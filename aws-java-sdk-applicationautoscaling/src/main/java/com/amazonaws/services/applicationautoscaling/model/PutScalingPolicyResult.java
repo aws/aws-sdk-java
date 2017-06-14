@@ -29,6 +29,12 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String policyARN;
+    /**
+     * <p>
+     * The CloudWatch alarms created for the target tracking policy.
+     * </p>
+     */
+    private java.util.List<Alarm> alarms;
 
     /**
      * <p>
@@ -71,6 +77,76 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The CloudWatch alarms created for the target tracking policy.
+     * </p>
+     * 
+     * @return The CloudWatch alarms created for the target tracking policy.
+     */
+
+    public java.util.List<Alarm> getAlarms() {
+        return alarms;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms created for the target tracking policy.
+     * </p>
+     * 
+     * @param alarms
+     *        The CloudWatch alarms created for the target tracking policy.
+     */
+
+    public void setAlarms(java.util.Collection<Alarm> alarms) {
+        if (alarms == null) {
+            this.alarms = null;
+            return;
+        }
+
+        this.alarms = new java.util.ArrayList<Alarm>(alarms);
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms created for the target tracking policy.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAlarms(java.util.Collection)} or {@link #withAlarms(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param alarms
+     *        The CloudWatch alarms created for the target tracking policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutScalingPolicyResult withAlarms(Alarm... alarms) {
+        if (this.alarms == null) {
+            setAlarms(new java.util.ArrayList<Alarm>(alarms.length));
+        }
+        for (Alarm ele : alarms) {
+            this.alarms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms created for the target tracking policy.
+     * </p>
+     * 
+     * @param alarms
+     *        The CloudWatch alarms created for the target tracking policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutScalingPolicyResult withAlarms(java.util.Collection<Alarm> alarms) {
+        setAlarms(alarms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -82,7 +158,9 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicyARN() != null)
-            sb.append("PolicyARN: ").append(getPolicyARN());
+            sb.append("PolicyARN: ").append(getPolicyARN()).append(",");
+        if (getAlarms() != null)
+            sb.append("Alarms: ").append(getAlarms());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +179,10 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getPolicyARN() != null && other.getPolicyARN().equals(this.getPolicyARN()) == false)
             return false;
+        if (other.getAlarms() == null ^ this.getAlarms() == null)
+            return false;
+        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +192,7 @@ public class PutScalingPolicyResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPolicyARN() == null) ? 0 : getPolicyARN().hashCode());
+        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         return hashCode;
     }
 

@@ -1,3 +1,12 @@
+# __1.11.148__ __2017-06-14__
+## __Amazon CloudDirectory__
+  - ### Features
+    - Documentation update for Cloud Directory
+
+## __Application Auto Scaling__
+  - ### Features
+    - Application Auto Scaling now supports automatic scaling of read and write throughput capacity for DynamoDB tables and global secondary indexes.
+
 # __1.11.147__ __2017-06-13__
 ## __AWS Config__
   - ### Features

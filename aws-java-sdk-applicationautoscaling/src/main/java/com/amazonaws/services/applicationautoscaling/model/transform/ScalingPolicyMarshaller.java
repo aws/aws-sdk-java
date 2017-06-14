@@ -42,6 +42,8 @@ public class ScalingPolicyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyType").build();
     private static final MarshallingInfo<StructuredPojo> STEPSCALINGPOLICYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepScalingPolicyConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> TARGETTRACKINGSCALINGPOLICYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetTrackingScalingPolicyConfiguration").build();
     private static final MarshallingInfo<List> ALARMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Alarms").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -70,6 +72,7 @@ public class ScalingPolicyMarshaller {
             protocolMarshaller.marshall(scalingPolicy.getScalableDimension(), SCALABLEDIMENSION_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getPolicyType(), POLICYTYPE_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getStepScalingPolicyConfiguration(), STEPSCALINGPOLICYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(scalingPolicy.getTargetTrackingScalingPolicyConfiguration(), TARGETTRACKINGSCALINGPOLICYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getAlarms(), ALARMS_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getCreationTime(), CREATIONTIME_BINDING);
         } catch (Exception e) {

@@ -51,7 +51,7 @@ public class AttachTypedLinkRequest extends com.amazonaws.AmazonWebServiceReques
     private TypedLinkSchemaAndFacetName typedLinkFacet;
     /**
      * <p>
-     * An ordered set of attributes that are associated with the typed link.
+     * A set of attributes that are associated with the typed link.
      * </p>
      */
     private java.util.List<AttributeNameAndValue> attributes;
@@ -218,10 +218,10 @@ public class AttachTypedLinkRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An ordered set of attributes that are associated with the typed link.
+     * A set of attributes that are associated with the typed link.
      * </p>
      * 
-     * @return An ordered set of attributes that are associated with the typed link.
+     * @return A set of attributes that are associated with the typed link.
      */
 
     public java.util.List<AttributeNameAndValue> getAttributes() {
@@ -230,11 +230,11 @@ public class AttachTypedLinkRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An ordered set of attributes that are associated with the typed link.
+     * A set of attributes that are associated with the typed link.
      * </p>
      * 
      * @param attributes
-     *        An ordered set of attributes that are associated with the typed link.
+     *        A set of attributes that are associated with the typed link.
      */
 
     public void setAttributes(java.util.Collection<AttributeNameAndValue> attributes) {
@@ -248,7 +248,7 @@ public class AttachTypedLinkRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An ordered set of attributes that are associated with the typed link.
+     * A set of attributes that are associated with the typed link.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -257,7 +257,7 @@ public class AttachTypedLinkRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param attributes
-     *        An ordered set of attributes that are associated with the typed link.
+     *        A set of attributes that are associated with the typed link.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class AttachTypedLinkRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An ordered set of attributes that are associated with the typed link.
+     * A set of attributes that are associated with the typed link.
      * </p>
      * 
      * @param attributes
-     *        An ordered set of attributes that are associated with the typed link.
+     *        A set of attributes that are associated with the typed link.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

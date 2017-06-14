@@ -76,6 +76,11 @@ public class ScalingPolicyJsonUnmarshaller implements Unmarshaller<ScalingPolicy
                     context.nextToken();
                     scalingPolicy.setStepScalingPolicyConfiguration(StepScalingPolicyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TargetTrackingScalingPolicyConfiguration", targetDepth)) {
+                    context.nextToken();
+                    scalingPolicy.setTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
                 if (context.testExpression("Alarms", targetDepth)) {
                     context.nextToken();
                     scalingPolicy.setAlarms(new ListUnmarshaller<Alarm>(AlarmJsonUnmarshaller.getInstance()).unmarshall(context));

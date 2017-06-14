@@ -23,7 +23,11 @@ public enum ScalableDimension {
     EcsServiceDesiredCount("ecs:service:DesiredCount"),
     Ec2SpotFleetRequestTargetCapacity("ec2:spot-fleet-request:TargetCapacity"),
     ElasticmapreduceInstancegroupInstanceCount("elasticmapreduce:instancegroup:InstanceCount"),
-    AppstreamFleetDesiredCapacity("appstream:fleet:DesiredCapacity");
+    AppstreamFleetDesiredCapacity("appstream:fleet:DesiredCapacity"),
+    DynamodbTableReadCapacityUnits("dynamodb:table:ReadCapacityUnits"),
+    DynamodbTableWriteCapacityUnits("dynamodb:table:WriteCapacityUnits"),
+    DynamodbIndexReadCapacityUnits("dynamodb:index:ReadCapacityUnits"),
+    DynamodbIndexWriteCapacityUnits("dynamodb:index:WriteCapacityUnits");
 
     private String value;
 

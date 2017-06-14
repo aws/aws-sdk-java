@@ -78,6 +78,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -106,6 +118,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
@@ -117,10 +151,16 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private String policyType;
     /**
      * <p>
-     * The configuration for the step scaling policy.
+     * A step scaling policy.
      * </p>
      */
     private StepScalingPolicyConfiguration stepScalingPolicyConfiguration;
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     */
+    private TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration;
     /**
      * <p>
      * The CloudWatch alarms associated with the scaling policy.
@@ -337,6 +377,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -365,6 +417,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
      *        Example: <code>fleet/sample-fleet</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        Example: <code>table/my-table</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
      *        </p>
      *        </li>
      */
@@ -403,6 +467,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -431,6 +507,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet
      *         name. Example: <code>fleet/sample-fleet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *         Example: <code>table/my-table</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is
+     *         the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
      *         </p>
      *         </li>
      */
@@ -469,6 +557,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -497,6 +597,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
      *        Example: <code>fleet/sample-fleet</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        Example: <code>table/my-table</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -532,6 +644,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -556,6 +690,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -590,6 +746,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -613,6 +791,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *         secondary index.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *         secondary index.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -647,6 +847,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -671,6 +893,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -707,6 +951,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -731,6 +997,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -765,6 +1053,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -789,6 +1099,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -875,11 +1207,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for the step scaling policy.
+     * A step scaling policy.
      * </p>
      * 
      * @param stepScalingPolicyConfiguration
-     *        The configuration for the step scaling policy.
+     *        A step scaling policy.
      */
 
     public void setStepScalingPolicyConfiguration(StepScalingPolicyConfiguration stepScalingPolicyConfiguration) {
@@ -888,10 +1220,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for the step scaling policy.
+     * A step scaling policy.
      * </p>
      * 
-     * @return The configuration for the step scaling policy.
+     * @return A step scaling policy.
      */
 
     public StepScalingPolicyConfiguration getStepScalingPolicyConfiguration() {
@@ -900,16 +1232,56 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for the step scaling policy.
+     * A step scaling policy.
      * </p>
      * 
      * @param stepScalingPolicyConfiguration
-     *        The configuration for the step scaling policy.
+     *        A step scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalingPolicy withStepScalingPolicyConfiguration(StepScalingPolicyConfiguration stepScalingPolicyConfiguration) {
         setStepScalingPolicyConfiguration(stepScalingPolicyConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * 
+     * @param targetTrackingScalingPolicyConfiguration
+     *        A target tracking policy.
+     */
+
+    public void setTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration) {
+        this.targetTrackingScalingPolicyConfiguration = targetTrackingScalingPolicyConfiguration;
+    }
+
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * 
+     * @return A target tracking policy.
+     */
+
+    public TargetTrackingScalingPolicyConfiguration getTargetTrackingScalingPolicyConfiguration() {
+        return this.targetTrackingScalingPolicyConfiguration;
+    }
+
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * 
+     * @param targetTrackingScalingPolicyConfiguration
+     *        A target tracking policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingPolicy withTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration) {
+        setTargetTrackingScalingPolicyConfiguration(targetTrackingScalingPolicyConfiguration);
         return this;
     }
 
@@ -1048,6 +1420,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
             sb.append("PolicyType: ").append(getPolicyType()).append(",");
         if (getStepScalingPolicyConfiguration() != null)
             sb.append("StepScalingPolicyConfiguration: ").append(getStepScalingPolicyConfiguration()).append(",");
+        if (getTargetTrackingScalingPolicyConfiguration() != null)
+            sb.append("TargetTrackingScalingPolicyConfiguration: ").append(getTargetTrackingScalingPolicyConfiguration()).append(",");
         if (getAlarms() != null)
             sb.append("Alarms: ").append(getAlarms()).append(",");
         if (getCreationTime() != null)
@@ -1095,6 +1469,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
         if (other.getStepScalingPolicyConfiguration() != null
                 && other.getStepScalingPolicyConfiguration().equals(this.getStepScalingPolicyConfiguration()) == false)
             return false;
+        if (other.getTargetTrackingScalingPolicyConfiguration() == null ^ this.getTargetTrackingScalingPolicyConfiguration() == null)
+            return false;
+        if (other.getTargetTrackingScalingPolicyConfiguration() != null
+                && other.getTargetTrackingScalingPolicyConfiguration().equals(this.getTargetTrackingScalingPolicyConfiguration()) == false)
+            return false;
         if (other.getAlarms() == null ^ this.getAlarms() == null)
             return false;
         if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
@@ -1118,6 +1497,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getScalableDimension() == null) ? 0 : getScalableDimension().hashCode());
         hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
         hashCode = prime * hashCode + ((getStepScalingPolicyConfiguration() == null) ? 0 : getStepScalingPolicyConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTargetTrackingScalingPolicyConfiguration() == null) ? 0 : getTargetTrackingScalingPolicyConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;

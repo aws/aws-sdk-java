@@ -98,8 +98,15 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * <li>
  * <p>
  * AppStream 2.0 fleets. For more information, see <a
- * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Autoscaling Amazon AppStream 2.0
- * Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+ * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Fleet Auto Scaling for Amazon
+ * AppStream 2.0</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Provisioned read and write capacity for Amazon DynamoDB tables and global secondary indexes. For more information,
+ * see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TargetTracking.html">Auto Scaling for
+ * DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
  * </p>
  * </li>
  * </ul>
@@ -625,10 +632,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws ValidationException
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws FailedResourceAccessException
-     *         Failed access to resources caused an exception. This exception currently only applies to
-     *         <a>DescribeScalingPolicies</a>. It is thrown when Application Auto Scaling is unable to retrieve the
-     *         alarms associated with a scaling policy due to a client error, for example, if the role ARN specified for
-     *         a scalable target does not have the proper permissions to call the CloudWatch <a
+     *         Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is
+     *         unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the
+     *         role ARN specified for a scalable target does not have permission to call the CloudWatch <a
      *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html"
      *         >DescribeAlarms</a> API operation on behalf of your account.
      * @throws InvalidNextTokenException
@@ -717,6 +723,12 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws ConcurrentUpdateException
      *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
      *         Scaling resource that already has a pending update.
+     * @throws FailedResourceAccessException
+     *         Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is
+     *         unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the
+     *         role ARN specified for a scalable target does not have permission to call the CloudWatch <a
+     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html"
+     *         >DescribeAlarms</a> API operation on behalf of your account.
      * @throws InternalServiceException
      *         The service encountered an internal error.
      * @sample AWSApplicationAutoScaling.PutScalingPolicy

@@ -69,6 +69,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -97,6 +109,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
@@ -105,16 +139,31 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
      * parameter is not required.
      * </p>
+     * <p>
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * <code>StepScaling</code> is supported.
+     * </p>
      */
     private String policyType;
     /**
      * <p>
-     * The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If
-     * you are updating a policy, this parameter is not required. For more information, see
-     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
+     * A step scaling policy.
+     * </p>
+     * <p>
+     * This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.
      * </p>
      */
     private StepScalingPolicyConfiguration stepScalingPolicyConfiguration;
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * <p>
+     * This parameter is required if you are creating a new policy and the policy type is
+     * <code>TargetTrackingScaling</code>.
+     * </p>
+     */
+    private TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration;
 
     /**
      * <p>
@@ -279,6 +328,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -307,6 +368,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
      *        Example: <code>fleet/sample-fleet</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        Example: <code>table/my-table</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
      *        </p>
      *        </li>
      */
@@ -345,6 +418,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -373,6 +458,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet
      *         name. Example: <code>fleet/sample-fleet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *         Example: <code>table/my-table</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is
+     *         the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
      *         </p>
      *         </li>
      */
@@ -411,6 +508,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -439,6 +548,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
      *        Example: <code>fleet/sample-fleet</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        Example: <code>table/my-table</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -474,6 +595,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -498,6 +641,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -532,6 +697,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -555,6 +742,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         <li>
      *         <p>
      *         <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *         secondary index.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *         secondary index.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -589,6 +798,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -613,6 +844,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -649,6 +902,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -673,6 +948,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -707,6 +1004,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -733,6 +1052,28 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -747,10 +1088,17 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
      * parameter is not required.
      * </p>
+     * <p>
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * <code>StepScaling</code> is supported.
+     * </p>
      * 
      * @param policyType
      *        The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *        policy, this parameter is not required.
+     *        policy, this parameter is not required.</p>
+     *        <p>
+     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     *        <code>StepScaling</code> is supported.
      * @see PolicyType
      */
 
@@ -763,9 +1111,16 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
      * parameter is not required.
      * </p>
+     * <p>
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * <code>StepScaling</code> is supported.
+     * </p>
      * 
      * @return The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *         policy, this parameter is not required.
+     *         policy, this parameter is not required.</p>
+     *         <p>
+     *         For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     *         <code>StepScaling</code> is supported.
      * @see PolicyType
      */
 
@@ -778,10 +1133,17 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
      * parameter is not required.
      * </p>
+     * <p>
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * <code>StepScaling</code> is supported.
+     * </p>
      * 
      * @param policyType
      *        The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *        policy, this parameter is not required.
+     *        policy, this parameter is not required.</p>
+     *        <p>
+     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     *        <code>StepScaling</code> is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -796,10 +1158,17 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
      * parameter is not required.
      * </p>
+     * <p>
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * <code>StepScaling</code> is supported.
+     * </p>
      * 
      * @param policyType
      *        The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *        policy, this parameter is not required.
+     *        policy, this parameter is not required.</p>
+     *        <p>
+     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     *        <code>StepScaling</code> is supported.
      * @see PolicyType
      */
 
@@ -812,10 +1181,17 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
      * parameter is not required.
      * </p>
+     * <p>
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * <code>StepScaling</code> is supported.
+     * </p>
      * 
      * @param policyType
      *        The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *        policy, this parameter is not required.
+     *        policy, this parameter is not required.</p>
+     *        <p>
+     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     *        <code>StepScaling</code> is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -827,15 +1203,16 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If
-     * you are updating a policy, this parameter is not required. For more information, see
-     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
+     * A step scaling policy.
+     * </p>
+     * <p>
+     * This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.
      * </p>
      * 
      * @param stepScalingPolicyConfiguration
-     *        The configuration for the step scaling policy. If you are creating a new policy, this parameter is
-     *        required. If you are updating a policy, this parameter is not required. For more information, see
-     *        <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
+     *        A step scaling policy.</p>
+     *        <p>
+     *        This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.
      */
 
     public void setStepScalingPolicyConfiguration(StepScalingPolicyConfiguration stepScalingPolicyConfiguration) {
@@ -844,14 +1221,15 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If
-     * you are updating a policy, this parameter is not required. For more information, see
-     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
+     * A step scaling policy.
+     * </p>
+     * <p>
+     * This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.
      * </p>
      * 
-     * @return The configuration for the step scaling policy. If you are creating a new policy, this parameter is
-     *         required. If you are updating a policy, this parameter is not required. For more information, see
-     *         <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
+     * @return A step scaling policy.</p>
+     *         <p>
+     *         This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.
      */
 
     public StepScalingPolicyConfiguration getStepScalingPolicyConfiguration() {
@@ -860,20 +1238,83 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The configuration for the step scaling policy. If you are creating a new policy, this parameter is required. If
-     * you are updating a policy, this parameter is not required. For more information, see
-     * <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
+     * A step scaling policy.
+     * </p>
+     * <p>
+     * This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.
      * </p>
      * 
      * @param stepScalingPolicyConfiguration
-     *        The configuration for the step scaling policy. If you are creating a new policy, this parameter is
-     *        required. If you are updating a policy, this parameter is not required. For more information, see
-     *        <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
+     *        A step scaling policy.</p>
+     *        <p>
+     *        This parameter is required if you are creating a policy and the policy type is <code>StepScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutScalingPolicyRequest withStepScalingPolicyConfiguration(StepScalingPolicyConfiguration stepScalingPolicyConfiguration) {
         setStepScalingPolicyConfiguration(stepScalingPolicyConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * <p>
+     * This parameter is required if you are creating a new policy and the policy type is
+     * <code>TargetTrackingScaling</code>.
+     * </p>
+     * 
+     * @param targetTrackingScalingPolicyConfiguration
+     *        A target tracking policy.</p>
+     *        <p>
+     *        This parameter is required if you are creating a new policy and the policy type is
+     *        <code>TargetTrackingScaling</code>.
+     */
+
+    public void setTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration) {
+        this.targetTrackingScalingPolicyConfiguration = targetTrackingScalingPolicyConfiguration;
+    }
+
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * <p>
+     * This parameter is required if you are creating a new policy and the policy type is
+     * <code>TargetTrackingScaling</code>.
+     * </p>
+     * 
+     * @return A target tracking policy.</p>
+     *         <p>
+     *         This parameter is required if you are creating a new policy and the policy type is
+     *         <code>TargetTrackingScaling</code>.
+     */
+
+    public TargetTrackingScalingPolicyConfiguration getTargetTrackingScalingPolicyConfiguration() {
+        return this.targetTrackingScalingPolicyConfiguration;
+    }
+
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * <p>
+     * This parameter is required if you are creating a new policy and the policy type is
+     * <code>TargetTrackingScaling</code>.
+     * </p>
+     * 
+     * @param targetTrackingScalingPolicyConfiguration
+     *        A target tracking policy.</p>
+     *        <p>
+     *        This parameter is required if you are creating a new policy and the policy type is
+     *        <code>TargetTrackingScaling</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutScalingPolicyRequest withTargetTrackingScalingPolicyConfiguration(
+            TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration) {
+        setTargetTrackingScalingPolicyConfiguration(targetTrackingScalingPolicyConfiguration);
         return this;
     }
 
@@ -899,7 +1340,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         if (getPolicyType() != null)
             sb.append("PolicyType: ").append(getPolicyType()).append(",");
         if (getStepScalingPolicyConfiguration() != null)
-            sb.append("StepScalingPolicyConfiguration: ").append(getStepScalingPolicyConfiguration());
+            sb.append("StepScalingPolicyConfiguration: ").append(getStepScalingPolicyConfiguration()).append(",");
+        if (getTargetTrackingScalingPolicyConfiguration() != null)
+            sb.append("TargetTrackingScalingPolicyConfiguration: ").append(getTargetTrackingScalingPolicyConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -939,6 +1382,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getStepScalingPolicyConfiguration() != null
                 && other.getStepScalingPolicyConfiguration().equals(this.getStepScalingPolicyConfiguration()) == false)
             return false;
+        if (other.getTargetTrackingScalingPolicyConfiguration() == null ^ this.getTargetTrackingScalingPolicyConfiguration() == null)
+            return false;
+        if (other.getTargetTrackingScalingPolicyConfiguration() != null
+                && other.getTargetTrackingScalingPolicyConfiguration().equals(this.getTargetTrackingScalingPolicyConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -953,6 +1401,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getScalableDimension() == null) ? 0 : getScalableDimension().hashCode());
         hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
         hashCode = prime * hashCode + ((getStepScalingPolicyConfiguration() == null) ? 0 : getStepScalingPolicyConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTargetTrackingScalingPolicyConfiguration() == null) ? 0 : getTargetTrackingScalingPolicyConfiguration().hashCode());
         return hashCode;
     }
 

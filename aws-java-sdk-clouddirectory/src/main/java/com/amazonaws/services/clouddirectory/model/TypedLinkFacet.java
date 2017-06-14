@@ -37,19 +37,17 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * An ordered set of attributes that are associate with the typed link. You can use typed link attributes when you
-     * need to represent the relationship between two objects or allow for quick filtering of incoming or outgoing typed
-     * links.
+     * A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values
+     * that are related to the link itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same objects.
      * </p>
      */
     private java.util.List<TypedLinkAttributeDefinition> attributes;
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
+     * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.
      * </p>
      */
     private java.util.List<String> identityAttributeOrder;
@@ -96,14 +94,14 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ordered set of attributes that are associate with the typed link. You can use typed link attributes when you
-     * need to represent the relationship between two objects or allow for quick filtering of incoming or outgoing typed
-     * links.
+     * A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values
+     * that are related to the link itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same objects.
      * </p>
      * 
-     * @return An ordered set of attributes that are associate with the typed link. You can use typed link attributes
-     *         when you need to represent the relationship between two objects or allow for quick filtering of incoming
-     *         or outgoing typed links.
+     * @return A set of key-value pairs associated with the typed link. Typed link attributes are used when you have
+     *         data values that are related to the link itself, and not to one of the two objects being linked. Identity
+     *         attributes also serve to distinguish the link from others of the same type between the same objects.
      */
 
     public java.util.List<TypedLinkAttributeDefinition> getAttributes() {
@@ -112,15 +110,15 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ordered set of attributes that are associate with the typed link. You can use typed link attributes when you
-     * need to represent the relationship between two objects or allow for quick filtering of incoming or outgoing typed
-     * links.
+     * A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values
+     * that are related to the link itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same objects.
      * </p>
      * 
      * @param attributes
-     *        An ordered set of attributes that are associate with the typed link. You can use typed link attributes
-     *        when you need to represent the relationship between two objects or allow for quick filtering of incoming
-     *        or outgoing typed links.
+     *        A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data
+     *        values that are related to the link itself, and not to one of the two objects being linked. Identity
+     *        attributes also serve to distinguish the link from others of the same type between the same objects.
      */
 
     public void setAttributes(java.util.Collection<TypedLinkAttributeDefinition> attributes) {
@@ -134,9 +132,9 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ordered set of attributes that are associate with the typed link. You can use typed link attributes when you
-     * need to represent the relationship between two objects or allow for quick filtering of incoming or outgoing typed
-     * links.
+     * A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values
+     * that are related to the link itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,9 +143,9 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param attributes
-     *        An ordered set of attributes that are associate with the typed link. You can use typed link attributes
-     *        when you need to represent the relationship between two objects or allow for quick filtering of incoming
-     *        or outgoing typed links.
+     *        A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data
+     *        values that are related to the link itself, and not to one of the two objects being linked. Identity
+     *        attributes also serve to distinguish the link from others of the same type between the same objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,15 +161,15 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An ordered set of attributes that are associate with the typed link. You can use typed link attributes when you
-     * need to represent the relationship between two objects or allow for quick filtering of incoming or outgoing typed
-     * links.
+     * A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values
+     * that are related to the link itself, and not to one of the two objects being linked. Identity attributes also
+     * serve to distinguish the link from others of the same type between the same objects.
      * </p>
      * 
      * @param attributes
-     *        An ordered set of attributes that are associate with the typed link. You can use typed link attributes
-     *        when you need to represent the relationship between two objects or allow for quick filtering of incoming
-     *        or outgoing typed links.
+     *        A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data
+     *        values that are related to the link itself, and not to one of the two objects being linked. Identity
+     *        attributes also serve to distinguish the link from others of the same type between the same objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,18 +180,14 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
+     * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.
      * </p>
      * 
-     * @return A range filter that you provide for multiple attributes. The ability to filter typed links considers the
-     *         order that the attributes are defined on the typed link facet. When providing ranges to typed link
-     *         selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
-     *         specified are presumed to match the entire range. Filters are interpreted in the order of the attributes
-     *         on the typed link facet, not the order in which they are supplied to any API calls.
+     * @return The set of attributes that distinguish links made from this facet from each other, in the order of
+     *         significance. Listing typed links can filter on the values of these attributes. See
+     *         <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypeLinks</a> for details.
      */
 
     public java.util.List<String> getIdentityAttributeOrder() {
@@ -202,19 +196,15 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
+     * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.
      * </p>
      * 
      * @param identityAttributeOrder
-     *        A range filter that you provide for multiple attributes. The ability to filter typed links considers the
-     *        order that the attributes are defined on the typed link facet. When providing ranges to typed link
-     *        selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
-     *        specified are presumed to match the entire range. Filters are interpreted in the order of the attributes
-     *        on the typed link facet, not the order in which they are supplied to any API calls.
+     *        The set of attributes that distinguish links made from this facet from each other, in the order of
+     *        significance. Listing typed links can filter on the values of these attributes. See
+     *        <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypeLinks</a> for details.
      */
 
     public void setIdentityAttributeOrder(java.util.Collection<String> identityAttributeOrder) {
@@ -228,11 +218,9 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
+     * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -241,11 +229,9 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param identityAttributeOrder
-     *        A range filter that you provide for multiple attributes. The ability to filter typed links considers the
-     *        order that the attributes are defined on the typed link facet. When providing ranges to typed link
-     *        selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
-     *        specified are presumed to match the entire range. Filters are interpreted in the order of the attributes
-     *        on the typed link facet, not the order in which they are supplied to any API calls.
+     *        The set of attributes that distinguish links made from this facet from each other, in the order of
+     *        significance. Listing typed links can filter on the values of these attributes. See
+     *        <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypeLinks</a> for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,19 +247,15 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
+     * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
+     * <a>ListIncomingTypeLinks</a> for details.
      * </p>
      * 
      * @param identityAttributeOrder
-     *        A range filter that you provide for multiple attributes. The ability to filter typed links considers the
-     *        order that the attributes are defined on the typed link facet. When providing ranges to typed link
-     *        selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
-     *        specified are presumed to match the entire range. Filters are interpreted in the order of the attributes
-     *        on the typed link facet, not the order in which they are supplied to any API calls.
+     *        The set of attributes that distinguish links made from this facet from each other, in the order of
+     *        significance. Listing typed links can filter on the values of these attributes. See
+     *        <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypeLinks</a> for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PolicyType {
 
-    StepScaling("StepScaling");
+    StepScaling("StepScaling"),
+    TargetTrackingScaling("TargetTrackingScaling");
 
     private String value;
 

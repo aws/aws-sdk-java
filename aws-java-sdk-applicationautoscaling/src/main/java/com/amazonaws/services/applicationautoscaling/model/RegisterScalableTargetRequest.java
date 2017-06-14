@@ -63,6 +63,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -90,6 +102,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
      * </p>
      * </li>
      * </ul>
@@ -240,6 +274,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -268,6 +314,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
      *        Example: <code>fleet/sample-fleet</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        Example: <code>table/my-table</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
      *        </p>
      *        </li>
      */
@@ -306,6 +364,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scalable target. This string consists of the resource
@@ -334,6 +404,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet
      *         name. Example: <code>fleet/sample-fleet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *         Example: <code>table/my-table</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is
+     *         the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
      *         </p>
      *         </li>
      */
@@ -372,6 +454,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * Example: <code>fleet/sample-fleet</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -400,6 +494,18 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
      *        Example: <code>fleet/sample-fleet</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        Example: <code>table/my-table</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -436,6 +542,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -460,6 +588,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -495,6 +645,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension associated with the scalable target. This string consists of the service
@@ -518,6 +690,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         <li>
      *         <p>
      *         <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *         secondary index.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *         secondary index.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -553,6 +747,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -577,6 +793,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -614,6 +852,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -638,6 +898,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -673,6 +955,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -697,6 +1001,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

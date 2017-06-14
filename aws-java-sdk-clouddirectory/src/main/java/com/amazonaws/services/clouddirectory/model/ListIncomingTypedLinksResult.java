@@ -25,7 +25,7 @@ public class ListIncomingTypedLinksResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Returns a typed link specifier as output.
+     * Returns one or more typed link specifiers as output.
      * </p>
      */
     private java.util.List<TypedLinkSpecifier> linkSpecifiers;
@@ -38,10 +38,10 @@ public class ListIncomingTypedLinksResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Returns a typed link specifier as output.
+     * Returns one or more typed link specifiers as output.
      * </p>
      * 
-     * @return Returns a typed link specifier as output.
+     * @return Returns one or more typed link specifiers as output.
      */
 
     public java.util.List<TypedLinkSpecifier> getLinkSpecifiers() {
@@ -50,11 +50,11 @@ public class ListIncomingTypedLinksResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Returns a typed link specifier as output.
+     * Returns one or more typed link specifiers as output.
      * </p>
      * 
      * @param linkSpecifiers
-     *        Returns a typed link specifier as output.
+     *        Returns one or more typed link specifiers as output.
      */
 
     public void setLinkSpecifiers(java.util.Collection<TypedLinkSpecifier> linkSpecifiers) {
@@ -68,7 +68,7 @@ public class ListIncomingTypedLinksResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Returns a typed link specifier as output.
+     * Returns one or more typed link specifiers as output.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListIncomingTypedLinksResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param linkSpecifiers
-     *        Returns a typed link specifier as output.
+     *        Returns one or more typed link specifiers as output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListIncomingTypedLinksResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Returns a typed link specifier as output.
+     * Returns one or more typed link specifiers as output.
      * </p>
      * 
      * @param linkSpecifiers
-     *        Returns a typed link specifier as output.
+     *        Returns one or more typed link specifiers as output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

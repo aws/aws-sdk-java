@@ -45,11 +45,14 @@ public class UpdateTypedLinkFacetRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<TypedLinkFacetAttributeUpdate> attributeUpdates;
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The order of identity attributes for the facet, from most significant to least significant. The ability to filter
+     * typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to
+     * a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
+     * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
+     * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
+     * attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
      * </p>
      */
     private java.util.List<String> identityAttributeOrder;
@@ -206,18 +209,24 @@ public class UpdateTypedLinkFacetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The order of identity attributes for the facet, from most significant to least significant. The ability to filter
+     * typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to
+     * a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
+     * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
+     * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
+     * attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
      * </p>
      * 
-     * @return A range filter that you provide for multiple attributes. The ability to filter typed links considers the
-     *         order that the attributes are defined on the typed link facet. When providing ranges to a typed link
-     *         selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
-     *         specified are presumed to match the entire range. Filters are interpreted in the order of the attributes
-     *         on the typed link facet, not the order in which they are supplied to any API calls.
+     * @return The order of identity attributes for the facet, from most significant to least significant. The ability
+     *         to filter typed links considers the order that the attributes are defined on the typed link facet. When
+     *         providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any
+     *         attributes that do not have a range specified are presumed to match the entire range. Filters are
+     *         interpreted in the order of the attributes on the typed link facet, not the order in which they are
+     *         supplied to any API calls. For more information about identity attributes, see <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink"
+     *         >Typed link</a>.
      */
 
     public java.util.List<String> getIdentityAttributeOrder() {
@@ -226,19 +235,25 @@ public class UpdateTypedLinkFacetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The order of identity attributes for the facet, from most significant to least significant. The ability to filter
+     * typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to
+     * a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
+     * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
+     * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
+     * attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
      * </p>
      * 
      * @param identityAttributeOrder
-     *        A range filter that you provide for multiple attributes. The ability to filter typed links considers the
-     *        order that the attributes are defined on the typed link facet. When providing ranges to a typed link
-     *        selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
-     *        specified are presumed to match the entire range. Filters are interpreted in the order of the attributes
-     *        on the typed link facet, not the order in which they are supplied to any API calls.
+     *        The order of identity attributes for the facet, from most significant to least significant. The ability to
+     *        filter typed links considers the order that the attributes are defined on the typed link facet. When
+     *        providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any
+     *        attributes that do not have a range specified are presumed to match the entire range. Filters are
+     *        interpreted in the order of the attributes on the typed link facet, not the order in which they are
+     *        supplied to any API calls. For more information about identity attributes, see <a
+     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     *        link</a>.
      */
 
     public void setIdentityAttributeOrder(java.util.Collection<String> identityAttributeOrder) {
@@ -252,11 +267,14 @@ public class UpdateTypedLinkFacetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The order of identity attributes for the facet, from most significant to least significant. The ability to filter
+     * typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to
+     * a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
+     * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
+     * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
+     * attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -265,11 +283,14 @@ public class UpdateTypedLinkFacetRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param identityAttributeOrder
-     *        A range filter that you provide for multiple attributes. The ability to filter typed links considers the
-     *        order that the attributes are defined on the typed link facet. When providing ranges to a typed link
-     *        selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
-     *        specified are presumed to match the entire range. Filters are interpreted in the order of the attributes
-     *        on the typed link facet, not the order in which they are supplied to any API calls.
+     *        The order of identity attributes for the facet, from most significant to least significant. The ability to
+     *        filter typed links considers the order that the attributes are defined on the typed link facet. When
+     *        providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any
+     *        attributes that do not have a range specified are presumed to match the entire range. Filters are
+     *        interpreted in the order of the attributes on the typed link facet, not the order in which they are
+     *        supplied to any API calls. For more information about identity attributes, see <a
+     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     *        link</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,19 +306,25 @@ public class UpdateTypedLinkFacetRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A range filter that you provide for multiple attributes. The ability to filter typed links considers the order
-     * that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any
-     * inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to
-     * match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the
-     * order in which they are supplied to any API calls.
+     * The order of identity attributes for the facet, from most significant to least significant. The ability to filter
+     * typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to
+     * a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
+     * specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the
+     * typed link facet, not the order in which they are supplied to any API calls. For more information about identity
+     * attributes, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
      * </p>
      * 
      * @param identityAttributeOrder
-     *        A range filter that you provide for multiple attributes. The ability to filter typed links considers the
-     *        order that the attributes are defined on the typed link facet. When providing ranges to a typed link
-     *        selection, any inexact ranges must be specified at the end. Any attributes that do not have a range
-     *        specified are presumed to match the entire range. Filters are interpreted in the order of the attributes
-     *        on the typed link facet, not the order in which they are supplied to any API calls.
+     *        The order of identity attributes for the facet, from most significant to least significant. The ability to
+     *        filter typed links considers the order that the attributes are defined on the typed link facet. When
+     *        providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any
+     *        attributes that do not have a range specified are presumed to match the entire range. Filters are
+     *        interpreted in the order of the attributes on the typed link facet, not the order in which they are
+     *        supplied to any API calls. For more information about identity attributes, see <a
+     *        href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     *        link</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

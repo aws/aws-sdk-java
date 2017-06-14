@@ -39,6 +39,8 @@ public class PutScalingPolicyRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyType").build();
     private static final MarshallingInfo<StructuredPojo> STEPSCALINGPOLICYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepScalingPolicyConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> TARGETTRACKINGSCALINGPOLICYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetTrackingScalingPolicyConfiguration").build();
 
     private static final PutScalingPolicyRequestMarshaller instance = new PutScalingPolicyRequestMarshaller();
 
@@ -62,6 +64,8 @@ public class PutScalingPolicyRequestMarshaller {
             protocolMarshaller.marshall(putScalingPolicyRequest.getScalableDimension(), SCALABLEDIMENSION_BINDING);
             protocolMarshaller.marshall(putScalingPolicyRequest.getPolicyType(), POLICYTYPE_BINDING);
             protocolMarshaller.marshall(putScalingPolicyRequest.getStepScalingPolicyConfiguration(), STEPSCALINGPOLICYCONFIGURATION_BINDING);
+            protocolMarshaller
+                    .marshall(putScalingPolicyRequest.getTargetTrackingScalingPolicyConfiguration(), TARGETTRACKINGSCALINGPOLICYCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
