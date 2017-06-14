@@ -566,8 +566,8 @@ public class DynamoDBQueryExpression <T> {
      * <li>
      * <p>
      * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
-     * <i>AND</i> <code>:rangeval2</code> - true if the range key is less than
-     * or greater than <code>:rangeval1</code>, and less than or equal to
+     * <i>AND</i> <code>:rangeval2</code> - true if the range key is greater
+     * than or equal to <code>:rangeval1</code>, and less than or equal to
      * <code>:rangeval2</code>.</li>
      * <li>
      * <p>
@@ -664,7 +664,7 @@ public class DynamoDBQueryExpression <T> {
      *         <p>
      *         <code>rangeAttributeName</code> <i>BETWEEN</i>
      *         <code>:rangeval1</code> <i>AND</i> <code>:rangeval2</code> - true
-     *         if the range key is less than or greater than
+     *         if the range key is greater than or equal to
      *         <code>:rangeval1</code>, and less than or equal to
      *         <code>:rangeval2</code>.</li>
      *         <li>
@@ -763,8 +763,8 @@ public class DynamoDBQueryExpression <T> {
      * <li>
      * <p>
      * <code>rangeAttributeName</code> <i>BETWEEN</i> <code>:rangeval1</code>
-     * <i>AND</i> <code>:rangeval2</code> - true if the range key is less than
-     * or greater than <code>:rangeval1</code>, and less than or equal to
+     * <i>AND</i> <code>:rangeval2</code> - true if the range key is greater 
+     * than or equal to <code>:rangeval1</code>, and less than or equal to
      * <code>:rangeval2</code>.</li>
      * <li>
      * <p>
