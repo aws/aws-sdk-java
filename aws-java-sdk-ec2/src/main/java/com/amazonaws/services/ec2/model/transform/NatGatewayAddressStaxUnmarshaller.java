@@ -43,13 +43,13 @@ public class NatGatewayAddressStaxUnmarshaller implements Unmarshaller<NatGatewa
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("publicIp", targetDepth)) {
-                    natGatewayAddress.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("allocationId", targetDepth)) {
+                    natGatewayAddress.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("allocationId", targetDepth)) {
-                    natGatewayAddress.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    natGatewayAddress.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,8 +58,8 @@ public class NatGatewayAddressStaxUnmarshaller implements Unmarshaller<NatGatewa
                     continue;
                 }
 
-                if (context.testExpression("networkInterfaceId", targetDepth)) {
-                    natGatewayAddress.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("publicIp", targetDepth)) {
+                    natGatewayAddress.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -40,19 +40,6 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeAddressesRequestPublicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeAddressesRequest
-                .getPublicIps();
-        if (!describeAddressesRequestPublicIpsList.isEmpty() || !describeAddressesRequestPublicIpsList.isAutoConstruct()) {
-            int publicIpsListIndex = 1;
-
-            for (String describeAddressesRequestPublicIpsListValue : describeAddressesRequestPublicIpsList) {
-                if (describeAddressesRequestPublicIpsListValue != null) {
-                    request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(describeAddressesRequestPublicIpsListValue));
-                }
-                publicIpsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeAddressesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeAddressesRequest
                 .getFilters();
         if (!describeAddressesRequestFiltersList.isEmpty() || !describeAddressesRequestFiltersList.isAutoConstruct()) {
@@ -77,6 +64,19 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeAddressesRequestPublicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeAddressesRequest
+                .getPublicIps();
+        if (!describeAddressesRequestPublicIpsList.isEmpty() || !describeAddressesRequestPublicIpsList.isAutoConstruct()) {
+            int publicIpsListIndex = 1;
+
+            for (String describeAddressesRequestPublicIpsListValue : describeAddressesRequestPublicIpsList) {
+                if (describeAddressesRequestPublicIpsListValue != null) {
+                    request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(describeAddressesRequestPublicIpsListValue));
+                }
+                publicIpsListIndex++;
             }
         }
 

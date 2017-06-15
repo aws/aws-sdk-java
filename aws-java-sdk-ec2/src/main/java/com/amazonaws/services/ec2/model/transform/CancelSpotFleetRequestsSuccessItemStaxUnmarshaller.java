@@ -43,11 +43,6 @@ public class CancelSpotFleetRequestsSuccessItemStaxUnmarshaller implements Unmar
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("spotFleetRequestId", targetDepth)) {
-                    cancelSpotFleetRequestsSuccessItem.setSpotFleetRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("currentSpotFleetRequestState", targetDepth)) {
                     cancelSpotFleetRequestsSuccessItem.setCurrentSpotFleetRequestState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,6 +50,11 @@ public class CancelSpotFleetRequestsSuccessItemStaxUnmarshaller implements Unmar
 
                 if (context.testExpression("previousSpotFleetRequestState", targetDepth)) {
                     cancelSpotFleetRequestsSuccessItem.setPreviousSpotFleetRequestState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("spotFleetRequestId", targetDepth)) {
+                    cancelSpotFleetRequestsSuccessItem.setSpotFleetRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

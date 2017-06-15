@@ -40,12 +40,12 @@ public class ResetInstanceAttributeRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (resetInstanceAttributeRequest.getInstanceId() != null) {
-            request.addParameter("InstanceId", StringUtils.fromString(resetInstanceAttributeRequest.getInstanceId()));
-        }
-
         if (resetInstanceAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(resetInstanceAttributeRequest.getAttribute()));
+        }
+
+        if (resetInstanceAttributeRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(resetInstanceAttributeRequest.getInstanceId()));
         }
 
         return request;

@@ -40,19 +40,6 @@ public class DescribeFlowLogsRequestMarshaller implements Marshaller<Request<Des
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeFlowLogsRequestFlowLogIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeFlowLogsRequest
-                .getFlowLogIds();
-        if (!describeFlowLogsRequestFlowLogIdsList.isEmpty() || !describeFlowLogsRequestFlowLogIdsList.isAutoConstruct()) {
-            int flowLogIdsListIndex = 1;
-
-            for (String describeFlowLogsRequestFlowLogIdsListValue : describeFlowLogsRequestFlowLogIdsList) {
-                if (describeFlowLogsRequestFlowLogIdsListValue != null) {
-                    request.addParameter("FlowLogId." + flowLogIdsListIndex, StringUtils.fromString(describeFlowLogsRequestFlowLogIdsListValue));
-                }
-                flowLogIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeFlowLogsRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeFlowLogsRequest
                 .getFilter();
         if (!describeFlowLogsRequestFilterList.isEmpty() || !describeFlowLogsRequestFilterList.isAutoConstruct()) {
@@ -80,12 +67,25 @@ public class DescribeFlowLogsRequestMarshaller implements Marshaller<Request<Des
             }
         }
 
-        if (describeFlowLogsRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeFlowLogsRequest.getNextToken()));
+        com.amazonaws.internal.SdkInternalList<String> describeFlowLogsRequestFlowLogIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeFlowLogsRequest
+                .getFlowLogIds();
+        if (!describeFlowLogsRequestFlowLogIdsList.isEmpty() || !describeFlowLogsRequestFlowLogIdsList.isAutoConstruct()) {
+            int flowLogIdsListIndex = 1;
+
+            for (String describeFlowLogsRequestFlowLogIdsListValue : describeFlowLogsRequestFlowLogIdsList) {
+                if (describeFlowLogsRequestFlowLogIdsListValue != null) {
+                    request.addParameter("FlowLogId." + flowLogIdsListIndex, StringUtils.fromString(describeFlowLogsRequestFlowLogIdsListValue));
+                }
+                flowLogIdsListIndex++;
+            }
         }
 
         if (describeFlowLogsRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeFlowLogsRequest.getMaxResults()));
+        }
+
+        if (describeFlowLogsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeFlowLogsRequest.getNextToken()));
         }
 
         return request;

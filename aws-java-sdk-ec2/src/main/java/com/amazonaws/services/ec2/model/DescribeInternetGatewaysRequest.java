@@ -30,15 +30,6 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more Internet gateway IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Internet gateways.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> internetGatewayIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -83,7 +74,6 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more Internet gateway IDs.
@@ -91,91 +81,8 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
      * <p>
      * Default: Describes all your Internet gateways.
      * </p>
-     * 
-     * @return One or more Internet gateway IDs.</p>
-     *         <p>
-     *         Default: Describes all your Internet gateways.
      */
-
-    public java.util.List<String> getInternetGatewayIds() {
-        if (internetGatewayIds == null) {
-            internetGatewayIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return internetGatewayIds;
-    }
-
-    /**
-     * <p>
-     * One or more Internet gateway IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Internet gateways.
-     * </p>
-     * 
-     * @param internetGatewayIds
-     *        One or more Internet gateway IDs.</p>
-     *        <p>
-     *        Default: Describes all your Internet gateways.
-     */
-
-    public void setInternetGatewayIds(java.util.Collection<String> internetGatewayIds) {
-        if (internetGatewayIds == null) {
-            this.internetGatewayIds = null;
-            return;
-        }
-
-        this.internetGatewayIds = new com.amazonaws.internal.SdkInternalList<String>(internetGatewayIds);
-    }
-
-    /**
-     * <p>
-     * One or more Internet gateway IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Internet gateways.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setInternetGatewayIds(java.util.Collection)} or {@link #withInternetGatewayIds(java.util.Collection)} if
-     * you want to override the existing values.
-     * </p>
-     * 
-     * @param internetGatewayIds
-     *        One or more Internet gateway IDs.</p>
-     *        <p>
-     *        Default: Describes all your Internet gateways.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeInternetGatewaysRequest withInternetGatewayIds(String... internetGatewayIds) {
-        if (this.internetGatewayIds == null) {
-            setInternetGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(internetGatewayIds.length));
-        }
-        for (String ele : internetGatewayIds) {
-            this.internetGatewayIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more Internet gateway IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Internet gateways.
-     * </p>
-     * 
-     * @param internetGatewayIds
-     *        One or more Internet gateway IDs.</p>
-     *        <p>
-     *        Default: Describes all your Internet gateways.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeInternetGatewaysRequest withInternetGatewayIds(java.util.Collection<String> internetGatewayIds) {
-        setInternetGatewayIds(internetGatewayIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> internetGatewayIds;
 
     /**
      * <p>
@@ -571,6 +478,99 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * One or more Internet gateway IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your Internet gateways.
+     * </p>
+     * 
+     * @return One or more Internet gateway IDs.</p>
+     *         <p>
+     *         Default: Describes all your Internet gateways.
+     */
+
+    public java.util.List<String> getInternetGatewayIds() {
+        if (internetGatewayIds == null) {
+            internetGatewayIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return internetGatewayIds;
+    }
+
+    /**
+     * <p>
+     * One or more Internet gateway IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your Internet gateways.
+     * </p>
+     * 
+     * @param internetGatewayIds
+     *        One or more Internet gateway IDs.</p>
+     *        <p>
+     *        Default: Describes all your Internet gateways.
+     */
+
+    public void setInternetGatewayIds(java.util.Collection<String> internetGatewayIds) {
+        if (internetGatewayIds == null) {
+            this.internetGatewayIds = null;
+            return;
+        }
+
+        this.internetGatewayIds = new com.amazonaws.internal.SdkInternalList<String>(internetGatewayIds);
+    }
+
+    /**
+     * <p>
+     * One or more Internet gateway IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your Internet gateways.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInternetGatewayIds(java.util.Collection)} or {@link #withInternetGatewayIds(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param internetGatewayIds
+     *        One or more Internet gateway IDs.</p>
+     *        <p>
+     *        Default: Describes all your Internet gateways.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInternetGatewaysRequest withInternetGatewayIds(String... internetGatewayIds) {
+        if (this.internetGatewayIds == null) {
+            setInternetGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(internetGatewayIds.length));
+        }
+        for (String ele : internetGatewayIds) {
+            this.internetGatewayIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more Internet gateway IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your Internet gateways.
+     * </p>
+     * 
+     * @param internetGatewayIds
+     *        One or more Internet gateway IDs.</p>
+     *        <p>
+     *        Default: Describes all your Internet gateways.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInternetGatewaysRequest withInternetGatewayIds(java.util.Collection<String> internetGatewayIds) {
+        setInternetGatewayIds(internetGatewayIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -592,10 +592,10 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInternetGatewayIds() != null)
-            sb.append("InternetGatewayIds: ").append(getInternetGatewayIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getInternetGatewayIds() != null)
+            sb.append("InternetGatewayIds: ").append(getInternetGatewayIds());
         sb.append("}");
         return sb.toString();
     }
@@ -610,13 +610,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
         if (obj instanceof DescribeInternetGatewaysRequest == false)
             return false;
         DescribeInternetGatewaysRequest other = (DescribeInternetGatewaysRequest) obj;
-        if (other.getInternetGatewayIds() == null ^ this.getInternetGatewayIds() == null)
-            return false;
-        if (other.getInternetGatewayIds() != null && other.getInternetGatewayIds().equals(this.getInternetGatewayIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getInternetGatewayIds() == null ^ this.getInternetGatewayIds() == null)
+            return false;
+        if (other.getInternetGatewayIds() != null && other.getInternetGatewayIds().equals(this.getInternetGatewayIds()) == false)
             return false;
         return true;
     }
@@ -626,8 +626,8 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInternetGatewayIds() == null) ? 0 : getInternetGatewayIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getInternetGatewayIds() == null) ? 0 : getInternetGatewayIds().hashCode());
         return hashCode;
     }
 

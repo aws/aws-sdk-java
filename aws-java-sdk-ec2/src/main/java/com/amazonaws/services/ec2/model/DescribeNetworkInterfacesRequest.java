@@ -30,15 +30,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more network interface IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your network interfaces.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> networkInterfaceIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -248,7 +239,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more network interface IDs.
@@ -256,91 +246,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * <p>
      * Default: Describes all your network interfaces.
      * </p>
-     * 
-     * @return One or more network interface IDs.</p>
-     *         <p>
-     *         Default: Describes all your network interfaces.
      */
-
-    public java.util.List<String> getNetworkInterfaceIds() {
-        if (networkInterfaceIds == null) {
-            networkInterfaceIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return networkInterfaceIds;
-    }
-
-    /**
-     * <p>
-     * One or more network interface IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your network interfaces.
-     * </p>
-     * 
-     * @param networkInterfaceIds
-     *        One or more network interface IDs.</p>
-     *        <p>
-     *        Default: Describes all your network interfaces.
-     */
-
-    public void setNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
-        if (networkInterfaceIds == null) {
-            this.networkInterfaceIds = null;
-            return;
-        }
-
-        this.networkInterfaceIds = new com.amazonaws.internal.SdkInternalList<String>(networkInterfaceIds);
-    }
-
-    /**
-     * <p>
-     * One or more network interface IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your network interfaces.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setNetworkInterfaceIds(java.util.Collection)} or {@link #withNetworkInterfaceIds(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param networkInterfaceIds
-     *        One or more network interface IDs.</p>
-     *        <p>
-     *        Default: Describes all your network interfaces.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(String... networkInterfaceIds) {
-        if (this.networkInterfaceIds == null) {
-            setNetworkInterfaceIds(new com.amazonaws.internal.SdkInternalList<String>(networkInterfaceIds.length));
-        }
-        for (String ele : networkInterfaceIds) {
-            this.networkInterfaceIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more network interface IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your network interfaces.
-     * </p>
-     * 
-     * @param networkInterfaceIds
-     *        One or more network interface IDs.</p>
-     *        <p>
-     *        Default: Describes all your network interfaces.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
-        setNetworkInterfaceIds(networkInterfaceIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> networkInterfaceIds;
 
     /**
      * <p>
@@ -2068,6 +1975,99 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * One or more network interface IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your network interfaces.
+     * </p>
+     * 
+     * @return One or more network interface IDs.</p>
+     *         <p>
+     *         Default: Describes all your network interfaces.
+     */
+
+    public java.util.List<String> getNetworkInterfaceIds() {
+        if (networkInterfaceIds == null) {
+            networkInterfaceIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return networkInterfaceIds;
+    }
+
+    /**
+     * <p>
+     * One or more network interface IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your network interfaces.
+     * </p>
+     * 
+     * @param networkInterfaceIds
+     *        One or more network interface IDs.</p>
+     *        <p>
+     *        Default: Describes all your network interfaces.
+     */
+
+    public void setNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
+        if (networkInterfaceIds == null) {
+            this.networkInterfaceIds = null;
+            return;
+        }
+
+        this.networkInterfaceIds = new com.amazonaws.internal.SdkInternalList<String>(networkInterfaceIds);
+    }
+
+    /**
+     * <p>
+     * One or more network interface IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your network interfaces.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaceIds(java.util.Collection)} or {@link #withNetworkInterfaceIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param networkInterfaceIds
+     *        One or more network interface IDs.</p>
+     *        <p>
+     *        Default: Describes all your network interfaces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(String... networkInterfaceIds) {
+        if (this.networkInterfaceIds == null) {
+            setNetworkInterfaceIds(new com.amazonaws.internal.SdkInternalList<String>(networkInterfaceIds.length));
+        }
+        for (String ele : networkInterfaceIds) {
+            this.networkInterfaceIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more network interface IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your network interfaces.
+     * </p>
+     * 
+     * @param networkInterfaceIds
+     *        One or more network interface IDs.</p>
+     *        <p>
+     *        Default: Describes all your network interfaces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfacesRequest withNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
+        setNetworkInterfaceIds(networkInterfaceIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -2089,10 +2089,10 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNetworkInterfaceIds() != null)
-            sb.append("NetworkInterfaceIds: ").append(getNetworkInterfaceIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getNetworkInterfaceIds() != null)
+            sb.append("NetworkInterfaceIds: ").append(getNetworkInterfaceIds());
         sb.append("}");
         return sb.toString();
     }
@@ -2107,13 +2107,13 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
         if (obj instanceof DescribeNetworkInterfacesRequest == false)
             return false;
         DescribeNetworkInterfacesRequest other = (DescribeNetworkInterfacesRequest) obj;
-        if (other.getNetworkInterfaceIds() == null ^ this.getNetworkInterfaceIds() == null)
-            return false;
-        if (other.getNetworkInterfaceIds() != null && other.getNetworkInterfaceIds().equals(this.getNetworkInterfaceIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getNetworkInterfaceIds() == null ^ this.getNetworkInterfaceIds() == null)
+            return false;
+        if (other.getNetworkInterfaceIds() != null && other.getNetworkInterfaceIds().equals(this.getNetworkInterfaceIds()) == false)
             return false;
         return true;
     }
@@ -2123,8 +2123,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNetworkInterfaceIds() == null) ? 0 : getNetworkInterfaceIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceIds() == null) ? 0 : getNetworkInterfaceIds().hashCode());
         return hashCode;
     }
 

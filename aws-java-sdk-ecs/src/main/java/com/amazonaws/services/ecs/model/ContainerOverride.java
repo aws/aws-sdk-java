@@ -30,8 +30,7 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the container that receives the override. This parameter is required if a command or environment
-     * variable is specified.
+     * The name of the container that receives the override. This parameter is required if any override is specified.
      * </p>
      */
     private String name;
@@ -50,16 +49,37 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<KeyValuePair> environment;
+    /**
+     * <p>
+     * The number of <code>cpu</code> units reserved for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     */
+    private Integer cpu;
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     * definition. If your container attempts to exceed the memory specified here, the container is killed. You must
+     * also specify a container name.
+     * </p>
+     */
+    private Integer memory;
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     */
+    private Integer memoryReservation;
 
     /**
      * <p>
-     * The name of the container that receives the override. This parameter is required if a command or environment
-     * variable is specified.
+     * The name of the container that receives the override. This parameter is required if any override is specified.
      * </p>
      * 
      * @param name
-     *        The name of the container that receives the override. This parameter is required if a command or
-     *        environment variable is specified.
+     *        The name of the container that receives the override. This parameter is required if any override is
+     *        specified.
      */
 
     public void setName(String name) {
@@ -68,12 +88,11 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the container that receives the override. This parameter is required if a command or environment
-     * variable is specified.
+     * The name of the container that receives the override. This parameter is required if any override is specified.
      * </p>
      * 
-     * @return The name of the container that receives the override. This parameter is required if a command or
-     *         environment variable is specified.
+     * @return The name of the container that receives the override. This parameter is required if any override is
+     *         specified.
      */
 
     public String getName() {
@@ -82,13 +101,12 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the container that receives the override. This parameter is required if a command or environment
-     * variable is specified.
+     * The name of the container that receives the override. This parameter is required if any override is specified.
      * </p>
      * 
      * @param name
-     *        The name of the container that receives the override. This parameter is required if a command or
-     *        environment variable is specified.
+     *        The name of the container that receives the override. This parameter is required if any override is
+     *        specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,6 +286,150 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The number of <code>cpu</code> units reserved for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param cpu
+     *        The number of <code>cpu</code> units reserved for the container, instead of the default value from the
+     *        task definition. You must also specify a container name.
+     */
+
+    public void setCpu(Integer cpu) {
+        this.cpu = cpu;
+    }
+
+    /**
+     * <p>
+     * The number of <code>cpu</code> units reserved for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @return The number of <code>cpu</code> units reserved for the container, instead of the default value from the
+     *         task definition. You must also specify a container name.
+     */
+
+    public Integer getCpu() {
+        return this.cpu;
+    }
+
+    /**
+     * <p>
+     * The number of <code>cpu</code> units reserved for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param cpu
+     *        The number of <code>cpu</code> units reserved for the container, instead of the default value from the
+     *        task definition. You must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerOverride withCpu(Integer cpu) {
+        setCpu(cpu);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     * definition. If your container attempts to exceed the memory specified here, the container is killed. You must
+     * also specify a container name.
+     * </p>
+     * 
+     * @param memory
+     *        The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     *        definition. If your container attempts to exceed the memory specified here, the container is killed. You
+     *        must also specify a container name.
+     */
+
+    public void setMemory(Integer memory) {
+        this.memory = memory;
+    }
+
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     * definition. If your container attempts to exceed the memory specified here, the container is killed. You must
+     * also specify a container name.
+     * </p>
+     * 
+     * @return The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     *         definition. If your container attempts to exceed the memory specified here, the container is killed. You
+     *         must also specify a container name.
+     */
+
+    public Integer getMemory() {
+        return this.memory;
+    }
+
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     * definition. If your container attempts to exceed the memory specified here, the container is killed. You must
+     * also specify a container name.
+     * </p>
+     * 
+     * @param memory
+     *        The hard limit (in MiB) of memory to present to the container, instead of the default value from the task
+     *        definition. If your container attempts to exceed the memory specified here, the container is killed. You
+     *        must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerOverride withMemory(Integer memory) {
+        setMemory(memory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param memoryReservation
+     *        The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     *        definition. You must also specify a container name.
+     */
+
+    public void setMemoryReservation(Integer memoryReservation) {
+        this.memoryReservation = memoryReservation;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @return The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the
+     *         task definition. You must also specify a container name.
+     */
+
+    public Integer getMemoryReservation() {
+        return this.memoryReservation;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     * definition. You must also specify a container name.
+     * </p>
+     * 
+     * @param memoryReservation
+     *        The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task
+     *        definition. You must also specify a container name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerOverride withMemoryReservation(Integer memoryReservation) {
+        setMemoryReservation(memoryReservation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -283,7 +445,13 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
         if (getCommand() != null)
             sb.append("Command: ").append(getCommand()).append(",");
         if (getEnvironment() != null)
-            sb.append("Environment: ").append(getEnvironment());
+            sb.append("Environment: ").append(getEnvironment()).append(",");
+        if (getCpu() != null)
+            sb.append("Cpu: ").append(getCpu()).append(",");
+        if (getMemory() != null)
+            sb.append("Memory: ").append(getMemory()).append(",");
+        if (getMemoryReservation() != null)
+            sb.append("MemoryReservation: ").append(getMemoryReservation());
         sb.append("}");
         return sb.toString();
     }
@@ -310,6 +478,18 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
             return false;
+        if (other.getCpu() == null ^ this.getCpu() == null)
+            return false;
+        if (other.getCpu() != null && other.getCpu().equals(this.getCpu()) == false)
+            return false;
+        if (other.getMemory() == null ^ this.getMemory() == null)
+            return false;
+        if (other.getMemory() != null && other.getMemory().equals(this.getMemory()) == false)
+            return false;
+        if (other.getMemoryReservation() == null ^ this.getMemoryReservation() == null)
+            return false;
+        if (other.getMemoryReservation() != null && other.getMemoryReservation().equals(this.getMemoryReservation()) == false)
+            return false;
         return true;
     }
 
@@ -321,6 +501,9 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
+        hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
+        hashCode = prime * hashCode + ((getMemoryReservation() == null) ? 0 : getMemoryReservation().hashCode());
         return hashCode;
     }
 

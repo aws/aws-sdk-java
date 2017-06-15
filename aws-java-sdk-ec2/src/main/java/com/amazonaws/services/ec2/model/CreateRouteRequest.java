@@ -29,23 +29,11 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The ID of the route table for the route.
-     * </p>
-     */
-    private String routeTableId;
-    /**
-     * <p>
      * The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific
      * match.
      * </p>
      */
     private String destinationCidrBlock;
-    /**
-     * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
-     * </p>
-     */
-    private String gatewayId;
     /**
      * <p>
      * The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific match.
@@ -60,11 +48,23 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String egressOnlyInternetGatewayId;
     /**
      * <p>
+     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * </p>
+     */
+    private String gatewayId;
+    /**
+     * <p>
      * The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one
      * network interface is attached.
      * </p>
      */
     private String instanceId;
+    /**
+     * <p>
+     * [IPv4 traffic only] The ID of a NAT gateway.
+     * </p>
+     */
+    private String natGatewayId;
     /**
      * <p>
      * The ID of a network interface.
@@ -73,56 +73,16 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String networkInterfaceId;
     /**
      * <p>
+     * The ID of the route table for the route.
+     * </p>
+     */
+    private String routeTableId;
+    /**
+     * <p>
      * The ID of a VPC peering connection.
      * </p>
      */
     private String vpcPeeringConnectionId;
-    /**
-     * <p>
-     * [IPv4 traffic only] The ID of a NAT gateway.
-     * </p>
-     */
-    private String natGatewayId;
-
-    /**
-     * <p>
-     * The ID of the route table for the route.
-     * </p>
-     * 
-     * @param routeTableId
-     *        The ID of the route table for the route.
-     */
-
-    public void setRouteTableId(String routeTableId) {
-        this.routeTableId = routeTableId;
-    }
-
-    /**
-     * <p>
-     * The ID of the route table for the route.
-     * </p>
-     * 
-     * @return The ID of the route table for the route.
-     */
-
-    public String getRouteTableId() {
-        return this.routeTableId;
-    }
-
-    /**
-     * <p>
-     * The ID of the route table for the route.
-     * </p>
-     * 
-     * @param routeTableId
-     *        The ID of the route table for the route.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateRouteRequest withRouteTableId(String routeTableId) {
-        setRouteTableId(routeTableId);
-        return this;
-    }
 
     /**
      * <p>
@@ -167,46 +127,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     public CreateRouteRequest withDestinationCidrBlock(String destinationCidrBlock) {
         setDestinationCidrBlock(destinationCidrBlock);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
-     * </p>
-     * 
-     * @param gatewayId
-     *        The ID of an Internet gateway or virtual private gateway attached to your VPC.
-     */
-
-    public void setGatewayId(String gatewayId) {
-        this.gatewayId = gatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
-     * </p>
-     * 
-     * @return The ID of an Internet gateway or virtual private gateway attached to your VPC.
-     */
-
-    public String getGatewayId() {
-        return this.gatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
-     * </p>
-     * 
-     * @param gatewayId
-     *        The ID of an Internet gateway or virtual private gateway attached to your VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateRouteRequest withGatewayId(String gatewayId) {
-        setGatewayId(gatewayId);
         return this;
     }
 
@@ -295,6 +215,46 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
+     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     */
+
+    public void setGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * </p>
+     * 
+     * @return The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     */
+
+    public String getGatewayId() {
+        return this.gatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * </p>
+     * 
+     * @param gatewayId
+     *        The ID of an Internet gateway or virtual private gateway attached to your VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withGatewayId(String gatewayId) {
+        setGatewayId(gatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of a NAT instance in your VPC. The operation fails if you specify an instance ID unless exactly one
      * network interface is attached.
      * </p>
@@ -341,6 +301,46 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
+     * [IPv4 traffic only] The ID of a NAT gateway.
+     * </p>
+     * 
+     * @param natGatewayId
+     *        [IPv4 traffic only] The ID of a NAT gateway.
+     */
+
+    public void setNatGatewayId(String natGatewayId) {
+        this.natGatewayId = natGatewayId;
+    }
+
+    /**
+     * <p>
+     * [IPv4 traffic only] The ID of a NAT gateway.
+     * </p>
+     * 
+     * @return [IPv4 traffic only] The ID of a NAT gateway.
+     */
+
+    public String getNatGatewayId() {
+        return this.natGatewayId;
+    }
+
+    /**
+     * <p>
+     * [IPv4 traffic only] The ID of a NAT gateway.
+     * </p>
+     * 
+     * @param natGatewayId
+     *        [IPv4 traffic only] The ID of a NAT gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withNatGatewayId(String natGatewayId) {
+        setNatGatewayId(natGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of a network interface.
      * </p>
      * 
@@ -376,6 +376,46 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     public CreateRouteRequest withNetworkInterfaceId(String networkInterfaceId) {
         setNetworkInterfaceId(networkInterfaceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table for the route.
+     * </p>
+     * 
+     * @param routeTableId
+     *        The ID of the route table for the route.
+     */
+
+    public void setRouteTableId(String routeTableId) {
+        this.routeTableId = routeTableId;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table for the route.
+     * </p>
+     * 
+     * @return The ID of the route table for the route.
+     */
+
+    public String getRouteTableId() {
+        return this.routeTableId;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table for the route.
+     * </p>
+     * 
+     * @param routeTableId
+     *        The ID of the route table for the route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withRouteTableId(String routeTableId) {
+        setRouteTableId(routeTableId);
         return this;
     }
 
@@ -420,46 +460,6 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * <p>
-     * [IPv4 traffic only] The ID of a NAT gateway.
-     * </p>
-     * 
-     * @param natGatewayId
-     *        [IPv4 traffic only] The ID of a NAT gateway.
-     */
-
-    public void setNatGatewayId(String natGatewayId) {
-        this.natGatewayId = natGatewayId;
-    }
-
-    /**
-     * <p>
-     * [IPv4 traffic only] The ID of a NAT gateway.
-     * </p>
-     * 
-     * @return [IPv4 traffic only] The ID of a NAT gateway.
-     */
-
-    public String getNatGatewayId() {
-        return this.natGatewayId;
-    }
-
-    /**
-     * <p>
-     * [IPv4 traffic only] The ID of a NAT gateway.
-     * </p>
-     * 
-     * @param natGatewayId
-     *        [IPv4 traffic only] The ID of a NAT gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateRouteRequest withNatGatewayId(String natGatewayId) {
-        setNatGatewayId(natGatewayId);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -481,24 +481,24 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRouteTableId() != null)
-            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getDestinationCidrBlock() != null)
             sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
-        if (getGatewayId() != null)
-            sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getDestinationIpv6CidrBlock() != null)
             sb.append("DestinationIpv6CidrBlock: ").append(getDestinationIpv6CidrBlock()).append(",");
         if (getEgressOnlyInternetGatewayId() != null)
             sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId()).append(",");
+        if (getGatewayId() != null)
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getNatGatewayId() != null)
+            sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getRouteTableId() != null)
+            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
-        if (getNatGatewayId() != null)
-            sb.append("NatGatewayId: ").append(getNatGatewayId());
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId());
         sb.append("}");
         return sb.toString();
     }
@@ -513,17 +513,9 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         if (obj instanceof CreateRouteRequest == false)
             return false;
         CreateRouteRequest other = (CreateRouteRequest) obj;
-        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
-            return false;
-        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
-            return false;
         if (other.getDestinationCidrBlock() == null ^ this.getDestinationCidrBlock() == null)
             return false;
         if (other.getDestinationCidrBlock() != null && other.getDestinationCidrBlock().equals(this.getDestinationCidrBlock()) == false)
-            return false;
-        if (other.getGatewayId() == null ^ this.getGatewayId() == null)
-            return false;
-        if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
             return false;
         if (other.getDestinationIpv6CidrBlock() == null ^ this.getDestinationIpv6CidrBlock() == null)
             return false;
@@ -533,21 +525,29 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getEgressOnlyInternetGatewayId() != null && other.getEgressOnlyInternetGatewayId().equals(this.getEgressOnlyInternetGatewayId()) == false)
             return false;
+        if (other.getGatewayId() == null ^ this.getGatewayId() == null)
+            return false;
+        if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
+            return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getNatGatewayId() == null ^ this.getNatGatewayId() == null)
+            return false;
+        if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
             return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
+        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
+            return false;
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
+            return false;
         if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null)
             return false;
         if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
-            return false;
-        if (other.getNatGatewayId() == null ^ this.getNatGatewayId() == null)
-            return false;
-        if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
             return false;
         return true;
     }
@@ -557,15 +557,15 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
-        hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         hashCode = prime * hashCode + ((getDestinationIpv6CidrBlock() == null) ? 0 : getDestinationIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
-        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
+        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
         return hashCode;
     }
 

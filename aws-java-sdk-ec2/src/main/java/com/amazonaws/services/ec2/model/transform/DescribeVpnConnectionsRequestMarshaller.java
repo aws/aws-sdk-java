@@ -40,20 +40,6 @@ public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeVpnConnectionsRequestVpnConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnConnectionsRequest
-                .getVpnConnectionIds();
-        if (!describeVpnConnectionsRequestVpnConnectionIdsList.isEmpty() || !describeVpnConnectionsRequestVpnConnectionIdsList.isAutoConstruct()) {
-            int vpnConnectionIdsListIndex = 1;
-
-            for (String describeVpnConnectionsRequestVpnConnectionIdsListValue : describeVpnConnectionsRequestVpnConnectionIdsList) {
-                if (describeVpnConnectionsRequestVpnConnectionIdsListValue != null) {
-                    request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex,
-                            StringUtils.fromString(describeVpnConnectionsRequestVpnConnectionIdsListValue));
-                }
-                vpnConnectionIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeVpnConnectionsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpnConnectionsRequest
                 .getFilters();
         if (!describeVpnConnectionsRequestFiltersList.isEmpty() || !describeVpnConnectionsRequestFiltersList.isAutoConstruct()) {
@@ -79,6 +65,20 @@ public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Reque
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeVpnConnectionsRequestVpnConnectionIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpnConnectionsRequest
+                .getVpnConnectionIds();
+        if (!describeVpnConnectionsRequestVpnConnectionIdsList.isEmpty() || !describeVpnConnectionsRequestVpnConnectionIdsList.isAutoConstruct()) {
+            int vpnConnectionIdsListIndex = 1;
+
+            for (String describeVpnConnectionsRequestVpnConnectionIdsListValue : describeVpnConnectionsRequestVpnConnectionIdsList) {
+                if (describeVpnConnectionsRequestVpnConnectionIdsListValue != null) {
+                    request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex,
+                            StringUtils.fromString(describeVpnConnectionsRequestVpnConnectionIdsListValue));
+                }
+                vpnConnectionIdsListIndex++;
             }
         }
 

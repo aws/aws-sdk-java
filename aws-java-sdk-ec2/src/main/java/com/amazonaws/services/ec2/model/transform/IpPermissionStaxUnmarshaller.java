@@ -45,28 +45,13 @@ public class IpPermissionStaxUnmarshaller implements Unmarshaller<IpPermission, 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("ipProtocol", targetDepth)) {
-                    ipPermission.setIpProtocol(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("fromPort", targetDepth)) {
                     ipPermission.setFromPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("toPort", targetDepth)) {
-                    ipPermission.setToPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("groups", targetDepth)) {
-                    ipPermission.withUserIdGroupPairs(new ArrayList<UserIdGroupPair>());
-                    continue;
-                }
-
-                if (context.testExpression("groups/item", targetDepth)) {
-                    ipPermission.withUserIdGroupPairs(UserIdGroupPairStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ipProtocol", targetDepth)) {
+                    ipPermission.setIpProtocol(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -87,6 +72,21 @@ public class IpPermissionStaxUnmarshaller implements Unmarshaller<IpPermission, 
 
                 if (context.testExpression("prefixListIds/item", targetDepth)) {
                     ipPermission.withPrefixListIds(PrefixListIdStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("toPort", targetDepth)) {
+                    ipPermission.setToPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("groups", targetDepth)) {
+                    ipPermission.withUserIdGroupPairs(new ArrayList<UserIdGroupPair>());
+                    continue;
+                }
+
+                if (context.testExpression("groups/item", targetDepth)) {
+                    ipPermission.withUserIdGroupPairs(UserIdGroupPairStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

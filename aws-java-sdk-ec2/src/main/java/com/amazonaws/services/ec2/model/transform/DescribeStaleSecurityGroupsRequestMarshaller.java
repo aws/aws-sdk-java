@@ -42,16 +42,16 @@ public class DescribeStaleSecurityGroupsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeStaleSecurityGroupsRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(describeStaleSecurityGroupsRequest.getVpcId()));
-        }
-
         if (describeStaleSecurityGroupsRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeStaleSecurityGroupsRequest.getMaxResults()));
         }
 
         if (describeStaleSecurityGroupsRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeStaleSecurityGroupsRequest.getNextToken()));
+        }
+
+        if (describeStaleSecurityGroupsRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(describeStaleSecurityGroupsRequest.getVpcId()));
         }
 
         return request;

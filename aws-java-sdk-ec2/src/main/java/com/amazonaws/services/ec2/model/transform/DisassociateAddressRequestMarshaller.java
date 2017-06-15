@@ -40,12 +40,12 @@ public class DisassociateAddressRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (disassociateAddressRequest.getPublicIp() != null) {
-            request.addParameter("PublicIp", StringUtils.fromString(disassociateAddressRequest.getPublicIp()));
-        }
-
         if (disassociateAddressRequest.getAssociationId() != null) {
             request.addParameter("AssociationId", StringUtils.fromString(disassociateAddressRequest.getAssociationId()));
+        }
+
+        if (disassociateAddressRequest.getPublicIp() != null) {
+            request.addParameter("PublicIp", StringUtils.fromString(disassociateAddressRequest.getPublicIp()));
         }
 
         return request;

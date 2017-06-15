@@ -54,12 +54,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
-     * <note>
-     * <p>
-     * Amazon ECS task definitions currently only support tags as image identifiers within a specified repository (and
-     * not <code>sha256</code> digests).
-     * </p>
-     * </note>
      * <ul>
      * <li>
      * <p>
@@ -592,12 +586,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
-     * <note>
-     * <p>
-     * Amazon ECS task definitions currently only support tags as image identifiers within a specified repository (and
-     * not <code>sha256</code> digests).
-     * </p>
-     * </note>
      * <ul>
      * <li>
      * <p>
@@ -635,12 +623,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
-     *        <p>
-     *        Amazon ECS task definitions currently only support tags as image identifiers within a specified repository
-     *        (and not <code>sha256</code> digests).
-     *        </p>
-     *        </note>
+     *        run</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -684,12 +667,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
-     * <note>
-     * <p>
-     * Amazon ECS task definitions currently only support tags as image identifiers within a specified repository (and
-     * not <code>sha256</code> digests).
-     * </p>
-     * </note>
      * <ul>
      * <li>
      * <p>
@@ -726,12 +703,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and
      *         the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.</p> <note>
-     *         <p>
-     *         Amazon ECS task definitions currently only support tags as image identifiers within a specified
-     *         repository (and not <code>sha256</code> digests).
-     *         </p>
-     *         </note>
+     *         run</a>.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -775,12 +747,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      * <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
-     * <note>
-     * <p>
-     * Amazon ECS task definitions currently only support tags as image identifiers within a specified repository (and
-     * not <code>sha256</code> digests).
-     * </p>
-     * </note>
      * <ul>
      * <li>
      * <p>
@@ -818,12 +784,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
-     *        <p>
-     *        Amazon ECS task definitions currently only support tags as image identifiers within a specified repository
-     *        (and not <code>sha256</code> digests).
-     *        </p>
-     *        </note>
+     *        run</a>.</p>
      *        <ul>
      *        <li>
      *        <p>

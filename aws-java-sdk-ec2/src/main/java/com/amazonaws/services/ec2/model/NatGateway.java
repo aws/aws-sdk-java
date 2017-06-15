@@ -28,24 +28,6 @@ public class NatGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC in which the NAT gateway is located.
-     * </p>
-     */
-    private String vpcId;
-    /**
-     * <p>
-     * The ID of the subnet in which the NAT gateway is located.
-     * </p>
-     */
-    private String subnetId;
-    /**
-     * <p>
-     * The ID of the NAT gateway.
-     * </p>
-     */
-    private String natGatewayId;
-    /**
-     * <p>
      * The date and time the NAT gateway was created.
      * </p>
      */
@@ -56,47 +38,6 @@ public class NatGateway implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date deleteTime;
-    /**
-     * <p>
-     * Information about the IP addresses and network interface associated with the NAT gateway.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<NatGatewayAddress> natGatewayAddresses;
-    /**
-     * <p>
-     * The state of the NAT gateway.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and
-     * <code>failureMessage</code> fields for the reason.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT
-     * gateway, and does not indicate the health of the NAT gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.
-     * </p>
-     * </li>
-     * </ul>
-     */
-    private String state;
     /**
      * <p>
      * If the NAT gateway could not be created, specifies the error code for the failure. (
@@ -149,132 +90,71 @@ public class NatGateway implements Serializable, Cloneable {
     private String failureMessage;
     /**
      * <p>
+     * Information about the IP addresses and network interface associated with the NAT gateway.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<NatGatewayAddress> natGatewayAddresses;
+    /**
+     * <p>
+     * The ID of the NAT gateway.
+     * </p>
+     */
+    private String natGatewayId;
+    /**
+     * <p>
      * Reserved. If you need to sustain traffic greater than the <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
      * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      */
     private ProvisionedBandwidth provisionedBandwidth;
-
     /**
      * <p>
-     * The ID of the VPC in which the NAT gateway is located.
+     * The state of the NAT gateway.
      * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC in which the NAT gateway is located.
-     */
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
-    /**
+     * <ul>
+     * <li>
      * <p>
-     * The ID of the VPC in which the NAT gateway is located.
+     * <code>pending</code>: The NAT gateway is being created and is not ready to process traffic.
      * </p>
-     * 
-     * @return The ID of the VPC in which the NAT gateway is located.
-     */
-
-    public String getVpcId() {
-        return this.vpcId;
-    }
-
-    /**
+     * </li>
+     * <li>
      * <p>
-     * The ID of the VPC in which the NAT gateway is located.
+     * <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code> and
+     * <code>failureMessage</code> fields for the reason.
      * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC in which the NAT gateway is located.
-     * @return Returns a reference to this object so that method calls can be chained together.
+     * </li>
+     * <li>
+     * <p>
+     * <code>available</code>: The NAT gateway is able to process traffic. This status remains until you delete the NAT
+     * gateway, and does not indicate the health of the NAT gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleting</code>: The NAT gateway is in the process of being terminated and may still be processing traffic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>deleted</code>: The NAT gateway has been terminated and is no longer processing traffic.
+     * </p>
+     * </li>
+     * </ul>
      */
-
-    public NatGateway withVpcId(String vpcId) {
-        setVpcId(vpcId);
-        return this;
-    }
-
+    private String state;
     /**
      * <p>
      * The ID of the subnet in which the NAT gateway is located.
      * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet in which the NAT gateway is located.
      */
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
+    private String subnetId;
     /**
      * <p>
-     * The ID of the subnet in which the NAT gateway is located.
+     * The ID of the VPC in which the NAT gateway is located.
      * </p>
-     * 
-     * @return The ID of the subnet in which the NAT gateway is located.
      */
-
-    public String getSubnetId() {
-        return this.subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet in which the NAT gateway is located.
-     * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet in which the NAT gateway is located.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NatGateway withSubnetId(String subnetId) {
-        setSubnetId(subnetId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the NAT gateway.
-     * </p>
-     * 
-     * @param natGatewayId
-     *        The ID of the NAT gateway.
-     */
-
-    public void setNatGatewayId(String natGatewayId) {
-        this.natGatewayId = natGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the NAT gateway.
-     * </p>
-     * 
-     * @return The ID of the NAT gateway.
-     */
-
-    public String getNatGatewayId() {
-        return this.natGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the NAT gateway.
-     * </p>
-     * 
-     * @param natGatewayId
-     *        The ID of the NAT gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NatGateway withNatGatewayId(String natGatewayId) {
-        setNatGatewayId(natGatewayId);
-        return this;
-    }
+    private String vpcId;
 
     /**
      * <p>
@@ -358,6 +238,313 @@ public class NatGateway implements Serializable, Cloneable {
 
     /**
      * <p>
+     * If the NAT gateway could not be created, specifies the error code for the failure. (
+     * <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
+     * <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>
+     * | <code>InvalidSubnetID.NotFound</code>)
+     * </p>
+     * 
+     * @param failureCode
+     *        If the NAT gateway could not be created, specifies the error code for the failure. (
+     *        <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
+     *        <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> |
+     *        <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)
+     */
+
+    public void setFailureCode(String failureCode) {
+        this.failureCode = failureCode;
+    }
+
+    /**
+     * <p>
+     * If the NAT gateway could not be created, specifies the error code for the failure. (
+     * <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
+     * <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>
+     * | <code>InvalidSubnetID.NotFound</code>)
+     * </p>
+     * 
+     * @return If the NAT gateway could not be created, specifies the error code for the failure. (
+     *         <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
+     *         <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> |
+     *         <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)
+     */
+
+    public String getFailureCode() {
+        return this.failureCode;
+    }
+
+    /**
+     * <p>
+     * If the NAT gateway could not be created, specifies the error code for the failure. (
+     * <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
+     * <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>
+     * | <code>InvalidSubnetID.NotFound</code>)
+     * </p>
+     * 
+     * @param failureCode
+     *        If the NAT gateway could not be created, specifies the error code for the failure. (
+     *        <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
+     *        <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> |
+     *        <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NatGateway withFailureCode(String failureCode) {
+        setFailureCode(failureCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the
+     * error code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidAllocationID.NotFound:
+     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InternalError:
+     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param failureMessage
+     *        If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to
+     *        the error code.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For InvalidAllocationID.NotFound:
+     *        "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For InternalError:
+     *        "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     *        </p>
+     *        </li>
+     */
+
+    public void setFailureMessage(String failureMessage) {
+        this.failureMessage = failureMessage;
+    }
+
+    /**
+     * <p>
+     * If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the
+     * error code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidAllocationID.NotFound:
+     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InternalError:
+     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to
+     *         the error code.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For InsufficientFreeAddressesInSubnet:
+     *         "Subnet has insufficient free addresses to create this NAT gateway"
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For InvalidAllocationID.NotFound:
+     *         "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For InternalError:
+     *         "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For InvalidSubnetID.NotFound:
+     *         "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     *         </p>
+     *         </li>
+     */
+
+    public String getFailureMessage() {
+        return this.failureMessage;
+    }
+
+    /**
+     * <p>
+     * If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the
+     * error code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidAllocationID.NotFound:
+     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InternalError:
+     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param failureMessage
+     *        If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to
+     *        the error code.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For InvalidAllocationID.NotFound:
+     *        "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For InternalError:
+     *        "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NatGateway withFailureMessage(String failureMessage) {
+        setFailureMessage(failureMessage);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the IP addresses and network interface associated with the NAT gateway.
      * </p>
      * 
@@ -426,6 +613,98 @@ public class NatGateway implements Serializable, Cloneable {
 
     public NatGateway withNatGatewayAddresses(java.util.Collection<NatGatewayAddress> natGatewayAddresses) {
         setNatGatewayAddresses(natGatewayAddresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the NAT gateway.
+     * </p>
+     * 
+     * @param natGatewayId
+     *        The ID of the NAT gateway.
+     */
+
+    public void setNatGatewayId(String natGatewayId) {
+        this.natGatewayId = natGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the NAT gateway.
+     * </p>
+     * 
+     * @return The ID of the NAT gateway.
+     */
+
+    public String getNatGatewayId() {
+        return this.natGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the NAT gateway.
+     * </p>
+     * 
+     * @param natGatewayId
+     *        The ID of the NAT gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NatGateway withNatGatewayId(String natGatewayId) {
+        setNatGatewayId(natGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
+     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * </p>
+     * 
+     * @param provisionedBandwidth
+     *        Reserved. If you need to sustain traffic greater than the <a
+     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     */
+
+    public void setProvisionedBandwidth(ProvisionedBandwidth provisionedBandwidth) {
+        this.provisionedBandwidth = provisionedBandwidth;
+    }
+
+    /**
+     * <p>
+     * Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
+     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * </p>
+     * 
+     * @return Reserved. If you need to sustain traffic greater than the <a
+     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *         contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     */
+
+    public ProvisionedBandwidth getProvisionedBandwidth() {
+        return this.provisionedBandwidth;
+    }
+
+    /**
+     * <p>
+     * Reserved. If you need to sustain traffic greater than the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
+     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * </p>
+     * 
+     * @param provisionedBandwidth
+     *        Reserved. If you need to sustain traffic greater than the <a
+     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NatGateway withProvisionedBandwidth(ProvisionedBandwidth provisionedBandwidth) {
+        setProvisionedBandwidth(provisionedBandwidth);
         return this;
     }
 
@@ -794,360 +1073,81 @@ public class NatGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If the NAT gateway could not be created, specifies the error code for the failure. (
-     * <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
-     * <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>
-     * | <code>InvalidSubnetID.NotFound</code>)
+     * The ID of the subnet in which the NAT gateway is located.
      * </p>
      * 
-     * @param failureCode
-     *        If the NAT gateway could not be created, specifies the error code for the failure. (
-     *        <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
-     *        <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> |
-     *        <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)
+     * @param subnetId
+     *        The ID of the subnet in which the NAT gateway is located.
      */
 
-    public void setFailureCode(String failureCode) {
-        this.failureCode = failureCode;
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
     }
 
     /**
      * <p>
-     * If the NAT gateway could not be created, specifies the error code for the failure. (
-     * <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
-     * <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>
-     * | <code>InvalidSubnetID.NotFound</code>)
+     * The ID of the subnet in which the NAT gateway is located.
      * </p>
      * 
-     * @return If the NAT gateway could not be created, specifies the error code for the failure. (
-     *         <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
-     *         <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> |
-     *         <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)
+     * @return The ID of the subnet in which the NAT gateway is located.
      */
 
-    public String getFailureCode() {
-        return this.failureCode;
+    public String getSubnetId() {
+        return this.subnetId;
     }
 
     /**
      * <p>
-     * If the NAT gateway could not be created, specifies the error code for the failure. (
-     * <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
-     * <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> | <code>InternalError</code>
-     * | <code>InvalidSubnetID.NotFound</code>)
+     * The ID of the subnet in which the NAT gateway is located.
      * </p>
      * 
-     * @param failureCode
-     *        If the NAT gateway could not be created, specifies the error code for the failure. (
-     *        <code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code> |
-     *        <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code> |
-     *        <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)
+     * @param subnetId
+     *        The ID of the subnet in which the NAT gateway is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NatGateway withFailureCode(String failureCode) {
-        setFailureCode(failureCode);
+    public NatGateway withSubnetId(String subnetId) {
+        setSubnetId(subnetId);
         return this;
     }
 
     /**
      * <p>
-     * If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the
-     * error code.
+     * The ID of the VPC in which the NAT gateway is located.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For InvalidAllocationID.NotFound:
-     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For InternalError:
-     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @param failureMessage
-     *        If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to
-     *        the error code.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For InvalidAllocationID.NotFound:
-     *        "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For InternalError:
-     *        "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
-     *        </p>
-     *        </li>
+     * @param vpcId
+     *        The ID of the VPC in which the NAT gateway is located.
      */
 
-    public void setFailureMessage(String failureMessage) {
-        this.failureMessage = failureMessage;
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
     }
 
     /**
      * <p>
-     * If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the
-     * error code.
+     * The ID of the VPC in which the NAT gateway is located.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For InvalidAllocationID.NotFound:
-     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For InternalError:
-     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to
-     *         the error code.</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         For InsufficientFreeAddressesInSubnet:
-     *         "Subnet has insufficient free addresses to create this NAT gateway"
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For InvalidAllocationID.NotFound:
-     *         "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For InternalError:
-     *         "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For InvalidSubnetID.NotFound:
-     *         "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
-     *         </p>
-     *         </li>
+     * @return The ID of the VPC in which the NAT gateway is located.
      */
 
-    public String getFailureMessage() {
-        return this.failureMessage;
+    public String getVpcId() {
+        return this.vpcId;
     }
 
     /**
      * <p>
-     * If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to the
-     * error code.
+     * The ID of the VPC in which the NAT gateway is located.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For InvalidAllocationID.NotFound:
-     * "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For InternalError:
-     * "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @param failureMessage
-     *        If the NAT gateway could not be created, specifies the error message for the failure, that corresponds to
-     *        the error code.</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For InsufficientFreeAddressesInSubnet: "Subnet has insufficient free addresses to create this NAT gateway"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For Gateway.NotAttached: "Network vpc-xxxxxxxx has no Internet gateway attached"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For InvalidAllocationID.NotFound:
-     *        "Elastic IP address eipalloc-xxxxxxxx could not be associated with this NAT gateway"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For Resource.AlreadyAssociated: "Elastic IP address eipalloc-xxxxxxxx is already associated"
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For InternalError:
-     *        "Network interface eni-xxxxxxxx, created and used internally by this NAT gateway is in an invalid state. Please try again."
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For InvalidSubnetID.NotFound: "The specified subnet subnet-xxxxxxxx does not exist or could not be found."
-     *        </p>
-     *        </li>
+     * @param vpcId
+     *        The ID of the VPC in which the NAT gateway is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NatGateway withFailureMessage(String failureMessage) {
-        setFailureMessage(failureMessage);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
-     * </p>
-     * 
-     * @param provisionedBandwidth
-     *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
-     *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
-     */
-
-    public void setProvisionedBandwidth(ProvisionedBandwidth provisionedBandwidth) {
-        this.provisionedBandwidth = provisionedBandwidth;
-    }
-
-    /**
-     * <p>
-     * Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
-     * </p>
-     * 
-     * @return Reserved. If you need to sustain traffic greater than the <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
-     *         contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
-     */
-
-    public ProvisionedBandwidth getProvisionedBandwidth() {
-        return this.provisionedBandwidth;
-    }
-
-    /**
-     * <p>
-     * Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
-     * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
-     * </p>
-     * 
-     * @param provisionedBandwidth
-     *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
-     *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NatGateway withProvisionedBandwidth(ProvisionedBandwidth provisionedBandwidth) {
-        setProvisionedBandwidth(provisionedBandwidth);
+    public NatGateway withVpcId(String vpcId) {
+        setVpcId(vpcId);
         return this;
     }
 
@@ -1162,26 +1162,26 @@ public class NatGateway implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
-        if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId()).append(",");
-        if (getNatGatewayId() != null)
-            sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
         if (getCreateTime() != null)
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getDeleteTime() != null)
             sb.append("DeleteTime: ").append(getDeleteTime()).append(",");
-        if (getNatGatewayAddresses() != null)
-            sb.append("NatGatewayAddresses: ").append(getNatGatewayAddresses()).append(",");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
         if (getFailureCode() != null)
             sb.append("FailureCode: ").append(getFailureCode()).append(",");
         if (getFailureMessage() != null)
             sb.append("FailureMessage: ").append(getFailureMessage()).append(",");
+        if (getNatGatewayAddresses() != null)
+            sb.append("NatGatewayAddresses: ").append(getNatGatewayAddresses()).append(",");
+        if (getNatGatewayId() != null)
+            sb.append("NatGatewayId: ").append(getNatGatewayId()).append(",");
         if (getProvisionedBandwidth() != null)
-            sb.append("ProvisionedBandwidth: ").append(getProvisionedBandwidth());
+            sb.append("ProvisionedBandwidth: ").append(getProvisionedBandwidth()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
+        if (getSubnetId() != null)
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -1196,18 +1196,6 @@ public class NatGateway implements Serializable, Cloneable {
         if (obj instanceof NatGateway == false)
             return false;
         NatGateway other = (NatGateway) obj;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
-            return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
-            return false;
-        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
-            return false;
-        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
-            return false;
-        if (other.getNatGatewayId() == null ^ this.getNatGatewayId() == null)
-            return false;
-        if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
-            return false;
         if (other.getCreateTime() == null ^ this.getCreateTime() == null)
             return false;
         if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false)
@@ -1215,14 +1203,6 @@ public class NatGateway implements Serializable, Cloneable {
         if (other.getDeleteTime() == null ^ this.getDeleteTime() == null)
             return false;
         if (other.getDeleteTime() != null && other.getDeleteTime().equals(this.getDeleteTime()) == false)
-            return false;
-        if (other.getNatGatewayAddresses() == null ^ this.getNatGatewayAddresses() == null)
-            return false;
-        if (other.getNatGatewayAddresses() != null && other.getNatGatewayAddresses().equals(this.getNatGatewayAddresses()) == false)
-            return false;
-        if (other.getState() == null ^ this.getState() == null)
-            return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getFailureCode() == null ^ this.getFailureCode() == null)
             return false;
@@ -1232,9 +1212,29 @@ public class NatGateway implements Serializable, Cloneable {
             return false;
         if (other.getFailureMessage() != null && other.getFailureMessage().equals(this.getFailureMessage()) == false)
             return false;
+        if (other.getNatGatewayAddresses() == null ^ this.getNatGatewayAddresses() == null)
+            return false;
+        if (other.getNatGatewayAddresses() != null && other.getNatGatewayAddresses().equals(this.getNatGatewayAddresses()) == false)
+            return false;
+        if (other.getNatGatewayId() == null ^ this.getNatGatewayId() == null)
+            return false;
+        if (other.getNatGatewayId() != null && other.getNatGatewayId().equals(this.getNatGatewayId()) == false)
+            return false;
         if (other.getProvisionedBandwidth() == null ^ this.getProvisionedBandwidth() == null)
             return false;
         if (other.getProvisionedBandwidth() != null && other.getProvisionedBandwidth().equals(this.getProvisionedBandwidth()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+            return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -1244,16 +1244,16 @@ public class NatGateway implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getDeleteTime() == null) ? 0 : getDeleteTime().hashCode());
-        hashCode = prime * hashCode + ((getNatGatewayAddresses() == null) ? 0 : getNatGatewayAddresses().hashCode());
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         hashCode = prime * hashCode + ((getFailureMessage() == null) ? 0 : getFailureMessage().hashCode());
+        hashCode = prime * hashCode + ((getNatGatewayAddresses() == null) ? 0 : getNatGatewayAddresses().hashCode());
+        hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         hashCode = prime * hashCode + ((getProvisionedBandwidth() == null) ? 0 : getProvisionedBandwidth().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

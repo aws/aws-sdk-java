@@ -34,28 +34,28 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
     private String cidrBlock;
     /**
      * <p>
-     * The AWS account ID of the VPC owner.
-     * </p>
-     */
-    private String ownerId;
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
-     */
-    private String vpcId;
-    /**
-     * <p>
      * The IPv6 CIDR block for the VPC.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Ipv6CidrBlock> ipv6CidrBlockSet;
     /**
      * <p>
+     * The AWS account ID of the VPC owner.
+     * </p>
+     */
+    private String ownerId;
+    /**
+     * <p>
      * Information about the VPC peering connection options for the accepter or requester VPC.
      * </p>
      */
     private VpcPeeringConnectionOptionsDescription peeringOptions;
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     */
+    private String vpcId;
 
     /**
      * <p>
@@ -94,86 +94,6 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     public VpcPeeringConnectionVpcInfo withCidrBlock(String cidrBlock) {
         setCidrBlock(cidrBlock);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The AWS account ID of the VPC owner.
-     * </p>
-     * 
-     * @param ownerId
-     *        The AWS account ID of the VPC owner.
-     */
-
-    public void setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
-    }
-
-    /**
-     * <p>
-     * The AWS account ID of the VPC owner.
-     * </p>
-     * 
-     * @return The AWS account ID of the VPC owner.
-     */
-
-    public String getOwnerId() {
-        return this.ownerId;
-    }
-
-    /**
-     * <p>
-     * The AWS account ID of the VPC owner.
-     * </p>
-     * 
-     * @param ownerId
-     *        The AWS account ID of the VPC owner.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VpcPeeringConnectionVpcInfo withOwnerId(String ownerId) {
-        setOwnerId(ownerId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC.
-     */
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
-     * 
-     * @return The ID of the VPC.
-     */
-
-    public String getVpcId() {
-        return this.vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VpcPeeringConnectionVpcInfo withVpcId(String vpcId) {
-        setVpcId(vpcId);
         return this;
     }
 
@@ -252,6 +172,46 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The AWS account ID of the VPC owner.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID of the VPC owner.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the VPC owner.
+     * </p>
+     * 
+     * @return The AWS account ID of the VPC owner.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the VPC owner.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID of the VPC owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcPeeringConnectionVpcInfo withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the VPC peering connection options for the accepter or requester VPC.
      * </p>
      * 
@@ -291,6 +251,46 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     * 
+     * @return The ID of the VPC.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcPeeringConnectionVpcInfo withVpcId(String vpcId) {
+        setVpcId(vpcId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -303,14 +303,14 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
         sb.append("{");
         if (getCidrBlock() != null)
             sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
-        if (getOwnerId() != null)
-            sb.append("OwnerId: ").append(getOwnerId()).append(",");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getIpv6CidrBlockSet() != null)
             sb.append("Ipv6CidrBlockSet: ").append(getIpv6CidrBlockSet()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getPeeringOptions() != null)
-            sb.append("PeeringOptions: ").append(getPeeringOptions());
+            sb.append("PeeringOptions: ").append(getPeeringOptions()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -329,21 +329,21 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
             return false;
         if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
             return false;
-        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
-            return false;
-        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
-            return false;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
-            return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
-            return false;
         if (other.getIpv6CidrBlockSet() == null ^ this.getIpv6CidrBlockSet() == null)
             return false;
         if (other.getIpv6CidrBlockSet() != null && other.getIpv6CidrBlockSet().equals(this.getIpv6CidrBlockSet()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         if (other.getPeeringOptions() == null ^ this.getPeeringOptions() == null)
             return false;
         if (other.getPeeringOptions() != null && other.getPeeringOptions().equals(this.getPeeringOptions()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -354,10 +354,10 @@ public class VpcPeeringConnectionVpcInfo implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
-        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlockSet() == null) ? 0 : getIpv6CidrBlockSet().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPeeringOptions() == null) ? 0 : getPeeringOptions().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

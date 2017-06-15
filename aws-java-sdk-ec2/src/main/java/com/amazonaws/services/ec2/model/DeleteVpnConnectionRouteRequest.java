@@ -30,56 +30,16 @@ public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ID of the VPN connection.
-     * </p>
-     */
-    private String vpnConnectionId;
-    /**
-     * <p>
      * The CIDR block associated with the local subnet of the customer network.
      * </p>
      */
     private String destinationCidrBlock;
-
     /**
      * <p>
      * The ID of the VPN connection.
      * </p>
-     * 
-     * @param vpnConnectionId
-     *        The ID of the VPN connection.
      */
-
-    public void setVpnConnectionId(String vpnConnectionId) {
-        this.vpnConnectionId = vpnConnectionId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPN connection.
-     * </p>
-     * 
-     * @return The ID of the VPN connection.
-     */
-
-    public String getVpnConnectionId() {
-        return this.vpnConnectionId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPN connection.
-     * </p>
-     * 
-     * @param vpnConnectionId
-     *        The ID of the VPN connection.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteVpnConnectionRouteRequest withVpnConnectionId(String vpnConnectionId) {
-        setVpnConnectionId(vpnConnectionId);
-        return this;
-    }
+    private String vpnConnectionId;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The ID of the VPN connection.
+     * </p>
+     * 
+     * @param vpnConnectionId
+     *        The ID of the VPN connection.
+     */
+
+    public void setVpnConnectionId(String vpnConnectionId) {
+        this.vpnConnectionId = vpnConnectionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPN connection.
+     * </p>
+     * 
+     * @return The ID of the VPN connection.
+     */
+
+    public String getVpnConnectionId() {
+        return this.vpnConnectionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPN connection.
+     * </p>
+     * 
+     * @param vpnConnectionId
+     *        The ID of the VPN connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteVpnConnectionRouteRequest withVpnConnectionId(String vpnConnectionId) {
+        setVpnConnectionId(vpnConnectionId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -143,10 +143,10 @@ public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpnConnectionId() != null)
-            sb.append("VpnConnectionId: ").append(getVpnConnectionId()).append(",");
         if (getDestinationCidrBlock() != null)
-            sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock());
+            sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
+        if (getVpnConnectionId() != null)
+            sb.append("VpnConnectionId: ").append(getVpnConnectionId());
         sb.append("}");
         return sb.toString();
     }
@@ -161,13 +161,13 @@ public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
         if (obj instanceof DeleteVpnConnectionRouteRequest == false)
             return false;
         DeleteVpnConnectionRouteRequest other = (DeleteVpnConnectionRouteRequest) obj;
-        if (other.getVpnConnectionId() == null ^ this.getVpnConnectionId() == null)
-            return false;
-        if (other.getVpnConnectionId() != null && other.getVpnConnectionId().equals(this.getVpnConnectionId()) == false)
-            return false;
         if (other.getDestinationCidrBlock() == null ^ this.getDestinationCidrBlock() == null)
             return false;
         if (other.getDestinationCidrBlock() != null && other.getDestinationCidrBlock().equals(this.getDestinationCidrBlock()) == false)
+            return false;
+        if (other.getVpnConnectionId() == null ^ this.getVpnConnectionId() == null)
+            return false;
+        if (other.getVpnConnectionId() != null && other.getVpnConnectionId().equals(this.getVpnConnectionId()) == false)
             return false;
         return true;
     }
@@ -177,8 +177,8 @@ public class DeleteVpnConnectionRouteRequest extends AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpnConnectionId() == null) ? 0 : getVpnConnectionId().hashCode());
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getVpnConnectionId() == null) ? 0 : getVpnConnectionId().hashCode());
         return hashCode;
     }
 

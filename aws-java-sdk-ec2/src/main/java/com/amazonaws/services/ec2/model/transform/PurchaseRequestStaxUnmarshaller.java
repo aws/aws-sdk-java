@@ -43,13 +43,13 @@ public class PurchaseRequestStaxUnmarshaller implements Unmarshaller<PurchaseReq
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("PurchaseToken", targetDepth)) {
-                    purchaseRequest.setPurchaseToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("InstanceCount", targetDepth)) {
+                    purchaseRequest.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("InstanceCount", targetDepth)) {
-                    purchaseRequest.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("PurchaseToken", targetDepth)) {
+                    purchaseRequest.setPurchaseToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -45,21 +45,6 @@ public class DescribeSpotFleetRequestHistoryResultStaxUnmarshaller implements Un
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("spotFleetRequestId", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.setSpotFleetRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("startTime", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("lastEvaluatedTime", targetDepth)) {
-                    describeSpotFleetRequestHistoryResult.setLastEvaluatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("historyRecordSet", targetDepth)) {
                     describeSpotFleetRequestHistoryResult.withHistoryRecords(new ArrayList<HistoryRecord>());
                     continue;
@@ -70,8 +55,23 @@ public class DescribeSpotFleetRequestHistoryResultStaxUnmarshaller implements Un
                     continue;
                 }
 
+                if (context.testExpression("lastEvaluatedTime", targetDepth)) {
+                    describeSpotFleetRequestHistoryResult.setLastEvaluatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("nextToken", targetDepth)) {
                     describeSpotFleetRequestHistoryResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("spotFleetRequestId", targetDepth)) {
+                    describeSpotFleetRequestHistoryResult.setSpotFleetRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("startTime", targetDepth)) {
+                    describeSpotFleetRequestHistoryResult.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -28,9 +28,8 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the accepter VPC. CIDR block information is not returned when creating a VPC peering
-     * connection, or when describing a VPC peering connection that's in the <code>initiating-request</code> or
-     * <code>pending-acceptance</code> state.
+     * Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering
+     * connection.
      * </p>
      */
     private VpcPeeringConnectionVpcInfo accepterVpcInfo;
@@ -42,7 +41,8 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
     private java.util.Date expirationTime;
     /**
      * <p>
-     * Information about the requester VPC.
+     * Information about the requester VPC. CIDR block information is only returned when describing an active VPC
+     * peering connection.
      * </p>
      */
     private VpcPeeringConnectionVpcInfo requesterVpcInfo;
@@ -67,15 +67,13 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the accepter VPC. CIDR block information is not returned when creating a VPC peering
-     * connection, or when describing a VPC peering connection that's in the <code>initiating-request</code> or
-     * <code>pending-acceptance</code> state.
+     * Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering
+     * connection.
      * </p>
      * 
      * @param accepterVpcInfo
-     *        Information about the accepter VPC. CIDR block information is not returned when creating a VPC peering
-     *        connection, or when describing a VPC peering connection that's in the <code>initiating-request</code> or
-     *        <code>pending-acceptance</code> state.
+     *        Information about the accepter VPC. CIDR block information is only returned when describing an active VPC
+     *        peering connection.
      */
 
     public void setAccepterVpcInfo(VpcPeeringConnectionVpcInfo accepterVpcInfo) {
@@ -84,14 +82,12 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the accepter VPC. CIDR block information is not returned when creating a VPC peering
-     * connection, or when describing a VPC peering connection that's in the <code>initiating-request</code> or
-     * <code>pending-acceptance</code> state.
+     * Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering
+     * connection.
      * </p>
      * 
-     * @return Information about the accepter VPC. CIDR block information is not returned when creating a VPC peering
-     *         connection, or when describing a VPC peering connection that's in the <code>initiating-request</code> or
-     *         <code>pending-acceptance</code> state.
+     * @return Information about the accepter VPC. CIDR block information is only returned when describing an active VPC
+     *         peering connection.
      */
 
     public VpcPeeringConnectionVpcInfo getAccepterVpcInfo() {
@@ -100,15 +96,13 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the accepter VPC. CIDR block information is not returned when creating a VPC peering
-     * connection, or when describing a VPC peering connection that's in the <code>initiating-request</code> or
-     * <code>pending-acceptance</code> state.
+     * Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering
+     * connection.
      * </p>
      * 
      * @param accepterVpcInfo
-     *        Information about the accepter VPC. CIDR block information is not returned when creating a VPC peering
-     *        connection, or when describing a VPC peering connection that's in the <code>initiating-request</code> or
-     *        <code>pending-acceptance</code> state.
+     *        Information about the accepter VPC. CIDR block information is only returned when describing an active VPC
+     *        peering connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +153,13 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the requester VPC.
+     * Information about the requester VPC. CIDR block information is only returned when describing an active VPC
+     * peering connection.
      * </p>
      * 
      * @param requesterVpcInfo
-     *        Information about the requester VPC.
+     *        Information about the requester VPC. CIDR block information is only returned when describing an active VPC
+     *        peering connection.
      */
 
     public void setRequesterVpcInfo(VpcPeeringConnectionVpcInfo requesterVpcInfo) {
@@ -172,10 +168,12 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the requester VPC.
+     * Information about the requester VPC. CIDR block information is only returned when describing an active VPC
+     * peering connection.
      * </p>
      * 
-     * @return Information about the requester VPC.
+     * @return Information about the requester VPC. CIDR block information is only returned when describing an active
+     *         VPC peering connection.
      */
 
     public VpcPeeringConnectionVpcInfo getRequesterVpcInfo() {
@@ -184,11 +182,13 @@ public class VpcPeeringConnection implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the requester VPC.
+     * Information about the requester VPC. CIDR block information is only returned when describing an active VPC
+     * peering connection.
      * </p>
      * 
      * @param requesterVpcInfo
-     *        Information about the requester VPC.
+     *        Information about the requester VPC. CIDR block information is only returned when describing an active VPC
+     *        peering connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

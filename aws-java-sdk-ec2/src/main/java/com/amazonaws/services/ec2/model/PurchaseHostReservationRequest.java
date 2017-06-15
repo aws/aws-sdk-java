@@ -28,10 +28,20 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the offering.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
-    private String offeringId;
+    private String clientToken;
+    /**
+     * <p>
+     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     * <code>USD</code>.
+     * </p>
+     */
+    private String currencyCode;
     /**
      * <p>
      * The ID/s of the Dedicated Host/s that the reservation will be associated with.
@@ -50,58 +60,153 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     private String limitPrice;
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The ID of the offering.
      * </p>
      */
-    private String currencyCode;
+    private String offeringId;
+
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
-     */
-    private String clientToken;
-
-    /**
-     * <p>
-     * The ID of the offering.
-     * </p>
      * 
-     * @param offeringId
-     *        The ID of the offering.
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
-    public void setOfferingId(String offeringId) {
-        this.offeringId = offeringId;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The ID of the offering.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The ID of the offering.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
-    public String getOfferingId() {
-        return this.offeringId;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The ID of the offering.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @param offeringId
-     *        The ID of the offering.
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseHostReservationRequest withOfferingId(String offeringId) {
-        setOfferingId(offeringId);
+    public PurchaseHostReservationRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     * <code>USD</code>.
+     * </p>
+     * 
+     * @param currencyCode
+     *        The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     *        <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     *        <code>USD</code>.
+     * @see CurrencyCodeValues
+     */
+
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+    /**
+     * <p>
+     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     * <code>USD</code>.
+     * </p>
+     * 
+     * @return The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     *         <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     *         <code>USD</code>.
+     * @see CurrencyCodeValues
+     */
+
+    public String getCurrencyCode() {
+        return this.currencyCode;
+    }
+
+    /**
+     * <p>
+     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     * <code>USD</code>.
+     * </p>
+     * 
+     * @param currencyCode
+     *        The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     *        <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     *        <code>USD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CurrencyCodeValues
+     */
+
+    public PurchaseHostReservationRequest withCurrencyCode(String currencyCode) {
+        setCurrencyCode(currencyCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     * <code>USD</code>.
+     * </p>
+     * 
+     * @param currencyCode
+     *        The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     *        <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     *        <code>USD</code>.
+     * @see CurrencyCodeValues
+     */
+
+    public void setCurrencyCode(CurrencyCodeValues currencyCode) {
+        this.currencyCode = currencyCode.toString();
+    }
+
+    /**
+     * <p>
+     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     * <code>USD</code>.
+     * </p>
+     * 
+     * @param currencyCode
+     *        The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
+     *        <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
+     *        <code>USD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CurrencyCodeValues
+     */
+
+    public PurchaseHostReservationRequest withCurrencyCode(CurrencyCodeValues currencyCode) {
+        setCurrencyCode(currencyCode);
         return this;
     }
 
@@ -244,146 +349,41 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The ID of the offering.
      * </p>
      * 
-     * @param currencyCode
-     *        The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     *        <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     *        <code>USD</code>.
-     * @see CurrencyCodeValues
+     * @param offeringId
+     *        The ID of the offering.
      */
 
-    public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
+    public void setOfferingId(String offeringId) {
+        this.offeringId = offeringId;
     }
 
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The ID of the offering.
      * </p>
      * 
-     * @return The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     *         <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     *         <code>USD</code>.
-     * @see CurrencyCodeValues
+     * @return The ID of the offering.
      */
 
-    public String getCurrencyCode() {
-        return this.currencyCode;
+    public String getOfferingId() {
+        return this.offeringId;
     }
 
     /**
      * <p>
-     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     * <code>USD</code>.
+     * The ID of the offering.
      * </p>
      * 
-     * @param currencyCode
-     *        The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     *        <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     *        <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see CurrencyCodeValues
-     */
-
-    public PurchaseHostReservationRequest withCurrencyCode(String currencyCode) {
-        setCurrencyCode(currencyCode);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     * <code>USD</code>.
-     * </p>
-     * 
-     * @param currencyCode
-     *        The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     *        <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     *        <code>USD</code>.
-     * @see CurrencyCodeValues
-     */
-
-    public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
-    }
-
-    /**
-     * <p>
-     * The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     * <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     * <code>USD</code>.
-     * </p>
-     * 
-     * @param currencyCode
-     *        The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and
-     *        <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is
-     *        <code>USD</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see CurrencyCodeValues
-     */
-
-    public PurchaseHostReservationRequest withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * 
-     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @param offeringId
+     *        The ID of the offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseHostReservationRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public PurchaseHostReservationRequest withOfferingId(String offeringId) {
+        setOfferingId(offeringId);
         return this;
     }
 
@@ -409,16 +409,16 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOfferingId() != null)
-            sb.append("OfferingId: ").append(getOfferingId()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getCurrencyCode() != null)
+            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
         if (getHostIdSet() != null)
             sb.append("HostIdSet: ").append(getHostIdSet()).append(",");
         if (getLimitPrice() != null)
             sb.append("LimitPrice: ").append(getLimitPrice()).append(",");
-        if (getCurrencyCode() != null)
-            sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+        if (getOfferingId() != null)
+            sb.append("OfferingId: ").append(getOfferingId());
         sb.append("}");
         return sb.toString();
     }
@@ -433,9 +433,13 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
         if (obj instanceof PurchaseHostReservationRequest == false)
             return false;
         PurchaseHostReservationRequest other = (PurchaseHostReservationRequest) obj;
-        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
+            return false;
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
         if (other.getHostIdSet() == null ^ this.getHostIdSet() == null)
             return false;
@@ -445,13 +449,9 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getLimitPrice() != null && other.getLimitPrice().equals(this.getLimitPrice()) == false)
             return false;
-        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
+        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
             return false;
-        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
-            return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
         return true;
     }
@@ -461,11 +461,11 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
         hashCode = prime * hashCode + ((getHostIdSet() == null) ? 0 : getHostIdSet().hashCode());
         hashCode = prime * hashCode + ((getLimitPrice() == null) ? 0 : getLimitPrice().hashCode());
-        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         return hashCode;
     }
 

@@ -43,13 +43,13 @@ public class IcmpTypeCodeStaxUnmarshaller implements Unmarshaller<IcmpTypeCode, 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("type", targetDepth)) {
-                    icmpTypeCode.setType(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("code", targetDepth)) {
+                    icmpTypeCode.setCode(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("code", targetDepth)) {
-                    icmpTypeCode.setCode(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("type", targetDepth)) {
+                    icmpTypeCode.setType(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

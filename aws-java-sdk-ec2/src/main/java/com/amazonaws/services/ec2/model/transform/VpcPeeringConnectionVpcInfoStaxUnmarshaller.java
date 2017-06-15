@@ -50,16 +50,6 @@ public class VpcPeeringConnectionVpcInfoStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
-                if (context.testExpression("ownerId", targetDepth)) {
-                    vpcPeeringConnectionVpcInfo.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcId", targetDepth)) {
-                    vpcPeeringConnectionVpcInfo.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("ipv6CidrBlockSet", targetDepth)) {
                     vpcPeeringConnectionVpcInfo.withIpv6CidrBlockSet(new ArrayList<Ipv6CidrBlock>());
                     continue;
@@ -70,8 +60,18 @@ public class VpcPeeringConnectionVpcInfoStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("ownerId", targetDepth)) {
+                    vpcPeeringConnectionVpcInfo.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("peeringOptions", targetDepth)) {
                     vpcPeeringConnectionVpcInfo.setPeeringOptions(VpcPeeringConnectionOptionsDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpcId", targetDepth)) {
+                    vpcPeeringConnectionVpcInfo.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

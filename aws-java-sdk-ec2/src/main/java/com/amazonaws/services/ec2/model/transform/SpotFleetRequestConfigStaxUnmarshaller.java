@@ -43,18 +43,8 @@ public class SpotFleetRequestConfigStaxUnmarshaller implements Unmarshaller<Spot
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("spotFleetRequestId", targetDepth)) {
-                    spotFleetRequestConfig.setSpotFleetRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("spotFleetRequestState", targetDepth)) {
-                    spotFleetRequestConfig.setSpotFleetRequestState(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("spotFleetRequestConfig", targetDepth)) {
-                    spotFleetRequestConfig.setSpotFleetRequestConfig(SpotFleetRequestConfigDataStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("activityStatus", targetDepth)) {
+                    spotFleetRequestConfig.setActivityStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -63,8 +53,18 @@ public class SpotFleetRequestConfigStaxUnmarshaller implements Unmarshaller<Spot
                     continue;
                 }
 
-                if (context.testExpression("activityStatus", targetDepth)) {
-                    spotFleetRequestConfig.setActivityStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("spotFleetRequestConfig", targetDepth)) {
+                    spotFleetRequestConfig.setSpotFleetRequestConfig(SpotFleetRequestConfigDataStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("spotFleetRequestId", targetDepth)) {
+                    spotFleetRequestConfig.setSpotFleetRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("spotFleetRequestState", targetDepth)) {
+                    spotFleetRequestConfig.setSpotFleetRequestState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

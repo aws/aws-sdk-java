@@ -28,57 +28,17 @@ public class MovingAddressStatus implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Elastic IP address.
-     * </p>
-     */
-    private String publicIp;
-    /**
-     * <p>
      * The status of the Elastic IP address that's being moved to the EC2-VPC platform, or restored to the EC2-Classic
      * platform.
      * </p>
      */
     private String moveStatus;
-
     /**
      * <p>
      * The Elastic IP address.
      * </p>
-     * 
-     * @param publicIp
-     *        The Elastic IP address.
      */
-
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
-    }
-
-    /**
-     * <p>
-     * The Elastic IP address.
-     * </p>
-     * 
-     * @return The Elastic IP address.
-     */
-
-    public String getPublicIp() {
-        return this.publicIp;
-    }
-
-    /**
-     * <p>
-     * The Elastic IP address.
-     * </p>
-     * 
-     * @param publicIp
-     *        The Elastic IP address.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public MovingAddressStatus withPublicIp(String publicIp) {
-        setPublicIp(publicIp);
-        return this;
-    }
+    private String publicIp;
 
     /**
      * <p>
@@ -164,6 +124,46 @@ public class MovingAddressStatus implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @param publicIp
+     *        The Elastic IP address.
+     */
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @return The Elastic IP address.
+     */
+
+    public String getPublicIp() {
+        return this.publicIp;
+    }
+
+    /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @param publicIp
+     *        The Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MovingAddressStatus withPublicIp(String publicIp) {
+        setPublicIp(publicIp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -174,10 +174,10 @@ public class MovingAddressStatus implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getMoveStatus() != null)
-            sb.append("MoveStatus: ").append(getMoveStatus());
+            sb.append("MoveStatus: ").append(getMoveStatus()).append(",");
+        if (getPublicIp() != null)
+            sb.append("PublicIp: ").append(getPublicIp());
         sb.append("}");
         return sb.toString();
     }
@@ -192,13 +192,13 @@ public class MovingAddressStatus implements Serializable, Cloneable {
         if (obj instanceof MovingAddressStatus == false)
             return false;
         MovingAddressStatus other = (MovingAddressStatus) obj;
-        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
-            return false;
-        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
-            return false;
         if (other.getMoveStatus() == null ^ this.getMoveStatus() == null)
             return false;
         if (other.getMoveStatus() != null && other.getMoveStatus().equals(this.getMoveStatus()) == false)
+            return false;
+        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
+            return false;
+        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
         return true;
     }
@@ -208,8 +208,8 @@ public class MovingAddressStatus implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         hashCode = prime * hashCode + ((getMoveStatus() == null) ? 0 : getMoveStatus().hashCode());
+        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         return hashCode;
     }
 

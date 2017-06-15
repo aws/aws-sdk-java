@@ -22,7 +22,8 @@ public enum ProductViewFilterBy {
 
     FullTextSearch("FullTextSearch"),
     Owner("Owner"),
-    ProductType("ProductType");
+    ProductType("ProductType"),
+    SourceProductId("SourceProductId");
 
     private String value;
 

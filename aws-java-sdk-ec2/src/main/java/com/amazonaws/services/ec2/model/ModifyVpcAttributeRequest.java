@@ -29,10 +29,15 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The ID of the VPC.
+     * Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS
+     * hostnames; otherwise, they do not.
+     * </p>
+     * <p>
+     * You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for
+     * each attribute. You can only enable DNS hostnames if you've enabled DNS support.
      * </p>
      */
-    private String vpcId;
+    private Boolean enableDnsHostnames;
     /**
      * <p>
      * Indicates whether the DNS resolution is supported for the VPC. If enabled, queries to the Amazon provided DNS
@@ -48,6 +53,13 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
     private Boolean enableDnsSupport;
     /**
      * <p>
+     * The ID of the VPC.
+     * </p>
+     */
+    private String vpcId;
+
+    /**
+     * <p>
      * Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS
      * hostnames; otherwise, they do not.
      * </p>
@@ -55,47 +67,83 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
      * You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for
      * each attribute. You can only enable DNS hostnames if you've enabled DNS support.
      * </p>
-     */
-    private Boolean enableDnsHostnames;
-
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
      * 
-     * @param vpcId
-     *        The ID of the VPC.
+     * @param enableDnsHostnames
+     *        Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC
+     *        get DNS hostnames; otherwise, they do not.</p>
+     *        <p>
+     *        You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate
+     *        requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.
      */
 
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
+    public void setEnableDnsHostnames(Boolean enableDnsHostnames) {
+        this.enableDnsHostnames = enableDnsHostnames;
     }
 
     /**
      * <p>
-     * The ID of the VPC.
+     * Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS
+     * hostnames; otherwise, they do not.
+     * </p>
+     * <p>
+     * You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for
+     * each attribute. You can only enable DNS hostnames if you've enabled DNS support.
      * </p>
      * 
-     * @return The ID of the VPC.
+     * @return Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC
+     *         get DNS hostnames; otherwise, they do not.</p>
+     *         <p>
+     *         You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate
+     *         requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.
      */
 
-    public String getVpcId() {
-        return this.vpcId;
+    public Boolean getEnableDnsHostnames() {
+        return this.enableDnsHostnames;
     }
 
     /**
      * <p>
-     * The ID of the VPC.
+     * Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS
+     * hostnames; otherwise, they do not.
+     * </p>
+     * <p>
+     * You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for
+     * each attribute. You can only enable DNS hostnames if you've enabled DNS support.
      * </p>
      * 
-     * @param vpcId
-     *        The ID of the VPC.
+     * @param enableDnsHostnames
+     *        Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC
+     *        get DNS hostnames; otherwise, they do not.</p>
+     *        <p>
+     *        You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate
+     *        requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyVpcAttributeRequest withVpcId(String vpcId) {
-        setVpcId(vpcId);
+    public ModifyVpcAttributeRequest withEnableDnsHostnames(Boolean enableDnsHostnames) {
+        setEnableDnsHostnames(enableDnsHostnames);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS
+     * hostnames; otherwise, they do not.
+     * </p>
+     * <p>
+     * You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for
+     * each attribute. You can only enable DNS hostnames if you've enabled DNS support.
+     * </p>
+     * 
+     * @return Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC
+     *         get DNS hostnames; otherwise, they do not.</p>
+     *         <p>
+     *         You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate
+     *         requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.
+     */
+
+    public Boolean isEnableDnsHostnames() {
+        return this.enableDnsHostnames;
     }
 
     /**
@@ -204,90 +252,42 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS
-     * hostnames; otherwise, they do not.
-     * </p>
-     * <p>
-     * You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for
-     * each attribute. You can only enable DNS hostnames if you've enabled DNS support.
+     * The ID of the VPC.
      * </p>
      * 
-     * @param enableDnsHostnames
-     *        Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC
-     *        get DNS hostnames; otherwise, they do not.</p>
-     *        <p>
-     *        You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate
-     *        requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.
+     * @param vpcId
+     *        The ID of the VPC.
      */
 
-    public void setEnableDnsHostnames(Boolean enableDnsHostnames) {
-        this.enableDnsHostnames = enableDnsHostnames;
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
     }
 
     /**
      * <p>
-     * Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS
-     * hostnames; otherwise, they do not.
-     * </p>
-     * <p>
-     * You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for
-     * each attribute. You can only enable DNS hostnames if you've enabled DNS support.
+     * The ID of the VPC.
      * </p>
      * 
-     * @return Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC
-     *         get DNS hostnames; otherwise, they do not.</p>
-     *         <p>
-     *         You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate
-     *         requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.
+     * @return The ID of the VPC.
      */
 
-    public Boolean getEnableDnsHostnames() {
-        return this.enableDnsHostnames;
+    public String getVpcId() {
+        return this.vpcId;
     }
 
     /**
      * <p>
-     * Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS
-     * hostnames; otherwise, they do not.
-     * </p>
-     * <p>
-     * You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for
-     * each attribute. You can only enable DNS hostnames if you've enabled DNS support.
+     * The ID of the VPC.
      * </p>
      * 
-     * @param enableDnsHostnames
-     *        Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC
-     *        get DNS hostnames; otherwise, they do not.</p>
-     *        <p>
-     *        You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate
-     *        requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.
+     * @param vpcId
+     *        The ID of the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyVpcAttributeRequest withEnableDnsHostnames(Boolean enableDnsHostnames) {
-        setEnableDnsHostnames(enableDnsHostnames);
+    public ModifyVpcAttributeRequest withVpcId(String vpcId) {
+        setVpcId(vpcId);
         return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS
-     * hostnames; otherwise, they do not.
-     * </p>
-     * <p>
-     * You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for
-     * each attribute. You can only enable DNS hostnames if you've enabled DNS support.
-     * </p>
-     * 
-     * @return Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC
-     *         get DNS hostnames; otherwise, they do not.</p>
-     *         <p>
-     *         You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate
-     *         requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.
-     */
-
-    public Boolean isEnableDnsHostnames() {
-        return this.enableDnsHostnames;
     }
 
     /**
@@ -312,12 +312,12 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getEnableDnsHostnames() != null)
+            sb.append("EnableDnsHostnames: ").append(getEnableDnsHostnames()).append(",");
         if (getEnableDnsSupport() != null)
             sb.append("EnableDnsSupport: ").append(getEnableDnsSupport()).append(",");
-        if (getEnableDnsHostnames() != null)
-            sb.append("EnableDnsHostnames: ").append(getEnableDnsHostnames());
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -332,17 +332,17 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
         if (obj instanceof ModifyVpcAttributeRequest == false)
             return false;
         ModifyVpcAttributeRequest other = (ModifyVpcAttributeRequest) obj;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
+        if (other.getEnableDnsHostnames() == null ^ this.getEnableDnsHostnames() == null)
             return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
+        if (other.getEnableDnsHostnames() != null && other.getEnableDnsHostnames().equals(this.getEnableDnsHostnames()) == false)
             return false;
         if (other.getEnableDnsSupport() == null ^ this.getEnableDnsSupport() == null)
             return false;
         if (other.getEnableDnsSupport() != null && other.getEnableDnsSupport().equals(this.getEnableDnsSupport()) == false)
             return false;
-        if (other.getEnableDnsHostnames() == null ^ this.getEnableDnsHostnames() == null)
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
-        if (other.getEnableDnsHostnames() != null && other.getEnableDnsHostnames().equals(this.getEnableDnsHostnames()) == false)
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -352,9 +352,9 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest implement
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode + ((getEnableDnsSupport() == null) ? 0 : getEnableDnsSupport().hashCode());
         hashCode = prime * hashCode + ((getEnableDnsHostnames() == null) ? 0 : getEnableDnsHostnames().hashCode());
+        hashCode = prime * hashCode + ((getEnableDnsSupport() == null) ? 0 : getEnableDnsSupport().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

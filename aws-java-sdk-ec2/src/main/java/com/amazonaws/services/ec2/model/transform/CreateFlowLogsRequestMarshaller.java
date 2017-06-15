@@ -40,6 +40,18 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (createFlowLogsRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(createFlowLogsRequest.getClientToken()));
+        }
+
+        if (createFlowLogsRequest.getDeliverLogsPermissionArn() != null) {
+            request.addParameter("DeliverLogsPermissionArn", StringUtils.fromString(createFlowLogsRequest.getDeliverLogsPermissionArn()));
+        }
+
+        if (createFlowLogsRequest.getLogGroupName() != null) {
+            request.addParameter("LogGroupName", StringUtils.fromString(createFlowLogsRequest.getLogGroupName()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> createFlowLogsRequestResourceIdsList = (com.amazonaws.internal.SdkInternalList<String>) createFlowLogsRequest
                 .getResourceIds();
         if (!createFlowLogsRequestResourceIdsList.isEmpty() || !createFlowLogsRequestResourceIdsList.isAutoConstruct()) {
@@ -59,18 +71,6 @@ public class CreateFlowLogsRequestMarshaller implements Marshaller<Request<Creat
 
         if (createFlowLogsRequest.getTrafficType() != null) {
             request.addParameter("TrafficType", StringUtils.fromString(createFlowLogsRequest.getTrafficType()));
-        }
-
-        if (createFlowLogsRequest.getLogGroupName() != null) {
-            request.addParameter("LogGroupName", StringUtils.fromString(createFlowLogsRequest.getLogGroupName()));
-        }
-
-        if (createFlowLogsRequest.getDeliverLogsPermissionArn() != null) {
-            request.addParameter("DeliverLogsPermissionArn", StringUtils.fromString(createFlowLogsRequest.getDeliverLogsPermissionArn()));
-        }
-
-        if (createFlowLogsRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(createFlowLogsRequest.getClientToken()));
         }
 
         return request;

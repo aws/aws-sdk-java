@@ -28,89 +28,16 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the volume.
-     * </p>
-     */
-    private String status;
-    /**
-     * <p>
      * The details of the volume status.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VolumeStatusDetails> details;
-
     /**
      * <p>
      * The status of the volume.
      * </p>
-     * 
-     * @param status
-     *        The status of the volume.
-     * @see VolumeStatusInfoStatus
      */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The status of the volume.
-     * </p>
-     * 
-     * @return The status of the volume.
-     * @see VolumeStatusInfoStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The status of the volume.
-     * </p>
-     * 
-     * @param status
-     *        The status of the volume.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see VolumeStatusInfoStatus
-     */
-
-    public VolumeStatusInfo withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The status of the volume.
-     * </p>
-     * 
-     * @param status
-     *        The status of the volume.
-     * @see VolumeStatusInfoStatus
-     */
-
-    public void setStatus(VolumeStatusInfoStatus status) {
-        this.status = status.toString();
-    }
-
-    /**
-     * <p>
-     * The status of the volume.
-     * </p>
-     * 
-     * @param status
-     *        The status of the volume.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see VolumeStatusInfoStatus
-     */
-
-    public VolumeStatusInfo withStatus(VolumeStatusInfoStatus status) {
-        setStatus(status);
-        return this;
-    }
+    private String status;
 
     /**
      * <p>
@@ -186,6 +113,79 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     * 
+     * @param status
+     *        The status of the volume.
+     * @see VolumeStatusInfoStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     * 
+     * @return The status of the volume.
+     * @see VolumeStatusInfoStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     * 
+     * @param status
+     *        The status of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeStatusInfoStatus
+     */
+
+    public VolumeStatusInfo withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     * 
+     * @param status
+     *        The status of the volume.
+     * @see VolumeStatusInfoStatus
+     */
+
+    public void setStatus(VolumeStatusInfoStatus status) {
+        this.status = status.toString();
+    }
+
+    /**
+     * <p>
+     * The status of the volume.
+     * </p>
+     * 
+     * @param status
+     *        The status of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeStatusInfoStatus
+     */
+
+    public VolumeStatusInfo withStatus(VolumeStatusInfoStatus status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -196,10 +196,10 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
         if (getDetails() != null)
-            sb.append("Details: ").append(getDetails());
+            sb.append("Details: ").append(getDetails()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -214,13 +214,13 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
         if (obj instanceof VolumeStatusInfo == false)
             return false;
         VolumeStatusInfo other = (VolumeStatusInfo) obj;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
         if (other.getDetails() == null ^ this.getDetails() == null)
             return false;
         if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -230,8 +230,8 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

@@ -29,6 +29,26 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
+     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * </p>
+     */
+    private String deliverLogsPermissionArn;
+    /**
+     * <p>
+     * The name of the CloudWatch log group.
+     * </p>
+     */
+    private String logGroupName;
+    /**
+     * <p>
      * One or more subnet, network interface, or VPC IDs.
      * </p>
      * <p>
@@ -48,26 +68,141 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * </p>
      */
     private String trafficType;
-    /**
-     * <p>
-     * The name of the CloudWatch log group.
-     * </p>
-     */
-    private String logGroupName;
-    /**
-     * <p>
-     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
-     * </p>
-     */
-    private String deliverLogsPermissionArn;
+
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a>.
      * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
      */
-    private String clientToken;
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
+     * </p>
+     * 
+     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     *         Idempotency</a>.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
+     * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowLogsRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * </p>
+     * 
+     * @param deliverLogsPermissionArn
+     *        The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     */
+
+    public void setDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
+        this.deliverLogsPermissionArn = deliverLogsPermissionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * </p>
+     * 
+     * @return The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     */
+
+    public String getDeliverLogsPermissionArn() {
+        return this.deliverLogsPermissionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * </p>
+     * 
+     * @param deliverLogsPermissionArn
+     *        The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowLogsRequest withDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
+        setDeliverLogsPermissionArn(deliverLogsPermissionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch log group.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the CloudWatch log group.
+     */
+
+    public void setLogGroupName(String logGroupName) {
+        this.logGroupName = logGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch log group.
+     * </p>
+     * 
+     * @return The name of the CloudWatch log group.
+     */
+
+    public String getLogGroupName() {
+        return this.logGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the CloudWatch log group.
+     * </p>
+     * 
+     * @param logGroupName
+     *        The name of the CloudWatch log group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowLogsRequest withLogGroupName(String logGroupName) {
+        setLogGroupName(logGroupName);
+        return this;
+    }
 
     /**
      * <p>
@@ -309,141 +444,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
-     * <p>
-     * The name of the CloudWatch log group.
-     * </p>
-     * 
-     * @param logGroupName
-     *        The name of the CloudWatch log group.
-     */
-
-    public void setLogGroupName(String logGroupName) {
-        this.logGroupName = logGroupName;
-    }
-
-    /**
-     * <p>
-     * The name of the CloudWatch log group.
-     * </p>
-     * 
-     * @return The name of the CloudWatch log group.
-     */
-
-    public String getLogGroupName() {
-        return this.logGroupName;
-    }
-
-    /**
-     * <p>
-     * The name of the CloudWatch log group.
-     * </p>
-     * 
-     * @param logGroupName
-     *        The name of the CloudWatch log group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateFlowLogsRequest withLogGroupName(String logGroupName) {
-        setLogGroupName(logGroupName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
-     * </p>
-     * 
-     * @param deliverLogsPermissionArn
-     *        The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
-     */
-
-    public void setDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
-        this.deliverLogsPermissionArn = deliverLogsPermissionArn;
-    }
-
-    /**
-     * <p>
-     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
-     * </p>
-     * 
-     * @return The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
-     */
-
-    public String getDeliverLogsPermissionArn() {
-        return this.deliverLogsPermissionArn;
-    }
-
-    /**
-     * <p>
-     * The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
-     * </p>
-     * 
-     * @param deliverLogsPermissionArn
-     *        The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateFlowLogsRequest withDeliverLogsPermissionArn(String deliverLogsPermissionArn) {
-        setDeliverLogsPermissionArn(deliverLogsPermissionArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
-     * </p>
-     * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
-     * </p>
-     * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     *         Idempotency</a>.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
-     * </p>
-     * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateFlowLogsRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -465,18 +465,18 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getDeliverLogsPermissionArn() != null)
+            sb.append("DeliverLogsPermissionArn: ").append(getDeliverLogsPermissionArn()).append(",");
+        if (getLogGroupName() != null)
+            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
         if (getResourceIds() != null)
             sb.append("ResourceIds: ").append(getResourceIds()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getTrafficType() != null)
-            sb.append("TrafficType: ").append(getTrafficType()).append(",");
-        if (getLogGroupName() != null)
-            sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
-        if (getDeliverLogsPermissionArn() != null)
-            sb.append("DeliverLogsPermissionArn: ").append(getDeliverLogsPermissionArn()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("TrafficType: ").append(getTrafficType());
         sb.append("}");
         return sb.toString();
     }
@@ -491,6 +491,18 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
         if (obj instanceof CreateFlowLogsRequest == false)
             return false;
         CreateFlowLogsRequest other = (CreateFlowLogsRequest) obj;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getDeliverLogsPermissionArn() == null ^ this.getDeliverLogsPermissionArn() == null)
+            return false;
+        if (other.getDeliverLogsPermissionArn() != null && other.getDeliverLogsPermissionArn().equals(this.getDeliverLogsPermissionArn()) == false)
+            return false;
+        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
+            return false;
+        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+            return false;
         if (other.getResourceIds() == null ^ this.getResourceIds() == null)
             return false;
         if (other.getResourceIds() != null && other.getResourceIds().equals(this.getResourceIds()) == false)
@@ -503,18 +515,6 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getTrafficType() != null && other.getTrafficType().equals(this.getTrafficType()) == false)
             return false;
-        if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
-            return false;
-        if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
-            return false;
-        if (other.getDeliverLogsPermissionArn() == null ^ this.getDeliverLogsPermissionArn() == null)
-            return false;
-        if (other.getDeliverLogsPermissionArn() != null && other.getDeliverLogsPermissionArn().equals(this.getDeliverLogsPermissionArn()) == false)
-            return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         return true;
     }
 
@@ -523,12 +523,12 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getDeliverLogsPermissionArn() == null) ? 0 : getDeliverLogsPermissionArn().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         hashCode = prime * hashCode + ((getResourceIds() == null) ? 0 : getResourceIds().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getTrafficType() == null) ? 0 : getTrafficType().hashCode());
-        hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
-        hashCode = prime * hashCode + ((getDeliverLogsPermissionArn() == null) ? 0 : getDeliverLogsPermissionArn().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

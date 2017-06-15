@@ -45,13 +45,8 @@ public class ImportInstanceTaskDetailsStaxUnmarshaller implements Unmarshaller<I
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("volumes", targetDepth)) {
-                    importInstanceTaskDetails.withVolumes(new ArrayList<ImportInstanceVolumeDetailItem>());
-                    continue;
-                }
-
-                if (context.testExpression("volumes/item", targetDepth)) {
-                    importInstanceTaskDetails.withVolumes(ImportInstanceVolumeDetailItemStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("description", targetDepth)) {
+                    importInstanceTaskDetails.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -65,10 +60,16 @@ public class ImportInstanceTaskDetailsStaxUnmarshaller implements Unmarshaller<I
                     continue;
                 }
 
-                if (context.testExpression("description", targetDepth)) {
-                    importInstanceTaskDetails.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("volumes", targetDepth)) {
+                    importInstanceTaskDetails.withVolumes(new ArrayList<ImportInstanceVolumeDetailItem>());
                     continue;
                 }
+
+                if (context.testExpression("volumes/item", targetDepth)) {
+                    importInstanceTaskDetails.withVolumes(ImportInstanceVolumeDetailItemStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return importInstanceTaskDetails;

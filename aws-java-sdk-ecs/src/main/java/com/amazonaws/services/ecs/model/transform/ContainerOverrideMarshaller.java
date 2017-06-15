@@ -34,6 +34,12 @@ public class ContainerOverrideMarshaller {
             .marshallLocationName("command").build();
     private static final MarshallingInfo<List> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("environment").build();
+    private static final MarshallingInfo<Integer> CPU_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cpu").build();
+    private static final MarshallingInfo<Integer> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("memory").build();
+    private static final MarshallingInfo<Integer> MEMORYRESERVATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("memoryReservation").build();
 
     private static final ContainerOverrideMarshaller instance = new ContainerOverrideMarshaller();
 
@@ -54,6 +60,9 @@ public class ContainerOverrideMarshaller {
             protocolMarshaller.marshall(containerOverride.getName(), NAME_BINDING);
             protocolMarshaller.marshall(containerOverride.getCommand(), COMMAND_BINDING);
             protocolMarshaller.marshall(containerOverride.getEnvironment(), ENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(containerOverride.getCpu(), CPU_BINDING);
+            protocolMarshaller.marshall(containerOverride.getMemory(), MEMORY_BINDING);
+            protocolMarshaller.marshall(containerOverride.getMemoryReservation(), MEMORYRESERVATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

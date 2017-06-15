@@ -40,12 +40,12 @@ public class ConfirmProductInstanceRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (confirmProductInstanceRequest.getProductCode() != null) {
-            request.addParameter("ProductCode", StringUtils.fromString(confirmProductInstanceRequest.getProductCode()));
-        }
-
         if (confirmProductInstanceRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(confirmProductInstanceRequest.getInstanceId()));
+        }
+
+        if (confirmProductInstanceRequest.getProductCode() != null) {
+            request.addParameter("ProductCode", StringUtils.fromString(confirmProductInstanceRequest.getProductCode()));
         }
 
         return request;

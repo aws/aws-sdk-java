@@ -45,6 +45,11 @@ public class DescribePrefixListsResultStaxUnmarshaller implements Unmarshaller<D
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describePrefixListsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("prefixListSet", targetDepth)) {
                     describePrefixListsResult.withPrefixLists(new ArrayList<PrefixList>());
                     continue;
@@ -55,10 +60,6 @@ public class DescribePrefixListsResultStaxUnmarshaller implements Unmarshaller<D
                     continue;
                 }
 
-                if (context.testExpression("nextToken", targetDepth)) {
-                    describePrefixListsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describePrefixListsResult;

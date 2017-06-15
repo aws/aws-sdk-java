@@ -51,7 +51,8 @@ public class DeleteProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
     private String productId;
     /**
      * <p>
-     * The identifier of the provisioning artifact for the delete request.
+     * The identifier of the provisioning artifact for the delete request. This is sometimes referred to as the product
+     * version.
      * </p>
      */
     private String provisioningArtifactId;
@@ -207,11 +208,13 @@ public class DeleteProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the provisioning artifact for the delete request.
+     * The identifier of the provisioning artifact for the delete request. This is sometimes referred to as the product
+     * version.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The identifier of the provisioning artifact for the delete request.
+     *        The identifier of the provisioning artifact for the delete request. This is sometimes referred to as the
+     *        product version.
      */
 
     public void setProvisioningArtifactId(String provisioningArtifactId) {
@@ -220,10 +223,12 @@ public class DeleteProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the provisioning artifact for the delete request.
+     * The identifier of the provisioning artifact for the delete request. This is sometimes referred to as the product
+     * version.
      * </p>
      * 
-     * @return The identifier of the provisioning artifact for the delete request.
+     * @return The identifier of the provisioning artifact for the delete request. This is sometimes referred to as the
+     *         product version.
      */
 
     public String getProvisioningArtifactId() {
@@ -232,11 +237,13 @@ public class DeleteProvisioningArtifactRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the provisioning artifact for the delete request.
+     * The identifier of the provisioning artifact for the delete request. This is sometimes referred to as the product
+     * version.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The identifier of the provisioning artifact for the delete request.
+     *        The identifier of the provisioning artifact for the delete request. This is sometimes referred to as the
+     *        product version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

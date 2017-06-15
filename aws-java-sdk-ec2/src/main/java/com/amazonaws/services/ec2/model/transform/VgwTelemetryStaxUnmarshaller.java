@@ -43,6 +43,16 @@ public class VgwTelemetryStaxUnmarshaller implements Unmarshaller<VgwTelemetry, 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("acceptedRouteCount", targetDepth)) {
+                    vgwTelemetry.setAcceptedRouteCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("lastStatusChange", targetDepth)) {
+                    vgwTelemetry.setLastStatusChange(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("outsideIpAddress", targetDepth)) {
                     vgwTelemetry.setOutsideIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -53,18 +63,8 @@ public class VgwTelemetryStaxUnmarshaller implements Unmarshaller<VgwTelemetry, 
                     continue;
                 }
 
-                if (context.testExpression("lastStatusChange", targetDepth)) {
-                    vgwTelemetry.setLastStatusChange(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("statusMessage", targetDepth)) {
                     vgwTelemetry.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("acceptedRouteCount", targetDepth)) {
-                    vgwTelemetry.setAcceptedRouteCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

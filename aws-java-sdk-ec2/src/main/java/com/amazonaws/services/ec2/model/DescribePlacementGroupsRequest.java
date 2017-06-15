@@ -30,15 +30,6 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * One or more placement group names.
-     * </p>
-     * <p>
-     * Default: Describes all your placement groups, or only those otherwise specified.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> groupNames;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -61,7 +52,6 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more placement group names.
@@ -69,91 +59,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
      * <p>
      * Default: Describes all your placement groups, or only those otherwise specified.
      * </p>
-     * 
-     * @return One or more placement group names.</p>
-     *         <p>
-     *         Default: Describes all your placement groups, or only those otherwise specified.
      */
-
-    public java.util.List<String> getGroupNames() {
-        if (groupNames == null) {
-            groupNames = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return groupNames;
-    }
-
-    /**
-     * <p>
-     * One or more placement group names.
-     * </p>
-     * <p>
-     * Default: Describes all your placement groups, or only those otherwise specified.
-     * </p>
-     * 
-     * @param groupNames
-     *        One or more placement group names.</p>
-     *        <p>
-     *        Default: Describes all your placement groups, or only those otherwise specified.
-     */
-
-    public void setGroupNames(java.util.Collection<String> groupNames) {
-        if (groupNames == null) {
-            this.groupNames = null;
-            return;
-        }
-
-        this.groupNames = new com.amazonaws.internal.SdkInternalList<String>(groupNames);
-    }
-
-    /**
-     * <p>
-     * One or more placement group names.
-     * </p>
-     * <p>
-     * Default: Describes all your placement groups, or only those otherwise specified.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setGroupNames(java.util.Collection)} or {@link #withGroupNames(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param groupNames
-     *        One or more placement group names.</p>
-     *        <p>
-     *        Default: Describes all your placement groups, or only those otherwise specified.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePlacementGroupsRequest withGroupNames(String... groupNames) {
-        if (this.groupNames == null) {
-            setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(groupNames.length));
-        }
-        for (String ele : groupNames) {
-            this.groupNames.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more placement group names.
-     * </p>
-     * <p>
-     * Default: Describes all your placement groups, or only those otherwise specified.
-     * </p>
-     * 
-     * @param groupNames
-     *        One or more placement group names.</p>
-     *        <p>
-     *        Default: Describes all your placement groups, or only those otherwise specified.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePlacementGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
-        setGroupNames(groupNames);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> groupNames;
 
     /**
      * <p>
@@ -369,6 +276,99 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * One or more placement group names.
+     * </p>
+     * <p>
+     * Default: Describes all your placement groups, or only those otherwise specified.
+     * </p>
+     * 
+     * @return One or more placement group names.</p>
+     *         <p>
+     *         Default: Describes all your placement groups, or only those otherwise specified.
+     */
+
+    public java.util.List<String> getGroupNames() {
+        if (groupNames == null) {
+            groupNames = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return groupNames;
+    }
+
+    /**
+     * <p>
+     * One or more placement group names.
+     * </p>
+     * <p>
+     * Default: Describes all your placement groups, or only those otherwise specified.
+     * </p>
+     * 
+     * @param groupNames
+     *        One or more placement group names.</p>
+     *        <p>
+     *        Default: Describes all your placement groups, or only those otherwise specified.
+     */
+
+    public void setGroupNames(java.util.Collection<String> groupNames) {
+        if (groupNames == null) {
+            this.groupNames = null;
+            return;
+        }
+
+        this.groupNames = new com.amazonaws.internal.SdkInternalList<String>(groupNames);
+    }
+
+    /**
+     * <p>
+     * One or more placement group names.
+     * </p>
+     * <p>
+     * Default: Describes all your placement groups, or only those otherwise specified.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroupNames(java.util.Collection)} or {@link #withGroupNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param groupNames
+     *        One or more placement group names.</p>
+     *        <p>
+     *        Default: Describes all your placement groups, or only those otherwise specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePlacementGroupsRequest withGroupNames(String... groupNames) {
+        if (this.groupNames == null) {
+            setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(groupNames.length));
+        }
+        for (String ele : groupNames) {
+            this.groupNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more placement group names.
+     * </p>
+     * <p>
+     * Default: Describes all your placement groups, or only those otherwise specified.
+     * </p>
+     * 
+     * @param groupNames
+     *        One or more placement group names.</p>
+     *        <p>
+     *        Default: Describes all your placement groups, or only those otherwise specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePlacementGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
+        setGroupNames(groupNames);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -390,10 +390,10 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGroupNames() != null)
-            sb.append("GroupNames: ").append(getGroupNames()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getGroupNames() != null)
+            sb.append("GroupNames: ").append(getGroupNames());
         sb.append("}");
         return sb.toString();
     }
@@ -408,13 +408,13 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
         if (obj instanceof DescribePlacementGroupsRequest == false)
             return false;
         DescribePlacementGroupsRequest other = (DescribePlacementGroupsRequest) obj;
-        if (other.getGroupNames() == null ^ this.getGroupNames() == null)
-            return false;
-        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getGroupNames() == null ^ this.getGroupNames() == null)
+            return false;
+        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false)
             return false;
         return true;
     }
@@ -424,8 +424,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
         return hashCode;
     }
 

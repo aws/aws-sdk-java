@@ -43,13 +43,13 @@ public class RestoreAddressToClassicResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("status", targetDepth)) {
-                    restoreAddressToClassicResult.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("publicIp", targetDepth)) {
+                    restoreAddressToClassicResult.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("publicIp", targetDepth)) {
-                    restoreAddressToClassicResult.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("status", targetDepth)) {
+                    restoreAddressToClassicResult.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

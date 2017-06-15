@@ -43,14 +43,14 @@ public class CreateEgressOnlyInternetGatewayResultStaxUnmarshaller implements Un
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("egressOnlyInternetGateway", targetDepth)) {
-                    createEgressOnlyInternetGatewayResult.setEgressOnlyInternetGateway(EgressOnlyInternetGatewayStaxUnmarshaller.getInstance().unmarshall(
-                            context));
+                if (context.testExpression("clientToken", targetDepth)) {
+                    createEgressOnlyInternetGatewayResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("clientToken", targetDepth)) {
-                    createEgressOnlyInternetGatewayResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("egressOnlyInternetGateway", targetDepth)) {
+                    createEgressOnlyInternetGatewayResult.setEgressOnlyInternetGateway(EgressOnlyInternetGatewayStaxUnmarshaller.getInstance().unmarshall(
+                            context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

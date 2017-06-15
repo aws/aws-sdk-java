@@ -34,6 +34,12 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
     private String deviceName;
     /**
      * <p>
+     * Parameters used to set up EBS volumes automatically when the instance is launched.
+     * </p>
+     */
+    private ScheduledInstancesEbs ebs;
+    /**
+     * <p>
      * Suppresses the specified device included in the block device mapping of the AMI.
      * </p>
      */
@@ -52,12 +58,6 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
      * </p>
      */
     private String virtualName;
-    /**
-     * <p>
-     * Parameters used to set up EBS volumes automatically when the instance is launched.
-     * </p>
-     */
-    private ScheduledInstancesEbs ebs;
 
     /**
      * <p>
@@ -96,6 +96,46 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
 
     public ScheduledInstancesBlockDeviceMapping withDeviceName(String deviceName) {
         setDeviceName(deviceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Parameters used to set up EBS volumes automatically when the instance is launched.
+     * </p>
+     * 
+     * @param ebs
+     *        Parameters used to set up EBS volumes automatically when the instance is launched.
+     */
+
+    public void setEbs(ScheduledInstancesEbs ebs) {
+        this.ebs = ebs;
+    }
+
+    /**
+     * <p>
+     * Parameters used to set up EBS volumes automatically when the instance is launched.
+     * </p>
+     * 
+     * @return Parameters used to set up EBS volumes automatically when the instance is launched.
+     */
+
+    public ScheduledInstancesEbs getEbs() {
+        return this.ebs;
+    }
+
+    /**
+     * <p>
+     * Parameters used to set up EBS volumes automatically when the instance is launched.
+     * </p>
+     * 
+     * @param ebs
+     *        Parameters used to set up EBS volumes automatically when the instance is launched.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledInstancesBlockDeviceMapping withEbs(ScheduledInstancesEbs ebs) {
+        setEbs(ebs);
         return this;
     }
 
@@ -225,46 +265,6 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
     }
 
     /**
-     * <p>
-     * Parameters used to set up EBS volumes automatically when the instance is launched.
-     * </p>
-     * 
-     * @param ebs
-     *        Parameters used to set up EBS volumes automatically when the instance is launched.
-     */
-
-    public void setEbs(ScheduledInstancesEbs ebs) {
-        this.ebs = ebs;
-    }
-
-    /**
-     * <p>
-     * Parameters used to set up EBS volumes automatically when the instance is launched.
-     * </p>
-     * 
-     * @return Parameters used to set up EBS volumes automatically when the instance is launched.
-     */
-
-    public ScheduledInstancesEbs getEbs() {
-        return this.ebs;
-    }
-
-    /**
-     * <p>
-     * Parameters used to set up EBS volumes automatically when the instance is launched.
-     * </p>
-     * 
-     * @param ebs
-     *        Parameters used to set up EBS volumes automatically when the instance is launched.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ScheduledInstancesBlockDeviceMapping withEbs(ScheduledInstancesEbs ebs) {
-        setEbs(ebs);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -277,12 +277,12 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
         sb.append("{");
         if (getDeviceName() != null)
             sb.append("DeviceName: ").append(getDeviceName()).append(",");
+        if (getEbs() != null)
+            sb.append("Ebs: ").append(getEbs()).append(",");
         if (getNoDevice() != null)
             sb.append("NoDevice: ").append(getNoDevice()).append(",");
         if (getVirtualName() != null)
-            sb.append("VirtualName: ").append(getVirtualName()).append(",");
-        if (getEbs() != null)
-            sb.append("Ebs: ").append(getEbs());
+            sb.append("VirtualName: ").append(getVirtualName());
         sb.append("}");
         return sb.toString();
     }
@@ -301,6 +301,10 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
             return false;
         if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
             return false;
+        if (other.getEbs() == null ^ this.getEbs() == null)
+            return false;
+        if (other.getEbs() != null && other.getEbs().equals(this.getEbs()) == false)
+            return false;
         if (other.getNoDevice() == null ^ this.getNoDevice() == null)
             return false;
         if (other.getNoDevice() != null && other.getNoDevice().equals(this.getNoDevice()) == false)
@@ -308,10 +312,6 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
         if (other.getVirtualName() == null ^ this.getVirtualName() == null)
             return false;
         if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false)
-            return false;
-        if (other.getEbs() == null ^ this.getEbs() == null)
-            return false;
-        if (other.getEbs() != null && other.getEbs().equals(this.getEbs()) == false)
             return false;
         return true;
     }
@@ -322,9 +322,9 @@ public class ScheduledInstancesBlockDeviceMapping implements Serializable, Clone
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode());
         hashCode = prime * hashCode + ((getNoDevice() == null) ? 0 : getNoDevice().hashCode());
         hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
-        hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode());
         return hashCode;
     }
 

@@ -28,6 +28,12 @@ public class TagDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The tag key.
+     * </p>
+     */
+    private String key;
+    /**
+     * <p>
      * The ID of the resource. For example, <code>ami-1a2b3c4d</code>.
      * </p>
      */
@@ -40,16 +46,50 @@ public class TagDescription implements Serializable, Cloneable {
     private String resourceType;
     /**
      * <p>
-     * The tag key.
-     * </p>
-     */
-    private String key;
-    /**
-     * <p>
      * The tag value.
      * </p>
      */
     private String value;
+
+    /**
+     * <p>
+     * The tag key.
+     * </p>
+     * 
+     * @param key
+     *        The tag key.
+     */
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * <p>
+     * The tag key.
+     * </p>
+     * 
+     * @return The tag key.
+     */
+
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
+     * <p>
+     * The tag key.
+     * </p>
+     * 
+     * @param key
+     *        The tag key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TagDescription withKey(String key) {
+        setKey(key);
+        return this;
+    }
 
     /**
      * <p>
@@ -166,46 +206,6 @@ public class TagDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag key.
-     * </p>
-     * 
-     * @param key
-     *        The tag key.
-     */
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    /**
-     * <p>
-     * The tag key.
-     * </p>
-     * 
-     * @return The tag key.
-     */
-
-    public String getKey() {
-        return this.key;
-    }
-
-    /**
-     * <p>
-     * The tag key.
-     * </p>
-     * 
-     * @param key
-     *        The tag key.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TagDescription withKey(String key) {
-        setKey(key);
-        return this;
-    }
-
-    /**
-     * <p>
      * The tag value.
      * </p>
      * 
@@ -255,12 +255,12 @@ public class TagDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getKey() != null)
+            sb.append("Key: ").append(getKey()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
-        if (getKey() != null)
-            sb.append("Key: ").append(getKey()).append(",");
         if (getValue() != null)
             sb.append("Value: ").append(getValue());
         sb.append("}");
@@ -277,6 +277,10 @@ public class TagDescription implements Serializable, Cloneable {
         if (obj instanceof TagDescription == false)
             return false;
         TagDescription other = (TagDescription) obj;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
+            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
@@ -284,10 +288,6 @@ public class TagDescription implements Serializable, Cloneable {
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
-            return false;
-        if (other.getKey() == null ^ this.getKey() == null)
-            return false;
-        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
@@ -301,9 +301,9 @@ public class TagDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
-        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }

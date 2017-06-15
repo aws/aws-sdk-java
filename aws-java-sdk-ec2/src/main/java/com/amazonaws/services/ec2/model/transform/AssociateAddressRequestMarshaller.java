@@ -40,6 +40,10 @@ public class AssociateAddressRequestMarshaller implements Marshaller<Request<Ass
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (associateAddressRequest.getAllocationId() != null) {
+            request.addParameter("AllocationId", StringUtils.fromString(associateAddressRequest.getAllocationId()));
+        }
+
         if (associateAddressRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(associateAddressRequest.getInstanceId()));
         }
@@ -48,8 +52,8 @@ public class AssociateAddressRequestMarshaller implements Marshaller<Request<Ass
             request.addParameter("PublicIp", StringUtils.fromString(associateAddressRequest.getPublicIp()));
         }
 
-        if (associateAddressRequest.getAllocationId() != null) {
-            request.addParameter("AllocationId", StringUtils.fromString(associateAddressRequest.getAllocationId()));
+        if (associateAddressRequest.getAllowReassociation() != null) {
+            request.addParameter("AllowReassociation", StringUtils.fromBoolean(associateAddressRequest.getAllowReassociation()));
         }
 
         if (associateAddressRequest.getNetworkInterfaceId() != null) {
@@ -58,10 +62,6 @@ public class AssociateAddressRequestMarshaller implements Marshaller<Request<Ass
 
         if (associateAddressRequest.getPrivateIpAddress() != null) {
             request.addParameter("PrivateIpAddress", StringUtils.fromString(associateAddressRequest.getPrivateIpAddress()));
-        }
-
-        if (associateAddressRequest.getAllowReassociation() != null) {
-            request.addParameter("AllowReassociation", StringUtils.fromBoolean(associateAddressRequest.getAllowReassociation()));
         }
 
         return request;

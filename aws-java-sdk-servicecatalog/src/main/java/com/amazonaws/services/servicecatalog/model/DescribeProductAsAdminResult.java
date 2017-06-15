@@ -31,6 +31,12 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
     private ProductViewDetail productViewDetail;
     /**
      * <p>
+     * A list of provisioning artifact summaries for the product.
+     * </p>
+     */
+    private java.util.List<ProvisioningArtifactSummary> provisioningArtifactSummaries;
+    /**
+     * <p>
      * Tags associated with the product.
      * </p>
      */
@@ -73,6 +79,76 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
 
     public DescribeProductAsAdminResult withProductViewDetail(ProductViewDetail productViewDetail) {
         setProductViewDetail(productViewDetail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of provisioning artifact summaries for the product.
+     * </p>
+     * 
+     * @return A list of provisioning artifact summaries for the product.
+     */
+
+    public java.util.List<ProvisioningArtifactSummary> getProvisioningArtifactSummaries() {
+        return provisioningArtifactSummaries;
+    }
+
+    /**
+     * <p>
+     * A list of provisioning artifact summaries for the product.
+     * </p>
+     * 
+     * @param provisioningArtifactSummaries
+     *        A list of provisioning artifact summaries for the product.
+     */
+
+    public void setProvisioningArtifactSummaries(java.util.Collection<ProvisioningArtifactSummary> provisioningArtifactSummaries) {
+        if (provisioningArtifactSummaries == null) {
+            this.provisioningArtifactSummaries = null;
+            return;
+        }
+
+        this.provisioningArtifactSummaries = new java.util.ArrayList<ProvisioningArtifactSummary>(provisioningArtifactSummaries);
+    }
+
+    /**
+     * <p>
+     * A list of provisioning artifact summaries for the product.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProvisioningArtifactSummaries(java.util.Collection)} or
+     * {@link #withProvisioningArtifactSummaries(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param provisioningArtifactSummaries
+     *        A list of provisioning artifact summaries for the product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminResult withProvisioningArtifactSummaries(ProvisioningArtifactSummary... provisioningArtifactSummaries) {
+        if (this.provisioningArtifactSummaries == null) {
+            setProvisioningArtifactSummaries(new java.util.ArrayList<ProvisioningArtifactSummary>(provisioningArtifactSummaries.length));
+        }
+        for (ProvisioningArtifactSummary ele : provisioningArtifactSummaries) {
+            this.provisioningArtifactSummaries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of provisioning artifact summaries for the product.
+     * </p>
+     * 
+     * @param provisioningArtifactSummaries
+     *        A list of provisioning artifact summaries for the product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProductAsAdminResult withProvisioningArtifactSummaries(java.util.Collection<ProvisioningArtifactSummary> provisioningArtifactSummaries) {
+        setProvisioningArtifactSummaries(provisioningArtifactSummaries);
         return this;
     }
 
@@ -159,6 +235,8 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
         sb.append("{");
         if (getProductViewDetail() != null)
             sb.append("ProductViewDetail: ").append(getProductViewDetail()).append(",");
+        if (getProvisioningArtifactSummaries() != null)
+            sb.append("ProvisioningArtifactSummaries: ").append(getProvisioningArtifactSummaries()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -179,6 +257,11 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getProductViewDetail() != null && other.getProductViewDetail().equals(this.getProductViewDetail()) == false)
             return false;
+        if (other.getProvisioningArtifactSummaries() == null ^ this.getProvisioningArtifactSummaries() == null)
+            return false;
+        if (other.getProvisioningArtifactSummaries() != null
+                && other.getProvisioningArtifactSummaries().equals(this.getProvisioningArtifactSummaries()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -192,6 +275,7 @@ public class DescribeProductAsAdminResult extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProductViewDetail() == null) ? 0 : getProductViewDetail().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactSummaries() == null) ? 0 : getProvisioningArtifactSummaries().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

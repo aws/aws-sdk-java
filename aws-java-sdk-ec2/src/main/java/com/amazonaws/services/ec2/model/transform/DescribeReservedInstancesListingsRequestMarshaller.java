@@ -42,14 +42,6 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeReservedInstancesListingsRequest.getReservedInstancesId() != null) {
-            request.addParameter("ReservedInstancesId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesId()));
-        }
-
-        if (describeReservedInstancesListingsRequest.getReservedInstancesListingId() != null) {
-            request.addParameter("ReservedInstancesListingId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesListingId()));
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeReservedInstancesListingsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedInstancesListingsRequest
                 .getFilters();
         if (!describeReservedInstancesListingsRequestFiltersList.isEmpty() || !describeReservedInstancesListingsRequestFiltersList.isAutoConstruct()) {
@@ -76,6 +68,14 @@ public class DescribeReservedInstancesListingsRequestMarshaller implements
                 }
                 filtersListIndex++;
             }
+        }
+
+        if (describeReservedInstancesListingsRequest.getReservedInstancesId() != null) {
+            request.addParameter("ReservedInstancesId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesId()));
+        }
+
+        if (describeReservedInstancesListingsRequest.getReservedInstancesListingId() != null) {
+            request.addParameter("ReservedInstancesListingId", StringUtils.fromString(describeReservedInstancesListingsRequest.getReservedInstancesListingId()));
         }
 
         return request;

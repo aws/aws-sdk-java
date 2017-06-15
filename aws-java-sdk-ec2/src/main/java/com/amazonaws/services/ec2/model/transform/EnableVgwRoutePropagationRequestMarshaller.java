@@ -40,12 +40,12 @@ public class EnableVgwRoutePropagationRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (enableVgwRoutePropagationRequest.getRouteTableId() != null) {
-            request.addParameter("RouteTableId", StringUtils.fromString(enableVgwRoutePropagationRequest.getRouteTableId()));
-        }
-
         if (enableVgwRoutePropagationRequest.getGatewayId() != null) {
             request.addParameter("GatewayId", StringUtils.fromString(enableVgwRoutePropagationRequest.getGatewayId()));
+        }
+
+        if (enableVgwRoutePropagationRequest.getRouteTableId() != null) {
+            request.addParameter("RouteTableId", StringUtils.fromString(enableVgwRoutePropagationRequest.getRouteTableId()));
         }
 
         return request;

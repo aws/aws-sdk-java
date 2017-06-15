@@ -43,8 +43,8 @@ public class ClientDataStaxUnmarshaller implements Unmarshaller<ClientData, Stax
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("UploadStart", targetDepth)) {
-                    clientData.setUploadStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Comment", targetDepth)) {
+                    clientData.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,8 +58,8 @@ public class ClientDataStaxUnmarshaller implements Unmarshaller<ClientData, Stax
                     continue;
                 }
 
-                if (context.testExpression("Comment", targetDepth)) {
-                    clientData.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("UploadStart", targetDepth)) {
+                    clientData.setUploadStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

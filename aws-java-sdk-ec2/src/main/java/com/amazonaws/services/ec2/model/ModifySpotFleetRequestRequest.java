@@ -30,6 +30,13 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
+     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
+     * decreased below the current size of the Spot fleet.
+     * </p>
+     */
+    private String excessCapacityTerminationPolicy;
+    /**
+     * <p>
      * The ID of the Spot fleet request.
      * </p>
      */
@@ -40,93 +47,6 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private Integer targetCapacity;
-    /**
-     * <p>
-     * Indicates whether running Spot instances should be terminated if the target capacity of the Spot fleet request is
-     * decreased below the current size of the Spot fleet.
-     * </p>
-     */
-    private String excessCapacityTerminationPolicy;
-
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
-     */
-
-    public void setSpotFleetRequestId(String spotFleetRequestId) {
-        this.spotFleetRequestId = spotFleetRequestId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     * 
-     * @return The ID of the Spot fleet request.
-     */
-
-    public String getSpotFleetRequestId() {
-        return this.spotFleetRequestId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifySpotFleetRequestRequest withSpotFleetRequestId(String spotFleetRequestId) {
-        setSpotFleetRequestId(spotFleetRequestId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The size of the fleet.
-     * </p>
-     * 
-     * @param targetCapacity
-     *        The size of the fleet.
-     */
-
-    public void setTargetCapacity(Integer targetCapacity) {
-        this.targetCapacity = targetCapacity;
-    }
-
-    /**
-     * <p>
-     * The size of the fleet.
-     * </p>
-     * 
-     * @return The size of the fleet.
-     */
-
-    public Integer getTargetCapacity() {
-        return this.targetCapacity;
-    }
-
-    /**
-     * <p>
-     * The size of the fleet.
-     * </p>
-     * 
-     * @param targetCapacity
-     *        The size of the fleet.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifySpotFleetRequestRequest withTargetCapacity(Integer targetCapacity) {
-        setTargetCapacity(targetCapacity);
-        return this;
-    }
 
     /**
      * <p>
@@ -212,6 +132,86 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The ID of the Spot fleet request.
+     * </p>
+     * 
+     * @param spotFleetRequestId
+     *        The ID of the Spot fleet request.
+     */
+
+    public void setSpotFleetRequestId(String spotFleetRequestId) {
+        this.spotFleetRequestId = spotFleetRequestId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Spot fleet request.
+     * </p>
+     * 
+     * @return The ID of the Spot fleet request.
+     */
+
+    public String getSpotFleetRequestId() {
+        return this.spotFleetRequestId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Spot fleet request.
+     * </p>
+     * 
+     * @param spotFleetRequestId
+     *        The ID of the Spot fleet request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySpotFleetRequestRequest withSpotFleetRequestId(String spotFleetRequestId) {
+        setSpotFleetRequestId(spotFleetRequestId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size of the fleet.
+     * </p>
+     * 
+     * @param targetCapacity
+     *        The size of the fleet.
+     */
+
+    public void setTargetCapacity(Integer targetCapacity) {
+        this.targetCapacity = targetCapacity;
+    }
+
+    /**
+     * <p>
+     * The size of the fleet.
+     * </p>
+     * 
+     * @return The size of the fleet.
+     */
+
+    public Integer getTargetCapacity() {
+        return this.targetCapacity;
+    }
+
+    /**
+     * <p>
+     * The size of the fleet.
+     * </p>
+     * 
+     * @param targetCapacity
+     *        The size of the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySpotFleetRequestRequest withTargetCapacity(Integer targetCapacity) {
+        setTargetCapacity(targetCapacity);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -233,12 +233,12 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getExcessCapacityTerminationPolicy() != null)
+            sb.append("ExcessCapacityTerminationPolicy: ").append(getExcessCapacityTerminationPolicy()).append(",");
         if (getSpotFleetRequestId() != null)
             sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getTargetCapacity() != null)
-            sb.append("TargetCapacity: ").append(getTargetCapacity()).append(",");
-        if (getExcessCapacityTerminationPolicy() != null)
-            sb.append("ExcessCapacityTerminationPolicy: ").append(getExcessCapacityTerminationPolicy());
+            sb.append("TargetCapacity: ").append(getTargetCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -253,6 +253,11 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         if (obj instanceof ModifySpotFleetRequestRequest == false)
             return false;
         ModifySpotFleetRequestRequest other = (ModifySpotFleetRequestRequest) obj;
+        if (other.getExcessCapacityTerminationPolicy() == null ^ this.getExcessCapacityTerminationPolicy() == null)
+            return false;
+        if (other.getExcessCapacityTerminationPolicy() != null
+                && other.getExcessCapacityTerminationPolicy().equals(this.getExcessCapacityTerminationPolicy()) == false)
+            return false;
         if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
             return false;
         if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
@@ -260,11 +265,6 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         if (other.getTargetCapacity() == null ^ this.getTargetCapacity() == null)
             return false;
         if (other.getTargetCapacity() != null && other.getTargetCapacity().equals(this.getTargetCapacity()) == false)
-            return false;
-        if (other.getExcessCapacityTerminationPolicy() == null ^ this.getExcessCapacityTerminationPolicy() == null)
-            return false;
-        if (other.getExcessCapacityTerminationPolicy() != null
-                && other.getExcessCapacityTerminationPolicy().equals(this.getExcessCapacityTerminationPolicy()) == false)
             return false;
         return true;
     }
@@ -274,9 +274,9 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getExcessCapacityTerminationPolicy() == null) ? 0 : getExcessCapacityTerminationPolicy().hashCode());
         hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         hashCode = prime * hashCode + ((getTargetCapacity() == null) ? 0 : getTargetCapacity().hashCode());
-        hashCode = prime * hashCode + ((getExcessCapacityTerminationPolicy() == null) ? 0 : getExcessCapacityTerminationPolicy().hashCode());
         return hashCode;
     }
 

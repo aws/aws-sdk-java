@@ -40,12 +40,12 @@ public class ReleaseAddressRequestMarshaller implements Marshaller<Request<Relea
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (releaseAddressRequest.getPublicIp() != null) {
-            request.addParameter("PublicIp", StringUtils.fromString(releaseAddressRequest.getPublicIp()));
-        }
-
         if (releaseAddressRequest.getAllocationId() != null) {
             request.addParameter("AllocationId", StringUtils.fromString(releaseAddressRequest.getAllocationId()));
+        }
+
+        if (releaseAddressRequest.getPublicIp() != null) {
+            request.addParameter("PublicIp", StringUtils.fromString(releaseAddressRequest.getPublicIp()));
         }
 
         return request;

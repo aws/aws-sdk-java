@@ -30,10 +30,11 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IDs of the Spot fleet requests.
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<String> spotFleetRequestIds;
+    private Integer maxResults;
     /**
      * <p>
      * The token for the next set of results.
@@ -42,11 +43,99 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
     private String nextToken;
     /**
      * <p>
+     * The IDs of the Spot fleet requests.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> spotFleetRequestIds;
+
+    /**
+     * <p>
      * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
      * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
      */
-    private Integer maxResults;
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     * 
+     * @return The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *         value is 1000. To retrieve the remaining results, make another call with the returned
+     *         <code>NextToken</code> value.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
+     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
+     *        value is 1000. To retrieve the remaining results, make another call with the returned
+     *        <code>NextToken</code> value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotFleetRequestsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
+     * @return The token for the next set of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotFleetRequestsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -122,95 +211,6 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token for the next set of results.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     * 
-     * @return The token for the next set of results.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token for the next set of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token for the next set of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotFleetRequestsRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
-     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
-     *        value is 1000. To retrieve the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
-     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
-     * </p>
-     * 
-     * @return The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
-     *         value is 1000. To retrieve the remaining results, make another call with the returned
-     *         <code>NextToken</code> value.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
-     * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default
-     *        value is 1000. To retrieve the remaining results, make another call with the returned
-     *        <code>NextToken</code> value.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotFleetRequestsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -232,12 +232,12 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotFleetRequestIds() != null)
-            sb.append("SpotFleetRequestIds: ").append(getSpotFleetRequestIds()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+        if (getSpotFleetRequestIds() != null)
+            sb.append("SpotFleetRequestIds: ").append(getSpotFleetRequestIds());
         sb.append("}");
         return sb.toString();
     }
@@ -252,17 +252,17 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
         if (obj instanceof DescribeSpotFleetRequestsRequest == false)
             return false;
         DescribeSpotFleetRequestsRequest other = (DescribeSpotFleetRequestsRequest) obj;
-        if (other.getSpotFleetRequestIds() == null ^ this.getSpotFleetRequestIds() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getSpotFleetRequestIds() != null && other.getSpotFleetRequestIds().equals(this.getSpotFleetRequestIds()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+        if (other.getSpotFleetRequestIds() == null ^ this.getSpotFleetRequestIds() == null)
             return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+        if (other.getSpotFleetRequestIds() != null && other.getSpotFleetRequestIds().equals(this.getSpotFleetRequestIds()) == false)
             return false;
         return true;
     }
@@ -272,9 +272,9 @@ public class DescribeSpotFleetRequestsRequest extends AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSpotFleetRequestIds() == null) ? 0 : getSpotFleetRequestIds().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestIds() == null) ? 0 : getSpotFleetRequestIds().hashCode());
         return hashCode;
     }
 

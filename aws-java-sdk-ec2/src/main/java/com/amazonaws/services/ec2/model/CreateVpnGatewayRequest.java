@@ -29,16 +29,16 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The type of VPN connection this virtual private gateway supports.
-     * </p>
-     */
-    private String type;
-    /**
-     * <p>
      * The Availability Zone for the virtual private gateway.
      * </p>
      */
     private String availabilityZone;
+    /**
+     * <p>
+     * The type of VPN connection this virtual private gateway supports.
+     * </p>
+     */
+    private String type;
 
     /**
      * Default constructor for CreateVpnGatewayRequest object. Callers should use the setter or fluent setter (with...)
@@ -67,6 +67,46 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
      */
     public CreateVpnGatewayRequest(GatewayType type) {
         setType(type.toString());
+    }
+
+    /**
+     * <p>
+     * The Availability Zone for the virtual private gateway.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone for the virtual private gateway.
+     */
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone for the virtual private gateway.
+     * </p>
+     * 
+     * @return The Availability Zone for the virtual private gateway.
+     */
+
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone for the virtual private gateway.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone for the virtual private gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpnGatewayRequest withAvailabilityZone(String availabilityZone) {
+        setAvailabilityZone(availabilityZone);
+        return this;
     }
 
     /**
@@ -143,46 +183,6 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * <p>
-     * The Availability Zone for the virtual private gateway.
-     * </p>
-     * 
-     * @param availabilityZone
-     *        The Availability Zone for the virtual private gateway.
-     */
-
-    public void setAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone for the virtual private gateway.
-     * </p>
-     * 
-     * @return The Availability Zone for the virtual private gateway.
-     */
-
-    public String getAvailabilityZone() {
-        return this.availabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone for the virtual private gateway.
-     * </p>
-     * 
-     * @param availabilityZone
-     *        The Availability Zone for the virtual private gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVpnGatewayRequest withAvailabilityZone(String availabilityZone) {
-        setAvailabilityZone(availabilityZone);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -204,10 +204,10 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -222,13 +222,13 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof CreateVpnGatewayRequest == false)
             return false;
         CreateVpnGatewayRequest other = (CreateVpnGatewayRequest) obj;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -238,8 +238,8 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

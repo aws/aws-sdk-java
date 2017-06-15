@@ -29,21 +29,6 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The name of the security group.
-     * </p>
-     * <p>
-     * Constraints: Up to 255 characters in length
-     * </p>
-     * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
-     * </p>
-     */
-    private String groupName;
-    /**
-     * <p>
      * A description for the security group. This is informational only.
      * </p>
      * <p>
@@ -57,6 +42,21 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The name of the security group.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length
+     * </p>
+     * <p>
+     * Constraints for EC2-Classic: ASCII characters
+     * </p>
+     * <p>
+     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * </p>
+     */
+    private String groupName;
     /**
      * <p>
      * [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
@@ -100,97 +100,6 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
     public CreateSecurityGroupRequest(String groupName, String description) {
         setGroupName(groupName);
         setDescription(description);
-    }
-
-    /**
-     * <p>
-     * The name of the security group.
-     * </p>
-     * <p>
-     * Constraints: Up to 255 characters in length
-     * </p>
-     * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
-     * </p>
-     * 
-     * @param groupName
-     *        The name of the security group.</p>
-     *        <p>
-     *        Constraints: Up to 255 characters in length
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-Classic: ASCII characters
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
-     **/
-
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
-    }
-
-    /**
-     * <p>
-     * The name of the security group.
-     * </p>
-     * <p>
-     * Constraints: Up to 255 characters in length
-     * </p>
-     * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
-     * </p>
-     * 
-     * @return The name of the security group.</p>
-     *         <p>
-     *         Constraints: Up to 255 characters in length
-     *         </p>
-     *         <p>
-     *         Constraints for EC2-Classic: ASCII characters
-     *         </p>
-     *         <p>
-     *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
-     **/
-
-    public String getGroupName() {
-        return this.groupName;
-    }
-
-    /**
-     * <p>
-     * The name of the security group.
-     * </p>
-     * <p>
-     * Constraints: Up to 255 characters in length
-     * </p>
-     * <p>
-     * Constraints for EC2-Classic: ASCII characters
-     * </p>
-     * <p>
-     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
-     * </p>
-     * 
-     * @param groupName
-     *        The name of the security group.</p>
-     *        <p>
-     *        Constraints: Up to 255 characters in length
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-Classic: ASCII characters
-     *        </p>
-     *        <p>
-     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateSecurityGroupRequest withGroupName(String groupName) {
-        setGroupName(groupName);
-        return this;
     }
 
     /**
@@ -286,6 +195,97 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
+     * The name of the security group.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length
+     * </p>
+     * <p>
+     * Constraints for EC2-Classic: ASCII characters
+     * </p>
+     * <p>
+     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the security group.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length
+     *        </p>
+     *        <p>
+     *        Constraints for EC2-Classic: ASCII characters
+     *        </p>
+     *        <p>
+     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
+     **/
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    /**
+     * <p>
+     * The name of the security group.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length
+     * </p>
+     * <p>
+     * Constraints for EC2-Classic: ASCII characters
+     * </p>
+     * <p>
+     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * </p>
+     * 
+     * @return The name of the security group.</p>
+     *         <p>
+     *         Constraints: Up to 255 characters in length
+     *         </p>
+     *         <p>
+     *         Constraints for EC2-Classic: ASCII characters
+     *         </p>
+     *         <p>
+     *         Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$
+     **/
+
+    public String getGroupName() {
+        return this.groupName;
+    }
+
+    /**
+     * <p>
+     * The name of the security group.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length
+     * </p>
+     * <p>
+     * Constraints for EC2-Classic: ASCII characters
+     * </p>
+     * <p>
+     * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * </p>
+     * 
+     * @param groupName
+     *        The name of the security group.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length
+     *        </p>
+     *        <p>
+     *        Constraints for EC2-Classic: ASCII characters
+     *        </p>
+     *        <p>
+     *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSecurityGroupRequest withGroupName(String groupName) {
+        setGroupName(groupName);
+        return this;
+    }
+
+    /**
+     * <p>
      * [EC2-VPC] The ID of the VPC. Required for EC2-VPC.
      * </p>
      * 
@@ -346,10 +346,10 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGroupName() != null)
-            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getGroupName() != null)
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
@@ -366,13 +366,13 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof CreateSecurityGroupRequest == false)
             return false;
         CreateSecurityGroupRequest other = (CreateSecurityGroupRequest) obj;
-        if (other.getGroupName() == null ^ this.getGroupName() == null)
-            return false;
-        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getGroupName() == null ^ this.getGroupName() == null)
+            return false;
+        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
@@ -386,8 +386,8 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }

@@ -30,10 +30,13 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).
+     * For devices that support BGP, the customer gateway's BGP ASN.
+     * </p>
+     * <p>
+     * Default: 65000
      * </p>
      */
-    private String type;
+    private Integer bgpAsn;
     /**
      * <p>
      * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
@@ -42,13 +45,10 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     private String publicIp;
     /**
      * <p>
-     * For devices that support BGP, the customer gateway's BGP ASN.
-     * </p>
-     * <p>
-     * Default: 65000
+     * The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).
      * </p>
      */
-    private Integer bgpAsn;
+    private String type;
 
     /**
      * Default constructor for CreateCustomerGatewayRequest object. Callers should use the setter or fluent setter
@@ -93,6 +93,102 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         setType(type.toString());
         setPublicIp(publicIp);
         setBgpAsn(bgpAsn);
+    }
+
+    /**
+     * <p>
+     * For devices that support BGP, the customer gateway's BGP ASN.
+     * </p>
+     * <p>
+     * Default: 65000
+     * </p>
+     * 
+     * @param bgpAsn
+     *        For devices that support BGP, the customer gateway's BGP ASN.</p>
+     *        <p>
+     *        Default: 65000
+     */
+
+    public void setBgpAsn(Integer bgpAsn) {
+        this.bgpAsn = bgpAsn;
+    }
+
+    /**
+     * <p>
+     * For devices that support BGP, the customer gateway's BGP ASN.
+     * </p>
+     * <p>
+     * Default: 65000
+     * </p>
+     * 
+     * @return For devices that support BGP, the customer gateway's BGP ASN.</p>
+     *         <p>
+     *         Default: 65000
+     */
+
+    public Integer getBgpAsn() {
+        return this.bgpAsn;
+    }
+
+    /**
+     * <p>
+     * For devices that support BGP, the customer gateway's BGP ASN.
+     * </p>
+     * <p>
+     * Default: 65000
+     * </p>
+     * 
+     * @param bgpAsn
+     *        For devices that support BGP, the customer gateway's BGP ASN.</p>
+     *        <p>
+     *        Default: 65000
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomerGatewayRequest withBgpAsn(Integer bgpAsn) {
+        setBgpAsn(bgpAsn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     * </p>
+     * 
+     * @param publicIp
+     *        The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     */
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    /**
+     * <p>
+     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     * </p>
+     * 
+     * @return The Internet-routable IP address for the customer gateway's outside interface. The address must be
+     *         static.
+     */
+
+    public String getPublicIp() {
+        return this.publicIp;
+    }
+
+    /**
+     * <p>
+     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     * </p>
+     * 
+     * @param publicIp
+     *        The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomerGatewayRequest withPublicIp(String publicIp) {
+        setPublicIp(publicIp);
+        return this;
     }
 
     /**
@@ -169,102 +265,6 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     }
 
     /**
-     * <p>
-     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
-     * </p>
-     * 
-     * @param publicIp
-     *        The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
-     */
-
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
-    }
-
-    /**
-     * <p>
-     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
-     * </p>
-     * 
-     * @return The Internet-routable IP address for the customer gateway's outside interface. The address must be
-     *         static.
-     */
-
-    public String getPublicIp() {
-        return this.publicIp;
-    }
-
-    /**
-     * <p>
-     * The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
-     * </p>
-     * 
-     * @param publicIp
-     *        The Internet-routable IP address for the customer gateway's outside interface. The address must be static.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateCustomerGatewayRequest withPublicIp(String publicIp) {
-        setPublicIp(publicIp);
-        return this;
-    }
-
-    /**
-     * <p>
-     * For devices that support BGP, the customer gateway's BGP ASN.
-     * </p>
-     * <p>
-     * Default: 65000
-     * </p>
-     * 
-     * @param bgpAsn
-     *        For devices that support BGP, the customer gateway's BGP ASN.</p>
-     *        <p>
-     *        Default: 65000
-     */
-
-    public void setBgpAsn(Integer bgpAsn) {
-        this.bgpAsn = bgpAsn;
-    }
-
-    /**
-     * <p>
-     * For devices that support BGP, the customer gateway's BGP ASN.
-     * </p>
-     * <p>
-     * Default: 65000
-     * </p>
-     * 
-     * @return For devices that support BGP, the customer gateway's BGP ASN.</p>
-     *         <p>
-     *         Default: 65000
-     */
-
-    public Integer getBgpAsn() {
-        return this.bgpAsn;
-    }
-
-    /**
-     * <p>
-     * For devices that support BGP, the customer gateway's BGP ASN.
-     * </p>
-     * <p>
-     * Default: 65000
-     * </p>
-     * 
-     * @param bgpAsn
-     *        For devices that support BGP, the customer gateway's BGP ASN.</p>
-     *        <p>
-     *        Default: 65000
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateCustomerGatewayRequest withBgpAsn(Integer bgpAsn) {
-        setBgpAsn(bgpAsn);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -286,12 +286,12 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
+        if (getBgpAsn() != null)
+            sb.append("BgpAsn: ").append(getBgpAsn()).append(",");
         if (getPublicIp() != null)
             sb.append("PublicIp: ").append(getPublicIp()).append(",");
-        if (getBgpAsn() != null)
-            sb.append("BgpAsn: ").append(getBgpAsn());
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -306,17 +306,17 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         if (obj instanceof CreateCustomerGatewayRequest == false)
             return false;
         CreateCustomerGatewayRequest other = (CreateCustomerGatewayRequest) obj;
-        if (other.getType() == null ^ this.getType() == null)
+        if (other.getBgpAsn() == null ^ this.getBgpAsn() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+        if (other.getBgpAsn() != null && other.getBgpAsn().equals(this.getBgpAsn()) == false)
             return false;
         if (other.getPublicIp() == null ^ this.getPublicIp() == null)
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
-        if (other.getBgpAsn() == null ^ this.getBgpAsn() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getBgpAsn() != null && other.getBgpAsn().equals(this.getBgpAsn()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -326,9 +326,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         hashCode = prime * hashCode + ((getBgpAsn() == null) ? 0 : getBgpAsn().hashCode());
+        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

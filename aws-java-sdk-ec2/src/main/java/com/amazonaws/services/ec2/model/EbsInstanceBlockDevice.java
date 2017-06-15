@@ -28,18 +28,6 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the EBS volume.
-     * </p>
-     */
-    private String volumeId;
-    /**
-     * <p>
-     * The attachment state.
-     * </p>
-     */
-    private String status;
-    /**
-     * <p>
      * The time stamp when the attachment initiated.
      * </p>
      */
@@ -50,119 +38,18 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
      * </p>
      */
     private Boolean deleteOnTermination;
-
+    /**
+     * <p>
+     * The attachment state.
+     * </p>
+     */
+    private String status;
     /**
      * <p>
      * The ID of the EBS volume.
      * </p>
-     * 
-     * @param volumeId
-     *        The ID of the EBS volume.
      */
-
-    public void setVolumeId(String volumeId) {
-        this.volumeId = volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS volume.
-     * </p>
-     * 
-     * @return The ID of the EBS volume.
-     */
-
-    public String getVolumeId() {
-        return this.volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS volume.
-     * </p>
-     * 
-     * @param volumeId
-     *        The ID of the EBS volume.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EbsInstanceBlockDevice withVolumeId(String volumeId) {
-        setVolumeId(volumeId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The attachment state.
-     * </p>
-     * 
-     * @param status
-     *        The attachment state.
-     * @see AttachmentStatus
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The attachment state.
-     * </p>
-     * 
-     * @return The attachment state.
-     * @see AttachmentStatus
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The attachment state.
-     * </p>
-     * 
-     * @param status
-     *        The attachment state.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AttachmentStatus
-     */
-
-    public EbsInstanceBlockDevice withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The attachment state.
-     * </p>
-     * 
-     * @param status
-     *        The attachment state.
-     * @see AttachmentStatus
-     */
-
-    public void setStatus(AttachmentStatus status) {
-        this.status = status.toString();
-    }
-
-    /**
-     * <p>
-     * The attachment state.
-     * </p>
-     * 
-     * @param status
-     *        The attachment state.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AttachmentStatus
-     */
-
-    public EbsInstanceBlockDevice withStatus(AttachmentStatus status) {
-        setStatus(status);
-        return this;
-    }
+    private String volumeId;
 
     /**
      * <p>
@@ -257,6 +144,119 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The attachment state.
+     * </p>
+     * 
+     * @param status
+     *        The attachment state.
+     * @see AttachmentStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The attachment state.
+     * </p>
+     * 
+     * @return The attachment state.
+     * @see AttachmentStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The attachment state.
+     * </p>
+     * 
+     * @param status
+     *        The attachment state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AttachmentStatus
+     */
+
+    public EbsInstanceBlockDevice withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The attachment state.
+     * </p>
+     * 
+     * @param status
+     *        The attachment state.
+     * @see AttachmentStatus
+     */
+
+    public void setStatus(AttachmentStatus status) {
+        this.status = status.toString();
+    }
+
+    /**
+     * <p>
+     * The attachment state.
+     * </p>
+     * 
+     * @param status
+     *        The attachment state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AttachmentStatus
+     */
+
+    public EbsInstanceBlockDevice withStatus(AttachmentStatus status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the EBS volume.
+     */
+
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS volume.
+     * </p>
+     * 
+     * @return The ID of the EBS volume.
+     */
+
+    public String getVolumeId() {
+        return this.volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the EBS volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsInstanceBlockDevice withVolumeId(String volumeId) {
+        setVolumeId(volumeId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -267,14 +267,14 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null)
-            sb.append("VolumeId: ").append(getVolumeId()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
         if (getAttachTime() != null)
             sb.append("AttachTime: ").append(getAttachTime()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination());
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getVolumeId() != null)
+            sb.append("VolumeId: ").append(getVolumeId());
         sb.append("}");
         return sb.toString();
     }
@@ -289,14 +289,6 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
         if (obj instanceof EbsInstanceBlockDevice == false)
             return false;
         EbsInstanceBlockDevice other = (EbsInstanceBlockDevice) obj;
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
-            return false;
-        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
         if (other.getAttachTime() == null ^ this.getAttachTime() == null)
             return false;
         if (other.getAttachTime() != null && other.getAttachTime().equals(this.getAttachTime()) == false)
@@ -304,6 +296,14 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
         if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
             return false;
         if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+            return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         return true;
     }
@@ -313,10 +313,10 @@ public class EbsInstanceBlockDevice implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getAttachTime() == null) ? 0 : getAttachTime().hashCode());
         hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         return hashCode;
     }
 

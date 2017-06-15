@@ -28,68 +28,28 @@ public class HostProperties implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of sockets on the Dedicated Host.
-     * </p>
-     */
-    private Integer sockets;
-    /**
-     * <p>
      * The number of cores on the Dedicated Host.
      * </p>
      */
     private Integer cores;
     /**
      * <p>
-     * The number of vCPUs on the Dedicated Host.
-     * </p>
-     */
-    private Integer totalVCpus;
-    /**
-     * <p>
      * The instance type size that the Dedicated Host supports (for example, <code>m3.medium</code>).
      * </p>
      */
     private String instanceType;
-
     /**
      * <p>
      * The number of sockets on the Dedicated Host.
      * </p>
-     * 
-     * @param sockets
-     *        The number of sockets on the Dedicated Host.
      */
-
-    public void setSockets(Integer sockets) {
-        this.sockets = sockets;
-    }
-
+    private Integer sockets;
     /**
      * <p>
-     * The number of sockets on the Dedicated Host.
+     * The number of vCPUs on the Dedicated Host.
      * </p>
-     * 
-     * @return The number of sockets on the Dedicated Host.
      */
-
-    public Integer getSockets() {
-        return this.sockets;
-    }
-
-    /**
-     * <p>
-     * The number of sockets on the Dedicated Host.
-     * </p>
-     * 
-     * @param sockets
-     *        The number of sockets on the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public HostProperties withSockets(Integer sockets) {
-        setSockets(sockets);
-        return this;
-    }
+    private Integer totalVCpus;
 
     /**
      * <p>
@@ -128,46 +88,6 @@ public class HostProperties implements Serializable, Cloneable {
 
     public HostProperties withCores(Integer cores) {
         setCores(cores);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The number of vCPUs on the Dedicated Host.
-     * </p>
-     * 
-     * @param totalVCpus
-     *        The number of vCPUs on the Dedicated Host.
-     */
-
-    public void setTotalVCpus(Integer totalVCpus) {
-        this.totalVCpus = totalVCpus;
-    }
-
-    /**
-     * <p>
-     * The number of vCPUs on the Dedicated Host.
-     * </p>
-     * 
-     * @return The number of vCPUs on the Dedicated Host.
-     */
-
-    public Integer getTotalVCpus() {
-        return this.totalVCpus;
-    }
-
-    /**
-     * <p>
-     * The number of vCPUs on the Dedicated Host.
-     * </p>
-     * 
-     * @param totalVCpus
-     *        The number of vCPUs on the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public HostProperties withTotalVCpus(Integer totalVCpus) {
-        setTotalVCpus(totalVCpus);
         return this;
     }
 
@@ -212,6 +132,86 @@ public class HostProperties implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of sockets on the Dedicated Host.
+     * </p>
+     * 
+     * @param sockets
+     *        The number of sockets on the Dedicated Host.
+     */
+
+    public void setSockets(Integer sockets) {
+        this.sockets = sockets;
+    }
+
+    /**
+     * <p>
+     * The number of sockets on the Dedicated Host.
+     * </p>
+     * 
+     * @return The number of sockets on the Dedicated Host.
+     */
+
+    public Integer getSockets() {
+        return this.sockets;
+    }
+
+    /**
+     * <p>
+     * The number of sockets on the Dedicated Host.
+     * </p>
+     * 
+     * @param sockets
+     *        The number of sockets on the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostProperties withSockets(Integer sockets) {
+        setSockets(sockets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of vCPUs on the Dedicated Host.
+     * </p>
+     * 
+     * @param totalVCpus
+     *        The number of vCPUs on the Dedicated Host.
+     */
+
+    public void setTotalVCpus(Integer totalVCpus) {
+        this.totalVCpus = totalVCpus;
+    }
+
+    /**
+     * <p>
+     * The number of vCPUs on the Dedicated Host.
+     * </p>
+     * 
+     * @return The number of vCPUs on the Dedicated Host.
+     */
+
+    public Integer getTotalVCpus() {
+        return this.totalVCpus;
+    }
+
+    /**
+     * <p>
+     * The number of vCPUs on the Dedicated Host.
+     * </p>
+     * 
+     * @param totalVCpus
+     *        The number of vCPUs on the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostProperties withTotalVCpus(Integer totalVCpus) {
+        setTotalVCpus(totalVCpus);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -222,14 +222,14 @@ public class HostProperties implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSockets() != null)
-            sb.append("Sockets: ").append(getSockets()).append(",");
         if (getCores() != null)
             sb.append("Cores: ").append(getCores()).append(",");
-        if (getTotalVCpus() != null)
-            sb.append("TotalVCpus: ").append(getTotalVCpus()).append(",");
         if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType());
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getSockets() != null)
+            sb.append("Sockets: ").append(getSockets()).append(",");
+        if (getTotalVCpus() != null)
+            sb.append("TotalVCpus: ").append(getTotalVCpus());
         sb.append("}");
         return sb.toString();
     }
@@ -244,21 +244,21 @@ public class HostProperties implements Serializable, Cloneable {
         if (obj instanceof HostProperties == false)
             return false;
         HostProperties other = (HostProperties) obj;
-        if (other.getSockets() == null ^ this.getSockets() == null)
-            return false;
-        if (other.getSockets() != null && other.getSockets().equals(this.getSockets()) == false)
-            return false;
         if (other.getCores() == null ^ this.getCores() == null)
             return false;
         if (other.getCores() != null && other.getCores().equals(this.getCores()) == false)
             return false;
-        if (other.getTotalVCpus() == null ^ this.getTotalVCpus() == null)
-            return false;
-        if (other.getTotalVCpus() != null && other.getTotalVCpus().equals(this.getTotalVCpus()) == false)
-            return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getSockets() == null ^ this.getSockets() == null)
+            return false;
+        if (other.getSockets() != null && other.getSockets().equals(this.getSockets()) == false)
+            return false;
+        if (other.getTotalVCpus() == null ^ this.getTotalVCpus() == null)
+            return false;
+        if (other.getTotalVCpus() != null && other.getTotalVCpus().equals(this.getTotalVCpus()) == false)
             return false;
         return true;
     }
@@ -268,10 +268,10 @@ public class HostProperties implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSockets() == null) ? 0 : getSockets().hashCode());
         hashCode = prime * hashCode + ((getCores() == null) ? 0 : getCores().hashCode());
-        hashCode = prime * hashCode + ((getTotalVCpus() == null) ? 0 : getTotalVCpus().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getSockets() == null) ? 0 : getSockets().hashCode());
+        hashCode = prime * hashCode + ((getTotalVCpus() == null) ? 0 : getTotalVCpus().hashCode());
         return hashCode;
     }
 

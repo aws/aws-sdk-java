@@ -27,18 +27,6 @@ public class Vpc implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC.
-     * </p>
-     */
-    private String vpcId;
-    /**
-     * <p>
-     * The current state of the VPC.
-     * </p>
-     */
-    private String state;
-    /**
-     * <p>
      * The IPv4 CIDR block for the VPC.
      * </p>
      */
@@ -52,10 +40,16 @@ public class Vpc implements Serializable, Cloneable {
     private String dhcpOptionsId;
     /**
      * <p>
-     * Any tags assigned to the VPC.
+     * The current state of the VPC.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    private String state;
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     */
+    private String vpcId;
     /**
      * <p>
      * The allowed tenancy of instances launched into the VPC.
@@ -64,129 +58,22 @@ public class Vpc implements Serializable, Cloneable {
     private String instanceTenancy;
     /**
      * <p>
+     * Information about the IPv6 CIDR blocks associated with the VPC.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<VpcIpv6CidrBlockAssociation> ipv6CidrBlockAssociationSet;
+    /**
+     * <p>
      * Indicates whether the VPC is the default VPC.
      * </p>
      */
     private Boolean isDefault;
     /**
      * <p>
-     * Information about the IPv6 CIDR blocks associated with the VPC.
+     * Any tags assigned to the VPC.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<VpcIpv6CidrBlockAssociation> ipv6CidrBlockAssociationSet;
-
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC.
-     */
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
-     * 
-     * @return The ID of the VPC.
-     */
-
-    public String getVpcId() {
-        return this.vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Vpc withVpcId(String vpcId) {
-        setVpcId(vpcId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The current state of the VPC.
-     * </p>
-     * 
-     * @param state
-     *        The current state of the VPC.
-     * @see VpcState
-     */
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    /**
-     * <p>
-     * The current state of the VPC.
-     * </p>
-     * 
-     * @return The current state of the VPC.
-     * @see VpcState
-     */
-
-    public String getState() {
-        return this.state;
-    }
-
-    /**
-     * <p>
-     * The current state of the VPC.
-     * </p>
-     * 
-     * @param state
-     *        The current state of the VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see VpcState
-     */
-
-    public Vpc withState(String state) {
-        setState(state);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The current state of the VPC.
-     * </p>
-     * 
-     * @param state
-     *        The current state of the VPC.
-     * @see VpcState
-     */
-
-    public void setState(VpcState state) {
-        this.state = state.toString();
-    }
-
-    /**
-     * <p>
-     * The current state of the VPC.
-     * </p>
-     * 
-     * @param state
-     *        The current state of the VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see VpcState
-     */
-
-    public Vpc withState(VpcState state) {
-        setState(state);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -276,74 +163,114 @@ public class Vpc implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any tags assigned to the VPC.
+     * The current state of the VPC.
      * </p>
      * 
-     * @return Any tags assigned to the VPC.
+     * @param state
+     *        The current state of the VPC.
+     * @see VpcState
      */
 
-    public java.util.List<Tag> getTags() {
-        if (tags == null) {
-            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
-        }
-        return tags;
+    public void setState(String state) {
+        this.state = state;
     }
 
     /**
      * <p>
-     * Any tags assigned to the VPC.
+     * The current state of the VPC.
      * </p>
      * 
-     * @param tags
-     *        Any tags assigned to the VPC.
+     * @return The current state of the VPC.
+     * @see VpcState
      */
 
-    public void setTags(java.util.Collection<Tag> tags) {
-        if (tags == null) {
-            this.tags = null;
-            return;
-        }
-
-        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    public String getState() {
+        return this.state;
     }
 
     /**
      * <p>
-     * Any tags assigned to the VPC.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
-     * existing values.
+     * The current state of the VPC.
      * </p>
      * 
-     * @param tags
-     *        Any tags assigned to the VPC.
+     * @param state
+     *        The current state of the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VpcState
      */
 
-    public Vpc withTags(Tag... tags) {
-        if (this.tags == null) {
-            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
-        }
-        for (Tag ele : tags) {
-            this.tags.add(ele);
-        }
+    public Vpc withState(String state) {
+        setState(state);
         return this;
     }
 
     /**
      * <p>
-     * Any tags assigned to the VPC.
+     * The current state of the VPC.
      * </p>
      * 
-     * @param tags
-     *        Any tags assigned to the VPC.
+     * @param state
+     *        The current state of the VPC.
+     * @see VpcState
+     */
+
+    public void setState(VpcState state) {
+        this.state = state.toString();
+    }
+
+    /**
+     * <p>
+     * The current state of the VPC.
+     * </p>
+     * 
+     * @param state
+     *        The current state of the VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VpcState
+     */
+
+    public Vpc withState(VpcState state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     * 
+     * @return The ID of the VPC.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Vpc withTags(java.util.Collection<Tag> tags) {
-        setTags(tags);
+    public Vpc withVpcId(String vpcId) {
+        setVpcId(vpcId);
         return this;
     }
 
@@ -422,58 +349,6 @@ public class Vpc implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the VPC is the default VPC.
-     * </p>
-     * 
-     * @param isDefault
-     *        Indicates whether the VPC is the default VPC.
-     */
-
-    public void setIsDefault(Boolean isDefault) {
-        this.isDefault = isDefault;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the VPC is the default VPC.
-     * </p>
-     * 
-     * @return Indicates whether the VPC is the default VPC.
-     */
-
-    public Boolean getIsDefault() {
-        return this.isDefault;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the VPC is the default VPC.
-     * </p>
-     * 
-     * @param isDefault
-     *        Indicates whether the VPC is the default VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Vpc withIsDefault(Boolean isDefault) {
-        setIsDefault(isDefault);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the VPC is the default VPC.
-     * </p>
-     * 
-     * @return Indicates whether the VPC is the default VPC.
-     */
-
-    public Boolean isDefault() {
-        return this.isDefault;
-    }
-
-    /**
-     * <p>
      * Information about the IPv6 CIDR blocks associated with the VPC.
      * </p>
      * 
@@ -546,6 +421,131 @@ public class Vpc implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the VPC is the default VPC.
+     * </p>
+     * 
+     * @param isDefault
+     *        Indicates whether the VPC is the default VPC.
+     */
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC is the default VPC.
+     * </p>
+     * 
+     * @return Indicates whether the VPC is the default VPC.
+     */
+
+    public Boolean getIsDefault() {
+        return this.isDefault;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC is the default VPC.
+     * </p>
+     * 
+     * @param isDefault
+     *        Indicates whether the VPC is the default VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Vpc withIsDefault(Boolean isDefault) {
+        setIsDefault(isDefault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPC is the default VPC.
+     * </p>
+     * 
+     * @return Indicates whether the VPC is the default VPC.
+     */
+
+    public Boolean isDefault() {
+        return this.isDefault;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the VPC.
+     * </p>
+     * 
+     * @return Any tags assigned to the VPC.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the VPC.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the VPC.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the VPC.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Vpc withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the VPC.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Vpc withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -556,22 +556,22 @@ public class Vpc implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
         if (getCidrBlock() != null)
             sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getDhcpOptionsId() != null)
             sb.append("DhcpOptionsId: ").append(getDhcpOptionsId()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getInstanceTenancy() != null)
             sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
+        if (getIpv6CidrBlockAssociationSet() != null)
+            sb.append("Ipv6CidrBlockAssociationSet: ").append(getIpv6CidrBlockAssociationSet()).append(",");
         if (getIsDefault() != null)
             sb.append("IsDefault: ").append(getIsDefault()).append(",");
-        if (getIpv6CidrBlockAssociationSet() != null)
-            sb.append("Ipv6CidrBlockAssociationSet: ").append(getIpv6CidrBlockAssociationSet());
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -586,14 +586,6 @@ public class Vpc implements Serializable, Cloneable {
         if (obj instanceof Vpc == false)
             return false;
         Vpc other = (Vpc) obj;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
-            return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
-            return false;
-        if (other.getState() == null ^ this.getState() == null)
-            return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
-            return false;
         if (other.getCidrBlock() == null ^ this.getCidrBlock() == null)
             return false;
         if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
@@ -602,21 +594,29 @@ public class Vpc implements Serializable, Cloneable {
             return false;
         if (other.getDhcpOptionsId() != null && other.getDhcpOptionsId().equals(this.getDhcpOptionsId()) == false)
             return false;
-        if (other.getTags() == null ^ this.getTags() == null)
+        if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null)
             return false;
         if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false)
             return false;
+        if (other.getIpv6CidrBlockAssociationSet() == null ^ this.getIpv6CidrBlockAssociationSet() == null)
+            return false;
+        if (other.getIpv6CidrBlockAssociationSet() != null && other.getIpv6CidrBlockAssociationSet().equals(this.getIpv6CidrBlockAssociationSet()) == false)
+            return false;
         if (other.getIsDefault() == null ^ this.getIsDefault() == null)
             return false;
         if (other.getIsDefault() != null && other.getIsDefault().equals(this.getIsDefault()) == false)
             return false;
-        if (other.getIpv6CidrBlockAssociationSet() == null ^ this.getIpv6CidrBlockAssociationSet() == null)
+        if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getIpv6CidrBlockAssociationSet() != null && other.getIpv6CidrBlockAssociationSet().equals(this.getIpv6CidrBlockAssociationSet()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -626,14 +626,14 @@ public class Vpc implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getDhcpOptionsId() == null) ? 0 : getDhcpOptionsId().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode());
-        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlockAssociationSet() == null) ? 0 : getIpv6CidrBlockAssociationSet().hashCode());
+        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

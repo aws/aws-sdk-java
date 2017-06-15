@@ -45,11 +45,6 @@ public class InstanceStatusStaxUnmarshaller implements Unmarshaller<InstanceStat
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceId", targetDepth)) {
-                    instanceStatus.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     instanceStatus.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -65,18 +60,23 @@ public class InstanceStatusStaxUnmarshaller implements Unmarshaller<InstanceStat
                     continue;
                 }
 
+                if (context.testExpression("instanceId", targetDepth)) {
+                    instanceStatus.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("instanceState", targetDepth)) {
                     instanceStatus.setInstanceState(InstanceStateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("systemStatus", targetDepth)) {
-                    instanceStatus.setSystemStatus(InstanceStatusSummaryStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceStatus", targetDepth)) {
+                    instanceStatus.setInstanceStatus(InstanceStatusSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("instanceStatus", targetDepth)) {
-                    instanceStatus.setInstanceStatus(InstanceStatusSummaryStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("systemStatus", targetDepth)) {
+                    instanceStatus.setSystemStatus(InstanceStatusSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

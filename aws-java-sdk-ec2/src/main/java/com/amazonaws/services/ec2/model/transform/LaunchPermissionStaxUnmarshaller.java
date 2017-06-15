@@ -43,13 +43,13 @@ public class LaunchPermissionStaxUnmarshaller implements Unmarshaller<LaunchPerm
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("userId", targetDepth)) {
-                    launchPermission.setUserId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("group", targetDepth)) {
+                    launchPermission.setGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("group", targetDepth)) {
-                    launchPermission.setGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("userId", targetDepth)) {
+                    launchPermission.setUserId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

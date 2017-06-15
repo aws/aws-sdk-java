@@ -45,33 +45,23 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("allocationStrategy", targetDepth)) {
+                    spotFleetRequestConfigData.setAllocationStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("clientToken", targetDepth)) {
                     spotFleetRequestConfigData.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("spotPrice", targetDepth)) {
-                    spotFleetRequestConfigData.setSpotPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("excessCapacityTerminationPolicy", targetDepth)) {
+                    spotFleetRequestConfigData.setExcessCapacityTerminationPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("targetCapacity", targetDepth)) {
-                    spotFleetRequestConfigData.setTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("validFrom", targetDepth)) {
-                    spotFleetRequestConfigData.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("validUntil", targetDepth)) {
-                    spotFleetRequestConfigData.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("terminateInstancesWithExpiration", targetDepth)) {
-                    spotFleetRequestConfigData.setTerminateInstancesWithExpiration(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("fulfilledCapacity", targetDepth)) {
+                    spotFleetRequestConfigData.setFulfilledCapacity(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -90,23 +80,33 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
-                if (context.testExpression("excessCapacityTerminationPolicy", targetDepth)) {
-                    spotFleetRequestConfigData.setExcessCapacityTerminationPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("spotPrice", targetDepth)) {
+                    spotFleetRequestConfigData.setSpotPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("allocationStrategy", targetDepth)) {
-                    spotFleetRequestConfigData.setAllocationStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("targetCapacity", targetDepth)) {
+                    spotFleetRequestConfigData.setTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("fulfilledCapacity", targetDepth)) {
-                    spotFleetRequestConfigData.setFulfilledCapacity(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("terminateInstancesWithExpiration", targetDepth)) {
+                    spotFleetRequestConfigData.setTerminateInstancesWithExpiration(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("type", targetDepth)) {
                     spotFleetRequestConfigData.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("validFrom", targetDepth)) {
+                    spotFleetRequestConfigData.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("validUntil", targetDepth)) {
+                    spotFleetRequestConfigData.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -40,6 +40,14 @@ public class DescribeSpotFleetRequestsRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (describeSpotFleetRequestsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotFleetRequestsRequest.getMaxResults()));
+        }
+
+        if (describeSpotFleetRequestsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSpotFleetRequestsRequest.getNextToken()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> describeSpotFleetRequestsRequestSpotFleetRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotFleetRequestsRequest
                 .getSpotFleetRequestIds();
         if (!describeSpotFleetRequestsRequestSpotFleetRequestIdsList.isEmpty() || !describeSpotFleetRequestsRequestSpotFleetRequestIdsList.isAutoConstruct()) {
@@ -52,14 +60,6 @@ public class DescribeSpotFleetRequestsRequestMarshaller implements Marshaller<Re
                 }
                 spotFleetRequestIdsListIndex++;
             }
-        }
-
-        if (describeSpotFleetRequestsRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeSpotFleetRequestsRequest.getNextToken()));
-        }
-
-        if (describeSpotFleetRequestsRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotFleetRequestsRequest.getMaxResults()));
         }
 
         return request;

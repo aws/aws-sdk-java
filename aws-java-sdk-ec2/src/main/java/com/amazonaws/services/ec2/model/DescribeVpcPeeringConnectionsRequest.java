@@ -30,15 +30,6 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more VPC peering connection IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your VPC peering connections.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> vpcPeeringConnectionIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -120,7 +111,6 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more VPC peering connection IDs.
@@ -128,91 +118,8 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
      * <p>
      * Default: Describes all your VPC peering connections.
      * </p>
-     * 
-     * @return One or more VPC peering connection IDs.</p>
-     *         <p>
-     *         Default: Describes all your VPC peering connections.
      */
-
-    public java.util.List<String> getVpcPeeringConnectionIds() {
-        if (vpcPeeringConnectionIds == null) {
-            vpcPeeringConnectionIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return vpcPeeringConnectionIds;
-    }
-
-    /**
-     * <p>
-     * One or more VPC peering connection IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your VPC peering connections.
-     * </p>
-     * 
-     * @param vpcPeeringConnectionIds
-     *        One or more VPC peering connection IDs.</p>
-     *        <p>
-     *        Default: Describes all your VPC peering connections.
-     */
-
-    public void setVpcPeeringConnectionIds(java.util.Collection<String> vpcPeeringConnectionIds) {
-        if (vpcPeeringConnectionIds == null) {
-            this.vpcPeeringConnectionIds = null;
-            return;
-        }
-
-        this.vpcPeeringConnectionIds = new com.amazonaws.internal.SdkInternalList<String>(vpcPeeringConnectionIds);
-    }
-
-    /**
-     * <p>
-     * One or more VPC peering connection IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your VPC peering connections.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVpcPeeringConnectionIds(java.util.Collection)} or
-     * {@link #withVpcPeeringConnectionIds(java.util.Collection)} if you want to override the existing values.
-     * </p>
-     * 
-     * @param vpcPeeringConnectionIds
-     *        One or more VPC peering connection IDs.</p>
-     *        <p>
-     *        Default: Describes all your VPC peering connections.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcPeeringConnectionsRequest withVpcPeeringConnectionIds(String... vpcPeeringConnectionIds) {
-        if (this.vpcPeeringConnectionIds == null) {
-            setVpcPeeringConnectionIds(new com.amazonaws.internal.SdkInternalList<String>(vpcPeeringConnectionIds.length));
-        }
-        for (String ele : vpcPeeringConnectionIds) {
-            this.vpcPeeringConnectionIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more VPC peering connection IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your VPC peering connections.
-     * </p>
-     * 
-     * @param vpcPeeringConnectionIds
-     *        One or more VPC peering connection IDs.</p>
-     *        <p>
-     *        Default: Describes all your VPC peering connections.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcPeeringConnectionsRequest withVpcPeeringConnectionIds(java.util.Collection<String> vpcPeeringConnectionIds) {
-        setVpcPeeringConnectionIds(vpcPeeringConnectionIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> vpcPeeringConnectionIds;
 
     /**
      * <p>
@@ -904,6 +811,99 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * One or more VPC peering connection IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your VPC peering connections.
+     * </p>
+     * 
+     * @return One or more VPC peering connection IDs.</p>
+     *         <p>
+     *         Default: Describes all your VPC peering connections.
+     */
+
+    public java.util.List<String> getVpcPeeringConnectionIds() {
+        if (vpcPeeringConnectionIds == null) {
+            vpcPeeringConnectionIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return vpcPeeringConnectionIds;
+    }
+
+    /**
+     * <p>
+     * One or more VPC peering connection IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your VPC peering connections.
+     * </p>
+     * 
+     * @param vpcPeeringConnectionIds
+     *        One or more VPC peering connection IDs.</p>
+     *        <p>
+     *        Default: Describes all your VPC peering connections.
+     */
+
+    public void setVpcPeeringConnectionIds(java.util.Collection<String> vpcPeeringConnectionIds) {
+        if (vpcPeeringConnectionIds == null) {
+            this.vpcPeeringConnectionIds = null;
+            return;
+        }
+
+        this.vpcPeeringConnectionIds = new com.amazonaws.internal.SdkInternalList<String>(vpcPeeringConnectionIds);
+    }
+
+    /**
+     * <p>
+     * One or more VPC peering connection IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your VPC peering connections.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcPeeringConnectionIds(java.util.Collection)} or
+     * {@link #withVpcPeeringConnectionIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param vpcPeeringConnectionIds
+     *        One or more VPC peering connection IDs.</p>
+     *        <p>
+     *        Default: Describes all your VPC peering connections.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcPeeringConnectionsRequest withVpcPeeringConnectionIds(String... vpcPeeringConnectionIds) {
+        if (this.vpcPeeringConnectionIds == null) {
+            setVpcPeeringConnectionIds(new com.amazonaws.internal.SdkInternalList<String>(vpcPeeringConnectionIds.length));
+        }
+        for (String ele : vpcPeeringConnectionIds) {
+            this.vpcPeeringConnectionIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more VPC peering connection IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your VPC peering connections.
+     * </p>
+     * 
+     * @param vpcPeeringConnectionIds
+     *        One or more VPC peering connection IDs.</p>
+     *        <p>
+     *        Default: Describes all your VPC peering connections.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcPeeringConnectionsRequest withVpcPeeringConnectionIds(java.util.Collection<String> vpcPeeringConnectionIds) {
+        setVpcPeeringConnectionIds(vpcPeeringConnectionIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -925,10 +925,10 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcPeeringConnectionIds() != null)
-            sb.append("VpcPeeringConnectionIds: ").append(getVpcPeeringConnectionIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getVpcPeeringConnectionIds() != null)
+            sb.append("VpcPeeringConnectionIds: ").append(getVpcPeeringConnectionIds());
         sb.append("}");
         return sb.toString();
     }
@@ -943,13 +943,13 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
         if (obj instanceof DescribeVpcPeeringConnectionsRequest == false)
             return false;
         DescribeVpcPeeringConnectionsRequest other = (DescribeVpcPeeringConnectionsRequest) obj;
-        if (other.getVpcPeeringConnectionIds() == null ^ this.getVpcPeeringConnectionIds() == null)
-            return false;
-        if (other.getVpcPeeringConnectionIds() != null && other.getVpcPeeringConnectionIds().equals(this.getVpcPeeringConnectionIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getVpcPeeringConnectionIds() == null ^ this.getVpcPeeringConnectionIds() == null)
+            return false;
+        if (other.getVpcPeeringConnectionIds() != null && other.getVpcPeeringConnectionIds().equals(this.getVpcPeeringConnectionIds()) == false)
             return false;
         return true;
     }
@@ -959,8 +959,8 @@ public class DescribeVpcPeeringConnectionsRequest extends AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcPeeringConnectionIds() == null) ? 0 : getVpcPeeringConnectionIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getVpcPeeringConnectionIds() == null) ? 0 : getVpcPeeringConnectionIds().hashCode());
         return hashCode;
     }
 

@@ -43,8 +43,28 @@ public class NetworkAclEntryStaxUnmarshaller implements Unmarshaller<NetworkAclE
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("ruleNumber", targetDepth)) {
-                    networkAclEntry.setRuleNumber(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("cidrBlock", targetDepth)) {
+                    networkAclEntry.setCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("egress", targetDepth)) {
+                    networkAclEntry.setEgress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("icmpTypeCode", targetDepth)) {
+                    networkAclEntry.setIcmpTypeCode(IcmpTypeCodeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6CidrBlock", targetDepth)) {
+                    networkAclEntry.setIpv6CidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("portRange", targetDepth)) {
+                    networkAclEntry.setPortRange(PortRangeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,28 +78,8 @@ public class NetworkAclEntryStaxUnmarshaller implements Unmarshaller<NetworkAclE
                     continue;
                 }
 
-                if (context.testExpression("egress", targetDepth)) {
-                    networkAclEntry.setEgress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("cidrBlock", targetDepth)) {
-                    networkAclEntry.setCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ipv6CidrBlock", targetDepth)) {
-                    networkAclEntry.setIpv6CidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("icmpTypeCode", targetDepth)) {
-                    networkAclEntry.setIcmpTypeCode(IcmpTypeCodeStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("portRange", targetDepth)) {
-                    networkAclEntry.setPortRange(PortRangeStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ruleNumber", targetDepth)) {
+                    networkAclEntry.setRuleNumber(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

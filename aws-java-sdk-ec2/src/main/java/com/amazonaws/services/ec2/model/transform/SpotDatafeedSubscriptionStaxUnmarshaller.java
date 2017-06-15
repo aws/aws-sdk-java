@@ -43,13 +43,18 @@ public class SpotDatafeedSubscriptionStaxUnmarshaller implements Unmarshaller<Sp
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("ownerId", targetDepth)) {
-                    spotDatafeedSubscription.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("bucket", targetDepth)) {
+                    spotDatafeedSubscription.setBucket(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("bucket", targetDepth)) {
-                    spotDatafeedSubscription.setBucket(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("fault", targetDepth)) {
+                    spotDatafeedSubscription.setFault(SpotInstanceStateFaultStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    spotDatafeedSubscription.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -60,11 +65,6 @@ public class SpotDatafeedSubscriptionStaxUnmarshaller implements Unmarshaller<Sp
 
                 if (context.testExpression("state", targetDepth)) {
                     spotDatafeedSubscription.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("fault", targetDepth)) {
-                    spotDatafeedSubscription.setFault(SpotInstanceStateFaultStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -40,6 +40,10 @@ public class ModifyHostsRequestMarshaller implements Marshaller<Request<ModifyHo
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (modifyHostsRequest.getAutoPlacement() != null) {
+            request.addParameter("AutoPlacement", StringUtils.fromString(modifyHostsRequest.getAutoPlacement()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> modifyHostsRequestHostIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyHostsRequest
                 .getHostIds();
         if (!modifyHostsRequestHostIdsList.isEmpty() || !modifyHostsRequestHostIdsList.isAutoConstruct()) {
@@ -51,10 +55,6 @@ public class ModifyHostsRequestMarshaller implements Marshaller<Request<ModifyHo
                 }
                 hostIdsListIndex++;
             }
-        }
-
-        if (modifyHostsRequest.getAutoPlacement() != null) {
-            request.addParameter("AutoPlacement", StringUtils.fromString(modifyHostsRequest.getAutoPlacement()));
         }
 
         return request;

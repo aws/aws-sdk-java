@@ -43,6 +43,11 @@ public class VpcIpv6CidrBlockAssociationStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("associationId", targetDepth)) {
+                    vpcIpv6CidrBlockAssociation.setAssociationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ipv6CidrBlock", targetDepth)) {
                     vpcIpv6CidrBlockAssociation.setIpv6CidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class VpcIpv6CidrBlockAssociationStaxUnmarshaller implements Unmarshaller
 
                 if (context.testExpression("ipv6CidrBlockState", targetDepth)) {
                     vpcIpv6CidrBlockAssociation.setIpv6CidrBlockState(VpcCidrBlockStateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("associationId", targetDepth)) {
-                    vpcIpv6CidrBlockAssociation.setAssociationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

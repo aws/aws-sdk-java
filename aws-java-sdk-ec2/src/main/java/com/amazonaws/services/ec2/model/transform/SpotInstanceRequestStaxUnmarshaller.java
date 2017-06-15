@@ -45,6 +45,56 @@ public class SpotInstanceRequestStaxUnmarshaller implements Unmarshaller<SpotIns
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("actualBlockHourlyPrice", targetDepth)) {
+                    spotInstanceRequest.setActualBlockHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("availabilityZoneGroup", targetDepth)) {
+                    spotInstanceRequest.setAvailabilityZoneGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("blockDurationMinutes", targetDepth)) {
+                    spotInstanceRequest.setBlockDurationMinutes(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("createTime", targetDepth)) {
+                    spotInstanceRequest.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("fault", targetDepth)) {
+                    spotInstanceRequest.setFault(SpotInstanceStateFaultStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instanceId", targetDepth)) {
+                    spotInstanceRequest.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("launchGroup", targetDepth)) {
+                    spotInstanceRequest.setLaunchGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("launchSpecification", targetDepth)) {
+                    spotInstanceRequest.setLaunchSpecification(LaunchSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("launchedAvailabilityZone", targetDepth)) {
+                    spotInstanceRequest.setLaunchedAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("productDescription", targetDepth)) {
+                    spotInstanceRequest.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("spotInstanceRequestId", targetDepth)) {
                     spotInstanceRequest.setSpotInstanceRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,73 +105,13 @@ public class SpotInstanceRequestStaxUnmarshaller implements Unmarshaller<SpotIns
                     continue;
                 }
 
-                if (context.testExpression("type", targetDepth)) {
-                    spotInstanceRequest.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("state", targetDepth)) {
                     spotInstanceRequest.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("fault", targetDepth)) {
-                    spotInstanceRequest.setFault(SpotInstanceStateFaultStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("status", targetDepth)) {
                     spotInstanceRequest.setStatus(SpotInstanceStatusStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("validFrom", targetDepth)) {
-                    spotInstanceRequest.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("validUntil", targetDepth)) {
-                    spotInstanceRequest.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("launchGroup", targetDepth)) {
-                    spotInstanceRequest.setLaunchGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("availabilityZoneGroup", targetDepth)) {
-                    spotInstanceRequest.setAvailabilityZoneGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("launchSpecification", targetDepth)) {
-                    spotInstanceRequest.setLaunchSpecification(LaunchSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceId", targetDepth)) {
-                    spotInstanceRequest.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("createTime", targetDepth)) {
-                    spotInstanceRequest.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("productDescription", targetDepth)) {
-                    spotInstanceRequest.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("blockDurationMinutes", targetDepth)) {
-                    spotInstanceRequest.setBlockDurationMinutes(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("actualBlockHourlyPrice", targetDepth)) {
-                    spotInstanceRequest.setActualBlockHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -135,8 +125,18 @@ public class SpotInstanceRequestStaxUnmarshaller implements Unmarshaller<SpotIns
                     continue;
                 }
 
-                if (context.testExpression("launchedAvailabilityZone", targetDepth)) {
-                    spotInstanceRequest.setLaunchedAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("type", targetDepth)) {
+                    spotInstanceRequest.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("validFrom", targetDepth)) {
+                    spotInstanceRequest.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("validUntil", targetDepth)) {
+                    spotInstanceRequest.setValidUntil(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

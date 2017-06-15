@@ -29,18 +29,6 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The ID of the volume.
-     * </p>
-     */
-    private String volumeId;
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     */
-    private String instanceId;
-    /**
-     * <p>
      * The device name.
      * </p>
      */
@@ -55,6 +43,18 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private Boolean force;
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     */
+    private String instanceId;
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     */
+    private String volumeId;
 
     /**
      * Default constructor for DetachVolumeRequest object. Callers should use the setter or fluent setter (with...)
@@ -72,86 +72,6 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
      */
     public DetachVolumeRequest(String volumeId) {
         setVolumeId(volumeId);
-    }
-
-    /**
-     * <p>
-     * The ID of the volume.
-     * </p>
-     * 
-     * @param volumeId
-     *        The ID of the volume.
-     */
-
-    public void setVolumeId(String volumeId) {
-        this.volumeId = volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the volume.
-     * </p>
-     * 
-     * @return The ID of the volume.
-     */
-
-    public String getVolumeId() {
-        return this.volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the volume.
-     * </p>
-     * 
-     * @param volumeId
-     *        The ID of the volume.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DetachVolumeRequest withVolumeId(String volumeId) {
-        setVolumeId(volumeId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance.
-     */
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @return The ID of the instance.
-     */
-
-    public String getInstanceId() {
-        return this.instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DetachVolumeRequest withInstanceId(String instanceId) {
-        setInstanceId(instanceId);
-        return this;
     }
 
     /**
@@ -279,6 +199,86 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @return The ID of the instance.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetachVolumeRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     */
+
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @return The ID of the volume.
+     */
+
+    public String getVolumeId() {
+        return this.volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetachVolumeRequest withVolumeId(String volumeId) {
+        setVolumeId(volumeId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -300,14 +300,14 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null)
-            sb.append("VolumeId: ").append(getVolumeId()).append(",");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getDevice() != null)
             sb.append("Device: ").append(getDevice()).append(",");
         if (getForce() != null)
-            sb.append("Force: ").append(getForce());
+            sb.append("Force: ").append(getForce()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getVolumeId() != null)
+            sb.append("VolumeId: ").append(getVolumeId());
         sb.append("}");
         return sb.toString();
     }
@@ -322,14 +322,6 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
         if (obj instanceof DetachVolumeRequest == false)
             return false;
         DetachVolumeRequest other = (DetachVolumeRequest) obj;
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
-            return false;
-        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
-            return false;
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
-            return false;
-        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
-            return false;
         if (other.getDevice() == null ^ this.getDevice() == null)
             return false;
         if (other.getDevice() != null && other.getDevice().equals(this.getDevice()) == false)
@@ -337,6 +329,14 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
         if (other.getForce() == null ^ this.getForce() == null)
             return false;
         if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
+            return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+            return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         return true;
     }
@@ -346,10 +346,10 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest implements Seri
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
-        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getDevice() == null) ? 0 : getDevice().hashCode());
         hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         return hashCode;
     }
 

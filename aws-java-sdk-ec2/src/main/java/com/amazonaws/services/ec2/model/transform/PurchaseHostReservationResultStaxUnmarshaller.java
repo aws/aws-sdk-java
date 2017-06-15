@@ -45,6 +45,16 @@ public class PurchaseHostReservationResultStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("clientToken", targetDepth)) {
+                    purchaseHostReservationResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("currencyCode", targetDepth)) {
+                    purchaseHostReservationResult.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("purchase", targetDepth)) {
                     purchaseHostReservationResult.withPurchase(new ArrayList<Purchase>());
                     continue;
@@ -55,23 +65,13 @@ public class PurchaseHostReservationResultStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
-                if (context.testExpression("totalUpfrontPrice", targetDepth)) {
-                    purchaseHostReservationResult.setTotalUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("totalHourlyPrice", targetDepth)) {
                     purchaseHostReservationResult.setTotalHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("currencyCode", targetDepth)) {
-                    purchaseHostReservationResult.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("clientToken", targetDepth)) {
-                    purchaseHostReservationResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("totalUpfrontPrice", targetDepth)) {
+                    purchaseHostReservationResult.setTotalUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

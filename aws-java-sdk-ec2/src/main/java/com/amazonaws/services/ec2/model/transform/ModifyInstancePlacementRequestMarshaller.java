@@ -40,20 +40,20 @@ public class ModifyInstancePlacementRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (modifyInstancePlacementRequest.getInstanceId() != null) {
-            request.addParameter("InstanceId", StringUtils.fromString(modifyInstancePlacementRequest.getInstanceId()));
-        }
-
-        if (modifyInstancePlacementRequest.getTenancy() != null) {
-            request.addParameter("Tenancy", StringUtils.fromString(modifyInstancePlacementRequest.getTenancy()));
-        }
-
         if (modifyInstancePlacementRequest.getAffinity() != null) {
             request.addParameter("Affinity", StringUtils.fromString(modifyInstancePlacementRequest.getAffinity()));
         }
 
         if (modifyInstancePlacementRequest.getHostId() != null) {
             request.addParameter("HostId", StringUtils.fromString(modifyInstancePlacementRequest.getHostId()));
+        }
+
+        if (modifyInstancePlacementRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(modifyInstancePlacementRequest.getInstanceId()));
+        }
+
+        if (modifyInstancePlacementRequest.getTenancy() != null) {
+            request.addParameter("Tenancy", StringUtils.fromString(modifyInstancePlacementRequest.getTenancy()));
         }
 
         return request;

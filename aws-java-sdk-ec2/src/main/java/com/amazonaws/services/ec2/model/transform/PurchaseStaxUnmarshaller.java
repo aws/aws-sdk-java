@@ -45,8 +45,13 @@ public class PurchaseStaxUnmarshaller implements Unmarshaller<Purchase, StaxUnma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("hostReservationId", targetDepth)) {
-                    purchase.setHostReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("currencyCode", targetDepth)) {
+                    purchase.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("duration", targetDepth)) {
+                    purchase.setDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -57,6 +62,16 @@ public class PurchaseStaxUnmarshaller implements Unmarshaller<Purchase, StaxUnma
 
                 if (context.testExpression("hostIdSet/item", targetDepth)) {
                     purchase.withHostIdSet(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hostReservationId", targetDepth)) {
+                    purchase.setHostReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hourlyPrice", targetDepth)) {
+                    purchase.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -72,21 +87,6 @@ public class PurchaseStaxUnmarshaller implements Unmarshaller<Purchase, StaxUnma
 
                 if (context.testExpression("upfrontPrice", targetDepth)) {
                     purchase.setUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("hourlyPrice", targetDepth)) {
-                    purchase.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("currencyCode", targetDepth)) {
-                    purchase.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("duration", targetDepth)) {
-                    purchase.setDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

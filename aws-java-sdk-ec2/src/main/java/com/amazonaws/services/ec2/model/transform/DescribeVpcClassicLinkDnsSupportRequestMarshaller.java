@@ -42,6 +42,14 @@ public class DescribeVpcClassicLinkDnsSupportRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (describeVpcClassicLinkDnsSupportRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeVpcClassicLinkDnsSupportRequest.getMaxResults()));
+        }
+
+        if (describeVpcClassicLinkDnsSupportRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeVpcClassicLinkDnsSupportRequest.getNextToken()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> describeVpcClassicLinkDnsSupportRequestVpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcClassicLinkDnsSupportRequest
                 .getVpcIds();
         if (!describeVpcClassicLinkDnsSupportRequestVpcIdsList.isEmpty() || !describeVpcClassicLinkDnsSupportRequestVpcIdsList.isAutoConstruct()) {
@@ -53,14 +61,6 @@ public class DescribeVpcClassicLinkDnsSupportRequestMarshaller implements
                 }
                 vpcIdsListIndex++;
             }
-        }
-
-        if (describeVpcClassicLinkDnsSupportRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeVpcClassicLinkDnsSupportRequest.getMaxResults()));
-        }
-
-        if (describeVpcClassicLinkDnsSupportRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeVpcClassicLinkDnsSupportRequest.getNextToken()));
         }
 
         return request;

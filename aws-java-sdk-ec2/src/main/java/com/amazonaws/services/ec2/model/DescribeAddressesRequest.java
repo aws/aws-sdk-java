@@ -29,15 +29,6 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> publicIps;
-    /**
-     * <p>
      * One or more filters. Filter names and values are case-sensitive.
      * </p>
      * <ul>
@@ -88,6 +79,15 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
+     * [EC2-Classic] One or more Elastic IP addresses.
+     * </p>
+     * <p>
+     * Default: Describes all your Elastic IP addresses.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> publicIps;
+    /**
+     * <p>
      * [EC2-VPC] One or more allocation IDs.
      * </p>
      * <p>
@@ -95,99 +95,6 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> allocationIds;
-
-    /**
-     * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
-     * </p>
-     * 
-     * @return [EC2-Classic] One or more Elastic IP addresses.</p>
-     *         <p>
-     *         Default: Describes all your Elastic IP addresses.
-     */
-
-    public java.util.List<String> getPublicIps() {
-        if (publicIps == null) {
-            publicIps = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return publicIps;
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
-     * </p>
-     * 
-     * @param publicIps
-     *        [EC2-Classic] One or more Elastic IP addresses.</p>
-     *        <p>
-     *        Default: Describes all your Elastic IP addresses.
-     */
-
-    public void setPublicIps(java.util.Collection<String> publicIps) {
-        if (publicIps == null) {
-            this.publicIps = null;
-            return;
-        }
-
-        this.publicIps = new com.amazonaws.internal.SdkInternalList<String>(publicIps);
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setPublicIps(java.util.Collection)} or {@link #withPublicIps(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param publicIps
-     *        [EC2-Classic] One or more Elastic IP addresses.</p>
-     *        <p>
-     *        Default: Describes all your Elastic IP addresses.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeAddressesRequest withPublicIps(String... publicIps) {
-        if (this.publicIps == null) {
-            setPublicIps(new com.amazonaws.internal.SdkInternalList<String>(publicIps.length));
-        }
-        for (String ele : publicIps) {
-            this.publicIps.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
-     * </p>
-     * <p>
-     * Default: Describes all your Elastic IP addresses.
-     * </p>
-     * 
-     * @param publicIps
-     *        [EC2-Classic] One or more Elastic IP addresses.</p>
-     *        <p>
-     *        Default: Describes all your Elastic IP addresses.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeAddressesRequest withPublicIps(java.util.Collection<String> publicIps) {
-        setPublicIps(publicIps);
-        return this;
-    }
 
     /**
      * <p>
@@ -613,6 +520,99 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
+     * [EC2-Classic] One or more Elastic IP addresses.
+     * </p>
+     * <p>
+     * Default: Describes all your Elastic IP addresses.
+     * </p>
+     * 
+     * @return [EC2-Classic] One or more Elastic IP addresses.</p>
+     *         <p>
+     *         Default: Describes all your Elastic IP addresses.
+     */
+
+    public java.util.List<String> getPublicIps() {
+        if (publicIps == null) {
+            publicIps = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return publicIps;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic] One or more Elastic IP addresses.
+     * </p>
+     * <p>
+     * Default: Describes all your Elastic IP addresses.
+     * </p>
+     * 
+     * @param publicIps
+     *        [EC2-Classic] One or more Elastic IP addresses.</p>
+     *        <p>
+     *        Default: Describes all your Elastic IP addresses.
+     */
+
+    public void setPublicIps(java.util.Collection<String> publicIps) {
+        if (publicIps == null) {
+            this.publicIps = null;
+            return;
+        }
+
+        this.publicIps = new com.amazonaws.internal.SdkInternalList<String>(publicIps);
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic] One or more Elastic IP addresses.
+     * </p>
+     * <p>
+     * Default: Describes all your Elastic IP addresses.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPublicIps(java.util.Collection)} or {@link #withPublicIps(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param publicIps
+     *        [EC2-Classic] One or more Elastic IP addresses.</p>
+     *        <p>
+     *        Default: Describes all your Elastic IP addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAddressesRequest withPublicIps(String... publicIps) {
+        if (this.publicIps == null) {
+            setPublicIps(new com.amazonaws.internal.SdkInternalList<String>(publicIps.length));
+        }
+        for (String ele : publicIps) {
+            this.publicIps.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic] One or more Elastic IP addresses.
+     * </p>
+     * <p>
+     * Default: Describes all your Elastic IP addresses.
+     * </p>
+     * 
+     * @param publicIps
+     *        [EC2-Classic] One or more Elastic IP addresses.</p>
+     *        <p>
+     *        Default: Describes all your Elastic IP addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAddressesRequest withPublicIps(java.util.Collection<String> publicIps) {
+        setPublicIps(publicIps);
+        return this;
+    }
+
+    /**
+     * <p>
      * [EC2-VPC] One or more allocation IDs.
      * </p>
      * <p>
@@ -726,10 +726,10 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPublicIps() != null)
-            sb.append("PublicIps: ").append(getPublicIps()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
+        if (getPublicIps() != null)
+            sb.append("PublicIps: ").append(getPublicIps()).append(",");
         if (getAllocationIds() != null)
             sb.append("AllocationIds: ").append(getAllocationIds());
         sb.append("}");
@@ -746,13 +746,13 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
         if (obj instanceof DescribeAddressesRequest == false)
             return false;
         DescribeAddressesRequest other = (DescribeAddressesRequest) obj;
-        if (other.getPublicIps() == null ^ this.getPublicIps() == null)
-            return false;
-        if (other.getPublicIps() != null && other.getPublicIps().equals(this.getPublicIps()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getPublicIps() == null ^ this.getPublicIps() == null)
+            return false;
+        if (other.getPublicIps() != null && other.getPublicIps().equals(this.getPublicIps()) == false)
             return false;
         if (other.getAllocationIds() == null ^ this.getAllocationIds() == null)
             return false;
@@ -766,8 +766,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPublicIps() == null) ? 0 : getPublicIps().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getPublicIps() == null) ? 0 : getPublicIps().hashCode());
         hashCode = prime * hashCode + ((getAllocationIds() == null) ? 0 : getAllocationIds().hashCode());
         return hashCode;
     }

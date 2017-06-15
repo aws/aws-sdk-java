@@ -43,6 +43,11 @@ public class TagDescriptionStaxUnmarshaller implements Unmarshaller<TagDescripti
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("key", targetDepth)) {
+                    tagDescription.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("resourceId", targetDepth)) {
                     tagDescription.setResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class TagDescriptionStaxUnmarshaller implements Unmarshaller<TagDescripti
 
                 if (context.testExpression("resourceType", targetDepth)) {
                     tagDescription.setResourceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("key", targetDepth)) {
-                    tagDescription.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

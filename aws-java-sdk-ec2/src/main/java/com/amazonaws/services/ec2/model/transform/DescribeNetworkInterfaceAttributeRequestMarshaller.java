@@ -42,12 +42,12 @@ public class DescribeNetworkInterfaceAttributeRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {
-            request.addParameter("NetworkInterfaceId", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getNetworkInterfaceId()));
-        }
-
         if (describeNetworkInterfaceAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getAttribute()));
+        }
+
+        if (describeNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {
+            request.addParameter("NetworkInterfaceId", StringUtils.fromString(describeNetworkInterfaceAttributeRequest.getNetworkInterfaceId()));
         }
 
         return request;

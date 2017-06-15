@@ -32,9 +32,9 @@ import com.amazonaws.services.servicecatalog.model.*;
  * <p>
  * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> allows organizations to create and manage
  * catalogs of IT services that are approved for use on AWS. This documentation provides reference material for the AWS
- * Service Catalog end user API. To get the most out of this documentation, you need to be familiar with the terminology
- * discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/userguide/what-is_concepts.html">AWS Service
- * Catalog Concepts</a>.
+ * Service Catalog end user API. To get the most out of this documentation, be familiar with the terminology discussed
+ * in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
+ * Concepts</a>.
  * </p>
  * <p>
  * <i>Additional Resources</i>
@@ -160,7 +160,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new constraint.
+     * Creates a new constraint. For more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
      * </p>
      * 
      * @param createConstraintRequest
@@ -173,7 +174,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a new constraint.
+     * Creates a new constraint. For more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
      * </p>
      * 
      * @param createConstraintRequest
@@ -284,8 +286,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Create a new provisioning artifact for the specified product. This operation will not work with a product that
+     * Create a new provisioning artifact for the specified product. This operation does not work with a product that
      * has been shared with you.
+     * </p>
+     * <p>
+     * See the bottom of this topic for an example JSON request.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -299,8 +304,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Create a new provisioning artifact for the specified product. This operation will not work with a product that
+     * Create a new provisioning artifact for the specified product. This operation does not work with a product that
      * has been shared with you.
+     * </p>
+     * <p>
+     * See the bottom of this topic for an example JSON request.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -350,7 +358,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified portfolio. This operation will not work with a portfolio that has been shared with you or
+     * Deletes the specified portfolio. This operation does not work with a portfolio that has been shared with you or
      * if it has products, users, constraints, or shared accounts associated with it.
      * </p>
      * 
@@ -364,7 +372,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified portfolio. This operation will not work with a portfolio that has been shared with you or
+     * Deletes the specified portfolio. This operation does not work with a portfolio that has been shared with you or
      * if it has products, users, constraints, or shared accounts associated with it.
      * </p>
      * 
@@ -414,7 +422,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified product. This operation will not work with a product that has been shared with you or is
+     * Deletes the specified product. This operation does not work with a product that has been shared with you or is
      * associated with a portfolio.
      * </p>
      * 
@@ -428,7 +436,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified product. This operation will not work with a product that has been shared with you or is
+     * Deletes the specified product. This operation does not work with a product that has been shared with you or is
      * associated with a portfolio.
      * </p>
      * 
@@ -447,7 +455,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified provisioning artifact. This operation will not work on a provisioning artifact associated
+     * Deletes the specified provisioning artifact. This operation does not work on a provisioning artifact associated
      * with a product that has been shared with you, or on the last provisioning artifact associated with a product (a
      * product must have at least one provisioning artifact).
      * </p>
@@ -463,7 +471,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Deletes the specified provisioning artifact. This operation will not work on a provisioning artifact associated
+     * Deletes the specified provisioning artifact. This operation does not work on a provisioning artifact associated
      * with a product that has been shared with you, or on the last provisioning artifact associated with a product (a
      * product must have at least one provisioning artifact).
      * </p>
@@ -652,6 +660,39 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      */
     java.util.concurrent.Future<DescribeProductViewResult> describeProductViewAsync(DescribeProductViewRequest describeProductViewRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeProductViewRequest, DescribeProductViewResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve detailed information about the provisioned product.
+     * </p>
+     * 
+     * @param describeProvisionedProductRequest
+     * @return A Java Future containing the result of the DescribeProvisionedProduct operation returned by the service.
+     * @sample AWSServiceCatalogAsync.DescribeProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProvisionedProductResult> describeProvisionedProductAsync(
+            DescribeProvisionedProductRequest describeProvisionedProductRequest);
+
+    /**
+     * <p>
+     * Retrieve detailed information about the provisioned product.
+     * </p>
+     * 
+     * @param describeProvisionedProductRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProvisionedProduct operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.DescribeProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProvisionedProductResult> describeProvisionedProductAsync(
+            DescribeProvisionedProductRequest describeProvisionedProductRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProvisionedProductRequest, DescribeProvisionedProductResult> asyncHandler);
 
     /**
      * <p>
@@ -1125,7 +1166,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests a <i>Provision</i> of a specified product. A <i>ProvisionedProduct</i> is a resourced instance for a
+     * Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a
      * product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation
      * stack and all the underlying resources that come with it.
      * </p>
@@ -1143,7 +1184,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Requests a <i>Provision</i> of a specified product. A <i>ProvisionedProduct</i> is a resourced instance for a
+     * Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a
      * product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation
      * stack and all the underlying resources that come with it.
      * </p>
@@ -1378,7 +1419,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates the specified portfolio's details. This operation will not work with a product that has been shared with
+     * Updates the specified portfolio's details. This operation does not work with a product that has been shared with
      * you.
      * </p>
      * 
@@ -1392,7 +1433,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates the specified portfolio's details. This operation will not work with a product that has been shared with
+     * Updates the specified portfolio's details. This operation does not work with a product that has been shared with
      * you.
      * </p>
      * 
@@ -1485,7 +1526,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing provisioning artifact's information. This operation will not work on a provisioning artifact
+     * Updates an existing provisioning artifact's information. This operation does not work on a provisioning artifact
      * associated with a product that has been shared with you.
      * </p>
      * 
@@ -1500,7 +1541,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Updates an existing provisioning artifact's information. This operation will not work on a provisioning artifact
+     * Updates an existing provisioning artifact's information. This operation does not work on a provisioning artifact
      * associated with a product that has been shared with you.
      * </p>
      * 

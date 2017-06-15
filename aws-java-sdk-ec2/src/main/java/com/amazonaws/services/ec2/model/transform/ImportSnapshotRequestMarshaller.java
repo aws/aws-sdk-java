@@ -40,6 +40,30 @@ public class ImportSnapshotRequestMarshaller implements Marshaller<Request<Impor
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        ClientData clientData = importSnapshotRequest.getClientData();
+        if (clientData != null) {
+
+            if (clientData.getComment() != null) {
+                request.addParameter("ClientData.Comment", StringUtils.fromString(clientData.getComment()));
+            }
+
+            if (clientData.getUploadEnd() != null) {
+                request.addParameter("ClientData.UploadEnd", StringUtils.fromDate(clientData.getUploadEnd()));
+            }
+
+            if (clientData.getUploadSize() != null) {
+                request.addParameter("ClientData.UploadSize", StringUtils.fromDouble(clientData.getUploadSize()));
+            }
+
+            if (clientData.getUploadStart() != null) {
+                request.addParameter("ClientData.UploadStart", StringUtils.fromDate(clientData.getUploadStart()));
+            }
+        }
+
+        if (importSnapshotRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(importSnapshotRequest.getClientToken()));
+        }
+
         if (importSnapshotRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(importSnapshotRequest.getDescription()));
         }
@@ -70,30 +94,6 @@ public class ImportSnapshotRequestMarshaller implements Marshaller<Request<Impor
                     request.addParameter("DiskContainer.UserBucket.S3Key", StringUtils.fromString(userBucket.getS3Key()));
                 }
             }
-        }
-
-        ClientData clientData = importSnapshotRequest.getClientData();
-        if (clientData != null) {
-
-            if (clientData.getUploadStart() != null) {
-                request.addParameter("ClientData.UploadStart", StringUtils.fromDate(clientData.getUploadStart()));
-            }
-
-            if (clientData.getUploadEnd() != null) {
-                request.addParameter("ClientData.UploadEnd", StringUtils.fromDate(clientData.getUploadEnd()));
-            }
-
-            if (clientData.getUploadSize() != null) {
-                request.addParameter("ClientData.UploadSize", StringUtils.fromDouble(clientData.getUploadSize()));
-            }
-
-            if (clientData.getComment() != null) {
-                request.addParameter("ClientData.Comment", StringUtils.fromString(clientData.getComment()));
-            }
-        }
-
-        if (importSnapshotRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(importSnapshotRequest.getClientToken()));
         }
 
         if (importSnapshotRequest.getRoleName() != null) {

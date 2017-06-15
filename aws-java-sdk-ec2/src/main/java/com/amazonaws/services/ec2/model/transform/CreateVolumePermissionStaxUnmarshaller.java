@@ -43,13 +43,13 @@ public class CreateVolumePermissionStaxUnmarshaller implements Unmarshaller<Crea
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("userId", targetDepth)) {
-                    createVolumePermission.setUserId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("group", targetDepth)) {
+                    createVolumePermission.setGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("group", targetDepth)) {
-                    createVolumePermission.setGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("userId", targetDepth)) {
+                    createVolumePermission.setUserId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

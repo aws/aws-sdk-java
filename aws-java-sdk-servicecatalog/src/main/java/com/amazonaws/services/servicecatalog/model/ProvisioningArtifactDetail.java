@@ -30,7 +30,7 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * </p>
      */
     private String id;
@@ -48,7 +48,14 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
     private String description;
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
+     * products:
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * </p>
      */
     private String type;
@@ -61,11 +68,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param id
-     *        The identifier of the provisioning artifact.
+     *        The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      */
 
     public void setId(String id) {
@@ -74,10 +81,10 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * </p>
      * 
-     * @return The identifier of the provisioning artifact.
+     * @return The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      */
 
     public String getId() {
@@ -86,11 +93,11 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param id
-     *        The identifier of the provisioning artifact.
+     *        The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +188,24 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
+     * products:
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * </p>
      * 
      * @param type
-     *        The type of the provisioning artifact.
+     *        The type of the provisioning artifact. The following provisioning artifact types are used by AWS
+     *        Marketplace products:</p>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        </p>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * @see ProvisioningArtifactType
      */
 
@@ -195,10 +215,23 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
+     * products:
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * </p>
      * 
-     * @return The type of the provisioning artifact.
+     * @return The type of the provisioning artifact. The following provisioning artifact types are used by AWS
+     *         Marketplace products:</p>
+     *         <p>
+     *         <code>MARKETPLACE_AMI</code> - AMI products.
+     *         </p>
+     *         <p>
+     *         <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * @see ProvisioningArtifactType
      */
 
@@ -208,11 +241,24 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
+     * products:
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * </p>
      * 
      * @param type
-     *        The type of the provisioning artifact.
+     *        The type of the provisioning artifact. The following provisioning artifact types are used by AWS
+     *        Marketplace products:</p>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        </p>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
@@ -224,11 +270,24 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
+     * products:
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * </p>
      * 
      * @param type
-     *        The type of the provisioning artifact.
+     *        The type of the provisioning artifact. The following provisioning artifact types are used by AWS
+     *        Marketplace products:</p>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        </p>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * @see ProvisioningArtifactType
      */
 
@@ -238,11 +297,24 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the provisioning artifact.
+     * The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace
+     * products:
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_AMI</code> - AMI products.
+     * </p>
+     * <p>
+     * <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * </p>
      * 
      * @param type
-     *        The type of the provisioning artifact.
+     *        The type of the provisioning artifact. The following provisioning artifact types are used by AWS
+     *        Marketplace products:</p>
+     *        <p>
+     *        <code>MARKETPLACE_AMI</code> - AMI products.
+     *        </p>
+     *        <p>
+     *        <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */

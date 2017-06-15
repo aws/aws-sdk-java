@@ -27,17 +27,63 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * All available prefix lists.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<PrefixList> prefixLists;
-    /**
-     * <p>
      * The token to use when requesting the next set of items. If there are no additional items to return, the string is
      * empty.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * All available prefix lists.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PrefixList> prefixLists;
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
+     *         string is empty.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePrefixListsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -113,52 +159,6 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
-     *         string is empty.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribePrefixListsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -169,10 +169,10 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPrefixLists() != null)
-            sb.append("PrefixLists: ").append(getPrefixLists()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPrefixLists() != null)
+            sb.append("PrefixLists: ").append(getPrefixLists());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +187,13 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
         if (obj instanceof DescribePrefixListsResult == false)
             return false;
         DescribePrefixListsResult other = (DescribePrefixListsResult) obj;
-        if (other.getPrefixLists() == null ^ this.getPrefixLists() == null)
-            return false;
-        if (other.getPrefixLists() != null && other.getPrefixLists().equals(this.getPrefixLists()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getPrefixLists() == null ^ this.getPrefixLists() == null)
+            return false;
+        if (other.getPrefixLists() != null && other.getPrefixLists().equals(this.getPrefixLists()) == false)
             return false;
         return true;
     }
@@ -203,8 +203,8 @@ public class DescribePrefixListsResult extends com.amazonaws.AmazonWebServiceRes
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPrefixLists() == null) ? 0 : getPrefixLists().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPrefixLists() == null) ? 0 : getPrefixLists().hashCode());
         return hashCode;
     }
 

@@ -28,6 +28,12 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The description of the security group.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The ID of the security group.
      * </p>
      */
@@ -40,18 +46,6 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
     private String groupName;
     /**
      * <p>
-     * The description of the security group.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * The ID of the VPC for the security group.
-     * </p>
-     */
-    private String vpcId;
-    /**
-     * <p>
      * Information about the stale inbound rules in the security group.
      * </p>
      */
@@ -62,6 +56,52 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StaleIpPermission> staleIpPermissionsEgress;
+    /**
+     * <p>
+     * The ID of the VPC for the security group.
+     * </p>
+     */
+    private String vpcId;
+
+    /**
+     * <p>
+     * The description of the security group.
+     * </p>
+     * 
+     * @param description
+     *        The description of the security group.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the security group.
+     * </p>
+     * 
+     * @return The description of the security group.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the security group.
+     * </p>
+     * 
+     * @param description
+     *        The description of the security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StaleSecurityGroup withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
 
     /**
      * <p>
@@ -140,86 +180,6 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
 
     public StaleSecurityGroup withGroupName(String groupName) {
         setGroupName(groupName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The description of the security group.
-     * </p>
-     * 
-     * @param description
-     *        The description of the security group.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The description of the security group.
-     * </p>
-     * 
-     * @return The description of the security group.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The description of the security group.
-     * </p>
-     * 
-     * @param description
-     *        The description of the security group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StaleSecurityGroup withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC for the security group.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC for the security group.
-     */
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC for the security group.
-     * </p>
-     * 
-     * @return The ID of the VPC for the security group.
-     */
-
-    public String getVpcId() {
-        return this.vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC for the security group.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC for the security group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StaleSecurityGroup withVpcId(String vpcId) {
-        setVpcId(vpcId);
         return this;
     }
 
@@ -370,6 +330,46 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the VPC for the security group.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC for the security group.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC for the security group.
+     * </p>
+     * 
+     * @return The ID of the VPC for the security group.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC for the security group.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC for the security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StaleSecurityGroup withVpcId(String vpcId) {
+        setVpcId(vpcId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -380,18 +380,18 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getGroupId() != null)
             sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getStaleIpPermissions() != null)
             sb.append("StaleIpPermissions: ").append(getStaleIpPermissions()).append(",");
         if (getStaleIpPermissionsEgress() != null)
-            sb.append("StaleIpPermissionsEgress: ").append(getStaleIpPermissionsEgress());
+            sb.append("StaleIpPermissionsEgress: ").append(getStaleIpPermissionsEgress()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -406,6 +406,10 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
         if (obj instanceof StaleSecurityGroup == false)
             return false;
         StaleSecurityGroup other = (StaleSecurityGroup) obj;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getGroupId() == null ^ this.getGroupId() == null)
             return false;
         if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
@@ -413,14 +417,6 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
-            return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getStaleIpPermissions() == null ^ this.getStaleIpPermissions() == null)
             return false;
@@ -430,6 +426,10 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
             return false;
         if (other.getStaleIpPermissionsEgress() != null && other.getStaleIpPermissionsEgress().equals(this.getStaleIpPermissionsEgress()) == false)
             return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
+            return false;
         return true;
     }
 
@@ -438,12 +438,12 @@ public class StaleSecurityGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getStaleIpPermissions() == null) ? 0 : getStaleIpPermissions().hashCode());
         hashCode = prime * hashCode + ((getStaleIpPermissionsEgress() == null) ? 0 : getStaleIpPermissionsEgress().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

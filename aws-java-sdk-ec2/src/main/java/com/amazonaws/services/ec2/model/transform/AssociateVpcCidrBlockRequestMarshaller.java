@@ -40,12 +40,12 @@ public class AssociateVpcCidrBlockRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (associateVpcCidrBlockRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(associateVpcCidrBlockRequest.getVpcId()));
-        }
-
         if (associateVpcCidrBlockRequest.getAmazonProvidedIpv6CidrBlock() != null) {
             request.addParameter("AmazonProvidedIpv6CidrBlock", StringUtils.fromBoolean(associateVpcCidrBlockRequest.getAmazonProvidedIpv6CidrBlock()));
+        }
+
+        if (associateVpcCidrBlockRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(associateVpcCidrBlockRequest.getVpcId()));
         }
 
         return request;

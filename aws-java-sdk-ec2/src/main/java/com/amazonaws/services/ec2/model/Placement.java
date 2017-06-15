@@ -34,10 +34,24 @@ public class Placement implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
+     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
+     * <a>ImportInstance</a> command.
+     * </p>
+     */
+    private String affinity;
+    /**
+     * <p>
      * The name of the placement group the instance is in (for cluster compute instances).
      * </p>
      */
     private String groupName;
+    /**
+     * <p>
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
+     * <a>ImportInstance</a> command.
+     * </p>
+     */
+    private String hostId;
     /**
      * <p>
      * The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of
@@ -48,18 +62,10 @@ public class Placement implements Serializable, Cloneable {
     private String tenancy;
     /**
      * <p>
-     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * Reserved for future use.
      * </p>
      */
-    private String hostId;
-    /**
-     * <p>
-     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
-     * </p>
-     */
-    private String affinity;
+    private String spreadDomain;
 
     /**
      * Default constructor for Placement object. Callers should use the setter or fluent setter (with...) methods to
@@ -121,6 +127,52 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
+     * <a>ImportInstance</a> command.
+     * </p>
+     * 
+     * @param affinity
+     *        The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
+     *        <a>ImportInstance</a> command.
+     */
+
+    public void setAffinity(String affinity) {
+        this.affinity = affinity;
+    }
+
+    /**
+     * <p>
+     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
+     * <a>ImportInstance</a> command.
+     * </p>
+     * 
+     * @return The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
+     *         <a>ImportInstance</a> command.
+     */
+
+    public String getAffinity() {
+        return this.affinity;
+    }
+
+    /**
+     * <p>
+     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
+     * <a>ImportInstance</a> command.
+     * </p>
+     * 
+     * @param affinity
+     *        The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
+     *        <a>ImportInstance</a> command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Placement withAffinity(String affinity) {
+        setAffinity(affinity);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the placement group the instance is in (for cluster compute instances).
      * </p>
      * 
@@ -156,6 +208,52 @@ public class Placement implements Serializable, Cloneable {
 
     public Placement withGroupName(String groupName) {
         setGroupName(groupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
+     * <a>ImportInstance</a> command.
+     * </p>
+     * 
+     * @param hostId
+     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
+     *        <a>ImportInstance</a> command.
+     */
+
+    public void setHostId(String hostId) {
+        this.hostId = hostId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
+     * <a>ImportInstance</a> command.
+     * </p>
+     * 
+     * @return The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
+     *         <a>ImportInstance</a> command.
+     */
+
+    public String getHostId() {
+        return this.hostId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
+     * <a>ImportInstance</a> command.
+     * </p>
+     * 
+     * @param hostId
+     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
+     *        <a>ImportInstance</a> command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Placement withHostId(String hostId) {
+        setHostId(hostId);
         return this;
     }
 
@@ -254,93 +352,41 @@ public class Placement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * Reserved for future use.
      * </p>
      * 
-     * @param hostId
-     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     *        <a>ImportInstance</a> command.
+     * @param spreadDomain
+     *        Reserved for future use.
      */
 
-    public void setHostId(String hostId) {
-        this.hostId = hostId;
+    public void setSpreadDomain(String spreadDomain) {
+        this.spreadDomain = spreadDomain;
     }
 
     /**
      * <p>
-     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * Reserved for future use.
      * </p>
      * 
-     * @return The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     *         <a>ImportInstance</a> command.
+     * @return Reserved for future use.
      */
 
-    public String getHostId() {
-        return this.hostId;
+    public String getSpreadDomain() {
+        return this.spreadDomain;
     }
 
     /**
      * <p>
-     * The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
+     * Reserved for future use.
      * </p>
      * 
-     * @param hostId
-     *        The ID of the Dedicated Host on which the instance resides. This parameter is not supported for the
-     *        <a>ImportInstance</a> command.
+     * @param spreadDomain
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Placement withHostId(String hostId) {
-        setHostId(hostId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
-     * </p>
-     * 
-     * @param affinity
-     *        The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     *        <a>ImportInstance</a> command.
-     */
-
-    public void setAffinity(String affinity) {
-        this.affinity = affinity;
-    }
-
-    /**
-     * <p>
-     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
-     * </p>
-     * 
-     * @return The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     *         <a>ImportInstance</a> command.
-     */
-
-    public String getAffinity() {
-        return this.affinity;
-    }
-
-    /**
-     * <p>
-     * The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     * <a>ImportInstance</a> command.
-     * </p>
-     * 
-     * @param affinity
-     *        The affinity setting for the instance on the Dedicated Host. This parameter is not supported for the
-     *        <a>ImportInstance</a> command.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Placement withAffinity(String affinity) {
-        setAffinity(affinity);
+    public Placement withSpreadDomain(String spreadDomain) {
+        setSpreadDomain(spreadDomain);
         return this;
     }
 
@@ -357,14 +403,16 @@ public class Placement implements Serializable, Cloneable {
         sb.append("{");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getAffinity() != null)
+            sb.append("Affinity: ").append(getAffinity()).append(",");
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
-        if (getTenancy() != null)
-            sb.append("Tenancy: ").append(getTenancy()).append(",");
         if (getHostId() != null)
             sb.append("HostId: ").append(getHostId()).append(",");
-        if (getAffinity() != null)
-            sb.append("Affinity: ").append(getAffinity());
+        if (getTenancy() != null)
+            sb.append("Tenancy: ").append(getTenancy()).append(",");
+        if (getSpreadDomain() != null)
+            sb.append("SpreadDomain: ").append(getSpreadDomain());
         sb.append("}");
         return sb.toString();
     }
@@ -383,21 +431,25 @@ public class Placement implements Serializable, Cloneable {
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
+        if (other.getAffinity() == null ^ this.getAffinity() == null)
+            return false;
+        if (other.getAffinity() != null && other.getAffinity().equals(this.getAffinity()) == false)
+            return false;
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
-            return false;
-        if (other.getTenancy() == null ^ this.getTenancy() == null)
-            return false;
-        if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false)
             return false;
         if (other.getHostId() == null ^ this.getHostId() == null)
             return false;
         if (other.getHostId() != null && other.getHostId().equals(this.getHostId()) == false)
             return false;
-        if (other.getAffinity() == null ^ this.getAffinity() == null)
+        if (other.getTenancy() == null ^ this.getTenancy() == null)
             return false;
-        if (other.getAffinity() != null && other.getAffinity().equals(this.getAffinity()) == false)
+        if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false)
+            return false;
+        if (other.getSpreadDomain() == null ^ this.getSpreadDomain() == null)
+            return false;
+        if (other.getSpreadDomain() != null && other.getSpreadDomain().equals(this.getSpreadDomain()) == false)
             return false;
         return true;
     }
@@ -408,10 +460,11 @@ public class Placement implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
-        hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
-        hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
         hashCode = prime * hashCode + ((getAffinity() == null) ? 0 : getAffinity().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
+        hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
+        hashCode = prime * hashCode + ((getSpreadDomain() == null) ? 0 : getSpreadDomain().hashCode());
         return hashCode;
     }
 

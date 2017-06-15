@@ -45,11 +45,6 @@ public class VolumeStatusInfoStaxUnmarshaller implements Unmarshaller<VolumeStat
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("status", targetDepth)) {
-                    volumeStatusInfo.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("details", targetDepth)) {
                     volumeStatusInfo.withDetails(new ArrayList<VolumeStatusDetails>());
                     continue;
@@ -60,6 +55,10 @@ public class VolumeStatusInfoStaxUnmarshaller implements Unmarshaller<VolumeStat
                     continue;
                 }
 
+                if (context.testExpression("status", targetDepth)) {
+                    volumeStatusInfo.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return volumeStatusInfo;

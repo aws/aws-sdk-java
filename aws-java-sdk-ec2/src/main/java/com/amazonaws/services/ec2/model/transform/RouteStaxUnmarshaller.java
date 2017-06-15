@@ -48,8 +48,18 @@ public class RouteStaxUnmarshaller implements Unmarshaller<Route, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("destinationIpv6CidrBlock", targetDepth)) {
+                    route.setDestinationIpv6CidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("destinationPrefixListId", targetDepth)) {
                     route.setDestinationPrefixListId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("egressOnlyInternetGatewayId", targetDepth)) {
+                    route.setEgressOnlyInternetGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -68,23 +78,13 @@ public class RouteStaxUnmarshaller implements Unmarshaller<Route, StaxUnmarshall
                     continue;
                 }
 
-                if (context.testExpression("networkInterfaceId", targetDepth)) {
-                    route.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcPeeringConnectionId", targetDepth)) {
-                    route.setVpcPeeringConnectionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("natGatewayId", targetDepth)) {
                     route.setNatGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("state", targetDepth)) {
-                    route.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    route.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -93,13 +93,13 @@ public class RouteStaxUnmarshaller implements Unmarshaller<Route, StaxUnmarshall
                     continue;
                 }
 
-                if (context.testExpression("destinationIpv6CidrBlock", targetDepth)) {
-                    route.setDestinationIpv6CidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("state", targetDepth)) {
+                    route.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("egressOnlyInternetGatewayId", targetDepth)) {
-                    route.setEgressOnlyInternetGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("vpcPeeringConnectionId", targetDepth)) {
+                    route.setVpcPeeringConnectionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

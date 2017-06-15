@@ -41,16 +41,16 @@ public class CreateVpcPeeringConnectionRequestMarshaller implements Marshaller<R
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createVpcPeeringConnectionRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(createVpcPeeringConnectionRequest.getVpcId()));
+        if (createVpcPeeringConnectionRequest.getPeerOwnerId() != null) {
+            request.addParameter("PeerOwnerId", StringUtils.fromString(createVpcPeeringConnectionRequest.getPeerOwnerId()));
         }
 
         if (createVpcPeeringConnectionRequest.getPeerVpcId() != null) {
             request.addParameter("PeerVpcId", StringUtils.fromString(createVpcPeeringConnectionRequest.getPeerVpcId()));
         }
 
-        if (createVpcPeeringConnectionRequest.getPeerOwnerId() != null) {
-            request.addParameter("PeerOwnerId", StringUtils.fromString(createVpcPeeringConnectionRequest.getPeerOwnerId()));
+        if (createVpcPeeringConnectionRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createVpcPeeringConnectionRequest.getVpcId()));
         }
 
         return request;

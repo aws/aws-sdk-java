@@ -46,6 +46,11 @@ public class DescribeReservedInstancesModificationsResultStaxUnmarshaller implem
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeReservedInstancesModificationsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("reservedInstancesModificationsSet", targetDepth)) {
                     describeReservedInstancesModificationsResult.withReservedInstancesModifications(new ArrayList<ReservedInstancesModification>());
                     continue;
@@ -57,10 +62,6 @@ public class DescribeReservedInstancesModificationsResultStaxUnmarshaller implem
                     continue;
                 }
 
-                if (context.testExpression("nextToken", targetDepth)) {
-                    describeReservedInstancesModificationsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeReservedInstancesModificationsResult;

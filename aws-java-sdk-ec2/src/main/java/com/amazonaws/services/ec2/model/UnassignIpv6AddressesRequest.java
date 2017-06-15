@@ -28,56 +28,16 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ID of the network interface.
-     * </p>
-     */
-    private String networkInterfaceId;
-    /**
-     * <p>
      * The IPv6 addresses to unassign from the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ipv6Addresses;
-
     /**
      * <p>
      * The ID of the network interface.
      * </p>
-     * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
      */
-
-    public void setNetworkInterfaceId(String networkInterfaceId) {
-        this.networkInterfaceId = networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
-     * 
-     * @return The ID of the network interface.
-     */
-
-    public String getNetworkInterfaceId() {
-        return this.networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
-     * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UnassignIpv6AddressesRequest withNetworkInterfaceId(String networkInterfaceId) {
-        setNetworkInterfaceId(networkInterfaceId);
-        return this;
-    }
+    private String networkInterfaceId;
 
     /**
      * <p>
@@ -153,6 +113,46 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @return The ID of the network interface.
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UnassignIpv6AddressesRequest withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -174,10 +174,10 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getIpv6Addresses() != null)
-            sb.append("Ipv6Addresses: ").append(getIpv6Addresses());
+            sb.append("Ipv6Addresses: ").append(getIpv6Addresses()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
         sb.append("}");
         return sb.toString();
     }
@@ -192,13 +192,13 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
         if (obj instanceof UnassignIpv6AddressesRequest == false)
             return false;
         UnassignIpv6AddressesRequest other = (UnassignIpv6AddressesRequest) obj;
-        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
-            return false;
-        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
-            return false;
         if (other.getIpv6Addresses() == null ^ this.getIpv6Addresses() == null)
             return false;
         if (other.getIpv6Addresses() != null && other.getIpv6Addresses().equals(this.getIpv6Addresses()) == false)
+            return false;
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+            return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         return true;
     }
@@ -208,8 +208,8 @@ public class UnassignIpv6AddressesRequest extends AmazonWebServiceRequest implem
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         return hashCode;
     }
 

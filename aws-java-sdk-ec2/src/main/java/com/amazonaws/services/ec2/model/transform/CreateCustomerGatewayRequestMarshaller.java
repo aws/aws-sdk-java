@@ -40,16 +40,16 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createCustomerGatewayRequest.getType() != null) {
-            request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));
+        if (createCustomerGatewayRequest.getBgpAsn() != null) {
+            request.addParameter("BgpAsn", StringUtils.fromInteger(createCustomerGatewayRequest.getBgpAsn()));
         }
 
         if (createCustomerGatewayRequest.getPublicIp() != null) {
             request.addParameter("IpAddress", StringUtils.fromString(createCustomerGatewayRequest.getPublicIp()));
         }
 
-        if (createCustomerGatewayRequest.getBgpAsn() != null) {
-            request.addParameter("BgpAsn", StringUtils.fromInteger(createCustomerGatewayRequest.getBgpAsn()));
+        if (createCustomerGatewayRequest.getType() != null) {
+            request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));
         }
 
         return request;

@@ -29,17 +29,17 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
+     * The ID of the security group. Required for a nondefault VPC.
+     * </p>
+     */
+    private String groupId;
+    /**
+     * <p>
      * [EC2-Classic, default VPC] The name of the security group. You can specify either the security group name or the
      * security group ID.
      * </p>
      */
     private String groupName;
-    /**
-     * <p>
-     * The ID of the security group. Required for a nondefault VPC.
-     * </p>
-     */
-    private String groupId;
 
     /**
      * Default constructor for DeleteSecurityGroupRequest object. Callers should use the setter or fluent setter
@@ -58,6 +58,46 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
      */
     public DeleteSecurityGroupRequest(String groupName) {
         setGroupName(groupName);
+    }
+
+    /**
+     * <p>
+     * The ID of the security group. Required for a nondefault VPC.
+     * </p>
+     * 
+     * @param groupId
+     *        The ID of the security group. Required for a nondefault VPC.
+     */
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group. Required for a nondefault VPC.
+     * </p>
+     * 
+     * @return The ID of the security group. Required for a nondefault VPC.
+     */
+
+    public String getGroupId() {
+        return this.groupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group. Required for a nondefault VPC.
+     * </p>
+     * 
+     * @param groupId
+     *        The ID of the security group. Required for a nondefault VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteSecurityGroupRequest withGroupId(String groupId) {
+        setGroupId(groupId);
+        return this;
     }
 
     /**
@@ -107,46 +147,6 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
-     * <p>
-     * The ID of the security group. Required for a nondefault VPC.
-     * </p>
-     * 
-     * @param groupId
-     *        The ID of the security group. Required for a nondefault VPC.
-     */
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
-    }
-
-    /**
-     * <p>
-     * The ID of the security group. Required for a nondefault VPC.
-     * </p>
-     * 
-     * @return The ID of the security group. Required for a nondefault VPC.
-     */
-
-    public String getGroupId() {
-        return this.groupId;
-    }
-
-    /**
-     * <p>
-     * The ID of the security group. Required for a nondefault VPC.
-     * </p>
-     * 
-     * @param groupId
-     *        The ID of the security group. Required for a nondefault VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteSecurityGroupRequest withGroupId(String groupId) {
-        setGroupId(groupId);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -168,10 +168,10 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGroupName() != null)
-            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getGroupId() != null)
-            sb.append("GroupId: ").append(getGroupId());
+            sb.append("GroupId: ").append(getGroupId()).append(",");
+        if (getGroupName() != null)
+            sb.append("GroupName: ").append(getGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -186,13 +186,13 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof DeleteSecurityGroupRequest == false)
             return false;
         DeleteSecurityGroupRequest other = (DeleteSecurityGroupRequest) obj;
-        if (other.getGroupName() == null ^ this.getGroupName() == null)
-            return false;
-        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
-            return false;
         if (other.getGroupId() == null ^ this.getGroupId() == null)
             return false;
         if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
+            return false;
+        if (other.getGroupName() == null ^ this.getGroupName() == null)
+            return false;
+        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
         return true;
     }
@@ -202,8 +202,8 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         return hashCode;
     }
 

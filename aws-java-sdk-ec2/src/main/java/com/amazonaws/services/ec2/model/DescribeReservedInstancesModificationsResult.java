@@ -28,17 +28,63 @@ public class DescribeReservedInstancesModificationsResult extends com.amazonaws.
 
     /**
      * <p>
-     * The Reserved Instance modification information.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<ReservedInstancesModification> reservedInstancesModifications;
-    /**
-     * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
      * results to return.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The Reserved Instance modification information.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ReservedInstancesModification> reservedInstancesModifications;
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReservedInstancesModificationsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -115,52 +161,6 @@ public class DescribeReservedInstancesModificationsResult extends com.amazonaws.
     }
 
     /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeReservedInstancesModificationsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -171,10 +171,10 @@ public class DescribeReservedInstancesModificationsResult extends com.amazonaws.
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservedInstancesModifications() != null)
-            sb.append("ReservedInstancesModifications: ").append(getReservedInstancesModifications()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getReservedInstancesModifications() != null)
+            sb.append("ReservedInstancesModifications: ").append(getReservedInstancesModifications());
         sb.append("}");
         return sb.toString();
     }
@@ -189,14 +189,14 @@ public class DescribeReservedInstancesModificationsResult extends com.amazonaws.
         if (obj instanceof DescribeReservedInstancesModificationsResult == false)
             return false;
         DescribeReservedInstancesModificationsResult other = (DescribeReservedInstancesModificationsResult) obj;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         if (other.getReservedInstancesModifications() == null ^ this.getReservedInstancesModifications() == null)
             return false;
         if (other.getReservedInstancesModifications() != null
                 && other.getReservedInstancesModifications().equals(this.getReservedInstancesModifications()) == false)
-            return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -206,8 +206,8 @@ public class DescribeReservedInstancesModificationsResult extends com.amazonaws.
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getReservedInstancesModifications() == null) ? 0 : getReservedInstancesModifications().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesModifications() == null) ? 0 : getReservedInstancesModifications().hashCode());
         return hashCode;
     }
 

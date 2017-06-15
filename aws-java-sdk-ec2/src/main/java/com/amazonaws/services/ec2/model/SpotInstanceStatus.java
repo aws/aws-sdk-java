@@ -36,17 +36,17 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
     private String code;
     /**
      * <p>
+     * The description for the status code.
+     * </p>
+     */
+    private String message;
+    /**
+     * <p>
      * The date and time of the most recent status update, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      */
     private java.util.Date updateTime;
-    /**
-     * <p>
-     * The description for the status code.
-     * </p>
-     */
-    private String message;
 
     /**
      * <p>
@@ -102,6 +102,46 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The description for the status code.
+     * </p>
+     * 
+     * @param message
+     *        The description for the status code.
+     */
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    /**
+     * <p>
+     * The description for the status code.
+     * </p>
+     * 
+     * @return The description for the status code.
+     */
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * The description for the status code.
+     * </p>
+     * 
+     * @param message
+     *        The description for the status code.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceStatus withMessage(String message) {
+        setMessage(message);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time of the most recent status update, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
@@ -147,46 +187,6 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The description for the status code.
-     * </p>
-     * 
-     * @param message
-     *        The description for the status code.
-     */
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    /**
-     * <p>
-     * The description for the status code.
-     * </p>
-     * 
-     * @return The description for the status code.
-     */
-
-    public String getMessage() {
-        return this.message;
-    }
-
-    /**
-     * <p>
-     * The description for the status code.
-     * </p>
-     * 
-     * @param message
-     *        The description for the status code.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceStatus withMessage(String message) {
-        setMessage(message);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -199,10 +199,10 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
         sb.append("{");
         if (getCode() != null)
             sb.append("Code: ").append(getCode()).append(",");
-        if (getUpdateTime() != null)
-            sb.append("UpdateTime: ").append(getUpdateTime()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage());
+            sb.append("Message: ").append(getMessage()).append(",");
+        if (getUpdateTime() != null)
+            sb.append("UpdateTime: ").append(getUpdateTime());
         sb.append("}");
         return sb.toString();
     }
@@ -221,13 +221,13 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
             return false;
         if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
             return false;
-        if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
-            return false;
-        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
-            return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
+            return false;
+        if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
+            return false;
+        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
             return false;
         return true;
     }
@@ -238,8 +238,8 @@ public class SpotInstanceStatus implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
-        hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return hashCode;
     }
 

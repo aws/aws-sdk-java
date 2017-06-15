@@ -45,21 +45,6 @@ public class NatGatewayStaxUnmarshaller implements Unmarshaller<NatGateway, Stax
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("vpcId", targetDepth)) {
-                    natGateway.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("subnetId", targetDepth)) {
-                    natGateway.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("natGatewayId", targetDepth)) {
-                    natGateway.setNatGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("createTime", targetDepth)) {
                     natGateway.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -67,21 +52,6 @@ public class NatGatewayStaxUnmarshaller implements Unmarshaller<NatGateway, Stax
 
                 if (context.testExpression("deleteTime", targetDepth)) {
                     natGateway.setDeleteTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("natGatewayAddressSet", targetDepth)) {
-                    natGateway.withNatGatewayAddresses(new ArrayList<NatGatewayAddress>());
-                    continue;
-                }
-
-                if (context.testExpression("natGatewayAddressSet/item", targetDepth)) {
-                    natGateway.withNatGatewayAddresses(NatGatewayAddressStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("state", targetDepth)) {
-                    natGateway.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -95,8 +65,38 @@ public class NatGatewayStaxUnmarshaller implements Unmarshaller<NatGateway, Stax
                     continue;
                 }
 
+                if (context.testExpression("natGatewayAddressSet", targetDepth)) {
+                    natGateway.withNatGatewayAddresses(new ArrayList<NatGatewayAddress>());
+                    continue;
+                }
+
+                if (context.testExpression("natGatewayAddressSet/item", targetDepth)) {
+                    natGateway.withNatGatewayAddresses(NatGatewayAddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("natGatewayId", targetDepth)) {
+                    natGateway.setNatGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("provisionedBandwidth", targetDepth)) {
                     natGateway.setProvisionedBandwidth(ProvisionedBandwidthStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("state", targetDepth)) {
+                    natGateway.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("subnetId", targetDepth)) {
+                    natGateway.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpcId", targetDepth)) {
+                    natGateway.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

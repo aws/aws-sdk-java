@@ -30,7 +30,7 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier for the artifact.
+     * The identifier for the artifact. This is sometimes referred to as the product version.
      * </p>
      */
     private String id;
@@ -55,11 +55,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier for the artifact.
+     * The identifier for the artifact. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param id
-     *        The identifier for the artifact.
+     *        The identifier for the artifact. This is sometimes referred to as the product version.
      */
 
     public void setId(String id) {
@@ -68,10 +68,10 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier for the artifact.
+     * The identifier for the artifact. This is sometimes referred to as the product version.
      * </p>
      * 
-     * @return The identifier for the artifact.
+     * @return The identifier for the artifact. This is sometimes referred to as the product version.
      */
 
     public String getId() {
@@ -80,11 +80,11 @@ public class ProvisioningArtifact implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier for the artifact.
+     * The identifier for the artifact. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param id
-     *        The identifier for the artifact.
+     *        The identifier for the artifact. This is sometimes referred to as the product version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

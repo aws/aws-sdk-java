@@ -30,6 +30,13 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
+     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
+     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
+     * </p>
+     */
+    private String principalArn;
+    /**
+     * <p>
      * The type of resource: <code>instance</code> | <code>reservation</code> | <code>snapshot</code> |
      * <code>volume</code>
      * </p>
@@ -41,13 +48,52 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private Boolean useLongIds;
+
     /**
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
      * modify the ID format for all IAM users, IAM roles, and the root user of the account.
      * </p>
+     * 
+     * @param principalArn
+     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code>
+     *        to modify the ID format for all IAM users, IAM roles, and the root user of the account.
      */
-    private String principalArn;
+
+    public void setPrincipalArn(String principalArn) {
+        this.principalArn = principalArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
+     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
+     * </p>
+     * 
+     * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code>
+     *         to modify the ID format for all IAM users, IAM roles, and the root user of the account.
+     */
+
+    public String getPrincipalArn() {
+        return this.principalArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
+     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
+     * </p>
+     * 
+     * @param principalArn
+     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code>
+     *        to modify the ID format for all IAM users, IAM roles, and the root user of the account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyIdentityIdFormatRequest withPrincipalArn(String principalArn) {
+        setPrincipalArn(principalArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -148,52 +194,6 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
-     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
-     * </p>
-     * 
-     * @param principalArn
-     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code>
-     *        to modify the ID format for all IAM users, IAM roles, and the root user of the account.
-     */
-
-    public void setPrincipalArn(String principalArn) {
-        this.principalArn = principalArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
-     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
-     * </p>
-     * 
-     * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code>
-     *         to modify the ID format for all IAM users, IAM roles, and the root user of the account.
-     */
-
-    public String getPrincipalArn() {
-        return this.principalArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code> to
-     * modify the ID format for all IAM users, IAM roles, and the root user of the account.
-     * </p>
-     * 
-     * @param principalArn
-     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. Specify <code>all</code>
-     *        to modify the ID format for all IAM users, IAM roles, and the root user of the account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyIdentityIdFormatRequest withPrincipalArn(String principalArn) {
-        setPrincipalArn(principalArn);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -215,12 +215,12 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPrincipalArn() != null)
+            sb.append("PrincipalArn: ").append(getPrincipalArn()).append(",");
         if (getResource() != null)
             sb.append("Resource: ").append(getResource()).append(",");
         if (getUseLongIds() != null)
-            sb.append("UseLongIds: ").append(getUseLongIds()).append(",");
-        if (getPrincipalArn() != null)
-            sb.append("PrincipalArn: ").append(getPrincipalArn());
+            sb.append("UseLongIds: ").append(getUseLongIds());
         sb.append("}");
         return sb.toString();
     }
@@ -235,6 +235,10 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest imple
         if (obj instanceof ModifyIdentityIdFormatRequest == false)
             return false;
         ModifyIdentityIdFormatRequest other = (ModifyIdentityIdFormatRequest) obj;
+        if (other.getPrincipalArn() == null ^ this.getPrincipalArn() == null)
+            return false;
+        if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
+            return false;
         if (other.getResource() == null ^ this.getResource() == null)
             return false;
         if (other.getResource() != null && other.getResource().equals(this.getResource()) == false)
@@ -242,10 +246,6 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest imple
         if (other.getUseLongIds() == null ^ this.getUseLongIds() == null)
             return false;
         if (other.getUseLongIds() != null && other.getUseLongIds().equals(this.getUseLongIds()) == false)
-            return false;
-        if (other.getPrincipalArn() == null ^ this.getPrincipalArn() == null)
-            return false;
-        if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
             return false;
         return true;
     }
@@ -255,9 +255,9 @@ public class ModifyIdentityIdFormatRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
         hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
         hashCode = prime * hashCode + ((getUseLongIds() == null) ? 0 : getUseLongIds().hashCode());
-        hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
         return hashCode;
     }
 

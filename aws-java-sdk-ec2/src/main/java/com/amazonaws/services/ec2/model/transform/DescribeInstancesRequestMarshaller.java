@@ -40,19 +40,6 @@ public class DescribeInstancesRequestMarshaller implements Marshaller<Request<De
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeInstancesRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeInstancesRequest
-                .getInstanceIds();
-        if (!describeInstancesRequestInstanceIdsList.isEmpty() || !describeInstancesRequestInstanceIdsList.isAutoConstruct()) {
-            int instanceIdsListIndex = 1;
-
-            for (String describeInstancesRequestInstanceIdsListValue : describeInstancesRequestInstanceIdsList) {
-                if (describeInstancesRequestInstanceIdsListValue != null) {
-                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(describeInstancesRequestInstanceIdsListValue));
-                }
-                instanceIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeInstancesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeInstancesRequest
                 .getFilters();
         if (!describeInstancesRequestFiltersList.isEmpty() || !describeInstancesRequestFiltersList.isAutoConstruct()) {
@@ -80,12 +67,25 @@ public class DescribeInstancesRequestMarshaller implements Marshaller<Request<De
             }
         }
 
-        if (describeInstancesRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeInstancesRequest.getNextToken()));
+        com.amazonaws.internal.SdkInternalList<String> describeInstancesRequestInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeInstancesRequest
+                .getInstanceIds();
+        if (!describeInstancesRequestInstanceIdsList.isEmpty() || !describeInstancesRequestInstanceIdsList.isAutoConstruct()) {
+            int instanceIdsListIndex = 1;
+
+            for (String describeInstancesRequestInstanceIdsListValue : describeInstancesRequestInstanceIdsList) {
+                if (describeInstancesRequestInstanceIdsListValue != null) {
+                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(describeInstancesRequestInstanceIdsListValue));
+                }
+                instanceIdsListIndex++;
+            }
         }
 
         if (describeInstancesRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeInstancesRequest.getMaxResults()));
+        }
+
+        if (describeInstancesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeInstancesRequest.getNextToken()));
         }
 
         return request;

@@ -29,24 +29,6 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * One or more image IDs.
-     * </p>
-     * <p>
-     * Default: Describes all images available to you.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> imageIds;
-    /**
-     * <p>
-     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> owners;
-    /**
-     * <p>
      * Scopes the images by users with explicit launch permissions. Specify an AWS account ID, <code>self</code> (the
      * sender of the request), or <code>all</code> (public AMIs).
      * </p>
@@ -224,7 +206,6 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more image IDs.
@@ -232,92 +213,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Default: Describes all images available to you.
      * </p>
-     * 
-     * @return One or more image IDs.</p>
-     *         <p>
-     *         Default: Describes all images available to you.
      */
-
-    public java.util.List<String> getImageIds() {
-        if (imageIds == null) {
-            imageIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return imageIds;
-    }
-
-    /**
-     * <p>
-     * One or more image IDs.
-     * </p>
-     * <p>
-     * Default: Describes all images available to you.
-     * </p>
-     * 
-     * @param imageIds
-     *        One or more image IDs.</p>
-     *        <p>
-     *        Default: Describes all images available to you.
-     */
-
-    public void setImageIds(java.util.Collection<String> imageIds) {
-        if (imageIds == null) {
-            this.imageIds = null;
-            return;
-        }
-
-        this.imageIds = new com.amazonaws.internal.SdkInternalList<String>(imageIds);
-    }
-
-    /**
-     * <p>
-     * One or more image IDs.
-     * </p>
-     * <p>
-     * Default: Describes all images available to you.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setImageIds(java.util.Collection)} or {@link #withImageIds(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param imageIds
-     *        One or more image IDs.</p>
-     *        <p>
-     *        Default: Describes all images available to you.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeImagesRequest withImageIds(String... imageIds) {
-        if (this.imageIds == null) {
-            setImageIds(new com.amazonaws.internal.SdkInternalList<String>(imageIds.length));
-        }
-        for (String ele : imageIds) {
-            this.imageIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more image IDs.
-     * </p>
-     * <p>
-     * Default: Describes all images available to you.
-     * </p>
-     * 
-     * @param imageIds
-     *        One or more image IDs.</p>
-     *        <p>
-     *        Default: Describes all images available to you.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeImagesRequest withImageIds(java.util.Collection<String> imageIds) {
-        setImageIds(imageIds);
-        return this;
-    }
-
+    private com.amazonaws.internal.SdkInternalList<String> imageIds;
     /**
      * <p>
      * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
@@ -325,95 +222,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
      * regardless of ownership.
      * </p>
-     * 
-     * @return Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     *         request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     *         <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     *         regardless of ownership.
      */
-
-    public java.util.List<String> getOwners() {
-        if (owners == null) {
-            owners = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return owners;
-    }
-
-    /**
-     * <p>
-     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.
-     * </p>
-     * 
-     * @param owners
-     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     *        regardless of ownership.
-     */
-
-    public void setOwners(java.util.Collection<String> owners) {
-        if (owners == null) {
-            this.owners = null;
-            return;
-        }
-
-        this.owners = new com.amazonaws.internal.SdkInternalList<String>(owners);
-    }
-
-    /**
-     * <p>
-     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setOwners(java.util.Collection)} or {@link #withOwners(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param owners
-     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     *        regardless of ownership.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeImagesRequest withOwners(String... owners) {
-        if (this.owners == null) {
-            setOwners(new com.amazonaws.internal.SdkInternalList<String>(owners.length));
-        }
-        for (String ele : owners) {
-            this.owners.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.
-     * </p>
-     * 
-     * @param owners
-     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     *        regardless of ownership.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeImagesRequest withOwners(java.util.Collection<String> owners) {
-        setOwners(owners);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> owners;
 
     /**
      * <p>
@@ -1906,6 +1716,196 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * One or more image IDs.
+     * </p>
+     * <p>
+     * Default: Describes all images available to you.
+     * </p>
+     * 
+     * @return One or more image IDs.</p>
+     *         <p>
+     *         Default: Describes all images available to you.
+     */
+
+    public java.util.List<String> getImageIds() {
+        if (imageIds == null) {
+            imageIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return imageIds;
+    }
+
+    /**
+     * <p>
+     * One or more image IDs.
+     * </p>
+     * <p>
+     * Default: Describes all images available to you.
+     * </p>
+     * 
+     * @param imageIds
+     *        One or more image IDs.</p>
+     *        <p>
+     *        Default: Describes all images available to you.
+     */
+
+    public void setImageIds(java.util.Collection<String> imageIds) {
+        if (imageIds == null) {
+            this.imageIds = null;
+            return;
+        }
+
+        this.imageIds = new com.amazonaws.internal.SdkInternalList<String>(imageIds);
+    }
+
+    /**
+     * <p>
+     * One or more image IDs.
+     * </p>
+     * <p>
+     * Default: Describes all images available to you.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImageIds(java.util.Collection)} or {@link #withImageIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param imageIds
+     *        One or more image IDs.</p>
+     *        <p>
+     *        Default: Describes all images available to you.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withImageIds(String... imageIds) {
+        if (this.imageIds == null) {
+            setImageIds(new com.amazonaws.internal.SdkInternalList<String>(imageIds.length));
+        }
+        for (String ele : imageIds) {
+            this.imageIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more image IDs.
+     * </p>
+     * <p>
+     * Default: Describes all images available to you.
+     * </p>
+     * 
+     * @param imageIds
+     *        One or more image IDs.</p>
+     *        <p>
+     *        Default: Describes all images available to you.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withImageIds(java.util.Collection<String> imageIds) {
+        setImageIds(imageIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     * regardless of ownership.
+     * </p>
+     * 
+     * @return Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     *         request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     *         <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     *         regardless of ownership.
+     */
+
+    public java.util.List<String> getOwners() {
+        if (owners == null) {
+            owners = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return owners;
+    }
+
+    /**
+     * <p>
+     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     * regardless of ownership.
+     * </p>
+     * 
+     * @param owners
+     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     *        regardless of ownership.
+     */
+
+    public void setOwners(java.util.Collection<String> owners) {
+        if (owners == null) {
+            this.owners = null;
+            return;
+        }
+
+        this.owners = new com.amazonaws.internal.SdkInternalList<String>(owners);
+    }
+
+    /**
+     * <p>
+     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     * regardless of ownership.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOwners(java.util.Collection)} or {@link #withOwners(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param owners
+     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     *        regardless of ownership.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withOwners(String... owners) {
+        if (this.owners == null) {
+            setOwners(new com.amazonaws.internal.SdkInternalList<String>(owners.length));
+        }
+        for (String ele : owners) {
+            this.owners.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     * regardless of ownership.
+     * </p>
+     * 
+     * @param owners
+     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
+     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
+     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
+     *        regardless of ownership.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withOwners(java.util.Collection<String> owners) {
+        setOwners(owners);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1927,14 +1927,14 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImageIds() != null)
-            sb.append("ImageIds: ").append(getImageIds()).append(",");
-        if (getOwners() != null)
-            sb.append("Owners: ").append(getOwners()).append(",");
         if (getExecutableUsers() != null)
             sb.append("ExecutableUsers: ").append(getExecutableUsers()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getImageIds() != null)
+            sb.append("ImageIds: ").append(getImageIds()).append(",");
+        if (getOwners() != null)
+            sb.append("Owners: ").append(getOwners());
         sb.append("}");
         return sb.toString();
     }
@@ -1949,14 +1949,6 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
         if (obj instanceof DescribeImagesRequest == false)
             return false;
         DescribeImagesRequest other = (DescribeImagesRequest) obj;
-        if (other.getImageIds() == null ^ this.getImageIds() == null)
-            return false;
-        if (other.getImageIds() != null && other.getImageIds().equals(this.getImageIds()) == false)
-            return false;
-        if (other.getOwners() == null ^ this.getOwners() == null)
-            return false;
-        if (other.getOwners() != null && other.getOwners().equals(this.getOwners()) == false)
-            return false;
         if (other.getExecutableUsers() == null ^ this.getExecutableUsers() == null)
             return false;
         if (other.getExecutableUsers() != null && other.getExecutableUsers().equals(this.getExecutableUsers()) == false)
@@ -1964,6 +1956,14 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getImageIds() == null ^ this.getImageIds() == null)
+            return false;
+        if (other.getImageIds() != null && other.getImageIds().equals(this.getImageIds()) == false)
+            return false;
+        if (other.getOwners() == null ^ this.getOwners() == null)
+            return false;
+        if (other.getOwners() != null && other.getOwners().equals(this.getOwners()) == false)
             return false;
         return true;
     }
@@ -1973,10 +1973,10 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
-        hashCode = prime * hashCode + ((getOwners() == null) ? 0 : getOwners().hashCode());
         hashCode = prime * hashCode + ((getExecutableUsers() == null) ? 0 : getExecutableUsers().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
+        hashCode = prime * hashCode + ((getOwners() == null) ? 0 : getOwners().hashCode());
         return hashCode;
     }
 

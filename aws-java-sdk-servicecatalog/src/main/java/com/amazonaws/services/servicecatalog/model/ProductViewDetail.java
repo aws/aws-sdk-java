@@ -38,6 +38,15 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Current status of the product.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Product is available for use.
+     * </p>
+     * <p>
+     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * </p>
+     * <p>
+     * <code>FAILED</code> - Action on product failed.
+     * </p>
      */
     private String status;
     /**
@@ -97,9 +106,26 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Current status of the product.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Product is available for use.
+     * </p>
+     * <p>
+     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * </p>
+     * <p>
+     * <code>FAILED</code> - Action on product failed.
+     * </p>
      * 
      * @param status
-     *        Current status of the product.
+     *        Current status of the product.</p>
+     *        <p>
+     *        <code>AVAILABLE</code> - Product is available for use.
+     *        </p>
+     *        <p>
+     *        <code>CREATING</code> - Creation of product started, not ready for use.
+     *        </p>
+     *        <p>
+     *        <code>FAILED</code> - Action on product failed.
      * @see Status
      */
 
@@ -111,8 +137,25 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Current status of the product.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Product is available for use.
+     * </p>
+     * <p>
+     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * </p>
+     * <p>
+     * <code>FAILED</code> - Action on product failed.
+     * </p>
      * 
-     * @return Current status of the product.
+     * @return Current status of the product.</p>
+     *         <p>
+     *         <code>AVAILABLE</code> - Product is available for use.
+     *         </p>
+     *         <p>
+     *         <code>CREATING</code> - Creation of product started, not ready for use.
+     *         </p>
+     *         <p>
+     *         <code>FAILED</code> - Action on product failed.
      * @see Status
      */
 
@@ -124,9 +167,26 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Current status of the product.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Product is available for use.
+     * </p>
+     * <p>
+     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * </p>
+     * <p>
+     * <code>FAILED</code> - Action on product failed.
+     * </p>
      * 
      * @param status
-     *        Current status of the product.
+     *        Current status of the product.</p>
+     *        <p>
+     *        <code>AVAILABLE</code> - Product is available for use.
+     *        </p>
+     *        <p>
+     *        <code>CREATING</code> - Creation of product started, not ready for use.
+     *        </p>
+     *        <p>
+     *        <code>FAILED</code> - Action on product failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */
@@ -140,9 +200,26 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Current status of the product.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Product is available for use.
+     * </p>
+     * <p>
+     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * </p>
+     * <p>
+     * <code>FAILED</code> - Action on product failed.
+     * </p>
      * 
      * @param status
-     *        Current status of the product.
+     *        Current status of the product.</p>
+     *        <p>
+     *        <code>AVAILABLE</code> - Product is available for use.
+     *        </p>
+     *        <p>
+     *        <code>CREATING</code> - Creation of product started, not ready for use.
+     *        </p>
+     *        <p>
+     *        <code>FAILED</code> - Action on product failed.
      * @see Status
      */
 
@@ -154,9 +231,26 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Current status of the product.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Product is available for use.
+     * </p>
+     * <p>
+     * <code>CREATING</code> - Creation of product started, not ready for use.
+     * </p>
+     * <p>
+     * <code>FAILED</code> - Action on product failed.
+     * </p>
      * 
      * @param status
-     *        Current status of the product.
+     *        Current status of the product.</p>
+     *        <p>
+     *        <code>AVAILABLE</code> - Product is available for use.
+     *        </p>
+     *        <p>
+     *        <code>CREATING</code> - Creation of product started, not ready for use.
+     *        </p>
+     *        <p>
+     *        <code>FAILED</code> - Action on product failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Status
      */

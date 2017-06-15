@@ -45,6 +45,11 @@ public class DescribeSpotPriceHistoryResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeSpotPriceHistoryResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("spotPriceHistorySet", targetDepth)) {
                     describeSpotPriceHistoryResult.withSpotPriceHistory(new ArrayList<SpotPrice>());
                     continue;
@@ -55,10 +60,6 @@ public class DescribeSpotPriceHistoryResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
-                if (context.testExpression("nextToken", targetDepth)) {
-                    describeSpotPriceHistoryResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeSpotPriceHistoryResult;

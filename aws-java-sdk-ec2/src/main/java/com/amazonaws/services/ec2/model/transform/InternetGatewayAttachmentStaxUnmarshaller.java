@@ -43,13 +43,13 @@ public class InternetGatewayAttachmentStaxUnmarshaller implements Unmarshaller<I
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("vpcId", targetDepth)) {
-                    internetGatewayAttachment.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("state", targetDepth)) {
+                    internetGatewayAttachment.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("state", targetDepth)) {
-                    internetGatewayAttachment.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("vpcId", targetDepth)) {
+                    internetGatewayAttachment.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -28,16 +28,56 @@ public class DescribeVpcClassicLinkDnsSupportResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Information about the ClassicLink DNS support status of the VPCs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<ClassicLinkDnsSupport> vpcs;
-    /**
-     * <p>
      * The token to use when requesting the next set of items.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Information about the ClassicLink DNS support status of the VPCs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ClassicLinkDnsSupport> vpcs;
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items.
+     * </p>
+     * 
+     * @return The token to use when requesting the next set of items.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcClassicLinkDnsSupportResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -113,46 +153,6 @@ public class DescribeVpcClassicLinkDnsSupportResult extends com.amazonaws.Amazon
     }
 
     /**
-     * <p>
-     * The token to use when requesting the next set of items.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items.
-     * </p>
-     * 
-     * @return The token to use when requesting the next set of items.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcClassicLinkDnsSupportResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -163,10 +163,10 @@ public class DescribeVpcClassicLinkDnsSupportResult extends com.amazonaws.Amazon
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcs() != null)
-            sb.append("Vpcs: ").append(getVpcs()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getVpcs() != null)
+            sb.append("Vpcs: ").append(getVpcs());
         sb.append("}");
         return sb.toString();
     }
@@ -181,13 +181,13 @@ public class DescribeVpcClassicLinkDnsSupportResult extends com.amazonaws.Amazon
         if (obj instanceof DescribeVpcClassicLinkDnsSupportResult == false)
             return false;
         DescribeVpcClassicLinkDnsSupportResult other = (DescribeVpcClassicLinkDnsSupportResult) obj;
-        if (other.getVpcs() == null ^ this.getVpcs() == null)
-            return false;
-        if (other.getVpcs() != null && other.getVpcs().equals(this.getVpcs()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getVpcs() == null ^ this.getVpcs() == null)
+            return false;
+        if (other.getVpcs() != null && other.getVpcs().equals(this.getVpcs()) == false)
             return false;
         return true;
     }
@@ -197,8 +197,8 @@ public class DescribeVpcClassicLinkDnsSupportResult extends com.amazonaws.Amazon
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcs() == null) ? 0 : getVpcs().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVpcs() == null) ? 0 : getVpcs().hashCode());
         return hashCode;
     }
 

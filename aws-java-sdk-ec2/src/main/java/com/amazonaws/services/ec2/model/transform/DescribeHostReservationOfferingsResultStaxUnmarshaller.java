@@ -45,6 +45,11 @@ public class DescribeHostReservationOfferingsResultStaxUnmarshaller implements U
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeHostReservationOfferingsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("offeringSet", targetDepth)) {
                     describeHostReservationOfferingsResult.withOfferingSet(new ArrayList<HostOffering>());
                     continue;
@@ -55,10 +60,6 @@ public class DescribeHostReservationOfferingsResultStaxUnmarshaller implements U
                     continue;
                 }
 
-                if (context.testExpression("nextToken", targetDepth)) {
-                    describeHostReservationOfferingsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeHostReservationOfferingsResult;

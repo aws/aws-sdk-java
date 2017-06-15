@@ -45,23 +45,13 @@ public class SecurityGroupStaxUnmarshaller implements Unmarshaller<SecurityGroup
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("ownerId", targetDepth)) {
-                    securityGroup.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("groupDescription", targetDepth)) {
+                    securityGroup.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("groupName", targetDepth)) {
                     securityGroup.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("groupId", targetDepth)) {
-                    securityGroup.setGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("groupDescription", targetDepth)) {
-                    securityGroup.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -75,6 +65,16 @@ public class SecurityGroupStaxUnmarshaller implements Unmarshaller<SecurityGroup
                     continue;
                 }
 
+                if (context.testExpression("ownerId", targetDepth)) {
+                    securityGroup.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("groupId", targetDepth)) {
+                    securityGroup.setGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ipPermissionsEgress", targetDepth)) {
                     securityGroup.withIpPermissionsEgress(new ArrayList<IpPermission>());
                     continue;
@@ -82,11 +82,6 @@ public class SecurityGroupStaxUnmarshaller implements Unmarshaller<SecurityGroup
 
                 if (context.testExpression("ipPermissionsEgress/item", targetDepth)) {
                     securityGroup.withIpPermissionsEgress(IpPermissionStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcId", targetDepth)) {
-                    securityGroup.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -100,6 +95,10 @@ public class SecurityGroupStaxUnmarshaller implements Unmarshaller<SecurityGroup
                     continue;
                 }
 
+                if (context.testExpression("vpcId", targetDepth)) {
+                    securityGroup.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return securityGroup;

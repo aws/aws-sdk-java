@@ -28,28 +28,10 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The date and time the VPC endpoint was created.
      * </p>
      */
-    private String vpcEndpointId;
-    /**
-     * <p>
-     * The ID of the VPC to which the endpoint is associated.
-     * </p>
-     */
-    private String vpcId;
-    /**
-     * <p>
-     * The name of the AWS service to which the endpoint is associated.
-     * </p>
-     */
-    private String serviceName;
-    /**
-     * <p>
-     * The state of the VPC endpoint.
-     * </p>
-     */
-    private String state;
+    private java.util.Date creationTimestamp;
     /**
      * <p>
      * The policy document associated with the endpoint.
@@ -64,201 +46,66 @@ public class VpcEndpoint implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
     /**
      * <p>
+     * The name of the AWS service to which the endpoint is associated.
+     * </p>
+     */
+    private String serviceName;
+    /**
+     * <p>
+     * The state of the VPC endpoint.
+     * </p>
+     */
+    private String state;
+    /**
+     * <p>
+     * The ID of the VPC endpoint.
+     * </p>
+     */
+    private String vpcEndpointId;
+    /**
+     * <p>
+     * The ID of the VPC to which the endpoint is associated.
+     * </p>
+     */
+    private String vpcId;
+
+    /**
+     * <p>
      * The date and time the VPC endpoint was created.
      * </p>
-     */
-    private java.util.Date creationTimestamp;
-
-    /**
-     * <p>
-     * The ID of the VPC endpoint.
-     * </p>
      * 
-     * @param vpcEndpointId
-     *        The ID of the VPC endpoint.
+     * @param creationTimestamp
+     *        The date and time the VPC endpoint was created.
      */
 
-    public void setVpcEndpointId(String vpcEndpointId) {
-        this.vpcEndpointId = vpcEndpointId;
+    public void setCreationTimestamp(java.util.Date creationTimestamp) {
+        this.creationTimestamp = creationTimestamp;
     }
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The date and time the VPC endpoint was created.
      * </p>
      * 
-     * @return The ID of the VPC endpoint.
+     * @return The date and time the VPC endpoint was created.
      */
 
-    public String getVpcEndpointId() {
-        return this.vpcEndpointId;
+    public java.util.Date getCreationTimestamp() {
+        return this.creationTimestamp;
     }
 
     /**
      * <p>
-     * The ID of the VPC endpoint.
+     * The date and time the VPC endpoint was created.
      * </p>
      * 
-     * @param vpcEndpointId
-     *        The ID of the VPC endpoint.
+     * @param creationTimestamp
+     *        The date and time the VPC endpoint was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VpcEndpoint withVpcEndpointId(String vpcEndpointId) {
-        setVpcEndpointId(vpcEndpointId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC to which the endpoint is associated.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC to which the endpoint is associated.
-     */
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC to which the endpoint is associated.
-     * </p>
-     * 
-     * @return The ID of the VPC to which the endpoint is associated.
-     */
-
-    public String getVpcId() {
-        return this.vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC to which the endpoint is associated.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC to which the endpoint is associated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VpcEndpoint withVpcId(String vpcId) {
-        setVpcId(vpcId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the AWS service to which the endpoint is associated.
-     * </p>
-     * 
-     * @param serviceName
-     *        The name of the AWS service to which the endpoint is associated.
-     */
-
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
-
-    /**
-     * <p>
-     * The name of the AWS service to which the endpoint is associated.
-     * </p>
-     * 
-     * @return The name of the AWS service to which the endpoint is associated.
-     */
-
-    public String getServiceName() {
-        return this.serviceName;
-    }
-
-    /**
-     * <p>
-     * The name of the AWS service to which the endpoint is associated.
-     * </p>
-     * 
-     * @param serviceName
-     *        The name of the AWS service to which the endpoint is associated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VpcEndpoint withServiceName(String serviceName) {
-        setServiceName(serviceName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The state of the VPC endpoint.
-     * </p>
-     * 
-     * @param state
-     *        The state of the VPC endpoint.
-     * @see State
-     */
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    /**
-     * <p>
-     * The state of the VPC endpoint.
-     * </p>
-     * 
-     * @return The state of the VPC endpoint.
-     * @see State
-     */
-
-    public String getState() {
-        return this.state;
-    }
-
-    /**
-     * <p>
-     * The state of the VPC endpoint.
-     * </p>
-     * 
-     * @param state
-     *        The state of the VPC endpoint.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see State
-     */
-
-    public VpcEndpoint withState(String state) {
-        setState(state);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The state of the VPC endpoint.
-     * </p>
-     * 
-     * @param state
-     *        The state of the VPC endpoint.
-     * @see State
-     */
-
-    public void setState(State state) {
-        this.state = state.toString();
-    }
-
-    /**
-     * <p>
-     * The state of the VPC endpoint.
-     * </p>
-     * 
-     * @param state
-     *        The state of the VPC endpoint.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see State
-     */
-
-    public VpcEndpoint withState(State state) {
-        setState(state);
+    public VpcEndpoint withCreationTimestamp(java.util.Date creationTimestamp) {
+        setCreationTimestamp(creationTimestamp);
         return this;
     }
 
@@ -377,41 +224,194 @@ public class VpcEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the VPC endpoint was created.
+     * The name of the AWS service to which the endpoint is associated.
      * </p>
      * 
-     * @param creationTimestamp
-     *        The date and time the VPC endpoint was created.
+     * @param serviceName
+     *        The name of the AWS service to which the endpoint is associated.
      */
 
-    public void setCreationTimestamp(java.util.Date creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     /**
      * <p>
-     * The date and time the VPC endpoint was created.
+     * The name of the AWS service to which the endpoint is associated.
      * </p>
      * 
-     * @return The date and time the VPC endpoint was created.
+     * @return The name of the AWS service to which the endpoint is associated.
      */
 
-    public java.util.Date getCreationTimestamp() {
-        return this.creationTimestamp;
+    public String getServiceName() {
+        return this.serviceName;
     }
 
     /**
      * <p>
-     * The date and time the VPC endpoint was created.
+     * The name of the AWS service to which the endpoint is associated.
      * </p>
      * 
-     * @param creationTimestamp
-     *        The date and time the VPC endpoint was created.
+     * @param serviceName
+     *        The name of the AWS service to which the endpoint is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VpcEndpoint withCreationTimestamp(java.util.Date creationTimestamp) {
-        setCreationTimestamp(creationTimestamp);
+    public VpcEndpoint withServiceName(String serviceName) {
+        setServiceName(serviceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the VPC endpoint.
+     * </p>
+     * 
+     * @param state
+     *        The state of the VPC endpoint.
+     * @see State
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The state of the VPC endpoint.
+     * </p>
+     * 
+     * @return The state of the VPC endpoint.
+     * @see State
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The state of the VPC endpoint.
+     * </p>
+     * 
+     * @param state
+     *        The state of the VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see State
+     */
+
+    public VpcEndpoint withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the VPC endpoint.
+     * </p>
+     * 
+     * @param state
+     *        The state of the VPC endpoint.
+     * @see State
+     */
+
+    public void setState(State state) {
+        this.state = state.toString();
+    }
+
+    /**
+     * <p>
+     * The state of the VPC endpoint.
+     * </p>
+     * 
+     * @param state
+     *        The state of the VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see State
+     */
+
+    public VpcEndpoint withState(State state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC endpoint.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of the VPC endpoint.
+     */
+
+    public void setVpcEndpointId(String vpcEndpointId) {
+        this.vpcEndpointId = vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC endpoint.
+     * </p>
+     * 
+     * @return The ID of the VPC endpoint.
+     */
+
+    public String getVpcEndpointId() {
+        return this.vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC endpoint.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of the VPC endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withVpcEndpointId(String vpcEndpointId) {
+        setVpcEndpointId(vpcEndpointId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC to which the endpoint is associated.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC to which the endpoint is associated.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC to which the endpoint is associated.
+     * </p>
+     * 
+     * @return The ID of the VPC to which the endpoint is associated.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC to which the endpoint is associated.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC to which the endpoint is associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpoint withVpcId(String vpcId) {
+        setVpcId(vpcId);
         return this;
     }
 
@@ -426,20 +426,20 @@ public class VpcEndpoint implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcEndpointId() != null)
-            sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
-        if (getServiceName() != null)
-            sb.append("ServiceName: ").append(getServiceName()).append(",");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
+        if (getCreationTimestamp() != null)
+            sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
         if (getPolicyDocument() != null)
             sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getRouteTableIds() != null)
             sb.append("RouteTableIds: ").append(getRouteTableIds()).append(",");
-        if (getCreationTimestamp() != null)
-            sb.append("CreationTimestamp: ").append(getCreationTimestamp());
+        if (getServiceName() != null)
+            sb.append("ServiceName: ").append(getServiceName()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
+        if (getVpcEndpointId() != null)
+            sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -454,21 +454,9 @@ public class VpcEndpoint implements Serializable, Cloneable {
         if (obj instanceof VpcEndpoint == false)
             return false;
         VpcEndpoint other = (VpcEndpoint) obj;
-        if (other.getVpcEndpointId() == null ^ this.getVpcEndpointId() == null)
+        if (other.getCreationTimestamp() == null ^ this.getCreationTimestamp() == null)
             return false;
-        if (other.getVpcEndpointId() != null && other.getVpcEndpointId().equals(this.getVpcEndpointId()) == false)
-            return false;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
-            return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
-            return false;
-        if (other.getServiceName() == null ^ this.getServiceName() == null)
-            return false;
-        if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
-            return false;
-        if (other.getState() == null ^ this.getState() == null)
-            return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+        if (other.getCreationTimestamp() != null && other.getCreationTimestamp().equals(this.getCreationTimestamp()) == false)
             return false;
         if (other.getPolicyDocument() == null ^ this.getPolicyDocument() == null)
             return false;
@@ -478,9 +466,21 @@ public class VpcEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getRouteTableIds() != null && other.getRouteTableIds().equals(this.getRouteTableIds()) == false)
             return false;
-        if (other.getCreationTimestamp() == null ^ this.getCreationTimestamp() == null)
+        if (other.getServiceName() == null ^ this.getServiceName() == null)
             return false;
-        if (other.getCreationTimestamp() != null && other.getCreationTimestamp().equals(this.getCreationTimestamp()) == false)
+        if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getVpcEndpointId() == null ^ this.getVpcEndpointId() == null)
+            return false;
+        if (other.getVpcEndpointId() != null && other.getVpcEndpointId().equals(this.getVpcEndpointId()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -490,13 +490,13 @@ public class VpcEndpoint implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getPolicyDocument() == null) ? 0 : getPolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
-        hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

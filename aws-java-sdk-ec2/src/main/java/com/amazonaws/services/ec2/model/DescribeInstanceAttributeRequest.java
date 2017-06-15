@@ -30,12 +30,6 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the instance.
-     * </p>
-     */
-    private String instanceId;
-    /**
-     * <p>
      * The instance attribute.
      * </p>
      * <p>
@@ -43,6 +37,12 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
      * </p>
      */
     private String attribute;
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     */
+    private String instanceId;
 
     /**
      * Default constructor for DescribeInstanceAttributeRequest object. Callers should use the setter or fluent setter
@@ -81,46 +81,6 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
     public DescribeInstanceAttributeRequest(String instanceId, InstanceAttributeName attribute) {
         setInstanceId(instanceId);
         setAttribute(attribute.toString());
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance.
-     */
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @return The ID of the instance.
-     */
-
-    public String getInstanceId() {
-        return this.instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance.
-     * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeInstanceAttributeRequest withInstanceId(String instanceId) {
-        setInstanceId(instanceId);
-        return this;
     }
 
     /**
@@ -222,6 +182,46 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @return The ID of the instance.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInstanceAttributeRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -243,10 +243,10 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: ").append(getAttribute());
+            sb.append("Attribute: ").append(getAttribute()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -261,13 +261,13 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
         if (obj instanceof DescribeInstanceAttributeRequest == false)
             return false;
         DescribeInstanceAttributeRequest other = (DescribeInstanceAttributeRequest) obj;
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
-            return false;
-        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
-            return false;
         if (other.getAttribute() == null ^ this.getAttribute() == null)
             return false;
         if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         return true;
     }
@@ -277,8 +277,8 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

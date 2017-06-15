@@ -43,18 +43,18 @@ public class VolumeStatusEventStaxUnmarshaller implements Unmarshaller<VolumeSta
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("eventType", targetDepth)) {
-                    volumeStatusEvent.setEventType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("description", targetDepth)) {
                     volumeStatusEvent.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("notBefore", targetDepth)) {
-                    volumeStatusEvent.setNotBefore(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("eventId", targetDepth)) {
+                    volumeStatusEvent.setEventId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("eventType", targetDepth)) {
+                    volumeStatusEvent.setEventType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -63,8 +63,8 @@ public class VolumeStatusEventStaxUnmarshaller implements Unmarshaller<VolumeSta
                     continue;
                 }
 
-                if (context.testExpression("eventId", targetDepth)) {
-                    volumeStatusEvent.setEventId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("notBefore", targetDepth)) {
+                    volumeStatusEvent.setNotBefore(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

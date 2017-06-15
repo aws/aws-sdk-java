@@ -40,19 +40,6 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeNetworkAclsRequestNetworkAclIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkAclsRequest
-                .getNetworkAclIds();
-        if (!describeNetworkAclsRequestNetworkAclIdsList.isEmpty() || !describeNetworkAclsRequestNetworkAclIdsList.isAutoConstruct()) {
-            int networkAclIdsListIndex = 1;
-
-            for (String describeNetworkAclsRequestNetworkAclIdsListValue : describeNetworkAclsRequestNetworkAclIdsList) {
-                if (describeNetworkAclsRequestNetworkAclIdsListValue != null) {
-                    request.addParameter("NetworkAclId." + networkAclIdsListIndex, StringUtils.fromString(describeNetworkAclsRequestNetworkAclIdsListValue));
-                }
-                networkAclIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeNetworkAclsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNetworkAclsRequest
                 .getFilters();
         if (!describeNetworkAclsRequestFiltersList.isEmpty() || !describeNetworkAclsRequestFiltersList.isAutoConstruct()) {
@@ -77,6 +64,19 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeNetworkAclsRequestNetworkAclIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkAclsRequest
+                .getNetworkAclIds();
+        if (!describeNetworkAclsRequestNetworkAclIdsList.isEmpty() || !describeNetworkAclsRequestNetworkAclIdsList.isAutoConstruct()) {
+            int networkAclIdsListIndex = 1;
+
+            for (String describeNetworkAclsRequestNetworkAclIdsListValue : describeNetworkAclsRequestNetworkAclIdsList) {
+                if (describeNetworkAclsRequestNetworkAclIdsListValue != null) {
+                    request.addParameter("NetworkAclId." + networkAclIdsListIndex, StringUtils.fromString(describeNetworkAclsRequestNetworkAclIdsListValue));
+                }
+                networkAclIdsListIndex++;
             }
         }
 

@@ -28,6 +28,15 @@ public class S3Storage implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
+     * follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * Managing AWS Access Keys</a>.
+     * </p>
+     */
+    private String aWSAccessKeyId;
+    /**
+     * <p>
      * The bucket in which to store the AMI. You can specify a bucket that you already own or a new bucket that Amazon
      * EC2 creates on your behalf. If you specify a bucket that belongs to someone else, Amazon EC2 returns an error.
      * </p>
@@ -41,15 +50,6 @@ public class S3Storage implements Serializable, Cloneable {
     private String prefix;
     /**
      * <p>
-     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
-     * follow the guidance in <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
-     * Managing AWS Access Keys</a>.
-     * </p>
-     */
-    private String aWSAccessKeyId;
-    /**
-     * <p>
      * An Amazon S3 upload policy that gives Amazon EC2 permission to upload items into Amazon S3 on your behalf.
      * </p>
      */
@@ -60,6 +60,64 @@ public class S3Storage implements Serializable, Cloneable {
      * </p>
      */
     private String uploadPolicySignature;
+
+    /**
+     * <p>
+     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
+     * follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * Managing AWS Access Keys</a>.
+     * </p>
+     * 
+     * @param aWSAccessKeyId
+     *        The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
+     *        and follow the guidance in <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     *        Managing AWS Access Keys</a>.
+     */
+
+    public void setAWSAccessKeyId(String aWSAccessKeyId) {
+        this.aWSAccessKeyId = aWSAccessKeyId;
+    }
+
+    /**
+     * <p>
+     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
+     * follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * Managing AWS Access Keys</a>.
+     * </p>
+     * 
+     * @return The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
+     *         and follow the guidance in <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices
+     *         for Managing AWS Access Keys</a>.
+     */
+
+    public String getAWSAccessKeyId() {
+        return this.aWSAccessKeyId;
+    }
+
+    /**
+     * <p>
+     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
+     * follow the guidance in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * Managing AWS Access Keys</a>.
+     * </p>
+     * 
+     * @param aWSAccessKeyId
+     *        The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
+     *        and follow the guidance in <a
+     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     *        Managing AWS Access Keys</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Storage withAWSAccessKeyId(String aWSAccessKeyId) {
+        setAWSAccessKeyId(aWSAccessKeyId);
+        return this;
+    }
 
     /**
      * <p>
@@ -147,64 +205,6 @@ public class S3Storage implements Serializable, Cloneable {
 
     public S3Storage withPrefix(String prefix) {
         setPrefix(prefix);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
-     * follow the guidance in <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
-     * Managing AWS Access Keys</a>.
-     * </p>
-     * 
-     * @param aWSAccessKeyId
-     *        The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
-     *        and follow the guidance in <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
-     *        Managing AWS Access Keys</a>.
-     */
-
-    public void setAWSAccessKeyId(String aWSAccessKeyId) {
-        this.aWSAccessKeyId = aWSAccessKeyId;
-    }
-
-    /**
-     * <p>
-     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
-     * follow the guidance in <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
-     * Managing AWS Access Keys</a>.
-     * </p>
-     * 
-     * @return The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
-     *         and follow the guidance in <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices
-     *         for Managing AWS Access Keys</a>.
-     */
-
-    public String getAWSAccessKeyId() {
-        return this.aWSAccessKeyId;
-    }
-
-    /**
-     * <p>
-     * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
-     * follow the guidance in <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
-     * Managing AWS Access Keys</a>.
-     * </p>
-     * 
-     * @param aWSAccessKeyId
-     *        The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
-     *        and follow the guidance in <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
-     *        Managing AWS Access Keys</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public S3Storage withAWSAccessKeyId(String aWSAccessKeyId) {
-        setAWSAccessKeyId(aWSAccessKeyId);
         return this;
     }
 
@@ -300,12 +300,12 @@ public class S3Storage implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAWSAccessKeyId() != null)
+            sb.append("AWSAccessKeyId: ").append(getAWSAccessKeyId()).append(",");
         if (getBucket() != null)
             sb.append("Bucket: ").append(getBucket()).append(",");
         if (getPrefix() != null)
             sb.append("Prefix: ").append(getPrefix()).append(",");
-        if (getAWSAccessKeyId() != null)
-            sb.append("AWSAccessKeyId: ").append(getAWSAccessKeyId()).append(",");
         if (getUploadPolicy() != null)
             sb.append("UploadPolicy: ").append(getUploadPolicy()).append(",");
         if (getUploadPolicySignature() != null)
@@ -324,6 +324,10 @@ public class S3Storage implements Serializable, Cloneable {
         if (obj instanceof S3Storage == false)
             return false;
         S3Storage other = (S3Storage) obj;
+        if (other.getAWSAccessKeyId() == null ^ this.getAWSAccessKeyId() == null)
+            return false;
+        if (other.getAWSAccessKeyId() != null && other.getAWSAccessKeyId().equals(this.getAWSAccessKeyId()) == false)
+            return false;
         if (other.getBucket() == null ^ this.getBucket() == null)
             return false;
         if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false)
@@ -331,10 +335,6 @@ public class S3Storage implements Serializable, Cloneable {
         if (other.getPrefix() == null ^ this.getPrefix() == null)
             return false;
         if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false)
-            return false;
-        if (other.getAWSAccessKeyId() == null ^ this.getAWSAccessKeyId() == null)
-            return false;
-        if (other.getAWSAccessKeyId() != null && other.getAWSAccessKeyId().equals(this.getAWSAccessKeyId()) == false)
             return false;
         if (other.getUploadPolicy() == null ^ this.getUploadPolicy() == null)
             return false;
@@ -352,9 +352,9 @@ public class S3Storage implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAWSAccessKeyId() == null) ? 0 : getAWSAccessKeyId().hashCode());
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
         hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
-        hashCode = prime * hashCode + ((getAWSAccessKeyId() == null) ? 0 : getAWSAccessKeyId().hashCode());
         hashCode = prime * hashCode + ((getUploadPolicy() == null) ? 0 : getUploadPolicy().hashCode());
         hashCode = prime * hashCode + ((getUploadPolicySignature() == null) ? 0 : getUploadPolicySignature().hashCode());
         return hashCode;

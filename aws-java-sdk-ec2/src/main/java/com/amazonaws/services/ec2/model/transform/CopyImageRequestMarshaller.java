@@ -40,24 +40,12 @@ public class CopyImageRequestMarshaller implements Marshaller<Request<CopyImageR
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (copyImageRequest.getSourceRegion() != null) {
-            request.addParameter("SourceRegion", StringUtils.fromString(copyImageRequest.getSourceRegion()));
-        }
-
-        if (copyImageRequest.getSourceImageId() != null) {
-            request.addParameter("SourceImageId", StringUtils.fromString(copyImageRequest.getSourceImageId()));
-        }
-
-        if (copyImageRequest.getName() != null) {
-            request.addParameter("Name", StringUtils.fromString(copyImageRequest.getName()));
+        if (copyImageRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(copyImageRequest.getClientToken()));
         }
 
         if (copyImageRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(copyImageRequest.getDescription()));
-        }
-
-        if (copyImageRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(copyImageRequest.getClientToken()));
         }
 
         if (copyImageRequest.getEncrypted() != null) {
@@ -66,6 +54,18 @@ public class CopyImageRequestMarshaller implements Marshaller<Request<CopyImageR
 
         if (copyImageRequest.getKmsKeyId() != null) {
             request.addParameter("KmsKeyId", StringUtils.fromString(copyImageRequest.getKmsKeyId()));
+        }
+
+        if (copyImageRequest.getName() != null) {
+            request.addParameter("Name", StringUtils.fromString(copyImageRequest.getName()));
+        }
+
+        if (copyImageRequest.getSourceImageId() != null) {
+            request.addParameter("SourceImageId", StringUtils.fromString(copyImageRequest.getSourceImageId()));
+        }
+
+        if (copyImageRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(copyImageRequest.getSourceRegion()));
         }
 
         return request;

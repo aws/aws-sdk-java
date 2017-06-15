@@ -26,56 +26,16 @@ public class ModifyVpcPeeringConnectionOptionsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Information about the VPC peering connection options for the requester VPC.
-     * </p>
-     */
-    private PeeringConnectionOptions requesterPeeringConnectionOptions;
-    /**
-     * <p>
      * Information about the VPC peering connection options for the accepter VPC.
      * </p>
      */
     private PeeringConnectionOptions accepterPeeringConnectionOptions;
-
     /**
      * <p>
      * Information about the VPC peering connection options for the requester VPC.
      * </p>
-     * 
-     * @param requesterPeeringConnectionOptions
-     *        Information about the VPC peering connection options for the requester VPC.
      */
-
-    public void setRequesterPeeringConnectionOptions(PeeringConnectionOptions requesterPeeringConnectionOptions) {
-        this.requesterPeeringConnectionOptions = requesterPeeringConnectionOptions;
-    }
-
-    /**
-     * <p>
-     * Information about the VPC peering connection options for the requester VPC.
-     * </p>
-     * 
-     * @return Information about the VPC peering connection options for the requester VPC.
-     */
-
-    public PeeringConnectionOptions getRequesterPeeringConnectionOptions() {
-        return this.requesterPeeringConnectionOptions;
-    }
-
-    /**
-     * <p>
-     * Information about the VPC peering connection options for the requester VPC.
-     * </p>
-     * 
-     * @param requesterPeeringConnectionOptions
-     *        Information about the VPC peering connection options for the requester VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyVpcPeeringConnectionOptionsResult withRequesterPeeringConnectionOptions(PeeringConnectionOptions requesterPeeringConnectionOptions) {
-        setRequesterPeeringConnectionOptions(requesterPeeringConnectionOptions);
-        return this;
-    }
+    private PeeringConnectionOptions requesterPeeringConnectionOptions;
 
     /**
      * <p>
@@ -118,6 +78,46 @@ public class ModifyVpcPeeringConnectionOptionsResult extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * Information about the VPC peering connection options for the requester VPC.
+     * </p>
+     * 
+     * @param requesterPeeringConnectionOptions
+     *        Information about the VPC peering connection options for the requester VPC.
+     */
+
+    public void setRequesterPeeringConnectionOptions(PeeringConnectionOptions requesterPeeringConnectionOptions) {
+        this.requesterPeeringConnectionOptions = requesterPeeringConnectionOptions;
+    }
+
+    /**
+     * <p>
+     * Information about the VPC peering connection options for the requester VPC.
+     * </p>
+     * 
+     * @return Information about the VPC peering connection options for the requester VPC.
+     */
+
+    public PeeringConnectionOptions getRequesterPeeringConnectionOptions() {
+        return this.requesterPeeringConnectionOptions;
+    }
+
+    /**
+     * <p>
+     * Information about the VPC peering connection options for the requester VPC.
+     * </p>
+     * 
+     * @param requesterPeeringConnectionOptions
+     *        Information about the VPC peering connection options for the requester VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcPeeringConnectionOptionsResult withRequesterPeeringConnectionOptions(PeeringConnectionOptions requesterPeeringConnectionOptions) {
+        setRequesterPeeringConnectionOptions(requesterPeeringConnectionOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -128,10 +128,10 @@ public class ModifyVpcPeeringConnectionOptionsResult extends com.amazonaws.Amazo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRequesterPeeringConnectionOptions() != null)
-            sb.append("RequesterPeeringConnectionOptions: ").append(getRequesterPeeringConnectionOptions()).append(",");
         if (getAccepterPeeringConnectionOptions() != null)
-            sb.append("AccepterPeeringConnectionOptions: ").append(getAccepterPeeringConnectionOptions());
+            sb.append("AccepterPeeringConnectionOptions: ").append(getAccepterPeeringConnectionOptions()).append(",");
+        if (getRequesterPeeringConnectionOptions() != null)
+            sb.append("RequesterPeeringConnectionOptions: ").append(getRequesterPeeringConnectionOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -146,15 +146,15 @@ public class ModifyVpcPeeringConnectionOptionsResult extends com.amazonaws.Amazo
         if (obj instanceof ModifyVpcPeeringConnectionOptionsResult == false)
             return false;
         ModifyVpcPeeringConnectionOptionsResult other = (ModifyVpcPeeringConnectionOptionsResult) obj;
-        if (other.getRequesterPeeringConnectionOptions() == null ^ this.getRequesterPeeringConnectionOptions() == null)
-            return false;
-        if (other.getRequesterPeeringConnectionOptions() != null
-                && other.getRequesterPeeringConnectionOptions().equals(this.getRequesterPeeringConnectionOptions()) == false)
-            return false;
         if (other.getAccepterPeeringConnectionOptions() == null ^ this.getAccepterPeeringConnectionOptions() == null)
             return false;
         if (other.getAccepterPeeringConnectionOptions() != null
                 && other.getAccepterPeeringConnectionOptions().equals(this.getAccepterPeeringConnectionOptions()) == false)
+            return false;
+        if (other.getRequesterPeeringConnectionOptions() == null ^ this.getRequesterPeeringConnectionOptions() == null)
+            return false;
+        if (other.getRequesterPeeringConnectionOptions() != null
+                && other.getRequesterPeeringConnectionOptions().equals(this.getRequesterPeeringConnectionOptions()) == false)
             return false;
         return true;
     }
@@ -164,8 +164,8 @@ public class ModifyVpcPeeringConnectionOptionsResult extends com.amazonaws.Amazo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRequesterPeeringConnectionOptions() == null) ? 0 : getRequesterPeeringConnectionOptions().hashCode());
         hashCode = prime * hashCode + ((getAccepterPeeringConnectionOptions() == null) ? 0 : getAccepterPeeringConnectionOptions().hashCode());
+        hashCode = prime * hashCode + ((getRequesterPeeringConnectionOptions() == null) ? 0 : getRequesterPeeringConnectionOptions().hashCode());
         return hashCode;
     }
 

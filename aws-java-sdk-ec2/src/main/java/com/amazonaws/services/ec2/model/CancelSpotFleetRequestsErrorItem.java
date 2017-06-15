@@ -28,56 +28,16 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     */
-    private String spotFleetRequestId;
-    /**
-     * <p>
      * The error.
      * </p>
      */
     private CancelSpotFleetRequestsError error;
-
     /**
      * <p>
      * The ID of the Spot fleet request.
      * </p>
-     * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
      */
-
-    public void setSpotFleetRequestId(String spotFleetRequestId) {
-        this.spotFleetRequestId = spotFleetRequestId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     * 
-     * @return The ID of the Spot fleet request.
-     */
-
-    public String getSpotFleetRequestId() {
-        return this.spotFleetRequestId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CancelSpotFleetRequestsErrorItem withSpotFleetRequestId(String spotFleetRequestId) {
-        setSpotFleetRequestId(spotFleetRequestId);
-        return this;
-    }
+    private String spotFleetRequestId;
 
     /**
      * <p>
@@ -120,6 +80,46 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The ID of the Spot fleet request.
+     * </p>
+     * 
+     * @param spotFleetRequestId
+     *        The ID of the Spot fleet request.
+     */
+
+    public void setSpotFleetRequestId(String spotFleetRequestId) {
+        this.spotFleetRequestId = spotFleetRequestId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Spot fleet request.
+     * </p>
+     * 
+     * @return The ID of the Spot fleet request.
+     */
+
+    public String getSpotFleetRequestId() {
+        return this.spotFleetRequestId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Spot fleet request.
+     * </p>
+     * 
+     * @param spotFleetRequestId
+     *        The ID of the Spot fleet request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CancelSpotFleetRequestsErrorItem withSpotFleetRequestId(String spotFleetRequestId) {
+        setSpotFleetRequestId(spotFleetRequestId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -130,10 +130,10 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getError() != null)
-            sb.append("Error: ").append(getError());
+            sb.append("Error: ").append(getError()).append(",");
+        if (getSpotFleetRequestId() != null)
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +148,13 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
         if (obj instanceof CancelSpotFleetRequestsErrorItem == false)
             return false;
         CancelSpotFleetRequestsErrorItem other = (CancelSpotFleetRequestsErrorItem) obj;
-        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
-            return false;
-        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
-            return false;
         if (other.getError() == null ^ this.getError() == null)
             return false;
         if (other.getError() != null && other.getError().equals(this.getError()) == false)
+            return false;
+        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
+            return false;
+        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
             return false;
         return true;
     }
@@ -164,8 +164,8 @@ public class CancelSpotFleetRequestsErrorItem implements Serializable, Cloneable
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         return hashCode;
     }
 

@@ -40,16 +40,16 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
     private EbsInstanceBlockDeviceSpecification ebs;
     /**
      * <p>
-     * The virtual device name.
-     * </p>
-     */
-    private String virtualName;
-    /**
-     * <p>
      * suppress the specified device included in the block device mapping.
      * </p>
      */
     private String noDevice;
+    /**
+     * <p>
+     * The virtual device name.
+     * </p>
+     */
+    private String virtualName;
 
     /**
      * <p>
@@ -133,46 +133,6 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
 
     /**
      * <p>
-     * The virtual device name.
-     * </p>
-     * 
-     * @param virtualName
-     *        The virtual device name.
-     */
-
-    public void setVirtualName(String virtualName) {
-        this.virtualName = virtualName;
-    }
-
-    /**
-     * <p>
-     * The virtual device name.
-     * </p>
-     * 
-     * @return The virtual device name.
-     */
-
-    public String getVirtualName() {
-        return this.virtualName;
-    }
-
-    /**
-     * <p>
-     * The virtual device name.
-     * </p>
-     * 
-     * @param virtualName
-     *        The virtual device name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InstanceBlockDeviceMappingSpecification withVirtualName(String virtualName) {
-        setVirtualName(virtualName);
-        return this;
-    }
-
-    /**
-     * <p>
      * suppress the specified device included in the block device mapping.
      * </p>
      * 
@@ -212,6 +172,46 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
     }
 
     /**
+     * <p>
+     * The virtual device name.
+     * </p>
+     * 
+     * @param virtualName
+     *        The virtual device name.
+     */
+
+    public void setVirtualName(String virtualName) {
+        this.virtualName = virtualName;
+    }
+
+    /**
+     * <p>
+     * The virtual device name.
+     * </p>
+     * 
+     * @return The virtual device name.
+     */
+
+    public String getVirtualName() {
+        return this.virtualName;
+    }
+
+    /**
+     * <p>
+     * The virtual device name.
+     * </p>
+     * 
+     * @param virtualName
+     *        The virtual device name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceBlockDeviceMappingSpecification withVirtualName(String virtualName) {
+        setVirtualName(virtualName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -226,10 +226,10 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
             sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getEbs() != null)
             sb.append("Ebs: ").append(getEbs()).append(",");
-        if (getVirtualName() != null)
-            sb.append("VirtualName: ").append(getVirtualName()).append(",");
         if (getNoDevice() != null)
-            sb.append("NoDevice: ").append(getNoDevice());
+            sb.append("NoDevice: ").append(getNoDevice()).append(",");
+        if (getVirtualName() != null)
+            sb.append("VirtualName: ").append(getVirtualName());
         sb.append("}");
         return sb.toString();
     }
@@ -252,13 +252,13 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
             return false;
         if (other.getEbs() != null && other.getEbs().equals(this.getEbs()) == false)
             return false;
-        if (other.getVirtualName() == null ^ this.getVirtualName() == null)
-            return false;
-        if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false)
-            return false;
         if (other.getNoDevice() == null ^ this.getNoDevice() == null)
             return false;
         if (other.getNoDevice() != null && other.getNoDevice().equals(this.getNoDevice()) == false)
+            return false;
+        if (other.getVirtualName() == null ^ this.getVirtualName() == null)
+            return false;
+        if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false)
             return false;
         return true;
     }
@@ -270,8 +270,8 @@ public class InstanceBlockDeviceMappingSpecification implements Serializable, Cl
 
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode());
-        hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
         hashCode = prime * hashCode + ((getNoDevice() == null) ? 0 : getNoDevice().hashCode());
+        hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
         return hashCode;
     }
 

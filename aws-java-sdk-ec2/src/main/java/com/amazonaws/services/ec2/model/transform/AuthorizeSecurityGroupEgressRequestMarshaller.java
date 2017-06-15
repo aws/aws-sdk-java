@@ -46,30 +46,6 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements
             request.addParameter("GroupId", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getGroupId()));
         }
 
-        if (authorizeSecurityGroupEgressRequest.getSourceSecurityGroupName() != null) {
-            request.addParameter("SourceSecurityGroupName", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getSourceSecurityGroupName()));
-        }
-
-        if (authorizeSecurityGroupEgressRequest.getSourceSecurityGroupOwnerId() != null) {
-            request.addParameter("SourceSecurityGroupOwnerId", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getSourceSecurityGroupOwnerId()));
-        }
-
-        if (authorizeSecurityGroupEgressRequest.getIpProtocol() != null) {
-            request.addParameter("IpProtocol", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getIpProtocol()));
-        }
-
-        if (authorizeSecurityGroupEgressRequest.getFromPort() != null) {
-            request.addParameter("FromPort", StringUtils.fromInteger(authorizeSecurityGroupEgressRequest.getFromPort()));
-        }
-
-        if (authorizeSecurityGroupEgressRequest.getToPort() != null) {
-            request.addParameter("ToPort", StringUtils.fromInteger(authorizeSecurityGroupEgressRequest.getToPort()));
-        }
-
-        if (authorizeSecurityGroupEgressRequest.getCidrIp() != null) {
-            request.addParameter("CidrIp", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getCidrIp()));
-        }
-
         com.amazonaws.internal.SdkInternalList<IpPermission> authorizeSecurityGroupEgressRequestIpPermissionsList = (com.amazonaws.internal.SdkInternalList<IpPermission>) authorizeSecurityGroupEgressRequest
                 .getIpPermissions();
         if (!authorizeSecurityGroupEgressRequestIpPermissionsList.isEmpty() || !authorizeSecurityGroupEgressRequestIpPermissionsList.isAutoConstruct()) {
@@ -77,60 +53,14 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements
 
             for (IpPermission authorizeSecurityGroupEgressRequestIpPermissionsListValue : authorizeSecurityGroupEgressRequestIpPermissionsList) {
 
-                if (authorizeSecurityGroupEgressRequestIpPermissionsListValue.getIpProtocol() != null) {
-                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpProtocol",
-                            StringUtils.fromString(authorizeSecurityGroupEgressRequestIpPermissionsListValue.getIpProtocol()));
-                }
-
                 if (authorizeSecurityGroupEgressRequestIpPermissionsListValue.getFromPort() != null) {
                     request.addParameter("IpPermissions." + ipPermissionsListIndex + ".FromPort",
                             StringUtils.fromInteger(authorizeSecurityGroupEgressRequestIpPermissionsListValue.getFromPort()));
                 }
 
-                if (authorizeSecurityGroupEgressRequestIpPermissionsListValue.getToPort() != null) {
-                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".ToPort",
-                            StringUtils.fromInteger(authorizeSecurityGroupEgressRequestIpPermissionsListValue.getToPort()));
-                }
-
-                com.amazonaws.internal.SdkInternalList<UserIdGroupPair> ipPermissionUserIdGroupPairsList = (com.amazonaws.internal.SdkInternalList<UserIdGroupPair>) authorizeSecurityGroupEgressRequestIpPermissionsListValue
-                        .getUserIdGroupPairs();
-                if (!ipPermissionUserIdGroupPairsList.isEmpty() || !ipPermissionUserIdGroupPairsList.isAutoConstruct()) {
-                    int userIdGroupPairsListIndex = 1;
-
-                    for (UserIdGroupPair ipPermissionUserIdGroupPairsListValue : ipPermissionUserIdGroupPairsList) {
-
-                        if (ipPermissionUserIdGroupPairsListValue.getUserId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getUserId()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getGroupName() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupName()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getGroupId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupId()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getVpcId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcId()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId() != null) {
-                            request.addParameter(
-                                    "IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcPeeringConnectionId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getPeeringStatus() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".PeeringStatus",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getPeeringStatus()));
-                        }
-                        userIdGroupPairsListIndex++;
-                    }
+                if (authorizeSecurityGroupEgressRequestIpPermissionsListValue.getIpProtocol() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpProtocol",
+                            StringUtils.fromString(authorizeSecurityGroupEgressRequestIpPermissionsListValue.getIpProtocol()));
                 }
 
                 com.amazonaws.internal.SdkInternalList<Ipv6Range> ipPermissionIpv6RangesList = (com.amazonaws.internal.SdkInternalList<Ipv6Range>) authorizeSecurityGroupEgressRequestIpPermissionsListValue
@@ -163,6 +93,52 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements
                     }
                 }
 
+                if (authorizeSecurityGroupEgressRequestIpPermissionsListValue.getToPort() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".ToPort",
+                            StringUtils.fromInteger(authorizeSecurityGroupEgressRequestIpPermissionsListValue.getToPort()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<UserIdGroupPair> ipPermissionUserIdGroupPairsList = (com.amazonaws.internal.SdkInternalList<UserIdGroupPair>) authorizeSecurityGroupEgressRequestIpPermissionsListValue
+                        .getUserIdGroupPairs();
+                if (!ipPermissionUserIdGroupPairsList.isEmpty() || !ipPermissionUserIdGroupPairsList.isAutoConstruct()) {
+                    int userIdGroupPairsListIndex = 1;
+
+                    for (UserIdGroupPair ipPermissionUserIdGroupPairsListValue : ipPermissionUserIdGroupPairsList) {
+
+                        if (ipPermissionUserIdGroupPairsListValue.getGroupId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupId()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getGroupName() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupName()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getPeeringStatus() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".PeeringStatus",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getPeeringStatus()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getUserId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getUserId()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getVpcId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcId()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId() != null) {
+                            request.addParameter(
+                                    "IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcPeeringConnectionId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId()));
+                        }
+                        userIdGroupPairsListIndex++;
+                    }
+                }
+
                 com.amazonaws.internal.SdkInternalList<IpRange> ipPermissionIpv4RangesList = (com.amazonaws.internal.SdkInternalList<IpRange>) authorizeSecurityGroupEgressRequestIpPermissionsListValue
                         .getIpv4Ranges();
                 if (!ipPermissionIpv4RangesList.isEmpty() || !ipPermissionIpv4RangesList.isAutoConstruct()) {
@@ -179,6 +155,30 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements
                 }
                 ipPermissionsListIndex++;
             }
+        }
+
+        if (authorizeSecurityGroupEgressRequest.getCidrIp() != null) {
+            request.addParameter("CidrIp", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getCidrIp()));
+        }
+
+        if (authorizeSecurityGroupEgressRequest.getFromPort() != null) {
+            request.addParameter("FromPort", StringUtils.fromInteger(authorizeSecurityGroupEgressRequest.getFromPort()));
+        }
+
+        if (authorizeSecurityGroupEgressRequest.getIpProtocol() != null) {
+            request.addParameter("IpProtocol", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getIpProtocol()));
+        }
+
+        if (authorizeSecurityGroupEgressRequest.getToPort() != null) {
+            request.addParameter("ToPort", StringUtils.fromInteger(authorizeSecurityGroupEgressRequest.getToPort()));
+        }
+
+        if (authorizeSecurityGroupEgressRequest.getSourceSecurityGroupName() != null) {
+            request.addParameter("SourceSecurityGroupName", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getSourceSecurityGroupName()));
+        }
+
+        if (authorizeSecurityGroupEgressRequest.getSourceSecurityGroupOwnerId() != null) {
+            request.addParameter("SourceSecurityGroupOwnerId", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getSourceSecurityGroupOwnerId()));
         }
 
         return request;

@@ -33,16 +33,16 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
     private String instanceId;
     /**
      * <p>
-     * The time the output was last updated.
-     * </p>
-     */
-    private java.util.Date timestamp;
-    /**
-     * <p>
      * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
      * </p>
      */
     private String output;
+    /**
+     * <p>
+     * The time the output was last updated.
+     * </p>
+     */
+    private java.util.Date timestamp;
 
     /**
      * <p>
@@ -81,46 +81,6 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     public GetConsoleOutputResult withInstanceId(String instanceId) {
         setInstanceId(instanceId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time the output was last updated.
-     * </p>
-     * 
-     * @param timestamp
-     *        The time the output was last updated.
-     */
-
-    public void setTimestamp(java.util.Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    /**
-     * <p>
-     * The time the output was last updated.
-     * </p>
-     * 
-     * @return The time the output was last updated.
-     */
-
-    public java.util.Date getTimestamp() {
-        return this.timestamp;
-    }
-
-    /**
-     * <p>
-     * The time the output was last updated.
-     * </p>
-     * 
-     * @param timestamp
-     *        The time the output was last updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetConsoleOutputResult withTimestamp(java.util.Date timestamp) {
-        setTimestamp(timestamp);
         return this;
     }
 
@@ -165,6 +125,46 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The time the output was last updated.
+     * </p>
+     * 
+     * @param timestamp
+     *        The time the output was last updated.
+     */
+
+    public void setTimestamp(java.util.Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    /**
+     * <p>
+     * The time the output was last updated.
+     * </p>
+     * 
+     * @return The time the output was last updated.
+     */
+
+    public java.util.Date getTimestamp() {
+        return this.timestamp;
+    }
+
+    /**
+     * <p>
+     * The time the output was last updated.
+     * </p>
+     * 
+     * @param timestamp
+     *        The time the output was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetConsoleOutputResult withTimestamp(java.util.Date timestamp) {
+        setTimestamp(timestamp);
+        return this;
+    }
+
+    /**
      * The decoded console output.
      *
      * @return The decoded console output.
@@ -187,10 +187,10 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
         sb.append("{");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
-        if (getTimestamp() != null)
-            sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getOutput() != null)
-            sb.append("Output: ").append(getOutput());
+            sb.append("Output: ").append(getOutput()).append(",");
+        if (getTimestamp() != null)
+            sb.append("Timestamp: ").append(getTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -209,13 +209,13 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
-        if (other.getTimestamp() == null ^ this.getTimestamp() == null)
-            return false;
-        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
-            return false;
         if (other.getOutput() == null ^ this.getOutput() == null)
             return false;
         if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
+            return false;
+        if (other.getTimestamp() == null ^ this.getTimestamp() == null)
+            return false;
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
         return true;
     }
@@ -226,8 +226,8 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         return hashCode;
     }
 

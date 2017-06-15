@@ -28,10 +28,10 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more volumes.
+     * A description of the task.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem> volumes;
+    private String description;
     /**
      * <p>
      * The ID of the instance.
@@ -46,81 +46,48 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
     private String platform;
     /**
      * <p>
+     * One or more volumes.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem> volumes;
+
+    /**
+     * <p>
      * A description of the task.
      * </p>
-     */
-    private String description;
-
-    /**
-     * <p>
-     * One or more volumes.
-     * </p>
      * 
-     * @return One or more volumes.
+     * @param description
+     *        A description of the task.
      */
 
-    public java.util.List<ImportInstanceVolumeDetailItem> getVolumes() {
-        if (volumes == null) {
-            volumes = new com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem>();
-        }
-        return volumes;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * <p>
-     * One or more volumes.
+     * A description of the task.
      * </p>
      * 
-     * @param volumes
-     *        One or more volumes.
+     * @return A description of the task.
      */
 
-    public void setVolumes(java.util.Collection<ImportInstanceVolumeDetailItem> volumes) {
-        if (volumes == null) {
-            this.volumes = null;
-            return;
-        }
-
-        this.volumes = new com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem>(volumes);
+    public String getDescription() {
+        return this.description;
     }
 
     /**
      * <p>
-     * One or more volumes.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVolumes(java.util.Collection)} or {@link #withVolumes(java.util.Collection)} if you want to override
-     * the existing values.
+     * A description of the task.
      * </p>
      * 
-     * @param volumes
-     *        One or more volumes.
+     * @param description
+     *        A description of the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportInstanceTaskDetails withVolumes(ImportInstanceVolumeDetailItem... volumes) {
-        if (this.volumes == null) {
-            setVolumes(new com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem>(volumes.length));
-        }
-        for (ImportInstanceVolumeDetailItem ele : volumes) {
-            this.volumes.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more volumes.
-     * </p>
-     * 
-     * @param volumes
-     *        One or more volumes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportInstanceTaskDetails withVolumes(java.util.Collection<ImportInstanceVolumeDetailItem> volumes) {
-        setVolumes(volumes);
+    public ImportInstanceTaskDetails withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -239,41 +206,74 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the task.
+     * One or more volumes.
      * </p>
      * 
-     * @param description
-     *        A description of the task.
+     * @return One or more volumes.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public java.util.List<ImportInstanceVolumeDetailItem> getVolumes() {
+        if (volumes == null) {
+            volumes = new com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem>();
+        }
+        return volumes;
     }
 
     /**
      * <p>
-     * A description of the task.
+     * One or more volumes.
      * </p>
      * 
-     * @return A description of the task.
+     * @param volumes
+     *        One or more volumes.
      */
 
-    public String getDescription() {
-        return this.description;
+    public void setVolumes(java.util.Collection<ImportInstanceVolumeDetailItem> volumes) {
+        if (volumes == null) {
+            this.volumes = null;
+            return;
+        }
+
+        this.volumes = new com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem>(volumes);
     }
 
     /**
      * <p>
-     * A description of the task.
+     * One or more volumes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVolumes(java.util.Collection)} or {@link #withVolumes(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param description
-     *        A description of the task.
+     * @param volumes
+     *        One or more volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ImportInstanceTaskDetails withDescription(String description) {
-        setDescription(description);
+    public ImportInstanceTaskDetails withVolumes(ImportInstanceVolumeDetailItem... volumes) {
+        if (this.volumes == null) {
+            setVolumes(new com.amazonaws.internal.SdkInternalList<ImportInstanceVolumeDetailItem>(volumes.length));
+        }
+        for (ImportInstanceVolumeDetailItem ele : volumes) {
+            this.volumes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more volumes.
+     * </p>
+     * 
+     * @param volumes
+     *        One or more volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportInstanceTaskDetails withVolumes(java.util.Collection<ImportInstanceVolumeDetailItem> volumes) {
+        setVolumes(volumes);
         return this;
     }
 
@@ -288,14 +288,14 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumes() != null)
-            sb.append("Volumes: ").append(getVolumes()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+        if (getVolumes() != null)
+            sb.append("Volumes: ").append(getVolumes());
         sb.append("}");
         return sb.toString();
     }
@@ -310,9 +310,9 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
         if (obj instanceof ImportInstanceTaskDetails == false)
             return false;
         ImportInstanceTaskDetails other = (ImportInstanceTaskDetails) obj;
-        if (other.getVolumes() == null ^ this.getVolumes() == null)
+        if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getVolumes() != null && other.getVolumes().equals(this.getVolumes()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
@@ -322,9 +322,9 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getVolumes() == null ^ this.getVolumes() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getVolumes() != null && other.getVolumes().equals(this.getVolumes()) == false)
             return false;
         return true;
     }
@@ -334,10 +334,10 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode());
         return hashCode;
     }
 

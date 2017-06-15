@@ -30,12 +30,6 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> instanceIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -79,10 +73,10 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      */
-    private String nextToken;
+    private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results of the initial
@@ -95,79 +89,12 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
      * </p>
      */
     private Integer maxResults;
-
     /**
      * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * The token to retrieve the next page of results.
      * </p>
-     * 
-     * @return One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
      */
-
-    public java.util.List<String> getInstanceIds() {
-        if (instanceIds == null) {
-            instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return instanceIds;
-    }
-
-    /**
-     * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
-     * </p>
-     * 
-     * @param instanceIds
-     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
-     */
-
-    public void setInstanceIds(java.util.Collection<String> instanceIds) {
-        if (instanceIds == null) {
-            this.instanceIds = null;
-            return;
-        }
-
-        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(instanceIds);
-    }
-
-    /**
-     * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setInstanceIds(java.util.Collection)} or {@link #withInstanceIds(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param instanceIds
-     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeClassicLinkInstancesRequest withInstanceIds(String... instanceIds) {
-        if (this.instanceIds == null) {
-            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(instanceIds.length));
-        }
-        for (String ele : instanceIds) {
-            this.instanceIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
-     * </p>
-     * 
-     * @param instanceIds
-     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeClassicLinkInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
-        setInstanceIds(instanceIds);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -536,41 +463,74 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
+     * @return One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
      */
 
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
+    public java.util.List<String> getInstanceIds() {
+        if (instanceIds == null) {
+            instanceIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return instanceIds;
     }
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @param instanceIds
+     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
      */
 
-    public String getNextToken() {
-        return this.nextToken;
+    public void setInstanceIds(java.util.Collection<String> instanceIds) {
+        if (instanceIds == null) {
+            this.instanceIds = null;
+            return;
+        }
+
+        this.instanceIds = new com.amazonaws.internal.SdkInternalList<String>(instanceIds);
     }
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceIds(java.util.Collection)} or {@link #withInstanceIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
+     * @param instanceIds
+     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeClassicLinkInstancesRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
+    public DescribeClassicLinkInstancesRequest withInstanceIds(String... instanceIds) {
+        if (this.instanceIds == null) {
+            setInstanceIds(new com.amazonaws.internal.SdkInternalList<String>(instanceIds.length));
+        }
+        for (String ele : instanceIds) {
+            this.instanceIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * </p>
+     * 
+     * @param instanceIds
+     *        One or more instance IDs. Must be instances linked to a VPC through ClassicLink.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClassicLinkInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
+        setInstanceIds(instanceIds);
         return this;
     }
 
@@ -651,6 +611,46 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @return The token to retrieve the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClassicLinkInstancesRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -672,14 +672,14 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceIds() != null)
-            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getInstanceIds() != null)
+            sb.append("InstanceIds: ").append(getInstanceIds()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -694,21 +694,21 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeClassicLinkInstancesRequest == false)
             return false;
         DescribeClassicLinkInstancesRequest other = (DescribeClassicLinkInstancesRequest) obj;
-        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
-            return false;
-        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
+        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null)
             return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -718,10 +718,10 @@ public class DescribeClassicLinkInstancesRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

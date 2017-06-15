@@ -1452,8 +1452,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * region by using its endpoint when making the request.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-     * AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information about the prerequisites and limits when copying an AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -1471,8 +1472,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * region by using its endpoint when making the request.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-     * AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information about the prerequisites and limits when copying an AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -5105,6 +5107,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeFlowLogsResult> describeFlowLogsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeFlowLogsRequest, DescribeFlowLogsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes one or more available Amazon FPGA Images (AFIs). These include public AFIs, private AFIs that you own,
+     * and AFIs owned by other AWS accounts for which you have load permissions.
+     * </p>
+     * 
+     * @param describeFpgaImagesRequest
+     * @return A Java Future containing the result of the DescribeFpgaImages operation returned by the service.
+     * @sample AmazonEC2Async.DescribeFpgaImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFpgaImagesResult> describeFpgaImagesAsync(DescribeFpgaImagesRequest describeFpgaImagesRequest);
+
+    /**
+     * <p>
+     * Describes one or more available Amazon FPGA Images (AFIs). These include public AFIs, private AFIs that you own,
+     * and AFIs owned by other AWS accounts for which you have load permissions.
+     * </p>
+     * 
+     * @param describeFpgaImagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFpgaImages operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeFpgaImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFpgaImagesResult> describeFpgaImagesAsync(DescribeFpgaImagesRequest describeFpgaImagesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFpgaImagesRequest, DescribeFpgaImagesResult> asyncHandler);
 
     /**
      * <p>

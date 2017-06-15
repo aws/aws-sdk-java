@@ -48,6 +48,21 @@ public class FlowLogStaxUnmarshaller implements Unmarshaller<FlowLog, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("deliverLogsErrorMessage", targetDepth)) {
+                    flowLog.setDeliverLogsErrorMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deliverLogsPermissionArn", targetDepth)) {
+                    flowLog.setDeliverLogsPermissionArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deliverLogsStatus", targetDepth)) {
+                    flowLog.setDeliverLogsStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("flowLogId", targetDepth)) {
                     flowLog.setFlowLogId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -58,6 +73,11 @@ public class FlowLogStaxUnmarshaller implements Unmarshaller<FlowLog, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("logGroupName", targetDepth)) {
+                    flowLog.setLogGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("resourceId", targetDepth)) {
                     flowLog.setResourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -65,26 +85,6 @@ public class FlowLogStaxUnmarshaller implements Unmarshaller<FlowLog, StaxUnmars
 
                 if (context.testExpression("trafficType", targetDepth)) {
                     flowLog.setTrafficType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("logGroupName", targetDepth)) {
-                    flowLog.setLogGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("deliverLogsStatus", targetDepth)) {
-                    flowLog.setDeliverLogsStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("deliverLogsErrorMessage", targetDepth)) {
-                    flowLog.setDeliverLogsErrorMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("deliverLogsPermissionArn", targetDepth)) {
-                    flowLog.setDeliverLogsPermissionArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

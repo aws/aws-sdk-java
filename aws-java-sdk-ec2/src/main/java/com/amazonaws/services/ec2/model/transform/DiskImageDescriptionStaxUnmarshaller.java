@@ -43,13 +43,13 @@ public class DiskImageDescriptionStaxUnmarshaller implements Unmarshaller<DiskIm
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("format", targetDepth)) {
-                    diskImageDescription.setFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("checksum", targetDepth)) {
+                    diskImageDescription.setChecksum(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("size", targetDepth)) {
-                    diskImageDescription.setSize(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("format", targetDepth)) {
+                    diskImageDescription.setFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,8 +58,8 @@ public class DiskImageDescriptionStaxUnmarshaller implements Unmarshaller<DiskIm
                     continue;
                 }
 
-                if (context.testExpression("checksum", targetDepth)) {
-                    diskImageDescription.setChecksum(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("size", targetDepth)) {
+                    diskImageDescription.setSize(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

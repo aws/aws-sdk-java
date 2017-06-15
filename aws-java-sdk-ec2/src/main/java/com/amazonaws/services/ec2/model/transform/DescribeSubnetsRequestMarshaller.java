@@ -40,19 +40,6 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeSubnetsRequestSubnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSubnetsRequest
-                .getSubnetIds();
-        if (!describeSubnetsRequestSubnetIdsList.isEmpty() || !describeSubnetsRequestSubnetIdsList.isAutoConstruct()) {
-            int subnetIdsListIndex = 1;
-
-            for (String describeSubnetsRequestSubnetIdsListValue : describeSubnetsRequestSubnetIdsList) {
-                if (describeSubnetsRequestSubnetIdsListValue != null) {
-                    request.addParameter("SubnetId." + subnetIdsListIndex, StringUtils.fromString(describeSubnetsRequestSubnetIdsListValue));
-                }
-                subnetIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeSubnetsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSubnetsRequest
                 .getFilters();
         if (!describeSubnetsRequestFiltersList.isEmpty() || !describeSubnetsRequestFiltersList.isAutoConstruct()) {
@@ -77,6 +64,19 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeSubnetsRequestSubnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSubnetsRequest
+                .getSubnetIds();
+        if (!describeSubnetsRequestSubnetIdsList.isEmpty() || !describeSubnetsRequestSubnetIdsList.isAutoConstruct()) {
+            int subnetIdsListIndex = 1;
+
+            for (String describeSubnetsRequestSubnetIdsListValue : describeSubnetsRequestSubnetIdsList) {
+                if (describeSubnetsRequestSubnetIdsListValue != null) {
+                    request.addParameter("SubnetId." + subnetIdsListIndex, StringUtils.fromString(describeSubnetsRequestSubnetIdsListValue));
+                }
+                subnetIdsListIndex++;
             }
         }
 

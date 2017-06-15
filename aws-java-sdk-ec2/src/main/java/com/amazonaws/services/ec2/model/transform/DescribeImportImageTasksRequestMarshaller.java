@@ -40,28 +40,6 @@ public class DescribeImportImageTasksRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeImportImageTasksRequestImportTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImportImageTasksRequest
-                .getImportTaskIds();
-        if (!describeImportImageTasksRequestImportTaskIdsList.isEmpty() || !describeImportImageTasksRequestImportTaskIdsList.isAutoConstruct()) {
-            int importTaskIdsListIndex = 1;
-
-            for (String describeImportImageTasksRequestImportTaskIdsListValue : describeImportImageTasksRequestImportTaskIdsList) {
-                if (describeImportImageTasksRequestImportTaskIdsListValue != null) {
-                    request.addParameter("ImportTaskId." + importTaskIdsListIndex,
-                            StringUtils.fromString(describeImportImageTasksRequestImportTaskIdsListValue));
-                }
-                importTaskIdsListIndex++;
-            }
-        }
-
-        if (describeImportImageTasksRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeImportImageTasksRequest.getNextToken()));
-        }
-
-        if (describeImportImageTasksRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeImportImageTasksRequest.getMaxResults()));
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeImportImageTasksRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeImportImageTasksRequest
                 .getFilters();
         if (!describeImportImageTasksRequestFiltersList.isEmpty() || !describeImportImageTasksRequestFiltersList.isAutoConstruct()) {
@@ -88,6 +66,28 @@ public class DescribeImportImageTasksRequestMarshaller implements Marshaller<Req
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeImportImageTasksRequestImportTaskIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImportImageTasksRequest
+                .getImportTaskIds();
+        if (!describeImportImageTasksRequestImportTaskIdsList.isEmpty() || !describeImportImageTasksRequestImportTaskIdsList.isAutoConstruct()) {
+            int importTaskIdsListIndex = 1;
+
+            for (String describeImportImageTasksRequestImportTaskIdsListValue : describeImportImageTasksRequestImportTaskIdsList) {
+                if (describeImportImageTasksRequestImportTaskIdsListValue != null) {
+                    request.addParameter("ImportTaskId." + importTaskIdsListIndex,
+                            StringUtils.fromString(describeImportImageTasksRequestImportTaskIdsListValue));
+                }
+                importTaskIdsListIndex++;
+            }
+        }
+
+        if (describeImportImageTasksRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeImportImageTasksRequest.getMaxResults()));
+        }
+
+        if (describeImportImageTasksRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeImportImageTasksRequest.getNextToken()));
         }
 
         return request;

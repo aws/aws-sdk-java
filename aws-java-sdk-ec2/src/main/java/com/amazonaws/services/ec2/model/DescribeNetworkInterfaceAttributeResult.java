@@ -28,10 +28,10 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the network interface.
+     * The attachment (if any) of the network interface.
      * </p>
      */
-    private String networkInterfaceId;
+    private NetworkInterfaceAttachment attachment;
     /**
      * <p>
      * The description of the network interface.
@@ -40,60 +40,60 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
     private String description;
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled.
-     * </p>
-     */
-    private Boolean sourceDestCheck;
-    /**
-     * <p>
      * The security groups associated with the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
     /**
      * <p>
+     * The ID of the network interface.
+     * </p>
+     */
+    private String networkInterfaceId;
+    /**
+     * <p>
+     * Indicates whether source/destination checking is enabled.
+     * </p>
+     */
+    private Boolean sourceDestCheck;
+
+    /**
+     * <p>
      * The attachment (if any) of the network interface.
      * </p>
-     */
-    private NetworkInterfaceAttachment attachment;
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
      * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
+     * @param attachment
+     *        The attachment (if any) of the network interface.
      */
 
-    public void setNetworkInterfaceId(String networkInterfaceId) {
-        this.networkInterfaceId = networkInterfaceId;
+    public void setAttachment(NetworkInterfaceAttachment attachment) {
+        this.attachment = attachment;
     }
 
     /**
      * <p>
-     * The ID of the network interface.
+     * The attachment (if any) of the network interface.
      * </p>
      * 
-     * @return The ID of the network interface.
+     * @return The attachment (if any) of the network interface.
      */
 
-    public String getNetworkInterfaceId() {
-        return this.networkInterfaceId;
+    public NetworkInterfaceAttachment getAttachment() {
+        return this.attachment;
     }
 
     /**
      * <p>
-     * The ID of the network interface.
+     * The attachment (if any) of the network interface.
      * </p>
      * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
+     * @param attachment
+     *        The attachment (if any) of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withNetworkInterfaceId(String networkInterfaceId) {
-        setNetworkInterfaceId(networkInterfaceId);
+    public DescribeNetworkInterfaceAttributeResult withAttachment(NetworkInterfaceAttachment attachment) {
+        setAttachment(attachment);
         return this;
     }
 
@@ -135,58 +135,6 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
     public DescribeNetworkInterfaceAttributeResult withDescription(String description) {
         setDescription(description);
         return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether source/destination checking is enabled.
-     * </p>
-     * 
-     * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled.
-     */
-
-    public void setSourceDestCheck(Boolean sourceDestCheck) {
-        this.sourceDestCheck = sourceDestCheck;
-    }
-
-    /**
-     * <p>
-     * Indicates whether source/destination checking is enabled.
-     * </p>
-     * 
-     * @return Indicates whether source/destination checking is enabled.
-     */
-
-    public Boolean getSourceDestCheck() {
-        return this.sourceDestCheck;
-    }
-
-    /**
-     * <p>
-     * Indicates whether source/destination checking is enabled.
-     * </p>
-     * 
-     * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeNetworkInterfaceAttributeResult withSourceDestCheck(Boolean sourceDestCheck) {
-        setSourceDestCheck(sourceDestCheck);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether source/destination checking is enabled.
-     * </p>
-     * 
-     * @return Indicates whether source/destination checking is enabled.
-     */
-
-    public Boolean isSourceDestCheck() {
-        return this.sourceDestCheck;
     }
 
     /**
@@ -264,42 +212,94 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The attachment (if any) of the network interface.
+     * The ID of the network interface.
      * </p>
      * 
-     * @param attachment
-     *        The attachment (if any) of the network interface.
+     * @param networkInterfaceId
+     *        The ID of the network interface.
      */
 
-    public void setAttachment(NetworkInterfaceAttachment attachment) {
-        this.attachment = attachment;
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
     }
 
     /**
      * <p>
-     * The attachment (if any) of the network interface.
+     * The ID of the network interface.
      * </p>
      * 
-     * @return The attachment (if any) of the network interface.
+     * @return The ID of the network interface.
      */
 
-    public NetworkInterfaceAttachment getAttachment() {
-        return this.attachment;
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
     }
 
     /**
      * <p>
-     * The attachment (if any) of the network interface.
+     * The ID of the network interface.
      * </p>
      * 
-     * @param attachment
-     *        The attachment (if any) of the network interface.
+     * @param networkInterfaceId
+     *        The ID of the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeNetworkInterfaceAttributeResult withAttachment(NetworkInterfaceAttachment attachment) {
-        setAttachment(attachment);
+    public DescribeNetworkInterfaceAttributeResult withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether source/destination checking is enabled.
+     * </p>
+     * 
+     * @param sourceDestCheck
+     *        Indicates whether source/destination checking is enabled.
+     */
+
+    public void setSourceDestCheck(Boolean sourceDestCheck) {
+        this.sourceDestCheck = sourceDestCheck;
+    }
+
+    /**
+     * <p>
+     * Indicates whether source/destination checking is enabled.
+     * </p>
+     * 
+     * @return Indicates whether source/destination checking is enabled.
+     */
+
+    public Boolean getSourceDestCheck() {
+        return this.sourceDestCheck;
+    }
+
+    /**
+     * <p>
+     * Indicates whether source/destination checking is enabled.
+     * </p>
+     * 
+     * @param sourceDestCheck
+     *        Indicates whether source/destination checking is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfaceAttributeResult withSourceDestCheck(Boolean sourceDestCheck) {
+        setSourceDestCheck(sourceDestCheck);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether source/destination checking is enabled.
+     * </p>
+     * 
+     * @return Indicates whether source/destination checking is enabled.
+     */
+
+    public Boolean isSourceDestCheck() {
+        return this.sourceDestCheck;
     }
 
     /**
@@ -313,16 +313,16 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getAttachment() != null)
+            sb.append("Attachment: ").append(getAttachment()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
-        if (getSourceDestCheck() != null)
-            sb.append("SourceDestCheck: ").append(getSourceDestCheck()).append(",");
         if (getGroups() != null)
             sb.append("Groups: ").append(getGroups()).append(",");
-        if (getAttachment() != null)
-            sb.append("Attachment: ").append(getAttachment());
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
+        if (getSourceDestCheck() != null)
+            sb.append("SourceDestCheck: ").append(getSourceDestCheck());
         sb.append("}");
         return sb.toString();
     }
@@ -337,25 +337,25 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
         if (obj instanceof DescribeNetworkInterfaceAttributeResult == false)
             return false;
         DescribeNetworkInterfaceAttributeResult other = (DescribeNetworkInterfaceAttributeResult) obj;
-        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+        if (other.getAttachment() == null ^ this.getAttachment() == null)
             return false;
-        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
+        if (other.getAttachment() != null && other.getAttachment().equals(this.getAttachment()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getSourceDestCheck() == null ^ this.getSourceDestCheck() == null)
-            return false;
-        if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
-            return false;
         if (other.getGroups() == null ^ this.getGroups() == null)
             return false;
         if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
             return false;
-        if (other.getAttachment() == null ^ this.getAttachment() == null)
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
-        if (other.getAttachment() != null && other.getAttachment().equals(this.getAttachment()) == false)
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
+            return false;
+        if (other.getSourceDestCheck() == null ^ this.getSourceDestCheck() == null)
+            return false;
+        if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
             return false;
         return true;
     }
@@ -365,11 +365,11 @@ public class DescribeNetworkInterfaceAttributeResult extends com.amazonaws.Amazo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
-        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         hashCode = prime * hashCode + ((getAttachment() == null) ? 0 : getAttachment().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
+        hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
         return hashCode;
     }
 

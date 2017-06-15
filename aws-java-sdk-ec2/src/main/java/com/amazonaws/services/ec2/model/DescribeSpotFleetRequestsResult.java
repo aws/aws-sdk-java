@@ -27,17 +27,63 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the configuration of your Spot fleet.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<SpotFleetRequestConfig> spotFleetRequestConfigs;
-    /**
-     * <p>
      * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
      * results to return.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Information about the configuration of your Spot fleet.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SpotFleetRequestConfig> spotFleetRequestConfigs;
+
+    /**
+     * <p>
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotFleetRequestsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -113,52 +159,6 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @return The token required to retrieve the next set of results. This value is <code>null</code> when there are no
-     *         more results to return.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotFleetRequestsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -169,10 +169,10 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotFleetRequestConfigs() != null)
-            sb.append("SpotFleetRequestConfigs: ").append(getSpotFleetRequestConfigs()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getSpotFleetRequestConfigs() != null)
+            sb.append("SpotFleetRequestConfigs: ").append(getSpotFleetRequestConfigs());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +187,13 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
         if (obj instanceof DescribeSpotFleetRequestsResult == false)
             return false;
         DescribeSpotFleetRequestsResult other = (DescribeSpotFleetRequestsResult) obj;
-        if (other.getSpotFleetRequestConfigs() == null ^ this.getSpotFleetRequestConfigs() == null)
-            return false;
-        if (other.getSpotFleetRequestConfigs() != null && other.getSpotFleetRequestConfigs().equals(this.getSpotFleetRequestConfigs()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getSpotFleetRequestConfigs() == null ^ this.getSpotFleetRequestConfigs() == null)
+            return false;
+        if (other.getSpotFleetRequestConfigs() != null && other.getSpotFleetRequestConfigs().equals(this.getSpotFleetRequestConfigs()) == false)
             return false;
         return true;
     }
@@ -203,8 +203,8 @@ public class DescribeSpotFleetRequestsResult extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSpotFleetRequestConfigs() == null) ? 0 : getSpotFleetRequestConfigs().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestConfigs() == null) ? 0 : getSpotFleetRequestConfigs().hashCode());
         return hashCode;
     }
 

@@ -27,23 +27,22 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Dedicated Host.
-     * </p>
-     */
-    private String hostId;
-    /**
-     * <p>
      * Whether auto-placement is on or off.
      * </p>
      */
     private String autoPlacement;
     /**
      * <p>
-     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
-     * have an associated reservation.
+     * The Availability Zone of the Dedicated Host.
      * </p>
      */
-    private String hostReservationId;
+    private String availabilityZone;
+    /**
+     * <p>
+     * The number of new instances that can be launched onto the Dedicated Host.
+     * </p>
+     */
+    private AvailableCapacity availableCapacity;
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
@@ -54,22 +53,23 @@ public class Host implements Serializable, Cloneable {
     private String clientToken;
     /**
      * <p>
+     * The ID of the Dedicated Host.
+     * </p>
+     */
+    private String hostId;
+    /**
+     * <p>
      * The hardware specifications of the Dedicated Host.
      * </p>
      */
     private HostProperties hostProperties;
     /**
      * <p>
-     * The Dedicated Host's state.
+     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
+     * have an associated reservation.
      * </p>
      */
-    private String state;
-    /**
-     * <p>
-     * The Availability Zone of the Dedicated Host.
-     * </p>
-     */
-    private String availabilityZone;
+    private String hostReservationId;
     /**
      * <p>
      * The IDs and instance type that are currently running on the Dedicated Host.
@@ -78,50 +78,10 @@ public class Host implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<HostInstance> instances;
     /**
      * <p>
-     * The number of new instances that can be launched onto the Dedicated Host.
+     * The Dedicated Host's state.
      * </p>
      */
-    private AvailableCapacity availableCapacity;
-
-    /**
-     * <p>
-     * The ID of the Dedicated Host.
-     * </p>
-     * 
-     * @param hostId
-     *        The ID of the Dedicated Host.
-     */
-
-    public void setHostId(String hostId) {
-        this.hostId = hostId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Dedicated Host.
-     * </p>
-     * 
-     * @return The ID of the Dedicated Host.
-     */
-
-    public String getHostId() {
-        return this.hostId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Dedicated Host.
-     * </p>
-     * 
-     * @param hostId
-     *        The ID of the Dedicated Host.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Host withHostId(String hostId) {
-        setHostId(hostId);
-        return this;
-    }
+    private String state;
 
     /**
      * <p>
@@ -198,47 +158,81 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
-     * have an associated reservation.
+     * The Availability Zone of the Dedicated Host.
      * </p>
      * 
-     * @param hostReservationId
-     *        The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host
-     *        doesn't have an associated reservation.
+     * @param availabilityZone
+     *        The Availability Zone of the Dedicated Host.
      */
 
-    public void setHostReservationId(String hostReservationId) {
-        this.hostReservationId = hostReservationId;
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
     }
 
     /**
      * <p>
-     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
-     * have an associated reservation.
+     * The Availability Zone of the Dedicated Host.
      * </p>
      * 
-     * @return The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host
-     *         doesn't have an associated reservation.
+     * @return The Availability Zone of the Dedicated Host.
      */
 
-    public String getHostReservationId() {
-        return this.hostReservationId;
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
     }
 
     /**
      * <p>
-     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
-     * have an associated reservation.
+     * The Availability Zone of the Dedicated Host.
      * </p>
      * 
-     * @param hostReservationId
-     *        The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host
-     *        doesn't have an associated reservation.
+     * @param availabilityZone
+     *        The Availability Zone of the Dedicated Host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Host withHostReservationId(String hostReservationId) {
-        setHostReservationId(hostReservationId);
+    public Host withAvailabilityZone(String availabilityZone) {
+        setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of new instances that can be launched onto the Dedicated Host.
+     * </p>
+     * 
+     * @param availableCapacity
+     *        The number of new instances that can be launched onto the Dedicated Host.
+     */
+
+    public void setAvailableCapacity(AvailableCapacity availableCapacity) {
+        this.availableCapacity = availableCapacity;
+    }
+
+    /**
+     * <p>
+     * The number of new instances that can be launched onto the Dedicated Host.
+     * </p>
+     * 
+     * @return The number of new instances that can be launched onto the Dedicated Host.
+     */
+
+    public AvailableCapacity getAvailableCapacity() {
+        return this.availableCapacity;
+    }
+
+    /**
+     * <p>
+     * The number of new instances that can be launched onto the Dedicated Host.
+     * </p>
+     * 
+     * @param availableCapacity
+     *        The number of new instances that can be launched onto the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Host withAvailableCapacity(AvailableCapacity availableCapacity) {
+        setAvailableCapacity(availableCapacity);
         return this;
     }
 
@@ -296,6 +290,46 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ID of the Dedicated Host.
+     * </p>
+     * 
+     * @param hostId
+     *        The ID of the Dedicated Host.
+     */
+
+    public void setHostId(String hostId) {
+        this.hostId = hostId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Dedicated Host.
+     * </p>
+     * 
+     * @return The ID of the Dedicated Host.
+     */
+
+    public String getHostId() {
+        return this.hostId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Dedicated Host.
+     * </p>
+     * 
+     * @param hostId
+     *        The ID of the Dedicated Host.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Host withHostId(String hostId) {
+        setHostId(hostId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The hardware specifications of the Dedicated Host.
      * </p>
      * 
@@ -336,114 +370,47 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Dedicated Host's state.
+     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
+     * have an associated reservation.
      * </p>
      * 
-     * @param state
-     *        The Dedicated Host's state.
-     * @see AllocationState
+     * @param hostReservationId
+     *        The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host
+     *        doesn't have an associated reservation.
      */
 
-    public void setState(String state) {
-        this.state = state;
+    public void setHostReservationId(String hostReservationId) {
+        this.hostReservationId = hostReservationId;
     }
 
     /**
      * <p>
-     * The Dedicated Host's state.
+     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
+     * have an associated reservation.
      * </p>
      * 
-     * @return The Dedicated Host's state.
-     * @see AllocationState
+     * @return The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host
+     *         doesn't have an associated reservation.
      */
 
-    public String getState() {
-        return this.state;
+    public String getHostReservationId() {
+        return this.hostReservationId;
     }
 
     /**
      * <p>
-     * The Dedicated Host's state.
+     * The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host doesn't
+     * have an associated reservation.
      * </p>
      * 
-     * @param state
-     *        The Dedicated Host's state.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AllocationState
-     */
-
-    public Host withState(String state) {
-        setState(state);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Dedicated Host's state.
-     * </p>
-     * 
-     * @param state
-     *        The Dedicated Host's state.
-     * @see AllocationState
-     */
-
-    public void setState(AllocationState state) {
-        this.state = state.toString();
-    }
-
-    /**
-     * <p>
-     * The Dedicated Host's state.
-     * </p>
-     * 
-     * @param state
-     *        The Dedicated Host's state.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see AllocationState
-     */
-
-    public Host withState(AllocationState state) {
-        setState(state);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone of the Dedicated Host.
-     * </p>
-     * 
-     * @param availabilityZone
-     *        The Availability Zone of the Dedicated Host.
-     */
-
-    public void setAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone of the Dedicated Host.
-     * </p>
-     * 
-     * @return The Availability Zone of the Dedicated Host.
-     */
-
-    public String getAvailabilityZone() {
-        return this.availabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone of the Dedicated Host.
-     * </p>
-     * 
-     * @param availabilityZone
-     *        The Availability Zone of the Dedicated Host.
+     * @param hostReservationId
+     *        The reservation ID of the Dedicated Host. This returns a <code>null</code> response if the Dedicated Host
+     *        doesn't have an associated reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Host withAvailabilityZone(String availabilityZone) {
-        setAvailabilityZone(availabilityZone);
+    public Host withHostReservationId(String hostReservationId) {
+        setHostReservationId(hostReservationId);
         return this;
     }
 
@@ -522,41 +489,74 @@ public class Host implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of new instances that can be launched onto the Dedicated Host.
+     * The Dedicated Host's state.
      * </p>
      * 
-     * @param availableCapacity
-     *        The number of new instances that can be launched onto the Dedicated Host.
+     * @param state
+     *        The Dedicated Host's state.
+     * @see AllocationState
      */
 
-    public void setAvailableCapacity(AvailableCapacity availableCapacity) {
-        this.availableCapacity = availableCapacity;
+    public void setState(String state) {
+        this.state = state;
     }
 
     /**
      * <p>
-     * The number of new instances that can be launched onto the Dedicated Host.
+     * The Dedicated Host's state.
      * </p>
      * 
-     * @return The number of new instances that can be launched onto the Dedicated Host.
+     * @return The Dedicated Host's state.
+     * @see AllocationState
      */
 
-    public AvailableCapacity getAvailableCapacity() {
-        return this.availableCapacity;
+    public String getState() {
+        return this.state;
     }
 
     /**
      * <p>
-     * The number of new instances that can be launched onto the Dedicated Host.
+     * The Dedicated Host's state.
      * </p>
      * 
-     * @param availableCapacity
-     *        The number of new instances that can be launched onto the Dedicated Host.
+     * @param state
+     *        The Dedicated Host's state.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AllocationState
      */
 
-    public Host withAvailableCapacity(AvailableCapacity availableCapacity) {
-        setAvailableCapacity(availableCapacity);
+    public Host withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Dedicated Host's state.
+     * </p>
+     * 
+     * @param state
+     *        The Dedicated Host's state.
+     * @see AllocationState
+     */
+
+    public void setState(AllocationState state) {
+        this.state = state.toString();
+    }
+
+    /**
+     * <p>
+     * The Dedicated Host's state.
+     * </p>
+     * 
+     * @param state
+     *        The Dedicated Host's state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AllocationState
+     */
+
+    public Host withState(AllocationState state) {
+        setState(state);
         return this;
     }
 
@@ -571,24 +571,24 @@ public class Host implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getHostId() != null)
-            sb.append("HostId: ").append(getHostId()).append(",");
         if (getAutoPlacement() != null)
             sb.append("AutoPlacement: ").append(getAutoPlacement()).append(",");
-        if (getHostReservationId() != null)
-            sb.append("HostReservationId: ").append(getHostReservationId()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
-        if (getHostProperties() != null)
-            sb.append("HostProperties: ").append(getHostProperties()).append(",");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getAvailableCapacity() != null)
+            sb.append("AvailableCapacity: ").append(getAvailableCapacity()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getHostId() != null)
+            sb.append("HostId: ").append(getHostId()).append(",");
+        if (getHostProperties() != null)
+            sb.append("HostProperties: ").append(getHostProperties()).append(",");
+        if (getHostReservationId() != null)
+            sb.append("HostReservationId: ").append(getHostReservationId()).append(",");
         if (getInstances() != null)
             sb.append("Instances: ").append(getInstances()).append(",");
-        if (getAvailableCapacity() != null)
-            sb.append("AvailableCapacity: ").append(getAvailableCapacity());
+        if (getState() != null)
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }
@@ -603,41 +603,41 @@ public class Host implements Serializable, Cloneable {
         if (obj instanceof Host == false)
             return false;
         Host other = (Host) obj;
-        if (other.getHostId() == null ^ this.getHostId() == null)
-            return false;
-        if (other.getHostId() != null && other.getHostId().equals(this.getHostId()) == false)
-            return false;
         if (other.getAutoPlacement() == null ^ this.getAutoPlacement() == null)
             return false;
         if (other.getAutoPlacement() != null && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
-            return false;
-        if (other.getHostReservationId() == null ^ this.getHostReservationId() == null)
-            return false;
-        if (other.getHostReservationId() != null && other.getHostReservationId().equals(this.getHostReservationId()) == false)
-            return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
-        if (other.getHostProperties() == null ^ this.getHostProperties() == null)
-            return false;
-        if (other.getHostProperties() != null && other.getHostProperties().equals(this.getHostProperties()) == false)
-            return false;
-        if (other.getState() == null ^ this.getState() == null)
-            return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
+        if (other.getAvailableCapacity() == null ^ this.getAvailableCapacity() == null)
+            return false;
+        if (other.getAvailableCapacity() != null && other.getAvailableCapacity().equals(this.getAvailableCapacity()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getHostId() == null ^ this.getHostId() == null)
+            return false;
+        if (other.getHostId() != null && other.getHostId().equals(this.getHostId()) == false)
+            return false;
+        if (other.getHostProperties() == null ^ this.getHostProperties() == null)
+            return false;
+        if (other.getHostProperties() != null && other.getHostProperties().equals(this.getHostProperties()) == false)
+            return false;
+        if (other.getHostReservationId() == null ^ this.getHostReservationId() == null)
+            return false;
+        if (other.getHostReservationId() != null && other.getHostReservationId().equals(this.getHostReservationId()) == false)
+            return false;
         if (other.getInstances() == null ^ this.getInstances() == null)
             return false;
         if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
-        if (other.getAvailableCapacity() == null ^ this.getAvailableCapacity() == null)
+        if (other.getState() == null ^ this.getState() == null)
             return false;
-        if (other.getAvailableCapacity() != null && other.getAvailableCapacity().equals(this.getAvailableCapacity()) == false)
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         return true;
     }
@@ -647,15 +647,15 @@ public class Host implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
         hashCode = prime * hashCode + ((getAutoPlacement() == null) ? 0 : getAutoPlacement().hashCode());
-        hashCode = prime * hashCode + ((getHostReservationId() == null) ? 0 : getHostReservationId().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
-        hashCode = prime * hashCode + ((getHostProperties() == null) ? 0 : getHostProperties().hashCode());
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
-        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
         hashCode = prime * hashCode + ((getAvailableCapacity() == null) ? 0 : getAvailableCapacity().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
+        hashCode = prime * hashCode + ((getHostProperties() == null) ? 0 : getHostProperties().hashCode());
+        hashCode = prime * hashCode + ((getHostReservationId() == null) ? 0 : getHostReservationId().hashCode());
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
 

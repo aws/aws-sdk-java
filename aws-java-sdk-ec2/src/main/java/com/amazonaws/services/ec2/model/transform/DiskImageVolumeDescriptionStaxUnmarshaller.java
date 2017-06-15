@@ -43,13 +43,13 @@ public class DiskImageVolumeDescriptionStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("size", targetDepth)) {
-                    diskImageVolumeDescription.setSize(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("id", targetDepth)) {
+                    diskImageVolumeDescription.setId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("id", targetDepth)) {
-                    diskImageVolumeDescription.setId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("size", targetDepth)) {
+                    diskImageVolumeDescription.setSize(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

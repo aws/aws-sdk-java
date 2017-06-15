@@ -43,6 +43,11 @@ public class SpotPriceStaxUnmarshaller implements Unmarshaller<SpotPrice, StaxUn
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("availabilityZone", targetDepth)) {
+                    spotPrice.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("instanceType", targetDepth)) {
                     spotPrice.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -60,11 +65,6 @@ public class SpotPriceStaxUnmarshaller implements Unmarshaller<SpotPrice, StaxUn
 
                 if (context.testExpression("timestamp", targetDepth)) {
                     spotPrice.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("availabilityZone", targetDepth)) {
-                    spotPrice.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

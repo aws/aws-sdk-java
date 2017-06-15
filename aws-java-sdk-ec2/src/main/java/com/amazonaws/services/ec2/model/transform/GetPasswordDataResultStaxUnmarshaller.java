@@ -48,13 +48,13 @@ public class GetPasswordDataResultStaxUnmarshaller implements Unmarshaller<GetPa
                     continue;
                 }
 
-                if (context.testExpression("timestamp", targetDepth)) {
-                    getPasswordDataResult.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("passwordData", targetDepth)) {
+                    getPasswordDataResult.setPasswordData(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("passwordData", targetDepth)) {
-                    getPasswordDataResult.setPasswordData(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("timestamp", targetDepth)) {
+                    getPasswordDataResult.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

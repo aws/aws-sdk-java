@@ -1,3 +1,20 @@
+# __1.11.149__ __2017-06-15__
+## __AWS IoT__
+  - ### Features
+    - Revert the last release: remove CertificatePem from DescribeCertificate API.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Added ProvisioningArtifactSummaries to DescribeProductAsAdmin's output to show the provisioning artifacts belong to the product. Allow filtering by SourceProductId in SearchProductsAsAdmin for AWS Marketplace products. Added a verbose option to DescribeProvisioningArtifact to display the CloudFormation template used to create the provisioning artifact.Added DescribeProvisionedProduct API. Changed the type of ProvisionedProduct's Status to be distinct from Record's Status. New ProvisionedProduct's Status are AVAILABLE, UNDER_CHANGE, TAINTED, ERROR. Changed Record's Status set of values to CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED.
+
+## __Amazon EC2__
+  - ### Features
+    - Adds API to describe Amazon FPGA Images (AFIs) available to customers, which includes public AFIs, private AFIs that you own, and AFIs owned by other AWS accounts for which you have load permissions.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Added support for cpu, memory, and memory reservation container overrides on the RunTask and StartTask APIs.
+
 # __1.11.148__ __2017-06-14__
 ## __Amazon CloudDirectory__
   - ### Features

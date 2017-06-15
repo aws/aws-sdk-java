@@ -45,28 +45,8 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("reservedInstancesId", targetDepth)) {
-                    reservedInstances.setReservedInstancesId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceType", targetDepth)) {
-                    reservedInstances.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     reservedInstances.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("start", targetDepth)) {
-                    reservedInstances.setStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("end", targetDepth)) {
-                    reservedInstances.setEnd(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -75,8 +55,8 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     continue;
                 }
 
-                if (context.testExpression("usagePrice", targetDepth)) {
-                    reservedInstances.setUsagePrice(FloatStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("end", targetDepth)) {
+                    reservedInstances.setEnd(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -90,8 +70,23 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     continue;
                 }
 
+                if (context.testExpression("instanceType", targetDepth)) {
+                    reservedInstances.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("productDescription", targetDepth)) {
                     reservedInstances.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("reservedInstancesId", targetDepth)) {
+                    reservedInstances.setReservedInstancesId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("start", targetDepth)) {
+                    reservedInstances.setStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -100,13 +95,13 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     continue;
                 }
 
-                if (context.testExpression("tagSet", targetDepth)) {
-                    reservedInstances.withTags(new ArrayList<Tag>());
+                if (context.testExpression("usagePrice", targetDepth)) {
+                    reservedInstances.setUsagePrice(FloatStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("tagSet/item", targetDepth)) {
-                    reservedInstances.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("currencyCode", targetDepth)) {
+                    reservedInstances.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -115,8 +110,8 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     continue;
                 }
 
-                if (context.testExpression("currencyCode", targetDepth)) {
-                    reservedInstances.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("offeringClass", targetDepth)) {
+                    reservedInstances.setOfferingClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -135,15 +130,21 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     continue;
                 }
 
-                if (context.testExpression("offeringClass", targetDepth)) {
-                    reservedInstances.setOfferingClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("scope", targetDepth)) {
                     reservedInstances.setScope(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    reservedInstances.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    reservedInstances.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstances;

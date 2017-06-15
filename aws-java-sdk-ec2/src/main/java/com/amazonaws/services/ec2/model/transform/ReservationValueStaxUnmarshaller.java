@@ -43,6 +43,11 @@ public class ReservationValueStaxUnmarshaller implements Unmarshaller<Reservatio
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("hourlyPrice", targetDepth)) {
+                    reservationValue.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("remainingTotalValue", targetDepth)) {
                     reservationValue.setRemainingTotalValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class ReservationValueStaxUnmarshaller implements Unmarshaller<Reservatio
 
                 if (context.testExpression("remainingUpfrontValue", targetDepth)) {
                     reservationValue.setRemainingUpfrontValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("hourlyPrice", targetDepth)) {
-                    reservationValue.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -29,15 +29,6 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more subnet IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your subnets.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> subnetIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -121,7 +112,6 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more subnet IDs.
@@ -129,91 +119,8 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * <p>
      * Default: Describes all your subnets.
      * </p>
-     * 
-     * @return One or more subnet IDs.</p>
-     *         <p>
-     *         Default: Describes all your subnets.
      */
-
-    public java.util.List<String> getSubnetIds() {
-        if (subnetIds == null) {
-            subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return subnetIds;
-    }
-
-    /**
-     * <p>
-     * One or more subnet IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your subnets.
-     * </p>
-     * 
-     * @param subnetIds
-     *        One or more subnet IDs.</p>
-     *        <p>
-     *        Default: Describes all your subnets.
-     */
-
-    public void setSubnetIds(java.util.Collection<String> subnetIds) {
-        if (subnetIds == null) {
-            this.subnetIds = null;
-            return;
-        }
-
-        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(subnetIds);
-    }
-
-    /**
-     * <p>
-     * One or more subnet IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your subnets.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param subnetIds
-     *        One or more subnet IDs.</p>
-     *        <p>
-     *        Default: Describes all your subnets.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSubnetsRequest withSubnetIds(String... subnetIds) {
-        if (this.subnetIds == null) {
-            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(subnetIds.length));
-        }
-        for (String ele : subnetIds) {
-            this.subnetIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more subnet IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your subnets.
-     * </p>
-     * 
-     * @param subnetIds
-     *        One or more subnet IDs.</p>
-     *        <p>
-     *        Default: Describes all your subnets.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSubnetsRequest withSubnetIds(java.util.Collection<String> subnetIds) {
-        setSubnetIds(subnetIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> subnetIds;
 
     /**
      * <p>
@@ -925,6 +832,99 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
+     * <p>
+     * One or more subnet IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your subnets.
+     * </p>
+     * 
+     * @return One or more subnet IDs.</p>
+     *         <p>
+     *         Default: Describes all your subnets.
+     */
+
+    public java.util.List<String> getSubnetIds() {
+        if (subnetIds == null) {
+            subnetIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return subnetIds;
+    }
+
+    /**
+     * <p>
+     * One or more subnet IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your subnets.
+     * </p>
+     * 
+     * @param subnetIds
+     *        One or more subnet IDs.</p>
+     *        <p>
+     *        Default: Describes all your subnets.
+     */
+
+    public void setSubnetIds(java.util.Collection<String> subnetIds) {
+        if (subnetIds == null) {
+            this.subnetIds = null;
+            return;
+        }
+
+        this.subnetIds = new com.amazonaws.internal.SdkInternalList<String>(subnetIds);
+    }
+
+    /**
+     * <p>
+     * One or more subnet IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your subnets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param subnetIds
+     *        One or more subnet IDs.</p>
+     *        <p>
+     *        Default: Describes all your subnets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSubnetsRequest withSubnetIds(String... subnetIds) {
+        if (this.subnetIds == null) {
+            setSubnetIds(new com.amazonaws.internal.SdkInternalList<String>(subnetIds.length));
+        }
+        for (String ele : subnetIds) {
+            this.subnetIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more subnet IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your subnets.
+     * </p>
+     * 
+     * @param subnetIds
+     *        One or more subnet IDs.</p>
+     *        <p>
+     *        Default: Describes all your subnets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSubnetsRequest withSubnetIds(java.util.Collection<String> subnetIds) {
+        setSubnetIds(subnetIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -946,10 +946,10 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSubnetIds() != null)
-            sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getSubnetIds() != null)
+            sb.append("SubnetIds: ").append(getSubnetIds());
         sb.append("}");
         return sb.toString();
     }
@@ -964,13 +964,13 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
         if (obj instanceof DescribeSubnetsRequest == false)
             return false;
         DescribeSubnetsRequest other = (DescribeSubnetsRequest) obj;
-        if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
-            return false;
-        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
+            return false;
+        if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
             return false;
         return true;
     }
@@ -980,8 +980,8 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         return hashCode;
     }
 

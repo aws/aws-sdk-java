@@ -40,20 +40,6 @@ public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeNetworkInterfacesRequestNetworkInterfaceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkInterfacesRequest
-                .getNetworkInterfaceIds();
-        if (!describeNetworkInterfacesRequestNetworkInterfaceIdsList.isEmpty() || !describeNetworkInterfacesRequestNetworkInterfaceIdsList.isAutoConstruct()) {
-            int networkInterfaceIdsListIndex = 1;
-
-            for (String describeNetworkInterfacesRequestNetworkInterfaceIdsListValue : describeNetworkInterfacesRequestNetworkInterfaceIdsList) {
-                if (describeNetworkInterfacesRequestNetworkInterfaceIdsListValue != null) {
-                    request.addParameter("NetworkInterfaceId." + networkInterfaceIdsListIndex,
-                            StringUtils.fromString(describeNetworkInterfacesRequestNetworkInterfaceIdsListValue));
-                }
-                networkInterfaceIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeNetworkInterfacesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNetworkInterfacesRequest
                 .getFilters();
         if (!describeNetworkInterfacesRequestFiltersList.isEmpty() || !describeNetworkInterfacesRequestFiltersList.isAutoConstruct()) {
@@ -79,6 +65,20 @@ public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Re
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeNetworkInterfacesRequestNetworkInterfaceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNetworkInterfacesRequest
+                .getNetworkInterfaceIds();
+        if (!describeNetworkInterfacesRequestNetworkInterfaceIdsList.isEmpty() || !describeNetworkInterfacesRequestNetworkInterfaceIdsList.isAutoConstruct()) {
+            int networkInterfaceIdsListIndex = 1;
+
+            for (String describeNetworkInterfacesRequestNetworkInterfaceIdsListValue : describeNetworkInterfacesRequestNetworkInterfaceIdsList) {
+                if (describeNetworkInterfacesRequestNetworkInterfaceIdsListValue != null) {
+                    request.addParameter("NetworkInterfaceId." + networkInterfaceIdsListIndex,
+                            StringUtils.fromString(describeNetworkInterfacesRequestNetworkInterfaceIdsListValue));
+                }
+                networkInterfaceIdsListIndex++;
             }
         }
 

@@ -25,22 +25,12 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Describes the details of the purchase.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<Purchase> purchase;
-    /**
-     * <p>
-     * The total amount that will be charged to your account when you purchase the reservation.
-     * </p>
-     */
-    private String totalUpfrontPrice;
-    /**
-     * <p>
-     * The total hourly price of the reservation calculated per hour.
-     * </p>
-     */
-    private String totalHourlyPrice;
+    private String clientToken;
     /**
      * <p>
      * The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code> amounts are specified.
@@ -50,163 +40,72 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
     private String currencyCode;
     /**
      * <p>
+     * Describes the details of the purchase.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Purchase> purchase;
+    /**
+     * <p>
+     * The total hourly price of the reservation calculated per hour.
+     * </p>
+     */
+    private String totalHourlyPrice;
+    /**
+     * <p>
+     * The total amount that will be charged to your account when you purchase the reservation.
+     * </p>
+     */
+    private String totalUpfrontPrice;
+
+    /**
+     * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
      * </p>
-     */
-    private String clientToken;
-
-    /**
-     * <p>
-     * Describes the details of the purchase.
-     * </p>
      * 
-     * @return Describes the details of the purchase.
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
      */
 
-    public java.util.List<Purchase> getPurchase() {
-        if (purchase == null) {
-            purchase = new com.amazonaws.internal.SdkInternalList<Purchase>();
-        }
-        return purchase;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * Describes the details of the purchase.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
      * </p>
      * 
-     * @param purchase
-     *        Describes the details of the purchase.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
      */
 
-    public void setPurchase(java.util.Collection<Purchase> purchase) {
-        if (purchase == null) {
-            this.purchase = null;
-            return;
-        }
-
-        this.purchase = new com.amazonaws.internal.SdkInternalList<Purchase>(purchase);
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * Describes the details of the purchase.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setPurchase(java.util.Collection)} or {@link #withPurchase(java.util.Collection)} if you want to override
-     * the existing values.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
      * </p>
      * 
-     * @param purchase
-     *        Describes the details of the purchase.
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
+     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseHostReservationResult withPurchase(Purchase... purchase) {
-        if (this.purchase == null) {
-            setPurchase(new com.amazonaws.internal.SdkInternalList<Purchase>(purchase.length));
-        }
-        for (Purchase ele : purchase) {
-            this.purchase.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Describes the details of the purchase.
-     * </p>
-     * 
-     * @param purchase
-     *        Describes the details of the purchase.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PurchaseHostReservationResult withPurchase(java.util.Collection<Purchase> purchase) {
-        setPurchase(purchase);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The total amount that will be charged to your account when you purchase the reservation.
-     * </p>
-     * 
-     * @param totalUpfrontPrice
-     *        The total amount that will be charged to your account when you purchase the reservation.
-     */
-
-    public void setTotalUpfrontPrice(String totalUpfrontPrice) {
-        this.totalUpfrontPrice = totalUpfrontPrice;
-    }
-
-    /**
-     * <p>
-     * The total amount that will be charged to your account when you purchase the reservation.
-     * </p>
-     * 
-     * @return The total amount that will be charged to your account when you purchase the reservation.
-     */
-
-    public String getTotalUpfrontPrice() {
-        return this.totalUpfrontPrice;
-    }
-
-    /**
-     * <p>
-     * The total amount that will be charged to your account when you purchase the reservation.
-     * </p>
-     * 
-     * @param totalUpfrontPrice
-     *        The total amount that will be charged to your account when you purchase the reservation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PurchaseHostReservationResult withTotalUpfrontPrice(String totalUpfrontPrice) {
-        setTotalUpfrontPrice(totalUpfrontPrice);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The total hourly price of the reservation calculated per hour.
-     * </p>
-     * 
-     * @param totalHourlyPrice
-     *        The total hourly price of the reservation calculated per hour.
-     */
-
-    public void setTotalHourlyPrice(String totalHourlyPrice) {
-        this.totalHourlyPrice = totalHourlyPrice;
-    }
-
-    /**
-     * <p>
-     * The total hourly price of the reservation calculated per hour.
-     * </p>
-     * 
-     * @return The total hourly price of the reservation calculated per hour.
-     */
-
-    public String getTotalHourlyPrice() {
-        return this.totalHourlyPrice;
-    }
-
-    /**
-     * <p>
-     * The total hourly price of the reservation calculated per hour.
-     * </p>
-     * 
-     * @param totalHourlyPrice
-     *        The total hourly price of the reservation calculated per hour.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PurchaseHostReservationResult withTotalHourlyPrice(String totalHourlyPrice) {
-        setTotalHourlyPrice(totalHourlyPrice);
+    public PurchaseHostReservationResult withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -295,53 +194,154 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * Describes the details of the purchase.
      * </p>
      * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * @return Describes the details of the purchase.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public java.util.List<Purchase> getPurchase() {
+        if (purchase == null) {
+            purchase = new com.amazonaws.internal.SdkInternalList<Purchase>();
+        }
+        return purchase;
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * Describes the details of the purchase.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * @param purchase
+     *        Describes the details of the purchase.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public void setPurchase(java.util.Collection<Purchase> purchase) {
+        if (purchase == null) {
+            this.purchase = null;
+            return;
+        }
+
+        this.purchase = new com.amazonaws.internal.SdkInternalList<Purchase>(purchase);
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * Describes the details of the purchase.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPurchase(java.util.Collection)} or {@link #withPurchase(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
+     * @param purchase
+     *        Describes the details of the purchase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PurchaseHostReservationResult withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public PurchaseHostReservationResult withPurchase(Purchase... purchase) {
+        if (this.purchase == null) {
+            setPurchase(new com.amazonaws.internal.SdkInternalList<Purchase>(purchase.length));
+        }
+        for (Purchase ele : purchase) {
+            this.purchase.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the details of the purchase.
+     * </p>
+     * 
+     * @param purchase
+     *        Describes the details of the purchase.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseHostReservationResult withPurchase(java.util.Collection<Purchase> purchase) {
+        setPurchase(purchase);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total hourly price of the reservation calculated per hour.
+     * </p>
+     * 
+     * @param totalHourlyPrice
+     *        The total hourly price of the reservation calculated per hour.
+     */
+
+    public void setTotalHourlyPrice(String totalHourlyPrice) {
+        this.totalHourlyPrice = totalHourlyPrice;
+    }
+
+    /**
+     * <p>
+     * The total hourly price of the reservation calculated per hour.
+     * </p>
+     * 
+     * @return The total hourly price of the reservation calculated per hour.
+     */
+
+    public String getTotalHourlyPrice() {
+        return this.totalHourlyPrice;
+    }
+
+    /**
+     * <p>
+     * The total hourly price of the reservation calculated per hour.
+     * </p>
+     * 
+     * @param totalHourlyPrice
+     *        The total hourly price of the reservation calculated per hour.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseHostReservationResult withTotalHourlyPrice(String totalHourlyPrice) {
+        setTotalHourlyPrice(totalHourlyPrice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total amount that will be charged to your account when you purchase the reservation.
+     * </p>
+     * 
+     * @param totalUpfrontPrice
+     *        The total amount that will be charged to your account when you purchase the reservation.
+     */
+
+    public void setTotalUpfrontPrice(String totalUpfrontPrice) {
+        this.totalUpfrontPrice = totalUpfrontPrice;
+    }
+
+    /**
+     * <p>
+     * The total amount that will be charged to your account when you purchase the reservation.
+     * </p>
+     * 
+     * @return The total amount that will be charged to your account when you purchase the reservation.
+     */
+
+    public String getTotalUpfrontPrice() {
+        return this.totalUpfrontPrice;
+    }
+
+    /**
+     * <p>
+     * The total amount that will be charged to your account when you purchase the reservation.
+     * </p>
+     * 
+     * @param totalUpfrontPrice
+     *        The total amount that will be charged to your account when you purchase the reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseHostReservationResult withTotalUpfrontPrice(String totalUpfrontPrice) {
+        setTotalUpfrontPrice(totalUpfrontPrice);
         return this;
     }
 
@@ -356,16 +356,16 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPurchase() != null)
-            sb.append("Purchase: ").append(getPurchase()).append(",");
-        if (getTotalUpfrontPrice() != null)
-            sb.append("TotalUpfrontPrice: ").append(getTotalUpfrontPrice()).append(",");
-        if (getTotalHourlyPrice() != null)
-            sb.append("TotalHourlyPrice: ").append(getTotalHourlyPrice()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getCurrencyCode() != null)
             sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+        if (getPurchase() != null)
+            sb.append("Purchase: ").append(getPurchase()).append(",");
+        if (getTotalHourlyPrice() != null)
+            sb.append("TotalHourlyPrice: ").append(getTotalHourlyPrice()).append(",");
+        if (getTotalUpfrontPrice() != null)
+            sb.append("TotalUpfrontPrice: ").append(getTotalUpfrontPrice());
         sb.append("}");
         return sb.toString();
     }
@@ -380,25 +380,25 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
         if (obj instanceof PurchaseHostReservationResult == false)
             return false;
         PurchaseHostReservationResult other = (PurchaseHostReservationResult) obj;
-        if (other.getPurchase() == null ^ this.getPurchase() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getPurchase() != null && other.getPurchase().equals(this.getPurchase()) == false)
-            return false;
-        if (other.getTotalUpfrontPrice() == null ^ this.getTotalUpfrontPrice() == null)
-            return false;
-        if (other.getTotalUpfrontPrice() != null && other.getTotalUpfrontPrice().equals(this.getTotalUpfrontPrice()) == false)
-            return false;
-        if (other.getTotalHourlyPrice() == null ^ this.getTotalHourlyPrice() == null)
-            return false;
-        if (other.getTotalHourlyPrice() != null && other.getTotalHourlyPrice().equals(this.getTotalHourlyPrice()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
         if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getPurchase() == null ^ this.getPurchase() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getPurchase() != null && other.getPurchase().equals(this.getPurchase()) == false)
+            return false;
+        if (other.getTotalHourlyPrice() == null ^ this.getTotalHourlyPrice() == null)
+            return false;
+        if (other.getTotalHourlyPrice() != null && other.getTotalHourlyPrice().equals(this.getTotalHourlyPrice()) == false)
+            return false;
+        if (other.getTotalUpfrontPrice() == null ^ this.getTotalUpfrontPrice() == null)
+            return false;
+        if (other.getTotalUpfrontPrice() != null && other.getTotalUpfrontPrice().equals(this.getTotalUpfrontPrice()) == false)
             return false;
         return true;
     }
@@ -408,11 +408,11 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPurchase() == null) ? 0 : getPurchase().hashCode());
-        hashCode = prime * hashCode + ((getTotalUpfrontPrice() == null) ? 0 : getTotalUpfrontPrice().hashCode());
-        hashCode = prime * hashCode + ((getTotalHourlyPrice() == null) ? 0 : getTotalHourlyPrice().hashCode());
-        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
+        hashCode = prime * hashCode + ((getPurchase() == null) ? 0 : getPurchase().hashCode());
+        hashCode = prime * hashCode + ((getTotalHourlyPrice() == null) ? 0 : getTotalHourlyPrice().hashCode());
+        hashCode = prime * hashCode + ((getTotalUpfrontPrice() == null) ? 0 : getTotalUpfrontPrice().hashCode());
         return hashCode;
     }
 

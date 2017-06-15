@@ -40,19 +40,6 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeAvailabilityZonesRequestZoneNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAvailabilityZonesRequest
-                .getZoneNames();
-        if (!describeAvailabilityZonesRequestZoneNamesList.isEmpty() || !describeAvailabilityZonesRequestZoneNamesList.isAutoConstruct()) {
-            int zoneNamesListIndex = 1;
-
-            for (String describeAvailabilityZonesRequestZoneNamesListValue : describeAvailabilityZonesRequestZoneNamesList) {
-                if (describeAvailabilityZonesRequestZoneNamesListValue != null) {
-                    request.addParameter("ZoneName." + zoneNamesListIndex, StringUtils.fromString(describeAvailabilityZonesRequestZoneNamesListValue));
-                }
-                zoneNamesListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeAvailabilityZonesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeAvailabilityZonesRequest
                 .getFilters();
         if (!describeAvailabilityZonesRequestFiltersList.isEmpty() || !describeAvailabilityZonesRequestFiltersList.isAutoConstruct()) {
@@ -78,6 +65,19 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeAvailabilityZonesRequestZoneNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAvailabilityZonesRequest
+                .getZoneNames();
+        if (!describeAvailabilityZonesRequestZoneNamesList.isEmpty() || !describeAvailabilityZonesRequestZoneNamesList.isAutoConstruct()) {
+            int zoneNamesListIndex = 1;
+
+            for (String describeAvailabilityZonesRequestZoneNamesListValue : describeAvailabilityZonesRequestZoneNamesList) {
+                if (describeAvailabilityZonesRequestZoneNamesListValue != null) {
+                    request.addParameter("ZoneName." + zoneNamesListIndex, StringUtils.fromString(describeAvailabilityZonesRequestZoneNamesListValue));
+                }
+                zoneNamesListIndex++;
             }
         }
 

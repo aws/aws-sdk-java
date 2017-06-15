@@ -44,6 +44,10 @@ public class AllocateHostsRequestMarshaller implements Marshaller<Request<Alloca
             request.addParameter("AutoPlacement", StringUtils.fromString(allocateHostsRequest.getAutoPlacement()));
         }
 
+        if (allocateHostsRequest.getAvailabilityZone() != null) {
+            request.addParameter("AvailabilityZone", StringUtils.fromString(allocateHostsRequest.getAvailabilityZone()));
+        }
+
         if (allocateHostsRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(allocateHostsRequest.getClientToken()));
         }
@@ -54,10 +58,6 @@ public class AllocateHostsRequestMarshaller implements Marshaller<Request<Alloca
 
         if (allocateHostsRequest.getQuantity() != null) {
             request.addParameter("Quantity", StringUtils.fromInteger(allocateHostsRequest.getQuantity()));
-        }
-
-        if (allocateHostsRequest.getAvailabilityZone() != null) {
-            request.addParameter("AvailabilityZone", StringUtils.fromString(allocateHostsRequest.getAvailabilityZone()));
         }
 
         return request;

@@ -43,13 +43,13 @@ public class ExportToS3TaskStaxUnmarshaller implements Unmarshaller<ExportToS3Ta
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("diskImageFormat", targetDepth)) {
-                    exportToS3Task.setDiskImageFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("containerFormat", targetDepth)) {
+                    exportToS3Task.setContainerFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("containerFormat", targetDepth)) {
-                    exportToS3Task.setContainerFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("diskImageFormat", targetDepth)) {
+                    exportToS3Task.setDiskImageFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

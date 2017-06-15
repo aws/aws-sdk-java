@@ -40,17 +40,39 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeSnapshotsRequestSnapshotIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSnapshotsRequest
-                .getSnapshotIds();
-        if (!describeSnapshotsRequestSnapshotIdsList.isEmpty() || !describeSnapshotsRequestSnapshotIdsList.isAutoConstruct()) {
-            int snapshotIdsListIndex = 1;
+        com.amazonaws.internal.SdkInternalList<Filter> describeSnapshotsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSnapshotsRequest
+                .getFilters();
+        if (!describeSnapshotsRequestFiltersList.isEmpty() || !describeSnapshotsRequestFiltersList.isAutoConstruct()) {
+            int filtersListIndex = 1;
 
-            for (String describeSnapshotsRequestSnapshotIdsListValue : describeSnapshotsRequestSnapshotIdsList) {
-                if (describeSnapshotsRequestSnapshotIdsListValue != null) {
-                    request.addParameter("SnapshotId." + snapshotIdsListIndex, StringUtils.fromString(describeSnapshotsRequestSnapshotIdsListValue));
+            for (Filter describeSnapshotsRequestFiltersListValue : describeSnapshotsRequestFiltersList) {
+
+                if (describeSnapshotsRequestFiltersListValue.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeSnapshotsRequestFiltersListValue.getName()));
                 }
-                snapshotIdsListIndex++;
+
+                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeSnapshotsRequestFiltersListValue
+                        .getValues();
+                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
+                    int valuesListIndex = 1;
+
+                    for (String filterValuesListValue : filterValuesList) {
+                        if (filterValuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+                filtersListIndex++;
             }
+        }
+
+        if (describeSnapshotsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSnapshotsRequest.getMaxResults()));
+        }
+
+        if (describeSnapshotsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSnapshotsRequest.getNextToken()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> describeSnapshotsRequestOwnerIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSnapshotsRequest
@@ -80,39 +102,17 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> describeSnapshotsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSnapshotsRequest
-                .getFilters();
-        if (!describeSnapshotsRequestFiltersList.isEmpty() || !describeSnapshotsRequestFiltersList.isAutoConstruct()) {
-            int filtersListIndex = 1;
+        com.amazonaws.internal.SdkInternalList<String> describeSnapshotsRequestSnapshotIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSnapshotsRequest
+                .getSnapshotIds();
+        if (!describeSnapshotsRequestSnapshotIdsList.isEmpty() || !describeSnapshotsRequestSnapshotIdsList.isAutoConstruct()) {
+            int snapshotIdsListIndex = 1;
 
-            for (Filter describeSnapshotsRequestFiltersListValue : describeSnapshotsRequestFiltersList) {
-
-                if (describeSnapshotsRequestFiltersListValue.getName() != null) {
-                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(describeSnapshotsRequestFiltersListValue.getName()));
+            for (String describeSnapshotsRequestSnapshotIdsListValue : describeSnapshotsRequestSnapshotIdsList) {
+                if (describeSnapshotsRequestSnapshotIdsListValue != null) {
+                    request.addParameter("SnapshotId." + snapshotIdsListIndex, StringUtils.fromString(describeSnapshotsRequestSnapshotIdsListValue));
                 }
-
-                com.amazonaws.internal.SdkInternalList<String> filterValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeSnapshotsRequestFiltersListValue
-                        .getValues();
-                if (!filterValuesList.isEmpty() || !filterValuesList.isAutoConstruct()) {
-                    int valuesListIndex = 1;
-
-                    for (String filterValuesListValue : filterValuesList) {
-                        if (filterValuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(filterValuesListValue));
-                        }
-                        valuesListIndex++;
-                    }
-                }
-                filtersListIndex++;
+                snapshotIdsListIndex++;
             }
-        }
-
-        if (describeSnapshotsRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeSnapshotsRequest.getNextToken()));
-        }
-
-        if (describeSnapshotsRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeSnapshotsRequest.getMaxResults()));
         }
 
         return request;

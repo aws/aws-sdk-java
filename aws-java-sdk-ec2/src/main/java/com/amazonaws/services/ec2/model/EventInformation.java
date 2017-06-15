@@ -28,10 +28,10 @@ public class EventInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the instance. This information is available only for <code>instanceChange</code> events.
+     * The description of the event.
      * </p>
      */
-    private String instanceId;
+    private String eventDescription;
     /**
      * <p>
      * The event.
@@ -140,48 +140,48 @@ public class EventInformation implements Serializable, Cloneable {
     private String eventSubType;
     /**
      * <p>
+     * The ID of the instance. This information is available only for <code>instanceChange</code> events.
+     * </p>
+     */
+    private String instanceId;
+
+    /**
+     * <p>
      * The description of the event.
      * </p>
-     */
-    private String eventDescription;
-
-    /**
-     * <p>
-     * The ID of the instance. This information is available only for <code>instanceChange</code> events.
-     * </p>
      * 
-     * @param instanceId
-     *        The ID of the instance. This information is available only for <code>instanceChange</code> events.
+     * @param eventDescription
+     *        The description of the event.
      */
 
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
+    public void setEventDescription(String eventDescription) {
+        this.eventDescription = eventDescription;
     }
 
     /**
      * <p>
-     * The ID of the instance. This information is available only for <code>instanceChange</code> events.
+     * The description of the event.
      * </p>
      * 
-     * @return The ID of the instance. This information is available only for <code>instanceChange</code> events.
+     * @return The description of the event.
      */
 
-    public String getInstanceId() {
-        return this.instanceId;
+    public String getEventDescription() {
+        return this.eventDescription;
     }
 
     /**
      * <p>
-     * The ID of the instance. This information is available only for <code>instanceChange</code> events.
+     * The description of the event.
      * </p>
      * 
-     * @param instanceId
-     *        The ID of the instance. This information is available only for <code>instanceChange</code> events.
+     * @param eventDescription
+     *        The description of the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EventInformation withInstanceId(String instanceId) {
-        setInstanceId(instanceId);
+    public EventInformation withEventDescription(String eventDescription) {
+        setEventDescription(eventDescription);
         return this;
     }
 
@@ -828,41 +828,41 @@ public class EventInformation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The description of the event.
+     * The ID of the instance. This information is available only for <code>instanceChange</code> events.
      * </p>
      * 
-     * @param eventDescription
-     *        The description of the event.
+     * @param instanceId
+     *        The ID of the instance. This information is available only for <code>instanceChange</code> events.
      */
 
-    public void setEventDescription(String eventDescription) {
-        this.eventDescription = eventDescription;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     /**
      * <p>
-     * The description of the event.
+     * The ID of the instance. This information is available only for <code>instanceChange</code> events.
      * </p>
      * 
-     * @return The description of the event.
+     * @return The ID of the instance. This information is available only for <code>instanceChange</code> events.
      */
 
-    public String getEventDescription() {
-        return this.eventDescription;
+    public String getInstanceId() {
+        return this.instanceId;
     }
 
     /**
      * <p>
-     * The description of the event.
+     * The ID of the instance. This information is available only for <code>instanceChange</code> events.
      * </p>
      * 
-     * @param eventDescription
-     *        The description of the event.
+     * @param instanceId
+     *        The ID of the instance. This information is available only for <code>instanceChange</code> events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EventInformation withEventDescription(String eventDescription) {
-        setEventDescription(eventDescription);
+    public EventInformation withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
         return this;
     }
 
@@ -877,12 +877,12 @@ public class EventInformation implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getEventDescription() != null)
+            sb.append("EventDescription: ").append(getEventDescription()).append(",");
         if (getEventSubType() != null)
             sb.append("EventSubType: ").append(getEventSubType()).append(",");
-        if (getEventDescription() != null)
-            sb.append("EventDescription: ").append(getEventDescription());
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -897,17 +897,17 @@ public class EventInformation implements Serializable, Cloneable {
         if (obj instanceof EventInformation == false)
             return false;
         EventInformation other = (EventInformation) obj;
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+        if (other.getEventDescription() == null ^ this.getEventDescription() == null)
             return false;
-        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+        if (other.getEventDescription() != null && other.getEventDescription().equals(this.getEventDescription()) == false)
             return false;
         if (other.getEventSubType() == null ^ this.getEventSubType() == null)
             return false;
         if (other.getEventSubType() != null && other.getEventSubType().equals(this.getEventSubType()) == false)
             return false;
-        if (other.getEventDescription() == null ^ this.getEventDescription() == null)
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getEventDescription() != null && other.getEventDescription().equals(this.getEventDescription()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         return true;
     }
@@ -917,9 +917,9 @@ public class EventInformation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode + ((getEventSubType() == null) ? 0 : getEventSubType().hashCode());
         hashCode = prime * hashCode + ((getEventDescription() == null) ? 0 : getEventDescription().hashCode());
+        hashCode = prime * hashCode + ((getEventSubType() == null) ? 0 : getEventSubType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

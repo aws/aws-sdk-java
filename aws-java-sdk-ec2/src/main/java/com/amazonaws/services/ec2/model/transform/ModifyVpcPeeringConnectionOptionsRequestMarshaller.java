@@ -42,31 +42,13 @@ public class ModifyVpcPeeringConnectionOptionsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (modifyVpcPeeringConnectionOptionsRequest.getVpcPeeringConnectionId() != null) {
-            request.addParameter("VpcPeeringConnectionId", StringUtils.fromString(modifyVpcPeeringConnectionOptionsRequest.getVpcPeeringConnectionId()));
-        }
-
-        PeeringConnectionOptionsRequest requesterPeeringConnectionOptions = modifyVpcPeeringConnectionOptionsRequest.getRequesterPeeringConnectionOptions();
-        if (requesterPeeringConnectionOptions != null) {
-
-            if (requesterPeeringConnectionOptions.getAllowEgressFromLocalClassicLinkToRemoteVpc() != null) {
-                request.addParameter("RequesterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc",
-                        StringUtils.fromBoolean(requesterPeeringConnectionOptions.getAllowEgressFromLocalClassicLinkToRemoteVpc()));
-            }
-
-            if (requesterPeeringConnectionOptions.getAllowEgressFromLocalVpcToRemoteClassicLink() != null) {
-                request.addParameter("RequesterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink",
-                        StringUtils.fromBoolean(requesterPeeringConnectionOptions.getAllowEgressFromLocalVpcToRemoteClassicLink()));
-            }
-
-            if (requesterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc() != null) {
-                request.addParameter("RequesterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc",
-                        StringUtils.fromBoolean(requesterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc()));
-            }
-        }
-
         PeeringConnectionOptionsRequest accepterPeeringConnectionOptions = modifyVpcPeeringConnectionOptionsRequest.getAccepterPeeringConnectionOptions();
         if (accepterPeeringConnectionOptions != null) {
+
+            if (accepterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc() != null) {
+                request.addParameter("AccepterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc",
+                        StringUtils.fromBoolean(accepterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc()));
+            }
 
             if (accepterPeeringConnectionOptions.getAllowEgressFromLocalClassicLinkToRemoteVpc() != null) {
                 request.addParameter("AccepterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc",
@@ -77,11 +59,29 @@ public class ModifyVpcPeeringConnectionOptionsRequestMarshaller implements
                 request.addParameter("AccepterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink",
                         StringUtils.fromBoolean(accepterPeeringConnectionOptions.getAllowEgressFromLocalVpcToRemoteClassicLink()));
             }
+        }
 
-            if (accepterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc() != null) {
-                request.addParameter("AccepterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc",
-                        StringUtils.fromBoolean(accepterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc()));
+        PeeringConnectionOptionsRequest requesterPeeringConnectionOptions = modifyVpcPeeringConnectionOptionsRequest.getRequesterPeeringConnectionOptions();
+        if (requesterPeeringConnectionOptions != null) {
+
+            if (requesterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc() != null) {
+                request.addParameter("RequesterPeeringConnectionOptions.AllowDnsResolutionFromRemoteVpc",
+                        StringUtils.fromBoolean(requesterPeeringConnectionOptions.getAllowDnsResolutionFromRemoteVpc()));
             }
+
+            if (requesterPeeringConnectionOptions.getAllowEgressFromLocalClassicLinkToRemoteVpc() != null) {
+                request.addParameter("RequesterPeeringConnectionOptions.AllowEgressFromLocalClassicLinkToRemoteVpc",
+                        StringUtils.fromBoolean(requesterPeeringConnectionOptions.getAllowEgressFromLocalClassicLinkToRemoteVpc()));
+            }
+
+            if (requesterPeeringConnectionOptions.getAllowEgressFromLocalVpcToRemoteClassicLink() != null) {
+                request.addParameter("RequesterPeeringConnectionOptions.AllowEgressFromLocalVpcToRemoteClassicLink",
+                        StringUtils.fromBoolean(requesterPeeringConnectionOptions.getAllowEgressFromLocalVpcToRemoteClassicLink()));
+            }
+        }
+
+        if (modifyVpcPeeringConnectionOptionsRequest.getVpcPeeringConnectionId() != null) {
+            request.addParameter("VpcPeeringConnectionId", StringUtils.fromString(modifyVpcPeeringConnectionOptionsRequest.getVpcPeeringConnectionId()));
         }
 
         return request;

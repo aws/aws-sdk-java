@@ -28,11 +28,10 @@ public class HistoryRecord implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * Information about the event.
      * </p>
      */
-    private java.util.Date timestamp;
+    private EventInformation eventInformation;
     /**
      * <p>
      * The event type.
@@ -58,54 +57,49 @@ public class HistoryRecord implements Serializable, Cloneable {
     private String eventType;
     /**
      * <p>
+     * The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     */
+    private java.util.Date timestamp;
+
+    /**
+     * <p>
      * Information about the event.
      * </p>
-     */
-    private EventInformation eventInformation;
-
-    /**
-     * <p>
-     * The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
      * 
-     * @param timestamp
-     *        The date and time of the event, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * @param eventInformation
+     *        Information about the event.
      */
 
-    public void setTimestamp(java.util.Date timestamp) {
-        this.timestamp = timestamp;
+    public void setEventInformation(EventInformation eventInformation) {
+        this.eventInformation = eventInformation;
     }
 
     /**
      * <p>
-     * The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * Information about the event.
      * </p>
      * 
-     * @return The date and time of the event, in UTC format (for example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * @return Information about the event.
      */
 
-    public java.util.Date getTimestamp() {
-        return this.timestamp;
+    public EventInformation getEventInformation() {
+        return this.eventInformation;
     }
 
     /**
      * <p>
-     * The date and time of the event, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * Information about the event.
      * </p>
      * 
-     * @param timestamp
-     *        The date and time of the event, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * @param eventInformation
+     *        Information about the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HistoryRecord withTimestamp(java.util.Date timestamp) {
-        setTimestamp(timestamp);
+    public HistoryRecord withEventInformation(EventInformation eventInformation) {
+        setEventInformation(eventInformation);
         return this;
     }
 
@@ -354,41 +348,47 @@ public class HistoryRecord implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the event.
+     * The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
-     * @param eventInformation
-     *        Information about the event.
+     * @param timestamp
+     *        The date and time of the event, in UTC format (for example,
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
-    public void setEventInformation(EventInformation eventInformation) {
-        this.eventInformation = eventInformation;
+    public void setTimestamp(java.util.Date timestamp) {
+        this.timestamp = timestamp;
     }
 
     /**
      * <p>
-     * Information about the event.
+     * The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
-     * @return Information about the event.
+     * @return The date and time of the event, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
 
-    public EventInformation getEventInformation() {
-        return this.eventInformation;
+    public java.util.Date getTimestamp() {
+        return this.timestamp;
     }
 
     /**
      * <p>
-     * Information about the event.
+     * The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
      * 
-     * @param eventInformation
-     *        Information about the event.
+     * @param timestamp
+     *        The date and time of the event, in UTC format (for example,
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public HistoryRecord withEventInformation(EventInformation eventInformation) {
-        setEventInformation(eventInformation);
+    public HistoryRecord withTimestamp(java.util.Date timestamp) {
+        setTimestamp(timestamp);
         return this;
     }
 
@@ -403,12 +403,12 @@ public class HistoryRecord implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTimestamp() != null)
-            sb.append("Timestamp: ").append(getTimestamp()).append(",");
+        if (getEventInformation() != null)
+            sb.append("EventInformation: ").append(getEventInformation()).append(",");
         if (getEventType() != null)
             sb.append("EventType: ").append(getEventType()).append(",");
-        if (getEventInformation() != null)
-            sb.append("EventInformation: ").append(getEventInformation());
+        if (getTimestamp() != null)
+            sb.append("Timestamp: ").append(getTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -423,17 +423,17 @@ public class HistoryRecord implements Serializable, Cloneable {
         if (obj instanceof HistoryRecord == false)
             return false;
         HistoryRecord other = (HistoryRecord) obj;
-        if (other.getTimestamp() == null ^ this.getTimestamp() == null)
+        if (other.getEventInformation() == null ^ this.getEventInformation() == null)
             return false;
-        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
+        if (other.getEventInformation() != null && other.getEventInformation().equals(this.getEventInformation()) == false)
             return false;
         if (other.getEventType() == null ^ this.getEventType() == null)
             return false;
         if (other.getEventType() != null && other.getEventType().equals(this.getEventType()) == false)
             return false;
-        if (other.getEventInformation() == null ^ this.getEventInformation() == null)
+        if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
-        if (other.getEventInformation() != null && other.getEventInformation().equals(this.getEventInformation()) == false)
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
         return true;
     }
@@ -443,9 +443,9 @@ public class HistoryRecord implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
-        hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
         hashCode = prime * hashCode + ((getEventInformation() == null) ? 0 : getEventInformation().hashCode());
+        hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         return hashCode;
     }
 

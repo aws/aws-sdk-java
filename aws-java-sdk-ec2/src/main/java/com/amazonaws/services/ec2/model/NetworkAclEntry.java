@@ -28,10 +28,34 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
+     * The IPv4 network range to allow or deny, in CIDR notation.
      * </p>
      */
-    private Integer ruleNumber;
+    private String cidrBlock;
+    /**
+     * <p>
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * </p>
+     */
+    private Boolean egress;
+    /**
+     * <p>
+     * ICMP protocol: The ICMP type and code.
+     * </p>
+     */
+    private IcmpTypeCode icmpTypeCode;
+    /**
+     * <p>
+     * The IPv6 network range to allow or deny, in CIDR notation.
+     * </p>
+     */
+    private String ipv6CidrBlock;
+    /**
+     * <p>
+     * TCP or UDP protocols: The range of ports the rule applies to.
+     * </p>
+     */
+    private PortRange portRange;
     /**
      * <p>
      * The protocol. A value of <code>-1</code> means all protocols.
@@ -46,72 +70,220 @@ public class NetworkAclEntry implements Serializable, Cloneable {
     private String ruleAction;
     /**
      * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
      * </p>
      */
-    private Boolean egress;
+    private Integer ruleNumber;
+
     /**
      * <p>
      * The IPv4 network range to allow or deny, in CIDR notation.
      * </p>
+     * 
+     * @param cidrBlock
+     *        The IPv4 network range to allow or deny, in CIDR notation.
      */
-    private String cidrBlock;
+
+    public void setCidrBlock(String cidrBlock) {
+        this.cidrBlock = cidrBlock;
+    }
+
     /**
      * <p>
-     * The IPv6 network range to allow or deny, in CIDR notation.
+     * The IPv4 network range to allow or deny, in CIDR notation.
      * </p>
+     * 
+     * @return The IPv4 network range to allow or deny, in CIDR notation.
      */
-    private String ipv6CidrBlock;
+
+    public String getCidrBlock() {
+        return this.cidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv4 network range to allow or deny, in CIDR notation.
+     * </p>
+     * 
+     * @param cidrBlock
+     *        The IPv4 network range to allow or deny, in CIDR notation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkAclEntry withCidrBlock(String cidrBlock) {
+        setCidrBlock(cidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * </p>
+     * 
+     * @param egress
+     *        Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     */
+
+    public void setEgress(Boolean egress) {
+        this.egress = egress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * </p>
+     * 
+     * @return Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     */
+
+    public Boolean getEgress() {
+        return this.egress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * </p>
+     * 
+     * @param egress
+     *        Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkAclEntry withEgress(Boolean egress) {
+        setEgress(egress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * </p>
+     * 
+     * @return Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     */
+
+    public Boolean isEgress() {
+        return this.egress;
+    }
+
     /**
      * <p>
      * ICMP protocol: The ICMP type and code.
      * </p>
+     * 
+     * @param icmpTypeCode
+     *        ICMP protocol: The ICMP type and code.
      */
-    private IcmpTypeCode icmpTypeCode;
+
+    public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
+        this.icmpTypeCode = icmpTypeCode;
+    }
+
+    /**
+     * <p>
+     * ICMP protocol: The ICMP type and code.
+     * </p>
+     * 
+     * @return ICMP protocol: The ICMP type and code.
+     */
+
+    public IcmpTypeCode getIcmpTypeCode() {
+        return this.icmpTypeCode;
+    }
+
+    /**
+     * <p>
+     * ICMP protocol: The ICMP type and code.
+     * </p>
+     * 
+     * @param icmpTypeCode
+     *        ICMP protocol: The ICMP type and code.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkAclEntry withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
+        setIcmpTypeCode(icmpTypeCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 network range to allow or deny, in CIDR notation.
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 network range to allow or deny, in CIDR notation.
+     */
+
+    public void setIpv6CidrBlock(String ipv6CidrBlock) {
+        this.ipv6CidrBlock = ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 network range to allow or deny, in CIDR notation.
+     * </p>
+     * 
+     * @return The IPv6 network range to allow or deny, in CIDR notation.
+     */
+
+    public String getIpv6CidrBlock() {
+        return this.ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 network range to allow or deny, in CIDR notation.
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 network range to allow or deny, in CIDR notation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkAclEntry withIpv6CidrBlock(String ipv6CidrBlock) {
+        setIpv6CidrBlock(ipv6CidrBlock);
+        return this;
+    }
+
     /**
      * <p>
      * TCP or UDP protocols: The range of ports the rule applies to.
      * </p>
-     */
-    private PortRange portRange;
-
-    /**
-     * <p>
-     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
-     * </p>
      * 
-     * @param ruleNumber
-     *        The rule number for the entry. ACL entries are processed in ascending order by rule number.
+     * @param portRange
+     *        TCP or UDP protocols: The range of ports the rule applies to.
      */
 
-    public void setRuleNumber(Integer ruleNumber) {
-        this.ruleNumber = ruleNumber;
+    public void setPortRange(PortRange portRange) {
+        this.portRange = portRange;
     }
 
     /**
      * <p>
-     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      * </p>
      * 
-     * @return The rule number for the entry. ACL entries are processed in ascending order by rule number.
+     * @return TCP or UDP protocols: The range of ports the rule applies to.
      */
 
-    public Integer getRuleNumber() {
-        return this.ruleNumber;
+    public PortRange getPortRange() {
+        return this.portRange;
     }
 
     /**
      * <p>
-     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
+     * TCP or UDP protocols: The range of ports the rule applies to.
      * </p>
      * 
-     * @param ruleNumber
-     *        The rule number for the entry. ACL entries are processed in ascending order by rule number.
+     * @param portRange
+     *        TCP or UDP protocols: The range of ports the rule applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NetworkAclEntry withRuleNumber(Integer ruleNumber) {
-        setRuleNumber(ruleNumber);
+    public NetworkAclEntry withPortRange(PortRange portRange) {
+        setPortRange(portRange);
         return this;
     }
 
@@ -230,213 +402,41 @@ public class NetworkAclEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
      * </p>
      * 
-     * @param egress
-     *        Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * @param ruleNumber
+     *        The rule number for the entry. ACL entries are processed in ascending order by rule number.
      */
 
-    public void setEgress(Boolean egress) {
-        this.egress = egress;
+    public void setRuleNumber(Integer ruleNumber) {
+        this.ruleNumber = ruleNumber;
     }
 
     /**
      * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
      * </p>
      * 
-     * @return Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * @return The rule number for the entry. ACL entries are processed in ascending order by rule number.
      */
 
-    public Boolean getEgress() {
-        return this.egress;
+    public Integer getRuleNumber() {
+        return this.ruleNumber;
     }
 
     /**
      * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * The rule number for the entry. ACL entries are processed in ascending order by rule number.
      * </p>
      * 
-     * @param egress
-     *        Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
+     * @param ruleNumber
+     *        The rule number for the entry. ACL entries are processed in ascending order by rule number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public NetworkAclEntry withEgress(Boolean egress) {
-        setEgress(egress);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
-     * </p>
-     * 
-     * @return Indicates whether the rule is an egress rule (applied to traffic leaving the subnet).
-     */
-
-    public Boolean isEgress() {
-        return this.egress;
-    }
-
-    /**
-     * <p>
-     * The IPv4 network range to allow or deny, in CIDR notation.
-     * </p>
-     * 
-     * @param cidrBlock
-     *        The IPv4 network range to allow or deny, in CIDR notation.
-     */
-
-    public void setCidrBlock(String cidrBlock) {
-        this.cidrBlock = cidrBlock;
-    }
-
-    /**
-     * <p>
-     * The IPv4 network range to allow or deny, in CIDR notation.
-     * </p>
-     * 
-     * @return The IPv4 network range to allow or deny, in CIDR notation.
-     */
-
-    public String getCidrBlock() {
-        return this.cidrBlock;
-    }
-
-    /**
-     * <p>
-     * The IPv4 network range to allow or deny, in CIDR notation.
-     * </p>
-     * 
-     * @param cidrBlock
-     *        The IPv4 network range to allow or deny, in CIDR notation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NetworkAclEntry withCidrBlock(String cidrBlock) {
-        setCidrBlock(cidrBlock);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The IPv6 network range to allow or deny, in CIDR notation.
-     * </p>
-     * 
-     * @param ipv6CidrBlock
-     *        The IPv6 network range to allow or deny, in CIDR notation.
-     */
-
-    public void setIpv6CidrBlock(String ipv6CidrBlock) {
-        this.ipv6CidrBlock = ipv6CidrBlock;
-    }
-
-    /**
-     * <p>
-     * The IPv6 network range to allow or deny, in CIDR notation.
-     * </p>
-     * 
-     * @return The IPv6 network range to allow or deny, in CIDR notation.
-     */
-
-    public String getIpv6CidrBlock() {
-        return this.ipv6CidrBlock;
-    }
-
-    /**
-     * <p>
-     * The IPv6 network range to allow or deny, in CIDR notation.
-     * </p>
-     * 
-     * @param ipv6CidrBlock
-     *        The IPv6 network range to allow or deny, in CIDR notation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NetworkAclEntry withIpv6CidrBlock(String ipv6CidrBlock) {
-        setIpv6CidrBlock(ipv6CidrBlock);
-        return this;
-    }
-
-    /**
-     * <p>
-     * ICMP protocol: The ICMP type and code.
-     * </p>
-     * 
-     * @param icmpTypeCode
-     *        ICMP protocol: The ICMP type and code.
-     */
-
-    public void setIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
-        this.icmpTypeCode = icmpTypeCode;
-    }
-
-    /**
-     * <p>
-     * ICMP protocol: The ICMP type and code.
-     * </p>
-     * 
-     * @return ICMP protocol: The ICMP type and code.
-     */
-
-    public IcmpTypeCode getIcmpTypeCode() {
-        return this.icmpTypeCode;
-    }
-
-    /**
-     * <p>
-     * ICMP protocol: The ICMP type and code.
-     * </p>
-     * 
-     * @param icmpTypeCode
-     *        ICMP protocol: The ICMP type and code.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NetworkAclEntry withIcmpTypeCode(IcmpTypeCode icmpTypeCode) {
-        setIcmpTypeCode(icmpTypeCode);
-        return this;
-    }
-
-    /**
-     * <p>
-     * TCP or UDP protocols: The range of ports the rule applies to.
-     * </p>
-     * 
-     * @param portRange
-     *        TCP or UDP protocols: The range of ports the rule applies to.
-     */
-
-    public void setPortRange(PortRange portRange) {
-        this.portRange = portRange;
-    }
-
-    /**
-     * <p>
-     * TCP or UDP protocols: The range of ports the rule applies to.
-     * </p>
-     * 
-     * @return TCP or UDP protocols: The range of ports the rule applies to.
-     */
-
-    public PortRange getPortRange() {
-        return this.portRange;
-    }
-
-    /**
-     * <p>
-     * TCP or UDP protocols: The range of ports the rule applies to.
-     * </p>
-     * 
-     * @param portRange
-     *        TCP or UDP protocols: The range of ports the rule applies to.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public NetworkAclEntry withPortRange(PortRange portRange) {
-        setPortRange(portRange);
+    public NetworkAclEntry withRuleNumber(Integer ruleNumber) {
+        setRuleNumber(ruleNumber);
         return this;
     }
 
@@ -451,22 +451,22 @@ public class NetworkAclEntry implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRuleNumber() != null)
-            sb.append("RuleNumber: ").append(getRuleNumber()).append(",");
+        if (getCidrBlock() != null)
+            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
+        if (getEgress() != null)
+            sb.append("Egress: ").append(getEgress()).append(",");
+        if (getIcmpTypeCode() != null)
+            sb.append("IcmpTypeCode: ").append(getIcmpTypeCode()).append(",");
+        if (getIpv6CidrBlock() != null)
+            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
+        if (getPortRange() != null)
+            sb.append("PortRange: ").append(getPortRange()).append(",");
         if (getProtocol() != null)
             sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getRuleAction() != null)
             sb.append("RuleAction: ").append(getRuleAction()).append(",");
-        if (getEgress() != null)
-            sb.append("Egress: ").append(getEgress()).append(",");
-        if (getCidrBlock() != null)
-            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
-        if (getIpv6CidrBlock() != null)
-            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
-        if (getIcmpTypeCode() != null)
-            sb.append("IcmpTypeCode: ").append(getIcmpTypeCode()).append(",");
-        if (getPortRange() != null)
-            sb.append("PortRange: ").append(getPortRange());
+        if (getRuleNumber() != null)
+            sb.append("RuleNumber: ").append(getRuleNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -481,9 +481,25 @@ public class NetworkAclEntry implements Serializable, Cloneable {
         if (obj instanceof NetworkAclEntry == false)
             return false;
         NetworkAclEntry other = (NetworkAclEntry) obj;
-        if (other.getRuleNumber() == null ^ this.getRuleNumber() == null)
+        if (other.getCidrBlock() == null ^ this.getCidrBlock() == null)
             return false;
-        if (other.getRuleNumber() != null && other.getRuleNumber().equals(this.getRuleNumber()) == false)
+        if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
+            return false;
+        if (other.getEgress() == null ^ this.getEgress() == null)
+            return false;
+        if (other.getEgress() != null && other.getEgress().equals(this.getEgress()) == false)
+            return false;
+        if (other.getIcmpTypeCode() == null ^ this.getIcmpTypeCode() == null)
+            return false;
+        if (other.getIcmpTypeCode() != null && other.getIcmpTypeCode().equals(this.getIcmpTypeCode()) == false)
+            return false;
+        if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
+            return false;
+        if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
+            return false;
+        if (other.getPortRange() == null ^ this.getPortRange() == null)
+            return false;
+        if (other.getPortRange() != null && other.getPortRange().equals(this.getPortRange()) == false)
             return false;
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
@@ -493,25 +509,9 @@ public class NetworkAclEntry implements Serializable, Cloneable {
             return false;
         if (other.getRuleAction() != null && other.getRuleAction().equals(this.getRuleAction()) == false)
             return false;
-        if (other.getEgress() == null ^ this.getEgress() == null)
+        if (other.getRuleNumber() == null ^ this.getRuleNumber() == null)
             return false;
-        if (other.getEgress() != null && other.getEgress().equals(this.getEgress()) == false)
-            return false;
-        if (other.getCidrBlock() == null ^ this.getCidrBlock() == null)
-            return false;
-        if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
-            return false;
-        if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
-            return false;
-        if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
-            return false;
-        if (other.getIcmpTypeCode() == null ^ this.getIcmpTypeCode() == null)
-            return false;
-        if (other.getIcmpTypeCode() != null && other.getIcmpTypeCode().equals(this.getIcmpTypeCode()) == false)
-            return false;
-        if (other.getPortRange() == null ^ this.getPortRange() == null)
-            return false;
-        if (other.getPortRange() != null && other.getPortRange().equals(this.getPortRange()) == false)
+        if (other.getRuleNumber() != null && other.getRuleNumber().equals(this.getRuleNumber()) == false)
             return false;
         return true;
     }
@@ -521,14 +521,14 @@ public class NetworkAclEntry implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRuleNumber() == null) ? 0 : getRuleNumber().hashCode());
+        hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getEgress() == null) ? 0 : getEgress().hashCode());
+        hashCode = prime * hashCode + ((getIcmpTypeCode() == null) ? 0 : getIcmpTypeCode().hashCode());
+        hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getPortRange() == null) ? 0 : getPortRange().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getRuleAction() == null) ? 0 : getRuleAction().hashCode());
-        hashCode = prime * hashCode + ((getEgress() == null) ? 0 : getEgress().hashCode());
-        hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
-        hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
-        hashCode = prime * hashCode + ((getIcmpTypeCode() == null) ? 0 : getIcmpTypeCode().hashCode());
-        hashCode = prime * hashCode + ((getPortRange() == null) ? 0 : getPortRange().hashCode());
+        hashCode = prime * hashCode + ((getRuleNumber() == null) ? 0 : getRuleNumber().hashCode());
         return hashCode;
     }
 

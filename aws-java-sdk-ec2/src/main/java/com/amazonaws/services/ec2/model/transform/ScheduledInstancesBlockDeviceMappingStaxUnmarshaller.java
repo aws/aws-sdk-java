@@ -48,6 +48,11 @@ public class ScheduledInstancesBlockDeviceMappingStaxUnmarshaller implements Unm
                     continue;
                 }
 
+                if (context.testExpression("Ebs", targetDepth)) {
+                    scheduledInstancesBlockDeviceMapping.setEbs(ScheduledInstancesEbsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("NoDevice", targetDepth)) {
                     scheduledInstancesBlockDeviceMapping.setNoDevice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,11 +60,6 @@ public class ScheduledInstancesBlockDeviceMappingStaxUnmarshaller implements Unm
 
                 if (context.testExpression("VirtualName", targetDepth)) {
                     scheduledInstancesBlockDeviceMapping.setVirtualName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("Ebs", targetDepth)) {
-                    scheduledInstancesBlockDeviceMapping.setEbs(ScheduledInstancesEbsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -28,12 +28,6 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * One or more host reservation IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> hostReservationIdSet;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -59,6 +53,12 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
+     * One or more host reservation IDs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> hostReservationIdSet;
+    /**
+     * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
      * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
      * <code>maxResults</code> is given a larger value than 500, you will receive an error.
@@ -71,79 +71,6 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
      * </p>
      */
     private String nextToken;
-
-    /**
-     * <p>
-     * One or more host reservation IDs.
-     * </p>
-     * 
-     * @return One or more host reservation IDs.
-     */
-
-    public java.util.List<String> getHostReservationIdSet() {
-        if (hostReservationIdSet == null) {
-            hostReservationIdSet = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return hostReservationIdSet;
-    }
-
-    /**
-     * <p>
-     * One or more host reservation IDs.
-     * </p>
-     * 
-     * @param hostReservationIdSet
-     *        One or more host reservation IDs.
-     */
-
-    public void setHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
-        if (hostReservationIdSet == null) {
-            this.hostReservationIdSet = null;
-            return;
-        }
-
-        this.hostReservationIdSet = new com.amazonaws.internal.SdkInternalList<String>(hostReservationIdSet);
-    }
-
-    /**
-     * <p>
-     * One or more host reservation IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setHostReservationIdSet(java.util.Collection)} or {@link #withHostReservationIdSet(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param hostReservationIdSet
-     *        One or more host reservation IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHostReservationsRequest withHostReservationIdSet(String... hostReservationIdSet) {
-        if (this.hostReservationIdSet == null) {
-            setHostReservationIdSet(new com.amazonaws.internal.SdkInternalList<String>(hostReservationIdSet.length));
-        }
-        for (String ele : hostReservationIdSet) {
-            this.hostReservationIdSet.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more host reservation IDs.
-     * </p>
-     * 
-     * @param hostReservationIdSet
-     *        One or more host reservation IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeHostReservationsRequest withHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
-        setHostReservationIdSet(hostReservationIdSet);
-        return this;
-    }
 
     /**
      * <p>
@@ -368,6 +295,79 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * One or more host reservation IDs.
+     * </p>
+     * 
+     * @return One or more host reservation IDs.
+     */
+
+    public java.util.List<String> getHostReservationIdSet() {
+        if (hostReservationIdSet == null) {
+            hostReservationIdSet = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return hostReservationIdSet;
+    }
+
+    /**
+     * <p>
+     * One or more host reservation IDs.
+     * </p>
+     * 
+     * @param hostReservationIdSet
+     *        One or more host reservation IDs.
+     */
+
+    public void setHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
+        if (hostReservationIdSet == null) {
+            this.hostReservationIdSet = null;
+            return;
+        }
+
+        this.hostReservationIdSet = new com.amazonaws.internal.SdkInternalList<String>(hostReservationIdSet);
+    }
+
+    /**
+     * <p>
+     * One or more host reservation IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHostReservationIdSet(java.util.Collection)} or {@link #withHostReservationIdSet(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param hostReservationIdSet
+     *        One or more host reservation IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHostReservationsRequest withHostReservationIdSet(String... hostReservationIdSet) {
+        if (this.hostReservationIdSet == null) {
+            setHostReservationIdSet(new com.amazonaws.internal.SdkInternalList<String>(hostReservationIdSet.length));
+        }
+        for (String ele : hostReservationIdSet) {
+            this.hostReservationIdSet.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more host reservation IDs.
+     * </p>
+     * 
+     * @param hostReservationIdSet
+     *        One or more host reservation IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHostReservationsRequest withHostReservationIdSet(java.util.Collection<String> hostReservationIdSet) {
+        setHostReservationIdSet(hostReservationIdSet);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
      * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500; if
      * <code>maxResults</code> is given a larger value than 500, you will receive an error.
@@ -480,10 +480,10 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getHostReservationIdSet() != null)
-            sb.append("HostReservationIdSet: ").append(getHostReservationIdSet()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
+        if (getHostReservationIdSet() != null)
+            sb.append("HostReservationIdSet: ").append(getHostReservationIdSet()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -502,13 +502,13 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
         if (obj instanceof DescribeHostReservationsRequest == false)
             return false;
         DescribeHostReservationsRequest other = (DescribeHostReservationsRequest) obj;
-        if (other.getHostReservationIdSet() == null ^ this.getHostReservationIdSet() == null)
-            return false;
-        if (other.getHostReservationIdSet() != null && other.getHostReservationIdSet().equals(this.getHostReservationIdSet()) == false)
-            return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
+        if (other.getHostReservationIdSet() == null ^ this.getHostReservationIdSet() == null)
+            return false;
+        if (other.getHostReservationIdSet() != null && other.getHostReservationIdSet().equals(this.getHostReservationIdSet()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
@@ -526,8 +526,8 @@ public class DescribeHostReservationsRequest extends AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getHostReservationIdSet() == null) ? 0 : getHostReservationIdSet().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getHostReservationIdSet() == null) ? 0 : getHostReservationIdSet().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

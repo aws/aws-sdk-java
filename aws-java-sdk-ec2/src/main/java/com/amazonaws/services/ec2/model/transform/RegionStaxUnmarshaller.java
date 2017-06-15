@@ -43,13 +43,13 @@ public class RegionStaxUnmarshaller implements Unmarshaller<Region, StaxUnmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("regionName", targetDepth)) {
-                    region.setRegionName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("regionEndpoint", targetDepth)) {
+                    region.setEndpoint(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("regionEndpoint", targetDepth)) {
-                    region.setEndpoint(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("regionName", targetDepth)) {
+                    region.setRegionName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

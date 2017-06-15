@@ -30,12 +30,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The names of one or more Availability Zones.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> zoneNames;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -64,79 +58,12 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * The names of one or more Availability Zones.
      * </p>
-     * 
-     * @return The names of one or more Availability Zones.
      */
-
-    public java.util.List<String> getZoneNames() {
-        if (zoneNames == null) {
-            zoneNames = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return zoneNames;
-    }
-
-    /**
-     * <p>
-     * The names of one or more Availability Zones.
-     * </p>
-     * 
-     * @param zoneNames
-     *        The names of one or more Availability Zones.
-     */
-
-    public void setZoneNames(java.util.Collection<String> zoneNames) {
-        if (zoneNames == null) {
-            this.zoneNames = null;
-            return;
-        }
-
-        this.zoneNames = new com.amazonaws.internal.SdkInternalList<String>(zoneNames);
-    }
-
-    /**
-     * <p>
-     * The names of one or more Availability Zones.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setZoneNames(java.util.Collection)} or {@link #withZoneNames(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param zoneNames
-     *        The names of one or more Availability Zones.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeAvailabilityZonesRequest withZoneNames(String... zoneNames) {
-        if (this.zoneNames == null) {
-            setZoneNames(new com.amazonaws.internal.SdkInternalList<String>(zoneNames.length));
-        }
-        for (String ele : zoneNames) {
-            this.zoneNames.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The names of one or more Availability Zones.
-     * </p>
-     * 
-     * @param zoneNames
-     *        The names of one or more Availability Zones.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeAvailabilityZonesRequest withZoneNames(java.util.Collection<String> zoneNames) {
-        setZoneNames(zoneNames);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> zoneNames;
 
     /**
      * <p>
@@ -400,6 +327,79 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The names of one or more Availability Zones.
+     * </p>
+     * 
+     * @return The names of one or more Availability Zones.
+     */
+
+    public java.util.List<String> getZoneNames() {
+        if (zoneNames == null) {
+            zoneNames = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return zoneNames;
+    }
+
+    /**
+     * <p>
+     * The names of one or more Availability Zones.
+     * </p>
+     * 
+     * @param zoneNames
+     *        The names of one or more Availability Zones.
+     */
+
+    public void setZoneNames(java.util.Collection<String> zoneNames) {
+        if (zoneNames == null) {
+            this.zoneNames = null;
+            return;
+        }
+
+        this.zoneNames = new com.amazonaws.internal.SdkInternalList<String>(zoneNames);
+    }
+
+    /**
+     * <p>
+     * The names of one or more Availability Zones.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setZoneNames(java.util.Collection)} or {@link #withZoneNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param zoneNames
+     *        The names of one or more Availability Zones.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAvailabilityZonesRequest withZoneNames(String... zoneNames) {
+        if (this.zoneNames == null) {
+            setZoneNames(new com.amazonaws.internal.SdkInternalList<String>(zoneNames.length));
+        }
+        for (String ele : zoneNames) {
+            this.zoneNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of one or more Availability Zones.
+     * </p>
+     * 
+     * @param zoneNames
+     *        The names of one or more Availability Zones.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAvailabilityZonesRequest withZoneNames(java.util.Collection<String> zoneNames) {
+        setZoneNames(zoneNames);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -421,10 +421,10 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getZoneNames() != null)
-            sb.append("ZoneNames: ").append(getZoneNames()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getZoneNames() != null)
+            sb.append("ZoneNames: ").append(getZoneNames());
         sb.append("}");
         return sb.toString();
     }
@@ -439,13 +439,13 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
         if (obj instanceof DescribeAvailabilityZonesRequest == false)
             return false;
         DescribeAvailabilityZonesRequest other = (DescribeAvailabilityZonesRequest) obj;
-        if (other.getZoneNames() == null ^ this.getZoneNames() == null)
-            return false;
-        if (other.getZoneNames() != null && other.getZoneNames().equals(this.getZoneNames()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getZoneNames() == null ^ this.getZoneNames() == null)
+            return false;
+        if (other.getZoneNames() != null && other.getZoneNames().equals(this.getZoneNames()) == false)
             return false;
         return true;
     }
@@ -455,8 +455,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getZoneNames() == null) ? 0 : getZoneNames().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getZoneNames() == null) ? 0 : getZoneNames().hashCode());
         return hashCode;
     }
 

@@ -28,18 +28,6 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI.
-     * </p>
-     */
-    private String imageId;
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     */
-    private String keyName;
-    /**
-     * <p>
      * The user data to make available to the instances. If you are using an AWS SDK or command line tool,
      * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
      * Base64-encoded text.
@@ -54,30 +42,6 @@ public class LaunchSpecification implements Serializable, Cloneable {
     private String addressingType;
     /**
      * <p>
-     * The instance type.
-     * </p>
-     */
-    private String instanceType;
-    /**
-     * <p>
-     * The placement information for the instance.
-     * </p>
-     */
-    private SpotPlacement placement;
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     */
-    private String kernelId;
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     */
-    private String ramdiskId;
-    /**
-     * <p>
      * One or more block device mapping entries.
      * </p>
      * <p>
@@ -86,25 +50,6 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
-    /**
-     * <p>
-     * The ID of the subnet in which to launch the instance.
-     * </p>
-     */
-    private String subnetId;
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
-    /**
-     * <p>
-     * The IAM instance profile.
-     * </p>
-     */
-    private IamInstanceProfileSpecification iamInstanceProfile;
     /**
      * <p>
      * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
@@ -116,6 +61,61 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * </p>
      */
     private Boolean ebsOptimized;
+    /**
+     * <p>
+     * The IAM instance profile.
+     * </p>
+     */
+    private IamInstanceProfileSpecification iamInstanceProfile;
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     */
+    private String imageId;
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     */
+    private String instanceType;
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     */
+    private String kernelId;
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     */
+    private String keyName;
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
+    /**
+     * <p>
+     * The placement information for the instance.
+     * </p>
+     */
+    private SpotPlacement placement;
+    /**
+     * <p>
+     * The ID of the RAM disk.
+     * </p>
+     */
+    private String ramdiskId;
+    /**
+     * <p>
+     * The ID of the subnet in which to launch the instance.
+     * </p>
+     */
+    private String subnetId;
     /**
      * <p>
      * One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups.
@@ -131,86 +131,6 @@ public class LaunchSpecification implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @param imageId
-     *        The ID of the AMI.
-     */
-
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @return The ID of the AMI.
-     */
-
-    public String getImageId() {
-        return this.imageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @param imageId
-     *        The ID of the AMI.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchSpecification withImageId(String imageId) {
-        setImageId(imageId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @param keyName
-     *        The name of the key pair.
-     */
-
-    public void setKeyName(String keyName) {
-        this.keyName = keyName;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @return The name of the key pair.
-     */
-
-    public String getKeyName() {
-        return this.keyName;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @param keyName
-     *        The name of the key pair.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchSpecification withKeyName(String keyName) {
-        setKeyName(keyName);
-        return this;
-    }
 
     /**
      * <p>
@@ -301,199 +221,6 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     public LaunchSpecification withAddressingType(String addressingType) {
         setAddressingType(addressingType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The instance type.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type.
-     * @see InstanceType
-     */
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type.
-     * </p>
-     * 
-     * @return The instance type.
-     * @see InstanceType
-     */
-
-    public String getInstanceType() {
-        return this.instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceType
-     */
-
-    public LaunchSpecification withInstanceType(String instanceType) {
-        setInstanceType(instanceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The instance type.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type.
-     * @see InstanceType
-     */
-
-    public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
-    }
-
-    /**
-     * <p>
-     * The instance type.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceType
-     */
-
-    public LaunchSpecification withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The placement information for the instance.
-     * </p>
-     * 
-     * @param placement
-     *        The placement information for the instance.
-     */
-
-    public void setPlacement(SpotPlacement placement) {
-        this.placement = placement;
-    }
-
-    /**
-     * <p>
-     * The placement information for the instance.
-     * </p>
-     * 
-     * @return The placement information for the instance.
-     */
-
-    public SpotPlacement getPlacement() {
-        return this.placement;
-    }
-
-    /**
-     * <p>
-     * The placement information for the instance.
-     * </p>
-     * 
-     * @param placement
-     *        The placement information for the instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchSpecification withPlacement(SpotPlacement placement) {
-        setPlacement(placement);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     * 
-     * @param kernelId
-     *        The ID of the kernel.
-     */
-
-    public void setKernelId(String kernelId) {
-        this.kernelId = kernelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     * 
-     * @return The ID of the kernel.
-     */
-
-    public String getKernelId() {
-        return this.kernelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the kernel.
-     * </p>
-     * 
-     * @param kernelId
-     *        The ID of the kernel.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchSpecification withKernelId(String kernelId) {
-        setKernelId(kernelId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     * 
-     * @param ramdiskId
-     *        The ID of the RAM disk.
-     */
-
-    public void setRamdiskId(String ramdiskId) {
-        this.ramdiskId = ramdiskId;
-    }
-
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     * 
-     * @return The ID of the RAM disk.
-     */
-
-    public String getRamdiskId() {
-        return this.ramdiskId;
-    }
-
-    /**
-     * <p>
-     * The ID of the RAM disk.
-     * </p>
-     * 
-     * @param ramdiskId
-     *        The ID of the RAM disk.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchSpecification withRamdiskId(String ramdiskId) {
-        setRamdiskId(ramdiskId);
         return this;
     }
 
@@ -600,167 +327,6 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the subnet in which to launch the instance.
-     * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet in which to launch the instance.
-     */
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet in which to launch the instance.
-     * </p>
-     * 
-     * @return The ID of the subnet in which to launch the instance.
-     */
-
-    public String getSubnetId() {
-        return this.subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet in which to launch the instance.
-     * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet in which to launch the instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchSpecification withSubnetId(String subnetId) {
-        setSubnetId(subnetId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     * 
-     * @return One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *         security group IDs using the network interface.
-     */
-
-    public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
-        if (networkInterfaces == null) {
-            networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>();
-        }
-        return networkInterfaces;
-    }
-
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     * 
-     * @param networkInterfaces
-     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
-     */
-
-    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
-        if (networkInterfaces == null) {
-            this.networkInterfaces = null;
-            return;
-        }
-
-        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces);
-    }
-
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
-     * you want to override the existing values.
-     * </p>
-     * 
-     * @param networkInterfaces
-     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchSpecification withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
-        if (this.networkInterfaces == null) {
-            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
-        }
-        for (InstanceNetworkInterfaceSpecification ele : networkInterfaces) {
-            this.networkInterfaces.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
-     * group IDs using the network interface.
-     * </p>
-     * 
-     * @param networkInterfaces
-     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchSpecification withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
-        setNetworkInterfaces(networkInterfaces);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The IAM instance profile.
-     * </p>
-     * 
-     * @param iamInstanceProfile
-     *        The IAM instance profile.
-     */
-
-    public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
-        this.iamInstanceProfile = iamInstanceProfile;
-    }
-
-    /**
-     * <p>
-     * The IAM instance profile.
-     * </p>
-     * 
-     * @return The IAM instance profile.
-     */
-
-    public IamInstanceProfileSpecification getIamInstanceProfile() {
-        return this.iamInstanceProfile;
-    }
-
-    /**
-     * <p>
-     * The IAM instance profile.
-     * </p>
-     * 
-     * @param iamInstanceProfile
-     *        The IAM instance profile.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LaunchSpecification withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
-        setIamInstanceProfile(iamInstanceProfile);
-        return this;
-    }
-
-    /**
-     * <p>
      * Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to
      * Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't
      * available with all instance types. Additional usage charges apply when using an EBS Optimized instance.
@@ -849,6 +415,440 @@ public class LaunchSpecification implements Serializable, Cloneable {
 
     public Boolean isEbsOptimized() {
         return this.ebsOptimized;
+    }
+
+    /**
+     * <p>
+     * The IAM instance profile.
+     * </p>
+     * 
+     * @param iamInstanceProfile
+     *        The IAM instance profile.
+     */
+
+    public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+    }
+
+    /**
+     * <p>
+     * The IAM instance profile.
+     * </p>
+     * 
+     * @return The IAM instance profile.
+     */
+
+    public IamInstanceProfileSpecification getIamInstanceProfile() {
+        return this.iamInstanceProfile;
+    }
+
+    /**
+     * <p>
+     * The IAM instance profile.
+     * </p>
+     * 
+     * @param iamInstanceProfile
+     *        The IAM instance profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchSpecification withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
+        setIamInstanceProfile(iamInstanceProfile);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @return The ID of the AMI.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchSpecification withImageId(String imageId) {
+        setImageId(imageId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @see InstanceType
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @return The instance type.
+     * @see InstanceType
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public LaunchSpecification withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @see InstanceType
+     */
+
+    public void setInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public LaunchSpecification withInstanceType(InstanceType instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @param kernelId
+     *        The ID of the kernel.
+     */
+
+    public void setKernelId(String kernelId) {
+        this.kernelId = kernelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @return The ID of the kernel.
+     */
+
+    public String getKernelId() {
+        return this.kernelId;
+    }
+
+    /**
+     * <p>
+     * The ID of the kernel.
+     * </p>
+     * 
+     * @param kernelId
+     *        The ID of the kernel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchSpecification withKernelId(String kernelId) {
+        setKernelId(kernelId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
+     */
+
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @return The name of the key pair.
+     */
+
+    public String getKeyName() {
+        return this.keyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchSpecification withKeyName(String keyName) {
+        setKeyName(keyName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
+     * </p>
+     * 
+     * @return One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *         security group IDs using the network interface.
+     */
+
+    public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
+        if (networkInterfaces == null) {
+            networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>();
+        }
+        return networkInterfaces;
+    }
+
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *        security group IDs using the network interface.
+     */
+
+    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        this.networkInterfaces = new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces);
+    }
+
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *        security group IDs using the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchSpecification withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
+        if (this.networkInterfaces == null) {
+            setNetworkInterfaces(new com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
+        }
+        for (InstanceNetworkInterfaceSpecification ele : networkInterfaces) {
+            this.networkInterfaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
+     * group IDs using the network interface.
+     * </p>
+     * 
+     * @param networkInterfaces
+     *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
+     *        security group IDs using the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchSpecification withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+        setNetworkInterfaces(networkInterfaces);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The placement information for the instance.
+     * </p>
+     * 
+     * @param placement
+     *        The placement information for the instance.
+     */
+
+    public void setPlacement(SpotPlacement placement) {
+        this.placement = placement;
+    }
+
+    /**
+     * <p>
+     * The placement information for the instance.
+     * </p>
+     * 
+     * @return The placement information for the instance.
+     */
+
+    public SpotPlacement getPlacement() {
+        return this.placement;
+    }
+
+    /**
+     * <p>
+     * The placement information for the instance.
+     * </p>
+     * 
+     * @param placement
+     *        The placement information for the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchSpecification withPlacement(SpotPlacement placement) {
+        setPlacement(placement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The ID of the RAM disk.
+     */
+
+    public void setRamdiskId(String ramdiskId) {
+        this.ramdiskId = ramdiskId;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk.
+     * </p>
+     * 
+     * @return The ID of the RAM disk.
+     */
+
+    public String getRamdiskId() {
+        return this.ramdiskId;
+    }
+
+    /**
+     * <p>
+     * The ID of the RAM disk.
+     * </p>
+     * 
+     * @param ramdiskId
+     *        The ID of the RAM disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchSpecification withRamdiskId(String ramdiskId) {
+        setRamdiskId(ramdiskId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet in which to launch the instance.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet in which to launch the instance.
+     */
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet in which to launch the instance.
+     * </p>
+     * 
+     * @return The ID of the subnet in which to launch the instance.
+     */
+
+    public String getSubnetId() {
+        return this.subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet in which to launch the instance.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet in which to launch the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchSpecification withSubnetId(String subnetId) {
+        setSubnetId(subnetId);
+        return this;
     }
 
     /**
@@ -1054,32 +1054,32 @@ public class LaunchSpecification implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImageId() != null)
-            sb.append("ImageId: ").append(getImageId()).append(",");
-        if (getKeyName() != null)
-            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getUserData() != null)
             sb.append("UserData: ").append(getUserData()).append(",");
         if (getAddressingType() != null)
             sb.append("AddressingType: ").append(getAddressingType()).append(",");
-        if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType()).append(",");
-        if (getPlacement() != null)
-            sb.append("Placement: ").append(getPlacement()).append(",");
-        if (getKernelId() != null)
-            sb.append("KernelId: ").append(getKernelId()).append(",");
-        if (getRamdiskId() != null)
-            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getBlockDeviceMappings() != null)
             sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
-        if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId()).append(",");
-        if (getNetworkInterfaces() != null)
-            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
-        if (getIamInstanceProfile() != null)
-            sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
+        if (getIamInstanceProfile() != null)
+            sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getKernelId() != null)
+            sb.append("KernelId: ").append(getKernelId()).append(",");
+        if (getKeyName() != null)
+            sb.append("KeyName: ").append(getKeyName()).append(",");
+        if (getNetworkInterfaces() != null)
+            sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
+        if (getPlacement() != null)
+            sb.append("Placement: ").append(getPlacement()).append(",");
+        if (getRamdiskId() != null)
+            sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
+        if (getSubnetId() != null)
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getAllSecurityGroups() != null)
             sb.append("AllSecurityGroups: ").append(getAllSecurityGroups()).append(",");
         if (getMonitoringEnabled() != null)
@@ -1100,14 +1100,6 @@ public class LaunchSpecification implements Serializable, Cloneable {
         if (obj instanceof LaunchSpecification == false)
             return false;
         LaunchSpecification other = (LaunchSpecification) obj;
-        if (other.getImageId() == null ^ this.getImageId() == null)
-            return false;
-        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
-            return false;
-        if (other.getKeyName() == null ^ this.getKeyName() == null)
-            return false;
-        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
-            return false;
         if (other.getUserData() == null ^ this.getUserData() == null)
             return false;
         if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false)
@@ -1116,41 +1108,49 @@ public class LaunchSpecification implements Serializable, Cloneable {
             return false;
         if (other.getAddressingType() != null && other.getAddressingType().equals(this.getAddressingType()) == false)
             return false;
-        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
-            return false;
-        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
-            return false;
-        if (other.getPlacement() == null ^ this.getPlacement() == null)
-            return false;
-        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false)
-            return false;
-        if (other.getKernelId() == null ^ this.getKernelId() == null)
-            return false;
-        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
-            return false;
-        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
-            return false;
-        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
-            return false;
         if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
             return false;
         if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
-        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+        if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
-        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
-            return false;
-        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
-            return false;
-        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
+        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
             return false;
         if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
         if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
             return false;
-        if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
+        if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
-        if (other.getEbsOptimized() != null && other.getEbsOptimized().equals(this.getEbsOptimized()) == false)
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getKernelId() == null ^ this.getKernelId() == null)
+            return false;
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false)
+            return false;
+        if (other.getKeyName() == null ^ this.getKeyName() == null)
+            return false;
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
+            return false;
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
+            return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
+            return false;
+        if (other.getPlacement() == null ^ this.getPlacement() == null)
+            return false;
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false)
+            return false;
+        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null)
+            return false;
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
+            return false;
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+            return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         if (other.getAllSecurityGroups() == null ^ this.getAllSecurityGroups() == null)
             return false;
@@ -1172,19 +1172,19 @@ public class LaunchSpecification implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
-        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
         hashCode = prime * hashCode + ((getAddressingType() == null) ? 0 : getAddressingType().hashCode());
-        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
-        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
-        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
-        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
-        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
-        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
         hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode());
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getAllSecurityGroups() == null) ? 0 : getAllSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getMonitoringEnabled() == null) ? 0 : getMonitoringEnabled().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());

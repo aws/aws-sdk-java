@@ -43,13 +43,13 @@ public class InstanceStateChangeStaxUnmarshaller implements Unmarshaller<Instanc
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceId", targetDepth)) {
-                    instanceStateChange.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("currentState", targetDepth)) {
+                    instanceStateChange.setCurrentState(InstanceStateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("currentState", targetDepth)) {
-                    instanceStateChange.setCurrentState(InstanceStateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceId", targetDepth)) {
+                    instanceStateChange.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

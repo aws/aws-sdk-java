@@ -43,11 +43,6 @@ public class KeyPairStaxUnmarshaller implements Unmarshaller<KeyPair, StaxUnmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("keyName", targetDepth)) {
-                    keyPair.setKeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("keyFingerprint", targetDepth)) {
                     keyPair.setKeyFingerprint(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,6 +50,11 @@ public class KeyPairStaxUnmarshaller implements Unmarshaller<KeyPair, StaxUnmars
 
                 if (context.testExpression("keyMaterial", targetDepth)) {
                     keyPair.setKeyMaterial(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("keyName", targetDepth)) {
+                    keyPair.setKeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

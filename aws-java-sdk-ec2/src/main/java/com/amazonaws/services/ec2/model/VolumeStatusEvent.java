@@ -28,22 +28,22 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of this event.
-     * </p>
-     */
-    private String eventType;
-    /**
-     * <p>
      * A description of the event.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The earliest start time of the event.
+     * The ID of this event.
      * </p>
      */
-    private java.util.Date notBefore;
+    private String eventId;
+    /**
+     * <p>
+     * The type of this event.
+     * </p>
+     */
+    private String eventType;
     /**
      * <p>
      * The latest end time of the event.
@@ -52,50 +52,10 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
     private java.util.Date notAfter;
     /**
      * <p>
-     * The ID of this event.
+     * The earliest start time of the event.
      * </p>
      */
-    private String eventId;
-
-    /**
-     * <p>
-     * The type of this event.
-     * </p>
-     * 
-     * @param eventType
-     *        The type of this event.
-     */
-
-    public void setEventType(String eventType) {
-        this.eventType = eventType;
-    }
-
-    /**
-     * <p>
-     * The type of this event.
-     * </p>
-     * 
-     * @return The type of this event.
-     */
-
-    public String getEventType() {
-        return this.eventType;
-    }
-
-    /**
-     * <p>
-     * The type of this event.
-     * </p>
-     * 
-     * @param eventType
-     *        The type of this event.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VolumeStatusEvent withEventType(String eventType) {
-        setEventType(eventType);
-        return this;
-    }
+    private java.util.Date notBefore;
 
     /**
      * <p>
@@ -139,41 +99,81 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The earliest start time of the event.
+     * The ID of this event.
      * </p>
      * 
-     * @param notBefore
-     *        The earliest start time of the event.
+     * @param eventId
+     *        The ID of this event.
      */
 
-    public void setNotBefore(java.util.Date notBefore) {
-        this.notBefore = notBefore;
+    public void setEventId(String eventId) {
+        this.eventId = eventId;
     }
 
     /**
      * <p>
-     * The earliest start time of the event.
+     * The ID of this event.
      * </p>
      * 
-     * @return The earliest start time of the event.
+     * @return The ID of this event.
      */
 
-    public java.util.Date getNotBefore() {
-        return this.notBefore;
+    public String getEventId() {
+        return this.eventId;
     }
 
     /**
      * <p>
-     * The earliest start time of the event.
+     * The ID of this event.
      * </p>
      * 
-     * @param notBefore
-     *        The earliest start time of the event.
+     * @param eventId
+     *        The ID of this event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VolumeStatusEvent withNotBefore(java.util.Date notBefore) {
-        setNotBefore(notBefore);
+    public VolumeStatusEvent withEventId(String eventId) {
+        setEventId(eventId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of this event.
+     * </p>
+     * 
+     * @param eventType
+     *        The type of this event.
+     */
+
+    public void setEventType(String eventType) {
+        this.eventType = eventType;
+    }
+
+    /**
+     * <p>
+     * The type of this event.
+     * </p>
+     * 
+     * @return The type of this event.
+     */
+
+    public String getEventType() {
+        return this.eventType;
+    }
+
+    /**
+     * <p>
+     * The type of this event.
+     * </p>
+     * 
+     * @param eventType
+     *        The type of this event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeStatusEvent withEventType(String eventType) {
+        setEventType(eventType);
         return this;
     }
 
@@ -219,41 +219,41 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of this event.
+     * The earliest start time of the event.
      * </p>
      * 
-     * @param eventId
-     *        The ID of this event.
+     * @param notBefore
+     *        The earliest start time of the event.
      */
 
-    public void setEventId(String eventId) {
-        this.eventId = eventId;
+    public void setNotBefore(java.util.Date notBefore) {
+        this.notBefore = notBefore;
     }
 
     /**
      * <p>
-     * The ID of this event.
+     * The earliest start time of the event.
      * </p>
      * 
-     * @return The ID of this event.
+     * @return The earliest start time of the event.
      */
 
-    public String getEventId() {
-        return this.eventId;
+    public java.util.Date getNotBefore() {
+        return this.notBefore;
     }
 
     /**
      * <p>
-     * The ID of this event.
+     * The earliest start time of the event.
      * </p>
      * 
-     * @param eventId
-     *        The ID of this event.
+     * @param notBefore
+     *        The earliest start time of the event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public VolumeStatusEvent withEventId(String eventId) {
-        setEventId(eventId);
+    public VolumeStatusEvent withNotBefore(java.util.Date notBefore) {
+        setNotBefore(notBefore);
         return this;
     }
 
@@ -268,16 +268,16 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEventType() != null)
-            sb.append("EventType: ").append(getEventType()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
-        if (getNotBefore() != null)
-            sb.append("NotBefore: ").append(getNotBefore()).append(",");
+        if (getEventId() != null)
+            sb.append("EventId: ").append(getEventId()).append(",");
+        if (getEventType() != null)
+            sb.append("EventType: ").append(getEventType()).append(",");
         if (getNotAfter() != null)
             sb.append("NotAfter: ").append(getNotAfter()).append(",");
-        if (getEventId() != null)
-            sb.append("EventId: ").append(getEventId());
+        if (getNotBefore() != null)
+            sb.append("NotBefore: ").append(getNotBefore());
         sb.append("}");
         return sb.toString();
     }
@@ -292,25 +292,25 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
         if (obj instanceof VolumeStatusEvent == false)
             return false;
         VolumeStatusEvent other = (VolumeStatusEvent) obj;
-        if (other.getEventType() == null ^ this.getEventType() == null)
-            return false;
-        if (other.getEventType() != null && other.getEventType().equals(this.getEventType()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getNotBefore() == null ^ this.getNotBefore() == null)
+        if (other.getEventId() == null ^ this.getEventId() == null)
             return false;
-        if (other.getNotBefore() != null && other.getNotBefore().equals(this.getNotBefore()) == false)
+        if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false)
+            return false;
+        if (other.getEventType() == null ^ this.getEventType() == null)
+            return false;
+        if (other.getEventType() != null && other.getEventType().equals(this.getEventType()) == false)
             return false;
         if (other.getNotAfter() == null ^ this.getNotAfter() == null)
             return false;
         if (other.getNotAfter() != null && other.getNotAfter().equals(this.getNotAfter()) == false)
             return false;
-        if (other.getEventId() == null ^ this.getEventId() == null)
+        if (other.getNotBefore() == null ^ this.getNotBefore() == null)
             return false;
-        if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false)
+        if (other.getNotBefore() != null && other.getNotBefore().equals(this.getNotBefore()) == false)
             return false;
         return true;
     }
@@ -320,11 +320,11 @@ public class VolumeStatusEvent implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getNotBefore() == null) ? 0 : getNotBefore().hashCode());
-        hashCode = prime * hashCode + ((getNotAfter() == null) ? 0 : getNotAfter().hashCode());
         hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode());
+        hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
+        hashCode = prime * hashCode + ((getNotAfter() == null) ? 0 : getNotAfter().hashCode());
+        hashCode = prime * hashCode + ((getNotBefore() == null) ? 0 : getNotBefore().hashCode());
         return hashCode;
     }
 

@@ -29,15 +29,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more network ACL IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your network ACLs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> networkAclIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -147,7 +138,6 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more network ACL IDs.
@@ -155,91 +145,8 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
      * <p>
      * Default: Describes all your network ACLs.
      * </p>
-     * 
-     * @return One or more network ACL IDs.</p>
-     *         <p>
-     *         Default: Describes all your network ACLs.
      */
-
-    public java.util.List<String> getNetworkAclIds() {
-        if (networkAclIds == null) {
-            networkAclIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return networkAclIds;
-    }
-
-    /**
-     * <p>
-     * One or more network ACL IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your network ACLs.
-     * </p>
-     * 
-     * @param networkAclIds
-     *        One or more network ACL IDs.</p>
-     *        <p>
-     *        Default: Describes all your network ACLs.
-     */
-
-    public void setNetworkAclIds(java.util.Collection<String> networkAclIds) {
-        if (networkAclIds == null) {
-            this.networkAclIds = null;
-            return;
-        }
-
-        this.networkAclIds = new com.amazonaws.internal.SdkInternalList<String>(networkAclIds);
-    }
-
-    /**
-     * <p>
-     * One or more network ACL IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your network ACLs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setNetworkAclIds(java.util.Collection)} or {@link #withNetworkAclIds(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param networkAclIds
-     *        One or more network ACL IDs.</p>
-     *        <p>
-     *        Default: Describes all your network ACLs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeNetworkAclsRequest withNetworkAclIds(String... networkAclIds) {
-        if (this.networkAclIds == null) {
-            setNetworkAclIds(new com.amazonaws.internal.SdkInternalList<String>(networkAclIds.length));
-        }
-        for (String ele : networkAclIds) {
-            this.networkAclIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more network ACL IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your network ACLs.
-     * </p>
-     * 
-     * @param networkAclIds
-     *        One or more network ACL IDs.</p>
-     *        <p>
-     *        Default: Describes all your network ACLs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeNetworkAclsRequest withNetworkAclIds(java.util.Collection<String> networkAclIds) {
-        setNetworkAclIds(networkAclIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> networkAclIds;
 
     /**
      * <p>
@@ -1163,6 +1070,99 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * One or more network ACL IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your network ACLs.
+     * </p>
+     * 
+     * @return One or more network ACL IDs.</p>
+     *         <p>
+     *         Default: Describes all your network ACLs.
+     */
+
+    public java.util.List<String> getNetworkAclIds() {
+        if (networkAclIds == null) {
+            networkAclIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return networkAclIds;
+    }
+
+    /**
+     * <p>
+     * One or more network ACL IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your network ACLs.
+     * </p>
+     * 
+     * @param networkAclIds
+     *        One or more network ACL IDs.</p>
+     *        <p>
+     *        Default: Describes all your network ACLs.
+     */
+
+    public void setNetworkAclIds(java.util.Collection<String> networkAclIds) {
+        if (networkAclIds == null) {
+            this.networkAclIds = null;
+            return;
+        }
+
+        this.networkAclIds = new com.amazonaws.internal.SdkInternalList<String>(networkAclIds);
+    }
+
+    /**
+     * <p>
+     * One or more network ACL IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your network ACLs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkAclIds(java.util.Collection)} or {@link #withNetworkAclIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param networkAclIds
+     *        One or more network ACL IDs.</p>
+     *        <p>
+     *        Default: Describes all your network ACLs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkAclsRequest withNetworkAclIds(String... networkAclIds) {
+        if (this.networkAclIds == null) {
+            setNetworkAclIds(new com.amazonaws.internal.SdkInternalList<String>(networkAclIds.length));
+        }
+        for (String ele : networkAclIds) {
+            this.networkAclIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more network ACL IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your network ACLs.
+     * </p>
+     * 
+     * @param networkAclIds
+     *        One or more network ACL IDs.</p>
+     *        <p>
+     *        Default: Describes all your network ACLs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkAclsRequest withNetworkAclIds(java.util.Collection<String> networkAclIds) {
+        setNetworkAclIds(networkAclIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1184,10 +1184,10 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNetworkAclIds() != null)
-            sb.append("NetworkAclIds: ").append(getNetworkAclIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getNetworkAclIds() != null)
+            sb.append("NetworkAclIds: ").append(getNetworkAclIds());
         sb.append("}");
         return sb.toString();
     }
@@ -1202,13 +1202,13 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof DescribeNetworkAclsRequest == false)
             return false;
         DescribeNetworkAclsRequest other = (DescribeNetworkAclsRequest) obj;
-        if (other.getNetworkAclIds() == null ^ this.getNetworkAclIds() == null)
-            return false;
-        if (other.getNetworkAclIds() != null && other.getNetworkAclIds().equals(this.getNetworkAclIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getNetworkAclIds() == null ^ this.getNetworkAclIds() == null)
+            return false;
+        if (other.getNetworkAclIds() != null && other.getNetworkAclIds().equals(this.getNetworkAclIds()) == false)
             return false;
         return true;
     }
@@ -1218,8 +1218,8 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNetworkAclIds() == null) ? 0 : getNetworkAclIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAclIds() == null) ? 0 : getNetworkAclIds().hashCode());
         return hashCode;
     }
 

@@ -43,13 +43,13 @@ public class ActiveInstanceStaxUnmarshaller implements Unmarshaller<ActiveInstan
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceType", targetDepth)) {
-                    activeInstance.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceId", targetDepth)) {
+                    activeInstance.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("instanceId", targetDepth)) {
-                    activeInstance.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceType", targetDepth)) {
+                    activeInstance.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

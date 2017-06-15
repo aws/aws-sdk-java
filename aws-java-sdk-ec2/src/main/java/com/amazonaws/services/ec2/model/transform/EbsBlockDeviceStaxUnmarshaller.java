@@ -43,6 +43,21 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("encrypted", targetDepth)) {
+                    ebsBlockDevice.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deleteOnTermination", targetDepth)) {
+                    ebsBlockDevice.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("iops", targetDepth)) {
+                    ebsBlockDevice.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("snapshotId", targetDepth)) {
                     ebsBlockDevice.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -53,23 +68,8 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
                     continue;
                 }
 
-                if (context.testExpression("deleteOnTermination", targetDepth)) {
-                    ebsBlockDevice.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("volumeType", targetDepth)) {
                     ebsBlockDevice.setVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("iops", targetDepth)) {
-                    ebsBlockDevice.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("encrypted", targetDepth)) {
-                    ebsBlockDevice.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

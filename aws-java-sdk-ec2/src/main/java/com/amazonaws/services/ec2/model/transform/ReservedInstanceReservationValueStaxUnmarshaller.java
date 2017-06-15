@@ -43,13 +43,13 @@ public class ReservedInstanceReservationValueStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("reservedInstanceId", targetDepth)) {
-                    reservedInstanceReservationValue.setReservedInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("reservationValue", targetDepth)) {
+                    reservedInstanceReservationValue.setReservationValue(ReservationValueStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("reservationValue", targetDepth)) {
-                    reservedInstanceReservationValue.setReservationValue(ReservationValueStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("reservedInstanceId", targetDepth)) {
+                    reservedInstanceReservationValue.setReservedInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

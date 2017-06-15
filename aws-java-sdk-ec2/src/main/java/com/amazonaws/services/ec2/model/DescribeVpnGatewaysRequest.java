@@ -29,15 +29,6 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more virtual private gateway IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your virtual private gateways.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> vpnGatewayIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -99,7 +90,6 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more virtual private gateway IDs.
@@ -107,91 +97,8 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
      * <p>
      * Default: Describes all your virtual private gateways.
      * </p>
-     * 
-     * @return One or more virtual private gateway IDs.</p>
-     *         <p>
-     *         Default: Describes all your virtual private gateways.
      */
-
-    public java.util.List<String> getVpnGatewayIds() {
-        if (vpnGatewayIds == null) {
-            vpnGatewayIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return vpnGatewayIds;
-    }
-
-    /**
-     * <p>
-     * One or more virtual private gateway IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your virtual private gateways.
-     * </p>
-     * 
-     * @param vpnGatewayIds
-     *        One or more virtual private gateway IDs.</p>
-     *        <p>
-     *        Default: Describes all your virtual private gateways.
-     */
-
-    public void setVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
-        if (vpnGatewayIds == null) {
-            this.vpnGatewayIds = null;
-            return;
-        }
-
-        this.vpnGatewayIds = new com.amazonaws.internal.SdkInternalList<String>(vpnGatewayIds);
-    }
-
-    /**
-     * <p>
-     * One or more virtual private gateway IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your virtual private gateways.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVpnGatewayIds(java.util.Collection)} or {@link #withVpnGatewayIds(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param vpnGatewayIds
-     *        One or more virtual private gateway IDs.</p>
-     *        <p>
-     *        Default: Describes all your virtual private gateways.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpnGatewaysRequest withVpnGatewayIds(String... vpnGatewayIds) {
-        if (this.vpnGatewayIds == null) {
-            setVpnGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(vpnGatewayIds.length));
-        }
-        for (String ele : vpnGatewayIds) {
-            this.vpnGatewayIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more virtual private gateway IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your virtual private gateways.
-     * </p>
-     * 
-     * @param vpnGatewayIds
-     *        One or more virtual private gateway IDs.</p>
-     *        <p>
-     *        Default: Describes all your virtual private gateways.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpnGatewaysRequest withVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
-        setVpnGatewayIds(vpnGatewayIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> vpnGatewayIds;
 
     /**
      * <p>
@@ -723,6 +630,99 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * One or more virtual private gateway IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your virtual private gateways.
+     * </p>
+     * 
+     * @return One or more virtual private gateway IDs.</p>
+     *         <p>
+     *         Default: Describes all your virtual private gateways.
+     */
+
+    public java.util.List<String> getVpnGatewayIds() {
+        if (vpnGatewayIds == null) {
+            vpnGatewayIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return vpnGatewayIds;
+    }
+
+    /**
+     * <p>
+     * One or more virtual private gateway IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your virtual private gateways.
+     * </p>
+     * 
+     * @param vpnGatewayIds
+     *        One or more virtual private gateway IDs.</p>
+     *        <p>
+     *        Default: Describes all your virtual private gateways.
+     */
+
+    public void setVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
+        if (vpnGatewayIds == null) {
+            this.vpnGatewayIds = null;
+            return;
+        }
+
+        this.vpnGatewayIds = new com.amazonaws.internal.SdkInternalList<String>(vpnGatewayIds);
+    }
+
+    /**
+     * <p>
+     * One or more virtual private gateway IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your virtual private gateways.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpnGatewayIds(java.util.Collection)} or {@link #withVpnGatewayIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param vpnGatewayIds
+     *        One or more virtual private gateway IDs.</p>
+     *        <p>
+     *        Default: Describes all your virtual private gateways.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpnGatewaysRequest withVpnGatewayIds(String... vpnGatewayIds) {
+        if (this.vpnGatewayIds == null) {
+            setVpnGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(vpnGatewayIds.length));
+        }
+        for (String ele : vpnGatewayIds) {
+            this.vpnGatewayIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more virtual private gateway IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your virtual private gateways.
+     * </p>
+     * 
+     * @param vpnGatewayIds
+     *        One or more virtual private gateway IDs.</p>
+     *        <p>
+     *        Default: Describes all your virtual private gateways.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpnGatewaysRequest withVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
+        setVpnGatewayIds(vpnGatewayIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -744,10 +744,10 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpnGatewayIds() != null)
-            sb.append("VpnGatewayIds: ").append(getVpnGatewayIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getVpnGatewayIds() != null)
+            sb.append("VpnGatewayIds: ").append(getVpnGatewayIds());
         sb.append("}");
         return sb.toString();
     }
@@ -762,13 +762,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof DescribeVpnGatewaysRequest == false)
             return false;
         DescribeVpnGatewaysRequest other = (DescribeVpnGatewaysRequest) obj;
-        if (other.getVpnGatewayIds() == null ^ this.getVpnGatewayIds() == null)
-            return false;
-        if (other.getVpnGatewayIds() != null && other.getVpnGatewayIds().equals(this.getVpnGatewayIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getVpnGatewayIds() == null ^ this.getVpnGatewayIds() == null)
+            return false;
+        if (other.getVpnGatewayIds() != null && other.getVpnGatewayIds().equals(this.getVpnGatewayIds()) == false)
             return false;
         return true;
     }
@@ -778,8 +778,8 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpnGatewayIds() == null) ? 0 : getVpnGatewayIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getVpnGatewayIds() == null) ? 0 : getVpnGatewayIds().hashCode());
         return hashCode;
     }
 

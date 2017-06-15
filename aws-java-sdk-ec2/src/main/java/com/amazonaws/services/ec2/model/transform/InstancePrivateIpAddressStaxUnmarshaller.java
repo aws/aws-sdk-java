@@ -43,13 +43,8 @@ public class InstancePrivateIpAddressStaxUnmarshaller implements Unmarshaller<In
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("privateIpAddress", targetDepth)) {
-                    instancePrivateIpAddress.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("privateDnsName", targetDepth)) {
-                    instancePrivateIpAddress.setPrivateDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("association", targetDepth)) {
+                    instancePrivateIpAddress.setAssociation(InstanceNetworkInterfaceAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,8 +53,13 @@ public class InstancePrivateIpAddressStaxUnmarshaller implements Unmarshaller<In
                     continue;
                 }
 
-                if (context.testExpression("association", targetDepth)) {
-                    instancePrivateIpAddress.setAssociation(InstanceNetworkInterfaceAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("privateDnsName", targetDepth)) {
+                    instancePrivateIpAddress.setPrivateDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("privateIpAddress", targetDepth)) {
+                    instancePrivateIpAddress.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

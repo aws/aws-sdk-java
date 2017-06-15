@@ -40,19 +40,6 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describePlacementGroupsRequestGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) describePlacementGroupsRequest
-                .getGroupNames();
-        if (!describePlacementGroupsRequestGroupNamesList.isEmpty() || !describePlacementGroupsRequestGroupNamesList.isAutoConstruct()) {
-            int groupNamesListIndex = 1;
-
-            for (String describePlacementGroupsRequestGroupNamesListValue : describePlacementGroupsRequestGroupNamesList) {
-                if (describePlacementGroupsRequestGroupNamesListValue != null) {
-                    request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(describePlacementGroupsRequestGroupNamesListValue));
-                }
-                groupNamesListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describePlacementGroupsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describePlacementGroupsRequest
                 .getFilters();
         if (!describePlacementGroupsRequestFiltersList.isEmpty() || !describePlacementGroupsRequestFiltersList.isAutoConstruct()) {
@@ -78,6 +65,19 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describePlacementGroupsRequestGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) describePlacementGroupsRequest
+                .getGroupNames();
+        if (!describePlacementGroupsRequestGroupNamesList.isEmpty() || !describePlacementGroupsRequestGroupNamesList.isAutoConstruct()) {
+            int groupNamesListIndex = 1;
+
+            for (String describePlacementGroupsRequestGroupNamesListValue : describePlacementGroupsRequestGroupNamesList) {
+                if (describePlacementGroupsRequestGroupNamesListValue != null) {
+                    request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(describePlacementGroupsRequestGroupNamesListValue));
+                }
+                groupNamesListIndex++;
             }
         }
 

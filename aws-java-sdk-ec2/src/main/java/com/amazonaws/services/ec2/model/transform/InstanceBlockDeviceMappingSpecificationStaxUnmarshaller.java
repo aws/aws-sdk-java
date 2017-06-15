@@ -53,13 +53,13 @@ public class InstanceBlockDeviceMappingSpecificationStaxUnmarshaller implements 
                     continue;
                 }
 
-                if (context.testExpression("virtualName", targetDepth)) {
-                    instanceBlockDeviceMappingSpecification.setVirtualName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("noDevice", targetDepth)) {
+                    instanceBlockDeviceMappingSpecification.setNoDevice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("noDevice", targetDepth)) {
-                    instanceBlockDeviceMappingSpecification.setNoDevice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("virtualName", targetDepth)) {
+                    instanceBlockDeviceMappingSpecification.setVirtualName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

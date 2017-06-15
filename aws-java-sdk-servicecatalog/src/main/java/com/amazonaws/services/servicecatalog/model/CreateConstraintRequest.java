@@ -57,13 +57,24 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
     private String productId;
     /**
      * <p>
-     * The constraint parameters.
+     * The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For examples, see
+     * the bottom of this topic.
+     * </p>
+     * <p>
+     * For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     * </p>
+     * <p>
+     * For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     * </p>
+     * <p>
+     * For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
      * </p>
      */
     private String parameters;
     /**
      * <p>
-     * The type of the constraint.
+     * The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>, <code>NOTIFICATION</code>, or
+     * <code>TEMPLATE</code>.
      * </p>
      */
     private String type;
@@ -272,11 +283,30 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The constraint parameters.
+     * The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For examples, see
+     * the bottom of this topic.
+     * </p>
+     * <p>
+     * For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     * </p>
+     * <p>
+     * For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     * </p>
+     * <p>
+     * For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
      * </p>
      * 
      * @param parameters
-     *        The constraint parameters.
+     *        The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For examples,
+     *        see the bottom of this topic.</p>
+     *        <p>
+     *        For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     *        </p>
+     *        <p>
+     *        For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     *        </p>
+     *        <p>
+     *        For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
      */
 
     public void setParameters(String parameters) {
@@ -285,10 +315,29 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The constraint parameters.
+     * The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For examples, see
+     * the bottom of this topic.
+     * </p>
+     * <p>
+     * For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     * </p>
+     * <p>
+     * For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     * </p>
+     * <p>
+     * For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
      * </p>
      * 
-     * @return The constraint parameters.
+     * @return The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For
+     *         examples, see the bottom of this topic.</p>
+     *         <p>
+     *         For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     *         </p>
+     *         <p>
+     *         For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     *         </p>
+     *         <p>
+     *         For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
      */
 
     public String getParameters() {
@@ -297,11 +346,30 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The constraint parameters.
+     * The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For examples, see
+     * the bottom of this topic.
+     * </p>
+     * <p>
+     * For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     * </p>
+     * <p>
+     * For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     * </p>
+     * <p>
+     * For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
      * </p>
      * 
      * @param parameters
-     *        The constraint parameters.
+     *        The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For examples,
+     *        see the bottom of this topic.</p>
+     *        <p>
+     *        For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required.
+     *        </p>
+     *        <p>
+     *        For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.
+     *        </p>
+     *        <p>
+     *        For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,11 +380,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of the constraint.
+     * The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>, <code>NOTIFICATION</code>, or
+     * <code>TEMPLATE</code>.
      * </p>
      * 
      * @param type
-     *        The type of the constraint.
+     *        The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>,
+     *        <code>NOTIFICATION</code>, or <code>TEMPLATE</code>.
      */
 
     public void setType(String type) {
@@ -325,10 +395,12 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of the constraint.
+     * The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>, <code>NOTIFICATION</code>, or
+     * <code>TEMPLATE</code>.
      * </p>
      * 
-     * @return The type of the constraint.
+     * @return The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>,
+     *         <code>NOTIFICATION</code>, or <code>TEMPLATE</code>.
      */
 
     public String getType() {
@@ -337,11 +409,13 @@ public class CreateConstraintRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of the constraint.
+     * The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>, <code>NOTIFICATION</code>, or
+     * <code>TEMPLATE</code>.
      * </p>
      * 
      * @param type
-     *        The type of the constraint.
+     *        The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>,
+     *        <code>NOTIFICATION</code>, or <code>TEMPLATE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

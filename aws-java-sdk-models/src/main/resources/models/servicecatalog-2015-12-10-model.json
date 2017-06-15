@@ -148,7 +148,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Creates a new constraint.</p>",
+      "documentation" : "<p>Creates a new constraint. For more information, see <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html\">Using Constraints</a>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -314,7 +314,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Create a new provisioning artifact for the specified product. This operation will not work with a product that has been shared with you.</p>",
+      "documentation" : "<p>Create a new provisioning artifact for the specified product. This operation does not work with a product that has been shared with you.</p> <p>See the bottom of this topic for an example JSON request.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -394,7 +394,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Deletes the specified portfolio. This operation will not work with a portfolio that has been shared with you or if it has products, users, constraints, or shared accounts associated with it.</p>",
+      "documentation" : "<p>Deletes the specified portfolio. This operation does not work with a portfolio that has been shared with you or if it has products, users, constraints, or shared accounts associated with it.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -468,7 +468,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Deletes the specified product. This operation will not work with a product that has been shared with you or is associated with a portfolio. </p>",
+      "documentation" : "<p>Deletes the specified product. This operation does not work with a product that has been shared with you or is associated with a portfolio. </p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -511,7 +511,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Deletes the specified provisioning artifact. This operation will not work on a provisioning artifact associated with a product that has been shared with you, or on the last provisioning artifact associated with a product (a product must have at least one provisioning artifact).</p>",
+      "documentation" : "<p>Deletes the specified provisioning artifact. This operation does not work on a provisioning artifact associated with a product that has been shared with you, or on the last provisioning artifact associated with a product (a product must have at least one provisioning artifact).</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -715,6 +715,37 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DescribeProductViewOutput"
+      }
+    },
+    "DescribeProvisionedProduct" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Retrieve detailed information about the provisioned product.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeProvisionedProductInput",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeProvisionedProduct",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeProvisionedProductOutput"
       }
     },
     "DescribeProvisioningArtifact" : {
@@ -1203,7 +1234,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Requests a <i>Provision</i> of a specified product. A <i>ProvisionedProduct</i> is a resourced instance for a product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation stack and all the underlying resources that come with it. </p> <p>You can check the status of this request using the <a>DescribeRecord</a> operation.</p>",
+      "documentation" : "<p>Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation stack and all the underlying resources that come with it. </p> <p>You can check the status of this request using the <a>DescribeRecord</a> operation.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1444,7 +1475,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Updates the specified portfolio's details. This operation will not work with a product that has been shared with you.</p>",
+      "documentation" : "<p>Updates the specified portfolio's details. This operation does not work with a product that has been shared with you.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1561,7 +1592,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Updates an existing provisioning artifact's information. This operation will not work on a provisioning artifact associated with a product that has been shared with you.</p>",
+      "documentation" : "<p>Updates an existing provisioning artifact's information. This operation does not work on a provisioning artifact associated with a product that has been shared with you.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2479,7 +2510,7 @@
         },
         "Parameters" : {
           "deprecated" : false,
-          "documentation" : "<p>The constraint parameters.</p>",
+          "documentation" : "<p>The constraint parameters. Expected values vary depending on which <b>Type</b> is specified. For examples, see the bottom of this topic.</p> <p>For Type <code>LAUNCH</code>, the <code>RoleArn</code> property is required. </p> <p>For Type <code>NOTIFICATION</code>, the <code>NotificationArns</code> property is required.</p> <p>For Type <code>TEMPLATE</code>, the <code>Rules</code> property is required.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2521,7 +2552,7 @@
         },
         "Type" : {
           "deprecated" : false,
-          "documentation" : "<p>The type of the constraint.</p>",
+          "documentation" : "<p>The type of the constraint. Case-sensitive valid values are: <code>LAUNCH</code>, <code>NOTIFICATION</code>, or <code>TEMPLATE</code>. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3194,7 +3225,7 @@
       "members" : {
         "Info" : {
           "deprecated" : false,
-          "documentation" : "<p>Additional information about the provisioning artifact create request.</p>",
+          "documentation" : "<p>Additional information about the creation request for the provisioning artifact.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3647,7 +3678,7 @@
         },
         "ProvisioningArtifactId" : {
           "deprecated" : false,
-          "documentation" : "<p>The identifier of the provisioning artifact for the delete request.</p>",
+          "documentation" : "<p>The identifier of the provisioning artifact for the delete request. This is sometimes referred to as the product version.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3980,6 +4011,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "ProvisioningArtifactSummaries" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of provisioning artifact summaries for the product.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProvisioningArtifactSummaries",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Tags" : {
           "deprecated" : false,
           "documentation" : "<p>Tags associated with the product.</p>",
@@ -4204,6 +4249,92 @@
       "value" : null,
       "wrapper" : false
     },
+    "DescribeProvisionedProductInput" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AcceptLanguage" : {
+          "deprecated" : false,
+          "documentation" : "<p>The language code to use for this operation. Supported language codes are as follows:</p> <p>\"en\" (English)</p> <p>\"jp\" (Japanese)</p> <p>\"zh\" (Chinese)</p> <p>If no code is specified, \"en\" is used as the default.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AcceptLanguage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Id" : {
+          "deprecated" : false,
+          "documentation" : "<p>The provisioned product identifier.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Id",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Id" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeProvisionedProductOutput" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ProvisionedProductDetail" : {
+          "deprecated" : false,
+          "documentation" : "<p>Detailed provisioned product information.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProvisionedProductDetail",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "DescribeProvisioningArtifactInput" : {
       "deprecated" : false,
       "documentation" : null,
@@ -4246,7 +4377,7 @@
         },
         "ProvisioningArtifactId" : {
           "deprecated" : false,
-          "documentation" : "<p>The identifier of the provisioning artifact.</p>",
+          "documentation" : "<p>The identifier of the provisioning artifact. This is sometimes referred to as the product version.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4255,6 +4386,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Id",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Verbose" : {
+          "deprecated" : false,
+          "documentation" : "<p>Selects verbose results. If set to true, the CloudFormation template is returned.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Verbose",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -4388,7 +4533,7 @@
         },
         "ProvisioningArtifactId" : {
           "deprecated" : false,
-          "documentation" : "<p>The provisioning artifact identifier for this product.</p>",
+          "documentation" : "<p>The provisioning artifact identifier for this product. This is sometimes referred to as the product version.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6564,7 +6709,7 @@
       "fault" : false,
       "flattened" : false,
       "key" : null,
-      "max" : 1000,
+      "max" : 4096,
       "member" : null,
       "members" : { },
       "min" : 0,
@@ -6929,7 +7074,7 @@
     "ProductType" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "CLOUD_FORMATION_TEMPLATE" ],
+      "enum" : [ "CLOUD_FORMATION_TEMPLATE", "MARKETPLACE" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -7155,7 +7300,7 @@
         },
         "Status" : {
           "deprecated" : false,
-          "documentation" : "<p>Current status of the product.</p>",
+          "documentation" : "<p>Current status of the product.</p> <p> <code>AVAILABLE</code> - Product is available for use.</p> <p> <code>CREATING</code> - Creation of product started, not ready for use.</p> <p> <code>FAILED</code> - Action on product failed.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7235,7 +7380,7 @@
     "ProductViewFilterBy" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "FullTextSearch", "Owner", "ProductType" ],
+      "enum" : [ "FullTextSearch", "Owner", "ProductType", "SourceProductId" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -7627,7 +7772,7 @@
         },
         "Type" : {
           "deprecated" : false,
-          "documentation" : "<p>The product type. Contact the product administrator for the significance of this value.</p>",
+          "documentation" : "<p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by AWS Marketplace.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7768,7 +7913,7 @@
         },
         "ProvisioningArtifactId" : {
           "deprecated" : false,
-          "documentation" : "<p>The provisioning artifact identifier for this product.</p>",
+          "documentation" : "<p>The provisioning artifact identifier for this product. This is sometimes referred to as the product version.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7952,7 +8097,7 @@
         },
         "Status" : {
           "deprecated" : false,
-          "documentation" : "<p>The current status of the ProvisionedProduct.</p>",
+          "documentation" : "<p>The current status of the ProvisionedProduct.</p> <p> <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request succeeded and completed.</p> <p> <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait for an <code>AVAILABLE</code> status before performing operations.</p> <p> <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version. </p> <p> <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack is not running. For example, CloudFormation received an invalid parameter value and could not launch the stack.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7960,7 +8105,7 @@
           "locationName" : null,
           "payload" : false,
           "queryName" : null,
-          "shape" : "RecordStatus",
+          "shape" : "ProvisionedProductStatus",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -8066,11 +8211,11 @@
       "fault" : false,
       "flattened" : false,
       "key" : null,
-      "max" : 0,
+      "max" : 128,
       "member" : null,
       "members" : { },
-      "min" : 0,
-      "pattern" : null,
+      "min" : 1,
+      "pattern" : "[a-zA-Z0-9][a-zA-Z0-9._-]*",
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -8091,7 +8236,28 @@
       "member" : null,
       "members" : { },
       "min" : 1,
-      "pattern" : "[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}|arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}",
+      "pattern" : "[a-zA-Z0-9][a-zA-Z0-9._-]{0,127}|arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ProvisionedProductStatus" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "AVAILABLE", "UNDER_CHANGE", "TAINTED", "ERROR" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -8183,7 +8349,7 @@
         },
         "Id" : {
           "deprecated" : false,
-          "documentation" : "<p>The identifier for the artifact.</p>",
+          "documentation" : "<p>The identifier for the artifact. This is sometimes referred to as the product version.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8303,7 +8469,7 @@
         },
         "Id" : {
           "deprecated" : false,
-          "documentation" : "<p>The identifier of the provisioning artifact.</p>",
+          "documentation" : "<p>The identifier of the provisioning artifact. This is sometimes referred to as the product version.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8331,7 +8497,7 @@
         },
         "Type" : {
           "deprecated" : false,
-          "documentation" : "<p>The type of the provisioning artifact.</p>",
+          "documentation" : "<p>The type of the provisioning artifact. The following provisioning artifact types are used by AWS Marketplace products:</p> <p> <code>MARKETPLACE_AMI</code> - AMI products.</p> <p> <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8409,7 +8575,7 @@
         "streaming" : false,
         "xmlNamespace" : null
       },
-      "max" : 1,
+      "max" : 100,
       "member" : null,
       "members" : { },
       "min" : 1,
@@ -8639,7 +8805,7 @@
     },
     "ProvisioningArtifactProperties" : {
       "deprecated" : false,
-      "documentation" : "<p>Provisioning artifact properties.</p>",
+      "documentation" : "<p>Provisioning artifact properties. For example request JSON, see <a>CreateProvisioningArtifact</a>.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8665,7 +8831,7 @@
         },
         "Info" : {
           "deprecated" : false,
-          "documentation" : "<p>Additional information about the provisioning artifact properties.</p>",
+          "documentation" : "<p>Additional information about the provisioning artifact properties. When using this element in a request, you must specify <code>LoadTemplateFromURL</code>. For more information, see <a>CreateProvisioningArtifact</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8693,7 +8859,7 @@
         },
         "Type" : {
           "deprecated" : false,
-          "documentation" : "<p>The type of the provisioning artifact properties.</p>",
+          "documentation" : "<p>The type of the provisioning artifact properties. The following provisioning artifact property types are used by AWS Marketplace products:</p> <p> <code>MARKETPLACE_AMI</code> - AMI products.</p> <p> <code>MARKETPLACE_CAR</code> - CAR (Cluster and AWS Resources) products.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8715,10 +8881,136 @@
       "value" : null,
       "wrapper" : false
     },
+    "ProvisioningArtifactSummaries" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "ProvisioningArtifactSummary",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ProvisioningArtifactSummary" : {
+      "deprecated" : false,
+      "documentation" : "<p>Summary information about a provisioning artifact.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "CreatedTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The UTC timestamp of the creation time.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProvisioningArtifactCreatedTime",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Description" : {
+          "deprecated" : false,
+          "documentation" : "<p>The provisioning artifact description.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProvisioningArtifactDescription",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Id" : {
+          "deprecated" : false,
+          "documentation" : "<p>The provisioning artifact identifier.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Id",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The provisioning artifact name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProvisioningArtifactName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProvisioningArtifactMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>The provisioning artifact metadata. This data is used with products created by AWS Marketplace.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProvisioningArtifactInfo",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ProvisioningArtifactType" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "CLOUD_FORMATION_TEMPLATE" ],
+      "enum" : [ "CLOUD_FORMATION_TEMPLATE", "MARKETPLACE_AMI", "MARKETPLACE_CAR" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -8772,7 +9064,7 @@
     },
     "ProvisioningParameter" : {
       "deprecated" : false,
-      "documentation" : "<p>The arameter key/value pairs used to provision a product.</p>",
+      "documentation" : "<p>The parameter key-value pairs used to provision a product.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8952,7 +9244,7 @@
         },
         "ProvisioningArtifactId" : {
           "deprecated" : false,
-          "documentation" : "<p>The provisioning artifact identifier for this product.</p>",
+          "documentation" : "<p>The provisioning artifact identifier for this product. This is sometimes referred to as the product version.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -9022,7 +9314,7 @@
         },
         "Status" : {
           "deprecated" : false,
-          "documentation" : "<p>The status of the ProvisionedProduct object.</p>",
+          "documentation" : "<p>The status of the ProvisionedProduct object.</p> <p> <code>CREATED</code> - Request created but the operation has not yet started.</p> <p> <code>IN_PROGRESS</code> - The requested operation is in-progress.</p> <p> <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed and some remediation is occurring. For example, a roll-back.</p> <p> <code>SUCCEEDED</code> - The requested operation has successfully completed.</p> <p> <code>FAILED</code> - The requested operation has completed but has failed. Investigate using the error messages returned.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -9277,7 +9569,7 @@
     "RecordStatus" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "IN_PROGRESS", "SUCCEEDED", "ERROR" ],
+      "enum" : [ "CREATED", "IN_PROGRESS", "IN_PROGRESS_IN_ERROR", "SUCCEEDED", "FAILED" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -10233,7 +10525,7 @@
         },
         "Value" : {
           "deprecated" : false,
-          "documentation" : "<p>The esired value for this key.</p>",
+          "documentation" : "<p>The desired value for this key.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10407,7 +10699,7 @@
         },
         "ProvisionedProductId" : {
           "deprecated" : false,
-          "documentation" : "<p>The identifier of the ProvisionedProduct object to terminate. You must specify either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.</p>",
+          "documentation" : "<p>The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10421,7 +10713,7 @@
         },
         "ProvisionedProductName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the ProvisionedProduct object to terminate. You must specify either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.</p>",
+          "documentation" : "<p>The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11073,7 +11365,7 @@
         },
         "ProvisionedProductId" : {
           "deprecated" : false,
-          "documentation" : "<p>The identifier of the ProvisionedProduct object to update. You must specify either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.</p>",
+          "documentation" : "<p>The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11087,7 +11379,7 @@
         },
         "ProvisionedProductName" : {
           "deprecated" : false,
-          "documentation" : "<p>The updated name of the ProvisionedProduct object . You must specify either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.</p>",
+          "documentation" : "<p>The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11101,7 +11393,7 @@
         },
         "ProvisioningArtifactId" : {
           "deprecated" : false,
-          "documentation" : "<p>The provisioning artifact identifier for this product.</p>",
+          "documentation" : "<p>The provisioning artifact identifier for this product. This is sometimes referred to as the product version.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11257,7 +11549,7 @@
         },
         "ProvisioningArtifactId" : {
           "deprecated" : false,
-          "documentation" : "<p>The identifier of the provisioning artifact for the update request.</p>",
+          "documentation" : "<p>The identifier of the provisioning artifact for the update request. This is sometimes referred to as the product version.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11345,7 +11637,7 @@
     },
     "UpdateProvisioningParameter" : {
       "deprecated" : false,
-      "documentation" : "<p>The parameter key/value pair used to update a ProvisionedProduct object. If <code>UsePreviousValue</code> is set to true, <code>Value</code> is ignored and the value for <code>Key</code> is kept as previously set (current value).</p>",
+      "documentation" : "<p>The parameter key-value pair used to update a ProvisionedProduct object. If <code>UsePreviousValue</code> is set to true, <code>Value</code> is ignored and the value for <code>Key</code> is kept as previously set (current value).</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11566,7 +11858,28 @@
       "type" : "boolean",
       "value" : null,
       "wrapper" : false
+    },
+    "Verbose" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "boolean",
+      "value" : null,
+      "wrapper" : false
     }
   },
-  "documentation" : "<fullname>AWS Service Catalog</fullname> <p> <b>Overview</b> </p> <p> <a href=\"https://aws.amazon.com/servicecatalog/\">AWS Service Catalog</a> allows organizations to create and manage catalogs of IT services that are approved for use on AWS. This documentation provides reference material for the AWS Service Catalog end user API. To get the most out of this documentation, you need to be familiar with the terminology discussed in <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/userguide/what-is_concepts.html\">AWS Service Catalog Concepts</a>.</p> <p> <i>Additional Resources</i> </p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html\">AWS Service Catalog Administrator Guide</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/userguide/introduction.html\">AWS Service Catalog User Guide</a> </p> </li> </ul>"
+  "documentation" : "<fullname>AWS Service Catalog</fullname> <p> <b>Overview</b> </p> <p> <a href=\"https://aws.amazon.com/servicecatalog/\">AWS Service Catalog</a> allows organizations to create and manage catalogs of IT services that are approved for use on AWS. This documentation provides reference material for the AWS Service Catalog end user API. To get the most out of this documentation, be familiar with the terminology discussed in <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html\">AWS Service Catalog Concepts</a>.</p> <p> <i>Additional Resources</i> </p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html\">AWS Service Catalog Administrator Guide</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/servicecatalog/latest/userguide/introduction.html\">AWS Service Catalog User Guide</a> </p> </li> </ul>"
 }

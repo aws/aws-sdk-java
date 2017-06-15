@@ -30,15 +30,6 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more VPN connection IDs.
-     * </p>
-     * <p>
-     * Default: Describes your VPN connections.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> vpnConnectionIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -115,7 +106,6 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more VPN connection IDs.
@@ -123,91 +113,8 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
      * <p>
      * Default: Describes your VPN connections.
      * </p>
-     * 
-     * @return One or more VPN connection IDs.</p>
-     *         <p>
-     *         Default: Describes your VPN connections.
      */
-
-    public java.util.List<String> getVpnConnectionIds() {
-        if (vpnConnectionIds == null) {
-            vpnConnectionIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return vpnConnectionIds;
-    }
-
-    /**
-     * <p>
-     * One or more VPN connection IDs.
-     * </p>
-     * <p>
-     * Default: Describes your VPN connections.
-     * </p>
-     * 
-     * @param vpnConnectionIds
-     *        One or more VPN connection IDs.</p>
-     *        <p>
-     *        Default: Describes your VPN connections.
-     */
-
-    public void setVpnConnectionIds(java.util.Collection<String> vpnConnectionIds) {
-        if (vpnConnectionIds == null) {
-            this.vpnConnectionIds = null;
-            return;
-        }
-
-        this.vpnConnectionIds = new com.amazonaws.internal.SdkInternalList<String>(vpnConnectionIds);
-    }
-
-    /**
-     * <p>
-     * One or more VPN connection IDs.
-     * </p>
-     * <p>
-     * Default: Describes your VPN connections.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVpnConnectionIds(java.util.Collection)} or {@link #withVpnConnectionIds(java.util.Collection)} if you
-     * want to override the existing values.
-     * </p>
-     * 
-     * @param vpnConnectionIds
-     *        One or more VPN connection IDs.</p>
-     *        <p>
-     *        Default: Describes your VPN connections.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpnConnectionsRequest withVpnConnectionIds(String... vpnConnectionIds) {
-        if (this.vpnConnectionIds == null) {
-            setVpnConnectionIds(new com.amazonaws.internal.SdkInternalList<String>(vpnConnectionIds.length));
-        }
-        for (String ele : vpnConnectionIds) {
-            this.vpnConnectionIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more VPN connection IDs.
-     * </p>
-     * <p>
-     * Default: Describes your VPN connections.
-     * </p>
-     * 
-     * @param vpnConnectionIds
-     *        One or more VPN connection IDs.</p>
-     *        <p>
-     *        Default: Describes your VPN connections.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpnConnectionsRequest withVpnConnectionIds(java.util.Collection<String> vpnConnectionIds) {
-        setVpnConnectionIds(vpnConnectionIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> vpnConnectionIds;
 
     /**
      * <p>
@@ -860,6 +767,99 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * One or more VPN connection IDs.
+     * </p>
+     * <p>
+     * Default: Describes your VPN connections.
+     * </p>
+     * 
+     * @return One or more VPN connection IDs.</p>
+     *         <p>
+     *         Default: Describes your VPN connections.
+     */
+
+    public java.util.List<String> getVpnConnectionIds() {
+        if (vpnConnectionIds == null) {
+            vpnConnectionIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return vpnConnectionIds;
+    }
+
+    /**
+     * <p>
+     * One or more VPN connection IDs.
+     * </p>
+     * <p>
+     * Default: Describes your VPN connections.
+     * </p>
+     * 
+     * @param vpnConnectionIds
+     *        One or more VPN connection IDs.</p>
+     *        <p>
+     *        Default: Describes your VPN connections.
+     */
+
+    public void setVpnConnectionIds(java.util.Collection<String> vpnConnectionIds) {
+        if (vpnConnectionIds == null) {
+            this.vpnConnectionIds = null;
+            return;
+        }
+
+        this.vpnConnectionIds = new com.amazonaws.internal.SdkInternalList<String>(vpnConnectionIds);
+    }
+
+    /**
+     * <p>
+     * One or more VPN connection IDs.
+     * </p>
+     * <p>
+     * Default: Describes your VPN connections.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpnConnectionIds(java.util.Collection)} or {@link #withVpnConnectionIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param vpnConnectionIds
+     *        One or more VPN connection IDs.</p>
+     *        <p>
+     *        Default: Describes your VPN connections.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpnConnectionsRequest withVpnConnectionIds(String... vpnConnectionIds) {
+        if (this.vpnConnectionIds == null) {
+            setVpnConnectionIds(new com.amazonaws.internal.SdkInternalList<String>(vpnConnectionIds.length));
+        }
+        for (String ele : vpnConnectionIds) {
+            this.vpnConnectionIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more VPN connection IDs.
+     * </p>
+     * <p>
+     * Default: Describes your VPN connections.
+     * </p>
+     * 
+     * @param vpnConnectionIds
+     *        One or more VPN connection IDs.</p>
+     *        <p>
+     *        Default: Describes your VPN connections.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpnConnectionsRequest withVpnConnectionIds(java.util.Collection<String> vpnConnectionIds) {
+        setVpnConnectionIds(vpnConnectionIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -881,10 +881,10 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpnConnectionIds() != null)
-            sb.append("VpnConnectionIds: ").append(getVpnConnectionIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getVpnConnectionIds() != null)
+            sb.append("VpnConnectionIds: ").append(getVpnConnectionIds());
         sb.append("}");
         return sb.toString();
     }
@@ -899,13 +899,13 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
         if (obj instanceof DescribeVpnConnectionsRequest == false)
             return false;
         DescribeVpnConnectionsRequest other = (DescribeVpnConnectionsRequest) obj;
-        if (other.getVpnConnectionIds() == null ^ this.getVpnConnectionIds() == null)
-            return false;
-        if (other.getVpnConnectionIds() != null && other.getVpnConnectionIds().equals(this.getVpnConnectionIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getVpnConnectionIds() == null ^ this.getVpnConnectionIds() == null)
+            return false;
+        if (other.getVpnConnectionIds() != null && other.getVpnConnectionIds().equals(this.getVpnConnectionIds()) == false)
             return false;
         return true;
     }
@@ -915,8 +915,8 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpnConnectionIds() == null) ? 0 : getVpnConnectionIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getVpnConnectionIds() == null) ? 0 : getVpnConnectionIds().hashCode());
         return hashCode;
     }
 

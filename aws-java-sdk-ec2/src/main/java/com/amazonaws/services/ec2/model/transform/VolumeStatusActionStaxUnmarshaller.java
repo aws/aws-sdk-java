@@ -53,13 +53,13 @@ public class VolumeStatusActionStaxUnmarshaller implements Unmarshaller<VolumeSt
                     continue;
                 }
 
-                if (context.testExpression("eventType", targetDepth)) {
-                    volumeStatusAction.setEventType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("eventId", targetDepth)) {
+                    volumeStatusAction.setEventId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("eventId", targetDepth)) {
-                    volumeStatusAction.setEventId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("eventType", targetDepth)) {
+                    volumeStatusAction.setEventType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

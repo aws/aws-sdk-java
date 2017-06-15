@@ -30,18 +30,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
 
     /**
      * <p>
-     * IDs for the submitted modification request.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> reservedInstancesModificationIds;
-    /**
-     * <p>
-     * The token to retrieve the next page of results.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -118,119 +106,18 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * IDs for the submitted modification request.
      * </p>
-     * 
-     * @return IDs for the submitted modification request.
      */
-
-    public java.util.List<String> getReservedInstancesModificationIds() {
-        if (reservedInstancesModificationIds == null) {
-            reservedInstancesModificationIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return reservedInstancesModificationIds;
-    }
-
-    /**
-     * <p>
-     * IDs for the submitted modification request.
-     * </p>
-     * 
-     * @param reservedInstancesModificationIds
-     *        IDs for the submitted modification request.
-     */
-
-    public void setReservedInstancesModificationIds(java.util.Collection<String> reservedInstancesModificationIds) {
-        if (reservedInstancesModificationIds == null) {
-            this.reservedInstancesModificationIds = null;
-            return;
-        }
-
-        this.reservedInstancesModificationIds = new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesModificationIds);
-    }
-
-    /**
-     * <p>
-     * IDs for the submitted modification request.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setReservedInstancesModificationIds(java.util.Collection)} or
-     * {@link #withReservedInstancesModificationIds(java.util.Collection)} if you want to override the existing values.
-     * </p>
-     * 
-     * @param reservedInstancesModificationIds
-     *        IDs for the submitted modification request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(String... reservedInstancesModificationIds) {
-        if (this.reservedInstancesModificationIds == null) {
-            setReservedInstancesModificationIds(new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesModificationIds.length));
-        }
-        for (String ele : reservedInstancesModificationIds) {
-            this.reservedInstancesModificationIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * IDs for the submitted modification request.
-     * </p>
-     * 
-     * @param reservedInstancesModificationIds
-     *        IDs for the submitted modification request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(java.util.Collection<String> reservedInstancesModificationIds) {
-        setReservedInstancesModificationIds(reservedInstancesModificationIds);
-        return this;
-    }
-
+    private com.amazonaws.internal.SdkInternalList<String> reservedInstancesModificationIds;
     /**
      * <p>
      * The token to retrieve the next page of results.
      * </p>
-     * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
      */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to retrieve the next page of results.
-     * </p>
-     * 
-     * @return The token to retrieve the next page of results.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to retrieve the next page of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeReservedInstancesModificationsRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -886,6 +773,119 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     }
 
     /**
+     * <p>
+     * IDs for the submitted modification request.
+     * </p>
+     * 
+     * @return IDs for the submitted modification request.
+     */
+
+    public java.util.List<String> getReservedInstancesModificationIds() {
+        if (reservedInstancesModificationIds == null) {
+            reservedInstancesModificationIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return reservedInstancesModificationIds;
+    }
+
+    /**
+     * <p>
+     * IDs for the submitted modification request.
+     * </p>
+     * 
+     * @param reservedInstancesModificationIds
+     *        IDs for the submitted modification request.
+     */
+
+    public void setReservedInstancesModificationIds(java.util.Collection<String> reservedInstancesModificationIds) {
+        if (reservedInstancesModificationIds == null) {
+            this.reservedInstancesModificationIds = null;
+            return;
+        }
+
+        this.reservedInstancesModificationIds = new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesModificationIds);
+    }
+
+    /**
+     * <p>
+     * IDs for the submitted modification request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReservedInstancesModificationIds(java.util.Collection)} or
+     * {@link #withReservedInstancesModificationIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param reservedInstancesModificationIds
+     *        IDs for the submitted modification request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(String... reservedInstancesModificationIds) {
+        if (this.reservedInstancesModificationIds == null) {
+            setReservedInstancesModificationIds(new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesModificationIds.length));
+        }
+        for (String ele : reservedInstancesModificationIds) {
+            this.reservedInstancesModificationIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * IDs for the submitted modification request.
+     * </p>
+     * 
+     * @param reservedInstancesModificationIds
+     *        IDs for the submitted modification request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReservedInstancesModificationsRequest withReservedInstancesModificationIds(java.util.Collection<String> reservedInstancesModificationIds) {
+        setReservedInstancesModificationIds(reservedInstancesModificationIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @return The token to retrieve the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReservedInstancesModificationsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -907,12 +907,12 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getReservedInstancesModificationIds() != null)
             sb.append("ReservedInstancesModificationIds: ").append(getReservedInstancesModificationIds()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -927,6 +927,10 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
         if (obj instanceof DescribeReservedInstancesModificationsRequest == false)
             return false;
         DescribeReservedInstancesModificationsRequest other = (DescribeReservedInstancesModificationsRequest) obj;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getReservedInstancesModificationIds() == null ^ this.getReservedInstancesModificationIds() == null)
             return false;
         if (other.getReservedInstancesModificationIds() != null
@@ -936,10 +940,6 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getFilters() == null ^ this.getFilters() == null)
-            return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
-            return false;
         return true;
     }
 
@@ -948,9 +948,9 @@ public class DescribeReservedInstancesModificationsRequest extends AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getReservedInstancesModificationIds() == null) ? 0 : getReservedInstancesModificationIds().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

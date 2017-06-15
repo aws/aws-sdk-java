@@ -29,16 +29,16 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The type of VPN connection (<code>ipsec.1</code>).
-     * </p>
-     */
-    private String type;
-    /**
-     * <p>
      * The ID of the customer gateway.
      * </p>
      */
     private String customerGatewayId;
+    /**
+     * <p>
+     * The type of VPN connection (<code>ipsec.1</code>).
+     * </p>
+     */
+    private String type;
     /**
      * <p>
      * The ID of the virtual private gateway.
@@ -82,46 +82,6 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The type of VPN connection (<code>ipsec.1</code>).
-     * </p>
-     * 
-     * @param type
-     *        The type of VPN connection (<code>ipsec.1</code>).
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The type of VPN connection (<code>ipsec.1</code>).
-     * </p>
-     * 
-     * @return The type of VPN connection (<code>ipsec.1</code>).
-     */
-
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The type of VPN connection (<code>ipsec.1</code>).
-     * </p>
-     * 
-     * @param type
-     *        The type of VPN connection (<code>ipsec.1</code>).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVpnConnectionRequest withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
      * The ID of the customer gateway.
      * </p>
      * 
@@ -157,6 +117,46 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     public CreateVpnConnectionRequest withCustomerGatewayId(String customerGatewayId) {
         setCustomerGatewayId(customerGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of VPN connection (<code>ipsec.1</code>).
+     * </p>
+     * 
+     * @param type
+     *        The type of VPN connection (<code>ipsec.1</code>).
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of VPN connection (<code>ipsec.1</code>).
+     * </p>
+     * 
+     * @return The type of VPN connection (<code>ipsec.1</code>).
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of VPN connection (<code>ipsec.1</code>).
+     * </p>
+     * 
+     * @param type
+     *        The type of VPN connection (<code>ipsec.1</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpnConnectionRequest withType(String type) {
+        setType(type);
         return this;
     }
 
@@ -283,10 +283,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
         if (getCustomerGatewayId() != null)
             sb.append("CustomerGatewayId: ").append(getCustomerGatewayId()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getVpnGatewayId() != null)
             sb.append("VpnGatewayId: ").append(getVpnGatewayId()).append(",");
         if (getOptions() != null)
@@ -305,13 +305,13 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof CreateVpnConnectionRequest == false)
             return false;
         CreateVpnConnectionRequest other = (CreateVpnConnectionRequest) obj;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
         if (other.getCustomerGatewayId() == null ^ this.getCustomerGatewayId() == null)
             return false;
         if (other.getCustomerGatewayId() != null && other.getCustomerGatewayId().equals(this.getCustomerGatewayId()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null)
             return false;
@@ -329,8 +329,8 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getCustomerGatewayId() == null) ? 0 : getCustomerGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;

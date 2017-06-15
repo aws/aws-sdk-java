@@ -43,48 +43,13 @@ public class ScheduledInstanceStaxUnmarshaller implements Unmarshaller<Scheduled
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("scheduledInstanceId", targetDepth)) {
-                    scheduledInstance.setScheduledInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceType", targetDepth)) {
-                    scheduledInstance.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("platform", targetDepth)) {
-                    scheduledInstance.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("networkPlatform", targetDepth)) {
-                    scheduledInstance.setNetworkPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     scheduledInstance.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("slotDurationInHours", targetDepth)) {
-                    scheduledInstance.setSlotDurationInHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("recurrence", targetDepth)) {
-                    scheduledInstance.setRecurrence(ScheduledInstanceRecurrenceStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("previousSlotEndTime", targetDepth)) {
-                    scheduledInstance.setPreviousSlotEndTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("nextSlotStartTime", targetDepth)) {
-                    scheduledInstance.setNextSlotStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("createDate", targetDepth)) {
+                    scheduledInstance.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -93,18 +58,48 @@ public class ScheduledInstanceStaxUnmarshaller implements Unmarshaller<Scheduled
                     continue;
                 }
 
-                if (context.testExpression("totalScheduledInstanceHours", targetDepth)) {
-                    scheduledInstance.setTotalScheduledInstanceHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("instanceCount", targetDepth)) {
                     scheduledInstance.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("termStartDate", targetDepth)) {
-                    scheduledInstance.setTermStartDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceType", targetDepth)) {
+                    scheduledInstance.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkPlatform", targetDepth)) {
+                    scheduledInstance.setNetworkPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("nextSlotStartTime", targetDepth)) {
+                    scheduledInstance.setNextSlotStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("platform", targetDepth)) {
+                    scheduledInstance.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("previousSlotEndTime", targetDepth)) {
+                    scheduledInstance.setPreviousSlotEndTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("recurrence", targetDepth)) {
+                    scheduledInstance.setRecurrence(ScheduledInstanceRecurrenceStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("scheduledInstanceId", targetDepth)) {
+                    scheduledInstance.setScheduledInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("slotDurationInHours", targetDepth)) {
+                    scheduledInstance.setSlotDurationInHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -113,8 +108,13 @@ public class ScheduledInstanceStaxUnmarshaller implements Unmarshaller<Scheduled
                     continue;
                 }
 
-                if (context.testExpression("createDate", targetDepth)) {
-                    scheduledInstance.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("termStartDate", targetDepth)) {
+                    scheduledInstance.setTermStartDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("totalScheduledInstanceHours", targetDepth)) {
+                    scheduledInstance.setTotalScheduledInstanceHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

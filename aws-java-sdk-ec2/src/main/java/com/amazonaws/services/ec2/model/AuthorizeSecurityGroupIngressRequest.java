@@ -30,16 +30,47 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group.
+     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
      * </p>
      */
-    private String groupName;
+    private String cidrIp;
+    /**
+     * <p>
+     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
+     * number, use <code>-1</code> to specify all types.
+     * </p>
+     */
+    private Integer fromPort;
     /**
      * <p>
      * The ID of the security group. Required for a nondefault VPC.
      * </p>
      */
     private String groupId;
+    /**
+     * <p>
+     * [EC2-Classic, default VPC] The name of the security group.
+     * </p>
+     */
+    private String groupName;
+    /**
+     * <p>
+     * A set of IP permissions. Can be used to specify multiple rules in a single command.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
+    /**
+     * <p>
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
+     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
+     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
+     * don't, traffic for all types and codes is allowed.
+     * </p>
+     */
+    private String ipProtocol;
     /**
      * <p>
      * [EC2-Classic, default VPC] The name of the source security group. You can't specify this parameter in combination
@@ -62,42 +93,11 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     private String sourceSecurityGroupOwnerId;
     /**
      * <p>
-     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
-     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
-     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
-     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
-     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
-     * don't, traffic for all types and codes is allowed.
-     * </p>
-     */
-    private String ipProtocol;
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types.
-     * </p>
-     */
-    private Integer fromPort;
-    /**
-     * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
      * number, use <code>-1</code> to specify all codes.
      * </p>
      */
     private Integer toPort;
-    /**
-     * <p>
-     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
-     * </p>
-     */
-    private String cidrIp;
-    /**
-     * <p>
-     * A set of IP permissions. Can be used to specify multiple rules in a single command.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
 
     /**
      * Default constructor for AuthorizeSecurityGroupIngressRequest object. Callers should use the setter or fluent
@@ -118,6 +118,132 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     public AuthorizeSecurityGroupIngressRequest(String groupName, java.util.List<IpPermission> ipPermissions) {
         setGroupName(groupName);
         setIpPermissions(ipPermissions);
+    }
+
+    /**
+     * <p>
+     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     * </p>
+     * 
+     * @param cidrIp
+     *        The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     */
+
+    public void setCidrIp(String cidrIp) {
+        this.cidrIp = cidrIp;
+    }
+
+    /**
+     * <p>
+     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     * </p>
+     * 
+     * @return The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     */
+
+    public String getCidrIp() {
+        return this.cidrIp;
+    }
+
+    /**
+     * <p>
+     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     * </p>
+     * 
+     * @param cidrIp
+     *        The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupIngressRequest withCidrIp(String cidrIp) {
+        setCidrIp(cidrIp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
+     * number, use <code>-1</code> to specify all types.
+     * </p>
+     * 
+     * @param fromPort
+     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
+     *        type number, use <code>-1</code> to specify all types.
+     */
+
+    public void setFromPort(Integer fromPort) {
+        this.fromPort = fromPort;
+    }
+
+    /**
+     * <p>
+     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
+     * number, use <code>-1</code> to specify all types.
+     * </p>
+     * 
+     * @return The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
+     *         type number, use <code>-1</code> to specify all types.
+     */
+
+    public Integer getFromPort() {
+        return this.fromPort;
+    }
+
+    /**
+     * <p>
+     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
+     * number, use <code>-1</code> to specify all types.
+     * </p>
+     * 
+     * @param fromPort
+     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
+     *        type number, use <code>-1</code> to specify all types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupIngressRequest withFromPort(Integer fromPort) {
+        setFromPort(fromPort);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group. Required for a nondefault VPC.
+     * </p>
+     * 
+     * @param groupId
+     *        The ID of the security group. Required for a nondefault VPC.
+     */
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group. Required for a nondefault VPC.
+     * </p>
+     * 
+     * @return The ID of the security group. Required for a nondefault VPC.
+     */
+
+    public String getGroupId() {
+        return this.groupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group. Required for a nondefault VPC.
+     * </p>
+     * 
+     * @param groupId
+     *        The ID of the security group. Required for a nondefault VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupIngressRequest withGroupId(String groupId) {
+        setGroupId(groupId);
+        return this;
     }
 
     /**
@@ -162,41 +288,151 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * A set of IP permissions. Can be used to specify multiple rules in a single command.
      * </p>
      * 
-     * @param groupId
-     *        The ID of the security group. Required for a nondefault VPC.
+     * @return A set of IP permissions. Can be used to specify multiple rules in a single command.
      */
 
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
+    public java.util.List<IpPermission> getIpPermissions() {
+        if (ipPermissions == null) {
+            ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>();
+        }
+        return ipPermissions;
     }
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * A set of IP permissions. Can be used to specify multiple rules in a single command.
      * </p>
      * 
-     * @return The ID of the security group. Required for a nondefault VPC.
+     * @param ipPermissions
+     *        A set of IP permissions. Can be used to specify multiple rules in a single command.
      */
 
-    public String getGroupId() {
-        return this.groupId;
+    public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
+        if (ipPermissions == null) {
+            this.ipPermissions = null;
+            return;
+        }
+
+        this.ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>(ipPermissions);
     }
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * A set of IP permissions. Can be used to specify multiple rules in a single command.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpPermissions(java.util.Collection)} or {@link #withIpPermissions(java.util.Collection)} if you want
+     * to override the existing values.
      * </p>
      * 
-     * @param groupId
-     *        The ID of the security group. Required for a nondefault VPC.
+     * @param ipPermissions
+     *        A set of IP permissions. Can be used to specify multiple rules in a single command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AuthorizeSecurityGroupIngressRequest withGroupId(String groupId) {
-        setGroupId(groupId);
+    public AuthorizeSecurityGroupIngressRequest withIpPermissions(IpPermission... ipPermissions) {
+        if (this.ipPermissions == null) {
+            setIpPermissions(new com.amazonaws.internal.SdkInternalList<IpPermission>(ipPermissions.length));
+        }
+        for (IpPermission ele : ipPermissions) {
+            this.ipPermissions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of IP permissions. Can be used to specify multiple rules in a single command.
+     * </p>
+     * 
+     * @param ipPermissions
+     *        A set of IP permissions. Can be used to specify multiple rules in a single command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupIngressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
+        setIpPermissions(ipPermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
+     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
+     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
+     * don't, traffic for all types and codes is allowed.
+     * </p>
+     * 
+     * @param ipProtocol
+     *        The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
+     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC
+     *        only) Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number
+     *        other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on
+     *        all ports is allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and
+     *        <code>icmp</code>, you must specify a port range. For protocol <code>58</code> (ICMPv6), you can
+     *        optionally specify a port range; if you don't, traffic for all types and codes is allowed.
+     */
+
+    public void setIpProtocol(String ipProtocol) {
+        this.ipProtocol = ipProtocol;
+    }
+
+    /**
+     * <p>
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
+     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
+     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
+     * don't, traffic for all types and codes is allowed.
+     * </p>
+     * 
+     * @return The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
+     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).
+     *         (VPC only) Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol
+     *         number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6),
+     *         traffic on all ports is allowed, regardless of any ports you specify. For <code>tcp</code>,
+     *         <code>udp</code>, and <code>icmp</code>, you must specify a port range. For protocol <code>58</code>
+     *         (ICMPv6), you can optionally specify a port range; if you don't, traffic for all types and codes is
+     *         allowed.
+     */
+
+    public String getIpProtocol() {
+        return this.ipProtocol;
+    }
+
+    /**
+     * <p>
+     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
+     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
+     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
+     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
+     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
+     * don't, traffic for all types and codes is allowed.
+     * </p>
+     * 
+     * @param ipProtocol
+     *        The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
+     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC
+     *        only) Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number
+     *        other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on
+     *        all ports is allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and
+     *        <code>icmp</code>, you must specify a port range. For protocol <code>58</code> (ICMPv6), you can
+     *        optionally specify a port range; if you don't, traffic for all types and codes is allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeSecurityGroupIngressRequest withIpProtocol(String ipProtocol) {
+        setIpProtocol(ipProtocol);
         return this;
     }
 
@@ -330,129 +566,6 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
-     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
-     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
-     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
-     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
-     * don't, traffic for all types and codes is allowed.
-     * </p>
-     * 
-     * @param ipProtocol
-     *        The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC
-     *        only) Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number
-     *        other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on
-     *        all ports is allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and
-     *        <code>icmp</code>, you must specify a port range. For protocol <code>58</code> (ICMPv6), you can
-     *        optionally specify a port range; if you don't, traffic for all types and codes is allowed.
-     */
-
-    public void setIpProtocol(String ipProtocol) {
-        this.ipProtocol = ipProtocol;
-    }
-
-    /**
-     * <p>
-     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
-     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
-     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
-     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
-     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
-     * don't, traffic for all types and codes is allowed.
-     * </p>
-     * 
-     * @return The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     *         href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).
-     *         (VPC only) Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol
-     *         number other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6),
-     *         traffic on all ports is allowed, regardless of any ports you specify. For <code>tcp</code>,
-     *         <code>udp</code>, and <code>icmp</code>, you must specify a port range. For protocol <code>58</code>
-     *         (ICMPv6), you can optionally specify a port range; if you don't, traffic for all types and codes is
-     *         allowed.
-     */
-
-    public String getIpProtocol() {
-        return this.ipProtocol;
-    }
-
-    /**
-     * <p>
-     * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC only)
-     * Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number other than
-     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on all ports is
-     * allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you
-     * must specify a port range. For protocol <code>58</code> (ICMPv6), you can optionally specify a port range; if you
-     * don't, traffic for all types and codes is allowed.
-     * </p>
-     * 
-     * @param ipProtocol
-     *        The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
-     *        href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). (VPC
-     *        only) Use <code>-1</code> to specify all protocols. If you specify <code>-1</code>, or a protocol number
-     *        other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6), traffic on
-     *        all ports is allowed, regardless of any ports you specify. For <code>tcp</code>, <code>udp</code>, and
-     *        <code>icmp</code>, you must specify a port range. For protocol <code>58</code> (ICMPv6), you can
-     *        optionally specify a port range; if you don't, traffic for all types and codes is allowed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AuthorizeSecurityGroupIngressRequest withIpProtocol(String ipProtocol) {
-        setIpProtocol(ipProtocol);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types.
-     * </p>
-     * 
-     * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
-     *        type number, use <code>-1</code> to specify all types.
-     */
-
-    public void setFromPort(Integer fromPort) {
-        this.fromPort = fromPort;
-    }
-
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types.
-     * </p>
-     * 
-     * @return The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
-     *         type number, use <code>-1</code> to specify all types.
-     */
-
-    public Integer getFromPort() {
-        return this.fromPort;
-    }
-
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types.
-     * </p>
-     * 
-     * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
-     *        type number, use <code>-1</code> to specify all types.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AuthorizeSecurityGroupIngressRequest withFromPort(Integer fromPort) {
-        setFromPort(fromPort);
-        return this;
-    }
-
-    /**
-     * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
      * number, use <code>-1</code> to specify all codes.
      * </p>
@@ -498,119 +611,6 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     }
 
     /**
-     * <p>
-     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
-     * </p>
-     * 
-     * @param cidrIp
-     *        The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
-     */
-
-    public void setCidrIp(String cidrIp) {
-        this.cidrIp = cidrIp;
-    }
-
-    /**
-     * <p>
-     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
-     * </p>
-     * 
-     * @return The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
-     */
-
-    public String getCidrIp() {
-        return this.cidrIp;
-    }
-
-    /**
-     * <p>
-     * The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
-     * </p>
-     * 
-     * @param cidrIp
-     *        The CIDR IPv4 address range. You can't specify this parameter when specifying a source security group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AuthorizeSecurityGroupIngressRequest withCidrIp(String cidrIp) {
-        setCidrIp(cidrIp);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A set of IP permissions. Can be used to specify multiple rules in a single command.
-     * </p>
-     * 
-     * @return A set of IP permissions. Can be used to specify multiple rules in a single command.
-     */
-
-    public java.util.List<IpPermission> getIpPermissions() {
-        if (ipPermissions == null) {
-            ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>();
-        }
-        return ipPermissions;
-    }
-
-    /**
-     * <p>
-     * A set of IP permissions. Can be used to specify multiple rules in a single command.
-     * </p>
-     * 
-     * @param ipPermissions
-     *        A set of IP permissions. Can be used to specify multiple rules in a single command.
-     */
-
-    public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
-        if (ipPermissions == null) {
-            this.ipPermissions = null;
-            return;
-        }
-
-        this.ipPermissions = new com.amazonaws.internal.SdkInternalList<IpPermission>(ipPermissions);
-    }
-
-    /**
-     * <p>
-     * A set of IP permissions. Can be used to specify multiple rules in a single command.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setIpPermissions(java.util.Collection)} or {@link #withIpPermissions(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param ipPermissions
-     *        A set of IP permissions. Can be used to specify multiple rules in a single command.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AuthorizeSecurityGroupIngressRequest withIpPermissions(IpPermission... ipPermissions) {
-        if (this.ipPermissions == null) {
-            setIpPermissions(new com.amazonaws.internal.SdkInternalList<IpPermission>(ipPermissions.length));
-        }
-        for (IpPermission ele : ipPermissions) {
-            this.ipPermissions.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A set of IP permissions. Can be used to specify multiple rules in a single command.
-     * </p>
-     * 
-     * @param ipPermissions
-     *        A set of IP permissions. Can be used to specify multiple rules in a single command.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AuthorizeSecurityGroupIngressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
-        setIpPermissions(ipPermissions);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -632,24 +632,24 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGroupName() != null)
-            sb.append("GroupName: ").append(getGroupName()).append(",");
+        if (getCidrIp() != null)
+            sb.append("CidrIp: ").append(getCidrIp()).append(",");
+        if (getFromPort() != null)
+            sb.append("FromPort: ").append(getFromPort()).append(",");
         if (getGroupId() != null)
             sb.append("GroupId: ").append(getGroupId()).append(",");
+        if (getGroupName() != null)
+            sb.append("GroupName: ").append(getGroupName()).append(",");
+        if (getIpPermissions() != null)
+            sb.append("IpPermissions: ").append(getIpPermissions()).append(",");
+        if (getIpProtocol() != null)
+            sb.append("IpProtocol: ").append(getIpProtocol()).append(",");
         if (getSourceSecurityGroupName() != null)
             sb.append("SourceSecurityGroupName: ").append(getSourceSecurityGroupName()).append(",");
         if (getSourceSecurityGroupOwnerId() != null)
             sb.append("SourceSecurityGroupOwnerId: ").append(getSourceSecurityGroupOwnerId()).append(",");
-        if (getIpProtocol() != null)
-            sb.append("IpProtocol: ").append(getIpProtocol()).append(",");
-        if (getFromPort() != null)
-            sb.append("FromPort: ").append(getFromPort()).append(",");
         if (getToPort() != null)
-            sb.append("ToPort: ").append(getToPort()).append(",");
-        if (getCidrIp() != null)
-            sb.append("CidrIp: ").append(getCidrIp()).append(",");
-        if (getIpPermissions() != null)
-            sb.append("IpPermissions: ").append(getIpPermissions());
+            sb.append("ToPort: ").append(getToPort());
         sb.append("}");
         return sb.toString();
     }
@@ -664,13 +664,29 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
         if (obj instanceof AuthorizeSecurityGroupIngressRequest == false)
             return false;
         AuthorizeSecurityGroupIngressRequest other = (AuthorizeSecurityGroupIngressRequest) obj;
-        if (other.getGroupName() == null ^ this.getGroupName() == null)
+        if (other.getCidrIp() == null ^ this.getCidrIp() == null)
             return false;
-        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
+        if (other.getCidrIp() != null && other.getCidrIp().equals(this.getCidrIp()) == false)
+            return false;
+        if (other.getFromPort() == null ^ this.getFromPort() == null)
+            return false;
+        if (other.getFromPort() != null && other.getFromPort().equals(this.getFromPort()) == false)
             return false;
         if (other.getGroupId() == null ^ this.getGroupId() == null)
             return false;
         if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
+            return false;
+        if (other.getGroupName() == null ^ this.getGroupName() == null)
+            return false;
+        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
+            return false;
+        if (other.getIpPermissions() == null ^ this.getIpPermissions() == null)
+            return false;
+        if (other.getIpPermissions() != null && other.getIpPermissions().equals(this.getIpPermissions()) == false)
+            return false;
+        if (other.getIpProtocol() == null ^ this.getIpProtocol() == null)
+            return false;
+        if (other.getIpProtocol() != null && other.getIpProtocol().equals(this.getIpProtocol()) == false)
             return false;
         if (other.getSourceSecurityGroupName() == null ^ this.getSourceSecurityGroupName() == null)
             return false;
@@ -680,25 +696,9 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
             return false;
         if (other.getSourceSecurityGroupOwnerId() != null && other.getSourceSecurityGroupOwnerId().equals(this.getSourceSecurityGroupOwnerId()) == false)
             return false;
-        if (other.getIpProtocol() == null ^ this.getIpProtocol() == null)
-            return false;
-        if (other.getIpProtocol() != null && other.getIpProtocol().equals(this.getIpProtocol()) == false)
-            return false;
-        if (other.getFromPort() == null ^ this.getFromPort() == null)
-            return false;
-        if (other.getFromPort() != null && other.getFromPort().equals(this.getFromPort()) == false)
-            return false;
         if (other.getToPort() == null ^ this.getToPort() == null)
             return false;
         if (other.getToPort() != null && other.getToPort().equals(this.getToPort()) == false)
-            return false;
-        if (other.getCidrIp() == null ^ this.getCidrIp() == null)
-            return false;
-        if (other.getCidrIp() != null && other.getCidrIp().equals(this.getCidrIp()) == false)
-            return false;
-        if (other.getIpPermissions() == null ^ this.getIpPermissions() == null)
-            return false;
-        if (other.getIpPermissions() != null && other.getIpPermissions().equals(this.getIpPermissions()) == false)
             return false;
         return true;
     }
@@ -708,15 +708,15 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode());
+        hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getIpPermissions() == null) ? 0 : getIpPermissions().hashCode());
+        hashCode = prime * hashCode + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode());
         hashCode = prime * hashCode + ((getSourceSecurityGroupName() == null) ? 0 : getSourceSecurityGroupName().hashCode());
         hashCode = prime * hashCode + ((getSourceSecurityGroupOwnerId() == null) ? 0 : getSourceSecurityGroupOwnerId().hashCode());
-        hashCode = prime * hashCode + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode());
-        hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
         hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode());
-        hashCode = prime * hashCode + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode());
-        hashCode = prime * hashCode + ((getIpPermissions() == null) ? 0 : getIpPermissions().hashCode());
         return hashCode;
     }
 

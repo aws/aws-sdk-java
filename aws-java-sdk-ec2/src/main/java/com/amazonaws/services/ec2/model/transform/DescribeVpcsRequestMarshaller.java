@@ -40,19 +40,6 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeVpcsRequestVpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcsRequest
-                .getVpcIds();
-        if (!describeVpcsRequestVpcIdsList.isEmpty() || !describeVpcsRequestVpcIdsList.isAutoConstruct()) {
-            int vpcIdsListIndex = 1;
-
-            for (String describeVpcsRequestVpcIdsListValue : describeVpcsRequestVpcIdsList) {
-                if (describeVpcsRequestVpcIdsListValue != null) {
-                    request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(describeVpcsRequestVpcIdsListValue));
-                }
-                vpcIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeVpcsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpcsRequest
                 .getFilters();
         if (!describeVpcsRequestFiltersList.isEmpty() || !describeVpcsRequestFiltersList.isAutoConstruct()) {
@@ -77,6 +64,19 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeVpcsRequestVpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcsRequest
+                .getVpcIds();
+        if (!describeVpcsRequestVpcIdsList.isEmpty() || !describeVpcsRequestVpcIdsList.isAutoConstruct()) {
+            int vpcIdsListIndex = 1;
+
+            for (String describeVpcsRequestVpcIdsListValue : describeVpcsRequestVpcIdsList) {
+                if (describeVpcsRequestVpcIdsListValue != null) {
+                    request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(describeVpcsRequestVpcIdsListValue));
+                }
+                vpcIdsListIndex++;
             }
         }
 

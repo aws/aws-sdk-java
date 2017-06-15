@@ -40,32 +40,6 @@ public class DescribeImagesRequestMarshaller implements Marshaller<Request<Descr
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeImagesRequestImageIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest
-                .getImageIds();
-        if (!describeImagesRequestImageIdsList.isEmpty() || !describeImagesRequestImageIdsList.isAutoConstruct()) {
-            int imageIdsListIndex = 1;
-
-            for (String describeImagesRequestImageIdsListValue : describeImagesRequestImageIdsList) {
-                if (describeImagesRequestImageIdsListValue != null) {
-                    request.addParameter("ImageId." + imageIdsListIndex, StringUtils.fromString(describeImagesRequestImageIdsListValue));
-                }
-                imageIdsListIndex++;
-            }
-        }
-
-        com.amazonaws.internal.SdkInternalList<String> describeImagesRequestOwnersList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest
-                .getOwners();
-        if (!describeImagesRequestOwnersList.isEmpty() || !describeImagesRequestOwnersList.isAutoConstruct()) {
-            int ownersListIndex = 1;
-
-            for (String describeImagesRequestOwnersListValue : describeImagesRequestOwnersList) {
-                if (describeImagesRequestOwnersListValue != null) {
-                    request.addParameter("Owner." + ownersListIndex, StringUtils.fromString(describeImagesRequestOwnersListValue));
-                }
-                ownersListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<String> describeImagesRequestExecutableUsersList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest
                 .getExecutableUsers();
         if (!describeImagesRequestExecutableUsersList.isEmpty() || !describeImagesRequestExecutableUsersList.isAutoConstruct()) {
@@ -103,6 +77,32 @@ public class DescribeImagesRequestMarshaller implements Marshaller<Request<Descr
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeImagesRequestImageIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest
+                .getImageIds();
+        if (!describeImagesRequestImageIdsList.isEmpty() || !describeImagesRequestImageIdsList.isAutoConstruct()) {
+            int imageIdsListIndex = 1;
+
+            for (String describeImagesRequestImageIdsListValue : describeImagesRequestImageIdsList) {
+                if (describeImagesRequestImageIdsListValue != null) {
+                    request.addParameter("ImageId." + imageIdsListIndex, StringUtils.fromString(describeImagesRequestImageIdsListValue));
+                }
+                imageIdsListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeImagesRequestOwnersList = (com.amazonaws.internal.SdkInternalList<String>) describeImagesRequest
+                .getOwners();
+        if (!describeImagesRequestOwnersList.isEmpty() || !describeImagesRequestOwnersList.isAutoConstruct()) {
+            int ownersListIndex = 1;
+
+            for (String describeImagesRequestOwnersListValue : describeImagesRequestOwnersList) {
+                if (describeImagesRequestOwnersListValue != null) {
+                    request.addParameter("Owner." + ownersListIndex, StringUtils.fromString(describeImagesRequestOwnersListValue));
+                }
+                ownersListIndex++;
             }
         }
 

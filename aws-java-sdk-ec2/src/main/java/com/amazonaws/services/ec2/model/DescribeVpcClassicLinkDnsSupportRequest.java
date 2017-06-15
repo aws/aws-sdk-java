@@ -30,12 +30,6 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
 
     /**
      * <p>
-     * One or more VPC IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> vpcIds;
-    /**
-     * <p>
      * The maximum number of items to return for this request. The request returns a token that you can specify in a
      * subsequent call to get the next set of results.
      * </p>
@@ -47,79 +41,12 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
      * One or more VPC IDs.
      * </p>
-     * 
-     * @return One or more VPC IDs.
      */
-
-    public java.util.List<String> getVpcIds() {
-        if (vpcIds == null) {
-            vpcIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return vpcIds;
-    }
-
-    /**
-     * <p>
-     * One or more VPC IDs.
-     * </p>
-     * 
-     * @param vpcIds
-     *        One or more VPC IDs.
-     */
-
-    public void setVpcIds(java.util.Collection<String> vpcIds) {
-        if (vpcIds == null) {
-            this.vpcIds = null;
-            return;
-        }
-
-        this.vpcIds = new com.amazonaws.internal.SdkInternalList<String>(vpcIds);
-    }
-
-    /**
-     * <p>
-     * One or more VPC IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVpcIds(java.util.Collection)} or {@link #withVpcIds(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param vpcIds
-     *        One or more VPC IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcClassicLinkDnsSupportRequest withVpcIds(String... vpcIds) {
-        if (this.vpcIds == null) {
-            setVpcIds(new com.amazonaws.internal.SdkInternalList<String>(vpcIds.length));
-        }
-        for (String ele : vpcIds) {
-            this.vpcIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more VPC IDs.
-     * </p>
-     * 
-     * @param vpcIds
-     *        One or more VPC IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcClassicLinkDnsSupportRequest withVpcIds(java.util.Collection<String> vpcIds) {
-        setVpcIds(vpcIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> vpcIds;
 
     /**
      * <p>
@@ -208,6 +135,79 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * One or more VPC IDs.
+     * </p>
+     * 
+     * @return One or more VPC IDs.
+     */
+
+    public java.util.List<String> getVpcIds() {
+        if (vpcIds == null) {
+            vpcIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return vpcIds;
+    }
+
+    /**
+     * <p>
+     * One or more VPC IDs.
+     * </p>
+     * 
+     * @param vpcIds
+     *        One or more VPC IDs.
+     */
+
+    public void setVpcIds(java.util.Collection<String> vpcIds) {
+        if (vpcIds == null) {
+            this.vpcIds = null;
+            return;
+        }
+
+        this.vpcIds = new com.amazonaws.internal.SdkInternalList<String>(vpcIds);
+    }
+
+    /**
+     * <p>
+     * One or more VPC IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcIds(java.util.Collection)} or {@link #withVpcIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param vpcIds
+     *        One or more VPC IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcClassicLinkDnsSupportRequest withVpcIds(String... vpcIds) {
+        if (this.vpcIds == null) {
+            setVpcIds(new com.amazonaws.internal.SdkInternalList<String>(vpcIds.length));
+        }
+        for (String ele : vpcIds) {
+            this.vpcIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more VPC IDs.
+     * </p>
+     * 
+     * @param vpcIds
+     *        One or more VPC IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcClassicLinkDnsSupportRequest withVpcIds(java.util.Collection<String> vpcIds) {
+        setVpcIds(vpcIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -229,12 +229,12 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcIds() != null)
-            sb.append("VpcIds: ").append(getVpcIds()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getVpcIds() != null)
+            sb.append("VpcIds: ").append(getVpcIds());
         sb.append("}");
         return sb.toString();
     }
@@ -249,10 +249,6 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
         if (obj instanceof DescribeVpcClassicLinkDnsSupportRequest == false)
             return false;
         DescribeVpcClassicLinkDnsSupportRequest other = (DescribeVpcClassicLinkDnsSupportRequest) obj;
-        if (other.getVpcIds() == null ^ this.getVpcIds() == null)
-            return false;
-        if (other.getVpcIds() != null && other.getVpcIds().equals(this.getVpcIds()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -260,6 +256,10 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getVpcIds() == null ^ this.getVpcIds() == null)
+            return false;
+        if (other.getVpcIds() != null && other.getVpcIds().equals(this.getVpcIds()) == false)
             return false;
         return true;
     }
@@ -269,9 +269,9 @@ public class DescribeVpcClassicLinkDnsSupportRequest extends AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcIds() == null) ? 0 : getVpcIds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVpcIds() == null) ? 0 : getVpcIds().hashCode());
         return hashCode;
     }
 

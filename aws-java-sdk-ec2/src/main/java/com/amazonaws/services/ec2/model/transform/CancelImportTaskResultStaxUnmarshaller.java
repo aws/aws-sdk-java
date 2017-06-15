@@ -48,13 +48,13 @@ public class CancelImportTaskResultStaxUnmarshaller implements Unmarshaller<Canc
                     continue;
                 }
 
-                if (context.testExpression("state", targetDepth)) {
-                    cancelImportTaskResult.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("previousState", targetDepth)) {
+                    cancelImportTaskResult.setPreviousState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("previousState", targetDepth)) {
-                    cancelImportTaskResult.setPreviousState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("state", targetDepth)) {
+                    cancelImportTaskResult.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

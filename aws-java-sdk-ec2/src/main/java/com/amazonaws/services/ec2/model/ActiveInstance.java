@@ -28,16 +28,16 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance type.
-     * </p>
-     */
-    private String instanceType;
-    /**
-     * <p>
      * The ID of the instance.
      * </p>
      */
     private String instanceId;
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     */
+    private String instanceType;
     /**
      * <p>
      * The ID of the Spot instance request.
@@ -52,46 +52,6 @@ public class ActiveInstance implements Serializable, Cloneable {
      * </p>
      */
     private String instanceHealth;
-
-    /**
-     * <p>
-     * The instance type.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type.
-     */
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type.
-     * </p>
-     * 
-     * @return The instance type.
-     */
-
-    public String getInstanceType() {
-        return this.instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ActiveInstance withInstanceType(String instanceType) {
-        setInstanceType(instanceType);
-        return this;
-    }
 
     /**
      * <p>
@@ -130,6 +90,46 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     public ActiveInstance withInstanceId(String instanceId) {
         setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @return The instance type.
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActiveInstance withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
         return this;
     }
 
@@ -277,10 +277,10 @@ public class ActiveInstance implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getSpotInstanceRequestId() != null)
             sb.append("SpotInstanceRequestId: ").append(getSpotInstanceRequestId()).append(",");
         if (getInstanceHealth() != null)
@@ -299,13 +299,13 @@ public class ActiveInstance implements Serializable, Cloneable {
         if (obj instanceof ActiveInstance == false)
             return false;
         ActiveInstance other = (ActiveInstance) obj;
-        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
-            return false;
-        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
-            return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getSpotInstanceRequestId() == null ^ this.getSpotInstanceRequestId() == null)
             return false;
@@ -323,8 +323,8 @@ public class ActiveInstance implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getSpotInstanceRequestId() == null) ? 0 : getSpotInstanceRequestId().hashCode());
         hashCode = prime * hashCode + ((getInstanceHealth() == null) ? 0 : getInstanceHealth().hashCode());
         return hashCode;

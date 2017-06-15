@@ -43,18 +43,38 @@ public class SnapshotTaskDetailStaxUnmarshaller implements Unmarshaller<Snapshot
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("diskImageSize", targetDepth)) {
-                    snapshotTaskDetail.setDiskImageSize(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("description", targetDepth)) {
                     snapshotTaskDetail.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
+                if (context.testExpression("diskImageSize", targetDepth)) {
+                    snapshotTaskDetail.setDiskImageSize(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("format", targetDepth)) {
                     snapshotTaskDetail.setFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("progress", targetDepth)) {
+                    snapshotTaskDetail.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("snapshotId", targetDepth)) {
+                    snapshotTaskDetail.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("status", targetDepth)) {
+                    snapshotTaskDetail.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("statusMessage", targetDepth)) {
+                    snapshotTaskDetail.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -65,26 +85,6 @@ public class SnapshotTaskDetailStaxUnmarshaller implements Unmarshaller<Snapshot
 
                 if (context.testExpression("userBucket", targetDepth)) {
                     snapshotTaskDetail.setUserBucket(UserBucketDetailsStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("snapshotId", targetDepth)) {
-                    snapshotTaskDetail.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("progress", targetDepth)) {
-                    snapshotTaskDetail.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("statusMessage", targetDepth)) {
-                    snapshotTaskDetail.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("status", targetDepth)) {
-                    snapshotTaskDetail.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -41,36 +41,20 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (revokeSecurityGroupIngressRequest.getGroupName() != null) {
-            request.addParameter("GroupName", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupName()));
-        }
-
-        if (revokeSecurityGroupIngressRequest.getGroupId() != null) {
-            request.addParameter("GroupId", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupId()));
-        }
-
-        if (revokeSecurityGroupIngressRequest.getSourceSecurityGroupName() != null) {
-            request.addParameter("SourceSecurityGroupName", StringUtils.fromString(revokeSecurityGroupIngressRequest.getSourceSecurityGroupName()));
-        }
-
-        if (revokeSecurityGroupIngressRequest.getSourceSecurityGroupOwnerId() != null) {
-            request.addParameter("SourceSecurityGroupOwnerId", StringUtils.fromString(revokeSecurityGroupIngressRequest.getSourceSecurityGroupOwnerId()));
-        }
-
-        if (revokeSecurityGroupIngressRequest.getIpProtocol() != null) {
-            request.addParameter("IpProtocol", StringUtils.fromString(revokeSecurityGroupIngressRequest.getIpProtocol()));
+        if (revokeSecurityGroupIngressRequest.getCidrIp() != null) {
+            request.addParameter("CidrIp", StringUtils.fromString(revokeSecurityGroupIngressRequest.getCidrIp()));
         }
 
         if (revokeSecurityGroupIngressRequest.getFromPort() != null) {
             request.addParameter("FromPort", StringUtils.fromInteger(revokeSecurityGroupIngressRequest.getFromPort()));
         }
 
-        if (revokeSecurityGroupIngressRequest.getToPort() != null) {
-            request.addParameter("ToPort", StringUtils.fromInteger(revokeSecurityGroupIngressRequest.getToPort()));
+        if (revokeSecurityGroupIngressRequest.getGroupId() != null) {
+            request.addParameter("GroupId", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupId()));
         }
 
-        if (revokeSecurityGroupIngressRequest.getCidrIp() != null) {
-            request.addParameter("CidrIp", StringUtils.fromString(revokeSecurityGroupIngressRequest.getCidrIp()));
+        if (revokeSecurityGroupIngressRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupName()));
         }
 
         com.amazonaws.internal.SdkInternalList<IpPermission> revokeSecurityGroupIngressRequestIpPermissionsList = (com.amazonaws.internal.SdkInternalList<IpPermission>) revokeSecurityGroupIngressRequest
@@ -80,60 +64,14 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
 
             for (IpPermission revokeSecurityGroupIngressRequestIpPermissionsListValue : revokeSecurityGroupIngressRequestIpPermissionsList) {
 
-                if (revokeSecurityGroupIngressRequestIpPermissionsListValue.getIpProtocol() != null) {
-                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpProtocol",
-                            StringUtils.fromString(revokeSecurityGroupIngressRequestIpPermissionsListValue.getIpProtocol()));
-                }
-
                 if (revokeSecurityGroupIngressRequestIpPermissionsListValue.getFromPort() != null) {
                     request.addParameter("IpPermissions." + ipPermissionsListIndex + ".FromPort",
                             StringUtils.fromInteger(revokeSecurityGroupIngressRequestIpPermissionsListValue.getFromPort()));
                 }
 
-                if (revokeSecurityGroupIngressRequestIpPermissionsListValue.getToPort() != null) {
-                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".ToPort",
-                            StringUtils.fromInteger(revokeSecurityGroupIngressRequestIpPermissionsListValue.getToPort()));
-                }
-
-                com.amazonaws.internal.SdkInternalList<UserIdGroupPair> ipPermissionUserIdGroupPairsList = (com.amazonaws.internal.SdkInternalList<UserIdGroupPair>) revokeSecurityGroupIngressRequestIpPermissionsListValue
-                        .getUserIdGroupPairs();
-                if (!ipPermissionUserIdGroupPairsList.isEmpty() || !ipPermissionUserIdGroupPairsList.isAutoConstruct()) {
-                    int userIdGroupPairsListIndex = 1;
-
-                    for (UserIdGroupPair ipPermissionUserIdGroupPairsListValue : ipPermissionUserIdGroupPairsList) {
-
-                        if (ipPermissionUserIdGroupPairsListValue.getUserId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getUserId()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getGroupName() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupName()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getGroupId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupId()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getVpcId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcId()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId() != null) {
-                            request.addParameter(
-                                    "IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcPeeringConnectionId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId()));
-                        }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getPeeringStatus() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".PeeringStatus",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getPeeringStatus()));
-                        }
-                        userIdGroupPairsListIndex++;
-                    }
+                if (revokeSecurityGroupIngressRequestIpPermissionsListValue.getIpProtocol() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpProtocol",
+                            StringUtils.fromString(revokeSecurityGroupIngressRequestIpPermissionsListValue.getIpProtocol()));
                 }
 
                 com.amazonaws.internal.SdkInternalList<Ipv6Range> ipPermissionIpv6RangesList = (com.amazonaws.internal.SdkInternalList<Ipv6Range>) revokeSecurityGroupIngressRequestIpPermissionsListValue
@@ -166,6 +104,52 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
                     }
                 }
 
+                if (revokeSecurityGroupIngressRequestIpPermissionsListValue.getToPort() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".ToPort",
+                            StringUtils.fromInteger(revokeSecurityGroupIngressRequestIpPermissionsListValue.getToPort()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<UserIdGroupPair> ipPermissionUserIdGroupPairsList = (com.amazonaws.internal.SdkInternalList<UserIdGroupPair>) revokeSecurityGroupIngressRequestIpPermissionsListValue
+                        .getUserIdGroupPairs();
+                if (!ipPermissionUserIdGroupPairsList.isEmpty() || !ipPermissionUserIdGroupPairsList.isAutoConstruct()) {
+                    int userIdGroupPairsListIndex = 1;
+
+                    for (UserIdGroupPair ipPermissionUserIdGroupPairsListValue : ipPermissionUserIdGroupPairsList) {
+
+                        if (ipPermissionUserIdGroupPairsListValue.getGroupId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupId()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getGroupName() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getGroupName()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getPeeringStatus() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".PeeringStatus",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getPeeringStatus()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getUserId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getUserId()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getVpcId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcId()));
+                        }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId() != null) {
+                            request.addParameter(
+                                    "IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcPeeringConnectionId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId()));
+                        }
+                        userIdGroupPairsListIndex++;
+                    }
+                }
+
                 com.amazonaws.internal.SdkInternalList<IpRange> ipPermissionIpv4RangesList = (com.amazonaws.internal.SdkInternalList<IpRange>) revokeSecurityGroupIngressRequestIpPermissionsListValue
                         .getIpv4Ranges();
                 if (!ipPermissionIpv4RangesList.isEmpty() || !ipPermissionIpv4RangesList.isAutoConstruct()) {
@@ -182,6 +166,22 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
                 }
                 ipPermissionsListIndex++;
             }
+        }
+
+        if (revokeSecurityGroupIngressRequest.getIpProtocol() != null) {
+            request.addParameter("IpProtocol", StringUtils.fromString(revokeSecurityGroupIngressRequest.getIpProtocol()));
+        }
+
+        if (revokeSecurityGroupIngressRequest.getSourceSecurityGroupName() != null) {
+            request.addParameter("SourceSecurityGroupName", StringUtils.fromString(revokeSecurityGroupIngressRequest.getSourceSecurityGroupName()));
+        }
+
+        if (revokeSecurityGroupIngressRequest.getSourceSecurityGroupOwnerId() != null) {
+            request.addParameter("SourceSecurityGroupOwnerId", StringUtils.fromString(revokeSecurityGroupIngressRequest.getSourceSecurityGroupOwnerId()));
+        }
+
+        if (revokeSecurityGroupIngressRequest.getToPort() != null) {
+            request.addParameter("ToPort", StringUtils.fromInteger(revokeSecurityGroupIngressRequest.getToPort()));
         }
 
         return request;

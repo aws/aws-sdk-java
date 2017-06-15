@@ -45,6 +45,11 @@ public class DescribeTagsResultStaxUnmarshaller implements Unmarshaller<Describe
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeTagsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     describeTagsResult.withTags(new ArrayList<TagDescription>());
                     continue;
@@ -55,10 +60,6 @@ public class DescribeTagsResultStaxUnmarshaller implements Unmarshaller<Describe
                     continue;
                 }
 
-                if (context.testExpression("nextToken", targetDepth)) {
-                    describeTagsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeTagsResult;

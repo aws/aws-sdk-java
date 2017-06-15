@@ -43,13 +43,8 @@ public class PriceScheduleStaxUnmarshaller implements Unmarshaller<PriceSchedule
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("term", targetDepth)) {
-                    priceSchedule.setTerm(LongStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("price", targetDepth)) {
-                    priceSchedule.setPrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("active", targetDepth)) {
+                    priceSchedule.setActive(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,8 +53,13 @@ public class PriceScheduleStaxUnmarshaller implements Unmarshaller<PriceSchedule
                     continue;
                 }
 
-                if (context.testExpression("active", targetDepth)) {
-                    priceSchedule.setActive(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("price", targetDepth)) {
+                    priceSchedule.setPrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("term", targetDepth)) {
+                    priceSchedule.setTerm(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

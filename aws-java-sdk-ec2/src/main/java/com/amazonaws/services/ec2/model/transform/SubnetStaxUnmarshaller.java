@@ -45,38 +45,8 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("subnetId", targetDepth)) {
-                    subnet.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("state", targetDepth)) {
-                    subnet.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcId", targetDepth)) {
-                    subnet.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("cidrBlock", targetDepth)) {
-                    subnet.setCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ipv6CidrBlockAssociationSet", targetDepth)) {
-                    subnet.withIpv6CidrBlockAssociationSet(new ArrayList<SubnetIpv6CidrBlockAssociation>());
-                    continue;
-                }
-
-                if (context.testExpression("ipv6CidrBlockAssociationSet/item", targetDepth)) {
-                    subnet.withIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("assignIpv6AddressOnCreation", targetDepth)) {
-                    subnet.setAssignIpv6AddressOnCreation(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("availabilityZone", targetDepth)) {
+                    subnet.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -85,8 +55,8 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     continue;
                 }
 
-                if (context.testExpression("availabilityZone", targetDepth)) {
-                    subnet.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("cidrBlock", targetDepth)) {
+                    subnet.setCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -97,6 +67,36 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
 
                 if (context.testExpression("mapPublicIpOnLaunch", targetDepth)) {
                     subnet.setMapPublicIpOnLaunch(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("state", targetDepth)) {
+                    subnet.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("subnetId", targetDepth)) {
+                    subnet.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpcId", targetDepth)) {
+                    subnet.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("assignIpv6AddressOnCreation", targetDepth)) {
+                    subnet.setAssignIpv6AddressOnCreation(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipv6CidrBlockAssociationSet", targetDepth)) {
+                    subnet.withIpv6CidrBlockAssociationSet(new ArrayList<SubnetIpv6CidrBlockAssociation>());
+                    continue;
+                }
+
+                if (context.testExpression("ipv6CidrBlockAssociationSet/item", targetDepth)) {
+                    subnet.withIpv6CidrBlockAssociationSet(SubnetIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -43,13 +43,13 @@ public class InstanceCapacityStaxUnmarshaller implements Unmarshaller<InstanceCa
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceType", targetDepth)) {
-                    instanceCapacity.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("availableCapacity", targetDepth)) {
+                    instanceCapacity.setAvailableCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("availableCapacity", targetDepth)) {
-                    instanceCapacity.setAvailableCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceType", targetDepth)) {
+                    instanceCapacity.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

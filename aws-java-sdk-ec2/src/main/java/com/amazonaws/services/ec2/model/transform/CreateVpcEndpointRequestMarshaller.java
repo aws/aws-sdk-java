@@ -40,12 +40,8 @@ public class CreateVpcEndpointRequestMarshaller implements Marshaller<Request<Cr
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createVpcEndpointRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(createVpcEndpointRequest.getVpcId()));
-        }
-
-        if (createVpcEndpointRequest.getServiceName() != null) {
-            request.addParameter("ServiceName", StringUtils.fromString(createVpcEndpointRequest.getServiceName()));
+        if (createVpcEndpointRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(createVpcEndpointRequest.getClientToken()));
         }
 
         if (createVpcEndpointRequest.getPolicyDocument() != null) {
@@ -65,8 +61,12 @@ public class CreateVpcEndpointRequestMarshaller implements Marshaller<Request<Cr
             }
         }
 
-        if (createVpcEndpointRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(createVpcEndpointRequest.getClientToken()));
+        if (createVpcEndpointRequest.getServiceName() != null) {
+            request.addParameter("ServiceName", StringUtils.fromString(createVpcEndpointRequest.getServiceName()));
+        }
+
+        if (createVpcEndpointRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createVpcEndpointRequest.getVpcId()));
         }
 
         return request;

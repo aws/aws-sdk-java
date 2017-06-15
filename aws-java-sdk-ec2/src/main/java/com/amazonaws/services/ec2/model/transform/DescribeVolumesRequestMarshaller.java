@@ -40,19 +40,6 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeVolumesRequestVolumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumesRequest
-                .getVolumeIds();
-        if (!describeVolumesRequestVolumeIdsList.isEmpty() || !describeVolumesRequestVolumeIdsList.isAutoConstruct()) {
-            int volumeIdsListIndex = 1;
-
-            for (String describeVolumesRequestVolumeIdsListValue : describeVolumesRequestVolumeIdsList) {
-                if (describeVolumesRequestVolumeIdsListValue != null) {
-                    request.addParameter("VolumeId." + volumeIdsListIndex, StringUtils.fromString(describeVolumesRequestVolumeIdsListValue));
-                }
-                volumeIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeVolumesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVolumesRequest
                 .getFilters();
         if (!describeVolumesRequestFiltersList.isEmpty() || !describeVolumesRequestFiltersList.isAutoConstruct()) {
@@ -80,12 +67,25 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
             }
         }
 
-        if (describeVolumesRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeVolumesRequest.getNextToken()));
+        com.amazonaws.internal.SdkInternalList<String> describeVolumesRequestVolumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumesRequest
+                .getVolumeIds();
+        if (!describeVolumesRequestVolumeIdsList.isEmpty() || !describeVolumesRequestVolumeIdsList.isAutoConstruct()) {
+            int volumeIdsListIndex = 1;
+
+            for (String describeVolumesRequestVolumeIdsListValue : describeVolumesRequestVolumeIdsList) {
+                if (describeVolumesRequestVolumeIdsListValue != null) {
+                    request.addParameter("VolumeId." + volumeIdsListIndex, StringUtils.fromString(describeVolumesRequestVolumeIdsListValue));
+                }
+                volumeIdsListIndex++;
+            }
         }
 
         if (describeVolumesRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeVolumesRequest.getMaxResults()));
+        }
+
+        if (describeVolumesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeVolumesRequest.getNextToken()));
         }
 
         return request;

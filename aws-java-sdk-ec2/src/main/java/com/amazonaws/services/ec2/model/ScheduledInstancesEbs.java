@@ -28,36 +28,17 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the snapshot.
-     * </p>
-     */
-    private String snapshotId;
-    /**
-     * <p>
-     * The size of the volume, in GiB.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
-     */
-    private Integer volumeSize;
-    /**
-     * <p>
      * Indicates whether the volume is deleted on instance termination.
      * </p>
      */
     private Boolean deleteOnTermination;
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
-     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
      * </p>
      */
-    private String volumeType;
+    private Boolean encrypted;
     /**
      * <p>
      * The number of I/O operations per second (IOPS) that the volume supports. For io1 volumes, this represents the
@@ -78,52 +59,10 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
     private Integer iops;
     /**
      * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
-     * </p>
-     */
-    private Boolean encrypted;
-
-    /**
-     * <p>
      * The ID of the snapshot.
      * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the snapshot.
      */
-
-    public void setSnapshotId(String snapshotId) {
-        this.snapshotId = snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the snapshot.
-     * </p>
-     * 
-     * @return The ID of the snapshot.
-     */
-
-    public String getSnapshotId() {
-        return this.snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the snapshot.
-     * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the snapshot.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ScheduledInstancesEbs withSnapshotId(String snapshotId) {
-        setSnapshotId(snapshotId);
-        return this;
-    }
-
+    private String snapshotId;
     /**
      * <p>
      * The size of the volume, in GiB.
@@ -132,58 +71,18 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
      * snapshot size.
      * </p>
-     * 
-     * @param volumeSize
-     *        The size of the volume, in GiB.</p>
-     *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
      */
-
-    public void setVolumeSize(Integer volumeSize) {
-        this.volumeSize = volumeSize;
-    }
-
+    private Integer volumeSize;
     /**
      * <p>
-     * The size of the volume, in GiB.
+     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
+     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
      * </p>
      * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
+     * Default: <code>standard</code>
      * </p>
-     * 
-     * @return The size of the volume, in GiB.</p>
-     *         <p>
-     *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
-     *         the snapshot size.
      */
-
-    public Integer getVolumeSize() {
-        return this.volumeSize;
-    }
-
-    /**
-     * <p>
-     * The size of the volume, in GiB.
-     * </p>
-     * <p>
-     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.
-     * </p>
-     * 
-     * @param volumeSize
-     *        The size of the volume, in GiB.</p>
-     *        <p>
-     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
-     *        snapshot size.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ScheduledInstancesEbs withVolumeSize(Integer volumeSize) {
-        setVolumeSize(volumeSize);
-        return this;
-    }
+    private String volumeType;
 
     /**
      * <p>
@@ -239,66 +138,62 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
-     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
      * </p>
      * 
-     * @param volumeType
-     *        The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
-     *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
-     *        Magnetic.</p>
-     *        <p>
-     *        Default: <code>standard</code>
+     * @param encrypted
+     *        Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
+     *        support them.
      */
 
-    public void setVolumeType(String volumeType) {
-        this.volumeType = volumeType;
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
     }
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
-     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
      * </p>
      * 
-     * @return The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
-     *         Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code>
-     *         for Magnetic.</p>
-     *         <p>
-     *         Default: <code>standard</code>
+     * @return Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
+     *         support them.
      */
 
-    public String getVolumeType() {
-        return this.volumeType;
+    public Boolean getEncrypted() {
+        return this.encrypted;
     }
 
     /**
      * <p>
-     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
-     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
-     * </p>
-     * <p>
-     * Default: <code>standard</code>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
      * </p>
      * 
-     * @param volumeType
-     *        The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
-     *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
-     *        Magnetic.</p>
-     *        <p>
-     *        Default: <code>standard</code>
+     * @param encrypted
+     *        Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
+     *        support them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesEbs withVolumeType(String volumeType) {
-        setVolumeType(volumeType);
+    public ScheduledInstancesEbs withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
+     * them.
+     * </p>
+     * 
+     * @return Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
+     *         support them.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
     }
 
     /**
@@ -416,62 +311,167 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
+     * The ID of the snapshot.
      * </p>
      * 
-     * @param encrypted
-     *        Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
-     *        support them.
+     * @param snapshotId
+     *        The ID of the snapshot.
      */
 
-    public void setEncrypted(Boolean encrypted) {
-        this.encrypted = encrypted;
+    public void setSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
     }
 
     /**
      * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
+     * The ID of the snapshot.
      * </p>
      * 
-     * @return Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
-     *         support them.
+     * @return The ID of the snapshot.
      */
 
-    public Boolean getEncrypted() {
-        return this.encrypted;
+    public String getSnapshotId() {
+        return this.snapshotId;
     }
 
     /**
      * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
+     * The ID of the snapshot.
      * </p>
      * 
-     * @param encrypted
-     *        Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
-     *        support them.
+     * @param snapshotId
+     *        The ID of the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ScheduledInstancesEbs withEncrypted(Boolean encrypted) {
-        setEncrypted(encrypted);
+    public ScheduledInstancesEbs withSnapshotId(String snapshotId) {
+        setSnapshotId(snapshotId);
         return this;
     }
 
     /**
      * <p>
-     * Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that support
-     * them.
+     * The size of the volume, in GiB.
+     * </p>
+     * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
      * </p>
      * 
-     * @return Indicates whether the volume is encrypted. You can attached encrypted volumes only to instances that
-     *         support them.
+     * @param volumeSize
+     *        The size of the volume, in GiB.</p>
+     *        <p>
+     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     *        snapshot size.
      */
 
-    public Boolean isEncrypted() {
-        return this.encrypted;
+    public void setVolumeSize(Integer volumeSize) {
+        this.volumeSize = volumeSize;
+    }
+
+    /**
+     * <p>
+     * The size of the volume, in GiB.
+     * </p>
+     * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * 
+     * @return The size of the volume, in GiB.</p>
+     *         <p>
+     *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
+     *         the snapshot size.
+     */
+
+    public Integer getVolumeSize() {
+        return this.volumeSize;
+    }
+
+    /**
+     * <p>
+     * The size of the volume, in GiB.
+     * </p>
+     * <p>
+     * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.
+     * </p>
+     * 
+     * @param volumeSize
+     *        The size of the volume, in GiB.</p>
+     *        <p>
+     *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
+     *        snapshot size.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledInstancesEbs withVolumeSize(Integer volumeSize) {
+        setVolumeSize(volumeSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
+     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @param volumeType
+     *        The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
+     *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
+     *        Magnetic.</p>
+     *        <p>
+     *        Default: <code>standard</code>
+     */
+
+    public void setVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+    }
+
+    /**
+     * <p>
+     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
+     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @return The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
+     *         Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code>
+     *         for Magnetic.</p>
+     *         <p>
+     *         Default: <code>standard</code>
+     */
+
+    public String getVolumeType() {
+        return this.volumeType;
+    }
+
+    /**
+     * <p>
+     * The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, Throughput
+     * Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for Magnetic.
+     * </p>
+     * <p>
+     * Default: <code>standard</code>
+     * </p>
+     * 
+     * @param volumeType
+     *        The volume type. <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD,
+     *        Throughput Optimized HDD for <code>st1</code>, Cold HDD for <code>sc1</code>, or <code>standard</code> for
+     *        Magnetic.</p>
+     *        <p>
+     *        Default: <code>standard</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledInstancesEbs withVolumeType(String volumeType) {
+        setVolumeType(volumeType);
+        return this;
     }
 
     /**
@@ -485,18 +485,18 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDeleteOnTermination() != null)
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getIops() != null)
+            sb.append("Iops: ").append(getIops()).append(",");
         if (getSnapshotId() != null)
             sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getVolumeSize() != null)
             sb.append("VolumeSize: ").append(getVolumeSize()).append(",");
-        if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
         if (getVolumeType() != null)
-            sb.append("VolumeType: ").append(getVolumeType()).append(",");
-        if (getIops() != null)
-            sb.append("Iops: ").append(getIops()).append(",");
-        if (getEncrypted() != null)
-            sb.append("Encrypted: ").append(getEncrypted());
+            sb.append("VolumeType: ").append(getVolumeType());
         sb.append("}");
         return sb.toString();
     }
@@ -511,6 +511,18 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
         if (obj instanceof ScheduledInstancesEbs == false)
             return false;
         ScheduledInstancesEbs other = (ScheduledInstancesEbs) obj;
+        if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
+            return false;
+        if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
+            return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
+        if (other.getIops() == null ^ this.getIops() == null)
+            return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
+            return false;
         if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
             return false;
         if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
@@ -519,21 +531,9 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
             return false;
         if (other.getVolumeSize() != null && other.getVolumeSize().equals(this.getVolumeSize()) == false)
             return false;
-        if (other.getDeleteOnTermination() == null ^ this.getDeleteOnTermination() == null)
-            return false;
-        if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
-            return false;
         if (other.getVolumeType() == null ^ this.getVolumeType() == null)
             return false;
         if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false)
-            return false;
-        if (other.getIops() == null ^ this.getIops() == null)
-            return false;
-        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
-            return false;
-        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
-            return false;
-        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
             return false;
         return true;
     }
@@ -543,12 +543,12 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode());
-        hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
-        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
-        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         return hashCode;
     }
 

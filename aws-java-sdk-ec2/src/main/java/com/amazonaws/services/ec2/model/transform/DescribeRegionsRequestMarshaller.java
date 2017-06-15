@@ -40,19 +40,6 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeRegionsRequestRegionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeRegionsRequest
-                .getRegionNames();
-        if (!describeRegionsRequestRegionNamesList.isEmpty() || !describeRegionsRequestRegionNamesList.isAutoConstruct()) {
-            int regionNamesListIndex = 1;
-
-            for (String describeRegionsRequestRegionNamesListValue : describeRegionsRequestRegionNamesList) {
-                if (describeRegionsRequestRegionNamesListValue != null) {
-                    request.addParameter("RegionName." + regionNamesListIndex, StringUtils.fromString(describeRegionsRequestRegionNamesListValue));
-                }
-                regionNamesListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeRegionsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeRegionsRequest
                 .getFilters();
         if (!describeRegionsRequestFiltersList.isEmpty() || !describeRegionsRequestFiltersList.isAutoConstruct()) {
@@ -77,6 +64,19 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeRegionsRequestRegionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeRegionsRequest
+                .getRegionNames();
+        if (!describeRegionsRequestRegionNamesList.isEmpty() || !describeRegionsRequestRegionNamesList.isAutoConstruct()) {
+            int regionNamesListIndex = 1;
+
+            for (String describeRegionsRequestRegionNamesListValue : describeRegionsRequestRegionNamesList) {
+                if (describeRegionsRequestRegionNamesListValue != null) {
+                    request.addParameter("RegionName." + regionNamesListIndex, StringUtils.fromString(describeRegionsRequestRegionNamesListValue));
+                }
+                regionNamesListIndex++;
             }
         }
 

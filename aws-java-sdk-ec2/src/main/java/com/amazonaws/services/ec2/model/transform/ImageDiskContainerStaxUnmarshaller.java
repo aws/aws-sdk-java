@@ -48,8 +48,18 @@ public class ImageDiskContainerStaxUnmarshaller implements Unmarshaller<ImageDis
                     continue;
                 }
 
+                if (context.testExpression("DeviceName", targetDepth)) {
+                    imageDiskContainer.setDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Format", targetDepth)) {
                     imageDiskContainer.setFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SnapshotId", targetDepth)) {
+                    imageDiskContainer.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -60,16 +70,6 @@ public class ImageDiskContainerStaxUnmarshaller implements Unmarshaller<ImageDis
 
                 if (context.testExpression("UserBucket", targetDepth)) {
                     imageDiskContainer.setUserBucket(UserBucketStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("DeviceName", targetDepth)) {
-                    imageDiskContainer.setDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("SnapshotId", targetDepth)) {
-                    imageDiskContainer.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

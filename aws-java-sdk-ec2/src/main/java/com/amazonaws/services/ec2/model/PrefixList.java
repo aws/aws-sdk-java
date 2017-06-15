@@ -28,6 +28,12 @@ public class PrefixList implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The IP address range of the AWS service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> cidrs;
+    /**
+     * <p>
      * The ID of the prefix.
      * </p>
      */
@@ -38,12 +44,79 @@ public class PrefixList implements Serializable, Cloneable {
      * </p>
      */
     private String prefixListName;
+
     /**
      * <p>
      * The IP address range of the AWS service.
      * </p>
+     * 
+     * @return The IP address range of the AWS service.
      */
-    private com.amazonaws.internal.SdkInternalList<String> cidrs;
+
+    public java.util.List<String> getCidrs() {
+        if (cidrs == null) {
+            cidrs = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return cidrs;
+    }
+
+    /**
+     * <p>
+     * The IP address range of the AWS service.
+     * </p>
+     * 
+     * @param cidrs
+     *        The IP address range of the AWS service.
+     */
+
+    public void setCidrs(java.util.Collection<String> cidrs) {
+        if (cidrs == null) {
+            this.cidrs = null;
+            return;
+        }
+
+        this.cidrs = new com.amazonaws.internal.SdkInternalList<String>(cidrs);
+    }
+
+    /**
+     * <p>
+     * The IP address range of the AWS service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCidrs(java.util.Collection)} or {@link #withCidrs(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param cidrs
+     *        The IP address range of the AWS service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PrefixList withCidrs(String... cidrs) {
+        if (this.cidrs == null) {
+            setCidrs(new com.amazonaws.internal.SdkInternalList<String>(cidrs.length));
+        }
+        for (String ele : cidrs) {
+            this.cidrs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address range of the AWS service.
+     * </p>
+     * 
+     * @param cidrs
+     *        The IP address range of the AWS service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PrefixList withCidrs(java.util.Collection<String> cidrs) {
+        setCidrs(cidrs);
+        return this;
+    }
 
     /**
      * <p>
@@ -126,79 +199,6 @@ public class PrefixList implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The IP address range of the AWS service.
-     * </p>
-     * 
-     * @return The IP address range of the AWS service.
-     */
-
-    public java.util.List<String> getCidrs() {
-        if (cidrs == null) {
-            cidrs = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return cidrs;
-    }
-
-    /**
-     * <p>
-     * The IP address range of the AWS service.
-     * </p>
-     * 
-     * @param cidrs
-     *        The IP address range of the AWS service.
-     */
-
-    public void setCidrs(java.util.Collection<String> cidrs) {
-        if (cidrs == null) {
-            this.cidrs = null;
-            return;
-        }
-
-        this.cidrs = new com.amazonaws.internal.SdkInternalList<String>(cidrs);
-    }
-
-    /**
-     * <p>
-     * The IP address range of the AWS service.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setCidrs(java.util.Collection)} or {@link #withCidrs(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param cidrs
-     *        The IP address range of the AWS service.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PrefixList withCidrs(String... cidrs) {
-        if (this.cidrs == null) {
-            setCidrs(new com.amazonaws.internal.SdkInternalList<String>(cidrs.length));
-        }
-        for (String ele : cidrs) {
-            this.cidrs.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The IP address range of the AWS service.
-     * </p>
-     * 
-     * @param cidrs
-     *        The IP address range of the AWS service.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PrefixList withCidrs(java.util.Collection<String> cidrs) {
-        setCidrs(cidrs);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -209,12 +209,12 @@ public class PrefixList implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCidrs() != null)
+            sb.append("Cidrs: ").append(getCidrs()).append(",");
         if (getPrefixListId() != null)
             sb.append("PrefixListId: ").append(getPrefixListId()).append(",");
         if (getPrefixListName() != null)
-            sb.append("PrefixListName: ").append(getPrefixListName()).append(",");
-        if (getCidrs() != null)
-            sb.append("Cidrs: ").append(getCidrs());
+            sb.append("PrefixListName: ").append(getPrefixListName());
         sb.append("}");
         return sb.toString();
     }
@@ -229,6 +229,10 @@ public class PrefixList implements Serializable, Cloneable {
         if (obj instanceof PrefixList == false)
             return false;
         PrefixList other = (PrefixList) obj;
+        if (other.getCidrs() == null ^ this.getCidrs() == null)
+            return false;
+        if (other.getCidrs() != null && other.getCidrs().equals(this.getCidrs()) == false)
+            return false;
         if (other.getPrefixListId() == null ^ this.getPrefixListId() == null)
             return false;
         if (other.getPrefixListId() != null && other.getPrefixListId().equals(this.getPrefixListId()) == false)
@@ -236,10 +240,6 @@ public class PrefixList implements Serializable, Cloneable {
         if (other.getPrefixListName() == null ^ this.getPrefixListName() == null)
             return false;
         if (other.getPrefixListName() != null && other.getPrefixListName().equals(this.getPrefixListName()) == false)
-            return false;
-        if (other.getCidrs() == null ^ this.getCidrs() == null)
-            return false;
-        if (other.getCidrs() != null && other.getCidrs().equals(this.getCidrs()) == false)
             return false;
         return true;
     }
@@ -249,9 +249,9 @@ public class PrefixList implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCidrs() == null) ? 0 : getCidrs().hashCode());
         hashCode = prime * hashCode + ((getPrefixListId() == null) ? 0 : getPrefixListId().hashCode());
         hashCode = prime * hashCode + ((getPrefixListName() == null) ? 0 : getPrefixListName().hashCode());
-        hashCode = prime * hashCode + ((getCidrs() == null) ? 0 : getCidrs().hashCode());
         return hashCode;
     }
 

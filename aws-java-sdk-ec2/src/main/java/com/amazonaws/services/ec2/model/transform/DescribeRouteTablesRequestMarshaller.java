@@ -40,19 +40,6 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeRouteTablesRequestRouteTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeRouteTablesRequest
-                .getRouteTableIds();
-        if (!describeRouteTablesRequestRouteTableIdsList.isEmpty() || !describeRouteTablesRequestRouteTableIdsList.isAutoConstruct()) {
-            int routeTableIdsListIndex = 1;
-
-            for (String describeRouteTablesRequestRouteTableIdsListValue : describeRouteTablesRequestRouteTableIdsList) {
-                if (describeRouteTablesRequestRouteTableIdsListValue != null) {
-                    request.addParameter("RouteTableId." + routeTableIdsListIndex, StringUtils.fromString(describeRouteTablesRequestRouteTableIdsListValue));
-                }
-                routeTableIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeRouteTablesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeRouteTablesRequest
                 .getFilters();
         if (!describeRouteTablesRequestFiltersList.isEmpty() || !describeRouteTablesRequestFiltersList.isAutoConstruct()) {
@@ -77,6 +64,19 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeRouteTablesRequestRouteTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeRouteTablesRequest
+                .getRouteTableIds();
+        if (!describeRouteTablesRequestRouteTableIdsList.isEmpty() || !describeRouteTablesRequestRouteTableIdsList.isAutoConstruct()) {
+            int routeTableIdsListIndex = 1;
+
+            for (String describeRouteTablesRequestRouteTableIdsListValue : describeRouteTablesRequestRouteTableIdsList) {
+                if (describeRouteTablesRequestRouteTableIdsListValue != null) {
+                    request.addParameter("RouteTableId." + routeTableIdsListIndex, StringUtils.fromString(describeRouteTablesRequestRouteTableIdsListValue));
+                }
+                routeTableIdsListIndex++;
             }
         }
 

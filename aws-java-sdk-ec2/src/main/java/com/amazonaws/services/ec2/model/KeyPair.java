@@ -27,12 +27,6 @@ public class KeyPair implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the key pair.
-     * </p>
-     */
-    private String keyName;
-    /**
-     * <p>
      * The SHA-1 digest of the DER encoded private key.
      * </p>
      */
@@ -43,46 +37,12 @@ public class KeyPair implements Serializable, Cloneable {
      * </p>
      */
     private String keyMaterial;
-
     /**
      * <p>
      * The name of the key pair.
      * </p>
-     * 
-     * @param keyName
-     *        The name of the key pair.
      */
-
-    public void setKeyName(String keyName) {
-        this.keyName = keyName;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @return The name of the key pair.
-     */
-
-    public String getKeyName() {
-        return this.keyName;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @param keyName
-     *        The name of the key pair.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public KeyPair withKeyName(String keyName) {
-        setKeyName(keyName);
-        return this;
-    }
+    private String keyName;
 
     /**
      * <p>
@@ -165,6 +125,46 @@ public class KeyPair implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
+     */
+
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @return The name of the key pair.
+     */
+
+    public String getKeyName() {
+        return this.keyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyPair withKeyName(String keyName) {
+        setKeyName(keyName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -175,12 +175,12 @@ public class KeyPair implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getKeyName() != null)
-            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getKeyFingerprint() != null)
             sb.append("KeyFingerprint: ").append(getKeyFingerprint()).append(",");
         if (getKeyMaterial() != null)
-            sb.append("KeyMaterial: ").append(getKeyMaterial());
+            sb.append("KeyMaterial: ").append(getKeyMaterial()).append(",");
+        if (getKeyName() != null)
+            sb.append("KeyName: ").append(getKeyName());
         sb.append("}");
         return sb.toString();
     }
@@ -195,10 +195,6 @@ public class KeyPair implements Serializable, Cloneable {
         if (obj instanceof KeyPair == false)
             return false;
         KeyPair other = (KeyPair) obj;
-        if (other.getKeyName() == null ^ this.getKeyName() == null)
-            return false;
-        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
-            return false;
         if (other.getKeyFingerprint() == null ^ this.getKeyFingerprint() == null)
             return false;
         if (other.getKeyFingerprint() != null && other.getKeyFingerprint().equals(this.getKeyFingerprint()) == false)
@@ -206,6 +202,10 @@ public class KeyPair implements Serializable, Cloneable {
         if (other.getKeyMaterial() == null ^ this.getKeyMaterial() == null)
             return false;
         if (other.getKeyMaterial() != null && other.getKeyMaterial().equals(this.getKeyMaterial()) == false)
+            return false;
+        if (other.getKeyName() == null ^ this.getKeyName() == null)
+            return false;
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
         return true;
     }
@@ -215,9 +215,9 @@ public class KeyPair implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         hashCode = prime * hashCode + ((getKeyFingerprint() == null) ? 0 : getKeyFingerprint().hashCode());
         hashCode = prime * hashCode + ((getKeyMaterial() == null) ? 0 : getKeyMaterial().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         return hashCode;
     }
 

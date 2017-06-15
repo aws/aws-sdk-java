@@ -28,16 +28,28 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A description of the resource being exported.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The ID of the export task.
      * </p>
      */
     private String exportTaskId;
     /**
      * <p>
-     * A description of the resource being exported.
+     * Information about the export task.
      * </p>
      */
-    private String description;
+    private ExportToS3Task exportToS3Task;
+    /**
+     * <p>
+     * Information about the instance to export.
+     * </p>
+     */
+    private InstanceExportDetails instanceExportDetails;
     /**
      * <p>
      * The state of the export task.
@@ -50,18 +62,46 @@ public class ExportTask implements Serializable, Cloneable {
      * </p>
      */
     private String statusMessage;
+
     /**
      * <p>
-     * Information about the instance to export.
+     * A description of the resource being exported.
      * </p>
+     * 
+     * @param description
+     *        A description of the resource being exported.
      */
-    private InstanceExportDetails instanceExportDetails;
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     /**
      * <p>
-     * Information about the export task.
+     * A description of the resource being exported.
      * </p>
+     * 
+     * @return A description of the resource being exported.
      */
-    private ExportToS3Task exportToS3Task;
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the resource being exported.
+     * </p>
+     * 
+     * @param description
+     *        A description of the resource being exported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportTask withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
 
     /**
      * <p>
@@ -105,41 +145,81 @@ public class ExportTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A description of the resource being exported.
+     * Information about the export task.
      * </p>
      * 
-     * @param description
-     *        A description of the resource being exported.
+     * @param exportToS3Task
+     *        Information about the export task.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setExportToS3Task(ExportToS3Task exportToS3Task) {
+        this.exportToS3Task = exportToS3Task;
     }
 
     /**
      * <p>
-     * A description of the resource being exported.
+     * Information about the export task.
      * </p>
      * 
-     * @return A description of the resource being exported.
+     * @return Information about the export task.
      */
 
-    public String getDescription() {
-        return this.description;
+    public ExportToS3Task getExportToS3Task() {
+        return this.exportToS3Task;
     }
 
     /**
      * <p>
-     * A description of the resource being exported.
+     * Information about the export task.
      * </p>
      * 
-     * @param description
-     *        A description of the resource being exported.
+     * @param exportToS3Task
+     *        Information about the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ExportTask withDescription(String description) {
-        setDescription(description);
+    public ExportTask withExportToS3Task(ExportToS3Task exportToS3Task) {
+        setExportToS3Task(exportToS3Task);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the instance to export.
+     * </p>
+     * 
+     * @param instanceExportDetails
+     *        Information about the instance to export.
+     */
+
+    public void setInstanceExportDetails(InstanceExportDetails instanceExportDetails) {
+        this.instanceExportDetails = instanceExportDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the instance to export.
+     * </p>
+     * 
+     * @return Information about the instance to export.
+     */
+
+    public InstanceExportDetails getInstanceExportDetails() {
+        return this.instanceExportDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the instance to export.
+     * </p>
+     * 
+     * @param instanceExportDetails
+     *        Information about the instance to export.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportTask withInstanceExportDetails(InstanceExportDetails instanceExportDetails) {
+        setInstanceExportDetails(instanceExportDetails);
         return this;
     }
 
@@ -257,86 +337,6 @@ public class ExportTask implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Information about the instance to export.
-     * </p>
-     * 
-     * @param instanceExportDetails
-     *        Information about the instance to export.
-     */
-
-    public void setInstanceExportDetails(InstanceExportDetails instanceExportDetails) {
-        this.instanceExportDetails = instanceExportDetails;
-    }
-
-    /**
-     * <p>
-     * Information about the instance to export.
-     * </p>
-     * 
-     * @return Information about the instance to export.
-     */
-
-    public InstanceExportDetails getInstanceExportDetails() {
-        return this.instanceExportDetails;
-    }
-
-    /**
-     * <p>
-     * Information about the instance to export.
-     * </p>
-     * 
-     * @param instanceExportDetails
-     *        Information about the instance to export.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ExportTask withInstanceExportDetails(InstanceExportDetails instanceExportDetails) {
-        setInstanceExportDetails(instanceExportDetails);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Information about the export task.
-     * </p>
-     * 
-     * @param exportToS3Task
-     *        Information about the export task.
-     */
-
-    public void setExportToS3Task(ExportToS3Task exportToS3Task) {
-        this.exportToS3Task = exportToS3Task;
-    }
-
-    /**
-     * <p>
-     * Information about the export task.
-     * </p>
-     * 
-     * @return Information about the export task.
-     */
-
-    public ExportToS3Task getExportToS3Task() {
-        return this.exportToS3Task;
-    }
-
-    /**
-     * <p>
-     * Information about the export task.
-     * </p>
-     * 
-     * @param exportToS3Task
-     *        Information about the export task.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ExportTask withExportToS3Task(ExportToS3Task exportToS3Task) {
-        setExportToS3Task(exportToS3Task);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -347,18 +347,18 @@ public class ExportTask implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getExportTaskId() != null)
-            sb.append("ExportTaskId: ").append(getExportTaskId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getExportTaskId() != null)
+            sb.append("ExportTaskId: ").append(getExportTaskId()).append(",");
+        if (getExportToS3Task() != null)
+            sb.append("ExportToS3Task: ").append(getExportToS3Task()).append(",");
+        if (getInstanceExportDetails() != null)
+            sb.append("InstanceExportDetails: ").append(getInstanceExportDetails()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
-        if (getInstanceExportDetails() != null)
-            sb.append("InstanceExportDetails: ").append(getInstanceExportDetails()).append(",");
-        if (getExportToS3Task() != null)
-            sb.append("ExportToS3Task: ").append(getExportToS3Task());
+            sb.append("StatusMessage: ").append(getStatusMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -373,13 +373,21 @@ public class ExportTask implements Serializable, Cloneable {
         if (obj instanceof ExportTask == false)
             return false;
         ExportTask other = (ExportTask) obj;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getExportTaskId() == null ^ this.getExportTaskId() == null)
             return false;
         if (other.getExportTaskId() != null && other.getExportTaskId().equals(this.getExportTaskId()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getExportToS3Task() == null ^ this.getExportToS3Task() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getExportToS3Task() != null && other.getExportToS3Task().equals(this.getExportToS3Task()) == false)
+            return false;
+        if (other.getInstanceExportDetails() == null ^ this.getInstanceExportDetails() == null)
+            return false;
+        if (other.getInstanceExportDetails() != null && other.getInstanceExportDetails().equals(this.getInstanceExportDetails()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
@@ -389,14 +397,6 @@ public class ExportTask implements Serializable, Cloneable {
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
-        if (other.getInstanceExportDetails() == null ^ this.getInstanceExportDetails() == null)
-            return false;
-        if (other.getInstanceExportDetails() != null && other.getInstanceExportDetails().equals(this.getInstanceExportDetails()) == false)
-            return false;
-        if (other.getExportToS3Task() == null ^ this.getExportToS3Task() == null)
-            return false;
-        if (other.getExportToS3Task() != null && other.getExportToS3Task().equals(this.getExportToS3Task()) == false)
-            return false;
         return true;
     }
 
@@ -405,12 +405,12 @@ public class ExportTask implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getExportTaskId() == null) ? 0 : getExportTaskId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getExportTaskId() == null) ? 0 : getExportTaskId().hashCode());
+        hashCode = prime * hashCode + ((getExportToS3Task() == null) ? 0 : getExportToS3Task().hashCode());
+        hashCode = prime * hashCode + ((getInstanceExportDetails() == null) ? 0 : getInstanceExportDetails().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
-        hashCode = prime * hashCode + ((getInstanceExportDetails() == null) ? 0 : getInstanceExportDetails().hashCode());
-        hashCode = prime * hashCode + ((getExportToS3Task() == null) ? 0 : getExportToS3Task().hashCode());
         return hashCode;
     }
 

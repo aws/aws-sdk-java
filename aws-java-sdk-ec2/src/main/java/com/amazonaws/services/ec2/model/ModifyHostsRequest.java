@@ -29,89 +29,16 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> hostIds;
-    /**
-     * <p>
      * Specify whether to enable or disable auto-placement.
      * </p>
      */
     private String autoPlacement;
-
     /**
      * <p>
      * The host IDs of the Dedicated Hosts you want to modify.
      * </p>
-     * 
-     * @return The host IDs of the Dedicated Hosts you want to modify.
      */
-
-    public java.util.List<String> getHostIds() {
-        if (hostIds == null) {
-            hostIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return hostIds;
-    }
-
-    /**
-     * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
-     * </p>
-     * 
-     * @param hostIds
-     *        The host IDs of the Dedicated Hosts you want to modify.
-     */
-
-    public void setHostIds(java.util.Collection<String> hostIds) {
-        if (hostIds == null) {
-            this.hostIds = null;
-            return;
-        }
-
-        this.hostIds = new com.amazonaws.internal.SdkInternalList<String>(hostIds);
-    }
-
-    /**
-     * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setHostIds(java.util.Collection)} or {@link #withHostIds(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param hostIds
-     *        The host IDs of the Dedicated Hosts you want to modify.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyHostsRequest withHostIds(String... hostIds) {
-        if (this.hostIds == null) {
-            setHostIds(new com.amazonaws.internal.SdkInternalList<String>(hostIds.length));
-        }
-        for (String ele : hostIds) {
-            this.hostIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The host IDs of the Dedicated Hosts you want to modify.
-     * </p>
-     * 
-     * @param hostIds
-     *        The host IDs of the Dedicated Hosts you want to modify.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyHostsRequest withHostIds(java.util.Collection<String> hostIds) {
-        setHostIds(hostIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> hostIds;
 
     /**
      * <p>
@@ -187,6 +114,79 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * <p>
+     * The host IDs of the Dedicated Hosts you want to modify.
+     * </p>
+     * 
+     * @return The host IDs of the Dedicated Hosts you want to modify.
+     */
+
+    public java.util.List<String> getHostIds() {
+        if (hostIds == null) {
+            hostIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return hostIds;
+    }
+
+    /**
+     * <p>
+     * The host IDs of the Dedicated Hosts you want to modify.
+     * </p>
+     * 
+     * @param hostIds
+     *        The host IDs of the Dedicated Hosts you want to modify.
+     */
+
+    public void setHostIds(java.util.Collection<String> hostIds) {
+        if (hostIds == null) {
+            this.hostIds = null;
+            return;
+        }
+
+        this.hostIds = new com.amazonaws.internal.SdkInternalList<String>(hostIds);
+    }
+
+    /**
+     * <p>
+     * The host IDs of the Dedicated Hosts you want to modify.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHostIds(java.util.Collection)} or {@link #withHostIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param hostIds
+     *        The host IDs of the Dedicated Hosts you want to modify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyHostsRequest withHostIds(String... hostIds) {
+        if (this.hostIds == null) {
+            setHostIds(new com.amazonaws.internal.SdkInternalList<String>(hostIds.length));
+        }
+        for (String ele : hostIds) {
+            this.hostIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The host IDs of the Dedicated Hosts you want to modify.
+     * </p>
+     * 
+     * @param hostIds
+     *        The host IDs of the Dedicated Hosts you want to modify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyHostsRequest withHostIds(java.util.Collection<String> hostIds) {
+        setHostIds(hostIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -208,10 +208,10 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getHostIds() != null)
-            sb.append("HostIds: ").append(getHostIds()).append(",");
         if (getAutoPlacement() != null)
-            sb.append("AutoPlacement: ").append(getAutoPlacement());
+            sb.append("AutoPlacement: ").append(getAutoPlacement()).append(",");
+        if (getHostIds() != null)
+            sb.append("HostIds: ").append(getHostIds());
         sb.append("}");
         return sb.toString();
     }
@@ -226,13 +226,13 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         if (obj instanceof ModifyHostsRequest == false)
             return false;
         ModifyHostsRequest other = (ModifyHostsRequest) obj;
-        if (other.getHostIds() == null ^ this.getHostIds() == null)
-            return false;
-        if (other.getHostIds() != null && other.getHostIds().equals(this.getHostIds()) == false)
-            return false;
         if (other.getAutoPlacement() == null ^ this.getAutoPlacement() == null)
             return false;
         if (other.getAutoPlacement() != null && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
+            return false;
+        if (other.getHostIds() == null ^ this.getHostIds() == null)
+            return false;
+        if (other.getHostIds() != null && other.getHostIds().equals(this.getHostIds()) == false)
             return false;
         return true;
     }
@@ -242,8 +242,8 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getHostIds() == null) ? 0 : getHostIds().hashCode());
         hashCode = prime * hashCode + ((getAutoPlacement() == null) ? 0 : getAutoPlacement().hashCode());
+        hashCode = prime * hashCode + ((getHostIds() == null) ? 0 : getHostIds().hashCode());
         return hashCode;
     }
 

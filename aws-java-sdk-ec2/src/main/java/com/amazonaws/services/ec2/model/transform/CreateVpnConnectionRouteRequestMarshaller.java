@@ -40,12 +40,12 @@ public class CreateVpnConnectionRouteRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createVpnConnectionRouteRequest.getVpnConnectionId() != null) {
-            request.addParameter("VpnConnectionId", StringUtils.fromString(createVpnConnectionRouteRequest.getVpnConnectionId()));
-        }
-
         if (createVpnConnectionRouteRequest.getDestinationCidrBlock() != null) {
             request.addParameter("DestinationCidrBlock", StringUtils.fromString(createVpnConnectionRouteRequest.getDestinationCidrBlock()));
+        }
+
+        if (createVpnConnectionRouteRequest.getVpnConnectionId() != null) {
+            request.addParameter("VpnConnectionId", StringUtils.fromString(createVpnConnectionRouteRequest.getVpnConnectionId()));
         }
 
         return request;

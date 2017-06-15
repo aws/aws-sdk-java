@@ -40,20 +40,6 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeReservedInstancesRequestReservedInstancesIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesRequest
-                .getReservedInstancesIds();
-        if (!describeReservedInstancesRequestReservedInstancesIdsList.isEmpty() || !describeReservedInstancesRequestReservedInstancesIdsList.isAutoConstruct()) {
-            int reservedInstancesIdsListIndex = 1;
-
-            for (String describeReservedInstancesRequestReservedInstancesIdsListValue : describeReservedInstancesRequestReservedInstancesIdsList) {
-                if (describeReservedInstancesRequestReservedInstancesIdsListValue != null) {
-                    request.addParameter("ReservedInstancesId." + reservedInstancesIdsListIndex,
-                            StringUtils.fromString(describeReservedInstancesRequestReservedInstancesIdsListValue));
-                }
-                reservedInstancesIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeReservedInstancesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedInstancesRequest
                 .getFilters();
         if (!describeReservedInstancesRequestFiltersList.isEmpty() || !describeReservedInstancesRequestFiltersList.isAutoConstruct()) {
@@ -82,12 +68,26 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
             }
         }
 
-        if (describeReservedInstancesRequest.getOfferingType() != null) {
-            request.addParameter("OfferingType", StringUtils.fromString(describeReservedInstancesRequest.getOfferingType()));
-        }
-
         if (describeReservedInstancesRequest.getOfferingClass() != null) {
             request.addParameter("OfferingClass", StringUtils.fromString(describeReservedInstancesRequest.getOfferingClass()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeReservedInstancesRequestReservedInstancesIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesRequest
+                .getReservedInstancesIds();
+        if (!describeReservedInstancesRequestReservedInstancesIdsList.isEmpty() || !describeReservedInstancesRequestReservedInstancesIdsList.isAutoConstruct()) {
+            int reservedInstancesIdsListIndex = 1;
+
+            for (String describeReservedInstancesRequestReservedInstancesIdsListValue : describeReservedInstancesRequestReservedInstancesIdsList) {
+                if (describeReservedInstancesRequestReservedInstancesIdsListValue != null) {
+                    request.addParameter("ReservedInstancesId." + reservedInstancesIdsListIndex,
+                            StringUtils.fromString(describeReservedInstancesRequestReservedInstancesIdsListValue));
+                }
+                reservedInstancesIdsListIndex++;
+            }
+        }
+
+        if (describeReservedInstancesRequest.getOfferingType() != null) {
+            request.addParameter("OfferingType", StringUtils.fromString(describeReservedInstancesRequest.getOfferingType()));
         }
 
         return request;

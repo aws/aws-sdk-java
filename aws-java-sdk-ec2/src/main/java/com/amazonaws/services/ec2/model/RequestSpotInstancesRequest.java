@@ -30,69 +30,6 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
-     * </p>
-     */
-    private String spotPrice;
-    /**
-     * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
-     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
-     * The maximum number of Spot instances to launch.
-     * </p>
-     * <p>
-     * Default: 1
-     * </p>
-     */
-    private Integer instanceCount;
-    /**
-     * <p>
-     * The Spot instance request type.
-     * </p>
-     * <p>
-     * Default: <code>one-time</code>
-     * </p>
-     */
-    private String type;
-    /**
-     * <p>
-     * The start date of the request. If this is a one-time request, the request becomes active at this date and time
-     * and remains active until all instances launch, the request expires, or the request is canceled. If the request is
-     * persistent, the request becomes active at this date and time and remains active until it expires or is canceled.
-     * </p>
-     * <p>
-     * Default: The request is effective indefinitely.
-     * </p>
-     */
-    private java.util.Date validFrom;
-    /**
-     * <p>
-     * The end date of the request. If this is a one-time request, the request remains active until all instances
-     * launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until
-     * it is canceled or this date and time is reached.
-     * </p>
-     * <p>
-     * Default: The request is effective indefinitely.
-     * </p>
-     */
-    private java.util.Date validUntil;
-    /**
-     * <p>
-     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     * </p>
-     * <p>
-     * Default: Instances are launched and terminated individually
-     * </p>
-     */
-    private String launchGroup;
-    /**
-     * <p>
      * The user-specified name for a logical grouping of bids.
      * </p>
      * <p>
@@ -129,8 +66,75 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * </p>
      */
     private Integer blockDurationMinutes;
-
+    /**
+     * <p>
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
+     * The maximum number of Spot instances to launch.
+     * </p>
+     * <p>
+     * Default: 1
+     * </p>
+     */
+    private Integer instanceCount;
+    /**
+     * <p>
+     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     * </p>
+     * <p>
+     * Default: Instances are launched and terminated individually
+     * </p>
+     */
+    private String launchGroup;
+    /**
+     * <p>
+     * The launch specification.
+     * </p>
+     */
     private LaunchSpecification launchSpecification;
+    /**
+     * <p>
+     * The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * </p>
+     */
+    private String spotPrice;
+    /**
+     * <p>
+     * The Spot instance request type.
+     * </p>
+     * <p>
+     * Default: <code>one-time</code>
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * The start date of the request. If this is a one-time request, the request becomes active at this date and time
+     * and remains active until all instances launch, the request expires, or the request is canceled. If the request is
+     * persistent, the request becomes active at this date and time and remains active until it expires or is canceled.
+     * </p>
+     * <p>
+     * Default: The request is effective indefinitely.
+     * </p>
+     */
+    private java.util.Date validFrom;
+    /**
+     * <p>
+     * The end date of the request. If this is a one-time request, the request remains active until all instances
+     * launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until
+     * it is canceled or this date and time is reached.
+     * </p>
+     * <p>
+     * Default: The request is effective indefinitely.
+     * </p>
+     */
+    private java.util.Date validUntil;
 
     /**
      * Default constructor for RequestSpotInstancesRequest object. Callers should use the setter or fluent setter
@@ -152,41 +156,234 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * The user-specified name for a logical grouping of bids.
+     * </p>
+     * <p>
+     * When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request are
+     * launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of
+     * Availability Zone is not. The group applies only to bids for Spot Instances of the same instance type. Any
+     * additional Spot instance requests that are specified with the same Availability Zone group name are launched in
+     * that same Availability Zone, as long as at least one instance from the group is still active.
+     * </p>
+     * <p>
+     * If there is no active instance running in the Availability Zone group that you specify for a new Spot instance
+     * request (all instances are terminated, the bid is expired, or the bid falls below current market), then Amazon
+     * EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent
+     * set of Spot instances could be placed in a different zone from the original request, even if you specified the
+     * same Availability Zone group.
+     * </p>
+     * <p>
+     * Default: Instances are launched in any available Availability Zone.
      * </p>
      * 
-     * @param spotPrice
-     *        The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * @param availabilityZoneGroup
+     *        The user-specified name for a logical grouping of bids.</p>
+     *        <p>
+     *        When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request
+     *        are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the
+     *        choice of Availability Zone is not. The group applies only to bids for Spot Instances of the same instance
+     *        type. Any additional Spot instance requests that are specified with the same Availability Zone group name
+     *        are launched in that same Availability Zone, as long as at least one instance from the group is still
+     *        active.
+     *        </p>
+     *        <p>
+     *        If there is no active instance running in the Availability Zone group that you specify for a new Spot
+     *        instance request (all instances are terminated, the bid is expired, or the bid falls below current
+     *        market), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met.
+     *        Consequently, the subsequent set of Spot instances could be placed in a different zone from the original
+     *        request, even if you specified the same Availability Zone group.
+     *        </p>
+     *        <p>
+     *        Default: Instances are launched in any available Availability Zone.
      */
 
-    public void setSpotPrice(String spotPrice) {
-        this.spotPrice = spotPrice;
+    public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
+        this.availabilityZoneGroup = availabilityZoneGroup;
     }
 
     /**
      * <p>
-     * The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * The user-specified name for a logical grouping of bids.
+     * </p>
+     * <p>
+     * When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request are
+     * launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of
+     * Availability Zone is not. The group applies only to bids for Spot Instances of the same instance type. Any
+     * additional Spot instance requests that are specified with the same Availability Zone group name are launched in
+     * that same Availability Zone, as long as at least one instance from the group is still active.
+     * </p>
+     * <p>
+     * If there is no active instance running in the Availability Zone group that you specify for a new Spot instance
+     * request (all instances are terminated, the bid is expired, or the bid falls below current market), then Amazon
+     * EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent
+     * set of Spot instances could be placed in a different zone from the original request, even if you specified the
+     * same Availability Zone group.
+     * </p>
+     * <p>
+     * Default: Instances are launched in any available Availability Zone.
      * </p>
      * 
-     * @return The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * @return The user-specified name for a logical grouping of bids.</p>
+     *         <p>
+     *         When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request
+     *         are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the
+     *         choice of Availability Zone is not. The group applies only to bids for Spot Instances of the same
+     *         instance type. Any additional Spot instance requests that are specified with the same Availability Zone
+     *         group name are launched in that same Availability Zone, as long as at least one instance from the group
+     *         is still active.
+     *         </p>
+     *         <p>
+     *         If there is no active instance running in the Availability Zone group that you specify for a new Spot
+     *         instance request (all instances are terminated, the bid is expired, or the bid falls below current
+     *         market), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met.
+     *         Consequently, the subsequent set of Spot instances could be placed in a different zone from the original
+     *         request, even if you specified the same Availability Zone group.
+     *         </p>
+     *         <p>
+     *         Default: Instances are launched in any available Availability Zone.
      */
 
-    public String getSpotPrice() {
-        return this.spotPrice;
+    public String getAvailabilityZoneGroup() {
+        return this.availabilityZoneGroup;
     }
 
     /**
      * <p>
-     * The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * The user-specified name for a logical grouping of bids.
+     * </p>
+     * <p>
+     * When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request are
+     * launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of
+     * Availability Zone is not. The group applies only to bids for Spot Instances of the same instance type. Any
+     * additional Spot instance requests that are specified with the same Availability Zone group name are launched in
+     * that same Availability Zone, as long as at least one instance from the group is still active.
+     * </p>
+     * <p>
+     * If there is no active instance running in the Availability Zone group that you specify for a new Spot instance
+     * request (all instances are terminated, the bid is expired, or the bid falls below current market), then Amazon
+     * EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent
+     * set of Spot instances could be placed in a different zone from the original request, even if you specified the
+     * same Availability Zone group.
+     * </p>
+     * <p>
+     * Default: Instances are launched in any available Availability Zone.
      * </p>
      * 
-     * @param spotPrice
-     *        The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * @param availabilityZoneGroup
+     *        The user-specified name for a logical grouping of bids.</p>
+     *        <p>
+     *        When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request
+     *        are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the
+     *        choice of Availability Zone is not. The group applies only to bids for Spot Instances of the same instance
+     *        type. Any additional Spot instance requests that are specified with the same Availability Zone group name
+     *        are launched in that same Availability Zone, as long as at least one instance from the group is still
+     *        active.
+     *        </p>
+     *        <p>
+     *        If there is no active instance running in the Availability Zone group that you specify for a new Spot
+     *        instance request (all instances are terminated, the bid is expired, or the bid falls below current
+     *        market), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met.
+     *        Consequently, the subsequent set of Spot instances could be placed in a different zone from the original
+     *        request, even if you specified the same Availability Zone group.
+     *        </p>
+     *        <p>
+     *        Default: Instances are launched in any available Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public RequestSpotInstancesRequest withSpotPrice(String spotPrice) {
-        setSpotPrice(spotPrice);
+    public RequestSpotInstancesRequest withAvailabilityZoneGroup(String availabilityZoneGroup) {
+        setAvailabilityZoneGroup(availabilityZoneGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
+     * multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * </p>
+     * <p>
+     * The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration
+     * period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.
+     * </p>
+     * <p>
+     * Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
+     * </p>
+     * 
+     * @param blockDurationMinutes
+     *        The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
+     *        multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
+     *        <p>
+     *        The duration period starts as soon as your Spot instance receives its instance ID. At the end of the
+     *        duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance
+     *        termination notice, which gives the instance a two-minute warning before it terminates.
+     *        </p>
+     *        <p>
+     *        Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
+     */
+
+    public void setBlockDurationMinutes(Integer blockDurationMinutes) {
+        this.blockDurationMinutes = blockDurationMinutes;
+    }
+
+    /**
+     * <p>
+     * The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
+     * multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * </p>
+     * <p>
+     * The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration
+     * period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.
+     * </p>
+     * <p>
+     * Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
+     * </p>
+     * 
+     * @return The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be
+     *         a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
+     *         <p>
+     *         The duration period starts as soon as your Spot instance receives its instance ID. At the end of the
+     *         duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance
+     *         termination notice, which gives the instance a two-minute warning before it terminates.
+     *         </p>
+     *         <p>
+     *         Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
+     */
+
+    public Integer getBlockDurationMinutes() {
+        return this.blockDurationMinutes;
+    }
+
+    /**
+     * <p>
+     * The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
+     * multiple of 60 (60, 120, 180, 240, 300, or 360).
+     * </p>
+     * <p>
+     * The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration
+     * period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which
+     * gives the instance a two-minute warning before it terminates.
+     * </p>
+     * <p>
+     * Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
+     * </p>
+     * 
+     * @param blockDurationMinutes
+     *        The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
+     *        multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
+     *        <p>
+     *        The duration period starts as soon as your Spot instance receives its instance ID. At the end of the
+     *        duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance
+     *        termination notice, which gives the instance a two-minute warning before it terminates.
+     *        </p>
+     *        <p>
+     *        Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestSpotInstancesRequest withBlockDurationMinutes(Integer blockDurationMinutes) {
+        setBlockDurationMinutes(blockDurationMinutes);
         return this;
     }
 
@@ -297,6 +494,144 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
 
     public RequestSpotInstancesRequest withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     * </p>
+     * <p>
+     * Default: Instances are launched and terminated individually
+     * </p>
+     * 
+     * @param launchGroup
+     *        The instance launch group. Launch groups are Spot instances that launch together and terminate
+     *        together.</p>
+     *        <p>
+     *        Default: Instances are launched and terminated individually
+     */
+
+    public void setLaunchGroup(String launchGroup) {
+        this.launchGroup = launchGroup;
+    }
+
+    /**
+     * <p>
+     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     * </p>
+     * <p>
+     * Default: Instances are launched and terminated individually
+     * </p>
+     * 
+     * @return The instance launch group. Launch groups are Spot instances that launch together and terminate
+     *         together.</p>
+     *         <p>
+     *         Default: Instances are launched and terminated individually
+     */
+
+    public String getLaunchGroup() {
+        return this.launchGroup;
+    }
+
+    /**
+     * <p>
+     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     * </p>
+     * <p>
+     * Default: Instances are launched and terminated individually
+     * </p>
+     * 
+     * @param launchGroup
+     *        The instance launch group. Launch groups are Spot instances that launch together and terminate
+     *        together.</p>
+     *        <p>
+     *        Default: Instances are launched and terminated individually
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestSpotInstancesRequest withLaunchGroup(String launchGroup) {
+        setLaunchGroup(launchGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch specification.
+     * </p>
+     * 
+     * @param launchSpecification
+     *        The launch specification.
+     */
+
+    public void setLaunchSpecification(LaunchSpecification launchSpecification) {
+        this.launchSpecification = launchSpecification;
+    }
+
+    /**
+     * <p>
+     * The launch specification.
+     * </p>
+     * 
+     * @return The launch specification.
+     */
+
+    public LaunchSpecification getLaunchSpecification() {
+        return this.launchSpecification;
+    }
+
+    /**
+     * <p>
+     * The launch specification.
+     * </p>
+     * 
+     * @param launchSpecification
+     *        The launch specification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestSpotInstancesRequest withLaunchSpecification(LaunchSpecification launchSpecification) {
+        setLaunchSpecification(launchSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * </p>
+     * 
+     * @param spotPrice
+     *        The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     */
+
+    public void setSpotPrice(String spotPrice) {
+        this.spotPrice = spotPrice;
+    }
+
+    /**
+     * <p>
+     * The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * </p>
+     * 
+     * @return The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     */
+
+    public String getSpotPrice() {
+        return this.spotPrice;
+    }
+
+    /**
+     * <p>
+     * The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * </p>
+     * 
+     * @param spotPrice
+     *        The maximum hourly price (bid) for any Spot instance launched to fulfill the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestSpotInstancesRequest withSpotPrice(String spotPrice) {
+        setSpotPrice(spotPrice);
         return this;
     }
 
@@ -536,323 +871,6 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * <p>
-     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     * </p>
-     * <p>
-     * Default: Instances are launched and terminated individually
-     * </p>
-     * 
-     * @param launchGroup
-     *        The instance launch group. Launch groups are Spot instances that launch together and terminate
-     *        together.</p>
-     *        <p>
-     *        Default: Instances are launched and terminated individually
-     */
-
-    public void setLaunchGroup(String launchGroup) {
-        this.launchGroup = launchGroup;
-    }
-
-    /**
-     * <p>
-     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     * </p>
-     * <p>
-     * Default: Instances are launched and terminated individually
-     * </p>
-     * 
-     * @return The instance launch group. Launch groups are Spot instances that launch together and terminate
-     *         together.</p>
-     *         <p>
-     *         Default: Instances are launched and terminated individually
-     */
-
-    public String getLaunchGroup() {
-        return this.launchGroup;
-    }
-
-    /**
-     * <p>
-     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     * </p>
-     * <p>
-     * Default: Instances are launched and terminated individually
-     * </p>
-     * 
-     * @param launchGroup
-     *        The instance launch group. Launch groups are Spot instances that launch together and terminate
-     *        together.</p>
-     *        <p>
-     *        Default: Instances are launched and terminated individually
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RequestSpotInstancesRequest withLaunchGroup(String launchGroup) {
-        setLaunchGroup(launchGroup);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The user-specified name for a logical grouping of bids.
-     * </p>
-     * <p>
-     * When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request are
-     * launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of
-     * Availability Zone is not. The group applies only to bids for Spot Instances of the same instance type. Any
-     * additional Spot instance requests that are specified with the same Availability Zone group name are launched in
-     * that same Availability Zone, as long as at least one instance from the group is still active.
-     * </p>
-     * <p>
-     * If there is no active instance running in the Availability Zone group that you specify for a new Spot instance
-     * request (all instances are terminated, the bid is expired, or the bid falls below current market), then Amazon
-     * EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent
-     * set of Spot instances could be placed in a different zone from the original request, even if you specified the
-     * same Availability Zone group.
-     * </p>
-     * <p>
-     * Default: Instances are launched in any available Availability Zone.
-     * </p>
-     * 
-     * @param availabilityZoneGroup
-     *        The user-specified name for a logical grouping of bids.</p>
-     *        <p>
-     *        When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request
-     *        are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the
-     *        choice of Availability Zone is not. The group applies only to bids for Spot Instances of the same instance
-     *        type. Any additional Spot instance requests that are specified with the same Availability Zone group name
-     *        are launched in that same Availability Zone, as long as at least one instance from the group is still
-     *        active.
-     *        </p>
-     *        <p>
-     *        If there is no active instance running in the Availability Zone group that you specify for a new Spot
-     *        instance request (all instances are terminated, the bid is expired, or the bid falls below current
-     *        market), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met.
-     *        Consequently, the subsequent set of Spot instances could be placed in a different zone from the original
-     *        request, even if you specified the same Availability Zone group.
-     *        </p>
-     *        <p>
-     *        Default: Instances are launched in any available Availability Zone.
-     */
-
-    public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
-        this.availabilityZoneGroup = availabilityZoneGroup;
-    }
-
-    /**
-     * <p>
-     * The user-specified name for a logical grouping of bids.
-     * </p>
-     * <p>
-     * When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request are
-     * launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of
-     * Availability Zone is not. The group applies only to bids for Spot Instances of the same instance type. Any
-     * additional Spot instance requests that are specified with the same Availability Zone group name are launched in
-     * that same Availability Zone, as long as at least one instance from the group is still active.
-     * </p>
-     * <p>
-     * If there is no active instance running in the Availability Zone group that you specify for a new Spot instance
-     * request (all instances are terminated, the bid is expired, or the bid falls below current market), then Amazon
-     * EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent
-     * set of Spot instances could be placed in a different zone from the original request, even if you specified the
-     * same Availability Zone group.
-     * </p>
-     * <p>
-     * Default: Instances are launched in any available Availability Zone.
-     * </p>
-     * 
-     * @return The user-specified name for a logical grouping of bids.</p>
-     *         <p>
-     *         When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request
-     *         are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the
-     *         choice of Availability Zone is not. The group applies only to bids for Spot Instances of the same
-     *         instance type. Any additional Spot instance requests that are specified with the same Availability Zone
-     *         group name are launched in that same Availability Zone, as long as at least one instance from the group
-     *         is still active.
-     *         </p>
-     *         <p>
-     *         If there is no active instance running in the Availability Zone group that you specify for a new Spot
-     *         instance request (all instances are terminated, the bid is expired, or the bid falls below current
-     *         market), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met.
-     *         Consequently, the subsequent set of Spot instances could be placed in a different zone from the original
-     *         request, even if you specified the same Availability Zone group.
-     *         </p>
-     *         <p>
-     *         Default: Instances are launched in any available Availability Zone.
-     */
-
-    public String getAvailabilityZoneGroup() {
-        return this.availabilityZoneGroup;
-    }
-
-    /**
-     * <p>
-     * The user-specified name for a logical grouping of bids.
-     * </p>
-     * <p>
-     * When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request are
-     * launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the choice of
-     * Availability Zone is not. The group applies only to bids for Spot Instances of the same instance type. Any
-     * additional Spot instance requests that are specified with the same Availability Zone group name are launched in
-     * that same Availability Zone, as long as at least one instance from the group is still active.
-     * </p>
-     * <p>
-     * If there is no active instance running in the Availability Zone group that you specify for a new Spot instance
-     * request (all instances are terminated, the bid is expired, or the bid falls below current market), then Amazon
-     * EC2 launches the instance in any Availability Zone where the constraint can be met. Consequently, the subsequent
-     * set of Spot instances could be placed in a different zone from the original request, even if you specified the
-     * same Availability Zone group.
-     * </p>
-     * <p>
-     * Default: Instances are launched in any available Availability Zone.
-     * </p>
-     * 
-     * @param availabilityZoneGroup
-     *        The user-specified name for a logical grouping of bids.</p>
-     *        <p>
-     *        When you specify an Availability Zone group in a Spot Instance request, all Spot instances in the request
-     *        are launched in the same Availability Zone. Instance proximity is maintained with this parameter, but the
-     *        choice of Availability Zone is not. The group applies only to bids for Spot Instances of the same instance
-     *        type. Any additional Spot instance requests that are specified with the same Availability Zone group name
-     *        are launched in that same Availability Zone, as long as at least one instance from the group is still
-     *        active.
-     *        </p>
-     *        <p>
-     *        If there is no active instance running in the Availability Zone group that you specify for a new Spot
-     *        instance request (all instances are terminated, the bid is expired, or the bid falls below current
-     *        market), then Amazon EC2 launches the instance in any Availability Zone where the constraint can be met.
-     *        Consequently, the subsequent set of Spot instances could be placed in a different zone from the original
-     *        request, even if you specified the same Availability Zone group.
-     *        </p>
-     *        <p>
-     *        Default: Instances are launched in any available Availability Zone.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RequestSpotInstancesRequest withAvailabilityZoneGroup(String availabilityZoneGroup) {
-        setAvailabilityZoneGroup(availabilityZoneGroup);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
-     * multiple of 60 (60, 120, 180, 240, 300, or 360).
-     * </p>
-     * <p>
-     * The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration
-     * period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.
-     * </p>
-     * <p>
-     * Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
-     * </p>
-     * 
-     * @param blockDurationMinutes
-     *        The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
-     *        multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
-     *        <p>
-     *        The duration period starts as soon as your Spot instance receives its instance ID. At the end of the
-     *        duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance
-     *        termination notice, which gives the instance a two-minute warning before it terminates.
-     *        </p>
-     *        <p>
-     *        Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
-     */
-
-    public void setBlockDurationMinutes(Integer blockDurationMinutes) {
-        this.blockDurationMinutes = blockDurationMinutes;
-    }
-
-    /**
-     * <p>
-     * The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
-     * multiple of 60 (60, 120, 180, 240, 300, or 360).
-     * </p>
-     * <p>
-     * The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration
-     * period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.
-     * </p>
-     * <p>
-     * Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
-     * </p>
-     * 
-     * @return The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be
-     *         a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
-     *         <p>
-     *         The duration period starts as soon as your Spot instance receives its instance ID. At the end of the
-     *         duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance
-     *         termination notice, which gives the instance a two-minute warning before it terminates.
-     *         </p>
-     *         <p>
-     *         Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
-     */
-
-    public Integer getBlockDurationMinutes() {
-        return this.blockDurationMinutes;
-    }
-
-    /**
-     * <p>
-     * The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
-     * multiple of 60 (60, 120, 180, 240, 300, or 360).
-     * </p>
-     * <p>
-     * The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration
-     * period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which
-     * gives the instance a two-minute warning before it terminates.
-     * </p>
-     * <p>
-     * Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
-     * </p>
-     * 
-     * @param blockDurationMinutes
-     *        The required duration for the Spot instances (also known as Spot blocks), in minutes. This value must be a
-     *        multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
-     *        <p>
-     *        The duration period starts as soon as your Spot instance receives its instance ID. At the end of the
-     *        duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance
-     *        termination notice, which gives the instance a two-minute warning before it terminates.
-     *        </p>
-     *        <p>
-     *        Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RequestSpotInstancesRequest withBlockDurationMinutes(Integer blockDurationMinutes) {
-        setBlockDurationMinutes(blockDurationMinutes);
-        return this;
-    }
-
-    /**
-     * @param launchSpecification
-     */
-
-    public void setLaunchSpecification(LaunchSpecification launchSpecification) {
-        this.launchSpecification = launchSpecification;
-    }
-
-    /**
-     * @return
-     */
-
-    public LaunchSpecification getLaunchSpecification() {
-        return this.launchSpecification;
-    }
-
-    /**
-     * @param launchSpecification
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RequestSpotInstancesRequest withLaunchSpecification(LaunchSpecification launchSpecification) {
-        setLaunchSpecification(launchSpecification);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -874,26 +892,26 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotPrice() != null)
-            sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
+        if (getAvailabilityZoneGroup() != null)
+            sb.append("AvailabilityZoneGroup: ").append(getAvailabilityZoneGroup()).append(",");
+        if (getBlockDurationMinutes() != null)
+            sb.append("BlockDurationMinutes: ").append(getBlockDurationMinutes()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getInstanceCount() != null)
             sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
+        if (getLaunchGroup() != null)
+            sb.append("LaunchGroup: ").append(getLaunchGroup()).append(",");
+        if (getLaunchSpecification() != null)
+            sb.append("LaunchSpecification: ").append(getLaunchSpecification()).append(",");
+        if (getSpotPrice() != null)
+            sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getValidFrom() != null)
             sb.append("ValidFrom: ").append(getValidFrom()).append(",");
         if (getValidUntil() != null)
-            sb.append("ValidUntil: ").append(getValidUntil()).append(",");
-        if (getLaunchGroup() != null)
-            sb.append("LaunchGroup: ").append(getLaunchGroup()).append(",");
-        if (getAvailabilityZoneGroup() != null)
-            sb.append("AvailabilityZoneGroup: ").append(getAvailabilityZoneGroup()).append(",");
-        if (getBlockDurationMinutes() != null)
-            sb.append("BlockDurationMinutes: ").append(getBlockDurationMinutes()).append(",");
-        if (getLaunchSpecification() != null)
-            sb.append("LaunchSpecification: ").append(getLaunchSpecification());
+            sb.append("ValidUntil: ").append(getValidUntil());
         sb.append("}");
         return sb.toString();
     }
@@ -908,9 +926,13 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         if (obj instanceof RequestSpotInstancesRequest == false)
             return false;
         RequestSpotInstancesRequest other = (RequestSpotInstancesRequest) obj;
-        if (other.getSpotPrice() == null ^ this.getSpotPrice() == null)
+        if (other.getAvailabilityZoneGroup() == null ^ this.getAvailabilityZoneGroup() == null)
             return false;
-        if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false)
+        if (other.getAvailabilityZoneGroup() != null && other.getAvailabilityZoneGroup().equals(this.getAvailabilityZoneGroup()) == false)
+            return false;
+        if (other.getBlockDurationMinutes() == null ^ this.getBlockDurationMinutes() == null)
+            return false;
+        if (other.getBlockDurationMinutes() != null && other.getBlockDurationMinutes().equals(this.getBlockDurationMinutes()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
@@ -919,6 +941,18 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+            return false;
+        if (other.getLaunchGroup() == null ^ this.getLaunchGroup() == null)
+            return false;
+        if (other.getLaunchGroup() != null && other.getLaunchGroup().equals(this.getLaunchGroup()) == false)
+            return false;
+        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null)
+            return false;
+        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false)
+            return false;
+        if (other.getSpotPrice() == null ^ this.getSpotPrice() == null)
+            return false;
+        if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
@@ -932,22 +966,6 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
             return false;
         if (other.getValidUntil() != null && other.getValidUntil().equals(this.getValidUntil()) == false)
             return false;
-        if (other.getLaunchGroup() == null ^ this.getLaunchGroup() == null)
-            return false;
-        if (other.getLaunchGroup() != null && other.getLaunchGroup().equals(this.getLaunchGroup()) == false)
-            return false;
-        if (other.getAvailabilityZoneGroup() == null ^ this.getAvailabilityZoneGroup() == null)
-            return false;
-        if (other.getAvailabilityZoneGroup() != null && other.getAvailabilityZoneGroup().equals(this.getAvailabilityZoneGroup()) == false)
-            return false;
-        if (other.getBlockDurationMinutes() == null ^ this.getBlockDurationMinutes() == null)
-            return false;
-        if (other.getBlockDurationMinutes() != null && other.getBlockDurationMinutes().equals(this.getBlockDurationMinutes()) == false)
-            return false;
-        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null)
-            return false;
-        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false)
-            return false;
         return true;
     }
 
@@ -956,16 +974,16 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneGroup() == null) ? 0 : getAvailabilityZoneGroup().hashCode());
+        hashCode = prime * hashCode + ((getBlockDurationMinutes() == null) ? 0 : getBlockDurationMinutes().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getLaunchGroup() == null) ? 0 : getLaunchGroup().hashCode());
+        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode());
+        hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode());
         hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode());
-        hashCode = prime * hashCode + ((getLaunchGroup() == null) ? 0 : getLaunchGroup().hashCode());
-        hashCode = prime * hashCode + ((getAvailabilityZoneGroup() == null) ? 0 : getAvailabilityZoneGroup().hashCode());
-        hashCode = prime * hashCode + ((getBlockDurationMinutes() == null) ? 0 : getBlockDurationMinutes().hashCode());
-        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode());
         return hashCode;
     }
 

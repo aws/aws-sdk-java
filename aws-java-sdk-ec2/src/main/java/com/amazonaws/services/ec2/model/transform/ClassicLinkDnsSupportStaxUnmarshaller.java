@@ -43,13 +43,13 @@ public class ClassicLinkDnsSupportStaxUnmarshaller implements Unmarshaller<Class
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("vpcId", targetDepth)) {
-                    classicLinkDnsSupport.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("classicLinkDnsSupported", targetDepth)) {
+                    classicLinkDnsSupport.setClassicLinkDnsSupported(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("classicLinkDnsSupported", targetDepth)) {
-                    classicLinkDnsSupport.setClassicLinkDnsSupported(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("vpcId", targetDepth)) {
+                    classicLinkDnsSupport.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

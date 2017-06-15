@@ -41,41 +41,6 @@ public class DescribeScheduledInstancesRequestMarshaller implements Marshaller<R
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeScheduledInstancesRequestScheduledInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledInstancesRequest
-                .getScheduledInstanceIds();
-        if (!describeScheduledInstancesRequestScheduledInstanceIdsList.isEmpty()
-                || !describeScheduledInstancesRequestScheduledInstanceIdsList.isAutoConstruct()) {
-            int scheduledInstanceIdsListIndex = 1;
-
-            for (String describeScheduledInstancesRequestScheduledInstanceIdsListValue : describeScheduledInstancesRequestScheduledInstanceIdsList) {
-                if (describeScheduledInstancesRequestScheduledInstanceIdsListValue != null) {
-                    request.addParameter("ScheduledInstanceId." + scheduledInstanceIdsListIndex,
-                            StringUtils.fromString(describeScheduledInstancesRequestScheduledInstanceIdsListValue));
-                }
-                scheduledInstanceIdsListIndex++;
-            }
-        }
-
-        SlotStartTimeRangeRequest slotStartTimeRange = describeScheduledInstancesRequest.getSlotStartTimeRange();
-        if (slotStartTimeRange != null) {
-
-            if (slotStartTimeRange.getEarliestTime() != null) {
-                request.addParameter("SlotStartTimeRange.EarliestTime", StringUtils.fromDate(slotStartTimeRange.getEarliestTime()));
-            }
-
-            if (slotStartTimeRange.getLatestTime() != null) {
-                request.addParameter("SlotStartTimeRange.LatestTime", StringUtils.fromDate(slotStartTimeRange.getLatestTime()));
-            }
-        }
-
-        if (describeScheduledInstancesRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeScheduledInstancesRequest.getNextToken()));
-        }
-
-        if (describeScheduledInstancesRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeScheduledInstancesRequest.getMaxResults()));
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeScheduledInstancesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeScheduledInstancesRequest
                 .getFilters();
         if (!describeScheduledInstancesRequestFiltersList.isEmpty() || !describeScheduledInstancesRequestFiltersList.isAutoConstruct()) {
@@ -101,6 +66,41 @@ public class DescribeScheduledInstancesRequestMarshaller implements Marshaller<R
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        if (describeScheduledInstancesRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeScheduledInstancesRequest.getMaxResults()));
+        }
+
+        if (describeScheduledInstancesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeScheduledInstancesRequest.getNextToken()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeScheduledInstancesRequestScheduledInstanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeScheduledInstancesRequest
+                .getScheduledInstanceIds();
+        if (!describeScheduledInstancesRequestScheduledInstanceIdsList.isEmpty()
+                || !describeScheduledInstancesRequestScheduledInstanceIdsList.isAutoConstruct()) {
+            int scheduledInstanceIdsListIndex = 1;
+
+            for (String describeScheduledInstancesRequestScheduledInstanceIdsListValue : describeScheduledInstancesRequestScheduledInstanceIdsList) {
+                if (describeScheduledInstancesRequestScheduledInstanceIdsListValue != null) {
+                    request.addParameter("ScheduledInstanceId." + scheduledInstanceIdsListIndex,
+                            StringUtils.fromString(describeScheduledInstancesRequestScheduledInstanceIdsListValue));
+                }
+                scheduledInstanceIdsListIndex++;
+            }
+        }
+
+        SlotStartTimeRangeRequest slotStartTimeRange = describeScheduledInstancesRequest.getSlotStartTimeRange();
+        if (slotStartTimeRange != null) {
+
+            if (slotStartTimeRange.getEarliestTime() != null) {
+                request.addParameter("SlotStartTimeRange.EarliestTime", StringUtils.fromDate(slotStartTimeRange.getEarliestTime()));
+            }
+
+            if (slotStartTimeRange.getLatestTime() != null) {
+                request.addParameter("SlotStartTimeRange.LatestTime", StringUtils.fromDate(slotStartTimeRange.getLatestTime()));
             }
         }
 

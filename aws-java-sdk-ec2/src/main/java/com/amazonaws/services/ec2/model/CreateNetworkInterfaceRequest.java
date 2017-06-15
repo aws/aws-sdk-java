@@ -30,16 +30,32 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ID of the subnet to associate with the network interface.
-     * </p>
-     */
-    private String subnetId;
-    /**
-     * <p>
      * A description for the network interface.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The IDs of one or more security groups.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> groups;
+    /**
+     * <p>
+     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
+     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
+     * <code>0</code> to override this setting.
+     * </p>
+     */
+    private Integer ipv6AddressCount;
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you're specifying a number of IPv6 addresses.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> ipv6Addresses;
     /**
      * <p>
      * The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2
@@ -49,12 +65,6 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private String privateIpAddress;
-    /**
-     * <p>
-     * The IDs of one or more security groups.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> groups;
     /**
      * <p>
      * One or more private IPv4 addresses.
@@ -76,60 +86,10 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     private Integer secondaryPrivateIpAddressCount;
     /**
      * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> ipv6Addresses;
-    /**
-     * <p>
-     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
-     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
-     * <code>0</code> to override this setting.
-     * </p>
-     */
-    private Integer ipv6AddressCount;
-
-    /**
-     * <p>
      * The ID of the subnet to associate with the network interface.
      * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet to associate with the network interface.
      */
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet to associate with the network interface.
-     * </p>
-     * 
-     * @return The ID of the subnet to associate with the network interface.
-     */
-
-    public String getSubnetId() {
-        return this.subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet to associate with the network interface.
-     * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet to associate with the network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateNetworkInterfaceRequest withSubnetId(String subnetId) {
-        setSubnetId(subnetId);
-        return this;
-    }
+    private String subnetId;
 
     /**
      * <p>
@@ -168,64 +128,6 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     public CreateNetworkInterfaceRequest withDescription(String description) {
         setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2
-     * selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP
-     * addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as
-     * primary).
-     * </p>
-     * 
-     * @param privateIpAddress
-     *        The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon
-     *        EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot
-     *        indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can
-     *        be designated as primary).
-     */
-
-    public void setPrivateIpAddress(String privateIpAddress) {
-        this.privateIpAddress = privateIpAddress;
-    }
-
-    /**
-     * <p>
-     * The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2
-     * selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP
-     * addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as
-     * primary).
-     * </p>
-     * 
-     * @return The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon
-     *         EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot
-     *         indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address
-     *         can be designated as primary).
-     */
-
-    public String getPrivateIpAddress() {
-        return this.privateIpAddress;
-    }
-
-    /**
-     * <p>
-     * The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2
-     * selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP
-     * addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as
-     * primary).
-     * </p>
-     * 
-     * @param privateIpAddress
-     *        The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon
-     *        EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot
-     *        indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can
-     *        be designated as primary).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateNetworkInterfaceRequest withPrivateIpAddress(String privateIpAddress) {
-        setPrivateIpAddress(privateIpAddress);
         return this;
     }
 
@@ -299,6 +201,203 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     public CreateNetworkInterfaceRequest withGroups(java.util.Collection<String> groups) {
         setGroups(groups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
+     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
+     * <code>0</code> to override this setting.
+     * </p>
+     * 
+     * @param ipv6AddressCount
+     *        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     *        addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your
+     *        subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can
+     *        specify <code>0</code> to override this setting.
+     */
+
+    public void setIpv6AddressCount(Integer ipv6AddressCount) {
+        this.ipv6AddressCount = ipv6AddressCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
+     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
+     * <code>0</code> to override this setting.
+     * </p>
+     * 
+     * @return The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     *         addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your
+     *         subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can
+     *         specify <code>0</code> to override this setting.
+     */
+
+    public Integer getIpv6AddressCount() {
+        return this.ipv6AddressCount;
+    }
+
+    /**
+     * <p>
+     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
+     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
+     * <code>0</code> to override this setting.
+     * </p>
+     * 
+     * @param ipv6AddressCount
+     *        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
+     *        addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your
+     *        subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can
+     *        specify <code>0</code> to override this setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkInterfaceRequest withIpv6AddressCount(Integer ipv6AddressCount) {
+        setIpv6AddressCount(ipv6AddressCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you're specifying a number of IPv6 addresses.
+     * </p>
+     * 
+     * @return One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
+     *         option if you're specifying a number of IPv6 addresses.
+     */
+
+    public java.util.List<InstanceIpv6Address> getIpv6Addresses() {
+        if (ipv6Addresses == null) {
+            ipv6Addresses = new com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>();
+        }
+        return ipv6Addresses;
+    }
+
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you're specifying a number of IPv6 addresses.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
+     *        option if you're specifying a number of IPv6 addresses.
+     */
+
+    public void setIpv6Addresses(java.util.Collection<InstanceIpv6Address> ipv6Addresses) {
+        if (ipv6Addresses == null) {
+            this.ipv6Addresses = null;
+            return;
+        }
+
+        this.ipv6Addresses = new com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>(ipv6Addresses);
+    }
+
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you're specifying a number of IPv6 addresses.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Addresses(java.util.Collection)} or {@link #withIpv6Addresses(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
+     *        option if you're specifying a number of IPv6 addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkInterfaceRequest withIpv6Addresses(InstanceIpv6Address... ipv6Addresses) {
+        if (this.ipv6Addresses == null) {
+            setIpv6Addresses(new com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>(ipv6Addresses.length));
+        }
+        for (InstanceIpv6Address ele : ipv6Addresses) {
+            this.ipv6Addresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
+     * you're specifying a number of IPv6 addresses.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
+     *        option if you're specifying a number of IPv6 addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkInterfaceRequest withIpv6Addresses(java.util.Collection<InstanceIpv6Address> ipv6Addresses) {
+        setIpv6Addresses(ipv6Addresses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2
+     * selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP
+     * addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as
+     * primary).
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon
+     *        EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot
+     *        indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can
+     *        be designated as primary).
+     */
+
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2
+     * selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP
+     * addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as
+     * primary).
+     * </p>
+     * 
+     * @return The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon
+     *         EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot
+     *         indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address
+     *         can be designated as primary).
+     */
+
+    public String getPrivateIpAddress() {
+        return this.privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2
+     * selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP
+     * addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as
+     * primary).
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon
+     *        EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot
+     *        indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can
+     *        be designated as primary).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkInterfaceRequest withPrivateIpAddress(String privateIpAddress) {
+        setPrivateIpAddress(privateIpAddress);
         return this;
     }
 
@@ -462,140 +561,41 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
+     * The ID of the subnet to associate with the network interface.
      * </p>
      * 
-     * @return One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
-     *         option if you're specifying a number of IPv6 addresses.
+     * @param subnetId
+     *        The ID of the subnet to associate with the network interface.
      */
 
-    public java.util.List<InstanceIpv6Address> getIpv6Addresses() {
-        if (ipv6Addresses == null) {
-            ipv6Addresses = new com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>();
-        }
-        return ipv6Addresses;
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
     }
 
     /**
      * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
+     * The ID of the subnet to associate with the network interface.
      * </p>
      * 
-     * @param ipv6Addresses
-     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
-     *        option if you're specifying a number of IPv6 addresses.
+     * @return The ID of the subnet to associate with the network interface.
      */
 
-    public void setIpv6Addresses(java.util.Collection<InstanceIpv6Address> ipv6Addresses) {
-        if (ipv6Addresses == null) {
-            this.ipv6Addresses = null;
-            return;
-        }
-
-        this.ipv6Addresses = new com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>(ipv6Addresses);
+    public String getSubnetId() {
+        return this.subnetId;
     }
 
     /**
      * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setIpv6Addresses(java.util.Collection)} or {@link #withIpv6Addresses(java.util.Collection)} if you want
-     * to override the existing values.
+     * The ID of the subnet to associate with the network interface.
      * </p>
      * 
-     * @param ipv6Addresses
-     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
-     *        option if you're specifying a number of IPv6 addresses.
+     * @param subnetId
+     *        The ID of the subnet to associate with the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateNetworkInterfaceRequest withIpv6Addresses(InstanceIpv6Address... ipv6Addresses) {
-        if (this.ipv6Addresses == null) {
-            setIpv6Addresses(new com.amazonaws.internal.SdkInternalList<InstanceIpv6Address>(ipv6Addresses.length));
-        }
-        for (InstanceIpv6Address ele : ipv6Addresses) {
-            this.ipv6Addresses.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this option if
-     * you're specifying a number of IPv6 addresses.
-     * </p>
-     * 
-     * @param ipv6Addresses
-     *        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. You can't use this
-     *        option if you're specifying a number of IPv6 addresses.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateNetworkInterfaceRequest withIpv6Addresses(java.util.Collection<InstanceIpv6Address> ipv6Addresses) {
-        setIpv6Addresses(ipv6Addresses);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
-     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
-     * <code>0</code> to override this setting.
-     * </p>
-     * 
-     * @param ipv6AddressCount
-     *        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     *        addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your
-     *        subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can
-     *        specify <code>0</code> to override this setting.
-     */
-
-    public void setIpv6AddressCount(Integer ipv6AddressCount) {
-        this.ipv6AddressCount = ipv6AddressCount;
-    }
-
-    /**
-     * <p>
-     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
-     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
-     * <code>0</code> to override this setting.
-     * </p>
-     * 
-     * @return The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     *         addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your
-     *         subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can
-     *         specify <code>0</code> to override this setting.
-     */
-
-    public Integer getIpv6AddressCount() {
-        return this.ipv6AddressCount;
-    }
-
-    /**
-     * <p>
-     * The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     * addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your subnet
-     * has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can specify
-     * <code>0</code> to override this setting.
-     * </p>
-     * 
-     * @param ipv6AddressCount
-     *        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6
-     *        addresses from the subnet range. You can't use this option if specifying specific IPv6 addresses. If your
-     *        subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set to <code>true</code>, you can
-     *        specify <code>0</code> to override this setting.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateNetworkInterfaceRequest withIpv6AddressCount(Integer ipv6AddressCount) {
-        setIpv6AddressCount(ipv6AddressCount);
+    public CreateNetworkInterfaceRequest withSubnetId(String subnetId) {
+        setSubnetId(subnetId);
         return this;
     }
 
@@ -621,22 +621,22 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
-        if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getGroups() != null)
             sb.append("Groups: ").append(getGroups()).append(",");
+        if (getIpv6AddressCount() != null)
+            sb.append("Ipv6AddressCount: ").append(getIpv6AddressCount()).append(",");
+        if (getIpv6Addresses() != null)
+            sb.append("Ipv6Addresses: ").append(getIpv6Addresses()).append(",");
+        if (getPrivateIpAddress() != null)
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPrivateIpAddresses() != null)
             sb.append("PrivateIpAddresses: ").append(getPrivateIpAddresses()).append(",");
         if (getSecondaryPrivateIpAddressCount() != null)
             sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
-        if (getIpv6Addresses() != null)
-            sb.append("Ipv6Addresses: ").append(getIpv6Addresses()).append(",");
-        if (getIpv6AddressCount() != null)
-            sb.append("Ipv6AddressCount: ").append(getIpv6AddressCount());
+        if (getSubnetId() != null)
+            sb.append("SubnetId: ").append(getSubnetId());
         sb.append("}");
         return sb.toString();
     }
@@ -651,21 +651,25 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         if (obj instanceof CreateNetworkInterfaceRequest == false)
             return false;
         CreateNetworkInterfaceRequest other = (CreateNetworkInterfaceRequest) obj;
-        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
-            return false;
-        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
-            return false;
-        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
-            return false;
         if (other.getGroups() == null ^ this.getGroups() == null)
             return false;
         if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
+            return false;
+        if (other.getIpv6AddressCount() == null ^ this.getIpv6AddressCount() == null)
+            return false;
+        if (other.getIpv6AddressCount() != null && other.getIpv6AddressCount().equals(this.getIpv6AddressCount()) == false)
+            return false;
+        if (other.getIpv6Addresses() == null ^ this.getIpv6Addresses() == null)
+            return false;
+        if (other.getIpv6Addresses() != null && other.getIpv6Addresses().equals(this.getIpv6Addresses()) == false)
+            return false;
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
+            return false;
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
         if (other.getPrivateIpAddresses() == null ^ this.getPrivateIpAddresses() == null)
             return false;
@@ -676,13 +680,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         if (other.getSecondaryPrivateIpAddressCount() != null
                 && other.getSecondaryPrivateIpAddressCount().equals(this.getSecondaryPrivateIpAddressCount()) == false)
             return false;
-        if (other.getIpv6Addresses() == null ^ this.getIpv6Addresses() == null)
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
-        if (other.getIpv6Addresses() != null && other.getIpv6Addresses().equals(this.getIpv6Addresses()) == false)
-            return false;
-        if (other.getIpv6AddressCount() == null ^ this.getIpv6AddressCount() == null)
-            return false;
-        if (other.getIpv6AddressCount() != null && other.getIpv6AddressCount().equals(this.getIpv6AddressCount()) == false)
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         return true;
     }
@@ -692,14 +692,14 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
+        hashCode = prime * hashCode + ((getIpv6AddressCount() == null) ? 0 : getIpv6AddressCount().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
-        hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
-        hashCode = prime * hashCode + ((getIpv6AddressCount() == null) ? 0 : getIpv6AddressCount().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         return hashCode;
     }
 

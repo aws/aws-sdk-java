@@ -56,6 +56,23 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <p>
      * The current status of the ProvisionedProduct.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request succeeded
+     * and completed.
+     * </p>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * <p>
+     * <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack is not
+     * running. For example, CloudFormation received an invalid parameter value and could not launch the stack.
+     * </p>
      */
     private String status;
     /**
@@ -248,10 +265,44 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <p>
      * The current status of the ProvisionedProduct.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request succeeded
+     * and completed.
+     * </p>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * <p>
+     * <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack is not
+     * running. For example, CloudFormation received an invalid parameter value and could not launch the stack.
+     * </p>
      * 
      * @param status
-     *        The current status of the ProvisionedProduct.
-     * @see RecordStatus
+     *        The current status of the ProvisionedProduct.</p>
+     *        <p>
+     *        <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request
+     *        succeeded and completed.
+     *        </p>
+     *        <p>
+     *        <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait
+     *        for an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        <p>
+     *        <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     *        operation but is not exactly what was requested. For example, a request to update to a new version failed
+     *        and the stack rolled back to the current version.
+     *        </p>
+     *        <p>
+     *        <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack
+     *        is not running. For example, CloudFormation received an invalid parameter value and could not launch the
+     *        stack.
+     * @see ProvisionedProductStatus
      */
 
     public void setStatus(String status) {
@@ -262,9 +313,43 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <p>
      * The current status of the ProvisionedProduct.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request succeeded
+     * and completed.
+     * </p>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * <p>
+     * <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack is not
+     * running. For example, CloudFormation received an invalid parameter value and could not launch the stack.
+     * </p>
      * 
-     * @return The current status of the ProvisionedProduct.
-     * @see RecordStatus
+     * @return The current status of the ProvisionedProduct.</p>
+     *         <p>
+     *         <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request
+     *         succeeded and completed.
+     *         </p>
+     *         <p>
+     *         <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results.
+     *         Wait for an <code>AVAILABLE</code> status before performing operations.
+     *         </p>
+     *         <p>
+     *         <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the
+     *         requested operation but is not exactly what was requested. For example, a request to update to a new
+     *         version failed and the stack rolled back to the current version.
+     *         </p>
+     *         <p>
+     *         <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack
+     *         is not running. For example, CloudFormation received an invalid parameter value and could not launch the
+     *         stack.
+     * @see ProvisionedProductStatus
      */
 
     public String getStatus() {
@@ -275,11 +360,45 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <p>
      * The current status of the ProvisionedProduct.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request succeeded
+     * and completed.
+     * </p>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * <p>
+     * <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack is not
+     * running. For example, CloudFormation received an invalid parameter value and could not launch the stack.
+     * </p>
      * 
      * @param status
-     *        The current status of the ProvisionedProduct.
+     *        The current status of the ProvisionedProduct.</p>
+     *        <p>
+     *        <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request
+     *        succeeded and completed.
+     *        </p>
+     *        <p>
+     *        <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait
+     *        for an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        <p>
+     *        <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     *        operation but is not exactly what was requested. For example, a request to update to a new version failed
+     *        and the stack rolled back to the current version.
+     *        </p>
+     *        <p>
+     *        <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack
+     *        is not running. For example, CloudFormation received an invalid parameter value and could not launch the
+     *        stack.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RecordStatus
+     * @see ProvisionedProductStatus
      */
 
     public ProvisionedProductDetail withStatus(String status) {
@@ -291,13 +410,47 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <p>
      * The current status of the ProvisionedProduct.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request succeeded
+     * and completed.
+     * </p>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * <p>
+     * <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack is not
+     * running. For example, CloudFormation received an invalid parameter value and could not launch the stack.
+     * </p>
      * 
      * @param status
-     *        The current status of the ProvisionedProduct.
-     * @see RecordStatus
+     *        The current status of the ProvisionedProduct.</p>
+     *        <p>
+     *        <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request
+     *        succeeded and completed.
+     *        </p>
+     *        <p>
+     *        <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait
+     *        for an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        <p>
+     *        <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     *        operation but is not exactly what was requested. For example, a request to update to a new version failed
+     *        and the stack rolled back to the current version.
+     *        </p>
+     *        <p>
+     *        <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack
+     *        is not running. For example, CloudFormation received an invalid parameter value and could not launch the
+     *        stack.
+     * @see ProvisionedProductStatus
      */
 
-    public void setStatus(RecordStatus status) {
+    public void setStatus(ProvisionedProductStatus status) {
         this.status = status.toString();
     }
 
@@ -305,14 +458,48 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <p>
      * The current status of the ProvisionedProduct.
      * </p>
+     * <p>
+     * <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request succeeded
+     * and completed.
+     * </p>
+     * <p>
+     * <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait for an
+     * <code>AVAILABLE</code> status before performing operations.
+     * </p>
+     * <p>
+     * <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     * operation but is not exactly what was requested. For example, a request to update to a new version failed and the
+     * stack rolled back to the current version.
+     * </p>
+     * <p>
+     * <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack is not
+     * running. For example, CloudFormation received an invalid parameter value and could not launch the stack.
+     * </p>
      * 
      * @param status
-     *        The current status of the ProvisionedProduct.
+     *        The current status of the ProvisionedProduct.</p>
+     *        <p>
+     *        <code>AVAILABLE</code> - Stable state, ready to perform any operation. The most recent action request
+     *        succeeded and completed.
+     *        </p>
+     *        <p>
+     *        <code>UNDER_CHANGE</code> - Transitive state, operations performed may or may not have valid results. Wait
+     *        for an <code>AVAILABLE</code> status before performing operations.
+     *        </p>
+     *        <p>
+     *        <code>TAINTED</code> - Stable state, ready to perform any operation. The stack has completed the requested
+     *        operation but is not exactly what was requested. For example, a request to update to a new version failed
+     *        and the stack rolled back to the current version.
+     *        </p>
+     *        <p>
+     *        <code>ERROR</code> - Something unexpected happened such that the provisioned product exists but the stack
+     *        is not running. For example, CloudFormation received an invalid parameter value and could not launch the
+     *        stack.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RecordStatus
+     * @see ProvisionedProductStatus
      */
 
-    public ProvisionedProductDetail withStatus(RecordStatus status) {
+    public ProvisionedProductDetail withStatus(ProvisionedProductStatus status) {
         setStatus(status);
         return this;
     }

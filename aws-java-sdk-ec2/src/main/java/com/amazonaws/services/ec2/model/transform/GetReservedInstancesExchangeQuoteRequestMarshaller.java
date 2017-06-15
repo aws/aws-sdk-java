@@ -65,14 +65,14 @@ public class GetReservedInstancesExchangeQuoteRequestMarshaller implements
 
             for (TargetConfigurationRequest getReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue : getReservedInstancesExchangeQuoteRequestTargetConfigurationsList) {
 
-                if (getReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getOfferingId() != null) {
-                    request.addParameter("TargetConfiguration." + targetConfigurationsListIndex + ".OfferingId",
-                            StringUtils.fromString(getReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getOfferingId()));
-                }
-
                 if (getReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getInstanceCount() != null) {
                     request.addParameter("TargetConfiguration." + targetConfigurationsListIndex + ".InstanceCount",
                             StringUtils.fromInteger(getReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getInstanceCount()));
+                }
+
+                if (getReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getOfferingId() != null) {
+                    request.addParameter("TargetConfiguration." + targetConfigurationsListIndex + ".OfferingId",
+                            StringUtils.fromString(getReservedInstancesExchangeQuoteRequestTargetConfigurationsListValue.getOfferingId()));
                 }
                 targetConfigurationsListIndex++;
             }

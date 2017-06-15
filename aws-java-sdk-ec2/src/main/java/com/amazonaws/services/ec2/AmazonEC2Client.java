@@ -1863,8 +1863,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * region by using its endpoint when making the request.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-     * AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information about the prerequisites and limits when copying an AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -5833,6 +5834,55 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeFlowLogsResult describeFlowLogs() {
         return describeFlowLogs(new DescribeFlowLogsRequest());
+    }
+
+    /**
+     * <p>
+     * Describes one or more available Amazon FPGA Images (AFIs). These include public AFIs, private AFIs that you own,
+     * and AFIs owned by other AWS accounts for which you have load permissions.
+     * </p>
+     * 
+     * @param describeFpgaImagesRequest
+     * @return Result of the DescribeFpgaImages operation returned by the service.
+     * @sample AmazonEC2.DescribeFpgaImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeFpgaImagesResult describeFpgaImages(DescribeFpgaImagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFpgaImages(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFpgaImagesResult executeDescribeFpgaImages(DescribeFpgaImagesRequest describeFpgaImagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFpgaImagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFpgaImagesRequest> request = null;
+        Response<DescribeFpgaImagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFpgaImagesRequestMarshaller().marshall(super.beforeMarshalling(describeFpgaImagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeFpgaImagesResult> responseHandler = new StaxResponseHandler<DescribeFpgaImagesResult>(
+                    new DescribeFpgaImagesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

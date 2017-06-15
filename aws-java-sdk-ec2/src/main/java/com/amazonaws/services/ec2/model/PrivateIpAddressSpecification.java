@@ -28,57 +28,17 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The private IPv4 addresses.
-     * </p>
-     */
-    private String privateIpAddress;
-    /**
-     * <p>
      * Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be
      * designated as primary.
      * </p>
      */
     private Boolean primary;
-
     /**
      * <p>
      * The private IPv4 addresses.
      * </p>
-     * 
-     * @param privateIpAddress
-     *        The private IPv4 addresses.
      */
-
-    public void setPrivateIpAddress(String privateIpAddress) {
-        this.privateIpAddress = privateIpAddress;
-    }
-
-    /**
-     * <p>
-     * The private IPv4 addresses.
-     * </p>
-     * 
-     * @return The private IPv4 addresses.
-     */
-
-    public String getPrivateIpAddress() {
-        return this.privateIpAddress;
-    }
-
-    /**
-     * <p>
-     * The private IPv4 addresses.
-     * </p>
-     * 
-     * @param privateIpAddress
-     *        The private IPv4 addresses.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PrivateIpAddressSpecification withPrivateIpAddress(String privateIpAddress) {
-        setPrivateIpAddress(privateIpAddress);
-        return this;
-    }
+    private String privateIpAddress;
 
     /**
      * <p>
@@ -141,6 +101,46 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The private IPv4 addresses.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The private IPv4 addresses.
+     */
+
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The private IPv4 addresses.
+     * </p>
+     * 
+     * @return The private IPv4 addresses.
+     */
+
+    public String getPrivateIpAddress() {
+        return this.privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The private IPv4 addresses.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The private IPv4 addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PrivateIpAddressSpecification withPrivateIpAddress(String privateIpAddress) {
+        setPrivateIpAddress(privateIpAddress);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -151,10 +151,10 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
         if (getPrimary() != null)
-            sb.append("Primary: ").append(getPrimary());
+            sb.append("Primary: ").append(getPrimary()).append(",");
+        if (getPrivateIpAddress() != null)
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -169,13 +169,13 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
         if (obj instanceof PrivateIpAddressSpecification == false)
             return false;
         PrivateIpAddressSpecification other = (PrivateIpAddressSpecification) obj;
-        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
-            return false;
-        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
-            return false;
         if (other.getPrimary() == null ^ this.getPrimary() == null)
             return false;
         if (other.getPrimary() != null && other.getPrimary().equals(this.getPrimary()) == false)
+            return false;
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
+            return false;
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
         return true;
     }
@@ -185,8 +185,8 @@ public class PrivateIpAddressSpecification implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPrimary() == null) ? 0 : getPrimary().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         return hashCode;
     }
 

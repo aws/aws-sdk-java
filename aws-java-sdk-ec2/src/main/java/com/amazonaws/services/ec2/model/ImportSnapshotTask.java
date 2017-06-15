@@ -28,6 +28,12 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A description of the import snapshot task.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The ID of the import snapshot task.
      * </p>
      */
@@ -38,12 +44,46 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
      * </p>
      */
     private SnapshotTaskDetail snapshotTaskDetail;
+
     /**
      * <p>
      * A description of the import snapshot task.
      * </p>
+     * 
+     * @param description
+     *        A description of the import snapshot task.
      */
-    private String description;
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the import snapshot task.
+     * </p>
+     * 
+     * @return A description of the import snapshot task.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the import snapshot task.
+     * </p>
+     * 
+     * @param description
+     *        A description of the import snapshot task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportSnapshotTask withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
 
     /**
      * <p>
@@ -126,46 +166,6 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * A description of the import snapshot task.
-     * </p>
-     * 
-     * @param description
-     *        A description of the import snapshot task.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description of the import snapshot task.
-     * </p>
-     * 
-     * @return A description of the import snapshot task.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description of the import snapshot task.
-     * </p>
-     * 
-     * @param description
-     *        A description of the import snapshot task.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportSnapshotTask withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -176,12 +176,12 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getImportTaskId() != null)
             sb.append("ImportTaskId: ").append(getImportTaskId()).append(",");
         if (getSnapshotTaskDetail() != null)
-            sb.append("SnapshotTaskDetail: ").append(getSnapshotTaskDetail()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("SnapshotTaskDetail: ").append(getSnapshotTaskDetail());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +196,10 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
         if (obj instanceof ImportSnapshotTask == false)
             return false;
         ImportSnapshotTask other = (ImportSnapshotTask) obj;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getImportTaskId() == null ^ this.getImportTaskId() == null)
             return false;
         if (other.getImportTaskId() != null && other.getImportTaskId().equals(this.getImportTaskId()) == false)
@@ -203,10 +207,6 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
         if (other.getSnapshotTaskDetail() == null ^ this.getSnapshotTaskDetail() == null)
             return false;
         if (other.getSnapshotTaskDetail() != null && other.getSnapshotTaskDetail().equals(this.getSnapshotTaskDetail()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -216,9 +216,9 @@ public class ImportSnapshotTask implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getImportTaskId() == null) ? 0 : getImportTaskId().hashCode());
         hashCode = prime * hashCode + ((getSnapshotTaskDetail() == null) ? 0 : getSnapshotTaskDetail().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

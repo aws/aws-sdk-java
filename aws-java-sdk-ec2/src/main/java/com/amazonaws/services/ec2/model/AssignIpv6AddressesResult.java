@@ -25,56 +25,16 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the network interface.
-     * </p>
-     */
-    private String networkInterfaceId;
-    /**
-     * <p>
      * The IPv6 addresses assigned to the network interface.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> assignedIpv6Addresses;
-
     /**
      * <p>
      * The ID of the network interface.
      * </p>
-     * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
      */
-
-    public void setNetworkInterfaceId(String networkInterfaceId) {
-        this.networkInterfaceId = networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
-     * 
-     * @return The ID of the network interface.
-     */
-
-    public String getNetworkInterfaceId() {
-        return this.networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
-     * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssignIpv6AddressesResult withNetworkInterfaceId(String networkInterfaceId) {
-        setNetworkInterfaceId(networkInterfaceId);
-        return this;
-    }
+    private String networkInterfaceId;
 
     /**
      * <p>
@@ -150,6 +110,46 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @return The ID of the network interface.
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssignIpv6AddressesResult withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -160,10 +160,10 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getAssignedIpv6Addresses() != null)
-            sb.append("AssignedIpv6Addresses: ").append(getAssignedIpv6Addresses());
+            sb.append("AssignedIpv6Addresses: ").append(getAssignedIpv6Addresses()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
         sb.append("}");
         return sb.toString();
     }
@@ -178,13 +178,13 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
         if (obj instanceof AssignIpv6AddressesResult == false)
             return false;
         AssignIpv6AddressesResult other = (AssignIpv6AddressesResult) obj;
-        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
-            return false;
-        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
-            return false;
         if (other.getAssignedIpv6Addresses() == null ^ this.getAssignedIpv6Addresses() == null)
             return false;
         if (other.getAssignedIpv6Addresses() != null && other.getAssignedIpv6Addresses().equals(this.getAssignedIpv6Addresses()) == false)
+            return false;
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+            return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         return true;
     }
@@ -194,8 +194,8 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getAssignedIpv6Addresses() == null) ? 0 : getAssignedIpv6Addresses().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         return hashCode;
     }
 

@@ -40,12 +40,12 @@ public class AssociateSubnetCidrBlockRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (associateSubnetCidrBlockRequest.getSubnetId() != null) {
-            request.addParameter("SubnetId", StringUtils.fromString(associateSubnetCidrBlockRequest.getSubnetId()));
-        }
-
         if (associateSubnetCidrBlockRequest.getIpv6CidrBlock() != null) {
             request.addParameter("Ipv6CidrBlock", StringUtils.fromString(associateSubnetCidrBlockRequest.getIpv6CidrBlock()));
+        }
+
+        if (associateSubnetCidrBlockRequest.getSubnetId() != null) {
+            request.addParameter("SubnetId", StringUtils.fromString(associateSubnetCidrBlockRequest.getSubnetId()));
         }
 
         return request;

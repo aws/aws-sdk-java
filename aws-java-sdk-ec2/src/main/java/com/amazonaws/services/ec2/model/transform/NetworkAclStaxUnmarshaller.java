@@ -45,18 +45,13 @@ public class NetworkAclStaxUnmarshaller implements Unmarshaller<NetworkAcl, Stax
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("networkAclId", targetDepth)) {
-                    networkAcl.setNetworkAclId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("associationSet", targetDepth)) {
+                    networkAcl.withAssociations(new ArrayList<NetworkAclAssociation>());
                     continue;
                 }
 
-                if (context.testExpression("vpcId", targetDepth)) {
-                    networkAcl.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("default", targetDepth)) {
-                    networkAcl.setIsDefault(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("associationSet/item", targetDepth)) {
+                    networkAcl.withAssociations(NetworkAclAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -70,13 +65,13 @@ public class NetworkAclStaxUnmarshaller implements Unmarshaller<NetworkAcl, Stax
                     continue;
                 }
 
-                if (context.testExpression("associationSet", targetDepth)) {
-                    networkAcl.withAssociations(new ArrayList<NetworkAclAssociation>());
+                if (context.testExpression("default", targetDepth)) {
+                    networkAcl.setIsDefault(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("associationSet/item", targetDepth)) {
-                    networkAcl.withAssociations(NetworkAclAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("networkAclId", targetDepth)) {
+                    networkAcl.setNetworkAclId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -90,6 +85,10 @@ public class NetworkAclStaxUnmarshaller implements Unmarshaller<NetworkAcl, Stax
                     continue;
                 }
 
+                if (context.testExpression("vpcId", targetDepth)) {
+                    networkAcl.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return networkAcl;

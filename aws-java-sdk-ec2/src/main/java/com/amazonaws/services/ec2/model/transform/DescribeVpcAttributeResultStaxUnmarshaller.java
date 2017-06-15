@@ -48,13 +48,13 @@ public class DescribeVpcAttributeResultStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
-                if (context.testExpression("enableDnsSupport/value", targetDepth)) {
-                    describeVpcAttributeResult.setEnableDnsSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("enableDnsHostnames/value", targetDepth)) {
+                    describeVpcAttributeResult.setEnableDnsHostnames(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("enableDnsHostnames/value", targetDepth)) {
-                    describeVpcAttributeResult.setEnableDnsHostnames(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("enableDnsSupport/value", targetDepth)) {
+                    describeVpcAttributeResult.setEnableDnsSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

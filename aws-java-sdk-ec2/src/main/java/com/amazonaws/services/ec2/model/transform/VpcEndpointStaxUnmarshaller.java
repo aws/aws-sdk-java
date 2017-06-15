@@ -45,23 +45,8 @@ public class VpcEndpointStaxUnmarshaller implements Unmarshaller<VpcEndpoint, St
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("vpcEndpointId", targetDepth)) {
-                    vpcEndpoint.setVpcEndpointId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcId", targetDepth)) {
-                    vpcEndpoint.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("serviceName", targetDepth)) {
-                    vpcEndpoint.setServiceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("state", targetDepth)) {
-                    vpcEndpoint.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("creationTimestamp", targetDepth)) {
+                    vpcEndpoint.setCreationTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -80,8 +65,23 @@ public class VpcEndpointStaxUnmarshaller implements Unmarshaller<VpcEndpoint, St
                     continue;
                 }
 
-                if (context.testExpression("creationTimestamp", targetDepth)) {
-                    vpcEndpoint.setCreationTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("serviceName", targetDepth)) {
+                    vpcEndpoint.setServiceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("state", targetDepth)) {
+                    vpcEndpoint.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpcEndpointId", targetDepth)) {
+                    vpcEndpoint.setVpcEndpointId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpcId", targetDepth)) {
+                    vpcEndpoint.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

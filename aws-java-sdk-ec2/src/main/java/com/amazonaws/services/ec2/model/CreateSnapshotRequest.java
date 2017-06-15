@@ -29,16 +29,16 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The ID of the EBS volume.
-     * </p>
-     */
-    private String volumeId;
-    /**
-     * <p>
      * A description for the snapshot.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The ID of the EBS volume.
+     * </p>
+     */
+    private String volumeId;
 
     /**
      * Default constructor for CreateSnapshotRequest object. Callers should use the setter or fluent setter (with...)
@@ -59,46 +59,6 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
     public CreateSnapshotRequest(String volumeId, String description) {
         setVolumeId(volumeId);
         setDescription(description);
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS volume.
-     * </p>
-     * 
-     * @param volumeId
-     *        The ID of the EBS volume.
-     */
-
-    public void setVolumeId(String volumeId) {
-        this.volumeId = volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS volume.
-     * </p>
-     * 
-     * @return The ID of the EBS volume.
-     */
-
-    public String getVolumeId() {
-        return this.volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS volume.
-     * </p>
-     * 
-     * @param volumeId
-     *        The ID of the EBS volume.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateSnapshotRequest withVolumeId(String volumeId) {
-        setVolumeId(volumeId);
-        return this;
     }
 
     /**
@@ -142,6 +102,46 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * The ID of the EBS volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the EBS volume.
+     */
+
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS volume.
+     * </p>
+     * 
+     * @return The ID of the EBS volume.
+     */
+
+    public String getVolumeId() {
+        return this.volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the EBS volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSnapshotRequest withVolumeId(String volumeId) {
+        setVolumeId(volumeId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -163,10 +163,10 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null)
-            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getVolumeId() != null)
+            sb.append("VolumeId: ").append(getVolumeId());
         sb.append("}");
         return sb.toString();
     }
@@ -181,13 +181,13 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         if (obj instanceof CreateSnapshotRequest == false)
             return false;
         CreateSnapshotRequest other = (CreateSnapshotRequest) obj;
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
-            return false;
-        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+            return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         return true;
     }
@@ -197,8 +197,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         return hashCode;
     }
 

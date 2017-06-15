@@ -45,11 +45,6 @@ public class EgressOnlyInternetGatewayStaxUnmarshaller implements Unmarshaller<E
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("egressOnlyInternetGatewayId", targetDepth)) {
-                    egressOnlyInternetGateway.setEgressOnlyInternetGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("attachmentSet", targetDepth)) {
                     egressOnlyInternetGateway.withAttachments(new ArrayList<InternetGatewayAttachment>());
                     continue;
@@ -60,6 +55,10 @@ public class EgressOnlyInternetGatewayStaxUnmarshaller implements Unmarshaller<E
                     continue;
                 }
 
+                if (context.testExpression("egressOnlyInternetGatewayId", targetDepth)) {
+                    egressOnlyInternetGateway.setEgressOnlyInternetGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return egressOnlyInternetGateway;

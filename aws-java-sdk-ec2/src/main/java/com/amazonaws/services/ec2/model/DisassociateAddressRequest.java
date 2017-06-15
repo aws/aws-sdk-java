@@ -29,16 +29,16 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * </p>
-     */
-    private String publicIp;
-    /**
-     * <p>
      * [EC2-VPC] The association ID. Required for EC2-VPC.
      * </p>
      */
     private String associationId;
+    /**
+     * <p>
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * </p>
+     */
+    private String publicIp;
 
     /**
      * Default constructor for DisassociateAddressRequest object. Callers should use the setter or fluent setter
@@ -56,46 +56,6 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
      */
     public DisassociateAddressRequest(String publicIp) {
         setPublicIp(publicIp);
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * </p>
-     * 
-     * @param publicIp
-     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     */
-
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * </p>
-     * 
-     * @return [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     */
-
-    public String getPublicIp() {
-        return this.publicIp;
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * </p>
-     * 
-     * @param publicIp
-     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DisassociateAddressRequest withPublicIp(String publicIp) {
-        setPublicIp(publicIp);
-        return this;
     }
 
     /**
@@ -139,6 +99,46 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * </p>
+     * 
+     * @param publicIp
+     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     */
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * </p>
+     * 
+     * @return [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     */
+
+    public String getPublicIp() {
+        return this.publicIp;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * </p>
+     * 
+     * @param publicIp
+     *        [EC2-Classic] The Elastic IP address. Required for EC2-Classic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DisassociateAddressRequest withPublicIp(String publicIp) {
+        setPublicIp(publicIp);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -160,10 +160,10 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp()).append(",");
         if (getAssociationId() != null)
-            sb.append("AssociationId: ").append(getAssociationId());
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
+        if (getPublicIp() != null)
+            sb.append("PublicIp: ").append(getPublicIp());
         sb.append("}");
         return sb.toString();
     }
@@ -178,13 +178,13 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof DisassociateAddressRequest == false)
             return false;
         DisassociateAddressRequest other = (DisassociateAddressRequest) obj;
-        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
-            return false;
-        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
-            return false;
         if (other.getAssociationId() == null ^ this.getAssociationId() == null)
             return false;
         if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
+            return false;
+        if (other.getPublicIp() == null ^ this.getPublicIp() == null)
+            return false;
+        if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
         return true;
     }
@@ -194,8 +194,8 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
+        hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         return hashCode;
     }
 

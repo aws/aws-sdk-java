@@ -45,18 +45,18 @@ public class HostStaxUnmarshaller implements Unmarshaller<Host, StaxUnmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("hostId", targetDepth)) {
-                    host.setHostId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("autoPlacement", targetDepth)) {
                     host.setAutoPlacement(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("hostReservationId", targetDepth)) {
-                    host.setHostReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("availabilityZone", targetDepth)) {
+                    host.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("availableCapacity", targetDepth)) {
+                    host.setAvailableCapacity(AvailableCapacityStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -65,18 +65,18 @@ public class HostStaxUnmarshaller implements Unmarshaller<Host, StaxUnmarshaller
                     continue;
                 }
 
+                if (context.testExpression("hostId", targetDepth)) {
+                    host.setHostId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("hostProperties", targetDepth)) {
                     host.setHostProperties(HostPropertiesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("state", targetDepth)) {
-                    host.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("availabilityZone", targetDepth)) {
-                    host.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("hostReservationId", targetDepth)) {
+                    host.setHostReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -90,8 +90,8 @@ public class HostStaxUnmarshaller implements Unmarshaller<Host, StaxUnmarshaller
                     continue;
                 }
 
-                if (context.testExpression("availableCapacity", targetDepth)) {
-                    host.setAvailableCapacity(AvailableCapacityStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("state", targetDepth)) {
+                    host.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

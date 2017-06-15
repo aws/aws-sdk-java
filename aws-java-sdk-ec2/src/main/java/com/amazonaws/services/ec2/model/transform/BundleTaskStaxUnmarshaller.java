@@ -43,33 +43,18 @@ public class BundleTaskStaxUnmarshaller implements Unmarshaller<BundleTask, Stax
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceId", targetDepth)) {
-                    bundleTask.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("bundleId", targetDepth)) {
                     bundleTask.setBundleId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("state", targetDepth)) {
-                    bundleTask.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("error", targetDepth)) {
+                    bundleTask.setBundleTaskError(BundleTaskErrorStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("startTime", targetDepth)) {
-                    bundleTask.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("updateTime", targetDepth)) {
-                    bundleTask.setUpdateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("storage", targetDepth)) {
-                    bundleTask.setStorage(StorageStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceId", targetDepth)) {
+                    bundleTask.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -78,8 +63,23 @@ public class BundleTaskStaxUnmarshaller implements Unmarshaller<BundleTask, Stax
                     continue;
                 }
 
-                if (context.testExpression("error", targetDepth)) {
-                    bundleTask.setBundleTaskError(BundleTaskErrorStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("startTime", targetDepth)) {
+                    bundleTask.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("state", targetDepth)) {
+                    bundleTask.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("storage", targetDepth)) {
+                    bundleTask.setStorage(StorageStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("updateTime", targetDepth)) {
+                    bundleTask.setUpdateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

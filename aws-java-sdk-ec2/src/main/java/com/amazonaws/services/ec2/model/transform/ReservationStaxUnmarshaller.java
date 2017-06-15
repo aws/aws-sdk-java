@@ -45,21 +45,6 @@ public class ReservationStaxUnmarshaller implements Unmarshaller<Reservation, St
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("reservationId", targetDepth)) {
-                    reservation.setReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ownerId", targetDepth)) {
-                    reservation.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("requesterId", targetDepth)) {
-                    reservation.setRequesterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("groupSet", targetDepth)) {
                     reservation.withGroups(new ArrayList<GroupIdentifier>());
                     continue;
@@ -77,6 +62,21 @@ public class ReservationStaxUnmarshaller implements Unmarshaller<Reservation, St
 
                 if (context.testExpression("instancesSet/item", targetDepth)) {
                     reservation.withInstances(InstanceStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    reservation.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("requesterId", targetDepth)) {
+                    reservation.setRequesterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("reservationId", targetDepth)) {
+                    reservation.setReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

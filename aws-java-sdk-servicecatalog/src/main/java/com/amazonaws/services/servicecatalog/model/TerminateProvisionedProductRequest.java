@@ -27,15 +27,15 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the ProvisionedProduct object to terminate. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      */
     private String provisionedProductName;
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to terminate. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
+     * or <code>ProvisionedProductId</code>, but not both.
      * </p>
      */
     private String provisionedProductId;
@@ -76,13 +76,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the ProvisionedProduct object to terminate. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
      * @param provisionedProductName
-     *        The name of the ProvisionedProduct object to terminate. You must specify either
-     *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     *        The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
+     *        or <code>ProvisionedProductId</code>, but not both.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -91,11 +91,11 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the ProvisionedProduct object to terminate. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
-     * @return The name of the ProvisionedProduct object to terminate. You must specify either
+     * @return The name of the ProvisionedProduct object to terminate. Specify either
      *         <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
      */
 
@@ -105,13 +105,13 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the ProvisionedProduct object to terminate. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
      * @param provisionedProductName
-     *        The name of the ProvisionedProduct object to terminate. You must specify either
-     *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     *        The name of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
+     *        or <code>ProvisionedProductId</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,12 +122,12 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to terminate. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
+     * or <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object to terminate. You must specify either
+     *        The identifier of the ProvisionedProduct object to terminate. Specify either
      *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
      */
 
@@ -137,11 +137,11 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to terminate. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
+     * or <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
-     * @return The identifier of the ProvisionedProduct object to terminate. You must specify either
+     * @return The identifier of the ProvisionedProduct object to terminate. Specify either
      *         <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
      */
 
@@ -151,12 +151,12 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to terminate. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the ProvisionedProduct object to terminate. Specify either <code>ProvisionedProductName</code>
+     * or <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object to terminate. You must specify either
+     *        The identifier of the ProvisionedProduct object to terminate. Specify either
      *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -45,6 +45,11 @@ public class GetHostReservationPurchasePreviewResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("currencyCode", targetDepth)) {
+                    getHostReservationPurchasePreviewResult.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("purchase", targetDepth)) {
                     getHostReservationPurchasePreviewResult.withPurchase(new ArrayList<Purchase>());
                     continue;
@@ -55,18 +60,13 @@ public class GetHostReservationPurchasePreviewResultStaxUnmarshaller implements 
                     continue;
                 }
 
-                if (context.testExpression("totalUpfrontPrice", targetDepth)) {
-                    getHostReservationPurchasePreviewResult.setTotalUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("totalHourlyPrice", targetDepth)) {
                     getHostReservationPurchasePreviewResult.setTotalHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("currencyCode", targetDepth)) {
-                    getHostReservationPurchasePreviewResult.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("totalUpfrontPrice", targetDepth)) {
+                    getHostReservationPurchasePreviewResult.setTotalUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -40,19 +40,6 @@ public class DescribeVolumeStatusRequestMarshaller implements Marshaller<Request
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeVolumeStatusRequestVolumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumeStatusRequest
-                .getVolumeIds();
-        if (!describeVolumeStatusRequestVolumeIdsList.isEmpty() || !describeVolumeStatusRequestVolumeIdsList.isAutoConstruct()) {
-            int volumeIdsListIndex = 1;
-
-            for (String describeVolumeStatusRequestVolumeIdsListValue : describeVolumeStatusRequestVolumeIdsList) {
-                if (describeVolumeStatusRequestVolumeIdsListValue != null) {
-                    request.addParameter("VolumeId." + volumeIdsListIndex, StringUtils.fromString(describeVolumeStatusRequestVolumeIdsListValue));
-                }
-                volumeIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeVolumeStatusRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVolumeStatusRequest
                 .getFilters();
         if (!describeVolumeStatusRequestFiltersList.isEmpty() || !describeVolumeStatusRequestFiltersList.isAutoConstruct()) {
@@ -80,12 +67,25 @@ public class DescribeVolumeStatusRequestMarshaller implements Marshaller<Request
             }
         }
 
+        if (describeVolumeStatusRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeVolumeStatusRequest.getMaxResults()));
+        }
+
         if (describeVolumeStatusRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeVolumeStatusRequest.getNextToken()));
         }
 
-        if (describeVolumeStatusRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeVolumeStatusRequest.getMaxResults()));
+        com.amazonaws.internal.SdkInternalList<String> describeVolumeStatusRequestVolumeIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVolumeStatusRequest
+                .getVolumeIds();
+        if (!describeVolumeStatusRequestVolumeIdsList.isEmpty() || !describeVolumeStatusRequestVolumeIdsList.isAutoConstruct()) {
+            int volumeIdsListIndex = 1;
+
+            for (String describeVolumeStatusRequestVolumeIdsListValue : describeVolumeStatusRequestVolumeIdsList) {
+                if (describeVolumeStatusRequestVolumeIdsListValue != null) {
+                    request.addParameter("VolumeId." + volumeIdsListIndex, StringUtils.fromString(describeVolumeStatusRequestVolumeIdsListValue));
+                }
+                volumeIdsListIndex++;
+            }
         }
 
         return request;

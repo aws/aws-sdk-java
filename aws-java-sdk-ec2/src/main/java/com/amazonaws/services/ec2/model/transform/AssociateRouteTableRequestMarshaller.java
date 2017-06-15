@@ -40,12 +40,12 @@ public class AssociateRouteTableRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (associateRouteTableRequest.getSubnetId() != null) {
-            request.addParameter("SubnetId", StringUtils.fromString(associateRouteTableRequest.getSubnetId()));
-        }
-
         if (associateRouteTableRequest.getRouteTableId() != null) {
             request.addParameter("RouteTableId", StringUtils.fromString(associateRouteTableRequest.getRouteTableId()));
+        }
+
+        if (associateRouteTableRequest.getSubnetId() != null) {
+            request.addParameter("SubnetId", StringUtils.fromString(associateRouteTableRequest.getSubnetId()));
         }
 
         return request;

@@ -727,8 +727,9 @@ public interface AmazonEC2 {
      * region by using its endpoint when making the request.
      * </p>
      * <p>
-     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
-     * AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information about the prerequisites and limits when copying an AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -2356,6 +2357,20 @@ public interface AmazonEC2 {
      * @see #describeFlowLogs(DescribeFlowLogsRequest)
      */
     DescribeFlowLogsResult describeFlowLogs();
+
+    /**
+     * <p>
+     * Describes one or more available Amazon FPGA Images (AFIs). These include public AFIs, private AFIs that you own,
+     * and AFIs owned by other AWS accounts for which you have load permissions.
+     * </p>
+     * 
+     * @param describeFpgaImagesRequest
+     * @return Result of the DescribeFpgaImages operation returned by the service.
+     * @sample AmazonEC2.DescribeFpgaImages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFpgaImages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeFpgaImagesResult describeFpgaImages(DescribeFpgaImagesRequest describeFpgaImagesRequest);
 
     /**
      * <p>

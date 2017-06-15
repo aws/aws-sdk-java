@@ -28,6 +28,12 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The association ID for the IPv6 CIDR block.
+     * </p>
+     */
+    private String associationId;
+    /**
+     * <p>
      * The IPv6 CIDR block.
      * </p>
      */
@@ -38,12 +44,46 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
      * </p>
      */
     private VpcCidrBlockState ipv6CidrBlockState;
+
     /**
      * <p>
      * The association ID for the IPv6 CIDR block.
      * </p>
+     * 
+     * @param associationId
+     *        The association ID for the IPv6 CIDR block.
      */
-    private String associationId;
+
+    public void setAssociationId(String associationId) {
+        this.associationId = associationId;
+    }
+
+    /**
+     * <p>
+     * The association ID for the IPv6 CIDR block.
+     * </p>
+     * 
+     * @return The association ID for the IPv6 CIDR block.
+     */
+
+    public String getAssociationId() {
+        return this.associationId;
+    }
+
+    /**
+     * <p>
+     * The association ID for the IPv6 CIDR block.
+     * </p>
+     * 
+     * @param associationId
+     *        The association ID for the IPv6 CIDR block.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcIpv6CidrBlockAssociation withAssociationId(String associationId) {
+        setAssociationId(associationId);
+        return this;
+    }
 
     /**
      * <p>
@@ -126,46 +166,6 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The association ID for the IPv6 CIDR block.
-     * </p>
-     * 
-     * @param associationId
-     *        The association ID for the IPv6 CIDR block.
-     */
-
-    public void setAssociationId(String associationId) {
-        this.associationId = associationId;
-    }
-
-    /**
-     * <p>
-     * The association ID for the IPv6 CIDR block.
-     * </p>
-     * 
-     * @return The association ID for the IPv6 CIDR block.
-     */
-
-    public String getAssociationId() {
-        return this.associationId;
-    }
-
-    /**
-     * <p>
-     * The association ID for the IPv6 CIDR block.
-     * </p>
-     * 
-     * @param associationId
-     *        The association ID for the IPv6 CIDR block.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public VpcIpv6CidrBlockAssociation withAssociationId(String associationId) {
-        setAssociationId(associationId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -176,12 +176,12 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssociationId() != null)
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
         if (getIpv6CidrBlock() != null)
             sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
         if (getIpv6CidrBlockState() != null)
-            sb.append("Ipv6CidrBlockState: ").append(getIpv6CidrBlockState()).append(",");
-        if (getAssociationId() != null)
-            sb.append("AssociationId: ").append(getAssociationId());
+            sb.append("Ipv6CidrBlockState: ").append(getIpv6CidrBlockState());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +196,10 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
         if (obj instanceof VpcIpv6CidrBlockAssociation == false)
             return false;
         VpcIpv6CidrBlockAssociation other = (VpcIpv6CidrBlockAssociation) obj;
+        if (other.getAssociationId() == null ^ this.getAssociationId() == null)
+            return false;
+        if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
+            return false;
         if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
             return false;
         if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
@@ -203,10 +207,6 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
         if (other.getIpv6CidrBlockState() == null ^ this.getIpv6CidrBlockState() == null)
             return false;
         if (other.getIpv6CidrBlockState() != null && other.getIpv6CidrBlockState().equals(this.getIpv6CidrBlockState()) == false)
-            return false;
-        if (other.getAssociationId() == null ^ this.getAssociationId() == null)
-            return false;
-        if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
             return false;
         return true;
     }
@@ -216,9 +216,9 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlockState() == null) ? 0 : getIpv6CidrBlockState().hashCode());
-        hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         return hashCode;
     }
 

@@ -40,16 +40,16 @@ public class ModifyIdentityIdFormatRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (modifyIdentityIdFormatRequest.getPrincipalArn() != null) {
+            request.addParameter("PrincipalArn", StringUtils.fromString(modifyIdentityIdFormatRequest.getPrincipalArn()));
+        }
+
         if (modifyIdentityIdFormatRequest.getResource() != null) {
             request.addParameter("Resource", StringUtils.fromString(modifyIdentityIdFormatRequest.getResource()));
         }
 
         if (modifyIdentityIdFormatRequest.getUseLongIds() != null) {
             request.addParameter("UseLongIds", StringUtils.fromBoolean(modifyIdentityIdFormatRequest.getUseLongIds()));
-        }
-
-        if (modifyIdentityIdFormatRequest.getPrincipalArn() != null) {
-            request.addParameter("PrincipalArn", StringUtils.fromString(modifyIdentityIdFormatRequest.getPrincipalArn()));
         }
 
         return request;

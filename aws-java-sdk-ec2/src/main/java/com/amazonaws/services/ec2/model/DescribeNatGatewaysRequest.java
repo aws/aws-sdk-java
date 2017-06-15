@@ -29,12 +29,6 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more NAT gateway IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> natGatewayIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -74,83 +68,16 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
     private Integer maxResults;
     /**
      * <p>
+     * One or more NAT gateway IDs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> natGatewayIds;
+    /**
+     * <p>
      * The token to retrieve the next page of results.
      * </p>
      */
     private String nextToken;
-
-    /**
-     * <p>
-     * One or more NAT gateway IDs.
-     * </p>
-     * 
-     * @return One or more NAT gateway IDs.
-     */
-
-    public java.util.List<String> getNatGatewayIds() {
-        if (natGatewayIds == null) {
-            natGatewayIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return natGatewayIds;
-    }
-
-    /**
-     * <p>
-     * One or more NAT gateway IDs.
-     * </p>
-     * 
-     * @param natGatewayIds
-     *        One or more NAT gateway IDs.
-     */
-
-    public void setNatGatewayIds(java.util.Collection<String> natGatewayIds) {
-        if (natGatewayIds == null) {
-            this.natGatewayIds = null;
-            return;
-        }
-
-        this.natGatewayIds = new com.amazonaws.internal.SdkInternalList<String>(natGatewayIds);
-    }
-
-    /**
-     * <p>
-     * One or more NAT gateway IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setNatGatewayIds(java.util.Collection)} or {@link #withNatGatewayIds(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param natGatewayIds
-     *        One or more NAT gateway IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeNatGatewaysRequest withNatGatewayIds(String... natGatewayIds) {
-        if (this.natGatewayIds == null) {
-            setNatGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(natGatewayIds.length));
-        }
-        for (String ele : natGatewayIds) {
-            this.natGatewayIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more NAT gateway IDs.
-     * </p>
-     * 
-     * @param natGatewayIds
-     *        One or more NAT gateway IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeNatGatewaysRequest withNatGatewayIds(java.util.Collection<String> natGatewayIds) {
-        setNatGatewayIds(natGatewayIds);
-        return this;
-    }
 
     /**
      * <p>
@@ -468,6 +395,79 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
+     * One or more NAT gateway IDs.
+     * </p>
+     * 
+     * @return One or more NAT gateway IDs.
+     */
+
+    public java.util.List<String> getNatGatewayIds() {
+        if (natGatewayIds == null) {
+            natGatewayIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return natGatewayIds;
+    }
+
+    /**
+     * <p>
+     * One or more NAT gateway IDs.
+     * </p>
+     * 
+     * @param natGatewayIds
+     *        One or more NAT gateway IDs.
+     */
+
+    public void setNatGatewayIds(java.util.Collection<String> natGatewayIds) {
+        if (natGatewayIds == null) {
+            this.natGatewayIds = null;
+            return;
+        }
+
+        this.natGatewayIds = new com.amazonaws.internal.SdkInternalList<String>(natGatewayIds);
+    }
+
+    /**
+     * <p>
+     * One or more NAT gateway IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNatGatewayIds(java.util.Collection)} or {@link #withNatGatewayIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param natGatewayIds
+     *        One or more NAT gateway IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNatGatewaysRequest withNatGatewayIds(String... natGatewayIds) {
+        if (this.natGatewayIds == null) {
+            setNatGatewayIds(new com.amazonaws.internal.SdkInternalList<String>(natGatewayIds.length));
+        }
+        for (String ele : natGatewayIds) {
+            this.natGatewayIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more NAT gateway IDs.
+     * </p>
+     * 
+     * @param natGatewayIds
+     *        One or more NAT gateway IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNatGatewaysRequest withNatGatewayIds(java.util.Collection<String> natGatewayIds) {
+        setNatGatewayIds(natGatewayIds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The token to retrieve the next page of results.
      * </p>
      * 
@@ -528,12 +528,12 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNatGatewayIds() != null)
-            sb.append("NatGatewayIds: ").append(getNatGatewayIds()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNatGatewayIds() != null)
+            sb.append("NatGatewayIds: ").append(getNatGatewayIds()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -550,10 +550,6 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof DescribeNatGatewaysRequest == false)
             return false;
         DescribeNatGatewaysRequest other = (DescribeNatGatewaysRequest) obj;
-        if (other.getNatGatewayIds() == null ^ this.getNatGatewayIds() == null)
-            return false;
-        if (other.getNatGatewayIds() != null && other.getNatGatewayIds().equals(this.getNatGatewayIds()) == false)
-            return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
@@ -561,6 +557,10 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNatGatewayIds() == null ^ this.getNatGatewayIds() == null)
+            return false;
+        if (other.getNatGatewayIds() != null && other.getNatGatewayIds().equals(this.getNatGatewayIds()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
@@ -574,9 +574,9 @@ public class DescribeNatGatewaysRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNatGatewayIds() == null) ? 0 : getNatGatewayIds().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNatGatewayIds() == null) ? 0 : getNatGatewayIds().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

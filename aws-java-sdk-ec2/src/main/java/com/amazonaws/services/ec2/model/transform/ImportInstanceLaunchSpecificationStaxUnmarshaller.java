@@ -45,18 +45,13 @@ public class ImportInstanceLaunchSpecificationStaxUnmarshaller implements Unmars
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("additionalInfo", targetDepth)) {
+                    importInstanceLaunchSpecification.setAdditionalInfo(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("architecture", targetDepth)) {
                     importInstanceLaunchSpecification.setArchitecture(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("GroupName", targetDepth)) {
-                    importInstanceLaunchSpecification.withGroupNames(new ArrayList<String>());
-                    continue;
-                }
-
-                if (context.testExpression("GroupName/SecurityGroup", targetDepth)) {
-                    importInstanceLaunchSpecification.withGroupNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -70,33 +65,13 @@ public class ImportInstanceLaunchSpecificationStaxUnmarshaller implements Unmars
                     continue;
                 }
 
-                if (context.testExpression("additionalInfo", targetDepth)) {
-                    importInstanceLaunchSpecification.setAdditionalInfo(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("GroupName", targetDepth)) {
+                    importInstanceLaunchSpecification.withGroupNames(new ArrayList<String>());
                     continue;
                 }
 
-                if (context.testExpression("userData", targetDepth)) {
-                    importInstanceLaunchSpecification.setUserData(UserDataStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceType", targetDepth)) {
-                    importInstanceLaunchSpecification.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("placement", targetDepth)) {
-                    importInstanceLaunchSpecification.setPlacement(PlacementStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("monitoring/enabled", targetDepth)) {
-                    importInstanceLaunchSpecification.setMonitoring(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("subnetId", targetDepth)) {
-                    importInstanceLaunchSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("GroupName/SecurityGroup", targetDepth)) {
+                    importInstanceLaunchSpecification.withGroupNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -105,8 +80,33 @@ public class ImportInstanceLaunchSpecificationStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("instanceType", targetDepth)) {
+                    importInstanceLaunchSpecification.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("monitoring/enabled", targetDepth)) {
+                    importInstanceLaunchSpecification.setMonitoring(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("placement", targetDepth)) {
+                    importInstanceLaunchSpecification.setPlacement(PlacementStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("privateIpAddress", targetDepth)) {
                     importInstanceLaunchSpecification.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("subnetId", targetDepth)) {
+                    importInstanceLaunchSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("userData", targetDepth)) {
+                    importInstanceLaunchSpecification.setUserData(UserDataStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -48,13 +48,13 @@ public class PlacementGroupStaxUnmarshaller implements Unmarshaller<PlacementGro
                     continue;
                 }
 
-                if (context.testExpression("strategy", targetDepth)) {
-                    placementGroup.setStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("state", targetDepth)) {
+                    placementGroup.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("state", targetDepth)) {
-                    placementGroup.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("strategy", targetDepth)) {
+                    placementGroup.setStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

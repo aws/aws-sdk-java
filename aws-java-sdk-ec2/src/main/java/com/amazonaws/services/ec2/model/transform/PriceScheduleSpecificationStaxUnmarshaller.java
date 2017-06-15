@@ -43,8 +43,8 @@ public class PriceScheduleSpecificationStaxUnmarshaller implements Unmarshaller<
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("term", targetDepth)) {
-                    priceScheduleSpecification.setTerm(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("currencyCode", targetDepth)) {
+                    priceScheduleSpecification.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -53,8 +53,8 @@ public class PriceScheduleSpecificationStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
-                if (context.testExpression("currencyCode", targetDepth)) {
-                    priceScheduleSpecification.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("term", targetDepth)) {
+                    priceScheduleSpecification.setTerm(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

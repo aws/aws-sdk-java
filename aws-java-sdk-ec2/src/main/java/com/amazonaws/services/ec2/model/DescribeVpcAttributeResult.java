@@ -33,18 +33,18 @@ public class DescribeVpcAttributeResult extends com.amazonaws.AmazonWebServiceRe
     private String vpcId;
     /**
      * <p>
-     * Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS
-     * server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.
-     * </p>
-     */
-    private Boolean enableDnsSupport;
-    /**
-     * <p>
      * Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>,
      * instances in the VPC get DNS hostnames; otherwise, they do not.
      * </p>
      */
     private Boolean enableDnsHostnames;
+    /**
+     * <p>
+     * Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>, the Amazon DNS
+     * server resolves DNS hostnames for your instances to their corresponding IP addresses; otherwise, it does not.
+     * </p>
+     */
+    private Boolean enableDnsSupport;
 
     /**
      * <p>
@@ -84,6 +84,66 @@ public class DescribeVpcAttributeResult extends com.amazonaws.AmazonWebServiceRe
     public DescribeVpcAttributeResult withVpcId(String vpcId) {
         setVpcId(vpcId);
         return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>,
+     * instances in the VPC get DNS hostnames; otherwise, they do not.
+     * </p>
+     * 
+     * @param enableDnsHostnames
+     *        Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is
+     *        <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
+     */
+
+    public void setEnableDnsHostnames(Boolean enableDnsHostnames) {
+        this.enableDnsHostnames = enableDnsHostnames;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>,
+     * instances in the VPC get DNS hostnames; otherwise, they do not.
+     * </p>
+     * 
+     * @return Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is
+     *         <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
+     */
+
+    public Boolean getEnableDnsHostnames() {
+        return this.enableDnsHostnames;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>,
+     * instances in the VPC get DNS hostnames; otherwise, they do not.
+     * </p>
+     * 
+     * @param enableDnsHostnames
+     *        Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is
+     *        <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcAttributeResult withEnableDnsHostnames(Boolean enableDnsHostnames) {
+        setEnableDnsHostnames(enableDnsHostnames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>,
+     * instances in the VPC get DNS hostnames; otherwise, they do not.
+     * </p>
+     * 
+     * @return Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is
+     *         <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
+     */
+
+    public Boolean isEnableDnsHostnames() {
+        return this.enableDnsHostnames;
     }
 
     /**
@@ -151,66 +211,6 @@ public class DescribeVpcAttributeResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>,
-     * instances in the VPC get DNS hostnames; otherwise, they do not.
-     * </p>
-     * 
-     * @param enableDnsHostnames
-     *        Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is
-     *        <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
-     */
-
-    public void setEnableDnsHostnames(Boolean enableDnsHostnames) {
-        this.enableDnsHostnames = enableDnsHostnames;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>,
-     * instances in the VPC get DNS hostnames; otherwise, they do not.
-     * </p>
-     * 
-     * @return Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is
-     *         <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
-     */
-
-    public Boolean getEnableDnsHostnames() {
-        return this.enableDnsHostnames;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>,
-     * instances in the VPC get DNS hostnames; otherwise, they do not.
-     * </p>
-     * 
-     * @param enableDnsHostnames
-     *        Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is
-     *        <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcAttributeResult withEnableDnsHostnames(Boolean enableDnsHostnames) {
-        setEnableDnsHostnames(enableDnsHostnames);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is <code>true</code>,
-     * instances in the VPC get DNS hostnames; otherwise, they do not.
-     * </p>
-     * 
-     * @return Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute is
-     *         <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
-     */
-
-    public Boolean isEnableDnsHostnames() {
-        return this.enableDnsHostnames;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -223,10 +223,10 @@ public class DescribeVpcAttributeResult extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
-        if (getEnableDnsSupport() != null)
-            sb.append("EnableDnsSupport: ").append(getEnableDnsSupport()).append(",");
         if (getEnableDnsHostnames() != null)
-            sb.append("EnableDnsHostnames: ").append(getEnableDnsHostnames());
+            sb.append("EnableDnsHostnames: ").append(getEnableDnsHostnames()).append(",");
+        if (getEnableDnsSupport() != null)
+            sb.append("EnableDnsSupport: ").append(getEnableDnsSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -245,13 +245,13 @@ public class DescribeVpcAttributeResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
-        if (other.getEnableDnsSupport() == null ^ this.getEnableDnsSupport() == null)
-            return false;
-        if (other.getEnableDnsSupport() != null && other.getEnableDnsSupport().equals(this.getEnableDnsSupport()) == false)
-            return false;
         if (other.getEnableDnsHostnames() == null ^ this.getEnableDnsHostnames() == null)
             return false;
         if (other.getEnableDnsHostnames() != null && other.getEnableDnsHostnames().equals(this.getEnableDnsHostnames()) == false)
+            return false;
+        if (other.getEnableDnsSupport() == null ^ this.getEnableDnsSupport() == null)
+            return false;
+        if (other.getEnableDnsSupport() != null && other.getEnableDnsSupport().equals(this.getEnableDnsSupport()) == false)
             return false;
         return true;
     }
@@ -262,8 +262,8 @@ public class DescribeVpcAttributeResult extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode + ((getEnableDnsSupport() == null) ? 0 : getEnableDnsSupport().hashCode());
         hashCode = prime * hashCode + ((getEnableDnsHostnames() == null) ? 0 : getEnableDnsHostnames().hashCode());
+        hashCode = prime * hashCode + ((getEnableDnsSupport() == null) ? 0 : getEnableDnsSupport().hashCode());
         return hashCode;
     }
 

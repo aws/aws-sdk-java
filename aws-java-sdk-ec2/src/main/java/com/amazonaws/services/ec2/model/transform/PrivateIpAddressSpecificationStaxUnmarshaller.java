@@ -43,13 +43,13 @@ public class PrivateIpAddressSpecificationStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("privateIpAddress", targetDepth)) {
-                    privateIpAddressSpecification.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("primary", targetDepth)) {
+                    privateIpAddressSpecification.setPrimary(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("primary", targetDepth)) {
-                    privateIpAddressSpecification.setPrimary(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("privateIpAddress", targetDepth)) {
+                    privateIpAddressSpecification.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

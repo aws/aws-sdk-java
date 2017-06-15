@@ -52,6 +52,11 @@ public class DescribeProductAsAdminResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describeProductAsAdminResult.setProductViewDetail(ProductViewDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ProvisioningArtifactSummaries", targetDepth)) {
+                    context.nextToken();
+                    describeProductAsAdminResult.setProvisioningArtifactSummaries(new ListUnmarshaller<ProvisioningArtifactSummary>(
+                            ProvisioningArtifactSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     describeProductAsAdminResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));

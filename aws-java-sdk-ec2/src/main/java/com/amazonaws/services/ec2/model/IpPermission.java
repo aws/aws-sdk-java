@@ -28,6 +28,13 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
+     * indicates all ICMP/ICMPv6 types.
+     * </p>
+     */
+    private Integer fromPort;
+    /**
+     * <p>
      * The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>).
      * </p>
@@ -41,26 +48,6 @@ public class IpPermission implements Serializable, Cloneable {
      * </p>
      */
     private String ipProtocol;
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
-     * indicates all ICMP/ICMPv6 types.
-     * </p>
-     */
-    private Integer fromPort;
-    /**
-     * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
-     * all ICMP/ICMPv6 codes for the specified ICMP type.
-     * </p>
-     */
-    private Integer toPort;
-    /**
-     * <p>
-     * One or more security group and AWS account ID pairs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<UserIdGroupPair> userIdGroupPairs;
     /**
      * <p>
      * [EC2-VPC only] One or more IPv6 ranges.
@@ -78,10 +65,69 @@ public class IpPermission implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<PrefixListId> prefixListIds;
     /**
      * <p>
+     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
+     * all ICMP/ICMPv6 codes for the specified ICMP type.
+     * </p>
+     */
+    private Integer toPort;
+    /**
+     * <p>
+     * One or more security group and AWS account ID pairs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<UserIdGroupPair> userIdGroupPairs;
+    /**
+     * <p>
      * One or more IPv4 ranges.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpRange> ipv4Ranges;
+
+    /**
+     * <p>
+     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
+     * indicates all ICMP/ICMPv6 types.
+     * </p>
+     * 
+     * @param fromPort
+     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of
+     *        <code>-1</code> indicates all ICMP/ICMPv6 types.
+     */
+
+    public void setFromPort(Integer fromPort) {
+        this.fromPort = fromPort;
+    }
+
+    /**
+     * <p>
+     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
+     * indicates all ICMP/ICMPv6 types.
+     * </p>
+     * 
+     * @return The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of
+     *         <code>-1</code> indicates all ICMP/ICMPv6 types.
+     */
+
+    public Integer getFromPort() {
+        return this.fromPort;
+    }
+
+    /**
+     * <p>
+     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
+     * indicates all ICMP/ICMPv6 types.
+     * </p>
+     * 
+     * @param fromPort
+     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of
+     *        <code>-1</code> indicates all ICMP/ICMPv6 types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpPermission withFromPort(Integer fromPort) {
+        setFromPort(fromPort);
+        return this;
+    }
 
     /**
      * <p>
@@ -172,171 +218,6 @@ public class IpPermission implements Serializable, Cloneable {
 
     public IpPermission withIpProtocol(String ipProtocol) {
         setIpProtocol(ipProtocol);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
-     * indicates all ICMP/ICMPv6 types.
-     * </p>
-     * 
-     * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of
-     *        <code>-1</code> indicates all ICMP/ICMPv6 types.
-     */
-
-    public void setFromPort(Integer fromPort) {
-        this.fromPort = fromPort;
-    }
-
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
-     * indicates all ICMP/ICMPv6 types.
-     * </p>
-     * 
-     * @return The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of
-     *         <code>-1</code> indicates all ICMP/ICMPv6 types.
-     */
-
-    public Integer getFromPort() {
-        return this.fromPort;
-    }
-
-    /**
-     * <p>
-     * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
-     * indicates all ICMP/ICMPv6 types.
-     * </p>
-     * 
-     * @param fromPort
-     *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of
-     *        <code>-1</code> indicates all ICMP/ICMPv6 types.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public IpPermission withFromPort(Integer fromPort) {
-        setFromPort(fromPort);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
-     * all ICMP/ICMPv6 codes for the specified ICMP type.
-     * </p>
-     * 
-     * @param toPort
-     *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code>
-     *        indicates all ICMP/ICMPv6 codes for the specified ICMP type.
-     */
-
-    public void setToPort(Integer toPort) {
-        this.toPort = toPort;
-    }
-
-    /**
-     * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
-     * all ICMP/ICMPv6 codes for the specified ICMP type.
-     * </p>
-     * 
-     * @return The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code>
-     *         indicates all ICMP/ICMPv6 codes for the specified ICMP type.
-     */
-
-    public Integer getToPort() {
-        return this.toPort;
-    }
-
-    /**
-     * <p>
-     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
-     * all ICMP/ICMPv6 codes for the specified ICMP type.
-     * </p>
-     * 
-     * @param toPort
-     *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code>
-     *        indicates all ICMP/ICMPv6 codes for the specified ICMP type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public IpPermission withToPort(Integer toPort) {
-        setToPort(toPort);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more security group and AWS account ID pairs.
-     * </p>
-     * 
-     * @return One or more security group and AWS account ID pairs.
-     */
-
-    public java.util.List<UserIdGroupPair> getUserIdGroupPairs() {
-        if (userIdGroupPairs == null) {
-            userIdGroupPairs = new com.amazonaws.internal.SdkInternalList<UserIdGroupPair>();
-        }
-        return userIdGroupPairs;
-    }
-
-    /**
-     * <p>
-     * One or more security group and AWS account ID pairs.
-     * </p>
-     * 
-     * @param userIdGroupPairs
-     *        One or more security group and AWS account ID pairs.
-     */
-
-    public void setUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
-        if (userIdGroupPairs == null) {
-            this.userIdGroupPairs = null;
-            return;
-        }
-
-        this.userIdGroupPairs = new com.amazonaws.internal.SdkInternalList<UserIdGroupPair>(userIdGroupPairs);
-    }
-
-    /**
-     * <p>
-     * One or more security group and AWS account ID pairs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setUserIdGroupPairs(java.util.Collection)} or {@link #withUserIdGroupPairs(java.util.Collection)} if you
-     * want to override the existing values.
-     * </p>
-     * 
-     * @param userIdGroupPairs
-     *        One or more security group and AWS account ID pairs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public IpPermission withUserIdGroupPairs(UserIdGroupPair... userIdGroupPairs) {
-        if (this.userIdGroupPairs == null) {
-            setUserIdGroupPairs(new com.amazonaws.internal.SdkInternalList<UserIdGroupPair>(userIdGroupPairs.length));
-        }
-        for (UserIdGroupPair ele : userIdGroupPairs) {
-            this.userIdGroupPairs.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more security group and AWS account ID pairs.
-     * </p>
-     * 
-     * @param userIdGroupPairs
-     *        One or more security group and AWS account ID pairs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public IpPermission withUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
-        setUserIdGroupPairs(userIdGroupPairs);
         return this;
     }
 
@@ -507,6 +388,125 @@ public class IpPermission implements Serializable, Cloneable {
 
     public IpPermission withPrefixListIds(java.util.Collection<PrefixListId> prefixListIds) {
         setPrefixListIds(prefixListIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
+     * all ICMP/ICMPv6 codes for the specified ICMP type.
+     * </p>
+     * 
+     * @param toPort
+     *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code>
+     *        indicates all ICMP/ICMPv6 codes for the specified ICMP type.
+     */
+
+    public void setToPort(Integer toPort) {
+        this.toPort = toPort;
+    }
+
+    /**
+     * <p>
+     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
+     * all ICMP/ICMPv6 codes for the specified ICMP type.
+     * </p>
+     * 
+     * @return The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code>
+     *         indicates all ICMP/ICMPv6 codes for the specified ICMP type.
+     */
+
+    public Integer getToPort() {
+        return this.toPort;
+    }
+
+    /**
+     * <p>
+     * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
+     * all ICMP/ICMPv6 codes for the specified ICMP type.
+     * </p>
+     * 
+     * @param toPort
+     *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code>
+     *        indicates all ICMP/ICMPv6 codes for the specified ICMP type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpPermission withToPort(Integer toPort) {
+        setToPort(toPort);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more security group and AWS account ID pairs.
+     * </p>
+     * 
+     * @return One or more security group and AWS account ID pairs.
+     */
+
+    public java.util.List<UserIdGroupPair> getUserIdGroupPairs() {
+        if (userIdGroupPairs == null) {
+            userIdGroupPairs = new com.amazonaws.internal.SdkInternalList<UserIdGroupPair>();
+        }
+        return userIdGroupPairs;
+    }
+
+    /**
+     * <p>
+     * One or more security group and AWS account ID pairs.
+     * </p>
+     * 
+     * @param userIdGroupPairs
+     *        One or more security group and AWS account ID pairs.
+     */
+
+    public void setUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
+        if (userIdGroupPairs == null) {
+            this.userIdGroupPairs = null;
+            return;
+        }
+
+        this.userIdGroupPairs = new com.amazonaws.internal.SdkInternalList<UserIdGroupPair>(userIdGroupPairs);
+    }
+
+    /**
+     * <p>
+     * One or more security group and AWS account ID pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserIdGroupPairs(java.util.Collection)} or {@link #withUserIdGroupPairs(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param userIdGroupPairs
+     *        One or more security group and AWS account ID pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpPermission withUserIdGroupPairs(UserIdGroupPair... userIdGroupPairs) {
+        if (this.userIdGroupPairs == null) {
+            setUserIdGroupPairs(new com.amazonaws.internal.SdkInternalList<UserIdGroupPair>(userIdGroupPairs.length));
+        }
+        for (UserIdGroupPair ele : userIdGroupPairs) {
+            this.userIdGroupPairs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more security group and AWS account ID pairs.
+     * </p>
+     * 
+     * @param userIdGroupPairs
+     *        One or more security group and AWS account ID pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpPermission withUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
+        setUserIdGroupPairs(userIdGroupPairs);
         return this;
     }
 
@@ -691,18 +691,18 @@ public class IpPermission implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIpProtocol() != null)
-            sb.append("IpProtocol: ").append(getIpProtocol()).append(",");
         if (getFromPort() != null)
             sb.append("FromPort: ").append(getFromPort()).append(",");
-        if (getToPort() != null)
-            sb.append("ToPort: ").append(getToPort()).append(",");
-        if (getUserIdGroupPairs() != null)
-            sb.append("UserIdGroupPairs: ").append(getUserIdGroupPairs()).append(",");
+        if (getIpProtocol() != null)
+            sb.append("IpProtocol: ").append(getIpProtocol()).append(",");
         if (getIpv6Ranges() != null)
             sb.append("Ipv6Ranges: ").append(getIpv6Ranges()).append(",");
         if (getPrefixListIds() != null)
             sb.append("PrefixListIds: ").append(getPrefixListIds()).append(",");
+        if (getToPort() != null)
+            sb.append("ToPort: ").append(getToPort()).append(",");
+        if (getUserIdGroupPairs() != null)
+            sb.append("UserIdGroupPairs: ").append(getUserIdGroupPairs()).append(",");
         if (getIpv4Ranges() != null)
             sb.append("Ipv4Ranges: ").append(getIpv4Ranges());
         sb.append("}");
@@ -719,21 +719,13 @@ public class IpPermission implements Serializable, Cloneable {
         if (obj instanceof IpPermission == false)
             return false;
         IpPermission other = (IpPermission) obj;
-        if (other.getIpProtocol() == null ^ this.getIpProtocol() == null)
-            return false;
-        if (other.getIpProtocol() != null && other.getIpProtocol().equals(this.getIpProtocol()) == false)
-            return false;
         if (other.getFromPort() == null ^ this.getFromPort() == null)
             return false;
         if (other.getFromPort() != null && other.getFromPort().equals(this.getFromPort()) == false)
             return false;
-        if (other.getToPort() == null ^ this.getToPort() == null)
+        if (other.getIpProtocol() == null ^ this.getIpProtocol() == null)
             return false;
-        if (other.getToPort() != null && other.getToPort().equals(this.getToPort()) == false)
-            return false;
-        if (other.getUserIdGroupPairs() == null ^ this.getUserIdGroupPairs() == null)
-            return false;
-        if (other.getUserIdGroupPairs() != null && other.getUserIdGroupPairs().equals(this.getUserIdGroupPairs()) == false)
+        if (other.getIpProtocol() != null && other.getIpProtocol().equals(this.getIpProtocol()) == false)
             return false;
         if (other.getIpv6Ranges() == null ^ this.getIpv6Ranges() == null)
             return false;
@@ -742,6 +734,14 @@ public class IpPermission implements Serializable, Cloneable {
         if (other.getPrefixListIds() == null ^ this.getPrefixListIds() == null)
             return false;
         if (other.getPrefixListIds() != null && other.getPrefixListIds().equals(this.getPrefixListIds()) == false)
+            return false;
+        if (other.getToPort() == null ^ this.getToPort() == null)
+            return false;
+        if (other.getToPort() != null && other.getToPort().equals(this.getToPort()) == false)
+            return false;
+        if (other.getUserIdGroupPairs() == null ^ this.getUserIdGroupPairs() == null)
+            return false;
+        if (other.getUserIdGroupPairs() != null && other.getUserIdGroupPairs().equals(this.getUserIdGroupPairs()) == false)
             return false;
         if (other.getIpv4Ranges() == null ^ this.getIpv4Ranges() == null)
             return false;
@@ -755,12 +755,12 @@ public class IpPermission implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode());
         hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
-        hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode());
-        hashCode = prime * hashCode + ((getUserIdGroupPairs() == null) ? 0 : getUserIdGroupPairs().hashCode());
+        hashCode = prime * hashCode + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode());
         hashCode = prime * hashCode + ((getIpv6Ranges() == null) ? 0 : getIpv6Ranges().hashCode());
         hashCode = prime * hashCode + ((getPrefixListIds() == null) ? 0 : getPrefixListIds().hashCode());
+        hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode());
+        hashCode = prime * hashCode + ((getUserIdGroupPairs() == null) ? 0 : getUserIdGroupPairs().hashCode());
         hashCode = prime * hashCode + ((getIpv4Ranges() == null) ? 0 : getIpv4Ranges().hashCode());
         return hashCode;
     }

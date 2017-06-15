@@ -43,13 +43,13 @@ public class TargetConfigurationStaxUnmarshaller implements Unmarshaller<TargetC
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("offeringId", targetDepth)) {
-                    targetConfiguration.setOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceCount", targetDepth)) {
+                    targetConfiguration.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("instanceCount", targetDepth)) {
-                    targetConfiguration.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("offeringId", targetDepth)) {
+                    targetConfiguration.setOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -40,6 +40,10 @@ public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (assignPrivateIpAddressesRequest.getAllowReassignment() != null) {
+            request.addParameter("AllowReassignment", StringUtils.fromBoolean(assignPrivateIpAddressesRequest.getAllowReassignment()));
+        }
+
         if (assignPrivateIpAddressesRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(assignPrivateIpAddressesRequest.getNetworkInterfaceId()));
         }
@@ -60,10 +64,6 @@ public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Req
 
         if (assignPrivateIpAddressesRequest.getSecondaryPrivateIpAddressCount() != null) {
             request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(assignPrivateIpAddressesRequest.getSecondaryPrivateIpAddressCount()));
-        }
-
-        if (assignPrivateIpAddressesRequest.getAllowReassignment() != null) {
-            request.addParameter("AllowReassignment", StringUtils.fromBoolean(assignPrivateIpAddressesRequest.getAllowReassignment()));
         }
 
         return request;

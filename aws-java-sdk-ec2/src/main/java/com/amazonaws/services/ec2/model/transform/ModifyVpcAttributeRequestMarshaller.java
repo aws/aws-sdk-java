@@ -40,16 +40,16 @@ public class ModifyVpcAttributeRequestMarshaller implements Marshaller<Request<M
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (modifyVpcAttributeRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(modifyVpcAttributeRequest.getVpcId()));
+        if (modifyVpcAttributeRequest.getEnableDnsHostnames() != null) {
+            request.addParameter("EnableDnsHostnames.Value", StringUtils.fromBoolean(modifyVpcAttributeRequest.getEnableDnsHostnames()));
         }
 
         if (modifyVpcAttributeRequest.getEnableDnsSupport() != null) {
             request.addParameter("EnableDnsSupport.Value", StringUtils.fromBoolean(modifyVpcAttributeRequest.getEnableDnsSupport()));
         }
 
-        if (modifyVpcAttributeRequest.getEnableDnsHostnames() != null) {
-            request.addParameter("EnableDnsHostnames.Value", StringUtils.fromBoolean(modifyVpcAttributeRequest.getEnableDnsHostnames()));
+        if (modifyVpcAttributeRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(modifyVpcAttributeRequest.getVpcId()));
         }
 
         return request;

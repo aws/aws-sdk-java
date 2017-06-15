@@ -27,17 +27,63 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of volumes.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<VolumeStatusItem> volumeStatuses;
-    /**
-     * <p>
      * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
      * results to return.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A list of volumes.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<VolumeStatusItem> volumeStatuses;
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumeStatusResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -113,52 +159,6 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumeStatusResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -169,10 +169,10 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeStatuses() != null)
-            sb.append("VolumeStatuses: ").append(getVolumeStatuses()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getVolumeStatuses() != null)
+            sb.append("VolumeStatuses: ").append(getVolumeStatuses());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +187,13 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof DescribeVolumeStatusResult == false)
             return false;
         DescribeVolumeStatusResult other = (DescribeVolumeStatusResult) obj;
-        if (other.getVolumeStatuses() == null ^ this.getVolumeStatuses() == null)
-            return false;
-        if (other.getVolumeStatuses() != null && other.getVolumeStatuses().equals(this.getVolumeStatuses()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getVolumeStatuses() == null ^ this.getVolumeStatuses() == null)
+            return false;
+        if (other.getVolumeStatuses() != null && other.getVolumeStatuses().equals(this.getVolumeStatuses()) == false)
             return false;
         return true;
     }
@@ -203,8 +203,8 @@ public class DescribeVolumeStatusResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeStatuses() == null) ? 0 : getVolumeStatuses().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVolumeStatuses() == null) ? 0 : getVolumeStatuses().hashCode());
         return hashCode;
     }
 

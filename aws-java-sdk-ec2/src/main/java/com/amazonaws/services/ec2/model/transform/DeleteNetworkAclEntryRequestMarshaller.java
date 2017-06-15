@@ -40,16 +40,16 @@ public class DeleteNetworkAclEntryRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (deleteNetworkAclEntryRequest.getEgress() != null) {
+            request.addParameter("Egress", StringUtils.fromBoolean(deleteNetworkAclEntryRequest.getEgress()));
+        }
+
         if (deleteNetworkAclEntryRequest.getNetworkAclId() != null) {
             request.addParameter("NetworkAclId", StringUtils.fromString(deleteNetworkAclEntryRequest.getNetworkAclId()));
         }
 
         if (deleteNetworkAclEntryRequest.getRuleNumber() != null) {
             request.addParameter("RuleNumber", StringUtils.fromInteger(deleteNetworkAclEntryRequest.getRuleNumber()));
-        }
-
-        if (deleteNetworkAclEntryRequest.getEgress() != null) {
-            request.addParameter("Egress", StringUtils.fromBoolean(deleteNetworkAclEntryRequest.getEgress()));
         }
 
         return request;

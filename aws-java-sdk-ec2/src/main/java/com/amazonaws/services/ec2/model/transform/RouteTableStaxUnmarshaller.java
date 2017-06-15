@@ -45,26 +45,6 @@ public class RouteTableStaxUnmarshaller implements Unmarshaller<RouteTable, Stax
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("routeTableId", targetDepth)) {
-                    routeTable.setRouteTableId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcId", targetDepth)) {
-                    routeTable.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("routeSet", targetDepth)) {
-                    routeTable.withRoutes(new ArrayList<Route>());
-                    continue;
-                }
-
-                if (context.testExpression("routeSet/item", targetDepth)) {
-                    routeTable.withRoutes(RouteStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("associationSet", targetDepth)) {
                     routeTable.withAssociations(new ArrayList<RouteTableAssociation>());
                     continue;
@@ -72,16 +52,6 @@ public class RouteTableStaxUnmarshaller implements Unmarshaller<RouteTable, Stax
 
                 if (context.testExpression("associationSet/item", targetDepth)) {
                     routeTable.withAssociations(RouteTableAssociationStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("tagSet", targetDepth)) {
-                    routeTable.withTags(new ArrayList<Tag>());
-                    continue;
-                }
-
-                if (context.testExpression("tagSet/item", targetDepth)) {
-                    routeTable.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -95,6 +65,35 @@ public class RouteTableStaxUnmarshaller implements Unmarshaller<RouteTable, Stax
                     continue;
                 }
 
+                if (context.testExpression("routeTableId", targetDepth)) {
+                    routeTable.setRouteTableId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("routeSet", targetDepth)) {
+                    routeTable.withRoutes(new ArrayList<Route>());
+                    continue;
+                }
+
+                if (context.testExpression("routeSet/item", targetDepth)) {
+                    routeTable.withRoutes(RouteStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    routeTable.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    routeTable.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpcId", targetDepth)) {
+                    routeTable.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return routeTable;

@@ -40,12 +40,12 @@ public class DescribeImageAttributeRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeImageAttributeRequest.getImageId() != null) {
-            request.addParameter("ImageId", StringUtils.fromString(describeImageAttributeRequest.getImageId()));
-        }
-
         if (describeImageAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(describeImageAttributeRequest.getAttribute()));
+        }
+
+        if (describeImageAttributeRequest.getImageId() != null) {
+            request.addParameter("ImageId", StringUtils.fromString(describeImageAttributeRequest.getImageId()));
         }
 
         return request;

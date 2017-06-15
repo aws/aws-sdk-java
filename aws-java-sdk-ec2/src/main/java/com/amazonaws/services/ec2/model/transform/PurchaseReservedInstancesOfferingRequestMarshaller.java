@@ -42,13 +42,13 @@ public class PurchaseReservedInstancesOfferingRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
+        if (purchaseReservedInstancesOfferingRequest.getInstanceCount() != null) {
+            request.addParameter("InstanceCount", StringUtils.fromInteger(purchaseReservedInstancesOfferingRequest.getInstanceCount()));
+        }
+
         if (purchaseReservedInstancesOfferingRequest.getReservedInstancesOfferingId() != null) {
             request.addParameter("ReservedInstancesOfferingId",
                     StringUtils.fromString(purchaseReservedInstancesOfferingRequest.getReservedInstancesOfferingId()));
-        }
-
-        if (purchaseReservedInstancesOfferingRequest.getInstanceCount() != null) {
-            request.addParameter("InstanceCount", StringUtils.fromInteger(purchaseReservedInstancesOfferingRequest.getInstanceCount()));
         }
 
         ReservedInstanceLimitPrice limitPrice = purchaseReservedInstancesOfferingRequest.getLimitPrice();

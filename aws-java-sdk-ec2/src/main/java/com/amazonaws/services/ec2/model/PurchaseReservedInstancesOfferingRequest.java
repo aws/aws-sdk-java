@@ -30,16 +30,16 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Reserved Instance offering to purchase.
-     * </p>
-     */
-    private String reservedInstancesOfferingId;
-    /**
-     * <p>
      * The number of Reserved Instances to purchase.
      * </p>
      */
     private Integer instanceCount;
+    /**
+     * <p>
+     * The ID of the Reserved Instance offering to purchase.
+     * </p>
+     */
+    private String reservedInstancesOfferingId;
     /**
      * <p>
      * Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved
@@ -67,46 +67,6 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     public PurchaseReservedInstancesOfferingRequest(String reservedInstancesOfferingId, Integer instanceCount) {
         setReservedInstancesOfferingId(reservedInstancesOfferingId);
         setInstanceCount(instanceCount);
-    }
-
-    /**
-     * <p>
-     * The ID of the Reserved Instance offering to purchase.
-     * </p>
-     * 
-     * @param reservedInstancesOfferingId
-     *        The ID of the Reserved Instance offering to purchase.
-     */
-
-    public void setReservedInstancesOfferingId(String reservedInstancesOfferingId) {
-        this.reservedInstancesOfferingId = reservedInstancesOfferingId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Reserved Instance offering to purchase.
-     * </p>
-     * 
-     * @return The ID of the Reserved Instance offering to purchase.
-     */
-
-    public String getReservedInstancesOfferingId() {
-        return this.reservedInstancesOfferingId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Reserved Instance offering to purchase.
-     * </p>
-     * 
-     * @param reservedInstancesOfferingId
-     *        The ID of the Reserved Instance offering to purchase.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PurchaseReservedInstancesOfferingRequest withReservedInstancesOfferingId(String reservedInstancesOfferingId) {
-        setReservedInstancesOfferingId(reservedInstancesOfferingId);
-        return this;
     }
 
     /**
@@ -146,6 +106,46 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
 
     public PurchaseReservedInstancesOfferingRequest withInstanceCount(Integer instanceCount) {
         setInstanceCount(instanceCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Reserved Instance offering to purchase.
+     * </p>
+     * 
+     * @param reservedInstancesOfferingId
+     *        The ID of the Reserved Instance offering to purchase.
+     */
+
+    public void setReservedInstancesOfferingId(String reservedInstancesOfferingId) {
+        this.reservedInstancesOfferingId = reservedInstancesOfferingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Reserved Instance offering to purchase.
+     * </p>
+     * 
+     * @return The ID of the Reserved Instance offering to purchase.
+     */
+
+    public String getReservedInstancesOfferingId() {
+        return this.reservedInstancesOfferingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Reserved Instance offering to purchase.
+     * </p>
+     * 
+     * @param reservedInstancesOfferingId
+     *        The ID of the Reserved Instance offering to purchase.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseReservedInstancesOfferingRequest withReservedInstancesOfferingId(String reservedInstancesOfferingId) {
+        setReservedInstancesOfferingId(reservedInstancesOfferingId);
         return this;
     }
 
@@ -217,10 +217,10 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservedInstancesOfferingId() != null)
-            sb.append("ReservedInstancesOfferingId: ").append(getReservedInstancesOfferingId()).append(",");
         if (getInstanceCount() != null)
             sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
+        if (getReservedInstancesOfferingId() != null)
+            sb.append("ReservedInstancesOfferingId: ").append(getReservedInstancesOfferingId()).append(",");
         if (getLimitPrice() != null)
             sb.append("LimitPrice: ").append(getLimitPrice());
         sb.append("}");
@@ -237,13 +237,13 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
         if (obj instanceof PurchaseReservedInstancesOfferingRequest == false)
             return false;
         PurchaseReservedInstancesOfferingRequest other = (PurchaseReservedInstancesOfferingRequest) obj;
-        if (other.getReservedInstancesOfferingId() == null ^ this.getReservedInstancesOfferingId() == null)
-            return false;
-        if (other.getReservedInstancesOfferingId() != null && other.getReservedInstancesOfferingId().equals(this.getReservedInstancesOfferingId()) == false)
-            return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+            return false;
+        if (other.getReservedInstancesOfferingId() == null ^ this.getReservedInstancesOfferingId() == null)
+            return false;
+        if (other.getReservedInstancesOfferingId() != null && other.getReservedInstancesOfferingId().equals(this.getReservedInstancesOfferingId()) == false)
             return false;
         if (other.getLimitPrice() == null ^ this.getLimitPrice() == null)
             return false;
@@ -257,8 +257,8 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getReservedInstancesOfferingId() == null) ? 0 : getReservedInstancesOfferingId().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesOfferingId() == null) ? 0 : getReservedInstancesOfferingId().hashCode());
         hashCode = prime * hashCode + ((getLimitPrice() == null) ? 0 : getLimitPrice().hashCode());
         return hashCode;
     }

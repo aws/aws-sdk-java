@@ -45,16 +45,6 @@ public class ClassicLinkInstanceStaxUnmarshaller implements Unmarshaller<Classic
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceId", targetDepth)) {
-                    classicLinkInstance.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcId", targetDepth)) {
-                    classicLinkInstance.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("groupSet", targetDepth)) {
                     classicLinkInstance.withGroups(new ArrayList<GroupIdentifier>());
                     continue;
@@ -62,6 +52,11 @@ public class ClassicLinkInstanceStaxUnmarshaller implements Unmarshaller<Classic
 
                 if (context.testExpression("groupSet/item", targetDepth)) {
                     classicLinkInstance.withGroups(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instanceId", targetDepth)) {
+                    classicLinkInstance.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -75,6 +70,10 @@ public class ClassicLinkInstanceStaxUnmarshaller implements Unmarshaller<Classic
                     continue;
                 }
 
+                if (context.testExpression("vpcId", targetDepth)) {
+                    classicLinkInstance.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return classicLinkInstance;

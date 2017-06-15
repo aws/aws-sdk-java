@@ -40,8 +40,8 @@ public class AssignIpv6AddressesRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (assignIpv6AddressesRequest.getNetworkInterfaceId() != null) {
-            request.addParameter("NetworkInterfaceId", StringUtils.fromString(assignIpv6AddressesRequest.getNetworkInterfaceId()));
+        if (assignIpv6AddressesRequest.getIpv6AddressCount() != null) {
+            request.addParameter("Ipv6AddressCount", StringUtils.fromInteger(assignIpv6AddressesRequest.getIpv6AddressCount()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> assignIpv6AddressesRequestIpv6AddressesList = (com.amazonaws.internal.SdkInternalList<String>) assignIpv6AddressesRequest
@@ -57,8 +57,8 @@ public class AssignIpv6AddressesRequestMarshaller implements Marshaller<Request<
             }
         }
 
-        if (assignIpv6AddressesRequest.getIpv6AddressCount() != null) {
-            request.addParameter("Ipv6AddressCount", StringUtils.fromInteger(assignIpv6AddressesRequest.getIpv6AddressCount()));
+        if (assignIpv6AddressesRequest.getNetworkInterfaceId() != null) {
+            request.addParameter("NetworkInterfaceId", StringUtils.fromString(assignIpv6AddressesRequest.getNetworkInterfaceId()));
         }
 
         return request;

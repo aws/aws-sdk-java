@@ -29,6 +29,12 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * </p>
+     */
+    private String allocationId;
+    /**
+     * <p>
      * The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or
      * the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one
      * network interface is attached.
@@ -43,10 +49,14 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     private String publicIp;
     /**
      * <p>
-     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
+     * associated with an instance or network interface to be reassociated with the specified instance or network
+     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
+     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
+     * with another resource.
      * </p>
      */
-    private String allocationId;
+    private Boolean allowReassociation;
     /**
      * <p>
      * [EC2-VPC] The ID of the network interface. If the instance has more than one network interface, you must specify
@@ -61,16 +71,6 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      * </p>
      */
     private String privateIpAddress;
-    /**
-     * <p>
-     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
-     * associated with an instance or network interface to be reassociated with the specified instance or network
-     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
-     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
-     * with another resource.
-     * </p>
-     */
-    private Boolean allowReassociation;
 
     /**
      * Default constructor for AssociateAddressRequest object. Callers should use the setter or fluent setter (with...)
@@ -93,6 +93,46 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     public AssociateAddressRequest(String instanceId, String publicIp) {
         setInstanceId(instanceId);
         setPublicIp(publicIp);
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * </p>
+     * 
+     * @param allocationId
+     *        [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     */
+
+    public void setAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * </p>
+     * 
+     * @return [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     */
+
+    public String getAllocationId() {
+        return this.allocationId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * </p>
+     * 
+     * @param allocationId
+     *        [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateAddressRequest withAllocationId(String allocationId) {
+        setAllocationId(allocationId);
+        return this;
     }
 
     /**
@@ -189,42 +229,86 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
+     * associated with an instance or network interface to be reassociated with the specified instance or network
+     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
+     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
+     * with another resource.
      * </p>
      * 
-     * @param allocationId
-     *        [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * @param allowReassociation
+     *        [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
+     *        associated with an instance or network interface to be reassociated with the specified instance or network
+     *        interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is
+     *        automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is
+     *        already associated with another resource.
      */
 
-    public void setAllocationId(String allocationId) {
-        this.allocationId = allocationId;
+    public void setAllowReassociation(Boolean allowReassociation) {
+        this.allowReassociation = allowReassociation;
     }
 
     /**
      * <p>
-     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
+     * associated with an instance or network interface to be reassociated with the specified instance or network
+     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
+     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
+     * with another resource.
      * </p>
      * 
-     * @return [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * @return [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is
+     *         already associated with an instance or network interface to be reassociated with the specified instance
+     *         or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation
+     *         is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is
+     *         already associated with another resource.
      */
 
-    public String getAllocationId() {
-        return this.allocationId;
+    public Boolean getAllowReassociation() {
+        return this.allowReassociation;
     }
 
     /**
      * <p>
-     * [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
+     * associated with an instance or network interface to be reassociated with the specified instance or network
+     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
+     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
+     * with another resource.
      * </p>
      * 
-     * @param allocationId
-     *        [EC2-VPC] The allocation ID. This is required for EC2-VPC.
+     * @param allowReassociation
+     *        [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
+     *        associated with an instance or network interface to be reassociated with the specified instance or network
+     *        interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is
+     *        automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is
+     *        already associated with another resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public AssociateAddressRequest withAllocationId(String allocationId) {
-        setAllocationId(allocationId);
+    public AssociateAddressRequest withAllowReassociation(Boolean allowReassociation) {
+        setAllowReassociation(allowReassociation);
         return this;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
+     * associated with an instance or network interface to be reassociated with the specified instance or network
+     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
+     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
+     * with another resource.
+     * </p>
+     * 
+     * @return [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is
+     *         already associated with an instance or network interface to be reassociated with the specified instance
+     *         or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation
+     *         is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is
+     *         already associated with another resource.
+     */
+
+    public Boolean isAllowReassociation() {
+        return this.allowReassociation;
     }
 
     /**
@@ -321,90 +405,6 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
-     * <p>
-     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
-     * associated with an instance or network interface to be reassociated with the specified instance or network
-     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
-     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
-     * with another resource.
-     * </p>
-     * 
-     * @param allowReassociation
-     *        [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
-     *        associated with an instance or network interface to be reassociated with the specified instance or network
-     *        interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is
-     *        automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is
-     *        already associated with another resource.
-     */
-
-    public void setAllowReassociation(Boolean allowReassociation) {
-        this.allowReassociation = allowReassociation;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
-     * associated with an instance or network interface to be reassociated with the specified instance or network
-     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
-     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
-     * with another resource.
-     * </p>
-     * 
-     * @return [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is
-     *         already associated with an instance or network interface to be reassociated with the specified instance
-     *         or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation
-     *         is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is
-     *         already associated with another resource.
-     */
-
-    public Boolean getAllowReassociation() {
-        return this.allowReassociation;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
-     * associated with an instance or network interface to be reassociated with the specified instance or network
-     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
-     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
-     * with another resource.
-     * </p>
-     * 
-     * @param allowReassociation
-     *        [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
-     *        associated with an instance or network interface to be reassociated with the specified instance or network
-     *        interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is
-     *        automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is
-     *        already associated with another resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssociateAddressRequest withAllowReassociation(Boolean allowReassociation) {
-        setAllowReassociation(allowReassociation);
-        return this;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is already
-     * associated with an instance or network interface to be reassociated with the specified instance or network
-     * interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation is automatic,
-     * therefore you can specify false to ensure the operation fails if the Elastic IP address is already associated
-     * with another resource.
-     * </p>
-     * 
-     * @return [EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an Elastic IP address that is
-     *         already associated with an instance or network interface to be reassociated with the specified instance
-     *         or network interface. Otherwise, the operation fails. In a VPC in an EC2-VPC-only account, reassociation
-     *         is automatic, therefore you can specify false to ensure the operation fails if the Elastic IP address is
-     *         already associated with another resource.
-     */
-
-    public Boolean isAllowReassociation() {
-        return this.allowReassociation;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -426,18 +426,18 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAllocationId() != null)
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getPublicIp() != null)
             sb.append("PublicIp: ").append(getPublicIp()).append(",");
-        if (getAllocationId() != null)
-            sb.append("AllocationId: ").append(getAllocationId()).append(",");
+        if (getAllowReassociation() != null)
+            sb.append("AllowReassociation: ").append(getAllowReassociation()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getPrivateIpAddress() != null)
-            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
-        if (getAllowReassociation() != null)
-            sb.append("AllowReassociation: ").append(getAllowReassociation());
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -452,6 +452,10 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof AssociateAddressRequest == false)
             return false;
         AssociateAddressRequest other = (AssociateAddressRequest) obj;
+        if (other.getAllocationId() == null ^ this.getAllocationId() == null)
+            return false;
+        if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+            return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
@@ -460,9 +464,9 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
-        if (other.getAllocationId() == null ^ this.getAllocationId() == null)
+        if (other.getAllowReassociation() == null ^ this.getAllowReassociation() == null)
             return false;
-        if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+        if (other.getAllowReassociation() != null && other.getAllowReassociation().equals(this.getAllowReassociation()) == false)
             return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
@@ -472,10 +476,6 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
-        if (other.getAllowReassociation() == null ^ this.getAllowReassociation() == null)
-            return false;
-        if (other.getAllowReassociation() != null && other.getAllowReassociation().equals(this.getAllowReassociation()) == false)
-            return false;
         return true;
     }
 
@@ -484,12 +484,12 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
-        hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
+        hashCode = prime * hashCode + ((getAllowReassociation() == null) ? 0 : getAllowReassociation().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
-        hashCode = prime * hashCode + ((getAllowReassociation() == null) ? 0 : getAllowReassociation().hashCode());
         return hashCode;
     }
 

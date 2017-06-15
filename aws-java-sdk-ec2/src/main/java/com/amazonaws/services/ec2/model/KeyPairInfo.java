@@ -28,58 +28,18 @@ public class KeyPairInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the key pair.
-     * </p>
-     */
-    private String keyName;
-    /**
-     * <p>
      * If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
      * If you used <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5 public key fingerprint as
      * specified in section 4 of RFC4716.
      * </p>
      */
     private String keyFingerprint;
-
     /**
      * <p>
      * The name of the key pair.
      * </p>
-     * 
-     * @param keyName
-     *        The name of the key pair.
      */
-
-    public void setKeyName(String keyName) {
-        this.keyName = keyName;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @return The name of the key pair.
-     */
-
-    public String getKeyName() {
-        return this.keyName;
-    }
-
-    /**
-     * <p>
-     * The name of the key pair.
-     * </p>
-     * 
-     * @param keyName
-     *        The name of the key pair.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public KeyPairInfo withKeyName(String keyName) {
-        setKeyName(keyName);
-        return this;
-    }
+    private String keyName;
 
     /**
      * <p>
@@ -134,6 +94,46 @@ public class KeyPairInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
+     */
+
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @return The name of the key pair.
+     */
+
+    public String getKeyName() {
+        return this.keyName;
+    }
+
+    /**
+     * <p>
+     * The name of the key pair.
+     * </p>
+     * 
+     * @param keyName
+     *        The name of the key pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KeyPairInfo withKeyName(String keyName) {
+        setKeyName(keyName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -144,10 +144,10 @@ public class KeyPairInfo implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getKeyName() != null)
-            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getKeyFingerprint() != null)
-            sb.append("KeyFingerprint: ").append(getKeyFingerprint());
+            sb.append("KeyFingerprint: ").append(getKeyFingerprint()).append(",");
+        if (getKeyName() != null)
+            sb.append("KeyName: ").append(getKeyName());
         sb.append("}");
         return sb.toString();
     }
@@ -162,13 +162,13 @@ public class KeyPairInfo implements Serializable, Cloneable {
         if (obj instanceof KeyPairInfo == false)
             return false;
         KeyPairInfo other = (KeyPairInfo) obj;
-        if (other.getKeyName() == null ^ this.getKeyName() == null)
-            return false;
-        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
-            return false;
         if (other.getKeyFingerprint() == null ^ this.getKeyFingerprint() == null)
             return false;
         if (other.getKeyFingerprint() != null && other.getKeyFingerprint().equals(this.getKeyFingerprint()) == false)
+            return false;
+        if (other.getKeyName() == null ^ this.getKeyName() == null)
+            return false;
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
         return true;
     }
@@ -178,8 +178,8 @@ public class KeyPairInfo implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         hashCode = prime * hashCode + ((getKeyFingerprint() == null) ? 0 : getKeyFingerprint().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         return hashCode;
     }
 

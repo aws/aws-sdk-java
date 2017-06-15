@@ -39,6 +39,12 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     private String autoPlacement;
     /**
      * <p>
+     * The Availability Zone for the Dedicated Hosts.
+     * </p>
+     */
+    private String availabilityZone;
+    /**
+     * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -58,12 +64,6 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      */
     private Integer quantity;
-    /**
-     * <p>
-     * The Availability Zone for the Dedicated Hosts.
-     * </p>
-     */
-    private String availabilityZone;
 
     /**
      * <p>
@@ -170,6 +170,46 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     public AllocateHostsRequest withAutoPlacement(AutoPlacement autoPlacement) {
         setAutoPlacement(autoPlacement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone for the Dedicated Hosts.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone for the Dedicated Hosts.
+     */
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone for the Dedicated Hosts.
+     * </p>
+     * 
+     * @return The Availability Zone for the Dedicated Hosts.
+     */
+
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone for the Dedicated Hosts.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone for the Dedicated Hosts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateHostsRequest withAvailabilityZone(String availabilityZone) {
+        setAvailabilityZone(availabilityZone);
         return this;
     }
 
@@ -312,46 +352,6 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * <p>
-     * The Availability Zone for the Dedicated Hosts.
-     * </p>
-     * 
-     * @param availabilityZone
-     *        The Availability Zone for the Dedicated Hosts.
-     */
-
-    public void setAvailabilityZone(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone for the Dedicated Hosts.
-     * </p>
-     * 
-     * @return The Availability Zone for the Dedicated Hosts.
-     */
-
-    public String getAvailabilityZone() {
-        return this.availabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone for the Dedicated Hosts.
-     * </p>
-     * 
-     * @param availabilityZone
-     *        The Availability Zone for the Dedicated Hosts.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AllocateHostsRequest withAvailabilityZone(String availabilityZone) {
-        setAvailabilityZone(availabilityZone);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -375,14 +375,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
         sb.append("{");
         if (getAutoPlacement() != null)
             sb.append("AutoPlacement: ").append(getAutoPlacement()).append(",");
+        if (getAvailabilityZone() != null)
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getQuantity() != null)
-            sb.append("Quantity: ").append(getQuantity()).append(",");
-        if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
+            sb.append("Quantity: ").append(getQuantity());
         sb.append("}");
         return sb.toString();
     }
@@ -401,6 +401,10 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getAutoPlacement() != null && other.getAutoPlacement().equals(this.getAutoPlacement()) == false)
             return false;
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
+            return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -413,10 +417,6 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false)
             return false;
-        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
-            return false;
-        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
-            return false;
         return true;
     }
 
@@ -426,10 +426,10 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAutoPlacement() == null) ? 0 : getAutoPlacement().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode());
-        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         return hashCode;
     }
 

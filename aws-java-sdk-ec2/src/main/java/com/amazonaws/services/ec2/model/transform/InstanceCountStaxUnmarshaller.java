@@ -43,13 +43,13 @@ public class InstanceCountStaxUnmarshaller implements Unmarshaller<InstanceCount
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("state", targetDepth)) {
-                    instanceCount.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceCount", targetDepth)) {
+                    instanceCount.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("instanceCount", targetDepth)) {
-                    instanceCount.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("state", targetDepth)) {
+                    instanceCount.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

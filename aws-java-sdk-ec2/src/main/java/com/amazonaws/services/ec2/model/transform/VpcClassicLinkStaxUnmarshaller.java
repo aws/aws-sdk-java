@@ -45,11 +45,6 @@ public class VpcClassicLinkStaxUnmarshaller implements Unmarshaller<VpcClassicLi
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("vpcId", targetDepth)) {
-                    vpcClassicLink.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("classicLinkEnabled", targetDepth)) {
                     vpcClassicLink.setClassicLinkEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -65,6 +60,10 @@ public class VpcClassicLinkStaxUnmarshaller implements Unmarshaller<VpcClassicLi
                     continue;
                 }
 
+                if (context.testExpression("vpcId", targetDepth)) {
+                    vpcClassicLink.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpcClassicLink;

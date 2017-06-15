@@ -40,12 +40,12 @@ public class DeleteVpnConnectionRouteRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (deleteVpnConnectionRouteRequest.getVpnConnectionId() != null) {
-            request.addParameter("VpnConnectionId", StringUtils.fromString(deleteVpnConnectionRouteRequest.getVpnConnectionId()));
-        }
-
         if (deleteVpnConnectionRouteRequest.getDestinationCidrBlock() != null) {
             request.addParameter("DestinationCidrBlock", StringUtils.fromString(deleteVpnConnectionRouteRequest.getDestinationCidrBlock()));
+        }
+
+        if (deleteVpnConnectionRouteRequest.getVpnConnectionId() != null) {
+            request.addParameter("VpnConnectionId", StringUtils.fromString(deleteVpnConnectionRouteRequest.getVpnConnectionId()));
         }
 
         return request;

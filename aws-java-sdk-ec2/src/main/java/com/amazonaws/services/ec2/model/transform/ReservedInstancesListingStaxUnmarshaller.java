@@ -45,33 +45,13 @@ public class ReservedInstancesListingStaxUnmarshaller implements Unmarshaller<Re
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("reservedInstancesListingId", targetDepth)) {
-                    reservedInstancesListing.setReservedInstancesListingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("reservedInstancesId", targetDepth)) {
-                    reservedInstancesListing.setReservedInstancesId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("clientToken", targetDepth)) {
+                    reservedInstancesListing.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("createDate", targetDepth)) {
                     reservedInstancesListing.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("updateDate", targetDepth)) {
-                    reservedInstancesListing.setUpdateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("status", targetDepth)) {
-                    reservedInstancesListing.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("statusMessage", targetDepth)) {
-                    reservedInstancesListing.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -95,6 +75,26 @@ public class ReservedInstancesListingStaxUnmarshaller implements Unmarshaller<Re
                     continue;
                 }
 
+                if (context.testExpression("reservedInstancesId", targetDepth)) {
+                    reservedInstancesListing.setReservedInstancesId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("reservedInstancesListingId", targetDepth)) {
+                    reservedInstancesListing.setReservedInstancesListingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("status", targetDepth)) {
+                    reservedInstancesListing.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("statusMessage", targetDepth)) {
+                    reservedInstancesListing.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tagSet", targetDepth)) {
                     reservedInstancesListing.withTags(new ArrayList<Tag>());
                     continue;
@@ -105,8 +105,8 @@ public class ReservedInstancesListingStaxUnmarshaller implements Unmarshaller<Re
                     continue;
                 }
 
-                if (context.testExpression("clientToken", targetDepth)) {
-                    reservedInstancesListing.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("updateDate", targetDepth)) {
+                    reservedInstancesListing.setUpdateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

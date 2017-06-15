@@ -40,12 +40,12 @@ public class CancelImportTaskRequestMarshaller implements Marshaller<Request<Can
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (cancelImportTaskRequest.getImportTaskId() != null) {
-            request.addParameter("ImportTaskId", StringUtils.fromString(cancelImportTaskRequest.getImportTaskId()));
-        }
-
         if (cancelImportTaskRequest.getCancelReason() != null) {
             request.addParameter("CancelReason", StringUtils.fromString(cancelImportTaskRequest.getCancelReason()));
+        }
+
+        if (cancelImportTaskRequest.getImportTaskId() != null) {
+            request.addParameter("ImportTaskId", StringUtils.fromString(cancelImportTaskRequest.getImportTaskId()));
         }
 
         return request;

@@ -48,13 +48,13 @@ public class AllocateAddressResultStaxUnmarshaller implements Unmarshaller<Alloc
                     continue;
                 }
 
-                if (context.testExpression("domain", targetDepth)) {
-                    allocateAddressResult.setDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("allocationId", targetDepth)) {
+                    allocateAddressResult.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("allocationId", targetDepth)) {
-                    allocateAddressResult.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("domain", targetDepth)) {
+                    allocateAddressResult.setDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

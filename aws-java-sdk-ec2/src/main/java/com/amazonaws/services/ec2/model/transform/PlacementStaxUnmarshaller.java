@@ -48,13 +48,13 @@ public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUn
                     continue;
                 }
 
-                if (context.testExpression("groupName", targetDepth)) {
-                    placement.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("affinity", targetDepth)) {
+                    placement.setAffinity(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("tenancy", targetDepth)) {
-                    placement.setTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("groupName", targetDepth)) {
+                    placement.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -63,8 +63,13 @@ public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUn
                     continue;
                 }
 
-                if (context.testExpression("affinity", targetDepth)) {
-                    placement.setAffinity(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("tenancy", targetDepth)) {
+                    placement.setTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("spreadDomain", targetDepth)) {
+                    placement.setSpreadDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

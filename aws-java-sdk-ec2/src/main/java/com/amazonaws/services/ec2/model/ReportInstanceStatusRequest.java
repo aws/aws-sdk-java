@@ -30,28 +30,22 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * One or more instances.
+     * Descriptive text about the health state of your instance.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<String> instances;
-    /**
-     * <p>
-     * The status of all instances listed.
-     * </p>
-     */
-    private String status;
-    /**
-     * <p>
-     * The time at which the reported instance health state began.
-     * </p>
-     */
-    private java.util.Date startTime;
+    private String description;
     /**
      * <p>
      * The time at which the reported instance health state ended.
      * </p>
      */
     private java.util.Date endTime;
+    /**
+     * <p>
+     * One or more instances.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> instances;
     /**
      * <p>
      * One or more reason codes that describes the health state of your instance.
@@ -110,10 +104,96 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     private com.amazonaws.internal.SdkInternalList<String> reasonCodes;
     /**
      * <p>
-     * Descriptive text about the health state of your instance.
+     * The time at which the reported instance health state began.
      * </p>
      */
-    private String description;
+    private java.util.Date startTime;
+    /**
+     * <p>
+     * The status of all instances listed.
+     * </p>
+     */
+    private String status;
+
+    /**
+     * <p>
+     * Descriptive text about the health state of your instance.
+     * </p>
+     * 
+     * @param description
+     *        Descriptive text about the health state of your instance.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * Descriptive text about the health state of your instance.
+     * </p>
+     * 
+     * @return Descriptive text about the health state of your instance.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * Descriptive text about the health state of your instance.
+     * </p>
+     * 
+     * @param description
+     *        Descriptive text about the health state of your instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportInstanceStatusRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time at which the reported instance health state ended.
+     * </p>
+     * 
+     * @param endTime
+     *        The time at which the reported instance health state ended.
+     */
+
+    public void setEndTime(java.util.Date endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * <p>
+     * The time at which the reported instance health state ended.
+     * </p>
+     * 
+     * @return The time at which the reported instance health state ended.
+     */
+
+    public java.util.Date getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * <p>
+     * The time at which the reported instance health state ended.
+     * </p>
+     * 
+     * @param endTime
+     *        The time at which the reported instance health state ended.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportInstanceStatusRequest withEndTime(java.util.Date endTime) {
+        setEndTime(endTime);
+        return this;
+    }
 
     /**
      * <p>
@@ -185,159 +265,6 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
 
     public ReportInstanceStatusRequest withInstances(java.util.Collection<String> instances) {
         setInstances(instances);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The status of all instances listed.
-     * </p>
-     * 
-     * @param status
-     *        The status of all instances listed.
-     * @see ReportStatusType
-     */
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    /**
-     * <p>
-     * The status of all instances listed.
-     * </p>
-     * 
-     * @return The status of all instances listed.
-     * @see ReportStatusType
-     */
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    /**
-     * <p>
-     * The status of all instances listed.
-     * </p>
-     * 
-     * @param status
-     *        The status of all instances listed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ReportStatusType
-     */
-
-    public ReportInstanceStatusRequest withStatus(String status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The status of all instances listed.
-     * </p>
-     * 
-     * @param status
-     *        The status of all instances listed.
-     * @see ReportStatusType
-     */
-
-    public void setStatus(ReportStatusType status) {
-        this.status = status.toString();
-    }
-
-    /**
-     * <p>
-     * The status of all instances listed.
-     * </p>
-     * 
-     * @param status
-     *        The status of all instances listed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ReportStatusType
-     */
-
-    public ReportInstanceStatusRequest withStatus(ReportStatusType status) {
-        setStatus(status);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time at which the reported instance health state began.
-     * </p>
-     * 
-     * @param startTime
-     *        The time at which the reported instance health state began.
-     */
-
-    public void setStartTime(java.util.Date startTime) {
-        this.startTime = startTime;
-    }
-
-    /**
-     * <p>
-     * The time at which the reported instance health state began.
-     * </p>
-     * 
-     * @return The time at which the reported instance health state began.
-     */
-
-    public java.util.Date getStartTime() {
-        return this.startTime;
-    }
-
-    /**
-     * <p>
-     * The time at which the reported instance health state began.
-     * </p>
-     * 
-     * @param startTime
-     *        The time at which the reported instance health state began.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReportInstanceStatusRequest withStartTime(java.util.Date startTime) {
-        setStartTime(startTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time at which the reported instance health state ended.
-     * </p>
-     * 
-     * @param endTime
-     *        The time at which the reported instance health state ended.
-     */
-
-    public void setEndTime(java.util.Date endTime) {
-        this.endTime = endTime;
-    }
-
-    /**
-     * <p>
-     * The time at which the reported instance health state ended.
-     * </p>
-     * 
-     * @return The time at which the reported instance health state ended.
-     */
-
-    public java.util.Date getEndTime() {
-        return this.endTime;
-    }
-
-    /**
-     * <p>
-     * The time at which the reported instance health state ended.
-     * </p>
-     * 
-     * @param endTime
-     *        The time at which the reported instance health state ended.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReportInstanceStatusRequest withEndTime(java.util.Date endTime) {
-        setEndTime(endTime);
         return this;
     }
 
@@ -939,41 +866,114 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Descriptive text about the health state of your instance.
+     * The time at which the reported instance health state began.
      * </p>
      * 
-     * @param description
-     *        Descriptive text about the health state of your instance.
+     * @param startTime
+     *        The time at which the reported instance health state began.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
     }
 
     /**
      * <p>
-     * Descriptive text about the health state of your instance.
+     * The time at which the reported instance health state began.
      * </p>
      * 
-     * @return Descriptive text about the health state of your instance.
+     * @return The time at which the reported instance health state began.
      */
 
-    public String getDescription() {
-        return this.description;
+    public java.util.Date getStartTime() {
+        return this.startTime;
     }
 
     /**
      * <p>
-     * Descriptive text about the health state of your instance.
+     * The time at which the reported instance health state began.
      * </p>
      * 
-     * @param description
-     *        Descriptive text about the health state of your instance.
+     * @param startTime
+     *        The time at which the reported instance health state began.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ReportInstanceStatusRequest withDescription(String description) {
-        setDescription(description);
+    public ReportInstanceStatusRequest withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of all instances listed.
+     * </p>
+     * 
+     * @param status
+     *        The status of all instances listed.
+     * @see ReportStatusType
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of all instances listed.
+     * </p>
+     * 
+     * @return The status of all instances listed.
+     * @see ReportStatusType
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of all instances listed.
+     * </p>
+     * 
+     * @param status
+     *        The status of all instances listed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReportStatusType
+     */
+
+    public ReportInstanceStatusRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of all instances listed.
+     * </p>
+     * 
+     * @param status
+     *        The status of all instances listed.
+     * @see ReportStatusType
+     */
+
+    public void setStatus(ReportStatusType status) {
+        this.status = status.toString();
+    }
+
+    /**
+     * <p>
+     * The status of all instances listed.
+     * </p>
+     * 
+     * @param status
+     *        The status of all instances listed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReportStatusType
+     */
+
+    public ReportInstanceStatusRequest withStatus(ReportStatusType status) {
+        setStatus(status);
         return this;
     }
 
@@ -999,18 +999,18 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstances() != null)
-            sb.append("Instances: ").append(getInstances()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
-        if (getStartTime() != null)
-            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getInstances() != null)
+            sb.append("Instances: ").append(getInstances()).append(",");
         if (getReasonCodes() != null)
             sb.append("ReasonCodes: ").append(getReasonCodes()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1025,29 +1025,29 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
         if (obj instanceof ReportInstanceStatusRequest == false)
             return false;
         ReportInstanceStatusRequest other = (ReportInstanceStatusRequest) obj;
-        if (other.getInstances() == null ^ this.getInstances() == null)
+        if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
-            return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
-        if (other.getStartTime() == null ^ this.getStartTime() == null)
-            return false;
-        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getInstances() == null ^ this.getInstances() == null)
+            return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
+            return false;
         if (other.getReasonCodes() == null ^ this.getReasonCodes() == null)
             return false;
         if (other.getReasonCodes() != null && other.getReasonCodes().equals(this.getReasonCodes()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -1057,12 +1057,12 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
-        hashCode = prime * hashCode + ((getReasonCodes() == null) ? 0 : getReasonCodes().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getReasonCodes() == null) ? 0 : getReasonCodes().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

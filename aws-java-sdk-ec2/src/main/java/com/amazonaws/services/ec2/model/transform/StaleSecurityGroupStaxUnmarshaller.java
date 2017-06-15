@@ -45,6 +45,11 @@ public class StaleSecurityGroupStaxUnmarshaller implements Unmarshaller<StaleSec
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("description", targetDepth)) {
+                    staleSecurityGroup.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("groupId", targetDepth)) {
                     staleSecurityGroup.setGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -52,16 +57,6 @@ public class StaleSecurityGroupStaxUnmarshaller implements Unmarshaller<StaleSec
 
                 if (context.testExpression("groupName", targetDepth)) {
                     staleSecurityGroup.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("description", targetDepth)) {
-                    staleSecurityGroup.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("vpcId", targetDepth)) {
-                    staleSecurityGroup.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -85,6 +80,10 @@ public class StaleSecurityGroupStaxUnmarshaller implements Unmarshaller<StaleSec
                     continue;
                 }
 
+                if (context.testExpression("vpcId", targetDepth)) {
+                    staleSecurityGroup.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return staleSecurityGroup;

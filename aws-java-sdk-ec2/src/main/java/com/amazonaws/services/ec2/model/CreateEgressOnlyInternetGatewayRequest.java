@@ -28,58 +28,18 @@ public class CreateEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the VPC for which to create the egress-only Internet gateway.
-     * </p>
-     */
-    private String vpcId;
-    /**
-     * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a>.
      * </p>
      */
     private String clientToken;
-
     /**
      * <p>
      * The ID of the VPC for which to create the egress-only Internet gateway.
      * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC for which to create the egress-only Internet gateway.
      */
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC for which to create the egress-only Internet gateway.
-     * </p>
-     * 
-     * @return The ID of the VPC for which to create the egress-only Internet gateway.
-     */
-
-    public String getVpcId() {
-        return this.vpcId;
-    }
-
-    /**
-     * <p>
-     * The ID of the VPC for which to create the egress-only Internet gateway.
-     * </p>
-     * 
-     * @param vpcId
-     *        The ID of the VPC for which to create the egress-only Internet gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateEgressOnlyInternetGatewayRequest withVpcId(String vpcId) {
-        setVpcId(vpcId);
-        return this;
-    }
+    private String vpcId;
 
     /**
      * <p>
@@ -137,6 +97,46 @@ public class CreateEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The ID of the VPC for which to create the egress-only Internet gateway.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC for which to create the egress-only Internet gateway.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC for which to create the egress-only Internet gateway.
+     * </p>
+     * 
+     * @return The ID of the VPC for which to create the egress-only Internet gateway.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC for which to create the egress-only Internet gateway.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC for which to create the egress-only Internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEgressOnlyInternetGatewayRequest withVpcId(String vpcId) {
+        setVpcId(vpcId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -158,10 +158,10 @@ public class CreateEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -176,13 +176,13 @@ public class CreateEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
         if (obj instanceof CreateEgressOnlyInternetGatewayRequest == false)
             return false;
         CreateEgressOnlyInternetGatewayRequest other = (CreateEgressOnlyInternetGatewayRequest) obj;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
-            return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
-            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -192,8 +192,8 @@ public class CreateEgressOnlyInternetGatewayRequest extends AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

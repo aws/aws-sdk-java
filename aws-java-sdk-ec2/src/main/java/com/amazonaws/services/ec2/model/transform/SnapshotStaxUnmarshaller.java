@@ -45,13 +45,43 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("dataEncryptionKeyId", targetDepth)) {
+                    snapshot.setDataEncryptionKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("description", targetDepth)) {
+                    snapshot.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("encrypted", targetDepth)) {
+                    snapshot.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    snapshot.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    snapshot.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("progress", targetDepth)) {
+                    snapshot.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("snapshotId", targetDepth)) {
                     snapshot.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("volumeId", targetDepth)) {
-                    snapshot.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("startTime", targetDepth)) {
+                    snapshot.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -65,23 +95,8 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("startTime", targetDepth)) {
-                    snapshot.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("progress", targetDepth)) {
-                    snapshot.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ownerId", targetDepth)) {
-                    snapshot.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("description", targetDepth)) {
-                    snapshot.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("volumeId", targetDepth)) {
+                    snapshot.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -105,20 +120,6 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("encrypted", targetDepth)) {
-                    snapshot.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("kmsKeyId", targetDepth)) {
-                    snapshot.setKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("dataEncryptionKeyId", targetDepth)) {
-                    snapshot.setDataEncryptionKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return snapshot;

@@ -45,8 +45,8 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceId", targetDepth)) {
-                    instance.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("amiLaunchIndex", targetDepth)) {
+                    instance.setAmiLaunchIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -55,23 +55,18 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("instanceState", targetDepth)) {
-                    instance.setState(InstanceStateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceId", targetDepth)) {
+                    instance.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("privateDnsName", targetDepth)) {
-                    instance.setPrivateDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceType", targetDepth)) {
+                    instance.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("dnsName", targetDepth)) {
-                    instance.setPublicDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("reason", targetDepth)) {
-                    instance.setStateTransitionReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("kernelId", targetDepth)) {
+                    instance.setKernelId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -80,8 +75,33 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("amiLaunchIndex", targetDepth)) {
-                    instance.setAmiLaunchIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("launchTime", targetDepth)) {
+                    instance.setLaunchTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("monitoring", targetDepth)) {
+                    instance.setMonitoring(MonitoringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("placement", targetDepth)) {
+                    instance.setPlacement(PlacementStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("platform", targetDepth)) {
+                    instance.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("privateDnsName", targetDepth)) {
+                    instance.setPrivateDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("privateIpAddress", targetDepth)) {
+                    instance.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -95,23 +115,13 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("instanceType", targetDepth)) {
-                    instance.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("dnsName", targetDepth)) {
+                    instance.setPublicDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("launchTime", targetDepth)) {
-                    instance.setLaunchTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("placement", targetDepth)) {
-                    instance.setPlacement(PlacementStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("kernelId", targetDepth)) {
-                    instance.setKernelId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ipAddress", targetDepth)) {
+                    instance.setPublicIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -120,13 +130,13 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("platform", targetDepth)) {
-                    instance.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceState", targetDepth)) {
+                    instance.setState(InstanceStateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("monitoring", targetDepth)) {
-                    instance.setMonitoring(MonitoringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("reason", targetDepth)) {
+                    instance.setStateTransitionReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -140,33 +150,8 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("privateIpAddress", targetDepth)) {
-                    instance.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ipAddress", targetDepth)) {
-                    instance.setPublicIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("stateReason", targetDepth)) {
-                    instance.setStateReason(StateReasonStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("architecture", targetDepth)) {
                     instance.setArchitecture(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("rootDeviceType", targetDepth)) {
-                    instance.setRootDeviceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("rootDeviceName", targetDepth)) {
-                    instance.setRootDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -180,8 +165,28 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("virtualizationType", targetDepth)) {
-                    instance.setVirtualizationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("clientToken", targetDepth)) {
+                    instance.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ebsOptimized", targetDepth)) {
+                    instance.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("enaSupport", targetDepth)) {
+                    instance.setEnaSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hypervisor", targetDepth)) {
+                    instance.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("iamInstanceProfile", targetDepth)) {
+                    instance.setIamInstanceProfile(IamInstanceProfileStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -190,23 +195,23 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("spotInstanceRequestId", targetDepth)) {
-                    instance.setSpotInstanceRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("networkInterfaceSet", targetDepth)) {
+                    instance.withNetworkInterfaces(new ArrayList<InstanceNetworkInterface>());
                     continue;
                 }
 
-                if (context.testExpression("clientToken", targetDepth)) {
-                    instance.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("networkInterfaceSet/item", targetDepth)) {
+                    instance.withNetworkInterfaces(InstanceNetworkInterfaceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("tagSet", targetDepth)) {
-                    instance.withTags(new ArrayList<Tag>());
+                if (context.testExpression("rootDeviceName", targetDepth)) {
+                    instance.setRootDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("tagSet/item", targetDepth)) {
-                    instance.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("rootDeviceType", targetDepth)) {
+                    instance.setRootDeviceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -225,28 +230,8 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("hypervisor", targetDepth)) {
-                    instance.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("networkInterfaceSet", targetDepth)) {
-                    instance.withNetworkInterfaces(new ArrayList<InstanceNetworkInterface>());
-                    continue;
-                }
-
-                if (context.testExpression("networkInterfaceSet/item", targetDepth)) {
-                    instance.withNetworkInterfaces(InstanceNetworkInterfaceStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("iamInstanceProfile", targetDepth)) {
-                    instance.setIamInstanceProfile(IamInstanceProfileStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ebsOptimized", targetDepth)) {
-                    instance.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("spotInstanceRequestId", targetDepth)) {
+                    instance.setSpotInstanceRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -255,8 +240,23 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
-                if (context.testExpression("enaSupport", targetDepth)) {
-                    instance.setEnaSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("stateReason", targetDepth)) {
+                    instance.setStateReason(StateReasonStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    instance.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    instance.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("virtualizationType", targetDepth)) {
+                    instance.setVirtualizationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

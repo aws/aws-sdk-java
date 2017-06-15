@@ -45,15 +45,15 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     private String acceptLanguage;
     /**
      * <p>
-     * The updated name of the ProvisionedProduct object . You must specify either <code>ProvisionedProductName</code>
-     * or <code>ProvisionedProductId</code>, but not both.
+     * The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      */
     private String provisionedProductName;
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to update. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      */
     private String provisionedProductId;
@@ -65,7 +65,7 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     private String productId;
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
      * </p>
      */
     private String provisioningArtifactId;
@@ -200,13 +200,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the ProvisionedProduct object . You must specify either <code>ProvisionedProductName</code>
-     * or <code>ProvisionedProductId</code>, but not both.
+     * The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
      * @param provisionedProductName
-     *        The updated name of the ProvisionedProduct object . You must specify either
-     *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     *        The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
+     *        <code>ProvisionedProductId</code>, but not both.
      */
 
     public void setProvisionedProductName(String provisionedProductName) {
@@ -215,12 +215,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the ProvisionedProduct object . You must specify either <code>ProvisionedProductName</code>
-     * or <code>ProvisionedProductId</code>, but not both.
+     * The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
-     * @return The updated name of the ProvisionedProduct object . You must specify either
-     *         <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * @return The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
+     *         <code>ProvisionedProductId</code>, but not both.
      */
 
     public String getProvisionedProductName() {
@@ -229,13 +229,13 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The updated name of the ProvisionedProduct object . You must specify either <code>ProvisionedProductName</code>
-     * or <code>ProvisionedProductId</code>, but not both.
+     * The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
      * @param provisionedProductName
-     *        The updated name of the ProvisionedProduct object . You must specify either
-     *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     *        The updated name of the ProvisionedProduct object. Specify either <code>ProvisionedProductName</code> or
+     *        <code>ProvisionedProductId</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,12 +246,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to update. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object to update. You must specify either
+     *        The identifier of the ProvisionedProduct object to update. Specify either
      *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
      */
 
@@ -261,11 +261,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to update. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
-     * @return The identifier of the ProvisionedProduct object to update. You must specify either
+     * @return The identifier of the ProvisionedProduct object to update. Specify either
      *         <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
      */
 
@@ -275,12 +275,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the ProvisionedProduct object to update. You must specify either
-     * <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
+     * The identifier of the ProvisionedProduct object to update. Specify either <code>ProvisionedProductName</code> or
+     * <code>ProvisionedProductId</code>, but not both.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the ProvisionedProduct object to update. You must specify either
+     *        The identifier of the ProvisionedProduct object to update. Specify either
      *        <code>ProvisionedProductName</code> or <code>ProvisionedProductId</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -332,11 +332,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product.
+     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
+     *        version.
      */
 
     public void setProvisioningArtifactId(String provisioningArtifactId) {
@@ -345,10 +346,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
      * </p>
      * 
-     * @return The provisioning artifact identifier for this product.
+     * @return The provisioning artifact identifier for this product. This is sometimes referred to as the product
+     *         version.
      */
 
     public String getProvisioningArtifactId() {
@@ -357,11 +359,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product.
+     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
+     *        version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

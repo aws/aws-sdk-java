@@ -43,14 +43,14 @@ public class ModifyVpcPeeringConnectionOptionsResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("requesterPeeringConnectionOptions", targetDepth)) {
-                    modifyVpcPeeringConnectionOptionsResult.setRequesterPeeringConnectionOptions(PeeringConnectionOptionsStaxUnmarshaller.getInstance()
+                if (context.testExpression("accepterPeeringConnectionOptions", targetDepth)) {
+                    modifyVpcPeeringConnectionOptionsResult.setAccepterPeeringConnectionOptions(PeeringConnectionOptionsStaxUnmarshaller.getInstance()
                             .unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("accepterPeeringConnectionOptions", targetDepth)) {
-                    modifyVpcPeeringConnectionOptionsResult.setAccepterPeeringConnectionOptions(PeeringConnectionOptionsStaxUnmarshaller.getInstance()
+                if (context.testExpression("requesterPeeringConnectionOptions", targetDepth)) {
+                    modifyVpcPeeringConnectionOptionsResult.setRequesterPeeringConnectionOptions(PeeringConnectionOptionsStaxUnmarshaller.getInstance()
                             .unmarshall(context));
                     continue;
                 }

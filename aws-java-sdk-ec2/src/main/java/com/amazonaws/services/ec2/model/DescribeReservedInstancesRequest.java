@@ -30,15 +30,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more Reserved Instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Reserved Instances, or only those otherwise specified.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> reservedInstancesIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -134,110 +125,26 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     */
+    private String offeringClass;
+    /**
+     * <p>
+     * One or more Reserved Instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your Reserved Instances, or only those otherwise specified.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> reservedInstancesIds;
+    /**
+     * <p>
      * The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only
      * have access to the <code>Medium Utilization</code> Reserved Instance offering type.
      * </p>
      */
     private String offeringType;
-    /**
-     * <p>
-     * Describes whether the Reserved Instance is Standard or Convertible.
-     * </p>
-     */
-    private String offeringClass;
-
-    /**
-     * <p>
-     * One or more Reserved Instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Reserved Instances, or only those otherwise specified.
-     * </p>
-     * 
-     * @return One or more Reserved Instance IDs.</p>
-     *         <p>
-     *         Default: Describes all your Reserved Instances, or only those otherwise specified.
-     */
-
-    public java.util.List<String> getReservedInstancesIds() {
-        if (reservedInstancesIds == null) {
-            reservedInstancesIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return reservedInstancesIds;
-    }
-
-    /**
-     * <p>
-     * One or more Reserved Instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Reserved Instances, or only those otherwise specified.
-     * </p>
-     * 
-     * @param reservedInstancesIds
-     *        One or more Reserved Instance IDs.</p>
-     *        <p>
-     *        Default: Describes all your Reserved Instances, or only those otherwise specified.
-     */
-
-    public void setReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
-        if (reservedInstancesIds == null) {
-            this.reservedInstancesIds = null;
-            return;
-        }
-
-        this.reservedInstancesIds = new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesIds);
-    }
-
-    /**
-     * <p>
-     * One or more Reserved Instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Reserved Instances, or only those otherwise specified.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setReservedInstancesIds(java.util.Collection)} or {@link #withReservedInstancesIds(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param reservedInstancesIds
-     *        One or more Reserved Instance IDs.</p>
-     *        <p>
-     *        Default: Describes all your Reserved Instances, or only those otherwise specified.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeReservedInstancesRequest withReservedInstancesIds(String... reservedInstancesIds) {
-        if (this.reservedInstancesIds == null) {
-            setReservedInstancesIds(new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesIds.length));
-        }
-        for (String ele : reservedInstancesIds) {
-            this.reservedInstancesIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more Reserved Instance IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your Reserved Instances, or only those otherwise specified.
-     * </p>
-     * 
-     * @param reservedInstancesIds
-     *        One or more Reserved Instance IDs.</p>
-     *        <p>
-     *        Default: Describes all your Reserved Instances, or only those otherwise specified.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeReservedInstancesRequest withReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
-        setReservedInstancesIds(reservedInstancesIds);
-        return this;
-    }
 
     /**
      * <p>
@@ -1034,6 +941,172 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @param offeringClass
+     *        Describes whether the Reserved Instance is Standard or Convertible.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(String offeringClass) {
+        this.offeringClass = offeringClass;
+    }
+
+    /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @return Describes whether the Reserved Instance is Standard or Convertible.
+     * @see OfferingClassType
+     */
+
+    public String getOfferingClass() {
+        return this.offeringClass;
+    }
+
+    /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @param offeringClass
+     *        Describes whether the Reserved Instance is Standard or Convertible.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public DescribeReservedInstancesRequest withOfferingClass(String offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @param offeringClass
+     *        Describes whether the Reserved Instance is Standard or Convertible.
+     * @see OfferingClassType
+     */
+
+    public void setOfferingClass(OfferingClassType offeringClass) {
+        this.offeringClass = offeringClass.toString();
+    }
+
+    /**
+     * <p>
+     * Describes whether the Reserved Instance is Standard or Convertible.
+     * </p>
+     * 
+     * @param offeringClass
+     *        Describes whether the Reserved Instance is Standard or Convertible.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingClassType
+     */
+
+    public DescribeReservedInstancesRequest withOfferingClass(OfferingClassType offeringClass) {
+        setOfferingClass(offeringClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more Reserved Instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your Reserved Instances, or only those otherwise specified.
+     * </p>
+     * 
+     * @return One or more Reserved Instance IDs.</p>
+     *         <p>
+     *         Default: Describes all your Reserved Instances, or only those otherwise specified.
+     */
+
+    public java.util.List<String> getReservedInstancesIds() {
+        if (reservedInstancesIds == null) {
+            reservedInstancesIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return reservedInstancesIds;
+    }
+
+    /**
+     * <p>
+     * One or more Reserved Instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your Reserved Instances, or only those otherwise specified.
+     * </p>
+     * 
+     * @param reservedInstancesIds
+     *        One or more Reserved Instance IDs.</p>
+     *        <p>
+     *        Default: Describes all your Reserved Instances, or only those otherwise specified.
+     */
+
+    public void setReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
+        if (reservedInstancesIds == null) {
+            this.reservedInstancesIds = null;
+            return;
+        }
+
+        this.reservedInstancesIds = new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesIds);
+    }
+
+    /**
+     * <p>
+     * One or more Reserved Instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your Reserved Instances, or only those otherwise specified.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReservedInstancesIds(java.util.Collection)} or {@link #withReservedInstancesIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param reservedInstancesIds
+     *        One or more Reserved Instance IDs.</p>
+     *        <p>
+     *        Default: Describes all your Reserved Instances, or only those otherwise specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReservedInstancesRequest withReservedInstancesIds(String... reservedInstancesIds) {
+        if (this.reservedInstancesIds == null) {
+            setReservedInstancesIds(new com.amazonaws.internal.SdkInternalList<String>(reservedInstancesIds.length));
+        }
+        for (String ele : reservedInstancesIds) {
+            this.reservedInstancesIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more Reserved Instance IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your Reserved Instances, or only those otherwise specified.
+     * </p>
+     * 
+     * @param reservedInstancesIds
+     *        One or more Reserved Instance IDs.</p>
+     *        <p>
+     *        Default: Describes all your Reserved Instances, or only those otherwise specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeReservedInstancesRequest withReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
+        setReservedInstancesIds(reservedInstancesIds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only
      * have access to the <code>Medium Utilization</code> Reserved Instance offering type.
      * </p>
@@ -1116,79 +1189,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     }
 
     /**
-     * <p>
-     * Describes whether the Reserved Instance is Standard or Convertible.
-     * </p>
-     * 
-     * @param offeringClass
-     *        Describes whether the Reserved Instance is Standard or Convertible.
-     * @see OfferingClassType
-     */
-
-    public void setOfferingClass(String offeringClass) {
-        this.offeringClass = offeringClass;
-    }
-
-    /**
-     * <p>
-     * Describes whether the Reserved Instance is Standard or Convertible.
-     * </p>
-     * 
-     * @return Describes whether the Reserved Instance is Standard or Convertible.
-     * @see OfferingClassType
-     */
-
-    public String getOfferingClass() {
-        return this.offeringClass;
-    }
-
-    /**
-     * <p>
-     * Describes whether the Reserved Instance is Standard or Convertible.
-     * </p>
-     * 
-     * @param offeringClass
-     *        Describes whether the Reserved Instance is Standard or Convertible.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OfferingClassType
-     */
-
-    public DescribeReservedInstancesRequest withOfferingClass(String offeringClass) {
-        setOfferingClass(offeringClass);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Describes whether the Reserved Instance is Standard or Convertible.
-     * </p>
-     * 
-     * @param offeringClass
-     *        Describes whether the Reserved Instance is Standard or Convertible.
-     * @see OfferingClassType
-     */
-
-    public void setOfferingClass(OfferingClassType offeringClass) {
-        this.offeringClass = offeringClass.toString();
-    }
-
-    /**
-     * <p>
-     * Describes whether the Reserved Instance is Standard or Convertible.
-     * </p>
-     * 
-     * @param offeringClass
-     *        Describes whether the Reserved Instance is Standard or Convertible.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OfferingClassType
-     */
-
-    public DescribeReservedInstancesRequest withOfferingClass(OfferingClassType offeringClass) {
-        setOfferingClass(offeringClass);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1210,14 +1210,14 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservedInstancesIds() != null)
-            sb.append("ReservedInstancesIds: ").append(getReservedInstancesIds()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
-        if (getOfferingType() != null)
-            sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getOfferingClass() != null)
-            sb.append("OfferingClass: ").append(getOfferingClass());
+            sb.append("OfferingClass: ").append(getOfferingClass()).append(",");
+        if (getReservedInstancesIds() != null)
+            sb.append("ReservedInstancesIds: ").append(getReservedInstancesIds()).append(",");
+        if (getOfferingType() != null)
+            sb.append("OfferingType: ").append(getOfferingType());
         sb.append("}");
         return sb.toString();
     }
@@ -1232,21 +1232,21 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
         if (obj instanceof DescribeReservedInstancesRequest == false)
             return false;
         DescribeReservedInstancesRequest other = (DescribeReservedInstancesRequest) obj;
-        if (other.getReservedInstancesIds() == null ^ this.getReservedInstancesIds() == null)
-            return false;
-        if (other.getReservedInstancesIds() != null && other.getReservedInstancesIds().equals(this.getReservedInstancesIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
-        if (other.getOfferingType() == null ^ this.getOfferingType() == null)
-            return false;
-        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false)
-            return false;
         if (other.getOfferingClass() == null ^ this.getOfferingClass() == null)
             return false;
         if (other.getOfferingClass() != null && other.getOfferingClass().equals(this.getOfferingClass()) == false)
+            return false;
+        if (other.getReservedInstancesIds() == null ^ this.getReservedInstancesIds() == null)
+            return false;
+        if (other.getReservedInstancesIds() != null && other.getReservedInstancesIds().equals(this.getReservedInstancesIds()) == false)
+            return false;
+        if (other.getOfferingType() == null ^ this.getOfferingType() == null)
+            return false;
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false)
             return false;
         return true;
     }
@@ -1256,10 +1256,10 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getReservedInstancesIds() == null) ? 0 : getReservedInstancesIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
         hashCode = prime * hashCode + ((getOfferingClass() == null) ? 0 : getOfferingClass().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesIds() == null) ? 0 : getReservedInstancesIds().hashCode());
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
         return hashCode;
     }
 

@@ -35,16 +35,16 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
     private String availabilityZone;
     /**
      * <p>
-     * The disk image.
-     * </p>
-     */
-    private DiskImageDetail image;
-    /**
-     * <p>
      * A description of the volume.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The disk image.
+     * </p>
+     */
+    private DiskImageDetail image;
     /**
      * <p>
      * The volume size.
@@ -94,46 +94,6 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The disk image.
-     * </p>
-     * 
-     * @param image
-     *        The disk image.
-     */
-
-    public void setImage(DiskImageDetail image) {
-        this.image = image;
-    }
-
-    /**
-     * <p>
-     * The disk image.
-     * </p>
-     * 
-     * @return The disk image.
-     */
-
-    public DiskImageDetail getImage() {
-        return this.image;
-    }
-
-    /**
-     * <p>
-     * The disk image.
-     * </p>
-     * 
-     * @param image
-     *        The disk image.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportVolumeRequest withImage(DiskImageDetail image) {
-        setImage(image);
-        return this;
-    }
-
-    /**
-     * <p>
      * A description of the volume.
      * </p>
      * 
@@ -169,6 +129,46 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     public ImportVolumeRequest withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The disk image.
+     * </p>
+     * 
+     * @param image
+     *        The disk image.
+     */
+
+    public void setImage(DiskImageDetail image) {
+        this.image = image;
+    }
+
+    /**
+     * <p>
+     * The disk image.
+     * </p>
+     * 
+     * @return The disk image.
+     */
+
+    public DiskImageDetail getImage() {
+        return this.image;
+    }
+
+    /**
+     * <p>
+     * The disk image.
+     * </p>
+     * 
+     * @param image
+     *        The disk image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportVolumeRequest withImage(DiskImageDetail image) {
+        setImage(image);
         return this;
     }
 
@@ -236,10 +236,10 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
         sb.append("{");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
-        if (getImage() != null)
-            sb.append("Image: ").append(getImage()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getImage() != null)
+            sb.append("Image: ").append(getImage()).append(",");
         if (getVolume() != null)
             sb.append("Volume: ").append(getVolume());
         sb.append("}");
@@ -260,13 +260,13 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
-        if (other.getImage() == null ^ this.getImage() == null)
-            return false;
-        if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getImage() == null ^ this.getImage() == null)
+            return false;
+        if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
             return false;
         if (other.getVolume() == null ^ this.getVolume() == null)
             return false;
@@ -281,8 +281,8 @@ public class ImportVolumeRequest extends AmazonWebServiceRequest implements Seri
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
-        hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getVolume() == null) ? 0 : getVolume().hashCode());
         return hashCode;
     }

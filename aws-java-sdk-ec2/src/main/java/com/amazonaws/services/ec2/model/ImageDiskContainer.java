@@ -34,6 +34,12 @@ public class ImageDiskContainer implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
+     * The block device mapping for the disk.
+     * </p>
+     */
+    private String deviceName;
+    /**
+     * <p>
      * The format of the disk image being imported.
      * </p>
      * <p>
@@ -41,6 +47,12 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * </p>
      */
     private String format;
+    /**
+     * <p>
+     * The ID of the EBS snapshot to be used for importing the snapshot.
+     * </p>
+     */
+    private String snapshotId;
     /**
      * <p>
      * The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an
@@ -54,18 +66,6 @@ public class ImageDiskContainer implements Serializable, Cloneable {
      * </p>
      */
     private UserBucket userBucket;
-    /**
-     * <p>
-     * The block device mapping for the disk.
-     * </p>
-     */
-    private String deviceName;
-    /**
-     * <p>
-     * The ID of the EBS snapshot to be used for importing the snapshot.
-     * </p>
-     */
-    private String snapshotId;
 
     /**
      * <p>
@@ -104,6 +104,46 @@ public class ImageDiskContainer implements Serializable, Cloneable {
 
     public ImageDiskContainer withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The block device mapping for the disk.
+     * </p>
+     * 
+     * @param deviceName
+     *        The block device mapping for the disk.
+     */
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    /**
+     * <p>
+     * The block device mapping for the disk.
+     * </p>
+     * 
+     * @return The block device mapping for the disk.
+     */
+
+    public String getDeviceName() {
+        return this.deviceName;
+    }
+
+    /**
+     * <p>
+     * The block device mapping for the disk.
+     * </p>
+     * 
+     * @param deviceName
+     *        The block device mapping for the disk.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageDiskContainer withDeviceName(String deviceName) {
+        setDeviceName(deviceName);
         return this;
     }
 
@@ -159,6 +199,46 @@ public class ImageDiskContainer implements Serializable, Cloneable {
 
     public ImageDiskContainer withFormat(String format) {
         setFormat(format);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS snapshot to be used for importing the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the EBS snapshot to be used for importing the snapshot.
+     */
+
+    public void setSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS snapshot to be used for importing the snapshot.
+     * </p>
+     * 
+     * @return The ID of the EBS snapshot to be used for importing the snapshot.
+     */
+
+    public String getSnapshotId() {
+        return this.snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS snapshot to be used for importing the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the EBS snapshot to be used for importing the snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageDiskContainer withSnapshotId(String snapshotId) {
+        setSnapshotId(snapshotId);
         return this;
     }
 
@@ -249,86 +329,6 @@ public class ImageDiskContainer implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The block device mapping for the disk.
-     * </p>
-     * 
-     * @param deviceName
-     *        The block device mapping for the disk.
-     */
-
-    public void setDeviceName(String deviceName) {
-        this.deviceName = deviceName;
-    }
-
-    /**
-     * <p>
-     * The block device mapping for the disk.
-     * </p>
-     * 
-     * @return The block device mapping for the disk.
-     */
-
-    public String getDeviceName() {
-        return this.deviceName;
-    }
-
-    /**
-     * <p>
-     * The block device mapping for the disk.
-     * </p>
-     * 
-     * @param deviceName
-     *        The block device mapping for the disk.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImageDiskContainer withDeviceName(String deviceName) {
-        setDeviceName(deviceName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS snapshot to be used for importing the snapshot.
-     * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the EBS snapshot to be used for importing the snapshot.
-     */
-
-    public void setSnapshotId(String snapshotId) {
-        this.snapshotId = snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS snapshot to be used for importing the snapshot.
-     * </p>
-     * 
-     * @return The ID of the EBS snapshot to be used for importing the snapshot.
-     */
-
-    public String getSnapshotId() {
-        return this.snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS snapshot to be used for importing the snapshot.
-     * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the EBS snapshot to be used for importing the snapshot.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImageDiskContainer withSnapshotId(String snapshotId) {
-        setSnapshotId(snapshotId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -341,16 +341,16 @@ public class ImageDiskContainer implements Serializable, Cloneable {
         sb.append("{");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getDeviceName() != null)
+            sb.append("DeviceName: ").append(getDeviceName()).append(",");
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat()).append(",");
+        if (getSnapshotId() != null)
+            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getUrl() != null)
             sb.append("Url: ").append(getUrl()).append(",");
         if (getUserBucket() != null)
-            sb.append("UserBucket: ").append(getUserBucket()).append(",");
-        if (getDeviceName() != null)
-            sb.append("DeviceName: ").append(getDeviceName()).append(",");
-        if (getSnapshotId() != null)
-            sb.append("SnapshotId: ").append(getSnapshotId());
+            sb.append("UserBucket: ").append(getUserBucket());
         sb.append("}");
         return sb.toString();
     }
@@ -369,9 +369,17 @@ public class ImageDiskContainer implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getDeviceName() == null ^ this.getDeviceName() == null)
+            return false;
+        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
+            return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
+            return false;
+        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
+            return false;
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
             return false;
         if (other.getUrl() == null ^ this.getUrl() == null)
             return false;
@@ -380,14 +388,6 @@ public class ImageDiskContainer implements Serializable, Cloneable {
         if (other.getUserBucket() == null ^ this.getUserBucket() == null)
             return false;
         if (other.getUserBucket() != null && other.getUserBucket().equals(this.getUserBucket()) == false)
-            return false;
-        if (other.getDeviceName() == null ^ this.getDeviceName() == null)
-            return false;
-        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
-            return false;
-        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
-            return false;
-        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
             return false;
         return true;
     }
@@ -398,11 +398,11 @@ public class ImageDiskContainer implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         hashCode = prime * hashCode + ((getUserBucket() == null) ? 0 : getUserBucket().hashCode());
-        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
-        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         return hashCode;
     }
 

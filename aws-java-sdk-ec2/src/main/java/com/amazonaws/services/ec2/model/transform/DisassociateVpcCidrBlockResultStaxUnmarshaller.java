@@ -43,13 +43,13 @@ public class DisassociateVpcCidrBlockResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("vpcId", targetDepth)) {
-                    disassociateVpcCidrBlockResult.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ipv6CidrBlockAssociation", targetDepth)) {
+                    disassociateVpcCidrBlockResult.setIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("ipv6CidrBlockAssociation", targetDepth)) {
-                    disassociateVpcCidrBlockResult.setIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("vpcId", targetDepth)) {
+                    disassociateVpcCidrBlockResult.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

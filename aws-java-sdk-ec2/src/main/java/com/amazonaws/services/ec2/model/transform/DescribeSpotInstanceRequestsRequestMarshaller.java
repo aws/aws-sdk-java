@@ -42,21 +42,6 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequest
-                .getSpotInstanceRequestIds();
-        if (!describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isEmpty()
-                || !describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isAutoConstruct()) {
-            int spotInstanceRequestIdsListIndex = 1;
-
-            for (String describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue : describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList) {
-                if (describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue != null) {
-                    request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex,
-                            StringUtils.fromString(describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue));
-                }
-                spotInstanceRequestIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeSpotInstanceRequestsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSpotInstanceRequestsRequest
                 .getFilters();
         if (!describeSpotInstanceRequestsRequestFiltersList.isEmpty() || !describeSpotInstanceRequestsRequestFiltersList.isAutoConstruct()) {
@@ -82,6 +67,21 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotInstanceRequestsRequest
+                .getSpotInstanceRequestIds();
+        if (!describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isEmpty()
+                || !describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList.isAutoConstruct()) {
+            int spotInstanceRequestIdsListIndex = 1;
+
+            for (String describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue : describeSpotInstanceRequestsRequestSpotInstanceRequestIdsList) {
+                if (describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue != null) {
+                    request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex,
+                            StringUtils.fromString(describeSpotInstanceRequestsRequestSpotInstanceRequestIdsListValue));
+                }
+                spotInstanceRequestIdsListIndex++;
             }
         }
 

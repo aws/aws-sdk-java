@@ -40,12 +40,12 @@ public class ModifyVolumeAttributeRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (modifyVolumeAttributeRequest.getVolumeId() != null) {
-            request.addParameter("VolumeId", StringUtils.fromString(modifyVolumeAttributeRequest.getVolumeId()));
-        }
-
         if (modifyVolumeAttributeRequest.getAutoEnableIO() != null) {
             request.addParameter("AutoEnableIO.Value", StringUtils.fromBoolean(modifyVolumeAttributeRequest.getAutoEnableIO()));
+        }
+
+        if (modifyVolumeAttributeRequest.getVolumeId() != null) {
+            request.addParameter("VolumeId", StringUtils.fromString(modifyVolumeAttributeRequest.getVolumeId()));
         }
 
         return request;

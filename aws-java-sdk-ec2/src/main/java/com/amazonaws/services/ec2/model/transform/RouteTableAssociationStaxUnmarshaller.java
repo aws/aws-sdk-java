@@ -43,6 +43,11 @@ public class RouteTableAssociationStaxUnmarshaller implements Unmarshaller<Route
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("main", targetDepth)) {
+                    routeTableAssociation.setMain(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("routeTableAssociationId", targetDepth)) {
                     routeTableAssociation.setRouteTableAssociationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,11 +60,6 @@ public class RouteTableAssociationStaxUnmarshaller implements Unmarshaller<Route
 
                 if (context.testExpression("subnetId", targetDepth)) {
                     routeTableAssociation.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("main", targetDepth)) {
-                    routeTableAssociation.setMain(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

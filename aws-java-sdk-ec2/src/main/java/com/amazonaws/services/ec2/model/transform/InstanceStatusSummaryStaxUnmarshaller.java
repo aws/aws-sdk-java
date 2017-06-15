@@ -45,11 +45,6 @@ public class InstanceStatusSummaryStaxUnmarshaller implements Unmarshaller<Insta
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("status", targetDepth)) {
-                    instanceStatusSummary.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("details", targetDepth)) {
                     instanceStatusSummary.withDetails(new ArrayList<InstanceStatusDetails>());
                     continue;
@@ -60,6 +55,10 @@ public class InstanceStatusSummaryStaxUnmarshaller implements Unmarshaller<Insta
                     continue;
                 }
 
+                if (context.testExpression("status", targetDepth)) {
+                    instanceStatusSummary.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceStatusSummary;

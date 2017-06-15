@@ -40,12 +40,12 @@ public class CreateVpnGatewayRequestMarshaller implements Marshaller<Request<Cre
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createVpnGatewayRequest.getType() != null) {
-            request.addParameter("Type", StringUtils.fromString(createVpnGatewayRequest.getType()));
-        }
-
         if (createVpnGatewayRequest.getAvailabilityZone() != null) {
             request.addParameter("AvailabilityZone", StringUtils.fromString(createVpnGatewayRequest.getAvailabilityZone()));
+        }
+
+        if (createVpnGatewayRequest.getType() != null) {
+            request.addParameter("Type", StringUtils.fromString(createVpnGatewayRequest.getType()));
         }
 
         return request;

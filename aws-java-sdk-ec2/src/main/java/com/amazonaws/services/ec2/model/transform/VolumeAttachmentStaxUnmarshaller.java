@@ -43,13 +43,8 @@ public class VolumeAttachmentStaxUnmarshaller implements Unmarshaller<VolumeAtta
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("volumeId", targetDepth)) {
-                    volumeAttachment.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceId", targetDepth)) {
-                    volumeAttachment.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("attachTime", targetDepth)) {
+                    volumeAttachment.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,13 +53,18 @@ public class VolumeAttachmentStaxUnmarshaller implements Unmarshaller<VolumeAtta
                     continue;
                 }
 
+                if (context.testExpression("instanceId", targetDepth)) {
+                    volumeAttachment.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("status", targetDepth)) {
                     volumeAttachment.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("attachTime", targetDepth)) {
-                    volumeAttachment.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("volumeId", targetDepth)) {
+                    volumeAttachment.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

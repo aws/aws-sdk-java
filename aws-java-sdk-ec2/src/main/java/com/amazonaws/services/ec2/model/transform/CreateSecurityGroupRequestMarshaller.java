@@ -40,12 +40,12 @@ public class CreateSecurityGroupRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createSecurityGroupRequest.getGroupName() != null) {
-            request.addParameter("GroupName", StringUtils.fromString(createSecurityGroupRequest.getGroupName()));
-        }
-
         if (createSecurityGroupRequest.getDescription() != null) {
             request.addParameter("GroupDescription", StringUtils.fromString(createSecurityGroupRequest.getDescription()));
+        }
+
+        if (createSecurityGroupRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(createSecurityGroupRequest.getGroupName()));
         }
 
         if (createSecurityGroupRequest.getVpcId() != null) {

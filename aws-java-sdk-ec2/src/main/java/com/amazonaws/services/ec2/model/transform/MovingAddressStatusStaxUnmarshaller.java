@@ -43,13 +43,13 @@ public class MovingAddressStatusStaxUnmarshaller implements Unmarshaller<MovingA
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("publicIp", targetDepth)) {
-                    movingAddressStatus.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("moveStatus", targetDepth)) {
+                    movingAddressStatus.setMoveStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("moveStatus", targetDepth)) {
-                    movingAddressStatus.setMoveStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("publicIp", targetDepth)) {
+                    movingAddressStatus.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

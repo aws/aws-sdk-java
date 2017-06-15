@@ -30,12 +30,6 @@ public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * One or more VPCs for which you want to describe the ClassicLink status.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> vpcIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -70,79 +64,12 @@ public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest imple
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more VPCs for which you want to describe the ClassicLink status.
      * </p>
-     * 
-     * @return One or more VPCs for which you want to describe the ClassicLink status.
      */
-
-    public java.util.List<String> getVpcIds() {
-        if (vpcIds == null) {
-            vpcIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return vpcIds;
-    }
-
-    /**
-     * <p>
-     * One or more VPCs for which you want to describe the ClassicLink status.
-     * </p>
-     * 
-     * @param vpcIds
-     *        One or more VPCs for which you want to describe the ClassicLink status.
-     */
-
-    public void setVpcIds(java.util.Collection<String> vpcIds) {
-        if (vpcIds == null) {
-            this.vpcIds = null;
-            return;
-        }
-
-        this.vpcIds = new com.amazonaws.internal.SdkInternalList<String>(vpcIds);
-    }
-
-    /**
-     * <p>
-     * One or more VPCs for which you want to describe the ClassicLink status.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVpcIds(java.util.Collection)} or {@link #withVpcIds(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param vpcIds
-     *        One or more VPCs for which you want to describe the ClassicLink status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcClassicLinkRequest withVpcIds(String... vpcIds) {
-        if (this.vpcIds == null) {
-            setVpcIds(new com.amazonaws.internal.SdkInternalList<String>(vpcIds.length));
-        }
-        for (String ele : vpcIds) {
-            this.vpcIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more VPCs for which you want to describe the ClassicLink status.
-     * </p>
-     * 
-     * @param vpcIds
-     *        One or more VPCs for which you want to describe the ClassicLink status.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVpcClassicLinkRequest withVpcIds(java.util.Collection<String> vpcIds) {
-        setVpcIds(vpcIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> vpcIds;
 
     /**
      * <p>
@@ -458,6 +385,79 @@ public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * One or more VPCs for which you want to describe the ClassicLink status.
+     * </p>
+     * 
+     * @return One or more VPCs for which you want to describe the ClassicLink status.
+     */
+
+    public java.util.List<String> getVpcIds() {
+        if (vpcIds == null) {
+            vpcIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return vpcIds;
+    }
+
+    /**
+     * <p>
+     * One or more VPCs for which you want to describe the ClassicLink status.
+     * </p>
+     * 
+     * @param vpcIds
+     *        One or more VPCs for which you want to describe the ClassicLink status.
+     */
+
+    public void setVpcIds(java.util.Collection<String> vpcIds) {
+        if (vpcIds == null) {
+            this.vpcIds = null;
+            return;
+        }
+
+        this.vpcIds = new com.amazonaws.internal.SdkInternalList<String>(vpcIds);
+    }
+
+    /**
+     * <p>
+     * One or more VPCs for which you want to describe the ClassicLink status.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpcIds(java.util.Collection)} or {@link #withVpcIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param vpcIds
+     *        One or more VPCs for which you want to describe the ClassicLink status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcClassicLinkRequest withVpcIds(String... vpcIds) {
+        if (this.vpcIds == null) {
+            setVpcIds(new com.amazonaws.internal.SdkInternalList<String>(vpcIds.length));
+        }
+        for (String ele : vpcIds) {
+            this.vpcIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more VPCs for which you want to describe the ClassicLink status.
+     * </p>
+     * 
+     * @param vpcIds
+     *        One or more VPCs for which you want to describe the ClassicLink status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVpcClassicLinkRequest withVpcIds(java.util.Collection<String> vpcIds) {
+        setVpcIds(vpcIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -479,10 +479,10 @@ public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcIds() != null)
-            sb.append("VpcIds: ").append(getVpcIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getVpcIds() != null)
+            sb.append("VpcIds: ").append(getVpcIds());
         sb.append("}");
         return sb.toString();
     }
@@ -497,13 +497,13 @@ public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest imple
         if (obj instanceof DescribeVpcClassicLinkRequest == false)
             return false;
         DescribeVpcClassicLinkRequest other = (DescribeVpcClassicLinkRequest) obj;
-        if (other.getVpcIds() == null ^ this.getVpcIds() == null)
-            return false;
-        if (other.getVpcIds() != null && other.getVpcIds().equals(this.getVpcIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getVpcIds() == null ^ this.getVpcIds() == null)
+            return false;
+        if (other.getVpcIds() != null && other.getVpcIds().equals(this.getVpcIds()) == false)
             return false;
         return true;
     }
@@ -513,8 +513,8 @@ public class DescribeVpcClassicLinkRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcIds() == null) ? 0 : getVpcIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getVpcIds() == null) ? 0 : getVpcIds().hashCode());
         return hashCode;
     }
 

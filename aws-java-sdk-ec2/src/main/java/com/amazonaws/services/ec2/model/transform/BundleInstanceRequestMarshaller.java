@@ -50,16 +50,16 @@ public class BundleInstanceRequestMarshaller implements Marshaller<Request<Bundl
             S3Storage s3 = storage.getS3();
             if (s3 != null) {
 
+                if (s3.getAWSAccessKeyId() != null) {
+                    request.addParameter("Storage.S3.AWSAccessKeyId", StringUtils.fromString(s3.getAWSAccessKeyId()));
+                }
+
                 if (s3.getBucket() != null) {
                     request.addParameter("Storage.S3.Bucket", StringUtils.fromString(s3.getBucket()));
                 }
 
                 if (s3.getPrefix() != null) {
                     request.addParameter("Storage.S3.Prefix", StringUtils.fromString(s3.getPrefix()));
-                }
-
-                if (s3.getAWSAccessKeyId() != null) {
-                    request.addParameter("Storage.S3.AWSAccessKeyId", StringUtils.fromString(s3.getAWSAccessKeyId()));
                 }
 
                 if (s3.getUploadPolicy() != null) {

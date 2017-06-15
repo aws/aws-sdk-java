@@ -28,6 +28,12 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     */
+    private String deviceName;
+    /**
+     * <p>
      * The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered starting from 0. An
      * instance type with 2 available instance store volumes can specify mappings for <code>ephemeral0</code> and
      * <code>ephemeral1</code>.The number of available instance store volumes depends on the instance type. After you
@@ -42,12 +48,6 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     private String virtualName;
     /**
      * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * </p>
-     */
-    private String deviceName;
-    /**
-     * <p>
      * Parameters used to automatically set up EBS volumes when the instance is launched.
      * </p>
      */
@@ -58,6 +58,46 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
      * </p>
      */
     private String noDevice;
+
+    /**
+     * <p>
+     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     * 
+     * @param deviceName
+     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     */
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    /**
+     * <p>
+     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     * 
+     * @return The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     */
+
+    public String getDeviceName() {
+        return this.deviceName;
+    }
+
+    /**
+     * <p>
+     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * </p>
+     * 
+     * @param deviceName
+     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BlockDeviceMapping withDeviceName(String deviceName) {
+        setDeviceName(deviceName);
+        return this;
+    }
 
     /**
      * <p>
@@ -141,46 +181,6 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
 
     public BlockDeviceMapping withVirtualName(String virtualName) {
         setVirtualName(virtualName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * </p>
-     * 
-     * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     */
-
-    public void setDeviceName(String deviceName) {
-        this.deviceName = deviceName;
-    }
-
-    /**
-     * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * </p>
-     * 
-     * @return The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     */
-
-    public String getDeviceName() {
-        return this.deviceName;
-    }
-
-    /**
-     * <p>
-     * The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * </p>
-     * 
-     * @param deviceName
-     *        The device name exposed to the instance (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BlockDeviceMapping withDeviceName(String deviceName) {
-        setDeviceName(deviceName);
         return this;
     }
 
@@ -275,10 +275,10 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVirtualName() != null)
-            sb.append("VirtualName: ").append(getVirtualName()).append(",");
         if (getDeviceName() != null)
             sb.append("DeviceName: ").append(getDeviceName()).append(",");
+        if (getVirtualName() != null)
+            sb.append("VirtualName: ").append(getVirtualName()).append(",");
         if (getEbs() != null)
             sb.append("Ebs: ").append(getEbs()).append(",");
         if (getNoDevice() != null)
@@ -297,13 +297,13 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
         if (obj instanceof BlockDeviceMapping == false)
             return false;
         BlockDeviceMapping other = (BlockDeviceMapping) obj;
-        if (other.getVirtualName() == null ^ this.getVirtualName() == null)
-            return false;
-        if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false)
-            return false;
         if (other.getDeviceName() == null ^ this.getDeviceName() == null)
             return false;
         if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
+            return false;
+        if (other.getVirtualName() == null ^ this.getVirtualName() == null)
+            return false;
+        if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false)
             return false;
         if (other.getEbs() == null ^ this.getEbs() == null)
             return false;
@@ -321,8 +321,8 @@ public class BlockDeviceMapping implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
+        hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode());
         hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode());
         hashCode = prime * hashCode + ((getNoDevice() == null) ? 0 : getNoDevice().hashCode());
         return hashCode;

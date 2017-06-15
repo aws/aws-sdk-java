@@ -37,9 +37,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> allows organizations to create and manage
  * catalogs of IT services that are approved for use on AWS. This documentation provides reference material for the AWS
- * Service Catalog end user API. To get the most out of this documentation, you need to be familiar with the terminology
- * discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/userguide/what-is_concepts.html">AWS Service
- * Catalog Concepts</a>.
+ * Service Catalog end user API. To get the most out of this documentation, be familiar with the terminology discussed
+ * in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
+ * Concepts</a>.
  * </p>
  * <p>
  * <i>Additional Resources</i>
@@ -851,6 +851,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeDescribeProductView(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProvisionedProductResult> describeProvisionedProductAsync(DescribeProvisionedProductRequest request) {
+
+        return describeProvisionedProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeProvisionedProductResult> describeProvisionedProductAsync(final DescribeProvisionedProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeProvisionedProductRequest, DescribeProvisionedProductResult> asyncHandler) {
+        final DescribeProvisionedProductRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeProvisionedProductResult>() {
+            @Override
+            public DescribeProvisionedProductResult call() throws Exception {
+                DescribeProvisionedProductResult result = null;
+
+                try {
+                    result = executeDescribeProvisionedProduct(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

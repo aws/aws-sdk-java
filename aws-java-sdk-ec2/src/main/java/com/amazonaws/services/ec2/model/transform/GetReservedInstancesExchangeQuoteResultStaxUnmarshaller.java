@@ -45,6 +45,31 @@ public class GetReservedInstancesExchangeQuoteResultStaxUnmarshaller implements 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("currencyCode", targetDepth)) {
+                    getReservedInstancesExchangeQuoteResult.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("isValidExchange", targetDepth)) {
+                    getReservedInstancesExchangeQuoteResult.setIsValidExchange(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("outputReservedInstancesWillExpireAt", targetDepth)) {
+                    getReservedInstancesExchangeQuoteResult.setOutputReservedInstancesWillExpireAt(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("paymentDue", targetDepth)) {
+                    getReservedInstancesExchangeQuoteResult.setPaymentDue(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("reservedInstanceValueRollup", targetDepth)) {
+                    getReservedInstancesExchangeQuoteResult.setReservedInstanceValueRollup(ReservationValueStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("reservedInstanceValueSet", targetDepth)) {
                     getReservedInstancesExchangeQuoteResult.withReservedInstanceValueSet(new ArrayList<ReservedInstanceReservationValue>());
                     continue;
@@ -56,8 +81,9 @@ public class GetReservedInstancesExchangeQuoteResultStaxUnmarshaller implements 
                     continue;
                 }
 
-                if (context.testExpression("reservedInstanceValueRollup", targetDepth)) {
-                    getReservedInstancesExchangeQuoteResult.setReservedInstanceValueRollup(ReservationValueStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("targetConfigurationValueRollup", targetDepth)) {
+                    getReservedInstancesExchangeQuoteResult.setTargetConfigurationValueRollup(ReservationValueStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
                     continue;
                 }
 
@@ -69,32 +95,6 @@ public class GetReservedInstancesExchangeQuoteResultStaxUnmarshaller implements 
                 if (context.testExpression("targetConfigurationValueSet/item", targetDepth)) {
                     getReservedInstancesExchangeQuoteResult.withTargetConfigurationValueSet(TargetReservationValueStaxUnmarshaller.getInstance().unmarshall(
                             context));
-                    continue;
-                }
-
-                if (context.testExpression("targetConfigurationValueRollup", targetDepth)) {
-                    getReservedInstancesExchangeQuoteResult.setTargetConfigurationValueRollup(ReservationValueStaxUnmarshaller.getInstance()
-                            .unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("paymentDue", targetDepth)) {
-                    getReservedInstancesExchangeQuoteResult.setPaymentDue(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("currencyCode", targetDepth)) {
-                    getReservedInstancesExchangeQuoteResult.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("outputReservedInstancesWillExpireAt", targetDepth)) {
-                    getReservedInstancesExchangeQuoteResult.setOutputReservedInstancesWillExpireAt(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("isValidExchange", targetDepth)) {
-                    getReservedInstancesExchangeQuoteResult.setIsValidExchange(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

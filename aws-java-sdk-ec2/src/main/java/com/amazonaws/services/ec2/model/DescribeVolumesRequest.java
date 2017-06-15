@@ -29,12 +29,6 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * One or more volume IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> volumeIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -135,13 +129,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request where
-     * <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * One or more volume IDs.
      * </p>
      */
-    private String nextToken;
+    private com.amazonaws.internal.SdkInternalList<String> volumeIds;
     /**
      * <p>
      * The maximum number of volume results returned by <code>DescribeVolumes</code> in paginated output. When this
@@ -154,6 +145,15 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request where
+     * <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code>
+     * when there are no more results to return.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * Default constructor for DescribeVolumesRequest object. Callers should use the setter or fluent setter (with...)
@@ -171,79 +171,6 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      */
     public DescribeVolumesRequest(java.util.List<String> volumeIds) {
         setVolumeIds(volumeIds);
-    }
-
-    /**
-     * <p>
-     * One or more volume IDs.
-     * </p>
-     * 
-     * @return One or more volume IDs.
-     */
-
-    public java.util.List<String> getVolumeIds() {
-        if (volumeIds == null) {
-            volumeIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return volumeIds;
-    }
-
-    /**
-     * <p>
-     * One or more volume IDs.
-     * </p>
-     * 
-     * @param volumeIds
-     *        One or more volume IDs.
-     */
-
-    public void setVolumeIds(java.util.Collection<String> volumeIds) {
-        if (volumeIds == null) {
-            this.volumeIds = null;
-            return;
-        }
-
-        this.volumeIds = new com.amazonaws.internal.SdkInternalList<String>(volumeIds);
-    }
-
-    /**
-     * <p>
-     * One or more volume IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setVolumeIds(java.util.Collection)} or {@link #withVolumeIds(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param volumeIds
-     *        One or more volume IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumesRequest withVolumeIds(String... volumeIds) {
-        if (this.volumeIds == null) {
-            setVolumeIds(new com.amazonaws.internal.SdkInternalList<String>(volumeIds.length));
-        }
-        for (String ele : volumeIds) {
-            this.volumeIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more volume IDs.
-     * </p>
-     * 
-     * @param volumeIds
-     *        One or more volume IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumesRequest withVolumeIds(java.util.Collection<String> volumeIds) {
-        setVolumeIds(volumeIds);
-        return this;
     }
 
     /**
@@ -1073,59 +1000,74 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request where
-     * <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * One or more volume IDs.
      * </p>
      * 
-     * @param nextToken
-     *        The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request
-     *        where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>NextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return.
+     * @return One or more volume IDs.
      */
 
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
+    public java.util.List<String> getVolumeIds() {
+        if (volumeIds == null) {
+            volumeIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return volumeIds;
     }
 
     /**
      * <p>
-     * The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request where
-     * <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * One or more volume IDs.
      * </p>
      * 
-     * @return The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request
-     *         where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *         continues from the end of the previous results that returned the <code>NextToken</code> value. This value
-     *         is <code>null</code> when there are no more results to return.
+     * @param volumeIds
+     *        One or more volume IDs.
      */
 
-    public String getNextToken() {
-        return this.nextToken;
+    public void setVolumeIds(java.util.Collection<String> volumeIds) {
+        if (volumeIds == null) {
+            this.volumeIds = null;
+            return;
+        }
+
+        this.volumeIds = new com.amazonaws.internal.SdkInternalList<String>(volumeIds);
     }
 
     /**
      * <p>
-     * The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request where
-     * <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code>
-     * when there are no more results to return.
+     * One or more volume IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVolumeIds(java.util.Collection)} or {@link #withVolumeIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param nextToken
-     *        The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request
-     *        where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     *        continues from the end of the previous results that returned the <code>NextToken</code> value. This value
-     *        is <code>null</code> when there are no more results to return.
+     * @param volumeIds
+     *        One or more volume IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeVolumesRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
+    public DescribeVolumesRequest withVolumeIds(String... volumeIds) {
+        if (this.volumeIds == null) {
+            setVolumeIds(new com.amazonaws.internal.SdkInternalList<String>(volumeIds.length));
+        }
+        for (String ele : volumeIds) {
+            this.volumeIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more volume IDs.
+     * </p>
+     * 
+     * @param volumeIds
+     *        One or more volume IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumesRequest withVolumeIds(java.util.Collection<String> volumeIds) {
+        setVolumeIds(volumeIds);
         return this;
     }
 
@@ -1209,6 +1151,64 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
+     * <p>
+     * The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request where
+     * <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code>
+     * when there are no more results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request
+     *        where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *        continues from the end of the previous results that returned the <code>NextToken</code> value. This value
+     *        is <code>null</code> when there are no more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request where
+     * <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code>
+     * when there are no more results to return.
+     * </p>
+     * 
+     * @return The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request
+     *         where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *         continues from the end of the previous results that returned the <code>NextToken</code> value. This value
+     *         is <code>null</code> when there are no more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request where
+     * <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>NextToken</code> value. This value is <code>null</code>
+     * when there are no more results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The <code>NextToken</code> value returned from a previous paginated <code>DescribeVolumes</code> request
+     *        where <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
+     *        continues from the end of the previous results that returned the <code>NextToken</code> value. This value
+     *        is <code>null</code> when there are no more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumesRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1230,14 +1230,14 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeIds() != null)
-            sb.append("VolumeIds: ").append(getVolumeIds()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getVolumeIds() != null)
+            sb.append("VolumeIds: ").append(getVolumeIds()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -1252,21 +1252,21 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         if (obj instanceof DescribeVolumesRequest == false)
             return false;
         DescribeVolumesRequest other = (DescribeVolumesRequest) obj;
-        if (other.getVolumeIds() == null ^ this.getVolumeIds() == null)
-            return false;
-        if (other.getVolumeIds() != null && other.getVolumeIds().equals(this.getVolumeIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
+        if (other.getVolumeIds() == null ^ this.getVolumeIds() == null)
             return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getVolumeIds() != null && other.getVolumeIds().equals(this.getVolumeIds()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -1276,10 +1276,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeIds() == null) ? 0 : getVolumeIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getVolumeIds() == null) ? 0 : getVolumeIds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

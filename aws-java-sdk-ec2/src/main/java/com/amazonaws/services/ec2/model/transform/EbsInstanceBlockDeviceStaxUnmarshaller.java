@@ -43,8 +43,13 @@ public class EbsInstanceBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsI
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("volumeId", targetDepth)) {
-                    ebsInstanceBlockDevice.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("attachTime", targetDepth)) {
+                    ebsInstanceBlockDevice.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deleteOnTermination", targetDepth)) {
+                    ebsInstanceBlockDevice.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -53,13 +58,8 @@ public class EbsInstanceBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsI
                     continue;
                 }
 
-                if (context.testExpression("attachTime", targetDepth)) {
-                    ebsInstanceBlockDevice.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("deleteOnTermination", targetDepth)) {
-                    ebsInstanceBlockDevice.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("volumeId", targetDepth)) {
+                    ebsInstanceBlockDevice.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

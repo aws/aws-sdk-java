@@ -43,13 +43,13 @@ public class DiskImageDetailStaxUnmarshaller implements Unmarshaller<DiskImageDe
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("format", targetDepth)) {
-                    diskImageDetail.setFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("bytes", targetDepth)) {
+                    diskImageDetail.setBytes(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("bytes", targetDepth)) {
-                    diskImageDetail.setBytes(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("format", targetDepth)) {
+                    diskImageDetail.setFormat(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

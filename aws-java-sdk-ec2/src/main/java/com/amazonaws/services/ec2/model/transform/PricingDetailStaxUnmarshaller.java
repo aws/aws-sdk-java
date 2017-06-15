@@ -43,13 +43,13 @@ public class PricingDetailStaxUnmarshaller implements Unmarshaller<PricingDetail
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("price", targetDepth)) {
-                    pricingDetail.setPrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("count", targetDepth)) {
+                    pricingDetail.setCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("count", targetDepth)) {
-                    pricingDetail.setCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("price", targetDepth)) {
+                    pricingDetail.setPrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

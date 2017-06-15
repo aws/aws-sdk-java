@@ -28,56 +28,16 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The offering ID of the reservation.
-     * </p>
-     */
-    private String offeringId;
-    /**
-     * <p>
      * The ID/s of the Dedicated Host/s that the reservation will be associated with.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> hostIdSet;
-
     /**
      * <p>
      * The offering ID of the reservation.
      * </p>
-     * 
-     * @param offeringId
-     *        The offering ID of the reservation.
      */
-
-    public void setOfferingId(String offeringId) {
-        this.offeringId = offeringId;
-    }
-
-    /**
-     * <p>
-     * The offering ID of the reservation.
-     * </p>
-     * 
-     * @return The offering ID of the reservation.
-     */
-
-    public String getOfferingId() {
-        return this.offeringId;
-    }
-
-    /**
-     * <p>
-     * The offering ID of the reservation.
-     * </p>
-     * 
-     * @param offeringId
-     *        The offering ID of the reservation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetHostReservationPurchasePreviewRequest withOfferingId(String offeringId) {
-        setOfferingId(offeringId);
-        return this;
-    }
+    private String offeringId;
 
     /**
      * <p>
@@ -153,6 +113,46 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The offering ID of the reservation.
+     * </p>
+     * 
+     * @param offeringId
+     *        The offering ID of the reservation.
+     */
+
+    public void setOfferingId(String offeringId) {
+        this.offeringId = offeringId;
+    }
+
+    /**
+     * <p>
+     * The offering ID of the reservation.
+     * </p>
+     * 
+     * @return The offering ID of the reservation.
+     */
+
+    public String getOfferingId() {
+        return this.offeringId;
+    }
+
+    /**
+     * <p>
+     * The offering ID of the reservation.
+     * </p>
+     * 
+     * @param offeringId
+     *        The offering ID of the reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetHostReservationPurchasePreviewRequest withOfferingId(String offeringId) {
+        setOfferingId(offeringId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -174,10 +174,10 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOfferingId() != null)
-            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getHostIdSet() != null)
-            sb.append("HostIdSet: ").append(getHostIdSet());
+            sb.append("HostIdSet: ").append(getHostIdSet()).append(",");
+        if (getOfferingId() != null)
+            sb.append("OfferingId: ").append(getOfferingId());
         sb.append("}");
         return sb.toString();
     }
@@ -192,13 +192,13 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
         if (obj instanceof GetHostReservationPurchasePreviewRequest == false)
             return false;
         GetHostReservationPurchasePreviewRequest other = (GetHostReservationPurchasePreviewRequest) obj;
-        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
-            return false;
-        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
-            return false;
         if (other.getHostIdSet() == null ^ this.getHostIdSet() == null)
             return false;
         if (other.getHostIdSet() != null && other.getHostIdSet().equals(this.getHostIdSet()) == false)
+            return false;
+        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
+            return false;
+        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
         return true;
     }
@@ -208,8 +208,8 @@ public class GetHostReservationPurchasePreviewRequest extends AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         hashCode = prime * hashCode + ((getHostIdSet() == null) ? 0 : getHostIdSet().hashCode());
+        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         return hashCode;
     }
 

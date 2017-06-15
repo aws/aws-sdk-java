@@ -43,8 +43,8 @@ public class EventInformationStaxUnmarshaller implements Unmarshaller<EventInfor
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("instanceId", targetDepth)) {
-                    eventInformation.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("eventDescription", targetDepth)) {
+                    eventInformation.setEventDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -53,8 +53,8 @@ public class EventInformationStaxUnmarshaller implements Unmarshaller<EventInfor
                     continue;
                 }
 
-                if (context.testExpression("eventDescription", targetDepth)) {
-                    eventInformation.setEventDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceId", targetDepth)) {
+                    eventInformation.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

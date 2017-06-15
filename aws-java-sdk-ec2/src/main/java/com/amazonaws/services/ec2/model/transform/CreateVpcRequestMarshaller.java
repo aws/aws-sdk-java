@@ -44,12 +44,12 @@ public class CreateVpcRequestMarshaller implements Marshaller<Request<CreateVpcR
             request.addParameter("CidrBlock", StringUtils.fromString(createVpcRequest.getCidrBlock()));
         }
 
-        if (createVpcRequest.getInstanceTenancy() != null) {
-            request.addParameter("InstanceTenancy", StringUtils.fromString(createVpcRequest.getInstanceTenancy()));
-        }
-
         if (createVpcRequest.getAmazonProvidedIpv6CidrBlock() != null) {
             request.addParameter("AmazonProvidedIpv6CidrBlock", StringUtils.fromBoolean(createVpcRequest.getAmazonProvidedIpv6CidrBlock()));
+        }
+
+        if (createVpcRequest.getInstanceTenancy() != null) {
+            request.addParameter("InstanceTenancy", StringUtils.fromString(createVpcRequest.getInstanceTenancy()));
         }
 
         return request;

@@ -45,7 +45,7 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
     private String acceptLanguage;
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * </p>
      */
     private String provisioningArtifactId;
@@ -55,6 +55,12 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String productId;
+    /**
+     * <p>
+     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * </p>
+     */
+    private Boolean verbose;
 
     /**
      * <p>
@@ -167,11 +173,11 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The identifier of the provisioning artifact.
+     *        The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      */
 
     public void setProvisioningArtifactId(String provisioningArtifactId) {
@@ -180,10 +186,10 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * </p>
      * 
-     * @return The identifier of the provisioning artifact.
+     * @return The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      */
 
     public String getProvisioningArtifactId() {
@@ -192,11 +198,11 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The identifier of the provisioning artifact.
+     *        The identifier of the provisioning artifact. This is sometimes referred to as the product version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,6 +252,58 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * </p>
+     * 
+     * @param verbose
+     *        Selects verbose results. If set to true, the CloudFormation template is returned.
+     */
+
+    public void setVerbose(Boolean verbose) {
+        this.verbose = verbose;
+    }
+
+    /**
+     * <p>
+     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * </p>
+     * 
+     * @return Selects verbose results. If set to true, the CloudFormation template is returned.
+     */
+
+    public Boolean getVerbose() {
+        return this.verbose;
+    }
+
+    /**
+     * <p>
+     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * </p>
+     * 
+     * @param verbose
+     *        Selects verbose results. If set to true, the CloudFormation template is returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningArtifactRequest withVerbose(Boolean verbose) {
+        setVerbose(verbose);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * </p>
+     * 
+     * @return Selects verbose results. If set to true, the CloudFormation template is returned.
+     */
+
+    public Boolean isVerbose() {
+        return this.verbose;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -261,7 +319,9 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
         if (getProvisioningArtifactId() != null)
             sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId()).append(",");
         if (getProductId() != null)
-            sb.append("ProductId: ").append(getProductId());
+            sb.append("ProductId: ").append(getProductId()).append(",");
+        if (getVerbose() != null)
+            sb.append("Verbose: ").append(getVerbose());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +348,10 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
             return false;
+        if (other.getVerbose() == null ^ this.getVerbose() == null)
+            return false;
+        if (other.getVerbose() != null && other.getVerbose().equals(this.getVerbose()) == false)
+            return false;
         return true;
     }
 
@@ -299,6 +363,7 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getVerbose() == null) ? 0 : getVerbose().hashCode());
         return hashCode;
     }
 

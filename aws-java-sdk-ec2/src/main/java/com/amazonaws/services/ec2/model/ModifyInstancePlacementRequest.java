@@ -30,18 +30,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the instance that you are modifying.
-     * </p>
-     */
-    private String instanceId;
-    /**
-     * <p>
-     * The tenancy of the instance that you are modifying.
-     * </p>
-     */
-    private String tenancy;
-    /**
-     * <p>
      * The new affinity setting for the instance.
      * </p>
      */
@@ -52,119 +40,18 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String hostId;
-
     /**
      * <p>
      * The ID of the instance that you are modifying.
      * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance that you are modifying.
      */
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance that you are modifying.
-     * </p>
-     * 
-     * @return The ID of the instance that you are modifying.
-     */
-
-    public String getInstanceId() {
-        return this.instanceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the instance that you are modifying.
-     * </p>
-     * 
-     * @param instanceId
-     *        The ID of the instance that you are modifying.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyInstancePlacementRequest withInstanceId(String instanceId) {
-        setInstanceId(instanceId);
-        return this;
-    }
-
+    private String instanceId;
     /**
      * <p>
      * The tenancy of the instance that you are modifying.
      * </p>
-     * 
-     * @param tenancy
-     *        The tenancy of the instance that you are modifying.
-     * @see HostTenancy
      */
-
-    public void setTenancy(String tenancy) {
-        this.tenancy = tenancy;
-    }
-
-    /**
-     * <p>
-     * The tenancy of the instance that you are modifying.
-     * </p>
-     * 
-     * @return The tenancy of the instance that you are modifying.
-     * @see HostTenancy
-     */
-
-    public String getTenancy() {
-        return this.tenancy;
-    }
-
-    /**
-     * <p>
-     * The tenancy of the instance that you are modifying.
-     * </p>
-     * 
-     * @param tenancy
-     *        The tenancy of the instance that you are modifying.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see HostTenancy
-     */
-
-    public ModifyInstancePlacementRequest withTenancy(String tenancy) {
-        setTenancy(tenancy);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The tenancy of the instance that you are modifying.
-     * </p>
-     * 
-     * @param tenancy
-     *        The tenancy of the instance that you are modifying.
-     * @see HostTenancy
-     */
-
-    public void setTenancy(HostTenancy tenancy) {
-        this.tenancy = tenancy.toString();
-    }
-
-    /**
-     * <p>
-     * The tenancy of the instance that you are modifying.
-     * </p>
-     * 
-     * @param tenancy
-     *        The tenancy of the instance that you are modifying.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see HostTenancy
-     */
-
-    public ModifyInstancePlacementRequest withTenancy(HostTenancy tenancy) {
-        setTenancy(tenancy);
-        return this;
-    }
+    private String tenancy;
 
     /**
      * <p>
@@ -280,6 +167,119 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The ID of the instance that you are modifying.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance that you are modifying.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance that you are modifying.
+     * </p>
+     * 
+     * @return The ID of the instance that you are modifying.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance that you are modifying.
+     * </p>
+     * 
+     * @param instanceId
+     *        The ID of the instance that you are modifying.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyInstancePlacementRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tenancy of the instance that you are modifying.
+     * </p>
+     * 
+     * @param tenancy
+     *        The tenancy of the instance that you are modifying.
+     * @see HostTenancy
+     */
+
+    public void setTenancy(String tenancy) {
+        this.tenancy = tenancy;
+    }
+
+    /**
+     * <p>
+     * The tenancy of the instance that you are modifying.
+     * </p>
+     * 
+     * @return The tenancy of the instance that you are modifying.
+     * @see HostTenancy
+     */
+
+    public String getTenancy() {
+        return this.tenancy;
+    }
+
+    /**
+     * <p>
+     * The tenancy of the instance that you are modifying.
+     * </p>
+     * 
+     * @param tenancy
+     *        The tenancy of the instance that you are modifying.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostTenancy
+     */
+
+    public ModifyInstancePlacementRequest withTenancy(String tenancy) {
+        setTenancy(tenancy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tenancy of the instance that you are modifying.
+     * </p>
+     * 
+     * @param tenancy
+     *        The tenancy of the instance that you are modifying.
+     * @see HostTenancy
+     */
+
+    public void setTenancy(HostTenancy tenancy) {
+        this.tenancy = tenancy.toString();
+    }
+
+    /**
+     * <p>
+     * The tenancy of the instance that you are modifying.
+     * </p>
+     * 
+     * @param tenancy
+     *        The tenancy of the instance that you are modifying.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostTenancy
+     */
+
+    public ModifyInstancePlacementRequest withTenancy(HostTenancy tenancy) {
+        setTenancy(tenancy);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -301,14 +301,14 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId()).append(",");
-        if (getTenancy() != null)
-            sb.append("Tenancy: ").append(getTenancy()).append(",");
         if (getAffinity() != null)
             sb.append("Affinity: ").append(getAffinity()).append(",");
         if (getHostId() != null)
-            sb.append("HostId: ").append(getHostId());
+            sb.append("HostId: ").append(getHostId()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getTenancy() != null)
+            sb.append("Tenancy: ").append(getTenancy());
         sb.append("}");
         return sb.toString();
     }
@@ -323,14 +323,6 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
         if (obj instanceof ModifyInstancePlacementRequest == false)
             return false;
         ModifyInstancePlacementRequest other = (ModifyInstancePlacementRequest) obj;
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
-            return false;
-        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
-            return false;
-        if (other.getTenancy() == null ^ this.getTenancy() == null)
-            return false;
-        if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false)
-            return false;
         if (other.getAffinity() == null ^ this.getAffinity() == null)
             return false;
         if (other.getAffinity() != null && other.getAffinity().equals(this.getAffinity()) == false)
@@ -338,6 +330,14 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
         if (other.getHostId() == null ^ this.getHostId() == null)
             return false;
         if (other.getHostId() != null && other.getHostId().equals(this.getHostId()) == false)
+            return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getTenancy() == null ^ this.getTenancy() == null)
+            return false;
+        if (other.getTenancy() != null && other.getTenancy().equals(this.getTenancy()) == false)
             return false;
         return true;
     }
@@ -347,10 +347,10 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         hashCode = prime * hashCode + ((getAffinity() == null) ? 0 : getAffinity().hashCode());
         hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         return hashCode;
     }
 

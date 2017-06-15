@@ -30,56 +30,16 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the network interface.
-     * </p>
-     */
-    private String networkInterfaceId;
-    /**
-     * <p>
      * The attribute of the network interface. This parameter is required.
      * </p>
      */
     private String attribute;
-
     /**
      * <p>
      * The ID of the network interface.
      * </p>
-     * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
      */
-
-    public void setNetworkInterfaceId(String networkInterfaceId) {
-        this.networkInterfaceId = networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
-     * 
-     * @return The ID of the network interface.
-     */
-
-    public String getNetworkInterfaceId() {
-        return this.networkInterfaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the network interface.
-     * </p>
-     * 
-     * @param networkInterfaceId
-     *        The ID of the network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeNetworkInterfaceAttributeRequest withNetworkInterfaceId(String networkInterfaceId) {
-        setNetworkInterfaceId(networkInterfaceId);
-        return this;
-    }
+    private String networkInterfaceId;
 
     /**
      * <p>
@@ -155,6 +115,46 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @return The ID of the network interface.
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the network interface.
+     * </p>
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeNetworkInterfaceAttributeRequest withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -176,10 +176,10 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNetworkInterfaceId() != null)
-            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: ").append(getAttribute());
+            sb.append("Attribute: ").append(getAttribute()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId());
         sb.append("}");
         return sb.toString();
     }
@@ -194,13 +194,13 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
         if (obj instanceof DescribeNetworkInterfaceAttributeRequest == false)
             return false;
         DescribeNetworkInterfaceAttributeRequest other = (DescribeNetworkInterfaceAttributeRequest) obj;
-        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
-            return false;
-        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
-            return false;
         if (other.getAttribute() == null ^ this.getAttribute() == null)
             return false;
         if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+            return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         return true;
     }
@@ -210,8 +210,8 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         return hashCode;
     }
 

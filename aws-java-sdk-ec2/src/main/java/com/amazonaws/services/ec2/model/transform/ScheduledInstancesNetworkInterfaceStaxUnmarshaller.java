@@ -45,8 +45,18 @@ public class ScheduledInstancesNetworkInterfaceStaxUnmarshaller implements Unmar
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("NetworkInterfaceId", targetDepth)) {
-                    scheduledInstancesNetworkInterface.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("AssociatePublicIpAddress", targetDepth)) {
+                    scheduledInstancesNetworkInterface.setAssociatePublicIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DeleteOnTermination", targetDepth)) {
+                    scheduledInstancesNetworkInterface.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Description", targetDepth)) {
+                    scheduledInstancesNetworkInterface.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -55,13 +65,33 @@ public class ScheduledInstancesNetworkInterfaceStaxUnmarshaller implements Unmar
                     continue;
                 }
 
-                if (context.testExpression("SubnetId", targetDepth)) {
-                    scheduledInstancesNetworkInterface.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Group", targetDepth)) {
+                    scheduledInstancesNetworkInterface.withGroups(new ArrayList<String>());
                     continue;
                 }
 
-                if (context.testExpression("Description", targetDepth)) {
-                    scheduledInstancesNetworkInterface.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Group/SecurityGroupId", targetDepth)) {
+                    scheduledInstancesNetworkInterface.withGroups(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Ipv6AddressCount", targetDepth)) {
+                    scheduledInstancesNetworkInterface.setIpv6AddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Ipv6Address", targetDepth)) {
+                    scheduledInstancesNetworkInterface.withIpv6Addresses(new ArrayList<ScheduledInstancesIpv6Address>());
+                    continue;
+                }
+
+                if (context.testExpression("Ipv6Address/Ipv6Address", targetDepth)) {
+                    scheduledInstancesNetworkInterface.withIpv6Addresses(ScheduledInstancesIpv6AddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("NetworkInterfaceId", targetDepth)) {
+                    scheduledInstancesNetworkInterface.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -86,38 +116,8 @@ public class ScheduledInstancesNetworkInterfaceStaxUnmarshaller implements Unmar
                     continue;
                 }
 
-                if (context.testExpression("AssociatePublicIpAddress", targetDepth)) {
-                    scheduledInstancesNetworkInterface.setAssociatePublicIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("Group", targetDepth)) {
-                    scheduledInstancesNetworkInterface.withGroups(new ArrayList<String>());
-                    continue;
-                }
-
-                if (context.testExpression("Group/SecurityGroupId", targetDepth)) {
-                    scheduledInstancesNetworkInterface.withGroups(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("DeleteOnTermination", targetDepth)) {
-                    scheduledInstancesNetworkInterface.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("Ipv6Address", targetDepth)) {
-                    scheduledInstancesNetworkInterface.withIpv6Addresses(new ArrayList<ScheduledInstancesIpv6Address>());
-                    continue;
-                }
-
-                if (context.testExpression("Ipv6Address/Ipv6Address", targetDepth)) {
-                    scheduledInstancesNetworkInterface.withIpv6Addresses(ScheduledInstancesIpv6AddressStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("Ipv6AddressCount", targetDepth)) {
-                    scheduledInstancesNetworkInterface.setIpv6AddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("SubnetId", targetDepth)) {
+                    scheduledInstancesNetworkInterface.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

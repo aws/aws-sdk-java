@@ -1302,7 +1302,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Gets information about the specified certificate. You may specify the certificate using either its ID or PEM.</p>",
+      "documentation" : "<p>Gets information about the specified certificate.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -4725,7 +4725,7 @@
     },
     "CertificatePem" : {
       "deprecated" : false,
-      "documentation" : "<p>The PEM of a certificate.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6560,20 +6560,6 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "CertificateId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "certificatePem" : {
-          "deprecated" : false,
-          "documentation" : "<p>The PEM of the certificate.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : "header",
-          "locationName" : "x-amzn-iot-certificate-pem",
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "CertificatePem",
           "streaming" : false,
           "xmlNamespace" : null
         }

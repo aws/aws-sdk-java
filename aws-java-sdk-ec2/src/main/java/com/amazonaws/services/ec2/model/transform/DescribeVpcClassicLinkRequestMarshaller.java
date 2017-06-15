@@ -40,19 +40,6 @@ public class DescribeVpcClassicLinkRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeVpcClassicLinkRequestVpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcClassicLinkRequest
-                .getVpcIds();
-        if (!describeVpcClassicLinkRequestVpcIdsList.isEmpty() || !describeVpcClassicLinkRequestVpcIdsList.isAutoConstruct()) {
-            int vpcIdsListIndex = 1;
-
-            for (String describeVpcClassicLinkRequestVpcIdsListValue : describeVpcClassicLinkRequestVpcIdsList) {
-                if (describeVpcClassicLinkRequestVpcIdsListValue != null) {
-                    request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(describeVpcClassicLinkRequestVpcIdsListValue));
-                }
-                vpcIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeVpcClassicLinkRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeVpcClassicLinkRequest
                 .getFilters();
         if (!describeVpcClassicLinkRequestFiltersList.isEmpty() || !describeVpcClassicLinkRequestFiltersList.isAutoConstruct()) {
@@ -78,6 +65,19 @@ public class DescribeVpcClassicLinkRequestMarshaller implements Marshaller<Reque
                     }
                 }
                 filtersListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeVpcClassicLinkRequestVpcIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeVpcClassicLinkRequest
+                .getVpcIds();
+        if (!describeVpcClassicLinkRequestVpcIdsList.isEmpty() || !describeVpcClassicLinkRequestVpcIdsList.isAutoConstruct()) {
+            int vpcIdsListIndex = 1;
+
+            for (String describeVpcClassicLinkRequestVpcIdsListValue : describeVpcClassicLinkRequestVpcIdsList) {
+                if (describeVpcClassicLinkRequestVpcIdsListValue != null) {
+                    request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(describeVpcClassicLinkRequestVpcIdsListValue));
+                }
+                vpcIdsListIndex++;
             }
         }
 

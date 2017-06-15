@@ -28,40 +28,22 @@ public class BundleTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the instance associated with this bundle task.
-     * </p>
-     */
-    private String instanceId;
-    /**
-     * <p>
      * The ID of the bundle task.
      * </p>
      */
     private String bundleId;
     /**
      * <p>
-     * The state of the task.
+     * If the task fails, a description of the error.
      * </p>
      */
-    private String state;
+    private BundleTaskError bundleTaskError;
     /**
      * <p>
-     * The time this task started.
+     * The ID of the instance associated with this bundle task.
      * </p>
      */
-    private java.util.Date startTime;
-    /**
-     * <p>
-     * The time of the most recent update for the task.
-     * </p>
-     */
-    private java.util.Date updateTime;
-    /**
-     * <p>
-     * The Amazon S3 storage locations.
-     * </p>
-     */
-    private Storage storage;
+    private String instanceId;
     /**
      * <p>
      * The level of task completion, as a percent (for example, 20%).
@@ -70,10 +52,108 @@ public class BundleTask implements Serializable, Cloneable {
     private String progress;
     /**
      * <p>
-     * If the task fails, a description of the error.
+     * The time this task started.
      * </p>
      */
-    private BundleTaskError bundleTaskError;
+    private java.util.Date startTime;
+    /**
+     * <p>
+     * The state of the task.
+     * </p>
+     */
+    private String state;
+    /**
+     * <p>
+     * The Amazon S3 storage locations.
+     * </p>
+     */
+    private Storage storage;
+    /**
+     * <p>
+     * The time of the most recent update for the task.
+     * </p>
+     */
+    private java.util.Date updateTime;
+
+    /**
+     * <p>
+     * The ID of the bundle task.
+     * </p>
+     * 
+     * @param bundleId
+     *        The ID of the bundle task.
+     */
+
+    public void setBundleId(String bundleId) {
+        this.bundleId = bundleId;
+    }
+
+    /**
+     * <p>
+     * The ID of the bundle task.
+     * </p>
+     * 
+     * @return The ID of the bundle task.
+     */
+
+    public String getBundleId() {
+        return this.bundleId;
+    }
+
+    /**
+     * <p>
+     * The ID of the bundle task.
+     * </p>
+     * 
+     * @param bundleId
+     *        The ID of the bundle task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BundleTask withBundleId(String bundleId) {
+        setBundleId(bundleId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the task fails, a description of the error.
+     * </p>
+     * 
+     * @param bundleTaskError
+     *        If the task fails, a description of the error.
+     */
+
+    public void setBundleTaskError(BundleTaskError bundleTaskError) {
+        this.bundleTaskError = bundleTaskError;
+    }
+
+    /**
+     * <p>
+     * If the task fails, a description of the error.
+     * </p>
+     * 
+     * @return If the task fails, a description of the error.
+     */
+
+    public BundleTaskError getBundleTaskError() {
+        return this.bundleTaskError;
+    }
+
+    /**
+     * <p>
+     * If the task fails, a description of the error.
+     * </p>
+     * 
+     * @param bundleTaskError
+     *        If the task fails, a description of the error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BundleTask withBundleTaskError(BundleTaskError bundleTaskError) {
+        setBundleTaskError(bundleTaskError);
+        return this;
+    }
 
     /**
      * <p>
@@ -117,41 +197,81 @@ public class BundleTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the bundle task.
+     * The level of task completion, as a percent (for example, 20%).
      * </p>
      * 
-     * @param bundleId
-     *        The ID of the bundle task.
+     * @param progress
+     *        The level of task completion, as a percent (for example, 20%).
      */
 
-    public void setBundleId(String bundleId) {
-        this.bundleId = bundleId;
+    public void setProgress(String progress) {
+        this.progress = progress;
     }
 
     /**
      * <p>
-     * The ID of the bundle task.
+     * The level of task completion, as a percent (for example, 20%).
      * </p>
      * 
-     * @return The ID of the bundle task.
+     * @return The level of task completion, as a percent (for example, 20%).
      */
 
-    public String getBundleId() {
-        return this.bundleId;
+    public String getProgress() {
+        return this.progress;
     }
 
     /**
      * <p>
-     * The ID of the bundle task.
+     * The level of task completion, as a percent (for example, 20%).
      * </p>
      * 
-     * @param bundleId
-     *        The ID of the bundle task.
+     * @param progress
+     *        The level of task completion, as a percent (for example, 20%).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BundleTask withBundleId(String bundleId) {
-        setBundleId(bundleId);
+    public BundleTask withProgress(String progress) {
+        setProgress(progress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time this task started.
+     * </p>
+     * 
+     * @param startTime
+     *        The time this task started.
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * The time this task started.
+     * </p>
+     * 
+     * @return The time this task started.
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * The time this task started.
+     * </p>
+     * 
+     * @param startTime
+     *        The time this task started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BundleTask withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
         return this;
     }
 
@@ -230,41 +350,41 @@ public class BundleTask implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time this task started.
+     * The Amazon S3 storage locations.
      * </p>
      * 
-     * @param startTime
-     *        The time this task started.
+     * @param storage
+     *        The Amazon S3 storage locations.
      */
 
-    public void setStartTime(java.util.Date startTime) {
-        this.startTime = startTime;
+    public void setStorage(Storage storage) {
+        this.storage = storage;
     }
 
     /**
      * <p>
-     * The time this task started.
+     * The Amazon S3 storage locations.
      * </p>
      * 
-     * @return The time this task started.
+     * @return The Amazon S3 storage locations.
      */
 
-    public java.util.Date getStartTime() {
-        return this.startTime;
+    public Storage getStorage() {
+        return this.storage;
     }
 
     /**
      * <p>
-     * The time this task started.
+     * The Amazon S3 storage locations.
      * </p>
      * 
-     * @param startTime
-     *        The time this task started.
+     * @param storage
+     *        The Amazon S3 storage locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public BundleTask withStartTime(java.util.Date startTime) {
-        setStartTime(startTime);
+    public BundleTask withStorage(Storage storage) {
+        setStorage(storage);
         return this;
     }
 
@@ -309,126 +429,6 @@ public class BundleTask implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The Amazon S3 storage locations.
-     * </p>
-     * 
-     * @param storage
-     *        The Amazon S3 storage locations.
-     */
-
-    public void setStorage(Storage storage) {
-        this.storage = storage;
-    }
-
-    /**
-     * <p>
-     * The Amazon S3 storage locations.
-     * </p>
-     * 
-     * @return The Amazon S3 storage locations.
-     */
-
-    public Storage getStorage() {
-        return this.storage;
-    }
-
-    /**
-     * <p>
-     * The Amazon S3 storage locations.
-     * </p>
-     * 
-     * @param storage
-     *        The Amazon S3 storage locations.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BundleTask withStorage(Storage storage) {
-        setStorage(storage);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The level of task completion, as a percent (for example, 20%).
-     * </p>
-     * 
-     * @param progress
-     *        The level of task completion, as a percent (for example, 20%).
-     */
-
-    public void setProgress(String progress) {
-        this.progress = progress;
-    }
-
-    /**
-     * <p>
-     * The level of task completion, as a percent (for example, 20%).
-     * </p>
-     * 
-     * @return The level of task completion, as a percent (for example, 20%).
-     */
-
-    public String getProgress() {
-        return this.progress;
-    }
-
-    /**
-     * <p>
-     * The level of task completion, as a percent (for example, 20%).
-     * </p>
-     * 
-     * @param progress
-     *        The level of task completion, as a percent (for example, 20%).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BundleTask withProgress(String progress) {
-        setProgress(progress);
-        return this;
-    }
-
-    /**
-     * <p>
-     * If the task fails, a description of the error.
-     * </p>
-     * 
-     * @param bundleTaskError
-     *        If the task fails, a description of the error.
-     */
-
-    public void setBundleTaskError(BundleTaskError bundleTaskError) {
-        this.bundleTaskError = bundleTaskError;
-    }
-
-    /**
-     * <p>
-     * If the task fails, a description of the error.
-     * </p>
-     * 
-     * @return If the task fails, a description of the error.
-     */
-
-    public BundleTaskError getBundleTaskError() {
-        return this.bundleTaskError;
-    }
-
-    /**
-     * <p>
-     * If the task fails, a description of the error.
-     * </p>
-     * 
-     * @param bundleTaskError
-     *        If the task fails, a description of the error.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BundleTask withBundleTaskError(BundleTaskError bundleTaskError) {
-        setBundleTaskError(bundleTaskError);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -439,22 +439,22 @@ public class BundleTask implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getBundleId() != null)
             sb.append("BundleId: ").append(getBundleId()).append(",");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
-        if (getStartTime() != null)
-            sb.append("StartTime: ").append(getStartTime()).append(",");
-        if (getUpdateTime() != null)
-            sb.append("UpdateTime: ").append(getUpdateTime()).append(",");
-        if (getStorage() != null)
-            sb.append("Storage: ").append(getStorage()).append(",");
+        if (getBundleTaskError() != null)
+            sb.append("BundleTaskError: ").append(getBundleTaskError()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getProgress() != null)
             sb.append("Progress: ").append(getProgress()).append(",");
-        if (getBundleTaskError() != null)
-            sb.append("BundleTaskError: ").append(getBundleTaskError());
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
+        if (getStorage() != null)
+            sb.append("Storage: ").append(getStorage()).append(",");
+        if (getUpdateTime() != null)
+            sb.append("UpdateTime: ").append(getUpdateTime());
         sb.append("}");
         return sb.toString();
     }
@@ -469,37 +469,37 @@ public class BundleTask implements Serializable, Cloneable {
         if (obj instanceof BundleTask == false)
             return false;
         BundleTask other = (BundleTask) obj;
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
-            return false;
-        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
-            return false;
         if (other.getBundleId() == null ^ this.getBundleId() == null)
             return false;
         if (other.getBundleId() != null && other.getBundleId().equals(this.getBundleId()) == false)
             return false;
-        if (other.getState() == null ^ this.getState() == null)
+        if (other.getBundleTaskError() == null ^ this.getBundleTaskError() == null)
             return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+        if (other.getBundleTaskError() != null && other.getBundleTaskError().equals(this.getBundleTaskError()) == false)
             return false;
-        if (other.getStartTime() == null ^ this.getStartTime() == null)
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
-        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
-            return false;
-        if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
-            return false;
-        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
-            return false;
-        if (other.getStorage() == null ^ this.getStorage() == null)
-            return false;
-        if (other.getStorage() != null && other.getStorage().equals(this.getStorage()) == false)
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
         if (other.getProgress() == null ^ this.getProgress() == null)
             return false;
         if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false)
             return false;
-        if (other.getBundleTaskError() == null ^ this.getBundleTaskError() == null)
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
-        if (other.getBundleTaskError() != null && other.getBundleTaskError().equals(this.getBundleTaskError()) == false)
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getStorage() == null ^ this.getStorage() == null)
+            return false;
+        if (other.getStorage() != null && other.getStorage().equals(this.getStorage()) == false)
+            return false;
+        if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
+            return false;
+        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
             return false;
         return true;
     }
@@ -509,14 +509,14 @@ public class BundleTask implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
-        hashCode = prime * hashCode + ((getStorage() == null) ? 0 : getStorage().hashCode());
-        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
         hashCode = prime * hashCode + ((getBundleTaskError() == null) ? 0 : getBundleTaskError().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getStorage() == null) ? 0 : getStorage().hashCode());
+        hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return hashCode;
     }
 

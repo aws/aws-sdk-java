@@ -43,14 +43,14 @@ public class AssociateSubnetCidrBlockResultStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("subnetId", targetDepth)) {
-                    associateSubnetCidrBlockResult.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("ipv6CidrBlockAssociation", targetDepth)) {
                     associateSubnetCidrBlockResult
                             .setIpv6CidrBlockAssociation(SubnetIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("subnetId", targetDepth)) {
+                    associateSubnetCidrBlockResult.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

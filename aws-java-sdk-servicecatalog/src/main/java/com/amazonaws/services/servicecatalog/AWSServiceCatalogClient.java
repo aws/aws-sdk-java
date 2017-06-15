@@ -55,9 +55,9 @@ import com.amazonaws.services.servicecatalog.model.transform.*;
  * <p>
  * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> allows organizations to create and manage
  * catalogs of IT services that are approved for use on AWS. This documentation provides reference material for the AWS
- * Service Catalog end user API. To get the most out of this documentation, you need to be familiar with the terminology
- * discussed in <a href="http://docs.aws.amazon.com/servicecatalog/latest/userguide/what-is_concepts.html">AWS Service
- * Catalog Concepts</a>.
+ * Service Catalog end user API. To get the most out of this documentation, be familiar with the terminology discussed
+ * in <a href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
+ * Concepts</a>.
  * </p>
  * <p>
  * <i>Additional Resources</i>
@@ -468,7 +468,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a new constraint.
+     * Creates a new constraint. For more information, see <a
+     * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
      * </p>
      * 
      * @param createConstraintRequest
@@ -686,8 +687,11 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Create a new provisioning artifact for the specified product. This operation will not work with a product that
+     * Create a new provisioning artifact for the specified product. This operation does not work with a product that
      * has been shared with you.
+     * </p>
+     * <p>
+     * See the bottom of this topic for an example JSON request.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -796,7 +800,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes the specified portfolio. This operation will not work with a portfolio that has been shared with you or
+     * Deletes the specified portfolio. This operation does not work with a portfolio that has been shared with you or
      * if it has products, users, constraints, or shared accounts associated with it.
      * </p>
      * 
@@ -902,7 +906,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes the specified product. This operation will not work with a product that has been shared with you or is
+     * Deletes the specified product. This operation does not work with a product that has been shared with you or is
      * associated with a portfolio.
      * </p>
      * 
@@ -958,7 +962,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes the specified provisioning artifact. This operation will not work on a provisioning artifact associated
+     * Deletes the specified provisioning artifact. This operation does not work on a provisioning artifact associated
      * with a product that has been shared with you, or on the last provisioning artifact associated with a product (a
      * product must have at least one provisioning artifact).
      * </p>
@@ -1268,6 +1272,58 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProductViewResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeProductViewResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve detailed information about the provisioned product.
+     * </p>
+     * 
+     * @param describeProvisionedProductRequest
+     * @return Result of the DescribeProvisionedProduct operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeProvisionedProductResult describeProvisionedProduct(DescribeProvisionedProductRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProvisionedProduct(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProvisionedProductResult executeDescribeProvisionedProduct(DescribeProvisionedProductRequest describeProvisionedProductRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeProvisionedProductRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProvisionedProductRequest> request = null;
+        Response<DescribeProvisionedProductResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProvisionedProductRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeProvisionedProductRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProvisionedProductResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeProvisionedProductResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2022,7 +2078,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Requests a <i>Provision</i> of a specified product. A <i>ProvisionedProduct</i> is a resourced instance for a
+     * Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a
      * product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation
      * stack and all the underlying resources that come with it.
      * </p>
@@ -2402,7 +2458,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates the specified portfolio's details. This operation will not work with a product that has been shared with
+     * Updates the specified portfolio's details. This operation does not work with a product that has been shared with
      * you.
      * </p>
      * 
@@ -2570,7 +2626,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates an existing provisioning artifact's information. This operation will not work on a provisioning artifact
+     * Updates an existing provisioning artifact's information. This operation does not work on a provisioning artifact
      * associated with a product that has been shared with you.
      * </p>
      * 

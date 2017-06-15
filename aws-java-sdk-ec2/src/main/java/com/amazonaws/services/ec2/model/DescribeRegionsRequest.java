@@ -29,12 +29,6 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The names of one or more regions.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> regionNames;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -51,79 +45,12 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * The names of one or more regions.
      * </p>
-     * 
-     * @return The names of one or more regions.
      */
-
-    public java.util.List<String> getRegionNames() {
-        if (regionNames == null) {
-            regionNames = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return regionNames;
-    }
-
-    /**
-     * <p>
-     * The names of one or more regions.
-     * </p>
-     * 
-     * @param regionNames
-     *        The names of one or more regions.
-     */
-
-    public void setRegionNames(java.util.Collection<String> regionNames) {
-        if (regionNames == null) {
-            this.regionNames = null;
-            return;
-        }
-
-        this.regionNames = new com.amazonaws.internal.SdkInternalList<String>(regionNames);
-    }
-
-    /**
-     * <p>
-     * The names of one or more regions.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setRegionNames(java.util.Collection)} or {@link #withRegionNames(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param regionNames
-     *        The names of one or more regions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeRegionsRequest withRegionNames(String... regionNames) {
-        if (this.regionNames == null) {
-            setRegionNames(new com.amazonaws.internal.SdkInternalList<String>(regionNames.length));
-        }
-        for (String ele : regionNames) {
-            this.regionNames.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The names of one or more regions.
-     * </p>
-     * 
-     * @param regionNames
-     *        The names of one or more regions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeRegionsRequest withRegionNames(java.util.Collection<String> regionNames) {
-        setRegionNames(regionNames);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> regionNames;
 
     /**
      * <p>
@@ -295,6 +222,79 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
+     * <p>
+     * The names of one or more regions.
+     * </p>
+     * 
+     * @return The names of one or more regions.
+     */
+
+    public java.util.List<String> getRegionNames() {
+        if (regionNames == null) {
+            regionNames = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return regionNames;
+    }
+
+    /**
+     * <p>
+     * The names of one or more regions.
+     * </p>
+     * 
+     * @param regionNames
+     *        The names of one or more regions.
+     */
+
+    public void setRegionNames(java.util.Collection<String> regionNames) {
+        if (regionNames == null) {
+            this.regionNames = null;
+            return;
+        }
+
+        this.regionNames = new com.amazonaws.internal.SdkInternalList<String>(regionNames);
+    }
+
+    /**
+     * <p>
+     * The names of one or more regions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRegionNames(java.util.Collection)} or {@link #withRegionNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param regionNames
+     *        The names of one or more regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRegionsRequest withRegionNames(String... regionNames) {
+        if (this.regionNames == null) {
+            setRegionNames(new com.amazonaws.internal.SdkInternalList<String>(regionNames.length));
+        }
+        for (String ele : regionNames) {
+            this.regionNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of one or more regions.
+     * </p>
+     * 
+     * @param regionNames
+     *        The names of one or more regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRegionsRequest withRegionNames(java.util.Collection<String> regionNames) {
+        setRegionNames(regionNames);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -316,10 +316,10 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRegionNames() != null)
-            sb.append("RegionNames: ").append(getRegionNames()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getRegionNames() != null)
+            sb.append("RegionNames: ").append(getRegionNames());
         sb.append("}");
         return sb.toString();
     }
@@ -334,13 +334,13 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
         if (obj instanceof DescribeRegionsRequest == false)
             return false;
         DescribeRegionsRequest other = (DescribeRegionsRequest) obj;
-        if (other.getRegionNames() == null ^ this.getRegionNames() == null)
-            return false;
-        if (other.getRegionNames() != null && other.getRegionNames().equals(this.getRegionNames()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getRegionNames() == null ^ this.getRegionNames() == null)
+            return false;
+        if (other.getRegionNames() != null && other.getRegionNames().equals(this.getRegionNames()) == false)
             return false;
         return true;
     }
@@ -350,8 +350,8 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest implements S
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRegionNames() == null) ? 0 : getRegionNames().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getRegionNames() == null) ? 0 : getRegionNames().hashCode());
         return hashCode;
     }
 

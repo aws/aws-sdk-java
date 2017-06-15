@@ -43,6 +43,21 @@ public class ScheduledInstancesEbsStaxUnmarshaller implements Unmarshaller<Sched
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("DeleteOnTermination", targetDepth)) {
+                    scheduledInstancesEbs.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Encrypted", targetDepth)) {
+                    scheduledInstancesEbs.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Iops", targetDepth)) {
+                    scheduledInstancesEbs.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("SnapshotId", targetDepth)) {
                     scheduledInstancesEbs.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -53,23 +68,8 @@ public class ScheduledInstancesEbsStaxUnmarshaller implements Unmarshaller<Sched
                     continue;
                 }
 
-                if (context.testExpression("DeleteOnTermination", targetDepth)) {
-                    scheduledInstancesEbs.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("VolumeType", targetDepth)) {
                     scheduledInstancesEbs.setVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("Iops", targetDepth)) {
-                    scheduledInstancesEbs.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("Encrypted", targetDepth)) {
-                    scheduledInstancesEbs.setEncrypted(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

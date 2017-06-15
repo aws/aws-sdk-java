@@ -33,18 +33,18 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
     private String publicIp;
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
-     * </p>
-     */
-    private String domain;
-    /**
-     * <p>
      * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
      * a VPC.
      * </p>
      */
     private String allocationId;
+    /**
+     * <p>
+     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
+     * instances in a VPC (<code>vpc</code>).
+     * </p>
+     */
+    private String domain;
 
     /**
      * <p>
@@ -83,6 +83,52 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
 
     public AllocateAddressResult withPublicIp(String publicIp) {
         setPublicIp(publicIp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
+     * a VPC.
+     * </p>
+     * 
+     * @param allocationId
+     *        [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with
+     *        instances in a VPC.
+     */
+
+    public void setAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
+     * a VPC.
+     * </p>
+     * 
+     * @return [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with
+     *         instances in a VPC.
+     */
+
+    public String getAllocationId() {
+        return this.allocationId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
+     * a VPC.
+     * </p>
+     * 
+     * @param allocationId
+     *        [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with
+     *        instances in a VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateAddressResult withAllocationId(String allocationId) {
+        setAllocationId(allocationId);
         return this;
     }
 
@@ -170,52 +216,6 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
-     * <p>
-     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
-     * a VPC.
-     * </p>
-     * 
-     * @param allocationId
-     *        [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with
-     *        instances in a VPC.
-     */
-
-    public void setAllocationId(String allocationId) {
-        this.allocationId = allocationId;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
-     * a VPC.
-     * </p>
-     * 
-     * @return [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with
-     *         instances in a VPC.
-     */
-
-    public String getAllocationId() {
-        return this.allocationId;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with instances in
-     * a VPC.
-     * </p>
-     * 
-     * @param allocationId
-     *        [EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic IP address for use with
-     *        instances in a VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AllocateAddressResult withAllocationId(String allocationId) {
-        setAllocationId(allocationId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -228,10 +228,10 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
         sb.append("{");
         if (getPublicIp() != null)
             sb.append("PublicIp: ").append(getPublicIp()).append(",");
-        if (getDomain() != null)
-            sb.append("Domain: ").append(getDomain()).append(",");
         if (getAllocationId() != null)
-            sb.append("AllocationId: ").append(getAllocationId());
+            sb.append("AllocationId: ").append(getAllocationId()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain());
         sb.append("}");
         return sb.toString();
     }
@@ -250,13 +250,13 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
-        if (other.getDomain() == null ^ this.getDomain() == null)
-            return false;
-        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
-            return false;
         if (other.getAllocationId() == null ^ this.getAllocationId() == null)
             return false;
         if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+            return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
         return true;
     }
@@ -267,8 +267,8 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
-        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         return hashCode;
     }
 

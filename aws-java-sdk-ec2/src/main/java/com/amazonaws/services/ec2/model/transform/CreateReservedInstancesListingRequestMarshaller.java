@@ -42,8 +42,8 @@ public class CreateReservedInstancesListingRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createReservedInstancesListingRequest.getReservedInstancesId() != null) {
-            request.addParameter("ReservedInstancesId", StringUtils.fromString(createReservedInstancesListingRequest.getReservedInstancesId()));
+        if (createReservedInstancesListingRequest.getClientToken() != null) {
+            request.addParameter("ClientToken", StringUtils.fromString(createReservedInstancesListingRequest.getClientToken()));
         }
 
         if (createReservedInstancesListingRequest.getInstanceCount() != null) {
@@ -57,9 +57,9 @@ public class CreateReservedInstancesListingRequestMarshaller implements
 
             for (PriceScheduleSpecification createReservedInstancesListingRequestPriceSchedulesListValue : createReservedInstancesListingRequestPriceSchedulesList) {
 
-                if (createReservedInstancesListingRequestPriceSchedulesListValue.getTerm() != null) {
-                    request.addParameter("PriceSchedules." + priceSchedulesListIndex + ".Term",
-                            StringUtils.fromLong(createReservedInstancesListingRequestPriceSchedulesListValue.getTerm()));
+                if (createReservedInstancesListingRequestPriceSchedulesListValue.getCurrencyCode() != null) {
+                    request.addParameter("PriceSchedules." + priceSchedulesListIndex + ".CurrencyCode",
+                            StringUtils.fromString(createReservedInstancesListingRequestPriceSchedulesListValue.getCurrencyCode()));
                 }
 
                 if (createReservedInstancesListingRequestPriceSchedulesListValue.getPrice() != null) {
@@ -67,16 +67,16 @@ public class CreateReservedInstancesListingRequestMarshaller implements
                             StringUtils.fromDouble(createReservedInstancesListingRequestPriceSchedulesListValue.getPrice()));
                 }
 
-                if (createReservedInstancesListingRequestPriceSchedulesListValue.getCurrencyCode() != null) {
-                    request.addParameter("PriceSchedules." + priceSchedulesListIndex + ".CurrencyCode",
-                            StringUtils.fromString(createReservedInstancesListingRequestPriceSchedulesListValue.getCurrencyCode()));
+                if (createReservedInstancesListingRequestPriceSchedulesListValue.getTerm() != null) {
+                    request.addParameter("PriceSchedules." + priceSchedulesListIndex + ".Term",
+                            StringUtils.fromLong(createReservedInstancesListingRequestPriceSchedulesListValue.getTerm()));
                 }
                 priceSchedulesListIndex++;
             }
         }
 
-        if (createReservedInstancesListingRequest.getClientToken() != null) {
-            request.addParameter("ClientToken", StringUtils.fromString(createReservedInstancesListingRequest.getClientToken()));
+        if (createReservedInstancesListingRequest.getReservedInstancesId() != null) {
+            request.addParameter("ReservedInstancesId", StringUtils.fromString(createReservedInstancesListingRequest.getReservedInstancesId()));
         }
 
         return request;

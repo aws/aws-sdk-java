@@ -45,53 +45,13 @@ public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReserva
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("hostReservationId", targetDepth)) {
-                    hostReservation.setHostReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("hostIdSet", targetDepth)) {
-                    hostReservation.withHostIdSet(new ArrayList<String>());
-                    continue;
-                }
-
-                if (context.testExpression("hostIdSet/item", targetDepth)) {
-                    hostReservation.withHostIdSet(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("offeringId", targetDepth)) {
-                    hostReservation.setOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceFamily", targetDepth)) {
-                    hostReservation.setInstanceFamily(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("paymentOption", targetDepth)) {
-                    hostReservation.setPaymentOption(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("hourlyPrice", targetDepth)) {
-                    hostReservation.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("upfrontPrice", targetDepth)) {
-                    hostReservation.setUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("count", targetDepth)) {
+                    hostReservation.setCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("currencyCode", targetDepth)) {
                     hostReservation.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("count", targetDepth)) {
-                    hostReservation.setCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -105,6 +65,41 @@ public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReserva
                     continue;
                 }
 
+                if (context.testExpression("hostIdSet", targetDepth)) {
+                    hostReservation.withHostIdSet(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("hostIdSet/item", targetDepth)) {
+                    hostReservation.withHostIdSet(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hostReservationId", targetDepth)) {
+                    hostReservation.setHostReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hourlyPrice", targetDepth)) {
+                    hostReservation.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instanceFamily", targetDepth)) {
+                    hostReservation.setInstanceFamily(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("offeringId", targetDepth)) {
+                    hostReservation.setOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("paymentOption", targetDepth)) {
+                    hostReservation.setPaymentOption(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("start", targetDepth)) {
                     hostReservation.setStart(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -112,6 +107,11 @@ public class HostReservationStaxUnmarshaller implements Unmarshaller<HostReserva
 
                 if (context.testExpression("state", targetDepth)) {
                     hostReservation.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("upfrontPrice", targetDepth)) {
+                    hostReservation.setUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

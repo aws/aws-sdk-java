@@ -29,12 +29,6 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * One or more flow log IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> flowLogIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -68,10 +62,10 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more flow log IDs.
      * </p>
      */
-    private String nextToken;
+    private com.amazonaws.internal.SdkInternalList<String> flowLogIds;
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
@@ -81,79 +75,12 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
      * </p>
      */
     private Integer maxResults;
-
     /**
      * <p>
-     * One or more flow log IDs.
+     * The token to retrieve the next page of results.
      * </p>
-     * 
-     * @return One or more flow log IDs.
      */
-
-    public java.util.List<String> getFlowLogIds() {
-        if (flowLogIds == null) {
-            flowLogIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return flowLogIds;
-    }
-
-    /**
-     * <p>
-     * One or more flow log IDs.
-     * </p>
-     * 
-     * @param flowLogIds
-     *        One or more flow log IDs.
-     */
-
-    public void setFlowLogIds(java.util.Collection<String> flowLogIds) {
-        if (flowLogIds == null) {
-            this.flowLogIds = null;
-            return;
-        }
-
-        this.flowLogIds = new com.amazonaws.internal.SdkInternalList<String>(flowLogIds);
-    }
-
-    /**
-     * <p>
-     * One or more flow log IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setFlowLogIds(java.util.Collection)} or {@link #withFlowLogIds(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param flowLogIds
-     *        One or more flow log IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeFlowLogsRequest withFlowLogIds(String... flowLogIds) {
-        if (this.flowLogIds == null) {
-            setFlowLogIds(new com.amazonaws.internal.SdkInternalList<String>(flowLogIds.length));
-        }
-        for (String ele : flowLogIds) {
-            this.flowLogIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more flow log IDs.
-     * </p>
-     * 
-     * @param flowLogIds
-     *        One or more flow log IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeFlowLogsRequest withFlowLogIds(java.util.Collection<String> flowLogIds) {
-        setFlowLogIds(flowLogIds);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -450,41 +377,74 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more flow log IDs.
      * </p>
      * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
+     * @return One or more flow log IDs.
      */
 
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
+    public java.util.List<String> getFlowLogIds() {
+        if (flowLogIds == null) {
+            flowLogIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return flowLogIds;
     }
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more flow log IDs.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @param flowLogIds
+     *        One or more flow log IDs.
      */
 
-    public String getNextToken() {
-        return this.nextToken;
+    public void setFlowLogIds(java.util.Collection<String> flowLogIds) {
+        if (flowLogIds == null) {
+            this.flowLogIds = null;
+            return;
+        }
+
+        this.flowLogIds = new com.amazonaws.internal.SdkInternalList<String>(flowLogIds);
     }
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * One or more flow log IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFlowLogIds(java.util.Collection)} or {@link #withFlowLogIds(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param nextToken
-     *        The token to retrieve the next page of results.
+     * @param flowLogIds
+     *        One or more flow log IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeFlowLogsRequest withNextToken(String nextToken) {
-        setNextToken(nextToken);
+    public DescribeFlowLogsRequest withFlowLogIds(String... flowLogIds) {
+        if (this.flowLogIds == null) {
+            setFlowLogIds(new com.amazonaws.internal.SdkInternalList<String>(flowLogIds.length));
+        }
+        for (String ele : flowLogIds) {
+            this.flowLogIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more flow log IDs.
+     * </p>
+     * 
+     * @param flowLogIds
+     *        One or more flow log IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFlowLogsRequest withFlowLogIds(java.util.Collection<String> flowLogIds) {
+        setFlowLogIds(flowLogIds);
         return this;
     }
 
@@ -547,6 +507,46 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @return The token to retrieve the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to retrieve the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to retrieve the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFlowLogsRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -568,14 +568,14 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFlowLogIds() != null)
-            sb.append("FlowLogIds: ").append(getFlowLogIds()).append(",");
         if (getFilter() != null)
             sb.append("Filter: ").append(getFilter()).append(",");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFlowLogIds() != null)
+            sb.append("FlowLogIds: ").append(getFlowLogIds()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -590,21 +590,21 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof DescribeFlowLogsRequest == false)
             return false;
         DescribeFlowLogsRequest other = (DescribeFlowLogsRequest) obj;
-        if (other.getFlowLogIds() == null ^ this.getFlowLogIds() == null)
-            return false;
-        if (other.getFlowLogIds() != null && other.getFlowLogIds().equals(this.getFlowLogIds()) == false)
-            return false;
         if (other.getFilter() == null ^ this.getFilter() == null)
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
+        if (other.getFlowLogIds() == null ^ this.getFlowLogIds() == null)
             return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+        if (other.getFlowLogIds() != null && other.getFlowLogIds().equals(this.getFlowLogIds()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -614,10 +614,10 @@ public class DescribeFlowLogsRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFlowLogIds() == null) ? 0 : getFlowLogIds().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFlowLogIds() == null) ? 0 : getFlowLogIds().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

@@ -43,13 +43,28 @@ public class HostOfferingStaxUnmarshaller implements Unmarshaller<HostOffering, 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("offeringId", targetDepth)) {
-                    hostOffering.setOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("currencyCode", targetDepth)) {
+                    hostOffering.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("duration", targetDepth)) {
+                    hostOffering.setDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hourlyPrice", targetDepth)) {
+                    hostOffering.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("instanceFamily", targetDepth)) {
                     hostOffering.setInstanceFamily(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("offeringId", targetDepth)) {
+                    hostOffering.setOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -60,21 +75,6 @@ public class HostOfferingStaxUnmarshaller implements Unmarshaller<HostOffering, 
 
                 if (context.testExpression("upfrontPrice", targetDepth)) {
                     hostOffering.setUpfrontPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("hourlyPrice", targetDepth)) {
-                    hostOffering.setHourlyPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("currencyCode", targetDepth)) {
-                    hostOffering.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("duration", targetDepth)) {
-                    hostOffering.setDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -40,12 +40,12 @@ public class AttachVpnGatewayRequestMarshaller implements Marshaller<Request<Att
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (attachVpnGatewayRequest.getVpnGatewayId() != null) {
-            request.addParameter("VpnGatewayId", StringUtils.fromString(attachVpnGatewayRequest.getVpnGatewayId()));
-        }
-
         if (attachVpnGatewayRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(attachVpnGatewayRequest.getVpcId()));
+        }
+
+        if (attachVpnGatewayRequest.getVpnGatewayId() != null) {
+            request.addParameter("VpnGatewayId", StringUtils.fromString(attachVpnGatewayRequest.getVpnGatewayId()));
         }
 
         return request;

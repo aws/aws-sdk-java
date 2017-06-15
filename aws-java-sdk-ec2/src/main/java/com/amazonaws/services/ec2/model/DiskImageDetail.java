@@ -28,16 +28,16 @@ public class DiskImageDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The disk image format.
-     * </p>
-     */
-    private String format;
-    /**
-     * <p>
      * The size of the disk image, in GiB.
      * </p>
      */
     private Long bytes;
+    /**
+     * <p>
+     * The disk image format.
+     * </p>
+     */
+    private String format;
     /**
      * <p>
      * A presigned URL for the import manifest stored in Amazon S3 and presented here as an Amazon S3 presigned URL. For
@@ -52,6 +52,46 @@ public class DiskImageDetail implements Serializable, Cloneable {
      * </p>
      */
     private String importManifestUrl;
+
+    /**
+     * <p>
+     * The size of the disk image, in GiB.
+     * </p>
+     * 
+     * @param bytes
+     *        The size of the disk image, in GiB.
+     */
+
+    public void setBytes(Long bytes) {
+        this.bytes = bytes;
+    }
+
+    /**
+     * <p>
+     * The size of the disk image, in GiB.
+     * </p>
+     * 
+     * @return The size of the disk image, in GiB.
+     */
+
+    public Long getBytes() {
+        return this.bytes;
+    }
+
+    /**
+     * <p>
+     * The size of the disk image, in GiB.
+     * </p>
+     * 
+     * @param bytes
+     *        The size of the disk image, in GiB.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiskImageDetail withBytes(Long bytes) {
+        setBytes(bytes);
+        return this;
+    }
 
     /**
      * <p>
@@ -123,46 +163,6 @@ public class DiskImageDetail implements Serializable, Cloneable {
 
     public DiskImageDetail withFormat(DiskImageFormat format) {
         setFormat(format);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The size of the disk image, in GiB.
-     * </p>
-     * 
-     * @param bytes
-     *        The size of the disk image, in GiB.
-     */
-
-    public void setBytes(Long bytes) {
-        this.bytes = bytes;
-    }
-
-    /**
-     * <p>
-     * The size of the disk image, in GiB.
-     * </p>
-     * 
-     * @return The size of the disk image, in GiB.
-     */
-
-    public Long getBytes() {
-        return this.bytes;
-    }
-
-    /**
-     * <p>
-     * The size of the disk image, in GiB.
-     * </p>
-     * 
-     * @param bytes
-     *        The size of the disk image, in GiB.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DiskImageDetail withBytes(Long bytes) {
-        setBytes(bytes);
         return this;
     }
 
@@ -262,10 +262,10 @@ public class DiskImageDetail implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFormat() != null)
-            sb.append("Format: ").append(getFormat()).append(",");
         if (getBytes() != null)
             sb.append("Bytes: ").append(getBytes()).append(",");
+        if (getFormat() != null)
+            sb.append("Format: ").append(getFormat()).append(",");
         if (getImportManifestUrl() != null)
             sb.append("ImportManifestUrl: ").append(getImportManifestUrl());
         sb.append("}");
@@ -282,13 +282,13 @@ public class DiskImageDetail implements Serializable, Cloneable {
         if (obj instanceof DiskImageDetail == false)
             return false;
         DiskImageDetail other = (DiskImageDetail) obj;
-        if (other.getFormat() == null ^ this.getFormat() == null)
-            return false;
-        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
-            return false;
         if (other.getBytes() == null ^ this.getBytes() == null)
             return false;
         if (other.getBytes() != null && other.getBytes().equals(this.getBytes()) == false)
+            return false;
+        if (other.getFormat() == null ^ this.getFormat() == null)
+            return false;
+        if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
         if (other.getImportManifestUrl() == null ^ this.getImportManifestUrl() == null)
             return false;
@@ -302,8 +302,8 @@ public class DiskImageDetail implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getBytes() == null) ? 0 : getBytes().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getImportManifestUrl() == null) ? 0 : getImportManifestUrl().hashCode());
         return hashCode;
     }

@@ -40,12 +40,12 @@ public class ResetImageAttributeRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (resetImageAttributeRequest.getImageId() != null) {
-            request.addParameter("ImageId", StringUtils.fromString(resetImageAttributeRequest.getImageId()));
-        }
-
         if (resetImageAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(resetImageAttributeRequest.getAttribute()));
+        }
+
+        if (resetImageAttributeRequest.getImageId() != null) {
+            request.addParameter("ImageId", StringUtils.fromString(resetImageAttributeRequest.getImageId()));
         }
 
         return request;

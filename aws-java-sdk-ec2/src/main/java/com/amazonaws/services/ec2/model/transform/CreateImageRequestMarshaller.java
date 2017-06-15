@@ -40,22 +40,6 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createImageRequest.getInstanceId() != null) {
-            request.addParameter("InstanceId", StringUtils.fromString(createImageRequest.getInstanceId()));
-        }
-
-        if (createImageRequest.getName() != null) {
-            request.addParameter("Name", StringUtils.fromString(createImageRequest.getName()));
-        }
-
-        if (createImageRequest.getDescription() != null) {
-            request.addParameter("Description", StringUtils.fromString(createImageRequest.getDescription()));
-        }
-
-        if (createImageRequest.getNoReboot() != null) {
-            request.addParameter("NoReboot", StringUtils.fromBoolean(createImageRequest.getNoReboot()));
-        }
-
         com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> createImageRequestBlockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) createImageRequest
                 .getBlockDeviceMappings();
         if (!createImageRequestBlockDeviceMappingsList.isEmpty() || !createImageRequestBlockDeviceMappingsList.isAutoConstruct()) {
@@ -63,18 +47,32 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
 
             for (BlockDeviceMapping createImageRequestBlockDeviceMappingsListValue : createImageRequestBlockDeviceMappingsList) {
 
-                if (createImageRequestBlockDeviceMappingsListValue.getVirtualName() != null) {
-                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
-                            StringUtils.fromString(createImageRequestBlockDeviceMappingsListValue.getVirtualName()));
-                }
-
                 if (createImageRequestBlockDeviceMappingsListValue.getDeviceName() != null) {
                     request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName",
                             StringUtils.fromString(createImageRequestBlockDeviceMappingsListValue.getDeviceName()));
                 }
 
+                if (createImageRequestBlockDeviceMappingsListValue.getVirtualName() != null) {
+                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
+                            StringUtils.fromString(createImageRequestBlockDeviceMappingsListValue.getVirtualName()));
+                }
+
                 EbsBlockDevice ebs = createImageRequestBlockDeviceMappingsListValue.getEbs();
                 if (ebs != null) {
+
+                    if (ebs.getEncrypted() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
+                                StringUtils.fromBoolean(ebs.getEncrypted()));
+                    }
+
+                    if (ebs.getDeleteOnTermination() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
+                                StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
+                    }
+
+                    if (ebs.getIops() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebs.getIops()));
+                    }
 
                     if (ebs.getSnapshotId() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
@@ -86,23 +84,9 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
                                 StringUtils.fromInteger(ebs.getVolumeSize()));
                     }
 
-                    if (ebs.getDeleteOnTermination() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
-                                StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
-                    }
-
                     if (ebs.getVolumeType() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
                                 StringUtils.fromString(ebs.getVolumeType()));
-                    }
-
-                    if (ebs.getIops() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebs.getIops()));
-                    }
-
-                    if (ebs.getEncrypted() != null) {
-                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
-                                StringUtils.fromBoolean(ebs.getEncrypted()));
                     }
                 }
 
@@ -112,6 +96,22 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
                 }
                 blockDeviceMappingsListIndex++;
             }
+        }
+
+        if (createImageRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(createImageRequest.getDescription()));
+        }
+
+        if (createImageRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(createImageRequest.getInstanceId()));
+        }
+
+        if (createImageRequest.getName() != null) {
+            request.addParameter("Name", StringUtils.fromString(createImageRequest.getName()));
+        }
+
+        if (createImageRequest.getNoReboot() != null) {
+            request.addParameter("NoReboot", StringUtils.fromBoolean(createImageRequest.getNoReboot()));
         }
 
         return request;

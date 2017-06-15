@@ -43,25 +43,6 @@ public class DescribeReservedInstancesModificationsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesModificationsRequest
-                .getReservedInstancesModificationIds();
-        if (!describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList.isEmpty()
-                || !describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList.isAutoConstruct()) {
-            int reservedInstancesModificationIdsListIndex = 1;
-
-            for (String describeReservedInstancesModificationsRequestReservedInstancesModificationIdsListValue : describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList) {
-                if (describeReservedInstancesModificationsRequestReservedInstancesModificationIdsListValue != null) {
-                    request.addParameter("ReservedInstancesModificationId." + reservedInstancesModificationIdsListIndex,
-                            StringUtils.fromString(describeReservedInstancesModificationsRequestReservedInstancesModificationIdsListValue));
-                }
-                reservedInstancesModificationIdsListIndex++;
-            }
-        }
-
-        if (describeReservedInstancesModificationsRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeReservedInstancesModificationsRequest.getNextToken()));
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeReservedInstancesModificationsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedInstancesModificationsRequest
                 .getFilters();
         if (!describeReservedInstancesModificationsRequestFiltersList.isEmpty() || !describeReservedInstancesModificationsRequestFiltersList.isAutoConstruct()) {
@@ -88,6 +69,25 @@ public class DescribeReservedInstancesModificationsRequestMarshaller implements
                 }
                 filtersListIndex++;
             }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesModificationsRequest
+                .getReservedInstancesModificationIds();
+        if (!describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList.isEmpty()
+                || !describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList.isAutoConstruct()) {
+            int reservedInstancesModificationIdsListIndex = 1;
+
+            for (String describeReservedInstancesModificationsRequestReservedInstancesModificationIdsListValue : describeReservedInstancesModificationsRequestReservedInstancesModificationIdsList) {
+                if (describeReservedInstancesModificationsRequestReservedInstancesModificationIdsListValue != null) {
+                    request.addParameter("ReservedInstancesModificationId." + reservedInstancesModificationIdsListIndex,
+                            StringUtils.fromString(describeReservedInstancesModificationsRequestReservedInstancesModificationIdsListValue));
+                }
+                reservedInstancesModificationIdsListIndex++;
+            }
+        }
+
+        if (describeReservedInstancesModificationsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeReservedInstancesModificationsRequest.getNextToken()));
         }
 
         return request;

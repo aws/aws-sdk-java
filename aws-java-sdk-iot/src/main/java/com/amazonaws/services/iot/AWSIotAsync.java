@@ -850,7 +850,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets information about the specified certificate. You may specify the certificate using either its ID or PEM.
+     * Gets information about the specified certificate.
      * </p>
      * 
      * @param describeCertificateRequest
@@ -862,7 +862,7 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Gets information about the specified certificate. You may specify the certificate using either its ID or PEM.
+     * Gets information about the specified certificate.
      * </p>
      * 
      * @param describeCertificateRequest

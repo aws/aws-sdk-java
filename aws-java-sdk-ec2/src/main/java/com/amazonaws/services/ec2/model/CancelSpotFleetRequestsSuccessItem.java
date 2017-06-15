@@ -28,12 +28,6 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     */
-    private String spotFleetRequestId;
-    /**
-     * <p>
      * The current state of the Spot fleet request.
      * </p>
      */
@@ -44,46 +38,12 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      * </p>
      */
     private String previousSpotFleetRequestState;
-
     /**
      * <p>
      * The ID of the Spot fleet request.
      * </p>
-     * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
      */
-
-    public void setSpotFleetRequestId(String spotFleetRequestId) {
-        this.spotFleetRequestId = spotFleetRequestId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     * 
-     * @return The ID of the Spot fleet request.
-     */
-
-    public String getSpotFleetRequestId() {
-        return this.spotFleetRequestId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Spot fleet request.
-     * </p>
-     * 
-     * @param spotFleetRequestId
-     *        The ID of the Spot fleet request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CancelSpotFleetRequestsSuccessItem withSpotFleetRequestId(String spotFleetRequestId) {
-        setSpotFleetRequestId(spotFleetRequestId);
-        return this;
-    }
+    private String spotFleetRequestId;
 
     /**
      * <p>
@@ -232,6 +192,46 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The ID of the Spot fleet request.
+     * </p>
+     * 
+     * @param spotFleetRequestId
+     *        The ID of the Spot fleet request.
+     */
+
+    public void setSpotFleetRequestId(String spotFleetRequestId) {
+        this.spotFleetRequestId = spotFleetRequestId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Spot fleet request.
+     * </p>
+     * 
+     * @return The ID of the Spot fleet request.
+     */
+
+    public String getSpotFleetRequestId() {
+        return this.spotFleetRequestId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Spot fleet request.
+     * </p>
+     * 
+     * @param spotFleetRequestId
+     *        The ID of the Spot fleet request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CancelSpotFleetRequestsSuccessItem withSpotFleetRequestId(String spotFleetRequestId) {
+        setSpotFleetRequestId(spotFleetRequestId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -242,12 +242,12 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotFleetRequestId() != null)
-            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getCurrentSpotFleetRequestState() != null)
             sb.append("CurrentSpotFleetRequestState: ").append(getCurrentSpotFleetRequestState()).append(",");
         if (getPreviousSpotFleetRequestState() != null)
-            sb.append("PreviousSpotFleetRequestState: ").append(getPreviousSpotFleetRequestState());
+            sb.append("PreviousSpotFleetRequestState: ").append(getPreviousSpotFleetRequestState()).append(",");
+        if (getSpotFleetRequestId() != null)
+            sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId());
         sb.append("}");
         return sb.toString();
     }
@@ -262,10 +262,6 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
         if (obj instanceof CancelSpotFleetRequestsSuccessItem == false)
             return false;
         CancelSpotFleetRequestsSuccessItem other = (CancelSpotFleetRequestsSuccessItem) obj;
-        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
-            return false;
-        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
-            return false;
         if (other.getCurrentSpotFleetRequestState() == null ^ this.getCurrentSpotFleetRequestState() == null)
             return false;
         if (other.getCurrentSpotFleetRequestState() != null && other.getCurrentSpotFleetRequestState().equals(this.getCurrentSpotFleetRequestState()) == false)
@@ -275,6 +271,10 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
         if (other.getPreviousSpotFleetRequestState() != null
                 && other.getPreviousSpotFleetRequestState().equals(this.getPreviousSpotFleetRequestState()) == false)
             return false;
+        if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
+            return false;
+        if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
+            return false;
         return true;
     }
 
@@ -283,9 +283,9 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         hashCode = prime * hashCode + ((getCurrentSpotFleetRequestState() == null) ? 0 : getCurrentSpotFleetRequestState().hashCode());
         hashCode = prime * hashCode + ((getPreviousSpotFleetRequestState() == null) ? 0 : getPreviousSpotFleetRequestState().hashCode());
+        hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         return hashCode;
     }
 

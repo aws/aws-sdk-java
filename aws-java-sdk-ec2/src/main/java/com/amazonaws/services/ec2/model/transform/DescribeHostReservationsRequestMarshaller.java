@@ -40,20 +40,6 @@ public class DescribeHostReservationsRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeHostReservationsRequestHostReservationIdSetList = (com.amazonaws.internal.SdkInternalList<String>) describeHostReservationsRequest
-                .getHostReservationIdSet();
-        if (!describeHostReservationsRequestHostReservationIdSetList.isEmpty() || !describeHostReservationsRequestHostReservationIdSetList.isAutoConstruct()) {
-            int hostReservationIdSetListIndex = 1;
-
-            for (String describeHostReservationsRequestHostReservationIdSetListValue : describeHostReservationsRequestHostReservationIdSetList) {
-                if (describeHostReservationsRequestHostReservationIdSetListValue != null) {
-                    request.addParameter("HostReservationIdSet." + hostReservationIdSetListIndex,
-                            StringUtils.fromString(describeHostReservationsRequestHostReservationIdSetListValue));
-                }
-                hostReservationIdSetListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeHostReservationsRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeHostReservationsRequest
                 .getFilter();
         if (!describeHostReservationsRequestFilterList.isEmpty() || !describeHostReservationsRequestFilterList.isAutoConstruct()) {
@@ -79,6 +65,20 @@ public class DescribeHostReservationsRequestMarshaller implements Marshaller<Req
                     }
                 }
                 filterListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeHostReservationsRequestHostReservationIdSetList = (com.amazonaws.internal.SdkInternalList<String>) describeHostReservationsRequest
+                .getHostReservationIdSet();
+        if (!describeHostReservationsRequestHostReservationIdSetList.isEmpty() || !describeHostReservationsRequestHostReservationIdSetList.isAutoConstruct()) {
+            int hostReservationIdSetListIndex = 1;
+
+            for (String describeHostReservationsRequestHostReservationIdSetListValue : describeHostReservationsRequestHostReservationIdSetList) {
+                if (describeHostReservationsRequestHostReservationIdSetListValue != null) {
+                    request.addParameter("HostReservationIdSet." + hostReservationIdSetListIndex,
+                            StringUtils.fromString(describeHostReservationsRequestHostReservationIdSetListValue));
+                }
+                hostReservationIdSetListIndex++;
             }
         }
 

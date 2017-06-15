@@ -27,12 +27,6 @@ public class DescribeVolumeAttributeResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the volume.
-     * </p>
-     */
-    private String volumeId;
-    /**
-     * <p>
      * The state of <code>autoEnableIO</code> attribute.
      * </p>
      */
@@ -43,46 +37,12 @@ public class DescribeVolumeAttributeResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ProductCode> productCodes;
-
     /**
      * <p>
      * The ID of the volume.
      * </p>
-     * 
-     * @param volumeId
-     *        The ID of the volume.
      */
-
-    public void setVolumeId(String volumeId) {
-        this.volumeId = volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the volume.
-     * </p>
-     * 
-     * @return The ID of the volume.
-     */
-
-    public String getVolumeId() {
-        return this.volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the volume.
-     * </p>
-     * 
-     * @param volumeId
-     *        The ID of the volume.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumeAttributeResult withVolumeId(String volumeId) {
-        setVolumeId(volumeId);
-        return this;
-    }
+    private String volumeId;
 
     /**
      * <p>
@@ -210,6 +170,46 @@ public class DescribeVolumeAttributeResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     */
+
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @return The ID of the volume.
+     */
+
+    public String getVolumeId() {
+        return this.volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumeAttributeResult withVolumeId(String volumeId) {
+        setVolumeId(volumeId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -220,12 +220,12 @@ public class DescribeVolumeAttributeResult extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null)
-            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getAutoEnableIO() != null)
             sb.append("AutoEnableIO: ").append(getAutoEnableIO()).append(",");
         if (getProductCodes() != null)
-            sb.append("ProductCodes: ").append(getProductCodes());
+            sb.append("ProductCodes: ").append(getProductCodes()).append(",");
+        if (getVolumeId() != null)
+            sb.append("VolumeId: ").append(getVolumeId());
         sb.append("}");
         return sb.toString();
     }
@@ -240,10 +240,6 @@ public class DescribeVolumeAttributeResult extends com.amazonaws.AmazonWebServic
         if (obj instanceof DescribeVolumeAttributeResult == false)
             return false;
         DescribeVolumeAttributeResult other = (DescribeVolumeAttributeResult) obj;
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
-            return false;
-        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
-            return false;
         if (other.getAutoEnableIO() == null ^ this.getAutoEnableIO() == null)
             return false;
         if (other.getAutoEnableIO() != null && other.getAutoEnableIO().equals(this.getAutoEnableIO()) == false)
@@ -251,6 +247,10 @@ public class DescribeVolumeAttributeResult extends com.amazonaws.AmazonWebServic
         if (other.getProductCodes() == null ^ this.getProductCodes() == null)
             return false;
         if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false)
+            return false;
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+            return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         return true;
     }
@@ -260,9 +260,9 @@ public class DescribeVolumeAttributeResult extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getAutoEnableIO() == null) ? 0 : getAutoEnableIO().hashCode());
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         return hashCode;
     }
 

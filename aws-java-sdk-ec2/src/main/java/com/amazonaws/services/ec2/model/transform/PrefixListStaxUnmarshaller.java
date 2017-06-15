@@ -45,16 +45,6 @@ public class PrefixListStaxUnmarshaller implements Unmarshaller<PrefixList, Stax
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("prefixListId", targetDepth)) {
-                    prefixList.setPrefixListId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("prefixListName", targetDepth)) {
-                    prefixList.setPrefixListName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("cidrSet", targetDepth)) {
                     prefixList.withCidrs(new ArrayList<String>());
                     continue;
@@ -65,6 +55,15 @@ public class PrefixListStaxUnmarshaller implements Unmarshaller<PrefixList, Stax
                     continue;
                 }
 
+                if (context.testExpression("prefixListId", targetDepth)) {
+                    prefixList.setPrefixListId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("prefixListName", targetDepth)) {
+                    prefixList.setPrefixListName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return prefixList;

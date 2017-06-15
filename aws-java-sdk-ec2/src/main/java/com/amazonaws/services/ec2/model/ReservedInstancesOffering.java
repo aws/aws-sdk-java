@@ -28,19 +28,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
-     * </p>
-     */
-    private String reservedInstancesOfferingId;
-    /**
-     * <p>
-     * The instance type on which the Reserved Instance can be used.
-     * </p>
-     */
-    private String instanceType;
-    /**
-     * <p>
      * The Availability Zone in which the Reserved Instance can be used.
      * </p>
      */
@@ -53,16 +40,16 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     private Long duration;
     /**
      * <p>
-     * The usage price of the Reserved Instance, per hour.
-     * </p>
-     */
-    private Float usagePrice;
-    /**
-     * <p>
      * The purchase price of the Reserved Instance.
      * </p>
      */
     private Float fixedPrice;
+    /**
+     * <p>
+     * The instance type on which the Reserved Instance can be used.
+     * </p>
+     */
+    private String instanceType;
     /**
      * <p>
      * The Reserved Instance product platform description.
@@ -71,10 +58,17 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     private String productDescription;
     /**
      * <p>
-     * The tenancy of the instance.
+     * The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * </p>
      */
-    private String instanceTenancy;
+    private String reservedInstancesOfferingId;
+    /**
+     * <p>
+     * The usage price of the Reserved Instance, per hour.
+     * </p>
+     */
+    private Float usagePrice;
     /**
      * <p>
      * The currency of the Reserved Instance offering you are purchasing. It's specified using ISO 4217 standard
@@ -84,16 +78,10 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     private String currencyCode;
     /**
      * <p>
-     * The Reserved Instance offering type.
+     * The tenancy of the instance.
      * </p>
      */
-    private String offeringType;
-    /**
-     * <p>
-     * The recurring charge tag assigned to the resource.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
+    private String instanceTenancy;
     /**
      * <p>
      * Indicates whether the offering is available through the Reserved Instance Marketplace (resale) or AWS. If it's a
@@ -103,12 +91,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     private Boolean marketplace;
     /**
      * <p>
-     * The pricing details of the Reserved Instance offering.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<PricingDetail> pricingDetails;
-    /**
-     * <p>
      * If <code>convertible</code> it can be exchanged for Reserved Instances of the same or higher monetary value, with
      * different configurations. If <code>standard</code>, it is not possible to perform an exchange.
      * </p>
@@ -116,129 +98,28 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     private String offeringClass;
     /**
      * <p>
+     * The Reserved Instance offering type.
+     * </p>
+     */
+    private String offeringType;
+    /**
+     * <p>
+     * The pricing details of the Reserved Instance offering.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PricingDetail> pricingDetails;
+    /**
+     * <p>
+     * The recurring charge tag assigned to the resource.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
+    /**
+     * <p>
      * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
      * </p>
      */
     private String scope;
-
-    /**
-     * <p>
-     * The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
-     * </p>
-     * 
-     * @param reservedInstancesOfferingId
-     *        The ID of the Reserved Instance offering. This is the offering ID used in
-     *        <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
-     */
-
-    public void setReservedInstancesOfferingId(String reservedInstancesOfferingId) {
-        this.reservedInstancesOfferingId = reservedInstancesOfferingId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
-     * </p>
-     * 
-     * @return The ID of the Reserved Instance offering. This is the offering ID used in
-     *         <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
-     */
-
-    public String getReservedInstancesOfferingId() {
-        return this.reservedInstancesOfferingId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Reserved Instance offering. This is the offering ID used in
-     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
-     * </p>
-     * 
-     * @param reservedInstancesOfferingId
-     *        The ID of the Reserved Instance offering. This is the offering ID used in
-     *        <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReservedInstancesOffering withReservedInstancesOfferingId(String reservedInstancesOfferingId) {
-        setReservedInstancesOfferingId(reservedInstancesOfferingId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The instance type on which the Reserved Instance can be used.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type on which the Reserved Instance can be used.
-     * @see InstanceType
-     */
-
-    public void setInstanceType(String instanceType) {
-        this.instanceType = instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type on which the Reserved Instance can be used.
-     * </p>
-     * 
-     * @return The instance type on which the Reserved Instance can be used.
-     * @see InstanceType
-     */
-
-    public String getInstanceType() {
-        return this.instanceType;
-    }
-
-    /**
-     * <p>
-     * The instance type on which the Reserved Instance can be used.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type on which the Reserved Instance can be used.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceType
-     */
-
-    public ReservedInstancesOffering withInstanceType(String instanceType) {
-        setInstanceType(instanceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The instance type on which the Reserved Instance can be used.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type on which the Reserved Instance can be used.
-     * @see InstanceType
-     */
-
-    public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
-    }
-
-    /**
-     * <p>
-     * The instance type on which the Reserved Instance can be used.
-     * </p>
-     * 
-     * @param instanceType
-     *        The instance type on which the Reserved Instance can be used.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceType
-     */
-
-    public ReservedInstancesOffering withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
-        return this;
-    }
 
     /**
      * <p>
@@ -322,46 +203,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The usage price of the Reserved Instance, per hour.
-     * </p>
-     * 
-     * @param usagePrice
-     *        The usage price of the Reserved Instance, per hour.
-     */
-
-    public void setUsagePrice(Float usagePrice) {
-        this.usagePrice = usagePrice;
-    }
-
-    /**
-     * <p>
-     * The usage price of the Reserved Instance, per hour.
-     * </p>
-     * 
-     * @return The usage price of the Reserved Instance, per hour.
-     */
-
-    public Float getUsagePrice() {
-        return this.usagePrice;
-    }
-
-    /**
-     * <p>
-     * The usage price of the Reserved Instance, per hour.
-     * </p>
-     * 
-     * @param usagePrice
-     *        The usage price of the Reserved Instance, per hour.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReservedInstancesOffering withUsagePrice(Float usagePrice) {
-        setUsagePrice(usagePrice);
-        return this;
-    }
-
-    /**
-     * <p>
      * The purchase price of the Reserved Instance.
      * </p>
      * 
@@ -397,6 +238,79 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     public ReservedInstancesOffering withFixedPrice(Float fixedPrice) {
         setFixedPrice(fixedPrice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type on which the Reserved Instance can be used.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type on which the Reserved Instance can be used.
+     * @see InstanceType
+     */
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type on which the Reserved Instance can be used.
+     * </p>
+     * 
+     * @return The instance type on which the Reserved Instance can be used.
+     * @see InstanceType
+     */
+
+    public String getInstanceType() {
+        return this.instanceType;
+    }
+
+    /**
+     * <p>
+     * The instance type on which the Reserved Instance can be used.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type on which the Reserved Instance can be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public ReservedInstancesOffering withInstanceType(String instanceType) {
+        setInstanceType(instanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance type on which the Reserved Instance can be used.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type on which the Reserved Instance can be used.
+     * @see InstanceType
+     */
+
+    public void setInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+    }
+
+    /**
+     * <p>
+     * The instance type on which the Reserved Instance can be used.
+     * </p>
+     * 
+     * @param instanceType
+     *        The instance type on which the Reserved Instance can be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public ReservedInstancesOffering withInstanceType(InstanceType instanceType) {
+        setInstanceType(instanceType);
         return this;
     }
 
@@ -475,74 +389,87 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tenancy of the instance.
+     * The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * </p>
      * 
-     * @param instanceTenancy
-     *        The tenancy of the instance.
-     * @see Tenancy
+     * @param reservedInstancesOfferingId
+     *        The ID of the Reserved Instance offering. This is the offering ID used in
+     *        <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      */
 
-    public void setInstanceTenancy(String instanceTenancy) {
-        this.instanceTenancy = instanceTenancy;
+    public void setReservedInstancesOfferingId(String reservedInstancesOfferingId) {
+        this.reservedInstancesOfferingId = reservedInstancesOfferingId;
     }
 
     /**
      * <p>
-     * The tenancy of the instance.
+     * The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * </p>
      * 
-     * @return The tenancy of the instance.
-     * @see Tenancy
+     * @return The ID of the Reserved Instance offering. This is the offering ID used in
+     *         <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      */
 
-    public String getInstanceTenancy() {
-        return this.instanceTenancy;
+    public String getReservedInstancesOfferingId() {
+        return this.reservedInstancesOfferingId;
     }
 
     /**
      * <p>
-     * The tenancy of the instance.
+     * The ID of the Reserved Instance offering. This is the offering ID used in
+     * <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * </p>
      * 
-     * @param instanceTenancy
-     *        The tenancy of the instance.
+     * @param reservedInstancesOfferingId
+     *        The ID of the Reserved Instance offering. This is the offering ID used in
+     *        <a>GetReservedInstancesExchangeQuote</a> to confirm that an exchange can be made.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Tenancy
      */
 
-    public ReservedInstancesOffering withInstanceTenancy(String instanceTenancy) {
-        setInstanceTenancy(instanceTenancy);
+    public ReservedInstancesOffering withReservedInstancesOfferingId(String reservedInstancesOfferingId) {
+        setReservedInstancesOfferingId(reservedInstancesOfferingId);
         return this;
     }
 
     /**
      * <p>
-     * The tenancy of the instance.
+     * The usage price of the Reserved Instance, per hour.
      * </p>
      * 
-     * @param instanceTenancy
-     *        The tenancy of the instance.
-     * @see Tenancy
+     * @param usagePrice
+     *        The usage price of the Reserved Instance, per hour.
      */
 
-    public void setInstanceTenancy(Tenancy instanceTenancy) {
-        this.instanceTenancy = instanceTenancy.toString();
+    public void setUsagePrice(Float usagePrice) {
+        this.usagePrice = usagePrice;
     }
 
     /**
      * <p>
-     * The tenancy of the instance.
+     * The usage price of the Reserved Instance, per hour.
      * </p>
      * 
-     * @param instanceTenancy
-     *        The tenancy of the instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see Tenancy
+     * @return The usage price of the Reserved Instance, per hour.
      */
 
-    public ReservedInstancesOffering withInstanceTenancy(Tenancy instanceTenancy) {
-        setInstanceTenancy(instanceTenancy);
+    public Float getUsagePrice() {
+        return this.usagePrice;
+    }
+
+    /**
+     * <p>
+     * The usage price of the Reserved Instance, per hour.
+     * </p>
+     * 
+     * @param usagePrice
+     *        The usage price of the Reserved Instance, per hour.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservedInstancesOffering withUsagePrice(Float usagePrice) {
+        setUsagePrice(usagePrice);
         return this;
     }
 
@@ -631,147 +558,74 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Reserved Instance offering type.
+     * The tenancy of the instance.
      * </p>
      * 
-     * @param offeringType
-     *        The Reserved Instance offering type.
-     * @see OfferingTypeValues
+     * @param instanceTenancy
+     *        The tenancy of the instance.
+     * @see Tenancy
      */
 
-    public void setOfferingType(String offeringType) {
-        this.offeringType = offeringType;
+    public void setInstanceTenancy(String instanceTenancy) {
+        this.instanceTenancy = instanceTenancy;
     }
 
     /**
      * <p>
-     * The Reserved Instance offering type.
+     * The tenancy of the instance.
      * </p>
      * 
-     * @return The Reserved Instance offering type.
-     * @see OfferingTypeValues
+     * @return The tenancy of the instance.
+     * @see Tenancy
      */
 
-    public String getOfferingType() {
-        return this.offeringType;
+    public String getInstanceTenancy() {
+        return this.instanceTenancy;
     }
 
     /**
      * <p>
-     * The Reserved Instance offering type.
+     * The tenancy of the instance.
      * </p>
      * 
-     * @param offeringType
-     *        The Reserved Instance offering type.
+     * @param instanceTenancy
+     *        The tenancy of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OfferingTypeValues
+     * @see Tenancy
      */
 
-    public ReservedInstancesOffering withOfferingType(String offeringType) {
-        setOfferingType(offeringType);
+    public ReservedInstancesOffering withInstanceTenancy(String instanceTenancy) {
+        setInstanceTenancy(instanceTenancy);
         return this;
     }
 
     /**
      * <p>
-     * The Reserved Instance offering type.
+     * The tenancy of the instance.
      * </p>
      * 
-     * @param offeringType
-     *        The Reserved Instance offering type.
-     * @see OfferingTypeValues
+     * @param instanceTenancy
+     *        The tenancy of the instance.
+     * @see Tenancy
      */
 
-    public void setOfferingType(OfferingTypeValues offeringType) {
-        this.offeringType = offeringType.toString();
+    public void setInstanceTenancy(Tenancy instanceTenancy) {
+        this.instanceTenancy = instanceTenancy.toString();
     }
 
     /**
      * <p>
-     * The Reserved Instance offering type.
+     * The tenancy of the instance.
      * </p>
      * 
-     * @param offeringType
-     *        The Reserved Instance offering type.
+     * @param instanceTenancy
+     *        The tenancy of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OfferingTypeValues
+     * @see Tenancy
      */
 
-    public ReservedInstancesOffering withOfferingType(OfferingTypeValues offeringType) {
-        setOfferingType(offeringType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The recurring charge tag assigned to the resource.
-     * </p>
-     * 
-     * @return The recurring charge tag assigned to the resource.
-     */
-
-    public java.util.List<RecurringCharge> getRecurringCharges() {
-        if (recurringCharges == null) {
-            recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>();
-        }
-        return recurringCharges;
-    }
-
-    /**
-     * <p>
-     * The recurring charge tag assigned to the resource.
-     * </p>
-     * 
-     * @param recurringCharges
-     *        The recurring charge tag assigned to the resource.
-     */
-
-    public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
-        if (recurringCharges == null) {
-            this.recurringCharges = null;
-            return;
-        }
-
-        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges);
-    }
-
-    /**
-     * <p>
-     * The recurring charge tag assigned to the resource.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setRecurringCharges(java.util.Collection)} or {@link #withRecurringCharges(java.util.Collection)} if you
-     * want to override the existing values.
-     * </p>
-     * 
-     * @param recurringCharges
-     *        The recurring charge tag assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReservedInstancesOffering withRecurringCharges(RecurringCharge... recurringCharges) {
-        if (this.recurringCharges == null) {
-            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges.length));
-        }
-        for (RecurringCharge ele : recurringCharges) {
-            this.recurringCharges.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The recurring charge tag assigned to the resource.
-     * </p>
-     * 
-     * @param recurringCharges
-     *        The recurring charge tag assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReservedInstancesOffering withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
-        setRecurringCharges(recurringCharges);
+    public ReservedInstancesOffering withInstanceTenancy(Tenancy instanceTenancy) {
+        setInstanceTenancy(instanceTenancy);
         return this;
     }
 
@@ -833,79 +687,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     public Boolean isMarketplace() {
         return this.marketplace;
-    }
-
-    /**
-     * <p>
-     * The pricing details of the Reserved Instance offering.
-     * </p>
-     * 
-     * @return The pricing details of the Reserved Instance offering.
-     */
-
-    public java.util.List<PricingDetail> getPricingDetails() {
-        if (pricingDetails == null) {
-            pricingDetails = new com.amazonaws.internal.SdkInternalList<PricingDetail>();
-        }
-        return pricingDetails;
-    }
-
-    /**
-     * <p>
-     * The pricing details of the Reserved Instance offering.
-     * </p>
-     * 
-     * @param pricingDetails
-     *        The pricing details of the Reserved Instance offering.
-     */
-
-    public void setPricingDetails(java.util.Collection<PricingDetail> pricingDetails) {
-        if (pricingDetails == null) {
-            this.pricingDetails = null;
-            return;
-        }
-
-        this.pricingDetails = new com.amazonaws.internal.SdkInternalList<PricingDetail>(pricingDetails);
-    }
-
-    /**
-     * <p>
-     * The pricing details of the Reserved Instance offering.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setPricingDetails(java.util.Collection)} or {@link #withPricingDetails(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param pricingDetails
-     *        The pricing details of the Reserved Instance offering.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReservedInstancesOffering withPricingDetails(PricingDetail... pricingDetails) {
-        if (this.pricingDetails == null) {
-            setPricingDetails(new com.amazonaws.internal.SdkInternalList<PricingDetail>(pricingDetails.length));
-        }
-        for (PricingDetail ele : pricingDetails) {
-            this.pricingDetails.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The pricing details of the Reserved Instance offering.
-     * </p>
-     * 
-     * @param pricingDetails
-     *        The pricing details of the Reserved Instance offering.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReservedInstancesOffering withPricingDetails(java.util.Collection<PricingDetail> pricingDetails) {
-        setPricingDetails(pricingDetails);
-        return this;
     }
 
     /**
@@ -994,6 +775,225 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Reserved Instance offering type.
+     * </p>
+     * 
+     * @param offeringType
+     *        The Reserved Instance offering type.
+     * @see OfferingTypeValues
+     */
+
+    public void setOfferingType(String offeringType) {
+        this.offeringType = offeringType;
+    }
+
+    /**
+     * <p>
+     * The Reserved Instance offering type.
+     * </p>
+     * 
+     * @return The Reserved Instance offering type.
+     * @see OfferingTypeValues
+     */
+
+    public String getOfferingType() {
+        return this.offeringType;
+    }
+
+    /**
+     * <p>
+     * The Reserved Instance offering type.
+     * </p>
+     * 
+     * @param offeringType
+     *        The Reserved Instance offering type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingTypeValues
+     */
+
+    public ReservedInstancesOffering withOfferingType(String offeringType) {
+        setOfferingType(offeringType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Reserved Instance offering type.
+     * </p>
+     * 
+     * @param offeringType
+     *        The Reserved Instance offering type.
+     * @see OfferingTypeValues
+     */
+
+    public void setOfferingType(OfferingTypeValues offeringType) {
+        this.offeringType = offeringType.toString();
+    }
+
+    /**
+     * <p>
+     * The Reserved Instance offering type.
+     * </p>
+     * 
+     * @param offeringType
+     *        The Reserved Instance offering type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OfferingTypeValues
+     */
+
+    public ReservedInstancesOffering withOfferingType(OfferingTypeValues offeringType) {
+        setOfferingType(offeringType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pricing details of the Reserved Instance offering.
+     * </p>
+     * 
+     * @return The pricing details of the Reserved Instance offering.
+     */
+
+    public java.util.List<PricingDetail> getPricingDetails() {
+        if (pricingDetails == null) {
+            pricingDetails = new com.amazonaws.internal.SdkInternalList<PricingDetail>();
+        }
+        return pricingDetails;
+    }
+
+    /**
+     * <p>
+     * The pricing details of the Reserved Instance offering.
+     * </p>
+     * 
+     * @param pricingDetails
+     *        The pricing details of the Reserved Instance offering.
+     */
+
+    public void setPricingDetails(java.util.Collection<PricingDetail> pricingDetails) {
+        if (pricingDetails == null) {
+            this.pricingDetails = null;
+            return;
+        }
+
+        this.pricingDetails = new com.amazonaws.internal.SdkInternalList<PricingDetail>(pricingDetails);
+    }
+
+    /**
+     * <p>
+     * The pricing details of the Reserved Instance offering.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPricingDetails(java.util.Collection)} or {@link #withPricingDetails(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param pricingDetails
+     *        The pricing details of the Reserved Instance offering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservedInstancesOffering withPricingDetails(PricingDetail... pricingDetails) {
+        if (this.pricingDetails == null) {
+            setPricingDetails(new com.amazonaws.internal.SdkInternalList<PricingDetail>(pricingDetails.length));
+        }
+        for (PricingDetail ele : pricingDetails) {
+            this.pricingDetails.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pricing details of the Reserved Instance offering.
+     * </p>
+     * 
+     * @param pricingDetails
+     *        The pricing details of the Reserved Instance offering.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservedInstancesOffering withPricingDetails(java.util.Collection<PricingDetail> pricingDetails) {
+        setPricingDetails(pricingDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The recurring charge tag assigned to the resource.
+     * </p>
+     * 
+     * @return The recurring charge tag assigned to the resource.
+     */
+
+    public java.util.List<RecurringCharge> getRecurringCharges() {
+        if (recurringCharges == null) {
+            recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>();
+        }
+        return recurringCharges;
+    }
+
+    /**
+     * <p>
+     * The recurring charge tag assigned to the resource.
+     * </p>
+     * 
+     * @param recurringCharges
+     *        The recurring charge tag assigned to the resource.
+     */
+
+    public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
+        if (recurringCharges == null) {
+            this.recurringCharges = null;
+            return;
+        }
+
+        this.recurringCharges = new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges);
+    }
+
+    /**
+     * <p>
+     * The recurring charge tag assigned to the resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRecurringCharges(java.util.Collection)} or {@link #withRecurringCharges(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param recurringCharges
+     *        The recurring charge tag assigned to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservedInstancesOffering withRecurringCharges(RecurringCharge... recurringCharges) {
+        if (this.recurringCharges == null) {
+            setRecurringCharges(new com.amazonaws.internal.SdkInternalList<RecurringCharge>(recurringCharges.length));
+        }
+        for (RecurringCharge ele : recurringCharges) {
+            this.recurringCharges.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The recurring charge tag assigned to the resource.
+     * </p>
+     * 
+     * @param recurringCharges
+     *        The recurring charge tag assigned to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservedInstancesOffering withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
+        setRecurringCharges(recurringCharges);
+        return this;
+    }
+
+    /**
+     * <p>
      * Whether the Reserved Instance is applied to instances in a region or an Availability Zone.
      * </p>
      * 
@@ -1076,34 +1076,34 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservedInstancesOfferingId() != null)
-            sb.append("ReservedInstancesOfferingId: ").append(getReservedInstancesOfferingId()).append(",");
-        if (getInstanceType() != null)
-            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getDuration() != null)
             sb.append("Duration: ").append(getDuration()).append(",");
-        if (getUsagePrice() != null)
-            sb.append("UsagePrice: ").append(getUsagePrice()).append(",");
         if (getFixedPrice() != null)
             sb.append("FixedPrice: ").append(getFixedPrice()).append(",");
+        if (getInstanceType() != null)
+            sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getProductDescription() != null)
             sb.append("ProductDescription: ").append(getProductDescription()).append(",");
-        if (getInstanceTenancy() != null)
-            sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
+        if (getReservedInstancesOfferingId() != null)
+            sb.append("ReservedInstancesOfferingId: ").append(getReservedInstancesOfferingId()).append(",");
+        if (getUsagePrice() != null)
+            sb.append("UsagePrice: ").append(getUsagePrice()).append(",");
         if (getCurrencyCode() != null)
             sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
-        if (getOfferingType() != null)
-            sb.append("OfferingType: ").append(getOfferingType()).append(",");
-        if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: ").append(getRecurringCharges()).append(",");
+        if (getInstanceTenancy() != null)
+            sb.append("InstanceTenancy: ").append(getInstanceTenancy()).append(",");
         if (getMarketplace() != null)
             sb.append("Marketplace: ").append(getMarketplace()).append(",");
-        if (getPricingDetails() != null)
-            sb.append("PricingDetails: ").append(getPricingDetails()).append(",");
         if (getOfferingClass() != null)
             sb.append("OfferingClass: ").append(getOfferingClass()).append(",");
+        if (getOfferingType() != null)
+            sb.append("OfferingType: ").append(getOfferingType()).append(",");
+        if (getPricingDetails() != null)
+            sb.append("PricingDetails: ").append(getPricingDetails()).append(",");
+        if (getRecurringCharges() != null)
+            sb.append("RecurringCharges: ").append(getRecurringCharges()).append(",");
         if (getScope() != null)
             sb.append("Scope: ").append(getScope());
         sb.append("}");
@@ -1120,14 +1120,6 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
         if (obj instanceof ReservedInstancesOffering == false)
             return false;
         ReservedInstancesOffering other = (ReservedInstancesOffering) obj;
-        if (other.getReservedInstancesOfferingId() == null ^ this.getReservedInstancesOfferingId() == null)
-            return false;
-        if (other.getReservedInstancesOfferingId() != null && other.getReservedInstancesOfferingId().equals(this.getReservedInstancesOfferingId()) == false)
-            return false;
-        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
-            return false;
-        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
-            return false;
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
@@ -1136,45 +1128,53 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
             return false;
         if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
-        if (other.getUsagePrice() == null ^ this.getUsagePrice() == null)
-            return false;
-        if (other.getUsagePrice() != null && other.getUsagePrice().equals(this.getUsagePrice()) == false)
-            return false;
         if (other.getFixedPrice() == null ^ this.getFixedPrice() == null)
             return false;
         if (other.getFixedPrice() != null && other.getFixedPrice().equals(this.getFixedPrice()) == false)
+            return false;
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null)
+            return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
         if (other.getProductDescription() == null ^ this.getProductDescription() == null)
             return false;
         if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false)
             return false;
-        if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null)
+        if (other.getReservedInstancesOfferingId() == null ^ this.getReservedInstancesOfferingId() == null)
             return false;
-        if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false)
+        if (other.getReservedInstancesOfferingId() != null && other.getReservedInstancesOfferingId().equals(this.getReservedInstancesOfferingId()) == false)
+            return false;
+        if (other.getUsagePrice() == null ^ this.getUsagePrice() == null)
+            return false;
+        if (other.getUsagePrice() != null && other.getUsagePrice().equals(this.getUsagePrice()) == false)
             return false;
         if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
         if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
             return false;
-        if (other.getOfferingType() == null ^ this.getOfferingType() == null)
+        if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null)
             return false;
-        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false)
-            return false;
-        if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null)
-            return false;
-        if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
+        if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false)
             return false;
         if (other.getMarketplace() == null ^ this.getMarketplace() == null)
             return false;
         if (other.getMarketplace() != null && other.getMarketplace().equals(this.getMarketplace()) == false)
             return false;
+        if (other.getOfferingClass() == null ^ this.getOfferingClass() == null)
+            return false;
+        if (other.getOfferingClass() != null && other.getOfferingClass().equals(this.getOfferingClass()) == false)
+            return false;
+        if (other.getOfferingType() == null ^ this.getOfferingType() == null)
+            return false;
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false)
+            return false;
         if (other.getPricingDetails() == null ^ this.getPricingDetails() == null)
             return false;
         if (other.getPricingDetails() != null && other.getPricingDetails().equals(this.getPricingDetails()) == false)
             return false;
-        if (other.getOfferingClass() == null ^ this.getOfferingClass() == null)
+        if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null)
             return false;
-        if (other.getOfferingClass() != null && other.getOfferingClass().equals(this.getOfferingClass()) == false)
+        if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
         if (other.getScope() == null ^ this.getScope() == null)
             return false;
@@ -1188,20 +1188,20 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getReservedInstancesOfferingId() == null) ? 0 : getReservedInstancesOfferingId().hashCode());
-        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
-        hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
         hashCode = prime * hashCode + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode());
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode());
-        hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstancesOfferingId() == null) ? 0 : getReservedInstancesOfferingId().hashCode());
+        hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode());
         hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
-        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
-        hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
+        hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode());
         hashCode = prime * hashCode + ((getMarketplace() == null) ? 0 : getMarketplace().hashCode());
-        hashCode = prime * hashCode + ((getPricingDetails() == null) ? 0 : getPricingDetails().hashCode());
         hashCode = prime * hashCode + ((getOfferingClass() == null) ? 0 : getOfferingClass().hashCode());
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
+        hashCode = prime * hashCode + ((getPricingDetails() == null) ? 0 : getPricingDetails().hashCode());
+        hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         return hashCode;
     }

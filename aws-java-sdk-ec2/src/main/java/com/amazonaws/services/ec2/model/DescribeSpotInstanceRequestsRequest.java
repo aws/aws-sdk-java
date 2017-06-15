@@ -30,12 +30,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * One or more Spot instance request IDs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> spotInstanceRequestIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -261,79 +255,12 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more Spot instance request IDs.
      * </p>
-     * 
-     * @return One or more Spot instance request IDs.
      */
-
-    public java.util.List<String> getSpotInstanceRequestIds() {
-        if (spotInstanceRequestIds == null) {
-            spotInstanceRequestIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return spotInstanceRequestIds;
-    }
-
-    /**
-     * <p>
-     * One or more Spot instance request IDs.
-     * </p>
-     * 
-     * @param spotInstanceRequestIds
-     *        One or more Spot instance request IDs.
-     */
-
-    public void setSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
-        if (spotInstanceRequestIds == null) {
-            this.spotInstanceRequestIds = null;
-            return;
-        }
-
-        this.spotInstanceRequestIds = new com.amazonaws.internal.SdkInternalList<String>(spotInstanceRequestIds);
-    }
-
-    /**
-     * <p>
-     * One or more Spot instance request IDs.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSpotInstanceRequestIds(java.util.Collection)} or
-     * {@link #withSpotInstanceRequestIds(java.util.Collection)} if you want to override the existing values.
-     * </p>
-     * 
-     * @param spotInstanceRequestIds
-     *        One or more Spot instance request IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(String... spotInstanceRequestIds) {
-        if (this.spotInstanceRequestIds == null) {
-            setSpotInstanceRequestIds(new com.amazonaws.internal.SdkInternalList<String>(spotInstanceRequestIds.length));
-        }
-        for (String ele : spotInstanceRequestIds) {
-            this.spotInstanceRequestIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more Spot instance request IDs.
-     * </p>
-     * 
-     * @param spotInstanceRequestIds
-     *        One or more Spot instance request IDs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
-        setSpotInstanceRequestIds(spotInstanceRequestIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> spotInstanceRequestIds;
 
     /**
      * <p>
@@ -2197,6 +2124,79 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * One or more Spot instance request IDs.
+     * </p>
+     * 
+     * @return One or more Spot instance request IDs.
+     */
+
+    public java.util.List<String> getSpotInstanceRequestIds() {
+        if (spotInstanceRequestIds == null) {
+            spotInstanceRequestIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return spotInstanceRequestIds;
+    }
+
+    /**
+     * <p>
+     * One or more Spot instance request IDs.
+     * </p>
+     * 
+     * @param spotInstanceRequestIds
+     *        One or more Spot instance request IDs.
+     */
+
+    public void setSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
+        if (spotInstanceRequestIds == null) {
+            this.spotInstanceRequestIds = null;
+            return;
+        }
+
+        this.spotInstanceRequestIds = new com.amazonaws.internal.SdkInternalList<String>(spotInstanceRequestIds);
+    }
+
+    /**
+     * <p>
+     * One or more Spot instance request IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSpotInstanceRequestIds(java.util.Collection)} or
+     * {@link #withSpotInstanceRequestIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param spotInstanceRequestIds
+     *        One or more Spot instance request IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(String... spotInstanceRequestIds) {
+        if (this.spotInstanceRequestIds == null) {
+            setSpotInstanceRequestIds(new com.amazonaws.internal.SdkInternalList<String>(spotInstanceRequestIds.length));
+        }
+        for (String ele : spotInstanceRequestIds) {
+            this.spotInstanceRequestIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more Spot instance request IDs.
+     * </p>
+     * 
+     * @param spotInstanceRequestIds
+     *        One or more Spot instance request IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
+        setSpotInstanceRequestIds(spotInstanceRequestIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -2218,10 +2218,10 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSpotInstanceRequestIds() != null)
-            sb.append("SpotInstanceRequestIds: ").append(getSpotInstanceRequestIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getSpotInstanceRequestIds() != null)
+            sb.append("SpotInstanceRequestIds: ").append(getSpotInstanceRequestIds());
         sb.append("}");
         return sb.toString();
     }
@@ -2236,13 +2236,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
         if (obj instanceof DescribeSpotInstanceRequestsRequest == false)
             return false;
         DescribeSpotInstanceRequestsRequest other = (DescribeSpotInstanceRequestsRequest) obj;
-        if (other.getSpotInstanceRequestIds() == null ^ this.getSpotInstanceRequestIds() == null)
-            return false;
-        if (other.getSpotInstanceRequestIds() != null && other.getSpotInstanceRequestIds().equals(this.getSpotInstanceRequestIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getSpotInstanceRequestIds() == null ^ this.getSpotInstanceRequestIds() == null)
+            return false;
+        if (other.getSpotInstanceRequestIds() != null && other.getSpotInstanceRequestIds().equals(this.getSpotInstanceRequestIds()) == false)
             return false;
         return true;
     }
@@ -2252,8 +2252,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSpotInstanceRequestIds() == null) ? 0 : getSpotInstanceRequestIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getSpotInstanceRequestIds() == null) ? 0 : getSpotInstanceRequestIds().hashCode());
         return hashCode;
     }
 

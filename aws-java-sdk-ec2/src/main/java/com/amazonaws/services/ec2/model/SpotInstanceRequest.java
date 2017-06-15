@@ -28,6 +28,69 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
+     * If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price in
+     * effect for the Spot instance while it runs.
+     * </p>
+     */
+    private String actualBlockHourlyPrice;
+    /**
+     * <p>
+     * The Availability Zone group. If you specify the same Availability Zone group for all Spot instance requests, all
+     * Spot instances are launched in the same Availability Zone.
+     * </p>
+     */
+    private String availabilityZoneGroup;
+    /**
+     * <p>
+     * The duration for the Spot instance, in minutes.
+     * </p>
+     */
+    private Integer blockDurationMinutes;
+    /**
+     * <p>
+     * The date and time when the Spot instance request was created, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     */
+    private java.util.Date createTime;
+    /**
+     * <p>
+     * The fault codes for the Spot instance request, if any.
+     * </p>
+     */
+    private SpotInstanceStateFault fault;
+    /**
+     * <p>
+     * The instance ID, if an instance has been launched to fulfill the Spot instance request.
+     * </p>
+     */
+    private String instanceId;
+    /**
+     * <p>
+     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     * </p>
+     */
+    private String launchGroup;
+    /**
+     * <p>
+     * Additional information for launching instances.
+     * </p>
+     */
+    private LaunchSpecification launchSpecification;
+    /**
+     * <p>
+     * The Availability Zone in which the bid is launched.
+     * </p>
+     */
+    private String launchedAvailabilityZone;
+    /**
+     * <p>
+     * The product description associated with the Spot instance.
+     * </p>
+     */
+    private String productDescription;
+    /**
+     * <p>
      * The ID of the Spot instance request.
      * </p>
      */
@@ -40,12 +103,6 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     private String spotPrice;
     /**
      * <p>
-     * The Spot instance request type.
-     * </p>
-     */
-    private String type;
-    /**
-     * <p>
      * The state of the Spot instance request. Spot bid status information can help you track your Spot instance
      * requests. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Bid Status</a> in the
@@ -55,16 +112,22 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     private String state;
     /**
      * <p>
-     * The fault codes for the Spot instance request, if any.
-     * </p>
-     */
-    private SpotInstanceStateFault fault;
-    /**
-     * <p>
      * The status code and status message describing the Spot instance request.
      * </p>
      */
     private SpotInstanceStatus status;
+    /**
+     * <p>
+     * Any tags assigned to the resource.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The Spot instance request type.
+     * </p>
+     */
+    private String type;
     /**
      * <p>
      * The start date of the request, in UTC format (for example,
@@ -82,69 +145,457 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date validUntil;
-    /**
-     * <p>
-     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     * </p>
-     */
-    private String launchGroup;
-    /**
-     * <p>
-     * The Availability Zone group. If you specify the same Availability Zone group for all Spot instance requests, all
-     * Spot instances are launched in the same Availability Zone.
-     * </p>
-     */
-    private String availabilityZoneGroup;
-    /**
-     * <p>
-     * Additional information for launching instances.
-     * </p>
-     */
-    private LaunchSpecification launchSpecification;
-    /**
-     * <p>
-     * The instance ID, if an instance has been launched to fulfill the Spot instance request.
-     * </p>
-     */
-    private String instanceId;
-    /**
-     * <p>
-     * The date and time when the Spot instance request was created, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     */
-    private java.util.Date createTime;
-    /**
-     * <p>
-     * The product description associated with the Spot instance.
-     * </p>
-     */
-    private String productDescription;
-    /**
-     * <p>
-     * The duration for the Spot instance, in minutes.
-     * </p>
-     */
-    private Integer blockDurationMinutes;
+
     /**
      * <p>
      * If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price in
      * effect for the Spot instance while it runs.
      * </p>
+     * 
+     * @param actualBlockHourlyPrice
+     *        If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price
+     *        in effect for the Spot instance while it runs.
      */
-    private String actualBlockHourlyPrice;
+
+    public void setActualBlockHourlyPrice(String actualBlockHourlyPrice) {
+        this.actualBlockHourlyPrice = actualBlockHourlyPrice;
+    }
+
     /**
      * <p>
-     * Any tags assigned to the resource.
+     * If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price in
+     * effect for the Spot instance while it runs.
      * </p>
+     * 
+     * @return If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price
+     *         in effect for the Spot instance while it runs.
      */
-    private com.amazonaws.internal.SdkInternalList<Tag> tags;
+
+    public String getActualBlockHourlyPrice() {
+        return this.actualBlockHourlyPrice;
+    }
+
+    /**
+     * <p>
+     * If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price in
+     * effect for the Spot instance while it runs.
+     * </p>
+     * 
+     * @param actualBlockHourlyPrice
+     *        If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price
+     *        in effect for the Spot instance while it runs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withActualBlockHourlyPrice(String actualBlockHourlyPrice) {
+        setActualBlockHourlyPrice(actualBlockHourlyPrice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone group. If you specify the same Availability Zone group for all Spot instance requests, all
+     * Spot instances are launched in the same Availability Zone.
+     * </p>
+     * 
+     * @param availabilityZoneGroup
+     *        The Availability Zone group. If you specify the same Availability Zone group for all Spot instance
+     *        requests, all Spot instances are launched in the same Availability Zone.
+     */
+
+    public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
+        this.availabilityZoneGroup = availabilityZoneGroup;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone group. If you specify the same Availability Zone group for all Spot instance requests, all
+     * Spot instances are launched in the same Availability Zone.
+     * </p>
+     * 
+     * @return The Availability Zone group. If you specify the same Availability Zone group for all Spot instance
+     *         requests, all Spot instances are launched in the same Availability Zone.
+     */
+
+    public String getAvailabilityZoneGroup() {
+        return this.availabilityZoneGroup;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone group. If you specify the same Availability Zone group for all Spot instance requests, all
+     * Spot instances are launched in the same Availability Zone.
+     * </p>
+     * 
+     * @param availabilityZoneGroup
+     *        The Availability Zone group. If you specify the same Availability Zone group for all Spot instance
+     *        requests, all Spot instances are launched in the same Availability Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withAvailabilityZoneGroup(String availabilityZoneGroup) {
+        setAvailabilityZoneGroup(availabilityZoneGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The duration for the Spot instance, in minutes.
+     * </p>
+     * 
+     * @param blockDurationMinutes
+     *        The duration for the Spot instance, in minutes.
+     */
+
+    public void setBlockDurationMinutes(Integer blockDurationMinutes) {
+        this.blockDurationMinutes = blockDurationMinutes;
+    }
+
+    /**
+     * <p>
+     * The duration for the Spot instance, in minutes.
+     * </p>
+     * 
+     * @return The duration for the Spot instance, in minutes.
+     */
+
+    public Integer getBlockDurationMinutes() {
+        return this.blockDurationMinutes;
+    }
+
+    /**
+     * <p>
+     * The duration for the Spot instance, in minutes.
+     * </p>
+     * 
+     * @param blockDurationMinutes
+     *        The duration for the Spot instance, in minutes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withBlockDurationMinutes(Integer blockDurationMinutes) {
+        setBlockDurationMinutes(blockDurationMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time when the Spot instance request was created, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @param createTime
+     *        The date and time when the Spot instance request was created, in UTC format (for example,
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     */
+
+    public void setCreateTime(java.util.Date createTime) {
+        this.createTime = createTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the Spot instance request was created, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @return The date and time when the Spot instance request was created, in UTC format (for example,
+     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     */
+
+    public java.util.Date getCreateTime() {
+        return this.createTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the Spot instance request was created, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @param createTime
+     *        The date and time when the Spot instance request was created, in UTC format (for example,
+     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withCreateTime(java.util.Date createTime) {
+        setCreateTime(createTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fault codes for the Spot instance request, if any.
+     * </p>
+     * 
+     * @param fault
+     *        The fault codes for the Spot instance request, if any.
+     */
+
+    public void setFault(SpotInstanceStateFault fault) {
+        this.fault = fault;
+    }
+
+    /**
+     * <p>
+     * The fault codes for the Spot instance request, if any.
+     * </p>
+     * 
+     * @return The fault codes for the Spot instance request, if any.
+     */
+
+    public SpotInstanceStateFault getFault() {
+        return this.fault;
+    }
+
+    /**
+     * <p>
+     * The fault codes for the Spot instance request, if any.
+     * </p>
+     * 
+     * @param fault
+     *        The fault codes for the Spot instance request, if any.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withFault(SpotInstanceStateFault fault) {
+        setFault(fault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance ID, if an instance has been launched to fulfill the Spot instance request.
+     * </p>
+     * 
+     * @param instanceId
+     *        The instance ID, if an instance has been launched to fulfill the Spot instance request.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The instance ID, if an instance has been launched to fulfill the Spot instance request.
+     * </p>
+     * 
+     * @return The instance ID, if an instance has been launched to fulfill the Spot instance request.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The instance ID, if an instance has been launched to fulfill the Spot instance request.
+     * </p>
+     * 
+     * @param instanceId
+     *        The instance ID, if an instance has been launched to fulfill the Spot instance request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     * </p>
+     * 
+     * @param launchGroup
+     *        The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     */
+
+    public void setLaunchGroup(String launchGroup) {
+        this.launchGroup = launchGroup;
+    }
+
+    /**
+     * <p>
+     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     * </p>
+     * 
+     * @return The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     */
+
+    public String getLaunchGroup() {
+        return this.launchGroup;
+    }
+
+    /**
+     * <p>
+     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     * </p>
+     * 
+     * @param launchGroup
+     *        The instance launch group. Launch groups are Spot instances that launch together and terminate together.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withLaunchGroup(String launchGroup) {
+        setLaunchGroup(launchGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional information for launching instances.
+     * </p>
+     * 
+     * @param launchSpecification
+     *        Additional information for launching instances.
+     */
+
+    public void setLaunchSpecification(LaunchSpecification launchSpecification) {
+        this.launchSpecification = launchSpecification;
+    }
+
+    /**
+     * <p>
+     * Additional information for launching instances.
+     * </p>
+     * 
+     * @return Additional information for launching instances.
+     */
+
+    public LaunchSpecification getLaunchSpecification() {
+        return this.launchSpecification;
+    }
+
+    /**
+     * <p>
+     * Additional information for launching instances.
+     * </p>
+     * 
+     * @param launchSpecification
+     *        Additional information for launching instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withLaunchSpecification(LaunchSpecification launchSpecification) {
+        setLaunchSpecification(launchSpecification);
+        return this;
+    }
+
     /**
      * <p>
      * The Availability Zone in which the bid is launched.
      * </p>
+     * 
+     * @param launchedAvailabilityZone
+     *        The Availability Zone in which the bid is launched.
      */
-    private String launchedAvailabilityZone;
+
+    public void setLaunchedAvailabilityZone(String launchedAvailabilityZone) {
+        this.launchedAvailabilityZone = launchedAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone in which the bid is launched.
+     * </p>
+     * 
+     * @return The Availability Zone in which the bid is launched.
+     */
+
+    public String getLaunchedAvailabilityZone() {
+        return this.launchedAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone in which the bid is launched.
+     * </p>
+     * 
+     * @param launchedAvailabilityZone
+     *        The Availability Zone in which the bid is launched.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withLaunchedAvailabilityZone(String launchedAvailabilityZone) {
+        setLaunchedAvailabilityZone(launchedAvailabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The product description associated with the Spot instance.
+     * </p>
+     * 
+     * @param productDescription
+     *        The product description associated with the Spot instance.
+     * @see RIProductDescription
+     */
+
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
+    }
+
+    /**
+     * <p>
+     * The product description associated with the Spot instance.
+     * </p>
+     * 
+     * @return The product description associated with the Spot instance.
+     * @see RIProductDescription
+     */
+
+    public String getProductDescription() {
+        return this.productDescription;
+    }
+
+    /**
+     * <p>
+     * The product description associated with the Spot instance.
+     * </p>
+     * 
+     * @param productDescription
+     *        The product description associated with the Spot instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RIProductDescription
+     */
+
+    public SpotInstanceRequest withProductDescription(String productDescription) {
+        setProductDescription(productDescription);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The product description associated with the Spot instance.
+     * </p>
+     * 
+     * @param productDescription
+     *        The product description associated with the Spot instance.
+     * @see RIProductDescription
+     */
+
+    public void setProductDescription(RIProductDescription productDescription) {
+        this.productDescription = productDescription.toString();
+    }
+
+    /**
+     * <p>
+     * The product description associated with the Spot instance.
+     * </p>
+     * 
+     * @param productDescription
+     *        The product description associated with the Spot instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RIProductDescription
+     */
+
+    public SpotInstanceRequest withProductDescription(RIProductDescription productDescription) {
+        setProductDescription(productDescription);
+        return this;
+    }
 
     /**
      * <p>
@@ -223,79 +674,6 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     public SpotInstanceRequest withSpotPrice(String spotPrice) {
         setSpotPrice(spotPrice);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Spot instance request type.
-     * </p>
-     * 
-     * @param type
-     *        The Spot instance request type.
-     * @see SpotInstanceType
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The Spot instance request type.
-     * </p>
-     * 
-     * @return The Spot instance request type.
-     * @see SpotInstanceType
-     */
-
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The Spot instance request type.
-     * </p>
-     * 
-     * @param type
-     *        The Spot instance request type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see SpotInstanceType
-     */
-
-    public SpotInstanceRequest withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Spot instance request type.
-     * </p>
-     * 
-     * @param type
-     *        The Spot instance request type.
-     * @see SpotInstanceType
-     */
-
-    public void setType(SpotInstanceType type) {
-        this.type = type.toString();
-    }
-
-    /**
-     * <p>
-     * The Spot instance request type.
-     * </p>
-     * 
-     * @param type
-     *        The Spot instance request type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see SpotInstanceType
-     */
-
-    public SpotInstanceRequest withType(SpotInstanceType type) {
-        setType(type);
         return this;
     }
 
@@ -404,46 +782,6 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The fault codes for the Spot instance request, if any.
-     * </p>
-     * 
-     * @param fault
-     *        The fault codes for the Spot instance request, if any.
-     */
-
-    public void setFault(SpotInstanceStateFault fault) {
-        this.fault = fault;
-    }
-
-    /**
-     * <p>
-     * The fault codes for the Spot instance request, if any.
-     * </p>
-     * 
-     * @return The fault codes for the Spot instance request, if any.
-     */
-
-    public SpotInstanceStateFault getFault() {
-        return this.fault;
-    }
-
-    /**
-     * <p>
-     * The fault codes for the Spot instance request, if any.
-     * </p>
-     * 
-     * @param fault
-     *        The fault codes for the Spot instance request, if any.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withFault(SpotInstanceStateFault fault) {
-        setFault(fault);
-        return this;
-    }
-
-    /**
-     * <p>
      * The status code and status message describing the Spot instance request.
      * </p>
      * 
@@ -479,6 +817,152 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
 
     public SpotInstanceRequest withStatus(SpotInstanceStatus status) {
         setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the resource.
+     * </p>
+     * 
+     * @return Any tags assigned to the resource.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the resource.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the resource.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the resource.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotInstanceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Spot instance request type.
+     * </p>
+     * 
+     * @param type
+     *        The Spot instance request type.
+     * @see SpotInstanceType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The Spot instance request type.
+     * </p>
+     * 
+     * @return The Spot instance request type.
+     * @see SpotInstanceType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The Spot instance request type.
+     * </p>
+     * 
+     * @param type
+     *        The Spot instance request type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpotInstanceType
+     */
+
+    public SpotInstanceRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Spot instance request type.
+     * </p>
+     * 
+     * @param type
+     *        The Spot instance request type.
+     * @see SpotInstanceType
+     */
+
+    public void setType(SpotInstanceType type) {
+        this.type = type.toString();
+    }
+
+    /**
+     * <p>
+     * The Spot instance request type.
+     * </p>
+     * 
+     * @param type
+     *        The Spot instance request type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpotInstanceType
+     */
+
+    public SpotInstanceRequest withType(SpotInstanceType type) {
+        setType(type);
         return this;
     }
 
@@ -593,490 +1077,6 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     * </p>
-     * 
-     * @param launchGroup
-     *        The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     */
-
-    public void setLaunchGroup(String launchGroup) {
-        this.launchGroup = launchGroup;
-    }
-
-    /**
-     * <p>
-     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     * </p>
-     * 
-     * @return The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     */
-
-    public String getLaunchGroup() {
-        return this.launchGroup;
-    }
-
-    /**
-     * <p>
-     * The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     * </p>
-     * 
-     * @param launchGroup
-     *        The instance launch group. Launch groups are Spot instances that launch together and terminate together.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withLaunchGroup(String launchGroup) {
-        setLaunchGroup(launchGroup);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone group. If you specify the same Availability Zone group for all Spot instance requests, all
-     * Spot instances are launched in the same Availability Zone.
-     * </p>
-     * 
-     * @param availabilityZoneGroup
-     *        The Availability Zone group. If you specify the same Availability Zone group for all Spot instance
-     *        requests, all Spot instances are launched in the same Availability Zone.
-     */
-
-    public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
-        this.availabilityZoneGroup = availabilityZoneGroup;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone group. If you specify the same Availability Zone group for all Spot instance requests, all
-     * Spot instances are launched in the same Availability Zone.
-     * </p>
-     * 
-     * @return The Availability Zone group. If you specify the same Availability Zone group for all Spot instance
-     *         requests, all Spot instances are launched in the same Availability Zone.
-     */
-
-    public String getAvailabilityZoneGroup() {
-        return this.availabilityZoneGroup;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone group. If you specify the same Availability Zone group for all Spot instance requests, all
-     * Spot instances are launched in the same Availability Zone.
-     * </p>
-     * 
-     * @param availabilityZoneGroup
-     *        The Availability Zone group. If you specify the same Availability Zone group for all Spot instance
-     *        requests, all Spot instances are launched in the same Availability Zone.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withAvailabilityZoneGroup(String availabilityZoneGroup) {
-        setAvailabilityZoneGroup(availabilityZoneGroup);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Additional information for launching instances.
-     * </p>
-     * 
-     * @param launchSpecification
-     *        Additional information for launching instances.
-     */
-
-    public void setLaunchSpecification(LaunchSpecification launchSpecification) {
-        this.launchSpecification = launchSpecification;
-    }
-
-    /**
-     * <p>
-     * Additional information for launching instances.
-     * </p>
-     * 
-     * @return Additional information for launching instances.
-     */
-
-    public LaunchSpecification getLaunchSpecification() {
-        return this.launchSpecification;
-    }
-
-    /**
-     * <p>
-     * Additional information for launching instances.
-     * </p>
-     * 
-     * @param launchSpecification
-     *        Additional information for launching instances.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withLaunchSpecification(LaunchSpecification launchSpecification) {
-        setLaunchSpecification(launchSpecification);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The instance ID, if an instance has been launched to fulfill the Spot instance request.
-     * </p>
-     * 
-     * @param instanceId
-     *        The instance ID, if an instance has been launched to fulfill the Spot instance request.
-     */
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    /**
-     * <p>
-     * The instance ID, if an instance has been launched to fulfill the Spot instance request.
-     * </p>
-     * 
-     * @return The instance ID, if an instance has been launched to fulfill the Spot instance request.
-     */
-
-    public String getInstanceId() {
-        return this.instanceId;
-    }
-
-    /**
-     * <p>
-     * The instance ID, if an instance has been launched to fulfill the Spot instance request.
-     * </p>
-     * 
-     * @param instanceId
-     *        The instance ID, if an instance has been launched to fulfill the Spot instance request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withInstanceId(String instanceId) {
-        setInstanceId(instanceId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The date and time when the Spot instance request was created, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     * 
-     * @param createTime
-     *        The date and time when the Spot instance request was created, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     */
-
-    public void setCreateTime(java.util.Date createTime) {
-        this.createTime = createTime;
-    }
-
-    /**
-     * <p>
-     * The date and time when the Spot instance request was created, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     * 
-     * @return The date and time when the Spot instance request was created, in UTC format (for example,
-     *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     */
-
-    public java.util.Date getCreateTime() {
-        return this.createTime;
-    }
-
-    /**
-     * <p>
-     * The date and time when the Spot instance request was created, in UTC format (for example,
-     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     * 
-     * @param createTime
-     *        The date and time when the Spot instance request was created, in UTC format (for example,
-     *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withCreateTime(java.util.Date createTime) {
-        setCreateTime(createTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The product description associated with the Spot instance.
-     * </p>
-     * 
-     * @param productDescription
-     *        The product description associated with the Spot instance.
-     * @see RIProductDescription
-     */
-
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
-    }
-
-    /**
-     * <p>
-     * The product description associated with the Spot instance.
-     * </p>
-     * 
-     * @return The product description associated with the Spot instance.
-     * @see RIProductDescription
-     */
-
-    public String getProductDescription() {
-        return this.productDescription;
-    }
-
-    /**
-     * <p>
-     * The product description associated with the Spot instance.
-     * </p>
-     * 
-     * @param productDescription
-     *        The product description associated with the Spot instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RIProductDescription
-     */
-
-    public SpotInstanceRequest withProductDescription(String productDescription) {
-        setProductDescription(productDescription);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The product description associated with the Spot instance.
-     * </p>
-     * 
-     * @param productDescription
-     *        The product description associated with the Spot instance.
-     * @see RIProductDescription
-     */
-
-    public void setProductDescription(RIProductDescription productDescription) {
-        this.productDescription = productDescription.toString();
-    }
-
-    /**
-     * <p>
-     * The product description associated with the Spot instance.
-     * </p>
-     * 
-     * @param productDescription
-     *        The product description associated with the Spot instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see RIProductDescription
-     */
-
-    public SpotInstanceRequest withProductDescription(RIProductDescription productDescription) {
-        setProductDescription(productDescription);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The duration for the Spot instance, in minutes.
-     * </p>
-     * 
-     * @param blockDurationMinutes
-     *        The duration for the Spot instance, in minutes.
-     */
-
-    public void setBlockDurationMinutes(Integer blockDurationMinutes) {
-        this.blockDurationMinutes = blockDurationMinutes;
-    }
-
-    /**
-     * <p>
-     * The duration for the Spot instance, in minutes.
-     * </p>
-     * 
-     * @return The duration for the Spot instance, in minutes.
-     */
-
-    public Integer getBlockDurationMinutes() {
-        return this.blockDurationMinutes;
-    }
-
-    /**
-     * <p>
-     * The duration for the Spot instance, in minutes.
-     * </p>
-     * 
-     * @param blockDurationMinutes
-     *        The duration for the Spot instance, in minutes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withBlockDurationMinutes(Integer blockDurationMinutes) {
-        setBlockDurationMinutes(blockDurationMinutes);
-        return this;
-    }
-
-    /**
-     * <p>
-     * If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price in
-     * effect for the Spot instance while it runs.
-     * </p>
-     * 
-     * @param actualBlockHourlyPrice
-     *        If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price
-     *        in effect for the Spot instance while it runs.
-     */
-
-    public void setActualBlockHourlyPrice(String actualBlockHourlyPrice) {
-        this.actualBlockHourlyPrice = actualBlockHourlyPrice;
-    }
-
-    /**
-     * <p>
-     * If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price in
-     * effect for the Spot instance while it runs.
-     * </p>
-     * 
-     * @return If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price
-     *         in effect for the Spot instance while it runs.
-     */
-
-    public String getActualBlockHourlyPrice() {
-        return this.actualBlockHourlyPrice;
-    }
-
-    /**
-     * <p>
-     * If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price in
-     * effect for the Spot instance while it runs.
-     * </p>
-     * 
-     * @param actualBlockHourlyPrice
-     *        If you specified a duration and your Spot instance request was fulfilled, this is the fixed hourly price
-     *        in effect for the Spot instance while it runs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withActualBlockHourlyPrice(String actualBlockHourlyPrice) {
-        setActualBlockHourlyPrice(actualBlockHourlyPrice);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Any tags assigned to the resource.
-     * </p>
-     * 
-     * @return Any tags assigned to the resource.
-     */
-
-    public java.util.List<Tag> getTags() {
-        if (tags == null) {
-            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
-        }
-        return tags;
-    }
-
-    /**
-     * <p>
-     * Any tags assigned to the resource.
-     * </p>
-     * 
-     * @param tags
-     *        Any tags assigned to the resource.
-     */
-
-    public void setTags(java.util.Collection<Tag> tags) {
-        if (tags == null) {
-            this.tags = null;
-            return;
-        }
-
-        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
-    }
-
-    /**
-     * <p>
-     * Any tags assigned to the resource.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param tags
-     *        Any tags assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withTags(Tag... tags) {
-        if (this.tags == null) {
-            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
-        }
-        for (Tag ele : tags) {
-            this.tags.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Any tags assigned to the resource.
-     * </p>
-     * 
-     * @param tags
-     *        Any tags assigned to the resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withTags(java.util.Collection<Tag> tags) {
-        setTags(tags);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone in which the bid is launched.
-     * </p>
-     * 
-     * @param launchedAvailabilityZone
-     *        The Availability Zone in which the bid is launched.
-     */
-
-    public void setLaunchedAvailabilityZone(String launchedAvailabilityZone) {
-        this.launchedAvailabilityZone = launchedAvailabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone in which the bid is launched.
-     * </p>
-     * 
-     * @return The Availability Zone in which the bid is launched.
-     */
-
-    public String getLaunchedAvailabilityZone() {
-        return this.launchedAvailabilityZone;
-    }
-
-    /**
-     * <p>
-     * The Availability Zone in which the bid is launched.
-     * </p>
-     * 
-     * @param launchedAvailabilityZone
-     *        The Availability Zone in which the bid is launched.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SpotInstanceRequest withLaunchedAvailabilityZone(String launchedAvailabilityZone) {
-        setLaunchedAvailabilityZone(launchedAvailabilityZone);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1087,42 +1087,42 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getActualBlockHourlyPrice() != null)
+            sb.append("ActualBlockHourlyPrice: ").append(getActualBlockHourlyPrice()).append(",");
+        if (getAvailabilityZoneGroup() != null)
+            sb.append("AvailabilityZoneGroup: ").append(getAvailabilityZoneGroup()).append(",");
+        if (getBlockDurationMinutes() != null)
+            sb.append("BlockDurationMinutes: ").append(getBlockDurationMinutes()).append(",");
+        if (getCreateTime() != null)
+            sb.append("CreateTime: ").append(getCreateTime()).append(",");
+        if (getFault() != null)
+            sb.append("Fault: ").append(getFault()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getLaunchGroup() != null)
+            sb.append("LaunchGroup: ").append(getLaunchGroup()).append(",");
+        if (getLaunchSpecification() != null)
+            sb.append("LaunchSpecification: ").append(getLaunchSpecification()).append(",");
+        if (getLaunchedAvailabilityZone() != null)
+            sb.append("LaunchedAvailabilityZone: ").append(getLaunchedAvailabilityZone()).append(",");
+        if (getProductDescription() != null)
+            sb.append("ProductDescription: ").append(getProductDescription()).append(",");
         if (getSpotInstanceRequestId() != null)
             sb.append("SpotInstanceRequestId: ").append(getSpotInstanceRequestId()).append(",");
         if (getSpotPrice() != null)
             sb.append("SpotPrice: ").append(getSpotPrice()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
-        if (getFault() != null)
-            sb.append("Fault: ").append(getFault()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getValidFrom() != null)
             sb.append("ValidFrom: ").append(getValidFrom()).append(",");
         if (getValidUntil() != null)
-            sb.append("ValidUntil: ").append(getValidUntil()).append(",");
-        if (getLaunchGroup() != null)
-            sb.append("LaunchGroup: ").append(getLaunchGroup()).append(",");
-        if (getAvailabilityZoneGroup() != null)
-            sb.append("AvailabilityZoneGroup: ").append(getAvailabilityZoneGroup()).append(",");
-        if (getLaunchSpecification() != null)
-            sb.append("LaunchSpecification: ").append(getLaunchSpecification()).append(",");
-        if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId()).append(",");
-        if (getCreateTime() != null)
-            sb.append("CreateTime: ").append(getCreateTime()).append(",");
-        if (getProductDescription() != null)
-            sb.append("ProductDescription: ").append(getProductDescription()).append(",");
-        if (getBlockDurationMinutes() != null)
-            sb.append("BlockDurationMinutes: ").append(getBlockDurationMinutes()).append(",");
-        if (getActualBlockHourlyPrice() != null)
-            sb.append("ActualBlockHourlyPrice: ").append(getActualBlockHourlyPrice()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
-        if (getLaunchedAvailabilityZone() != null)
-            sb.append("LaunchedAvailabilityZone: ").append(getLaunchedAvailabilityZone());
+            sb.append("ValidUntil: ").append(getValidUntil());
         sb.append("}");
         return sb.toString();
     }
@@ -1137,6 +1137,46 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
         if (obj instanceof SpotInstanceRequest == false)
             return false;
         SpotInstanceRequest other = (SpotInstanceRequest) obj;
+        if (other.getActualBlockHourlyPrice() == null ^ this.getActualBlockHourlyPrice() == null)
+            return false;
+        if (other.getActualBlockHourlyPrice() != null && other.getActualBlockHourlyPrice().equals(this.getActualBlockHourlyPrice()) == false)
+            return false;
+        if (other.getAvailabilityZoneGroup() == null ^ this.getAvailabilityZoneGroup() == null)
+            return false;
+        if (other.getAvailabilityZoneGroup() != null && other.getAvailabilityZoneGroup().equals(this.getAvailabilityZoneGroup()) == false)
+            return false;
+        if (other.getBlockDurationMinutes() == null ^ this.getBlockDurationMinutes() == null)
+            return false;
+        if (other.getBlockDurationMinutes() != null && other.getBlockDurationMinutes().equals(this.getBlockDurationMinutes()) == false)
+            return false;
+        if (other.getCreateTime() == null ^ this.getCreateTime() == null)
+            return false;
+        if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false)
+            return false;
+        if (other.getFault() == null ^ this.getFault() == null)
+            return false;
+        if (other.getFault() != null && other.getFault().equals(this.getFault()) == false)
+            return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
+        if (other.getLaunchGroup() == null ^ this.getLaunchGroup() == null)
+            return false;
+        if (other.getLaunchGroup() != null && other.getLaunchGroup().equals(this.getLaunchGroup()) == false)
+            return false;
+        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null)
+            return false;
+        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false)
+            return false;
+        if (other.getLaunchedAvailabilityZone() == null ^ this.getLaunchedAvailabilityZone() == null)
+            return false;
+        if (other.getLaunchedAvailabilityZone() != null && other.getLaunchedAvailabilityZone().equals(this.getLaunchedAvailabilityZone()) == false)
+            return false;
+        if (other.getProductDescription() == null ^ this.getProductDescription() == null)
+            return false;
+        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false)
+            return false;
         if (other.getSpotInstanceRequestId() == null ^ this.getSpotInstanceRequestId() == null)
             return false;
         if (other.getSpotInstanceRequestId() != null && other.getSpotInstanceRequestId().equals(this.getSpotInstanceRequestId()) == false)
@@ -1145,21 +1185,21 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
             return false;
         if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getFault() == null ^ this.getFault() == null)
-            return false;
-        if (other.getFault() != null && other.getFault().equals(this.getFault()) == false)
-            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getValidFrom() == null ^ this.getValidFrom() == null)
             return false;
@@ -1169,46 +1209,6 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
             return false;
         if (other.getValidUntil() != null && other.getValidUntil().equals(this.getValidUntil()) == false)
             return false;
-        if (other.getLaunchGroup() == null ^ this.getLaunchGroup() == null)
-            return false;
-        if (other.getLaunchGroup() != null && other.getLaunchGroup().equals(this.getLaunchGroup()) == false)
-            return false;
-        if (other.getAvailabilityZoneGroup() == null ^ this.getAvailabilityZoneGroup() == null)
-            return false;
-        if (other.getAvailabilityZoneGroup() != null && other.getAvailabilityZoneGroup().equals(this.getAvailabilityZoneGroup()) == false)
-            return false;
-        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null)
-            return false;
-        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false)
-            return false;
-        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
-            return false;
-        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
-            return false;
-        if (other.getCreateTime() == null ^ this.getCreateTime() == null)
-            return false;
-        if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false)
-            return false;
-        if (other.getProductDescription() == null ^ this.getProductDescription() == null)
-            return false;
-        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false)
-            return false;
-        if (other.getBlockDurationMinutes() == null ^ this.getBlockDurationMinutes() == null)
-            return false;
-        if (other.getBlockDurationMinutes() != null && other.getBlockDurationMinutes().equals(this.getBlockDurationMinutes()) == false)
-            return false;
-        if (other.getActualBlockHourlyPrice() == null ^ this.getActualBlockHourlyPrice() == null)
-            return false;
-        if (other.getActualBlockHourlyPrice() != null && other.getActualBlockHourlyPrice().equals(this.getActualBlockHourlyPrice()) == false)
-            return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
-        if (other.getLaunchedAvailabilityZone() == null ^ this.getLaunchedAvailabilityZone() == null)
-            return false;
-        if (other.getLaunchedAvailabilityZone() != null && other.getLaunchedAvailabilityZone().equals(this.getLaunchedAvailabilityZone()) == false)
-            return false;
         return true;
     }
 
@@ -1217,24 +1217,24 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getActualBlockHourlyPrice() == null) ? 0 : getActualBlockHourlyPrice().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneGroup() == null) ? 0 : getAvailabilityZoneGroup().hashCode());
+        hashCode = prime * hashCode + ((getBlockDurationMinutes() == null) ? 0 : getBlockDurationMinutes().hashCode());
+        hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getFault() == null) ? 0 : getFault().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getLaunchGroup() == null) ? 0 : getLaunchGroup().hashCode());
+        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode());
+        hashCode = prime * hashCode + ((getLaunchedAvailabilityZone() == null) ? 0 : getLaunchedAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode());
         hashCode = prime * hashCode + ((getSpotInstanceRequestId() == null) ? 0 : getSpotInstanceRequestId().hashCode());
         hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode());
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode + ((getFault() == null) ? 0 : getFault().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode());
         hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode());
-        hashCode = prime * hashCode + ((getLaunchGroup() == null) ? 0 : getLaunchGroup().hashCode());
-        hashCode = prime * hashCode + ((getAvailabilityZoneGroup() == null) ? 0 : getAvailabilityZoneGroup().hashCode());
-        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode());
-        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
-        hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
-        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode());
-        hashCode = prime * hashCode + ((getBlockDurationMinutes() == null) ? 0 : getBlockDurationMinutes().hashCode());
-        hashCode = prime * hashCode + ((getActualBlockHourlyPrice() == null) ? 0 : getActualBlockHourlyPrice().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getLaunchedAvailabilityZone() == null) ? 0 : getLaunchedAvailabilityZone().hashCode());
         return hashCode;
     }
 

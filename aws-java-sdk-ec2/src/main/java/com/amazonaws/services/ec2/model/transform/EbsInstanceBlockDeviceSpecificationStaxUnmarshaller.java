@@ -43,13 +43,13 @@ public class EbsInstanceBlockDeviceSpecificationStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("volumeId", targetDepth)) {
-                    ebsInstanceBlockDeviceSpecification.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("deleteOnTermination", targetDepth)) {
+                    ebsInstanceBlockDeviceSpecification.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("deleteOnTermination", targetDepth)) {
-                    ebsInstanceBlockDeviceSpecification.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("volumeId", targetDepth)) {
+                    ebsInstanceBlockDeviceSpecification.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

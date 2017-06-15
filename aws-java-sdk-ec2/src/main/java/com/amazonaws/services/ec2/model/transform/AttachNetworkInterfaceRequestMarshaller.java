@@ -40,16 +40,16 @@ public class AttachNetworkInterfaceRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (attachNetworkInterfaceRequest.getNetworkInterfaceId() != null) {
-            request.addParameter("NetworkInterfaceId", StringUtils.fromString(attachNetworkInterfaceRequest.getNetworkInterfaceId()));
+        if (attachNetworkInterfaceRequest.getDeviceIndex() != null) {
+            request.addParameter("DeviceIndex", StringUtils.fromInteger(attachNetworkInterfaceRequest.getDeviceIndex()));
         }
 
         if (attachNetworkInterfaceRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(attachNetworkInterfaceRequest.getInstanceId()));
         }
 
-        if (attachNetworkInterfaceRequest.getDeviceIndex() != null) {
-            request.addParameter("DeviceIndex", StringUtils.fromInteger(attachNetworkInterfaceRequest.getDeviceIndex()));
+        if (attachNetworkInterfaceRequest.getNetworkInterfaceId() != null) {
+            request.addParameter("NetworkInterfaceId", StringUtils.fromString(attachNetworkInterfaceRequest.getNetworkInterfaceId()));
         }
 
         return request;

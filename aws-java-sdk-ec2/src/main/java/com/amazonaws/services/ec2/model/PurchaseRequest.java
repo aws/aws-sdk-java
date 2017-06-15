@@ -28,56 +28,16 @@ public class PurchaseRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The purchase token.
-     * </p>
-     */
-    private String purchaseToken;
-    /**
-     * <p>
      * The number of instances.
      * </p>
      */
     private Integer instanceCount;
-
     /**
      * <p>
      * The purchase token.
      * </p>
-     * 
-     * @param purchaseToken
-     *        The purchase token.
      */
-
-    public void setPurchaseToken(String purchaseToken) {
-        this.purchaseToken = purchaseToken;
-    }
-
-    /**
-     * <p>
-     * The purchase token.
-     * </p>
-     * 
-     * @return The purchase token.
-     */
-
-    public String getPurchaseToken() {
-        return this.purchaseToken;
-    }
-
-    /**
-     * <p>
-     * The purchase token.
-     * </p>
-     * 
-     * @param purchaseToken
-     *        The purchase token.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PurchaseRequest withPurchaseToken(String purchaseToken) {
-        setPurchaseToken(purchaseToken);
-        return this;
-    }
+    private String purchaseToken;
 
     /**
      * <p>
@@ -120,6 +80,46 @@ public class PurchaseRequest implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The purchase token.
+     * </p>
+     * 
+     * @param purchaseToken
+     *        The purchase token.
+     */
+
+    public void setPurchaseToken(String purchaseToken) {
+        this.purchaseToken = purchaseToken;
+    }
+
+    /**
+     * <p>
+     * The purchase token.
+     * </p>
+     * 
+     * @return The purchase token.
+     */
+
+    public String getPurchaseToken() {
+        return this.purchaseToken;
+    }
+
+    /**
+     * <p>
+     * The purchase token.
+     * </p>
+     * 
+     * @param purchaseToken
+     *        The purchase token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PurchaseRequest withPurchaseToken(String purchaseToken) {
+        setPurchaseToken(purchaseToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -130,10 +130,10 @@ public class PurchaseRequest implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPurchaseToken() != null)
-            sb.append("PurchaseToken: ").append(getPurchaseToken()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: ").append(getInstanceCount());
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
+        if (getPurchaseToken() != null)
+            sb.append("PurchaseToken: ").append(getPurchaseToken());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +148,13 @@ public class PurchaseRequest implements Serializable, Cloneable {
         if (obj instanceof PurchaseRequest == false)
             return false;
         PurchaseRequest other = (PurchaseRequest) obj;
-        if (other.getPurchaseToken() == null ^ this.getPurchaseToken() == null)
-            return false;
-        if (other.getPurchaseToken() != null && other.getPurchaseToken().equals(this.getPurchaseToken()) == false)
-            return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+            return false;
+        if (other.getPurchaseToken() == null ^ this.getPurchaseToken() == null)
+            return false;
+        if (other.getPurchaseToken() != null && other.getPurchaseToken().equals(this.getPurchaseToken()) == false)
             return false;
         return true;
     }
@@ -164,8 +164,8 @@ public class PurchaseRequest implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPurchaseToken() == null) ? 0 : getPurchaseToken().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getPurchaseToken() == null) ? 0 : getPurchaseToken().hashCode());
         return hashCode;
     }
 

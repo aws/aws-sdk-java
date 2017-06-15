@@ -48,11 +48,6 @@ public class ReservedInstancesConfigurationStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
-                if (context.testExpression("platform", targetDepth)) {
-                    reservedInstancesConfiguration.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("instanceCount", targetDepth)) {
                     reservedInstancesConfiguration.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -60,6 +55,11 @@ public class ReservedInstancesConfigurationStaxUnmarshaller implements Unmarshal
 
                 if (context.testExpression("instanceType", targetDepth)) {
                     reservedInstancesConfiguration.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("platform", targetDepth)) {
+                    reservedInstancesConfiguration.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

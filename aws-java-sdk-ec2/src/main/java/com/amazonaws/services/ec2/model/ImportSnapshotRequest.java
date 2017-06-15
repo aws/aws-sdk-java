@@ -29,18 +29,6 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The description string for the import snapshot task.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * Information about the disk container.
-     * </p>
-     */
-    private SnapshotDiskContainer diskContainer;
-    /**
-     * <p>
      * The client-specific data.
      * </p>
      */
@@ -53,90 +41,22 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
     private String clientToken;
     /**
      * <p>
+     * The description string for the import snapshot task.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * Information about the disk container.
+     * </p>
+     */
+    private SnapshotDiskContainer diskContainer;
+    /**
+     * <p>
      * The name of the role to use when not using the default role, 'vmimport'.
      * </p>
      */
     private String roleName;
-
-    /**
-     * <p>
-     * The description string for the import snapshot task.
-     * </p>
-     * 
-     * @param description
-     *        The description string for the import snapshot task.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The description string for the import snapshot task.
-     * </p>
-     * 
-     * @return The description string for the import snapshot task.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The description string for the import snapshot task.
-     * </p>
-     * 
-     * @param description
-     *        The description string for the import snapshot task.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportSnapshotRequest withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Information about the disk container.
-     * </p>
-     * 
-     * @param diskContainer
-     *        Information about the disk container.
-     */
-
-    public void setDiskContainer(SnapshotDiskContainer diskContainer) {
-        this.diskContainer = diskContainer;
-    }
-
-    /**
-     * <p>
-     * Information about the disk container.
-     * </p>
-     * 
-     * @return Information about the disk container.
-     */
-
-    public SnapshotDiskContainer getDiskContainer() {
-        return this.diskContainer;
-    }
-
-    /**
-     * <p>
-     * Information about the disk container.
-     * </p>
-     * 
-     * @param diskContainer
-     *        Information about the disk container.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportSnapshotRequest withDiskContainer(SnapshotDiskContainer diskContainer) {
-        setDiskContainer(diskContainer);
-        return this;
-    }
 
     /**
      * <p>
@@ -220,6 +140,86 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
+     * The description string for the import snapshot task.
+     * </p>
+     * 
+     * @param description
+     *        The description string for the import snapshot task.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description string for the import snapshot task.
+     * </p>
+     * 
+     * @return The description string for the import snapshot task.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description string for the import snapshot task.
+     * </p>
+     * 
+     * @param description
+     *        The description string for the import snapshot task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportSnapshotRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the disk container.
+     * </p>
+     * 
+     * @param diskContainer
+     *        Information about the disk container.
+     */
+
+    public void setDiskContainer(SnapshotDiskContainer diskContainer) {
+        this.diskContainer = diskContainer;
+    }
+
+    /**
+     * <p>
+     * Information about the disk container.
+     * </p>
+     * 
+     * @return Information about the disk container.
+     */
+
+    public SnapshotDiskContainer getDiskContainer() {
+        return this.diskContainer;
+    }
+
+    /**
+     * <p>
+     * Information about the disk container.
+     * </p>
+     * 
+     * @param diskContainer
+     *        Information about the disk container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportSnapshotRequest withDiskContainer(SnapshotDiskContainer diskContainer) {
+        setDiskContainer(diskContainer);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the role to use when not using the default role, 'vmimport'.
      * </p>
      * 
@@ -280,14 +280,14 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getDiskContainer() != null)
-            sb.append("DiskContainer: ").append(getDiskContainer()).append(",");
         if (getClientData() != null)
             sb.append("ClientData: ").append(getClientData()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getDiskContainer() != null)
+            sb.append("DiskContainer: ").append(getDiskContainer()).append(",");
         if (getRoleName() != null)
             sb.append("RoleName: ").append(getRoleName());
         sb.append("}");
@@ -304,14 +304,6 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
         if (obj instanceof ImportSnapshotRequest == false)
             return false;
         ImportSnapshotRequest other = (ImportSnapshotRequest) obj;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getDiskContainer() == null ^ this.getDiskContainer() == null)
-            return false;
-        if (other.getDiskContainer() != null && other.getDiskContainer().equals(this.getDiskContainer()) == false)
-            return false;
         if (other.getClientData() == null ^ this.getClientData() == null)
             return false;
         if (other.getClientData() != null && other.getClientData().equals(this.getClientData()) == false)
@@ -319,6 +311,14 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getDiskContainer() == null ^ this.getDiskContainer() == null)
+            return false;
+        if (other.getDiskContainer() != null && other.getDiskContainer().equals(this.getDiskContainer()) == false)
             return false;
         if (other.getRoleName() == null ^ this.getRoleName() == null)
             return false;
@@ -332,10 +332,10 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getDiskContainer() == null) ? 0 : getDiskContainer().hashCode());
         hashCode = prime * hashCode + ((getClientData() == null) ? 0 : getClientData().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDiskContainer() == null) ? 0 : getDiskContainer().hashCode());
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         return hashCode;
     }

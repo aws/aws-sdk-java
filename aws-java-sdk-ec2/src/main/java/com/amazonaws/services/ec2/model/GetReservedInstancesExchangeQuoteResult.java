@@ -28,6 +28,36 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
 
     /**
      * <p>
+     * The currency of the transaction.
+     * </p>
+     */
+    private String currencyCode;
+    /**
+     * <p>
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
+     * </p>
+     */
+    private Boolean isValidExchange;
+    /**
+     * <p>
+     * The new end date of the reservation term.
+     * </p>
+     */
+    private java.util.Date outputReservedInstancesWillExpireAt;
+    /**
+     * <p>
+     * The total true upfront charge for the exchange.
+     * </p>
+     */
+    private String paymentDue;
+    /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     */
+    private ReservationValue reservedInstanceValueRollup;
+    /**
+     * <p>
      * The configuration of your Convertible Reserved Instances.
      * </p>
      */
@@ -37,7 +67,7 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
      * The cost associated with the Reserved Instance.
      * </p>
      */
-    private ReservationValue reservedInstanceValueRollup;
+    private ReservationValue targetConfigurationValueRollup;
     /**
      * <p>
      * The values of the target Convertible Reserved Instances.
@@ -46,40 +76,222 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
     private com.amazonaws.internal.SdkInternalList<TargetReservationValue> targetConfigurationValueSet;
     /**
      * <p>
-     * The cost associated with the Reserved Instance.
-     * </p>
-     */
-    private ReservationValue targetConfigurationValueRollup;
-    /**
-     * <p>
-     * The total true upfront charge for the exchange.
-     * </p>
-     */
-    private String paymentDue;
-    /**
-     * <p>
-     * The currency of the transaction.
-     * </p>
-     */
-    private String currencyCode;
-    /**
-     * <p>
-     * The new end date of the reservation term.
-     * </p>
-     */
-    private java.util.Date outputReservedInstancesWillExpireAt;
-    /**
-     * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
-     * </p>
-     */
-    private Boolean isValidExchange;
-    /**
-     * <p>
      * Describes the reason why the exchange cannot be completed.
      * </p>
      */
     private String validationFailureReason;
+
+    /**
+     * <p>
+     * The currency of the transaction.
+     * </p>
+     * 
+     * @param currencyCode
+     *        The currency of the transaction.
+     */
+
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+
+    /**
+     * <p>
+     * The currency of the transaction.
+     * </p>
+     * 
+     * @return The currency of the transaction.
+     */
+
+    public String getCurrencyCode() {
+        return this.currencyCode;
+    }
+
+    /**
+     * <p>
+     * The currency of the transaction.
+     * </p>
+     * 
+     * @param currencyCode
+     *        The currency of the transaction.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReservedInstancesExchangeQuoteResult withCurrencyCode(String currencyCode) {
+        setCurrencyCode(currencyCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
+     * </p>
+     * 
+     * @param isValidExchange
+     *        If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
+     */
+
+    public void setIsValidExchange(Boolean isValidExchange) {
+        this.isValidExchange = isValidExchange;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
+     * </p>
+     * 
+     * @return If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
+     */
+
+    public Boolean getIsValidExchange() {
+        return this.isValidExchange;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
+     * </p>
+     * 
+     * @param isValidExchange
+     *        If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReservedInstancesExchangeQuoteResult withIsValidExchange(Boolean isValidExchange) {
+        setIsValidExchange(isValidExchange);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
+     * </p>
+     * 
+     * @return If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
+     */
+
+    public Boolean isValidExchange() {
+        return this.isValidExchange;
+    }
+
+    /**
+     * <p>
+     * The new end date of the reservation term.
+     * </p>
+     * 
+     * @param outputReservedInstancesWillExpireAt
+     *        The new end date of the reservation term.
+     */
+
+    public void setOutputReservedInstancesWillExpireAt(java.util.Date outputReservedInstancesWillExpireAt) {
+        this.outputReservedInstancesWillExpireAt = outputReservedInstancesWillExpireAt;
+    }
+
+    /**
+     * <p>
+     * The new end date of the reservation term.
+     * </p>
+     * 
+     * @return The new end date of the reservation term.
+     */
+
+    public java.util.Date getOutputReservedInstancesWillExpireAt() {
+        return this.outputReservedInstancesWillExpireAt;
+    }
+
+    /**
+     * <p>
+     * The new end date of the reservation term.
+     * </p>
+     * 
+     * @param outputReservedInstancesWillExpireAt
+     *        The new end date of the reservation term.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReservedInstancesExchangeQuoteResult withOutputReservedInstancesWillExpireAt(java.util.Date outputReservedInstancesWillExpireAt) {
+        setOutputReservedInstancesWillExpireAt(outputReservedInstancesWillExpireAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total true upfront charge for the exchange.
+     * </p>
+     * 
+     * @param paymentDue
+     *        The total true upfront charge for the exchange.
+     */
+
+    public void setPaymentDue(String paymentDue) {
+        this.paymentDue = paymentDue;
+    }
+
+    /**
+     * <p>
+     * The total true upfront charge for the exchange.
+     * </p>
+     * 
+     * @return The total true upfront charge for the exchange.
+     */
+
+    public String getPaymentDue() {
+        return this.paymentDue;
+    }
+
+    /**
+     * <p>
+     * The total true upfront charge for the exchange.
+     * </p>
+     * 
+     * @param paymentDue
+     *        The total true upfront charge for the exchange.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReservedInstancesExchangeQuoteResult withPaymentDue(String paymentDue) {
+        setPaymentDue(paymentDue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     * 
+     * @param reservedInstanceValueRollup
+     *        The cost associated with the Reserved Instance.
+     */
+
+    public void setReservedInstanceValueRollup(ReservationValue reservedInstanceValueRollup) {
+        this.reservedInstanceValueRollup = reservedInstanceValueRollup;
+    }
+
+    /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     * 
+     * @return The cost associated with the Reserved Instance.
+     */
+
+    public ReservationValue getReservedInstanceValueRollup() {
+        return this.reservedInstanceValueRollup;
+    }
+
+    /**
+     * <p>
+     * The cost associated with the Reserved Instance.
+     * </p>
+     * 
+     * @param reservedInstanceValueRollup
+     *        The cost associated with the Reserved Instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetReservedInstancesExchangeQuoteResult withReservedInstanceValueRollup(ReservationValue reservedInstanceValueRollup) {
+        setReservedInstanceValueRollup(reservedInstanceValueRollup);
+        return this;
+    }
 
     /**
      * <p>
@@ -159,12 +371,12 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
      * The cost associated with the Reserved Instance.
      * </p>
      * 
-     * @param reservedInstanceValueRollup
+     * @param targetConfigurationValueRollup
      *        The cost associated with the Reserved Instance.
      */
 
-    public void setReservedInstanceValueRollup(ReservationValue reservedInstanceValueRollup) {
-        this.reservedInstanceValueRollup = reservedInstanceValueRollup;
+    public void setTargetConfigurationValueRollup(ReservationValue targetConfigurationValueRollup) {
+        this.targetConfigurationValueRollup = targetConfigurationValueRollup;
     }
 
     /**
@@ -175,8 +387,8 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
      * @return The cost associated with the Reserved Instance.
      */
 
-    public ReservationValue getReservedInstanceValueRollup() {
-        return this.reservedInstanceValueRollup;
+    public ReservationValue getTargetConfigurationValueRollup() {
+        return this.targetConfigurationValueRollup;
     }
 
     /**
@@ -184,13 +396,13 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
      * The cost associated with the Reserved Instance.
      * </p>
      * 
-     * @param reservedInstanceValueRollup
+     * @param targetConfigurationValueRollup
      *        The cost associated with the Reserved Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public GetReservedInstancesExchangeQuoteResult withReservedInstanceValueRollup(ReservationValue reservedInstanceValueRollup) {
-        setReservedInstanceValueRollup(reservedInstanceValueRollup);
+    public GetReservedInstancesExchangeQuoteResult withTargetConfigurationValueRollup(ReservationValue targetConfigurationValueRollup) {
+        setTargetConfigurationValueRollup(targetConfigurationValueRollup);
         return this;
     }
 
@@ -269,218 +481,6 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The cost associated with the Reserved Instance.
-     * </p>
-     * 
-     * @param targetConfigurationValueRollup
-     *        The cost associated with the Reserved Instance.
-     */
-
-    public void setTargetConfigurationValueRollup(ReservationValue targetConfigurationValueRollup) {
-        this.targetConfigurationValueRollup = targetConfigurationValueRollup;
-    }
-
-    /**
-     * <p>
-     * The cost associated with the Reserved Instance.
-     * </p>
-     * 
-     * @return The cost associated with the Reserved Instance.
-     */
-
-    public ReservationValue getTargetConfigurationValueRollup() {
-        return this.targetConfigurationValueRollup;
-    }
-
-    /**
-     * <p>
-     * The cost associated with the Reserved Instance.
-     * </p>
-     * 
-     * @param targetConfigurationValueRollup
-     *        The cost associated with the Reserved Instance.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReservedInstancesExchangeQuoteResult withTargetConfigurationValueRollup(ReservationValue targetConfigurationValueRollup) {
-        setTargetConfigurationValueRollup(targetConfigurationValueRollup);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The total true upfront charge for the exchange.
-     * </p>
-     * 
-     * @param paymentDue
-     *        The total true upfront charge for the exchange.
-     */
-
-    public void setPaymentDue(String paymentDue) {
-        this.paymentDue = paymentDue;
-    }
-
-    /**
-     * <p>
-     * The total true upfront charge for the exchange.
-     * </p>
-     * 
-     * @return The total true upfront charge for the exchange.
-     */
-
-    public String getPaymentDue() {
-        return this.paymentDue;
-    }
-
-    /**
-     * <p>
-     * The total true upfront charge for the exchange.
-     * </p>
-     * 
-     * @param paymentDue
-     *        The total true upfront charge for the exchange.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReservedInstancesExchangeQuoteResult withPaymentDue(String paymentDue) {
-        setPaymentDue(paymentDue);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The currency of the transaction.
-     * </p>
-     * 
-     * @param currencyCode
-     *        The currency of the transaction.
-     */
-
-    public void setCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
-    }
-
-    /**
-     * <p>
-     * The currency of the transaction.
-     * </p>
-     * 
-     * @return The currency of the transaction.
-     */
-
-    public String getCurrencyCode() {
-        return this.currencyCode;
-    }
-
-    /**
-     * <p>
-     * The currency of the transaction.
-     * </p>
-     * 
-     * @param currencyCode
-     *        The currency of the transaction.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReservedInstancesExchangeQuoteResult withCurrencyCode(String currencyCode) {
-        setCurrencyCode(currencyCode);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The new end date of the reservation term.
-     * </p>
-     * 
-     * @param outputReservedInstancesWillExpireAt
-     *        The new end date of the reservation term.
-     */
-
-    public void setOutputReservedInstancesWillExpireAt(java.util.Date outputReservedInstancesWillExpireAt) {
-        this.outputReservedInstancesWillExpireAt = outputReservedInstancesWillExpireAt;
-    }
-
-    /**
-     * <p>
-     * The new end date of the reservation term.
-     * </p>
-     * 
-     * @return The new end date of the reservation term.
-     */
-
-    public java.util.Date getOutputReservedInstancesWillExpireAt() {
-        return this.outputReservedInstancesWillExpireAt;
-    }
-
-    /**
-     * <p>
-     * The new end date of the reservation term.
-     * </p>
-     * 
-     * @param outputReservedInstancesWillExpireAt
-     *        The new end date of the reservation term.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReservedInstancesExchangeQuoteResult withOutputReservedInstancesWillExpireAt(java.util.Date outputReservedInstancesWillExpireAt) {
-        setOutputReservedInstancesWillExpireAt(outputReservedInstancesWillExpireAt);
-        return this;
-    }
-
-    /**
-     * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
-     * </p>
-     * 
-     * @param isValidExchange
-     *        If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
-     */
-
-    public void setIsValidExchange(Boolean isValidExchange) {
-        this.isValidExchange = isValidExchange;
-    }
-
-    /**
-     * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
-     * </p>
-     * 
-     * @return If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
-     */
-
-    public Boolean getIsValidExchange() {
-        return this.isValidExchange;
-    }
-
-    /**
-     * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
-     * </p>
-     * 
-     * @param isValidExchange
-     *        If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetReservedInstancesExchangeQuoteResult withIsValidExchange(Boolean isValidExchange) {
-        setIsValidExchange(isValidExchange);
-        return this;
-    }
-
-    /**
-     * <p>
-     * If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
-     * </p>
-     * 
-     * @return If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot be completed.
-     */
-
-    public Boolean isValidExchange() {
-        return this.isValidExchange;
-    }
-
-    /**
-     * <p>
      * Describes the reason why the exchange cannot be completed.
      * </p>
      * 
@@ -530,22 +530,22 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservedInstanceValueSet() != null)
-            sb.append("ReservedInstanceValueSet: ").append(getReservedInstanceValueSet()).append(",");
-        if (getReservedInstanceValueRollup() != null)
-            sb.append("ReservedInstanceValueRollup: ").append(getReservedInstanceValueRollup()).append(",");
-        if (getTargetConfigurationValueSet() != null)
-            sb.append("TargetConfigurationValueSet: ").append(getTargetConfigurationValueSet()).append(",");
-        if (getTargetConfigurationValueRollup() != null)
-            sb.append("TargetConfigurationValueRollup: ").append(getTargetConfigurationValueRollup()).append(",");
-        if (getPaymentDue() != null)
-            sb.append("PaymentDue: ").append(getPaymentDue()).append(",");
         if (getCurrencyCode() != null)
             sb.append("CurrencyCode: ").append(getCurrencyCode()).append(",");
-        if (getOutputReservedInstancesWillExpireAt() != null)
-            sb.append("OutputReservedInstancesWillExpireAt: ").append(getOutputReservedInstancesWillExpireAt()).append(",");
         if (getIsValidExchange() != null)
             sb.append("IsValidExchange: ").append(getIsValidExchange()).append(",");
+        if (getOutputReservedInstancesWillExpireAt() != null)
+            sb.append("OutputReservedInstancesWillExpireAt: ").append(getOutputReservedInstancesWillExpireAt()).append(",");
+        if (getPaymentDue() != null)
+            sb.append("PaymentDue: ").append(getPaymentDue()).append(",");
+        if (getReservedInstanceValueRollup() != null)
+            sb.append("ReservedInstanceValueRollup: ").append(getReservedInstanceValueRollup()).append(",");
+        if (getReservedInstanceValueSet() != null)
+            sb.append("ReservedInstanceValueSet: ").append(getReservedInstanceValueSet()).append(",");
+        if (getTargetConfigurationValueRollup() != null)
+            sb.append("TargetConfigurationValueRollup: ").append(getTargetConfigurationValueRollup()).append(",");
+        if (getTargetConfigurationValueSet() != null)
+            sb.append("TargetConfigurationValueSet: ").append(getTargetConfigurationValueSet()).append(",");
         if (getValidationFailureReason() != null)
             sb.append("ValidationFailureReason: ").append(getValidationFailureReason());
         sb.append("}");
@@ -562,39 +562,39 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
         if (obj instanceof GetReservedInstancesExchangeQuoteResult == false)
             return false;
         GetReservedInstancesExchangeQuoteResult other = (GetReservedInstancesExchangeQuoteResult) obj;
-        if (other.getReservedInstanceValueSet() == null ^ this.getReservedInstanceValueSet() == null)
-            return false;
-        if (other.getReservedInstanceValueSet() != null && other.getReservedInstanceValueSet().equals(this.getReservedInstanceValueSet()) == false)
-            return false;
-        if (other.getReservedInstanceValueRollup() == null ^ this.getReservedInstanceValueRollup() == null)
-            return false;
-        if (other.getReservedInstanceValueRollup() != null && other.getReservedInstanceValueRollup().equals(this.getReservedInstanceValueRollup()) == false)
-            return false;
-        if (other.getTargetConfigurationValueSet() == null ^ this.getTargetConfigurationValueSet() == null)
-            return false;
-        if (other.getTargetConfigurationValueSet() != null && other.getTargetConfigurationValueSet().equals(this.getTargetConfigurationValueSet()) == false)
-            return false;
-        if (other.getTargetConfigurationValueRollup() == null ^ this.getTargetConfigurationValueRollup() == null)
-            return false;
-        if (other.getTargetConfigurationValueRollup() != null
-                && other.getTargetConfigurationValueRollup().equals(this.getTargetConfigurationValueRollup()) == false)
-            return false;
-        if (other.getPaymentDue() == null ^ this.getPaymentDue() == null)
-            return false;
-        if (other.getPaymentDue() != null && other.getPaymentDue().equals(this.getPaymentDue()) == false)
-            return false;
         if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null)
             return false;
         if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false)
+            return false;
+        if (other.getIsValidExchange() == null ^ this.getIsValidExchange() == null)
+            return false;
+        if (other.getIsValidExchange() != null && other.getIsValidExchange().equals(this.getIsValidExchange()) == false)
             return false;
         if (other.getOutputReservedInstancesWillExpireAt() == null ^ this.getOutputReservedInstancesWillExpireAt() == null)
             return false;
         if (other.getOutputReservedInstancesWillExpireAt() != null
                 && other.getOutputReservedInstancesWillExpireAt().equals(this.getOutputReservedInstancesWillExpireAt()) == false)
             return false;
-        if (other.getIsValidExchange() == null ^ this.getIsValidExchange() == null)
+        if (other.getPaymentDue() == null ^ this.getPaymentDue() == null)
             return false;
-        if (other.getIsValidExchange() != null && other.getIsValidExchange().equals(this.getIsValidExchange()) == false)
+        if (other.getPaymentDue() != null && other.getPaymentDue().equals(this.getPaymentDue()) == false)
+            return false;
+        if (other.getReservedInstanceValueRollup() == null ^ this.getReservedInstanceValueRollup() == null)
+            return false;
+        if (other.getReservedInstanceValueRollup() != null && other.getReservedInstanceValueRollup().equals(this.getReservedInstanceValueRollup()) == false)
+            return false;
+        if (other.getReservedInstanceValueSet() == null ^ this.getReservedInstanceValueSet() == null)
+            return false;
+        if (other.getReservedInstanceValueSet() != null && other.getReservedInstanceValueSet().equals(this.getReservedInstanceValueSet()) == false)
+            return false;
+        if (other.getTargetConfigurationValueRollup() == null ^ this.getTargetConfigurationValueRollup() == null)
+            return false;
+        if (other.getTargetConfigurationValueRollup() != null
+                && other.getTargetConfigurationValueRollup().equals(this.getTargetConfigurationValueRollup()) == false)
+            return false;
+        if (other.getTargetConfigurationValueSet() == null ^ this.getTargetConfigurationValueSet() == null)
+            return false;
+        if (other.getTargetConfigurationValueSet() != null && other.getTargetConfigurationValueSet().equals(this.getTargetConfigurationValueSet()) == false)
             return false;
         if (other.getValidationFailureReason() == null ^ this.getValidationFailureReason() == null)
             return false;
@@ -608,14 +608,14 @@ public class GetReservedInstancesExchangeQuoteResult extends com.amazonaws.Amazo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getReservedInstanceValueSet() == null) ? 0 : getReservedInstanceValueSet().hashCode());
-        hashCode = prime * hashCode + ((getReservedInstanceValueRollup() == null) ? 0 : getReservedInstanceValueRollup().hashCode());
-        hashCode = prime * hashCode + ((getTargetConfigurationValueSet() == null) ? 0 : getTargetConfigurationValueSet().hashCode());
-        hashCode = prime * hashCode + ((getTargetConfigurationValueRollup() == null) ? 0 : getTargetConfigurationValueRollup().hashCode());
-        hashCode = prime * hashCode + ((getPaymentDue() == null) ? 0 : getPaymentDue().hashCode());
         hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
-        hashCode = prime * hashCode + ((getOutputReservedInstancesWillExpireAt() == null) ? 0 : getOutputReservedInstancesWillExpireAt().hashCode());
         hashCode = prime * hashCode + ((getIsValidExchange() == null) ? 0 : getIsValidExchange().hashCode());
+        hashCode = prime * hashCode + ((getOutputReservedInstancesWillExpireAt() == null) ? 0 : getOutputReservedInstancesWillExpireAt().hashCode());
+        hashCode = prime * hashCode + ((getPaymentDue() == null) ? 0 : getPaymentDue().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstanceValueRollup() == null) ? 0 : getReservedInstanceValueRollup().hashCode());
+        hashCode = prime * hashCode + ((getReservedInstanceValueSet() == null) ? 0 : getReservedInstanceValueSet().hashCode());
+        hashCode = prime * hashCode + ((getTargetConfigurationValueRollup() == null) ? 0 : getTargetConfigurationValueRollup().hashCode());
+        hashCode = prime * hashCode + ((getTargetConfigurationValueSet() == null) ? 0 : getTargetConfigurationValueSet().hashCode());
         hashCode = prime * hashCode + ((getValidationFailureReason() == null) ? 0 : getValidationFailureReason().hashCode());
         return hashCode;
     }

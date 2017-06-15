@@ -20,9 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RecordStatus {
 
+    CREATED("CREATED"),
     IN_PROGRESS("IN_PROGRESS"),
+    IN_PROGRESS_IN_ERROR("IN_PROGRESS_IN_ERROR"),
     SUCCEEDED("SUCCEEDED"),
-    ERROR("ERROR");
+    FAILED("FAILED");
 
     private String value;
 

@@ -40,8 +40,8 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createSubnetRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(createSubnetRequest.getVpcId()));
+        if (createSubnetRequest.getAvailabilityZone() != null) {
+            request.addParameter("AvailabilityZone", StringUtils.fromString(createSubnetRequest.getAvailabilityZone()));
         }
 
         if (createSubnetRequest.getCidrBlock() != null) {
@@ -52,8 +52,8 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
             request.addParameter("Ipv6CidrBlock", StringUtils.fromString(createSubnetRequest.getIpv6CidrBlock()));
         }
 
-        if (createSubnetRequest.getAvailabilityZone() != null) {
-            request.addParameter("AvailabilityZone", StringUtils.fromString(createSubnetRequest.getAvailabilityZone()));
+        if (createSubnetRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createSubnetRequest.getVpcId()));
         }
 
         return request;

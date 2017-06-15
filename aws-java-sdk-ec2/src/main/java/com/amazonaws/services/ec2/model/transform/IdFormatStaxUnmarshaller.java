@@ -43,6 +43,11 @@ public class IdFormatStaxUnmarshaller implements Unmarshaller<IdFormat, StaxUnma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("deadline", targetDepth)) {
+                    idFormat.setDeadline(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("resource", targetDepth)) {
                     idFormat.setResource(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class IdFormatStaxUnmarshaller implements Unmarshaller<IdFormat, StaxUnma
 
                 if (context.testExpression("useLongIds", targetDepth)) {
                     idFormat.setUseLongIds(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("deadline", targetDepth)) {
-                    idFormat.setDeadline(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

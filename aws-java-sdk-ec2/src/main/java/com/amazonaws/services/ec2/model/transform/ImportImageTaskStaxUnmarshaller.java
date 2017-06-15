@@ -45,13 +45,28 @@ public class ImportImageTaskStaxUnmarshaller implements Unmarshaller<ImportImage
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("importTaskId", targetDepth)) {
-                    importImageTask.setImportTaskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("architecture", targetDepth)) {
+                    importImageTask.setArchitecture(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("architecture", targetDepth)) {
-                    importImageTask.setArchitecture(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("description", targetDepth)) {
+                    importImageTask.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hypervisor", targetDepth)) {
+                    importImageTask.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("imageId", targetDepth)) {
+                    importImageTask.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("importTaskId", targetDepth)) {
+                    importImageTask.setImportTaskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -65,13 +80,8 @@ public class ImportImageTaskStaxUnmarshaller implements Unmarshaller<ImportImage
                     continue;
                 }
 
-                if (context.testExpression("hypervisor", targetDepth)) {
-                    importImageTask.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("description", targetDepth)) {
-                    importImageTask.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("progress", targetDepth)) {
+                    importImageTask.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -85,23 +95,13 @@ public class ImportImageTaskStaxUnmarshaller implements Unmarshaller<ImportImage
                     continue;
                 }
 
-                if (context.testExpression("imageId", targetDepth)) {
-                    importImageTask.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("progress", targetDepth)) {
-                    importImageTask.setProgress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("status", targetDepth)) {
+                    importImageTask.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("statusMessage", targetDepth)) {
                     importImageTask.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("status", targetDepth)) {
-                    importImageTask.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

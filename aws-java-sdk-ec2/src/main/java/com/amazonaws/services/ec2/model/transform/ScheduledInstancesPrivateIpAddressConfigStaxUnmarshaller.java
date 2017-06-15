@@ -44,13 +44,13 @@ public class ScheduledInstancesPrivateIpAddressConfigStaxUnmarshaller implements
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("PrivateIpAddress", targetDepth)) {
-                    scheduledInstancesPrivateIpAddressConfig.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Primary", targetDepth)) {
+                    scheduledInstancesPrivateIpAddressConfig.setPrimary(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("Primary", targetDepth)) {
-                    scheduledInstancesPrivateIpAddressConfig.setPrimary(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("PrivateIpAddress", targetDepth)) {
+                    scheduledInstancesPrivateIpAddressConfig.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

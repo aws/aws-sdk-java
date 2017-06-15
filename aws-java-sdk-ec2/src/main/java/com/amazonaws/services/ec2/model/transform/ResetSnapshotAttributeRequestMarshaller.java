@@ -40,12 +40,12 @@ public class ResetSnapshotAttributeRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (resetSnapshotAttributeRequest.getSnapshotId() != null) {
-            request.addParameter("SnapshotId", StringUtils.fromString(resetSnapshotAttributeRequest.getSnapshotId()));
-        }
-
         if (resetSnapshotAttributeRequest.getAttribute() != null) {
             request.addParameter("Attribute", StringUtils.fromString(resetSnapshotAttributeRequest.getAttribute()));
+        }
+
+        if (resetSnapshotAttributeRequest.getSnapshotId() != null) {
+            request.addParameter("SnapshotId", StringUtils.fromString(resetSnapshotAttributeRequest.getSnapshotId()));
         }
 
         return request;

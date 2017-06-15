@@ -30,56 +30,16 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID of the volume.
-     * </p>
-     */
-    private String volumeId;
-    /**
-     * <p>
      * The attribute of the volume. This parameter is required.
      * </p>
      */
     private String attribute;
-
     /**
      * <p>
      * The ID of the volume.
      * </p>
-     * 
-     * @param volumeId
-     *        The ID of the volume.
      */
-
-    public void setVolumeId(String volumeId) {
-        this.volumeId = volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the volume.
-     * </p>
-     * 
-     * @return The ID of the volume.
-     */
-
-    public String getVolumeId() {
-        return this.volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the volume.
-     * </p>
-     * 
-     * @param volumeId
-     *        The ID of the volume.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeVolumeAttributeRequest withVolumeId(String volumeId) {
-        setVolumeId(volumeId);
-        return this;
-    }
+    private String volumeId;
 
     /**
      * <p>
@@ -155,6 +115,46 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     */
+
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @return The ID of the volume.
+     */
+
+    public String getVolumeId() {
+        return this.volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeVolumeAttributeRequest withVolumeId(String volumeId) {
+        setVolumeId(volumeId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -176,10 +176,10 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null)
-            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: ").append(getAttribute());
+            sb.append("Attribute: ").append(getAttribute()).append(",");
+        if (getVolumeId() != null)
+            sb.append("VolumeId: ").append(getVolumeId());
         sb.append("}");
         return sb.toString();
     }
@@ -194,13 +194,13 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
         if (obj instanceof DescribeVolumeAttributeRequest == false)
             return false;
         DescribeVolumeAttributeRequest other = (DescribeVolumeAttributeRequest) obj;
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
-            return false;
-        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
-            return false;
         if (other.getAttribute() == null ^ this.getAttribute() == null)
             return false;
         if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+            return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         return true;
     }
@@ -210,8 +210,8 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         return hashCode;
     }
 

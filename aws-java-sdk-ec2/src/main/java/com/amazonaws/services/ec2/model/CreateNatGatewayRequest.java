@@ -29,12 +29,6 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The subnet in which to create the NAT gateway.
-     * </p>
-     */
-    private String subnetId;
-    /**
-     * <p>
      * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
      * associated with another resource, you must first disassociate it.
      * </p>
@@ -51,46 +45,12 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * </p>
      */
     private String clientToken;
-
     /**
      * <p>
      * The subnet in which to create the NAT gateway.
      * </p>
-     * 
-     * @param subnetId
-     *        The subnet in which to create the NAT gateway.
      */
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    /**
-     * <p>
-     * The subnet in which to create the NAT gateway.
-     * </p>
-     * 
-     * @return The subnet in which to create the NAT gateway.
-     */
-
-    public String getSubnetId() {
-        return this.subnetId;
-    }
-
-    /**
-     * <p>
-     * The subnet in which to create the NAT gateway.
-     * </p>
-     * 
-     * @param subnetId
-     *        The subnet in which to create the NAT gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateNatGatewayRequest withSubnetId(String subnetId) {
-        setSubnetId(subnetId);
-        return this;
-    }
+    private String subnetId;
 
     /**
      * <p>
@@ -209,6 +169,46 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * <p>
+     * The subnet in which to create the NAT gateway.
+     * </p>
+     * 
+     * @param subnetId
+     *        The subnet in which to create the NAT gateway.
+     */
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    /**
+     * <p>
+     * The subnet in which to create the NAT gateway.
+     * </p>
+     * 
+     * @return The subnet in which to create the NAT gateway.
+     */
+
+    public String getSubnetId() {
+        return this.subnetId;
+    }
+
+    /**
+     * <p>
+     * The subnet in which to create the NAT gateway.
+     * </p>
+     * 
+     * @param subnetId
+     *        The subnet in which to create the NAT gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNatGatewayRequest withSubnetId(String subnetId) {
+        setSubnetId(subnetId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -230,12 +230,12 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getAllocationId() != null)
             sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getSubnetId() != null)
+            sb.append("SubnetId: ").append(getSubnetId());
         sb.append("}");
         return sb.toString();
     }
@@ -250,10 +250,6 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof CreateNatGatewayRequest == false)
             return false;
         CreateNatGatewayRequest other = (CreateNatGatewayRequest) obj;
-        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
-            return false;
-        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
-            return false;
         if (other.getAllocationId() == null ^ this.getAllocationId() == null)
             return false;
         if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
@@ -261,6 +257,10 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+            return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         return true;
     }
@@ -270,9 +270,9 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         return hashCode;
     }
 

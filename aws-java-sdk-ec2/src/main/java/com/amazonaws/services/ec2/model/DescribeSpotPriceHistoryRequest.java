@@ -30,32 +30,6 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format
-     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     */
-    private java.util.Date startTime;
-    /**
-     * <p>
-     * The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format
-     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     */
-    private java.util.Date endTime;
-    /**
-     * <p>
-     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> instanceTypes;
-    /**
-     * <p>
-     * Filters the results by the specified basic product descriptions.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> productDescriptions;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -100,6 +74,19 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
     private String availabilityZone;
     /**
      * <p>
+     * The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format
+     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     */
+    private java.util.Date endTime;
+    /**
+     * <p>
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> instanceTypes;
+    /**
+     * <p>
      * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
      * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
@@ -111,277 +98,19 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * </p>
      */
     private String nextToken;
-
+    /**
+     * <p>
+     * Filters the results by the specified basic product descriptions.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> productDescriptions;
     /**
      * <p>
      * The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format
      * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
-     * 
-     * @param startTime
-     *        The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC
-     *        format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      */
-
-    public void setStartTime(java.util.Date startTime) {
-        this.startTime = startTime;
-    }
-
-    /**
-     * <p>
-     * The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format
-     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     * 
-     * @return The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC
-     *         format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     */
-
-    public java.util.Date getStartTime() {
-        return this.startTime;
-    }
-
-    /**
-     * <p>
-     * The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format
-     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     * 
-     * @param startTime
-     *        The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC
-     *        format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotPriceHistoryRequest withStartTime(java.util.Date startTime) {
-        setStartTime(startTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format
-     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     * 
-     * @param endTime
-     *        The date and time, up to the current date, from which to stop retrieving the price history data, in UTC
-     *        format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     */
-
-    public void setEndTime(java.util.Date endTime) {
-        this.endTime = endTime;
-    }
-
-    /**
-     * <p>
-     * The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format
-     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     * 
-     * @return The date and time, up to the current date, from which to stop retrieving the price history data, in UTC
-     *         format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     */
-
-    public java.util.Date getEndTime() {
-        return this.endTime;
-    }
-
-    /**
-     * <p>
-     * The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format
-     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * </p>
-     * 
-     * @param endTime
-     *        The date and time, up to the current date, from which to stop retrieving the price history data, in UTC
-     *        format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotPriceHistoryRequest withEndTime(java.util.Date endTime) {
-        setEndTime(endTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     * 
-     * @return Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
-     *         supported.
-     * @see InstanceType
-     */
-
-    public java.util.List<String> getInstanceTypes() {
-        if (instanceTypes == null) {
-            instanceTypes = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return instanceTypes;
-    }
-
-    /**
-     * <p>
-     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     * 
-     * @param instanceTypes
-     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
-     *        supported.
-     * @see InstanceType
-     */
-
-    public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
-        if (instanceTypes == null) {
-            this.instanceTypes = null;
-            return;
-        }
-
-        this.instanceTypes = new com.amazonaws.internal.SdkInternalList<String>(instanceTypes);
-    }
-
-    /**
-     * <p>
-     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setInstanceTypes(java.util.Collection)} or {@link #withInstanceTypes(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param instanceTypes
-     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
-     *        supported.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceType
-     */
-
-    public DescribeSpotPriceHistoryRequest withInstanceTypes(String... instanceTypes) {
-        if (this.instanceTypes == null) {
-            setInstanceTypes(new com.amazonaws.internal.SdkInternalList<String>(instanceTypes.length));
-        }
-        for (String ele : instanceTypes) {
-            this.instanceTypes.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     * 
-     * @param instanceTypes
-     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
-     *        supported.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceType
-     */
-
-    public DescribeSpotPriceHistoryRequest withInstanceTypes(java.util.Collection<String> instanceTypes) {
-        setInstanceTypes(instanceTypes);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
-     * </p>
-     * 
-     * @param instanceTypes
-     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
-     *        supported.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see InstanceType
-     */
-
-    public DescribeSpotPriceHistoryRequest withInstanceTypes(InstanceType... instanceTypes) {
-        com.amazonaws.internal.SdkInternalList<String> instanceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(instanceTypes.length);
-        for (InstanceType value : instanceTypes) {
-            instanceTypesCopy.add(value.toString());
-        }
-        if (getInstanceTypes() == null) {
-            setInstanceTypes(instanceTypesCopy);
-        } else {
-            getInstanceTypes().addAll(instanceTypesCopy);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Filters the results by the specified basic product descriptions.
-     * </p>
-     * 
-     * @return Filters the results by the specified basic product descriptions.
-     */
-
-    public java.util.List<String> getProductDescriptions() {
-        if (productDescriptions == null) {
-            productDescriptions = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return productDescriptions;
-    }
-
-    /**
-     * <p>
-     * Filters the results by the specified basic product descriptions.
-     * </p>
-     * 
-     * @param productDescriptions
-     *        Filters the results by the specified basic product descriptions.
-     */
-
-    public void setProductDescriptions(java.util.Collection<String> productDescriptions) {
-        if (productDescriptions == null) {
-            this.productDescriptions = null;
-            return;
-        }
-
-        this.productDescriptions = new com.amazonaws.internal.SdkInternalList<String>(productDescriptions);
-    }
-
-    /**
-     * <p>
-     * Filters the results by the specified basic product descriptions.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setProductDescriptions(java.util.Collection)} or {@link #withProductDescriptions(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param productDescriptions
-     *        Filters the results by the specified basic product descriptions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotPriceHistoryRequest withProductDescriptions(String... productDescriptions) {
-        if (this.productDescriptions == null) {
-            setProductDescriptions(new com.amazonaws.internal.SdkInternalList<String>(productDescriptions.length));
-        }
-        for (String ele : productDescriptions) {
-            this.productDescriptions.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Filters the results by the specified basic product descriptions.
-     * </p>
-     * 
-     * @param productDescriptions
-     *        Filters the results by the specified basic product descriptions.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSpotPriceHistoryRequest withProductDescriptions(java.util.Collection<String> productDescriptions) {
-        setProductDescriptions(productDescriptions);
-        return this;
-    }
+    private java.util.Date startTime;
 
     /**
      * <p>
@@ -750,6 +479,158 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format
+     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @param endTime
+     *        The date and time, up to the current date, from which to stop retrieving the price history data, in UTC
+     *        format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     */
+
+    public void setEndTime(java.util.Date endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format
+     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @return The date and time, up to the current date, from which to stop retrieving the price history data, in UTC
+     *         format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     */
+
+    public java.util.Date getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, up to the current date, from which to stop retrieving the price history data, in UTC format
+     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @param endTime
+     *        The date and time, up to the current date, from which to stop retrieving the price history data, in UTC
+     *        format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotPriceHistoryRequest withEndTime(java.util.Date endTime) {
+        setEndTime(endTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
+     * </p>
+     * 
+     * @return Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *         supported.
+     * @see InstanceType
+     */
+
+    public java.util.List<String> getInstanceTypes() {
+        if (instanceTypes == null) {
+            instanceTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return instanceTypes;
+    }
+
+    /**
+     * <p>
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *        supported.
+     * @see InstanceType
+     */
+
+    public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
+        if (instanceTypes == null) {
+            this.instanceTypes = null;
+            return;
+        }
+
+        this.instanceTypes = new com.amazonaws.internal.SdkInternalList<String>(instanceTypes);
+    }
+
+    /**
+     * <p>
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceTypes(java.util.Collection)} or {@link #withInstanceTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public DescribeSpotPriceHistoryRequest withInstanceTypes(String... instanceTypes) {
+        if (this.instanceTypes == null) {
+            setInstanceTypes(new com.amazonaws.internal.SdkInternalList<String>(instanceTypes.length));
+        }
+        for (String ele : instanceTypes) {
+            this.instanceTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public DescribeSpotPriceHistoryRequest withInstanceTypes(java.util.Collection<String> instanceTypes) {
+        setInstanceTypes(instanceTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the results by the specified instance types. Note that T2 and HS1 instance types are not supported.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        Filters the results by the specified instance types. Note that T2 and HS1 instance types are not
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceType
+     */
+
+    public DescribeSpotPriceHistoryRequest withInstanceTypes(InstanceType... instanceTypes) {
+        com.amazonaws.internal.SdkInternalList<String> instanceTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(instanceTypes.length);
+        for (InstanceType value : instanceTypes) {
+            instanceTypesCopy.add(value.toString());
+        }
+        if (getInstanceTypes() == null) {
+            setInstanceTypes(instanceTypesCopy);
+        } else {
+            getInstanceTypes().addAll(instanceTypesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value
      * is 1000. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
      * </p>
@@ -838,6 +719,125 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Filters the results by the specified basic product descriptions.
+     * </p>
+     * 
+     * @return Filters the results by the specified basic product descriptions.
+     */
+
+    public java.util.List<String> getProductDescriptions() {
+        if (productDescriptions == null) {
+            productDescriptions = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return productDescriptions;
+    }
+
+    /**
+     * <p>
+     * Filters the results by the specified basic product descriptions.
+     * </p>
+     * 
+     * @param productDescriptions
+     *        Filters the results by the specified basic product descriptions.
+     */
+
+    public void setProductDescriptions(java.util.Collection<String> productDescriptions) {
+        if (productDescriptions == null) {
+            this.productDescriptions = null;
+            return;
+        }
+
+        this.productDescriptions = new com.amazonaws.internal.SdkInternalList<String>(productDescriptions);
+    }
+
+    /**
+     * <p>
+     * Filters the results by the specified basic product descriptions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProductDescriptions(java.util.Collection)} or {@link #withProductDescriptions(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param productDescriptions
+     *        Filters the results by the specified basic product descriptions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotPriceHistoryRequest withProductDescriptions(String... productDescriptions) {
+        if (this.productDescriptions == null) {
+            setProductDescriptions(new com.amazonaws.internal.SdkInternalList<String>(productDescriptions.length));
+        }
+        for (String ele : productDescriptions) {
+            this.productDescriptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the results by the specified basic product descriptions.
+     * </p>
+     * 
+     * @param productDescriptions
+     *        Filters the results by the specified basic product descriptions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotPriceHistoryRequest withProductDescriptions(java.util.Collection<String> productDescriptions) {
+        setProductDescriptions(productDescriptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format
+     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @param startTime
+     *        The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC
+     *        format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format
+     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @return The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC
+     *         format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC format
+     * (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * </p>
+     * 
+     * @param startTime
+     *        The date and time, up to the past 90 days, from which to start retrieving the price history data, in UTC
+     *        format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSpotPriceHistoryRequest withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -859,22 +859,22 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStartTime() != null)
-            sb.append("StartTime: ").append(getStartTime()).append(",");
-        if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime()).append(",");
-        if (getInstanceTypes() != null)
-            sb.append("InstanceTypes: ").append(getInstanceTypes()).append(",");
-        if (getProductDescriptions() != null)
-            sb.append("ProductDescriptions: ").append(getProductDescriptions()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getEndTime() != null)
+            sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getInstanceTypes() != null)
+            sb.append("InstanceTypes: ").append(getInstanceTypes()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getProductDescriptions() != null)
+            sb.append("ProductDescriptions: ").append(getProductDescriptions()).append(",");
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime());
         sb.append("}");
         return sb.toString();
     }
@@ -889,9 +889,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         if (obj instanceof DescribeSpotPriceHistoryRequest == false)
             return false;
         DescribeSpotPriceHistoryRequest other = (DescribeSpotPriceHistoryRequest) obj;
-        if (other.getStartTime() == null ^ this.getStartTime() == null)
+        if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
+            return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
@@ -901,18 +905,6 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
             return false;
         if (other.getInstanceTypes() != null && other.getInstanceTypes().equals(this.getInstanceTypes()) == false)
             return false;
-        if (other.getProductDescriptions() == null ^ this.getProductDescriptions() == null)
-            return false;
-        if (other.getProductDescriptions() != null && other.getProductDescriptions().equals(this.getProductDescriptions()) == false)
-            return false;
-        if (other.getFilters() == null ^ this.getFilters() == null)
-            return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
-            return false;
-        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
-            return false;
-        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -920,6 +912,14 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getProductDescriptions() == null ^ this.getProductDescriptions() == null)
+            return false;
+        if (other.getProductDescriptions() != null && other.getProductDescriptions().equals(this.getProductDescriptions()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         return true;
     }
@@ -929,14 +929,14 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
-        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
-        hashCode = prime * hashCode + ((getInstanceTypes() == null) ? 0 : getInstanceTypes().hashCode());
-        hashCode = prime * hashCode + ((getProductDescriptions() == null) ? 0 : getProductDescriptions().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getInstanceTypes() == null) ? 0 : getInstanceTypes().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getProductDescriptions() == null) ? 0 : getProductDescriptions().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         return hashCode;
     }
 

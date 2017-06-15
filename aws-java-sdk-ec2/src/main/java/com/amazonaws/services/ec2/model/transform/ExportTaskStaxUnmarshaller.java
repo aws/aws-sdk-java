@@ -43,13 +43,23 @@ public class ExportTaskStaxUnmarshaller implements Unmarshaller<ExportTask, Stax
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("description", targetDepth)) {
+                    exportTask.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("exportTaskId", targetDepth)) {
                     exportTask.setExportTaskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("description", targetDepth)) {
-                    exportTask.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("exportToS3", targetDepth)) {
+                    exportTask.setExportToS3Task(ExportToS3TaskStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("instanceExport", targetDepth)) {
+                    exportTask.setInstanceExportDetails(InstanceExportDetailsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -60,16 +70,6 @@ public class ExportTaskStaxUnmarshaller implements Unmarshaller<ExportTask, Stax
 
                 if (context.testExpression("statusMessage", targetDepth)) {
                     exportTask.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("instanceExport", targetDepth)) {
-                    exportTask.setInstanceExportDetails(InstanceExportDetailsStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("exportToS3", targetDepth)) {
-                    exportTask.setExportToS3Task(ExportToS3TaskStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

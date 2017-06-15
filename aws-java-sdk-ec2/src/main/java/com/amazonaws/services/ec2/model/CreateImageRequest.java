@@ -29,6 +29,18 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
+     * Information about one or more block device mappings.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
+    /**
+     * <p>
+     * A description for the new image.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The ID of the instance.
      * </p>
      */
@@ -45,24 +57,12 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     private String name;
     /**
      * <p>
-     * A description for the new image.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the 'No
      * Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this option is
      * used, file system integrity on the created image can't be guaranteed.
      * </p>
      */
     private Boolean noReboot;
-    /**
-     * <p>
-     * Information about one or more block device mappings.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
 
     /**
      * Default constructor for CreateImageRequest object. Callers should use the setter or fluent setter (with...)
@@ -86,6 +86,119 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     public CreateImageRequest(String instanceId, String name) {
         setInstanceId(instanceId);
         setName(name);
+    }
+
+    /**
+     * <p>
+     * Information about one or more block device mappings.
+     * </p>
+     * 
+     * @return Information about one or more block device mappings.
+     */
+
+    public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        if (blockDeviceMappings == null) {
+            blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
+        }
+        return blockDeviceMappings;
+    }
+
+    /**
+     * <p>
+     * Information about one or more block device mappings.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        Information about one or more block device mappings.
+     */
+
+    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+            return;
+        }
+
+        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
+    }
+
+    /**
+     * <p>
+     * Information about one or more block device mappings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        Information about one or more block device mappings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (this.blockDeviceMappings == null) {
+            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
+        }
+        for (BlockDeviceMapping ele : blockDeviceMappings) {
+            this.blockDeviceMappings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about one or more block device mappings.
+     * </p>
+     * 
+     * @param blockDeviceMappings
+     *        Information about one or more block device mappings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
+        setBlockDeviceMappings(blockDeviceMappings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description for the new image.
+     * </p>
+     * 
+     * @param description
+     *        A description for the new image.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the new image.
+     * </p>
+     * 
+     * @return A description for the new image.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the new image.
+     * </p>
+     * 
+     * @param description
+     *        A description for the new image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withDescription(String description) {
+        setDescription(description);
+        return this;
     }
 
     /**
@@ -191,46 +304,6 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * A description for the new image.
-     * </p>
-     * 
-     * @param description
-     *        A description for the new image.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description for the new image.
-     * </p>
-     * 
-     * @return A description for the new image.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description for the new image.
-     * </p>
-     * 
-     * @param description
-     *        A description for the new image.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateImageRequest withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
      * By default, Amazon EC2 attempts to shut down and reboot the instance before creating the image. If the 'No
      * Reboot' option is set, Amazon EC2 doesn't shut down the instance before creating the image. When this option is
      * used, file system integrity on the created image can't be guaranteed.
@@ -298,79 +371,6 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
-     * <p>
-     * Information about one or more block device mappings.
-     * </p>
-     * 
-     * @return Information about one or more block device mappings.
-     */
-
-    public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        if (blockDeviceMappings == null) {
-            blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>();
-        }
-        return blockDeviceMappings;
-    }
-
-    /**
-     * <p>
-     * Information about one or more block device mappings.
-     * </p>
-     * 
-     * @param blockDeviceMappings
-     *        Information about one or more block device mappings.
-     */
-
-    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        if (blockDeviceMappings == null) {
-            this.blockDeviceMappings = null;
-            return;
-        }
-
-        this.blockDeviceMappings = new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings);
-    }
-
-    /**
-     * <p>
-     * Information about one or more block device mappings.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setBlockDeviceMappings(java.util.Collection)} or {@link #withBlockDeviceMappings(java.util.Collection)}
-     * if you want to override the existing values.
-     * </p>
-     * 
-     * @param blockDeviceMappings
-     *        Information about one or more block device mappings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateImageRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
-        if (this.blockDeviceMappings == null) {
-            setBlockDeviceMappings(new com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>(blockDeviceMappings.length));
-        }
-        for (BlockDeviceMapping ele : blockDeviceMappings) {
-            this.blockDeviceMappings.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Information about one or more block device mappings.
-     * </p>
-     * 
-     * @param blockDeviceMappings
-     *        Information about one or more block device mappings.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateImageRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        setBlockDeviceMappings(blockDeviceMappings);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -392,16 +392,16 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getBlockDeviceMappings() != null)
+            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getNoReboot() != null)
-            sb.append("NoReboot: ").append(getNoReboot()).append(",");
-        if (getBlockDeviceMappings() != null)
-            sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings());
+            sb.append("NoReboot: ").append(getNoReboot());
         sb.append("}");
         return sb.toString();
     }
@@ -416,6 +416,14 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
         if (obj instanceof CreateImageRequest == false)
             return false;
         CreateImageRequest other = (CreateImageRequest) obj;
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
+            return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
@@ -424,17 +432,9 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getNoReboot() == null ^ this.getNoReboot() == null)
             return false;
         if (other.getNoReboot() != null && other.getNoReboot().equals(this.getNoReboot()) == false)
-            return false;
-        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null)
-            return false;
-        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false)
             return false;
         return true;
     }
@@ -444,11 +444,11 @@ public class CreateImageRequest extends AmazonWebServiceRequest implements Seria
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getNoReboot() == null) ? 0 : getNoReboot().hashCode());
-        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         return hashCode;
     }
 

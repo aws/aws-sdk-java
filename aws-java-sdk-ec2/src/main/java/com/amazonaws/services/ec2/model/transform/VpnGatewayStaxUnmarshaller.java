@@ -45,8 +45,8 @@ public class VpnGatewayStaxUnmarshaller implements Unmarshaller<VpnGateway, Stax
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("vpnGatewayId", targetDepth)) {
-                    vpnGateway.setVpnGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("availabilityZone", targetDepth)) {
+                    vpnGateway.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -60,11 +60,6 @@ public class VpnGatewayStaxUnmarshaller implements Unmarshaller<VpnGateway, Stax
                     continue;
                 }
 
-                if (context.testExpression("availabilityZone", targetDepth)) {
-                    vpnGateway.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("attachments", targetDepth)) {
                     vpnGateway.withVpcAttachments(new ArrayList<VpcAttachment>());
                     continue;
@@ -72,6 +67,11 @@ public class VpnGatewayStaxUnmarshaller implements Unmarshaller<VpnGateway, Stax
 
                 if (context.testExpression("attachments/item", targetDepth)) {
                     vpnGateway.withVpcAttachments(VpcAttachmentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("vpnGatewayId", targetDepth)) {
+                    vpnGateway.setVpnGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

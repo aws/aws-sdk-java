@@ -42,16 +42,20 @@ public class ModifyNetworkInterfaceAttributeRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (modifyNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {
-            request.addParameter("NetworkInterfaceId", StringUtils.fromString(modifyNetworkInterfaceAttributeRequest.getNetworkInterfaceId()));
+        NetworkInterfaceAttachmentChanges attachment = modifyNetworkInterfaceAttributeRequest.getAttachment();
+        if (attachment != null) {
+
+            if (attachment.getAttachmentId() != null) {
+                request.addParameter("Attachment.AttachmentId", StringUtils.fromString(attachment.getAttachmentId()));
+            }
+
+            if (attachment.getDeleteOnTermination() != null) {
+                request.addParameter("Attachment.DeleteOnTermination", StringUtils.fromBoolean(attachment.getDeleteOnTermination()));
+            }
         }
 
         if (modifyNetworkInterfaceAttributeRequest.getDescription() != null) {
             request.addParameter("Description.Value", StringUtils.fromString(modifyNetworkInterfaceAttributeRequest.getDescription()));
-        }
-
-        if (modifyNetworkInterfaceAttributeRequest.getSourceDestCheck() != null) {
-            request.addParameter("SourceDestCheck.Value", StringUtils.fromBoolean(modifyNetworkInterfaceAttributeRequest.getSourceDestCheck()));
         }
 
         com.amazonaws.internal.SdkInternalList<String> modifyNetworkInterfaceAttributeRequestGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyNetworkInterfaceAttributeRequest
@@ -67,16 +71,12 @@ public class ModifyNetworkInterfaceAttributeRequestMarshaller implements
             }
         }
 
-        NetworkInterfaceAttachmentChanges attachment = modifyNetworkInterfaceAttributeRequest.getAttachment();
-        if (attachment != null) {
+        if (modifyNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {
+            request.addParameter("NetworkInterfaceId", StringUtils.fromString(modifyNetworkInterfaceAttributeRequest.getNetworkInterfaceId()));
+        }
 
-            if (attachment.getAttachmentId() != null) {
-                request.addParameter("Attachment.AttachmentId", StringUtils.fromString(attachment.getAttachmentId()));
-            }
-
-            if (attachment.getDeleteOnTermination() != null) {
-                request.addParameter("Attachment.DeleteOnTermination", StringUtils.fromBoolean(attachment.getDeleteOnTermination()));
-            }
+        if (modifyNetworkInterfaceAttributeRequest.getSourceDestCheck() != null) {
+            request.addParameter("SourceDestCheck.Value", StringUtils.fromBoolean(modifyNetworkInterfaceAttributeRequest.getSourceDestCheck()));
         }
 
         return request;

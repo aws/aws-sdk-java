@@ -48,13 +48,17 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * range for your container instance operating system and Docker version.
      * </p>
      * <p>
-     * The default ephemeral port range is 49153 to 65535, and this range is used for Docker versions prior to 1.6.0.
-     * For Docker version 1.6.0 and later, the Docker daemon tries to read the ephemeral port range from
+     * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     * ephemeral port range is used. You should not attempt to specify a host port in the ephemeral port range, because
-     * these are reserved for automatic assignment. In general, ports below 32768 are outside of the ephemeral port
-     * range.
+     * ephemeral port range of 49153 to 65535 is used. You should not attempt to specify a host port in the ephemeral
+     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
+     * ephemeral port range.
      * </p>
+     * <note>
+     * <p>
+     * The default ephemeral port range of 49153 to 65535 will always be used for Docker versions prior to 1.6.0.
+     * </p>
+     * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
      * ports 51678 and 51679. Any host port that was previously specified in a running task is also reserved while the
@@ -142,13 +146,17 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * range for your container instance operating system and Docker version.
      * </p>
      * <p>
-     * The default ephemeral port range is 49153 to 65535, and this range is used for Docker versions prior to 1.6.0.
-     * For Docker version 1.6.0 and later, the Docker daemon tries to read the ephemeral port range from
+     * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     * ephemeral port range is used. You should not attempt to specify a host port in the ephemeral port range, because
-     * these are reserved for automatic assignment. In general, ports below 32768 are outside of the ephemeral port
-     * range.
+     * ephemeral port range of 49153 to 65535 is used. You should not attempt to specify a host port in the ephemeral
+     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
+     * ephemeral port range.
      * </p>
+     * <note>
+     * <p>
+     * The default ephemeral port range of 49153 to 65535 will always be used for Docker versions prior to 1.6.0.
+     * </p>
+     * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
      * ports 51678 and 51679. Any host port that was previously specified in a running task is also reserved while the
@@ -164,13 +172,17 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a
      *        port in the ephemeral port range for your container instance operating system and Docker version.</p>
      *        <p>
-     *        The default ephemeral port range is 49153 to 65535, and this range is used for Docker versions prior to
-     *        1.6.0. For Docker version 1.6.0 and later, the Docker daemon tries to read the ephemeral port range from
+     *        The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      *        <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     *        ephemeral port range is used. You should not attempt to specify a host port in the ephemeral port range,
-     *        because these are reserved for automatic assignment. In general, ports below 32768 are outside of the
-     *        ephemeral port range.
+     *        ephemeral port range of 49153 to 65535 is used. You should not attempt to specify a host port in the
+     *        ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
+     *        outside of the ephemeral port range.
      *        </p>
+     *        <note>
+     *        <p>
+     *        The default ephemeral port range of 49153 to 65535 will always be used for Docker versions prior to 1.6.0.
+     *        </p>
+     *        </note>
      *        <p>
      *        The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
      *        agent ports 51678 and 51679. Any host port that was previously specified in a running task is also
@@ -192,13 +204,17 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * range for your container instance operating system and Docker version.
      * </p>
      * <p>
-     * The default ephemeral port range is 49153 to 65535, and this range is used for Docker versions prior to 1.6.0.
-     * For Docker version 1.6.0 and later, the Docker daemon tries to read the ephemeral port range from
+     * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     * ephemeral port range is used. You should not attempt to specify a host port in the ephemeral port range, because
-     * these are reserved for automatic assignment. In general, ports below 32768 are outside of the ephemeral port
-     * range.
+     * ephemeral port range of 49153 to 65535 is used. You should not attempt to specify a host port in the ephemeral
+     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
+     * ephemeral port range.
      * </p>
+     * <note>
+     * <p>
+     * The default ephemeral port range of 49153 to 65535 will always be used for Docker versions prior to 1.6.0.
+     * </p>
+     * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
      * ports 51678 and 51679. Any host port that was previously specified in a running task is also reserved while the
@@ -213,13 +229,18 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *         <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a
      *         port in the ephemeral port range for your container instance operating system and Docker version.</p>
      *         <p>
-     *         The default ephemeral port range is 49153 to 65535, and this range is used for Docker versions prior to
-     *         1.6.0. For Docker version 1.6.0 and later, the Docker daemon tries to read the ephemeral port range from
+     *         The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      *         <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     *         ephemeral port range is used. You should not attempt to specify a host port in the ephemeral port range,
-     *         because these are reserved for automatic assignment. In general, ports below 32768 are outside of the
-     *         ephemeral port range.
+     *         ephemeral port range of 49153 to 65535 is used. You should not attempt to specify a host port in the
+     *         ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
+     *         outside of the ephemeral port range.
      *         </p>
+     *         <note>
+     *         <p>
+     *         The default ephemeral port range of 49153 to 65535 will always be used for Docker versions prior to
+     *         1.6.0.
+     *         </p>
+     *         </note>
      *         <p>
      *         The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
      *         agent ports 51678 and 51679. Any host port that was previously specified in a running task is also
@@ -241,13 +262,17 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * range for your container instance operating system and Docker version.
      * </p>
      * <p>
-     * The default ephemeral port range is 49153 to 65535, and this range is used for Docker versions prior to 1.6.0.
-     * For Docker version 1.6.0 and later, the Docker daemon tries to read the ephemeral port range from
+     * The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      * <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     * ephemeral port range is used. You should not attempt to specify a host port in the ephemeral port range, because
-     * these are reserved for automatic assignment. In general, ports below 32768 are outside of the ephemeral port
-     * range.
+     * ephemeral port range of 49153 to 65535 is used. You should not attempt to specify a host port in the ephemeral
+     * port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the
+     * ephemeral port range.
      * </p>
+     * <note>
+     * <p>
+     * The default ephemeral port range of 49153 to 65535 will always be used for Docker versions prior to 1.6.0.
+     * </p>
+     * </note>
      * <p>
      * The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent
      * ports 51678 and 51679. Any host port that was previously specified in a running task is also reserved while the
@@ -263,13 +288,17 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        <code>0</code>) while specifying a <code>containerPort</code> and your container automatically receives a
      *        port in the ephemeral port range for your container instance operating system and Docker version.</p>
      *        <p>
-     *        The default ephemeral port range is 49153 to 65535, and this range is used for Docker versions prior to
-     *        1.6.0. For Docker version 1.6.0 and later, the Docker daemon tries to read the ephemeral port range from
+     *        The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under
      *        <code>/proc/sys/net/ipv4/ip_local_port_range</code>; if this kernel parameter is unavailable, the default
-     *        ephemeral port range is used. You should not attempt to specify a host port in the ephemeral port range,
-     *        because these are reserved for automatic assignment. In general, ports below 32768 are outside of the
-     *        ephemeral port range.
+     *        ephemeral port range of 49153 to 65535 is used. You should not attempt to specify a host port in the
+     *        ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are
+     *        outside of the ephemeral port range.
      *        </p>
+     *        <note>
+     *        <p>
+     *        The default ephemeral port range of 49153 to 65535 will always be used for Docker versions prior to 1.6.0.
+     *        </p>
+     *        </note>
      *        <p>
      *        The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container
      *        agent ports 51678 and 51679. Any host port that was previously specified in a running task is also

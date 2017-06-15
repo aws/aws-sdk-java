@@ -43,13 +43,13 @@ public class CreateNatGatewayResultStaxUnmarshaller implements Unmarshaller<Crea
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("natGateway", targetDepth)) {
-                    createNatGatewayResult.setNatGateway(NatGatewayStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("clientToken", targetDepth)) {
+                    createNatGatewayResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("clientToken", targetDepth)) {
-                    createNatGatewayResult.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("natGateway", targetDepth)) {
+                    createNatGatewayResult.setNatGateway(NatGatewayStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

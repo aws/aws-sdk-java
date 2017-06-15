@@ -45,16 +45,6 @@ public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerCo
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("vpcId", targetDepth)) {
-                    vpc.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("state", targetDepth)) {
-                    vpc.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("cidrBlock", targetDepth)) {
                     vpc.setCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -65,23 +55,18 @@ public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerCo
                     continue;
                 }
 
-                if (context.testExpression("tagSet", targetDepth)) {
-                    vpc.withTags(new ArrayList<Tag>());
+                if (context.testExpression("state", targetDepth)) {
+                    vpc.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("tagSet/item", targetDepth)) {
-                    vpc.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("vpcId", targetDepth)) {
+                    vpc.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
                 if (context.testExpression("instanceTenancy", targetDepth)) {
                     vpc.setInstanceTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("isDefault", targetDepth)) {
-                    vpc.setIsDefault(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -92,6 +77,21 @@ public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerCo
 
                 if (context.testExpression("ipv6CidrBlockAssociationSet/item", targetDepth)) {
                     vpc.withIpv6CidrBlockAssociationSet(VpcIpv6CidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("isDefault", targetDepth)) {
+                    vpc.setIsDefault(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    vpc.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    vpc.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

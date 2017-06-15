@@ -51,7 +51,7 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
     private String productId;
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
      * </p>
      */
     private String provisioningArtifactId;
@@ -214,11 +214,12 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product.
+     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
+     *        version.
      */
 
     public void setProvisioningArtifactId(String provisioningArtifactId) {
@@ -227,10 +228,11 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
      * </p>
      * 
-     * @return The provisioning artifact identifier for this product.
+     * @return The provisioning artifact identifier for this product. This is sometimes referred to as the product
+     *         version.
      */
 
     public String getProvisioningArtifactId() {
@@ -239,11 +241,12 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The provisioning artifact identifier for this product.
+     * The provisioning artifact identifier for this product. This is sometimes referred to as the product version.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The provisioning artifact identifier for this product.
+     *        The provisioning artifact identifier for this product. This is sometimes referred to as the product
+     *        version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

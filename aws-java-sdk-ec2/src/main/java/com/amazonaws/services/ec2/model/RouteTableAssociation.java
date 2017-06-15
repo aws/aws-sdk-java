@@ -28,6 +28,12 @@ public class RouteTableAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates whether this is the main route table.
+     * </p>
+     */
+    private Boolean main;
+    /**
+     * <p>
      * The ID of the association between a route table and a subnet.
      * </p>
      */
@@ -44,12 +50,58 @@ public class RouteTableAssociation implements Serializable, Cloneable {
      * </p>
      */
     private String subnetId;
+
     /**
      * <p>
      * Indicates whether this is the main route table.
      * </p>
+     * 
+     * @param main
+     *        Indicates whether this is the main route table.
      */
-    private Boolean main;
+
+    public void setMain(Boolean main) {
+        this.main = main;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this is the main route table.
+     * </p>
+     * 
+     * @return Indicates whether this is the main route table.
+     */
+
+    public Boolean getMain() {
+        return this.main;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this is the main route table.
+     * </p>
+     * 
+     * @param main
+     *        Indicates whether this is the main route table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RouteTableAssociation withMain(Boolean main) {
+        setMain(main);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this is the main route table.
+     * </p>
+     * 
+     * @return Indicates whether this is the main route table.
+     */
+
+    public Boolean isMain() {
+        return this.main;
+    }
 
     /**
      * <p>
@@ -172,58 +224,6 @@ public class RouteTableAssociation implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * Indicates whether this is the main route table.
-     * </p>
-     * 
-     * @param main
-     *        Indicates whether this is the main route table.
-     */
-
-    public void setMain(Boolean main) {
-        this.main = main;
-    }
-
-    /**
-     * <p>
-     * Indicates whether this is the main route table.
-     * </p>
-     * 
-     * @return Indicates whether this is the main route table.
-     */
-
-    public Boolean getMain() {
-        return this.main;
-    }
-
-    /**
-     * <p>
-     * Indicates whether this is the main route table.
-     * </p>
-     * 
-     * @param main
-     *        Indicates whether this is the main route table.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RouteTableAssociation withMain(Boolean main) {
-        setMain(main);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether this is the main route table.
-     * </p>
-     * 
-     * @return Indicates whether this is the main route table.
-     */
-
-    public Boolean isMain() {
-        return this.main;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -234,14 +234,14 @@ public class RouteTableAssociation implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getMain() != null)
+            sb.append("Main: ").append(getMain()).append(",");
         if (getRouteTableAssociationId() != null)
             sb.append("RouteTableAssociationId: ").append(getRouteTableAssociationId()).append(",");
         if (getRouteTableId() != null)
             sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId()).append(",");
-        if (getMain() != null)
-            sb.append("Main: ").append(getMain());
+            sb.append("SubnetId: ").append(getSubnetId());
         sb.append("}");
         return sb.toString();
     }
@@ -256,6 +256,10 @@ public class RouteTableAssociation implements Serializable, Cloneable {
         if (obj instanceof RouteTableAssociation == false)
             return false;
         RouteTableAssociation other = (RouteTableAssociation) obj;
+        if (other.getMain() == null ^ this.getMain() == null)
+            return false;
+        if (other.getMain() != null && other.getMain().equals(this.getMain()) == false)
+            return false;
         if (other.getRouteTableAssociationId() == null ^ this.getRouteTableAssociationId() == null)
             return false;
         if (other.getRouteTableAssociationId() != null && other.getRouteTableAssociationId().equals(this.getRouteTableAssociationId()) == false)
@@ -268,10 +272,6 @@ public class RouteTableAssociation implements Serializable, Cloneable {
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
-        if (other.getMain() == null ^ this.getMain() == null)
-            return false;
-        if (other.getMain() != null && other.getMain().equals(this.getMain()) == false)
-            return false;
         return true;
     }
 
@@ -280,10 +280,10 @@ public class RouteTableAssociation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getMain() == null) ? 0 : getMain().hashCode());
         hashCode = prime * hashCode + ((getRouteTableAssociationId() == null) ? 0 : getRouteTableAssociationId().hashCode());
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
-        hashCode = prime * hashCode + ((getMain() == null) ? 0 : getMain().hashCode());
         return hashCode;
     }
 

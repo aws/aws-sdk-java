@@ -45,6 +45,11 @@ public class DescribeSpotFleetRequestsResultStaxUnmarshaller implements Unmarsha
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeSpotFleetRequestsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("spotFleetRequestConfigSet", targetDepth)) {
                     describeSpotFleetRequestsResult.withSpotFleetRequestConfigs(new ArrayList<SpotFleetRequestConfig>());
                     continue;
@@ -55,10 +60,6 @@ public class DescribeSpotFleetRequestsResultStaxUnmarshaller implements Unmarsha
                     continue;
                 }
 
-                if (context.testExpression("nextToken", targetDepth)) {
-                    describeSpotFleetRequestsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeSpotFleetRequestsResult;

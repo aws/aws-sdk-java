@@ -30,16 +30,16 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ID of the snapshot.
-     * </p>
-     */
-    private String snapshotId;
-    /**
-     * <p>
      * The attribute to reset. Currently, only the attribute for permission to create volumes can be reset.
      * </p>
      */
     private String attribute;
+    /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     */
+    private String snapshotId;
 
     /**
      * Default constructor for ResetSnapshotAttributeRequest object. Callers should use the setter or fluent setter
@@ -74,46 +74,6 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     public ResetSnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute) {
         setSnapshotId(snapshotId);
         setAttribute(attribute.toString());
-    }
-
-    /**
-     * <p>
-     * The ID of the snapshot.
-     * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the snapshot.
-     */
-
-    public void setSnapshotId(String snapshotId) {
-        this.snapshotId = snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the snapshot.
-     * </p>
-     * 
-     * @return The ID of the snapshot.
-     */
-
-    public String getSnapshotId() {
-        return this.snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the snapshot.
-     * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the snapshot.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ResetSnapshotAttributeRequest withSnapshotId(String snapshotId) {
-        setSnapshotId(snapshotId);
-        return this;
     }
 
     /**
@@ -190,6 +150,46 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot.
+     */
+
+    public void setSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @return The ID of the snapshot.
+     */
+
+    public String getSnapshotId() {
+        return this.snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResetSnapshotAttributeRequest withSnapshotId(String snapshotId) {
+        setSnapshotId(snapshotId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -211,10 +211,10 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSnapshotId() != null)
-            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: ").append(getAttribute());
+            sb.append("Attribute: ").append(getAttribute()).append(",");
+        if (getSnapshotId() != null)
+            sb.append("SnapshotId: ").append(getSnapshotId());
         sb.append("}");
         return sb.toString();
     }
@@ -229,13 +229,13 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
         if (obj instanceof ResetSnapshotAttributeRequest == false)
             return false;
         ResetSnapshotAttributeRequest other = (ResetSnapshotAttributeRequest) obj;
-        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
-            return false;
-        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
-            return false;
         if (other.getAttribute() == null ^ this.getAttribute() == null)
             return false;
         if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
+            return false;
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
             return false;
         return true;
     }
@@ -245,8 +245,8 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         return hashCode;
     }
 

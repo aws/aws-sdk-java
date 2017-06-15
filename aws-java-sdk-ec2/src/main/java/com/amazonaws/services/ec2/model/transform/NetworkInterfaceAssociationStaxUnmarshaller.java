@@ -43,13 +43,13 @@ public class NetworkInterfaceAssociationStaxUnmarshaller implements Unmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("publicIp", targetDepth)) {
-                    networkInterfaceAssociation.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("allocationId", targetDepth)) {
+                    networkInterfaceAssociation.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("publicDnsName", targetDepth)) {
-                    networkInterfaceAssociation.setPublicDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("associationId", targetDepth)) {
+                    networkInterfaceAssociation.setAssociationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,13 +58,13 @@ public class NetworkInterfaceAssociationStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
-                if (context.testExpression("allocationId", targetDepth)) {
-                    networkInterfaceAssociation.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("publicDnsName", targetDepth)) {
+                    networkInterfaceAssociation.setPublicDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("associationId", targetDepth)) {
-                    networkInterfaceAssociation.setAssociationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("publicIp", targetDepth)) {
+                    networkInterfaceAssociation.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

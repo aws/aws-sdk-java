@@ -28,62 +28,22 @@ public class InternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Internet gateway.
-     * </p>
-     */
-    private String internetGatewayId;
-    /**
-     * <p>
      * Any VPCs attached to the Internet gateway.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InternetGatewayAttachment> attachments;
     /**
      * <p>
+     * The ID of the Internet gateway.
+     * </p>
+     */
+    private String internetGatewayId;
+    /**
+     * <p>
      * Any tags assigned to the Internet gateway.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
-
-    /**
-     * <p>
-     * The ID of the Internet gateway.
-     * </p>
-     * 
-     * @param internetGatewayId
-     *        The ID of the Internet gateway.
-     */
-
-    public void setInternetGatewayId(String internetGatewayId) {
-        this.internetGatewayId = internetGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Internet gateway.
-     * </p>
-     * 
-     * @return The ID of the Internet gateway.
-     */
-
-    public String getInternetGatewayId() {
-        return this.internetGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the Internet gateway.
-     * </p>
-     * 
-     * @param internetGatewayId
-     *        The ID of the Internet gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InternetGateway withInternetGatewayId(String internetGatewayId) {
-        setInternetGatewayId(internetGatewayId);
-        return this;
-    }
 
     /**
      * <p>
@@ -155,6 +115,46 @@ public class InternetGateway implements Serializable, Cloneable {
 
     public InternetGateway withAttachments(java.util.Collection<InternetGatewayAttachment> attachments) {
         setAttachments(attachments);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Internet gateway.
+     * </p>
+     * 
+     * @param internetGatewayId
+     *        The ID of the Internet gateway.
+     */
+
+    public void setInternetGatewayId(String internetGatewayId) {
+        this.internetGatewayId = internetGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Internet gateway.
+     * </p>
+     * 
+     * @return The ID of the Internet gateway.
+     */
+
+    public String getInternetGatewayId() {
+        return this.internetGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Internet gateway.
+     * </p>
+     * 
+     * @param internetGatewayId
+     *        The ID of the Internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InternetGateway withInternetGatewayId(String internetGatewayId) {
+        setInternetGatewayId(internetGatewayId);
         return this;
     }
 
@@ -242,10 +242,10 @@ public class InternetGateway implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInternetGatewayId() != null)
-            sb.append("InternetGatewayId: ").append(getInternetGatewayId()).append(",");
         if (getAttachments() != null)
             sb.append("Attachments: ").append(getAttachments()).append(",");
+        if (getInternetGatewayId() != null)
+            sb.append("InternetGatewayId: ").append(getInternetGatewayId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -262,13 +262,13 @@ public class InternetGateway implements Serializable, Cloneable {
         if (obj instanceof InternetGateway == false)
             return false;
         InternetGateway other = (InternetGateway) obj;
-        if (other.getInternetGatewayId() == null ^ this.getInternetGatewayId() == null)
-            return false;
-        if (other.getInternetGatewayId() != null && other.getInternetGatewayId().equals(this.getInternetGatewayId()) == false)
-            return false;
         if (other.getAttachments() == null ^ this.getAttachments() == null)
             return false;
         if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
+            return false;
+        if (other.getInternetGatewayId() == null ^ this.getInternetGatewayId() == null)
+            return false;
+        if (other.getInternetGatewayId() != null && other.getInternetGatewayId().equals(this.getInternetGatewayId()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -282,8 +282,8 @@ public class InternetGateway implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInternetGatewayId() == null) ? 0 : getInternetGatewayId().hashCode());
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
+        hashCode = prime * hashCode + ((getInternetGatewayId() == null) ? 0 : getInternetGatewayId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

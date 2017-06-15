@@ -30,56 +30,16 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the route table.
-     * </p>
-     */
-    private String routeTableId;
-    /**
-     * <p>
      * The ID of the virtual private gateway.
      * </p>
      */
     private String gatewayId;
-
     /**
      * <p>
      * The ID of the route table.
      * </p>
-     * 
-     * @param routeTableId
-     *        The ID of the route table.
      */
-
-    public void setRouteTableId(String routeTableId) {
-        this.routeTableId = routeTableId;
-    }
-
-    /**
-     * <p>
-     * The ID of the route table.
-     * </p>
-     * 
-     * @return The ID of the route table.
-     */
-
-    public String getRouteTableId() {
-        return this.routeTableId;
-    }
-
-    /**
-     * <p>
-     * The ID of the route table.
-     * </p>
-     * 
-     * @param routeTableId
-     *        The ID of the route table.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EnableVgwRoutePropagationRequest withRouteTableId(String routeTableId) {
-        setRouteTableId(routeTableId);
-        return this;
-    }
+    private String routeTableId;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID of the route table.
+     * </p>
+     * 
+     * @param routeTableId
+     *        The ID of the route table.
+     */
+
+    public void setRouteTableId(String routeTableId) {
+        this.routeTableId = routeTableId;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table.
+     * </p>
+     * 
+     * @return The ID of the route table.
+     */
+
+    public String getRouteTableId() {
+        return this.routeTableId;
+    }
+
+    /**
+     * <p>
+     * The ID of the route table.
+     * </p>
+     * 
+     * @param routeTableId
+     *        The ID of the route table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnableVgwRoutePropagationRequest withRouteTableId(String routeTableId) {
+        setRouteTableId(routeTableId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -143,10 +143,10 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRouteTableId() != null)
-            sb.append("RouteTableId: ").append(getRouteTableId()).append(",");
         if (getGatewayId() != null)
-            sb.append("GatewayId: ").append(getGatewayId());
+            sb.append("GatewayId: ").append(getGatewayId()).append(",");
+        if (getRouteTableId() != null)
+            sb.append("RouteTableId: ").append(getRouteTableId());
         sb.append("}");
         return sb.toString();
     }
@@ -161,13 +161,13 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
         if (obj instanceof EnableVgwRoutePropagationRequest == false)
             return false;
         EnableVgwRoutePropagationRequest other = (EnableVgwRoutePropagationRequest) obj;
-        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
-            return false;
-        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
-            return false;
         if (other.getGatewayId() == null ^ this.getGatewayId() == null)
             return false;
         if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false)
+            return false;
+        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null)
+            return false;
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false)
             return false;
         return true;
     }
@@ -177,8 +177,8 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         return hashCode;
     }
 

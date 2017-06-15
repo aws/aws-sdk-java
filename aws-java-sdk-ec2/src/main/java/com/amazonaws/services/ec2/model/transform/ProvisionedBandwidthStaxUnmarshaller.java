@@ -43,13 +43,13 @@ public class ProvisionedBandwidthStaxUnmarshaller implements Unmarshaller<Provis
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("provisioned", targetDepth)) {
-                    provisionedBandwidth.setProvisioned(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("provisionTime", targetDepth)) {
+                    provisionedBandwidth.setProvisionTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("requested", targetDepth)) {
-                    provisionedBandwidth.setRequested(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("provisioned", targetDepth)) {
+                    provisionedBandwidth.setProvisioned(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -58,8 +58,8 @@ public class ProvisionedBandwidthStaxUnmarshaller implements Unmarshaller<Provis
                     continue;
                 }
 
-                if (context.testExpression("provisionTime", targetDepth)) {
-                    provisionedBandwidth.setProvisionTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("requested", targetDepth)) {
+                    provisionedBandwidth.setRequested(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

@@ -45,6 +45,16 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("architecture", targetDepth)) {
+                    image.setArchitecture(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("creationDate", targetDepth)) {
+                    image.setCreationDate(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("imageId", targetDepth)) {
                     image.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -55,8 +65,18 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     continue;
                 }
 
-                if (context.testExpression("imageState", targetDepth)) {
-                    image.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("imageType", targetDepth)) {
+                    image.setImageType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("isPublic", targetDepth)) {
+                    image.setPublic(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("kernelId", targetDepth)) {
+                    image.setKernelId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -65,13 +85,8 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     continue;
                 }
 
-                if (context.testExpression("creationDate", targetDepth)) {
-                    image.setCreationDate(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("isPublic", targetDepth)) {
-                    image.setPublic(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("platform", targetDepth)) {
+                    image.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -85,68 +100,13 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     continue;
                 }
 
-                if (context.testExpression("architecture", targetDepth)) {
-                    image.setArchitecture(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("imageType", targetDepth)) {
-                    image.setImageType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("kernelId", targetDepth)) {
-                    image.setKernelId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("ramdiskId", targetDepth)) {
                     image.setRamdiskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("platform", targetDepth)) {
-                    image.setPlatform(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("sriovNetSupport", targetDepth)) {
-                    image.setSriovNetSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("enaSupport", targetDepth)) {
-                    image.setEnaSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("stateReason", targetDepth)) {
-                    image.setStateReason(StateReasonStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("imageOwnerAlias", targetDepth)) {
-                    image.setImageOwnerAlias(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("name", targetDepth)) {
-                    image.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("description", targetDepth)) {
-                    image.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("rootDeviceType", targetDepth)) {
-                    image.setRootDeviceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("rootDeviceName", targetDepth)) {
-                    image.setRootDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("imageState", targetDepth)) {
+                    image.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -160,8 +120,48 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     continue;
                 }
 
-                if (context.testExpression("virtualizationType", targetDepth)) {
-                    image.setVirtualizationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("description", targetDepth)) {
+                    image.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("enaSupport", targetDepth)) {
+                    image.setEnaSupport(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("hypervisor", targetDepth)) {
+                    image.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("imageOwnerAlias", targetDepth)) {
+                    image.setImageOwnerAlias(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("name", targetDepth)) {
+                    image.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("rootDeviceName", targetDepth)) {
+                    image.setRootDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("rootDeviceType", targetDepth)) {
+                    image.setRootDeviceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("sriovNetSupport", targetDepth)) {
+                    image.setSriovNetSupport(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("stateReason", targetDepth)) {
+                    image.setStateReason(StateReasonStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -175,8 +175,8 @@ public class ImageStaxUnmarshaller implements Unmarshaller<Image, StaxUnmarshall
                     continue;
                 }
 
-                if (context.testExpression("hypervisor", targetDepth)) {
-                    image.setHypervisor(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("virtualizationType", targetDepth)) {
+                    image.setVirtualizationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -29,10 +29,22 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the endpoint.
+     * One or more route tables IDs to associate with the endpoint.
      * </p>
      */
-    private String vpcEndpointId;
+    private com.amazonaws.internal.SdkInternalList<String> addRouteTableIds;
+    /**
+     * <p>
+     * A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * </p>
+     */
+    private String policyDocument;
+    /**
+     * <p>
+     * One or more route table IDs to disassociate from the endpoint.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> removeRouteTableIds;
     /**
      * <p>
      * Specify <code>true</code> to reset the policy document to the default policy. The default policy allows access to
@@ -42,162 +54,10 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     private Boolean resetPolicy;
     /**
      * <p>
-     * A policy document to attach to the endpoint. The policy must be in valid JSON format.
-     * </p>
-     */
-    private String policyDocument;
-    /**
-     * <p>
-     * One or more route tables IDs to associate with the endpoint.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> addRouteTableIds;
-    /**
-     * <p>
-     * One or more route table IDs to disassociate from the endpoint.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> removeRouteTableIds;
-
-    /**
-     * <p>
      * The ID of the endpoint.
      * </p>
-     * 
-     * @param vpcEndpointId
-     *        The ID of the endpoint.
      */
-
-    public void setVpcEndpointId(String vpcEndpointId) {
-        this.vpcEndpointId = vpcEndpointId;
-    }
-
-    /**
-     * <p>
-     * The ID of the endpoint.
-     * </p>
-     * 
-     * @return The ID of the endpoint.
-     */
-
-    public String getVpcEndpointId() {
-        return this.vpcEndpointId;
-    }
-
-    /**
-     * <p>
-     * The ID of the endpoint.
-     * </p>
-     * 
-     * @param vpcEndpointId
-     *        The ID of the endpoint.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyVpcEndpointRequest withVpcEndpointId(String vpcEndpointId) {
-        setVpcEndpointId(vpcEndpointId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specify <code>true</code> to reset the policy document to the default policy. The default policy allows access to
-     * the service.
-     * </p>
-     * 
-     * @param resetPolicy
-     *        Specify <code>true</code> to reset the policy document to the default policy. The default policy allows
-     *        access to the service.
-     */
-
-    public void setResetPolicy(Boolean resetPolicy) {
-        this.resetPolicy = resetPolicy;
-    }
-
-    /**
-     * <p>
-     * Specify <code>true</code> to reset the policy document to the default policy. The default policy allows access to
-     * the service.
-     * </p>
-     * 
-     * @return Specify <code>true</code> to reset the policy document to the default policy. The default policy allows
-     *         access to the service.
-     */
-
-    public Boolean getResetPolicy() {
-        return this.resetPolicy;
-    }
-
-    /**
-     * <p>
-     * Specify <code>true</code> to reset the policy document to the default policy. The default policy allows access to
-     * the service.
-     * </p>
-     * 
-     * @param resetPolicy
-     *        Specify <code>true</code> to reset the policy document to the default policy. The default policy allows
-     *        access to the service.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyVpcEndpointRequest withResetPolicy(Boolean resetPolicy) {
-        setResetPolicy(resetPolicy);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specify <code>true</code> to reset the policy document to the default policy. The default policy allows access to
-     * the service.
-     * </p>
-     * 
-     * @return Specify <code>true</code> to reset the policy document to the default policy. The default policy allows
-     *         access to the service.
-     */
-
-    public Boolean isResetPolicy() {
-        return this.resetPolicy;
-    }
-
-    /**
-     * <p>
-     * A policy document to attach to the endpoint. The policy must be in valid JSON format.
-     * </p>
-     * 
-     * @param policyDocument
-     *        A policy document to attach to the endpoint. The policy must be in valid JSON format.
-     */
-
-    public void setPolicyDocument(String policyDocument) {
-        this.policyDocument = policyDocument;
-    }
-
-    /**
-     * <p>
-     * A policy document to attach to the endpoint. The policy must be in valid JSON format.
-     * </p>
-     * 
-     * @return A policy document to attach to the endpoint. The policy must be in valid JSON format.
-     */
-
-    public String getPolicyDocument() {
-        return this.policyDocument;
-    }
-
-    /**
-     * <p>
-     * A policy document to attach to the endpoint. The policy must be in valid JSON format.
-     * </p>
-     * 
-     * @param policyDocument
-     *        A policy document to attach to the endpoint. The policy must be in valid JSON format.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyVpcEndpointRequest withPolicyDocument(String policyDocument) {
-        setPolicyDocument(policyDocument);
-        return this;
-    }
+    private String vpcEndpointId;
 
     /**
      * <p>
@@ -269,6 +129,46 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     public ModifyVpcEndpointRequest withAddRouteTableIds(java.util.Collection<String> addRouteTableIds) {
         setAddRouteTableIds(addRouteTableIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * </p>
+     * 
+     * @param policyDocument
+     *        A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     */
+
+    public void setPolicyDocument(String policyDocument) {
+        this.policyDocument = policyDocument;
+    }
+
+    /**
+     * <p>
+     * A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * </p>
+     * 
+     * @return A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     */
+
+    public String getPolicyDocument() {
+        return this.policyDocument;
+    }
+
+    /**
+     * <p>
+     * A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * </p>
+     * 
+     * @param policyDocument
+     *        A policy document to attach to the endpoint. The policy must be in valid JSON format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointRequest withPolicyDocument(String policyDocument) {
+        setPolicyDocument(policyDocument);
         return this;
     }
 
@@ -346,6 +246,106 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     }
 
     /**
+     * <p>
+     * Specify <code>true</code> to reset the policy document to the default policy. The default policy allows access to
+     * the service.
+     * </p>
+     * 
+     * @param resetPolicy
+     *        Specify <code>true</code> to reset the policy document to the default policy. The default policy allows
+     *        access to the service.
+     */
+
+    public void setResetPolicy(Boolean resetPolicy) {
+        this.resetPolicy = resetPolicy;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to reset the policy document to the default policy. The default policy allows access to
+     * the service.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to reset the policy document to the default policy. The default policy allows
+     *         access to the service.
+     */
+
+    public Boolean getResetPolicy() {
+        return this.resetPolicy;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to reset the policy document to the default policy. The default policy allows access to
+     * the service.
+     * </p>
+     * 
+     * @param resetPolicy
+     *        Specify <code>true</code> to reset the policy document to the default policy. The default policy allows
+     *        access to the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointRequest withResetPolicy(Boolean resetPolicy) {
+        setResetPolicy(resetPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to reset the policy document to the default policy. The default policy allows access to
+     * the service.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to reset the policy document to the default policy. The default policy allows
+     *         access to the service.
+     */
+
+    public Boolean isResetPolicy() {
+        return this.resetPolicy;
+    }
+
+    /**
+     * <p>
+     * The ID of the endpoint.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of the endpoint.
+     */
+
+    public void setVpcEndpointId(String vpcEndpointId) {
+        this.vpcEndpointId = vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the endpoint.
+     * </p>
+     * 
+     * @return The ID of the endpoint.
+     */
+
+    public String getVpcEndpointId() {
+        return this.vpcEndpointId;
+    }
+
+    /**
+     * <p>
+     * The ID of the endpoint.
+     * </p>
+     * 
+     * @param vpcEndpointId
+     *        The ID of the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpcEndpointRequest withVpcEndpointId(String vpcEndpointId) {
+        setVpcEndpointId(vpcEndpointId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -367,16 +367,16 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcEndpointId() != null)
-            sb.append("VpcEndpointId: ").append(getVpcEndpointId()).append(",");
-        if (getResetPolicy() != null)
-            sb.append("ResetPolicy: ").append(getResetPolicy()).append(",");
-        if (getPolicyDocument() != null)
-            sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getAddRouteTableIds() != null)
             sb.append("AddRouteTableIds: ").append(getAddRouteTableIds()).append(",");
+        if (getPolicyDocument() != null)
+            sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getRemoveRouteTableIds() != null)
-            sb.append("RemoveRouteTableIds: ").append(getRemoveRouteTableIds());
+            sb.append("RemoveRouteTableIds: ").append(getRemoveRouteTableIds()).append(",");
+        if (getResetPolicy() != null)
+            sb.append("ResetPolicy: ").append(getResetPolicy()).append(",");
+        if (getVpcEndpointId() != null)
+            sb.append("VpcEndpointId: ").append(getVpcEndpointId());
         sb.append("}");
         return sb.toString();
     }
@@ -391,25 +391,25 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
         if (obj instanceof ModifyVpcEndpointRequest == false)
             return false;
         ModifyVpcEndpointRequest other = (ModifyVpcEndpointRequest) obj;
-        if (other.getVpcEndpointId() == null ^ this.getVpcEndpointId() == null)
+        if (other.getAddRouteTableIds() == null ^ this.getAddRouteTableIds() == null)
             return false;
-        if (other.getVpcEndpointId() != null && other.getVpcEndpointId().equals(this.getVpcEndpointId()) == false)
-            return false;
-        if (other.getResetPolicy() == null ^ this.getResetPolicy() == null)
-            return false;
-        if (other.getResetPolicy() != null && other.getResetPolicy().equals(this.getResetPolicy()) == false)
+        if (other.getAddRouteTableIds() != null && other.getAddRouteTableIds().equals(this.getAddRouteTableIds()) == false)
             return false;
         if (other.getPolicyDocument() == null ^ this.getPolicyDocument() == null)
             return false;
         if (other.getPolicyDocument() != null && other.getPolicyDocument().equals(this.getPolicyDocument()) == false)
             return false;
-        if (other.getAddRouteTableIds() == null ^ this.getAddRouteTableIds() == null)
-            return false;
-        if (other.getAddRouteTableIds() != null && other.getAddRouteTableIds().equals(this.getAddRouteTableIds()) == false)
-            return false;
         if (other.getRemoveRouteTableIds() == null ^ this.getRemoveRouteTableIds() == null)
             return false;
         if (other.getRemoveRouteTableIds() != null && other.getRemoveRouteTableIds().equals(this.getRemoveRouteTableIds()) == false)
+            return false;
+        if (other.getResetPolicy() == null ^ this.getResetPolicy() == null)
+            return false;
+        if (other.getResetPolicy() != null && other.getResetPolicy().equals(this.getResetPolicy()) == false)
+            return false;
+        if (other.getVpcEndpointId() == null ^ this.getVpcEndpointId() == null)
+            return false;
+        if (other.getVpcEndpointId() != null && other.getVpcEndpointId().equals(this.getVpcEndpointId()) == false)
             return false;
         return true;
     }
@@ -419,11 +419,11 @@ public class ModifyVpcEndpointRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
-        hashCode = prime * hashCode + ((getResetPolicy() == null) ? 0 : getResetPolicy().hashCode());
-        hashCode = prime * hashCode + ((getPolicyDocument() == null) ? 0 : getPolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getAddRouteTableIds() == null) ? 0 : getAddRouteTableIds().hashCode());
+        hashCode = prime * hashCode + ((getPolicyDocument() == null) ? 0 : getPolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getRemoveRouteTableIds() == null) ? 0 : getRemoveRouteTableIds().hashCode());
+        hashCode = prime * hashCode + ((getResetPolicy() == null) ? 0 : getResetPolicy().hashCode());
+        hashCode = prime * hashCode + ((getVpcEndpointId() == null) ? 0 : getVpcEndpointId().hashCode());
         return hashCode;
     }
 

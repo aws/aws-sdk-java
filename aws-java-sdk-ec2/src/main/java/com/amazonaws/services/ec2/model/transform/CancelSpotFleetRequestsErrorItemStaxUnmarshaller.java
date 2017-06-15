@@ -43,13 +43,13 @@ public class CancelSpotFleetRequestsErrorItemStaxUnmarshaller implements Unmarsh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("spotFleetRequestId", targetDepth)) {
-                    cancelSpotFleetRequestsErrorItem.setSpotFleetRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("error", targetDepth)) {
+                    cancelSpotFleetRequestsErrorItem.setError(CancelSpotFleetRequestsErrorStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("error", targetDepth)) {
-                    cancelSpotFleetRequestsErrorItem.setError(CancelSpotFleetRequestsErrorStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("spotFleetRequestId", targetDepth)) {
+                    cancelSpotFleetRequestsErrorItem.setSpotFleetRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

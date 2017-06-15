@@ -40,19 +40,6 @@ public class DescribeNatGatewaysRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeNatGatewaysRequestNatGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNatGatewaysRequest
-                .getNatGatewayIds();
-        if (!describeNatGatewaysRequestNatGatewayIdsList.isEmpty() || !describeNatGatewaysRequestNatGatewayIdsList.isAutoConstruct()) {
-            int natGatewayIdsListIndex = 1;
-
-            for (String describeNatGatewaysRequestNatGatewayIdsListValue : describeNatGatewaysRequestNatGatewayIdsList) {
-                if (describeNatGatewaysRequestNatGatewayIdsListValue != null) {
-                    request.addParameter("NatGatewayId." + natGatewayIdsListIndex, StringUtils.fromString(describeNatGatewaysRequestNatGatewayIdsListValue));
-                }
-                natGatewayIdsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeNatGatewaysRequestFilterList = (com.amazonaws.internal.SdkInternalList<Filter>) describeNatGatewaysRequest
                 .getFilter();
         if (!describeNatGatewaysRequestFilterList.isEmpty() || !describeNatGatewaysRequestFilterList.isAutoConstruct()) {
@@ -82,6 +69,19 @@ public class DescribeNatGatewaysRequestMarshaller implements Marshaller<Request<
 
         if (describeNatGatewaysRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeNatGatewaysRequest.getMaxResults()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeNatGatewaysRequestNatGatewayIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeNatGatewaysRequest
+                .getNatGatewayIds();
+        if (!describeNatGatewaysRequestNatGatewayIdsList.isEmpty() || !describeNatGatewaysRequestNatGatewayIdsList.isAutoConstruct()) {
+            int natGatewayIdsListIndex = 1;
+
+            for (String describeNatGatewaysRequestNatGatewayIdsListValue : describeNatGatewaysRequestNatGatewayIdsList) {
+                if (describeNatGatewaysRequestNatGatewayIdsListValue != null) {
+                    request.addParameter("NatGatewayId." + natGatewayIdsListIndex, StringUtils.fromString(describeNatGatewaysRequestNatGatewayIdsListValue));
+                }
+                natGatewayIdsListIndex++;
+            }
         }
 
         if (describeNatGatewaysRequest.getNextToken() != null) {

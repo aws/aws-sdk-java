@@ -45,18 +45,8 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("zoneName", targetDepth)) {
-                    availabilityZone.setZoneName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("zoneState", targetDepth)) {
                     availabilityZone.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("regionName", targetDepth)) {
-                    availabilityZone.setRegionName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -70,6 +60,15 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
                     continue;
                 }
 
+                if (context.testExpression("regionName", targetDepth)) {
+                    availabilityZone.setRegionName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("zoneName", targetDepth)) {
+                    availabilityZone.setZoneName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return availabilityZone;

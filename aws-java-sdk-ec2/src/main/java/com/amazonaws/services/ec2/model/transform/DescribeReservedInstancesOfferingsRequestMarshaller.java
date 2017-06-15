@@ -42,31 +42,8 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesOfferingsRequest
-                .getReservedInstancesOfferingIds();
-        if (!describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsList.isEmpty()
-                || !describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsList.isAutoConstruct()) {
-            int reservedInstancesOfferingIdsListIndex = 1;
-
-            for (String describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsListValue : describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsList) {
-                if (describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsListValue != null) {
-                    request.addParameter("ReservedInstancesOfferingId." + reservedInstancesOfferingIdsListIndex,
-                            StringUtils.fromString(describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsListValue));
-                }
-                reservedInstancesOfferingIdsListIndex++;
-            }
-        }
-
-        if (describeReservedInstancesOfferingsRequest.getInstanceType() != null) {
-            request.addParameter("InstanceType", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getInstanceType()));
-        }
-
         if (describeReservedInstancesOfferingsRequest.getAvailabilityZone() != null) {
             request.addParameter("AvailabilityZone", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getAvailabilityZone()));
-        }
-
-        if (describeReservedInstancesOfferingsRequest.getProductDescription() != null) {
-            request.addParameter("ProductDescription", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getProductDescription()));
         }
 
         com.amazonaws.internal.SdkInternalList<Filter> describeReservedInstancesOfferingsRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeReservedInstancesOfferingsRequest
@@ -97,28 +74,12 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements
             }
         }
 
-        if (describeReservedInstancesOfferingsRequest.getInstanceTenancy() != null) {
-            request.addParameter("InstanceTenancy", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getInstanceTenancy()));
-        }
-
-        if (describeReservedInstancesOfferingsRequest.getOfferingType() != null) {
-            request.addParameter("OfferingType", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getOfferingType()));
-        }
-
-        if (describeReservedInstancesOfferingsRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getNextToken()));
-        }
-
-        if (describeReservedInstancesOfferingsRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeReservedInstancesOfferingsRequest.getMaxResults()));
-        }
-
         if (describeReservedInstancesOfferingsRequest.getIncludeMarketplace() != null) {
             request.addParameter("IncludeMarketplace", StringUtils.fromBoolean(describeReservedInstancesOfferingsRequest.getIncludeMarketplace()));
         }
 
-        if (describeReservedInstancesOfferingsRequest.getMinDuration() != null) {
-            request.addParameter("MinDuration", StringUtils.fromLong(describeReservedInstancesOfferingsRequest.getMinDuration()));
+        if (describeReservedInstancesOfferingsRequest.getInstanceType() != null) {
+            request.addParameter("InstanceType", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getInstanceType()));
         }
 
         if (describeReservedInstancesOfferingsRequest.getMaxDuration() != null) {
@@ -129,8 +90,47 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements
             request.addParameter("MaxInstanceCount", StringUtils.fromInteger(describeReservedInstancesOfferingsRequest.getMaxInstanceCount()));
         }
 
+        if (describeReservedInstancesOfferingsRequest.getMinDuration() != null) {
+            request.addParameter("MinDuration", StringUtils.fromLong(describeReservedInstancesOfferingsRequest.getMinDuration()));
+        }
+
         if (describeReservedInstancesOfferingsRequest.getOfferingClass() != null) {
             request.addParameter("OfferingClass", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getOfferingClass()));
+        }
+
+        if (describeReservedInstancesOfferingsRequest.getProductDescription() != null) {
+            request.addParameter("ProductDescription", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getProductDescription()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeReservedInstancesOfferingsRequest
+                .getReservedInstancesOfferingIds();
+        if (!describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsList.isEmpty()
+                || !describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsList.isAutoConstruct()) {
+            int reservedInstancesOfferingIdsListIndex = 1;
+
+            for (String describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsListValue : describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsList) {
+                if (describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsListValue != null) {
+                    request.addParameter("ReservedInstancesOfferingId." + reservedInstancesOfferingIdsListIndex,
+                            StringUtils.fromString(describeReservedInstancesOfferingsRequestReservedInstancesOfferingIdsListValue));
+                }
+                reservedInstancesOfferingIdsListIndex++;
+            }
+        }
+
+        if (describeReservedInstancesOfferingsRequest.getInstanceTenancy() != null) {
+            request.addParameter("InstanceTenancy", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getInstanceTenancy()));
+        }
+
+        if (describeReservedInstancesOfferingsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeReservedInstancesOfferingsRequest.getMaxResults()));
+        }
+
+        if (describeReservedInstancesOfferingsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getNextToken()));
+        }
+
+        if (describeReservedInstancesOfferingsRequest.getOfferingType() != null) {
+            request.addParameter("OfferingType", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getOfferingType()));
         }
 
         return request;

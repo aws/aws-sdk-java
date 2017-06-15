@@ -27,12 +27,6 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the EBS snapshot.
-     * </p>
-     */
-    private String snapshotId;
-    /**
-     * <p>
      * A list of permissions for creating volumes from the snapshot.
      * </p>
      */
@@ -43,46 +37,12 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ProductCode> productCodes;
-
     /**
      * <p>
      * The ID of the EBS snapshot.
      * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the EBS snapshot.
      */
-
-    public void setSnapshotId(String snapshotId) {
-        this.snapshotId = snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS snapshot.
-     * </p>
-     * 
-     * @return The ID of the EBS snapshot.
-     */
-
-    public String getSnapshotId() {
-        return this.snapshotId;
-    }
-
-    /**
-     * <p>
-     * The ID of the EBS snapshot.
-     * </p>
-     * 
-     * @param snapshotId
-     *        The ID of the EBS snapshot.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSnapshotAttributeResult withSnapshotId(String snapshotId) {
-        setSnapshotId(snapshotId);
-        return this;
-    }
+    private String snapshotId;
 
     /**
      * <p>
@@ -231,6 +191,46 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The ID of the EBS snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the EBS snapshot.
+     */
+
+    public void setSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS snapshot.
+     * </p>
+     * 
+     * @return The ID of the EBS snapshot.
+     */
+
+    public String getSnapshotId() {
+        return this.snapshotId;
+    }
+
+    /**
+     * <p>
+     * The ID of the EBS snapshot.
+     * </p>
+     * 
+     * @param snapshotId
+     *        The ID of the EBS snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSnapshotAttributeResult withSnapshotId(String snapshotId) {
+        setSnapshotId(snapshotId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -241,12 +241,12 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSnapshotId() != null)
-            sb.append("SnapshotId: ").append(getSnapshotId()).append(",");
         if (getCreateVolumePermissions() != null)
             sb.append("CreateVolumePermissions: ").append(getCreateVolumePermissions()).append(",");
         if (getProductCodes() != null)
-            sb.append("ProductCodes: ").append(getProductCodes());
+            sb.append("ProductCodes: ").append(getProductCodes()).append(",");
+        if (getSnapshotId() != null)
+            sb.append("SnapshotId: ").append(getSnapshotId());
         sb.append("}");
         return sb.toString();
     }
@@ -261,10 +261,6 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
         if (obj instanceof DescribeSnapshotAttributeResult == false)
             return false;
         DescribeSnapshotAttributeResult other = (DescribeSnapshotAttributeResult) obj;
-        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
-            return false;
-        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
-            return false;
         if (other.getCreateVolumePermissions() == null ^ this.getCreateVolumePermissions() == null)
             return false;
         if (other.getCreateVolumePermissions() != null && other.getCreateVolumePermissions().equals(this.getCreateVolumePermissions()) == false)
@@ -272,6 +268,10 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
         if (other.getProductCodes() == null ^ this.getProductCodes() == null)
             return false;
         if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false)
+            return false;
+        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null)
+            return false;
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false)
             return false;
         return true;
     }
@@ -281,9 +281,9 @@ public class DescribeSnapshotAttributeResult extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getCreateVolumePermissions() == null) ? 0 : getCreateVolumePermissions().hashCode());
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode());
         return hashCode;
     }
 

@@ -40,16 +40,16 @@ public class AttachVolumeRequestMarshaller implements Marshaller<Request<AttachV
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (attachVolumeRequest.getVolumeId() != null) {
-            request.addParameter("VolumeId", StringUtils.fromString(attachVolumeRequest.getVolumeId()));
+        if (attachVolumeRequest.getDevice() != null) {
+            request.addParameter("Device", StringUtils.fromString(attachVolumeRequest.getDevice()));
         }
 
         if (attachVolumeRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(attachVolumeRequest.getInstanceId()));
         }
 
-        if (attachVolumeRequest.getDevice() != null) {
-            request.addParameter("Device", StringUtils.fromString(attachVolumeRequest.getDevice()));
+        if (attachVolumeRequest.getVolumeId() != null) {
+            request.addParameter("VolumeId", StringUtils.fromString(attachVolumeRequest.getVolumeId()));
         }
 
         return request;

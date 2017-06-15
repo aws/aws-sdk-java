@@ -48,13 +48,13 @@ public class GetConsoleOutputResultStaxUnmarshaller implements Unmarshaller<GetC
                     continue;
                 }
 
-                if (context.testExpression("timestamp", targetDepth)) {
-                    getConsoleOutputResult.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("output", targetDepth)) {
+                    getConsoleOutputResult.setOutput(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("output", targetDepth)) {
-                    getConsoleOutputResult.setOutput(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("timestamp", targetDepth)) {
+                    getConsoleOutputResult.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

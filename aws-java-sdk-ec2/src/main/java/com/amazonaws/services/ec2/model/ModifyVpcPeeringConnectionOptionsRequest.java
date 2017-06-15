@@ -28,10 +28,10 @@ public class ModifyVpcPeeringConnectionOptionsRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The VPC peering connection options for the accepter VPC.
      * </p>
      */
-    private String vpcPeeringConnectionId;
+    private PeeringConnectionOptionsRequest accepterPeeringConnectionOptions;
     /**
      * <p>
      * The VPC peering connection options for the requester VPC.
@@ -40,48 +40,48 @@ public class ModifyVpcPeeringConnectionOptionsRequest extends AmazonWebServiceRe
     private PeeringConnectionOptionsRequest requesterPeeringConnectionOptions;
     /**
      * <p>
+     * The ID of the VPC peering connection.
+     * </p>
+     */
+    private String vpcPeeringConnectionId;
+
+    /**
+     * <p>
      * The VPC peering connection options for the accepter VPC.
      * </p>
-     */
-    private PeeringConnectionOptionsRequest accepterPeeringConnectionOptions;
-
-    /**
-     * <p>
-     * The ID of the VPC peering connection.
-     * </p>
      * 
-     * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
+     * @param accepterPeeringConnectionOptions
+     *        The VPC peering connection options for the accepter VPC.
      */
 
-    public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
-        this.vpcPeeringConnectionId = vpcPeeringConnectionId;
+    public void setAccepterPeeringConnectionOptions(PeeringConnectionOptionsRequest accepterPeeringConnectionOptions) {
+        this.accepterPeeringConnectionOptions = accepterPeeringConnectionOptions;
     }
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The VPC peering connection options for the accepter VPC.
      * </p>
      * 
-     * @return The ID of the VPC peering connection.
+     * @return The VPC peering connection options for the accepter VPC.
      */
 
-    public String getVpcPeeringConnectionId() {
-        return this.vpcPeeringConnectionId;
+    public PeeringConnectionOptionsRequest getAccepterPeeringConnectionOptions() {
+        return this.accepterPeeringConnectionOptions;
     }
 
     /**
      * <p>
-     * The ID of the VPC peering connection.
+     * The VPC peering connection options for the accepter VPC.
      * </p>
      * 
-     * @param vpcPeeringConnectionId
-     *        The ID of the VPC peering connection.
+     * @param accepterPeeringConnectionOptions
+     *        The VPC peering connection options for the accepter VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyVpcPeeringConnectionOptionsRequest withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
-        setVpcPeeringConnectionId(vpcPeeringConnectionId);
+    public ModifyVpcPeeringConnectionOptionsRequest withAccepterPeeringConnectionOptions(PeeringConnectionOptionsRequest accepterPeeringConnectionOptions) {
+        setAccepterPeeringConnectionOptions(accepterPeeringConnectionOptions);
         return this;
     }
 
@@ -127,41 +127,41 @@ public class ModifyVpcPeeringConnectionOptionsRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The VPC peering connection options for the accepter VPC.
+     * The ID of the VPC peering connection.
      * </p>
      * 
-     * @param accepterPeeringConnectionOptions
-     *        The VPC peering connection options for the accepter VPC.
+     * @param vpcPeeringConnectionId
+     *        The ID of the VPC peering connection.
      */
 
-    public void setAccepterPeeringConnectionOptions(PeeringConnectionOptionsRequest accepterPeeringConnectionOptions) {
-        this.accepterPeeringConnectionOptions = accepterPeeringConnectionOptions;
+    public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
+        this.vpcPeeringConnectionId = vpcPeeringConnectionId;
     }
 
     /**
      * <p>
-     * The VPC peering connection options for the accepter VPC.
+     * The ID of the VPC peering connection.
      * </p>
      * 
-     * @return The VPC peering connection options for the accepter VPC.
+     * @return The ID of the VPC peering connection.
      */
 
-    public PeeringConnectionOptionsRequest getAccepterPeeringConnectionOptions() {
-        return this.accepterPeeringConnectionOptions;
+    public String getVpcPeeringConnectionId() {
+        return this.vpcPeeringConnectionId;
     }
 
     /**
      * <p>
-     * The VPC peering connection options for the accepter VPC.
+     * The ID of the VPC peering connection.
      * </p>
      * 
-     * @param accepterPeeringConnectionOptions
-     *        The VPC peering connection options for the accepter VPC.
+     * @param vpcPeeringConnectionId
+     *        The ID of the VPC peering connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModifyVpcPeeringConnectionOptionsRequest withAccepterPeeringConnectionOptions(PeeringConnectionOptionsRequest accepterPeeringConnectionOptions) {
-        setAccepterPeeringConnectionOptions(accepterPeeringConnectionOptions);
+    public ModifyVpcPeeringConnectionOptionsRequest withVpcPeeringConnectionId(String vpcPeeringConnectionId) {
+        setVpcPeeringConnectionId(vpcPeeringConnectionId);
         return this;
     }
 
@@ -187,12 +187,12 @@ public class ModifyVpcPeeringConnectionOptionsRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
+        if (getAccepterPeeringConnectionOptions() != null)
+            sb.append("AccepterPeeringConnectionOptions: ").append(getAccepterPeeringConnectionOptions()).append(",");
         if (getRequesterPeeringConnectionOptions() != null)
             sb.append("RequesterPeeringConnectionOptions: ").append(getRequesterPeeringConnectionOptions()).append(",");
-        if (getAccepterPeeringConnectionOptions() != null)
-            sb.append("AccepterPeeringConnectionOptions: ").append(getAccepterPeeringConnectionOptions());
+        if (getVpcPeeringConnectionId() != null)
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId());
         sb.append("}");
         return sb.toString();
     }
@@ -207,19 +207,19 @@ public class ModifyVpcPeeringConnectionOptionsRequest extends AmazonWebServiceRe
         if (obj instanceof ModifyVpcPeeringConnectionOptionsRequest == false)
             return false;
         ModifyVpcPeeringConnectionOptionsRequest other = (ModifyVpcPeeringConnectionOptionsRequest) obj;
-        if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null)
+        if (other.getAccepterPeeringConnectionOptions() == null ^ this.getAccepterPeeringConnectionOptions() == null)
             return false;
-        if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
+        if (other.getAccepterPeeringConnectionOptions() != null
+                && other.getAccepterPeeringConnectionOptions().equals(this.getAccepterPeeringConnectionOptions()) == false)
             return false;
         if (other.getRequesterPeeringConnectionOptions() == null ^ this.getRequesterPeeringConnectionOptions() == null)
             return false;
         if (other.getRequesterPeeringConnectionOptions() != null
                 && other.getRequesterPeeringConnectionOptions().equals(this.getRequesterPeeringConnectionOptions()) == false)
             return false;
-        if (other.getAccepterPeeringConnectionOptions() == null ^ this.getAccepterPeeringConnectionOptions() == null)
+        if (other.getVpcPeeringConnectionId() == null ^ this.getVpcPeeringConnectionId() == null)
             return false;
-        if (other.getAccepterPeeringConnectionOptions() != null
-                && other.getAccepterPeeringConnectionOptions().equals(this.getAccepterPeeringConnectionOptions()) == false)
+        if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
             return false;
         return true;
     }
@@ -229,9 +229,9 @@ public class ModifyVpcPeeringConnectionOptionsRequest extends AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
-        hashCode = prime * hashCode + ((getRequesterPeeringConnectionOptions() == null) ? 0 : getRequesterPeeringConnectionOptions().hashCode());
         hashCode = prime * hashCode + ((getAccepterPeeringConnectionOptions() == null) ? 0 : getAccepterPeeringConnectionOptions().hashCode());
+        hashCode = prime * hashCode + ((getRequesterPeeringConnectionOptions() == null) ? 0 : getRequesterPeeringConnectionOptions().hashCode());
+        hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
         return hashCode;
     }
 

@@ -34,12 +34,6 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     private String availabilityZone;
     /**
      * <p>
-     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
-     * </p>
-     */
-    private String platform;
-    /**
-     * <p>
      * The number of modified Reserved Instances.
      * </p>
      */
@@ -50,6 +44,12 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private String instanceType;
+    /**
+     * <p>
+     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * </p>
+     */
+    private String platform;
     /**
      * <p>
      * Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability Zone.
@@ -94,46 +94,6 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     public ReservedInstancesConfiguration withAvailabilityZone(String availabilityZone) {
         setAvailabilityZone(availabilityZone);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
-     * </p>
-     * 
-     * @param platform
-     *        The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
-     */
-
-    public void setPlatform(String platform) {
-        this.platform = platform;
-    }
-
-    /**
-     * <p>
-     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
-     * </p>
-     * 
-     * @return The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
-     */
-
-    public String getPlatform() {
-        return this.platform;
-    }
-
-    /**
-     * <p>
-     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
-     * </p>
-     * 
-     * @param platform
-     *        The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ReservedInstancesConfiguration withPlatform(String platform) {
-        setPlatform(platform);
         return this;
     }
 
@@ -252,6 +212,46 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * </p>
+     * 
+     * @param platform
+     *        The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     */
+
+    public void setPlatform(String platform) {
+        this.platform = platform;
+    }
+
+    /**
+     * <p>
+     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * </p>
+     * 
+     * @return The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     */
+
+    public String getPlatform() {
+        return this.platform;
+    }
+
+    /**
+     * <p>
+     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * </p>
+     * 
+     * @param platform
+     *        The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReservedInstancesConfiguration withPlatform(String platform) {
+        setPlatform(platform);
+        return this;
+    }
+
+    /**
+     * <p>
      * Whether the Reserved Instance is applied to instances in a region or instances in a specific Availability Zone.
      * </p>
      * 
@@ -341,12 +341,12 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
         sb.append("{");
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
-        if (getPlatform() != null)
-            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getInstanceCount() != null)
             sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getPlatform() != null)
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getScope() != null)
             sb.append("Scope: ").append(getScope());
         sb.append("}");
@@ -367,10 +367,6 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
-        if (other.getPlatform() == null ^ this.getPlatform() == null)
-            return false;
-        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
-            return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
@@ -378,6 +374,10 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
+            return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getScope() == null ^ this.getScope() == null)
             return false;
@@ -392,9 +392,9 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
-        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         return hashCode;
     }

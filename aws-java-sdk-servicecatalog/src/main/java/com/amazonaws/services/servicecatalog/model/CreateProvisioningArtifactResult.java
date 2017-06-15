@@ -31,7 +31,7 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
     private ProvisioningArtifactDetail provisioningArtifactDetail;
     /**
      * <p>
-     * Additional information about the provisioning artifact create request.
+     * Additional information about the creation request for the provisioning artifact.
      * </p>
      */
     private java.util.Map<String, String> info;
@@ -84,10 +84,10 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the provisioning artifact create request.
+     * Additional information about the creation request for the provisioning artifact.
      * </p>
      * 
-     * @return Additional information about the provisioning artifact create request.
+     * @return Additional information about the creation request for the provisioning artifact.
      */
 
     public java.util.Map<String, String> getInfo() {
@@ -96,11 +96,11 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the provisioning artifact create request.
+     * Additional information about the creation request for the provisioning artifact.
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact create request.
+     *        Additional information about the creation request for the provisioning artifact.
      */
 
     public void setInfo(java.util.Map<String, String> info) {
@@ -109,11 +109,11 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Additional information about the provisioning artifact create request.
+     * Additional information about the creation request for the provisioning artifact.
      * </p>
      * 
      * @param info
-     *        Additional information about the provisioning artifact create request.
+     *        Additional information about the creation request for the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -60,7 +60,8 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
     private String shortDescription;
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      */
     private String type;
@@ -300,11 +301,13 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the significance of this value.
+     *        The product type. Contact the product administrator for the significance of this value. If this value is
+     *        <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @see ProductType
      */
 
@@ -314,10 +317,12 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
-     * @return The product type. Contact the product administrator for the significance of this value.
+     * @return The product type. Contact the product administrator for the significance of this value. If this value is
+     *         <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @see ProductType
      */
 
@@ -327,11 +332,13 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the significance of this value.
+     *        The product type. Contact the product administrator for the significance of this value. If this value is
+     *        <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductType
      */
@@ -343,11 +350,13 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the significance of this value.
+     *        The product type. Contact the product administrator for the significance of this value. If this value is
+     *        <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @see ProductType
      */
 
@@ -357,11 +366,13 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The product type. Contact the product administrator for the significance of this value.
+     * The product type. Contact the product administrator for the significance of this value. If this value is
+     * <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * </p>
      * 
      * @param type
-     *        The product type. Contact the product administrator for the significance of this value.
+     *        The product type. Contact the product administrator for the significance of this value. If this value is
+     *        <code>MARKETPLACE</code>, the product was created by AWS Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductType
      */

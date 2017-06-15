@@ -41,16 +41,16 @@ public class DescribeSpotFleetInstancesRequestMarshaller implements Marshaller<R
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeSpotFleetInstancesRequest.getSpotFleetRequestId() != null) {
-            request.addParameter("SpotFleetRequestId", StringUtils.fromString(describeSpotFleetInstancesRequest.getSpotFleetRequestId()));
+        if (describeSpotFleetInstancesRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotFleetInstancesRequest.getMaxResults()));
         }
 
         if (describeSpotFleetInstancesRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeSpotFleetInstancesRequest.getNextToken()));
         }
 
-        if (describeSpotFleetInstancesRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotFleetInstancesRequest.getMaxResults()));
+        if (describeSpotFleetInstancesRequest.getSpotFleetRequestId() != null) {
+            request.addParameter("SpotFleetRequestId", StringUtils.fromString(describeSpotFleetInstancesRequest.getSpotFleetRequestId()));
         }
 
         return request;

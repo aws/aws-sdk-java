@@ -27,56 +27,16 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The key pair name you provided.
-     * </p>
-     */
-    private String keyName;
-    /**
-     * <p>
      * The MD5 public key fingerprint as specified in section 4 of RFC 4716.
      * </p>
      */
     private String keyFingerprint;
-
     /**
      * <p>
      * The key pair name you provided.
      * </p>
-     * 
-     * @param keyName
-     *        The key pair name you provided.
      */
-
-    public void setKeyName(String keyName) {
-        this.keyName = keyName;
-    }
-
-    /**
-     * <p>
-     * The key pair name you provided.
-     * </p>
-     * 
-     * @return The key pair name you provided.
-     */
-
-    public String getKeyName() {
-        return this.keyName;
-    }
-
-    /**
-     * <p>
-     * The key pair name you provided.
-     * </p>
-     * 
-     * @param keyName
-     *        The key pair name you provided.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportKeyPairResult withKeyName(String keyName) {
-        setKeyName(keyName);
-        return this;
-    }
+    private String keyName;
 
     /**
      * <p>
@@ -119,6 +79,46 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The key pair name you provided.
+     * </p>
+     * 
+     * @param keyName
+     *        The key pair name you provided.
+     */
+
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
+    }
+
+    /**
+     * <p>
+     * The key pair name you provided.
+     * </p>
+     * 
+     * @return The key pair name you provided.
+     */
+
+    public String getKeyName() {
+        return this.keyName;
+    }
+
+    /**
+     * <p>
+     * The key pair name you provided.
+     * </p>
+     * 
+     * @param keyName
+     *        The key pair name you provided.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportKeyPairResult withKeyName(String keyName) {
+        setKeyName(keyName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -129,10 +129,10 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getKeyName() != null)
-            sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getKeyFingerprint() != null)
-            sb.append("KeyFingerprint: ").append(getKeyFingerprint());
+            sb.append("KeyFingerprint: ").append(getKeyFingerprint()).append(",");
+        if (getKeyName() != null)
+            sb.append("KeyName: ").append(getKeyName());
         sb.append("}");
         return sb.toString();
     }
@@ -147,13 +147,13 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
         if (obj instanceof ImportKeyPairResult == false)
             return false;
         ImportKeyPairResult other = (ImportKeyPairResult) obj;
-        if (other.getKeyName() == null ^ this.getKeyName() == null)
-            return false;
-        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
-            return false;
         if (other.getKeyFingerprint() == null ^ this.getKeyFingerprint() == null)
             return false;
         if (other.getKeyFingerprint() != null && other.getKeyFingerprint().equals(this.getKeyFingerprint()) == false)
+            return false;
+        if (other.getKeyName() == null ^ this.getKeyName() == null)
+            return false;
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false)
             return false;
         return true;
     }
@@ -163,8 +163,8 @@ public class ImportKeyPairResult extends com.amazonaws.AmazonWebServiceResult<co
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         hashCode = prime * hashCode + ((getKeyFingerprint() == null) ? 0 : getKeyFingerprint().hashCode());
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         return hashCode;
     }
 

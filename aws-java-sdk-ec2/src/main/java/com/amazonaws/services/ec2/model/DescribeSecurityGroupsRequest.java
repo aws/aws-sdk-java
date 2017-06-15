@@ -30,26 +30,6 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * [EC2-Classic and default VPC only] One or more security group names. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
-     * </p>
-     * <p>
-     * Default: Describes all your security groups.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> groupNames;
-    /**
-     * <p>
-     * One or more security group IDs. Required for security groups in a nondefault VPC.
-     * </p>
-     * <p>
-     * Default: Describes all your security groups.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> groupIds;
-    /**
-     * <p>
      * One or more filters. If using multiple filters for rules, the results include security groups for which any
      * combination of rules - not necessarily a single rule - match all filters.
      * </p>
@@ -141,7 +121,15 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
+    /**
+     * <p>
+     * One or more security group IDs. Required for security groups in a nondefault VPC.
+     * </p>
+     * <p>
+     * Default: Describes all your security groups.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> groupIds;
     /**
      * <p>
      * [EC2-Classic and default VPC only] One or more security group names. You can specify either the security group
@@ -151,198 +139,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
      * <p>
      * Default: Describes all your security groups.
      * </p>
-     * 
-     * @return [EC2-Classic and default VPC only] One or more security group names. You can specify either the security
-     *         group name or the security group ID. For security groups in a nondefault VPC, use the
-     *         <code>group-name</code> filter to describe security groups by name.</p>
-     *         <p>
-     *         Default: Describes all your security groups.
      */
-
-    public java.util.List<String> getGroupNames() {
-        if (groupNames == null) {
-            groupNames = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return groupNames;
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic and default VPC only] One or more security group names. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
-     * </p>
-     * <p>
-     * Default: Describes all your security groups.
-     * </p>
-     * 
-     * @param groupNames
-     *        [EC2-Classic and default VPC only] One or more security group names. You can specify either the security
-     *        group name or the security group ID. For security groups in a nondefault VPC, use the
-     *        <code>group-name</code> filter to describe security groups by name.</p>
-     *        <p>
-     *        Default: Describes all your security groups.
-     */
-
-    public void setGroupNames(java.util.Collection<String> groupNames) {
-        if (groupNames == null) {
-            this.groupNames = null;
-            return;
-        }
-
-        this.groupNames = new com.amazonaws.internal.SdkInternalList<String>(groupNames);
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic and default VPC only] One or more security group names. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
-     * </p>
-     * <p>
-     * Default: Describes all your security groups.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setGroupNames(java.util.Collection)} or {@link #withGroupNames(java.util.Collection)} if you want to
-     * override the existing values.
-     * </p>
-     * 
-     * @param groupNames
-     *        [EC2-Classic and default VPC only] One or more security group names. You can specify either the security
-     *        group name or the security group ID. For security groups in a nondefault VPC, use the
-     *        <code>group-name</code> filter to describe security groups by name.</p>
-     *        <p>
-     *        Default: Describes all your security groups.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSecurityGroupsRequest withGroupNames(String... groupNames) {
-        if (this.groupNames == null) {
-            setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(groupNames.length));
-        }
-        for (String ele : groupNames) {
-            this.groupNames.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * [EC2-Classic and default VPC only] One or more security group names. You can specify either the security group
-     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
-     * describe security groups by name.
-     * </p>
-     * <p>
-     * Default: Describes all your security groups.
-     * </p>
-     * 
-     * @param groupNames
-     *        [EC2-Classic and default VPC only] One or more security group names. You can specify either the security
-     *        group name or the security group ID. For security groups in a nondefault VPC, use the
-     *        <code>group-name</code> filter to describe security groups by name.</p>
-     *        <p>
-     *        Default: Describes all your security groups.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSecurityGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
-        setGroupNames(groupNames);
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more security group IDs. Required for security groups in a nondefault VPC.
-     * </p>
-     * <p>
-     * Default: Describes all your security groups.
-     * </p>
-     * 
-     * @return One or more security group IDs. Required for security groups in a nondefault VPC.</p>
-     *         <p>
-     *         Default: Describes all your security groups.
-     */
-
-    public java.util.List<String> getGroupIds() {
-        if (groupIds == null) {
-            groupIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return groupIds;
-    }
-
-    /**
-     * <p>
-     * One or more security group IDs. Required for security groups in a nondefault VPC.
-     * </p>
-     * <p>
-     * Default: Describes all your security groups.
-     * </p>
-     * 
-     * @param groupIds
-     *        One or more security group IDs. Required for security groups in a nondefault VPC.</p>
-     *        <p>
-     *        Default: Describes all your security groups.
-     */
-
-    public void setGroupIds(java.util.Collection<String> groupIds) {
-        if (groupIds == null) {
-            this.groupIds = null;
-            return;
-        }
-
-        this.groupIds = new com.amazonaws.internal.SdkInternalList<String>(groupIds);
-    }
-
-    /**
-     * <p>
-     * One or more security group IDs. Required for security groups in a nondefault VPC.
-     * </p>
-     * <p>
-     * Default: Describes all your security groups.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setGroupIds(java.util.Collection)} or {@link #withGroupIds(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param groupIds
-     *        One or more security group IDs. Required for security groups in a nondefault VPC.</p>
-     *        <p>
-     *        Default: Describes all your security groups.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSecurityGroupsRequest withGroupIds(String... groupIds) {
-        if (this.groupIds == null) {
-            setGroupIds(new com.amazonaws.internal.SdkInternalList<String>(groupIds.length));
-        }
-        for (String ele : groupIds) {
-            this.groupIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more security group IDs. Required for security groups in a nondefault VPC.
-     * </p>
-     * <p>
-     * Default: Describes all your security groups.
-     * </p>
-     * 
-     * @param groupIds
-     *        One or more security group IDs. Required for security groups in a nondefault VPC.</p>
-     *        <p>
-     *        Default: Describes all your security groups.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeSecurityGroupsRequest withGroupIds(java.util.Collection<String> groupIds) {
-        setGroupIds(groupIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> groupNames;
 
     /**
      * <p>
@@ -1115,6 +913,208 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * One or more security group IDs. Required for security groups in a nondefault VPC.
+     * </p>
+     * <p>
+     * Default: Describes all your security groups.
+     * </p>
+     * 
+     * @return One or more security group IDs. Required for security groups in a nondefault VPC.</p>
+     *         <p>
+     *         Default: Describes all your security groups.
+     */
+
+    public java.util.List<String> getGroupIds() {
+        if (groupIds == null) {
+            groupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return groupIds;
+    }
+
+    /**
+     * <p>
+     * One or more security group IDs. Required for security groups in a nondefault VPC.
+     * </p>
+     * <p>
+     * Default: Describes all your security groups.
+     * </p>
+     * 
+     * @param groupIds
+     *        One or more security group IDs. Required for security groups in a nondefault VPC.</p>
+     *        <p>
+     *        Default: Describes all your security groups.
+     */
+
+    public void setGroupIds(java.util.Collection<String> groupIds) {
+        if (groupIds == null) {
+            this.groupIds = null;
+            return;
+        }
+
+        this.groupIds = new com.amazonaws.internal.SdkInternalList<String>(groupIds);
+    }
+
+    /**
+     * <p>
+     * One or more security group IDs. Required for security groups in a nondefault VPC.
+     * </p>
+     * <p>
+     * Default: Describes all your security groups.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroupIds(java.util.Collection)} or {@link #withGroupIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param groupIds
+     *        One or more security group IDs. Required for security groups in a nondefault VPC.</p>
+     *        <p>
+     *        Default: Describes all your security groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecurityGroupsRequest withGroupIds(String... groupIds) {
+        if (this.groupIds == null) {
+            setGroupIds(new com.amazonaws.internal.SdkInternalList<String>(groupIds.length));
+        }
+        for (String ele : groupIds) {
+            this.groupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more security group IDs. Required for security groups in a nondefault VPC.
+     * </p>
+     * <p>
+     * Default: Describes all your security groups.
+     * </p>
+     * 
+     * @param groupIds
+     *        One or more security group IDs. Required for security groups in a nondefault VPC.</p>
+     *        <p>
+     *        Default: Describes all your security groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecurityGroupsRequest withGroupIds(java.util.Collection<String> groupIds) {
+        setGroupIds(groupIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic and default VPC only] One or more security group names. You can specify either the security group
+     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
+     * describe security groups by name.
+     * </p>
+     * <p>
+     * Default: Describes all your security groups.
+     * </p>
+     * 
+     * @return [EC2-Classic and default VPC only] One or more security group names. You can specify either the security
+     *         group name or the security group ID. For security groups in a nondefault VPC, use the
+     *         <code>group-name</code> filter to describe security groups by name.</p>
+     *         <p>
+     *         Default: Describes all your security groups.
+     */
+
+    public java.util.List<String> getGroupNames() {
+        if (groupNames == null) {
+            groupNames = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return groupNames;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic and default VPC only] One or more security group names. You can specify either the security group
+     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
+     * describe security groups by name.
+     * </p>
+     * <p>
+     * Default: Describes all your security groups.
+     * </p>
+     * 
+     * @param groupNames
+     *        [EC2-Classic and default VPC only] One or more security group names. You can specify either the security
+     *        group name or the security group ID. For security groups in a nondefault VPC, use the
+     *        <code>group-name</code> filter to describe security groups by name.</p>
+     *        <p>
+     *        Default: Describes all your security groups.
+     */
+
+    public void setGroupNames(java.util.Collection<String> groupNames) {
+        if (groupNames == null) {
+            this.groupNames = null;
+            return;
+        }
+
+        this.groupNames = new com.amazonaws.internal.SdkInternalList<String>(groupNames);
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic and default VPC only] One or more security group names. You can specify either the security group
+     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
+     * describe security groups by name.
+     * </p>
+     * <p>
+     * Default: Describes all your security groups.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGroupNames(java.util.Collection)} or {@link #withGroupNames(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param groupNames
+     *        [EC2-Classic and default VPC only] One or more security group names. You can specify either the security
+     *        group name or the security group ID. For security groups in a nondefault VPC, use the
+     *        <code>group-name</code> filter to describe security groups by name.</p>
+     *        <p>
+     *        Default: Describes all your security groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecurityGroupsRequest withGroupNames(String... groupNames) {
+        if (this.groupNames == null) {
+            setGroupNames(new com.amazonaws.internal.SdkInternalList<String>(groupNames.length));
+        }
+        for (String ele : groupNames) {
+            this.groupNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * [EC2-Classic and default VPC only] One or more security group names. You can specify either the security group
+     * name or the security group ID. For security groups in a nondefault VPC, use the <code>group-name</code> filter to
+     * describe security groups by name.
+     * </p>
+     * <p>
+     * Default: Describes all your security groups.
+     * </p>
+     * 
+     * @param groupNames
+     *        [EC2-Classic and default VPC only] One or more security group names. You can specify either the security
+     *        group name or the security group ID. For security groups in a nondefault VPC, use the
+     *        <code>group-name</code> filter to describe security groups by name.</p>
+     *        <p>
+     *        Default: Describes all your security groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecurityGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
+        setGroupNames(groupNames);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1136,12 +1136,12 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getGroupNames() != null)
-            sb.append("GroupNames: ").append(getGroupNames()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getGroupIds() != null)
             sb.append("GroupIds: ").append(getGroupIds()).append(",");
-        if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+        if (getGroupNames() != null)
+            sb.append("GroupNames: ").append(getGroupNames());
         sb.append("}");
         return sb.toString();
     }
@@ -1156,17 +1156,17 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
         if (obj instanceof DescribeSecurityGroupsRequest == false)
             return false;
         DescribeSecurityGroupsRequest other = (DescribeSecurityGroupsRequest) obj;
-        if (other.getGroupNames() == null ^ this.getGroupNames() == null)
+        if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
-        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false)
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
         if (other.getGroupIds() == null ^ this.getGroupIds() == null)
             return false;
         if (other.getGroupIds() != null && other.getGroupIds().equals(this.getGroupIds()) == false)
             return false;
-        if (other.getFilters() == null ^ this.getFilters() == null)
+        if (other.getGroupNames() == null ^ this.getGroupNames() == null)
             return false;
-        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false)
             return false;
         return true;
     }
@@ -1176,9 +1176,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
-        hashCode = prime * hashCode + ((getGroupIds() == null) ? 0 : getGroupIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getGroupIds() == null) ? 0 : getGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
         return hashCode;
     }
 

@@ -40,42 +40,6 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (describeSpotPriceHistoryRequest.getStartTime() != null) {
-            request.addParameter("StartTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getStartTime()));
-        }
-
-        if (describeSpotPriceHistoryRequest.getEndTime() != null) {
-            request.addParameter("EndTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getEndTime()));
-        }
-
-        com.amazonaws.internal.SdkInternalList<String> describeSpotPriceHistoryRequestInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotPriceHistoryRequest
-                .getInstanceTypes();
-        if (!describeSpotPriceHistoryRequestInstanceTypesList.isEmpty() || !describeSpotPriceHistoryRequestInstanceTypesList.isAutoConstruct()) {
-            int instanceTypesListIndex = 1;
-
-            for (String describeSpotPriceHistoryRequestInstanceTypesListValue : describeSpotPriceHistoryRequestInstanceTypesList) {
-                if (describeSpotPriceHistoryRequestInstanceTypesListValue != null) {
-                    request.addParameter("InstanceType." + instanceTypesListIndex,
-                            StringUtils.fromString(describeSpotPriceHistoryRequestInstanceTypesListValue));
-                }
-                instanceTypesListIndex++;
-            }
-        }
-
-        com.amazonaws.internal.SdkInternalList<String> describeSpotPriceHistoryRequestProductDescriptionsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotPriceHistoryRequest
-                .getProductDescriptions();
-        if (!describeSpotPriceHistoryRequestProductDescriptionsList.isEmpty() || !describeSpotPriceHistoryRequestProductDescriptionsList.isAutoConstruct()) {
-            int productDescriptionsListIndex = 1;
-
-            for (String describeSpotPriceHistoryRequestProductDescriptionsListValue : describeSpotPriceHistoryRequestProductDescriptionsList) {
-                if (describeSpotPriceHistoryRequestProductDescriptionsListValue != null) {
-                    request.addParameter("ProductDescription." + productDescriptionsListIndex,
-                            StringUtils.fromString(describeSpotPriceHistoryRequestProductDescriptionsListValue));
-                }
-                productDescriptionsListIndex++;
-            }
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeSpotPriceHistoryRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeSpotPriceHistoryRequest
                 .getFilters();
         if (!describeSpotPriceHistoryRequestFiltersList.isEmpty() || !describeSpotPriceHistoryRequestFiltersList.isAutoConstruct()) {
@@ -108,12 +72,48 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
             request.addParameter("AvailabilityZone", StringUtils.fromString(describeSpotPriceHistoryRequest.getAvailabilityZone()));
         }
 
+        if (describeSpotPriceHistoryRequest.getEndTime() != null) {
+            request.addParameter("EndTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getEndTime()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeSpotPriceHistoryRequestInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotPriceHistoryRequest
+                .getInstanceTypes();
+        if (!describeSpotPriceHistoryRequestInstanceTypesList.isEmpty() || !describeSpotPriceHistoryRequestInstanceTypesList.isAutoConstruct()) {
+            int instanceTypesListIndex = 1;
+
+            for (String describeSpotPriceHistoryRequestInstanceTypesListValue : describeSpotPriceHistoryRequestInstanceTypesList) {
+                if (describeSpotPriceHistoryRequestInstanceTypesListValue != null) {
+                    request.addParameter("InstanceType." + instanceTypesListIndex,
+                            StringUtils.fromString(describeSpotPriceHistoryRequestInstanceTypesListValue));
+                }
+                instanceTypesListIndex++;
+            }
+        }
+
         if (describeSpotPriceHistoryRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotPriceHistoryRequest.getMaxResults()));
         }
 
         if (describeSpotPriceHistoryRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeSpotPriceHistoryRequest.getNextToken()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeSpotPriceHistoryRequestProductDescriptionsList = (com.amazonaws.internal.SdkInternalList<String>) describeSpotPriceHistoryRequest
+                .getProductDescriptions();
+        if (!describeSpotPriceHistoryRequestProductDescriptionsList.isEmpty() || !describeSpotPriceHistoryRequestProductDescriptionsList.isAutoConstruct()) {
+            int productDescriptionsListIndex = 1;
+
+            for (String describeSpotPriceHistoryRequestProductDescriptionsListValue : describeSpotPriceHistoryRequestProductDescriptionsList) {
+                if (describeSpotPriceHistoryRequestProductDescriptionsListValue != null) {
+                    request.addParameter("ProductDescription." + productDescriptionsListIndex,
+                            StringUtils.fromString(describeSpotPriceHistoryRequestProductDescriptionsListValue));
+                }
+                productDescriptionsListIndex++;
+            }
+        }
+
+        if (describeSpotPriceHistoryRequest.getStartTime() != null) {
+            request.addParameter("StartTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getStartTime()));
         }
 
         return request;

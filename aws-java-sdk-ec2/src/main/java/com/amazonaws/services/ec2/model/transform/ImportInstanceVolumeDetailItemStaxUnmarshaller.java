@@ -43,23 +43,23 @@ public class ImportInstanceVolumeDetailItemStaxUnmarshaller implements Unmarshal
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("bytesConverted", targetDepth)) {
-                    importInstanceVolumeDetailItem.setBytesConverted(LongStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("availabilityZone", targetDepth)) {
                     importInstanceVolumeDetailItem.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("image", targetDepth)) {
-                    importInstanceVolumeDetailItem.setImage(DiskImageDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("bytesConverted", targetDepth)) {
+                    importInstanceVolumeDetailItem.setBytesConverted(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("volume", targetDepth)) {
-                    importInstanceVolumeDetailItem.setVolume(DiskImageVolumeDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("description", targetDepth)) {
+                    importInstanceVolumeDetailItem.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("image", targetDepth)) {
+                    importInstanceVolumeDetailItem.setImage(DiskImageDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -73,8 +73,8 @@ public class ImportInstanceVolumeDetailItemStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
-                if (context.testExpression("description", targetDepth)) {
-                    importInstanceVolumeDetailItem.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("volume", targetDepth)) {
+                    importInstanceVolumeDetailItem.setVolume(DiskImageVolumeDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

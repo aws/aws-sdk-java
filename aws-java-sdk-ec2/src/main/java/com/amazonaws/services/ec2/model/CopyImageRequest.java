@@ -29,36 +29,18 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The name of the region that contains the AMI to copy.
-     * </p>
-     */
-    private String sourceRegion;
-    /**
-     * <p>
-     * The ID of the AMI to copy.
-     * </p>
-     */
-    private String sourceImageId;
-    /**
-     * <p>
-     * The name of the new AMI in the destination region.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
-     * A description for the new AMI in the destination region.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * A description for the new AMI in the destination region.
+     * </p>
+     */
+    private String description;
     /**
      * <p>
      * Specifies whether the destination snapshots of the copied image should be encrypted. The default CMK for EBS is
@@ -81,166 +63,24 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </p>
      */
     private String kmsKeyId;
-
-    /**
-     * <p>
-     * The name of the region that contains the AMI to copy.
-     * </p>
-     * 
-     * @param sourceRegion
-     *        The name of the region that contains the AMI to copy.
-     */
-
-    public void setSourceRegion(String sourceRegion) {
-        this.sourceRegion = sourceRegion;
-    }
-
-    /**
-     * <p>
-     * The name of the region that contains the AMI to copy.
-     * </p>
-     * 
-     * @return The name of the region that contains the AMI to copy.
-     */
-
-    public String getSourceRegion() {
-        return this.sourceRegion;
-    }
-
-    /**
-     * <p>
-     * The name of the region that contains the AMI to copy.
-     * </p>
-     * 
-     * @param sourceRegion
-     *        The name of the region that contains the AMI to copy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CopyImageRequest withSourceRegion(String sourceRegion) {
-        setSourceRegion(sourceRegion);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI to copy.
-     * </p>
-     * 
-     * @param sourceImageId
-     *        The ID of the AMI to copy.
-     */
-
-    public void setSourceImageId(String sourceImageId) {
-        this.sourceImageId = sourceImageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI to copy.
-     * </p>
-     * 
-     * @return The ID of the AMI to copy.
-     */
-
-    public String getSourceImageId() {
-        return this.sourceImageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI to copy.
-     * </p>
-     * 
-     * @param sourceImageId
-     *        The ID of the AMI to copy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CopyImageRequest withSourceImageId(String sourceImageId) {
-        setSourceImageId(sourceImageId);
-        return this;
-    }
-
     /**
      * <p>
      * The name of the new AMI in the destination region.
      * </p>
-     * 
-     * @param name
-     *        The name of the new AMI in the destination region.
      */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    private String name;
     /**
      * <p>
-     * The name of the new AMI in the destination region.
+     * The ID of the AMI to copy.
      * </p>
-     * 
-     * @return The name of the new AMI in the destination region.
      */
-
-    public String getName() {
-        return this.name;
-    }
-
+    private String sourceImageId;
     /**
      * <p>
-     * The name of the new AMI in the destination region.
+     * The name of the region that contains the AMI to copy.
      * </p>
-     * 
-     * @param name
-     *        The name of the new AMI in the destination region.
-     * @return Returns a reference to this object so that method calls can be chained together.
      */
-
-    public CopyImageRequest withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A description for the new AMI in the destination region.
-     * </p>
-     * 
-     * @param description
-     *        A description for the new AMI in the destination region.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description for the new AMI in the destination region.
-     * </p>
-     * 
-     * @return A description for the new AMI in the destination region.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description for the new AMI in the destination region.
-     * </p>
-     * 
-     * @param description
-     *        A description for the new AMI in the destination region.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CopyImageRequest withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
+    private String sourceRegion;
 
     /**
      * <p>
@@ -291,6 +131,46 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     public CopyImageRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description for the new AMI in the destination region.
+     * </p>
+     * 
+     * @param description
+     *        A description for the new AMI in the destination region.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the new AMI in the destination region.
+     * </p>
+     * 
+     * @return A description for the new AMI in the destination region.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the new AMI in the destination region.
+     * </p>
+     * 
+     * @param description
+     *        A description for the new AMI in the destination region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyImageRequest withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -457,6 +337,126 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     }
 
     /**
+     * <p>
+     * The name of the new AMI in the destination region.
+     * </p>
+     * 
+     * @param name
+     *        The name of the new AMI in the destination region.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the new AMI in the destination region.
+     * </p>
+     * 
+     * @return The name of the new AMI in the destination region.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the new AMI in the destination region.
+     * </p>
+     * 
+     * @param name
+     *        The name of the new AMI in the destination region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyImageRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI to copy.
+     * </p>
+     * 
+     * @param sourceImageId
+     *        The ID of the AMI to copy.
+     */
+
+    public void setSourceImageId(String sourceImageId) {
+        this.sourceImageId = sourceImageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI to copy.
+     * </p>
+     * 
+     * @return The ID of the AMI to copy.
+     */
+
+    public String getSourceImageId() {
+        return this.sourceImageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI to copy.
+     * </p>
+     * 
+     * @param sourceImageId
+     *        The ID of the AMI to copy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyImageRequest withSourceImageId(String sourceImageId) {
+        setSourceImageId(sourceImageId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the region that contains the AMI to copy.
+     * </p>
+     * 
+     * @param sourceRegion
+     *        The name of the region that contains the AMI to copy.
+     */
+
+    public void setSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+    }
+
+    /**
+     * <p>
+     * The name of the region that contains the AMI to copy.
+     * </p>
+     * 
+     * @return The name of the region that contains the AMI to copy.
+     */
+
+    public String getSourceRegion() {
+        return this.sourceRegion;
+    }
+
+    /**
+     * <p>
+     * The name of the region that contains the AMI to copy.
+     * </p>
+     * 
+     * @param sourceRegion
+     *        The name of the region that contains the AMI to copy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyImageRequest withSourceRegion(String sourceRegion) {
+        setSourceRegion(sourceRegion);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -478,20 +478,20 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSourceRegion() != null)
-            sb.append("SourceRegion: ").append(getSourceRegion()).append(",");
-        if (getSourceImageId() != null)
-            sb.append("SourceImageId: ").append(getSourceImageId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEncrypted() != null)
             sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getSourceImageId() != null)
+            sb.append("SourceImageId: ").append(getSourceImageId()).append(",");
+        if (getSourceRegion() != null)
+            sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -506,25 +506,13 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         if (obj instanceof CopyImageRequest == false)
             return false;
         CopyImageRequest other = (CopyImageRequest) obj;
-        if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
-            return false;
-        if (other.getSourceImageId() == null ^ this.getSourceImageId() == null)
-            return false;
-        if (other.getSourceImageId() != null && other.getSourceImageId().equals(this.getSourceImageId()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getEncrypted() == null ^ this.getEncrypted() == null)
             return false;
@@ -534,6 +522,18 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getSourceImageId() == null ^ this.getSourceImageId() == null)
+            return false;
+        if (other.getSourceImageId() != null && other.getSourceImageId().equals(this.getSourceImageId()) == false)
+            return false;
+        if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
+            return false;
+        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
+            return false;
         return true;
     }
 
@@ -542,13 +542,13 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
-        hashCode = prime * hashCode + ((getSourceImageId() == null) ? 0 : getSourceImageId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSourceImageId() == null) ? 0 : getSourceImageId().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }
 

@@ -28,57 +28,17 @@ public class TargetConfigurationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Convertible Reserved Instance offering ID.
-     * </p>
-     */
-    private String offeringId;
-    /**
-     * <p>
      * The number of instances the Covertible Reserved Instance offering can be applied to. This parameter is reserved
      * and cannot be specified in a request
      * </p>
      */
     private Integer instanceCount;
-
     /**
      * <p>
      * The Convertible Reserved Instance offering ID.
      * </p>
-     * 
-     * @param offeringId
-     *        The Convertible Reserved Instance offering ID.
      */
-
-    public void setOfferingId(String offeringId) {
-        this.offeringId = offeringId;
-    }
-
-    /**
-     * <p>
-     * The Convertible Reserved Instance offering ID.
-     * </p>
-     * 
-     * @return The Convertible Reserved Instance offering ID.
-     */
-
-    public String getOfferingId() {
-        return this.offeringId;
-    }
-
-    /**
-     * <p>
-     * The Convertible Reserved Instance offering ID.
-     * </p>
-     * 
-     * @param offeringId
-     *        The Convertible Reserved Instance offering ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TargetConfigurationRequest withOfferingId(String offeringId) {
-        setOfferingId(offeringId);
-        return this;
-    }
+    private String offeringId;
 
     /**
      * <p>
@@ -127,6 +87,46 @@ public class TargetConfigurationRequest implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Convertible Reserved Instance offering ID.
+     * </p>
+     * 
+     * @param offeringId
+     *        The Convertible Reserved Instance offering ID.
+     */
+
+    public void setOfferingId(String offeringId) {
+        this.offeringId = offeringId;
+    }
+
+    /**
+     * <p>
+     * The Convertible Reserved Instance offering ID.
+     * </p>
+     * 
+     * @return The Convertible Reserved Instance offering ID.
+     */
+
+    public String getOfferingId() {
+        return this.offeringId;
+    }
+
+    /**
+     * <p>
+     * The Convertible Reserved Instance offering ID.
+     * </p>
+     * 
+     * @param offeringId
+     *        The Convertible Reserved Instance offering ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TargetConfigurationRequest withOfferingId(String offeringId) {
+        setOfferingId(offeringId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -137,10 +137,10 @@ public class TargetConfigurationRequest implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOfferingId() != null)
-            sb.append("OfferingId: ").append(getOfferingId()).append(",");
         if (getInstanceCount() != null)
-            sb.append("InstanceCount: ").append(getInstanceCount());
+            sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
+        if (getOfferingId() != null)
+            sb.append("OfferingId: ").append(getOfferingId());
         sb.append("}");
         return sb.toString();
     }
@@ -155,13 +155,13 @@ public class TargetConfigurationRequest implements Serializable, Cloneable {
         if (obj instanceof TargetConfigurationRequest == false)
             return false;
         TargetConfigurationRequest other = (TargetConfigurationRequest) obj;
-        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
-            return false;
-        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
-            return false;
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null)
             return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false)
+            return false;
+        if (other.getOfferingId() == null ^ this.getOfferingId() == null)
+            return false;
+        if (other.getOfferingId() != null && other.getOfferingId().equals(this.getOfferingId()) == false)
             return false;
         return true;
     }
@@ -171,8 +171,8 @@ public class TargetConfigurationRequest implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
+        hashCode = prime * hashCode + ((getOfferingId() == null) ? 0 : getOfferingId().hashCode());
         return hashCode;
     }
 

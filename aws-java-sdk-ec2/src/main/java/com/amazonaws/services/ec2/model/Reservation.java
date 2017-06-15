@@ -28,10 +28,16 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the reservation.
+     * [EC2-Classic only] One or more security groups.
      * </p>
      */
-    private String reservationId;
+    private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
+    /**
+     * <p>
+     * One or more instances.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Instance> instances;
     /**
      * <p>
      * The ID of the AWS account that owns the reservation.
@@ -47,148 +53,16 @@ public class Reservation implements Serializable, Cloneable {
     private String requesterId;
     /**
      * <p>
-     * [EC2-Classic only] One or more security groups.
+     * The ID of the reservation.
      * </p>
      */
-    private com.amazonaws.internal.SdkInternalList<GroupIdentifier> groups;
-    /**
-     * <p>
-     * One or more instances.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<Instance> instances;
+    private String reservationId;
     /**
      * <p>
      * One or more security group names.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groupNames;
-
-    /**
-     * <p>
-     * The ID of the reservation.
-     * </p>
-     * 
-     * @param reservationId
-     *        The ID of the reservation.
-     */
-
-    public void setReservationId(String reservationId) {
-        this.reservationId = reservationId;
-    }
-
-    /**
-     * <p>
-     * The ID of the reservation.
-     * </p>
-     * 
-     * @return The ID of the reservation.
-     */
-
-    public String getReservationId() {
-        return this.reservationId;
-    }
-
-    /**
-     * <p>
-     * The ID of the reservation.
-     * </p>
-     * 
-     * @param reservationId
-     *        The ID of the reservation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Reservation withReservationId(String reservationId) {
-        setReservationId(reservationId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the AWS account that owns the reservation.
-     * </p>
-     * 
-     * @param ownerId
-     *        The ID of the AWS account that owns the reservation.
-     */
-
-    public void setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AWS account that owns the reservation.
-     * </p>
-     * 
-     * @return The ID of the AWS account that owns the reservation.
-     */
-
-    public String getOwnerId() {
-        return this.ownerId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AWS account that owns the reservation.
-     * </p>
-     * 
-     * @param ownerId
-     *        The ID of the AWS account that owns the reservation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Reservation withOwnerId(String ownerId) {
-        setOwnerId(ownerId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
-     * </p>
-     * 
-     * @param requesterId
-     *        The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or
-     *        Auto Scaling).
-     */
-
-    public void setRequesterId(String requesterId) {
-        this.requesterId = requesterId;
-    }
-
-    /**
-     * <p>
-     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
-     * </p>
-     * 
-     * @return The ID of the requester that launched the instances on your behalf (for example, AWS Management Console
-     *         or Auto Scaling).
-     */
-
-    public String getRequesterId() {
-        return this.requesterId;
-    }
-
-    /**
-     * <p>
-     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
-     * Scaling).
-     * </p>
-     * 
-     * @param requesterId
-     *        The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or
-     *        Auto Scaling).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Reservation withRequesterId(String requesterId) {
-        setRequesterId(requesterId);
-        return this;
-    }
 
     /**
      * <p>
@@ -338,6 +212,132 @@ public class Reservation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The ID of the AWS account that owns the reservation.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the reservation.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the reservation.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the reservation.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the reservation.
+     * </p>
+     * 
+     * @param ownerId
+     *        The ID of the AWS account that owns the reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Reservation withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
+     * Scaling).
+     * </p>
+     * 
+     * @param requesterId
+     *        The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or
+     *        Auto Scaling).
+     */
+
+    public void setRequesterId(String requesterId) {
+        this.requesterId = requesterId;
+    }
+
+    /**
+     * <p>
+     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
+     * Scaling).
+     * </p>
+     * 
+     * @return The ID of the requester that launched the instances on your behalf (for example, AWS Management Console
+     *         or Auto Scaling).
+     */
+
+    public String getRequesterId() {
+        return this.requesterId;
+    }
+
+    /**
+     * <p>
+     * The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or Auto
+     * Scaling).
+     * </p>
+     * 
+     * @param requesterId
+     *        The ID of the requester that launched the instances on your behalf (for example, AWS Management Console or
+     *        Auto Scaling).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Reservation withRequesterId(String requesterId) {
+        setRequesterId(requesterId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the reservation.
+     * </p>
+     * 
+     * @param reservationId
+     *        The ID of the reservation.
+     */
+
+    public void setReservationId(String reservationId) {
+        this.reservationId = reservationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the reservation.
+     * </p>
+     * 
+     * @return The ID of the reservation.
+     */
+
+    public String getReservationId() {
+        return this.reservationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the reservation.
+     * </p>
+     * 
+     * @param reservationId
+     *        The ID of the reservation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Reservation withReservationId(String reservationId) {
+        setReservationId(reservationId);
+        return this;
+    }
+
+    /**
+     * <p>
      * One or more security group names.
      * </p>
      * 
@@ -420,16 +420,16 @@ public class Reservation implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getReservationId() != null)
-            sb.append("ReservationId: ").append(getReservationId()).append(",");
-        if (getOwnerId() != null)
-            sb.append("OwnerId: ").append(getOwnerId()).append(",");
-        if (getRequesterId() != null)
-            sb.append("RequesterId: ").append(getRequesterId()).append(",");
         if (getGroups() != null)
             sb.append("Groups: ").append(getGroups()).append(",");
         if (getInstances() != null)
             sb.append("Instances: ").append(getInstances()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
+        if (getRequesterId() != null)
+            sb.append("RequesterId: ").append(getRequesterId()).append(",");
+        if (getReservationId() != null)
+            sb.append("ReservationId: ").append(getReservationId()).append(",");
         if (getGroupNames() != null)
             sb.append("GroupNames: ").append(getGroupNames());
         sb.append("}");
@@ -446,9 +446,13 @@ public class Reservation implements Serializable, Cloneable {
         if (obj instanceof Reservation == false)
             return false;
         Reservation other = (Reservation) obj;
-        if (other.getReservationId() == null ^ this.getReservationId() == null)
+        if (other.getGroups() == null ^ this.getGroups() == null)
             return false;
-        if (other.getReservationId() != null && other.getReservationId().equals(this.getReservationId()) == false)
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
+            return false;
+        if (other.getInstances() == null ^ this.getInstances() == null)
+            return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
             return false;
         if (other.getOwnerId() == null ^ this.getOwnerId() == null)
             return false;
@@ -458,13 +462,9 @@ public class Reservation implements Serializable, Cloneable {
             return false;
         if (other.getRequesterId() != null && other.getRequesterId().equals(this.getRequesterId()) == false)
             return false;
-        if (other.getGroups() == null ^ this.getGroups() == null)
+        if (other.getReservationId() == null ^ this.getReservationId() == null)
             return false;
-        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false)
-            return false;
-        if (other.getInstances() == null ^ this.getInstances() == null)
-            return false;
-        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
+        if (other.getReservationId() != null && other.getReservationId().equals(this.getReservationId()) == false)
             return false;
         if (other.getGroupNames() == null ^ this.getGroupNames() == null)
             return false;
@@ -478,11 +478,11 @@ public class Reservation implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getReservationId() == null) ? 0 : getReservationId().hashCode());
-        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
-        hashCode = prime * hashCode + ((getRequesterId() == null) ? 0 : getRequesterId().hashCode());
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getRequesterId() == null) ? 0 : getRequesterId().hashCode());
+        hashCode = prime * hashCode + ((getReservationId() == null) ? 0 : getReservationId().hashCode());
         hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode());
         return hashCode;
     }

@@ -40,44 +40,32 @@ public class ReplaceNetworkAclEntryRequestMarshaller implements Marshaller<Reque
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (replaceNetworkAclEntryRequest.getNetworkAclId() != null) {
-            request.addParameter("NetworkAclId", StringUtils.fromString(replaceNetworkAclEntryRequest.getNetworkAclId()));
-        }
-
-        if (replaceNetworkAclEntryRequest.getRuleNumber() != null) {
-            request.addParameter("RuleNumber", StringUtils.fromInteger(replaceNetworkAclEntryRequest.getRuleNumber()));
-        }
-
-        if (replaceNetworkAclEntryRequest.getProtocol() != null) {
-            request.addParameter("Protocol", StringUtils.fromString(replaceNetworkAclEntryRequest.getProtocol()));
-        }
-
-        if (replaceNetworkAclEntryRequest.getRuleAction() != null) {
-            request.addParameter("RuleAction", StringUtils.fromString(replaceNetworkAclEntryRequest.getRuleAction()));
+        if (replaceNetworkAclEntryRequest.getCidrBlock() != null) {
+            request.addParameter("CidrBlock", StringUtils.fromString(replaceNetworkAclEntryRequest.getCidrBlock()));
         }
 
         if (replaceNetworkAclEntryRequest.getEgress() != null) {
             request.addParameter("Egress", StringUtils.fromBoolean(replaceNetworkAclEntryRequest.getEgress()));
         }
 
-        if (replaceNetworkAclEntryRequest.getCidrBlock() != null) {
-            request.addParameter("CidrBlock", StringUtils.fromString(replaceNetworkAclEntryRequest.getCidrBlock()));
+        IcmpTypeCode icmpTypeCode = replaceNetworkAclEntryRequest.getIcmpTypeCode();
+        if (icmpTypeCode != null) {
+
+            if (icmpTypeCode.getCode() != null) {
+                request.addParameter("Icmp.Code", StringUtils.fromInteger(icmpTypeCode.getCode()));
+            }
+
+            if (icmpTypeCode.getType() != null) {
+                request.addParameter("Icmp.Type", StringUtils.fromInteger(icmpTypeCode.getType()));
+            }
         }
 
         if (replaceNetworkAclEntryRequest.getIpv6CidrBlock() != null) {
             request.addParameter("Ipv6CidrBlock", StringUtils.fromString(replaceNetworkAclEntryRequest.getIpv6CidrBlock()));
         }
 
-        IcmpTypeCode icmpTypeCode = replaceNetworkAclEntryRequest.getIcmpTypeCode();
-        if (icmpTypeCode != null) {
-
-            if (icmpTypeCode.getType() != null) {
-                request.addParameter("Icmp.Type", StringUtils.fromInteger(icmpTypeCode.getType()));
-            }
-
-            if (icmpTypeCode.getCode() != null) {
-                request.addParameter("Icmp.Code", StringUtils.fromInteger(icmpTypeCode.getCode()));
-            }
+        if (replaceNetworkAclEntryRequest.getNetworkAclId() != null) {
+            request.addParameter("NetworkAclId", StringUtils.fromString(replaceNetworkAclEntryRequest.getNetworkAclId()));
         }
 
         PortRange portRange = replaceNetworkAclEntryRequest.getPortRange();
@@ -90,6 +78,18 @@ public class ReplaceNetworkAclEntryRequestMarshaller implements Marshaller<Reque
             if (portRange.getTo() != null) {
                 request.addParameter("PortRange.To", StringUtils.fromInteger(portRange.getTo()));
             }
+        }
+
+        if (replaceNetworkAclEntryRequest.getProtocol() != null) {
+            request.addParameter("Protocol", StringUtils.fromString(replaceNetworkAclEntryRequest.getProtocol()));
+        }
+
+        if (replaceNetworkAclEntryRequest.getRuleAction() != null) {
+            request.addParameter("RuleAction", StringUtils.fromString(replaceNetworkAclEntryRequest.getRuleAction()));
+        }
+
+        if (replaceNetworkAclEntryRequest.getRuleNumber() != null) {
+            request.addParameter("RuleNumber", StringUtils.fromInteger(replaceNetworkAclEntryRequest.getRuleNumber()));
         }
 
         return request;

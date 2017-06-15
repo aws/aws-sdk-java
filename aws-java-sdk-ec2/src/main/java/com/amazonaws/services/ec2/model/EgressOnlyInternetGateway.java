@@ -28,56 +28,16 @@ public class EgressOnlyInternetGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the egress-only Internet gateway.
-     * </p>
-     */
-    private String egressOnlyInternetGatewayId;
-    /**
-     * <p>
      * Information about the attachment of the egress-only Internet gateway.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InternetGatewayAttachment> attachments;
-
     /**
      * <p>
      * The ID of the egress-only Internet gateway.
      * </p>
-     * 
-     * @param egressOnlyInternetGatewayId
-     *        The ID of the egress-only Internet gateway.
      */
-
-    public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
-        this.egressOnlyInternetGatewayId = egressOnlyInternetGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the egress-only Internet gateway.
-     * </p>
-     * 
-     * @return The ID of the egress-only Internet gateway.
-     */
-
-    public String getEgressOnlyInternetGatewayId() {
-        return this.egressOnlyInternetGatewayId;
-    }
-
-    /**
-     * <p>
-     * The ID of the egress-only Internet gateway.
-     * </p>
-     * 
-     * @param egressOnlyInternetGatewayId
-     *        The ID of the egress-only Internet gateway.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EgressOnlyInternetGateway withEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
-        setEgressOnlyInternetGatewayId(egressOnlyInternetGatewayId);
-        return this;
-    }
+    private String egressOnlyInternetGatewayId;
 
     /**
      * <p>
@@ -153,6 +113,46 @@ public class EgressOnlyInternetGateway implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the egress-only Internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGatewayId
+     *        The ID of the egress-only Internet gateway.
+     */
+
+    public void setEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
+        this.egressOnlyInternetGatewayId = egressOnlyInternetGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the egress-only Internet gateway.
+     * </p>
+     * 
+     * @return The ID of the egress-only Internet gateway.
+     */
+
+    public String getEgressOnlyInternetGatewayId() {
+        return this.egressOnlyInternetGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the egress-only Internet gateway.
+     * </p>
+     * 
+     * @param egressOnlyInternetGatewayId
+     *        The ID of the egress-only Internet gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EgressOnlyInternetGateway withEgressOnlyInternetGatewayId(String egressOnlyInternetGatewayId) {
+        setEgressOnlyInternetGatewayId(egressOnlyInternetGatewayId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -163,10 +163,10 @@ public class EgressOnlyInternetGateway implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEgressOnlyInternetGatewayId() != null)
-            sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId()).append(",");
         if (getAttachments() != null)
-            sb.append("Attachments: ").append(getAttachments());
+            sb.append("Attachments: ").append(getAttachments()).append(",");
+        if (getEgressOnlyInternetGatewayId() != null)
+            sb.append("EgressOnlyInternetGatewayId: ").append(getEgressOnlyInternetGatewayId());
         sb.append("}");
         return sb.toString();
     }
@@ -181,13 +181,13 @@ public class EgressOnlyInternetGateway implements Serializable, Cloneable {
         if (obj instanceof EgressOnlyInternetGateway == false)
             return false;
         EgressOnlyInternetGateway other = (EgressOnlyInternetGateway) obj;
-        if (other.getEgressOnlyInternetGatewayId() == null ^ this.getEgressOnlyInternetGatewayId() == null)
-            return false;
-        if (other.getEgressOnlyInternetGatewayId() != null && other.getEgressOnlyInternetGatewayId().equals(this.getEgressOnlyInternetGatewayId()) == false)
-            return false;
         if (other.getAttachments() == null ^ this.getAttachments() == null)
             return false;
         if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
+            return false;
+        if (other.getEgressOnlyInternetGatewayId() == null ^ this.getEgressOnlyInternetGatewayId() == null)
+            return false;
+        if (other.getEgressOnlyInternetGatewayId() != null && other.getEgressOnlyInternetGatewayId().equals(this.getEgressOnlyInternetGatewayId()) == false)
             return false;
         return true;
     }
@@ -197,8 +197,8 @@ public class EgressOnlyInternetGateway implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
+        hashCode = prime * hashCode + ((getEgressOnlyInternetGatewayId() == null) ? 0 : getEgressOnlyInternetGatewayId().hashCode());
         return hashCode;
     }
 

@@ -28,62 +28,22 @@ public class DiskImage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Information about the disk image.
-     * </p>
-     */
-    private DiskImageDetail image;
-    /**
-     * <p>
      * A description of the disk image.
      * </p>
      */
     private String description;
     /**
      * <p>
+     * Information about the disk image.
+     * </p>
+     */
+    private DiskImageDetail image;
+    /**
+     * <p>
      * Information about the volume.
      * </p>
      */
     private VolumeDetail volume;
-
-    /**
-     * <p>
-     * Information about the disk image.
-     * </p>
-     * 
-     * @param image
-     *        Information about the disk image.
-     */
-
-    public void setImage(DiskImageDetail image) {
-        this.image = image;
-    }
-
-    /**
-     * <p>
-     * Information about the disk image.
-     * </p>
-     * 
-     * @return Information about the disk image.
-     */
-
-    public DiskImageDetail getImage() {
-        return this.image;
-    }
-
-    /**
-     * <p>
-     * Information about the disk image.
-     * </p>
-     * 
-     * @param image
-     *        Information about the disk image.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DiskImage withImage(DiskImageDetail image) {
-        setImage(image);
-        return this;
-    }
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class DiskImage implements Serializable, Cloneable {
 
     public DiskImage withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the disk image.
+     * </p>
+     * 
+     * @param image
+     *        Information about the disk image.
+     */
+
+    public void setImage(DiskImageDetail image) {
+        this.image = image;
+    }
+
+    /**
+     * <p>
+     * Information about the disk image.
+     * </p>
+     * 
+     * @return Information about the disk image.
+     */
+
+    public DiskImageDetail getImage() {
+        return this.image;
+    }
+
+    /**
+     * <p>
+     * Information about the disk image.
+     * </p>
+     * 
+     * @param image
+     *        Information about the disk image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiskImage withImage(DiskImageDetail image) {
+        setImage(image);
         return this;
     }
 
@@ -176,10 +176,10 @@ public class DiskImage implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImage() != null)
-            sb.append("Image: ").append(getImage()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getImage() != null)
+            sb.append("Image: ").append(getImage()).append(",");
         if (getVolume() != null)
             sb.append("Volume: ").append(getVolume());
         sb.append("}");
@@ -196,13 +196,13 @@ public class DiskImage implements Serializable, Cloneable {
         if (obj instanceof DiskImage == false)
             return false;
         DiskImage other = (DiskImage) obj;
-        if (other.getImage() == null ^ this.getImage() == null)
-            return false;
-        if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getImage() == null ^ this.getImage() == null)
+            return false;
+        if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
             return false;
         if (other.getVolume() == null ^ this.getVolume() == null)
             return false;
@@ -216,8 +216,8 @@ public class DiskImage implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getVolume() == null) ? 0 : getVolume().hashCode());
         return hashCode;
     }

@@ -43,13 +43,13 @@ public class TargetReservationValueStaxUnmarshaller implements Unmarshaller<Targ
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("targetConfiguration", targetDepth)) {
-                    targetReservationValue.setTargetConfiguration(TargetConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("reservationValue", targetDepth)) {
+                    targetReservationValue.setReservationValue(ReservationValueStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("reservationValue", targetDepth)) {
-                    targetReservationValue.setReservationValue(ReservationValueStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("targetConfiguration", targetDepth)) {
+                    targetReservationValue.setTargetConfiguration(TargetConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -29,6 +29,27 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
+     * The architecture of the virtual machine.
+     * </p>
+     * <p>
+     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * </p>
+     */
+    private String architecture;
+    /**
+     * <p>
+     * The client-specific data.
+     * </p>
+     */
+    private ClientData clientData;
+    /**
+     * <p>
+     * The token to enable idempotency for VM import requests.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
      * A description string for the import image task.
      * </p>
      */
@@ -39,6 +60,15 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ImageDiskContainer> diskContainers;
+    /**
+     * <p>
+     * The target hypervisor platform.
+     * </p>
+     * <p>
+     * Valid values: <code>xen</code>
+     * </p>
+     */
+    private String hypervisor;
     /**
      * <p>
      * The license type to be used for the Amazon Machine Image (AMI) after importing.
@@ -56,24 +86,6 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     private String licenseType;
     /**
      * <p>
-     * The target hypervisor platform.
-     * </p>
-     * <p>
-     * Valid values: <code>xen</code>
-     * </p>
-     */
-    private String hypervisor;
-    /**
-     * <p>
-     * The architecture of the virtual machine.
-     * </p>
-     * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
-     * </p>
-     */
-    private String architecture;
-    /**
-     * <p>
      * The operating system of the virtual machine.
      * </p>
      * <p>
@@ -83,22 +95,145 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     private String platform;
     /**
      * <p>
-     * The client-specific data.
-     * </p>
-     */
-    private ClientData clientData;
-    /**
-     * <p>
-     * The token to enable idempotency for VM import requests.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
      * The name of the role to use when not using the default role, 'vmimport'.
      * </p>
      */
     private String roleName;
+
+    /**
+     * <p>
+     * The architecture of the virtual machine.
+     * </p>
+     * <p>
+     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * </p>
+     * 
+     * @param architecture
+     *        The architecture of the virtual machine.</p>
+     *        <p>
+     *        Valid values: <code>i386</code> | <code>x86_64</code>
+     */
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
+    }
+
+    /**
+     * <p>
+     * The architecture of the virtual machine.
+     * </p>
+     * <p>
+     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * </p>
+     * 
+     * @return The architecture of the virtual machine.</p>
+     *         <p>
+     *         Valid values: <code>i386</code> | <code>x86_64</code>
+     */
+
+    public String getArchitecture() {
+        return this.architecture;
+    }
+
+    /**
+     * <p>
+     * The architecture of the virtual machine.
+     * </p>
+     * <p>
+     * Valid values: <code>i386</code> | <code>x86_64</code>
+     * </p>
+     * 
+     * @param architecture
+     *        The architecture of the virtual machine.</p>
+     *        <p>
+     *        Valid values: <code>i386</code> | <code>x86_64</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageRequest withArchitecture(String architecture) {
+        setArchitecture(architecture);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client-specific data.
+     * </p>
+     * 
+     * @param clientData
+     *        The client-specific data.
+     */
+
+    public void setClientData(ClientData clientData) {
+        this.clientData = clientData;
+    }
+
+    /**
+     * <p>
+     * The client-specific data.
+     * </p>
+     * 
+     * @return The client-specific data.
+     */
+
+    public ClientData getClientData() {
+        return this.clientData;
+    }
+
+    /**
+     * <p>
+     * The client-specific data.
+     * </p>
+     * 
+     * @param clientData
+     *        The client-specific data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageRequest withClientData(ClientData clientData) {
+        setClientData(clientData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The token to enable idempotency for VM import requests.
+     * </p>
+     * 
+     * @param clientToken
+     *        The token to enable idempotency for VM import requests.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * The token to enable idempotency for VM import requests.
+     * </p>
+     * 
+     * @return The token to enable idempotency for VM import requests.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * The token to enable idempotency for VM import requests.
+     * </p>
+     * 
+     * @param clientToken
+     *        The token to enable idempotency for VM import requests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -215,6 +350,61 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
+     * The target hypervisor platform.
+     * </p>
+     * <p>
+     * Valid values: <code>xen</code>
+     * </p>
+     * 
+     * @param hypervisor
+     *        The target hypervisor platform.</p>
+     *        <p>
+     *        Valid values: <code>xen</code>
+     */
+
+    public void setHypervisor(String hypervisor) {
+        this.hypervisor = hypervisor;
+    }
+
+    /**
+     * <p>
+     * The target hypervisor platform.
+     * </p>
+     * <p>
+     * Valid values: <code>xen</code>
+     * </p>
+     * 
+     * @return The target hypervisor platform.</p>
+     *         <p>
+     *         Valid values: <code>xen</code>
+     */
+
+    public String getHypervisor() {
+        return this.hypervisor;
+    }
+
+    /**
+     * <p>
+     * The target hypervisor platform.
+     * </p>
+     * <p>
+     * Valid values: <code>xen</code>
+     * </p>
+     * 
+     * @param hypervisor
+     *        The target hypervisor platform.</p>
+     *        <p>
+     *        Valid values: <code>xen</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportImageRequest withHypervisor(String hypervisor) {
+        setHypervisor(hypervisor);
+        return this;
+    }
+
+    /**
+     * <p>
      * The license type to be used for the Amazon Machine Image (AMI) after importing.
      * </p>
      * <p>
@@ -306,116 +496,6 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The target hypervisor platform.
-     * </p>
-     * <p>
-     * Valid values: <code>xen</code>
-     * </p>
-     * 
-     * @param hypervisor
-     *        The target hypervisor platform.</p>
-     *        <p>
-     *        Valid values: <code>xen</code>
-     */
-
-    public void setHypervisor(String hypervisor) {
-        this.hypervisor = hypervisor;
-    }
-
-    /**
-     * <p>
-     * The target hypervisor platform.
-     * </p>
-     * <p>
-     * Valid values: <code>xen</code>
-     * </p>
-     * 
-     * @return The target hypervisor platform.</p>
-     *         <p>
-     *         Valid values: <code>xen</code>
-     */
-
-    public String getHypervisor() {
-        return this.hypervisor;
-    }
-
-    /**
-     * <p>
-     * The target hypervisor platform.
-     * </p>
-     * <p>
-     * Valid values: <code>xen</code>
-     * </p>
-     * 
-     * @param hypervisor
-     *        The target hypervisor platform.</p>
-     *        <p>
-     *        Valid values: <code>xen</code>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportImageRequest withHypervisor(String hypervisor) {
-        setHypervisor(hypervisor);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The architecture of the virtual machine.
-     * </p>
-     * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
-     * </p>
-     * 
-     * @param architecture
-     *        The architecture of the virtual machine.</p>
-     *        <p>
-     *        Valid values: <code>i386</code> | <code>x86_64</code>
-     */
-
-    public void setArchitecture(String architecture) {
-        this.architecture = architecture;
-    }
-
-    /**
-     * <p>
-     * The architecture of the virtual machine.
-     * </p>
-     * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
-     * </p>
-     * 
-     * @return The architecture of the virtual machine.</p>
-     *         <p>
-     *         Valid values: <code>i386</code> | <code>x86_64</code>
-     */
-
-    public String getArchitecture() {
-        return this.architecture;
-    }
-
-    /**
-     * <p>
-     * The architecture of the virtual machine.
-     * </p>
-     * <p>
-     * Valid values: <code>i386</code> | <code>x86_64</code>
-     * </p>
-     * 
-     * @param architecture
-     *        The architecture of the virtual machine.</p>
-     *        <p>
-     *        Valid values: <code>i386</code> | <code>x86_64</code>
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportImageRequest withArchitecture(String architecture) {
-        setArchitecture(architecture);
-        return this;
-    }
-
-    /**
-     * <p>
      * The operating system of the virtual machine.
      * </p>
      * <p>
@@ -466,86 +546,6 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     public ImportImageRequest withPlatform(String platform) {
         setPlatform(platform);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The client-specific data.
-     * </p>
-     * 
-     * @param clientData
-     *        The client-specific data.
-     */
-
-    public void setClientData(ClientData clientData) {
-        this.clientData = clientData;
-    }
-
-    /**
-     * <p>
-     * The client-specific data.
-     * </p>
-     * 
-     * @return The client-specific data.
-     */
-
-    public ClientData getClientData() {
-        return this.clientData;
-    }
-
-    /**
-     * <p>
-     * The client-specific data.
-     * </p>
-     * 
-     * @param clientData
-     *        The client-specific data.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportImageRequest withClientData(ClientData clientData) {
-        setClientData(clientData);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The token to enable idempotency for VM import requests.
-     * </p>
-     * 
-     * @param clientToken
-     *        The token to enable idempotency for VM import requests.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * The token to enable idempotency for VM import requests.
-     * </p>
-     * 
-     * @return The token to enable idempotency for VM import requests.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * The token to enable idempotency for VM import requests.
-     * </p>
-     * 
-     * @param clientToken
-     *        The token to enable idempotency for VM import requests.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ImportImageRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
         return this;
     }
 
@@ -611,22 +611,22 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getDiskContainers() != null)
-            sb.append("DiskContainers: ").append(getDiskContainers()).append(",");
-        if (getLicenseType() != null)
-            sb.append("LicenseType: ").append(getLicenseType()).append(",");
-        if (getHypervisor() != null)
-            sb.append("Hypervisor: ").append(getHypervisor()).append(",");
         if (getArchitecture() != null)
             sb.append("Architecture: ").append(getArchitecture()).append(",");
-        if (getPlatform() != null)
-            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getClientData() != null)
             sb.append("ClientData: ").append(getClientData()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getDiskContainers() != null)
+            sb.append("DiskContainers: ").append(getDiskContainers()).append(",");
+        if (getHypervisor() != null)
+            sb.append("Hypervisor: ").append(getHypervisor()).append(",");
+        if (getLicenseType() != null)
+            sb.append("LicenseType: ").append(getLicenseType()).append(",");
+        if (getPlatform() != null)
+            sb.append("Platform: ").append(getPlatform()).append(",");
         if (getRoleName() != null)
             sb.append("RoleName: ").append(getRoleName());
         sb.append("}");
@@ -643,29 +643,9 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
         if (obj instanceof ImportImageRequest == false)
             return false;
         ImportImageRequest other = (ImportImageRequest) obj;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getDiskContainers() == null ^ this.getDiskContainers() == null)
-            return false;
-        if (other.getDiskContainers() != null && other.getDiskContainers().equals(this.getDiskContainers()) == false)
-            return false;
-        if (other.getLicenseType() == null ^ this.getLicenseType() == null)
-            return false;
-        if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
-            return false;
-        if (other.getHypervisor() == null ^ this.getHypervisor() == null)
-            return false;
-        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false)
-            return false;
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
-            return false;
-        if (other.getPlatform() == null ^ this.getPlatform() == null)
-            return false;
-        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getClientData() == null ^ this.getClientData() == null)
             return false;
@@ -674,6 +654,26 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getDiskContainers() == null ^ this.getDiskContainers() == null)
+            return false;
+        if (other.getDiskContainers() != null && other.getDiskContainers().equals(this.getDiskContainers()) == false)
+            return false;
+        if (other.getHypervisor() == null ^ this.getHypervisor() == null)
+            return false;
+        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false)
+            return false;
+        if (other.getLicenseType() == null ^ this.getLicenseType() == null)
+            return false;
+        if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
+            return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
         if (other.getRoleName() == null ^ this.getRoleName() == null)
             return false;
@@ -687,14 +687,14 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getDiskContainers() == null) ? 0 : getDiskContainers().hashCode());
-        hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
-        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
-        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getClientData() == null) ? 0 : getClientData().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDiskContainers() == null) ? 0 : getDiskContainers().hashCode());
+        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
+        hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         return hashCode;
     }

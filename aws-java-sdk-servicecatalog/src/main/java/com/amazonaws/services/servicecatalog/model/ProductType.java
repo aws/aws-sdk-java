@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ProductType {
 
-    CLOUD_FORMATION_TEMPLATE("CLOUD_FORMATION_TEMPLATE");
+    CLOUD_FORMATION_TEMPLATE("CLOUD_FORMATION_TEMPLATE"),
+    MARKETPLACE("MARKETPLACE");
 
     private String value;
 

@@ -43,13 +43,13 @@ public class RecurringChargeStaxUnmarshaller implements Unmarshaller<RecurringCh
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("frequency", targetDepth)) {
-                    recurringCharge.setFrequency(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("amount", targetDepth)) {
+                    recurringCharge.setAmount(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("amount", targetDepth)) {
-                    recurringCharge.setAmount(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("frequency", targetDepth)) {
+                    recurringCharge.setFrequency(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -25,17 +25,63 @@ public class DescribeStaleSecurityGroupsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Information about the stale security groups.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<StaleSecurityGroup> staleSecurityGroupSet;
-    /**
-     * <p>
      * The token to use when requesting the next set of items. If there are no additional items to return, the string is
      * empty.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Information about the stale security groups.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<StaleSecurityGroup> staleSecurityGroupSet;
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
+     *         string is empty.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
+     * empty.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use when requesting the next set of items. If there are no additional items to return, the
+     *        string is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStaleSecurityGroupsResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -111,52 +157,6 @@ public class DescribeStaleSecurityGroupsResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
-     */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @return The token to use when requesting the next set of items. If there are no additional items to return, the
-     *         string is empty.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The token to use when requesting the next set of items. If there are no additional items to return, the string is
-     * empty.
-     * </p>
-     * 
-     * @param nextToken
-     *        The token to use when requesting the next set of items. If there are no additional items to return, the
-     *        string is empty.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeStaleSecurityGroupsResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -167,10 +167,10 @@ public class DescribeStaleSecurityGroupsResult extends com.amazonaws.AmazonWebSe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStaleSecurityGroupSet() != null)
-            sb.append("StaleSecurityGroupSet: ").append(getStaleSecurityGroupSet()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getStaleSecurityGroupSet() != null)
+            sb.append("StaleSecurityGroupSet: ").append(getStaleSecurityGroupSet());
         sb.append("}");
         return sb.toString();
     }
@@ -185,13 +185,13 @@ public class DescribeStaleSecurityGroupsResult extends com.amazonaws.AmazonWebSe
         if (obj instanceof DescribeStaleSecurityGroupsResult == false)
             return false;
         DescribeStaleSecurityGroupsResult other = (DescribeStaleSecurityGroupsResult) obj;
-        if (other.getStaleSecurityGroupSet() == null ^ this.getStaleSecurityGroupSet() == null)
-            return false;
-        if (other.getStaleSecurityGroupSet() != null && other.getStaleSecurityGroupSet().equals(this.getStaleSecurityGroupSet()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getStaleSecurityGroupSet() == null ^ this.getStaleSecurityGroupSet() == null)
+            return false;
+        if (other.getStaleSecurityGroupSet() != null && other.getStaleSecurityGroupSet().equals(this.getStaleSecurityGroupSet()) == false)
             return false;
         return true;
     }
@@ -201,8 +201,8 @@ public class DescribeStaleSecurityGroupsResult extends com.amazonaws.AmazonWebSe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getStaleSecurityGroupSet() == null) ? 0 : getStaleSecurityGroupSet().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getStaleSecurityGroupSet() == null) ? 0 : getStaleSecurityGroupSet().hashCode());
         return hashCode;
     }
 

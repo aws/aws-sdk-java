@@ -43,23 +43,23 @@ public class HostPropertiesStaxUnmarshaller implements Unmarshaller<HostProperti
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("sockets", targetDepth)) {
-                    hostProperties.setSockets(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("cores", targetDepth)) {
                     hostProperties.setCores(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("totalVCpus", targetDepth)) {
-                    hostProperties.setTotalVCpus(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("instanceType", targetDepth)) {
+                    hostProperties.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("instanceType", targetDepth)) {
-                    hostProperties.setInstanceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("sockets", targetDepth)) {
+                    hostProperties.setSockets(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("totalVCpus", targetDepth)) {
+                    hostProperties.setTotalVCpus(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

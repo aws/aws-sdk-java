@@ -40,18 +40,6 @@ public class ModifyVpcEndpointRequestMarshaller implements Marshaller<Request<Mo
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (modifyVpcEndpointRequest.getVpcEndpointId() != null) {
-            request.addParameter("VpcEndpointId", StringUtils.fromString(modifyVpcEndpointRequest.getVpcEndpointId()));
-        }
-
-        if (modifyVpcEndpointRequest.getResetPolicy() != null) {
-            request.addParameter("ResetPolicy", StringUtils.fromBoolean(modifyVpcEndpointRequest.getResetPolicy()));
-        }
-
-        if (modifyVpcEndpointRequest.getPolicyDocument() != null) {
-            request.addParameter("PolicyDocument", StringUtils.fromString(modifyVpcEndpointRequest.getPolicyDocument()));
-        }
-
         com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointRequestAddRouteTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointRequest
                 .getAddRouteTableIds();
         if (!modifyVpcEndpointRequestAddRouteTableIdsList.isEmpty() || !modifyVpcEndpointRequestAddRouteTableIdsList.isAutoConstruct()) {
@@ -66,6 +54,10 @@ public class ModifyVpcEndpointRequestMarshaller implements Marshaller<Request<Mo
             }
         }
 
+        if (modifyVpcEndpointRequest.getPolicyDocument() != null) {
+            request.addParameter("PolicyDocument", StringUtils.fromString(modifyVpcEndpointRequest.getPolicyDocument()));
+        }
+
         com.amazonaws.internal.SdkInternalList<String> modifyVpcEndpointRequestRemoveRouteTableIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyVpcEndpointRequest
                 .getRemoveRouteTableIds();
         if (!modifyVpcEndpointRequestRemoveRouteTableIdsList.isEmpty() || !modifyVpcEndpointRequestRemoveRouteTableIdsList.isAutoConstruct()) {
@@ -78,6 +70,14 @@ public class ModifyVpcEndpointRequestMarshaller implements Marshaller<Request<Mo
                 }
                 removeRouteTableIdsListIndex++;
             }
+        }
+
+        if (modifyVpcEndpointRequest.getResetPolicy() != null) {
+            request.addParameter("ResetPolicy", StringUtils.fromBoolean(modifyVpcEndpointRequest.getResetPolicy()));
+        }
+
+        if (modifyVpcEndpointRequest.getVpcEndpointId() != null) {
+            request.addParameter("VpcEndpointId", StringUtils.fromString(modifyVpcEndpointRequest.getVpcEndpointId()));
         }
 
         return request;

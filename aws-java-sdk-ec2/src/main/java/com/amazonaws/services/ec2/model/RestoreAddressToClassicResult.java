@@ -27,16 +27,56 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The move status for the IP address.
-     * </p>
-     */
-    private String status;
-    /**
-     * <p>
      * The Elastic IP address.
      * </p>
      */
     private String publicIp;
+    /**
+     * <p>
+     * The move status for the IP address.
+     * </p>
+     */
+    private String status;
+
+    /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @param publicIp
+     *        The Elastic IP address.
+     */
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @return The Elastic IP address.
+     */
+
+    public String getPublicIp() {
+        return this.publicIp;
+    }
+
+    /**
+     * <p>
+     * The Elastic IP address.
+     * </p>
+     * 
+     * @param publicIp
+     *        The Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreAddressToClassicResult withPublicIp(String publicIp) {
+        setPublicIp(publicIp);
+        return this;
+    }
 
     /**
      * <p>
@@ -112,46 +152,6 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p>
-     * The Elastic IP address.
-     * </p>
-     * 
-     * @param publicIp
-     *        The Elastic IP address.
-     */
-
-    public void setPublicIp(String publicIp) {
-        this.publicIp = publicIp;
-    }
-
-    /**
-     * <p>
-     * The Elastic IP address.
-     * </p>
-     * 
-     * @return The Elastic IP address.
-     */
-
-    public String getPublicIp() {
-        return this.publicIp;
-    }
-
-    /**
-     * <p>
-     * The Elastic IP address.
-     * </p>
-     * 
-     * @param publicIp
-     *        The Elastic IP address.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RestoreAddressToClassicResult withPublicIp(String publicIp) {
-        setPublicIp(publicIp);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -162,10 +162,10 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp());
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -180,13 +180,13 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
         if (obj instanceof RestoreAddressToClassicResult == false)
             return false;
         RestoreAddressToClassicResult other = (RestoreAddressToClassicResult) obj;
-        if (other.getStatus() == null ^ this.getStatus() == null)
-            return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
-            return false;
         if (other.getPublicIp() == null ^ this.getPublicIp() == null)
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         return true;
     }
@@ -196,8 +196,8 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

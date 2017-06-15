@@ -28,62 +28,22 @@ public class DhcpOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the set of DHCP options.
-     * </p>
-     */
-    private String dhcpOptionsId;
-    /**
-     * <p>
      * One or more DHCP options in the set.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DhcpConfiguration> dhcpConfigurations;
     /**
      * <p>
+     * The ID of the set of DHCP options.
+     * </p>
+     */
+    private String dhcpOptionsId;
+    /**
+     * <p>
      * Any tags assigned to the DHCP options set.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
-
-    /**
-     * <p>
-     * The ID of the set of DHCP options.
-     * </p>
-     * 
-     * @param dhcpOptionsId
-     *        The ID of the set of DHCP options.
-     */
-
-    public void setDhcpOptionsId(String dhcpOptionsId) {
-        this.dhcpOptionsId = dhcpOptionsId;
-    }
-
-    /**
-     * <p>
-     * The ID of the set of DHCP options.
-     * </p>
-     * 
-     * @return The ID of the set of DHCP options.
-     */
-
-    public String getDhcpOptionsId() {
-        return this.dhcpOptionsId;
-    }
-
-    /**
-     * <p>
-     * The ID of the set of DHCP options.
-     * </p>
-     * 
-     * @param dhcpOptionsId
-     *        The ID of the set of DHCP options.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DhcpOptions withDhcpOptionsId(String dhcpOptionsId) {
-        setDhcpOptionsId(dhcpOptionsId);
-        return this;
-    }
 
     /**
      * <p>
@@ -155,6 +115,46 @@ public class DhcpOptions implements Serializable, Cloneable {
 
     public DhcpOptions withDhcpConfigurations(java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
         setDhcpConfigurations(dhcpConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the set of DHCP options.
+     * </p>
+     * 
+     * @param dhcpOptionsId
+     *        The ID of the set of DHCP options.
+     */
+
+    public void setDhcpOptionsId(String dhcpOptionsId) {
+        this.dhcpOptionsId = dhcpOptionsId;
+    }
+
+    /**
+     * <p>
+     * The ID of the set of DHCP options.
+     * </p>
+     * 
+     * @return The ID of the set of DHCP options.
+     */
+
+    public String getDhcpOptionsId() {
+        return this.dhcpOptionsId;
+    }
+
+    /**
+     * <p>
+     * The ID of the set of DHCP options.
+     * </p>
+     * 
+     * @param dhcpOptionsId
+     *        The ID of the set of DHCP options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DhcpOptions withDhcpOptionsId(String dhcpOptionsId) {
+        setDhcpOptionsId(dhcpOptionsId);
         return this;
     }
 
@@ -242,10 +242,10 @@ public class DhcpOptions implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDhcpOptionsId() != null)
-            sb.append("DhcpOptionsId: ").append(getDhcpOptionsId()).append(",");
         if (getDhcpConfigurations() != null)
             sb.append("DhcpConfigurations: ").append(getDhcpConfigurations()).append(",");
+        if (getDhcpOptionsId() != null)
+            sb.append("DhcpOptionsId: ").append(getDhcpOptionsId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -262,13 +262,13 @@ public class DhcpOptions implements Serializable, Cloneable {
         if (obj instanceof DhcpOptions == false)
             return false;
         DhcpOptions other = (DhcpOptions) obj;
-        if (other.getDhcpOptionsId() == null ^ this.getDhcpOptionsId() == null)
-            return false;
-        if (other.getDhcpOptionsId() != null && other.getDhcpOptionsId().equals(this.getDhcpOptionsId()) == false)
-            return false;
         if (other.getDhcpConfigurations() == null ^ this.getDhcpConfigurations() == null)
             return false;
         if (other.getDhcpConfigurations() != null && other.getDhcpConfigurations().equals(this.getDhcpConfigurations()) == false)
+            return false;
+        if (other.getDhcpOptionsId() == null ^ this.getDhcpOptionsId() == null)
+            return false;
+        if (other.getDhcpOptionsId() != null && other.getDhcpOptionsId().equals(this.getDhcpOptionsId()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -282,8 +282,8 @@ public class DhcpOptions implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDhcpOptionsId() == null) ? 0 : getDhcpOptionsId().hashCode());
         hashCode = prime * hashCode + ((getDhcpConfigurations() == null) ? 0 : getDhcpConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getDhcpOptionsId() == null) ? 0 : getDhcpOptionsId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

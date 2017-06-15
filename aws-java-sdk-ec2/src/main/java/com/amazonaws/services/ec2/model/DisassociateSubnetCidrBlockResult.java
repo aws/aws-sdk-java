@@ -25,56 +25,16 @@ public class DisassociateSubnetCidrBlockResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the subnet.
-     * </p>
-     */
-    private String subnetId;
-    /**
-     * <p>
      * Information about the IPv6 CIDR block association.
      * </p>
      */
     private SubnetIpv6CidrBlockAssociation ipv6CidrBlockAssociation;
-
     /**
      * <p>
      * The ID of the subnet.
      * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet.
      */
-
-    public void setSubnetId(String subnetId) {
-        this.subnetId = subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet.
-     * </p>
-     * 
-     * @return The ID of the subnet.
-     */
-
-    public String getSubnetId() {
-        return this.subnetId;
-    }
-
-    /**
-     * <p>
-     * The ID of the subnet.
-     * </p>
-     * 
-     * @param subnetId
-     *        The ID of the subnet.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DisassociateSubnetCidrBlockResult withSubnetId(String subnetId) {
-        setSubnetId(subnetId);
-        return this;
-    }
+    private String subnetId;
 
     /**
      * <p>
@@ -117,6 +77,46 @@ public class DisassociateSubnetCidrBlockResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet.
+     */
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     * 
+     * @return The ID of the subnet.
+     */
+
+    public String getSubnetId() {
+        return this.subnetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the subnet.
+     * </p>
+     * 
+     * @param subnetId
+     *        The ID of the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DisassociateSubnetCidrBlockResult withSubnetId(String subnetId) {
+        setSubnetId(subnetId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -127,10 +127,10 @@ public class DisassociateSubnetCidrBlockResult extends com.amazonaws.AmazonWebSe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getIpv6CidrBlockAssociation() != null)
-            sb.append("Ipv6CidrBlockAssociation: ").append(getIpv6CidrBlockAssociation());
+            sb.append("Ipv6CidrBlockAssociation: ").append(getIpv6CidrBlockAssociation()).append(",");
+        if (getSubnetId() != null)
+            sb.append("SubnetId: ").append(getSubnetId());
         sb.append("}");
         return sb.toString();
     }
@@ -145,13 +145,13 @@ public class DisassociateSubnetCidrBlockResult extends com.amazonaws.AmazonWebSe
         if (obj instanceof DisassociateSubnetCidrBlockResult == false)
             return false;
         DisassociateSubnetCidrBlockResult other = (DisassociateSubnetCidrBlockResult) obj;
-        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
-            return false;
-        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
-            return false;
         if (other.getIpv6CidrBlockAssociation() == null ^ this.getIpv6CidrBlockAssociation() == null)
             return false;
         if (other.getIpv6CidrBlockAssociation() != null && other.getIpv6CidrBlockAssociation().equals(this.getIpv6CidrBlockAssociation()) == false)
+            return false;
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null)
+            return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
         return true;
     }
@@ -161,8 +161,8 @@ public class DisassociateSubnetCidrBlockResult extends com.amazonaws.AmazonWebSe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlockAssociation() == null) ? 0 : getIpv6CidrBlockAssociation().hashCode());
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         return hashCode;
     }
 

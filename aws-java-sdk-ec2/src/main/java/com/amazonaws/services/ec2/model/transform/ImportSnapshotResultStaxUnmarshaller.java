@@ -43,6 +43,11 @@ public class ImportSnapshotResultStaxUnmarshaller implements Unmarshaller<Import
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("description", targetDepth)) {
+                    importSnapshotResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("importTaskId", targetDepth)) {
                     importSnapshotResult.setImportTaskId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class ImportSnapshotResultStaxUnmarshaller implements Unmarshaller<Import
 
                 if (context.testExpression("snapshotTaskDetail", targetDepth)) {
                     importSnapshotResult.setSnapshotTaskDetail(SnapshotTaskDetailStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("description", targetDepth)) {
-                    importSnapshotResult.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

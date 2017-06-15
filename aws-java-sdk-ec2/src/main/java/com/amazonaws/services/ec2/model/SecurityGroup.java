@@ -28,10 +28,10 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS account ID of the owner of the security group.
+     * A description of the security group.
      * </p>
      */
-    private String ownerId;
+    private String description;
     /**
      * <p>
      * The name of the security group.
@@ -40,22 +40,22 @@ public class SecurityGroup implements Serializable, Cloneable {
     private String groupName;
     /**
      * <p>
-     * The ID of the security group.
-     * </p>
-     */
-    private String groupId;
-    /**
-     * <p>
-     * A description of the security group.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
      * One or more inbound rules associated with the security group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
+    /**
+     * <p>
+     * The AWS account ID of the owner of the security group.
+     * </p>
+     */
+    private String ownerId;
+    /**
+     * <p>
+     * The ID of the security group.
+     * </p>
+     */
+    private String groupId;
     /**
      * <p>
      * [EC2-VPC] One or more outbound rules associated with the security group.
@@ -64,54 +64,54 @@ public class SecurityGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissionsEgress;
     /**
      * <p>
-     * [EC2-VPC] The ID of the VPC for the security group.
-     * </p>
-     */
-    private String vpcId;
-    /**
-     * <p>
      * Any tags assigned to the security group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * [EC2-VPC] The ID of the VPC for the security group.
+     * </p>
+     */
+    private String vpcId;
 
     /**
      * <p>
-     * The AWS account ID of the owner of the security group.
+     * A description of the security group.
      * </p>
      * 
-     * @param ownerId
-     *        The AWS account ID of the owner of the security group.
+     * @param description
+     *        A description of the security group.
      */
 
-    public void setOwnerId(String ownerId) {
-        this.ownerId = ownerId;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
      * <p>
-     * The AWS account ID of the owner of the security group.
+     * A description of the security group.
      * </p>
      * 
-     * @return The AWS account ID of the owner of the security group.
+     * @return A description of the security group.
      */
 
-    public String getOwnerId() {
-        return this.ownerId;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
      * <p>
-     * The AWS account ID of the owner of the security group.
+     * A description of the security group.
      * </p>
      * 
-     * @param ownerId
-     *        The AWS account ID of the owner of the security group.
+     * @param description
+     *        A description of the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SecurityGroup withOwnerId(String ownerId) {
-        setOwnerId(ownerId);
+    public SecurityGroup withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -152,86 +152,6 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     public SecurityGroup withGroupName(String groupName) {
         setGroupName(groupName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the security group.
-     * </p>
-     * 
-     * @param groupId
-     *        The ID of the security group.
-     */
-
-    public void setGroupId(String groupId) {
-        this.groupId = groupId;
-    }
-
-    /**
-     * <p>
-     * The ID of the security group.
-     * </p>
-     * 
-     * @return The ID of the security group.
-     */
-
-    public String getGroupId() {
-        return this.groupId;
-    }
-
-    /**
-     * <p>
-     * The ID of the security group.
-     * </p>
-     * 
-     * @param groupId
-     *        The ID of the security group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SecurityGroup withGroupId(String groupId) {
-        setGroupId(groupId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A description of the security group.
-     * </p>
-     * 
-     * @param description
-     *        A description of the security group.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * A description of the security group.
-     * </p>
-     * 
-     * @return A description of the security group.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * A description of the security group.
-     * </p>
-     * 
-     * @param description
-     *        A description of the security group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SecurityGroup withDescription(String description) {
-        setDescription(description);
         return this;
     }
 
@@ -310,6 +230,86 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The AWS account ID of the owner of the security group.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID of the owner of the security group.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the owner of the security group.
+     * </p>
+     * 
+     * @return The AWS account ID of the owner of the security group.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the owner of the security group.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID of the owner of the security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecurityGroup withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group.
+     * </p>
+     * 
+     * @param groupId
+     *        The ID of the security group.
+     */
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group.
+     * </p>
+     * 
+     * @return The ID of the security group.
+     */
+
+    public String getGroupId() {
+        return this.groupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group.
+     * </p>
+     * 
+     * @param groupId
+     *        The ID of the security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecurityGroup withGroupId(String groupId) {
+        setGroupId(groupId);
+        return this;
+    }
+
+    /**
+     * <p>
      * [EC2-VPC] One or more outbound rules associated with the security group.
      * </p>
      * 
@@ -378,46 +378,6 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     public SecurityGroup withIpPermissionsEgress(java.util.Collection<IpPermission> ipPermissionsEgress) {
         setIpPermissionsEgress(ipPermissionsEgress);
-        return this;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The ID of the VPC for the security group.
-     * </p>
-     * 
-     * @param vpcId
-     *        [EC2-VPC] The ID of the VPC for the security group.
-     */
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The ID of the VPC for the security group.
-     * </p>
-     * 
-     * @return [EC2-VPC] The ID of the VPC for the security group.
-     */
-
-    public String getVpcId() {
-        return this.vpcId;
-    }
-
-    /**
-     * <p>
-     * [EC2-VPC] The ID of the VPC for the security group.
-     * </p>
-     * 
-     * @param vpcId
-     *        [EC2-VPC] The ID of the VPC for the security group.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SecurityGroup withVpcId(String vpcId) {
-        setVpcId(vpcId);
         return this;
     }
 
@@ -495,6 +455,46 @@ public class SecurityGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * [EC2-VPC] The ID of the VPC for the security group.
+     * </p>
+     * 
+     * @param vpcId
+     *        [EC2-VPC] The ID of the VPC for the security group.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The ID of the VPC for the security group.
+     * </p>
+     * 
+     * @return [EC2-VPC] The ID of the VPC for the security group.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The ID of the VPC for the security group.
+     * </p>
+     * 
+     * @param vpcId
+     *        [EC2-VPC] The ID of the VPC for the security group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SecurityGroup withVpcId(String vpcId) {
+        setVpcId(vpcId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -505,22 +505,22 @@ public class SecurityGroup implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOwnerId() != null)
-            sb.append("OwnerId: ").append(getOwnerId()).append(",");
-        if (getGroupName() != null)
-            sb.append("GroupName: ").append(getGroupName()).append(",");
-        if (getGroupId() != null)
-            sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getGroupName() != null)
+            sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getIpPermissions() != null)
             sb.append("IpPermissions: ").append(getIpPermissions()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
+        if (getGroupId() != null)
+            sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getIpPermissionsEgress() != null)
             sb.append("IpPermissionsEgress: ").append(getIpPermissionsEgress()).append(",");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -535,37 +535,37 @@ public class SecurityGroup implements Serializable, Cloneable {
         if (obj instanceof SecurityGroup == false)
             return false;
         SecurityGroup other = (SecurityGroup) obj;
-        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+        if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
-        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getGroupName() == null ^ this.getGroupName() == null)
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
-        if (other.getGroupId() == null ^ this.getGroupId() == null)
-            return false;
-        if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getIpPermissions() == null ^ this.getIpPermissions() == null)
             return false;
         if (other.getIpPermissions() != null && other.getIpPermissions().equals(this.getIpPermissions()) == false)
+            return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
+        if (other.getGroupId() == null ^ this.getGroupId() == null)
+            return false;
+        if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
             return false;
         if (other.getIpPermissionsEgress() == null ^ this.getIpPermissionsEgress() == null)
             return false;
         if (other.getIpPermissionsEgress() != null && other.getIpPermissionsEgress().equals(this.getIpPermissionsEgress()) == false)
             return false;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
-            return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
-            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -575,14 +575,14 @@ public class SecurityGroup implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
-        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
-        hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getIpPermissions() == null) ? 0 : getIpPermissions().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getIpPermissionsEgress() == null) ? 0 : getIpPermissionsEgress().hashCode());
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

@@ -45,11 +45,6 @@ public class AssignIpv6AddressesResultStaxUnmarshaller implements Unmarshaller<A
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("networkInterfaceId", targetDepth)) {
-                    assignIpv6AddressesResult.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("assignedIpv6Addresses", targetDepth)) {
                     assignIpv6AddressesResult.withAssignedIpv6Addresses(new ArrayList<String>());
                     continue;
@@ -60,6 +55,10 @@ public class AssignIpv6AddressesResultStaxUnmarshaller implements Unmarshaller<A
                     continue;
                 }
 
+                if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    assignIpv6AddressesResult.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return assignIpv6AddressesResult;

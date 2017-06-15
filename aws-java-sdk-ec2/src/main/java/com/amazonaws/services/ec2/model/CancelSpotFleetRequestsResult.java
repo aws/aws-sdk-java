@@ -27,89 +27,16 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about the Spot fleet requests that are not successfully canceled.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests;
-    /**
-     * <p>
      * Information about the Spot fleet requests that are successfully canceled.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsSuccessItem> successfulFleetRequests;
-
     /**
      * <p>
      * Information about the Spot fleet requests that are not successfully canceled.
      * </p>
-     * 
-     * @return Information about the Spot fleet requests that are not successfully canceled.
      */
-
-    public java.util.List<CancelSpotFleetRequestsErrorItem> getUnsuccessfulFleetRequests() {
-        if (unsuccessfulFleetRequests == null) {
-            unsuccessfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>();
-        }
-        return unsuccessfulFleetRequests;
-    }
-
-    /**
-     * <p>
-     * Information about the Spot fleet requests that are not successfully canceled.
-     * </p>
-     * 
-     * @param unsuccessfulFleetRequests
-     *        Information about the Spot fleet requests that are not successfully canceled.
-     */
-
-    public void setUnsuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
-        if (unsuccessfulFleetRequests == null) {
-            this.unsuccessfulFleetRequests = null;
-            return;
-        }
-
-        this.unsuccessfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>(unsuccessfulFleetRequests);
-    }
-
-    /**
-     * <p>
-     * Information about the Spot fleet requests that are not successfully canceled.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setUnsuccessfulFleetRequests(java.util.Collection)} or
-     * {@link #withUnsuccessfulFleetRequests(java.util.Collection)} if you want to override the existing values.
-     * </p>
-     * 
-     * @param unsuccessfulFleetRequests
-     *        Information about the Spot fleet requests that are not successfully canceled.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItem... unsuccessfulFleetRequests) {
-        if (this.unsuccessfulFleetRequests == null) {
-            setUnsuccessfulFleetRequests(new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>(unsuccessfulFleetRequests.length));
-        }
-        for (CancelSpotFleetRequestsErrorItem ele : unsuccessfulFleetRequests) {
-            this.unsuccessfulFleetRequests.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Information about the Spot fleet requests that are not successfully canceled.
-     * </p>
-     * 
-     * @param unsuccessfulFleetRequests
-     *        Information about the Spot fleet requests that are not successfully canceled.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
-        setUnsuccessfulFleetRequests(unsuccessfulFleetRequests);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests;
 
     /**
      * <p>
@@ -185,6 +112,79 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Information about the Spot fleet requests that are not successfully canceled.
+     * </p>
+     * 
+     * @return Information about the Spot fleet requests that are not successfully canceled.
+     */
+
+    public java.util.List<CancelSpotFleetRequestsErrorItem> getUnsuccessfulFleetRequests() {
+        if (unsuccessfulFleetRequests == null) {
+            unsuccessfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>();
+        }
+        return unsuccessfulFleetRequests;
+    }
+
+    /**
+     * <p>
+     * Information about the Spot fleet requests that are not successfully canceled.
+     * </p>
+     * 
+     * @param unsuccessfulFleetRequests
+     *        Information about the Spot fleet requests that are not successfully canceled.
+     */
+
+    public void setUnsuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
+        if (unsuccessfulFleetRequests == null) {
+            this.unsuccessfulFleetRequests = null;
+            return;
+        }
+
+        this.unsuccessfulFleetRequests = new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>(unsuccessfulFleetRequests);
+    }
+
+    /**
+     * <p>
+     * Information about the Spot fleet requests that are not successfully canceled.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUnsuccessfulFleetRequests(java.util.Collection)} or
+     * {@link #withUnsuccessfulFleetRequests(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param unsuccessfulFleetRequests
+     *        Information about the Spot fleet requests that are not successfully canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(CancelSpotFleetRequestsErrorItem... unsuccessfulFleetRequests) {
+        if (this.unsuccessfulFleetRequests == null) {
+            setUnsuccessfulFleetRequests(new com.amazonaws.internal.SdkInternalList<CancelSpotFleetRequestsErrorItem>(unsuccessfulFleetRequests.length));
+        }
+        for (CancelSpotFleetRequestsErrorItem ele : unsuccessfulFleetRequests) {
+            this.unsuccessfulFleetRequests.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the Spot fleet requests that are not successfully canceled.
+     * </p>
+     * 
+     * @param unsuccessfulFleetRequests
+     *        Information about the Spot fleet requests that are not successfully canceled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CancelSpotFleetRequestsResult withUnsuccessfulFleetRequests(java.util.Collection<CancelSpotFleetRequestsErrorItem> unsuccessfulFleetRequests) {
+        setUnsuccessfulFleetRequests(unsuccessfulFleetRequests);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -195,10 +195,10 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getUnsuccessfulFleetRequests() != null)
-            sb.append("UnsuccessfulFleetRequests: ").append(getUnsuccessfulFleetRequests()).append(",");
         if (getSuccessfulFleetRequests() != null)
-            sb.append("SuccessfulFleetRequests: ").append(getSuccessfulFleetRequests());
+            sb.append("SuccessfulFleetRequests: ").append(getSuccessfulFleetRequests()).append(",");
+        if (getUnsuccessfulFleetRequests() != null)
+            sb.append("UnsuccessfulFleetRequests: ").append(getUnsuccessfulFleetRequests());
         sb.append("}");
         return sb.toString();
     }
@@ -213,13 +213,13 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
         if (obj instanceof CancelSpotFleetRequestsResult == false)
             return false;
         CancelSpotFleetRequestsResult other = (CancelSpotFleetRequestsResult) obj;
-        if (other.getUnsuccessfulFleetRequests() == null ^ this.getUnsuccessfulFleetRequests() == null)
-            return false;
-        if (other.getUnsuccessfulFleetRequests() != null && other.getUnsuccessfulFleetRequests().equals(this.getUnsuccessfulFleetRequests()) == false)
-            return false;
         if (other.getSuccessfulFleetRequests() == null ^ this.getSuccessfulFleetRequests() == null)
             return false;
         if (other.getSuccessfulFleetRequests() != null && other.getSuccessfulFleetRequests().equals(this.getSuccessfulFleetRequests()) == false)
+            return false;
+        if (other.getUnsuccessfulFleetRequests() == null ^ this.getUnsuccessfulFleetRequests() == null)
+            return false;
+        if (other.getUnsuccessfulFleetRequests() != null && other.getUnsuccessfulFleetRequests().equals(this.getUnsuccessfulFleetRequests()) == false)
             return false;
         return true;
     }
@@ -229,8 +229,8 @@ public class CancelSpotFleetRequestsResult extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getUnsuccessfulFleetRequests() == null) ? 0 : getUnsuccessfulFleetRequests().hashCode());
         hashCode = prime * hashCode + ((getSuccessfulFleetRequests() == null) ? 0 : getSuccessfulFleetRequests().hashCode());
+        hashCode = prime * hashCode + ((getUnsuccessfulFleetRequests() == null) ? 0 : getUnsuccessfulFleetRequests().hashCode());
         return hashCode;
     }
 

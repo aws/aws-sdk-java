@@ -41,12 +41,12 @@ public class DisableVgwRoutePropagationRequestMarshaller implements Marshaller<R
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (disableVgwRoutePropagationRequest.getRouteTableId() != null) {
-            request.addParameter("RouteTableId", StringUtils.fromString(disableVgwRoutePropagationRequest.getRouteTableId()));
-        }
-
         if (disableVgwRoutePropagationRequest.getGatewayId() != null) {
             request.addParameter("GatewayId", StringUtils.fromString(disableVgwRoutePropagationRequest.getGatewayId()));
+        }
+
+        if (disableVgwRoutePropagationRequest.getRouteTableId() != null) {
+            request.addParameter("RouteTableId", StringUtils.fromString(disableVgwRoutePropagationRequest.getRouteTableId()));
         }
 
         return request;

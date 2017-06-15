@@ -30,56 +30,16 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ID of the volume.
-     * </p>
-     */
-    private String volumeId;
-    /**
-     * <p>
      * Indicates whether the volume should be auto-enabled for I/O operations.
      * </p>
      */
     private Boolean autoEnableIO;
-
     /**
      * <p>
      * The ID of the volume.
      * </p>
-     * 
-     * @param volumeId
-     *        The ID of the volume.
      */
-
-    public void setVolumeId(String volumeId) {
-        this.volumeId = volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the volume.
-     * </p>
-     * 
-     * @return The ID of the volume.
-     */
-
-    public String getVolumeId() {
-        return this.volumeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the volume.
-     * </p>
-     * 
-     * @param volumeId
-     *        The ID of the volume.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyVolumeAttributeRequest withVolumeId(String volumeId) {
-        setVolumeId(volumeId);
-        return this;
-    }
+    private String volumeId;
 
     /**
      * <p>
@@ -134,6 +94,46 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     */
+
+    public void setVolumeId(String volumeId) {
+        this.volumeId = volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @return The ID of the volume.
+     */
+
+    public String getVolumeId() {
+        return this.volumeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the volume.
+     * </p>
+     * 
+     * @param volumeId
+     *        The ID of the volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVolumeAttributeRequest withVolumeId(String volumeId) {
+        setVolumeId(volumeId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -155,10 +155,10 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVolumeId() != null)
-            sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getAutoEnableIO() != null)
-            sb.append("AutoEnableIO: ").append(getAutoEnableIO());
+            sb.append("AutoEnableIO: ").append(getAutoEnableIO()).append(",");
+        if (getVolumeId() != null)
+            sb.append("VolumeId: ").append(getVolumeId());
         sb.append("}");
         return sb.toString();
     }
@@ -173,13 +173,13 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
         if (obj instanceof ModifyVolumeAttributeRequest == false)
             return false;
         ModifyVolumeAttributeRequest other = (ModifyVolumeAttributeRequest) obj;
-        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
-            return false;
-        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
-            return false;
         if (other.getAutoEnableIO() == null ^ this.getAutoEnableIO() == null)
             return false;
         if (other.getAutoEnableIO() != null && other.getAutoEnableIO().equals(this.getAutoEnableIO()) == false)
+            return false;
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null)
+            return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
             return false;
         return true;
     }
@@ -189,8 +189,8 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest implem
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getAutoEnableIO() == null) ? 0 : getAutoEnableIO().hashCode());
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         return hashCode;
     }
 

@@ -40,14 +40,6 @@ public class AttachClassicLinkVpcRequestMarshaller implements Marshaller<Request
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (attachClassicLinkVpcRequest.getInstanceId() != null) {
-            request.addParameter("InstanceId", StringUtils.fromString(attachClassicLinkVpcRequest.getInstanceId()));
-        }
-
-        if (attachClassicLinkVpcRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(attachClassicLinkVpcRequest.getVpcId()));
-        }
-
         com.amazonaws.internal.SdkInternalList<String> attachClassicLinkVpcRequestGroupsList = (com.amazonaws.internal.SdkInternalList<String>) attachClassicLinkVpcRequest
                 .getGroups();
         if (!attachClassicLinkVpcRequestGroupsList.isEmpty() || !attachClassicLinkVpcRequestGroupsList.isAutoConstruct()) {
@@ -59,6 +51,14 @@ public class AttachClassicLinkVpcRequestMarshaller implements Marshaller<Request
                 }
                 groupsListIndex++;
             }
+        }
+
+        if (attachClassicLinkVpcRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(attachClassicLinkVpcRequest.getInstanceId()));
+        }
+
+        if (attachClassicLinkVpcRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(attachClassicLinkVpcRequest.getVpcId()));
         }
 
         return request;

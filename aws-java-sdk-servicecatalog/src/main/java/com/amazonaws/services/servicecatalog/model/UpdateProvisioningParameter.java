@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The parameter key/value pair used to update a ProvisionedProduct object. If <code>UsePreviousValue</code> is set to
+ * The parameter key-value pair used to update a ProvisionedProduct object. If <code>UsePreviousValue</code> is set to
  * true, <code>Value</code> is ignored and the value for <code>Key</code> is kept as previously set (current value).
  * </p>
  * 

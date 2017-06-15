@@ -40,23 +40,6 @@ public class DescribeMovingAddressesRequestMarshaller implements Marshaller<Requ
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> describeMovingAddressesRequestPublicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeMovingAddressesRequest
-                .getPublicIps();
-        if (!describeMovingAddressesRequestPublicIpsList.isEmpty() || !describeMovingAddressesRequestPublicIpsList.isAutoConstruct()) {
-            int publicIpsListIndex = 1;
-
-            for (String describeMovingAddressesRequestPublicIpsListValue : describeMovingAddressesRequestPublicIpsList) {
-                if (describeMovingAddressesRequestPublicIpsListValue != null) {
-                    request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(describeMovingAddressesRequestPublicIpsListValue));
-                }
-                publicIpsListIndex++;
-            }
-        }
-
-        if (describeMovingAddressesRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(describeMovingAddressesRequest.getNextToken()));
-        }
-
         com.amazonaws.internal.SdkInternalList<Filter> describeMovingAddressesRequestFiltersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeMovingAddressesRequest
                 .getFilters();
         if (!describeMovingAddressesRequestFiltersList.isEmpty() || !describeMovingAddressesRequestFiltersList.isAutoConstruct()) {
@@ -87,6 +70,23 @@ public class DescribeMovingAddressesRequestMarshaller implements Marshaller<Requ
 
         if (describeMovingAddressesRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeMovingAddressesRequest.getMaxResults()));
+        }
+
+        if (describeMovingAddressesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeMovingAddressesRequest.getNextToken()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> describeMovingAddressesRequestPublicIpsList = (com.amazonaws.internal.SdkInternalList<String>) describeMovingAddressesRequest
+                .getPublicIps();
+        if (!describeMovingAddressesRequestPublicIpsList.isEmpty() || !describeMovingAddressesRequestPublicIpsList.isAutoConstruct()) {
+            int publicIpsListIndex = 1;
+
+            for (String describeMovingAddressesRequestPublicIpsListValue : describeMovingAddressesRequestPublicIpsList) {
+                if (describeMovingAddressesRequestPublicIpsListValue != null) {
+                    request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(describeMovingAddressesRequestPublicIpsListValue));
+                }
+                publicIpsListIndex++;
+            }
         }
 
         return request;

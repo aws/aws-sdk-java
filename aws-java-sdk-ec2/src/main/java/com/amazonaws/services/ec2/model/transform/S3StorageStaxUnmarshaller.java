@@ -43,6 +43,11 @@ public class S3StorageStaxUnmarshaller implements Unmarshaller<S3Storage, StaxUn
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AWSAccessKeyId", targetDepth)) {
+                    s3Storage.setAWSAccessKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("bucket", targetDepth)) {
                     s3Storage.setBucket(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class S3StorageStaxUnmarshaller implements Unmarshaller<S3Storage, StaxUn
 
                 if (context.testExpression("prefix", targetDepth)) {
                     s3Storage.setPrefix(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("AWSAccessKeyId", targetDepth)) {
-                    s3Storage.setAWSAccessKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

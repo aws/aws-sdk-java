@@ -45,8 +45,18 @@ public class CustomerGatewayStaxUnmarshaller implements Unmarshaller<CustomerGat
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("bgpAsn", targetDepth)) {
+                    customerGateway.setBgpAsn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("customerGatewayId", targetDepth)) {
                     customerGateway.setCustomerGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ipAddress", targetDepth)) {
+                    customerGateway.setIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -57,16 +67,6 @@ public class CustomerGatewayStaxUnmarshaller implements Unmarshaller<CustomerGat
 
                 if (context.testExpression("type", targetDepth)) {
                     customerGateway.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("ipAddress", targetDepth)) {
-                    customerGateway.setIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("bgpAsn", targetDepth)) {
-                    customerGateway.setBgpAsn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

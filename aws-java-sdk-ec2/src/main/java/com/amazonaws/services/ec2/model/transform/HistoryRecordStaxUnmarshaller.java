@@ -43,8 +43,8 @@ public class HistoryRecordStaxUnmarshaller implements Unmarshaller<HistoryRecord
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("timestamp", targetDepth)) {
-                    historyRecord.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("eventInformation", targetDepth)) {
+                    historyRecord.setEventInformation(EventInformationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -53,8 +53,8 @@ public class HistoryRecordStaxUnmarshaller implements Unmarshaller<HistoryRecord
                     continue;
                 }
 
-                if (context.testExpression("eventInformation", targetDepth)) {
-                    historyRecord.setEventInformation(EventInformationStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("timestamp", targetDepth)) {
+                    historyRecord.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

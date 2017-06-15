@@ -30,6 +30,13 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
+     * reassigned to the specified network interface.
+     * </p>
+     */
+    private Boolean allowReassignment;
+    /**
+     * <p>
      * The ID of the network interface.
      * </p>
      */
@@ -51,13 +58,66 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
      * </p>
      */
     private Integer secondaryPrivateIpAddressCount;
+
     /**
      * <p>
      * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
      * reassigned to the specified network interface.
      * </p>
+     * 
+     * @param allowReassignment
+     *        Indicates whether to allow an IP address that is already assigned to another network interface or instance
+     *        to be reassigned to the specified network interface.
      */
-    private Boolean allowReassignment;
+
+    public void setAllowReassignment(Boolean allowReassignment) {
+        this.allowReassignment = allowReassignment;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
+     * reassigned to the specified network interface.
+     * </p>
+     * 
+     * @return Indicates whether to allow an IP address that is already assigned to another network interface or
+     *         instance to be reassigned to the specified network interface.
+     */
+
+    public Boolean getAllowReassignment() {
+        return this.allowReassignment;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
+     * reassigned to the specified network interface.
+     * </p>
+     * 
+     * @param allowReassignment
+     *        Indicates whether to allow an IP address that is already assigned to another network interface or instance
+     *        to be reassigned to the specified network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssignPrivateIpAddressesRequest withAllowReassignment(Boolean allowReassignment) {
+        setAllowReassignment(allowReassignment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
+     * reassigned to the specified network interface.
+     * </p>
+     * 
+     * @return Indicates whether to allow an IP address that is already assigned to another network interface or
+     *         instance to be reassigned to the specified network interface.
+     */
+
+    public Boolean isAllowReassignment() {
+        return this.allowReassignment;
+    }
 
     /**
      * <p>
@@ -251,66 +311,6 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
     }
 
     /**
-     * <p>
-     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
-     * reassigned to the specified network interface.
-     * </p>
-     * 
-     * @param allowReassignment
-     *        Indicates whether to allow an IP address that is already assigned to another network interface or instance
-     *        to be reassigned to the specified network interface.
-     */
-
-    public void setAllowReassignment(Boolean allowReassignment) {
-        this.allowReassignment = allowReassignment;
-    }
-
-    /**
-     * <p>
-     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
-     * reassigned to the specified network interface.
-     * </p>
-     * 
-     * @return Indicates whether to allow an IP address that is already assigned to another network interface or
-     *         instance to be reassigned to the specified network interface.
-     */
-
-    public Boolean getAllowReassignment() {
-        return this.allowReassignment;
-    }
-
-    /**
-     * <p>
-     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
-     * reassigned to the specified network interface.
-     * </p>
-     * 
-     * @param allowReassignment
-     *        Indicates whether to allow an IP address that is already assigned to another network interface or instance
-     *        to be reassigned to the specified network interface.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssignPrivateIpAddressesRequest withAllowReassignment(Boolean allowReassignment) {
-        setAllowReassignment(allowReassignment);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Indicates whether to allow an IP address that is already assigned to another network interface or instance to be
-     * reassigned to the specified network interface.
-     * </p>
-     * 
-     * @return Indicates whether to allow an IP address that is already assigned to another network interface or
-     *         instance to be reassigned to the specified network interface.
-     */
-
-    public Boolean isAllowReassignment() {
-        return this.allowReassignment;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -332,14 +332,14 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAllowReassignment() != null)
+            sb.append("AllowReassignment: ").append(getAllowReassignment()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getPrivateIpAddresses() != null)
             sb.append("PrivateIpAddresses: ").append(getPrivateIpAddresses()).append(",");
         if (getSecondaryPrivateIpAddressCount() != null)
-            sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
-        if (getAllowReassignment() != null)
-            sb.append("AllowReassignment: ").append(getAllowReassignment());
+            sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount());
         sb.append("}");
         return sb.toString();
     }
@@ -354,6 +354,10 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
         if (obj instanceof AssignPrivateIpAddressesRequest == false)
             return false;
         AssignPrivateIpAddressesRequest other = (AssignPrivateIpAddressesRequest) obj;
+        if (other.getAllowReassignment() == null ^ this.getAllowReassignment() == null)
+            return false;
+        if (other.getAllowReassignment() != null && other.getAllowReassignment().equals(this.getAllowReassignment()) == false)
+            return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
@@ -367,10 +371,6 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
         if (other.getSecondaryPrivateIpAddressCount() != null
                 && other.getSecondaryPrivateIpAddressCount().equals(this.getSecondaryPrivateIpAddressCount()) == false)
             return false;
-        if (other.getAllowReassignment() == null ^ this.getAllowReassignment() == null)
-            return false;
-        if (other.getAllowReassignment() != null && other.getAllowReassignment().equals(this.getAllowReassignment()) == false)
-            return false;
         return true;
     }
 
@@ -379,10 +379,10 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAllowReassignment() == null) ? 0 : getAllowReassignment().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
-        hashCode = prime * hashCode + ((getAllowReassignment() == null) ? 0 : getAllowReassignment().hashCode());
         return hashCode;
     }
 

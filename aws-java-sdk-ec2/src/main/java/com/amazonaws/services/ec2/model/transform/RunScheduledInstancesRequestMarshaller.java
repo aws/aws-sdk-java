@@ -47,63 +47,8 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
             request.addParameter("InstanceCount", StringUtils.fromInteger(runScheduledInstancesRequest.getInstanceCount()));
         }
 
-        if (runScheduledInstancesRequest.getScheduledInstanceId() != null) {
-            request.addParameter("ScheduledInstanceId", StringUtils.fromString(runScheduledInstancesRequest.getScheduledInstanceId()));
-        }
-
         ScheduledInstancesLaunchSpecification launchSpecification = runScheduledInstancesRequest.getLaunchSpecification();
         if (launchSpecification != null) {
-
-            if (launchSpecification.getImageId() != null) {
-                request.addParameter("LaunchSpecification.ImageId", StringUtils.fromString(launchSpecification.getImageId()));
-            }
-
-            if (launchSpecification.getKeyName() != null) {
-                request.addParameter("LaunchSpecification.KeyName", StringUtils.fromString(launchSpecification.getKeyName()));
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> scheduledInstancesLaunchSpecificationSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
-                    .getSecurityGroupIds();
-            if (!scheduledInstancesLaunchSpecificationSecurityGroupIdsList.isEmpty()
-                    || !scheduledInstancesLaunchSpecificationSecurityGroupIdsList.isAutoConstruct()) {
-                int securityGroupIdsListIndex = 1;
-
-                for (String scheduledInstancesLaunchSpecificationSecurityGroupIdsListValue : scheduledInstancesLaunchSpecificationSecurityGroupIdsList) {
-                    if (scheduledInstancesLaunchSpecificationSecurityGroupIdsListValue != null) {
-                        request.addParameter("LaunchSpecification.SecurityGroupId." + securityGroupIdsListIndex,
-                                StringUtils.fromString(scheduledInstancesLaunchSpecificationSecurityGroupIdsListValue));
-                    }
-                    securityGroupIdsListIndex++;
-                }
-            }
-
-            if (launchSpecification.getUserData() != null) {
-                request.addParameter("LaunchSpecification.UserData", StringUtils.fromString(launchSpecification.getUserData()));
-            }
-
-            ScheduledInstancesPlacement placement = launchSpecification.getPlacement();
-            if (placement != null) {
-
-                if (placement.getAvailabilityZone() != null) {
-                    request.addParameter("LaunchSpecification.Placement.AvailabilityZone", StringUtils.fromString(placement.getAvailabilityZone()));
-                }
-
-                if (placement.getGroupName() != null) {
-                    request.addParameter("LaunchSpecification.Placement.GroupName", StringUtils.fromString(placement.getGroupName()));
-                }
-            }
-
-            if (launchSpecification.getKernelId() != null) {
-                request.addParameter("LaunchSpecification.KernelId", StringUtils.fromString(launchSpecification.getKernelId()));
-            }
-
-            if (launchSpecification.getInstanceType() != null) {
-                request.addParameter("LaunchSpecification.InstanceType", StringUtils.fromString(launchSpecification.getInstanceType()));
-            }
-
-            if (launchSpecification.getRamdiskId() != null) {
-                request.addParameter("LaunchSpecification.RamdiskId", StringUtils.fromString(launchSpecification.getRamdiskId()));
-            }
 
             com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping> scheduledInstancesLaunchSpecificationBlockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesBlockDeviceMapping>) launchSpecification
                     .getBlockDeviceMappings();
@@ -118,18 +63,23 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
                                 StringUtils.fromString(scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getDeviceName()));
                     }
 
-                    if (scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getNoDevice() != null) {
-                        request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice",
-                                StringUtils.fromString(scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getNoDevice()));
-                    }
-
-                    if (scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getVirtualName() != null) {
-                        request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
-                                StringUtils.fromString(scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getVirtualName()));
-                    }
-
                     ScheduledInstancesEbs ebs = scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getEbs();
                     if (ebs != null) {
+
+                        if (ebs.getDeleteOnTermination() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
+                                    StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
+                        }
+
+                        if (ebs.getEncrypted() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
+                                    StringUtils.fromBoolean(ebs.getEncrypted()));
+                        }
+
+                        if (ebs.getIops() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops",
+                                    StringUtils.fromInteger(ebs.getIops()));
+                        }
 
                         if (ebs.getSnapshotId() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
@@ -141,28 +91,55 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
                                     StringUtils.fromInteger(ebs.getVolumeSize()));
                         }
 
-                        if (ebs.getDeleteOnTermination() != null) {
-                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
-                                    StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
-                        }
-
                         if (ebs.getVolumeType() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
                                     StringUtils.fromString(ebs.getVolumeType()));
                         }
+                    }
 
-                        if (ebs.getIops() != null) {
-                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops",
-                                    StringUtils.fromInteger(ebs.getIops()));
-                        }
+                    if (scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getNoDevice() != null) {
+                        request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice",
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getNoDevice()));
+                    }
 
-                        if (ebs.getEncrypted() != null) {
-                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
-                                    StringUtils.fromBoolean(ebs.getEncrypted()));
-                        }
+                    if (scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getVirtualName() != null) {
+                        request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName",
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationBlockDeviceMappingsListValue.getVirtualName()));
                     }
                     blockDeviceMappingsListIndex++;
                 }
+            }
+
+            if (launchSpecification.getEbsOptimized() != null) {
+                request.addParameter("LaunchSpecification.EbsOptimized", StringUtils.fromBoolean(launchSpecification.getEbsOptimized()));
+            }
+
+            ScheduledInstancesIamInstanceProfile iamInstanceProfile = launchSpecification.getIamInstanceProfile();
+            if (iamInstanceProfile != null) {
+
+                if (iamInstanceProfile.getArn() != null) {
+                    request.addParameter("LaunchSpecification.IamInstanceProfile.Arn", StringUtils.fromString(iamInstanceProfile.getArn()));
+                }
+
+                if (iamInstanceProfile.getName() != null) {
+                    request.addParameter("LaunchSpecification.IamInstanceProfile.Name", StringUtils.fromString(iamInstanceProfile.getName()));
+                }
+            }
+
+            if (launchSpecification.getImageId() != null) {
+                request.addParameter("LaunchSpecification.ImageId", StringUtils.fromString(launchSpecification.getImageId()));
+            }
+
+            if (launchSpecification.getInstanceType() != null) {
+                request.addParameter("LaunchSpecification.InstanceType", StringUtils.fromString(launchSpecification.getInstanceType()));
+            }
+
+            if (launchSpecification.getKernelId() != null) {
+                request.addParameter("LaunchSpecification.KernelId", StringUtils.fromString(launchSpecification.getKernelId()));
+            }
+
+            if (launchSpecification.getKeyName() != null) {
+                request.addParameter("LaunchSpecification.KeyName", StringUtils.fromString(launchSpecification.getKeyName()));
             }
 
             ScheduledInstancesMonitoring monitoring = launchSpecification.getMonitoring();
@@ -173,10 +150,6 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
                 }
             }
 
-            if (launchSpecification.getSubnetId() != null) {
-                request.addParameter("LaunchSpecification.SubnetId", StringUtils.fromString(launchSpecification.getSubnetId()));
-            }
-
             com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface> scheduledInstancesLaunchSpecificationNetworkInterfacesList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesNetworkInterface>) launchSpecification
                     .getNetworkInterfaces();
             if (!scheduledInstancesLaunchSpecificationNetworkInterfacesList.isEmpty()
@@ -185,19 +158,14 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
 
                 for (ScheduledInstancesNetworkInterface scheduledInstancesLaunchSpecificationNetworkInterfacesListValue : scheduledInstancesLaunchSpecificationNetworkInterfacesList) {
 
-                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getNetworkInterfaceId() != null) {
-                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".NetworkInterfaceId",
-                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getNetworkInterfaceId()));
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getAssociatePublicIpAddress() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress",
+                                StringUtils.fromBoolean(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getAssociatePublicIpAddress()));
                     }
 
-                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeviceIndex() != null) {
-                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeviceIndex",
-                                StringUtils.fromInteger(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeviceIndex()));
-                    }
-
-                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSubnetId() != null) {
-                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SubnetId",
-                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSubnetId()));
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeleteOnTermination() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeleteOnTermination",
+                                StringUtils.fromBoolean(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeleteOnTermination()));
                     }
 
                     if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDescription() != null) {
@@ -205,42 +173,9 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
                                 StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDescription()));
                     }
 
-                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getPrivateIpAddress() != null) {
-                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddress",
-                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getPrivateIpAddress()));
-                    }
-
-                    com.amazonaws.internal.SdkInternalList<ScheduledInstancesPrivateIpAddressConfig> scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesPrivateIpAddressConfig>) scheduledInstancesLaunchSpecificationNetworkInterfacesListValue
-                            .getPrivateIpAddressConfigs();
-                    if (!scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList.isEmpty()
-                            || !scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList.isAutoConstruct()) {
-                        int privateIpAddressConfigsListIndex = 1;
-
-                        for (ScheduledInstancesPrivateIpAddressConfig scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue : scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList) {
-
-                            if (scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrivateIpAddress() != null) {
-                                request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddressConfig."
-                                        + privateIpAddressConfigsListIndex + ".PrivateIpAddress",
-                                        StringUtils.fromString(scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrivateIpAddress()));
-                            }
-
-                            if (scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrimary() != null) {
-                                request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddressConfig."
-                                        + privateIpAddressConfigsListIndex + ".Primary",
-                                        StringUtils.fromBoolean(scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrimary()));
-                            }
-                            privateIpAddressConfigsListIndex++;
-                        }
-                    }
-
-                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSecondaryPrivateIpAddressCount() != null) {
-                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount",
-                                StringUtils.fromInteger(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSecondaryPrivateIpAddressCount()));
-                    }
-
-                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getAssociatePublicIpAddress() != null) {
-                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress",
-                                StringUtils.fromBoolean(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getAssociatePublicIpAddress()));
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeviceIndex() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeviceIndex",
+                                StringUtils.fromInteger(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeviceIndex()));
                     }
 
                     com.amazonaws.internal.SdkInternalList<String> scheduledInstancesNetworkInterfaceGroupsList = (com.amazonaws.internal.SdkInternalList<String>) scheduledInstancesLaunchSpecificationNetworkInterfacesListValue
@@ -257,9 +192,9 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
                         }
                     }
 
-                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeleteOnTermination() != null) {
-                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".DeleteOnTermination",
-                                StringUtils.fromBoolean(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getDeleteOnTermination()));
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getIpv6AddressCount() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".Ipv6AddressCount",
+                                StringUtils.fromInteger(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getIpv6AddressCount()));
                     }
 
                     com.amazonaws.internal.SdkInternalList<ScheduledInstancesIpv6Address> scheduledInstancesNetworkInterfaceIpv6AddressesList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesIpv6Address>) scheduledInstancesLaunchSpecificationNetworkInterfacesListValue
@@ -279,29 +214,94 @@ public class RunScheduledInstancesRequestMarshaller implements Marshaller<Reques
                         }
                     }
 
-                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getIpv6AddressCount() != null) {
-                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".Ipv6AddressCount",
-                                StringUtils.fromInteger(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getIpv6AddressCount()));
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getNetworkInterfaceId() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".NetworkInterfaceId",
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getNetworkInterfaceId()));
+                    }
+
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getPrivateIpAddress() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddress",
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getPrivateIpAddress()));
+                    }
+
+                    com.amazonaws.internal.SdkInternalList<ScheduledInstancesPrivateIpAddressConfig> scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList = (com.amazonaws.internal.SdkInternalList<ScheduledInstancesPrivateIpAddressConfig>) scheduledInstancesLaunchSpecificationNetworkInterfacesListValue
+                            .getPrivateIpAddressConfigs();
+                    if (!scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList.isEmpty()
+                            || !scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList.isAutoConstruct()) {
+                        int privateIpAddressConfigsListIndex = 1;
+
+                        for (ScheduledInstancesPrivateIpAddressConfig scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue : scheduledInstancesNetworkInterfacePrivateIpAddressConfigsList) {
+
+                            if (scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrimary() != null) {
+                                request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddressConfig."
+                                        + privateIpAddressConfigsListIndex + ".Primary",
+                                        StringUtils.fromBoolean(scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrimary()));
+                            }
+
+                            if (scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrivateIpAddress() != null) {
+                                request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddressConfig."
+                                        + privateIpAddressConfigsListIndex + ".PrivateIpAddress",
+                                        StringUtils.fromString(scheduledInstancesNetworkInterfacePrivateIpAddressConfigsListValue.getPrivateIpAddress()));
+                            }
+                            privateIpAddressConfigsListIndex++;
+                        }
+                    }
+
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSecondaryPrivateIpAddressCount() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount",
+                                StringUtils.fromInteger(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSecondaryPrivateIpAddressCount()));
+                    }
+
+                    if (scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSubnetId() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".SubnetId",
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationNetworkInterfacesListValue.getSubnetId()));
                     }
                     networkInterfacesListIndex++;
                 }
             }
 
-            ScheduledInstancesIamInstanceProfile iamInstanceProfile = launchSpecification.getIamInstanceProfile();
-            if (iamInstanceProfile != null) {
+            ScheduledInstancesPlacement placement = launchSpecification.getPlacement();
+            if (placement != null) {
 
-                if (iamInstanceProfile.getArn() != null) {
-                    request.addParameter("LaunchSpecification.IamInstanceProfile.Arn", StringUtils.fromString(iamInstanceProfile.getArn()));
+                if (placement.getAvailabilityZone() != null) {
+                    request.addParameter("LaunchSpecification.Placement.AvailabilityZone", StringUtils.fromString(placement.getAvailabilityZone()));
                 }
 
-                if (iamInstanceProfile.getName() != null) {
-                    request.addParameter("LaunchSpecification.IamInstanceProfile.Name", StringUtils.fromString(iamInstanceProfile.getName()));
+                if (placement.getGroupName() != null) {
+                    request.addParameter("LaunchSpecification.Placement.GroupName", StringUtils.fromString(placement.getGroupName()));
                 }
             }
 
-            if (launchSpecification.getEbsOptimized() != null) {
-                request.addParameter("LaunchSpecification.EbsOptimized", StringUtils.fromBoolean(launchSpecification.getEbsOptimized()));
+            if (launchSpecification.getRamdiskId() != null) {
+                request.addParameter("LaunchSpecification.RamdiskId", StringUtils.fromString(launchSpecification.getRamdiskId()));
             }
+
+            com.amazonaws.internal.SdkInternalList<String> scheduledInstancesLaunchSpecificationSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) launchSpecification
+                    .getSecurityGroupIds();
+            if (!scheduledInstancesLaunchSpecificationSecurityGroupIdsList.isEmpty()
+                    || !scheduledInstancesLaunchSpecificationSecurityGroupIdsList.isAutoConstruct()) {
+                int securityGroupIdsListIndex = 1;
+
+                for (String scheduledInstancesLaunchSpecificationSecurityGroupIdsListValue : scheduledInstancesLaunchSpecificationSecurityGroupIdsList) {
+                    if (scheduledInstancesLaunchSpecificationSecurityGroupIdsListValue != null) {
+                        request.addParameter("LaunchSpecification.SecurityGroupId." + securityGroupIdsListIndex,
+                                StringUtils.fromString(scheduledInstancesLaunchSpecificationSecurityGroupIdsListValue));
+                    }
+                    securityGroupIdsListIndex++;
+                }
+            }
+
+            if (launchSpecification.getSubnetId() != null) {
+                request.addParameter("LaunchSpecification.SubnetId", StringUtils.fromString(launchSpecification.getSubnetId()));
+            }
+
+            if (launchSpecification.getUserData() != null) {
+                request.addParameter("LaunchSpecification.UserData", StringUtils.fromString(launchSpecification.getUserData()));
+            }
+        }
+
+        if (runScheduledInstancesRequest.getScheduledInstanceId() != null) {
+            request.addParameter("ScheduledInstanceId", StringUtils.fromString(runScheduledInstancesRequest.getScheduledInstanceId()));
         }
 
         return request;

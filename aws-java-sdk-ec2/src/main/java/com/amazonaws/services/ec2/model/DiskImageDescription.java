@@ -28,16 +28,16 @@ public class DiskImageDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The checksum computed for the disk image.
+     * </p>
+     */
+    private String checksum;
+    /**
+     * <p>
      * The disk image format.
      * </p>
      */
     private String format;
-    /**
-     * <p>
-     * The size of the disk image, in GiB.
-     * </p>
-     */
-    private Long size;
     /**
      * <p>
      * A presigned URL for the import manifest stored in Amazon S3. For information about creating a presigned URL for
@@ -53,10 +53,50 @@ public class DiskImageDescription implements Serializable, Cloneable {
     private String importManifestUrl;
     /**
      * <p>
-     * The checksum computed for the disk image.
+     * The size of the disk image, in GiB.
      * </p>
      */
-    private String checksum;
+    private Long size;
+
+    /**
+     * <p>
+     * The checksum computed for the disk image.
+     * </p>
+     * 
+     * @param checksum
+     *        The checksum computed for the disk image.
+     */
+
+    public void setChecksum(String checksum) {
+        this.checksum = checksum;
+    }
+
+    /**
+     * <p>
+     * The checksum computed for the disk image.
+     * </p>
+     * 
+     * @return The checksum computed for the disk image.
+     */
+
+    public String getChecksum() {
+        return this.checksum;
+    }
+
+    /**
+     * <p>
+     * The checksum computed for the disk image.
+     * </p>
+     * 
+     * @param checksum
+     *        The checksum computed for the disk image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiskImageDescription withChecksum(String checksum) {
+        setChecksum(checksum);
+        return this;
+    }
 
     /**
      * <p>
@@ -128,46 +168,6 @@ public class DiskImageDescription implements Serializable, Cloneable {
 
     public DiskImageDescription withFormat(DiskImageFormat format) {
         setFormat(format);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The size of the disk image, in GiB.
-     * </p>
-     * 
-     * @param size
-     *        The size of the disk image, in GiB.
-     */
-
-    public void setSize(Long size) {
-        this.size = size;
-    }
-
-    /**
-     * <p>
-     * The size of the disk image, in GiB.
-     * </p>
-     * 
-     * @return The size of the disk image, in GiB.
-     */
-
-    public Long getSize() {
-        return this.size;
-    }
-
-    /**
-     * <p>
-     * The size of the disk image, in GiB.
-     * </p>
-     * 
-     * @param size
-     *        The size of the disk image, in GiB.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DiskImageDescription withSize(Long size) {
-        setSize(size);
         return this;
     }
 
@@ -252,41 +252,41 @@ public class DiskImageDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The checksum computed for the disk image.
+     * The size of the disk image, in GiB.
      * </p>
      * 
-     * @param checksum
-     *        The checksum computed for the disk image.
+     * @param size
+     *        The size of the disk image, in GiB.
      */
 
-    public void setChecksum(String checksum) {
-        this.checksum = checksum;
+    public void setSize(Long size) {
+        this.size = size;
     }
 
     /**
      * <p>
-     * The checksum computed for the disk image.
+     * The size of the disk image, in GiB.
      * </p>
      * 
-     * @return The checksum computed for the disk image.
+     * @return The size of the disk image, in GiB.
      */
 
-    public String getChecksum() {
-        return this.checksum;
+    public Long getSize() {
+        return this.size;
     }
 
     /**
      * <p>
-     * The checksum computed for the disk image.
+     * The size of the disk image, in GiB.
      * </p>
      * 
-     * @param checksum
-     *        The checksum computed for the disk image.
+     * @param size
+     *        The size of the disk image, in GiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DiskImageDescription withChecksum(String checksum) {
-        setChecksum(checksum);
+    public DiskImageDescription withSize(Long size) {
+        setSize(size);
         return this;
     }
 
@@ -301,14 +301,14 @@ public class DiskImageDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getChecksum() != null)
+            sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat()).append(",");
-        if (getSize() != null)
-            sb.append("Size: ").append(getSize()).append(",");
         if (getImportManifestUrl() != null)
             sb.append("ImportManifestUrl: ").append(getImportManifestUrl()).append(",");
-        if (getChecksum() != null)
-            sb.append("Checksum: ").append(getChecksum());
+        if (getSize() != null)
+            sb.append("Size: ").append(getSize());
         sb.append("}");
         return sb.toString();
     }
@@ -323,21 +323,21 @@ public class DiskImageDescription implements Serializable, Cloneable {
         if (obj instanceof DiskImageDescription == false)
             return false;
         DiskImageDescription other = (DiskImageDescription) obj;
+        if (other.getChecksum() == null ^ this.getChecksum() == null)
+            return false;
+        if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
+            return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
-            return false;
-        if (other.getSize() == null ^ this.getSize() == null)
-            return false;
-        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         if (other.getImportManifestUrl() == null ^ this.getImportManifestUrl() == null)
             return false;
         if (other.getImportManifestUrl() != null && other.getImportManifestUrl().equals(this.getImportManifestUrl()) == false)
             return false;
-        if (other.getChecksum() == null ^ this.getChecksum() == null)
+        if (other.getSize() == null ^ this.getSize() == null)
             return false;
-        if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
             return false;
         return true;
     }
@@ -347,10 +347,10 @@ public class DiskImageDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
-        hashCode = prime * hashCode + ((getImportManifestUrl() == null) ? 0 : getImportManifestUrl().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
+        hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
+        hashCode = prime * hashCode + ((getImportManifestUrl() == null) ? 0 : getImportManifestUrl().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         return hashCode;
     }
 

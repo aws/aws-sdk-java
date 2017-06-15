@@ -42,10 +42,6 @@ public class GetHostReservationPurchasePreviewRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (getHostReservationPurchasePreviewRequest.getOfferingId() != null) {
-            request.addParameter("OfferingId", StringUtils.fromString(getHostReservationPurchasePreviewRequest.getOfferingId()));
-        }
-
         com.amazonaws.internal.SdkInternalList<String> getHostReservationPurchasePreviewRequestHostIdSetList = (com.amazonaws.internal.SdkInternalList<String>) getHostReservationPurchasePreviewRequest
                 .getHostIdSet();
         if (!getHostReservationPurchasePreviewRequestHostIdSetList.isEmpty() || !getHostReservationPurchasePreviewRequestHostIdSetList.isAutoConstruct()) {
@@ -57,6 +53,10 @@ public class GetHostReservationPurchasePreviewRequestMarshaller implements
                 }
                 hostIdSetListIndex++;
             }
+        }
+
+        if (getHostReservationPurchasePreviewRequest.getOfferingId() != null) {
+            request.addParameter("OfferingId", StringUtils.fromString(getHostReservationPurchasePreviewRequest.getOfferingId()));
         }
 
         return request;

@@ -43,6 +43,11 @@ public class PeeringConnectionOptionsStaxUnmarshaller implements Unmarshaller<Pe
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("allowDnsResolutionFromRemoteVpc", targetDepth)) {
+                    peeringConnectionOptions.setAllowDnsResolutionFromRemoteVpc(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("allowEgressFromLocalClassicLinkToRemoteVpc", targetDepth)) {
                     peeringConnectionOptions.setAllowEgressFromLocalClassicLinkToRemoteVpc(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -50,11 +55,6 @@ public class PeeringConnectionOptionsStaxUnmarshaller implements Unmarshaller<Pe
 
                 if (context.testExpression("allowEgressFromLocalVpcToRemoteClassicLink", targetDepth)) {
                     peeringConnectionOptions.setAllowEgressFromLocalVpcToRemoteClassicLink(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("allowDnsResolutionFromRemoteVpc", targetDepth)) {
-                    peeringConnectionOptions.setAllowDnsResolutionFromRemoteVpc(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

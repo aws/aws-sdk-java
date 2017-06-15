@@ -30,12 +30,6 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ID of the AMI.
-     * </p>
-     */
-    private String imageId;
-    /**
-     * <p>
      * The AMI attribute.
      * </p>
      * <p>
@@ -45,6 +39,12 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private String attribute;
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     */
+    private String imageId;
 
     /**
      * Default constructor for DescribeImageAttributeRequest object. Callers should use the setter or fluent setter
@@ -87,46 +87,6 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
     public DescribeImageAttributeRequest(String imageId, ImageAttributeName attribute) {
         setImageId(imageId);
         setAttribute(attribute.toString());
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @param imageId
-     *        The ID of the AMI.
-     */
-
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @return The ID of the AMI.
-     */
-
-    public String getImageId() {
-        return this.imageId;
-    }
-
-    /**
-     * <p>
-     * The ID of the AMI.
-     * </p>
-     * 
-     * @param imageId
-     *        The ID of the AMI.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeImageAttributeRequest withImageId(String imageId) {
-        setImageId(imageId);
-        return this;
     }
 
     /**
@@ -248,6 +208,46 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @return The ID of the AMI.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AMI.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImageAttributeRequest withImageId(String imageId) {
+        setImageId(imageId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -269,10 +269,10 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImageId() != null)
-            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getAttribute() != null)
-            sb.append("Attribute: ").append(getAttribute());
+            sb.append("Attribute: ").append(getAttribute()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId());
         sb.append("}");
         return sb.toString();
     }
@@ -287,13 +287,13 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
         if (obj instanceof DescribeImageAttributeRequest == false)
             return false;
         DescribeImageAttributeRequest other = (DescribeImageAttributeRequest) obj;
-        if (other.getImageId() == null ^ this.getImageId() == null)
-            return false;
-        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
-            return false;
         if (other.getAttribute() == null ^ this.getAttribute() == null)
             return false;
         if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false)
+            return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
             return false;
         return true;
     }
@@ -303,8 +303,8 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         return hashCode;
     }
 

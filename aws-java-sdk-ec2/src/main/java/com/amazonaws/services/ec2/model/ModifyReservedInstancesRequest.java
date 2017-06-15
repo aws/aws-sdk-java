@@ -30,6 +30,12 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * The IDs of the Reserved Instances to modify.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> reservedInstancesIds;
+    /**
+     * <p>
      * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
@@ -39,74 +45,10 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     private String clientToken;
     /**
      * <p>
-     * The IDs of the Reserved Instances to modify.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> reservedInstancesIds;
-    /**
-     * <p>
      * The configuration settings for the Reserved Instances to modify.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ReservedInstancesConfiguration> targetConfigurations;
-
-    /**
-     * <p>
-     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.
-     * </p>
-     * 
-     * @param clientToken
-     *        A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *        Idempotency</a>.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.
-     * </p>
-     * 
-     * @return A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *         Idempotency</a>.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     * Idempotency</a>.
-     * </p>
-     * 
-     * @param clientToken
-     *        A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-     *        Idempotency</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModifyReservedInstancesRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
 
     /**
      * <p>
@@ -178,6 +120,64 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
 
     public ModifyReservedInstancesRequest withReservedInstancesIds(java.util.Collection<String> reservedInstancesIds) {
         setReservedInstancesIds(reservedInstancesIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
+     * </p>
+     * 
+     * @return A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         Idempotency</a>.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique, case-sensitive token you provide to ensure idempotency of your modification request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        Idempotency</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReservedInstancesRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -276,10 +276,10 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getReservedInstancesIds() != null)
             sb.append("ReservedInstancesIds: ").append(getReservedInstancesIds()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTargetConfigurations() != null)
             sb.append("TargetConfigurations: ").append(getTargetConfigurations());
         sb.append("}");
@@ -296,13 +296,13 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
         if (obj instanceof ModifyReservedInstancesRequest == false)
             return false;
         ModifyReservedInstancesRequest other = (ModifyReservedInstancesRequest) obj;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getReservedInstancesIds() == null ^ this.getReservedInstancesIds() == null)
             return false;
         if (other.getReservedInstancesIds() != null && other.getReservedInstancesIds().equals(this.getReservedInstancesIds()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getTargetConfigurations() == null ^ this.getTargetConfigurations() == null)
             return false;
@@ -316,8 +316,8 @@ public class ModifyReservedInstancesRequest extends AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getReservedInstancesIds() == null) ? 0 : getReservedInstancesIds().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTargetConfigurations() == null) ? 0 : getTargetConfigurations().hashCode());
         return hashCode;
     }

@@ -29,17 +29,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ID of the VPC in which the endpoint will be used.
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      */
-    private String vpcId;
-    /**
-     * <p>
-     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
-     * </p>
-     */
-    private String serviceName;
+    private String clientToken;
     /**
      * <p>
      * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
@@ -55,96 +50,70 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
     /**
      * <p>
+     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * </p>
+     */
+    private String serviceName;
+    /**
+     * <p>
+     * The ID of the VPC in which the endpoint will be used.
+     * </p>
+     */
+    private String vpcId;
+
+    /**
+     * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a>.
      * </p>
-     */
-    private String clientToken;
-
-    /**
-     * <p>
-     * The ID of the VPC in which the endpoint will be used.
-     * </p>
      * 
-     * @param vpcId
-     *        The ID of the VPC in which the endpoint will be used.
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
      */
 
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
     }
 
     /**
      * <p>
-     * The ID of the VPC in which the endpoint will be used.
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
-     * @return The ID of the VPC in which the endpoint will be used.
+     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *         Idempotency</a>.
      */
 
-    public String getVpcId() {
-        return this.vpcId;
+    public String getClientToken() {
+        return this.clientToken;
     }
 
     /**
      * <p>
-     * The ID of the VPC in which the endpoint will be used.
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
+     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     * Idempotency</a>.
      * </p>
      * 
-     * @param vpcId
-     *        The ID of the VPC in which the endpoint will be used.
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateVpcEndpointRequest withVpcId(String vpcId) {
-        setVpcId(vpcId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
-     * </p>
-     * 
-     * @param serviceName
-     *        The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
-     *        of available services, use the <a>DescribeVpcEndpointServices</a> request.
-     */
-
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
-
-    /**
-     * <p>
-     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
-     * </p>
-     * 
-     * @return The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
-     *         of available services, use the <a>DescribeVpcEndpointServices</a> request.
-     */
-
-    public String getServiceName() {
-        return this.serviceName;
-    }
-
-    /**
-     * <p>
-     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
-     * available services, use the <a>DescribeVpcEndpointServices</a> request.
-     * </p>
-     * 
-     * @param serviceName
-     *        The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
-     *        of available services, use the <a>DescribeVpcEndpointServices</a> request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateVpcEndpointRequest withServiceName(String serviceName) {
-        setServiceName(serviceName);
+    public CreateVpcEndpointRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
         return this;
     }
 
@@ -272,56 +241,87 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.
      * </p>
      * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.
+     * @param serviceName
+     *        The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
+     *        of available services, use the <a>DescribeVpcEndpointServices</a> request.
      */
 
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *         Idempotency</a>.
+     * @return The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
+     *         of available services, use the <a>DescribeVpcEndpointServices</a> request.
      */
 
-    public String getClientToken() {
-        return this.clientToken;
+    public String getServiceName() {
+        return this.serviceName;
     }
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a>.
+     * The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list of
+     * available services, use the <a>DescribeVpcEndpointServices</a> request.
      * </p>
      * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.
+     * @param serviceName
+     *        The AWS service name, in the form <code>com.amazonaws.<i>region</i>.<i>service</i> </code>. To get a list
+     *        of available services, use the <a>DescribeVpcEndpointServices</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateVpcEndpointRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
+    public CreateVpcEndpointRequest withServiceName(String serviceName) {
+        setServiceName(serviceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC in which the endpoint will be used.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC in which the endpoint will be used.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC in which the endpoint will be used.
+     * </p>
+     * 
+     * @return The ID of the VPC in which the endpoint will be used.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC in which the endpoint will be used.
+     * </p>
+     * 
+     * @param vpcId
+     *        The ID of the VPC in which the endpoint will be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcEndpointRequest withVpcId(String vpcId) {
+        setVpcId(vpcId);
         return this;
     }
 
@@ -347,16 +347,16 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
-        if (getServiceName() != null)
-            sb.append("ServiceName: ").append(getServiceName()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getPolicyDocument() != null)
             sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getRouteTableIds() != null)
             sb.append("RouteTableIds: ").append(getRouteTableIds()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+        if (getServiceName() != null)
+            sb.append("ServiceName: ").append(getServiceName()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -371,13 +371,9 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
         if (obj instanceof CreateVpcEndpointRequest == false)
             return false;
         CreateVpcEndpointRequest other = (CreateVpcEndpointRequest) obj;
-        if (other.getVpcId() == null ^ this.getVpcId() == null)
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
-        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
-            return false;
-        if (other.getServiceName() == null ^ this.getServiceName() == null)
-            return false;
-        if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getPolicyDocument() == null ^ this.getPolicyDocument() == null)
             return false;
@@ -387,9 +383,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
             return false;
         if (other.getRouteTableIds() != null && other.getRouteTableIds().equals(this.getRouteTableIds()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
+        if (other.getServiceName() == null ^ this.getServiceName() == null)
             return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+        if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         return true;
     }
@@ -399,11 +399,11 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getPolicyDocument() == null) ? 0 : getPolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }
 

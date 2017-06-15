@@ -43,13 +43,13 @@ public class BlockDeviceMappingStaxUnmarshaller implements Unmarshaller<BlockDev
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("virtualName", targetDepth)) {
-                    blockDeviceMapping.setVirtualName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("deviceName", targetDepth)) {
+                    blockDeviceMapping.setDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("deviceName", targetDepth)) {
-                    blockDeviceMapping.setDeviceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("virtualName", targetDepth)) {
+                    blockDeviceMapping.setVirtualName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

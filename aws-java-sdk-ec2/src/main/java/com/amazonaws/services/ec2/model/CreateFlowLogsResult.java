@@ -27,22 +27,62 @@ public class CreateFlowLogsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The IDs of the flow logs.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> flowLogIds;
-    /**
-     * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
+     * The IDs of the flow logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> flowLogIds;
+    /**
+     * <p>
      * Information about the flow logs that could not be created successfully.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<UnsuccessfulItem> unsuccessful;
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowLogsResult withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -114,46 +154,6 @@ public class CreateFlowLogsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     public CreateFlowLogsResult withFlowLogIds(java.util.Collection<String> flowLogIds) {
         setFlowLogIds(flowLogIds);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateFlowLogsResult withClientToken(String clientToken) {
-        setClientToken(clientToken);
         return this;
     }
 
@@ -241,10 +241,10 @@ public class CreateFlowLogsResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getFlowLogIds() != null)
-            sb.append("FlowLogIds: ").append(getFlowLogIds()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getFlowLogIds() != null)
+            sb.append("FlowLogIds: ").append(getFlowLogIds()).append(",");
         if (getUnsuccessful() != null)
             sb.append("Unsuccessful: ").append(getUnsuccessful());
         sb.append("}");
@@ -261,13 +261,13 @@ public class CreateFlowLogsResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof CreateFlowLogsResult == false)
             return false;
         CreateFlowLogsResult other = (CreateFlowLogsResult) obj;
-        if (other.getFlowLogIds() == null ^ this.getFlowLogIds() == null)
-            return false;
-        if (other.getFlowLogIds() != null && other.getFlowLogIds().equals(this.getFlowLogIds()) == false)
-            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getFlowLogIds() == null ^ this.getFlowLogIds() == null)
+            return false;
+        if (other.getFlowLogIds() != null && other.getFlowLogIds().equals(this.getFlowLogIds()) == false)
             return false;
         if (other.getUnsuccessful() == null ^ this.getUnsuccessful() == null)
             return false;
@@ -281,8 +281,8 @@ public class CreateFlowLogsResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFlowLogIds() == null) ? 0 : getFlowLogIds().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getFlowLogIds() == null) ? 0 : getFlowLogIds().hashCode());
         hashCode = prime * hashCode + ((getUnsuccessful() == null) ? 0 : getUnsuccessful().hashCode());
         return hashCode;
     }

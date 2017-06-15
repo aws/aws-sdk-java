@@ -43,13 +43,13 @@ public class ImportKeyPairResultStaxUnmarshaller implements Unmarshaller<ImportK
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("keyName", targetDepth)) {
-                    importKeyPairResult.setKeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("keyFingerprint", targetDepth)) {
+                    importKeyPairResult.setKeyFingerprint(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("keyFingerprint", targetDepth)) {
-                    importKeyPairResult.setKeyFingerprint(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("keyName", targetDepth)) {
+                    importKeyPairResult.setKeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

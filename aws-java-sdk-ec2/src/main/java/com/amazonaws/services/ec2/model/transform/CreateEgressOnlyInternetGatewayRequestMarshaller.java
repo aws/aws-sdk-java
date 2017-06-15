@@ -42,12 +42,12 @@ public class CreateEgressOnlyInternetGatewayRequestMarshaller implements
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createEgressOnlyInternetGatewayRequest.getVpcId() != null) {
-            request.addParameter("VpcId", StringUtils.fromString(createEgressOnlyInternetGatewayRequest.getVpcId()));
-        }
-
         if (createEgressOnlyInternetGatewayRequest.getClientToken() != null) {
             request.addParameter("ClientToken", StringUtils.fromString(createEgressOnlyInternetGatewayRequest.getClientToken()));
+        }
+
+        if (createEgressOnlyInternetGatewayRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createEgressOnlyInternetGatewayRequest.getVpcId()));
         }
 
         return request;

@@ -40,12 +40,12 @@ public class DeleteSecurityGroupRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (deleteSecurityGroupRequest.getGroupName() != null) {
-            request.addParameter("GroupName", StringUtils.fromString(deleteSecurityGroupRequest.getGroupName()));
-        }
-
         if (deleteSecurityGroupRequest.getGroupId() != null) {
             request.addParameter("GroupId", StringUtils.fromString(deleteSecurityGroupRequest.getGroupId()));
+        }
+
+        if (deleteSecurityGroupRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(deleteSecurityGroupRequest.getGroupName()));
         }
 
         return request;

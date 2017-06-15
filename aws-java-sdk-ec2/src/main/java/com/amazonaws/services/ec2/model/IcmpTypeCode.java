@@ -28,56 +28,16 @@ public class IcmpTypeCode implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ICMP type. A value of -1 means all types.
-     * </p>
-     */
-    private Integer type;
-    /**
-     * <p>
      * The ICMP code. A value of -1 means all codes for the specified ICMP type.
      * </p>
      */
     private Integer code;
-
     /**
      * <p>
      * The ICMP type. A value of -1 means all types.
      * </p>
-     * 
-     * @param type
-     *        The ICMP type. A value of -1 means all types.
      */
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The ICMP type. A value of -1 means all types.
-     * </p>
-     * 
-     * @return The ICMP type. A value of -1 means all types.
-     */
-
-    public Integer getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The ICMP type. A value of -1 means all types.
-     * </p>
-     * 
-     * @param type
-     *        The ICMP type. A value of -1 means all types.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public IcmpTypeCode withType(Integer type) {
-        setType(type);
-        return this;
-    }
+    private Integer type;
 
     /**
      * <p>
@@ -120,6 +80,46 @@ public class IcmpTypeCode implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ICMP type. A value of -1 means all types.
+     * </p>
+     * 
+     * @param type
+     *        The ICMP type. A value of -1 means all types.
+     */
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The ICMP type. A value of -1 means all types.
+     * </p>
+     * 
+     * @return The ICMP type. A value of -1 means all types.
+     */
+
+    public Integer getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The ICMP type. A value of -1 means all types.
+     * </p>
+     * 
+     * @param type
+     *        The ICMP type. A value of -1 means all types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IcmpTypeCode withType(Integer type) {
+        setType(type);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -130,10 +130,10 @@ public class IcmpTypeCode implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
         if (getCode() != null)
-            sb.append("Code: ").append(getCode());
+            sb.append("Code: ").append(getCode()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +148,13 @@ public class IcmpTypeCode implements Serializable, Cloneable {
         if (obj instanceof IcmpTypeCode == false)
             return false;
         IcmpTypeCode other = (IcmpTypeCode) obj;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
         if (other.getCode() == null ^ this.getCode() == null)
             return false;
         if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -164,8 +164,8 @@ public class IcmpTypeCode implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

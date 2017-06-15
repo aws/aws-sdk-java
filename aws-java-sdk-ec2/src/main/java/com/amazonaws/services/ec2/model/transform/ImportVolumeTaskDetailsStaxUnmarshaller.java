@@ -43,13 +43,13 @@ public class ImportVolumeTaskDetailsStaxUnmarshaller implements Unmarshaller<Imp
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
-                if (context.testExpression("bytesConverted", targetDepth)) {
-                    importVolumeTaskDetails.setBytesConverted(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("availabilityZone", targetDepth)) {
+                    importVolumeTaskDetails.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("availabilityZone", targetDepth)) {
-                    importVolumeTaskDetails.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("bytesConverted", targetDepth)) {
+                    importVolumeTaskDetails.setBytesConverted(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

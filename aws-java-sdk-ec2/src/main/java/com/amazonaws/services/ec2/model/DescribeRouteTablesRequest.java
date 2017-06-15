@@ -29,15 +29,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * One or more route table IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your route tables.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
-    /**
-     * <p>
      * One or more filters.
      * </p>
      * <ul>
@@ -156,7 +147,6 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
-
     /**
      * <p>
      * One or more route table IDs.
@@ -164,91 +154,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <p>
      * Default: Describes all your route tables.
      * </p>
-     * 
-     * @return One or more route table IDs.</p>
-     *         <p>
-     *         Default: Describes all your route tables.
      */
-
-    public java.util.List<String> getRouteTableIds() {
-        if (routeTableIds == null) {
-            routeTableIds = new com.amazonaws.internal.SdkInternalList<String>();
-        }
-        return routeTableIds;
-    }
-
-    /**
-     * <p>
-     * One or more route table IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your route tables.
-     * </p>
-     * 
-     * @param routeTableIds
-     *        One or more route table IDs.</p>
-     *        <p>
-     *        Default: Describes all your route tables.
-     */
-
-    public void setRouteTableIds(java.util.Collection<String> routeTableIds) {
-        if (routeTableIds == null) {
-            this.routeTableIds = null;
-            return;
-        }
-
-        this.routeTableIds = new com.amazonaws.internal.SdkInternalList<String>(routeTableIds);
-    }
-
-    /**
-     * <p>
-     * One or more route table IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your route tables.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setRouteTableIds(java.util.Collection)} or {@link #withRouteTableIds(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param routeTableIds
-     *        One or more route table IDs.</p>
-     *        <p>
-     *        Default: Describes all your route tables.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeRouteTablesRequest withRouteTableIds(String... routeTableIds) {
-        if (this.routeTableIds == null) {
-            setRouteTableIds(new com.amazonaws.internal.SdkInternalList<String>(routeTableIds.length));
-        }
-        for (String ele : routeTableIds) {
-            this.routeTableIds.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * One or more route table IDs.
-     * </p>
-     * <p>
-     * Default: Describes all your route tables.
-     * </p>
-     * 
-     * @param routeTableIds
-     *        One or more route table IDs.</p>
-     *        <p>
-     *        Default: Describes all your route tables.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeRouteTablesRequest withRouteTableIds(java.util.Collection<String> routeTableIds) {
-        setRouteTableIds(routeTableIds);
-        return this;
-    }
+    private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
 
     /**
      * <p>
@@ -1244,6 +1151,99 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * One or more route table IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your route tables.
+     * </p>
+     * 
+     * @return One or more route table IDs.</p>
+     *         <p>
+     *         Default: Describes all your route tables.
+     */
+
+    public java.util.List<String> getRouteTableIds() {
+        if (routeTableIds == null) {
+            routeTableIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return routeTableIds;
+    }
+
+    /**
+     * <p>
+     * One or more route table IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your route tables.
+     * </p>
+     * 
+     * @param routeTableIds
+     *        One or more route table IDs.</p>
+     *        <p>
+     *        Default: Describes all your route tables.
+     */
+
+    public void setRouteTableIds(java.util.Collection<String> routeTableIds) {
+        if (routeTableIds == null) {
+            this.routeTableIds = null;
+            return;
+        }
+
+        this.routeTableIds = new com.amazonaws.internal.SdkInternalList<String>(routeTableIds);
+    }
+
+    /**
+     * <p>
+     * One or more route table IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your route tables.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRouteTableIds(java.util.Collection)} or {@link #withRouteTableIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param routeTableIds
+     *        One or more route table IDs.</p>
+     *        <p>
+     *        Default: Describes all your route tables.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRouteTablesRequest withRouteTableIds(String... routeTableIds) {
+        if (this.routeTableIds == null) {
+            setRouteTableIds(new com.amazonaws.internal.SdkInternalList<String>(routeTableIds.length));
+        }
+        for (String ele : routeTableIds) {
+            this.routeTableIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more route table IDs.
+     * </p>
+     * <p>
+     * Default: Describes all your route tables.
+     * </p>
+     * 
+     * @param routeTableIds
+     *        One or more route table IDs.</p>
+     *        <p>
+     *        Default: Describes all your route tables.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRouteTablesRequest withRouteTableIds(java.util.Collection<String> routeTableIds) {
+        setRouteTableIds(routeTableIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -1265,10 +1265,10 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRouteTableIds() != null)
-            sb.append("RouteTableIds: ").append(getRouteTableIds()).append(",");
         if (getFilters() != null)
-            sb.append("Filters: ").append(getFilters());
+            sb.append("Filters: ").append(getFilters()).append(",");
+        if (getRouteTableIds() != null)
+            sb.append("RouteTableIds: ").append(getRouteTableIds());
         sb.append("}");
         return sb.toString();
     }
@@ -1283,13 +1283,13 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
         if (obj instanceof DescribeRouteTablesRequest == false)
             return false;
         DescribeRouteTablesRequest other = (DescribeRouteTablesRequest) obj;
-        if (other.getRouteTableIds() == null ^ this.getRouteTableIds() == null)
-            return false;
-        if (other.getRouteTableIds() != null && other.getRouteTableIds().equals(this.getRouteTableIds()) == false)
-            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
+        if (other.getRouteTableIds() == null ^ this.getRouteTableIds() == null)
+            return false;
+        if (other.getRouteTableIds() != null && other.getRouteTableIds().equals(this.getRouteTableIds()) == false)
             return false;
         return true;
     }
@@ -1299,8 +1299,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getRouteTableIds() == null) ? 0 : getRouteTableIds().hashCode());
         return hashCode;
     }
 

@@ -44,16 +44,16 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The earliest scheduled start time for the event.
-     * </p>
-     */
-    private java.util.Date notBefore;
-    /**
-     * <p>
      * The latest scheduled end time for the event.
      * </p>
      */
     private java.util.Date notAfter;
+    /**
+     * <p>
+     * The earliest scheduled start time for the event.
+     * </p>
+     */
+    private java.util.Date notBefore;
 
     /**
      * <p>
@@ -191,46 +191,6 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The earliest scheduled start time for the event.
-     * </p>
-     * 
-     * @param notBefore
-     *        The earliest scheduled start time for the event.
-     */
-
-    public void setNotBefore(java.util.Date notBefore) {
-        this.notBefore = notBefore;
-    }
-
-    /**
-     * <p>
-     * The earliest scheduled start time for the event.
-     * </p>
-     * 
-     * @return The earliest scheduled start time for the event.
-     */
-
-    public java.util.Date getNotBefore() {
-        return this.notBefore;
-    }
-
-    /**
-     * <p>
-     * The earliest scheduled start time for the event.
-     * </p>
-     * 
-     * @param notBefore
-     *        The earliest scheduled start time for the event.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InstanceStatusEvent withNotBefore(java.util.Date notBefore) {
-        setNotBefore(notBefore);
-        return this;
-    }
-
-    /**
-     * <p>
      * The latest scheduled end time for the event.
      * </p>
      * 
@@ -270,6 +230,46 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The earliest scheduled start time for the event.
+     * </p>
+     * 
+     * @param notBefore
+     *        The earliest scheduled start time for the event.
+     */
+
+    public void setNotBefore(java.util.Date notBefore) {
+        this.notBefore = notBefore;
+    }
+
+    /**
+     * <p>
+     * The earliest scheduled start time for the event.
+     * </p>
+     * 
+     * @return The earliest scheduled start time for the event.
+     */
+
+    public java.util.Date getNotBefore() {
+        return this.notBefore;
+    }
+
+    /**
+     * <p>
+     * The earliest scheduled start time for the event.
+     * </p>
+     * 
+     * @param notBefore
+     *        The earliest scheduled start time for the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceStatusEvent withNotBefore(java.util.Date notBefore) {
+        setNotBefore(notBefore);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -284,10 +284,10 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
             sb.append("Code: ").append(getCode()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
-        if (getNotBefore() != null)
-            sb.append("NotBefore: ").append(getNotBefore()).append(",");
         if (getNotAfter() != null)
-            sb.append("NotAfter: ").append(getNotAfter());
+            sb.append("NotAfter: ").append(getNotAfter()).append(",");
+        if (getNotBefore() != null)
+            sb.append("NotBefore: ").append(getNotBefore());
         sb.append("}");
         return sb.toString();
     }
@@ -310,13 +310,13 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getNotBefore() == null ^ this.getNotBefore() == null)
-            return false;
-        if (other.getNotBefore() != null && other.getNotBefore().equals(this.getNotBefore()) == false)
-            return false;
         if (other.getNotAfter() == null ^ this.getNotAfter() == null)
             return false;
         if (other.getNotAfter() != null && other.getNotAfter().equals(this.getNotAfter()) == false)
+            return false;
+        if (other.getNotBefore() == null ^ this.getNotBefore() == null)
+            return false;
+        if (other.getNotBefore() != null && other.getNotBefore().equals(this.getNotBefore()) == false)
             return false;
         return true;
     }
@@ -328,8 +328,8 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getNotBefore() == null) ? 0 : getNotBefore().hashCode());
         hashCode = prime * hashCode + ((getNotAfter() == null) ? 0 : getNotAfter().hashCode());
+        hashCode = prime * hashCode + ((getNotBefore() == null) ? 0 : getNotBefore().hashCode());
         return hashCode;
     }
 

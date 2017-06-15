@@ -43,8 +43,18 @@ public class InstanceNetworkInterfaceAttachmentStaxUnmarshaller implements Unmar
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("attachTime", targetDepth)) {
+                    instanceNetworkInterfaceAttachment.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("attachmentId", targetDepth)) {
                     instanceNetworkInterfaceAttachment.setAttachmentId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("deleteOnTermination", targetDepth)) {
+                    instanceNetworkInterfaceAttachment.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -55,16 +65,6 @@ public class InstanceNetworkInterfaceAttachmentStaxUnmarshaller implements Unmar
 
                 if (context.testExpression("status", targetDepth)) {
                     instanceNetworkInterfaceAttachment.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("attachTime", targetDepth)) {
-                    instanceNetworkInterfaceAttachment.setAttachTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("deleteOnTermination", targetDepth)) {
-                    instanceNetworkInterfaceAttachment.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

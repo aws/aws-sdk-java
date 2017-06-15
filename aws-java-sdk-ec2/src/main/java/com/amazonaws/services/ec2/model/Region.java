@@ -27,56 +27,16 @@ public class Region implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the region.
-     * </p>
-     */
-    private String regionName;
-    /**
-     * <p>
      * The region service endpoint.
      * </p>
      */
     private String endpoint;
-
     /**
      * <p>
      * The name of the region.
      * </p>
-     * 
-     * @param regionName
-     *        The name of the region.
      */
-
-    public void setRegionName(String regionName) {
-        this.regionName = regionName;
-    }
-
-    /**
-     * <p>
-     * The name of the region.
-     * </p>
-     * 
-     * @return The name of the region.
-     */
-
-    public String getRegionName() {
-        return this.regionName;
-    }
-
-    /**
-     * <p>
-     * The name of the region.
-     * </p>
-     * 
-     * @param regionName
-     *        The name of the region.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Region withRegionName(String regionName) {
-        setRegionName(regionName);
-        return this;
-    }
+    private String regionName;
 
     /**
      * <p>
@@ -119,6 +79,46 @@ public class Region implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the region.
+     * </p>
+     * 
+     * @param regionName
+     *        The name of the region.
+     */
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
+    }
+
+    /**
+     * <p>
+     * The name of the region.
+     * </p>
+     * 
+     * @return The name of the region.
+     */
+
+    public String getRegionName() {
+        return this.regionName;
+    }
+
+    /**
+     * <p>
+     * The name of the region.
+     * </p>
+     * 
+     * @param regionName
+     *        The name of the region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Region withRegionName(String regionName) {
+        setRegionName(regionName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -129,10 +129,10 @@ public class Region implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRegionName() != null)
-            sb.append("RegionName: ").append(getRegionName()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: ").append(getEndpoint());
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
+        if (getRegionName() != null)
+            sb.append("RegionName: ").append(getRegionName());
         sb.append("}");
         return sb.toString();
     }
@@ -147,13 +147,13 @@ public class Region implements Serializable, Cloneable {
         if (obj instanceof Region == false)
             return false;
         Region other = (Region) obj;
-        if (other.getRegionName() == null ^ this.getRegionName() == null)
-            return false;
-        if (other.getRegionName() != null && other.getRegionName().equals(this.getRegionName()) == false)
-            return false;
         if (other.getEndpoint() == null ^ this.getEndpoint() == null)
             return false;
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
+            return false;
+        if (other.getRegionName() == null ^ this.getRegionName() == null)
+            return false;
+        if (other.getRegionName() != null && other.getRegionName().equals(this.getRegionName()) == false)
             return false;
         return true;
     }
@@ -163,8 +163,8 @@ public class Region implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
         return hashCode;
     }
 
