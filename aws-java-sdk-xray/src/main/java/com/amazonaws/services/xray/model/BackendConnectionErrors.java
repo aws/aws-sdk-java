@@ -18,8 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
- * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/BackendConnectionErrors" target="_top">AWS API
  *      Documentation</a>
@@ -27,40 +26,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BackendConnectionErrors implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer timeoutCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer connectionRefusedCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer hTTPCode4XXCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer hTTPCode5XXCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer unknownHostCount;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private Integer otherCount;
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param timeoutCount
      */
@@ -70,8 +50,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -81,8 +60,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param timeoutCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -94,8 +72,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param connectionRefusedCount
      */
@@ -105,8 +82,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -116,8 +92,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param connectionRefusedCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -129,8 +104,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param hTTPCode4XXCount
      */
@@ -140,8 +114,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -151,8 +124,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param hTTPCode4XXCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -164,8 +136,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param hTTPCode5XXCount
      */
@@ -175,8 +146,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -186,8 +156,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param hTTPCode5XXCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -199,8 +168,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param unknownHostCount
      */
@@ -210,8 +178,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -221,8 +188,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param unknownHostCount
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -234,8 +200,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param otherCount
      */
@@ -245,8 +210,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -256,8 +220,7 @@ public class BackendConnectionErrors implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param otherCount
      * @return Returns a reference to this object so that method calls can be chained together.

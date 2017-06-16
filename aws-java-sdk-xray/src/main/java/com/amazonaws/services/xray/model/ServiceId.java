@@ -18,8 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p>
- * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ServiceId" target="_top">AWS API
  *      Documentation</a>
@@ -27,30 +26,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceId implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private String name;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private java.util.List<String> names;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private String accountId;
-    /**
-     * <p>
-     * </p>
-     */
+    /** <p/> */
     private String type;
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param name
      */
@@ -60,8 +46,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -71,8 +56,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param name
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -84,8 +68,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -95,8 +78,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param names
      */
@@ -111,8 +93,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNames(java.util.Collection)} or {@link #withNames(java.util.Collection)} if you want to override the
@@ -134,8 +115,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param names
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -147,8 +127,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param accountId
      */
@@ -158,8 +137,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -169,8 +147,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param accountId
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -182,8 +159,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param type
      */
@@ -193,8 +169,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return
      */
@@ -204,8 +179,7 @@ public class ServiceId implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param type
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -53,7 +53,7 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
     private EdgeStatistics summaryStatistics;
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      */
     private java.util.List<HistogramEntry> responseTimeHistogram;
@@ -226,10 +226,10 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      * 
-     * @return Histogram describing the prominence of response times on the edge.
+     * @return A histogram that maps the spread of client response times on an edge.
      */
 
     public java.util.List<HistogramEntry> getResponseTimeHistogram() {
@@ -238,11 +238,11 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      * 
      * @param responseTimeHistogram
-     *        Histogram describing the prominence of response times on the edge.
+     *        A histogram that maps the spread of client response times on an edge.
      */
 
     public void setResponseTimeHistogram(java.util.Collection<HistogramEntry> responseTimeHistogram) {
@@ -256,7 +256,7 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -265,7 +265,7 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param responseTimeHistogram
-     *        Histogram describing the prominence of response times on the edge.
+     *        A histogram that maps the spread of client response times on an edge.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,11 +281,11 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Histogram describing the prominence of response times on the edge.
+     * A histogram that maps the spread of client response times on an edge.
      * </p>
      * 
      * @param responseTimeHistogram
-     *        Histogram describing the prominence of response times on the edge.
+     *        A histogram that maps the spread of client response times on an edge.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

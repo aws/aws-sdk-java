@@ -96,6 +96,10 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setDurationHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("ResponseTimeHistogram", targetDepth)) {
+                    context.nextToken();
+                    service.setResponseTimeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

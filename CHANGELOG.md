@@ -1,3 +1,8 @@
+# __1.11.150__ __2017-06-16__
+## __AWS X-Ray__
+  - ### Features
+    - Add a response time histogram to the services in response of GetServiceGraph API.
+
 # __1.11.149__ __2017-06-15__
 ## __AWS IoT__
   - ### Features

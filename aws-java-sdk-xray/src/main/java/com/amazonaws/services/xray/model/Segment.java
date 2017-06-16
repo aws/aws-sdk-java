@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a segment
+ * A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents
+ * uploaded with <a>PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a
+ * subsegment sent by the service that called it.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Segment" target="_top">AWS API Documentation</a>
@@ -35,7 +37,7 @@ public class Segment implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The segment document.
+     * The segment document
      * </p>
      */
     private String document;
@@ -82,11 +84,11 @@ public class Segment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The segment document.
+     * The segment document
      * </p>
      * 
      * @param document
-     *        The segment document.
+     *        The segment document
      */
 
     public void setDocument(String document) {
@@ -95,10 +97,10 @@ public class Segment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The segment document.
+     * The segment document
      * </p>
      * 
-     * @return The segment document.
+     * @return The segment document
      */
 
     public String getDocument() {
@@ -107,11 +109,11 @@ public class Segment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The segment document.
+     * The segment document
      * </p>
      * 
      * @param document
-     *        The segment document.
+     *        The segment document
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

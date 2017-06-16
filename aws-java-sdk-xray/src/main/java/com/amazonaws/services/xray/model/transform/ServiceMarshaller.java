@@ -52,6 +52,8 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SummaryStatistics").build();
     private static final MarshallingInfo<List> DURATIONHISTOGRAM_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DurationHistogram").build();
+    private static final MarshallingInfo<List> RESPONSETIMEHISTOGRAM_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseTimeHistogram").build();
 
     private static final ServiceMarshaller instance = new ServiceMarshaller();
 
@@ -81,6 +83,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getEdges(), EDGES_BINDING);
             protocolMarshaller.marshall(service.getSummaryStatistics(), SUMMARYSTATISTICS_BINDING);
             protocolMarshaller.marshall(service.getDurationHistogram(), DURATIONHISTOGRAM_BINDING);
+            protocolMarshaller.marshall(service.getResponseTimeHistogram(), RESPONSETIMEHISTOGRAM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

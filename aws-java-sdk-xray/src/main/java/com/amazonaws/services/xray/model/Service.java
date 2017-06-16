@@ -121,10 +121,16 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private ServiceStatistics summaryStatistics;
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      */
     private java.util.List<HistogramEntry> durationHistogram;
+    /**
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     */
+    private java.util.List<HistogramEntry> responseTimeHistogram;
 
     /**
      * <p>
@@ -787,10 +793,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      * 
-     * @return Histogram mapping the spread of trace durations
+     * @return A histogram that maps the spread of service durations.
      */
 
     public java.util.List<HistogramEntry> getDurationHistogram() {
@@ -799,11 +805,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      * 
      * @param durationHistogram
-     *        Histogram mapping the spread of trace durations
+     *        A histogram that maps the spread of service durations.
      */
 
     public void setDurationHistogram(java.util.Collection<HistogramEntry> durationHistogram) {
@@ -817,7 +823,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -826,7 +832,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param durationHistogram
-     *        Histogram mapping the spread of trace durations
+     *        A histogram that maps the spread of service durations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -842,16 +848,86 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Histogram mapping the spread of trace durations
+     * A histogram that maps the spread of service durations.
      * </p>
      * 
      * @param durationHistogram
-     *        Histogram mapping the spread of trace durations
+     *        A histogram that maps the spread of service durations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Service withDurationHistogram(java.util.Collection<HistogramEntry> durationHistogram) {
         setDurationHistogram(durationHistogram);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     * 
+     * @return A histogram that maps the spread of service response times.
+     */
+
+    public java.util.List<HistogramEntry> getResponseTimeHistogram() {
+        return responseTimeHistogram;
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     * 
+     * @param responseTimeHistogram
+     *        A histogram that maps the spread of service response times.
+     */
+
+    public void setResponseTimeHistogram(java.util.Collection<HistogramEntry> responseTimeHistogram) {
+        if (responseTimeHistogram == null) {
+            this.responseTimeHistogram = null;
+            return;
+        }
+
+        this.responseTimeHistogram = new java.util.ArrayList<HistogramEntry>(responseTimeHistogram);
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResponseTimeHistogram(java.util.Collection)} or
+     * {@link #withResponseTimeHistogram(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param responseTimeHistogram
+     *        A histogram that maps the spread of service response times.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withResponseTimeHistogram(HistogramEntry... responseTimeHistogram) {
+        if (this.responseTimeHistogram == null) {
+            setResponseTimeHistogram(new java.util.ArrayList<HistogramEntry>(responseTimeHistogram.length));
+        }
+        for (HistogramEntry ele : responseTimeHistogram) {
+            this.responseTimeHistogram.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of service response times.
+     * </p>
+     * 
+     * @param responseTimeHistogram
+     *        A histogram that maps the spread of service response times.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withResponseTimeHistogram(java.util.Collection<HistogramEntry> responseTimeHistogram) {
+        setResponseTimeHistogram(responseTimeHistogram);
         return this;
     }
 
@@ -889,7 +965,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (getSummaryStatistics() != null)
             sb.append("SummaryStatistics: ").append(getSummaryStatistics()).append(",");
         if (getDurationHistogram() != null)
-            sb.append("DurationHistogram: ").append(getDurationHistogram());
+            sb.append("DurationHistogram: ").append(getDurationHistogram()).append(",");
+        if (getResponseTimeHistogram() != null)
+            sb.append("ResponseTimeHistogram: ").append(getResponseTimeHistogram());
         sb.append("}");
         return sb.toString();
     }
@@ -952,6 +1030,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDurationHistogram() != null && other.getDurationHistogram().equals(this.getDurationHistogram()) == false)
             return false;
+        if (other.getResponseTimeHistogram() == null ^ this.getResponseTimeHistogram() == null)
+            return false;
+        if (other.getResponseTimeHistogram() != null && other.getResponseTimeHistogram().equals(this.getResponseTimeHistogram()) == false)
+            return false;
         return true;
     }
 
@@ -972,6 +1054,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEdges() == null) ? 0 : getEdges().hashCode());
         hashCode = prime * hashCode + ((getSummaryStatistics() == null) ? 0 : getSummaryStatistics().hashCode());
         hashCode = prime * hashCode + ((getDurationHistogram() == null) ? 0 : getDurationHistogram().hashCode());
+        hashCode = prime * hashCode + ((getResponseTimeHistogram() == null) ? 0 : getResponseTimeHistogram().hashCode());
         return hashCode;
     }
 
