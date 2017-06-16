@@ -210,9 +210,6 @@ public interface AmazonRoute53 {
      * syntax.
      * </p>
      * <p>
-     * For an example for each type of resource record set, see "Examples."
-     * </p>
-     * <p>
      * Don't refer to the syntax in the "Parameter Syntax" section, which includes all of the elements for every kind of
      * resource record set that you can create, delete, or update by using <code>ChangeResourceRecordSets</code>.
      * </p>
