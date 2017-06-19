@@ -3174,9 +3174,9 @@ public interface AmazonS3 extends S3DirectSpi {
         throws SdkClientException, AmazonServiceException;
 
     /**
-     * Gets the lifecycle configuration for the specified bucket, or null if
-     * the specified bucket does not exists, or an empty list if no
-     * configuration has been established.
+     * Gets the lifecycle configuration for the specified bucket, or null if the
+     * specified bucket does not exist or if no configuration has been
+     * established.
      *
      * @param bucketName
      *            The name of the bucket for which to retrieve lifecycle
@@ -3188,9 +3188,9 @@ public interface AmazonS3 extends S3DirectSpi {
     public BucketLifecycleConfiguration getBucketLifecycleConfiguration(String bucketName);
 
     /**
-     * Gets the lifecycle configuration for the specified bucket, or null if
-     * the specified bucket does not exists, or an empty list if no
-     * configuration has been established.
+     * Gets the lifecycle configuration for the specified bucket, or null if the
+     * specified bucket does not exist or if no configuration has been
+     * established.
      *
      * @param getBucketLifecycleConfigurationRequest
      *            The request object for retrieving the bucket lifecycle
@@ -3247,7 +3247,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * Gets the cross origin configuration for the specified bucket, or null if
-     * the specified bucket does not exists, or an empty list if no
+     * the specified bucket does not exist, or an empty list if no
      * configuration has been established.
      *
      * @param bucketName
@@ -3317,7 +3317,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * Gets the tagging configuration for the specified bucket, or null if
-     * the specified bucket does not exists, or an empty list if no
+     * the specified bucket does not exist, or an empty list if no
      * configuration has been established.
      *
      * @param bucketName
@@ -3331,7 +3331,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * Gets the tagging configuration for the specified bucket, or null if
-     * the specified bucket does not exists, or an empty list if no
+     * the specified bucket does not exist, or an empty list if no
      * configuration has been established.
      *
      * @param getBucketTaggingConfigurationRequest
