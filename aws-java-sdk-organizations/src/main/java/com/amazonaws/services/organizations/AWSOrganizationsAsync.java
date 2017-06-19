@@ -191,6 +191,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * After you accept a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that
+     * it is deleted.
+     * </p>
      * 
      * @param acceptHandshakeRequest
      * @return A Java Future containing the result of the AcceptHandshake operation returned by the service.
@@ -228,6 +232,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * After you accept a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that
+     * it is deleted.
+     * </p>
      * 
      * @param acceptHandshakeRequest
      * @param asyncHandler
@@ -382,6 +390,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * can't cancel it, but can use <a>DeclineHandshake</a> instead. After a handshake is canceled, the recipient can no
      * longer respond to that handshake.
      * </p>
+     * <p>
+     * After you cancel a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that
+     * it is deleted.
+     * </p>
      * 
      * @param cancelHandshakeRequest
      * @return A Java Future containing the result of the CancelHandshake operation returned by the service.
@@ -399,6 +411,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * This operation can be called only from the account that originated the handshake. The recipient of the handshake
      * can't cancel it, but can use <a>DeclineHandshake</a> instead. After a handshake is canceled, the recipient can no
      * longer respond to that handshake.
+     * </p>
+     * <p>
+     * After you cancel a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that
+     * it is deleted.
      * </p>
      * 
      * @param cancelHandshakeRequest
@@ -680,6 +696,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * can use <a>CancelHandshake</a> instead. The originator can't reactivate a declined request, but can re-initiate
      * the process with a new handshake request.
      * </p>
+     * <p>
+     * After you decline a handshake, it continues to appear in the results of relevant APIs for only 30 days. After
+     * that it is deleted.
+     * </p>
      * 
      * @param declineHandshakeRequest
      * @return A Java Future containing the result of the DeclineHandshake operation returned by the service.
@@ -698,6 +718,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * This operation can be called only from the account that received the handshake. The originator of the handshake
      * can use <a>CancelHandshake</a> instead. The originator can't reactivate a declined request, but can re-initiate
      * the process with a new handshake request.
+     * </p>
+     * <p>
+     * After you decline a handshake, it continues to appear in the results of relevant APIs for only 30 days. After
+     * that it is deleted.
      * </p>
      * 
      * @param declineHandshakeRequest
@@ -918,6 +942,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * original <a>InviteAccountToOrganization</a> operation that generated the handshake.
      * </p>
      * <p>
+     * You can access handshakes that are ACCEPTED, DECLINED, or CANCELED for only 30 days after they change to that
+     * state. They are then deleted and no longer accessible.
+     * </p>
+     * <p>
      * This operation can be called from any account in the organization.
      * </p>
      * 
@@ -933,6 +961,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * Retrieves information about a previously requested handshake. The handshake ID comes from the response to the
      * original <a>InviteAccountToOrganization</a> operation that generated the handshake.
+     * </p>
+     * <p>
+     * You can access handshakes that are ACCEPTED, DECLINED, or CANCELED for only 30 days after they change to that
+     * state. They are then deleted and no longer accessible.
      * </p>
      * <p>
      * This operation can be called from any account in the organization.
@@ -1302,6 +1334,16 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * on your behalf to the email address that is associated with the other account's owner. The invitation is
      * implemented as a <a>Handshake</a> whose details are in the response.
      * </p>
+     * <important>
+     * <p>
+     * You can invite AWS accounts only from the same reseller as the master account. For example, if your
+     * organization's master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS reseller in India,
+     * then you can only invite other AISPL accounts to your organization. You can't combine accounts from AISPL and
+     * AWS. For more information, see <a
+     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
+     * >Consolidated Billing in India</a>.
+     * </p>
+     * </important>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
@@ -1321,6 +1363,16 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * on your behalf to the email address that is associated with the other account's owner. The invitation is
      * implemented as a <a>Handshake</a> whose details are in the response.
      * </p>
+     * <important>
+     * <p>
+     * You can invite AWS accounts only from the same reseller as the master account. For example, if your
+     * organization's master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS reseller in India,
+     * then you can only invite other AISPL accounts to your organization. You can't combine accounts from AISPL and
+     * AWS. For more information, see <a
+     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
+     * >Consolidated Billing in India</a>.
+     * </p>
+     * </important>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
@@ -1349,11 +1401,30 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * This operation can be called only from a member account in the organization.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * The master account in an organization with all features enabled can set service control policies (SCPs) that can
      * restrict what administrators of member accounts can do, including preventing them from successfully calling
      * <code>LeaveOrganization</code> and leaving the organization.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you created the account using the AWS Organizations console, the Organizations API, or the Organizations CLI
+     * commands, then you cannot remove the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can leave an organization only after you enable IAM user access to billing in your account. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param leaveOrganizationRequest
@@ -1374,11 +1445,30 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * This operation can be called only from a member account in the organization.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * The master account in an organization with all features enabled can set service control policies (SCPs) that can
      * restrict what administrators of member accounts can do, including preventing them from successfully calling
      * <code>LeaveOrganization</code> and leaving the organization.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you created the account using the AWS Organizations console, the Organizations API, or the Organizations CLI
+     * commands, then you cannot remove the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can leave an organization only after you enable IAM user access to billing in your account. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param leaveOrganizationRequest
@@ -1547,6 +1637,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Lists the current handshakes that are associated with the account of the requesting user.
      * </p>
      * <p>
+     * Handshakes that are ACCEPTED, DECLINED, or CANCELED appear in the results of this API for only 30 days after
+     * changing to that state. After that they are deleted and no longer accessible.
+     * </p>
+     * <p>
      * This operation can be called from any account in the organization.
      * </p>
      * 
@@ -1561,6 +1655,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
     /**
      * <p>
      * Lists the current handshakes that are associated with the account of the requesting user.
+     * </p>
+     * <p>
+     * Handshakes that are ACCEPTED, DECLINED, or CANCELED appear in the results of this API for only 30 days after
+     * changing to that state. After that they are deleted and no longer accessible.
      * </p>
      * <p>
      * This operation can be called from any account in the organization.
@@ -1586,6 +1684,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * contains details and status about a handshake.
      * </p>
      * <p>
+     * Handshakes that are ACCEPTED, DECLINED, or CANCELED appear in the results of this API for only 30 days after
+     * changing to that state. After that they are deleted and no longer accessible.
+     * </p>
+     * <p>
      * This operation can be called only from the organization's master account.
      * </p>
      * 
@@ -1604,6 +1706,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Lists the handshakes that are associated with the organization that the requesting user is part of. The
      * <code>ListHandshakesForOrganization</code> operation returns a list of handshake structures. Each structure
      * contains details and status about a handshake.
+     * </p>
+     * <p>
+     * Handshakes that are ACCEPTED, DECLINED, or CANCELED appear in the results of this API for only 30 days after
+     * changing to that state. After that they are deleted and no longer accessible.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -1917,10 +2023,24 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
-     * You can remove only existing accounts that were invited to join the organization. You cannot remove accounts that
-     * were created by AWS Organizations.
+     * You can remove only accounts that were created outside your organization and invited to join. If you created the
+     * account using the AWS Organizations console, the Organizations API, or the Organizations CLI commands, then you
+     * cannot remove the account.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can remove a member account only after you enable IAM user access to billing in the member account. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param removeAccountFromOrganizationRequest
@@ -1947,10 +2067,24 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
-     * You can remove only existing accounts that were invited to join the organization. You cannot remove accounts that
-     * were created by AWS Organizations.
+     * You can remove only accounts that were created outside your organization and invited to join. If you created the
+     * account using the AWS Organizations console, the Organizations API, or the Organizations CLI commands, then you
+     * cannot remove the account.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can remove a member account only after you enable IAM user access to billing in the member account. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param removeAccountFromOrganizationRequest

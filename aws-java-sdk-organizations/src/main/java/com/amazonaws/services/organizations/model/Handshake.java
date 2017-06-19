@@ -24,6 +24,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * account (the recipient) to join its organization, the two accounts exchange information as a series of handshake
  * requests and responses.
  * </p>
+ * <p>
+ * <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering
+ * that state After that they are deleted.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Handshake" target="_top">AWS API
  *      Documentation</a>

@@ -42,6 +42,11 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
  * </p>
  * </li>

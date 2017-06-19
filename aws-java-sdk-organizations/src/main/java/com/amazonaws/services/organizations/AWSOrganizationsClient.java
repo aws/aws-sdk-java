@@ -525,6 +525,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * After you accept a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that
+     * it is deleted.
+     * </p>
      * 
      * @param acceptHandshakeRequest
      * @return Result of the AcceptHandshake operation returned by the service.
@@ -620,6 +624,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -808,7 +817,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -848,8 +865,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -905,6 +930,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -1033,6 +1063,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * can't cancel it, but can use <a>DeclineHandshake</a> instead. After a handshake is canceled, the recipient can no
      * longer respond to that handshake.
      * </p>
+     * <p>
+     * After you cancel a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that
+     * it is deleted.
+     * </p>
      * 
      * @param cancelHandshakeRequest
      * @return Result of the CancelHandshake operation returned by the service.
@@ -1041,6 +1075,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
      *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
      *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws HandshakeNotFoundException
      *         We can't find a handshake with the HandshakeId that you specified.
      * @throws InvalidHandshakeTransitionException
@@ -1073,6 +1109,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -1229,6 +1270,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
@@ -1239,7 +1282,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -1279,8 +1330,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -1334,6 +1393,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -1487,7 +1551,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -1527,8 +1599,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -1582,6 +1662,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -1717,6 +1802,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
@@ -1727,7 +1814,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -1767,8 +1862,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -1824,6 +1927,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -1973,7 +2081,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -2013,8 +2129,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -2070,6 +2194,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -2200,6 +2329,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * can use <a>CancelHandshake</a> instead. The originator can't reactivate a declined request, but can re-initiate
      * the process with a new handshake request.
      * </p>
+     * <p>
+     * After you decline a handshake, it continues to appear in the results of relevant APIs for only 30 days. After
+     * that it is deleted.
+     * </p>
      * 
      * @param declineHandshakeRequest
      * @return Result of the DeclineHandshake operation returned by the service.
@@ -2208,6 +2341,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
      *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
      *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws HandshakeNotFoundException
      *         We can't find a handshake with the HandshakeId that you specified.
      * @throws InvalidHandshakeTransitionException
@@ -2240,6 +2375,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -2401,6 +2541,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -2554,6 +2699,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -2719,6 +2869,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -2878,6 +3033,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -3031,6 +3191,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -3144,6 +3309,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * original <a>InviteAccountToOrganization</a> operation that generated the handshake.
      * </p>
      * <p>
+     * You can access handshakes that are ACCEPTED, DECLINED, or CANCELED for only 30 days after they change to that
+     * state. They are then deleted and no longer accessible.
+     * </p>
+     * <p>
      * This operation can be called from any account in the organization.
      * </p>
      * 
@@ -3154,6 +3323,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
      *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
      *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws HandshakeNotFoundException
      *         We can't find a handshake with the HandshakeId that you specified.
      * @throws InvalidInputException
@@ -3180,6 +3351,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -3307,6 +3483,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -3395,6 +3573,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -3554,6 +3737,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -3705,7 +3893,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -3745,8 +3941,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -3800,6 +4004,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -3948,7 +4157,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -3988,8 +4205,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -4043,6 +4268,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -4202,6 +4432,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws HandshakeConstraintViolationException
      *         The requested operation would violate the constraint identified in the reason code.</p>
      *         <ul>
@@ -4278,6 +4510,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -4418,7 +4655,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -4458,8 +4703,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -4513,6 +4766,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -4638,6 +4896,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * on your behalf to the email address that is associated with the other account's owner. The invitation is
      * implemented as a <a>Handshake</a> whose details are in the response.
      * </p>
+     * <important>
+     * <p>
+     * You can invite AWS accounts only from the same reseller as the master account. For example, if your
+     * organization's master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS reseller in India,
+     * then you can only invite other AISPL accounts to your organization. You can't combine accounts from AISPL and
+     * AWS. For more information, see <a
+     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
+     * >Consolidated Billing in India</a>.
+     * </p>
+     * </important>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
@@ -4652,6 +4920,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws HandshakeConstraintViolationException
      *         The requested operation would violate the constraint identified in the reason code.</p>
      *         <ul>
@@ -4733,6 +5003,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -4857,11 +5132,30 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * This operation can be called only from a member account in the organization.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * The master account in an organization with all features enabled can set service control policies (SCPs) that can
      * restrict what administrators of member accounts can do, including preventing them from successfully calling
      * <code>LeaveOrganization</code> and leaving the organization.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you created the account using the AWS Organizations console, the Organizations API, or the Organizations CLI
+     * commands, then you cannot remove the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can leave an organization only after you enable IAM user access to billing in your account. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param leaveOrganizationRequest
@@ -4889,7 +5183,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -4929,8 +5231,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -4984,6 +5294,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -5143,6 +5458,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -5290,6 +5610,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -5442,6 +5767,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -5600,6 +5930,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -5712,6 +6047,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Lists the current handshakes that are associated with the account of the requesting user.
      * </p>
      * <p>
+     * Handshakes that are ACCEPTED, DECLINED, or CANCELED appear in the results of this API for only 30 days after
+     * changing to that state. After that they are deleted and no longer accessible.
+     * </p>
+     * <p>
      * This operation can be called from any account in the organization.
      * </p>
      * 
@@ -5722,6 +6061,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
      *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
      *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws InvalidInputException
      *         The requested operation failed because you provided invalid values for one or more of the request
      *         parameters. This exception includes a reason that contains additional information about the violated
@@ -5746,6 +6087,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -5864,6 +6210,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * contains details and status about a handshake.
      * </p>
      * <p>
+     * Handshakes that are ACCEPTED, DECLINED, or CANCELED appear in the results of this API for only 30 days after
+     * changing to that state. After that they are deleted and no longer accessible.
+     * </p>
+     * <p>
      * This operation can be called only from the organization's master account.
      * </p>
      * 
@@ -5877,6 +6227,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws InvalidInputException
      *         The requested operation failed because you provided invalid values for one or more of the request
      *         parameters. This exception includes a reason that contains additional information about the violated
@@ -5901,6 +6253,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -6054,6 +6411,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -6223,6 +6585,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -6370,6 +6737,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -6522,6 +6894,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -6680,6 +7057,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -6827,6 +7209,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -6981,6 +7368,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -7114,10 +7506,24 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
-     * You can remove only existing accounts that were invited to join the organization. You cannot remove accounts that
-     * were created by AWS Organizations.
+     * You can remove only accounts that were created outside your organization and invited to join. If you created the
+     * account using the AWS Organizations console, the Organizations API, or the Organizations CLI commands, then you
+     * cannot remove the account.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can remove a member account only after you enable IAM user access to billing in the member account. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param removeAccountFromOrganizationRequest
@@ -7145,7 +7551,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -7185,8 +7599,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -7240,6 +7662,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>
@@ -7405,6 +7832,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
      *         </p>
      *         </li>
@@ -7545,7 +7977,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
-     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         organization. If you need more accounts, contact AWS Support to request an increase in your limit.
+     *         </p>
+     *         <p>
+     *         Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations, or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <p>
+     *         <b>Note</b>: deleted and closed accounts still count toward your limit.
      *         </p>
      *         </li>
      *         <li>
@@ -7585,8 +8025,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
-     *         created from within organizations.
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not
+     *         yet have enough information to exist as a stand-alone account. This account requires you to first agree
+     *         to the End-User License Agreement (EULA).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that does not yet have enough information to exist as a stand-alone account. This account requires you to
+     *         first complete phone verification.
      *         </p>
      *         </li>
      *         <li>
@@ -7642,6 +8090,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
      *         </p>
      *         </li>
      *         <li>

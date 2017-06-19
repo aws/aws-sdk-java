@@ -1,3 +1,8 @@
+# __1.11.151__ __2017-06-19__
+## __AWS Organizations__
+  - ### Features
+    - Improvements to Exception Modeling
+
 # __1.11.150__ __2017-06-16__
 ## __AWS X-Ray__
   - ### Features

@@ -24,7 +24,14 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization.
+ * ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization. If you
+ * need more accounts, contact AWS Support to request an increase in your limit.
+ * </p>
+ * <p>
+ * Or, The number of invitations that you tried to send would cause you to exceed the limit of accounts in your
+ * organization. Send fewer invitations, or contact AWS Support to request an increase in the number of accounts.
+ * </p>
+ * <p>
  * <b>Note</b>: deleted and closed accounts still count toward your limit.
  * </p>
  * </li>
@@ -62,8 +69,16 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was created from
- * within organizations.
+ * ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that does not yet have
+ * enough information to exist as a stand-alone account. This account requires you to first agree to the End-User
+ * License Agreement (EULA).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that does
+ * not yet have enough information to exist as a stand-alone account. This account requires you to first complete phone
+ * verification.
  * </p>
  * </li>
  * <li>
