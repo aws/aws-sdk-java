@@ -1305,6 +1305,65 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Describes the user activities in a specified time period.
+     * </p>
+     * 
+     * @param describeActivitiesRequest
+     * @return Result of the DescribeActivities operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws InvalidArgumentException
+     *         The pagination marker and/or limit fields are not valid.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DescribeActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeActivitiesResult describeActivities(DescribeActivitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeActivities(request);
+    }
+
+    @SdkInternalApi
+    final DescribeActivitiesResult executeDescribeActivities(DescribeActivitiesRequest describeActivitiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeActivitiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeActivitiesRequest> request = null;
+        Response<DescribeActivitiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeActivitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeActivitiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeActivitiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeActivitiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List all the comments for the specified document version.
      * </p>
      * 
@@ -1617,6 +1676,67 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecyleBin</code>.
+     * <code>RootFolder</code> is the root of user's files and folders and <code>RecyleBin</code> is the root of
+     * recycled items. This is not a valid action for SigV4 (administrative API) clients.
+     * </p>
+     * 
+     * @param describeRootFoldersRequest
+     * @return Result of the DescribeRootFolders operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws InvalidArgumentException
+     *         The pagination marker and/or limit fields are not valid.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DescribeRootFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeRootFoldersResult describeRootFolders(DescribeRootFoldersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRootFolders(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRootFoldersResult executeDescribeRootFolders(DescribeRootFoldersRequest describeRootFoldersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRootFoldersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRootFoldersRequest> request = null;
+        Response<DescribeRootFoldersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRootFoldersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRootFoldersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRootFoldersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeRootFoldersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified users. You can describe all users or filter the results (for example, by status or
      * organization).
      * </p>
@@ -1669,6 +1789,66 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeUsersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details of the current user for whom the authentication token was generated. This is not a valid action
+     * for SigV4 (administrative API) clients.
+     * </p>
+     * 
+     * @param getCurrentUserRequest
+     * @return Result of the GetCurrentUser operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.GetCurrentUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetCurrentUserResult getCurrentUser(GetCurrentUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCurrentUser(request);
+    }
+
+    @SdkInternalApi
+    final GetCurrentUserResult executeGetCurrentUser(GetCurrentUserRequest getCurrentUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCurrentUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCurrentUserRequest> request = null;
+        Response<GetCurrentUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCurrentUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCurrentUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCurrentUserResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCurrentUserResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2030,6 +2210,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *         This exception is thrown when a valid checkout ID is not presented on document version upload calls for a
      *         document that has been checked out from Web client.
      * @throws ResourceAlreadyCheckedOutException
+     *         The resource is already checked out.
      * @sample AmazonWorkDocs.InitiateDocumentVersionUpload
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload"
      *      target="_top">AWS API Documentation</a>

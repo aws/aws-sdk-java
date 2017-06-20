@@ -118,6 +118,11 @@ public class AbstractAmazonWorkDocs implements AmazonWorkDocs {
     }
 
     @Override
+    public DescribeActivitiesResult describeActivities(DescribeActivitiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeCommentsResult describeComments(DescribeCommentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -143,7 +148,17 @@ public class AbstractAmazonWorkDocs implements AmazonWorkDocs {
     }
 
     @Override
+    public DescribeRootFoldersResult describeRootFolders(DescribeRootFoldersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeUsersResult describeUsers(DescribeUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCurrentUserResult getCurrentUser(GetCurrentUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

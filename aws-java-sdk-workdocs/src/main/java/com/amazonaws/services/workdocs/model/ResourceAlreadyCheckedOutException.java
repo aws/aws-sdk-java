@@ -15,7 +15,9 @@ package com.amazonaws.services.workdocs.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The resource is already checked out.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceAlreadyCheckedOutException extends com.amazonaws.services.workdocs.model.AmazonWorkDocsException {

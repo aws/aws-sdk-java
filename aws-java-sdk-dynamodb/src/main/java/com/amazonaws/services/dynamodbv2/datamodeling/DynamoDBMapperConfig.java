@@ -694,7 +694,7 @@ public class DynamoDBMapperConfig {
      * the UnprocessedItems response parameter. This interface allows you to
      * control the retry strategy when such scenario occurs.
      *
-     * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
+     * @see DynamoDBMapper#batchWrite(Iterable, Iterable, DynamoDBMapperConfig)
      * @see <ahref="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html">DynamoDB service API reference -- BatchWriteItem</a>
      */
     public interface BatchWriteRetryStrategy {
@@ -734,7 +734,7 @@ public class DynamoDBMapperConfig {
 
 
     /**
-     * {@link DynamoDBMapper#batchLoad(List)} breaks the requested items in batches of maximum size 100.
+     * {@link DynamoDBMapper#batchLoad(Iterable, DynamoDBMapperConfig)} breaks the requested items in batches of maximum size 100.
      * When calling the Dyanmo Db client, there is a chance that due to throttling, some unprocessed keys will be returned.
      * This interfaces controls whether we need to retry these unprocessed keys and it also controls the strategy as to how retries should be handled
      */
@@ -925,7 +925,7 @@ public class DynamoDBMapperConfig {
     /**
      * Legacy constructor, using default PaginationLoadingStrategy
      * @deprecated in favor of the fluent {@link Builder}
-     * @see DynamoDBConfig#builder
+     * @see DynamoDBMapperConfig#builder()
      **/
     @Deprecated
     public DynamoDBMapperConfig(
@@ -948,8 +948,8 @@ public class DynamoDBMapperConfig {
      *            An override for the table name, or null for no override.
      * @param paginationLoadingStrategy
      *            The pagination loading strategy, or null for default.
-     * @deprecated in favor of the fluent {@code Builder}
-     * @see DynamoDBConfig#builder
+     * @deprecated in favor of the fluent {@link Builder}
+     * @see DynamoDBMapperConfig#builder()
      */
     @Deprecated
     public DynamoDBMapperConfig(
@@ -975,8 +975,8 @@ public class DynamoDBMapperConfig {
      *            The pagination loading strategy, or null for default.
      * @param requestMetricCollector
      *            optional request metric collector
-     * @deprecated in favor of the fluent {@code Builder}
-     * @see DynamoDBConfig#builder
+     * @deprecated in favor of the fluent {@link Builder}
+     * @see DynamoDBMapperConfig#builder()
      */
     @Deprecated
     public DynamoDBMapperConfig(
@@ -1056,7 +1056,7 @@ public class DynamoDBMapperConfig {
 
     /**
      * Constructs a new configuration object with the table name resolver strategy given.
-     * @see DynamoDBConfig#builder
+     * @see DynamoDBMapperConfig#builder()
      */
     @Deprecated
     public DynamoDBMapperConfig(TableNameResolver tableNameResolver) {
@@ -1066,7 +1066,7 @@ public class DynamoDBMapperConfig {
 
     /**
      * Constructs a new configuration object with the object table name resolver strategy given.
-     * @see DynamoDBConfig#builder
+     * @see DynamoDBMapperConfig#builder()
      */
     @Deprecated
     public DynamoDBMapperConfig(ObjectTableNameResolver objectTableNameResolver) {
@@ -1076,7 +1076,7 @@ public class DynamoDBMapperConfig {
 
     /**
      * Constructs a new configuration object with the table name resolver strategies given.
-     * @see DynamoDBConfig#builder
+     * @see DynamoDBMapperConfig#builder()
      */
     @Deprecated
     public DynamoDBMapperConfig(TableNameResolver tableNameResolver, ObjectTableNameResolver objectTableNameResolver) {
@@ -1099,7 +1099,7 @@ public class DynamoDBMapperConfig {
 
     /**
      * Constructs a new configuration object with the conversion schema given.
-     * @see DynamoDBConfig#builder
+     * @see DynamoDBMapperConfig#builder()
      */
     @Deprecated
     public DynamoDBMapperConfig(ConversionSchema conversionSchema) {
@@ -1119,7 +1119,7 @@ public class DynamoDBMapperConfig {
      * @param overrides
      *            The overridden mapper configuration values. Any non-null
      *            config settings will be applied to the returned object.
-     * @see DynamoDBConfig#builder
+     * @see DynamoDBMapperConfig#builder()
      */
     @Deprecated
     public DynamoDBMapperConfig(

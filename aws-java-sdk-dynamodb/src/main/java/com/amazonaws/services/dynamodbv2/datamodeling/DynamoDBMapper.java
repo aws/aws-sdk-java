@@ -2208,8 +2208,8 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             return unprocessedItems;
         }
 
-        public void setException(Exception excetpion) {
-            this.exception = excetpion;
+        public void setException(Exception exception) {
+            this.exception = exception;
         }
 
         public Exception getException() {

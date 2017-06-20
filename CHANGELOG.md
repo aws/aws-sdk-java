@@ -1,3 +1,8 @@
+# __1.11.152__ __2017-06-20__
+## __Amazon WorkDocs__
+  - ### Features
+    - This release provides a new API to retrieve the activities performed by WorkDocs users.
+
 # __1.11.151__ __2017-06-19__
 ## __AWS Organizations__
   - ### Features

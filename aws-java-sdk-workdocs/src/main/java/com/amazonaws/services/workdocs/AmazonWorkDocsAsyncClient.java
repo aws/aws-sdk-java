@@ -691,6 +691,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeActivitiesResult> describeActivitiesAsync(DescribeActivitiesRequest request) {
+
+        return describeActivitiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActivitiesResult> describeActivitiesAsync(final DescribeActivitiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeActivitiesRequest, DescribeActivitiesResult> asyncHandler) {
+        final DescribeActivitiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeActivitiesResult>() {
+            @Override
+            public DescribeActivitiesResult call() throws Exception {
+                DescribeActivitiesResult result = null;
+
+                try {
+                    result = executeDescribeActivities(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCommentsResult> describeCommentsAsync(DescribeCommentsRequest request) {
 
         return describeCommentsAsync(request, null);
@@ -858,6 +891,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRootFoldersResult> describeRootFoldersAsync(DescribeRootFoldersRequest request) {
+
+        return describeRootFoldersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRootFoldersResult> describeRootFoldersAsync(final DescribeRootFoldersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRootFoldersRequest, DescribeRootFoldersResult> asyncHandler) {
+        final DescribeRootFoldersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRootFoldersResult>() {
+            @Override
+            public DescribeRootFoldersResult call() throws Exception {
+                DescribeRootFoldersResult result = null;
+
+                try {
+                    result = executeDescribeRootFolders(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUsersResult> describeUsersAsync(DescribeUsersRequest request) {
 
         return describeUsersAsync(request, null);
@@ -875,6 +941,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
 
                 try {
                     result = executeDescribeUsers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCurrentUserResult> getCurrentUserAsync(GetCurrentUserRequest request) {
+
+        return getCurrentUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCurrentUserResult> getCurrentUserAsync(final GetCurrentUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCurrentUserRequest, GetCurrentUserResult> asyncHandler) {
+        final GetCurrentUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCurrentUserResult>() {
+            @Override
+            public GetCurrentUserResult call() throws Exception {
+                GetCurrentUserResult result = null;
+
+                try {
+                    result = executeGetCurrentUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -262,6 +262,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeActivitiesResult> describeActivitiesAsync(DescribeActivitiesRequest request) {
+
+        return describeActivitiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeActivitiesResult> describeActivitiesAsync(DescribeActivitiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeActivitiesRequest, DescribeActivitiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCommentsResult> describeCommentsAsync(DescribeCommentsRequest request) {
 
         return describeCommentsAsync(request, null);
@@ -329,6 +342,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRootFoldersResult> describeRootFoldersAsync(DescribeRootFoldersRequest request) {
+
+        return describeRootFoldersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRootFoldersResult> describeRootFoldersAsync(DescribeRootFoldersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRootFoldersRequest, DescribeRootFoldersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUsersResult> describeUsersAsync(DescribeUsersRequest request) {
 
         return describeUsersAsync(request, null);
@@ -337,6 +363,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     @Override
     public java.util.concurrent.Future<DescribeUsersResult> describeUsersAsync(DescribeUsersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeUsersRequest, DescribeUsersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCurrentUserResult> getCurrentUserAsync(GetCurrentUserRequest request) {
+
+        return getCurrentUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCurrentUserResult> getCurrentUserAsync(GetCurrentUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCurrentUserRequest, GetCurrentUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

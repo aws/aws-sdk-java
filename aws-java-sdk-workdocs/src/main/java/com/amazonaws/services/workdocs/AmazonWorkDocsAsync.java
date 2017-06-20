@@ -653,6 +653,37 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
+     * Describes the user activities in a specified time period.
+     * </p>
+     * 
+     * @param describeActivitiesRequest
+     * @return A Java Future containing the result of the DescribeActivities operation returned by the service.
+     * @sample AmazonWorkDocsAsync.DescribeActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeActivitiesResult> describeActivitiesAsync(DescribeActivitiesRequest describeActivitiesRequest);
+
+    /**
+     * <p>
+     * Describes the user activities in a specified time period.
+     * </p>
+     * 
+     * @param describeActivitiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeActivities operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.DescribeActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeActivitiesResult> describeActivitiesAsync(DescribeActivitiesRequest describeActivitiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeActivitiesRequest, DescribeActivitiesResult> asyncHandler);
+
+    /**
+     * <p>
      * List all the comments for the specified document version.
      * </p>
      * 
@@ -830,6 +861,41 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
+     * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecyleBin</code>.
+     * <code>RootFolder</code> is the root of user's files and folders and <code>RecyleBin</code> is the root of
+     * recycled items. This is not a valid action for SigV4 (administrative API) clients.
+     * </p>
+     * 
+     * @param describeRootFoldersRequest
+     * @return A Java Future containing the result of the DescribeRootFolders operation returned by the service.
+     * @sample AmazonWorkDocsAsync.DescribeRootFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRootFoldersResult> describeRootFoldersAsync(DescribeRootFoldersRequest describeRootFoldersRequest);
+
+    /**
+     * <p>
+     * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecyleBin</code>.
+     * <code>RootFolder</code> is the root of user's files and folders and <code>RecyleBin</code> is the root of
+     * recycled items. This is not a valid action for SigV4 (administrative API) clients.
+     * </p>
+     * 
+     * @param describeRootFoldersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRootFolders operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.DescribeRootFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRootFoldersResult> describeRootFoldersAsync(DescribeRootFoldersRequest describeRootFoldersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRootFoldersRequest, DescribeRootFoldersResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified users. You can describe all users or filter the results (for example, by status or
      * organization).
      * </p>
@@ -868,6 +934,39 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      */
     java.util.concurrent.Future<DescribeUsersResult> describeUsersAsync(DescribeUsersRequest describeUsersRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeUsersRequest, DescribeUsersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details of the current user for whom the authentication token was generated. This is not a valid action
+     * for SigV4 (administrative API) clients.
+     * </p>
+     * 
+     * @param getCurrentUserRequest
+     * @return A Java Future containing the result of the GetCurrentUser operation returned by the service.
+     * @sample AmazonWorkDocsAsync.GetCurrentUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCurrentUserResult> getCurrentUserAsync(GetCurrentUserRequest getCurrentUserRequest);
+
+    /**
+     * <p>
+     * Retrieves details of the current user for whom the authentication token was generated. This is not a valid action
+     * for SigV4 (administrative API) clients.
+     * </p>
+     * 
+     * @param getCurrentUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCurrentUser operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.GetCurrentUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCurrentUserResult> getCurrentUserAsync(GetCurrentUserRequest getCurrentUserRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCurrentUserRequest, GetCurrentUserResult> asyncHandler);
 
     /**
      * <p>

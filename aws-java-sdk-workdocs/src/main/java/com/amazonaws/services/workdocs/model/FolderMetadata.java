@@ -82,9 +82,17 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> labels;
-
+    /**
+     * <p>
+     * The size of the folder metadata.
+     * </p>
+     */
     private Long size;
-
+    /**
+     * <p>
+     * The size of the latest version of the folder metadata.
+     * </p>
+     */
     private Long latestVersionSize;
 
     /**
@@ -511,7 +519,12 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The size of the folder metadata.
+     * </p>
+     * 
      * @param size
+     *        The size of the folder metadata.
      */
 
     public void setSize(Long size) {
@@ -519,7 +532,11 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The size of the folder metadata.
+     * </p>
+     * 
+     * @return The size of the folder metadata.
      */
 
     public Long getSize() {
@@ -527,7 +544,12 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The size of the folder metadata.
+     * </p>
+     * 
      * @param size
+     *        The size of the folder metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -537,7 +559,12 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The size of the latest version of the folder metadata.
+     * </p>
+     * 
      * @param latestVersionSize
+     *        The size of the latest version of the folder metadata.
      */
 
     public void setLatestVersionSize(Long latestVersionSize) {
@@ -545,7 +572,11 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The size of the latest version of the folder metadata.
+     * </p>
+     * 
+     * @return The size of the latest version of the folder metadata.
      */
 
     public Long getLatestVersionSize() {
@@ -553,7 +584,12 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The size of the latest version of the folder metadata.
+     * </p>
+     * 
      * @param latestVersionSize
+     *        The size of the latest version of the folder metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

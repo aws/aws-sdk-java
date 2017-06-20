@@ -541,6 +541,30 @@ public interface AmazonWorkDocs {
 
     /**
      * <p>
+     * Describes the user activities in a specified time period.
+     * </p>
+     * 
+     * @param describeActivitiesRequest
+     * @return Result of the DescribeActivities operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws InvalidArgumentException
+     *         The pagination marker and/or limit fields are not valid.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DescribeActivities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeActivities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeActivitiesResult describeActivities(DescribeActivitiesRequest describeActivitiesRequest);
+
+    /**
+     * <p>
      * List all the comments for the specified document version.
      * </p>
      * 
@@ -670,6 +694,32 @@ public interface AmazonWorkDocs {
 
     /**
      * <p>
+     * Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecyleBin</code>.
+     * <code>RootFolder</code> is the root of user's files and folders and <code>RecyleBin</code> is the root of
+     * recycled items. This is not a valid action for SigV4 (administrative API) clients.
+     * </p>
+     * 
+     * @param describeRootFoldersRequest
+     * @return Result of the DescribeRootFolders operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws InvalidArgumentException
+     *         The pagination marker and/or limit fields are not valid.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DescribeRootFolders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeRootFoldersResult describeRootFolders(DescribeRootFoldersRequest describeRootFoldersRequest);
+
+    /**
+     * <p>
      * Describes the specified users. You can describe all users or filter the results (for example, by status or
      * organization).
      * </p>
@@ -696,6 +746,31 @@ public interface AmazonWorkDocs {
      *      Documentation</a>
      */
     DescribeUsersResult describeUsers(DescribeUsersRequest describeUsersRequest);
+
+    /**
+     * <p>
+     * Retrieves details of the current user for whom the authentication token was generated. This is not a valid action
+     * for SigV4 (administrative API) clients.
+     * </p>
+     * 
+     * @param getCurrentUserRequest
+     * @return Result of the GetCurrentUser operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.GetCurrentUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetCurrentUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCurrentUserResult getCurrentUser(GetCurrentUserRequest getCurrentUserRequest);
 
     /**
      * <p>
@@ -873,6 +948,7 @@ public interface AmazonWorkDocs {
      *         This exception is thrown when a valid checkout ID is not presented on document version upload calls for a
      *         document that has been checked out from Web client.
      * @throws ResourceAlreadyCheckedOutException
+     *         The resource is already checked out.
      * @sample AmazonWorkDocs.InitiateDocumentVersionUpload
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload"
      *      target="_top">AWS API Documentation</a>
