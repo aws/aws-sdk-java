@@ -629,8 +629,7 @@ public class DynamoDBMapperConfig {
     /**
      * Interface for a strategy used to determine the table name of an object based on it's class.
      * This resolver is used when an object is available such as in
-     * {@link DynamoDBMapper#316
-     * (java.util.List)}.
+     * {@link DynamoDBMapper#batchSave(Object...)}
      *
      * If no table name resolver for objects is set, {@link DynamoDBMapper} reverts to using the
      * {@link TableNameResolver} on each object's class.
