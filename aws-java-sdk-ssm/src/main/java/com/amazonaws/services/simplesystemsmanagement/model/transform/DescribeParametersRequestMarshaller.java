@@ -30,6 +30,8 @@ public class DescribeParametersRequestMarshaller {
 
     private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Filters").build();
+    private static final MarshallingInfo<List> PARAMETERFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParameterFilters").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class DescribeParametersRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeParametersRequest.getFilters(), FILTERS_BINDING);
+            protocolMarshaller.marshall(describeParametersRequest.getParameterFilters(), PARAMETERFILTERS_BINDING);
             protocolMarshaller.marshall(describeParametersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeParametersRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

@@ -63,8 +63,15 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private Integer responseCode;
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, August
-     * 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, June
+     * 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to execute, the string is empty.
      * </p>
      */
     private String executionStartDateTime;
@@ -77,7 +84,14 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
-     * August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to execute, the string is empty.
      * </p>
      */
     private String executionEndDateTime;
@@ -443,14 +457,26 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, August
-     * 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, June
+     * 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to execute, the string is empty.
      * </p>
      * 
      * @param executionStartDateTime
      *        The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example,
-     *        August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is
-     *        empty.
+     *        June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *        <code>InvokedBefore</code> filter.</p>
+     *        <p>
+     *        <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     *        </p>
+     *        <p>
+     *        If the plugin has not started to execute, the string is empty.
      */
 
     public void setExecutionStartDateTime(String executionStartDateTime) {
@@ -459,13 +485,25 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, August
-     * 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, June
+     * 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to execute, the string is empty.
      * </p>
      * 
      * @return The date and time the plugin started executing. Date and time are written in ISO 8601 format. For
-     *         example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the
-     *         string is empty.
+     *         example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *         <code>InvokedBefore</code> filter.</p>
+     *         <p>
+     *         <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     *         </p>
+     *         <p>
+     *         If the plugin has not started to execute, the string is empty.
      */
 
     public String getExecutionStartDateTime() {
@@ -474,14 +512,26 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, August
-     * 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example, June
+     * 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedBefore</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to execute, the string is empty.
      * </p>
      * 
      * @param executionStartDateTime
      *        The date and time the plugin started executing. Date and time are written in ISO 8601 format. For example,
-     *        August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is
-     *        empty.
+     *        June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *        <code>InvokedBefore</code> filter.</p>
+     *        <p>
+     *        <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+     *        </p>
+     *        <p>
+     *        If the plugin has not started to execute, the string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -533,13 +583,25 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
-     * August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to execute, the string is empty.
      * </p>
      * 
      * @param executionEndDateTime
      *        The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For
-     *        example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the
-     *        string is empty.
+     *        example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *        <code>InvokedAfter</code> filter.</p>
+     *        <p>
+     *        <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     *        </p>
+     *        <p>
+     *        If the plugin has not started to execute, the string is empty.
      */
 
     public void setExecutionEndDateTime(String executionEndDateTime) {
@@ -549,12 +611,24 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
-     * August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to execute, the string is empty.
      * </p>
      * 
      * @return The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For
-     *         example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the
-     *         string is empty.
+     *         example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *         <code>InvokedAfter</code> filter.</p>
+     *         <p>
+     *         <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     *         </p>
+     *         <p>
+     *         If the plugin has not started to execute, the string is empty.
      */
 
     public String getExecutionEndDateTime() {
@@ -564,13 +638,25 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For example,
-     * August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the string is empty.
+     * June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the <code>InvokedAfter</code>
+     * filter.
+     * </p>
+     * <p>
+     * <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     * </p>
+     * <p>
+     * If the plugin has not started to execute, the string is empty.
      * </p>
      * 
      * @param executionEndDateTime
      *        The date and time the plugin was finished executing. Date and time are written in ISO 8601 format. For
-     *        example, August 28, 2016 is represented as 2016-08-28. If the plugin has not started to execute, the
-     *        string is empty.
+     *        example, June 7, 2017 is represented as 2017-06-7. The following sample AWS CLI command uses the
+     *        <code>InvokedAfter</code> filter.</p>
+     *        <p>
+     *        <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+     *        </p>
+     *        <p>
+     *        If the plugin has not started to execute, the string is empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

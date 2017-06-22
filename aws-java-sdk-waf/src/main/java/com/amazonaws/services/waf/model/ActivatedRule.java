@@ -81,6 +81,15 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private WafAction action;
+    /**
+     * <p>
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
+     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -365,6 +374,110 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
+     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * </p>
+     * 
+     * @param type
+     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
+     *        defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if
+     *        you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request
+     *        will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * @see WafRuleType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
+     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * </p>
+     * 
+     * @return The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
+     *         defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that
+     *         if you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
+     *         request will fail because the request tries to add a REGULAR rule with the specified ID, which does not
+     *         exist.
+     * @see WafRuleType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
+     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * </p>
+     * 
+     * @param type
+     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
+     *        defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if
+     *        you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request
+     *        will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WafRuleType
+     */
+
+    public ActivatedRule withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
+     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * </p>
+     * 
+     * @param type
+     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
+     *        defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if
+     *        you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request
+     *        will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * @see WafRuleType
+     */
+
+    public void setType(WafRuleType type) {
+        this.type = type.toString();
+    }
+
+    /**
+     * <p>
+     * The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as defined by
+     * <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if you try to add a
+     * RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request will fail because the
+     * request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * </p>
+     * 
+     * @param type
+     *        The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, or <code>RATE_BASED</code>, as
+     *        defined by <a>RateBasedRule</a>. The default is REGULAR. Although this field is optional, be aware that if
+     *        you try to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a> request
+     *        will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WafRuleType
+     */
+
+    public ActivatedRule withType(WafRuleType type) {
+        setType(type);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -380,7 +493,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
         if (getRuleId() != null)
             sb.append("RuleId: ").append(getRuleId()).append(",");
         if (getAction() != null)
-            sb.append("Action: ").append(getAction());
+            sb.append("Action: ").append(getAction()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -407,6 +522,10 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -418,6 +537,7 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getRuleId() == null) ? 0 : getRuleId().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

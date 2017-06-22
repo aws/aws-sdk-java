@@ -147,8 +147,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private String statusDetails;
     /**
      * <p>
-     * The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value is the
-     * region where Run Command is being called.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      */
     private String outputS3Region;
@@ -1094,13 +1094,13 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value is the
-     * region where Run Command is being called.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value
-     *        is the region where Run Command is being called.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *        automatically determines the Amazon S3 bucket region.
      */
 
     public void setOutputS3Region(String outputS3Region) {
@@ -1109,12 +1109,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value is the
-     * region where Run Command is being called.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
-     * @return The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
-     *         value is the region where Run Command is being called.
+     * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *         automatically determines the Amazon S3 bucket region.
      */
 
     public String getOutputS3Region() {
@@ -1123,13 +1123,13 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value is the
-     * region where Run Command is being called.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default value
-     *        is the region where Run Command is being called.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *        automatically determines the Amazon S3 bucket region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

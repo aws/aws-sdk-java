@@ -40,7 +40,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * </p>
  * <p>
  * To get started, verify prerequisites and configure managed instances. For more information, see <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems Manager
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems Manager
  * Prerequisites</a>.
  * </p>
  */
@@ -513,6 +513,21 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     DeleteParameterResult deleteParameter(DeleteParameterRequest deleteParameterRequest);
+
+    /**
+     * <p>
+     * Delete a list of parameters.
+     * </p>
+     * 
+     * @param deleteParametersRequest
+     * @return Result of the DeleteParameters operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeleteParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteParametersResult deleteParameters(DeleteParametersRequest deleteParametersRequest);
 
     /**
      * <p>
@@ -1059,6 +1074,11 @@ public interface AWSSimpleSystemsManagement {
      * @return Result of the DescribeParameters operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidFilterOptionException
+     *         The specified filter option is not valid. Valid options are Equals and BeginsWith. For Path filter, valid
+     *         options are Recursive and OneLevel.
      * @throws InvalidFilterValueException
      *         The filter value is not valid. Verify the value and try again.
      * @throws InvalidNextTokenException
@@ -1317,6 +1337,25 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Get information about a parameter by using the parameter name.
+     * </p>
+     * 
+     * @param getParameterRequest
+     * @return Result of the GetParameter operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidKeyIdException
+     *         The query key ID is not valid.
+     * @throws ParameterNotFoundException
+     *         The parameter could not be found. Verify the name and try again.
+     * @sample AWSSimpleSystemsManagement.GetParameter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetParameterResult getParameter(GetParameterRequest getParameterRequest);
+
+    /**
+     * <p>
      * Query a list of all parameters used by the AWS account.
      * </p>
      * 
@@ -1328,6 +1367,8 @@ public interface AWSSimpleSystemsManagement {
      *         The parameter could not be found. Verify the name and try again.
      * @throws InvalidNextTokenException
      *         The specified token is not valid.
+     * @throws InvalidKeyIdException
+     *         The query key ID is not valid.
      * @sample AWSSimpleSystemsManagement.GetParameterHistory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory" target="_top">AWS API
      *      Documentation</a>
@@ -1341,6 +1382,8 @@ public interface AWSSimpleSystemsManagement {
      * 
      * @param getParametersRequest
      * @return Result of the GetParameters operation returned by the service.
+     * @throws InvalidKeyIdException
+     *         The query key ID is not valid.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetParameters
@@ -1348,6 +1391,34 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     GetParametersResult getParameters(GetParametersRequest getParametersRequest);
+
+    /**
+     * <p>
+     * Retrieve parameters in a specific hierarchy. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
+     * Parameter Hierarchies</a>.
+     * </p>
+     * 
+     * @param getParametersByPathRequest
+     * @return Result of the GetParametersByPath operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidFilterKeyException
+     *         The specified key is not valid.
+     * @throws InvalidFilterOptionException
+     *         The specified filter option is not valid. Valid options are Equals and BeginsWith. For Path filter, valid
+     *         options are Recursive and OneLevel.
+     * @throws InvalidFilterValueException
+     *         The filter value is not valid. Verify the value and try again.
+     * @throws InvalidKeyIdException
+     *         The query key ID is not valid.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.GetParametersByPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetParametersByPathResult getParametersByPath(GetParametersByPathRequest getParametersByPathRequest);
 
     /**
      * <p>
@@ -1653,7 +1724,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Add one or more paramaters to the system.
+     * Add one or more parameters to the system.
      * </p>
      * 
      * @param putParameterRequest
@@ -1669,6 +1740,22 @@ public interface AWSSimpleSystemsManagement {
      *         There are concurrent updates for a resource that supports one update at a time.
      * @throws ParameterAlreadyExistsException
      *         The parameter already exists. You can't create duplicate parameters.
+     * @throws HierarchyLevelLimitExceededException
+     *         A hierarchy can have a maximum of five levels. For example:</p>
+     *         <p>
+     *         /Finance/Prod/IAD/OS/WinServ2016/license15
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html"
+     *         >Develop a Parameter Hierarchy</a>.
+     * @throws HierarchyTypeMismatchException
+     *         Parameter Store does not support changing a parameter type in a hierarchy. For example, you can't change
+     *         a parameter from a String type to a SecureString type. You must create a new, unique parameter.
+     * @throws InvalidAllowedPatternException
+     *         The request does not meet the regular expression requirement.
+     * @throws ParameterPatternMismatchException
+     *         The parameter name is not valid.
      * @throws UnsupportedParameterTypeException
      *         The parameter type is not supported.
      * @sample AWSSimpleSystemsManagement.PutParameter
@@ -1791,7 +1878,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Executes commands on one or more remote instances.
+     * Executes commands on one or more managed instances.
      * </p>
      * 
      * @param sendCommandRequest

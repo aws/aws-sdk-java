@@ -39,6 +39,8 @@ public class PutParameterRequestMarshaller {
             .marshallLocationName("KeyId").build();
     private static final MarshallingInfo<Boolean> OVERWRITE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Overwrite").build();
+    private static final MarshallingInfo<String> ALLOWEDPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedPattern").build();
 
     private static final PutParameterRequestMarshaller instance = new PutParameterRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class PutParameterRequestMarshaller {
             protocolMarshaller.marshall(putParameterRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(putParameterRequest.getKeyId(), KEYID_BINDING);
             protocolMarshaller.marshall(putParameterRequest.getOverwrite(), OVERWRITE_BINDING);
+            protocolMarshaller.marshall(putParameterRequest.getAllowedPattern(), ALLOWEDPATTERN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

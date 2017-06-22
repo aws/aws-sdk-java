@@ -33,6 +33,8 @@ public class ActivatedRuleMarshaller {
             .marshallLocationName("RuleId").build();
     private static final MarshallingInfo<StructuredPojo> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Action").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
 
     private static final ActivatedRuleMarshaller instance = new ActivatedRuleMarshaller();
 
@@ -53,6 +55,7 @@ public class ActivatedRuleMarshaller {
             protocolMarshaller.marshall(activatedRule.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(activatedRule.getRuleId(), RULEID_BINDING);
             protocolMarshaller.marshall(activatedRule.getAction(), ACTION_BINDING);
+            protocolMarshaller.marshall(activatedRule.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -239,6 +239,245 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Creates a <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a <code>RateLimit</code>, which specifies
+     * the maximum number of requests that AWS WAF allows from a specified IP address in a five-minute period. The
+     * <code>RateBasedRule</code> also contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects, and
+     * other predicates that identify the requests that you want to count or block if these requests exceed the
+     * <code>RateLimit</code>.
+     * </p>
+     * <p>
+     * If you add more than one predicate to a <code>RateBasedRule</code>, a request not only must exceed the
+     * <code>RateLimit</code>, but it also must match all the specifications to be counted or blocked. For example,
+     * suppose you add the following to a <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
+     * that meet the conditions in the rule. For a request to be blocked, it must come from the IP address 192.0.2.44
+     * <i>and</i> the <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further,
+     * requests that match these two conditions must be received at a rate of more than 15,000 requests every five
+     * minutes. If both conditions are met and the rate is exceeded, AWS WAF blocks the requests. If the rate drops
+     * below 15,000 for a five-minute period, AWS WAF no longer blocks the requests.
+     * </p>
+     * <p>
+     * As a second example, suppose you want to limit requests to a particular page on your site. To do this, you could
+     * add the following to a <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> with <code>FieldToMatch</code> of <code>URI</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>PositionalConstraint</code> of <code>STARTS_WITH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>TargetString</code> of <code>login</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
+     * without affecting the rest of your site.
+     * </p>
+     * <p>
+     * To create and configure a <code>RateBasedRule</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create and update the predicates that you want to include in the rule. For more information, see
+     * <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateRateBasedRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRule</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRateBasedRule</code> request to specify the predicates that you want to include in the
+     * rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>RateBasedRule</code>. For more information, see
+     * <a>CreateWebACL</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRateBasedRuleRequest
+     * @return A Java Future containing the result of the CreateRateBasedRule operation returned by the service.
+     * @sample AWSWAFAsync.CreateRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRateBasedRuleResult> createRateBasedRuleAsync(CreateRateBasedRuleRequest createRateBasedRuleRequest);
+
+    /**
+     * <p>
+     * Creates a <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a <code>RateLimit</code>, which specifies
+     * the maximum number of requests that AWS WAF allows from a specified IP address in a five-minute period. The
+     * <code>RateBasedRule</code> also contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects, and
+     * other predicates that identify the requests that you want to count or block if these requests exceed the
+     * <code>RateLimit</code>.
+     * </p>
+     * <p>
+     * If you add more than one predicate to a <code>RateBasedRule</code>, a request not only must exceed the
+     * <code>RateLimit</code>, but it also must match all the specifications to be counted or blocked. For example,
+     * suppose you add the following to a <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
+     * that meet the conditions in the rule. For a request to be blocked, it must come from the IP address 192.0.2.44
+     * <i>and</i> the <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further,
+     * requests that match these two conditions must be received at a rate of more than 15,000 requests every five
+     * minutes. If both conditions are met and the rate is exceeded, AWS WAF blocks the requests. If the rate drops
+     * below 15,000 for a five-minute period, AWS WAF no longer blocks the requests.
+     * </p>
+     * <p>
+     * As a second example, suppose you want to limit requests to a particular page on your site. To do this, you could
+     * add the following to a <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> with <code>FieldToMatch</code> of <code>URI</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>PositionalConstraint</code> of <code>STARTS_WITH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>TargetString</code> of <code>login</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
+     * without affecting the rest of your site.
+     * </p>
+     * <p>
+     * To create and configure a <code>RateBasedRule</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create and update the predicates that you want to include in the rule. For more information, see
+     * <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateRateBasedRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRule</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRateBasedRule</code> request to specify the predicates that you want to include in the
+     * rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>RateBasedRule</code>. For more information, see
+     * <a>CreateWebACL</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRateBasedRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRateBasedRule operation returned by the service.
+     * @sample AWSWAFAsyncHandler.CreateRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRateBasedRuleResult> createRateBasedRuleAsync(CreateRateBasedRuleRequest createRateBasedRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRateBasedRuleRequest, CreateRateBasedRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects,
      * and other predicates that identify the requests that you want to block. If you add more than one predicate to a
      * <code>Rule</code>, a request must match all of the specifications to be allowed or blocked. For example, suppose
@@ -1006,6 +1245,89 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still used in any <code>WebACL</code>
+     * objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
+     * </p>
+     * <p>
+     * If you just want to remove a rule from a <code>WebACL</code>, use <a>UpdateWebACL</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>RateBasedRule</code> from AWS WAF, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>RateBasedRule</code> to remove predicates, if any. For more information, see
+     * <a>UpdateRateBasedRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRateBasedRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRateBasedRule</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteRateBasedRuleRequest
+     * @return A Java Future containing the result of the DeleteRateBasedRule operation returned by the service.
+     * @sample AWSWAFAsync.DeleteRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest deleteRateBasedRuleRequest);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still used in any <code>WebACL</code>
+     * objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
+     * </p>
+     * <p>
+     * If you just want to remove a rule from a <code>WebACL</code>, use <a>UpdateWebACL</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>RateBasedRule</code> from AWS WAF, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>RateBasedRule</code> to remove predicates, if any. For more information, see
+     * <a>UpdateRateBasedRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRateBasedRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRateBasedRule</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteRateBasedRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRateBasedRule operation returned by the service.
+     * @sample AWSWAFAsyncHandler.DeleteRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteRateBasedRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest deleteRateBasedRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRateBasedRuleRequest, DeleteRateBasedRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Permanently deletes a <a>Rule</a>. You can't delete a <code>Rule</code> if it's still used in any
      * <code>WebACL</code> objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
      * </p>
@@ -1607,6 +1929,76 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you included in the
+     * <code>GetRateBasedRule</code> request.
+     * </p>
+     * 
+     * @param getRateBasedRuleRequest
+     * @return A Java Future containing the result of the GetRateBasedRule operation returned by the service.
+     * @sample AWSWAFAsync.GetRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRateBasedRuleResult> getRateBasedRuleAsync(GetRateBasedRuleRequest getRateBasedRuleRequest);
+
+    /**
+     * <p>
+     * Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you included in the
+     * <code>GetRateBasedRule</code> request.
+     * </p>
+     * 
+     * @param getRateBasedRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRateBasedRule operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetRateBasedRuleResult> getRateBasedRuleAsync(GetRateBasedRuleRequest getRateBasedRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRateBasedRuleRequest, GetRateBasedRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of IP addresses currently being blocked by the <a>RateBasedRule</a> that is specified by the
+     * <code>RuleId</code>. The maximum number of managed keys that will be blocked is 10,000. If more than 10,000
+     * addresses exceed the rate limit, the 10,000 addresses with the highest rates will be blocked.
+     * </p>
+     * 
+     * @param getRateBasedRuleManagedKeysRequest
+     * @return A Java Future containing the result of the GetRateBasedRuleManagedKeys operation returned by the service.
+     * @sample AWSWAFAsync.GetRateBasedRuleManagedKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRuleManagedKeys"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRateBasedRuleManagedKeysResult> getRateBasedRuleManagedKeysAsync(
+            GetRateBasedRuleManagedKeysRequest getRateBasedRuleManagedKeysRequest);
+
+    /**
+     * <p>
+     * Returns an array of IP addresses currently being blocked by the <a>RateBasedRule</a> that is specified by the
+     * <code>RuleId</code>. The maximum number of managed keys that will be blocked is 10,000. If more than 10,000
+     * addresses exceed the rate limit, the 10,000 addresses with the highest rates will be blocked.
+     * </p>
+     * 
+     * @param getRateBasedRuleManagedKeysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRateBasedRuleManagedKeys operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetRateBasedRuleManagedKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetRateBasedRuleManagedKeys"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRateBasedRuleManagedKeysResult> getRateBasedRuleManagedKeysAsync(
+            GetRateBasedRuleManagedKeysRequest getRateBasedRuleManagedKeysRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRateBasedRuleManagedKeysRequest, GetRateBasedRuleManagedKeysResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the <a>Rule</a> that is specified by the <code>RuleId</code> that you included in the
      * <code>GetRule</code> request.
      * </p>
@@ -1874,6 +2266,37 @@ public interface AWSWAFAsync extends AWSWAF {
      */
     java.util.concurrent.Future<ListIPSetsResult> listIPSetsAsync(ListIPSetsRequest listIPSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListIPSetsRequest, ListIPSetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <a>RuleSummary</a> objects.
+     * </p>
+     * 
+     * @param listRateBasedRulesRequest
+     * @return A Java Future containing the result of the ListRateBasedRules operation returned by the service.
+     * @sample AWSWAFAsync.ListRateBasedRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRateBasedRulesResult> listRateBasedRulesAsync(ListRateBasedRulesRequest listRateBasedRulesRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>RuleSummary</a> objects.
+     * </p>
+     * 
+     * @param listRateBasedRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRateBasedRules operation returned by the service.
+     * @sample AWSWAFAsyncHandler.ListRateBasedRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRateBasedRulesResult> listRateBasedRulesAsync(ListRateBasedRulesRequest listRateBasedRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRateBasedRulesRequest, ListRateBasedRulesResult> asyncHandler);
 
     /**
      * <p>
@@ -2399,6 +2822,157 @@ public interface AWSWAFAsync extends AWSWAF {
      */
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest updateIPSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>Predicate</a> objects in a rule and updates the <code>RateLimit</code> in the rule.
+     * </p>
+     * <p>
+     * Each <code>Predicate</code> object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
+     * specifies the web requests that you want to block or count. The <code>RateLimit</code> specifies the number of
+     * requests every five minutes that triggers the rule.
+     * </p>
+     * <p>
+     * If you add more than one predicate to a <code>RateBasedRule</code>, a request must match all the predicates and
+     * exceed the <code>RateLimit</code> to be counted or blocked. For example, suppose you add the following to a
+     * <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
+     * that satisfy the rule. For a request to be blocked, it must come from the IP address 192.0.2.44 <i>and</i> the
+     * <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further, requests that
+     * match these two conditions much be received at a rate of more than 15,000 every five minutes. If the rate drops
+     * below this limit, AWS WAF no longer blocks the requests.
+     * </p>
+     * <p>
+     * As a second example, suppose you want to limit requests to a particular page on your site. To do this, you could
+     * add the following to a <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> with <code>FieldToMatch</code> of <code>URI</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>PositionalConstraint</code> of <code>STARTS_WITH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>TargetString</code> of <code>login</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
+     * without affecting the rest of your site.
+     * </p>
+     * 
+     * @param updateRateBasedRuleRequest
+     * @return A Java Future containing the result of the UpdateRateBasedRule operation returned by the service.
+     * @sample AWSWAFAsync.UpdateRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRateBasedRuleResult> updateRateBasedRuleAsync(UpdateRateBasedRuleRequest updateRateBasedRuleRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>Predicate</a> objects in a rule and updates the <code>RateLimit</code> in the rule.
+     * </p>
+     * <p>
+     * Each <code>Predicate</code> object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
+     * specifies the web requests that you want to block or count. The <code>RateLimit</code> specifies the number of
+     * requests every five minutes that triggers the rule.
+     * </p>
+     * <p>
+     * If you add more than one predicate to a <code>RateBasedRule</code>, a request must match all the predicates and
+     * exceed the <code>RateLimit</code> to be counted or blocked. For example, suppose you add the following to a
+     * <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
+     * that satisfy the rule. For a request to be blocked, it must come from the IP address 192.0.2.44 <i>and</i> the
+     * <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further, requests that
+     * match these two conditions much be received at a rate of more than 15,000 every five minutes. If the rate drops
+     * below this limit, AWS WAF no longer blocks the requests.
+     * </p>
+     * <p>
+     * As a second example, suppose you want to limit requests to a particular page on your site. To do this, you could
+     * add the following to a <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> with <code>FieldToMatch</code> of <code>URI</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>PositionalConstraint</code> of <code>STARTS_WITH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>TargetString</code> of <code>login</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
+     * without affecting the rest of your site.
+     * </p>
+     * 
+     * @param updateRateBasedRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRateBasedRule operation returned by the service.
+     * @sample AWSWAFAsyncHandler.UpdateRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRateBasedRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRateBasedRuleResult> updateRateBasedRuleAsync(UpdateRateBasedRuleRequest updateRateBasedRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRateBasedRuleRequest, UpdateRateBasedRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -2928,6 +3502,11 @@ public interface AWSWAFAsync extends AWSWAF {
      * </li>
      * </ol>
      * <p>
+     * Be aware that if you try to add a RATE_BASED rule to a web ACL without setting the rule type when first creating
+     * the rule, the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR rule (the default
+     * rule type) with the specified ID, which does not exist.
+     * </p>
+     * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
      * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
@@ -3014,6 +3593,11 @@ public interface AWSWAFAsync extends AWSWAF {
      * </p>
      * </li>
      * </ol>
+     * <p>
+     * Be aware that if you try to add a RATE_BASED rule to a web ACL without setting the rule type when first creating
+     * the rule, the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR rule (the default
+     * rule type) with the specified ID, which does not exist.
+     * </p>
      * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
      * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.

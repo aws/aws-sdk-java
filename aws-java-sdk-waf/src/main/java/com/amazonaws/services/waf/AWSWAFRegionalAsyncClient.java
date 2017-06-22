@@ -349,6 +349,39 @@ public class AWSWAFRegionalAsyncClient extends AWSWAFRegionalClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRateBasedRuleResult> createRateBasedRuleAsync(CreateRateBasedRuleRequest request) {
+
+        return createRateBasedRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRateBasedRuleResult> createRateBasedRuleAsync(final CreateRateBasedRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRateBasedRuleRequest, CreateRateBasedRuleResult> asyncHandler) {
+        final CreateRateBasedRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRateBasedRuleResult>() {
+            @Override
+            public CreateRateBasedRuleResult call() throws Exception {
+                CreateRateBasedRuleResult result = null;
+
+                try {
+                    result = executeCreateRateBasedRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRuleResult> createRuleAsync(CreateRuleRequest request) {
 
         return createRuleAsync(request, null);
@@ -564,6 +597,39 @@ public class AWSWAFRegionalAsyncClient extends AWSWAFRegionalClient implements A
 
                 try {
                     result = executeDeleteIPSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request) {
+
+        return deleteRateBasedRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(final DeleteRateBasedRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRateBasedRuleRequest, DeleteRateBasedRuleResult> asyncHandler) {
+        final DeleteRateBasedRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRateBasedRuleResult>() {
+            @Override
+            public DeleteRateBasedRuleResult call() throws Exception {
+                DeleteRateBasedRuleResult result = null;
+
+                try {
+                    result = executeDeleteRateBasedRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -910,6 +976,72 @@ public class AWSWAFRegionalAsyncClient extends AWSWAFRegionalClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetRateBasedRuleResult> getRateBasedRuleAsync(GetRateBasedRuleRequest request) {
+
+        return getRateBasedRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRateBasedRuleResult> getRateBasedRuleAsync(final GetRateBasedRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRateBasedRuleRequest, GetRateBasedRuleResult> asyncHandler) {
+        final GetRateBasedRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRateBasedRuleResult>() {
+            @Override
+            public GetRateBasedRuleResult call() throws Exception {
+                GetRateBasedRuleResult result = null;
+
+                try {
+                    result = executeGetRateBasedRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRateBasedRuleManagedKeysResult> getRateBasedRuleManagedKeysAsync(GetRateBasedRuleManagedKeysRequest request) {
+
+        return getRateBasedRuleManagedKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRateBasedRuleManagedKeysResult> getRateBasedRuleManagedKeysAsync(final GetRateBasedRuleManagedKeysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRateBasedRuleManagedKeysRequest, GetRateBasedRuleManagedKeysResult> asyncHandler) {
+        final GetRateBasedRuleManagedKeysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRateBasedRuleManagedKeysResult>() {
+            @Override
+            public GetRateBasedRuleManagedKeysResult call() throws Exception {
+                GetRateBasedRuleManagedKeysResult result = null;
+
+                try {
+                    result = executeGetRateBasedRuleManagedKeys(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRuleResult> getRuleAsync(GetRuleRequest request) {
 
         return getRuleAsync(request, null);
@@ -1207,6 +1339,39 @@ public class AWSWAFRegionalAsyncClient extends AWSWAFRegionalClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListRateBasedRulesResult> listRateBasedRulesAsync(ListRateBasedRulesRequest request) {
+
+        return listRateBasedRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRateBasedRulesResult> listRateBasedRulesAsync(final ListRateBasedRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRateBasedRulesRequest, ListRateBasedRulesResult> asyncHandler) {
+        final ListRateBasedRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRateBasedRulesResult>() {
+            @Override
+            public ListRateBasedRulesResult call() throws Exception {
+                ListRateBasedRulesResult result = null;
+
+                try {
+                    result = executeListRateBasedRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourcesForWebACLResult> listResourcesForWebACLAsync(ListResourcesForWebACLRequest request) {
 
         return listResourcesForWebACLAsync(request, null);
@@ -1455,6 +1620,39 @@ public class AWSWAFRegionalAsyncClient extends AWSWAFRegionalClient implements A
 
                 try {
                     result = executeUpdateIPSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRateBasedRuleResult> updateRateBasedRuleAsync(UpdateRateBasedRuleRequest request) {
+
+        return updateRateBasedRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRateBasedRuleResult> updateRateBasedRuleAsync(final UpdateRateBasedRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRateBasedRuleRequest, UpdateRateBasedRuleResult> asyncHandler) {
+        final UpdateRateBasedRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRateBasedRuleResult>() {
+            @Override
+            public UpdateRateBasedRuleResult call() throws Exception {
+                UpdateRateBasedRuleResult result = null;
+
+                try {
+                    result = executeUpdateRateBasedRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

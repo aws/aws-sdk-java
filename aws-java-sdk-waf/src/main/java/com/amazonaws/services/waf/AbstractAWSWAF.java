@@ -48,6 +48,11 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public CreateRateBasedRuleResult createRateBasedRule(CreateRateBasedRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRuleResult createRule(CreateRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public DeleteIPSetResult deleteIPSet(DeleteIPSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRateBasedRuleResult deleteRateBasedRule(DeleteRateBasedRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,6 +138,16 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public GetRateBasedRuleResult getRateBasedRule(GetRateBasedRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRateBasedRuleManagedKeysResult getRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRuleResult getRule(GetRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -168,6 +188,11 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public ListRateBasedRulesResult listRateBasedRules(ListRateBasedRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRulesResult listRules(ListRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -199,6 +224,11 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public UpdateIPSetResult updateIPSet(UpdateIPSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRateBasedRuleResult updateRateBasedRule(UpdateRateBasedRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

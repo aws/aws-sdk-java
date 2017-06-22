@@ -43,6 +43,11 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than <code>IP</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
  * <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
  * </p>

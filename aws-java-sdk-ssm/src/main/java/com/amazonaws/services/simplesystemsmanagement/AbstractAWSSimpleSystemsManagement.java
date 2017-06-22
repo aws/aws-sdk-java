@@ -103,6 +103,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DeleteParametersResult deleteParameters(DeleteParametersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -294,12 +299,22 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public GetParameterResult getParameter(GetParameterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetParameterHistoryResult getParameterHistory(GetParameterHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetParametersResult getParameters(GetParametersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetParametersByPathResult getParametersByPath(GetParametersByPathRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

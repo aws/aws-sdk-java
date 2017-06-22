@@ -41,6 +41,8 @@ public class ParameterHistoryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Value").build();
+    private static final MarshallingInfo<String> ALLOWEDPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedPattern").build();
 
     private static final ParameterHistoryMarshaller instance = new ParameterHistoryMarshaller();
 
@@ -65,6 +67,7 @@ public class ParameterHistoryMarshaller {
             protocolMarshaller.marshall(parameterHistory.getLastModifiedUser(), LASTMODIFIEDUSER_BINDING);
             protocolMarshaller.marshall(parameterHistory.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(parameterHistory.getValue(), VALUE_BINDING);
+            protocolMarshaller.marshall(parameterHistory.getAllowedPattern(), ALLOWEDPATTERN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

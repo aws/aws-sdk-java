@@ -197,6 +197,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteParametersResult> deleteParametersAsync(DeleteParametersRequest request) {
+
+        return deleteParametersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteParametersResult> deleteParametersAsync(DeleteParametersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteParametersRequest, DeleteParametersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePatchBaselineResult> deletePatchBaselineAsync(DeletePatchBaselineRequest request) {
 
         return deletePatchBaselineAsync(request, null);
@@ -717,6 +730,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<GetParameterResult> getParameterAsync(GetParameterRequest request) {
+
+        return getParameterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParameterResult> getParameterAsync(GetParameterRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetParameterRequest, GetParameterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetParameterHistoryResult> getParameterHistoryAsync(GetParameterHistoryRequest request) {
 
         return getParameterHistoryAsync(request, null);
@@ -738,6 +764,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<GetParametersResult> getParametersAsync(GetParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<GetParametersRequest, GetParametersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParametersByPathResult> getParametersByPathAsync(GetParametersByPathRequest request) {
+
+        return getParametersByPathAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParametersByPathResult> getParametersByPathAsync(GetParametersByPathRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetParametersByPathRequest, GetParametersByPathResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

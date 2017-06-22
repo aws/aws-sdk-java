@@ -44,7 +44,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * To get started, verify prerequisites and configure managed instances. For more information, see <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems Manager
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems Manager
  * Prerequisites</a>.
  * </p>
  */
@@ -672,6 +672,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeDeleteParameter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteParametersResult> deleteParametersAsync(DeleteParametersRequest request) {
+
+        return deleteParametersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteParametersResult> deleteParametersAsync(final DeleteParametersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteParametersRequest, DeleteParametersResult> asyncHandler) {
+        final DeleteParametersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteParametersResult>() {
+            @Override
+            public DeleteParametersResult call() throws Exception {
+                DeleteParametersResult result = null;
+
+                try {
+                    result = executeDeleteParameters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1970,6 +2003,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<GetParameterResult> getParameterAsync(GetParameterRequest request) {
+
+        return getParameterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParameterResult> getParameterAsync(final GetParameterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetParameterRequest, GetParameterResult> asyncHandler) {
+        final GetParameterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetParameterResult>() {
+            @Override
+            public GetParameterResult call() throws Exception {
+                GetParameterResult result = null;
+
+                try {
+                    result = executeGetParameter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetParameterHistoryResult> getParameterHistoryAsync(GetParameterHistoryRequest request) {
 
         return getParameterHistoryAsync(request, null);
@@ -2020,6 +2086,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeGetParameters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParametersByPathResult> getParametersByPathAsync(GetParametersByPathRequest request) {
+
+        return getParametersByPathAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParametersByPathResult> getParametersByPathAsync(final GetParametersByPathRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetParametersByPathRequest, GetParametersByPathResult> asyncHandler) {
+        final GetParametersByPathRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetParametersByPathResult>() {
+            @Override
+            public GetParametersByPathResult call() throws Exception {
+                GetParametersByPathResult result = null;
+
+                try {
+                    result = executeGetParametersByPath(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

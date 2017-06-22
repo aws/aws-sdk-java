@@ -29,7 +29,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags.
+     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -37,8 +39,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-     * a Command Using Systems Manager Run Command</a>.
+     * use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
@@ -91,8 +94,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.Map<String, java.util.List<String>> parameters;
     /**
      * <p>
-     * (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
-     * value is the region where Run Command is being called.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      */
     private String outputS3Region;
@@ -113,8 +116,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
      * specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-velocity.html">Using Concurrency
+     * Controls</a>.
      * </p>
      */
     private String maxConcurrency;
@@ -123,8 +126,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
      * value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10
      * or a percentage like 10%. The default value is 50. For more information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using Error
+     * Controls</a>.
      * </p>
      */
     private String maxErrors;
@@ -145,12 +148,16 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags.
+     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      * 
      * @return The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not
      *         to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets
-     *         parameter, which accepts EC2 tags.
+     *         parameter, which accepts EC2 tags. For more information about how to use Targets, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     *         Commands to a Fleet</a>.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -164,13 +171,17 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags.
+     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      * 
      * @param instanceIds
      *        The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not
      *        to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets
-     *        parameter, which accepts EC2 tags.
+     *        parameter, which accepts EC2 tags. For more information about how to use Targets, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     *        Commands to a Fleet</a>.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -186,7 +197,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags.
+     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -197,7 +210,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param instanceIds
      *        The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not
      *        to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets
-     *        parameter, which accepts EC2 tags.
+     *        parameter, which accepts EC2 tags. For more information about how to use Targets, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     *        Commands to a Fleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,13 +230,17 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list
      * individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which
-     * accepts EC2 tags.
+     * accepts EC2 tags. For more information about how to use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      * 
      * @param instanceIds
      *        The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not
      *        to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets
-     *        parameter, which accepts EC2 tags.
+     *        parameter, which accepts EC2 tags. For more information about how to use Targets, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     *        Commands to a Fleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,15 +253,16 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-     * a Command Using Systems Manager Run Command</a>.
+     * use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      * 
      * @return (Optional) An array of search criteria that targets instances using a Key,Value combination that you
      *         specify. Targets is required if you don't provide one or more instance IDs in the call. For more
      *         information about how to use Targets, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *         Using Systems Manager Run Command</a>.
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     *         Commands to a Fleet</a>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -256,16 +276,17 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-     * a Command Using Systems Manager Run Command</a>.
+     * use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      * 
      * @param targets
      *        (Optional) An array of search criteria that targets instances using a Key,Value combination that you
      *        specify. Targets is required if you don't provide one or more instance IDs in the call. For more
      *        information about how to use Targets, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     *        Commands to a Fleet</a>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -281,8 +302,9 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-     * a Command Using Systems Manager Run Command</a>.
+     * use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -294,8 +316,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        (Optional) An array of search criteria that targets instances using a Key,Value combination that you
      *        specify. Targets is required if you don't provide one or more instance IDs in the call. For more
      *        information about how to use Targets, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     *        Commands to a Fleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,16 +335,17 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * (Optional) An array of search criteria that targets instances using a Key,Value combination that you specify.
      * Targets is required if you don't provide one or more instance IDs in the call. For more information about how to
-     * use Targets, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing
-     * a Command Using Systems Manager Run Command</a>.
+     * use Targets, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending Commands
+     * to a Fleet</a>.
      * </p>
      * 
      * @param targets
      *        (Optional) An array of search criteria that targets instances using a Key,Value combination that you
      *        specify. Targets is required if you don't provide one or more instance IDs in the call. For more
      *        information about how to use Targets, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     *        Commands to a Fleet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -697,13 +720,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
-     * value is the region where Run Command is being called.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The
-     *        default value is the region where Run Command is being called.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *        automatically determines the Amazon S3 bucket region.
      */
 
     public void setOutputS3Region(String outputS3Region) {
@@ -712,12 +735,12 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
-     * value is the region where Run Command is being called.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
-     * @return (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The
-     *         default value is the region where Run Command is being called.
+     * @return (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *         automatically determines the Amazon S3 bucket region.
      */
 
     public String getOutputS3Region() {
@@ -726,13 +749,13 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The default
-     * value is the region where Run Command is being called.
+     * (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     * automatically determines the Amazon S3 bucket region.
      * </p>
      * 
      * @param outputS3Region
-     *        (Optional) The region where the Amazon Simple Storage Service (Amazon S3) output bucket is located. The
-     *        default value is the region where Run Command is being called.
+     *        (Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
+     *        automatically determines the Amazon S3 bucket region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -826,16 +849,16 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
      * specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-velocity.html">Using Concurrency
+     * Controls</a>.
      * </p>
      * 
      * @param maxConcurrency
      *        (Optional) The maximum number of instances that are allowed to execute the command at the same time. You
      *        can specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information
      *        about how to use MaxConcurrency, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-velocity.html">Using
+     *        Concurrency Controls</a>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -847,15 +870,15 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
      * specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-velocity.html">Using Concurrency
+     * Controls</a>.
      * </p>
      * 
      * @return (Optional) The maximum number of instances that are allowed to execute the command at the same time. You
      *         can specify a number such as 10 or a percentage such as 10%. The default value is 50. For more
      *         information about how to use MaxConcurrency, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *         Using Systems Manager Run Command</a>.
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-velocity.html">Using
+     *         Concurrency Controls</a>.
      */
 
     public String getMaxConcurrency() {
@@ -867,16 +890,16 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
      * specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-velocity.html">Using Concurrency
+     * Controls</a>.
      * </p>
      * 
      * @param maxConcurrency
      *        (Optional) The maximum number of instances that are allowed to execute the command at the same time. You
      *        can specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information
      *        about how to use MaxConcurrency, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-velocity.html">Using
+     *        Concurrency Controls</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -890,8 +913,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
      * value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10
      * or a percentage like 10%. The default value is 50. For more information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using Error
+     * Controls</a>.
      * </p>
      * 
      * @param maxErrors
@@ -899,8 +922,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        beyond the value of MaxErrors, the systems stops sending the command to additional targets. You can
      *        specify a number like 10 or a percentage like 10%. The default value is 50. For more information about how
      *        to use MaxErrors, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using
+     *        Error Controls</a>.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -912,16 +935,16 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
      * value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10
      * or a percentage like 10%. The default value is 50. For more information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using Error
+     * Controls</a>.
      * </p>
      * 
      * @return The maximum number of errors allowed without the command failing. When the command fails one more time
      *         beyond the value of MaxErrors, the systems stops sending the command to additional targets. You can
      *         specify a number like 10 or a percentage like 10%. The default value is 50. For more information about
      *         how to use MaxErrors, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *         Using Systems Manager Run Command</a>.
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using
+     *         Error Controls</a>.
      */
 
     public String getMaxErrors() {
@@ -933,8 +956,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The maximum number of errors allowed without the command failing. When the command fails one more time beyond the
      * value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10
      * or a percentage like 10%. The default value is 50. For more information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using Error
+     * Controls</a>.
      * </p>
      * 
      * @param maxErrors
@@ -942,8 +965,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        beyond the value of MaxErrors, the systems stops sending the command to additional targets. You can
      *        specify a number like 10 or a percentage like 10%. The default value is 50. For more information about how
      *        to use MaxErrors, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-maxerrors.html">Using
+     *        Error Controls</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

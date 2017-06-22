@@ -54,7 +54,8 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code>
      * </p>
      * </li>
      * <li>
@@ -175,7 +176,8 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code>
      * </p>
      * </li>
      * <li>
@@ -198,7 +200,8 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *         <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     *         <code>Type</code>
      *         </p>
      *         </li>
      *         <li>
@@ -228,7 +231,8 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code>
      * </p>
      * </li>
      * <li>
@@ -252,7 +256,8 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     *        <code>Type</code>
      *        </p>
      *        </li>
      *        <li>
@@ -287,7 +292,8 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code>
      * </p>
      * </li>
      * <li>
@@ -316,7 +322,8 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     *        <code>Type</code>
      *        </p>
      *        </li>
      *        <li>
@@ -353,7 +360,8 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     * <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     * <code>Type</code>
      * </p>
      * </li>
      * <li>
@@ -377,7 +385,8 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, and <code>RuleId</code>
+     *        <a>ActivatedRule</a>: Contains <code>Action</code>, <code>Priority</code>, <code>RuleId</code>, and
+     *        <code>Type</code>
      *        </p>
      *        </li>
      *        <li>

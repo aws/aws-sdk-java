@@ -39,7 +39,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * </p>
  * <p>
  * To get started, verify prerequisites and configure managed instances. For more information, see <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems Manager
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems Manager
  * Prerequisites</a>.
  * </p>
  */
@@ -556,6 +556,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<DeleteParameterResult> deleteParameterAsync(DeleteParameterRequest deleteParameterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteParameterRequest, DeleteParameterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a list of parameters.
+     * </p>
+     * 
+     * @param deleteParametersRequest
+     * @return A Java Future containing the result of the DeleteParameters operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteParametersResult> deleteParametersAsync(DeleteParametersRequest deleteParametersRequest);
+
+    /**
+     * <p>
+     * Delete a list of parameters.
+     * </p>
+     * 
+     * @param deleteParametersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteParameters operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteParameters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteParametersResult> deleteParametersAsync(DeleteParametersRequest deleteParametersRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteParametersRequest, DeleteParametersResult> asyncHandler);
 
     /**
      * <p>
@@ -1839,6 +1870,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Get information about a parameter by using the parameter name.
+     * </p>
+     * 
+     * @param getParameterRequest
+     * @return A Java Future containing the result of the GetParameter operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetParameter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetParameterResult> getParameterAsync(GetParameterRequest getParameterRequest);
+
+    /**
+     * <p>
+     * Get information about a parameter by using the parameter name.
+     * </p>
+     * 
+     * @param getParameterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetParameter operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetParameter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetParameterResult> getParameterAsync(GetParameterRequest getParameterRequest,
+            com.amazonaws.handlers.AsyncHandler<GetParameterRequest, GetParameterResult> asyncHandler);
+
+    /**
+     * <p>
      * Query a list of all parameters used by the AWS account.
      * </p>
      * 
@@ -1898,6 +1960,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<GetParametersResult> getParametersAsync(GetParametersRequest getParametersRequest,
             com.amazonaws.handlers.AsyncHandler<GetParametersRequest, GetParametersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve parameters in a specific hierarchy. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
+     * Parameter Hierarchies</a>.
+     * </p>
+     * 
+     * @param getParametersByPathRequest
+     * @return A Java Future containing the result of the GetParametersByPath operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetParametersByPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetParametersByPathResult> getParametersByPathAsync(GetParametersByPathRequest getParametersByPathRequest);
+
+    /**
+     * <p>
+     * Retrieve parameters in a specific hierarchy. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
+     * Parameter Hierarchies</a>.
+     * </p>
+     * 
+     * @param getParametersByPathRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetParametersByPath operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetParametersByPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetParametersByPathResult> getParametersByPathAsync(GetParametersByPathRequest getParametersByPathRequest,
+            com.amazonaws.handlers.AsyncHandler<GetParametersByPathRequest, GetParametersByPathResult> asyncHandler);
 
     /**
      * <p>
@@ -2273,7 +2370,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Add one or more paramaters to the system.
+     * Add one or more parameters to the system.
      * </p>
      * 
      * @param putParameterRequest
@@ -2286,7 +2383,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Add one or more paramaters to the system.
+     * Add one or more parameters to the system.
      * </p>
      * 
      * @param putParameterRequest
@@ -2475,7 +2572,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Executes commands on one or more remote instances.
+     * Executes commands on one or more managed instances.
      * </p>
      * 
      * @param sendCommandRequest
@@ -2488,7 +2585,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Executes commands on one or more remote instances.
+     * Executes commands on one or more managed instances.
      * </p>
      * 
      * @param sendCommandRequest

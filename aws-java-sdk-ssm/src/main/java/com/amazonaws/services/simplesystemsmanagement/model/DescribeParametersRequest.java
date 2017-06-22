@@ -33,6 +33,12 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<ParametersFilter> filters;
     /**
      * <p>
+     * Filters to limit the request results.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ParameterStringFilter> parameterFilters;
+    /**
+     * <p>
      * The maximum number of items to return for this call. The call also returns a token that you can specify in a
      * subsequent call to get the next set of results.
      * </p>
@@ -115,6 +121,79 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
 
     public DescribeParametersRequest withFilters(java.util.Collection<ParametersFilter> filters) {
         setFilters(filters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters to limit the request results.
+     * </p>
+     * 
+     * @return Filters to limit the request results.
+     */
+
+    public java.util.List<ParameterStringFilter> getParameterFilters() {
+        if (parameterFilters == null) {
+            parameterFilters = new com.amazonaws.internal.SdkInternalList<ParameterStringFilter>();
+        }
+        return parameterFilters;
+    }
+
+    /**
+     * <p>
+     * Filters to limit the request results.
+     * </p>
+     * 
+     * @param parameterFilters
+     *        Filters to limit the request results.
+     */
+
+    public void setParameterFilters(java.util.Collection<ParameterStringFilter> parameterFilters) {
+        if (parameterFilters == null) {
+            this.parameterFilters = null;
+            return;
+        }
+
+        this.parameterFilters = new com.amazonaws.internal.SdkInternalList<ParameterStringFilter>(parameterFilters);
+    }
+
+    /**
+     * <p>
+     * Filters to limit the request results.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParameterFilters(java.util.Collection)} or {@link #withParameterFilters(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param parameterFilters
+     *        Filters to limit the request results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeParametersRequest withParameterFilters(ParameterStringFilter... parameterFilters) {
+        if (this.parameterFilters == null) {
+            setParameterFilters(new com.amazonaws.internal.SdkInternalList<ParameterStringFilter>(parameterFilters.length));
+        }
+        for (ParameterStringFilter ele : parameterFilters) {
+            this.parameterFilters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters to limit the request results.
+     * </p>
+     * 
+     * @param parameterFilters
+     *        Filters to limit the request results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeParametersRequest withParameterFilters(java.util.Collection<ParameterStringFilter> parameterFilters) {
+        setParameterFilters(parameterFilters);
         return this;
     }
 
@@ -217,6 +296,8 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
         sb.append("{");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
+        if (getParameterFilters() != null)
+            sb.append("ParameterFilters: ").append(getParameterFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -239,6 +320,10 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
             return false;
+        if (other.getParameterFilters() == null ^ this.getParameterFilters() == null)
+            return false;
+        if (other.getParameterFilters() != null && other.getParameterFilters().equals(this.getParameterFilters()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -256,6 +341,7 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getParameterFilters() == null) ? 0 : getParameterFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

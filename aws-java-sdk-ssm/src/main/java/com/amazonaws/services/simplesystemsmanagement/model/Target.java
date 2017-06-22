@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An array of search criteria that targets instances using a Key,Value combination that you specify. Targets is
- * required if you don't provide one or more instance IDs in the call.
+ * An array of search criteria that targets instances using a Key,Value combination that you specify.
+ * <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
  * </p>
+ * <p/>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Target" target="_top">AWS API Documentation</a>
  */
@@ -33,8 +34,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria for sending commands that target instances that meet the criteria. Key can be
      * tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target instances
      * using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     * Command Using Systems Manager Run Command</a>.
      * </p>
      */
     private String key;
@@ -43,8 +44,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
      * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     * Command Using Systems Manager Run Command</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
@@ -54,16 +55,16 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria for sending commands that target instances that meet the criteria. Key can be
      * tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target instances
      * using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     * Command Using Systems Manager Run Command</a>.
      * </p>
      * 
      * @param key
      *        User-defined criteria for sending commands that target instances that meet the criteria. Key can be
      *        tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target
      *        instances using Key,Value parameters, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     *        Command Using Systems Manager Run Command</a>.
      */
 
     public void setKey(String key) {
@@ -75,15 +76,15 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria for sending commands that target instances that meet the criteria. Key can be
      * tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target instances
      * using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     * Command Using Systems Manager Run Command</a>.
      * </p>
      * 
      * @return User-defined criteria for sending commands that target instances that meet the criteria. Key can be
      *         tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target
      *         instances using Key,Value parameters, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *         Using Systems Manager Run Command</a>.
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
+     *         a Command Using Systems Manager Run Command</a>.
      */
 
     public String getKey() {
@@ -95,16 +96,16 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria for sending commands that target instances that meet the criteria. Key can be
      * tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target instances
      * using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     * Command Using Systems Manager Run Command</a>.
      * </p>
      * 
      * @param key
      *        User-defined criteria for sending commands that target instances that meet the criteria. Key can be
      *        tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target
      *        instances using Key,Value parameters, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     *        Command Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,15 +119,15 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
      * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     * Command Using Systems Manager Run Command</a>.
      * </p>
      * 
      * @return User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
      *         value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
      *         For more information about how to send commands that target instances using Key,Value parameters, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *         Using Systems Manager Run Command</a>.
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
+     *         a Command Using Systems Manager Run Command</a>.
      */
 
     public java.util.List<String> getValues() {
@@ -141,16 +142,16 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
      * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     * Command Using Systems Manager Run Command</a>.
      * </p>
      * 
      * @param values
      *        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
      *        value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
      *        For more information about how to send commands that target instances using Key,Value parameters, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     *        Command Using Systems Manager Run Command</a>.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -167,8 +168,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
      * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     * Command Using Systems Manager Run Command</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -180,8 +181,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      *        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
      *        value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
      *        For more information about how to send commands that target instances using Key,Value parameters, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     *        Command Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,16 +201,16 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
      * value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
-     * Systems Manager Run Command</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     * Command Using Systems Manager Run Command</a>.
      * </p>
      * 
      * @param values
      *        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify
      *        value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
      *        For more information about how to send commands that target instances using Key,Value parameters, see <a
-     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
-     *        Using Systems Manager Run Command</a>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing a
+     *        Command Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

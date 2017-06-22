@@ -67,6 +67,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRateBasedRuleResult> createRateBasedRuleAsync(CreateRateBasedRuleRequest request) {
+
+        return createRateBasedRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRateBasedRuleResult> createRateBasedRuleAsync(CreateRateBasedRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRateBasedRuleRequest, CreateRateBasedRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRuleResult> createRuleAsync(CreateRuleRequest request) {
 
         return createRuleAsync(request, null);
@@ -153,6 +166,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     @Override
     public java.util.concurrent.Future<DeleteIPSetResult> deleteIPSetAsync(DeleteIPSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteIPSetRequest, DeleteIPSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request) {
+
+        return deleteRateBasedRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRateBasedRuleRequest, DeleteRateBasedRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -288,6 +314,32 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetRateBasedRuleResult> getRateBasedRuleAsync(GetRateBasedRuleRequest request) {
+
+        return getRateBasedRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRateBasedRuleResult> getRateBasedRuleAsync(GetRateBasedRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRateBasedRuleRequest, GetRateBasedRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRateBasedRuleManagedKeysResult> getRateBasedRuleManagedKeysAsync(GetRateBasedRuleManagedKeysRequest request) {
+
+        return getRateBasedRuleManagedKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRateBasedRuleManagedKeysResult> getRateBasedRuleManagedKeysAsync(GetRateBasedRuleManagedKeysRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRateBasedRuleManagedKeysRequest, GetRateBasedRuleManagedKeysResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRuleResult> getRuleAsync(GetRuleRequest request) {
 
         return getRuleAsync(request, null);
@@ -405,6 +457,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListRateBasedRulesResult> listRateBasedRulesAsync(ListRateBasedRulesRequest request) {
+
+        return listRateBasedRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRateBasedRulesResult> listRateBasedRulesAsync(ListRateBasedRulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRateBasedRulesRequest, ListRateBasedRulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourcesForWebACLResult> listResourcesForWebACLAsync(ListResourcesForWebACLRequest request) {
 
         return listResourcesForWebACLAsync(request, null);
@@ -504,6 +569,19 @@ public class AbstractAWSWAFRegionalAsync extends AbstractAWSWAFRegional implemen
     @Override
     public java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRateBasedRuleResult> updateRateBasedRuleAsync(UpdateRateBasedRuleRequest request) {
+
+        return updateRateBasedRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRateBasedRuleResult> updateRateBasedRuleAsync(UpdateRateBasedRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRateBasedRuleRequest, UpdateRateBasedRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

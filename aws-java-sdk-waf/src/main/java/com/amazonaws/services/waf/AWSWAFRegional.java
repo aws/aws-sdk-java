@@ -137,6 +137,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -241,6 +247,12 @@ public interface AWSWAFRegional {
      *         <p>
      *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -359,6 +371,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -391,6 +409,190 @@ public interface AWSWAFRegional {
      *      Documentation</a>
      */
     CreateIPSetResult createIPSet(CreateIPSetRequest createIPSetRequest);
+
+    /**
+     * <p>
+     * Creates a <a>RateBasedRule</a>. The <code>RateBasedRule</code> contains a <code>RateLimit</code>, which specifies
+     * the maximum number of requests that AWS WAF allows from a specified IP address in a five-minute period. The
+     * <code>RateBasedRule</code> also contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects, and
+     * other predicates that identify the requests that you want to count or block if these requests exceed the
+     * <code>RateLimit</code>.
+     * </p>
+     * <p>
+     * If you add more than one predicate to a <code>RateBasedRule</code>, a request not only must exceed the
+     * <code>RateLimit</code>, but it also must match all the specifications to be counted or blocked. For example,
+     * suppose you add the following to a <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
+     * that meet the conditions in the rule. For a request to be blocked, it must come from the IP address 192.0.2.44
+     * <i>and</i> the <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further,
+     * requests that match these two conditions must be received at a rate of more than 15,000 requests every five
+     * minutes. If both conditions are met and the rate is exceeded, AWS WAF blocks the requests. If the rate drops
+     * below 15,000 for a five-minute period, AWS WAF no longer blocks the requests.
+     * </p>
+     * <p>
+     * As a second example, suppose you want to limit requests to a particular page on your site. To do this, you could
+     * add the following to a <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> with <code>FieldToMatch</code> of <code>URI</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>PositionalConstraint</code> of <code>STARTS_WITH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>TargetString</code> of <code>login</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
+     * without affecting the rest of your site.
+     * </p>
+     * <p>
+     * To create and configure a <code>RateBasedRule</code>, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Create and update the predicates that you want to include in the rule. For more information, see
+     * <a>CreateByteMatchSet</a>, <a>CreateIPSet</a>, and <a>CreateSqlInjectionMatchSet</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>CreateRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>CreateRateBasedRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+     * parameter of an <a>UpdateRule</a> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateRateBasedRule</code> request to specify the predicates that you want to include in the
+     * rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create and update a <code>WebACL</code> that contains the <code>RateBasedRule</code>. For more information, see
+     * <a>CreateWebACL</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param createRateBasedRuleRequest
+     * @return Result of the CreateRateBasedRule operation returned by the service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFDisallowedNameException
+     *         The name specified is invalid.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, QUERY_STRING, or URI.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         Developer Guide</i>.
+     * @sample AWSWAFRegional.CreateRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/CreateRateBasedRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRateBasedRuleResult createRateBasedRule(CreateRateBasedRuleRequest createRateBasedRuleRequest);
 
     /**
      * <p>
@@ -493,6 +695,12 @@ public interface AWSWAFRegional {
      *         <p>
      *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -610,6 +818,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -715,6 +929,12 @@ public interface AWSWAFRegional {
      *         <p>
      *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -852,6 +1072,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -957,6 +1183,12 @@ public interface AWSWAFRegional {
      *         <p>
      *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1169,6 +1401,93 @@ public interface AWSWAFRegional {
      *      Documentation</a>
      */
     DeleteIPSetResult deleteIPSet(DeleteIPSetRequest deleteIPSetRequest);
+
+    /**
+     * <p>
+     * Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still used in any <code>WebACL</code>
+     * objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
+     * </p>
+     * <p>
+     * If you just want to remove a rule from a <code>WebACL</code>, use <a>UpdateWebACL</a>.
+     * </p>
+     * <p>
+     * To permanently delete a <code>RateBasedRule</code> from AWS WAF, perform the following steps:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Update the <code>RateBasedRule</code> to remove predicates, if any. For more information, see
+     * <a>UpdateRateBasedRule</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code> parameter of a
+     * <code>DeleteRateBasedRule</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a <code>DeleteRateBasedRule</code> request.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param deleteRateBasedRuleRequest
+     * @return Result of the DeleteRateBasedRule operation returned by the service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or delete an object by using an invalid account
+     *         identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that is still in use. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     * @throws WAFNonEmptyEntityException
+     *         The operation failed because you tried to delete an object that isn't empty. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code> objects.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code> objects
+     *         or other predicates.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+     *         objects.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFRegional.DeleteRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRateBasedRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRateBasedRuleResult deleteRateBasedRule(DeleteRateBasedRuleRequest deleteRateBasedRuleRequest);
 
     /**
      * <p>
@@ -1642,6 +1961,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -1775,6 +2100,104 @@ public interface AWSWAFRegional {
      *      Documentation</a>
      */
     GetIPSetResult getIPSet(GetIPSetRequest getIPSetRequest);
+
+    /**
+     * <p>
+     * Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you included in the
+     * <code>GetRateBasedRule</code> request.
+     * </p>
+     * 
+     * @param getRateBasedRuleRequest
+     * @return Result of the GetRateBasedRule operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or delete an object by using an invalid account
+     *         identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAFRegional.GetRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRateBasedRule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetRateBasedRuleResult getRateBasedRule(GetRateBasedRuleRequest getRateBasedRuleRequest);
+
+    /**
+     * <p>
+     * Returns an array of IP addresses currently being blocked by the <a>RateBasedRule</a> that is specified by the
+     * <code>RuleId</code>. The maximum number of managed keys that will be blocked is 10,000. If more than 10,000
+     * addresses exceed the rate limit, the 10,000 addresses with the highest rates will be blocked.
+     * </p>
+     * 
+     * @param getRateBasedRuleManagedKeysRequest
+     * @return Result of the GetRateBasedRuleManagedKeys operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or delete an object by using an invalid account
+     *         identifier.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, QUERY_STRING, or URI.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @sample AWSWAFRegional.GetRateBasedRuleManagedKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRateBasedRuleManagedKeys"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRateBasedRuleManagedKeysResult getRateBasedRuleManagedKeys(GetRateBasedRuleManagedKeysRequest getRateBasedRuleManagedKeysRequest);
 
     /**
      * <p>
@@ -1924,6 +2347,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -2010,6 +2439,24 @@ public interface AWSWAFRegional {
      *      Documentation</a>
      */
     ListIPSetsResult listIPSets(ListIPSetsRequest listIPSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <a>RuleSummary</a> objects.
+     * </p>
+     * 
+     * @param listRateBasedRulesRequest
+     * @return Result of the ListRateBasedRules operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or delete an object by using an invalid account
+     *         identifier.
+     * @sample AWSWAFRegional.ListRateBasedRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/ListRateBasedRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRateBasedRulesResult listRateBasedRules(ListRateBasedRulesRequest listRateBasedRulesRequest);
 
     /**
      * <p>
@@ -2265,6 +2712,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -2498,6 +2951,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -2572,6 +3031,228 @@ public interface AWSWAFRegional {
      *      Documentation</a>
      */
     UpdateIPSetResult updateIPSet(UpdateIPSetRequest updateIPSetRequest);
+
+    /**
+     * <p>
+     * Inserts or deletes <a>Predicate</a> objects in a rule and updates the <code>RateLimit</code> in the rule.
+     * </p>
+     * <p>
+     * Each <code>Predicate</code> object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
+     * specifies the web requests that you want to block or count. The <code>RateLimit</code> specifies the number of
+     * requests every five minutes that triggers the rule.
+     * </p>
+     * <p>
+     * If you add more than one predicate to a <code>RateBasedRule</code>, a request must match all the predicates and
+     * exceed the <code>RateLimit</code> to be counted or blocked. For example, suppose you add the following to a
+     * <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>IPSet</code> that matches the IP address <code>192.0.2.44/32</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> that matches <code>BadBot</code> in the <code>User-Agent</code> header
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * You then add the <code>RateBasedRule</code> to a <code>WebACL</code> and specify that you want to block requests
+     * that satisfy the rule. For a request to be blocked, it must come from the IP address 192.0.2.44 <i>and</i> the
+     * <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>. Further, requests that
+     * match these two conditions much be received at a rate of more than 15,000 every five minutes. If the rate drops
+     * below this limit, AWS WAF no longer blocks the requests.
+     * </p>
+     * <p>
+     * As a second example, suppose you want to limit requests to a particular page on your site. To do this, you could
+     * add the following to a <code>RateBasedRule</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A <code>ByteMatchSet</code> with <code>FieldToMatch</code> of <code>URI</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>PositionalConstraint</code> of <code>STARTS_WITH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>TargetString</code> of <code>login</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Further, you specify a <code>RateLimit</code> of 15,000.
+     * </p>
+     * <p>
+     * By adding this <code>RateBasedRule</code> to a <code>WebACL</code>, you could limit requests to your login page
+     * without affecting the rest of your site.
+     * </p>
+     * 
+     * @param updateRateBasedRuleRequest
+     * @return Result of the UpdateRateBasedRule operation returned by the service.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFInvalidAccountException
+     *         The operation failed because you tried to create, update, or delete an object by using an invalid account
+     *         identifier.
+     * @throws WAFInvalidOperationException
+     *         The operation failed because there was nothing to do. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code> isn't in
+     *         the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't in the specified
+     *         <code>IPSet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code> already exists
+     *         in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add an IP address to an <code>IPSet</code>, but the IP address already exists in the
+     *         specified <code>IPSet</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but the
+     *         <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     * @throws WAFInvalidParameterException
+     *         The operation failed because AWS WAF didn't recognize a parameter in the request. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an invalid parameter name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>, or
+     *         <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
+     *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code> other
+     *         than HEADER, QUERY_STRING, or URI.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code> but no
+     *         value for <code>Data</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL
+     *         cannot be associated.
+     *         </p>
+     *         </li>
+     * @throws WAFNonexistentContainerException
+     *         The operation failed because you tried to add an object to or delete an object from another object that
+     *         doesn't exist. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code> that
+     *         doesn't exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code> from a
+     *         <code>Rule</code> that doesn't exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add an IP address to or delete an IP address from an <code>IPSet</code> that doesn't exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code> from a
+     *         <code>ByteMatchSet</code> that doesn't exist.
+     *         </p>
+     *         </li>
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFReferencedItemException
+     *         The operation failed because you tried to delete an object that is still in use. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+     *         </p>
+     *         </li>
+     * @throws WAFLimitsExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="http://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         Developer Guide</i>.
+     * @sample AWSWAFRegional.UpdateRateBasedRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRateBasedRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRateBasedRuleResult updateRateBasedRule(UpdateRateBasedRuleRequest updateRateBasedRuleRequest);
 
     /**
      * <p>
@@ -2710,6 +3391,12 @@ public interface AWSWAFRegional {
      *         <p>
      *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -2935,6 +3622,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -3142,6 +3835,12 @@ public interface AWSWAFRegional {
      *         </li>
      *         <li>
      *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
      *         </p>
@@ -3282,6 +3981,11 @@ public interface AWSWAFRegional {
      * </li>
      * </ol>
      * <p>
+     * Be aware that if you try to add a RATE_BASED rule to a web ACL without setting the rule type when first creating
+     * the rule, the <a>UpdateWebACL</a> request will fail because the request tries to add a REGULAR rule (the default
+     * rule type) with the specified ID, which does not exist.
+     * </p>
+     * <p>
      * For more information about how to use the AWS WAF API to allow or block HTTP requests, see the <a
      * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer Guide</a>.
      * </p>
@@ -3358,6 +4062,12 @@ public interface AWSWAFRegional {
      *         <p>
      *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -3565,6 +4275,12 @@ public interface AWSWAFRegional {
      *         <p>
      *         You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code> other than
      *         <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value other than
+     *         <code>IP</code>.
      *         </p>
      *         </li>
      *         <li>

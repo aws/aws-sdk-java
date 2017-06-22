@@ -64,6 +64,15 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * A parameter name can include only the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     */
+    private String allowedPattern;
 
     /**
      * <p>
@@ -339,6 +348,61 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A parameter name can include only the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @param allowedPattern
+     *        A parameter name can include only the following letters and symbols.</p>
+     *        <p>
+     *        a-zA-Z0-9_.-
+     */
+
+    public void setAllowedPattern(String allowedPattern) {
+        this.allowedPattern = allowedPattern;
+    }
+
+    /**
+     * <p>
+     * A parameter name can include only the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @return A parameter name can include only the following letters and symbols.</p>
+     *         <p>
+     *         a-zA-Z0-9_.-
+     */
+
+    public String getAllowedPattern() {
+        return this.allowedPattern;
+    }
+
+    /**
+     * <p>
+     * A parameter name can include only the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @param allowedPattern
+     *        A parameter name can include only the following letters and symbols.</p>
+     *        <p>
+     *        a-zA-Z0-9_.-
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterMetadata withAllowedPattern(String allowedPattern) {
+        setAllowedPattern(allowedPattern);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -360,7 +424,9 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
         if (getLastModifiedUser() != null)
             sb.append("LastModifiedUser: ").append(getLastModifiedUser()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getAllowedPattern() != null)
+            sb.append("AllowedPattern: ").append(getAllowedPattern());
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +465,10 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getAllowedPattern() == null ^ this.getAllowedPattern() == null)
+            return false;
+        if (other.getAllowedPattern() != null && other.getAllowedPattern().equals(this.getAllowedPattern()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +483,7 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedUser() == null) ? 0 : getLastModifiedUser().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getAllowedPattern() == null) ? 0 : getAllowedPattern().hashCode());
         return hashCode;
     }
 

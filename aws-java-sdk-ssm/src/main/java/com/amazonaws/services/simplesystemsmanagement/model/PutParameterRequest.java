@@ -51,7 +51,8 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String type;
     /**
      * <p>
-     * The parameter key ID that you want to add to the system.
+     * The KMS Key ID that you want to use to encrypt a parameter when you choose the SecureString data type. If you
+     * don't specify a key ID, the system uses the default key associated with your AWS account.
      * </p>
      */
     private String keyId;
@@ -61,6 +62,13 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Boolean overwrite;
+    /**
+     * <p>
+     * A regular expression used to validate the parameter value. For example, for String types with values restricted
+     * to numbers, you can specify the following: AllowedPattern=^\d+$
+     * </p>
+     */
+    private String allowedPattern;
 
     /**
      * <p>
@@ -257,11 +265,13 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The parameter key ID that you want to add to the system.
+     * The KMS Key ID that you want to use to encrypt a parameter when you choose the SecureString data type. If you
+     * don't specify a key ID, the system uses the default key associated with your AWS account.
      * </p>
      * 
      * @param keyId
-     *        The parameter key ID that you want to add to the system.
+     *        The KMS Key ID that you want to use to encrypt a parameter when you choose the SecureString data type. If
+     *        you don't specify a key ID, the system uses the default key associated with your AWS account.
      */
 
     public void setKeyId(String keyId) {
@@ -270,10 +280,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The parameter key ID that you want to add to the system.
+     * The KMS Key ID that you want to use to encrypt a parameter when you choose the SecureString data type. If you
+     * don't specify a key ID, the system uses the default key associated with your AWS account.
      * </p>
      * 
-     * @return The parameter key ID that you want to add to the system.
+     * @return The KMS Key ID that you want to use to encrypt a parameter when you choose the SecureString data type. If
+     *         you don't specify a key ID, the system uses the default key associated with your AWS account.
      */
 
     public String getKeyId() {
@@ -282,11 +294,13 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The parameter key ID that you want to add to the system.
+     * The KMS Key ID that you want to use to encrypt a parameter when you choose the SecureString data type. If you
+     * don't specify a key ID, the system uses the default key associated with your AWS account.
      * </p>
      * 
      * @param keyId
-     *        The parameter key ID that you want to add to the system.
+     *        The KMS Key ID that you want to use to encrypt a parameter when you choose the SecureString data type. If
+     *        you don't specify a key ID, the system uses the default key associated with your AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,6 +362,52 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A regular expression used to validate the parameter value. For example, for String types with values restricted
+     * to numbers, you can specify the following: AllowedPattern=^\d+$
+     * </p>
+     * 
+     * @param allowedPattern
+     *        A regular expression used to validate the parameter value. For example, for String types with values
+     *        restricted to numbers, you can specify the following: AllowedPattern=^\d+$
+     */
+
+    public void setAllowedPattern(String allowedPattern) {
+        this.allowedPattern = allowedPattern;
+    }
+
+    /**
+     * <p>
+     * A regular expression used to validate the parameter value. For example, for String types with values restricted
+     * to numbers, you can specify the following: AllowedPattern=^\d+$
+     * </p>
+     * 
+     * @return A regular expression used to validate the parameter value. For example, for String types with values
+     *         restricted to numbers, you can specify the following: AllowedPattern=^\d+$
+     */
+
+    public String getAllowedPattern() {
+        return this.allowedPattern;
+    }
+
+    /**
+     * <p>
+     * A regular expression used to validate the parameter value. For example, for String types with values restricted
+     * to numbers, you can specify the following: AllowedPattern=^\d+$
+     * </p>
+     * 
+     * @param allowedPattern
+     *        A regular expression used to validate the parameter value. For example, for String types with values
+     *        restricted to numbers, you can specify the following: AllowedPattern=^\d+$
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutParameterRequest withAllowedPattern(String allowedPattern) {
+        setAllowedPattern(allowedPattern);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -369,7 +429,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getKeyId() != null)
             sb.append("KeyId: ").append(getKeyId()).append(",");
         if (getOverwrite() != null)
-            sb.append("Overwrite: ").append(getOverwrite());
+            sb.append("Overwrite: ").append(getOverwrite()).append(",");
+        if (getAllowedPattern() != null)
+            sb.append("AllowedPattern: ").append(getAllowedPattern());
         sb.append("}");
         return sb.toString();
     }
@@ -408,6 +470,10 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getOverwrite() != null && other.getOverwrite().equals(this.getOverwrite()) == false)
             return false;
+        if (other.getAllowedPattern() == null ^ this.getAllowedPattern() == null)
+            return false;
+        if (other.getAllowedPattern() != null && other.getAllowedPattern().equals(this.getAllowedPattern()) == false)
+            return false;
         return true;
     }
 
@@ -422,6 +488,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         hashCode = prime * hashCode + ((getOverwrite() == null) ? 0 : getOverwrite().hashCode());
+        hashCode = prime * hashCode + ((getAllowedPattern() == null) ? 0 : getAllowedPattern().hashCode());
         return hashCode;
     }
 

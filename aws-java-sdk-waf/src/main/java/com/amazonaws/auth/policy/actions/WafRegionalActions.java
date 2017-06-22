@@ -31,6 +31,8 @@ public enum WafRegionalActions implements Action {
     CreateByteMatchSet("waf-regional:CreateByteMatchSet"),
     /** Action for the CreateIPSet operation. */
     CreateIPSet("waf-regional:CreateIPSet"),
+    /** Action for the CreateRateBasedRule operation. */
+    CreateRateBasedRule("waf-regional:CreateRateBasedRule"),
     /** Action for the CreateRule operation. */
     CreateRule("waf-regional:CreateRule"),
     /** Action for the CreateSizeConstraintSet operation. */
@@ -45,6 +47,8 @@ public enum WafRegionalActions implements Action {
     DeleteByteMatchSet("waf-regional:DeleteByteMatchSet"),
     /** Action for the DeleteIPSet operation. */
     DeleteIPSet("waf-regional:DeleteIPSet"),
+    /** Action for the DeleteRateBasedRule operation. */
+    DeleteRateBasedRule("waf-regional:DeleteRateBasedRule"),
     /** Action for the DeleteRule operation. */
     DeleteRule("waf-regional:DeleteRule"),
     /** Action for the DeleteSizeConstraintSet operation. */
@@ -65,6 +69,10 @@ public enum WafRegionalActions implements Action {
     GetChangeTokenStatus("waf-regional:GetChangeTokenStatus"),
     /** Action for the GetIPSet operation. */
     GetIPSet("waf-regional:GetIPSet"),
+    /** Action for the GetRateBasedRule operation. */
+    GetRateBasedRule("waf-regional:GetRateBasedRule"),
+    /** Action for the GetRateBasedRuleManagedKeys operation. */
+    GetRateBasedRuleManagedKeys("waf-regional:GetRateBasedRuleManagedKeys"),
     /** Action for the GetRule operation. */
     GetRule("waf-regional:GetRule"),
     /** Action for the GetSampledRequests operation. */
@@ -83,6 +91,8 @@ public enum WafRegionalActions implements Action {
     ListByteMatchSets("waf-regional:ListByteMatchSets"),
     /** Action for the ListIPSets operation. */
     ListIPSets("waf-regional:ListIPSets"),
+    /** Action for the ListRateBasedRules operation. */
+    ListRateBasedRules("waf-regional:ListRateBasedRules"),
     /** Action for the ListResourcesForWebACL operation. */
     ListResourcesForWebACL("waf-regional:ListResourcesForWebACL"),
     /** Action for the ListRules operation. */
@@ -99,6 +109,8 @@ public enum WafRegionalActions implements Action {
     UpdateByteMatchSet("waf-regional:UpdateByteMatchSet"),
     /** Action for the UpdateIPSet operation. */
     UpdateIPSet("waf-regional:UpdateIPSet"),
+    /** Action for the UpdateRateBasedRule operation. */
+    UpdateRateBasedRule("waf-regional:UpdateRateBasedRule"),
     /** Action for the UpdateRule operation. */
     UpdateRule("waf-regional:UpdateRule"),
     /** Action for the UpdateSizeConstraintSet operation. */

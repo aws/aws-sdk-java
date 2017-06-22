@@ -70,6 +70,15 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String value;
+    /**
+     * <p>
+     * Parameter names can include the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     */
+    private String allowedPattern;
 
     /**
      * <p>
@@ -385,6 +394,61 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Parameter names can include the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @param allowedPattern
+     *        Parameter names can include the following letters and symbols.</p>
+     *        <p>
+     *        a-zA-Z0-9_.-
+     */
+
+    public void setAllowedPattern(String allowedPattern) {
+        this.allowedPattern = allowedPattern;
+    }
+
+    /**
+     * <p>
+     * Parameter names can include the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @return Parameter names can include the following letters and symbols.</p>
+     *         <p>
+     *         a-zA-Z0-9_.-
+     */
+
+    public String getAllowedPattern() {
+        return this.allowedPattern;
+    }
+
+    /**
+     * <p>
+     * Parameter names can include the following letters and symbols.
+     * </p>
+     * <p>
+     * a-zA-Z0-9_.-
+     * </p>
+     * 
+     * @param allowedPattern
+     *        Parameter names can include the following letters and symbols.</p>
+     *        <p>
+     *        a-zA-Z0-9_.-
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParameterHistory withAllowedPattern(String allowedPattern) {
+        setAllowedPattern(allowedPattern);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -408,7 +472,9 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getAllowedPattern() != null)
+            sb.append("AllowedPattern: ").append(getAllowedPattern());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +517,10 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getAllowedPattern() == null ^ this.getAllowedPattern() == null)
+            return false;
+        if (other.getAllowedPattern() != null && other.getAllowedPattern().equals(this.getAllowedPattern()) == false)
+            return false;
         return true;
     }
 
@@ -466,6 +536,7 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getLastModifiedUser() == null) ? 0 : getLastModifiedUser().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getAllowedPattern() == null) ? 0 : getAllowedPattern().hashCode());
         return hashCode;
     }
 

@@ -30,24 +30,24 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the filter. For example, requested date and time.
+     * The name of the filter.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The filter value. For example: June 30, 2015.
+     * The filter value.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The name of the filter. For example, requested date and time.
+     * The name of the filter.
      * </p>
      * 
      * @param key
-     *        The name of the filter. For example, requested date and time.
+     *        The name of the filter.
      * @see CommandFilterKey
      */
 
@@ -57,10 +57,10 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the filter. For example, requested date and time.
+     * The name of the filter.
      * </p>
      * 
-     * @return The name of the filter. For example, requested date and time.
+     * @return The name of the filter.
      * @see CommandFilterKey
      */
 
@@ -70,11 +70,11 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the filter. For example, requested date and time.
+     * The name of the filter.
      * </p>
      * 
      * @param key
-     *        The name of the filter. For example, requested date and time.
+     *        The name of the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandFilterKey
      */
@@ -86,11 +86,11 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the filter. For example, requested date and time.
+     * The name of the filter.
      * </p>
      * 
      * @param key
-     *        The name of the filter. For example, requested date and time.
+     *        The name of the filter.
      * @see CommandFilterKey
      */
 
@@ -100,11 +100,11 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the filter. For example, requested date and time.
+     * The name of the filter.
      * </p>
      * 
      * @param key
-     *        The name of the filter. For example, requested date and time.
+     *        The name of the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandFilterKey
      */
@@ -116,11 +116,11 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The filter value. For example: June 30, 2015.
+     * The filter value.
      * </p>
      * 
      * @param value
-     *        The filter value. For example: June 30, 2015.
+     *        The filter value.
      */
 
     public void setValue(String value) {
@@ -129,10 +129,10 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The filter value. For example: June 30, 2015.
+     * The filter value.
      * </p>
      * 
-     * @return The filter value. For example: June 30, 2015.
+     * @return The filter value.
      */
 
     public String getValue() {
@@ -141,11 +141,11 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The filter value. For example: June 30, 2015.
+     * The filter value.
      * </p>
      * 
      * @param value
-     *        The filter value. For example: June 30, 2015.
+     *        The filter value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

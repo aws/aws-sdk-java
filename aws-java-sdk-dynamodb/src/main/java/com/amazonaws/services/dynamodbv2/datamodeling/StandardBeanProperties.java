@@ -216,7 +216,7 @@ final class StandardBeanProperties {
             } else {
                 final Bean<T,V> bean = new Bean<T,V>(annotations, reflect, getter);
                 if (put(bean.properties().attributeName(), bean) != null) {
-                    throw new DynamoDBMappingException("duplicate attribute name");
+                    throw new DynamoDBMappingException("duplicate attribute name " + bean.properties().attributeName());
                 }
             }
         }
