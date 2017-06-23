@@ -1,3 +1,8 @@
+# __1.11.155__ __2017-06-23__
+## __AWS Lambda__
+  - ### Features
+    - The Lambda Invoke API will now throw new exception InvalidRuntimeException (status code 502) for invokes with deprecated runtimes.
+
 # __1.11.154__ __2017-06-22__
 ## __AWS CodePipeline__
   - ### Features

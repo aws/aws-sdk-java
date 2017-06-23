@@ -16,32 +16,26 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in
- * the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to
- * assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such
- * as Node v0.10.42.
+ * The runtime or runtime version specified is not supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidParameterValueException extends com.amazonaws.services.lambda.model.AWSLambdaException {
+public class InvalidRuntimeException extends com.amazonaws.services.lambda.model.AWSLambdaException {
     private static final long serialVersionUID = 1L;
 
-    /** <p/> */
     private String type;
 
     /**
-     * Constructs a new InvalidParameterValueException with the specified error message.
+     * Constructs a new InvalidRuntimeException with the specified error message.
      *
      * @param message
      *        Describes the error encountered.
      */
-    public InvalidParameterValueException(String message) {
+    public InvalidRuntimeException(String message) {
         super(message);
     }
 
     /**
-     * <p/>
-     * 
      * @param type
      */
 
@@ -51,8 +45,6 @@ public class InvalidParameterValueException extends com.amazonaws.services.lambd
     }
 
     /**
-     * <p/>
-     * 
      * @return
      */
 
@@ -62,13 +54,11 @@ public class InvalidParameterValueException extends com.amazonaws.services.lambd
     }
 
     /**
-     * <p/>
-     * 
      * @param type
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public InvalidParameterValueException withType(String type) {
+    public InvalidRuntimeException withType(String type) {
         setType(type);
         return this;
     }

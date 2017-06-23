@@ -87,7 +87,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private Integer memorySize;
     /**
      * <p>
-     * The time stamp of the last time you updated the function.
+     * The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with
+     * ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.
      * </p>
      */
     private String lastModified;
@@ -551,11 +553,15 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time stamp of the last time you updated the function.
+     * The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with
+     * ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.
      * </p>
      * 
      * @param lastModified
-     *        The time stamp of the last time you updated the function.
+     *        The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying
+     *        with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information,
+     *        see <a href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.
      */
 
     public void setLastModified(String lastModified) {
@@ -564,10 +570,14 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time stamp of the last time you updated the function.
+     * The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with
+     * ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.
      * </p>
      * 
-     * @return The time stamp of the last time you updated the function.
+     * @return The time stamp of the last time you updated the function. The time stamp is conveyed as a string
+     *         complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more
+     *         information, see <a href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.
      */
 
     public String getLastModified() {
@@ -576,11 +586,15 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The time stamp of the last time you updated the function.
+     * The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with
+     * ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a
+     * href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.
      * </p>
      * 
      * @param lastModified
-     *        The time stamp of the last time you updated the function.
+     *        The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying
+     *        with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information,
+     *        see <a href="https://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

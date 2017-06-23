@@ -28,7 +28,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResonse</code>
+     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
      * invocation type this status code will be 200. For the <code>Event</code> invocation type this status code will be
      * 202. For the <code>DryRun</code> invocation type the status code will be 204.
      * </p>
@@ -67,13 +67,13 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResonse</code>
+     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
      * invocation type this status code will be 200. For the <code>Event</code> invocation type this status code will be
      * 202. For the <code>DryRun</code> invocation type the status code will be 204.
      * </p>
      * 
      * @param statusCode
-     *        The HTTP status code will be in the 200 range for successful request. For the <code>RequestResonse</code>
+     *        The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
      *        invocation type this status code will be 200. For the <code>Event</code> invocation type this status code
      *        will be 202. For the <code>DryRun</code> invocation type the status code will be 204.
      */
@@ -84,14 +84,15 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResonse</code>
+     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
      * invocation type this status code will be 200. For the <code>Event</code> invocation type this status code will be
      * 202. For the <code>DryRun</code> invocation type the status code will be 204.
      * </p>
      * 
-     * @return The HTTP status code will be in the 200 range for successful request. For the <code>RequestResonse</code>
-     *         invocation type this status code will be 200. For the <code>Event</code> invocation type this status code
-     *         will be 202. For the <code>DryRun</code> invocation type the status code will be 204.
+     * @return The HTTP status code will be in the 200 range for successful request. For the
+     *         <code>RequestResponse</code> invocation type this status code will be 200. For the <code>Event</code>
+     *         invocation type this status code will be 202. For the <code>DryRun</code> invocation type the status code
+     *         will be 204.
      */
 
     public Integer getStatusCode() {
@@ -100,13 +101,13 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResonse</code>
+     * The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
      * invocation type this status code will be 200. For the <code>Event</code> invocation type this status code will be
      * 202. For the <code>DryRun</code> invocation type the status code will be 204.
      * </p>
      * 
      * @param statusCode
-     *        The HTTP status code will be in the 200 range for successful request. For the <code>RequestResonse</code>
+     *        The HTTP status code will be in the 200 range for successful request. For the <code>RequestResponse</code>
      *        invocation type this status code will be 200. For the <code>Event</code> invocation type this status code
      *        will be 202. For the <code>DryRun</code> invocation type the status code will be 204.
      * @return Returns a reference to this object so that method calls can be chained together.
