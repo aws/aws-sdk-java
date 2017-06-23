@@ -28,6 +28,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PollForThirdPartyJobsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     */
     private ActionTypeId actionTypeId;
     /**
      * <p>
@@ -37,7 +42,12 @@ public class PollForThirdPartyJobsRequest extends com.amazonaws.AmazonWebService
     private Integer maxBatchSize;
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      */
 
     public void setActionTypeId(ActionTypeId actionTypeId) {
@@ -45,7 +55,11 @@ public class PollForThirdPartyJobsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
+     * @return Represents information about an action type.
      */
 
     public ActionTypeId getActionTypeId() {
@@ -53,7 +67,12 @@ public class PollForThirdPartyJobsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

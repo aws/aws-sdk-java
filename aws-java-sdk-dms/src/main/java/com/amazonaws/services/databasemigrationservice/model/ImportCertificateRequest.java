@@ -43,6 +43,12 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.nio.ByteBuffer certificateWallet;
+    /**
+     * <p>
+     * The tags associated with the certificate.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -192,6 +198,76 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The tags associated with the certificate.
+     * </p>
+     * 
+     * @return The tags associated with the certificate.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the certificate.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the certificate.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags associated with the certificate.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportCertificateRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the certificate.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportCertificateRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -207,7 +283,9 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCertificatePem() != null)
             sb.append("CertificatePem: ").append(getCertificatePem()).append(",");
         if (getCertificateWallet() != null)
-            sb.append("CertificateWallet: ").append(getCertificateWallet());
+            sb.append("CertificateWallet: ").append(getCertificateWallet()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -234,6 +312,10 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getCertificateWallet() != null && other.getCertificateWallet().equals(this.getCertificateWallet()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -245,6 +327,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getCertificateIdentifier() == null) ? 0 : getCertificateIdentifier().hashCode());
         hashCode = prime * hashCode + ((getCertificatePem() == null) ? 0 : getCertificatePem().hashCode());
         hashCode = prime * hashCode + ((getCertificateWallet() == null) ? 0 : getCertificateWallet().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

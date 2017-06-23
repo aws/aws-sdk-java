@@ -879,6 +879,39 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListPipelineExecutionsResult> listPipelineExecutionsAsync(ListPipelineExecutionsRequest request) {
+
+        return listPipelineExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPipelineExecutionsResult> listPipelineExecutionsAsync(final ListPipelineExecutionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPipelineExecutionsRequest, ListPipelineExecutionsResult> asyncHandler) {
+        final ListPipelineExecutionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPipelineExecutionsResult>() {
+            @Override
+            public ListPipelineExecutionsResult call() throws Exception {
+                ListPipelineExecutionsResult result = null;
+
+                try {
+                    result = executeListPipelineExecutions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(ListPipelinesRequest request) {
 
         return listPipelinesAsync(request, null);

@@ -53,6 +53,8 @@ public enum CodepipelineActions implements Action {
     GetThirdPartyJobDetails("codepipeline:GetThirdPartyJobDetails"),
     /** Action for the ListActionTypes operation. */
     ListActionTypes("codepipeline:ListActionTypes"),
+    /** Action for the ListPipelineExecutions operation. */
+    ListPipelineExecutions("codepipeline:ListPipelineExecutions"),
     /** Action for the ListPipelines operation. */
     ListPipelines("codepipeline:ListPipelines"),
     /** Action for the PollForJobs operation. */

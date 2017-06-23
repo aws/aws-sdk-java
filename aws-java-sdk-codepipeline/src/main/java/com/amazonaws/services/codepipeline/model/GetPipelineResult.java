@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Represents the structure of actions and stages to be performed in the pipeline.
+     * </p>
+     */
     private PipelineDeclaration pipeline;
 
     /**
+     * <p>
+     * Represents the structure of actions and stages to be performed in the pipeline.
+     * </p>
+     * 
      * @param pipeline
+     *        Represents the structure of actions and stages to be performed in the pipeline.
      */
 
     public void setPipeline(PipelineDeclaration pipeline) {
@@ -37,7 +47,11 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the structure of actions and stages to be performed in the pipeline.
+     * </p>
+     * 
+     * @return Represents the structure of actions and stages to be performed in the pipeline.
      */
 
     public PipelineDeclaration getPipeline() {
@@ -45,7 +59,12 @@ public class GetPipelineResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Represents the structure of actions and stages to be performed in the pipeline.
+     * </p>
+     * 
      * @param pipeline
+     *        Represents the structure of actions and stages to be performed in the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

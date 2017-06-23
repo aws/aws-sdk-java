@@ -93,6 +93,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
      * resource record sets, specify the same value for all of the resource record sets in the group.
      * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * </p>
      * <note>
      * <p>
      * SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer
@@ -134,8 +138,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      * </p>
      * </li>
      * </ul>
@@ -357,13 +361,61 @@ public class ResourceRecordSet implements Serializable, Cloneable {
     private String failover;
     /**
      * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Amazon Route 53 always considers the
+     * record to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy
+     * records, Amazon Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Amazon Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     */
+    private Boolean multiValueAnswer;
+    /**
+     * <p>
      * The resource record cache time to live (TTL), in seconds. Note the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     * <code>TTL</code> for the alias target.
+     * If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the
+     * value of <code>TTL</code> for the alias target.
      * </p>
      * </li>
      * <li>
@@ -626,6 +678,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
      *        in the group.
      *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
+     *        </p>
      *        <note>
      *        <p>
      *        SPF records were formerly used to verify the identity of the sender of email messages. However, we no
@@ -667,8 +724,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      *        </p>
      *        </li>
      */
@@ -744,6 +801,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
      *        in the group.
      *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
+     *        </p>
      *        <note>
      *        <p>
      *        SPF records were formerly used to verify the identity of the sender of email messages. However, we no
@@ -785,8 +847,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      *        </p>
      *        </li>
      */
@@ -1116,6 +1178,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
      * resource record sets, specify the same value for all of the resource record sets in the group.
      * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * </p>
      * <note>
      * <p>
      * SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer
@@ -1157,8 +1223,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      * </p>
      * </li>
      * </ul>
@@ -1178,6 +1244,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
      *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
      *        in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1220,8 +1291,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      *        </p>
      *        </li>
      * @see RRType
@@ -1247,6 +1318,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
      * resource record sets, specify the same value for all of the resource record sets in the group.
+     * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <note>
      * <p>
@@ -1289,8 +1364,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      * </p>
      * </li>
      * </ul>
@@ -1309,6 +1384,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
      *         geolocation, or failover resource record sets, specify the same value for all of the resource record sets
      *         in the group.
+     *         </p>
+     *         <p>
+     *         Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *         <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *         <code>TXT</code>
      *         </p>
      *         <note>
      *         <p>
@@ -1351,8 +1431,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *         which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *         <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *         you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      *         </p>
      *         </li>
      * @see RRType
@@ -1378,6 +1458,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
      * resource record sets, specify the same value for all of the resource record sets in the group.
+     * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
      * </p>
      * <note>
      * <p>
@@ -1420,8 +1504,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      * </p>
      * </li>
      * </ul>
@@ -1441,6 +1525,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
      *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
      *        in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1483,8 +1572,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1513,6 +1602,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
      * resource record sets, specify the same value for all of the resource record sets in the group.
      * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * </p>
      * <note>
      * <p>
      * SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer
@@ -1554,8 +1647,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      * </p>
      * </li>
      * </ul>
@@ -1575,6 +1668,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
      *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
      *        in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1617,8 +1715,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      *        </p>
      *        </li>
      * @see RRType
@@ -1645,6 +1743,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover
      * resource record sets, specify the same value for all of the resource record sets in the group.
      * </p>
+     * <p>
+     * Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> |
+     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>
+     * </p>
      * <note>
      * <p>
      * SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer
@@ -1686,8 +1788,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for which
-     * you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     * <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're
+     * creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      * </p>
      * </li>
      * </ul>
@@ -1707,6 +1809,11 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency,
      *        geolocation, or failover resource record sets, specify the same value for all of the resource record sets
      *        in the group.
+     *        </p>
+     *        <p>
+     *        Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> |
+     *        <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
+     *        <code>TXT</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1749,8 +1856,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set for
-     *        which you're creating the alias. Specify any value except <code>NS</code> or <code>SOA</code>.
+     *        <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that
+     *        you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3549,13 +3656,401 @@ public class ResourceRecordSet implements Serializable, Cloneable {
 
     /**
      * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Amazon Route 53 always considers the
+     * record to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy
+     * records, Amazon Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Amazon Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     * 
+     * @param multiValueAnswer
+     *        <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     *        resources, such as web servers, create one multivalue answer record for each resource and specify
+     *        <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to
+     *        DNS queries with the corresponding IP address only when the health check is healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't associate a health check with a multivalue answer record, Amazon Route 53 always considers
+     *        the record to be healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer
+     *        healthy records, Amazon Route 53 responds to all DNS queries with all the healthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you have more than eight healthy records, Amazon Route 53 responds to different DNS resolvers with
+     *        different combinations of healthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to eight unhealthy
+     *        records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a resource becomes unavailable after a resolver caches a response, client software typically tries
+     *        another of the IP addresses in the response.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can't create multivalue answer alias records.
+     */
+
+    public void setMultiValueAnswer(Boolean multiValueAnswer) {
+        this.multiValueAnswer = multiValueAnswer;
+    }
+
+    /**
+     * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Amazon Route 53 always considers the
+     * record to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy
+     * records, Amazon Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Amazon Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     * 
+     * @return <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     *         resources, such as web servers, create one multivalue answer record for each resource and specify
+     *         <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to
+     *         DNS queries with the corresponding IP address only when the health check is healthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you don't associate a health check with a multivalue answer record, Amazon Route 53 always considers
+     *         the record to be healthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer
+     *         healthy records, Amazon Route 53 responds to all DNS queries with all the healthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you have more than eight healthy records, Amazon Route 53 responds to different DNS resolvers with
+     *         different combinations of healthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to eight unhealthy
+     *         records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a resource becomes unavailable after a resolver caches a response, client software typically tries
+     *         another of the IP addresses in the response.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can't create multivalue answer alias records.
+     */
+
+    public Boolean getMultiValueAnswer() {
+        return this.multiValueAnswer;
+    }
+
+    /**
+     * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Amazon Route 53 always considers the
+     * record to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy
+     * records, Amazon Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Amazon Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     * 
+     * @param multiValueAnswer
+     *        <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     *        resources, such as web servers, create one multivalue answer record for each resource and specify
+     *        <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to
+     *        DNS queries with the corresponding IP address only when the health check is healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you don't associate a health check with a multivalue answer record, Amazon Route 53 always considers
+     *        the record to be healthy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer
+     *        healthy records, Amazon Route 53 responds to all DNS queries with all the healthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you have more than eight healthy records, Amazon Route 53 responds to different DNS resolvers with
+     *        different combinations of healthy records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to eight unhealthy
+     *        records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a resource becomes unavailable after a resolver caches a response, client software typically tries
+     *        another of the IP addresses in the response.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can't create multivalue answer alias records.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceRecordSet withMultiValueAnswer(Boolean multiValueAnswer) {
+        setMultiValueAnswer(multiValueAnswer);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     * resources, such as web servers, create one multivalue answer record for each resource and specify
+     * <code>true</code> for <code>MultiValueAnswer</code>. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS
+     * queries with the corresponding IP address only when the health check is healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don't associate a health check with a multivalue answer record, Amazon Route 53 always considers the
+     * record to be healthy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy
+     * records, Amazon Route 53 responds to all DNS queries with all the healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have more than eight healthy records, Amazon Route 53 responds to different DNS resolvers with different
+     * combinations of healthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to eight unhealthy records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a resource becomes unavailable after a resolver caches a response, client software typically tries another of
+     * the IP addresses in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can't create multivalue answer alias records.
+     * </p>
+     * 
+     * @return <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple
+     *         resources, such as web servers, create one multivalue answer record for each resource and specify
+     *         <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to
+     *         DNS queries with the corresponding IP address only when the health check is healthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you don't associate a health check with a multivalue answer record, Amazon Route 53 always considers
+     *         the record to be healthy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer
+     *         healthy records, Amazon Route 53 responds to all DNS queries with all the healthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you have more than eight healthy records, Amazon Route 53 responds to different DNS resolvers with
+     *         different combinations of healthy records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When all records are unhealthy, Amazon Route 53 responds to DNS queries with up to eight unhealthy
+     *         records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a resource becomes unavailable after a resolver caches a response, client software typically tries
+     *         another of the IP addresses in the response.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can't create multivalue answer alias records.
+     */
+
+    public Boolean isMultiValueAnswer() {
+        return this.multiValueAnswer;
+    }
+
+    /**
+     * <p>
      * The resource record cache time to live (TTL), in seconds. Note the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     * <code>TTL</code> for the alias target.
+     * If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the
+     * value of <code>TTL</code> for the alias target.
      * </p>
      * </li>
      * <li>
@@ -3586,8 +4081,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     *        <code>TTL</code> for the alias target.
+     *        If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses
+     *        the value of <code>TTL</code> for the alias target.
      *        </p>
      *        </li>
      *        <li>
@@ -3625,8 +4120,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     * <code>TTL</code> for the alias target.
+     * If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the
+     * value of <code>TTL</code> for the alias target.
      * </p>
      * </li>
      * <li>
@@ -3656,8 +4151,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     *         <code>TTL</code> for the alias target.
+     *         If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses
+     *         the value of <code>TTL</code> for the alias target.
      *         </p>
      *         </li>
      *         <li>
@@ -3695,8 +4190,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     * <code>TTL</code> for the alias target.
+     * If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the
+     * value of <code>TTL</code> for the alias target.
      * </p>
      * </li>
      * <li>
@@ -3727,8 +4222,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        If you're creating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of
-     *        <code>TTL</code> for the alias target.
+     *        If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses
+     *        the value of <code>TTL</code> for the alias target.
      *        </p>
      *        </li>
      *        <li>
@@ -4802,6 +5297,8 @@ public class ResourceRecordSet implements Serializable, Cloneable {
             sb.append("GeoLocation: ").append(getGeoLocation()).append(",");
         if (getFailover() != null)
             sb.append("Failover: ").append(getFailover()).append(",");
+        if (getMultiValueAnswer() != null)
+            sb.append("MultiValueAnswer: ").append(getMultiValueAnswer()).append(",");
         if (getTTL() != null)
             sb.append("TTL: ").append(getTTL()).append(",");
         if (getResourceRecords() != null)
@@ -4854,6 +5351,10 @@ public class ResourceRecordSet implements Serializable, Cloneable {
             return false;
         if (other.getFailover() != null && other.getFailover().equals(this.getFailover()) == false)
             return false;
+        if (other.getMultiValueAnswer() == null ^ this.getMultiValueAnswer() == null)
+            return false;
+        if (other.getMultiValueAnswer() != null && other.getMultiValueAnswer().equals(this.getMultiValueAnswer()) == false)
+            return false;
         if (other.getTTL() == null ^ this.getTTL() == null)
             return false;
         if (other.getTTL() != null && other.getTTL().equals(this.getTTL()) == false)
@@ -4889,6 +5390,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getGeoLocation() == null) ? 0 : getGeoLocation().hashCode());
         hashCode = prime * hashCode + ((getFailover() == null) ? 0 : getFailover().hashCode());
+        hashCode = prime * hashCode + ((getMultiValueAnswer() == null) ? 0 : getMultiValueAnswer().hashCode());
         hashCode = prime * hashCode + ((getTTL() == null) ? 0 : getTTL().hashCode());
         hashCode = prime * hashCode + ((getResourceRecords() == null) ? 0 : getResourceRecords().hashCode());
         hashCode = prime * hashCode + ((getAliasTarget() == null) ? 0 : getAliasTarget().hashCode());

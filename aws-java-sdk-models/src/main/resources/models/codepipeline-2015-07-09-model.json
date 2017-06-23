@@ -585,6 +585,49 @@
         "shape" : "ListActionTypesOutput"
       }
     },
+    "ListPipelineExecutions" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Gets a summary of the most recent executions for a pipeline.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "PipelineNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListPipelineExecutionsInput",
+        "xmlNamespace" : null
+      },
+      "name" : "ListPipelineExecutions",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListPipelineExecutionsOutput"
+      }
+    },
     "ListPipelines" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -1714,7 +1757,7 @@
       "fault" : false,
       "flattened" : false,
       "key" : null,
-      "max" : 20,
+      "max" : 50,
       "member" : null,
       "members" : { },
       "min" : 1,
@@ -2290,7 +2333,7 @@
         },
         "currentRevision" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about the version (or revision) of an action.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2318,7 +2361,7 @@
         },
         "latestExecution" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about the run of an action.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2416,7 +2459,7 @@
         },
         "id" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about an action type.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3207,7 +3250,7 @@
     },
     "ArtifactStore" : {
       "deprecated" : false,
-      "documentation" : "<p>The Amazon S3 location where artifacts are stored for the pipeline. If this Amazon S3 bucket is created manually, it must meet the requirements for AWS CodePipeline. For more information, see the <a href=\"http://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#CPS3Bucket\">Concepts</a>.</p>",
+      "documentation" : "<p>The Amazon S3 bucket where artifacts are stored for the pipeline.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3233,7 +3276,7 @@
         },
         "location" : {
           "deprecated" : false,
-          "documentation" : "<p>The location for storing the artifacts for a pipeline, such as an S3 bucket or folder.</p>",
+          "documentation" : "<p>The Amazon S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder within the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any Amazon S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3550,7 +3593,7 @@
         },
         "inputArtifactDetails" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The details of the input artifact for the action, such as its commit ID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3564,7 +3607,7 @@
         },
         "outputArtifactDetails" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The details of the output artifact of the action, such as its commit ID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3592,7 +3635,7 @@
         },
         "settings" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Returns information about the settings for an action type.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3642,7 +3685,7 @@
       "members" : {
         "actionType" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Returns information about the details of an action type.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3678,7 +3721,7 @@
       "members" : {
         "pipeline" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents the structure of actions and stages to be performed in the pipeline. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3714,7 +3757,7 @@
       "members" : {
         "pipeline" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents the structure of actions and stages to be performed in the pipeline. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4674,7 +4717,7 @@
       "members" : {
         "pipeline" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents the structure of actions and stages to be performed in the pipeline. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5282,7 +5325,7 @@
       "members" : {
         "actionConfiguration" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about an action configuration.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5296,7 +5339,7 @@
         },
         "actionTypeId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about an action type.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5310,7 +5353,7 @@
         },
         "artifactCredentials" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to store artifact for the pipeline in AWS CodePipeline.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5338,7 +5381,7 @@
         },
         "encryptionKey" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5380,7 +5423,7 @@
         },
         "pipelineContext" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about a pipeline to a job worker.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5430,7 +5473,7 @@
         },
         "data" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents additional information about a job required for a job worker to complete the job. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5747,6 +5790,120 @@
       "value" : null,
       "wrapper" : false
     },
+    "ListPipelineExecutionsInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a list pipeline executions action.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "maxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. The available pipeline execution history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MaxResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The token that was returned from the previous list pipeline executions call, which can be used to return the next set of pipeline executions in the list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "pipelineName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the pipeline for which you want to get execution summary information.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PipelineName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "pipelineName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListPipelineExecutionsOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a list pipeline executions action. </p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>A token that can be used in the next list pipeline executions call to return the next set of pipeline executions. To view all items in the list, continue to call this operation with each subsequent token until no more nextToken values are returned.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "pipelineExecutionSummaries" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of executions in the history of a pipeline.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PipelineExecutionSummaryList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ListPipelinesInput" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the input of a list pipelines action.</p>",
@@ -5843,6 +6000,27 @@
       "flattened" : false,
       "key" : null,
       "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MaxResults" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
       "member" : null,
       "members" : { },
       "min" : 1,
@@ -6085,7 +6263,7 @@
       "members" : {
         "action" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p/>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6149,7 +6327,7 @@
       "members" : {
         "artifactStore" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents the context of an action within the stage of a pipeline to a job worker. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6297,7 +6475,7 @@
         },
         "status" : {
           "deprecated" : false,
-          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline did not complete successfully.</p> </li> </ul>",
+          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6379,6 +6557,118 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PipelineExecutionSummary" : {
+      "deprecated" : false,
+      "documentation" : "<p>Summary information about a pipeline execution.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "lastUpdateTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date and time of the last change to the pipeline execution, in timestamp format.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "pipelineExecutionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the pipeline execution.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PipelineExecutionId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "startTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date and time when the pipeline execution began, in timestamp format.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "status" : {
+          "deprecated" : false,
+          "documentation" : "<p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The pipeline execution completed successfully. </p> </li> <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution caught up and continued through the pipeline instead. </p> </li> <li> <p>Failed: The pipeline execution did not complete successfully.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PipelineExecutionStatus",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PipelineExecutionSummaryList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "PipelineExecutionSummary",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
       "value" : null,
       "wrapper" : false
     },
@@ -6647,7 +6937,7 @@
       "members" : {
         "actionTypeId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about an action type.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6747,7 +7037,7 @@
       "members" : {
         "actionTypeId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about an action type.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6847,7 +7137,7 @@
         },
         "actionRevision" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about the version (or revision) of an action.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7231,7 +7521,7 @@
         },
         "failureDetails" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about failure details.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7309,7 +7599,7 @@
         },
         "currentRevision" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about a current revision.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7323,7 +7613,7 @@
         },
         "executionDetails" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8330,7 +8620,7 @@
       "members" : {
         "actionConfiguration" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about an action configuration.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8344,7 +8634,7 @@
         },
         "actionTypeId" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about an action type.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8358,7 +8648,7 @@
         },
         "artifactCredentials" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to store artifact for the pipeline in AWS CodePipeline. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8428,7 +8718,7 @@
         },
         "pipelineContext" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p>Represents information about a pipeline to a job worker.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,

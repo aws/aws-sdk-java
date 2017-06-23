@@ -34,9 +34,17 @@ public class ActionState implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String actionName;
-
+    /**
+     * <p>
+     * Represents information about the version (or revision) of an action.
+     * </p>
+     */
     private ActionRevision currentRevision;
-
+    /**
+     * <p>
+     * Represents information about the run of an action.
+     * </p>
+     */
     private ActionExecution latestExecution;
     /**
      * <p>
@@ -92,7 +100,12 @@ public class ActionState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about the version (or revision) of an action.
+     * </p>
+     * 
      * @param currentRevision
+     *        Represents information about the version (or revision) of an action.
      */
 
     public void setCurrentRevision(ActionRevision currentRevision) {
@@ -100,7 +113,11 @@ public class ActionState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about the version (or revision) of an action.
+     * </p>
+     * 
+     * @return Represents information about the version (or revision) of an action.
      */
 
     public ActionRevision getCurrentRevision() {
@@ -108,7 +125,12 @@ public class ActionState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about the version (or revision) of an action.
+     * </p>
+     * 
      * @param currentRevision
+     *        Represents information about the version (or revision) of an action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,7 +140,12 @@ public class ActionState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about the run of an action.
+     * </p>
+     * 
      * @param latestExecution
+     *        Represents information about the run of an action.
      */
 
     public void setLatestExecution(ActionExecution latestExecution) {
@@ -126,7 +153,11 @@ public class ActionState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about the run of an action.
+     * </p>
+     * 
+     * @return Represents information about the run of an action.
      */
 
     public ActionExecution getLatestExecution() {
@@ -134,7 +165,12 @@ public class ActionState implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about the run of an action.
+     * </p>
+     * 
      * @param latestExecution
+     *        Represents information about the run of an action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

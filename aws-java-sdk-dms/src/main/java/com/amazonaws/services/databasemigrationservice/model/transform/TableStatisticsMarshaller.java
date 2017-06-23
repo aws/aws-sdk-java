@@ -41,6 +41,10 @@ public class TableStatisticsMarshaller {
             .marshallLocationName("Ddls").build();
     private static final MarshallingInfo<Long> FULLLOADROWS_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FullLoadRows").build();
+    private static final MarshallingInfo<Long> FULLLOADCONDTNLCHKFAILEDROWS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FullLoadCondtnlChkFailedRows").build();
+    private static final MarshallingInfo<Long> FULLLOADERRORROWS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FullLoadErrorRows").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateTime").build();
     private static final MarshallingInfo<String> TABLESTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +73,8 @@ public class TableStatisticsMarshaller {
             protocolMarshaller.marshall(tableStatistics.getUpdates(), UPDATES_BINDING);
             protocolMarshaller.marshall(tableStatistics.getDdls(), DDLS_BINDING);
             protocolMarshaller.marshall(tableStatistics.getFullLoadRows(), FULLLOADROWS_BINDING);
+            protocolMarshaller.marshall(tableStatistics.getFullLoadCondtnlChkFailedRows(), FULLLOADCONDTNLCHKFAILEDROWS_BINDING);
+            protocolMarshaller.marshall(tableStatistics.getFullLoadErrorRows(), FULLLOADERRORROWS_BINDING);
             protocolMarshaller.marshall(tableStatistics.getLastUpdateTime(), LASTUPDATETIME_BINDING);
             protocolMarshaller.marshall(tableStatistics.getTableState(), TABLESTATE_BINDING);
         } catch (Exception e) {

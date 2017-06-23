@@ -77,7 +77,7 @@ public class AmazonElasticLoadBalancingWaiters {
     public Waiter<DescribeInstanceHealthRequest> instanceInService() {
 
         return new WaiterBuilder<DescribeInstanceHealthRequest, DescribeInstanceHealthResult>().withSdkFunction(new DescribeInstanceHealthFunction(client))
-                .withAcceptors(new InstanceInService.IsInServiceMatcher())
+                .withAcceptors(new InstanceInService.IsInServiceMatcher(), new InstanceInService.IsInvalidInstanceMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }

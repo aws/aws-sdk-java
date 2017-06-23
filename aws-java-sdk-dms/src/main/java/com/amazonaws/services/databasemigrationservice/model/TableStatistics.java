@@ -70,6 +70,20 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
     private Long fullLoadRows;
     /**
      * <p>
+     * The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB as a
+     * target migrations).
+     * </p>
+     */
+    private Long fullLoadCondtnlChkFailedRows;
+    /**
+     * <p>
+     * The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
+     * migrations).
+     * </p>
+     */
+    private Long fullLoadErrorRows;
+    /**
+     * <p>
      * The last time the table was updated.
      * </p>
      */
@@ -363,6 +377,98 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB as a
+     * target migrations).
+     * </p>
+     * 
+     * @param fullLoadCondtnlChkFailedRows
+     *        The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB
+     *        as a target migrations).
+     */
+
+    public void setFullLoadCondtnlChkFailedRows(Long fullLoadCondtnlChkFailedRows) {
+        this.fullLoadCondtnlChkFailedRows = fullLoadCondtnlChkFailedRows;
+    }
+
+    /**
+     * <p>
+     * The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB as a
+     * target migrations).
+     * </p>
+     * 
+     * @return The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB
+     *         as a target migrations).
+     */
+
+    public Long getFullLoadCondtnlChkFailedRows() {
+        return this.fullLoadCondtnlChkFailedRows;
+    }
+
+    /**
+     * <p>
+     * The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB as a
+     * target migrations).
+     * </p>
+     * 
+     * @param fullLoadCondtnlChkFailedRows
+     *        The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB
+     *        as a target migrations).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withFullLoadCondtnlChkFailedRows(Long fullLoadCondtnlChkFailedRows) {
+        setFullLoadCondtnlChkFailedRows(fullLoadCondtnlChkFailedRows);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
+     * migrations).
+     * </p>
+     * 
+     * @param fullLoadErrorRows
+     *        The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
+     *        migrations).
+     */
+
+    public void setFullLoadErrorRows(Long fullLoadErrorRows) {
+        this.fullLoadErrorRows = fullLoadErrorRows;
+    }
+
+    /**
+     * <p>
+     * The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
+     * migrations).
+     * </p>
+     * 
+     * @return The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a
+     *         target migrations).
+     */
+
+    public Long getFullLoadErrorRows() {
+        return this.fullLoadErrorRows;
+    }
+
+    /**
+     * <p>
+     * The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
+     * migrations).
+     * </p>
+     * 
+     * @param fullLoadErrorRows
+     *        The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target
+     *        migrations).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withFullLoadErrorRows(Long fullLoadErrorRows) {
+        setFullLoadErrorRows(fullLoadErrorRows);
+        return this;
+    }
+
+    /**
+     * <p>
      * The last time the table was updated.
      * </p>
      * 
@@ -466,6 +572,10 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
             sb.append("Ddls: ").append(getDdls()).append(",");
         if (getFullLoadRows() != null)
             sb.append("FullLoadRows: ").append(getFullLoadRows()).append(",");
+        if (getFullLoadCondtnlChkFailedRows() != null)
+            sb.append("FullLoadCondtnlChkFailedRows: ").append(getFullLoadCondtnlChkFailedRows()).append(",");
+        if (getFullLoadErrorRows() != null)
+            sb.append("FullLoadErrorRows: ").append(getFullLoadErrorRows()).append(",");
         if (getLastUpdateTime() != null)
             sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
         if (getTableState() != null)
@@ -512,6 +622,14 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getFullLoadRows() != null && other.getFullLoadRows().equals(this.getFullLoadRows()) == false)
             return false;
+        if (other.getFullLoadCondtnlChkFailedRows() == null ^ this.getFullLoadCondtnlChkFailedRows() == null)
+            return false;
+        if (other.getFullLoadCondtnlChkFailedRows() != null && other.getFullLoadCondtnlChkFailedRows().equals(this.getFullLoadCondtnlChkFailedRows()) == false)
+            return false;
+        if (other.getFullLoadErrorRows() == null ^ this.getFullLoadErrorRows() == null)
+            return false;
+        if (other.getFullLoadErrorRows() != null && other.getFullLoadErrorRows().equals(this.getFullLoadErrorRows()) == false)
+            return false;
         if (other.getLastUpdateTime() == null ^ this.getLastUpdateTime() == null)
             return false;
         if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
@@ -535,6 +653,8 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getUpdates() == null) ? 0 : getUpdates().hashCode());
         hashCode = prime * hashCode + ((getDdls() == null) ? 0 : getDdls().hashCode());
         hashCode = prime * hashCode + ((getFullLoadRows() == null) ? 0 : getFullLoadRows().hashCode());
+        hashCode = prime * hashCode + ((getFullLoadCondtnlChkFailedRows() == null) ? 0 : getFullLoadCondtnlChkFailedRows().hashCode());
+        hashCode = prime * hashCode + ((getFullLoadErrorRows() == null) ? 0 : getFullLoadErrorRows().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getTableState() == null) ? 0 : getTableState().hashCode());
         return hashCode;

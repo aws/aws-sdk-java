@@ -41,7 +41,11 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String clientToken;
-
+    /**
+     * <p>
+     * Represents information about failure details.
+     * </p>
+     */
     private FailureDetails failureDetails;
 
     /**
@@ -131,7 +135,12 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * Represents information about failure details.
+     * </p>
+     * 
      * @param failureDetails
+     *        Represents information about failure details.
      */
 
     public void setFailureDetails(FailureDetails failureDetails) {
@@ -139,7 +148,11 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about failure details.
+     * </p>
+     * 
+     * @return Represents information about failure details.
      */
 
     public FailureDetails getFailureDetails() {
@@ -147,7 +160,12 @@ public class PutThirdPartyJobFailureResultRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * Represents information about failure details.
+     * </p>
+     * 
      * @param failureDetails
+     *        Represents information about failure details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

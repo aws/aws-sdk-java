@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Returns information about the details of an action type.
+     * </p>
+     */
     private ActionType actionType;
 
     /**
+     * <p>
+     * Returns information about the details of an action type.
+     * </p>
+     * 
      * @param actionType
+     *        Returns information about the details of an action type.
      */
 
     public void setActionType(ActionType actionType) {
@@ -37,7 +47,11 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * Returns information about the details of an action type.
+     * </p>
+     * 
+     * @return Returns information about the details of an action type.
      */
 
     public ActionType getActionType() {
@@ -45,7 +59,12 @@ public class CreateCustomActionTypeResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Returns information about the details of an action type.
+     * </p>
+     * 
      * @param actionType
+     *        Returns information about the details of an action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

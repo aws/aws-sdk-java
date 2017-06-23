@@ -210,6 +210,19 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListPipelineExecutionsResult> listPipelineExecutionsAsync(ListPipelineExecutionsRequest request) {
+
+        return listPipelineExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPipelineExecutionsResult> listPipelineExecutionsAsync(ListPipelineExecutionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPipelineExecutionsRequest, ListPipelineExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPipelinesResult> listPipelinesAsync(ListPipelinesRequest request) {
 
         return listPipelinesAsync(request, null);

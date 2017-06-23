@@ -69,7 +69,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution did not complete successfully.
      * </p>
      * </li>
      * </ul>
@@ -225,7 +225,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution did not complete successfully.
      * </p>
      * </li>
      * </ul>
@@ -251,7 +251,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The pipeline did not complete successfully.
+     *        Failed: The pipeline execution did not complete successfully.
      *        </p>
      *        </li>
      * @see PipelineExecutionStatus
@@ -284,7 +284,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution did not complete successfully.
      * </p>
      * </li>
      * </ul>
@@ -309,7 +309,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         Failed: The pipeline did not complete successfully.
+     *         Failed: The pipeline execution did not complete successfully.
      *         </p>
      *         </li>
      * @see PipelineExecutionStatus
@@ -342,7 +342,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution did not complete successfully.
      * </p>
      * </li>
      * </ul>
@@ -368,7 +368,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The pipeline did not complete successfully.
+     *        Failed: The pipeline execution did not complete successfully.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -403,7 +403,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution did not complete successfully.
      * </p>
      * </li>
      * </ul>
@@ -429,7 +429,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The pipeline did not complete successfully.
+     *        Failed: The pipeline execution did not complete successfully.
      *        </p>
      *        </li>
      * @see PipelineExecutionStatus
@@ -462,7 +462,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Failed: The pipeline did not complete successfully.
+     * Failed: The pipeline execution did not complete successfully.
      * </p>
      * </li>
      * </ul>
@@ -488,7 +488,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        Failed: The pipeline did not complete successfully.
+     *        Failed: The pipeline execution did not complete successfully.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

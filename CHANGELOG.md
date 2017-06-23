@@ -1,3 +1,24 @@
+# __1.11.154__ __2017-06-22__
+## __AWS CodePipeline__
+  - ### Features
+    - A new API, ListPipelineExecutions, enables you to retrieve summary information about the most recent executions in a pipeline, including pipeline execution ID, status, start time, and last updated time. You can request information for a maximum of 100 executions. Pipeline execution data is available for the most recent 12 months of activity.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - Added tagging for DMS certificates.
+
+## __Amazon Lightsail__
+  - ### Features
+    - This release adds a new nextPageToken property to the result of the GetOperationsForResource API. Developers can now get the next set of items in a list by making subsequent calls to GetOperationsForResource API with the token from the previous call. This release also deprecates the nextPageCount property, which previously returned null (use the nextPageToken property instead). This release also deprecates the customImageName property on the CreateInstancesRequest class, which was previously ignored by the API.
+
+## __Amazon Route 53__
+  - ### Features
+    - Amazon Route 53 now supports multivalue answers in response to DNS queries, which lets you route traffic approximately randomly to multiple resources, such as web servers. Create one multivalue answer record for each resource and, optionally, associate an Amazon Route 53 health check with each record, and Amazon Route 53 responds to DNS queries with up to eight healthy records.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Add retry error state to InstanceInService waiter for ElasticLoadBalancer
+
 # __1.11.153__ __2017-06-21__
 ## __AWS WAF__
   - ### Features

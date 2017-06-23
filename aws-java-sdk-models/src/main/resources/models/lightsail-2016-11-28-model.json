@@ -4627,8 +4627,8 @@
           "xmlNamespace" : null
         },
         "customImageName" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name for your custom image.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7454,8 +7454,22 @@
       "member" : null,
       "members" : {
         "nextPageCount" : {
+          "deprecated" : true,
+          "documentation" : "<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "nextPageToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Returns the number of pages of results that remain.</p>",
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10760,7 +10774,7 @@
     "RegionName" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "us-east-1", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1", "ap-south-1", "ap-southeast-1", "ap-southeast-2", "ap-northeast-1", "ap-northeast-2" ],
+      "enum" : [ "us-east-1", "us-east-2", "us-west-1", "us-west-2", "eu-west-1", "eu-central-1", "ap-south-1", "ap-southeast-1", "ap-southeast-2", "ap-northeast-1", "ap-northeast-2" ],
       "error" : null,
       "exception" : false,
       "fault" : false,

@@ -80,6 +80,11 @@ public class ResourceRecordSetStaxUnmarshaller implements Unmarshaller<ResourceR
                     continue;
                 }
 
+                if (context.testExpression("MultiValueAnswer", targetDepth)) {
+                    resourceRecordSet.setMultiValueAnswer(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TTL", targetDepth)) {
                     resourceRecordSet.setTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -76,6 +76,14 @@ public class TableStatisticsJsonUnmarshaller implements Unmarshaller<TableStatis
                     context.nextToken();
                     tableStatistics.setFullLoadRows(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("FullLoadCondtnlChkFailedRows", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setFullLoadCondtnlChkFailedRows(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("FullLoadErrorRows", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setFullLoadErrorRows(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("LastUpdateTime", targetDepth)) {
                     context.nextToken();
                     tableStatistics.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

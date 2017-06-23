@@ -318,6 +318,12 @@
         "error" : null,
         "exception" : false,
         "fault" : false,
+        "shape" : "AccessDeniedFault"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
         "shape" : "InvalidResourceStateFault"
       }, {
         "documentation" : null,
@@ -6369,6 +6375,20 @@
           "shape" : "CertificateWallet",
           "streaming" : false,
           "xmlNamespace" : null
+        },
+        "Tags" : {
+          "deprecated" : false,
+          "documentation" : "<p>The tags associated with the certificate.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TagList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
       "min" : 0,
@@ -10390,6 +10410,34 @@
         "Deletes" : {
           "deprecated" : false,
           "documentation" : "<p>The number of delete actions performed on a table.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FullLoadCondtnlChkFailedRows" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of rows that failed conditional checks during the Full Load operation (valid only for DynamoDB as a target migrations).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Long",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FullLoadErrorRows" : {
+          "deprecated" : false,
+          "documentation" : "<p>The number of rows that failed to load during the Full Load operation (valid only for DynamoDB as a target migrations).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,

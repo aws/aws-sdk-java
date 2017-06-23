@@ -124,6 +124,10 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                                     xmlWriter.startElement("Failover").value(resourceRecordSet.getFailover()).endElement();
                                 }
 
+                                if (resourceRecordSet.getMultiValueAnswer() != null) {
+                                    xmlWriter.startElement("MultiValueAnswer").value(resourceRecordSet.getMultiValueAnswer()).endElement();
+                                }
+
                                 if (resourceRecordSet.getTTL() != null) {
                                     xmlWriter.startElement("TTL").value(resourceRecordSet.getTTL()).endElement();
                                 }

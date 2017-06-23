@@ -28,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ActionType implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     */
     private ActionTypeId id;
     /**
      * <p>
@@ -55,7 +60,12 @@ public class ActionType implements Serializable, Cloneable, StructuredPojo {
     private ArtifactDetails outputArtifactDetails;
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param id
+     *        Represents information about an action type.
      */
 
     public void setId(ActionTypeId id) {
@@ -63,7 +73,11 @@ public class ActionType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
+     * @return Represents information about an action type.
      */
 
     public ActionTypeId getId() {
@@ -71,7 +85,12 @@ public class ActionType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param id
+     *        Represents information about an action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

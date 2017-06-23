@@ -28,10 +28,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     */
     private ActionTypeId actionTypeId;
-
+    /**
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     */
     private ActionConfiguration actionConfiguration;
-
+    /**
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     */
     private PipelineContext pipelineContext;
     /**
      * <p>
@@ -48,7 +61,13 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<Artifact> outputArtifacts;
-
+    /**
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     */
     private AWSSessionCredentials artifactCredentials;
     /**
      * <p>
@@ -66,7 +85,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     private EncryptionKey encryptionKey;
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      */
 
     public void setActionTypeId(ActionTypeId actionTypeId) {
@@ -74,7 +98,11 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
+     * @return Represents information about an action type.
      */
 
     public ActionTypeId getActionTypeId() {
@@ -82,7 +110,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,7 +125,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     * 
      * @param actionConfiguration
+     *        Represents information about an action configuration.
      */
 
     public void setActionConfiguration(ActionConfiguration actionConfiguration) {
@@ -100,7 +138,11 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     * 
+     * @return Represents information about an action configuration.
      */
 
     public ActionConfiguration getActionConfiguration() {
@@ -108,7 +150,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     * 
      * @param actionConfiguration
+     *        Represents information about an action configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,7 +165,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * 
      * @param pipelineContext
+     *        Represents information about a pipeline to a job worker.
      */
 
     public void setPipelineContext(PipelineContext pipelineContext) {
@@ -126,7 +178,11 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * 
+     * @return Represents information about a pipeline to a job worker.
      */
 
     public PipelineContext getPipelineContext() {
@@ -134,7 +190,12 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * 
      * @param pipelineContext
+     *        Represents information about a pipeline to a job worker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,7 +373,16 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     * 
      * @param artifactCredentials
+     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
+     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
+     *        bucket used to store artifact for the pipeline in AWS CodePipeline.
      */
 
     public void setArtifactCredentials(AWSSessionCredentials artifactCredentials) {
@@ -320,7 +390,15 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     * 
+     * @return Represents an AWS session credentials object. These credentials are temporary credentials that are issued
+     *         by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
+     *         bucket used to store artifact for the pipeline in AWS CodePipeline.
      */
 
     public AWSSessionCredentials getArtifactCredentials() {
@@ -328,7 +406,16 @@ public class ThirdPartyJobData implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     * 
      * @param artifactCredentials
+     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
+     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
+     *        bucket used to store artifact for the pipeline in AWS CodePipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

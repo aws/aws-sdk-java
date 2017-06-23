@@ -122,10 +122,25 @@ public interface AmazonRoute53 {
      *         You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a
      *         VPC with a public hosted zone.
      * @throws ConflictingDomainExistsException
-     *         You specified an Amazon VPC that you're already using for another hosted zone, and the domain that you
-     *         specified for one of the hosted zones is a subdomain of the domain that you specified for the other
-     *         hosted zone. For example, you can't use the same Amazon VPC for the hosted zones for example.com and
-     *         test.example.com.
+     *         The cause of this error depends on whether you're trying to create a public or a private hosted zone:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Public hosted zone:</b> Two hosted zones that have the same name or that have a parent/child
+     *         relationship (example.com and test.example.com) can't have any common name servers. You tried to create a
+     *         hosted zone that has the same name as an existing hosted zone or that's the parent or child of an
+     *         existing hosted zone, and you specified a delegation set that shares one or more name servers with the
+     *         existing hosted zone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Private hosted zone:</b> You specified an Amazon VPC that you're already using for another hosted
+     *         zone, and the domain that you specified for one of the hosted zones is a subdomain of the domain that you
+     *         specified for the other hosted zone. For example, you can't use the same Amazon VPC for the hosted zones
+     *         for example.com and test.example.com.
+     *         </p>
+     *         </li>
      * @throws LimitsExceededException
      *         The limits specified for a resource have been exceeded.
      * @sample AmazonRoute53.AssociateVPCWithHostedZone
@@ -223,8 +238,8 @@ public interface AmazonRoute53 {
      * When you submit a <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates your changes to all
      * of the Amazon Route 53 authoritative DNS servers. While your changes are propagating, <code>GetChange</code>
      * returns a status of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns a status
-     * of <code>INSYNC</code>. Changes generally propagate to all Amazon Route 53 name servers in a few minutes. In rare
-     * circumstances, propagation can take up to 30 minutes. For more information, see <a>GetChange</a>.
+     * of <code>INSYNC</code>. Changes generally propagate to all Amazon Route 53 name servers within 60 seconds. For
+     * more information, see <a>GetChange</a>.
      * </p>
      * <p>
      * <b>Limits on ChangeResourceRecordSets Requests</b>
@@ -442,10 +457,25 @@ public interface AmazonRoute53 {
      *         Route 53 has reached that limit. If you own the domain name and Amazon Route 53 generates this error,
      *         contact Customer Support.
      * @throws ConflictingDomainExistsException
-     *         You specified an Amazon VPC that you're already using for another hosted zone, and the domain that you
-     *         specified for one of the hosted zones is a subdomain of the domain that you specified for the other
-     *         hosted zone. For example, you can't use the same Amazon VPC for the hosted zones for example.com and
-     *         test.example.com.
+     *         The cause of this error depends on whether you're trying to create a public or a private hosted zone:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Public hosted zone:</b> Two hosted zones that have the same name or that have a parent/child
+     *         relationship (example.com and test.example.com) can't have any common name servers. You tried to create a
+     *         hosted zone that has the same name as an existing hosted zone or that's the parent or child of an
+     *         existing hosted zone, and you specified a delegation set that shares one or more name servers with the
+     *         existing hosted zone.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Private hosted zone:</b> You specified an Amazon VPC that you're already using for another hosted
+     *         zone, and the domain that you specified for one of the hosted zones is a subdomain of the domain that you
+     *         specified for the other hosted zone. For example, you can't use the same Amazon VPC for the hosted zones
+     *         for example.com and test.example.com.
+     *         </p>
+     *         </li>
      * @throws NoSuchDelegationSetException
      *         A reusable delegation set with the specified ID does not exist.
      * @throws DelegationSetNotReusableException
@@ -645,8 +675,7 @@ public interface AmazonRoute53 {
      * @throws NoSuchHealthCheckException
      *         No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code> request.
      * @throws HealthCheckInUseException
-     *         The health check ID for this health check is referenced in the <code>HealthCheckId</code> element in one
-     *         of the resource record sets in one of the hosted zones that are owned by the current AWS account.
+     *         This error code is not in use.
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.DeleteHealthCheck

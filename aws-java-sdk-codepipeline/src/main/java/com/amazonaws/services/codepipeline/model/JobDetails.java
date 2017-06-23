@@ -34,7 +34,11 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String id;
-
+    /**
+     * <p>
+     * Represents additional information about a job required for a job worker to complete the job.
+     * </p>
+     */
     private JobData data;
     /**
      * <p>
@@ -84,7 +88,12 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents additional information about a job required for a job worker to complete the job.
+     * </p>
+     * 
      * @param data
+     *        Represents additional information about a job required for a job worker to complete the job.
      */
 
     public void setData(JobData data) {
@@ -92,7 +101,11 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents additional information about a job required for a job worker to complete the job.
+     * </p>
+     * 
+     * @return Represents additional information about a job required for a job worker to complete the job.
      */
 
     public JobData getData() {
@@ -100,7 +113,12 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents additional information about a job required for a job worker to complete the job.
+     * </p>
+     * 
      * @param data
+     *        Represents additional information about a job required for a job worker to complete the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,6 +28,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     */
     private ActionTypeId actionTypeId;
     /**
      * <p>
@@ -45,7 +50,12 @@ public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.Map<String, String> queryParam;
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      */
 
     public void setActionTypeId(ActionTypeId actionTypeId) {
@@ -53,7 +63,11 @@ public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
+     * @return Represents information about an action type.
      */
 
     public ActionTypeId getActionTypeId() {
@@ -61,7 +75,12 @@ public class PollForJobsRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

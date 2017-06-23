@@ -571,6 +571,27 @@ public interface AWSCodePipeline {
 
     /**
      * <p>
+     * Gets a summary of the most recent executions for a pipeline.
+     * </p>
+     * 
+     * @param listPipelineExecutionsRequest
+     *        Represents the input of a list pipeline executions action.
+     * @return Result of the ListPipelineExecutions operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws PipelineNotFoundException
+     *         The specified pipeline was specified in an invalid format or cannot be found.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format. Make sure that the next token you provided is the
+     *         token returned by a previous call.
+     * @sample AWSCodePipeline.ListPipelineExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPipelineExecutionsResult listPipelineExecutions(ListPipelineExecutionsRequest listPipelineExecutionsRequest);
+
+    /**
+     * <p>
      * Gets a summary of all of the pipelines associated with your account.
      * </p>
      * 

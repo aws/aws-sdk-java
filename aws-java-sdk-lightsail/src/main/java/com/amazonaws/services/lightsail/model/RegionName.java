@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum RegionName {
 
     UsEast1("us-east-1"),
+    UsEast2("us-east-2"),
     UsWest1("us-west-1"),
     UsWest2("us-west-2"),
     EuWest1("eu-west-1"),

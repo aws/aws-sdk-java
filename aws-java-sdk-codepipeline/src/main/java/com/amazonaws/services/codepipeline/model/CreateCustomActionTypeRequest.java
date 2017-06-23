@@ -52,7 +52,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String version;
-
+    /**
+     * <p>
+     * Returns information about the settings for an action type.
+     * </p>
+     */
     private ActionTypeSettings settings;
     /**
      * <p>
@@ -69,9 +73,17 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      * </note>
      */
     private java.util.List<ActionConfigurationProperty> configurationProperties;
-
+    /**
+     * <p>
+     * The details of the input artifact for the action, such as its commit ID.
+     * </p>
+     */
     private ArtifactDetails inputArtifactDetails;
-
+    /**
+     * <p>
+     * The details of the output artifact of the action, such as its commit ID.
+     * </p>
+     */
     private ArtifactDetails outputArtifactDetails;
 
     /**
@@ -278,7 +290,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Returns information about the settings for an action type.
+     * </p>
+     * 
      * @param settings
+     *        Returns information about the settings for an action type.
      */
 
     public void setSettings(ActionTypeSettings settings) {
@@ -286,7 +303,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * Returns information about the settings for an action type.
+     * </p>
+     * 
+     * @return Returns information about the settings for an action type.
      */
 
     public ActionTypeSettings getSettings() {
@@ -294,7 +315,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Returns information about the settings for an action type.
+     * </p>
+     * 
      * @param settings
+     *        Returns information about the settings for an action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,7 +464,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The details of the input artifact for the action, such as its commit ID.
+     * </p>
+     * 
      * @param inputArtifactDetails
+     *        The details of the input artifact for the action, such as its commit ID.
      */
 
     public void setInputArtifactDetails(ArtifactDetails inputArtifactDetails) {
@@ -446,7 +477,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The details of the input artifact for the action, such as its commit ID.
+     * </p>
+     * 
+     * @return The details of the input artifact for the action, such as its commit ID.
      */
 
     public ArtifactDetails getInputArtifactDetails() {
@@ -454,7 +489,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The details of the input artifact for the action, such as its commit ID.
+     * </p>
+     * 
      * @param inputArtifactDetails
+     *        The details of the input artifact for the action, such as its commit ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -464,7 +504,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The details of the output artifact of the action, such as its commit ID.
+     * </p>
+     * 
      * @param outputArtifactDetails
+     *        The details of the output artifact of the action, such as its commit ID.
      */
 
     public void setOutputArtifactDetails(ArtifactDetails outputArtifactDetails) {
@@ -472,7 +517,11 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The details of the output artifact of the action, such as its commit ID.
+     * </p>
+     * 
+     * @return The details of the output artifact of the action, such as its commit ID.
      */
 
     public ArtifactDetails getOutputArtifactDetails() {
@@ -480,7 +529,12 @@ public class CreateCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The details of the output artifact of the action, such as its commit ID.
+     * </p>
+     * 
      * @param outputArtifactDetails
+     *        The details of the output artifact of the action, such as its commit ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

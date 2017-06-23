@@ -248,6 +248,8 @@ public interface AWSDatabaseMigrationService {
      * 
      * @param createReplicationTaskRequest
      * @return Result of the CreateReplicationTask operation returned by the service.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint.
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceAlreadyExistsException

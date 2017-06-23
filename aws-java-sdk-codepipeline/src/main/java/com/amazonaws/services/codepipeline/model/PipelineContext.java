@@ -41,7 +41,7 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private StageContext stage;
-
+    /** <p/> */
     private ActionContext action;
 
     /**
@@ -131,6 +131,8 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p/>
+     * 
      * @param action
      */
 
@@ -139,6 +141,8 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -147,6 +151,8 @@ public class PipelineContext implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p/>
+     * 
      * @param action
      * @return Returns a reference to this object so that method calls can be chained together.
      */

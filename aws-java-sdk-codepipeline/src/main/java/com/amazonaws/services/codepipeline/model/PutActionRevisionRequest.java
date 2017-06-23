@@ -46,7 +46,11 @@ public class PutActionRevisionRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String actionName;
-
+    /**
+     * <p>
+     * Represents information about the version (or revision) of an action.
+     * </p>
+     */
     private ActionRevision actionRevision;
 
     /**
@@ -170,7 +174,12 @@ public class PutActionRevisionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Represents information about the version (or revision) of an action.
+     * </p>
+     * 
      * @param actionRevision
+     *        Represents information about the version (or revision) of an action.
      */
 
     public void setActionRevision(ActionRevision actionRevision) {
@@ -178,7 +187,11 @@ public class PutActionRevisionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about the version (or revision) of an action.
+     * </p>
+     * 
+     * @return Represents information about the version (or revision) of an action.
      */
 
     public ActionRevision getActionRevision() {
@@ -186,7 +199,12 @@ public class PutActionRevisionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Represents information about the version (or revision) of an action.
+     * </p>
+     * 
      * @param actionRevision
+     *        Represents information about the version (or revision) of an action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

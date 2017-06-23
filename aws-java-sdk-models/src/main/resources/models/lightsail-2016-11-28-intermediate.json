@@ -11089,12 +11089,12 @@
       }, {
         "c2jName" : "customImageName",
         "c2jShape" : "ResourceName",
-        "deprecated" : false,
-        "documentation" : "<p>The name for your custom image.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name for your custom image.</p>\n@param customImageName The name for your custom image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>\n@param customImageName (Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCustomImageName",
-        "getterDocumentation" : "/**<p>The name for your custom image.</p>\n@return The name for your custom image.*/",
+        "getterDocumentation" : "/**<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>\n@return (Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>*/",
         "getterMethodName" : "getCustomImageName",
         "getterModel" : {
           "returnType" : "String",
@@ -11126,7 +11126,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "CustomImageName",
-        "setterDocumentation" : "/**<p>The name for your custom image.</p>\n@param customImageName The name for your custom image.*/",
+        "setterDocumentation" : "/**<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>\n@param customImageName (Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>*/",
         "setterMethodName" : "setCustomImageName",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -11138,12 +11138,12 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name for your custom image.</p>\n@param customImageName The name for your custom image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>\n@param customImageName (Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "customImageName",
           "variableType" : "String",
-          "documentation" : "<p>The name for your custom image.</p>",
+          "documentation" : "<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -11590,12 +11590,12 @@
         "CustomImageName" : {
           "c2jName" : "customImageName",
           "c2jShape" : "ResourceName",
-          "deprecated" : false,
-          "documentation" : "<p>The name for your custom image.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name for your custom image.</p>\n@param customImageName The name for your custom image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>\n@param customImageName (Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCustomImageName",
-          "getterDocumentation" : "/**<p>The name for your custom image.</p>\n@return The name for your custom image.*/",
+          "getterDocumentation" : "/**<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>\n@return (Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>*/",
           "getterMethodName" : "getCustomImageName",
           "getterModel" : {
             "returnType" : "String",
@@ -11627,7 +11627,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "CustomImageName",
-          "setterDocumentation" : "/**<p>The name for your custom image.</p>\n@param customImageName The name for your custom image.*/",
+          "setterDocumentation" : "/**<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>\n@param customImageName (Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>*/",
           "setterMethodName" : "setCustomImageName",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -11639,12 +11639,12 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name for your custom image.</p>\n@param customImageName The name for your custom image.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>\n@param customImageName (Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "customImageName",
             "variableType" : "String",
-            "documentation" : "<p>The name for your custom image.</p>",
+            "documentation" : "<p>(Deprecated) The name for your custom image.</p> <note> <p>In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -29026,12 +29026,12 @@
       }, {
         "c2jName" : "nextPageCount",
         "c2jShape" : "string",
-        "deprecated" : false,
-        "documentation" : "<p>Returns the number of pages of results that remain.</p>",
+        "deprecated" : true,
+        "documentation" : "<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Returns the number of pages of results that remain.</p>\n@param nextPageCount Returns the number of pages of results that remain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>\n@param nextPageCount (Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNextPageCount",
-        "getterDocumentation" : "/**<p>Returns the number of pages of results that remain.</p>\n@return Returns the number of pages of results that remain.*/",
+        "getterDocumentation" : "/**<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>\n@return (Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p>*/",
         "getterMethodName" : "getNextPageCount",
         "getterModel" : {
           "returnType" : "String",
@@ -29063,7 +29063,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NextPageCount",
-        "setterDocumentation" : "/**<p>Returns the number of pages of results that remain.</p>\n@param nextPageCount Returns the number of pages of results that remain.*/",
+        "setterDocumentation" : "/**<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>\n@param nextPageCount (Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p>*/",
         "setterMethodName" : "setNextPageCount",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -29075,12 +29075,74 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Returns the number of pages of results that remain.</p>\n@param nextPageCount Returns the number of pages of results that remain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>\n@param nextPageCount (Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "nextPageCount",
           "variableType" : "String",
-          "documentation" : "<p>Returns the number of pages of results that remain.</p>",
+          "documentation" : "<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "nextPageToken",
+        "c2jShape" : "string",
+        "deprecated" : false,
+        "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>\n@param nextPageToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withNextPageToken",
+        "getterDocumentation" : "/**<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>\n@return An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.*/",
+        "getterMethodName" : "getNextPageToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "nextPageToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "nextPageToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "NextPageToken",
+        "setterDocumentation" : "/**<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>\n@param nextPageToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.*/",
+        "setterMethodName" : "setNextPageToken",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextPageToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>\n@param nextPageToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextPageToken",
+          "variableType" : "String",
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -29090,12 +29152,12 @@
         "NextPageCount" : {
           "c2jName" : "nextPageCount",
           "c2jShape" : "string",
-          "deprecated" : false,
-          "documentation" : "<p>Returns the number of pages of results that remain.</p>",
+          "deprecated" : true,
+          "documentation" : "<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Returns the number of pages of results that remain.</p>\n@param nextPageCount Returns the number of pages of results that remain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>\n@param nextPageCount (Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNextPageCount",
-          "getterDocumentation" : "/**<p>Returns the number of pages of results that remain.</p>\n@return Returns the number of pages of results that remain.*/",
+          "getterDocumentation" : "/**<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>\n@return (Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p>*/",
           "getterMethodName" : "getNextPageCount",
           "getterModel" : {
             "returnType" : "String",
@@ -29127,7 +29189,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NextPageCount",
-          "setterDocumentation" : "/**<p>Returns the number of pages of results that remain.</p>\n@param nextPageCount Returns the number of pages of results that remain.*/",
+          "setterDocumentation" : "/**<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>\n@param nextPageCount (Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p>*/",
           "setterMethodName" : "setNextPageCount",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -29139,12 +29201,75 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Returns the number of pages of results that remain.</p>\n@param nextPageCount Returns the number of pages of results that remain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>\n@param nextPageCount (Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "nextPageCount",
             "variableType" : "String",
-            "documentation" : "<p>Returns the number of pages of results that remain.</p>",
+            "documentation" : "<p>(Deprecated) Returns the number of pages of results that remain.</p> <note> <p>In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated, and the API returns the <code>nextPageToken</code> parameter instead.</p> </note>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "NextPageToken" : {
+          "c2jName" : "nextPageToken",
+          "c2jShape" : "string",
+          "deprecated" : false,
+          "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>\n@param nextPageToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withNextPageToken",
+          "getterDocumentation" : "/**<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>\n@return An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.*/",
+          "getterMethodName" : "getNextPageToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "nextPageToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "nextPageToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "NextPageToken",
+          "setterDocumentation" : "/**<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>\n@param nextPageToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.*/",
+          "setterMethodName" : "setNextPageToken",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextPageToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>\n@param nextPageToken An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextPageToken",
+            "variableType" : "String",
+            "documentation" : "<p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -48174,6 +48299,9 @@
       "enums" : [ {
         "name" : "UsEast1",
         "value" : "us-east-1"
+      }, {
+        "name" : "UsEast2",
+        "value" : "us-east-2"
       }, {
         "name" : "UsWest1",
         "value" : "us-west-1"

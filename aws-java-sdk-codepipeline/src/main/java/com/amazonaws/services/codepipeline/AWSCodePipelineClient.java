@@ -1301,6 +1301,63 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Gets a summary of the most recent executions for a pipeline.
+     * </p>
+     * 
+     * @param listPipelineExecutionsRequest
+     *        Represents the input of a list pipeline executions action.
+     * @return Result of the ListPipelineExecutions operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws PipelineNotFoundException
+     *         The specified pipeline was specified in an invalid format or cannot be found.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format. Make sure that the next token you provided is the
+     *         token returned by a previous call.
+     * @sample AWSCodePipeline.ListPipelineExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPipelineExecutionsResult listPipelineExecutions(ListPipelineExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPipelineExecutions(request);
+    }
+
+    @SdkInternalApi
+    final ListPipelineExecutionsResult executeListPipelineExecutions(ListPipelineExecutionsRequest listPipelineExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPipelineExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPipelineExecutionsRequest> request = null;
+        Response<ListPipelineExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPipelineExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPipelineExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPipelineExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPipelineExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a summary of all of the pipelines associated with your account.
      * </p>
      * 

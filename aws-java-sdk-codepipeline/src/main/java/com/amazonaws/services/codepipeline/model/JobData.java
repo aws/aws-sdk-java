@@ -28,10 +28,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class JobData implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     */
     private ActionTypeId actionTypeId;
-
+    /**
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     */
     private ActionConfiguration actionConfiguration;
-
+    /**
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     */
     private PipelineContext pipelineContext;
     /**
      * <p>
@@ -45,7 +58,13 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Artifact> outputArtifacts;
-
+    /**
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     */
     private AWSSessionCredentials artifactCredentials;
     /**
      * <p>
@@ -54,11 +73,21 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String continuationToken;
-
+    /**
+     * <p>
+     * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
+     * Service (AWS KMS) key.
+     * </p>
+     */
     private EncryptionKey encryptionKey;
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      */
 
     public void setActionTypeId(ActionTypeId actionTypeId) {
@@ -66,7 +95,11 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
+     * @return Represents information about an action type.
      */
 
     public ActionTypeId getActionTypeId() {
@@ -74,7 +107,12 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about an action type.
+     * </p>
+     * 
      * @param actionTypeId
+     *        Represents information about an action type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +122,12 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     * 
      * @param actionConfiguration
+     *        Represents information about an action configuration.
      */
 
     public void setActionConfiguration(ActionConfiguration actionConfiguration) {
@@ -92,7 +135,11 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     * 
+     * @return Represents information about an action configuration.
      */
 
     public ActionConfiguration getActionConfiguration() {
@@ -100,7 +147,12 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about an action configuration.
+     * </p>
+     * 
      * @param actionConfiguration
+     *        Represents information about an action configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +162,12 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * 
      * @param pipelineContext
+     *        Represents information about a pipeline to a job worker.
      */
 
     public void setPipelineContext(PipelineContext pipelineContext) {
@@ -118,7 +175,11 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * 
+     * @return Represents information about a pipeline to a job worker.
      */
 
     public PipelineContext getPipelineContext() {
@@ -126,7 +187,12 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about a pipeline to a job worker.
+     * </p>
+     * 
      * @param pipelineContext
+     *        Represents information about a pipeline to a job worker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,7 +342,16 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     * 
      * @param artifactCredentials
+     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
+     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
+     *        bucket used to store artifact for the pipeline in AWS CodePipeline.
      */
 
     public void setArtifactCredentials(AWSSessionCredentials artifactCredentials) {
@@ -284,7 +359,15 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     * 
+     * @return Represents an AWS session credentials object. These credentials are temporary credentials that are issued
+     *         by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
+     *         bucket used to store artifact for the pipeline in AWS CodePipeline.
      */
 
     public AWSSessionCredentials getArtifactCredentials() {
@@ -292,7 +375,16 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS
+     * Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to
+     * store artifact for the pipeline in AWS CodePipeline.
+     * </p>
+     * 
      * @param artifactCredentials
+     *        Represents an AWS session credentials object. These credentials are temporary credentials that are issued
+     *        by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3
+     *        bucket used to store artifact for the pipeline in AWS CodePipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,7 +440,14 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
+     * Service (AWS KMS) key.
+     * </p>
+     * 
      * @param encryptionKey
+     *        Represents information about the key used to encrypt data in the artifact store, such as an AWS Key
+     *        Management Service (AWS KMS) key.
      */
 
     public void setEncryptionKey(EncryptionKey encryptionKey) {
@@ -356,7 +455,13 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
+     * Service (AWS KMS) key.
+     * </p>
+     * 
+     * @return Represents information about the key used to encrypt data in the artifact store, such as an AWS Key
+     *         Management Service (AWS KMS) key.
      */
 
     public EncryptionKey getEncryptionKey() {
@@ -364,7 +469,14 @@ public class JobData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management
+     * Service (AWS KMS) key.
+     * </p>
+     * 
      * @param encryptionKey
+     *        Represents information about the key used to encrypt data in the artifact store, such as an AWS Key
+     *        Management Service (AWS KMS) key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

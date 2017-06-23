@@ -41,7 +41,11 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String clientToken;
-
+    /**
+     * <p>
+     * Represents information about a current revision.
+     * </p>
+     */
     private CurrentRevision currentRevision;
     /**
      * <p>
@@ -52,7 +56,11 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String continuationToken;
-
+    /**
+     * <p>
+     * The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.
+     * </p>
+     */
     private ExecutionDetails executionDetails;
 
     /**
@@ -142,7 +150,12 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * Represents information about a current revision.
+     * </p>
+     * 
      * @param currentRevision
+     *        Represents information about a current revision.
      */
 
     public void setCurrentRevision(CurrentRevision currentRevision) {
@@ -150,7 +163,11 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * Represents information about a current revision.
+     * </p>
+     * 
+     * @return Represents information about a current revision.
      */
 
     public CurrentRevision getCurrentRevision() {
@@ -158,7 +175,12 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * Represents information about a current revision.
+     * </p>
+     * 
      * @param currentRevision
+     *        Represents information about a current revision.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,7 +248,13 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.
+     * </p>
+     * 
      * @param executionDetails
+     *        The details of the actions taken and results produced on an artifact as it passes through stages in the
+     *        pipeline.
      */
 
     public void setExecutionDetails(ExecutionDetails executionDetails) {
@@ -234,7 +262,12 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.
+     * </p>
+     * 
+     * @return The details of the actions taken and results produced on an artifact as it passes through stages in the
+     *         pipeline.
      */
 
     public ExecutionDetails getExecutionDetails() {
@@ -242,7 +275,13 @@ public class PutThirdPartyJobSuccessResultRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.
+     * </p>
+     * 
      * @param executionDetails
+     *        The details of the actions taken and results produced on an artifact as it passes through stages in the
+     *        pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -721,6 +721,39 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
+     * Gets a summary of the most recent executions for a pipeline.
+     * </p>
+     * 
+     * @param listPipelineExecutionsRequest
+     *        Represents the input of a list pipeline executions action.
+     * @return A Java Future containing the result of the ListPipelineExecutions operation returned by the service.
+     * @sample AWSCodePipelineAsync.ListPipelineExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPipelineExecutionsResult> listPipelineExecutionsAsync(ListPipelineExecutionsRequest listPipelineExecutionsRequest);
+
+    /**
+     * <p>
+     * Gets a summary of the most recent executions for a pipeline.
+     * </p>
+     * 
+     * @param listPipelineExecutionsRequest
+     *        Represents the input of a list pipeline executions action.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPipelineExecutions operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.ListPipelineExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelineExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPipelineExecutionsResult> listPipelineExecutionsAsync(ListPipelineExecutionsRequest listPipelineExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPipelineExecutionsRequest, ListPipelineExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a summary of all of the pipelines associated with your account.
      * </p>
      * 

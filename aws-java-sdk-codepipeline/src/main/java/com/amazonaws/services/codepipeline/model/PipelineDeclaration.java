@@ -41,7 +41,11 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String roleArn;
-
+    /**
+     * <p>
+     * Represents the context of an action within the stage of a pipeline to a job worker.
+     * </p>
+     */
     private ArtifactStore artifactStore;
     /**
      * <p>
@@ -144,7 +148,12 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Represents the context of an action within the stage of a pipeline to a job worker.
+     * </p>
+     * 
      * @param artifactStore
+     *        Represents the context of an action within the stage of a pipeline to a job worker.
      */
 
     public void setArtifactStore(ArtifactStore artifactStore) {
@@ -152,7 +161,11 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the context of an action within the stage of a pipeline to a job worker.
+     * </p>
+     * 
+     * @return Represents the context of an action within the stage of a pipeline to a job worker.
      */
 
     public ArtifactStore getArtifactStore() {
@@ -160,7 +173,12 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Represents the context of an action within the stage of a pipeline to a job worker.
+     * </p>
+     * 
      * @param artifactStore
+     *        Represents the context of an action within the stage of a pipeline to a job worker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

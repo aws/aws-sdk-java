@@ -28,10 +28,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Represents the structure of actions and stages to be performed in the pipeline.
+     * </p>
+     */
     private PipelineDeclaration pipeline;
 
     /**
+     * <p>
+     * Represents the structure of actions and stages to be performed in the pipeline.
+     * </p>
+     * 
      * @param pipeline
+     *        Represents the structure of actions and stages to be performed in the pipeline.
      */
 
     public void setPipeline(PipelineDeclaration pipeline) {
@@ -39,7 +49,11 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the structure of actions and stages to be performed in the pipeline.
+     * </p>
+     * 
+     * @return Represents the structure of actions and stages to be performed in the pipeline.
      */
 
     public PipelineDeclaration getPipeline() {
@@ -47,7 +61,12 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Represents the structure of actions and stages to be performed in the pipeline.
+     * </p>
+     * 
      * @param pipeline
+     *        Represents the structure of actions and stages to be performed in the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

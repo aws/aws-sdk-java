@@ -43,9 +43,15 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
     private String availabilityZone;
     /**
      * <p>
-     * The name for your custom image.
+     * (Deprecated) The name for your custom image.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.
+     * </p>
+     * </note>
      */
+    @Deprecated
     private String customImageName;
     /**
      * <p>
@@ -221,39 +227,63 @@ public class CreateInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for your custom image.
+     * (Deprecated) The name for your custom image.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.
+     * </p>
+     * </note>
      * 
      * @param customImageName
-     *        The name for your custom image.
+     *        (Deprecated) The name for your custom image.</p> <note>
+     *        <p>
+     *        In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.
+     *        </p>
      */
-
+    @Deprecated
     public void setCustomImageName(String customImageName) {
         this.customImageName = customImageName;
     }
 
     /**
      * <p>
-     * The name for your custom image.
+     * (Deprecated) The name for your custom image.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.
+     * </p>
+     * </note>
      * 
-     * @return The name for your custom image.
+     * @return (Deprecated) The name for your custom image.</p> <note>
+     *         <p>
+     *         In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.
+     *         </p>
      */
-
+    @Deprecated
     public String getCustomImageName() {
         return this.customImageName;
     }
 
     /**
      * <p>
-     * The name for your custom image.
+     * (Deprecated) The name for your custom image.
      * </p>
+     * <note>
+     * <p>
+     * In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.
+     * </p>
+     * </note>
      * 
      * @param customImageName
-     *        The name for your custom image.
+     *        (Deprecated) The name for your custom image.</p> <note>
+     *        <p>
+     *        In releases prior to June 12, 2017, this parameter was ignored by the API. It is now deprecated.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public CreateInstancesRequest withCustomImageName(String customImageName) {
         setCustomImageName(customImageName);
         return this;
