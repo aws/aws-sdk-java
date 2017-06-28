@@ -56,6 +56,11 @@ public class DescribePortfolioResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describePortfolioResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("TagOptions", targetDepth)) {
+                    context.nextToken();
+                    describePortfolioResult.setTagOptions(new ListUnmarshaller<TagOptionDetail>(TagOptionDetailJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

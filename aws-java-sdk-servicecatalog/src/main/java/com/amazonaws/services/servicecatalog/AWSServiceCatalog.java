@@ -179,6 +179,35 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Associate a TagOption identifier with a resource identifier.
+     * </p>
+     * 
+     * @param associateTagOptionWithResourceRequest
+     * @return Result of the AssociateTagOptionWithResource operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in an invalid state. Inspect the resource you are using
+     *         for this operation to ensure that all resource states are valid before retrying the operation.
+     * @sample AWSServiceCatalog.AssociateTagOptionWithResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateTagOptionWithResourceResult associateTagOptionWithResource(AssociateTagOptionWithResourceRequest associateTagOptionWithResourceRequest);
+
+    /**
+     * <p>
      * Creates a new constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
      * </p>
@@ -212,6 +241,10 @@ public interface AWSServiceCatalog {
      * @throws LimitExceededException
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.CreatePortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio" target="_top">AWS
      *      API Documentation</a>
@@ -250,6 +283,10 @@ public interface AWSServiceCatalog {
      * @throws LimitExceededException
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.CreateProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct" target="_top">AWS
      *      API Documentation</a>
@@ -279,6 +316,28 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     CreateProvisioningArtifactResult createProvisioningArtifact(CreateProvisioningArtifactRequest createProvisioningArtifactRequest);
+
+    /**
+     * <p>
+     * Create a new TagOption.
+     * </p>
+     * 
+     * @param createTagOptionRequest
+     * @return Result of the CreateTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.CreateTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateTagOptionResult createTagOption(CreateTagOptionRequest createTagOptionRequest);
 
     /**
      * <p>
@@ -312,6 +371,10 @@ public interface AWSServiceCatalog {
      * @throws ResourceInUseException
      *         The operation was requested against a resource that is currently in use. Free the resource from use and
      *         retry the operation.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.DeletePortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio" target="_top">AWS
      *      API Documentation</a>
@@ -348,6 +411,10 @@ public interface AWSServiceCatalog {
      *         retry the operation.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.DeleteProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct" target="_top">AWS
      *      API Documentation</a>
@@ -499,6 +566,15 @@ public interface AWSServiceCatalog {
      * operation to obtain the list of <code>ProvisioningArtifactParameters</code> parameters available to call the
      * <a>ProvisionProduct</a> operation for the specified product.
      * </p>
+     * <p>
+     * If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key.
+     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to the
+     * <code>ProvisionProduct</code> operation, do not include conflicted TagOption keys as tags. Calls to
+     * <code>ProvisionProduct</code> with empty TagOption values cause the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i> ". Calls to
+     * <code>ProvisionProduct</code> with conflicted TagOption keys automatically tag the provisioned product with the
+     * conflicted keys with the value "<code>sc-tagoption-conflict-portfolioId-productId</code>".
+     * </p>
      * 
      * @param describeProvisioningParametersRequest
      * @return Result of the DescribeProvisioningParameters operation returned by the service.
@@ -530,6 +606,25 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Describes a TagOption.
+     * </p>
+     * 
+     * @param describeTagOptionRequest
+     * @return Result of the DescribeTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTagOptionResult describeTagOption(DescribeTagOptionRequest describeTagOptionRequest);
+
+    /**
+     * <p>
      * Disassociates a previously associated principal ARN from a specified portfolio.
      * </p>
      * 
@@ -556,6 +651,9 @@ public interface AWSServiceCatalog {
      * @return Result of the DisassociateProductFromPortfolio operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ResourceInUseException
+     *         The operation was requested against a resource that is currently in use. Free the resource from use and
+     *         retry the operation.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.DisassociateProductFromPortfolio
@@ -563,6 +661,25 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateProductFromPortfolioResult disassociateProductFromPortfolio(DisassociateProductFromPortfolioRequest disassociateProductFromPortfolioRequest);
+
+    /**
+     * <p>
+     * Disassociates a TagOption from a resource.
+     * </p>
+     * 
+     * @param disassociateTagOptionFromResourceRequest
+     * @return Result of the DisassociateTagOptionFromResource operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DisassociateTagOptionFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateTagOptionFromResourceResult disassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest disassociateTagOptionFromResourceRequest);
 
     /**
      * <p>
@@ -713,12 +830,57 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
+     * Lists resources associated with a TagOption.
+     * </p>
+     * 
+     * @param listResourcesForTagOptionRequest
+     * @return Result of the ListResourcesForTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListResourcesForTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResourcesForTagOptionResult listResourcesForTagOption(ListResourcesForTagOptionRequest listResourcesForTagOptionRequest);
+
+    /**
+     * <p>
+     * Lists detailed TagOptions information.
+     * </p>
+     * 
+     * @param listTagOptionsRequest
+     * @return Result of the ListTagOptions operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListTagOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagOptionsResult listTagOptions(ListTagOptionsRequest listTagOptionsRequest);
+
+    /**
+     * <p>
      * Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a
      * product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation
      * stack and all the underlying resources that come with it.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * You can check the status of this request using the <a>DescribeRecord</a> operation. The error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" indicates that your
+     * request contains a tag which has a tag key but no corresponding tag value (value is empty or null). Your call may
+     * have included values returned from a <code>DescribeProvisioningParameters</code> call that resulted in a
+     * TagOption key with an empty list. This happens when TagOption keys are in conflict. For more information, see
+     * <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param provisionProductRequest
@@ -856,6 +1018,10 @@ public interface AWSServiceCatalog {
      * @throws LimitExceededException
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.UpdatePortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio" target="_top">AWS
      *      API Documentation</a>
@@ -873,6 +1039,10 @@ public interface AWSServiceCatalog {
      *         The specified resource was not found.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.UpdateProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct" target="_top">AWS
      *      API Documentation</a>
@@ -919,6 +1089,29 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateProvisioningArtifactResult updateProvisioningArtifact(UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest);
+
+    /**
+     * <p>
+     * Updates an existing TagOption.
+     * </p>
+     * 
+     * @param updateTagOptionRequest
+     * @return Result of the UpdateTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.UpdateTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateTagOptionResult updateTagOption(UpdateTagOptionRequest updateTagOptionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

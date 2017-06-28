@@ -44,6 +44,12 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
      * </p>
      */
     private java.util.List<UsageInstruction> usageInstructions;
+    /**
+     * <p>
+     * List of TagOptions associated with the provisioned provisioning parameters.
+     * </p>
+     */
+    private java.util.List<TagOptionSummary> tagOptions;
 
     /**
      * <p>
@@ -273,6 +279,76 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * List of TagOptions associated with the provisioned provisioning parameters.
+     * </p>
+     * 
+     * @return List of TagOptions associated with the provisioned provisioning parameters.
+     */
+
+    public java.util.List<TagOptionSummary> getTagOptions() {
+        return tagOptions;
+    }
+
+    /**
+     * <p>
+     * List of TagOptions associated with the provisioned provisioning parameters.
+     * </p>
+     * 
+     * @param tagOptions
+     *        List of TagOptions associated with the provisioned provisioning parameters.
+     */
+
+    public void setTagOptions(java.util.Collection<TagOptionSummary> tagOptions) {
+        if (tagOptions == null) {
+            this.tagOptions = null;
+            return;
+        }
+
+        this.tagOptions = new java.util.ArrayList<TagOptionSummary>(tagOptions);
+    }
+
+    /**
+     * <p>
+     * List of TagOptions associated with the provisioned provisioning parameters.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagOptions(java.util.Collection)} or {@link #withTagOptions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param tagOptions
+     *        List of TagOptions associated with the provisioned provisioning parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningParametersResult withTagOptions(TagOptionSummary... tagOptions) {
+        if (this.tagOptions == null) {
+            setTagOptions(new java.util.ArrayList<TagOptionSummary>(tagOptions.length));
+        }
+        for (TagOptionSummary ele : tagOptions) {
+            this.tagOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of TagOptions associated with the provisioned provisioning parameters.
+     * </p>
+     * 
+     * @param tagOptions
+     *        List of TagOptions associated with the provisioned provisioning parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningParametersResult withTagOptions(java.util.Collection<TagOptionSummary> tagOptions) {
+        setTagOptions(tagOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -288,7 +364,9 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
         if (getConstraintSummaries() != null)
             sb.append("ConstraintSummaries: ").append(getConstraintSummaries()).append(",");
         if (getUsageInstructions() != null)
-            sb.append("UsageInstructions: ").append(getUsageInstructions());
+            sb.append("UsageInstructions: ").append(getUsageInstructions()).append(",");
+        if (getTagOptions() != null)
+            sb.append("TagOptions: ").append(getTagOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -316,6 +394,10 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
             return false;
         if (other.getUsageInstructions() != null && other.getUsageInstructions().equals(this.getUsageInstructions()) == false)
             return false;
+        if (other.getTagOptions() == null ^ this.getTagOptions() == null)
+            return false;
+        if (other.getTagOptions() != null && other.getTagOptions().equals(this.getTagOptions()) == false)
+            return false;
         return true;
     }
 
@@ -327,6 +409,7 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getProvisioningArtifactParameters() == null) ? 0 : getProvisioningArtifactParameters().hashCode());
         hashCode = prime * hashCode + ((getConstraintSummaries() == null) ? 0 : getConstraintSummaries().hashCode());
         hashCode = prime * hashCode + ((getUsageInstructions() == null) ? 0 : getUsageInstructions().hashCode());
+        hashCode = prime * hashCode + ((getTagOptions() == null) ? 0 : getTagOptions().hashCode());
         return hashCode;
     }
 

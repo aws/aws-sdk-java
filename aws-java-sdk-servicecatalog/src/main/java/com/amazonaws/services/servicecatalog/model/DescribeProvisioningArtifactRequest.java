@@ -57,7 +57,7 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
     private String productId;
     /**
      * <p>
-     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * Enable a verbose level of details for the provisioning artifact.
      * </p>
      */
     private Boolean verbose;
@@ -253,11 +253,11 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * Enable a verbose level of details for the provisioning artifact.
      * </p>
      * 
      * @param verbose
-     *        Selects verbose results. If set to true, the CloudFormation template is returned.
+     *        Enable a verbose level of details for the provisioning artifact.
      */
 
     public void setVerbose(Boolean verbose) {
@@ -266,10 +266,10 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * Enable a verbose level of details for the provisioning artifact.
      * </p>
      * 
-     * @return Selects verbose results. If set to true, the CloudFormation template is returned.
+     * @return Enable a verbose level of details for the provisioning artifact.
      */
 
     public Boolean getVerbose() {
@@ -278,11 +278,11 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * Enable a verbose level of details for the provisioning artifact.
      * </p>
      * 
      * @param verbose
-     *        Selects verbose results. If set to true, the CloudFormation template is returned.
+     *        Enable a verbose level of details for the provisioning artifact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,10 +293,10 @@ public class DescribeProvisioningArtifactRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Selects verbose results. If set to true, the CloudFormation template is returned.
+     * Enable a verbose level of details for the provisioning artifact.
      * </p>
      * 
-     * @return Selects verbose results. If set to true, the CloudFormation template is returned.
+     * @return Enable a verbose level of details for the provisioning artifact.
      */
 
     public Boolean isVerbose() {

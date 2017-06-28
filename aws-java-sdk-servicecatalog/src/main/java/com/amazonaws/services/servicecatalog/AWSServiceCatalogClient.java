@@ -103,6 +103,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParametersException").withModeledClass(
                                     com.amazonaws.services.servicecatalog.model.InvalidParametersException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateException").withModeledClass(
+                                    com.amazonaws.services.servicecatalog.model.InvalidStateException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DuplicateResourceException").withModeledClass(
                                     com.amazonaws.services.servicecatalog.model.DuplicateResourceException.class))
                     .addErrorMetadata(
@@ -111,6 +114,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.servicecatalog.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagOptionNotMigratedException").withModeledClass(
+                                    com.amazonaws.services.servicecatalog.model.TagOptionNotMigratedException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException.class));
 
     /**
@@ -468,6 +474,72 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Associate a TagOption identifier with a resource identifier.
+     * </p>
+     * 
+     * @param associateTagOptionWithResourceRequest
+     * @return Result of the AssociateTagOptionWithResource operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws InvalidStateException
+     *         An attempt was made to modify a resource that is in an invalid state. Inspect the resource you are using
+     *         for this operation to ensure that all resource states are valid before retrying the operation.
+     * @sample AWSServiceCatalog.AssociateTagOptionWithResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateTagOptionWithResourceResult associateTagOptionWithResource(AssociateTagOptionWithResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateTagOptionWithResource(request);
+    }
+
+    @SdkInternalApi
+    final AssociateTagOptionWithResourceResult executeAssociateTagOptionWithResource(AssociateTagOptionWithResourceRequest associateTagOptionWithResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateTagOptionWithResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateTagOptionWithResourceRequest> request = null;
+        Response<AssociateTagOptionWithResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateTagOptionWithResourceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateTagOptionWithResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateTagOptionWithResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateTagOptionWithResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
      * </p>
@@ -536,6 +608,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws LimitExceededException
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.CreatePortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolio" target="_top">AWS
      *      API Documentation</a>
@@ -644,6 +720,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws LimitExceededException
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.CreateProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProduct" target="_top">AWS
      *      API Documentation</a>
@@ -748,6 +828,63 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Create a new TagOption.
+     * </p>
+     * 
+     * @param createTagOptionRequest
+     * @return Result of the CreateTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws LimitExceededException
+     *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
+     *         increase the service limits and retry the operation.
+     * @sample AWSServiceCatalog.CreateTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateTagOptionResult createTagOption(CreateTagOptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTagOption(request);
+    }
+
+    @SdkInternalApi
+    final CreateTagOptionResult executeCreateTagOption(CreateTagOptionRequest createTagOptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTagOptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTagOptionRequest> request = null;
+        Response<CreateTagOptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagOptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTagOptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTagOptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified constraint.
      * </p>
      * 
@@ -813,6 +950,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws ResourceInUseException
      *         The operation was requested against a resource that is currently in use. Free the resource from use and
      *         retry the operation.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.DeletePortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolio" target="_top">AWS
      *      API Documentation</a>
@@ -919,6 +1060,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         retry the operation.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.DeleteProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProduct" target="_top">AWS
      *      API Documentation</a>
@@ -1392,6 +1537,15 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * operation to obtain the list of <code>ProvisioningArtifactParameters</code> parameters available to call the
      * <a>ProvisionProduct</a> operation for the specified product.
      * </p>
+     * <p>
+     * If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key.
+     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to the
+     * <code>ProvisionProduct</code> operation, do not include conflicted TagOption keys as tags. Calls to
+     * <code>ProvisionProduct</code> with empty TagOption values cause the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i> ". Calls to
+     * <code>ProvisionProduct</code> with conflicted TagOption keys automatically tag the provisioned product with the
+     * conflicted keys with the value "<code>sc-tagoption-conflict-portfolioId-productId</code>".
+     * </p>
      * 
      * @param describeProvisioningParametersRequest
      * @return Result of the DescribeProvisioningParameters operation returned by the service.
@@ -1495,6 +1649,60 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Describes a TagOption.
+     * </p>
+     * 
+     * @param describeTagOptionRequest
+     * @return Result of the DescribeTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DescribeTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTagOptionResult describeTagOption(DescribeTagOptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTagOption(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTagOptionResult executeDescribeTagOption(DescribeTagOptionRequest describeTagOptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTagOptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTagOptionRequest> request = null;
+        Response<DescribeTagOptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagOptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTagOptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTagOptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates a previously associated principal ARN from a specified portfolio.
      * </p>
      * 
@@ -1558,6 +1766,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @return Result of the DisassociateProductFromPortfolio operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ResourceInUseException
+     *         The operation was requested against a resource that is currently in use. Free the resource from use and
+     *         retry the operation.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
      * @sample AWSServiceCatalog.DisassociateProductFromPortfolio
@@ -1594,6 +1805,63 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateProductFromPortfolioResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateProductFromPortfolioResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates a TagOption from a resource.
+     * </p>
+     * 
+     * @param disassociateTagOptionFromResourceRequest
+     * @return Result of the DisassociateTagOptionFromResource operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DisassociateTagOptionFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateTagOptionFromResourceResult disassociateTagOptionFromResource(DisassociateTagOptionFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateTagOptionFromResource(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateTagOptionFromResourceResult executeDisassociateTagOptionFromResource(
+            DisassociateTagOptionFromResourceRequest disassociateTagOptionFromResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateTagOptionFromResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateTagOptionFromResourceRequest> request = null;
+        Response<DisassociateTagOptionFromResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateTagOptionFromResourceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateTagOptionFromResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateTagOptionFromResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateTagOptionFromResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2078,12 +2346,129 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Lists resources associated with a TagOption.
+     * </p>
+     * 
+     * @param listResourcesForTagOptionRequest
+     * @return Result of the ListResourcesForTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListResourcesForTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourcesForTagOptionResult listResourcesForTagOption(ListResourcesForTagOptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourcesForTagOption(request);
+    }
+
+    @SdkInternalApi
+    final ListResourcesForTagOptionResult executeListResourcesForTagOption(ListResourcesForTagOptionRequest listResourcesForTagOptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourcesForTagOptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourcesForTagOptionRequest> request = null;
+        Response<ListResourcesForTagOptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourcesForTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listResourcesForTagOptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourcesForTagOptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListResourcesForTagOptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists detailed TagOptions information.
+     * </p>
+     * 
+     * @param listTagOptionsRequest
+     * @return Result of the ListTagOptions operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.ListTagOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagOptionsResult listTagOptions(ListTagOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagOptions(request);
+    }
+
+    @SdkInternalApi
+    final ListTagOptionsResult executeListTagOptions(ListTagOptionsRequest listTagOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagOptionsRequest> request = null;
+        Response<ListTagOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a
      * product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation
      * stack and all the underlying resources that come with it.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * You can check the status of this request using the <a>DescribeRecord</a> operation. The error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" indicates that your
+     * request contains a tag which has a tag key but no corresponding tag value (value is empty or null). Your call may
+     * have included values returned from a <code>DescribeProvisioningParameters</code> call that resulted in a
+     * TagOption key with an empty list. This happens when TagOption keys are in conflict. For more information, see
+     * <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param provisionProductRequest
@@ -2471,6 +2856,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws LimitExceededException
      *         The current limits of the service would have been exceeded by this operation. Reduce the resource use or
      *         increase the service limits and retry the operation.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.UpdatePortfolio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolio" target="_top">AWS
      *      API Documentation</a>
@@ -2523,6 +2912,10 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      *         The specified resource was not found.
      * @throws InvalidParametersException
      *         One or more parameters provided to the operation are invalid.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
      * @sample AWSServiceCatalog.UpdateProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateProduct" target="_top">AWS
      *      API Documentation</a>
@@ -2669,6 +3062,64 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<UpdateProvisioningArtifactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateProvisioningArtifactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing TagOption.
+     * </p>
+     * 
+     * @param updateTagOptionRequest
+     * @return Result of the UpdateTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws DuplicateResourceException
+     *         The specified resource is a duplicate.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are invalid.
+     * @sample AWSServiceCatalog.UpdateTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateTagOptionResult updateTagOption(UpdateTagOptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTagOption(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTagOptionResult executeUpdateTagOption(UpdateTagOptionRequest updateTagOptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTagOptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTagOptionRequest> request = null;
+        Response<UpdateTagOptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTagOptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTagOptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTagOptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

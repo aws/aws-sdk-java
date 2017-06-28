@@ -160,6 +160,41 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Associate a TagOption identifier with a resource identifier.
+     * </p>
+     * 
+     * @param associateTagOptionWithResourceRequest
+     * @return A Java Future containing the result of the AssociateTagOptionWithResource operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.AssociateTagOptionWithResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateTagOptionWithResourceResult> associateTagOptionWithResourceAsync(
+            AssociateTagOptionWithResourceRequest associateTagOptionWithResourceRequest);
+
+    /**
+     * <p>
+     * Associate a TagOption identifier with a resource identifier.
+     * </p>
+     * 
+     * @param associateTagOptionWithResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateTagOptionWithResource operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.AssociateTagOptionWithResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateTagOptionWithResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateTagOptionWithResourceResult> associateTagOptionWithResourceAsync(
+            AssociateTagOptionWithResourceRequest associateTagOptionWithResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateTagOptionWithResourceRequest, AssociateTagOptionWithResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new constraint. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html">Using Constraints</a>.
      * </p>
@@ -324,6 +359,37 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<CreateProvisioningArtifactResult> createProvisioningArtifactAsync(
             CreateProvisioningArtifactRequest createProvisioningArtifactRequest,
             com.amazonaws.handlers.AsyncHandler<CreateProvisioningArtifactRequest, CreateProvisioningArtifactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a new TagOption.
+     * </p>
+     * 
+     * @param createTagOptionRequest
+     * @return A Java Future containing the result of the CreateTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsync.CreateTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTagOptionResult> createTagOptionAsync(CreateTagOptionRequest createTagOptionRequest);
+
+    /**
+     * <p>
+     * Create a new TagOption.
+     * </p>
+     * 
+     * @param createTagOptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.CreateTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTagOptionResult> createTagOptionAsync(CreateTagOptionRequest createTagOptionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTagOptionRequest, CreateTagOptionResult> asyncHandler);
 
     /**
      * <p>
@@ -735,6 +801,15 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * operation to obtain the list of <code>ProvisioningArtifactParameters</code> parameters available to call the
      * <a>ProvisionProduct</a> operation for the specified product.
      * </p>
+     * <p>
+     * If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key.
+     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to the
+     * <code>ProvisionProduct</code> operation, do not include conflicted TagOption keys as tags. Calls to
+     * <code>ProvisionProduct</code> with empty TagOption values cause the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i> ". Calls to
+     * <code>ProvisionProduct</code> with conflicted TagOption keys automatically tag the provisioned product with the
+     * conflicted keys with the value "<code>sc-tagoption-conflict-portfolioId-productId</code>".
+     * </p>
      * 
      * @param describeProvisioningParametersRequest
      * @return A Java Future containing the result of the DescribeProvisioningParameters operation returned by the
@@ -751,6 +826,15 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * Provides information about parameters required to provision a specified product in a specified manner. Use this
      * operation to obtain the list of <code>ProvisioningArtifactParameters</code> parameters available to call the
      * <a>ProvisionProduct</a> operation for the specified product.
+     * </p>
+     * <p>
+     * If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key.
+     * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to the
+     * <code>ProvisionProduct</code> operation, do not include conflicted TagOption keys as tags. Calls to
+     * <code>ProvisionProduct</code> with empty TagOption values cause the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i> ". Calls to
+     * <code>ProvisionProduct</code> with conflicted TagOption keys automatically tag the provisioned product with the
+     * conflicted keys with the value "<code>sc-tagoption-conflict-portfolioId-productId</code>".
      * </p>
      * 
      * @param describeProvisioningParametersRequest
@@ -800,6 +884,37 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      */
     java.util.concurrent.Future<DescribeRecordResult> describeRecordAsync(DescribeRecordRequest describeRecordRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeRecordRequest, DescribeRecordResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a TagOption.
+     * </p>
+     * 
+     * @param describeTagOptionRequest
+     * @return A Java Future containing the result of the DescribeTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsync.DescribeTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTagOptionResult> describeTagOptionAsync(DescribeTagOptionRequest describeTagOptionRequest);
+
+    /**
+     * <p>
+     * Describes a TagOption.
+     * </p>
+     * 
+     * @param describeTagOptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.DescribeTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeTagOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTagOptionResult> describeTagOptionAsync(DescribeTagOptionRequest describeTagOptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTagOptionRequest, DescribeTagOptionResult> asyncHandler);
 
     /**
      * <p>
@@ -872,6 +987,41 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<DisassociateProductFromPortfolioResult> disassociateProductFromPortfolioAsync(
             DisassociateProductFromPortfolioRequest disassociateProductFromPortfolioRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateProductFromPortfolioRequest, DisassociateProductFromPortfolioResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a TagOption from a resource.
+     * </p>
+     * 
+     * @param disassociateTagOptionFromResourceRequest
+     * @return A Java Future containing the result of the DisassociateTagOptionFromResource operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.DisassociateTagOptionFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateTagOptionFromResourceResult> disassociateTagOptionFromResourceAsync(
+            DisassociateTagOptionFromResourceRequest disassociateTagOptionFromResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates a TagOption from a resource.
+     * </p>
+     * 
+     * @param disassociateTagOptionFromResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateTagOptionFromResource operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.DisassociateTagOptionFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociateTagOptionFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateTagOptionFromResourceResult> disassociateTagOptionFromResourceAsync(
+            DisassociateTagOptionFromResourceRequest disassociateTagOptionFromResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateTagOptionFromResourceRequest, DisassociateTagOptionFromResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -1166,12 +1316,81 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Lists resources associated with a TagOption.
+     * </p>
+     * 
+     * @param listResourcesForTagOptionRequest
+     * @return A Java Future containing the result of the ListResourcesForTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsync.ListResourcesForTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourcesForTagOptionResult> listResourcesForTagOptionAsync(
+            ListResourcesForTagOptionRequest listResourcesForTagOptionRequest);
+
+    /**
+     * <p>
+     * Lists resources associated with a TagOption.
+     * </p>
+     * 
+     * @param listResourcesForTagOptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourcesForTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.ListResourcesForTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListResourcesForTagOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourcesForTagOptionResult> listResourcesForTagOptionAsync(
+            ListResourcesForTagOptionRequest listResourcesForTagOptionRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourcesForTagOptionRequest, ListResourcesForTagOptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists detailed TagOptions information.
+     * </p>
+     * 
+     * @param listTagOptionsRequest
+     * @return A Java Future containing the result of the ListTagOptions operation returned by the service.
+     * @sample AWSServiceCatalogAsync.ListTagOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(ListTagOptionsRequest listTagOptionsRequest);
+
+    /**
+     * <p>
+     * Lists detailed TagOptions information.
+     * </p>
+     * 
+     * @param listTagOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagOptions operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.ListTagOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListTagOptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(ListTagOptionsRequest listTagOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagOptionsRequest, ListTagOptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Requests a <i>provision</i> of a specified product. A <i>provisioned product</i> is a resourced instance for a
      * product. For example, provisioning a CloudFormation-template-backed product results in launching a CloudFormation
      * stack and all the underlying resources that come with it.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * You can check the status of this request using the <a>DescribeRecord</a> operation. The error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" indicates that your
+     * request contains a tag which has a tag key but no corresponding tag value (value is empty or null). Your call may
+     * have included values returned from a <code>DescribeProvisioningParameters</code> call that resulted in a
+     * TagOption key with an empty list. This happens when TagOption keys are in conflict. For more information, see
+     * <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param provisionProductRequest
@@ -1189,7 +1408,12 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * stack and all the underlying resources that come with it.
      * </p>
      * <p>
-     * You can check the status of this request using the <a>DescribeRecord</a> operation.
+     * You can check the status of this request using the <a>DescribeRecord</a> operation. The error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" indicates that your
+     * request contains a tag which has a tag key but no corresponding tag value (value is empty or null). Your call may
+     * have included values returned from a <code>DescribeProvisioningParameters</code> call that resulted in a
+     * TagOption key with an empty list. This happens when TagOption keys are in conflict. For more information, see
+     * <a>DescribeProvisioningParameters</a>.
      * </p>
      * 
      * @param provisionProductRequest
@@ -1558,5 +1782,36 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<UpdateProvisioningArtifactResult> updateProvisioningArtifactAsync(
             UpdateProvisioningArtifactRequest updateProvisioningArtifactRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProvisioningArtifactRequest, UpdateProvisioningArtifactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing TagOption.
+     * </p>
+     * 
+     * @param updateTagOptionRequest
+     * @return A Java Future containing the result of the UpdateTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsync.UpdateTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTagOptionResult> updateTagOptionAsync(UpdateTagOptionRequest updateTagOptionRequest);
+
+    /**
+     * <p>
+     * Updates an existing TagOption.
+     * </p>
+     * 
+     * @param updateTagOptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.UpdateTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdateTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTagOptionResult> updateTagOptionAsync(UpdateTagOptionRequest updateTagOptionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTagOptionRequest, UpdateTagOptionResult> asyncHandler);
 
 }

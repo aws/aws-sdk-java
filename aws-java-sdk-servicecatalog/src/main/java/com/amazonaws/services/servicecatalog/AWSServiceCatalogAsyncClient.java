@@ -372,6 +372,40 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateTagOptionWithResourceResult> associateTagOptionWithResourceAsync(AssociateTagOptionWithResourceRequest request) {
+
+        return associateTagOptionWithResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateTagOptionWithResourceResult> associateTagOptionWithResourceAsync(
+            final AssociateTagOptionWithResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateTagOptionWithResourceRequest, AssociateTagOptionWithResourceResult> asyncHandler) {
+        final AssociateTagOptionWithResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateTagOptionWithResourceResult>() {
+            @Override
+            public AssociateTagOptionWithResourceResult call() throws Exception {
+                AssociateTagOptionWithResourceResult result = null;
+
+                try {
+                    result = executeAssociateTagOptionWithResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConstraintResult> createConstraintAsync(CreateConstraintRequest request) {
 
         return createConstraintAsync(request, null);
@@ -521,6 +555,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeCreateProvisioningArtifact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTagOptionResult> createTagOptionAsync(CreateTagOptionRequest request) {
+
+        return createTagOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTagOptionResult> createTagOptionAsync(final CreateTagOptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTagOptionRequest, CreateTagOptionResult> asyncHandler) {
+        final CreateTagOptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTagOptionResult>() {
+            @Override
+            public CreateTagOptionResult call() throws Exception {
+                CreateTagOptionResult result = null;
+
+                try {
+                    result = executeCreateTagOption(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1000,6 +1067,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTagOptionResult> describeTagOptionAsync(DescribeTagOptionRequest request) {
+
+        return describeTagOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTagOptionResult> describeTagOptionAsync(final DescribeTagOptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeTagOptionRequest, DescribeTagOptionResult> asyncHandler) {
+        final DescribeTagOptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeTagOptionResult>() {
+            @Override
+            public DescribeTagOptionResult call() throws Exception {
+                DescribeTagOptionResult result = null;
+
+                try {
+                    result = executeDescribeTagOption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociatePrincipalFromPortfolioResult> disassociatePrincipalFromPortfolioAsync(
             DisassociatePrincipalFromPortfolioRequest request) {
 
@@ -1054,6 +1154,41 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeDisassociateProductFromPortfolio(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTagOptionFromResourceResult> disassociateTagOptionFromResourceAsync(
+            DisassociateTagOptionFromResourceRequest request) {
+
+        return disassociateTagOptionFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTagOptionFromResourceResult> disassociateTagOptionFromResourceAsync(
+            final DisassociateTagOptionFromResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateTagOptionFromResourceRequest, DisassociateTagOptionFromResourceResult> asyncHandler) {
+        final DisassociateTagOptionFromResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateTagOptionFromResourceResult>() {
+            @Override
+            public DisassociateTagOptionFromResourceResult call() throws Exception {
+                DisassociateTagOptionFromResourceResult result = null;
+
+                try {
+                    result = executeDisassociateTagOptionFromResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1351,6 +1486,72 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeListRecordHistory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourcesForTagOptionResult> listResourcesForTagOptionAsync(ListResourcesForTagOptionRequest request) {
+
+        return listResourcesForTagOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourcesForTagOptionResult> listResourcesForTagOptionAsync(final ListResourcesForTagOptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourcesForTagOptionRequest, ListResourcesForTagOptionResult> asyncHandler) {
+        final ListResourcesForTagOptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourcesForTagOptionResult>() {
+            @Override
+            public ListResourcesForTagOptionResult call() throws Exception {
+                ListResourcesForTagOptionResult result = null;
+
+                try {
+                    result = executeListResourcesForTagOption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(ListTagOptionsRequest request) {
+
+        return listTagOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(final ListTagOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagOptionsRequest, ListTagOptionsResult> asyncHandler) {
+        final ListTagOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagOptionsResult>() {
+            @Override
+            public ListTagOptionsResult call() throws Exception {
+                ListTagOptionsResult result = null;
+
+                try {
+                    result = executeListTagOptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1714,6 +1915,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeUpdateProvisioningArtifact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagOptionResult> updateTagOptionAsync(UpdateTagOptionRequest request) {
+
+        return updateTagOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagOptionResult> updateTagOptionAsync(final UpdateTagOptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTagOptionRequest, UpdateTagOptionResult> asyncHandler) {
+        final UpdateTagOptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTagOptionResult>() {
+            @Override
+            public UpdateTagOptionResult call() throws Exception {
+                UpdateTagOptionResult result = null;
+
+                try {
+                    result = executeUpdateTagOption(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

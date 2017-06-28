@@ -69,6 +69,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateTagOptionWithResourceResult> associateTagOptionWithResourceAsync(AssociateTagOptionWithResourceRequest request) {
+
+        return associateTagOptionWithResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateTagOptionWithResourceResult> associateTagOptionWithResourceAsync(AssociateTagOptionWithResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateTagOptionWithResourceRequest, AssociateTagOptionWithResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateConstraintResult> createConstraintAsync(CreateConstraintRequest request) {
 
         return createConstraintAsync(request, null);
@@ -129,6 +142,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     @Override
     public java.util.concurrent.Future<CreateProvisioningArtifactResult> createProvisioningArtifactAsync(CreateProvisioningArtifactRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateProvisioningArtifactRequest, CreateProvisioningArtifactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTagOptionResult> createTagOptionAsync(CreateTagOptionRequest request) {
+
+        return createTagOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTagOptionResult> createTagOptionAsync(CreateTagOptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTagOptionRequest, CreateTagOptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -316,6 +342,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTagOptionResult> describeTagOptionAsync(DescribeTagOptionRequest request) {
+
+        return describeTagOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTagOptionResult> describeTagOptionAsync(DescribeTagOptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTagOptionRequest, DescribeTagOptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociatePrincipalFromPortfolioResult> disassociatePrincipalFromPortfolioAsync(
             DisassociatePrincipalFromPortfolioRequest request) {
 
@@ -341,6 +380,21 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     public java.util.concurrent.Future<DisassociateProductFromPortfolioResult> disassociateProductFromPortfolioAsync(
             DisassociateProductFromPortfolioRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateProductFromPortfolioRequest, DisassociateProductFromPortfolioResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTagOptionFromResourceResult> disassociateTagOptionFromResourceAsync(
+            DisassociateTagOptionFromResourceRequest request) {
+
+        return disassociateTagOptionFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTagOptionFromResourceResult> disassociateTagOptionFromResourceAsync(
+            DisassociateTagOptionFromResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateTagOptionFromResourceRequest, DisassociateTagOptionFromResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -458,6 +512,32 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     @Override
     public java.util.concurrent.Future<ListRecordHistoryResult> listRecordHistoryAsync(ListRecordHistoryRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRecordHistoryRequest, ListRecordHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourcesForTagOptionResult> listResourcesForTagOptionAsync(ListResourcesForTagOptionRequest request) {
+
+        return listResourcesForTagOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourcesForTagOptionResult> listResourcesForTagOptionAsync(ListResourcesForTagOptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResourcesForTagOptionRequest, ListResourcesForTagOptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(ListTagOptionsRequest request) {
+
+        return listTagOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagOptionsResult> listTagOptionsAsync(ListTagOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagOptionsRequest, ListTagOptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -601,6 +681,19 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     @Override
     public java.util.concurrent.Future<UpdateProvisioningArtifactResult> updateProvisioningArtifactAsync(UpdateProvisioningArtifactRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateProvisioningArtifactRequest, UpdateProvisioningArtifactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagOptionResult> updateTagOptionAsync(UpdateTagOptionRequest request) {
+
+        return updateTagOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTagOptionResult> updateTagOptionAsync(UpdateTagOptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTagOptionRequest, UpdateTagOptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

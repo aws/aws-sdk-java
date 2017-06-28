@@ -52,7 +52,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
-     * and some remediation is occurring. For example, a roll-back.
+     * and some remediation is occurring. For example, a rollback.
      * </p>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -216,7 +216,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
-     * and some remediation is occurring. For example, a roll-back.
+     * and some remediation is occurring. For example, a rollback.
      * </p>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -236,7 +236,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
-     *        failed and some remediation is occurring. For example, a roll-back.
+     *        failed and some remediation is occurring. For example, a rollback.
      *        </p>
      *        <p>
      *        <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -263,7 +263,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
-     * and some remediation is occurring. For example, a roll-back.
+     * and some remediation is occurring. For example, a rollback.
      * </p>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -282,7 +282,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
-     *         failed and some remediation is occurring. For example, a roll-back.
+     *         failed and some remediation is occurring. For example, a rollback.
      *         </p>
      *         <p>
      *         <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -309,7 +309,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
-     * and some remediation is occurring. For example, a roll-back.
+     * and some remediation is occurring. For example, a rollback.
      * </p>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -329,7 +329,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
-     *        failed and some remediation is occurring. For example, a roll-back.
+     *        failed and some remediation is occurring. For example, a rollback.
      *        </p>
      *        <p>
      *        <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -358,7 +358,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
-     * and some remediation is occurring. For example, a roll-back.
+     * and some remediation is occurring. For example, a rollback.
      * </p>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -378,7 +378,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
-     *        failed and some remediation is occurring. For example, a roll-back.
+     *        failed and some remediation is occurring. For example, a rollback.
      *        </p>
      *        <p>
      *        <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -405,7 +405,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation failed
-     * and some remediation is occurring. For example, a roll-back.
+     * and some remediation is occurring. For example, a rollback.
      * </p>
      * <p>
      * <code>SUCCEEDED</code> - The requested operation has successfully completed.
@@ -425,7 +425,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the requested operation
-     *        failed and some remediation is occurring. For example, a roll-back.
+     *        failed and some remediation is occurring. For example, a rollback.
      *        </p>
      *        <p>
      *        <code>SUCCEEDED</code> - The requested operation has successfully completed.

@@ -35,6 +35,12 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * TagOptions associated with the portfolio.
+     * </p>
+     */
+    private java.util.List<TagOptionDetail> tagOptions;
 
     /**
      * <p>
@@ -147,6 +153,76 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * TagOptions associated with the portfolio.
+     * </p>
+     * 
+     * @return TagOptions associated with the portfolio.
+     */
+
+    public java.util.List<TagOptionDetail> getTagOptions() {
+        return tagOptions;
+    }
+
+    /**
+     * <p>
+     * TagOptions associated with the portfolio.
+     * </p>
+     * 
+     * @param tagOptions
+     *        TagOptions associated with the portfolio.
+     */
+
+    public void setTagOptions(java.util.Collection<TagOptionDetail> tagOptions) {
+        if (tagOptions == null) {
+            this.tagOptions = null;
+            return;
+        }
+
+        this.tagOptions = new java.util.ArrayList<TagOptionDetail>(tagOptions);
+    }
+
+    /**
+     * <p>
+     * TagOptions associated with the portfolio.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagOptions(java.util.Collection)} or {@link #withTagOptions(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param tagOptions
+     *        TagOptions associated with the portfolio.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePortfolioResult withTagOptions(TagOptionDetail... tagOptions) {
+        if (this.tagOptions == null) {
+            setTagOptions(new java.util.ArrayList<TagOptionDetail>(tagOptions.length));
+        }
+        for (TagOptionDetail ele : tagOptions) {
+            this.tagOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * TagOptions associated with the portfolio.
+     * </p>
+     * 
+     * @param tagOptions
+     *        TagOptions associated with the portfolio.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePortfolioResult withTagOptions(java.util.Collection<TagOptionDetail> tagOptions) {
+        setTagOptions(tagOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -160,7 +236,9 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
         if (getPortfolioDetail() != null)
             sb.append("PortfolioDetail: ").append(getPortfolioDetail()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTagOptions() != null)
+            sb.append("TagOptions: ").append(getTagOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -183,6 +261,10 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTagOptions() == null ^ this.getTagOptions() == null)
+            return false;
+        if (other.getTagOptions() != null && other.getTagOptions().equals(this.getTagOptions()) == false)
+            return false;
         return true;
     }
 
@@ -193,6 +275,7 @@ public class DescribePortfolioResult extends com.amazonaws.AmazonWebServiceResul
 
         hashCode = prime * hashCode + ((getPortfolioDetail() == null) ? 0 : getPortfolioDetail().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTagOptions() == null) ? 0 : getTagOptions().hashCode());
         return hashCode;
     }
 
