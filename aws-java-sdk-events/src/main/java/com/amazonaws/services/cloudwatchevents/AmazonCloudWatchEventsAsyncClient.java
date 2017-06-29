@@ -305,6 +305,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEventBusResult> describeEventBusAsync(DescribeEventBusRequest request) {
+
+        return describeEventBusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventBusResult> describeEventBusAsync(final DescribeEventBusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEventBusRequest, DescribeEventBusResult> asyncHandler) {
+        final DescribeEventBusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEventBusResult>() {
+            @Override
+            public DescribeEventBusResult call() throws Exception {
+                DescribeEventBusResult result = null;
+
+                try {
+                    result = executeDescribeEventBus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest request) {
 
         return describeRuleAsync(request, null);
@@ -536,6 +569,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     }
 
     @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest request) {
+
+        return putPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(final PutPermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutPermissionRequest, PutPermissionResult> asyncHandler) {
+        final PutPermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutPermissionResult>() {
+            @Override
+            public PutPermissionResult call() throws Exception {
+                PutPermissionResult result = null;
+
+                try {
+                    result = executePutPermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRuleResult> putRuleAsync(PutRuleRequest request) {
 
         return putRuleAsync(request, null);
@@ -586,6 +652,39 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
 
                 try {
                     result = executePutTargets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request) {
+
+        return removePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(final RemovePermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
+        final RemovePermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemovePermissionResult>() {
+            @Override
+            public RemovePermissionResult call() throws Exception {
+                RemovePermissionResult result = null;
+
+                try {
+                    result = executeRemovePermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

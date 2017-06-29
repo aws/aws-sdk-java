@@ -22,6 +22,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Configuration of a queue that is used to process game session placement requests. The queue configuration identifies
  * several game features:
  * </p>
+ * <p>
+ * Queue-related operations include:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateGameSessionQueue</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionQueues</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateGameSessionQueue</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteGameSessionQueue</a>
+ * </p>
+ * </li>
+ * </ul>
  * <ul>
  * <li>
  * <p>

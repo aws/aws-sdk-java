@@ -78,6 +78,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public CreateResourceDataSyncResult createResourceDataSync(CreateResourceDataSyncRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteActivationResult deleteActivation(DeleteActivationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +114,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteResourceDataSyncResult deleteResourceDataSync(DeleteResourceDataSyncRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -360,6 +370,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceDataSyncResult listResourceDataSync(ListResourceDataSyncRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

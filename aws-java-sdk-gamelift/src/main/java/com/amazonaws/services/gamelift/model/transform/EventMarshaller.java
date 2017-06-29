@@ -37,6 +37,8 @@ public class EventMarshaller {
             .marshallLocationName("Message").build();
     private static final MarshallingInfo<java.util.Date> EVENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventTime").build();
+    private static final MarshallingInfo<String> PRESIGNEDLOGURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreSignedLogUrl").build();
 
     private static final EventMarshaller instance = new EventMarshaller();
 
@@ -59,6 +61,7 @@ public class EventMarshaller {
             protocolMarshaller.marshall(event.getEventCode(), EVENTCODE_BINDING);
             protocolMarshaller.marshall(event.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(event.getEventTime(), EVENTTIME_BINDING);
+            protocolMarshaller.marshall(event.getPreSignedLogUrl(), PRESIGNEDLOGURL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -382,6 +382,57 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Creates a resource data sync configuration to a single bucket in Amazon S3. This is an asynchronous operation
+     * that returns immediately. After a successful initial sync is completed, the system continuously syncs data to the
+     * Amazon S3 bucket. To check the status of the sync, use the <a
+     * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.
+     * </p>
+     * <p>
+     * By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to
+     * ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a
+     * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">
+     * Creating a Resource Data Sync</a>.
+     * </p>
+     * 
+     * @param createResourceDataSyncRequest
+     * @return A Java Future containing the result of the CreateResourceDataSync operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CreateResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResourceDataSyncResult> createResourceDataSyncAsync(CreateResourceDataSyncRequest createResourceDataSyncRequest);
+
+    /**
+     * <p>
+     * Creates a resource data sync configuration to a single bucket in Amazon S3. This is an asynchronous operation
+     * that returns immediately. After a successful initial sync is completed, the system continuously syncs data to the
+     * Amazon S3 bucket. To check the status of the sync, use the <a
+     * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.
+     * </p>
+     * <p>
+     * By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to
+     * ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a
+     * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">
+     * Creating a Resource Data Sync</a>.
+     * </p>
+     * 
+     * @param createResourceDataSyncRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateResourceDataSync operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CreateResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResourceDataSyncResult> createResourceDataSyncAsync(CreateResourceDataSyncRequest createResourceDataSyncRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateResourceDataSyncRequest, CreateResourceDataSyncResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an activation. You are not required to delete an activation. If you delete an activation, you can no
      * longer use it to register additional managed instances. Deleting an activation does not de-register managed
      * instances. You must manually de-register managed instances.
@@ -618,6 +669,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<DeletePatchBaselineResult> deletePatchBaselineAsync(DeletePatchBaselineRequest deletePatchBaselineRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePatchBaselineRequest, DeletePatchBaselineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a Resource Data Sync configuration. After the configuration is deleted, changes to inventory data on
+     * managed instances are no longer synced with the target Amazon S3 bucket. Deleting a sync configuration does not
+     * delete data in the target Amazon S3 bucket.
+     * </p>
+     * 
+     * @param deleteResourceDataSyncRequest
+     * @return A Java Future containing the result of the DeleteResourceDataSync operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceDataSyncResult> deleteResourceDataSyncAsync(DeleteResourceDataSyncRequest deleteResourceDataSyncRequest);
+
+    /**
+     * <p>
+     * Deletes a Resource Data Sync configuration. After the configuration is deleted, changes to inventory data on
+     * managed instances are no longer synced with the target Amazon S3 bucket. Deleting a sync configuration does not
+     * delete data in the target Amazon S3 bucket.
+     * </p>
+     * 
+     * @param deleteResourceDataSyncRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourceDataSync operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceDataSyncResult> deleteResourceDataSyncAsync(DeleteResourceDataSyncRequest deleteResourceDataSyncRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceDataSyncRequest, DeleteResourceDataSyncResult> asyncHandler);
 
     /**
      * <p>
@@ -1964,8 +2050,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Retrieve parameters in a specific hierarchy. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
-     * Parameter Hierarchies</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
+     * Systems Manager Parameters</a>.
      * </p>
      * 
      * @param getParametersByPathRequest
@@ -1979,8 +2065,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Retrieve parameters in a specific hierarchy. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
-     * Parameter Hierarchies</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
+     * Systems Manager Parameters</a>.
      * </p>
      * 
      * @param getParametersByPathRequest
@@ -2268,6 +2354,53 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest listInventoryEntriesRequest,
             com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists your resource data sync configurations. Includes information about the last time a sync attempted to start,
+     * the last sync status, and the last time a sync successfully completed.
+     * </p>
+     * <p>
+     * The number of sync configurations might be too large to return using a single call to
+     * <code>ListResourceDataSync</code>. You can limit the number of sync configurations returned by using the
+     * <code>MaxResults</code> parameter. To determine whether there are more sync configurations to list, check the
+     * value of <code>NextToken</code> in the output. If there are more sync configurations to list, you can request
+     * them by specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent call.
+     * </p>
+     * 
+     * @param listResourceDataSyncRequest
+     * @return A Java Future containing the result of the ListResourceDataSync operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceDataSyncResult> listResourceDataSyncAsync(ListResourceDataSyncRequest listResourceDataSyncRequest);
+
+    /**
+     * <p>
+     * Lists your resource data sync configurations. Includes information about the last time a sync attempted to start,
+     * the last sync status, and the last time a sync successfully completed.
+     * </p>
+     * <p>
+     * The number of sync configurations might be too large to return using a single call to
+     * <code>ListResourceDataSync</code>. You can limit the number of sync configurations returned by using the
+     * <code>MaxResults</code> parameter. To determine whether there are more sync configurations to list, check the
+     * value of <code>NextToken</code> in the output. If there are more sync configurations to list, you can request
+     * them by specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent call.
+     * </p>
+     * 
+     * @param listResourceDataSyncRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceDataSync operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceDataSyncResult> listResourceDataSyncAsync(ListResourceDataSyncRequest listResourceDataSyncRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceDataSyncRequest, ListResourceDataSyncResult> asyncHandler);
 
     /**
      * <p>

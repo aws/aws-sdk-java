@@ -33,7 +33,7 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String name;
     /**
      * <p>
-     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+     * The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * </p>
      */
     private String scheduleExpression;
@@ -106,11 +106,11 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+     * The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+     *        The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -119,10 +119,10 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+     * The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * </p>
      * 
-     * @return The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+     * @return The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      */
 
     public String getScheduleExpression() {
@@ -131,11 +131,11 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+     * The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * </p>
      * 
      * @param scheduleExpression
-     *        The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".
+     *        The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

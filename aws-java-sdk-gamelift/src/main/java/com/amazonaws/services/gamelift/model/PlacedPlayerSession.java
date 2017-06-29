@@ -23,6 +23,48 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * object contains only the player ID and player session ID. To retrieve full details on a player session, call
  * <a>DescribePlayerSessions</a> with the player session ID.
  * </p>
+ * <p>
+ * Player-session-related operations include:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreatePlayerSession</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreatePlayerSessions</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribePlayerSessions</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Game session placements
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>StartGameSessionPlacement</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionPlacement</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopGameSessionPlacement</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlacedPlayerSession" target="_top">AWS API
  *      Documentation</a>

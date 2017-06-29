@@ -30,13 +30,13 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a fleet to update runtime configuration for.
+     * Unique identifier for a fleet to update run-time configuration for.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The runtime configuration for a fleet
+     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
      * has a collection of server process configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable, launch parameters, and the number
      * of concurrent processes with that configuration to maintain on each instance.
@@ -46,11 +46,11 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a fleet to update runtime configuration for.
+     * Unique identifier for a fleet to update run-time configuration for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to update runtime configuration for.
+     *        Unique identifier for a fleet to update run-time configuration for.
      */
 
     public void setFleetId(String fleetId) {
@@ -59,10 +59,10 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a fleet to update runtime configuration for.
+     * Unique identifier for a fleet to update run-time configuration for.
      * </p>
      * 
-     * @return Unique identifier for a fleet to update runtime configuration for.
+     * @return Unique identifier for a fleet to update run-time configuration for.
      */
 
     public String getFleetId() {
@@ -71,11 +71,11 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Unique identifier for a fleet to update runtime configuration for.
+     * Unique identifier for a fleet to update run-time configuration for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to update runtime configuration for.
+     *        Unique identifier for a fleet to update run-time configuration for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,16 +86,16 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The runtime configuration for a fleet
+     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
      * has a collection of server process configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable, launch parameters, and the number
      * of concurrent processes with that configuration to maintain on each instance.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions for launching server processes on each instance in the fleet. The runtime configuration for a
-     *        fleet has a collection of server process configurations, one for each type of server process to run on an
-     *        instance. A server process configuration specifies the location of the server executable, launch
+     *        Instructions for launching server processes on each instance in the fleet. The run-time configuration for
+     *        a fleet has a collection of server process configurations, one for each type of server process to run on
+     *        an instance. A server process configuration specifies the location of the server executable, launch
      *        parameters, and the number of concurrent processes with that configuration to maintain on each instance.
      */
 
@@ -105,13 +105,13 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The runtime configuration for a fleet
+     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
      * has a collection of server process configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable, launch parameters, and the number
      * of concurrent processes with that configuration to maintain on each instance.
      * </p>
      * 
-     * @return Instructions for launching server processes on each instance in the fleet. The runtime configuration for
+     * @return Instructions for launching server processes on each instance in the fleet. The run-time configuration for
      *         a fleet has a collection of server process configurations, one for each type of server process to run on
      *         an instance. A server process configuration specifies the location of the server executable, launch
      *         parameters, and the number of concurrent processes with that configuration to maintain on each instance.
@@ -123,16 +123,16 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The runtime configuration for a fleet
+     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
      * has a collection of server process configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable, launch parameters, and the number
      * of concurrent processes with that configuration to maintain on each instance.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions for launching server processes on each instance in the fleet. The runtime configuration for a
-     *        fleet has a collection of server process configurations, one for each type of server process to run on an
-     *        instance. A server process configuration specifies the location of the server executable, launch
+     *        Instructions for launching server processes on each instance in the fleet. The run-time configuration for
+     *        a fleet has a collection of server process configurations, one for each type of server process to run on
+     *        an instance. A server process configuration specifies the location of the server executable, launch
      *        parameters, and the number of concurrent processes with that configuration to maintain on each instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

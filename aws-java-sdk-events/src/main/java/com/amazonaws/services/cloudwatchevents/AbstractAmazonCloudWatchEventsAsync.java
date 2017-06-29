@@ -41,6 +41,19 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEventBusResult> describeEventBusAsync(DescribeEventBusRequest request) {
+
+        return describeEventBusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventBusResult> describeEventBusAsync(DescribeEventBusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventBusRequest, DescribeEventBusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest request) {
 
         return describeRuleAsync(request, null);
@@ -132,6 +145,19 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     }
 
     @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest request) {
+
+        return putPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionResult> putPermissionAsync(PutPermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionRequest, PutPermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRuleResult> putRuleAsync(PutRuleRequest request) {
 
         return putRuleAsync(request, null);
@@ -153,6 +179,19 @@ public class AbstractAmazonCloudWatchEventsAsync extends AbstractAmazonCloudWatc
     @Override
     public java.util.concurrent.Future<PutTargetsResult> putTargetsAsync(PutTargetsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutTargetsRequest, PutTargetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request) {
+
+        return removePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

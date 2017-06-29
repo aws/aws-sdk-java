@@ -30,18 +30,18 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier for a fleet to get the runtime configuration for.
+     * Unique identifier for a fleet to get the run-time configuration for.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * Unique identifier for a fleet to get the runtime configuration for.
+     * Unique identifier for a fleet to get the run-time configuration for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to get the runtime configuration for.
+     *        Unique identifier for a fleet to get the run-time configuration for.
      */
 
     public void setFleetId(String fleetId) {
@@ -50,10 +50,10 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier for a fleet to get the runtime configuration for.
+     * Unique identifier for a fleet to get the run-time configuration for.
      * </p>
      * 
-     * @return Unique identifier for a fleet to get the runtime configuration for.
+     * @return Unique identifier for a fleet to get the run-time configuration for.
      */
 
     public String getFleetId() {
@@ -62,11 +62,11 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Unique identifier for a fleet to get the runtime configuration for.
+     * Unique identifier for a fleet to get the run-time configuration for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet to get the runtime configuration for.
+     *        Unique identifier for a fleet to get the run-time configuration for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * a game session when the player connects to the game session and is validated.
  * </p>
  * <p>
- * Player session-related operations include:
+ * Player-session-related operations include:
  * </p>
  * <ul>
  * <li>
@@ -41,6 +41,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * <a>DescribePlayerSessions</a>
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Game session placements
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>StartGameSessionPlacement</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionPlacement</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopGameSessionPlacement</a>
+ * </p>
+ * </li>
+ * </ul>
  * </li>
  * </ul>
  * 

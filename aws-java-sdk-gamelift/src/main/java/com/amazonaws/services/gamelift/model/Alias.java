@@ -50,6 +50,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <a>DeleteAlias</a>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <a>ResolveAlias</a>
+ * </p>
+ * </li>
  * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias" target="_top">AWS API

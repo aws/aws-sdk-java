@@ -112,6 +112,41 @@
       },
       "syncReturnType" : "DeleteRuleResult"
     },
+    "DescribeEventBus" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeEventBusResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeEventBusResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeEventBusRequest, DescribeEventBusResult>",
+      "asyncReturnType" : "DescribeEventBusResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Displays the external AWS accounts that are permitted to write events to your account using your account's event bus, and the associated policy. To enable your account to receive events from other accounts, use <a>PutPermission</a>.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>An entity that you specified does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalException",
+        "documentation" : "<p>This exception occurs due to unexpected causes.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "DescribeEventBusRequest",
+        "variableName" : "describeEventBusRequest",
+        "variableType" : "DescribeEventBusRequest",
+        "documentation" : "",
+        "simpleType" : "DescribeEventBusRequest",
+        "variableSetterType" : "DescribeEventBusRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "describeEventBus",
+      "operationName" : "DescribeEventBus",
+      "returnType" : {
+        "returnType" : "DescribeEventBusResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DescribeEventBusResult"
+    },
     "DescribeRule" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeRuleResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeRuleResult>",
@@ -122,7 +157,7 @@
       "documentation" : "<p>Describes the specified rule.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The rule does not exist.</p>",
+        "documentation" : "<p>An entity that you specified does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalException",
@@ -157,7 +192,7 @@
       "documentation" : "<p>Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.</p> <p>When you disable a rule, incoming events might continue to match to the disabled rule. Please allow a short period of time for changes to take effect.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The rule does not exist.</p>",
+        "documentation" : "<p>An entity that you specified does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
@@ -196,7 +231,7 @@
       "documentation" : "<p>Enables the specified rule. If the rule does not exist, the operation fails.</p> <p>When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Please allow a short period of time for changes to take effect.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The rule does not exist.</p>",
+        "documentation" : "<p>An entity that you specified does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
@@ -297,7 +332,7 @@
       "documentation" : "<p>Lists the targets assigned to the specified rule.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The rule does not exist.</p>",
+        "documentation" : "<p>An entity that you specified does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalException",
@@ -353,6 +388,45 @@
       },
       "syncReturnType" : "PutEventsResult"
     },
+    "PutPermission" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<PutPermissionResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<PutPermissionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<PutPermissionRequest, PutPermissionResult>",
+      "asyncReturnType" : "PutPermissionResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Running <code>PutPermission</code> permits the specified AWS account to put events to your account's default <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to your default event bus. </p> <p>For another account to send events to your account, that external account must have a CloudWatch Events rule with your account's default event bus as a target.</p> <p>To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for each of these accounts.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>An entity that you specified does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "PolicyLengthExceededException",
+        "documentation" : "<p>The event bus policy is too long. For more information, see the limits.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalException",
+        "documentation" : "<p>This exception occurs due to unexpected causes.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "PutPermissionRequest",
+        "variableName" : "putPermissionRequest",
+        "variableType" : "PutPermissionRequest",
+        "documentation" : "",
+        "simpleType" : "PutPermissionRequest",
+        "variableSetterType" : "PutPermissionRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "putPermission",
+      "operationName" : "PutPermission",
+      "returnType" : {
+        "returnType" : "PutPermissionResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "PutPermissionResult"
+    },
     "PutRule" : {
       "asyncCallableType" : "java.util.concurrent.Callable<PutRuleResult>",
       "asyncFutureType" : "java.util.concurrent.Future<PutRuleResult>",
@@ -403,10 +477,10 @@
       "asyncReturnType" : "PutTargetsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p> <p>Targets are the resources that are invoked when a rule is triggered. Example targets include EC2 instances, AWS Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions state machines, and built-in targets. Note that creating rules with built-in targets is supported only in the AWS Management Console.</p> <p>For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon Kinesis stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTarget</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html\">Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p> <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If none of the following arguments are specified for a target, then the entire event is passed to the target in JSON form (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event is passed to the target).</p> </li> <li> <p>If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.</p> </li> <li> <p>If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.</p> </li> </ul> <p>When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>, you must use JSON dot notation, not bracket notation.</p> <p>When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be immediately invoked. Please allow a short period of time for changes to take effect.</p> <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>",
+      "documentation" : "<p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p> <p>Targets are the resources that are invoked when a rule is triggered.</p> <p>You can configure the following as targets for CloudWatch Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li> <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p> </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li> <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p> </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> </ul> <p>Note that creating rules with built-in targets is supported only in the AWS Management Console.</p> <p>For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon Kinesis stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html\">Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>), you can set that account's event bus as a target of the rules in your account. To send the matched events to the other account, specify that account's event bus as the <code>Arn</code> when you run <code>PutTargets</code>. For more information about enabling cross-account events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If none of the following arguments are specified for a target, then the entire event is passed to the target in JSON form (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event is passed to the target).</p> </li> <li> <p>If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.</p> </li> <li> <p>If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.</p> </li> </ul> <p>When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>, you must use JSON dot notation, not bracket notation.</p> <p>When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be immediately invoked. Please allow a short period of time for changes to take effect.</p> <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The rule does not exist.</p>",
+        "documentation" : "<p>An entity that you specified does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
@@ -439,6 +513,41 @@
       },
       "syncReturnType" : "PutTargetsResult"
     },
+    "RemovePermission" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<RemovePermissionResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<RemovePermissionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult>",
+      "asyncReturnType" : "RemovePermissionResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Revokes the permission of another AWS account to be able to put events to your default event bus. Specify the account to revoke by the <code>StatementId</code> value that you associated with the account when you granted it permission with <code>PutPermission</code>. You can find the <code>StatementId</code> by using <a>DescribeEventBus</a>.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>An entity that you specified does not exist.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalException",
+        "documentation" : "<p>This exception occurs due to unexpected causes.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "RemovePermissionRequest",
+        "variableName" : "removePermissionRequest",
+        "variableType" : "RemovePermissionRequest",
+        "documentation" : "",
+        "simpleType" : "RemovePermissionRequest",
+        "variableSetterType" : "RemovePermissionRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "removePermission",
+      "operationName" : "RemovePermission",
+      "returnType" : {
+        "returnType" : "RemovePermissionResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "RemovePermissionResult"
+    },
     "RemoveTargets" : {
       "asyncCallableType" : "java.util.concurrent.Callable<RemoveTargetsResult>",
       "asyncFutureType" : "java.util.concurrent.Future<RemoveTargetsResult>",
@@ -449,7 +558,7 @@
       "documentation" : "<p>Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.</p> <p>When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Please allow a short period of time for changes to take effect.</p> <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
-        "documentation" : "<p>The rule does not exist.</p>",
+        "documentation" : "<p>An entity that you specified does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConcurrentModificationException",
@@ -756,6 +865,464 @@
         "documentation" : null,
         "simpleType" : "DeleteRuleResult",
         "variableSetterType" : "DeleteRuleResult"
+      },
+      "wrapper" : false
+    },
+    "DescribeEventBusRequest" : {
+      "c2jName" : "DescribeEventBusRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DescribeEventBus",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AWSEvents.DescribeEventBus",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DescribeEventBusRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "DescribeEventBusRequest",
+        "variableName" : "describeEventBusRequest",
+        "variableType" : "DescribeEventBusRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeEventBusRequest",
+        "variableSetterType" : "DescribeEventBusRequest"
+      },
+      "wrapper" : false
+    },
+    "DescribeEventBusResult" : {
+      "c2jName" : "DescribeEventBusResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "Name",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the event bus. Currently, this is always <code>default</code>.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withName",
+        "getterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@return The name of the event bus. Currently, this is always <code>default</code>.*/",
+        "getterMethodName" : "getName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Name",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Name",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Name",
+        "setterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.*/",
+        "setterMethodName" : "setName",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "name",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "name",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the event bus. Currently, this is always <code>default</code>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Arn",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withArn",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@return The Amazon Resource Name (ARN) of the account permitted to write events to the current account.*/",
+        "getterMethodName" : "getArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Arn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Arn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Arn",
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.*/",
+        "setterMethodName" : "setArn",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "arn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "arn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Policy",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The policy that enables the external account to send events to your account.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPolicy",
+        "getterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@return The policy that enables the external account to send events to your account.*/",
+        "getterMethodName" : "getPolicy",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Policy",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Policy",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Policy",
+        "setterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.*/",
+        "setterMethodName" : "setPolicy",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "policy",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "policy",
+          "variableType" : "String",
+          "documentation" : "<p>The policy that enables the external account to send events to your account.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Arn" : {
+          "c2jName" : "Arn",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withArn",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@return The Amazon Resource Name (ARN) of the account permitted to write events to the current account.*/",
+          "getterMethodName" : "getArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Arn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Arn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Arn",
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.*/",
+          "setterMethodName" : "setArn",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "arn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "arn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Name" : {
+          "c2jName" : "Name",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the event bus. Currently, this is always <code>default</code>.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withName",
+          "getterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@return The name of the event bus. Currently, this is always <code>default</code>.*/",
+          "getterMethodName" : "getName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Name",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Name",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Name",
+          "setterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.*/",
+          "setterMethodName" : "setName",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "name",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "name",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the event bus. Currently, this is always <code>default</code>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Policy" : {
+          "c2jName" : "Policy",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The policy that enables the external account to send events to your account.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPolicy",
+          "getterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@return The policy that enables the external account to send events to your account.*/",
+          "getterMethodName" : "getPolicy",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Policy",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Policy",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Policy",
+          "setterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.*/",
+          "setterMethodName" : "setPolicy",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "policy",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "policy",
+            "variableType" : "String",
+            "documentation" : "<p>The policy that enables the external account to send events to your account.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DescribeEventBusResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "DescribeEventBusResult",
+        "variableName" : "describeEventBusResult",
+        "variableType" : "DescribeEventBusResult",
+        "documentation" : null,
+        "simpleType" : "DescribeEventBusResult",
+        "variableSetterType" : "DescribeEventBusResult"
       },
       "wrapper" : false
     },
@@ -5855,6 +6422,42 @@
       },
       "wrapper" : false
     },
+    "PolicyLengthExceededException" : {
+      "c2jName" : "PolicyLengthExceededException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The event bus policy is too long. For more information, see the limits.</p>",
+      "enums" : null,
+      "errorCode" : "PolicyLengthExceededException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "PolicyLengthExceededException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "PolicyLengthExceededException",
+        "variableName" : "policyLengthExceededException",
+        "variableType" : "PolicyLengthExceededException",
+        "documentation" : null,
+        "simpleType" : "PolicyLengthExceededException",
+        "variableSetterType" : "PolicyLengthExceededException"
+      },
+      "wrapper" : false
+    },
     "PutEventsRequest" : {
       "c2jName" : "PutEventsRequest",
       "customization" : {
@@ -7856,6 +8459,464 @@
       },
       "wrapper" : false
     },
+    "PutPermissionRequest" : {
+      "c2jName" : "PutPermissionRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "PutPermission",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AWSEvents.PutPermission",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "Action",
+        "c2jShape" : "Action",
+        "deprecated" : false,
+        "documentation" : "<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAction",
+        "getterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@return The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.*/",
+        "getterMethodName" : "getAction",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Action",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Action",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Action",
+        "setterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.*/",
+        "setterMethodName" : "setAction",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "action",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "action",
+          "variableType" : "String",
+          "documentation" : "<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Principal",
+        "c2jShape" : "Principal",
+        "deprecated" : false,
+        "documentation" : "<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPrincipal",
+        "getterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@return The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.*/",
+        "getterMethodName" : "getPrincipal",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Principal",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Principal",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Principal",
+        "setterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.*/",
+        "setterMethodName" : "setPrincipal",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "principal",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "principal",
+          "variableType" : "String",
+          "documentation" : "<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "StatementId",
+        "c2jShape" : "StatementId",
+        "deprecated" : false,
+        "documentation" : "<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withStatementId",
+        "getterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@return An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.*/",
+        "getterMethodName" : "getStatementId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "StatementId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "StatementId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "StatementId",
+        "setterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.*/",
+        "setterMethodName" : "setStatementId",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "statementId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "statementId",
+          "variableType" : "String",
+          "documentation" : "<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "Action" : {
+          "c2jName" : "Action",
+          "c2jShape" : "Action",
+          "deprecated" : false,
+          "documentation" : "<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAction",
+          "getterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@return The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.*/",
+          "getterMethodName" : "getAction",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Action",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Action",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Action",
+          "setterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.*/",
+          "setterMethodName" : "setAction",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "action",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "action",
+            "variableType" : "String",
+            "documentation" : "<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Principal" : {
+          "c2jName" : "Principal",
+          "c2jShape" : "Principal",
+          "deprecated" : false,
+          "documentation" : "<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPrincipal",
+          "getterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@return The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.*/",
+          "getterMethodName" : "getPrincipal",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Principal",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Principal",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Principal",
+          "setterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.*/",
+          "setterMethodName" : "setPrincipal",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "principal",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "principal",
+            "variableType" : "String",
+            "documentation" : "<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "StatementId" : {
+          "c2jName" : "StatementId",
+          "c2jShape" : "StatementId",
+          "deprecated" : false,
+          "documentation" : "<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withStatementId",
+          "getterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@return An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.*/",
+          "getterMethodName" : "getStatementId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "StatementId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "StatementId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "StatementId",
+          "setterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.*/",
+          "setterMethodName" : "setStatementId",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "statementId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "statementId",
+            "variableType" : "String",
+            "documentation" : "<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "Action", "Principal", "StatementId" ],
+      "shapeName" : "PutPermissionRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "PutPermissionRequest",
+        "variableName" : "putPermissionRequest",
+        "variableType" : "PutPermissionRequest",
+        "documentation" : null,
+        "simpleType" : "PutPermissionRequest",
+        "variableSetterType" : "PutPermissionRequest"
+      },
+      "wrapper" : false
+    },
+    "PutPermissionResult" : {
+      "c2jName" : "PutPermissionResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "PutPermissionResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "PutPermissionResult",
+        "variableName" : "putPermissionResult",
+        "variableType" : "PutPermissionResult",
+        "documentation" : null,
+        "simpleType" : "PutPermissionResult",
+        "variableSetterType" : "PutPermissionResult"
+      },
+      "wrapper" : false
+    },
     "PutRuleRequest" : {
       "c2jName" : "PutRuleRequest",
       "customization" : {
@@ -7946,11 +9007,11 @@
         "c2jName" : "ScheduleExpression",
         "c2jShape" : "ScheduleExpression",
         "deprecated" : false,
-        "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
+        "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withScheduleExpression",
-        "getterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@return The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".*/",
+        "getterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@return The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".*/",
         "getterMethodName" : "getScheduleExpression",
         "getterModel" : {
           "returnType" : "String",
@@ -7982,7 +9043,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ScheduleExpression",
-        "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".*/",
+        "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".*/",
         "setterMethodName" : "setScheduleExpression",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -7994,12 +9055,12 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "scheduleExpression",
           "variableType" : "String",
-          "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
+          "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8510,11 +9571,11 @@
           "c2jName" : "ScheduleExpression",
           "c2jShape" : "ScheduleExpression",
           "deprecated" : false,
-          "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
+          "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withScheduleExpression",
-          "getterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@return The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".*/",
+          "getterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@return The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".*/",
           "getterMethodName" : "getScheduleExpression",
           "getterModel" : {
             "returnType" : "String",
@@ -8546,7 +9607,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ScheduleExpression",
-          "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".*/",
+          "setterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".*/",
           "setterMethodName" : "setScheduleExpression",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -8558,12 +9619,12 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "scheduleExpression",
             "variableType" : "String",
-            "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
+            "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -10122,6 +11183,214 @@
       },
       "wrapper" : false
     },
+    "RemovePermissionRequest" : {
+      "c2jName" : "RemovePermissionRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "RemovePermission",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "AWSEvents.RemovePermission",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "StatementId",
+        "c2jShape" : "StatementId",
+        "deprecated" : false,
+        "documentation" : "<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withStatementId",
+        "getterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@return The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.*/",
+        "getterMethodName" : "getStatementId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "StatementId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "StatementId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "StatementId",
+        "setterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.*/",
+        "setterMethodName" : "setStatementId",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "statementId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "statementId",
+          "variableType" : "String",
+          "documentation" : "<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "StatementId" : {
+          "c2jName" : "StatementId",
+          "c2jShape" : "StatementId",
+          "deprecated" : false,
+          "documentation" : "<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withStatementId",
+          "getterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@return The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.*/",
+          "getterMethodName" : "getStatementId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "StatementId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "StatementId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "StatementId",
+          "setterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.*/",
+          "setterMethodName" : "setStatementId",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "statementId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "statementId",
+            "variableType" : "String",
+            "documentation" : "<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "StatementId" ],
+      "shapeName" : "RemovePermissionRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "RemovePermissionRequest",
+        "variableName" : "removePermissionRequest",
+        "variableType" : "RemovePermissionRequest",
+        "documentation" : null,
+        "simpleType" : "RemovePermissionRequest",
+        "variableSetterType" : "RemovePermissionRequest"
+      },
+      "wrapper" : false
+    },
+    "RemovePermissionResult" : {
+      "c2jName" : "RemovePermissionResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "RemovePermissionResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "RemovePermissionResult",
+        "variableName" : "removePermissionResult",
+        "variableType" : "RemovePermissionResult",
+        "documentation" : null,
+        "simpleType" : "RemovePermissionResult",
+        "variableSetterType" : "RemovePermissionResult"
+      },
+      "wrapper" : false
+    },
     "RemoveTargetsRequest" : {
       "c2jName" : "RemoveTargetsRequest",
       "customization" : {
@@ -11438,7 +12707,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The rule does not exist.</p>",
+      "documentation" : "<p>An entity that you specified does not exist.</p>",
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
       "hasHeaderMember" : false,

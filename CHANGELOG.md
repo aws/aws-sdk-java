@@ -1,3 +1,16 @@
+# __1.11.157__ __2017-06-29__
+## __Amazon CloudWatch Events__
+  - ### Features
+    - CloudWatch Events now allows different AWS accounts to share events with each other through a new resource called event bus. Event buses accept events from AWS services, other AWS accounts and PutEvents API calls. Currently all AWS accounts have one default event bus. To send events to another account, customers simply write rules to match the events of interest and attach an event bus in the receiving account as the target to the rule. The PutTargets API has been updated to allow adding cross account event buses as targets. In addition, we have released two new APIs - PutPermission and RemovePermission - that enables customers to add/remove permissions to their default event bus.
+
+## __Amazon GameLift__
+  - ### Features
+    - Allow developers to download GameLift fleet creation logs to assist with debugging.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Adding Resource Data Sync support to SSM Inventory.<br/>New APIs:<br/>CreateResourceDataSync - creates a new resource data sync configuration<br/>ListResourceDataSync - lists existing resource data sync configurations<br/>DeleteResourceDataSync - deletes an existing resource data sync configuration.
+
 # __1.11.156__ __2017-06-27__
 ## __AWS Service Catalog__
   - ### Features

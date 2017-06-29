@@ -132,6 +132,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResourceDataSyncResult> createResourceDataSyncAsync(CreateResourceDataSyncRequest request) {
+
+        return createResourceDataSyncAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourceDataSyncResult> createResourceDataSyncAsync(CreateResourceDataSyncRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateResourceDataSyncRequest, CreateResourceDataSyncResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteActivationResult> deleteActivationAsync(DeleteActivationRequest request) {
 
         return deleteActivationAsync(request, null);
@@ -218,6 +231,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<DeletePatchBaselineResult> deletePatchBaselineAsync(DeletePatchBaselineRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePatchBaselineRequest, DeletePatchBaselineResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourceDataSyncResult> deleteResourceDataSyncAsync(DeleteResourceDataSyncRequest request) {
+
+        return deleteResourceDataSyncAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourceDataSyncResult> deleteResourceDataSyncAsync(DeleteResourceDataSyncRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceDataSyncRequest, DeleteResourceDataSyncResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -904,6 +930,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceDataSyncResult> listResourceDataSyncAsync(ListResourceDataSyncRequest request) {
+
+        return listResourceDataSyncAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceDataSyncResult> listResourceDataSyncAsync(ListResourceDataSyncRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResourceDataSyncRequest, ListResourceDataSyncResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

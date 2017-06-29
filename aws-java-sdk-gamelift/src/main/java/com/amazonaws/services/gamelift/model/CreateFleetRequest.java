@@ -52,7 +52,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify a server launch path using the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a runtime configuration will continue to work.)
+     * instead of a run-time configuration will continue to work.)
      * </p>
      */
     private String serverLaunchPath;
@@ -60,7 +60,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify server launch parameters in the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a runtime configuration will continue to work.)
+     * instead of a run-time configuration will continue to work.)
      * </p>
      */
     private String serverLaunchParameters;
@@ -115,13 +115,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String newGameSessionProtectionPolicy;
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The runtime configuration for a fleet
+     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
      * has a collection of server process configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable, launch parameters, and the number
      * of concurrent processes with that configuration to maintain on each instance. A CreateFleet request must include
-     * a runtime configuration with at least one server process configuration; otherwise the request will fail with an
+     * a run-time configuration with at least one server process configuration; otherwise the request fails with an
      * invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
-     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a runtime
+     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a run-time
      * configuration will continue to work.)
      * </p>
      */
@@ -135,9 +135,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group, or
-     * use a new name to create a new metric group. Currently, a fleet can only be included in one metric group at a
-     * time.
+     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
+     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      */
     private java.util.List<String> metricGroups;
@@ -278,13 +277,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify a server launch path using the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a runtime configuration will continue to work.)
+     * instead of a run-time configuration will continue to work.)
      * </p>
      * 
      * @param serverLaunchPath
      *        This parameter is no longer used. Instead, specify a server launch path using the
      *        <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *        parameters instead of a runtime configuration will continue to work.)
+     *        parameters instead of a run-time configuration will continue to work.)
      */
 
     public void setServerLaunchPath(String serverLaunchPath) {
@@ -295,12 +294,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify a server launch path using the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a runtime configuration will continue to work.)
+     * instead of a run-time configuration will continue to work.)
      * </p>
      * 
      * @return This parameter is no longer used. Instead, specify a server launch path using the
      *         <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *         parameters instead of a runtime configuration will continue to work.)
+     *         parameters instead of a run-time configuration will continue to work.)
      */
 
     public String getServerLaunchPath() {
@@ -311,13 +310,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify a server launch path using the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a runtime configuration will continue to work.)
+     * instead of a run-time configuration will continue to work.)
      * </p>
      * 
      * @param serverLaunchPath
      *        This parameter is no longer used. Instead, specify a server launch path using the
      *        <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *        parameters instead of a runtime configuration will continue to work.)
+     *        parameters instead of a run-time configuration will continue to work.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,13 +329,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify server launch parameters in the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a runtime configuration will continue to work.)
+     * instead of a run-time configuration will continue to work.)
      * </p>
      * 
      * @param serverLaunchParameters
      *        This parameter is no longer used. Instead, specify server launch parameters in the
      *        <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *        parameters instead of a runtime configuration will continue to work.)
+     *        parameters instead of a run-time configuration will continue to work.)
      */
 
     public void setServerLaunchParameters(String serverLaunchParameters) {
@@ -347,12 +346,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify server launch parameters in the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a runtime configuration will continue to work.)
+     * instead of a run-time configuration will continue to work.)
      * </p>
      * 
      * @return This parameter is no longer used. Instead, specify server launch parameters in the
      *         <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *         parameters instead of a runtime configuration will continue to work.)
+     *         parameters instead of a run-time configuration will continue to work.)
      */
 
     public String getServerLaunchParameters() {
@@ -363,13 +362,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * This parameter is no longer used. Instead, specify server launch parameters in the
      * <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch parameters
-     * instead of a runtime configuration will continue to work.)
+     * instead of a run-time configuration will continue to work.)
      * </p>
      * 
      * @param serverLaunchParameters
      *        This parameter is no longer used. Instead, specify server launch parameters in the
      *        <code>RuntimeConfiguration</code> parameter. (Requests that specify a server launch path and launch
-     *        parameters instead of a runtime configuration will continue to work.)
+     *        parameters instead of a run-time configuration will continue to work.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -903,25 +902,25 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The runtime configuration for a fleet
+     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
      * has a collection of server process configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable, launch parameters, and the number
      * of concurrent processes with that configuration to maintain on each instance. A CreateFleet request must include
-     * a runtime configuration with at least one server process configuration; otherwise the request will fail with an
+     * a run-time configuration with at least one server process configuration; otherwise the request fails with an
      * invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
-     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a runtime
+     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a run-time
      * configuration will continue to work.)
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions for launching server processes on each instance in the fleet. The runtime configuration for a
-     *        fleet has a collection of server process configurations, one for each type of server process to run on an
-     *        instance. A server process configuration specifies the location of the server executable, launch
+     *        Instructions for launching server processes on each instance in the fleet. The run-time configuration for
+     *        a fleet has a collection of server process configurations, one for each type of server process to run on
+     *        an instance. A server process configuration specifies the location of the server executable, launch
      *        parameters, and the number of concurrent processes with that configuration to maintain on each instance. A
-     *        CreateFleet request must include a runtime configuration with at least one server process configuration;
-     *        otherwise the request will fail with an invalid request exception. (This parameter replaces the parameters
+     *        CreateFleet request must include a run-time configuration with at least one server process configuration;
+     *        otherwise the request fails with an invalid request exception. (This parameter replaces the parameters
      *        <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>; requests that contain values for
-     *        these parameters instead of a runtime configuration will continue to work.)
+     *        these parameters instead of a run-time configuration will continue to work.)
      */
 
     public void setRuntimeConfiguration(RuntimeConfiguration runtimeConfiguration) {
@@ -930,24 +929,24 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The runtime configuration for a fleet
+     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
      * has a collection of server process configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable, launch parameters, and the number
      * of concurrent processes with that configuration to maintain on each instance. A CreateFleet request must include
-     * a runtime configuration with at least one server process configuration; otherwise the request will fail with an
+     * a run-time configuration with at least one server process configuration; otherwise the request fails with an
      * invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
-     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a runtime
+     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a run-time
      * configuration will continue to work.)
      * </p>
      * 
-     * @return Instructions for launching server processes on each instance in the fleet. The runtime configuration for
+     * @return Instructions for launching server processes on each instance in the fleet. The run-time configuration for
      *         a fleet has a collection of server process configurations, one for each type of server process to run on
      *         an instance. A server process configuration specifies the location of the server executable, launch
      *         parameters, and the number of concurrent processes with that configuration to maintain on each instance.
-     *         A CreateFleet request must include a runtime configuration with at least one server process
-     *         configuration; otherwise the request will fail with an invalid request exception. (This parameter
-     *         replaces the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>; requests
-     *         that contain values for these parameters instead of a runtime configuration will continue to work.)
+     *         A CreateFleet request must include a run-time configuration with at least one server process
+     *         configuration; otherwise the request fails with an invalid request exception. (This parameter replaces
+     *         the parameters <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>; requests that
+     *         contain values for these parameters instead of a run-time configuration will continue to work.)
      */
 
     public RuntimeConfiguration getRuntimeConfiguration() {
@@ -956,25 +955,25 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. The runtime configuration for a fleet
+     * Instructions for launching server processes on each instance in the fleet. The run-time configuration for a fleet
      * has a collection of server process configurations, one for each type of server process to run on an instance. A
      * server process configuration specifies the location of the server executable, launch parameters, and the number
      * of concurrent processes with that configuration to maintain on each instance. A CreateFleet request must include
-     * a runtime configuration with at least one server process configuration; otherwise the request will fail with an
+     * a run-time configuration with at least one server process configuration; otherwise the request fails with an
      * invalid request exception. (This parameter replaces the parameters <code>ServerLaunchPath</code> and
-     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a runtime
+     * <code>ServerLaunchParameters</code>; requests that contain values for these parameters instead of a run-time
      * configuration will continue to work.)
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions for launching server processes on each instance in the fleet. The runtime configuration for a
-     *        fleet has a collection of server process configurations, one for each type of server process to run on an
-     *        instance. A server process configuration specifies the location of the server executable, launch
+     *        Instructions for launching server processes on each instance in the fleet. The run-time configuration for
+     *        a fleet has a collection of server process configurations, one for each type of server process to run on
+     *        an instance. A server process configuration specifies the location of the server executable, launch
      *        parameters, and the number of concurrent processes with that configuration to maintain on each instance. A
-     *        CreateFleet request must include a runtime configuration with at least one server process configuration;
-     *        otherwise the request will fail with an invalid request exception. (This parameter replaces the parameters
+     *        CreateFleet request must include a run-time configuration with at least one server process configuration;
+     *        otherwise the request fails with an invalid request exception. (This parameter replaces the parameters
      *        <code>ServerLaunchPath</code> and <code>ServerLaunchParameters</code>; requests that contain values for
-     *        these parameters instead of a runtime configuration will continue to work.)
+     *        these parameters instead of a run-time configuration will continue to work.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1031,14 +1030,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group, or
-     * use a new name to create a new metric group. Currently, a fleet can only be included in one metric group at a
-     * time.
+     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
+     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @return Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *         group, or use a new name to create a new metric group. Currently, a fleet can only be included in one
-     *         metric group at a time.
+     *         group. Or use a new name to create a new metric group. A fleet can only be included in one metric group
+     *         at a time.
      */
 
     public java.util.List<String> getMetricGroups() {
@@ -1047,15 +1045,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group, or
-     * use a new name to create a new metric group. Currently, a fleet can only be included in one metric group at a
-     * time.
+     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
+     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
      *        Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *        group, or use a new name to create a new metric group. Currently, a fleet can only be included in one
-     *        metric group at a time.
+     *        group. Or use a new name to create a new metric group. A fleet can only be included in one metric group at
+     *        a time.
      */
 
     public void setMetricGroups(java.util.Collection<String> metricGroups) {
@@ -1069,9 +1066,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group, or
-     * use a new name to create a new metric group. Currently, a fleet can only be included in one metric group at a
-     * time.
+     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
+     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1081,8 +1077,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param metricGroups
      *        Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *        group, or use a new name to create a new metric group. Currently, a fleet can only be included in one
-     *        metric group at a time.
+     *        group. Or use a new name to create a new metric group. A fleet can only be included in one metric group at
+     *        a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1098,15 +1094,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group, or
-     * use a new name to create a new metric group. Currently, a fleet can only be included in one metric group at a
-     * time.
+     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
+     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
      *        Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *        group, or use a new name to create a new metric group. Currently, a fleet can only be included in one
-     *        metric group at a time.
+     *        group. Or use a new name to create a new metric group. A fleet can only be included in one metric group at
+     *        a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,6 +43,11 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
     }
 
     @Override
+    public DescribeEventBusResult describeEventBus(DescribeEventBusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeRuleResult describeRule(DescribeRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,12 +83,22 @@ public class AbstractAmazonCloudWatchEvents implements AmazonCloudWatchEvents {
     }
 
     @Override
+    public PutPermissionResult putPermission(PutPermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutRuleResult putRule(PutRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutTargetsResult putTargets(PutTargetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemovePermissionResult removePermission(RemovePermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

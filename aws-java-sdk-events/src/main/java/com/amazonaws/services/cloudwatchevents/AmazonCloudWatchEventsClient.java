@@ -110,6 +110,9 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.InternalException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withModeledClass(
+                                    com.amazonaws.services.cloudwatchevents.model.PolicyLengthExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.LimitExceededException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException.class));
@@ -358,13 +361,67 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Displays the external AWS accounts that are permitted to write events to your account using your account's event
+     * bus, and the associated policy. To enable your account to receive events from other accounts, use
+     * <a>PutPermission</a>.
+     * </p>
+     * 
+     * @param describeEventBusRequest
+     * @return Result of the DescribeEventBus operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DescribeEventBus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventBus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeEventBusResult describeEventBus(DescribeEventBusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventBus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventBusResult executeDescribeEventBus(DescribeEventBusRequest describeEventBusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEventBusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEventBusRequest> request = null;
+        Response<DescribeEventBusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEventBusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventBusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEventBusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEventBusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified rule.
      * </p>
      * 
      * @param describeRuleRequest
      * @return Result of the DescribeRule operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The rule does not exist.
+     *         An entity that you specified does not exist.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DescribeRule
@@ -421,7 +478,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @param disableRuleRequest
      * @return Result of the DisableRule operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The rule does not exist.
+     *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
      *         There is concurrent modification on a rule or target.
      * @throws InternalException
@@ -479,7 +536,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @param enableRuleRequest
      * @return Result of the EnableRule operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The rule does not exist.
+     *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
      *         There is concurrent modification on a rule or target.
      * @throws InternalException
@@ -636,7 +693,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @param listTargetsByRuleRequest
      * @return Result of the ListTargetsByRule operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The rule does not exist.
+     *         An entity that you specified does not exist.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.ListTargetsByRule
@@ -732,6 +789,70 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Running <code>PutPermission</code> permits the specified AWS account to put events to your account's default
+     * <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to your default
+     * event bus.
+     * </p>
+     * <p>
+     * For another account to send events to your account, that external account must have a CloudWatch Events rule with
+     * your account's default event bus as a target.
+     * </p>
+     * <p>
+     * To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for
+     * each of these accounts.
+     * </p>
+     * 
+     * @param putPermissionRequest
+     * @return Result of the PutPermission operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws PolicyLengthExceededException
+     *         The event bus policy is too long. For more information, see the limits.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.PutPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutPermissionResult putPermission(PutPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutPermission(request);
+    }
+
+    @SdkInternalApi
+    final PutPermissionResult executePutPermission(PutPermissionRequest putPermissionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putPermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutPermissionRequest> request = null;
+        Response<PutPermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutPermissionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutPermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can
      * disable a rule using <a>DisableRule</a>.
      * </p>
@@ -808,9 +929,55 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * rule.
      * </p>
      * <p>
-     * Targets are the resources that are invoked when a rule is triggered. Example targets include EC2 instances, AWS
-     * Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions state machines, and built-in
-     * targets. Note that creating rules with built-in targets is supported only in the AWS Management Console.
+     * Targets are the resources that are invoked when a rule is triggered.
+     * </p>
+     * <p>
+     * You can configure the following as targets for CloudWatch Events:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * EC2 instances
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Lambda functions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Streams in Amazon Kinesis Streams
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Delivery streams in Amazon Kinesis Firehose
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon ECS tasks
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Step Functions state machines
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SNS topics
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SQS queues
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that creating rules with built-in targets is supported only in the AWS Management Console.
      * </p>
      * <p>
      * For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon
@@ -822,9 +989,15 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
      * permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
      * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
-     * roles that you specify in the <code>RoleARN</code> argument in <code>PutTarget</code>. For more information, see
+     * roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see
      * <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">
      * Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * </p>
+     * <p>
+     * If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>),
+     * you can set that account's event bus as a target of the rules in your account. To send the matched events to the
+     * other account, specify that account's event bus as the <code>Arn</code> when you run <code>PutTargets</code>. For
+     * more information about enabling cross-account events, see <a>PutPermission</a>.
      * </p>
      * <p>
      * <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a
@@ -874,7 +1047,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @param putTargetsRequest
      * @return Result of the PutTargets operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The rule does not exist.
+     *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
      *         There is concurrent modification on a rule or target.
      * @throws LimitExceededException
@@ -924,6 +1097,61 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Revokes the permission of another AWS account to be able to put events to your default event bus. Specify the
+     * account to revoke by the <code>StatementId</code> value that you associated with the account when you granted it
+     * permission with <code>PutPermission</code>. You can find the <code>StatementId</code> by using
+     * <a>DescribeEventBus</a>.
+     * </p>
+     * 
+     * @param removePermissionRequest
+     * @return Result of the RemovePermission operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.RemovePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RemovePermissionResult removePermission(RemovePermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemovePermission(request);
+    }
+
+    @SdkInternalApi
+    final RemovePermissionResult executeRemovePermission(RemovePermissionRequest removePermissionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removePermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemovePermissionRequest> request = null;
+        Response<RemovePermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemovePermissionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemovePermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be
      * invoked.
      * </p>
@@ -940,7 +1168,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * @param removeTargetsRequest
      * @return Result of the RemoveTargets operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The rule does not exist.
+     *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
      *         There is concurrent modification on a rule or target.
      * @throws InternalException

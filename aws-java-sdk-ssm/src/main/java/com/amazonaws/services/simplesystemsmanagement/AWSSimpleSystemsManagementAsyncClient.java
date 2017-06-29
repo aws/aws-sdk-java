@@ -523,6 +523,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResourceDataSyncResult> createResourceDataSyncAsync(CreateResourceDataSyncRequest request) {
+
+        return createResourceDataSyncAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourceDataSyncResult> createResourceDataSyncAsync(final CreateResourceDataSyncRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateResourceDataSyncRequest, CreateResourceDataSyncResult> asyncHandler) {
+        final CreateResourceDataSyncRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateResourceDataSyncResult>() {
+            @Override
+            public CreateResourceDataSyncResult call() throws Exception {
+                CreateResourceDataSyncResult result = null;
+
+                try {
+                    result = executeCreateResourceDataSync(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteActivationResult> deleteActivationAsync(DeleteActivationRequest request) {
 
         return deleteActivationAsync(request, null);
@@ -738,6 +771,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeDeletePatchBaseline(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourceDataSyncResult> deleteResourceDataSyncAsync(DeleteResourceDataSyncRequest request) {
+
+        return deleteResourceDataSyncAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourceDataSyncResult> deleteResourceDataSyncAsync(final DeleteResourceDataSyncRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourceDataSyncRequest, DeleteResourceDataSyncResult> asyncHandler) {
+        final DeleteResourceDataSyncRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourceDataSyncResult>() {
+            @Override
+            public DeleteResourceDataSyncResult call() throws Exception {
+                DeleteResourceDataSyncResult result = null;
+
+                try {
+                    result = executeDeleteResourceDataSync(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2407,6 +2473,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeListInventoryEntries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceDataSyncResult> listResourceDataSyncAsync(ListResourceDataSyncRequest request) {
+
+        return listResourceDataSyncAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceDataSyncResult> listResourceDataSyncAsync(final ListResourceDataSyncRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourceDataSyncRequest, ListResourceDataSyncResult> asyncHandler) {
+        final ListResourceDataSyncRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourceDataSyncResult>() {
+            @Override
+            public ListResourceDataSyncResult call() throws Exception {
+                ListResourceDataSyncResult result = null;
+
+                try {
+                    result = executeListResourceDataSync(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

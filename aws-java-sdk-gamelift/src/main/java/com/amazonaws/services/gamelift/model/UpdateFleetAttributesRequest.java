@@ -74,9 +74,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
     /**
      * <p>
-     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
-     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
-     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      */
     private java.util.List<String> metricGroups;
@@ -456,15 +456,15 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
-     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
-     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      * 
-     * @return Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to
-     *         aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group,
-     *         or use a new name to create a new metric group. Currently, a fleet can only be included in one metric
-     *         group at a time.
+     * @return Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to
+     *         aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group.
+     *         Or use a new name to create a new metric group. A fleet can only be included in one metric group at a
+     *         time.
      */
 
     public java.util.List<String> getMetricGroups() {
@@ -473,16 +473,16 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
-     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
-     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to
-     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group,
-     *        or use a new name to create a new metric group. Currently, a fleet can only be included in one metric
-     *        group at a time.
+     *        Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to
+     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group.
+     *        Or use a new name to create a new metric group. A fleet can only be included in one metric group at a
+     *        time.
      */
 
     public void setMetricGroups(java.util.Collection<String> metricGroups) {
@@ -496,9 +496,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
-     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
-     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -507,10 +507,10 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param metricGroups
-     *        Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to
-     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group,
-     *        or use a new name to create a new metric group. Currently, a fleet can only be included in one metric
-     *        group at a time.
+     *        Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to
+     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group.
+     *        Or use a new name to create a new metric group. A fleet can only be included in one metric group at a
+     *        time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -526,16 +526,16 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
-     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
-     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group. Or use a new name
+     * to create a new metric group. A fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to
-     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group,
-     *        or use a new name to create a new metric group. Currently, a fleet can only be included in one metric
-     *        group at a time.
+     *        Names of metric groups to include this fleet in. Amazon CloudWatch uses a fleet metric group is to
+     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group.
+     *        Or use a new name to create a new metric group. A fleet can only be included in one metric group at a
+     *        time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

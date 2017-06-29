@@ -393,6 +393,37 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Creates a resource data sync configuration to a single bucket in Amazon S3. This is an asynchronous operation
+     * that returns immediately. After a successful initial sync is completed, the system continuously syncs data to the
+     * Amazon S3 bucket. To check the status of the sync, use the <a
+     * href="API_ListResourceDataSync.html">ListResourceDataSync</a> operation.
+     * </p>
+     * <p>
+     * By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to
+     * ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a
+     * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync,
+     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">
+     * Creating a Resource Data Sync</a>.
+     * </p>
+     * 
+     * @param createResourceDataSyncRequest
+     * @return Result of the CreateResourceDataSync operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourceDataSyncCountExceededException
+     *         You have exceeded the allowed maximum sync configurations.
+     * @throws ResourceDataSyncAlreadyExistsException
+     *         A sync configuration with the same name already exists.
+     * @throws ResourceDataSyncInvalidConfigurationException
+     *         The specified sync configuration is invalid.
+     * @sample AWSSimpleSystemsManagement.CreateResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateResourceDataSyncResult createResourceDataSync(CreateResourceDataSyncRequest createResourceDataSyncRequest);
+
+    /**
+     * <p>
      * Deletes an activation. You are not required to delete an activation. If you delete an activation, you can no
      * longer use it to register additional managed instances. Deleting an activation does not de-register managed
      * instances. You must manually de-register managed instances.
@@ -545,6 +576,25 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest deletePatchBaselineRequest);
+
+    /**
+     * <p>
+     * Deletes a Resource Data Sync configuration. After the configuration is deleted, changes to inventory data on
+     * managed instances are no longer synced with the target Amazon S3 bucket. Deleting a sync configuration does not
+     * delete data in the target Amazon S3 bucket.
+     * </p>
+     * 
+     * @param deleteResourceDataSyncRequest
+     * @return Result of the DeleteResourceDataSync operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourceDataSyncNotFoundException
+     *         The specified sync name was not found.
+     * @sample AWSSimpleSystemsManagement.DeleteResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteResourceDataSyncResult deleteResourceDataSync(DeleteResourceDataSyncRequest deleteResourceDataSyncRequest);
 
     /**
      * <p>
@@ -1395,8 +1445,8 @@ public interface AWSSimpleSystemsManagement {
     /**
      * <p>
      * Retrieve parameters in a specific hierarchy. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html">Using
-     * Parameter Hierarchies</a>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
+     * Systems Manager Parameters</a>.
      * </p>
      * 
      * @param getParametersByPathRequest
@@ -1630,6 +1680,31 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Lists your resource data sync configurations. Includes information about the last time a sync attempted to start,
+     * the last sync status, and the last time a sync successfully completed.
+     * </p>
+     * <p>
+     * The number of sync configurations might be too large to return using a single call to
+     * <code>ListResourceDataSync</code>. You can limit the number of sync configurations returned by using the
+     * <code>MaxResults</code> parameter. To determine whether there are more sync configurations to list, check the
+     * value of <code>NextToken</code> in the output. If there are more sync configurations to list, you can request
+     * them by specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent call.
+     * </p>
+     * 
+     * @param listResourceDataSyncRequest
+     * @return Result of the ListResourceDataSync operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListResourceDataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceDataSync" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListResourceDataSyncResult listResourceDataSync(ListResourceDataSyncRequest listResourceDataSyncRequest);
+
+    /**
+     * <p>
      * Returns a list of the tags assigned to the specified resource.
      * </p>
      * 
@@ -1747,8 +1822,8 @@ public interface AWSSimpleSystemsManagement {
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working-path.html"
-     *         >Develop a Parameter Hierarchy</a>.
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
+     *         with Systems Manager Parameters</a>.
      * @throws HierarchyTypeMismatchException
      *         Parameter Store does not support changing a parameter type in a hierarchy. For example, you can't change
      *         a parameter from a String type to a SecureString type. You must create a new, unique parameter.

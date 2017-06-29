@@ -22,6 +22,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Fleet designated in a game session queue. Requests for new game sessions in the queue are fulfilled by starting a new
  * game session on any destination configured for a queue.
  * </p>
+ * <p>
+ * Queue-related operations include:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateGameSessionQueue</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionQueues</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateGameSessionQueue</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteGameSessionQueue</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionQueueDestination"
  *      target="_top">AWS API Documentation</a>

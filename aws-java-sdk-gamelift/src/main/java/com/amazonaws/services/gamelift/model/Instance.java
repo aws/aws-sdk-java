@@ -67,7 +67,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
@@ -368,7 +368,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
@@ -392,7 +392,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined
-     *        in the fleet's runtime configuration.
+     *        in the fleet's run-time configuration.
      *        </p>
      *        </li>
      *        <li>
@@ -423,7 +423,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
@@ -446,7 +446,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <b>PENDING</b> – The instance is in the process of being created and launching server processes as
-     *         defined in the fleet's runtime configuration.
+     *         defined in the fleet's run-time configuration.
      *         </p>
      *         </li>
      *         <li>
@@ -477,7 +477,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
@@ -501,7 +501,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined
-     *        in the fleet's runtime configuration.
+     *        in the fleet's run-time configuration.
      *        </p>
      *        </li>
      *        <li>
@@ -534,7 +534,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
@@ -558,7 +558,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined
-     *        in the fleet's runtime configuration.
+     *        in the fleet's run-time configuration.
      *        </p>
      *        </li>
      *        <li>
@@ -589,7 +589,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined in the
-     * fleet's runtime configuration.
+     * fleet's run-time configuration.
      * </p>
      * </li>
      * <li>
@@ -613,7 +613,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>PENDING</b> – The instance is in the process of being created and launching server processes as defined
-     *        in the fleet's runtime configuration.
+     *        in the fleet's run-time configuration.
      *        </p>
      *        </li>
      *        <li>

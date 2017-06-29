@@ -23,6 +23,122 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * capacity of one instance, but can be updated as needed. The maximum number of instances for a fleet is determined by
  * the fleet's instance type.
  * </p>
+ * <p>
+ * Fleet-related operations include:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateFleet</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListFleets</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Describe fleets:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeFleetAttributes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetPortSettings</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetUtilization</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeRuntimeConfiguration</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetEvents</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * Update fleets:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>UpdateFleetAttributes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateFleetCapacity</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateFleetPortSettings</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateRuntimeConfiguration</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * Manage fleet capacity:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeFleetCapacity</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateFleetCapacity</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutScalingPolicy</a> (automatic scaling)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeScalingPolicies</a> (automatic scaling)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteScalingPolicy</a> (automatic scaling)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeEC2InstanceLimits</a>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteFleet</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetCapacity" target="_top">AWS API
  *      Documentation</a>

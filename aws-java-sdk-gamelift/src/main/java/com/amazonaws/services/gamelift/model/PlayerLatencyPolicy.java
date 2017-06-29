@@ -25,7 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * latency information.
  * </p>
  * <p>
- * Latency policy-related operations include:
+ * Queue-related operations include:
  * </p>
  * <ul>
  * <li>
@@ -35,12 +35,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
+ * <a>DescribeGameSessionQueues</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>UpdateGameSessionQueue</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>StartGameSessionPlacement</a>
+ * <a>DeleteGameSessionQueue</a>
  * </p>
  * </li>
  * </ul>

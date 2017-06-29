@@ -33,42 +33,66 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <fullname>Amazon GameLift Service</fullname>
  * <p>
  * Amazon GameLift is a managed service for developers who need a scalable, dedicated server solution for their
- * multiplayer games. Amazon GameLift provides tools to acquire computing resources and deploy game servers, scale game
- * server capacity to meet player demand, and track in-depth metrics on player usage and server performance.
+ * multiplayer games. Amazon GameLift provides tools for the following tasks: (1) acquire computing resources and deploy
+ * game servers, (2) scale game server capacity to meet player demand, (3) host game sessions and manage player access,
+ * and (4) track in-depth metrics on player usage and server performance.
  * </p>
  * <p>
- * The Amazon GameLift service API includes important features:
+ * The Amazon GameLift service API includes two important function sets:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Find game sessions and match players to games – Retrieve information on available game sessions; create new game
+ * <b>Manage game sessions and player access</b> – Retrieve information on available game sessions; create new game
  * sessions; send player requests to join a game session.
  * </p>
  * </li>
  * <li>
  * <p>
- * Configure and manage game server resources – Manage builds, fleets, queues, and aliases; set autoscaling policies;
- * retrieve logs and metrics.
+ * <b>Configure and manage game server resources</b> – Manage builds, fleets, queues, and aliases; set autoscaling
+ * policies; retrieve logs and metrics.
  * </p>
  * </li>
  * </ul>
  * <p>
- * This reference guide describes the low-level service API for Amazon GameLift. We recommend using either the Amazon
- * Web Services software development kit (<a href="http://aws.amazon.com/tools/#sdk">AWS SDK</a>), available in multiple
- * languages, or the <a href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool. Both of these align
- * with the low-level service API. In addition, you can use the <a
- * href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a> for Amazon GameLift for many
- * administrative actions.
+ * This reference guide describes the low-level service API for Amazon GameLift. You can use the API functionality with
+ * these tools:
  * </p>
+ * <ul>
+ * <li>
  * <p>
- * You can use some API actions with Amazon GameLift Local, a testing tool that lets you test your game integration
- * locally before deploying on Amazon GameLift. You can call these APIs from the AWS CLI or programmatically; API calls
- * to Amazon GameLift Local servers perform exactly as they do when calling Amazon GameLift web servers. For more
- * information on using Amazon GameLift Local, see <a
+ * The Amazon Web Services software development kit (<a href="http://aws.amazon.com/tools/#sdk">AWS SDK</a>) is
+ * available in <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-supported.html#gamelift-supported-clients"
+ * >multiple languages</a> including C++ and C#. Use the SDK to access the API programmatically from an application,
+ * such as a game client.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The <a href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool is primarily useful for handling
+ * administrative actions, such as setting up and managing Amazon GameLift settings and resources. You can use the AWS
+ * CLI to manage all of your AWS services.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The <a href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a> for Amazon GameLift provides a
+ * web interface to manage your Amazon GameLift settings and resources. The console includes a dashboard for tracking
+ * key resources, includings builds and fleets, and displays usage and performance metrics for your games as
+ * customizable graphs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon GameLift Local is a tool for testing your game's integration with Amazon GameLift before deploying it on the
+ * service. This tools supports a subset of key API actions, which can be called from either the AWS CLI or
+ * programmatically. See <a
  * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing an
  * Integration</a>.
  * </p>
+ * </li>
+ * </ul>
  * <p>
  * <b>MORE RESOURCES</b>
  * </p>
@@ -110,12 +134,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * This list offers a functional overview of the Amazon GameLift service API.
  * </p>
  * <p>
- * <b>Finding Games and Joining Players</b>
+ * <b>Managing Games and Players</b>
  * </p>
  * <p>
- * You can enable players to connect to game servers on Amazon GameLift from a game client or through a game service
- * (such as a matchmaking service). You can use these operations to discover actively running game or start new games.
- * You can also match players to games, either singly or as a group.
+ * These actions allow you to start new game sessions, find existing game sessions, track status and other game session
+ * information, and enable access for players to join game sessions.
  * </p>
  * <ul>
  * <li>
@@ -126,7 +149,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions that match a set of criteria.
- * <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
@@ -138,8 +160,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * Game session placement – Use a queue to process new game session requests and create game sessions on fleets
- * designated for the queue.
+ * Game session placement – Use a queue to process requests for new game sessions and place them on the best available
+ * fleet. Placement requests are asynchronous; game sessions are started whenever acceptable resources become available.
  * </p>
  * <ul>
  * <li>
@@ -161,14 +183,14 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
+ * <a>CreateGameSession</a> – Request a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
- * <b>Manage game session objects</b>
+ * <b>Manage game session data</b>
  * </p>
  * <ul>
  * <li>
@@ -197,7 +219,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <b>Manage player sessions objects</b>
+ * <b>Manage player sessions</b>
  * </p>
  * <ul>
  * <li>
@@ -225,9 +247,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <b>Setting Up and Managing Game Servers</b>
  * </p>
  * <p>
- * When setting up Amazon GameLift, first create a game build and upload the files to Amazon GameLift. Then use these
- * operations to set up a fleet of resources to run your game servers. Manage games to scale capacity, adjust
- * configuration settings, access raw utilization data, and more.
+ * When setting up Amazon GameLift resources for your game, you first <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create a game build</a>
+ * and upload it to Amazon GameLift. You can then use these actions to configure and manage a fleet of resources to run
+ * your game servers, scale capacity to meet player demand, access performance and utilization metrics, and more.
  * </p>
  * <ul>
  * <li>
@@ -237,8 +260,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreateBuild</a> – Create a new build by uploading files stored in an Amazon S3 bucket. (To create a build stored
- * at a local file location, use the AWS CLI command <code>upload-build</code>.)
+ * <a>CreateBuild</a> – Create a new build using files stored in an Amazon S3 bucket. (Update uploading permissions with
+ * <a>RequestUploadCredentials</a>.) To create a build and upload files from a local path, use the AWS CLI command
+ * <code>upload-build</code>.
  * </p>
  * </li>
  * <li>
@@ -275,6 +299,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <a>ListFleets</a> – Get a list of all fleet IDs in a Amazon GameLift region (all statuses).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>DeleteFleet</a> – Terminate a fleet that is no longer running game servers or hosting players.
  * </p>
  * </li>
@@ -283,11 +312,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * View / update fleet configurations.
  * </p>
  * <ul>
- * <li>
- * <p>
- * <a>ListFleets</a> – Get a list of all fleet IDs in a Amazon GameLift region (all statuses).
- * </p>
- * </li>
  * <li>
  * <p>
  * <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> – View or change a fleet's metadata and settings for
@@ -304,12 +328,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> – View or change what server processes (and
  * how many) to run on each instance in a fleet.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeInstances</a> – Get information on each instance in a fleet, including instance ID, IP address, and
- * status.
  * </p>
  * </li>
  * </ul>
@@ -386,6 +404,12 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <b>Remotely access an instance</b>
  * </p>
  * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeInstances</a> – Get information on each instance in a fleet, including instance ID, IP address, and
+ * status.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect to a specified instance in a fleet.
