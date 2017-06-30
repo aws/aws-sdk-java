@@ -133,8 +133,7 @@ public class TransferManagerUtils {
      */
     public static boolean shouldUseMultipartUpload(PutObjectRequest putObjectRequest, TransferManagerConfiguration configuration) {
         long contentLength = TransferManagerUtils.getContentLength(putObjectRequest);
-        return (contentLength > configuration.getMultipartUploadThreshold())
-                && putObjectRequest.getTagging() == null;
+        return (contentLength > configuration.getMultipartUploadThreshold());
     }
 
     /**

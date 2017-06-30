@@ -1,3 +1,12 @@
+# __1.11.158__ __2017-06-30__
+## __AWS Marketplace Commerce Analytics__
+  - ### Features
+    - Documentation updates for AWS Marketplace Commerce Analytics.
+
+## __Amazon S3__
+  - ### Features
+    - Adding Object Tagging Header to MultipartUpload Initialization
+
 # __1.11.157__ __2017-06-29__
 ## __Amazon CloudWatch Events__
   - ### Features

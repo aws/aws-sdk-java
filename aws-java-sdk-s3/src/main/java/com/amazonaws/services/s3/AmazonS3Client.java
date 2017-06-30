@@ -3037,6 +3037,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         populateSSE_KMS(request,
                 initiateMultipartUploadRequest.getSSEAwsKeyManagementParams());
 
+        addHeaderIfNotNull(request, Headers.S3_TAGGING, urlEncodeTags(initiateMultipartUploadRequest.getTagging()));
+
         // Be careful that we don't send the object's total size as the content
         // length for the InitiateMultipartUpload request.
         setZeroContentLength(request);

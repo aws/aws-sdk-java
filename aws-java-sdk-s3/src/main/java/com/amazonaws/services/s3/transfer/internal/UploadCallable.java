@@ -343,6 +343,8 @@ public class UploadCallable implements Callable<UploadResult> {
                 .withObjectMetadata(origReq.getMetadata());
         }
 
+        req.withTagging(origReq.getTagging());
+
         TransferManager.appendMultipartUserAgent(req);
 
         req.withAccessControlList(origReq.getAccessControlList())
