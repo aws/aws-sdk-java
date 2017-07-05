@@ -31,15 +31,15 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real-time.
+ * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real time.
  * You can use CloudWatch to collect and track metrics, which are the variables you want to measure for your resources
  * and applications.
  * </p>
  * <p>
- * CloudWatch alarms send notifications or automatically make changes to the resources you are monitoring based on rules
- * that you define. For example, you can monitor the CPU usage and disk reads and writes of your Amazon Elastic Compute
- * Cloud (Amazon EC2) instances and then use this data to determine whether you should launch additional instances to
- * handle increased load. You can also use this data to stop under-used instances to save money.
+ * CloudWatch alarms send notifications or automatically change the resources you are monitoring based on rules that you
+ * define. For example, you can monitor the CPU usage and disk reads and writes of your Amazon EC2 instances. Then, use
+ * this data to determine whether you should launch additional instances to handle increased load. You can also use this
+ * data to stop under-used instances to save money.
  * </p>
  * <p>
  * In addition to monitoring the built-in metrics that come with AWS, you can monitor your own custom metrics. With
@@ -290,6 +290,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDashboardsResult> deleteDashboardsAsync(DeleteDashboardsRequest request) {
+
+        return deleteDashboardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDashboardsResult> deleteDashboardsAsync(final DeleteDashboardsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDashboardsRequest, DeleteDashboardsResult> asyncHandler) {
+        final DeleteDashboardsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDashboardsResult>() {
+            @Override
+            public DeleteDashboardsResult call() throws Exception {
+                DeleteDashboardsResult result = null;
+
+                try {
+                    result = executeDeleteDashboards(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(DescribeAlarmHistoryRequest request) {
 
         return describeAlarmHistoryAsync(request, null);
@@ -501,6 +534,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetDashboardResult> getDashboardAsync(GetDashboardRequest request) {
+
+        return getDashboardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDashboardResult> getDashboardAsync(final GetDashboardRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDashboardRequest, GetDashboardResult> asyncHandler) {
+        final GetDashboardRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDashboardResult>() {
+            @Override
+            public GetDashboardResult call() throws Exception {
+                GetDashboardResult result = null;
+
+                try {
+                    result = executeGetDashboard(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(GetMetricStatisticsRequest request) {
 
         return getMetricStatisticsAsync(request, null);
@@ -518,6 +584,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
 
                 try {
                     result = executeGetMetricStatistics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDashboardsResult> listDashboardsAsync(ListDashboardsRequest request) {
+
+        return listDashboardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDashboardsResult> listDashboardsAsync(final ListDashboardsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDashboardsRequest, ListDashboardsResult> asyncHandler) {
+        final ListDashboardsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDashboardsResult>() {
+            @Override
+            public ListDashboardsResult call() throws Exception {
+                ListDashboardsResult result = null;
+
+                try {
+                    result = executeListDashboards(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -587,6 +686,39 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
             com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult> asyncHandler) {
 
         return listMetricsAsync(new ListMetricsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDashboardResult> putDashboardAsync(PutDashboardRequest request) {
+
+        return putDashboardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDashboardResult> putDashboardAsync(final PutDashboardRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDashboardRequest, PutDashboardResult> asyncHandler) {
+        final PutDashboardRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutDashboardResult>() {
+            @Override
+            public PutDashboardResult call() throws Exception {
+                PutDashboardResult result = null;
+
+                try {
+                    result = executePutDashboard(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

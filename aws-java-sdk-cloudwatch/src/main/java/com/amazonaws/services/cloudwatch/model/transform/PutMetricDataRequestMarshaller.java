@@ -111,6 +111,11 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
                 if (metricDataListValue.getUnit() != null) {
                     request.addParameter("MetricData.member." + metricDataListIndex + ".Unit", StringUtils.fromString(metricDataListValue.getUnit()));
                 }
+
+                if (metricDataListValue.getStorageResolution() != null) {
+                    request.addParameter("MetricData.member." + metricDataListIndex + ".StorageResolution",
+                            StringUtils.fromInteger(metricDataListValue.getStorageResolution()));
+                }
                 metricDataListIndex++;
             }
         }

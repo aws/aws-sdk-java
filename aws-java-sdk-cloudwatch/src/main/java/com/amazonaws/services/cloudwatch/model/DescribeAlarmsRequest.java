@@ -33,7 +33,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> alarmNames;
     /**
      * <p>
-     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      */
     private String alarmNamePrefix;
@@ -137,11 +137,11 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      * 
      * @param alarmNamePrefix
-     *        The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     *        The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      */
 
     public void setAlarmNamePrefix(String alarmNamePrefix) {
@@ -150,10 +150,10 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      * 
-     * @return The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * @return The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      */
 
     public String getAlarmNamePrefix() {
@@ -162,11 +162,11 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     * The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * </p>
      * 
      * @param alarmNamePrefix
-     *        The alarm name prefix. You cannot specify <code>AlarmNames</code> if this parameter is specified.
+     *        The alarm name prefix. If this parameter is specified, you cannot specify <code>AlarmNames</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

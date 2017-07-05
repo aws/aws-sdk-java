@@ -20,36 +20,38 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidStaxUnmarshaller;
 import com.amazonaws.util.StringUtils;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
-
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Default implementation of HttpResponseHandler that handles a successful
  * response from an AWS service and unmarshalls the result using a StAX
  * unmarshaller.
  *
- * @param <T>
- *            Indicates the type being unmarshalled by this response handler.
+ * @param <T> Indicates the type being unmarshalled by this response handler.
  */
 public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServiceResponse<T>> {
 
-    /** The StAX unmarshaller to use when handling the response */
+    /**
+     * The StAX unmarshaller to use when handling the response
+     */
     private Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller;
 
-    /** Shared logger for profiling information */
+    /**
+     * Shared logger for profiling information
+     */
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
 
-    /** Shared factory for creating XML event readers */
+    /**
+     * Shared factory for creating XML event readers
+     */
     private static final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 
     /**
@@ -58,8 +60,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      * response element path to find the root of the business data in the
      * service's response.
      *
-     * @param responseUnmarshaller
-     *            The StAX unmarshaller to use on the response.
+     * @param responseUnmarshaller The StAX unmarshaller to use on the response.
      */
     public StaxResponseHandler(Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller) {
         this.responseUnmarshaller = responseUnmarshaller;
@@ -89,7 +90,11 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
 
         XMLEventReader eventReader;
         synchronized (xmlInputFactory) {
-            eventReader = xmlInputFactory.createXMLEventReader(content);
+            try {
+                eventReader = xmlInputFactory.createXMLEventReader(content);
+            } catch (XMLStreamException e) {
+                throw handleXmlStreamException(e);
+            }
         }
 
         try {
@@ -107,7 +112,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             if (responseHeaders != null) {
                 if (responseHeaders.get(X_AMZN_REQUEST_ID_HEADER) != null) {
                     metadata.put(ResponseMetadata.AWS_REQUEST_ID,
-                            responseHeaders.get(X_AMZN_REQUEST_ID_HEADER));
+                                 responseHeaders.get(X_AMZN_REQUEST_ID_HEADER));
                 }
             }
             awsResponse.setResponseMetadata(getResponseMetadata(metadata));
@@ -115,12 +120,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             log.trace("Done parsing service response");
             return awsResponse;
         } catch (XMLStreamException e) {
-            // If the exception was caused by an IOE, wrap this in an IOE so
-            // that it will be exposed to the RetryPolicy.
-            if (e.getNestedException() instanceof IOException) {
-                throw new IOException(e);
-            }
-            throw e;
+            throw handleXmlStreamException(e);
         } finally {
             try {
                 eventReader.close();
@@ -128,6 +128,17 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
                 log.warn("Error closing xml parser", e);
             }
         }
+    }
+
+    /**
+     * If the exception was caused by an {@link IOException}, wrap it an another IOE so
+     * that it will be exposed to the RetryPolicy.
+     */
+    private Exception handleXmlStreamException(XMLStreamException e) throws Exception {
+        if (e.getNestedException() instanceof IOException) {
+            return new IOException(e);
+        }
+        return e;
     }
 
     /**
@@ -142,11 +153,11 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      * Hook for subclasses to override in order to collect additional metadata
      * from service responses.
      *
-     * @param unmarshallerContext
-     *            The unmarshaller context used to configure a service's response
-     *            data.
+     * @param unmarshallerContext The unmarshaller context used to configure a service's response
+     *                            data.
      */
-    protected void registerAdditionalMetadataExpressions(StaxUnmarshallerContext unmarshallerContext) {}
+    protected void registerAdditionalMetadataExpressions(StaxUnmarshallerContext unmarshallerContext) {
+    }
 
     /**
      * Since this response handler completely consumes all the data from the

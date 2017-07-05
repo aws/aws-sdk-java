@@ -41,6 +41,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDashboardsResult> deleteDashboardsAsync(DeleteDashboardsRequest request) {
+
+        return deleteDashboardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDashboardsResult> deleteDashboardsAsync(DeleteDashboardsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDashboardsRequest, DeleteDashboardsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(DescribeAlarmHistoryRequest request) {
 
         return describeAlarmHistoryAsync(request, null);
@@ -152,6 +165,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetDashboardResult> getDashboardAsync(GetDashboardRequest request) {
+
+        return getDashboardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDashboardResult> getDashboardAsync(GetDashboardRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDashboardRequest, GetDashboardResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(GetMetricStatisticsRequest request) {
 
         return getMetricStatisticsAsync(request, null);
@@ -160,6 +186,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     @Override
     public java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(GetMetricStatisticsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMetricStatisticsRequest, GetMetricStatisticsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDashboardsResult> listDashboardsAsync(ListDashboardsRequest request) {
+
+        return listDashboardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDashboardsResult> listDashboardsAsync(ListDashboardsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDashboardsRequest, ListDashboardsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -198,6 +237,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
             com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult> asyncHandler) {
 
         return listMetricsAsync(new ListMetricsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDashboardResult> putDashboardAsync(PutDashboardRequest request) {
+
+        return putDashboardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDashboardResult> putDashboardAsync(PutDashboardRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDashboardRequest, PutDashboardResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

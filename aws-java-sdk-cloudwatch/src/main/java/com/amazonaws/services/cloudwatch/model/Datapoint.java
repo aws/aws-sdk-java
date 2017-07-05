@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Encapsulates the statistical data that Amazon CloudWatch computes from metric data.
+ * Encapsulates the statistical data that CloudWatch computes from metric data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/Datapoint" target="_top">AWS API

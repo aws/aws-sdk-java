@@ -50,9 +50,9 @@ public class MetricDatum implements Serializable, Cloneable {
      * The value for the metric.
      * </p>
      * <p>
-     * Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either too small
-     * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+     * Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
      */
     private Double value;
@@ -68,6 +68,8 @@ public class MetricDatum implements Serializable, Cloneable {
      * </p>
      */
     private String unit;
+
+    private Integer storageResolution;
 
     /**
      * <p>
@@ -230,17 +232,17 @@ public class MetricDatum implements Serializable, Cloneable {
      * The value for the metric.
      * </p>
      * <p>
-     * Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either too small
-     * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+     * Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
      * 
      * @param value
      *        The value for the metric.</p>
      *        <p>
-     *        Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either
-     *        too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360
-     *        to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+     *        Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small
+     *        or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
+     *        (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      */
 
     public void setValue(Double value) {
@@ -252,17 +254,16 @@ public class MetricDatum implements Serializable, Cloneable {
      * The value for the metric.
      * </p>
      * <p>
-     * Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either too small
-     * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+     * Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
      * 
      * @return The value for the metric.</p>
      *         <p>
-     *         Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either
-     *         too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360
-     *         to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not
-     *         supported.
+     *         Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too
+     *         small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to
+     *         2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      */
 
     public Double getValue() {
@@ -274,17 +275,17 @@ public class MetricDatum implements Serializable, Cloneable {
      * The value for the metric.
      * </p>
      * <p>
-     * Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either too small
-     * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+     * Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2). In
+     * addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * </p>
      * 
      * @param value
      *        The value for the metric.</p>
      *        <p>
-     *        Although the parameter accepts numbers of type Double, Amazon CloudWatch rejects values that are either
-     *        too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360
-     *        to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
+     *        Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small
+     *        or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
+     *        (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -407,6 +408,32 @@ public class MetricDatum implements Serializable, Cloneable {
     }
 
     /**
+     * @param storageResolution
+     */
+
+    public void setStorageResolution(Integer storageResolution) {
+        this.storageResolution = storageResolution;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getStorageResolution() {
+        return this.storageResolution;
+    }
+
+    /**
+     * @param storageResolution
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricDatum withStorageResolution(Integer storageResolution) {
+        setStorageResolution(storageResolution);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -428,7 +455,9 @@ public class MetricDatum implements Serializable, Cloneable {
         if (getStatisticValues() != null)
             sb.append("StatisticValues: ").append(getStatisticValues()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: ").append(getUnit());
+            sb.append("Unit: ").append(getUnit()).append(",");
+        if (getStorageResolution() != null)
+            sb.append("StorageResolution: ").append(getStorageResolution());
         sb.append("}");
         return sb.toString();
     }
@@ -467,6 +496,10 @@ public class MetricDatum implements Serializable, Cloneable {
             return false;
         if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
             return false;
+        if (other.getStorageResolution() == null ^ this.getStorageResolution() == null)
+            return false;
+        if (other.getStorageResolution() != null && other.getStorageResolution().equals(this.getStorageResolution()) == false)
+            return false;
         return true;
     }
 
@@ -481,6 +514,7 @@ public class MetricDatum implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getStatisticValues() == null) ? 0 : getStatisticValues().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        hashCode = prime * hashCode + ((getStorageResolution() == null) ? 0 : getStorageResolution().hashCode());
         return hashCode;
     }
 

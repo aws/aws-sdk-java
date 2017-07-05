@@ -27,6 +27,8 @@ public enum CloudWatchActions implements Action {
 
     /** Action for the DeleteAlarms operation. */
     DeleteAlarms("cloudwatch:DeleteAlarms"),
+    /** Action for the DeleteDashboards operation. */
+    DeleteDashboards("cloudwatch:DeleteDashboards"),
     /** Action for the DescribeAlarmHistory operation. */
     DescribeAlarmHistory("cloudwatch:DescribeAlarmHistory"),
     /** Action for the DescribeAlarms operation. */
@@ -37,10 +39,16 @@ public enum CloudWatchActions implements Action {
     DisableAlarmActions("cloudwatch:DisableAlarmActions"),
     /** Action for the EnableAlarmActions operation. */
     EnableAlarmActions("cloudwatch:EnableAlarmActions"),
+    /** Action for the GetDashboard operation. */
+    GetDashboard("cloudwatch:GetDashboard"),
     /** Action for the GetMetricStatistics operation. */
     GetMetricStatistics("cloudwatch:GetMetricStatistics"),
+    /** Action for the ListDashboards operation. */
+    ListDashboards("cloudwatch:ListDashboards"),
     /** Action for the ListMetrics operation. */
     ListMetrics("cloudwatch:ListMetrics"),
+    /** Action for the PutDashboard operation. */
+    PutDashboard("cloudwatch:PutDashboard"),
     /** Action for the PutMetricAlarm operation. */
     PutMetricAlarm("cloudwatch:PutMetricAlarm"),
     /** Action for the PutMetricData operation. */

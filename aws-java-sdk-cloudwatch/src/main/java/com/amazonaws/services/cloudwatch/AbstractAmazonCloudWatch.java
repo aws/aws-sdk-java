@@ -44,6 +44,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public DeleteDashboardsResult deleteDashboards(DeleteDashboardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAlarmHistoryResult describeAlarmHistory(DescribeAlarmHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,7 +84,17 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public GetDashboardResult getDashboard(GetDashboardRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMetricStatisticsResult getMetricStatistics(GetMetricStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDashboardsResult listDashboards(ListDashboardsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,6 +106,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     @Override
     public ListMetricsResult listMetrics() {
         return listMetrics(new ListMetricsRequest());
+    }
+
+    @Override
+    public PutDashboardResult putDashboard(PutDashboardRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

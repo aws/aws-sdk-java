@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Parameters that cannot be used together were used together.
+ * Parameters were used together that cannot be used together.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

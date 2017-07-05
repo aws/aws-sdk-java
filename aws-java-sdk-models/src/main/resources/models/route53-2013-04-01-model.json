@@ -7758,6 +7758,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "messages" : {
           "deprecated" : false,
           "documentation" : "<p>Descriptive message for the error response.</p>",

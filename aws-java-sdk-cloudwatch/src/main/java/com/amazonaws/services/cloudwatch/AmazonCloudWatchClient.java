@@ -50,15 +50,15 @@ import com.amazonaws.services.cloudwatch.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real-time.
+ * Amazon CloudWatch monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real time.
  * You can use CloudWatch to collect and track metrics, which are the variables you want to measure for your resources
  * and applications.
  * </p>
  * <p>
- * CloudWatch alarms send notifications or automatically make changes to the resources you are monitoring based on rules
- * that you define. For example, you can monitor the CPU usage and disk reads and writes of your Amazon Elastic Compute
- * Cloud (Amazon EC2) instances and then use this data to determine whether you should launch additional instances to
- * handle increased load. You can also use this data to stop under-used instances to save money.
+ * CloudWatch alarms send notifications or automatically change the resources you are monitoring based on rules that you
+ * define. For example, you can monitor the CPU usage and disk reads and writes of your Amazon EC2 instances. Then, use
+ * this data to determine whether you should launch additional instances to handle increased load. You can also use this
+ * data to stop under-used instances to save money.
  * </p>
  * <p>
  * In addition to monitoring the built-in metrics that come with AWS, you can monitor your own custom metrics. With
@@ -259,11 +259,13 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     }
 
     private void init() {
+        exceptionUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidParameterCombinationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidFormatExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingRequiredParameterExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DashboardNotFoundErrorExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DashboardInvalidInputErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalServiceExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
@@ -330,11 +332,66 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes all dashboards that you specify. You may specify up to 100 dashboards to delete. If there is an error
+     * during this call, no dashboards are deleted.
+     * </p>
+     * 
+     * @param deleteDashboardsRequest
+     * @return Result of the DeleteDashboards operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws DashboardNotFoundErrorException
+     *         The specified dashboard does not exist.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.DeleteDashboards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteDashboards" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteDashboardsResult deleteDashboards(DeleteDashboardsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDashboards(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDashboardsResult executeDeleteDashboards(DeleteDashboardsRequest deleteDashboardsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDashboardsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDashboardsRequest> request = null;
+        Response<DeleteDashboardsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDashboardsRequestMarshaller().marshall(super.beforeMarshalling(deleteDashboardsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteDashboardsResult> responseHandler = new StaxResponseHandler<DeleteDashboardsResult>(
+                    new DeleteDashboardsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm
      * name is not specified, the histories for all alarms are returned.
      * </p>
      * <p>
-     * Note that Amazon CloudWatch retains the history of an alarm even if you delete the alarm.
+     * CloudWatch retains the history of an alarm even if you delete the alarm.
      * </p>
      * 
      * @param describeAlarmHistoryRequest
@@ -445,7 +502,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Retrieves the alarms for the specified metric. Specify a statistic, period, or unit to filter the results.
+     * Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.
      * </p>
      * 
      * @param describeAlarmsForMetricRequest
@@ -590,6 +647,64 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Displays the details of the dashboard that you specify.
+     * </p>
+     * <p>
+     * To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data returned within
+     * <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code> to
+     * create the copy.
+     * </p>
+     * 
+     * @param getDashboardRequest
+     * @return Result of the GetDashboard operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws DashboardNotFoundErrorException
+     *         The specified dashboard does not exist.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.GetDashboard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetDashboard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDashboardResult getDashboard(GetDashboardRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDashboard(request);
+    }
+
+    @SdkInternalApi
+    final GetDashboardResult executeGetDashboard(GetDashboardRequest getDashboardRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDashboardRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDashboardRequest> request = null;
+        Response<GetDashboardResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDashboardRequestMarshaller().marshall(super.beforeMarshalling(getDashboardRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetDashboardResult> responseHandler = new StaxResponseHandler<GetDashboardResult>(new GetDashboardResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets statistics for the specified metric.
      * </p>
      * <p>
@@ -598,12 +713,12 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <ul>
      * <li>
      * <p>
-     * Data points with a period of 60 seconds (1 minute) are available for 15 days
+     * Data points with a period of 60 seconds (1-minute) are available for 15 days
      * </p>
      * </li>
      * <li>
      * <p>
-     * Data points with a period of 300 seconds (5 minute) are available for 63 days
+     * Data points with a period of 300 seconds (5-minute) are available for 63 days
      * </p>
      * </li>
      * <li>
@@ -613,33 +728,33 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * </li>
      * </ul>
      * <p>
-     * Note that CloudWatch started retaining 5-minute and 1-hour metric data as of 9 July 2016.
+     * CloudWatch started retaining 5-minute and 1-hour metric data as of July 9, 2016.
      * </p>
      * <p>
      * The maximum number of data points returned from a single call is 1,440. If you request more than 1,440 data
-     * points, Amazon CloudWatch returns an error. To reduce the number of data points, you can narrow the specified
-     * time range and make multiple requests across adjacent time ranges, or you can increase the specified period. A
-     * period can be as short as one minute (60 seconds). Note that data points are not returned in chronological order.
+     * points, CloudWatch returns an error. To reduce the number of data points, you can narrow the specified time range
+     * and make multiple requests across adjacent time ranges, or you can increase the specified period. A period can be
+     * as short as one minute (60 seconds). Data points are not returned in chronological order.
      * </p>
      * <p>
-     * Amazon CloudWatch aggregates data points based on the length of the period that you specify. For example, if you
-     * request statistics with a one-hour period, Amazon CloudWatch aggregates all data points with time stamps that
-     * fall within each one-hour period. Therefore, the number of values aggregated by CloudWatch is larger than the
-     * number of data points returned.
+     * CloudWatch aggregates data points based on the length of the period that you specify. For example, if you request
+     * statistics with a one-hour period, CloudWatch aggregates all data points with time stamps that fall within each
+     * one-hour period. Therefore, the number of values aggregated by CloudWatch is larger than the number of data
+     * points returned.
      * </p>
      * <p>
      * CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set
-     * instead, you cannot retrieve percentile statistics for this data unless one of the following conditions is true:
+     * instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The SampleCount of the statistic set is 1
+     * The SampleCount value of the statistic set is 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The Min and the Max of the statistic set are equal
+     * The Min and the Max values of the statistic set are equal.
      * </p>
      * </li>
      * </ul>
@@ -656,7 +771,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * @throws MissingRequiredParameterException
      *         An input parameter that is required is missing.
      * @throws InvalidParameterCombinationException
-     *         Parameters that cannot be used together were used together.
+     *         Parameters were used together that cannot be used together.
      * @throws InternalServiceException
      *         Request processing has failed due to some unknown error, exception, or failure.
      * @sample AmazonCloudWatch.GetMetricStatistics
@@ -690,6 +805,59 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<GetMetricStatisticsResult> responseHandler = new StaxResponseHandler<GetMetricStatisticsResult>(
                     new GetMetricStatisticsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>, only those
+     * dashboards with names starting with the prefix are listed. Otherwise, all dashboards in your account are listed.
+     * </p>
+     * 
+     * @param listDashboardsRequest
+     * @return Result of the ListDashboards operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.ListDashboards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListDashboardsResult listDashboards(ListDashboardsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDashboards(request);
+    }
+
+    @SdkInternalApi
+    final ListDashboardsResult executeListDashboards(ListDashboardsRequest listDashboardsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDashboardsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDashboardsRequest> request = null;
+        Response<ListDashboardsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDashboardsRequestMarshaller().marshall(super.beforeMarshalling(listDashboardsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListDashboardsResult> responseHandler = new StaxResponseHandler<ListDashboardsResult>(
+                    new ListDashboardsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -767,6 +935,66 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a dashboard if it does not already exist, or updates an existing dashboard. If you update a dashboard,
+     * the entire contents are replaced with what you specify here.
+     * </p>
+     * <p>
+     * You can have up to 500 dashboards per account. All dashboards in your account are global, not region-specific.
+     * </p>
+     * <p>
+     * To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data returned within
+     * <code>DashboardBody</code> as the template for the new dashboard when you call <code>PutDashboard</code> to
+     * create the copy.
+     * </p>
+     * 
+     * @param putDashboardRequest
+     * @return Result of the PutDashboard operation returned by the service.
+     * @throws DashboardInvalidInputErrorException
+     *         Some part of the dashboard data is invalid.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @sample AmazonCloudWatch.PutDashboard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutDashboard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutDashboardResult putDashboard(PutDashboardRequest request) {
+        request = beforeClientExecution(request);
+        return executePutDashboard(request);
+    }
+
+    @SdkInternalApi
+    final PutDashboardResult executePutDashboard(PutDashboardRequest putDashboardRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putDashboardRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDashboardRequest> request = null;
+        Response<PutDashboardResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDashboardRequestMarshaller().marshall(super.beforeMarshalling(putDashboardRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutDashboardResult> responseHandler = new StaxResponseHandler<PutDashboardResult>(new PutDashboardResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates or updates an alarm and associates it with the specified metric. Optionally, this operation can associate
      * one or more Amazon SNS resources with the alarm.
      * </p>
@@ -779,8 +1007,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * configuration of the alarm.
      * </p>
      * <p>
-     * If you are an AWS Identity and Access Management (IAM) user, you must have Amazon EC2 permissions for some
-     * operations:
+     * If you are an IAM user, you must have Amazon EC2 permissions for some operations:
      * </p>
      * <ul>
      * <li>
@@ -808,22 +1035,22 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * </ul>
      * <p>
      * If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you can still create an alarm,
-     * but the stop or terminate actions won't be performed. However, if you are later granted the required permissions,
-     * the alarm actions that you created earlier will be performed.
+     * but the stop or terminate actions are not performed. However, if you are later granted the required permissions,
+     * the alarm actions that you created earlier are performed.
      * </p>
      * <p>
-     * If you are using an IAM role (for example, an Amazon EC2 instance profile), you cannot stop or terminate the
-     * instance using alarm actions. However, you can still see the alarm state and perform any other actions such as
-     * Amazon SNS notifications or Auto Scaling policies.
+     * If you are using an IAM role (for example, an EC2 instance profile), you cannot stop or terminate the instance
+     * using alarm actions. However, you can still see the alarm state and perform any other actions such as Amazon SNS
+     * notifications or Auto Scaling policies.
      * </p>
      * <p>
-     * If you are using temporary security credentials granted using the AWS Security Token Service (AWS STS), you
-     * cannot stop or terminate an Amazon EC2 instance using alarm actions.
+     * If you are using temporary security credentials granted using AWS STS, you cannot stop or terminate an EC2
+     * instance using alarm actions.
      * </p>
      * <p>
-     * Note that you must create at least one stop, terminate, or reboot alarm using the Amazon EC2 or CloudWatch
-     * console to create the <b>EC2ActionsAccess</b> IAM role. After this IAM role is created, you can create stop,
-     * terminate, or reboot alarms using a command-line interface or an API.
+     * You must create at least one stop, terminate, or reboot alarm using either the Amazon EC2 or CloudWatch consoles
+     * to create the <b>EC2ActionsAccess</b> IAM role. After this IAM role is created, you can create stop, terminate,
+     * or reboot alarms using a command-line interface or API.
      * </p>
      * 
      * @param putMetricAlarmRequest
@@ -873,23 +1100,22 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Publishes metric data points to Amazon CloudWatch. Amazon CloudWatch associates the data points with the
-     * specified metric. If the specified metric does not exist, Amazon CloudWatch creates the metric. When Amazon
-     * CloudWatch creates a metric, it can take up to fifteen minutes for the metric to appear in calls to
-     * <a>ListMetrics</a>.
+     * Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified
+     * metric. If the specified metric does not exist, CloudWatch creates the metric. When CloudWatch creates a metric,
+     * it can take up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.
      * </p>
      * <p>
      * Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests.
      * </p>
      * <p>
-     * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, Amazon CloudWatch rejects
-     * values that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108
-     * (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not
+     * Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>, CloudWatch rejects values
+     * that are either too small or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity, -Infinity) are not
      * supported.
      * </p>
      * <p>
      * You can use up to 10 dimensions per metric to further clarify what data the metric collects. For more information
-     * on specifying dimensions, see <a
+     * about specifying dimensions, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
@@ -899,17 +1125,17 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * CloudWatch needs raw data points to calculate percentile statistics. If you publish data using a statistic set
-     * instead, you cannot retrieve percentile statistics for this data unless one of the following conditions is true:
+     * instead, you can only retrieve percentile statistics for this data if one of the following conditions is true:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The SampleCount of the statistic set is 1
+     * The SampleCount value of the statistic set is 1
      * </p>
      * </li>
      * <li>
      * <p>
-     * The Min and the Max of the statistic set are equal
+     * The Min and the Max values of the statistic set are equal
      * </p>
      * </li>
      * </ul>
@@ -921,7 +1147,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * @throws MissingRequiredParameterException
      *         An input parameter that is required is missing.
      * @throws InvalidParameterCombinationException
-     *         Parameters that cannot be used together were used together.
+     *         Parameters were used together that cannot be used together.
      * @throws InternalServiceException
      *         Request processing has failed due to some unknown error, exception, or failure.
      * @sample AmazonCloudWatch.PutMetricData
@@ -969,9 +1195,9 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * Temporarily sets the state of an alarm for testing purposes. When the updated state differs from the previous
      * value, the action configured for the appropriate state is invoked. For example, if your alarm is configured to
      * send an Amazon SNS message when an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
-     * sends an Amazon SNS message. The alarm returns to its actual state (often within seconds). Because the alarm
-     * state change happens very quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon
-     * CloudWatch console or through <a>DescribeAlarmHistory</a>.
+     * sends an SNS message. The alarm returns to its actual state (often within seconds). Because the alarm state
+     * change happens quickly, it is typically only visible in the alarm's <b>History</b> tab in the Amazon CloudWatch
+     * console or through <a>DescribeAlarmHistory</a>.
      * </p>
      * 
      * @param setAlarmStateRequest

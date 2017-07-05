@@ -79,6 +79,11 @@ public class MetricDatumStaxUnmarshaller implements Unmarshaller<MetricDatum, St
                     metricDatum.setUnit(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("StorageResolution", targetDepth)) {
+                    metricDatum.setStorageResolution(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return metricDatum;
