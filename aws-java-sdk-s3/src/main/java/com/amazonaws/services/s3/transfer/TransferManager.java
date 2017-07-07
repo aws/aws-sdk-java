@@ -1195,52 +1195,41 @@ public class TransferManager {
             filter = KeyFilter.INCLUDE_ALL;
         }
         List<S3ObjectSummary> objectSummaries = new LinkedList<S3ObjectSummary>();
-        Stack<String> commonPrefixes = new Stack<String>();
-        commonPrefixes.add(keyPrefix);
         long totalSize = 0;
-        // Recurse all virtual subdirectories to get a list of object summaries.
-        // This is a depth-first search.
+
+        // List all files under keyPrefix and filter out the one satisfying the KeyFilter
+        String prefix = keyPrefix;
+        ObjectListing listObjectsResponse = null;
+
         do {
-            String prefix = commonPrefixes.pop();
-            ObjectListing listObjectsResponse = null;
+            if ( listObjectsResponse == null ) {
+                ListObjectsRequest listObjectsRequest = new ListObjectsRequest().withBucketName(bucketName)
+                        .withPrefix(prefix);
+                listObjectsResponse = s3.listObjects(listObjectsRequest);
+            } else {
+                listObjectsResponse = s3.listNextBatchOfObjects(listObjectsResponse);
+            }
 
-            do {
-                if ( listObjectsResponse == null ) {
-                    ListObjectsRequest listObjectsRequest = new ListObjectsRequest().withBucketName(bucketName)
-                            .withDelimiter(DEFAULT_DELIMITER).withPrefix(prefix);
-                    listObjectsResponse = s3.listObjects(listObjectsRequest);
-                } else {
-                    listObjectsResponse = s3.listNextBatchOfObjects(listObjectsResponse);
+            for ( S3ObjectSummary s : listObjectsResponse.getObjectSummaries() ) {
+                // Skip any files that are also virtual directories, since
+                // we can't save both a directory and a file of the same
+                // name.
+
+                if ( !filter.shouldInclude(s) ) {
+                    log.debug("Skipping " + s.getKey() + " as it does not match filter.");
+                    continue;
                 }
 
-                for ( S3ObjectSummary s : listObjectsResponse.getObjectSummaries() ) {
-                    // Skip any files that are also virtual directories, since
-                    // we can't save both a directory and a file of the same
-                    // name.
-
-                    if ( !filter.shouldInclude(s) ) {
-                        log.debug("Skipping " + s.getKey() + " as it does not match filter.");
-                        continue;
-                    }
-
-                    if ( leavesRoot(destinationDirectory, s.getKey()) ) {
-                        throw new RuntimeException("Cannot download key " + s.getKey() +
-                            ", its relative path resolves outside the parent directory.");
-                    }
-
-                    if ( !s.getKey().equals(prefix)
-                            && !listObjectsResponse.getCommonPrefixes().contains(s.getKey() + DEFAULT_DELIMITER) ) {
-                        objectSummaries.add(s);
-                        totalSize += s.getSize();
-                    } else {
-                        log.debug("Skipping download for object " + s.getKey()
-                                + " since it is also a virtual directory");
-                    }
+                if ( leavesRoot(destinationDirectory, s.getKey()) ) {
+                    throw new RuntimeException("Cannot download key " + s.getKey() +
+                        ", its relative path resolves outside the parent directory.");
                 }
 
-                commonPrefixes.addAll(listObjectsResponse.getCommonPrefixes());
-            } while ( listObjectsResponse.isTruncated() );
-        } while ( !commonPrefixes.isEmpty() );
+                objectSummaries.add(s);
+                totalSize += s.getSize();
+            }
+
+        } while ( listObjectsResponse.isTruncated() );
 
         /* This is the hook for adding additional progress listeners */
         ProgressListenerChain additionalListeners = new ProgressListenerChain();
@@ -1744,9 +1733,6 @@ public class TransferManager {
     }
     private static final String USER_AGENT = TransferManager.class.getName() + "/" + VersionInfoUtils.getVersion();
     private static final String USER_AGENT_MULTIPART = TransferManager.class.getName() + "_multipart/" + VersionInfoUtils.getVersion();
-
-
-    private static final String DEFAULT_DELIMITER = "/";
 
     /**
      * There is no need for threads from timedThreadPool if there is no more running threads in current process,
