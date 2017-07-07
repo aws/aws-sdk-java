@@ -61,6 +61,10 @@ public class GetDeployablePatchSnapshotForInstanceResultJsonUnmarshaller impleme
                     context.nextToken();
                     getDeployablePatchSnapshotForInstanceResult.setSnapshotDownloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Product", targetDepth)) {
+                    context.nextToken();
+                    getDeployablePatchSnapshotForInstanceResult.setProduct(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

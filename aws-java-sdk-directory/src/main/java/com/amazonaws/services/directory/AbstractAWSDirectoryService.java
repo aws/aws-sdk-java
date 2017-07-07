@@ -133,6 +133,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public DescribeDomainControllersResult describeDomainControllers(DescribeDomainControllersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEventTopicsResult describeEventTopics(DescribeEventTopicsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +234,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public UpdateConditionalForwarderResult updateConditionalForwarder(UpdateConditionalForwarderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNumberOfDomainControllersResult updateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

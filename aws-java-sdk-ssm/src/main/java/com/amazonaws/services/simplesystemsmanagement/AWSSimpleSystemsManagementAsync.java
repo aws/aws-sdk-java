@@ -391,8 +391,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to
      * ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a
      * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync,
-     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">
-     * Creating a Resource Data Sync</a>.
+     * see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync"
+     * >Configuring Resource Data Sync for Inventory</a>.
      * </p>
      * 
      * @param createResourceDataSyncRequest
@@ -414,8 +415,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to
      * ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a
      * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync,
-     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">
-     * Creating a Resource Data Sync</a>.
+     * see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync"
+     * >Configuring Resource Data Sync for Inventory</a>.
      * </p>
      * 
      * @param createResourceDataSyncRequest
@@ -1080,7 +1082,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline.
+     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline. Note
+     * that this API applies only to Windows patch baselines.
      * </p>
      * 
      * @param describeEffectivePatchesForPatchBaselineRequest
@@ -1095,7 +1098,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline.
+     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline. Note
+     * that this API applies only to Windows patch baselines.
      * </p>
      * 
      * @param describeEffectivePatchesForPatchBaselineRequest
@@ -1692,7 +1696,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Retrieves the default patch baseline.
+     * Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
      * @param getDefaultPatchBaselineRequest
@@ -1705,7 +1710,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Retrieves the default patch baseline.
+     * Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
      * @param getDefaultPatchBaselineRequest
@@ -1724,7 +1730,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the
-     * AWS-ApplyPatchBaseline Systems Manager document.
+     * AWS-RunPatchBaseline Systems Manager document.
      * </p>
      * 
      * @param getDeployablePatchSnapshotForInstanceRequest
@@ -1740,7 +1746,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the
-     * AWS-ApplyPatchBaseline Systems Manager document.
+     * AWS-RunPatchBaseline Systems Manager document.
      * </p>
      * 
      * @param getDeployablePatchSnapshotForInstanceRequest

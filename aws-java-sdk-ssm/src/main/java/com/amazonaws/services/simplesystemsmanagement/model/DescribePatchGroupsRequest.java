@@ -33,6 +33,12 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer maxResults;
     /**
      * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PatchOrchestratorFilter> filters;
+    /**
+     * <p>
      * The token for the next set of items to return. (You received this token from a previous call.)
      * </p>
      */
@@ -75,6 +81,79 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
 
     public DescribePatchGroupsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     * 
+     * @return One or more filters. Use a filter to return a more specific list of results.
+     */
+
+    public java.util.List<PatchOrchestratorFilter> getFilters() {
+        if (filters == null) {
+            filters = new com.amazonaws.internal.SdkInternalList<PatchOrchestratorFilter>();
+        }
+        return filters;
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters. Use a filter to return a more specific list of results.
+     */
+
+    public void setFilters(java.util.Collection<PatchOrchestratorFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<PatchOrchestratorFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters. Use a filter to return a more specific list of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePatchGroupsRequest withFilters(PatchOrchestratorFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<PatchOrchestratorFilter>(filters.length));
+        }
+        for (PatchOrchestratorFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters. Use a filter to return a more specific list of results.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters. Use a filter to return a more specific list of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePatchGroupsRequest withFilters(java.util.Collection<PatchOrchestratorFilter> filters) {
+        setFilters(filters);
         return this;
     }
 
@@ -131,6 +210,8 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -151,6 +232,10 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -164,6 +249,7 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

@@ -52,6 +52,10 @@ public class PatchStatusJsonUnmarshaller implements Unmarshaller<PatchStatus, Js
                     context.nextToken();
                     patchStatus.setDeploymentStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ComplianceLevel", targetDepth)) {
+                    context.nextToken();
+                    patchStatus.setComplianceLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ApprovalDate", targetDepth)) {
                     context.nextToken();
                     patchStatus.setApprovalDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

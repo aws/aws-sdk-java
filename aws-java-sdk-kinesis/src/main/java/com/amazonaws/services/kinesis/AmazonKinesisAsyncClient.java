@@ -1175,6 +1175,72 @@ public class AmazonKinesisAsyncClient extends AmazonKinesisClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<StartStreamEncryptionResult> startStreamEncryptionAsync(StartStreamEncryptionRequest request) {
+
+        return startStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartStreamEncryptionResult> startStreamEncryptionAsync(final StartStreamEncryptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartStreamEncryptionRequest, StartStreamEncryptionResult> asyncHandler) {
+        final StartStreamEncryptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartStreamEncryptionResult>() {
+            @Override
+            public StartStreamEncryptionResult call() throws Exception {
+                StartStreamEncryptionResult result = null;
+
+                try {
+                    result = executeStartStreamEncryption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamEncryptionResult> stopStreamEncryptionAsync(StopStreamEncryptionRequest request) {
+
+        return stopStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamEncryptionResult> stopStreamEncryptionAsync(final StopStreamEncryptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopStreamEncryptionRequest, StopStreamEncryptionResult> asyncHandler) {
+        final StopStreamEncryptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopStreamEncryptionResult>() {
+            @Override
+            public StopStreamEncryptionResult call() throws Exception {
+                StopStreamEncryptionResult result = null;
+
+                try {
+                    result = executeStopStreamEncryption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateShardCountResult> updateShardCountAsync(UpdateShardCountRequest request) {
 
         return updateShardCountAsync(request, null);

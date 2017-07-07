@@ -56,6 +56,10 @@ public class GetPatchBaselineResultJsonUnmarshaller implements Unmarshaller<GetP
                     context.nextToken();
                     getPatchBaselineResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OperatingSystem", targetDepth)) {
+                    context.nextToken();
+                    getPatchBaselineResult.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("GlobalFilters", targetDepth)) {
                     context.nextToken();
                     getPatchBaselineResult.setGlobalFilters(PatchFilterGroupJsonUnmarshaller.getInstance().unmarshall(context));
@@ -67,6 +71,10 @@ public class GetPatchBaselineResultJsonUnmarshaller implements Unmarshaller<GetP
                 if (context.testExpression("ApprovedPatches", targetDepth)) {
                     context.nextToken();
                     getPatchBaselineResult.setApprovedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("ApprovedPatchesComplianceLevel", targetDepth)) {
+                    context.nextToken();
+                    getPatchBaselineResult.setApprovedPatchesComplianceLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RejectedPatches", targetDepth)) {
                     context.nextToken();

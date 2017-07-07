@@ -23,7 +23,10 @@ public enum PatchFilterKey {
     PRODUCT("PRODUCT"),
     CLASSIFICATION("CLASSIFICATION"),
     MSRC_SEVERITY("MSRC_SEVERITY"),
-    PATCH_ID("PATCH_ID");
+    PATCH_ID("PATCH_ID"),
+    SECTION("SECTION"),
+    PRIORITY("PRIORITY"),
+    SEVERITY("SEVERITY");
 
     private String value;
 

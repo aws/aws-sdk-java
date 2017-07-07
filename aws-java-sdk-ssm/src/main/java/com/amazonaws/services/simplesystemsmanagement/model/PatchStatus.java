@@ -36,6 +36,12 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
     private String deploymentStatus;
     /**
      * <p>
+     * The compliance severity level for a patch.
+     * </p>
+     */
+    private String complianceLevel;
+    /**
+     * <p>
      * The date the patch was approved (or will be approved if the status is PENDING_APPROVAL).
      * </p>
      */
@@ -116,6 +122,79 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The compliance severity level for a patch.
+     * </p>
+     * 
+     * @param complianceLevel
+     *        The compliance severity level for a patch.
+     * @see PatchComplianceLevel
+     */
+
+    public void setComplianceLevel(String complianceLevel) {
+        this.complianceLevel = complianceLevel;
+    }
+
+    /**
+     * <p>
+     * The compliance severity level for a patch.
+     * </p>
+     * 
+     * @return The compliance severity level for a patch.
+     * @see PatchComplianceLevel
+     */
+
+    public String getComplianceLevel() {
+        return this.complianceLevel;
+    }
+
+    /**
+     * <p>
+     * The compliance severity level for a patch.
+     * </p>
+     * 
+     * @param complianceLevel
+     *        The compliance severity level for a patch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public PatchStatus withComplianceLevel(String complianceLevel) {
+        setComplianceLevel(complianceLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compliance severity level for a patch.
+     * </p>
+     * 
+     * @param complianceLevel
+     *        The compliance severity level for a patch.
+     * @see PatchComplianceLevel
+     */
+
+    public void setComplianceLevel(PatchComplianceLevel complianceLevel) {
+        this.complianceLevel = complianceLevel.toString();
+    }
+
+    /**
+     * <p>
+     * The compliance severity level for a patch.
+     * </p>
+     * 
+     * @param complianceLevel
+     *        The compliance severity level for a patch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public PatchStatus withComplianceLevel(PatchComplianceLevel complianceLevel) {
+        setComplianceLevel(complianceLevel);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date the patch was approved (or will be approved if the status is PENDING_APPROVAL).
      * </p>
      * 
@@ -167,6 +246,8 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getDeploymentStatus() != null)
             sb.append("DeploymentStatus: ").append(getDeploymentStatus()).append(",");
+        if (getComplianceLevel() != null)
+            sb.append("ComplianceLevel: ").append(getComplianceLevel()).append(",");
         if (getApprovalDate() != null)
             sb.append("ApprovalDate: ").append(getApprovalDate());
         sb.append("}");
@@ -187,6 +268,10 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeploymentStatus() != null && other.getDeploymentStatus().equals(this.getDeploymentStatus()) == false)
             return false;
+        if (other.getComplianceLevel() == null ^ this.getComplianceLevel() == null)
+            return false;
+        if (other.getComplianceLevel() != null && other.getComplianceLevel().equals(this.getComplianceLevel()) == false)
+            return false;
         if (other.getApprovalDate() == null ^ this.getApprovalDate() == null)
             return false;
         if (other.getApprovalDate() != null && other.getApprovalDate().equals(this.getApprovalDate()) == false)
@@ -200,6 +285,7 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
+        hashCode = prime * hashCode + ((getComplianceLevel() == null) ? 0 : getComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getApprovalDate() == null) ? 0 : getApprovalDate().hashCode());
         return hashCode;
     }

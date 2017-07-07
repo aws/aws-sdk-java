@@ -36,6 +36,12 @@ public class GetPatchBaselineForPatchGroupResult extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String patchGroup;
+    /**
+     * <p>
+     * The operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     */
+    private String operatingSystem;
 
     /**
      * <p>
@@ -118,6 +124,79 @@ public class GetPatchBaselineForPatchGroupResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system rule specified for patch groups using the patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * The operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @return The operating system rule specified for patch groups using the patch baseline.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * The operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system rule specified for patch groups using the patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetPatchBaselineForPatchGroupResult withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system rule specified for patch groups using the patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+    }
+
+    /**
+     * <p>
+     * The operating system rule specified for patch groups using the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system rule specified for patch groups using the patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetPatchBaselineForPatchGroupResult withOperatingSystem(OperatingSystem operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -131,7 +210,9 @@ public class GetPatchBaselineForPatchGroupResult extends com.amazonaws.AmazonWeb
         if (getBaselineId() != null)
             sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getPatchGroup() != null)
-            sb.append("PatchGroup: ").append(getPatchGroup());
+            sb.append("PatchGroup: ").append(getPatchGroup()).append(",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +235,10 @@ public class GetPatchBaselineForPatchGroupResult extends com.amazonaws.AmazonWeb
             return false;
         if (other.getPatchGroup() != null && other.getPatchGroup().equals(this.getPatchGroup()) == false)
             return false;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +249,7 @@ public class GetPatchBaselineForPatchGroupResult extends com.amazonaws.AmazonWeb
 
         hashCode = prime * hashCode + ((getBaselineId() == null) ? 0 : getBaselineId().hashCode());
         hashCode = prime * hashCode + ((getPatchGroup() == null) ? 0 : getPatchGroup().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         return hashCode;
     }
 

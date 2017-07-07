@@ -42,13 +42,21 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
     private String baselineName;
     /**
      * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     */
+    private String operatingSystem;
+    /**
+     * <p>
      * The description of the patch baseline.
      * </p>
      */
     private String baselineDescription;
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      */
     private Boolean defaultBaseline;
@@ -135,6 +143,89 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @return Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *         AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public PatchBaselineIdentity withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public PatchBaselineIdentity withOperatingSystem(OperatingSystem operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
      * The description of the patch baseline.
      * </p>
      * 
@@ -175,11 +266,13 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
      * @param defaultBaseline
-     *        Whether this is the default baseline.
+     *        Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     *        baselines. For example, you can create a default patch baseline for each operating system.
      */
 
     public void setDefaultBaseline(Boolean defaultBaseline) {
@@ -188,10 +281,12 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
-     * @return Whether this is the default baseline.
+     * @return Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     *         baselines. For example, you can create a default patch baseline for each operating system.
      */
 
     public Boolean getDefaultBaseline() {
@@ -200,11 +295,13 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
      * @param defaultBaseline
-     *        Whether this is the default baseline.
+     *        Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     *        baselines. For example, you can create a default patch baseline for each operating system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,10 +312,12 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Whether this is the default baseline.
+     * Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
-     * @return Whether this is the default baseline.
+     * @return Whether this is the default baseline. Note that Systems Manager supports creating multiple default patch
+     *         baselines. For example, you can create a default patch baseline for each operating system.
      */
 
     public Boolean isDefaultBaseline() {
@@ -240,6 +339,8 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
             sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getBaselineName() != null)
             sb.append("BaselineName: ").append(getBaselineName()).append(",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getBaselineDescription() != null)
             sb.append("BaselineDescription: ").append(getBaselineDescription()).append(",");
         if (getDefaultBaseline() != null)
@@ -266,6 +367,10 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
             return false;
         if (other.getBaselineName() != null && other.getBaselineName().equals(this.getBaselineName()) == false)
             return false;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         if (other.getBaselineDescription() == null ^ this.getBaselineDescription() == null)
             return false;
         if (other.getBaselineDescription() != null && other.getBaselineDescription().equals(this.getBaselineDescription()) == false)
@@ -284,6 +389,7 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getBaselineId() == null) ? 0 : getBaselineId().hashCode());
         hashCode = prime * hashCode + ((getBaselineName() == null) ? 0 : getBaselineName().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         hashCode = prime * hashCode + ((getBaselineDescription() == null) ? 0 : getBaselineDescription().hashCode());
         hashCode = prime * hashCode + ((getDefaultBaseline() == null) ? 0 : getDefaultBaseline().hashCode());
         return hashCode;

@@ -64,6 +64,10 @@ public class RecordJsonUnmarshaller implements Unmarshaller<Record, JsonUnmarsha
                     context.nextToken();
                     record.setPartitionKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EncryptionType", targetDepth)) {
+                    context.nextToken();
+                    record.setEncryptionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

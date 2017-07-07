@@ -57,6 +57,12 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     private com.amazonaws.internal.SdkInternalList<String> approvedPatches;
     /**
      * <p>
+     * Assigns a new compliance severity level to an existing patch baseline.
+     * </p>
+     */
+    private String approvedPatchesComplianceLevel;
+    /**
+     * <p>
      * A list of explicitly rejected patches for the baseline.
      * </p>
      */
@@ -303,6 +309,79 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Assigns a new compliance severity level to an existing patch baseline.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Assigns a new compliance severity level to an existing patch baseline.
+     * @see PatchComplianceLevel
+     */
+
+    public void setApprovedPatchesComplianceLevel(String approvedPatchesComplianceLevel) {
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel;
+    }
+
+    /**
+     * <p>
+     * Assigns a new compliance severity level to an existing patch baseline.
+     * </p>
+     * 
+     * @return Assigns a new compliance severity level to an existing patch baseline.
+     * @see PatchComplianceLevel
+     */
+
+    public String getApprovedPatchesComplianceLevel() {
+        return this.approvedPatchesComplianceLevel;
+    }
+
+    /**
+     * <p>
+     * Assigns a new compliance severity level to an existing patch baseline.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Assigns a new compliance severity level to an existing patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public UpdatePatchBaselineRequest withApprovedPatchesComplianceLevel(String approvedPatchesComplianceLevel) {
+        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Assigns a new compliance severity level to an existing patch baseline.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Assigns a new compliance severity level to an existing patch baseline.
+     * @see PatchComplianceLevel
+     */
+
+    public void setApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
+    }
+
+    /**
+     * <p>
+     * Assigns a new compliance severity level to an existing patch baseline.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Assigns a new compliance severity level to an existing patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public UpdatePatchBaselineRequest withApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
+        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of explicitly rejected patches for the baseline.
      * </p>
      * 
@@ -435,6 +514,8 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("ApprovalRules: ").append(getApprovalRules()).append(",");
         if (getApprovedPatches() != null)
             sb.append("ApprovedPatches: ").append(getApprovedPatches()).append(",");
+        if (getApprovedPatchesComplianceLevel() != null)
+            sb.append("ApprovedPatchesComplianceLevel: ").append(getApprovedPatchesComplianceLevel()).append(",");
         if (getRejectedPatches() != null)
             sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
         if (getDescription() != null)
@@ -473,6 +554,11 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getApprovedPatches() != null && other.getApprovedPatches().equals(this.getApprovedPatches()) == false)
             return false;
+        if (other.getApprovedPatchesComplianceLevel() == null ^ this.getApprovedPatchesComplianceLevel() == null)
+            return false;
+        if (other.getApprovedPatchesComplianceLevel() != null
+                && other.getApprovedPatchesComplianceLevel().equals(this.getApprovedPatchesComplianceLevel()) == false)
+            return false;
         if (other.getRejectedPatches() == null ^ this.getRejectedPatches() == null)
             return false;
         if (other.getRejectedPatches() != null && other.getRejectedPatches().equals(this.getRejectedPatches()) == false)
@@ -494,6 +580,7 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getGlobalFilters() == null) ? 0 : getGlobalFilters().hashCode());
         hashCode = prime * hashCode + ((getApprovalRules() == null) ? 0 : getApprovalRules().hashCode());
         hashCode = prime * hashCode + ((getApprovedPatches() == null) ? 0 : getApprovedPatches().hashCode());
+        hashCode = prime * hashCode + ((getApprovedPatchesComplianceLevel() == null) ? 0 : getApprovedPatchesComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getRejectedPatches() == null) ? 0 : getRejectedPatches().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;

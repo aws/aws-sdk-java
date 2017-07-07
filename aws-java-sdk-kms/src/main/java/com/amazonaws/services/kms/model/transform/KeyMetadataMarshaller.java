@@ -51,6 +51,8 @@ public class KeyMetadataMarshaller {
             .marshallLocationName("Origin").build();
     private static final MarshallingInfo<String> EXPIRATIONMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationModel").build();
+    private static final MarshallingInfo<String> KEYMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeyManager").build();
 
     private static final KeyMetadataMarshaller instance = new KeyMetadataMarshaller();
 
@@ -80,6 +82,7 @@ public class KeyMetadataMarshaller {
             protocolMarshaller.marshall(keyMetadata.getValidTo(), VALIDTO_BINDING);
             protocolMarshaller.marshall(keyMetadata.getOrigin(), ORIGIN_BINDING);
             protocolMarshaller.marshall(keyMetadata.getExpirationModel(), EXPIRATIONMODEL_BINDING);
+            protocolMarshaller.marshall(keyMetadata.getKeyManager(), KEYMANAGER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

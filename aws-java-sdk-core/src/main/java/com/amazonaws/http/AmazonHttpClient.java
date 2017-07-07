@@ -14,6 +14,16 @@
  */
 package com.amazonaws.http;
 
+import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
+import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolAvailableCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolLeasedCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolPendingCount;
+import static com.amazonaws.util.AWSRequestMetrics.Field.ThrottledRetryCount;
+import static com.amazonaws.util.IOUtils.closeQuietly;
+
 import com.amazonaws.AbortedException;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -52,6 +62,7 @@ import com.amazonaws.http.exception.HttpRequestTimeoutException;
 import com.amazonaws.http.request.HttpRequestFactory;
 import com.amazonaws.http.response.AwsResponseHandlerAdapter;
 import com.amazonaws.http.settings.HttpClientSettings;
+import com.amazonaws.http.timers.client.ClientExecutionAbortTrackerTask;
 import com.amazonaws.http.timers.client.ClientExecutionTimeoutException;
 import com.amazonaws.http.timers.client.ClientExecutionTimer;
 import com.amazonaws.http.timers.client.SdkInterruptedException;
@@ -85,21 +96,6 @@ import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.UnreliableFilterInputStream;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpEntityEnclosingRequest;
-import org.apache.http.HttpStatus;
-import org.apache.http.StatusLine;
-import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.entity.BufferedHttpEntity;
-import org.apache.http.pool.ConnPoolControl;
-import org.apache.http.pool.PoolStats;
-import org.apache.http.protocol.HttpContext;
-
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -115,16 +111,19 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
 import java.util.UUID;
-
-import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
-import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
-import static com.amazonaws.event.SDKProgressPublisher.publishRequestContentLength;
-import static com.amazonaws.event.SDKProgressPublisher.publishResponseContentLength;
-import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolAvailableCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolLeasedCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field.HttpClientPoolPendingCount;
-import static com.amazonaws.util.AWSRequestMetrics.Field.ThrottledRetryCount;
-import static com.amazonaws.util.IOUtils.closeQuietly;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpEntityEnclosingRequest;
+import org.apache.http.HttpStatus;
+import org.apache.http.StatusLine;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.entity.BufferedHttpEntity;
+import org.apache.http.pool.ConnPoolControl;
+import org.apache.http.pool.PoolStats;
+import org.apache.http.protocol.HttpContext;
 
 @ThreadSafe
 public class AmazonHttpClient {
@@ -421,8 +420,7 @@ public class AmazonHttpClient {
     public void shutdown() {
         clientExecutionTimer.shutdown();
         httpRequestTimer.shutdown();
-        IdleConnectionReaper.removeConnectionManager(httpClient
-                                                             .getHttpClientConnectionManager());
+        IdleConnectionReaper.removeConnectionManager(httpClient.getHttpClientConnectionManager());
         httpClient.getHttpClientConnectionManager().shutdown();
     }
 
@@ -710,9 +708,10 @@ public class AmazonHttpClient {
          * {@link #execute()} so * the interrupt status doesn't leak out to the callers code
          */
         private Response<Output> executeWithTimer() throws InterruptedException {
+            ClientExecutionAbortTrackerTask clientExecutionTrackerTask =
+                    clientExecutionTimer.startTimer(getClientExecutionTimeout(requestConfig));
             try {
-                executionContext.setClientExecutionTrackerTask(
-                        clientExecutionTimer.startTimer(getClientExecutionTimeout(requestConfig)));
+                executionContext.setClientExecutionTrackerTask(clientExecutionTrackerTask);
                 return doExecute();
             } finally {
                 executionContext.getClientExecutionTrackerTask().cancelTask();

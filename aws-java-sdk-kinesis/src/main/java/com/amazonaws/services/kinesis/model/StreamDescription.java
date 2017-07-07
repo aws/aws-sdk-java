@@ -102,6 +102,30 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EnhancedMetrics> enhancedMonitoring;
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String encryptionType;
+    /**
+     * <p>
+     * The GUID for the customer-managed KMS key used for encryption on the stream.
+     * </p>
+     */
+    private String keyId;
 
     /**
      * <p>
@@ -790,6 +814,240 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @see EncryptionType
+     */
+
+    public void setEncryptionType(String encryptionType) {
+        this.encryptionType = encryptionType;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The server-side encryption type used on the stream. This parameter can be one of the following
+     *         values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code>: Do not encrypt the records in the stream.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *         key.
+     *         </p>
+     *         </li>
+     * @see EncryptionType
+     */
+
+    public String getEncryptionType() {
+        return this.encryptionType;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionType
+     */
+
+    public StreamDescription withEncryptionType(String encryptionType) {
+        setEncryptionType(encryptionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @see EncryptionType
+     */
+
+    public void setEncryptionType(EncryptionType encryptionType) {
+        this.encryptionType = encryptionType.toString();
+    }
+
+    /**
+     * <p>
+     * The server-side encryption type used on the stream. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The server-side encryption type used on the stream. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionType
+     */
+
+    public StreamDescription withEncryptionType(EncryptionType encryptionType) {
+        setEncryptionType(encryptionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The GUID for the customer-managed KMS key used for encryption on the stream.
+     * </p>
+     * 
+     * @param keyId
+     *        The GUID for the customer-managed KMS key used for encryption on the stream.
+     */
+
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
+
+    /**
+     * <p>
+     * The GUID for the customer-managed KMS key used for encryption on the stream.
+     * </p>
+     * 
+     * @return The GUID for the customer-managed KMS key used for encryption on the stream.
+     */
+
+    public String getKeyId() {
+        return this.keyId;
+    }
+
+    /**
+     * <p>
+     * The GUID for the customer-managed KMS key used for encryption on the stream.
+     * </p>
+     * 
+     * @param keyId
+     *        The GUID for the customer-managed KMS key used for encryption on the stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamDescription withKeyId(String keyId) {
+        setKeyId(keyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -815,7 +1073,11 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
         if (getStreamCreationTimestamp() != null)
             sb.append("StreamCreationTimestamp: ").append(getStreamCreationTimestamp()).append(",");
         if (getEnhancedMonitoring() != null)
-            sb.append("EnhancedMonitoring: ").append(getEnhancedMonitoring());
+            sb.append("EnhancedMonitoring: ").append(getEnhancedMonitoring()).append(",");
+        if (getEncryptionType() != null)
+            sb.append("EncryptionType: ").append(getEncryptionType()).append(",");
+        if (getKeyId() != null)
+            sb.append("KeyId: ").append(getKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -862,6 +1124,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getEnhancedMonitoring() != null && other.getEnhancedMonitoring().equals(this.getEnhancedMonitoring()) == false)
             return false;
+        if (other.getEncryptionType() == null ^ this.getEncryptionType() == null)
+            return false;
+        if (other.getEncryptionType() != null && other.getEncryptionType().equals(this.getEncryptionType()) == false)
+            return false;
+        if (other.getKeyId() == null ^ this.getKeyId() == null)
+            return false;
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -878,6 +1148,8 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getRetentionPeriodHours() == null) ? 0 : getRetentionPeriodHours().hashCode());
         hashCode = prime * hashCode + ((getStreamCreationTimestamp() == null) ? 0 : getStreamCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getEnhancedMonitoring() == null) ? 0 : getEnhancedMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionType() == null) ? 0 : getEncryptionType().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         return hashCode;
     }
 

@@ -38,6 +38,8 @@ public class UpdatePatchBaselineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovalRules").build();
     private static final MarshallingInfo<List> APPROVEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatches").build();
+    private static final MarshallingInfo<String> APPROVEDPATCHESCOMPLIANCELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesComplianceLevel").build();
     private static final MarshallingInfo<List> REJECTEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatches").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class UpdatePatchBaselineRequestMarshaller {
             protocolMarshaller.marshall(updatePatchBaselineRequest.getGlobalFilters(), GLOBALFILTERS_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovalRules(), APPROVALRULES_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatches(), APPROVEDPATCHES_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatchesComplianceLevel(), APPROVEDPATCHESCOMPLIANCELEVEL_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getRejectedPatches(), REJECTEDPATCHES_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {

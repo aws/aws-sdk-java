@@ -29,6 +29,8 @@ public class GetPatchBaselineForPatchGroupRequestMarshaller {
 
     private static final MarshallingInfo<String> PATCHGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PatchGroup").build();
+    private static final MarshallingInfo<String> OPERATINGSYSTEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperatingSystem").build();
 
     private static final GetPatchBaselineForPatchGroupRequestMarshaller instance = new GetPatchBaselineForPatchGroupRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class GetPatchBaselineForPatchGroupRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(getPatchBaselineForPatchGroupRequest.getPatchGroup(), PATCHGROUP_BINDING);
+            protocolMarshaller.marshall(getPatchBaselineForPatchGroupRequest.getOperatingSystem(), OPERATINGSYSTEM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

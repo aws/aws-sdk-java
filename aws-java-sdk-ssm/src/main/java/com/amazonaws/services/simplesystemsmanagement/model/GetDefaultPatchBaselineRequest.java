@@ -26,6 +26,86 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetDefaultPatchBaselineRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * Returns the default patch baseline for the specified operating system.
+     * </p>
+     */
+    private String operatingSystem;
+
+    /**
+     * <p>
+     * Returns the default patch baseline for the specified operating system.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns the default patch baseline for the specified operating system.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Returns the default patch baseline for the specified operating system.
+     * </p>
+     * 
+     * @return Returns the default patch baseline for the specified operating system.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Returns the default patch baseline for the specified operating system.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns the default patch baseline for the specified operating system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetDefaultPatchBaselineRequest withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the default patch baseline for the specified operating system.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns the default patch baseline for the specified operating system.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+    }
+
+    /**
+     * <p>
+     * Returns the default patch baseline for the specified operating system.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns the default patch baseline for the specified operating system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetDefaultPatchBaselineRequest withOperatingSystem(OperatingSystem operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -36,6 +116,8 @@ public class GetDefaultPatchBaselineRequest extends com.amazonaws.AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem());
         sb.append("}");
         return sb.toString();
     }
@@ -50,6 +132,10 @@ public class GetDefaultPatchBaselineRequest extends com.amazonaws.AmazonWebServi
         if (obj instanceof GetDefaultPatchBaselineRequest == false)
             return false;
         GetDefaultPatchBaselineRequest other = (GetDefaultPatchBaselineRequest) obj;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         return true;
     }
 
@@ -58,6 +144,7 @@ public class GetDefaultPatchBaselineRequest extends com.amazonaws.AmazonWebServi
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         return hashCode;
     }
 

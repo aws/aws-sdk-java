@@ -639,6 +639,31 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Provides information about any domain controllers in your directory.
+     * </p>
+     * 
+     * @param describeDomainControllersRequest
+     * @return Result of the DescribeDomainControllers operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @sample AWSDirectoryService.DescribeDomainControllers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeDomainControllersResult describeDomainControllers(DescribeDomainControllersRequest describeDomainControllersRequest);
+
+    /**
+     * <p>
      * Obtains information about which SNS topics receive status messages from the specified directory.
      * </p>
      * <p>
@@ -1092,6 +1117,37 @@ public interface AWSDirectoryService {
      *      API Documentation</a>
      */
     UpdateConditionalForwarderResult updateConditionalForwarder(UpdateConditionalForwarderRequest updateConditionalForwarderRequest);
+
+    /**
+     * <p>
+     * Adds or removes domain controllers to or from the directory. Based on the difference between current value and
+     * new value (provided through this API call), domain controllers will be added or removed. It may take up to 45
+     * minutes for any new domain controllers to become fully active once the requested number of domain controllers is
+     * updated. During this time, you cannot make another update request.
+     * </p>
+     * 
+     * @param updateNumberOfDomainControllersRequest
+     * @return Result of the UpdateNumberOfDomainControllers operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DomainControllerLimitExceededException
+     *         The maximum allowed number of domain controllers per directory was exceeded. The default limit per
+     *         directory is 20 domain controllers.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateNumberOfDomainControllers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateNumberOfDomainControllersResult updateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest updateNumberOfDomainControllersRequest);
 
     /**
      * <p>

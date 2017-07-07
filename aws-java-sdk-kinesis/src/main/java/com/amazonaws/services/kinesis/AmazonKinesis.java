@@ -476,6 +476,23 @@ public interface AmazonKinesis {
      *         Backoff in AWS</a> in the <i>AWS General Reference</i>.
      * @throws ExpiredIteratorException
      *         The provided iterator exceeds the maximum age allowed.
+     * @throws KMSDisabledException
+     *         The request was rejected because the specified CMK isn't enabled.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource isn't valid for this request. For
+     *         more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     *         Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer
+     *         Guide</i>.
+     * @throws KMSAccessDeniedException
+     *         The ciphertext references a key that doesn't exist or that you don't have access to.
+     * @throws KMSNotFoundException
+     *         The request was rejected because the specified entity or resource couldn't be found.
+     * @throws KMSOptInRequiredException
+     *         The AWS access key ID needs a subscription for the service.
+     * @throws KMSThrottlingException
+     *         The request was denied due to request throttling. For more information about throttling, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AmazonKinesis.GetRecords
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords" target="_top">AWS API
      *      Documentation</a>
@@ -781,7 +798,8 @@ public interface AmazonKinesis {
      * shard involved in the request, <code>PutRecord</code> throws <code>ProvisionedThroughputExceededException</code>.
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they are added to a stream.
+     * By default, data records are accessible for 24 hours from the time that they are added to a stream. You can use
+     * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.
      * </p>
      * 
      * @param putRecordRequest
@@ -799,6 +817,23 @@ public interface AmazonKinesis {
      *         the <i>Amazon Kinesis Streams Developer Guide</i>, and <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential
      *         Backoff in AWS</a> in the <i>AWS General Reference</i>.
+     * @throws KMSDisabledException
+     *         The request was rejected because the specified CMK isn't enabled.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource isn't valid for this request. For
+     *         more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     *         Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer
+     *         Guide</i>.
+     * @throws KMSAccessDeniedException
+     *         The ciphertext references a key that doesn't exist or that you don't have access to.
+     * @throws KMSNotFoundException
+     *         The request was rejected because the specified entity or resource couldn't be found.
+     * @throws KMSOptInRequiredException
+     *         The AWS access key ID needs a subscription for the service.
+     * @throws KMSThrottlingException
+     *         The request was denied due to request throttling. For more information about throttling, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AmazonKinesis.PutRecord
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord" target="_top">AWS API
      *      Documentation</a>
@@ -882,9 +917,8 @@ public interface AmazonKinesis {
      * >Adding Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * <p>
-     * By default, data records are accessible for only 24 hours from the time that they are added to an Amazon Kinesis
-     * stream. This retention period can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
-     * <a>IncreaseStreamRetentionPeriod</a> operations.
+     * By default, data records are accessible for 24 hours from the time that they are added to a stream. You can use
+     * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.
      * </p>
      * 
      * @param putRecordsRequest
@@ -902,6 +936,23 @@ public interface AmazonKinesis {
      *         the <i>Amazon Kinesis Streams Developer Guide</i>, and <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential
      *         Backoff in AWS</a> in the <i>AWS General Reference</i>.
+     * @throws KMSDisabledException
+     *         The request was rejected because the specified CMK isn't enabled.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource isn't valid for this request. For
+     *         more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     *         Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer
+     *         Guide</i>.
+     * @throws KMSAccessDeniedException
+     *         The ciphertext references a key that doesn't exist or that you don't have access to.
+     * @throws KMSNotFoundException
+     *         The request was rejected because the specified entity or resource couldn't be found.
+     * @throws KMSOptInRequiredException
+     *         The AWS access key ID needs a subscription for the service.
+     * @throws KMSThrottlingException
+     *         The request was denied due to request throttling. For more information about throttling, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
      * @sample AmazonKinesis.PutRecords
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords" target="_top">AWS API
      *      Documentation</a>
@@ -1021,6 +1072,104 @@ public interface AmazonKinesis {
 
     /**
      * <p>
+     * Enables or updates server-side encryption using an AWS KMS key for a specified stream.
+     * </p>
+     * <p>
+     * Starting encryption is an asynchronous operation. Upon receiving the request, Amazon Kinesis returns immediately
+     * and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Amazon Kinesis sets the
+     * status of the stream back to <code>ACTIVE</code>. Updating or applying encryption normally takes a few seconds to
+     * complete but it can take minutes. You can continue to read and write data to your stream while its status is
+     * <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>, records written to the stream will
+     * begin to be encrypted.
+     * </p>
+     * <p>
+     * API Limits: You can successfully apply a new AWS KMS key for server-side encryption 25 times in a rolling 24 hour
+     * period.
+     * </p>
+     * <p>
+     * Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written
+     * to the stream are encrypted. After you’ve enabled encryption, you can verify encryption was applied by inspecting
+     * the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+     * </p>
+     * 
+     * @param startStreamEncryptionRequest
+     * @return Result of the StartStreamEncryption operation returned by the service.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed (5).
+     * @throws ResourceInUseException
+     *         The resource is not available for this operation. For successful operation, the resource needs to be in
+     *         the <code>ACTIVE</code> state.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws KMSDisabledException
+     *         The request was rejected because the specified CMK isn't enabled.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource isn't valid for this request. For
+     *         more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+     *         Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer
+     *         Guide</i>.
+     * @throws KMSAccessDeniedException
+     *         The ciphertext references a key that doesn't exist or that you don't have access to.
+     * @throws KMSNotFoundException
+     *         The request was rejected because the specified entity or resource couldn't be found.
+     * @throws KMSOptInRequiredException
+     *         The AWS access key ID needs a subscription for the service.
+     * @throws KMSThrottlingException
+     *         The request was denied due to request throttling. For more information about throttling, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
+     *         the <i>AWS Key Management Service Developer Guide</i>.
+     * @sample AmazonKinesis.StartStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartStreamEncryptionResult startStreamEncryption(StartStreamEncryptionRequest startStreamEncryptionRequest);
+
+    /**
+     * <p>
+     * Disables server-side encryption for a specified stream.
+     * </p>
+     * <p>
+     * Stopping encryption is an asynchronous operation. Upon receiving the request, Amazon Kinesis returns immediately
+     * and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Amazon Kinesis sets the
+     * status of the stream back to <code>ACTIVE</code>. Stopping encryption normally takes a few seconds to complete
+     * but it can take minutes. You can continue to read and write data to your stream while its status is
+     * <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code> records written to the stream will no
+     * longer be encrypted by the Amazon Kinesis Streams service.
+     * </p>
+     * <p>
+     * API Limits: You can successfully disable server-side encryption 25 times in a rolling 24 hour period.
+     * </p>
+     * <p>
+     * Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written
+     * to the stream are no longer subject to encryption. After you’ve disabled encryption, you can verify encryption
+     * was not applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+     * </p>
+     * 
+     * @param stopStreamEncryptionRequest
+     * @return Result of the StopStreamEncryption operation returned by the service.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed (5).
+     * @throws ResourceInUseException
+     *         The resource is not available for this operation. For successful operation, the resource needs to be in
+     *         the <code>ACTIVE</code> state.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found. The stream might not be specified correctly.
+     * @sample AmazonKinesis.StopStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StopStreamEncryptionResult stopStreamEncryption(StopStreamEncryptionRequest stopStreamEncryptionRequest);
+
+    /**
+     * <p>
      * Updates the shard count of the specified stream to the specified number of shards.
      * </p>
      * <p>
@@ -1031,14 +1180,47 @@ public interface AmazonKinesis {
      * its status is <code>UPDATING</code>.
      * </p>
      * <p>
-     * To update the shard count, Amazon Kinesis performs splits and merges and individual shards. This can cause
+     * To update the shard count, Amazon Kinesis performs splits or merges on individual shards. This can cause
      * short-lived shards to be created, in addition to the final shards. We recommend that you double or halve the
      * shard count, as this results in the fewest number of splits or merges.
      * </p>
      * <p>
-     * This operation has a rate limit of twice per rolling 24 hour period. You cannot scale above double your current
-     * shard count, scale below half your current shard count, or exceed the shard limits for your account.
+     * This operation has the following limits, which are per region per account unless otherwise noted:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * scale more than twice per rolling 24 hour period
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale up above double your current shard count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale down below half your current shard count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale up above 200 shards in a stream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale a stream with more than 200 shards down unless the result is less than 200 shards
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale up above the shard limits for your account
+     * </p>
+     * </li>
+     * <li>
+     * <p/></li>
+     * </ul>
      * <p>
      * For the default limits for an AWS account, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the

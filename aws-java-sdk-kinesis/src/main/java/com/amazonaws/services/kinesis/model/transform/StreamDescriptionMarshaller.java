@@ -44,6 +44,10 @@ public class StreamDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamCreationTimestamp").build();
     private static final MarshallingInfo<List> ENHANCEDMONITORING_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnhancedMonitoring").build();
+    private static final MarshallingInfo<String> ENCRYPTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionType").build();
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
 
     private static final StreamDescriptionMarshaller instance = new StreamDescriptionMarshaller();
 
@@ -69,6 +73,8 @@ public class StreamDescriptionMarshaller {
             protocolMarshaller.marshall(streamDescription.getRetentionPeriodHours(), RETENTIONPERIODHOURS_BINDING);
             protocolMarshaller.marshall(streamDescription.getStreamCreationTimestamp(), STREAMCREATIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(streamDescription.getEnhancedMonitoring(), ENHANCEDMONITORING_BINDING);
+            protocolMarshaller.marshall(streamDescription.getEncryptionType(), ENCRYPTIONTYPE_BINDING);
+            protocolMarshaller.marshall(streamDescription.getKeyId(), KEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

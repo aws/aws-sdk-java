@@ -37,6 +37,12 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
     private String name;
     /**
      * <p>
+     * Returns the operating system specified for the patch baseline.
+     * </p>
+     */
+    private String operatingSystem;
+    /**
+     * <p>
      * A set of global filters used to exclude patches from the baseline.
      * </p>
      */
@@ -53,6 +59,12 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> approvedPatches;
+    /**
+     * <p>
+     * Returns the specified compliance severity level for approved patches in the patch baseline.
+     * </p>
+     */
+    private String approvedPatchesComplianceLevel;
     /**
      * <p>
      * A list of explicitly rejected patches for the baseline.
@@ -161,6 +173,79 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
 
     public GetPatchBaselineResult withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the operating system specified for the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns the operating system specified for the patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Returns the operating system specified for the patch baseline.
+     * </p>
+     * 
+     * @return Returns the operating system specified for the patch baseline.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Returns the operating system specified for the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns the operating system specified for the patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetPatchBaselineResult withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the operating system specified for the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns the operating system specified for the patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+    }
+
+    /**
+     * <p>
+     * Returns the operating system specified for the patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Returns the operating system specified for the patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetPatchBaselineResult withOperatingSystem(OperatingSystem operatingSystem) {
+        setOperatingSystem(operatingSystem);
         return this;
     }
 
@@ -314,6 +399,79 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
 
     public GetPatchBaselineResult withApprovedPatches(java.util.Collection<String> approvedPatches) {
         setApprovedPatches(approvedPatches);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the specified compliance severity level for approved patches in the patch baseline.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Returns the specified compliance severity level for approved patches in the patch baseline.
+     * @see PatchComplianceLevel
+     */
+
+    public void setApprovedPatchesComplianceLevel(String approvedPatchesComplianceLevel) {
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel;
+    }
+
+    /**
+     * <p>
+     * Returns the specified compliance severity level for approved patches in the patch baseline.
+     * </p>
+     * 
+     * @return Returns the specified compliance severity level for approved patches in the patch baseline.
+     * @see PatchComplianceLevel
+     */
+
+    public String getApprovedPatchesComplianceLevel() {
+        return this.approvedPatchesComplianceLevel;
+    }
+
+    /**
+     * <p>
+     * Returns the specified compliance severity level for approved patches in the patch baseline.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Returns the specified compliance severity level for approved patches in the patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public GetPatchBaselineResult withApprovedPatchesComplianceLevel(String approvedPatchesComplianceLevel) {
+        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the specified compliance severity level for approved patches in the patch baseline.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Returns the specified compliance severity level for approved patches in the patch baseline.
+     * @see PatchComplianceLevel
+     */
+
+    public void setApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
+    }
+
+    /**
+     * <p>
+     * Returns the specified compliance severity level for approved patches in the patch baseline.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Returns the specified compliance severity level for approved patches in the patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public GetPatchBaselineResult withApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
+        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
         return this;
     }
 
@@ -598,12 +756,16 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getGlobalFilters() != null)
             sb.append("GlobalFilters: ").append(getGlobalFilters()).append(",");
         if (getApprovalRules() != null)
             sb.append("ApprovalRules: ").append(getApprovalRules()).append(",");
         if (getApprovedPatches() != null)
             sb.append("ApprovedPatches: ").append(getApprovedPatches()).append(",");
+        if (getApprovedPatchesComplianceLevel() != null)
+            sb.append("ApprovedPatchesComplianceLevel: ").append(getApprovedPatchesComplianceLevel()).append(",");
         if (getRejectedPatches() != null)
             sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
         if (getPatchGroups() != null)
@@ -636,6 +798,10 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         if (other.getGlobalFilters() == null ^ this.getGlobalFilters() == null)
             return false;
         if (other.getGlobalFilters() != null && other.getGlobalFilters().equals(this.getGlobalFilters()) == false)
@@ -647,6 +813,11 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
         if (other.getApprovedPatches() == null ^ this.getApprovedPatches() == null)
             return false;
         if (other.getApprovedPatches() != null && other.getApprovedPatches().equals(this.getApprovedPatches()) == false)
+            return false;
+        if (other.getApprovedPatchesComplianceLevel() == null ^ this.getApprovedPatchesComplianceLevel() == null)
+            return false;
+        if (other.getApprovedPatchesComplianceLevel() != null
+                && other.getApprovedPatchesComplianceLevel().equals(this.getApprovedPatchesComplianceLevel()) == false)
             return false;
         if (other.getRejectedPatches() == null ^ this.getRejectedPatches() == null)
             return false;
@@ -678,9 +849,11 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
 
         hashCode = prime * hashCode + ((getBaselineId() == null) ? 0 : getBaselineId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         hashCode = prime * hashCode + ((getGlobalFilters() == null) ? 0 : getGlobalFilters().hashCode());
         hashCode = prime * hashCode + ((getApprovalRules() == null) ? 0 : getApprovalRules().hashCode());
         hashCode = prime * hashCode + ((getApprovedPatches() == null) ? 0 : getApprovedPatches().hashCode());
+        hashCode = prime * hashCode + ((getApprovedPatchesComplianceLevel() == null) ? 0 : getApprovedPatchesComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getRejectedPatches() == null) ? 0 : getRejectedPatches().hashCode());
         hashCode = prime * hashCode + ((getPatchGroups() == null) ? 0 : getPatchGroups().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());

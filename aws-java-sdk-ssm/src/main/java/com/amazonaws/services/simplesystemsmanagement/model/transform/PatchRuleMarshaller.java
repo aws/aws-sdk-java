@@ -29,6 +29,8 @@ public class PatchRuleMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> PATCHFILTERGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PatchFilterGroup").build();
+    private static final MarshallingInfo<String> COMPLIANCELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceLevel").build();
     private static final MarshallingInfo<Integer> APPROVEAFTERDAYS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApproveAfterDays").build();
 
@@ -49,6 +51,7 @@ public class PatchRuleMarshaller {
 
         try {
             protocolMarshaller.marshall(patchRule.getPatchFilterGroup(), PATCHFILTERGROUP_BINDING);
+            protocolMarshaller.marshall(patchRule.getComplianceLevel(), COMPLIANCELEVEL_BINDING);
             protocolMarshaller.marshall(patchRule.getApproveAfterDays(), APPROVEAFTERDAYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

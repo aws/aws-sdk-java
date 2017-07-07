@@ -833,6 +833,39 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Provides information about any domain controllers in your directory.
+     * </p>
+     * 
+     * @param describeDomainControllersRequest
+     * @return A Java Future containing the result of the DescribeDomainControllers operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DescribeDomainControllers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDomainControllersResult> describeDomainControllersAsync(
+            DescribeDomainControllersRequest describeDomainControllersRequest);
+
+    /**
+     * <p>
+     * Provides information about any domain controllers in your directory.
+     * </p>
+     * 
+     * @param describeDomainControllersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDomainControllers operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DescribeDomainControllers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDomainControllersResult> describeDomainControllersAsync(
+            DescribeDomainControllersRequest describeDomainControllersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainControllersRequest, DescribeDomainControllersResult> asyncHandler);
+
+    /**
+     * <p>
      * Obtains information about which SNS topics receive status messages from the specified directory.
      * </p>
      * <p>
@@ -1506,6 +1539,47 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(
             UpdateConditionalForwarderRequest updateConditionalForwarderRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConditionalForwarderRequest, UpdateConditionalForwarderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or removes domain controllers to or from the directory. Based on the difference between current value and
+     * new value (provided through this API call), domain controllers will be added or removed. It may take up to 45
+     * minutes for any new domain controllers to become fully active once the requested number of domain controllers is
+     * updated. During this time, you cannot make another update request.
+     * </p>
+     * 
+     * @param updateNumberOfDomainControllersRequest
+     * @return A Java Future containing the result of the UpdateNumberOfDomainControllers operation returned by the
+     *         service.
+     * @sample AWSDirectoryServiceAsync.UpdateNumberOfDomainControllers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNumberOfDomainControllersResult> updateNumberOfDomainControllersAsync(
+            UpdateNumberOfDomainControllersRequest updateNumberOfDomainControllersRequest);
+
+    /**
+     * <p>
+     * Adds or removes domain controllers to or from the directory. Based on the difference between current value and
+     * new value (provided through this API call), domain controllers will be added or removed. It may take up to 45
+     * minutes for any new domain controllers to become fully active once the requested number of domain controllers is
+     * updated. During this time, you cannot make another update request.
+     * </p>
+     * 
+     * @param updateNumberOfDomainControllersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNumberOfDomainControllers operation returned by the
+     *         service.
+     * @sample AWSDirectoryServiceAsyncHandler.UpdateNumberOfDomainControllers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNumberOfDomainControllersResult> updateNumberOfDomainControllersAsync(
+            UpdateNumberOfDomainControllersRequest updateNumberOfDomainControllersRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNumberOfDomainControllersRequest, UpdateNumberOfDomainControllersResult> asyncHandler);
 
     /**
      * <p>

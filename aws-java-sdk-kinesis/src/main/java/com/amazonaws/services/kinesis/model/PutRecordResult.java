@@ -40,6 +40,24 @@ public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private String sequenceNumber;
+    /**
+     * <p>
+     * The encryption type to use on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String encryptionType;
 
     /**
      * <p>
@@ -134,6 +152,199 @@ public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * The encryption type to use on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The encryption type to use on the record. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @see EncryptionType
+     */
+
+    public void setEncryptionType(String encryptionType) {
+        this.encryptionType = encryptionType;
+    }
+
+    /**
+     * <p>
+     * The encryption type to use on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The encryption type to use on the record. This parameter can be one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code>: Do not encrypt the records in the stream.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *         key.
+     *         </p>
+     *         </li>
+     * @see EncryptionType
+     */
+
+    public String getEncryptionType() {
+        return this.encryptionType;
+    }
+
+    /**
+     * <p>
+     * The encryption type to use on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The encryption type to use on the record. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionType
+     */
+
+    public PutRecordResult withEncryptionType(String encryptionType) {
+        setEncryptionType(encryptionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The encryption type to use on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The encryption type to use on the record. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @see EncryptionType
+     */
+
+    public void setEncryptionType(EncryptionType encryptionType) {
+        this.encryptionType = encryptionType.toString();
+    }
+
+    /**
+     * <p>
+     * The encryption type to use on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The encryption type to use on the record. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionType
+     */
+
+    public PutRecordResult withEncryptionType(EncryptionType encryptionType) {
+        setEncryptionType(encryptionType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -147,7 +358,9 @@ public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getShardId() != null)
             sb.append("ShardId: ").append(getShardId()).append(",");
         if (getSequenceNumber() != null)
-            sb.append("SequenceNumber: ").append(getSequenceNumber());
+            sb.append("SequenceNumber: ").append(getSequenceNumber()).append(",");
+        if (getEncryptionType() != null)
+            sb.append("EncryptionType: ").append(getEncryptionType());
         sb.append("}");
         return sb.toString();
     }
@@ -170,6 +383,10 @@ public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getSequenceNumber() != null && other.getSequenceNumber().equals(this.getSequenceNumber()) == false)
             return false;
+        if (other.getEncryptionType() == null ^ this.getEncryptionType() == null)
+            return false;
+        if (other.getEncryptionType() != null && other.getEncryptionType().equals(this.getEncryptionType()) == false)
+            return false;
         return true;
     }
 
@@ -180,6 +397,7 @@ public class PutRecordResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
         hashCode = prime * hashCode + ((getShardId() == null) ? 0 : getShardId().hashCode());
         hashCode = prime * hashCode + ((getSequenceNumber() == null) ? 0 : getSequenceNumber().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionType() == null) ? 0 : getEncryptionType().hashCode());
         return hashCode;
     }
 

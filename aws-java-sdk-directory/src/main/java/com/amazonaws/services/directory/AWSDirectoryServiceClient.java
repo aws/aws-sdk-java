@@ -110,6 +110,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
                                     com.amazonaws.services.directory.model.InvalidNextTokenException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DomainControllerLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.directory.model.DomainControllerLimitExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
                                     com.amazonaws.services.directory.model.UnsupportedOperationException.class))
                     .addErrorMetadata(
@@ -1480,6 +1483,68 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Provides information about any domain controllers in your directory.
+     * </p>
+     * 
+     * @param describeDomainControllersRequest
+     * @return Result of the DescribeDomainControllers operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws InvalidNextTokenException
+     *         The <i>NextToken</i> value is not valid.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @sample AWSDirectoryService.DescribeDomainControllers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeDomainControllers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeDomainControllersResult describeDomainControllers(DescribeDomainControllersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDomainControllers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDomainControllersResult executeDescribeDomainControllers(DescribeDomainControllersRequest describeDomainControllersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDomainControllersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDomainControllersRequest> request = null;
+        Response<DescribeDomainControllersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDomainControllersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDomainControllersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDomainControllersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDomainControllersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Obtains information about which SNS topics receive status messages from the specified directory.
      * </p>
      * <p>
@@ -2553,6 +2618,75 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<UpdateConditionalForwarderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateConditionalForwarderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or removes domain controllers to or from the directory. Based on the difference between current value and
+     * new value (provided through this API call), domain controllers will be added or removed. It may take up to 45
+     * minutes for any new domain controllers to become fully active once the requested number of domain controllers is
+     * updated. During this time, you cannot make another update request.
+     * </p>
+     * 
+     * @param updateNumberOfDomainControllersRequest
+     * @return Result of the UpdateNumberOfDomainControllers operation returned by the service.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DomainControllerLimitExceededException
+     *         The maximum allowed number of domain controllers per directory was exceeded. The default limit per
+     *         directory is 20 domain controllers.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.UpdateNumberOfDomainControllers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateNumberOfDomainControllers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateNumberOfDomainControllersResult updateNumberOfDomainControllers(UpdateNumberOfDomainControllersRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNumberOfDomainControllers(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNumberOfDomainControllersResult executeUpdateNumberOfDomainControllers(
+            UpdateNumberOfDomainControllersRequest updateNumberOfDomainControllersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateNumberOfDomainControllersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateNumberOfDomainControllersRequest> request = null;
+        Response<UpdateNumberOfDomainControllersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateNumberOfDomainControllersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateNumberOfDomainControllersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateNumberOfDomainControllersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateNumberOfDomainControllersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

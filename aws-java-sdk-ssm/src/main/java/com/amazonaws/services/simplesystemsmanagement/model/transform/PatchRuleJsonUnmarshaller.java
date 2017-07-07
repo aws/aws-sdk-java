@@ -52,6 +52,10 @@ public class PatchRuleJsonUnmarshaller implements Unmarshaller<PatchRule, JsonUn
                     context.nextToken();
                     patchRule.setPatchFilterGroup(PatchFilterGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ComplianceLevel", targetDepth)) {
+                    context.nextToken();
+                    patchRule.setComplianceLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ApproveAfterDays", targetDepth)) {
                     context.nextToken();
                     patchRule.setApproveAfterDays(context.getUnmarshaller(Integer.class).unmarshall(context));

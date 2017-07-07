@@ -81,6 +81,14 @@ public class StreamDescriptionJsonUnmarshaller implements Unmarshaller<StreamDes
                     streamDescription.setEnhancedMonitoring(new ListUnmarshaller<EnhancedMetrics>(EnhancedMetricsJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("EncryptionType", targetDepth)) {
+                    context.nextToken();
+                    streamDescription.setEncryptionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("KeyId", targetDepth)) {
+                    context.nextToken();
+                    streamDescription.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

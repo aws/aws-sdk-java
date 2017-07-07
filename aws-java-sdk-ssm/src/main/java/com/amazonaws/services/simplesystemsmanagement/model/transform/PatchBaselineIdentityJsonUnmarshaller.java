@@ -56,6 +56,10 @@ public class PatchBaselineIdentityJsonUnmarshaller implements Unmarshaller<Patch
                     context.nextToken();
                     patchBaselineIdentity.setBaselineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OperatingSystem", targetDepth)) {
+                    context.nextToken();
+                    patchBaselineIdentity.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("BaselineDescription", targetDepth)) {
                     context.nextToken();
                     patchBaselineIdentity.setBaselineDescription(context.getUnmarshaller(String.class).unmarshall(context));

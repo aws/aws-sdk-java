@@ -29,6 +29,8 @@ public class PatchStatusMarshaller {
 
     private static final MarshallingInfo<String> DEPLOYMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentStatus").build();
+    private static final MarshallingInfo<String> COMPLIANCELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceLevel").build();
     private static final MarshallingInfo<java.util.Date> APPROVALDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovalDate").build();
 
@@ -49,6 +51,7 @@ public class PatchStatusMarshaller {
 
         try {
             protocolMarshaller.marshall(patchStatus.getDeploymentStatus(), DEPLOYMENTSTATUS_BINDING);
+            protocolMarshaller.marshall(patchStatus.getComplianceLevel(), COMPLIANCELEVEL_BINDING);
             protocolMarshaller.marshall(patchStatus.getApprovalDate(), APPROVALDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

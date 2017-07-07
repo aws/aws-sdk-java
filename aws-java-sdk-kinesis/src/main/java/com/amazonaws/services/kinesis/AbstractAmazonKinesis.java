@@ -201,6 +201,16 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
+    public StartStreamEncryptionResult startStreamEncryption(StartStreamEncryptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopStreamEncryptionResult stopStreamEncryption(StopStreamEncryptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateShardCountResult updateShardCount(UpdateShardCountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -285,6 +285,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainControllersResult> describeDomainControllersAsync(DescribeDomainControllersRequest request) {
+
+        return describeDomainControllersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainControllersResult> describeDomainControllersAsync(DescribeDomainControllersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainControllersRequest, DescribeDomainControllersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEventTopicsResult> describeEventTopicsAsync(DescribeEventTopicsRequest request) {
 
         return describeEventTopicsAsync(request, null);
@@ -560,6 +573,21 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     @Override
     public java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(UpdateConditionalForwarderRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConditionalForwarderRequest, UpdateConditionalForwarderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNumberOfDomainControllersResult> updateNumberOfDomainControllersAsync(
+            UpdateNumberOfDomainControllersRequest request) {
+
+        return updateNumberOfDomainControllersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNumberOfDomainControllersResult> updateNumberOfDomainControllersAsync(
+            UpdateNumberOfDomainControllersRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateNumberOfDomainControllersRequest, UpdateNumberOfDomainControllersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

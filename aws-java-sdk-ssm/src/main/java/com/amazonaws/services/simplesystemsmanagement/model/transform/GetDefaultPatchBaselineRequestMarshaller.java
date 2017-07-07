@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetDefaultPatchBaselineRequestMarshaller {
 
+    private static final MarshallingInfo<String> OPERATINGSYSTEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperatingSystem").build();
+
     private static final GetDefaultPatchBaselineRequestMarshaller instance = new GetDefaultPatchBaselineRequestMarshaller();
 
     public static GetDefaultPatchBaselineRequestMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class GetDefaultPatchBaselineRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getDefaultPatchBaselineRequest.getOperatingSystem(), OPERATINGSYSTEM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

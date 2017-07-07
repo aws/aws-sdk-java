@@ -37,6 +37,12 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
     private String name;
     /**
      * <p>
+     * The operating system rule used by the updated patch baseline.
+     * </p>
+     */
+    private String operatingSystem;
+    /**
+     * <p>
      * A set of global filters used to exclude patches from the baseline.
      * </p>
      */
@@ -53,6 +59,12 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> approvedPatches;
+    /**
+     * <p>
+     * The compliance severity level assigned to the patch baseline after the update completed.
+     * </p>
+     */
+    private String approvedPatchesComplianceLevel;
     /**
      * <p>
      * A list of explicitly rejected patches for the baseline.
@@ -155,6 +167,79 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
 
     public UpdatePatchBaselineResult withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system rule used by the updated patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system rule used by the updated patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * The operating system rule used by the updated patch baseline.
+     * </p>
+     * 
+     * @return The operating system rule used by the updated patch baseline.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * The operating system rule used by the updated patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system rule used by the updated patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public UpdatePatchBaselineResult withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system rule used by the updated patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system rule used by the updated patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+    }
+
+    /**
+     * <p>
+     * The operating system rule used by the updated patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system rule used by the updated patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public UpdatePatchBaselineResult withOperatingSystem(OperatingSystem operatingSystem) {
+        setOperatingSystem(operatingSystem);
         return this;
     }
 
@@ -308,6 +393,79 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
 
     public UpdatePatchBaselineResult withApprovedPatches(java.util.Collection<String> approvedPatches) {
         setApprovedPatches(approvedPatches);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compliance severity level assigned to the patch baseline after the update completed.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        The compliance severity level assigned to the patch baseline after the update completed.
+     * @see PatchComplianceLevel
+     */
+
+    public void setApprovedPatchesComplianceLevel(String approvedPatchesComplianceLevel) {
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel;
+    }
+
+    /**
+     * <p>
+     * The compliance severity level assigned to the patch baseline after the update completed.
+     * </p>
+     * 
+     * @return The compliance severity level assigned to the patch baseline after the update completed.
+     * @see PatchComplianceLevel
+     */
+
+    public String getApprovedPatchesComplianceLevel() {
+        return this.approvedPatchesComplianceLevel;
+    }
+
+    /**
+     * <p>
+     * The compliance severity level assigned to the patch baseline after the update completed.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        The compliance severity level assigned to the patch baseline after the update completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public UpdatePatchBaselineResult withApprovedPatchesComplianceLevel(String approvedPatchesComplianceLevel) {
+        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The compliance severity level assigned to the patch baseline after the update completed.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        The compliance severity level assigned to the patch baseline after the update completed.
+     * @see PatchComplianceLevel
+     */
+
+    public void setApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
+    }
+
+    /**
+     * <p>
+     * The compliance severity level assigned to the patch baseline after the update completed.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        The compliance severity level assigned to the patch baseline after the update completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public UpdatePatchBaselineResult withApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
+        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
         return this;
     }
 
@@ -519,12 +677,16 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("BaselineId: ").append(getBaselineId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getGlobalFilters() != null)
             sb.append("GlobalFilters: ").append(getGlobalFilters()).append(",");
         if (getApprovalRules() != null)
             sb.append("ApprovalRules: ").append(getApprovalRules()).append(",");
         if (getApprovedPatches() != null)
             sb.append("ApprovedPatches: ").append(getApprovedPatches()).append(",");
+        if (getApprovedPatchesComplianceLevel() != null)
+            sb.append("ApprovedPatchesComplianceLevel: ").append(getApprovedPatchesComplianceLevel()).append(",");
         if (getRejectedPatches() != null)
             sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
         if (getCreatedDate() != null)
@@ -555,6 +717,10 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         if (other.getGlobalFilters() == null ^ this.getGlobalFilters() == null)
             return false;
         if (other.getGlobalFilters() != null && other.getGlobalFilters().equals(this.getGlobalFilters()) == false)
@@ -566,6 +732,11 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getApprovedPatches() == null ^ this.getApprovedPatches() == null)
             return false;
         if (other.getApprovedPatches() != null && other.getApprovedPatches().equals(this.getApprovedPatches()) == false)
+            return false;
+        if (other.getApprovedPatchesComplianceLevel() == null ^ this.getApprovedPatchesComplianceLevel() == null)
+            return false;
+        if (other.getApprovedPatchesComplianceLevel() != null
+                && other.getApprovedPatchesComplianceLevel().equals(this.getApprovedPatchesComplianceLevel()) == false)
             return false;
         if (other.getRejectedPatches() == null ^ this.getRejectedPatches() == null)
             return false;
@@ -593,9 +764,11 @@ public class UpdatePatchBaselineResult extends com.amazonaws.AmazonWebServiceRes
 
         hashCode = prime * hashCode + ((getBaselineId() == null) ? 0 : getBaselineId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         hashCode = prime * hashCode + ((getGlobalFilters() == null) ? 0 : getGlobalFilters().hashCode());
         hashCode = prime * hashCode + ((getApprovalRules() == null) ? 0 : getApprovalRules().hashCode());
         hashCode = prime * hashCode + ((getApprovedPatches() == null) ? 0 : getApprovedPatches().hashCode());
+        hashCode = prime * hashCode + ((getApprovedPatchesComplianceLevel() == null) ? 0 : getApprovedPatchesComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getRejectedPatches() == null) ? 0 : getRejectedPatches().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getModifiedDate() == null) ? 0 : getModifiedDate().hashCode());

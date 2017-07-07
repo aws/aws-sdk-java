@@ -37,7 +37,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
     private String title;
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The operating system-specific ID of the patch.
      * </p>
      */
     private String kBId;
@@ -61,7 +61,8 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
     private String state;
     /**
      * <p>
-     * The date/time the patch was installed on the instance.
+     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * information.
      * </p>
      */
     private java.util.Date installedTime;
@@ -108,11 +109,11 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The operating system-specific ID of the patch.
      * </p>
      * 
      * @param kBId
-     *        The Microsoft Knowledge Base ID of the patch.
+     *        The operating system-specific ID of the patch.
      */
 
     public void setKBId(String kBId) {
@@ -121,10 +122,10 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The operating system-specific ID of the patch.
      * </p>
      * 
-     * @return The Microsoft Knowledge Base ID of the patch.
+     * @return The operating system-specific ID of the patch.
      */
 
     public String getKBId() {
@@ -133,11 +134,11 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Microsoft Knowledge Base ID of the patch.
+     * The operating system-specific ID of the patch.
      * </p>
      * 
      * @param kBId
-     *        The Microsoft Knowledge Base ID of the patch.
+     *        The operating system-specific ID of the patch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,11 +302,13 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date/time the patch was installed on the instance.
+     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * information.
      * </p>
      * 
      * @param installedTime
-     *        The date/time the patch was installed on the instance.
+     *        The date/time the patch was installed on the instance. Note that not all operating systems provide this
+     *        level of information.
      */
 
     public void setInstalledTime(java.util.Date installedTime) {
@@ -314,10 +317,12 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date/time the patch was installed on the instance.
+     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * information.
      * </p>
      * 
-     * @return The date/time the patch was installed on the instance.
+     * @return The date/time the patch was installed on the instance. Note that not all operating systems provide this
+     *         level of information.
      */
 
     public java.util.Date getInstalledTime() {
@@ -326,11 +331,13 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date/time the patch was installed on the instance.
+     * The date/time the patch was installed on the instance. Note that not all operating systems provide this level of
+     * information.
      * </p>
      * 
      * @param installedTime
-     *        The date/time the patch was installed on the instance.
+     *        The date/time the patch was installed on the instance. Note that not all operating systems provide this
+     *        level of information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

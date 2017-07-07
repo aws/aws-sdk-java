@@ -29,6 +29,12 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String baselineId;
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     */
+    private String operatingSystem;
 
     /**
      * <p>
@@ -71,6 +77,79 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system for the returned patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @return The operating system for the returned patch baseline.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system for the returned patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetDefaultPatchBaselineResult withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system for the returned patch baseline.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+    }
+
+    /**
+     * <p>
+     * The operating system for the returned patch baseline.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        The operating system for the returned patch baseline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public GetDefaultPatchBaselineResult withOperatingSystem(OperatingSystem operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -82,7 +161,9 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBaselineId() != null)
-            sb.append("BaselineId: ").append(getBaselineId());
+            sb.append("BaselineId: ").append(getBaselineId()).append(",");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +182,10 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getBaselineId() != null && other.getBaselineId().equals(this.getBaselineId()) == false)
             return false;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +195,7 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBaselineId() == null) ? 0 : getBaselineId().hashCode());
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         return hashCode;
     }
 

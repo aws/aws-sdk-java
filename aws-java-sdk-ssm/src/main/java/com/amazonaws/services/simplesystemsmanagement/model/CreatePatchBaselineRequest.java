@@ -27,6 +27,13 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     */
+    private String operatingSystem;
+    /**
+     * <p>
      * The name of the patch baseline.
      * </p>
      */
@@ -51,6 +58,14 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     private com.amazonaws.internal.SdkInternalList<String> approvedPatches;
     /**
      * <p>
+     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
+     * this is the severity of the compliance violation. Valid compliance severity levels include the following:
+     * CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * </p>
+     */
+    private String approvedPatchesComplianceLevel;
+    /**
+     * <p>
      * A list of explicitly rejected patches for the baseline.
      * </p>
      */
@@ -67,6 +82,89 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String clientToken;
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(String operatingSystem) {
+        this.operatingSystem = operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @return Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *         AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @see OperatingSystem
+     */
+
+    public String getOperatingSystem() {
+        return this.operatingSystem;
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public CreatePatchBaselineRequest withOperatingSystem(String operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @see OperatingSystem
+     */
+
+    public void setOperatingSystem(OperatingSystem operatingSystem) {
+        this.operatingSystem = operatingSystem.toString();
+    }
+
+    /**
+     * <p>
+     * Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     * AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * </p>
+     * 
+     * @param operatingSystem
+     *        Defines the operating system the patch baseline applies to. Supported operating systems include WINDOWS,
+     *        AMAZON_LINUX, UBUNTU and REDHAT_ENTERPRISE_LINUX. The Default value is WINDOWS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OperatingSystem
+     */
+
+    public CreatePatchBaselineRequest withOperatingSystem(OperatingSystem operatingSystem) {
+        setOperatingSystem(operatingSystem);
+        return this;
+    }
 
     /**
      * <p>
@@ -263,6 +361,99 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
+     * this is the severity of the compliance violation. Valid compliance severity levels include the following:
+     * CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Defines the compliance level for approved patches. This means that if an approved patch is reported as
+     *        missing, this is the severity of the compliance violation. Valid compliance severity levels include the
+     *        following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * @see PatchComplianceLevel
+     */
+
+    public void setApprovedPatchesComplianceLevel(String approvedPatchesComplianceLevel) {
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel;
+    }
+
+    /**
+     * <p>
+     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
+     * this is the severity of the compliance violation. Valid compliance severity levels include the following:
+     * CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * </p>
+     * 
+     * @return Defines the compliance level for approved patches. This means that if an approved patch is reported as
+     *         missing, this is the severity of the compliance violation. Valid compliance severity levels include the
+     *         following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * @see PatchComplianceLevel
+     */
+
+    public String getApprovedPatchesComplianceLevel() {
+        return this.approvedPatchesComplianceLevel;
+    }
+
+    /**
+     * <p>
+     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
+     * this is the severity of the compliance violation. Valid compliance severity levels include the following:
+     * CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Defines the compliance level for approved patches. This means that if an approved patch is reported as
+     *        missing, this is the severity of the compliance violation. Valid compliance severity levels include the
+     *        following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public CreatePatchBaselineRequest withApprovedPatchesComplianceLevel(String approvedPatchesComplianceLevel) {
+        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
+     * this is the severity of the compliance violation. Valid compliance severity levels include the following:
+     * CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Defines the compliance level for approved patches. This means that if an approved patch is reported as
+     *        missing, this is the severity of the compliance violation. Valid compliance severity levels include the
+     *        following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * @see PatchComplianceLevel
+     */
+
+    public void setApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
+    }
+
+    /**
+     * <p>
+     * Defines the compliance level for approved patches. This means that if an approved patch is reported as missing,
+     * this is the severity of the compliance violation. Valid compliance severity levels include the following:
+     * CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * </p>
+     * 
+     * @param approvedPatchesComplianceLevel
+     *        Defines the compliance level for approved patches. This means that if an approved patch is reported as
+     *        missing, this is the severity of the compliance violation. Valid compliance severity levels include the
+     *        following: CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED. The default value is UNSPECIFIED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public CreatePatchBaselineRequest withApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
+        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of explicitly rejected patches for the baseline.
      * </p>
      * 
@@ -425,6 +616,8 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getOperatingSystem() != null)
+            sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getGlobalFilters() != null)
@@ -433,6 +626,8 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("ApprovalRules: ").append(getApprovalRules()).append(",");
         if (getApprovedPatches() != null)
             sb.append("ApprovedPatches: ").append(getApprovedPatches()).append(",");
+        if (getApprovedPatchesComplianceLevel() != null)
+            sb.append("ApprovedPatchesComplianceLevel: ").append(getApprovedPatchesComplianceLevel()).append(",");
         if (getRejectedPatches() != null)
             sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
         if (getDescription() != null)
@@ -453,6 +648,10 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof CreatePatchBaselineRequest == false)
             return false;
         CreatePatchBaselineRequest other = (CreatePatchBaselineRequest) obj;
+        if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
+            return false;
+        if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -468,6 +667,11 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         if (other.getApprovedPatches() == null ^ this.getApprovedPatches() == null)
             return false;
         if (other.getApprovedPatches() != null && other.getApprovedPatches().equals(this.getApprovedPatches()) == false)
+            return false;
+        if (other.getApprovedPatchesComplianceLevel() == null ^ this.getApprovedPatchesComplianceLevel() == null)
+            return false;
+        if (other.getApprovedPatchesComplianceLevel() != null
+                && other.getApprovedPatchesComplianceLevel().equals(this.getApprovedPatchesComplianceLevel()) == false)
             return false;
         if (other.getRejectedPatches() == null ^ this.getRejectedPatches() == null)
             return false;
@@ -489,10 +693,12 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getGlobalFilters() == null) ? 0 : getGlobalFilters().hashCode());
         hashCode = prime * hashCode + ((getApprovalRules() == null) ? 0 : getApprovalRules().hashCode());
         hashCode = prime * hashCode + ((getApprovedPatches() == null) ? 0 : getApprovedPatches().hashCode());
+        hashCode = prime * hashCode + ((getApprovedPatchesComplianceLevel() == null) ? 0 : getApprovedPatchesComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getRejectedPatches() == null) ? 0 : getRejectedPatches().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());

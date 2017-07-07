@@ -18009,6 +18009,51 @@
       },
       "wrapper" : false
     },
+    "KeyManagerType" : {
+      "c2jName" : "KeyManagerType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "AWS",
+        "value" : "AWS"
+      }, {
+        "name" : "CUSTOMER",
+        "value" : "CUSTOMER"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "KeyManagerType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "KeyManagerType",
+        "variableName" : "keyManagerType",
+        "variableType" : "KeyManagerType",
+        "documentation" : null,
+        "simpleType" : "KeyManagerType",
+        "variableSetterType" : "KeyManagerType"
+      },
+      "wrapper" : false
+    },
     "KeyMetadata" : {
       "c2jName" : "KeyMetadata",
       "customization" : {
@@ -18770,6 +18815,68 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "KeyManager",
+        "c2jShape" : "KeyManagerType",
+        "deprecated" : false,
+        "documentation" : "<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+        "enumType" : "KeyManagerType",
+        "fluentSetterDocumentation" : "/**<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param keyManager The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see KeyManagerType*/",
+        "fluentSetterMethodName" : "withKeyManager",
+        "getterDocumentation" : "/**<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@return The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@see KeyManagerType*/",
+        "getterMethodName" : "getKeyManager",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "KeyManager",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "KeyManager",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "KeyManager",
+        "setterDocumentation" : "/**<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param keyManager The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@see KeyManagerType*/",
+        "setterMethodName" : "setKeyManager",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "keyManager",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param keyManager The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see KeyManagerType*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "keyManager",
+          "variableType" : "String",
+          "documentation" : "<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "AWSAccountId" : {
@@ -19271,6 +19378,69 @@
             "variableName" : "keyId",
             "variableType" : "String",
             "documentation" : "<p>The globally unique identifier for the CMK.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "KeyManager" : {
+          "c2jName" : "KeyManager",
+          "c2jShape" : "KeyManagerType",
+          "deprecated" : false,
+          "documentation" : "<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+          "enumType" : "KeyManagerType",
+          "fluentSetterDocumentation" : "/**<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param keyManager The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see KeyManagerType*/",
+          "fluentSetterMethodName" : "withKeyManager",
+          "getterDocumentation" : "/**<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@return The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@see KeyManagerType*/",
+          "getterMethodName" : "getKeyManager",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "KeyManager",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "KeyManager",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "KeyManager",
+          "setterDocumentation" : "/**<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param keyManager The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@see KeyManagerType*/",
+          "setterMethodName" : "setKeyManager",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "keyManager",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>\n@param keyManager The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see KeyManagerType*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "keyManager",
+            "variableType" : "String",
+            "documentation" : "<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

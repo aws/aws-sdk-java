@@ -36,6 +36,13 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
     private PatchFilterGroup patchFilterGroup;
     /**
      * <p>
+     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * </p>
+     */
+    private String complianceLevel;
+    /**
+     * <p>
      * The number of days after the release date of each patch matched by the rule the patch is marked as approved in
      * the patch baseline.
      * </p>
@@ -79,6 +86,89 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
 
     public PatchRule withPatchFilterGroup(PatchFilterGroup patchFilterGroup) {
         setPatchFilterGroup(patchFilterGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * </p>
+     * 
+     * @param complianceLevel
+     *        A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     *        include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * @see PatchComplianceLevel
+     */
+
+    public void setComplianceLevel(String complianceLevel) {
+        this.complianceLevel = complianceLevel;
+    }
+
+    /**
+     * <p>
+     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * </p>
+     * 
+     * @return A compliance severity level for all approved patches in a patch baseline. Valid compliance severity
+     *         levels include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * @see PatchComplianceLevel
+     */
+
+    public String getComplianceLevel() {
+        return this.complianceLevel;
+    }
+
+    /**
+     * <p>
+     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * </p>
+     * 
+     * @param complianceLevel
+     *        A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     *        include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public PatchRule withComplianceLevel(String complianceLevel) {
+        setComplianceLevel(complianceLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * </p>
+     * 
+     * @param complianceLevel
+     *        A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     *        include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * @see PatchComplianceLevel
+     */
+
+    public void setComplianceLevel(PatchComplianceLevel complianceLevel) {
+        this.complianceLevel = complianceLevel.toString();
+    }
+
+    /**
+     * <p>
+     * A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     * include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * </p>
+     * 
+     * @param complianceLevel
+     *        A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels
+     *        include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PatchComplianceLevel
+     */
+
+    public PatchRule withComplianceLevel(PatchComplianceLevel complianceLevel) {
+        setComplianceLevel(complianceLevel);
         return this;
     }
 
@@ -141,6 +231,8 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getPatchFilterGroup() != null)
             sb.append("PatchFilterGroup: ").append(getPatchFilterGroup()).append(",");
+        if (getComplianceLevel() != null)
+            sb.append("ComplianceLevel: ").append(getComplianceLevel()).append(",");
         if (getApproveAfterDays() != null)
             sb.append("ApproveAfterDays: ").append(getApproveAfterDays());
         sb.append("}");
@@ -161,6 +253,10 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPatchFilterGroup() != null && other.getPatchFilterGroup().equals(this.getPatchFilterGroup()) == false)
             return false;
+        if (other.getComplianceLevel() == null ^ this.getComplianceLevel() == null)
+            return false;
+        if (other.getComplianceLevel() != null && other.getComplianceLevel().equals(this.getComplianceLevel()) == false)
+            return false;
         if (other.getApproveAfterDays() == null ^ this.getApproveAfterDays() == null)
             return false;
         if (other.getApproveAfterDays() != null && other.getApproveAfterDays().equals(this.getApproveAfterDays()) == false)
@@ -174,6 +270,7 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPatchFilterGroup() == null) ? 0 : getPatchFilterGroup().hashCode());
+        hashCode = prime * hashCode + ((getComplianceLevel() == null) ? 0 : getComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getApproveAfterDays() == null) ? 0 : getApproveAfterDays().hashCode());
         return hashCode;
     }

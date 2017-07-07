@@ -818,6 +818,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (listObjectsRequest.getMaxKeys() != null && listObjectsRequest.getMaxKeys().intValue() >= 0) request.addParameter("max-keys", listObjectsRequest.getMaxKeys().toString());
         request.addParameter("encoding-type", shouldSDKDecodeResponse ? Constants.URL_ENCODING : listObjectsRequest.getEncodingType());
 
+        populateRequesterPaysHeader(request, listObjectsRequest.isRequesterPays());
+
         return invoke(request, new Unmarshallers.ListObjectsUnmarshaller(shouldSDKDecodeResponse), listObjectsRequest.getBucketName(), null);
     }
 
@@ -852,6 +854,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addParameterIfNotNull(request, "prefix", listObjectsV2Request.getPrefix());
         addParameterIfNotNull(request, "encoding-type", listObjectsV2Request.getEncodingType());
         request.addParameter("fetch-owner", Boolean.toString(listObjectsV2Request.isFetchOwner()));
+
+        populateRequesterPaysHeader(request, listObjectsV2Request.isRequesterPays());
 
         /**
          * If URL encoding has been requested from S3 we'll automatically decode the response.

@@ -30,6 +30,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreatePatchBaselineRequestMarshaller {
 
+    private static final MarshallingInfo<String> OPERATINGSYSTEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperatingSystem").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> GLOBALFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -38,6 +40,8 @@ public class CreatePatchBaselineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovalRules").build();
     private static final MarshallingInfo<List> APPROVEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatches").build();
+    private static final MarshallingInfo<String> APPROVEDPATCHESCOMPLIANCELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesComplianceLevel").build();
     private static final MarshallingInfo<List> REJECTEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatches").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,10 +66,12 @@ public class CreatePatchBaselineRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createPatchBaselineRequest.getOperatingSystem(), OPERATINGSYSTEM_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getGlobalFilters(), GLOBALFILTERS_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getApprovalRules(), APPROVALRULES_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getApprovedPatches(), APPROVEDPATCHES_BINDING);
+            protocolMarshaller.marshall(createPatchBaselineRequest.getApprovedPatchesComplianceLevel(), APPROVEDPATCHESCOMPLIANCELEVEL_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getRejectedPatches(), REJECTEDPATCHES_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getClientToken(), CLIENTTOKEN_BINDING);

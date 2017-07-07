@@ -56,7 +56,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String description;
-
+    /**
+     * <p>
+     * Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
+     * </p>
+     */
     private DirectoryVpcSettings vpcSettings;
 
     /**
@@ -244,7 +248,12 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
+     * </p>
+     * 
      * @param vpcSettings
+     *        Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
      */
 
     public void setVpcSettings(DirectoryVpcSettings vpcSettings) {
@@ -252,7 +261,11 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
+     * </p>
+     * 
+     * @return Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
      */
 
     public DirectoryVpcSettings getVpcSettings() {
@@ -260,7 +273,12 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
+     * </p>
+     * 
      * @param vpcSettings
+     *        Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

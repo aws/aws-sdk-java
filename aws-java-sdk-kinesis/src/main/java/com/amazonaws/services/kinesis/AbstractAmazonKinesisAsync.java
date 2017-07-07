@@ -596,6 +596,32 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
     }
 
     @Override
+    public java.util.concurrent.Future<StartStreamEncryptionResult> startStreamEncryptionAsync(StartStreamEncryptionRequest request) {
+
+        return startStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartStreamEncryptionResult> startStreamEncryptionAsync(StartStreamEncryptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartStreamEncryptionRequest, StartStreamEncryptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamEncryptionResult> stopStreamEncryptionAsync(StopStreamEncryptionRequest request) {
+
+        return stopStreamEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopStreamEncryptionResult> stopStreamEncryptionAsync(StopStreamEncryptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopStreamEncryptionRequest, StopStreamEncryptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateShardCountResult> updateShardCountAsync(UpdateShardCountRequest request) {
 
         return updateShardCountAsync(request, null);

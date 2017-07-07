@@ -31,6 +31,8 @@ public class PatchBaselineIdentityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaselineId").build();
     private static final MarshallingInfo<String> BASELINENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaselineName").build();
+    private static final MarshallingInfo<String> OPERATINGSYSTEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperatingSystem").build();
     private static final MarshallingInfo<String> BASELINEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaselineDescription").build();
     private static final MarshallingInfo<Boolean> DEFAULTBASELINE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -54,6 +56,7 @@ public class PatchBaselineIdentityMarshaller {
         try {
             protocolMarshaller.marshall(patchBaselineIdentity.getBaselineId(), BASELINEID_BINDING);
             protocolMarshaller.marshall(patchBaselineIdentity.getBaselineName(), BASELINENAME_BINDING);
+            protocolMarshaller.marshall(patchBaselineIdentity.getOperatingSystem(), OPERATINGSYSTEM_BINDING);
             protocolMarshaller.marshall(patchBaselineIdentity.getBaselineDescription(), BASELINEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(patchBaselineIdentity.getDefaultBaseline(), DEFAULTBASELINE_BINDING);
         } catch (Exception e) {

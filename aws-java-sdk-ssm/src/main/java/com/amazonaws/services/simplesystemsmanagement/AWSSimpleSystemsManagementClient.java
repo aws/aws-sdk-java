@@ -179,6 +179,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentVersion").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperatingSystem").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.UnsupportedOperatingSystemException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOutputFolder").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class))
                     .addErrorMetadata(
@@ -1074,8 +1077,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to
      * ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a
      * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync,
-     * see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">
-     * Creating a Resource Data Sync</a>.
+     * see <a href=
+     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync"
+     * >Configuring Resource Data Sync for Inventory</a>.
      * </p>
      * 
      * @param createResourceDataSyncRequest
@@ -2237,7 +2241,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline.
+     * Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline. Note
+     * that this API applies only to Windows patch baselines.
      * </p>
      * 
      * @param describeEffectivePatchesForPatchBaselineRequest
@@ -2246,6 +2251,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws DoesNotExistException
      *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
+     * @throws UnsupportedOperatingSystemException
+     *         The operating systems you specified is not supported, or the operation is not supported for the operating
+     *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeEffectivePatchesForPatchBaseline
@@ -3294,7 +3302,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Retrieves the default patch baseline.
+     * Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch
+     * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
      * 
      * @param getDefaultPatchBaselineRequest
@@ -3347,13 +3356,16 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the
-     * AWS-ApplyPatchBaseline Systems Manager document.
+     * AWS-RunPatchBaseline Systems Manager document.
      * </p>
      * 
      * @param getDeployablePatchSnapshotForInstanceRequest
      * @return Result of the GetDeployablePatchSnapshotForInstance operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @throws UnsupportedOperatingSystemException
+     *         The operating systems you specified is not supported, or the operation is not supported for the operating
+     *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
      * @sample AWSSimpleSystemsManagement.GetDeployablePatchSnapshotForInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance"
      *      target="_top">AWS API Documentation</a>

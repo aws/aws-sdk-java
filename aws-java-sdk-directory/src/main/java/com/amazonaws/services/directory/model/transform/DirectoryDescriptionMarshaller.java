@@ -64,6 +64,8 @@ public class DirectoryDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StageReason").build();
     private static final MarshallingInfo<Boolean> SSOENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SsoEnabled").build();
+    private static final MarshallingInfo<Integer> DESIREDNUMBEROFDOMAINCONTROLLERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredNumberOfDomainControllers").build();
 
     private static final DirectoryDescriptionMarshaller instance = new DirectoryDescriptionMarshaller();
 
@@ -99,6 +101,7 @@ public class DirectoryDescriptionMarshaller {
             protocolMarshaller.marshall(directoryDescription.getRadiusStatus(), RADIUSSTATUS_BINDING);
             protocolMarshaller.marshall(directoryDescription.getStageReason(), STAGEREASON_BINDING);
             protocolMarshaller.marshall(directoryDescription.getSsoEnabled(), SSOENABLED_BINDING);
+            protocolMarshaller.marshall(directoryDescription.getDesiredNumberOfDomainControllers(), DESIREDNUMBEROFDOMAINCONTROLLERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

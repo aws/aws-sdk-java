@@ -878,6 +878,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainControllersResult> describeDomainControllersAsync(DescribeDomainControllersRequest request) {
+
+        return describeDomainControllersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainControllersResult> describeDomainControllersAsync(final DescribeDomainControllersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDomainControllersRequest, DescribeDomainControllersResult> asyncHandler) {
+        final DescribeDomainControllersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDomainControllersResult>() {
+            @Override
+            public DescribeDomainControllersResult call() throws Exception {
+                DescribeDomainControllersResult result = null;
+
+                try {
+                    result = executeDescribeDomainControllers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEventTopicsResult> describeEventTopicsAsync(DescribeEventTopicsRequest request) {
 
         return describeEventTopicsAsync(request, null);
@@ -1502,6 +1535,41 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
 
                 try {
                     result = executeUpdateConditionalForwarder(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNumberOfDomainControllersResult> updateNumberOfDomainControllersAsync(
+            UpdateNumberOfDomainControllersRequest request) {
+
+        return updateNumberOfDomainControllersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNumberOfDomainControllersResult> updateNumberOfDomainControllersAsync(
+            final UpdateNumberOfDomainControllersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateNumberOfDomainControllersRequest, UpdateNumberOfDomainControllersResult> asyncHandler) {
+        final UpdateNumberOfDomainControllersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateNumberOfDomainControllersResult>() {
+            @Override
+            public UpdateNumberOfDomainControllersResult call() throws Exception {
+                UpdateNumberOfDomainControllersResult result = null;
+
+                try {
+                    result = executeUpdateNumberOfDomainControllers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

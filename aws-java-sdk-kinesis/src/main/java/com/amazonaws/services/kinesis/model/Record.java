@@ -31,7 +31,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the record in the stream.
+     * The unique identifier of the record within its shard.
      * </p>
      */
     private String sequenceNumber;
@@ -56,14 +56,32 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String partitionKey;
+    /**
+     * <p>
+     * The encryption type used on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String encryptionType;
 
     /**
      * <p>
-     * The unique identifier of the record in the stream.
+     * The unique identifier of the record within its shard.
      * </p>
      * 
      * @param sequenceNumber
-     *        The unique identifier of the record in the stream.
+     *        The unique identifier of the record within its shard.
      */
 
     public void setSequenceNumber(String sequenceNumber) {
@@ -72,10 +90,10 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the record in the stream.
+     * The unique identifier of the record within its shard.
      * </p>
      * 
-     * @return The unique identifier of the record in the stream.
+     * @return The unique identifier of the record within its shard.
      */
 
     public String getSequenceNumber() {
@@ -84,11 +102,11 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the record in the stream.
+     * The unique identifier of the record within its shard.
      * </p>
      * 
      * @param sequenceNumber
-     *        The unique identifier of the record in the stream.
+     *        The unique identifier of the record within its shard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,6 +281,199 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The encryption type used on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The encryption type used on the record. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @see EncryptionType
+     */
+
+    public void setEncryptionType(String encryptionType) {
+        this.encryptionType = encryptionType;
+    }
+
+    /**
+     * <p>
+     * The encryption type used on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The encryption type used on the record. This parameter can be one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code>: Do not encrypt the records in the stream.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *         key.
+     *         </p>
+     *         </li>
+     * @see EncryptionType
+     */
+
+    public String getEncryptionType() {
+        return this.encryptionType;
+    }
+
+    /**
+     * <p>
+     * The encryption type used on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The encryption type used on the record. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionType
+     */
+
+    public Record withEncryptionType(String encryptionType) {
+        setEncryptionType(encryptionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The encryption type used on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The encryption type used on the record. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @see EncryptionType
+     */
+
+    public void setEncryptionType(EncryptionType encryptionType) {
+        this.encryptionType = encryptionType.toString();
+    }
+
+    /**
+     * <p>
+     * The encryption type used on the record. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code>: Do not encrypt the records in the stream.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param encryptionType
+     *        The encryption type used on the record. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: Do not encrypt the records in the stream.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        key.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncryptionType
+     */
+
+    public Record withEncryptionType(EncryptionType encryptionType) {
+        setEncryptionType(encryptionType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -280,7 +491,9 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
         if (getData() != null)
             sb.append("Data: ").append(getData()).append(",");
         if (getPartitionKey() != null)
-            sb.append("PartitionKey: ").append(getPartitionKey());
+            sb.append("PartitionKey: ").append(getPartitionKey()).append(",");
+        if (getEncryptionType() != null)
+            sb.append("EncryptionType: ").append(getEncryptionType());
         sb.append("}");
         return sb.toString();
     }
@@ -311,6 +524,10 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPartitionKey() != null && other.getPartitionKey().equals(this.getPartitionKey()) == false)
             return false;
+        if (other.getEncryptionType() == null ^ this.getEncryptionType() == null)
+            return false;
+        if (other.getEncryptionType() != null && other.getEncryptionType().equals(this.getEncryptionType()) == false)
+            return false;
         return true;
     }
 
@@ -323,6 +540,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getApproximateArrivalTimestamp() == null) ? 0 : getApproximateArrivalTimestamp().hashCode());
         hashCode = prime * hashCode + ((getData() == null) ? 0 : getData().hashCode());
         hashCode = prime * hashCode + ((getPartitionKey() == null) ? 0 : getPartitionKey().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionType() == null) ? 0 : getEncryptionType().hashCode());
         return hashCode;
     }
 

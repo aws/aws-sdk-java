@@ -1,3 +1,24 @@
+# __1.11.160__ __2017-07-06__
+## __AWS Directory Service__
+  - ### Features
+    - You can now improve the resilience and performance of your Microsoft AD directory by deploying additional domain controllers. Added UpdateNumberofDomainControllers API that allows you to update the number of domain controllers you want for your directory, and DescribeDomainControllers API that allows you to describe the detailed information of each domain controller of your directory. Also added the 'DesiredNumberOfDomainControllers' field to the DescribeDirectories API output for Microsoft AD.
+
+## __AWS Key Management Service (KMS)__
+  - ### Features
+    - This release of AWS Key Management Service introduces the ability to determine whether a key is AWS managed or customer managed.
+
+## __Amazon Kinesis__
+  - ### Features
+    - You can now encrypt your data at rest within an Amazon Kinesis Stream using server-side encryption. Server-side encryption via AWS KMS makes it easy for customers to meet strict data management requirements by encrypting their data at rest within the Amazon Kinesis Streams, a fully managed real-time data processing service.
+
+## __Amazon S3__
+  - ### Features
+    - Allow requester-pays access for list-objects requests.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Amazon EC2 Systems Manager now expands Patching support to Amazon Linux, Red Hat and Ubuntu in addition to the already supported Windows Server.
+
 # __1.11.159__ __2017-07-05__
 ## __Amazon CloudWatch__
   - ### Features

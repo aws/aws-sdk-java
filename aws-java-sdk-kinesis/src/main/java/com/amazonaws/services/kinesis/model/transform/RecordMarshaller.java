@@ -35,6 +35,8 @@ public class RecordMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Data").build();
     private static final MarshallingInfo<String> PARTITIONKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PartitionKey").build();
+    private static final MarshallingInfo<String> ENCRYPTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionType").build();
 
     private static final RecordMarshaller instance = new RecordMarshaller();
 
@@ -56,6 +58,7 @@ public class RecordMarshaller {
             protocolMarshaller.marshall(record.getApproximateArrivalTimestamp(), APPROXIMATEARRIVALTIMESTAMP_BINDING);
             protocolMarshaller.marshall(record.getData(), DATA_BINDING);
             protocolMarshaller.marshall(record.getPartitionKey(), PARTITIONKEY_BINDING);
+            protocolMarshaller.marshall(record.getEncryptionType(), ENCRYPTIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

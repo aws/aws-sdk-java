@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class DescribePatchGroupsRequestMarshaller {
 
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Filters").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
 
@@ -49,6 +52,7 @@ public class DescribePatchGroupsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describePatchGroupsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describePatchGroupsRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(describePatchGroupsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

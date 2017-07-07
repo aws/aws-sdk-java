@@ -1216,7 +1216,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * shard involved in the request, <code>PutRecord</code> throws <code>ProvisionedThroughputExceededException</code>.
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they are added to a stream.
+     * By default, data records are accessible for 24 hours from the time that they are added to a stream. You can use
+     * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.
      * </p>
      * 
      * @param putRecordRequest
@@ -1272,7 +1273,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * shard involved in the request, <code>PutRecord</code> throws <code>ProvisionedThroughputExceededException</code>.
      * </p>
      * <p>
-     * Data records are accessible for only 24 hours from the time that they are added to a stream.
+     * By default, data records are accessible for 24 hours from the time that they are added to a stream. You can use
+     * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.
      * </p>
      * 
      * @param putRecordRequest
@@ -1383,9 +1385,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * >Adding Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * <p>
-     * By default, data records are accessible for only 24 hours from the time that they are added to an Amazon Kinesis
-     * stream. This retention period can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
-     * <a>IncreaseStreamRetentionPeriod</a> operations.
+     * By default, data records are accessible for 24 hours from the time that they are added to a stream. You can use
+     * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.
      * </p>
      * 
      * @param putRecordsRequest
@@ -1460,9 +1461,8 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * >Adding Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
      * </p>
      * <p>
-     * By default, data records are accessible for only 24 hours from the time that they are added to an Amazon Kinesis
-     * stream. This retention period can be modified using the <a>DecreaseStreamRetentionPeriod</a> and
-     * <a>IncreaseStreamRetentionPeriod</a> operations.
+     * By default, data records are accessible for 24 hours from the time that they are added to a stream. You can use
+     * <a>IncreaseStreamRetentionPeriod</a> or <a>DecreaseStreamRetentionPeriod</a> to modify this retention period.
      * </p>
      * 
      * @param putRecordsRequest
@@ -1670,6 +1670,134 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
+     * Enables or updates server-side encryption using an AWS KMS key for a specified stream.
+     * </p>
+     * <p>
+     * Starting encryption is an asynchronous operation. Upon receiving the request, Amazon Kinesis returns immediately
+     * and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Amazon Kinesis sets the
+     * status of the stream back to <code>ACTIVE</code>. Updating or applying encryption normally takes a few seconds to
+     * complete but it can take minutes. You can continue to read and write data to your stream while its status is
+     * <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>, records written to the stream will
+     * begin to be encrypted.
+     * </p>
+     * <p>
+     * API Limits: You can successfully apply a new AWS KMS key for server-side encryption 25 times in a rolling 24 hour
+     * period.
+     * </p>
+     * <p>
+     * Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written
+     * to the stream are encrypted. After you’ve enabled encryption, you can verify encryption was applied by inspecting
+     * the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+     * </p>
+     * 
+     * @param startStreamEncryptionRequest
+     * @return A Java Future containing the result of the StartStreamEncryption operation returned by the service.
+     * @sample AmazonKinesisAsync.StartStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartStreamEncryptionResult> startStreamEncryptionAsync(StartStreamEncryptionRequest startStreamEncryptionRequest);
+
+    /**
+     * <p>
+     * Enables or updates server-side encryption using an AWS KMS key for a specified stream.
+     * </p>
+     * <p>
+     * Starting encryption is an asynchronous operation. Upon receiving the request, Amazon Kinesis returns immediately
+     * and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Amazon Kinesis sets the
+     * status of the stream back to <code>ACTIVE</code>. Updating or applying encryption normally takes a few seconds to
+     * complete but it can take minutes. You can continue to read and write data to your stream while its status is
+     * <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>, records written to the stream will
+     * begin to be encrypted.
+     * </p>
+     * <p>
+     * API Limits: You can successfully apply a new AWS KMS key for server-side encryption 25 times in a rolling 24 hour
+     * period.
+     * </p>
+     * <p>
+     * Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written
+     * to the stream are encrypted. After you’ve enabled encryption, you can verify encryption was applied by inspecting
+     * the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+     * </p>
+     * 
+     * @param startStreamEncryptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartStreamEncryption operation returned by the service.
+     * @sample AmazonKinesisAsyncHandler.StartStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartStreamEncryptionResult> startStreamEncryptionAsync(StartStreamEncryptionRequest startStreamEncryptionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartStreamEncryptionRequest, StartStreamEncryptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables server-side encryption for a specified stream.
+     * </p>
+     * <p>
+     * Stopping encryption is an asynchronous operation. Upon receiving the request, Amazon Kinesis returns immediately
+     * and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Amazon Kinesis sets the
+     * status of the stream back to <code>ACTIVE</code>. Stopping encryption normally takes a few seconds to complete
+     * but it can take minutes. You can continue to read and write data to your stream while its status is
+     * <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code> records written to the stream will no
+     * longer be encrypted by the Amazon Kinesis Streams service.
+     * </p>
+     * <p>
+     * API Limits: You can successfully disable server-side encryption 25 times in a rolling 24 hour period.
+     * </p>
+     * <p>
+     * Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written
+     * to the stream are no longer subject to encryption. After you’ve disabled encryption, you can verify encryption
+     * was not applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+     * </p>
+     * 
+     * @param stopStreamEncryptionRequest
+     * @return A Java Future containing the result of the StopStreamEncryption operation returned by the service.
+     * @sample AmazonKinesisAsync.StopStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopStreamEncryptionResult> stopStreamEncryptionAsync(StopStreamEncryptionRequest stopStreamEncryptionRequest);
+
+    /**
+     * <p>
+     * Disables server-side encryption for a specified stream.
+     * </p>
+     * <p>
+     * Stopping encryption is an asynchronous operation. Upon receiving the request, Amazon Kinesis returns immediately
+     * and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Amazon Kinesis sets the
+     * status of the stream back to <code>ACTIVE</code>. Stopping encryption normally takes a few seconds to complete
+     * but it can take minutes. You can continue to read and write data to your stream while its status is
+     * <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code> records written to the stream will no
+     * longer be encrypted by the Amazon Kinesis Streams service.
+     * </p>
+     * <p>
+     * API Limits: You can successfully disable server-side encryption 25 times in a rolling 24 hour period.
+     * </p>
+     * <p>
+     * Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written
+     * to the stream are no longer subject to encryption. After you’ve disabled encryption, you can verify encryption
+     * was not applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+     * </p>
+     * 
+     * @param stopStreamEncryptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopStreamEncryption operation returned by the service.
+     * @sample AmazonKinesisAsyncHandler.StopStreamEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopStreamEncryptionResult> stopStreamEncryptionAsync(StopStreamEncryptionRequest stopStreamEncryptionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopStreamEncryptionRequest, StopStreamEncryptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the shard count of the specified stream to the specified number of shards.
      * </p>
      * <p>
@@ -1680,14 +1808,47 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * its status is <code>UPDATING</code>.
      * </p>
      * <p>
-     * To update the shard count, Amazon Kinesis performs splits and merges and individual shards. This can cause
+     * To update the shard count, Amazon Kinesis performs splits or merges on individual shards. This can cause
      * short-lived shards to be created, in addition to the final shards. We recommend that you double or halve the
      * shard count, as this results in the fewest number of splits or merges.
      * </p>
      * <p>
-     * This operation has a rate limit of twice per rolling 24 hour period. You cannot scale above double your current
-     * shard count, scale below half your current shard count, or exceed the shard limits for your account.
+     * This operation has the following limits, which are per region per account unless otherwise noted:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * scale more than twice per rolling 24 hour period
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale up above double your current shard count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale down below half your current shard count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale up above 200 shards in a stream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale a stream with more than 200 shards down unless the result is less than 200 shards
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale up above the shard limits for your account
+     * </p>
+     * </li>
+     * <li>
+     * <p/></li>
+     * </ul>
      * <p>
      * For the default limits for an AWS account, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the
@@ -1715,14 +1876,47 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * its status is <code>UPDATING</code>.
      * </p>
      * <p>
-     * To update the shard count, Amazon Kinesis performs splits and merges and individual shards. This can cause
+     * To update the shard count, Amazon Kinesis performs splits or merges on individual shards. This can cause
      * short-lived shards to be created, in addition to the final shards. We recommend that you double or halve the
      * shard count, as this results in the fewest number of splits or merges.
      * </p>
      * <p>
-     * This operation has a rate limit of twice per rolling 24 hour period. You cannot scale above double your current
-     * shard count, scale below half your current shard count, or exceed the shard limits for your account.
+     * This operation has the following limits, which are per region per account unless otherwise noted:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * scale more than twice per rolling 24 hour period
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale up above double your current shard count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale down below half your current shard count
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale up above 200 shards in a stream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale a stream with more than 200 shards down unless the result is less than 200 shards
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * scale up above the shard limits for your account
+     * </p>
+     * </li>
+     * <li>
+     * <p/></li>
+     * </ul>
      * <p>
      * For the default limits for an AWS account, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the

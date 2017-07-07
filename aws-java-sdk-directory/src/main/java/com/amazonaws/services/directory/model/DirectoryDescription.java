@@ -145,6 +145,12 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * </p>
      */
     private Boolean ssoEnabled;
+    /**
+     * <p>
+     * The desired number of domain controllers in the directory if the directory is Microsoft AD.
+     * </p>
+     */
+    private Integer desiredNumberOfDomainControllers;
 
     /**
      * <p>
@@ -1109,6 +1115,46 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The desired number of domain controllers in the directory if the directory is Microsoft AD.
+     * </p>
+     * 
+     * @param desiredNumberOfDomainControllers
+     *        The desired number of domain controllers in the directory if the directory is Microsoft AD.
+     */
+
+    public void setDesiredNumberOfDomainControllers(Integer desiredNumberOfDomainControllers) {
+        this.desiredNumberOfDomainControllers = desiredNumberOfDomainControllers;
+    }
+
+    /**
+     * <p>
+     * The desired number of domain controllers in the directory if the directory is Microsoft AD.
+     * </p>
+     * 
+     * @return The desired number of domain controllers in the directory if the directory is Microsoft AD.
+     */
+
+    public Integer getDesiredNumberOfDomainControllers() {
+        return this.desiredNumberOfDomainControllers;
+    }
+
+    /**
+     * <p>
+     * The desired number of domain controllers in the directory if the directory is Microsoft AD.
+     * </p>
+     * 
+     * @param desiredNumberOfDomainControllers
+     *        The desired number of domain controllers in the directory if the directory is Microsoft AD.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DirectoryDescription withDesiredNumberOfDomainControllers(Integer desiredNumberOfDomainControllers) {
+        setDesiredNumberOfDomainControllers(desiredNumberOfDomainControllers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1154,7 +1200,9 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         if (getStageReason() != null)
             sb.append("StageReason: ").append(getStageReason()).append(",");
         if (getSsoEnabled() != null)
-            sb.append("SsoEnabled: ").append(getSsoEnabled());
+            sb.append("SsoEnabled: ").append(getSsoEnabled()).append(",");
+        if (getDesiredNumberOfDomainControllers() != null)
+            sb.append("DesiredNumberOfDomainControllers: ").append(getDesiredNumberOfDomainControllers());
         sb.append("}");
         return sb.toString();
     }
@@ -1241,6 +1289,11 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
             return false;
         if (other.getSsoEnabled() != null && other.getSsoEnabled().equals(this.getSsoEnabled()) == false)
             return false;
+        if (other.getDesiredNumberOfDomainControllers() == null ^ this.getDesiredNumberOfDomainControllers() == null)
+            return false;
+        if (other.getDesiredNumberOfDomainControllers() != null
+                && other.getDesiredNumberOfDomainControllers().equals(this.getDesiredNumberOfDomainControllers()) == false)
+            return false;
         return true;
     }
 
@@ -1267,6 +1320,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getRadiusStatus() == null) ? 0 : getRadiusStatus().hashCode());
         hashCode = prime * hashCode + ((getStageReason() == null) ? 0 : getStageReason().hashCode());
         hashCode = prime * hashCode + ((getSsoEnabled() == null) ? 0 : getSsoEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDesiredNumberOfDomainControllers() == null) ? 0 : getDesiredNumberOfDomainControllers().hashCode());
         return hashCode;
     }
 

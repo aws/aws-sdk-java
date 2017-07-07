@@ -5272,6 +5272,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "KeyManagerType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "AWS", "CUSTOMER" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "KeyMetadata" : {
       "deprecated" : false,
       "documentation" : "<p>Contains metadata about a customer master key (CMK).</p> <p>This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.</p>",
@@ -5393,6 +5414,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "KeyIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "KeyManager" : {
+          "deprecated" : false,
+          "documentation" : "<p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information about the difference, see <a href=\"http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys\">Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "KeyManagerType",
           "streaming" : false,
           "xmlNamespace" : null
         },
