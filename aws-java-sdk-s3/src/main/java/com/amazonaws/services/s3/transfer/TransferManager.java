@@ -1258,12 +1258,7 @@ public class TransferManager {
         for ( S3ObjectSummary summary : objectSummaries ) {
             // TODO: non-standard delimiters
             File f = new File(destinationDirectory, summary.getKey());
-            File parentFile = f.getParentFile();
-
-            if ( !parentFile.exists() && !parentFile.mkdirs() ) {
-                throw new RuntimeException("Couldn't create parent directories for " + f.getAbsolutePath());
-            }
-
+           
             // All the single-file downloads share the same
             // MultipleFileTransferProgressUpdatingListener and
             // MultipleFileTransferStateChangeListener
