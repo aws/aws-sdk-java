@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>ActivityTaskFailed</code> event.
+ * Provides the details of the <code>ActivityTaskFailed</code> event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskFailedEventAttributes"
@@ -30,13 +30,13 @@ public class ActivityTaskFailedEventAttributes implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The reason provided for the failure (if any).
+     * The reason provided for the failure.
      * </p>
      */
     private String reason;
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      */
     private String details;
@@ -58,11 +58,11 @@ public class ActivityTaskFailedEventAttributes implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The reason provided for the failure (if any).
+     * The reason provided for the failure.
      * </p>
      * 
      * @param reason
-     *        The reason provided for the failure (if any).
+     *        The reason provided for the failure.
      */
 
     public void setReason(String reason) {
@@ -71,10 +71,10 @@ public class ActivityTaskFailedEventAttributes implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The reason provided for the failure (if any).
+     * The reason provided for the failure.
      * </p>
      * 
-     * @return The reason provided for the failure (if any).
+     * @return The reason provided for the failure.
      */
 
     public String getReason() {
@@ -83,11 +83,11 @@ public class ActivityTaskFailedEventAttributes implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The reason provided for the failure (if any).
+     * The reason provided for the failure.
      * </p>
      * 
      * @param reason
-     *        The reason provided for the failure (if any).
+     *        The reason provided for the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class ActivityTaskFailedEventAttributes implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      * 
      * @param details
-     *        The details of the failure (if any).
+     *        The details of the failure.
      */
 
     public void setDetails(String details) {
@@ -111,10 +111,10 @@ public class ActivityTaskFailedEventAttributes implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      * 
-     * @return The details of the failure (if any).
+     * @return The details of the failure.
      */
 
     public String getDetails() {
@@ -123,11 +123,11 @@ public class ActivityTaskFailedEventAttributes implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      * 
      * @param details
-     *        The details of the failure (if any).
+     *        The details of the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

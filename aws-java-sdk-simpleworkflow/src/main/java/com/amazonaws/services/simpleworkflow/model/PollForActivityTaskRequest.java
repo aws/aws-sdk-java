@@ -37,8 +37,8 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      */
     private TaskList taskList;
@@ -96,16 +96,17 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for activity tasks.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>arn</code>.
      */
 
     public void setTaskList(TaskList taskList) {
@@ -118,15 +119,16 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @return Specifies the task list to poll for activity tasks.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     *         - \u009f). Also, it must not contain the literal string quotarnquot.
+     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>arn</code>.
      */
 
     public TaskList getTaskList() {
@@ -139,16 +141,17 @@ public class PollForActivityTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for activity tasks.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

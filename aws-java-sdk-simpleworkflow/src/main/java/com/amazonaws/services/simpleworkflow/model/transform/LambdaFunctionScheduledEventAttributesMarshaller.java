@@ -31,6 +31,8 @@ public class LambdaFunctionScheduledEventAttributesMarshaller {
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> CONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("control").build();
     private static final MarshallingInfo<String> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("input").build();
     private static final MarshallingInfo<String> STARTTOCLOSETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +58,7 @@ public class LambdaFunctionScheduledEventAttributesMarshaller {
         try {
             protocolMarshaller.marshall(lambdaFunctionScheduledEventAttributes.getId(), ID_BINDING);
             protocolMarshaller.marshall(lambdaFunctionScheduledEventAttributes.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(lambdaFunctionScheduledEventAttributes.getControl(), CONTROL_BINDING);
             protocolMarshaller.marshall(lambdaFunctionScheduledEventAttributes.getInput(), INPUT_BINDING);
             protocolMarshaller.marshall(lambdaFunctionScheduledEventAttributes.getStartToCloseTimeout(), STARTTOCLOSETIMEOUT_BINDING);
             protocolMarshaller.marshall(lambdaFunctionScheduledEventAttributes.getDecisionTaskCompletedEventId(), DECISIONTASKCOMPLETEDEVENTID_BINDING);

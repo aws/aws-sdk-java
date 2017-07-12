@@ -26,12 +26,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     */
     private DomainInfo domainInfo;
-
+    /**
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     */
     private DomainConfiguration configuration;
 
     /**
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     * 
      * @param domainInfo
+     *        The basic information about a domain, such as its name, status, and description.
      */
 
     public void setDomainInfo(DomainInfo domainInfo) {
@@ -39,7 +53,11 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * @return
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     * 
+     * @return The basic information about a domain, such as its name, status, and description.
      */
 
     public DomainInfo getDomainInfo() {
@@ -47,7 +65,12 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The basic information about a domain, such as its name, status, and description.
+     * </p>
+     * 
      * @param domainInfo
+     *        The basic information about a domain, such as its name, status, and description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -57,7 +80,12 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     * 
      * @param configuration
+     *        The domain configuration. Currently, this includes only the domain's retention period.
      */
 
     public void setConfiguration(DomainConfiguration configuration) {
@@ -65,7 +93,11 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * @return
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     * 
+     * @return The domain configuration. Currently, this includes only the domain's retention period.
      */
 
     public DomainConfiguration getConfiguration() {
@@ -73,7 +105,12 @@ public class DomainDetail extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The domain configuration. Currently, this includes only the domain's retention period.
+     * </p>
+     * 
      * @param configuration
+     *        The domain configuration. Currently, this includes only the domain's retention period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

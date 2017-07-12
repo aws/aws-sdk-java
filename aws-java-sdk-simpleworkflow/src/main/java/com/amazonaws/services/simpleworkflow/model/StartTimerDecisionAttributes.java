@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>StartTimer</code> decision.
+ * Provides the details of the <code>StartTimer</code> decision.
  * </p>
  * <p>
  * <b>Access Control</b>
@@ -28,16 +28,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
  * </p>
  * <ul>
- * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
- * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * <li>
+ * <p>
+ * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use an <code>Action</code> element to allow or deny permission to call this action.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You cannot use an IAM policy to constrain this action's parameters.
+ * </p>
+ * </li>
  * </ul>
  * <p>
- * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the
- * specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to
- * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+ * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the
+ * specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to
+ * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
- * Amazon SWF Workflows</a>.
+ * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartTimerDecisionAttributes" target="_top">AWS
@@ -48,46 +60,48 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * <b>Required.</b> The unique ID of the timer.
+     * The unique ID of the timer.
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      */
     private String timerId;
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      */
     private String control;
     /**
      * <p>
-     * <b>Required.</b> The duration to wait before firing the timer.
+     * The duration to wait before firing the timer.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * </p>
      */
     private String startToFireTimeout;
 
     /**
      * <p>
-     * <b>Required.</b> The unique ID of the timer.
+     * The unique ID of the timer.
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @param timerId
-     *        Required.</b> The unique ID of the timer.</p>
+     *        The unique ID of the timer.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>arn</code>.
      */
 
     public void setTimerId(String timerId) {
@@ -96,18 +110,20 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * <b>Required.</b> The unique ID of the timer.
+     * The unique ID of the timer.
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
-     * @return Required.</b> The unique ID of the timer.</p>
+     * @return The unique ID of the timer.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|
+     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>arn</code>.
      */
 
     public String getTimerId() {
@@ -116,19 +132,21 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * <b>Required.</b> The unique ID of the timer.
+     * The unique ID of the timer.
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @param timerId
-     *        Required.</b> The unique ID of the timer.</p>
+     *        The unique ID of the timer.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +157,11 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        The data attached to the event that can be used by the decider in subsequent workflow tasks.
      */
 
     public void setControl(String control) {
@@ -152,10 +170,10 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
-     * @return Optional.
+     * @return The data attached to the event that can be used by the decider in subsequent workflow tasks.
      */
 
     public String getControl() {
@@ -164,11 +182,11 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,14 +197,16 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * <b>Required.</b> The duration to wait before firing the timer.
+     * The duration to wait before firing the timer.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * </p>
      * 
      * @param startToFireTimeout
-     *        Required.</b> The duration to wait before firing the timer.</p>
+     *        The duration to wait before firing the timer.</p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      */
 
     public void setStartToFireTimeout(String startToFireTimeout) {
@@ -195,13 +215,15 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * <b>Required.</b> The duration to wait before firing the timer.
+     * The duration to wait before firing the timer.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * </p>
      * 
-     * @return Required.</b> The duration to wait before firing the timer.</p>
+     * @return The duration to wait before firing the timer.</p>
+     *         <p>
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      */
 
     public String getStartToFireTimeout() {
@@ -210,14 +232,16 @@ public class StartTimerDecisionAttributes implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * <b>Required.</b> The duration to wait before firing the timer.
+     * The duration to wait before firing the timer.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * </p>
      * 
      * @param startToFireTimeout
-     *        Required.</b> The duration to wait before firing the timer.</p>
+     *        The duration to wait before firing the timer.</p>
+     *        <p>
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

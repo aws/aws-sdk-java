@@ -3,6 +3,7 @@
     "additionalShapeConstructors" : null,
     "authPolicyActions" : {
       "actionPrefix" : "cloudwatch",
+      "additionalOperations" : null,
       "fileNamePrefix" : "CloudWatch",
       "skip" : false
     },

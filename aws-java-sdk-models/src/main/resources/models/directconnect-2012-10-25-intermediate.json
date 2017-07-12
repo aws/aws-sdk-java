@@ -3,6 +3,7 @@
     "additionalShapeConstructors" : null,
     "authPolicyActions" : {
       "actionPrefix" : null,
+      "additionalOperations" : null,
       "fileNamePrefix" : "DirectConnect",
       "skip" : false
     },

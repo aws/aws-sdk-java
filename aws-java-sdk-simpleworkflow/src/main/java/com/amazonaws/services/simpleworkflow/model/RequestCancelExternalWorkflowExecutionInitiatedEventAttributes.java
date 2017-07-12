@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.
+ * Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event.
  * </p>
  * 
  * @see <a
@@ -51,7 +51,7 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
     private Long decisionTaskCompletedEventId;
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      */
     private String control;
@@ -193,11 +193,11 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent workflow tasks.
      */
 
     public void setControl(String control) {
@@ -206,10 +206,10 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
-     * @return Optional.
+     * @return Data attached to the event that can be used by the decider in subsequent workflow tasks.
      */
 
     public String getControl() {
@@ -218,11 +218,11 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes impl
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

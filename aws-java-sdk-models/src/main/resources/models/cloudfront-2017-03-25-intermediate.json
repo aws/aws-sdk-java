@@ -94,6 +94,7 @@
     },
     "authPolicyActions" : {
       "actionPrefix" : null,
+      "additionalOperations" : null,
       "fileNamePrefix" : "CloudFront",
       "skip" : false
     },

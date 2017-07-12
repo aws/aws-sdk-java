@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.
+ * Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.
  * </p>
  * 
  * @see <a

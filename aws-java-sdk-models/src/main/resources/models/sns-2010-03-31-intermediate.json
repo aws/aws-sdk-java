@@ -49,6 +49,7 @@
     },
     "authPolicyActions" : {
       "actionPrefix" : null,
+      "additionalOperations" : null,
       "fileNamePrefix" : null,
       "skip" : true
     },

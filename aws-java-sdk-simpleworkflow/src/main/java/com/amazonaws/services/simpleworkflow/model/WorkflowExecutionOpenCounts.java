@@ -30,7 +30,7 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The count of activity tasks whose status is OPEN.
+     * The count of activity tasks whose status is <code>OPEN</code>.
      * </p>
      */
     private Integer openActivityTasks;
@@ -48,24 +48,24 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
     private Integer openTimers;
     /**
      * <p>
-     * The count of child workflow executions whose status is OPEN.
+     * The count of child workflow executions whose status is <code>OPEN</code>.
      * </p>
      */
     private Integer openChildWorkflowExecutions;
     /**
      * <p>
-     * The count of AWS Lambda functions that are currently executing.
+     * The count of Lambda tasks whose status is <code>OPEN</code>.
      * </p>
      */
     private Integer openLambdaFunctions;
 
     /**
      * <p>
-     * The count of activity tasks whose status is OPEN.
+     * The count of activity tasks whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openActivityTasks
-     *        The count of activity tasks whose status is OPEN.
+     *        The count of activity tasks whose status is <code>OPEN</code>.
      */
 
     public void setOpenActivityTasks(Integer openActivityTasks) {
@@ -74,10 +74,10 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The count of activity tasks whose status is OPEN.
+     * The count of activity tasks whose status is <code>OPEN</code>.
      * </p>
      * 
-     * @return The count of activity tasks whose status is OPEN.
+     * @return The count of activity tasks whose status is <code>OPEN</code>.
      */
 
     public Integer getOpenActivityTasks() {
@@ -86,11 +86,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The count of activity tasks whose status is OPEN.
+     * The count of activity tasks whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openActivityTasks
-     *        The count of activity tasks whose status is OPEN.
+     *        The count of activity tasks whose status is <code>OPEN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The count of child workflow executions whose status is OPEN.
+     * The count of child workflow executions whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openChildWorkflowExecutions
-     *        The count of child workflow executions whose status is OPEN.
+     *        The count of child workflow executions whose status is <code>OPEN</code>.
      */
 
     public void setOpenChildWorkflowExecutions(Integer openChildWorkflowExecutions) {
@@ -197,10 +197,10 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The count of child workflow executions whose status is OPEN.
+     * The count of child workflow executions whose status is <code>OPEN</code>.
      * </p>
      * 
-     * @return The count of child workflow executions whose status is OPEN.
+     * @return The count of child workflow executions whose status is <code>OPEN</code>.
      */
 
     public Integer getOpenChildWorkflowExecutions() {
@@ -209,11 +209,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The count of child workflow executions whose status is OPEN.
+     * The count of child workflow executions whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openChildWorkflowExecutions
-     *        The count of child workflow executions whose status is OPEN.
+     *        The count of child workflow executions whose status is <code>OPEN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +224,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The count of AWS Lambda functions that are currently executing.
+     * The count of Lambda tasks whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openLambdaFunctions
-     *        The count of AWS Lambda functions that are currently executing.
+     *        The count of Lambda tasks whose status is <code>OPEN</code>.
      */
 
     public void setOpenLambdaFunctions(Integer openLambdaFunctions) {
@@ -237,10 +237,10 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The count of AWS Lambda functions that are currently executing.
+     * The count of Lambda tasks whose status is <code>OPEN</code>.
      * </p>
      * 
-     * @return The count of AWS Lambda functions that are currently executing.
+     * @return The count of Lambda tasks whose status is <code>OPEN</code>.
      */
 
     public Integer getOpenLambdaFunctions() {
@@ -249,11 +249,11 @@ public class WorkflowExecutionOpenCounts implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The count of AWS Lambda functions that are currently executing.
+     * The count of Lambda tasks whose status is <code>OPEN</code>.
      * </p>
      * 
      * @param openLambdaFunctions
-     *        The count of AWS Lambda functions that are currently executing.
+     *        The count of Lambda tasks whose status is <code>OPEN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

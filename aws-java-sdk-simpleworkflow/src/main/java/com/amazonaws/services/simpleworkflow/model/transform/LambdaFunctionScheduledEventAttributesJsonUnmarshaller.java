@@ -56,6 +56,10 @@ public class LambdaFunctionScheduledEventAttributesJsonUnmarshaller implements U
                     context.nextToken();
                     lambdaFunctionScheduledEventAttributes.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("control", targetDepth)) {
+                    context.nextToken();
+                    lambdaFunctionScheduledEventAttributes.setControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("input", targetDepth)) {
                     context.nextToken();
                     lambdaFunctionScheduledEventAttributes.setInput(context.getUnmarshaller(String.class).unmarshall(context));

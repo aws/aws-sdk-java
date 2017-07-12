@@ -1,3234 +1,779 @@
 {
-  "authorizers" : { },
-  "metadata" : {
-    "apiVersion" : "2016-10-20",
-    "endpointPrefix" : "budgets",
-    "jsonVersion" : "1.1",
-    "protocol" : "json",
-    "resultWrapped" : false,
-    "serviceAbbreviation" : "AWSBudgets",
-    "serviceFullName" : "AWS Budgets",
-    "signatureVersion" : "v4",
-    "signingName" : "budgets",
-    "targetPrefix" : "AWSBudgetServiceGateway",
-    "uid" : "budgets-2016-10-20",
-    "xmlNamespace" : null
+  "version":"2.0",
+  "metadata":{
+    "apiVersion":"2016-10-20",
+    "endpointPrefix":"budgets",
+    "jsonVersion":"1.1",
+    "protocol":"json",
+    "serviceAbbreviation":"AWSBudgets",
+    "serviceFullName":"AWS Budgets",
+    "signatureVersion":"v4",
+    "targetPrefix":"AWSBudgetServiceGateway",
+    "uid":"budgets-2016-10-20"
   },
-  "operations" : {
-    "CreateBudget" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Create a new budget",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "CreationLimitExceededException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "DuplicateRecordException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+  "operations":{
+    "CreateBudget":{
+      "name":"CreateBudget",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "CreateBudgetRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "CreateBudget",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "CreateBudgetResponse"
-      }
+      "input":{"shape":"CreateBudgetRequest"},
+      "output":{"shape":"CreateBudgetResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalErrorException"},
+        {"shape":"CreationLimitExceededException"},
+        {"shape":"DuplicateRecordException"}
+      ],
+      "documentation":"Create a new budget"
     },
-    "CreateNotification" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Create a new Notification with subscribers for a budget",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "CreationLimitExceededException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "DuplicateRecordException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "CreateNotification":{
+      "name":"CreateNotification",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "CreateNotificationRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "CreateNotification",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "CreateNotificationResponse"
-      }
+      "input":{"shape":"CreateNotificationRequest"},
+      "output":{"shape":"CreateNotificationResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"NotFoundException"},
+        {"shape":"CreationLimitExceededException"},
+        {"shape":"DuplicateRecordException"}
+      ],
+      "documentation":"Create a new Notification with subscribers for a budget"
     },
-    "CreateSubscriber" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Create a new Subscriber for a notification",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "CreationLimitExceededException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "DuplicateRecordException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "CreateSubscriber":{
+      "name":"CreateSubscriber",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "CreateSubscriberRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "CreateSubscriber",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "CreateSubscriberResponse"
-      }
+      "input":{"shape":"CreateSubscriberRequest"},
+      "output":{"shape":"CreateSubscriberResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"CreationLimitExceededException"},
+        {"shape":"DuplicateRecordException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"Create a new Subscriber for a notification"
     },
-    "DeleteBudget" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Delete a budget and related notifications",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DeleteBudget":{
+      "name":"DeleteBudget",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DeleteBudgetRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DeleteBudget",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DeleteBudgetResponse"
-      }
+      "input":{"shape":"DeleteBudgetRequest"},
+      "output":{"shape":"DeleteBudgetResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"Delete a budget and related notifications"
     },
-    "DeleteNotification" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Delete a notification and related subscribers",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DeleteNotification":{
+      "name":"DeleteNotification",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DeleteNotificationRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DeleteNotification",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DeleteNotificationResponse"
-      }
+      "input":{"shape":"DeleteNotificationRequest"},
+      "output":{"shape":"DeleteNotificationResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"InternalErrorException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"Delete a notification and related subscribers"
     },
-    "DeleteSubscriber" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Delete a Subscriber for a notification",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DeleteSubscriber":{
+      "name":"DeleteSubscriber",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DeleteSubscriberRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DeleteSubscriber",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DeleteSubscriberResponse"
-      }
+      "input":{"shape":"DeleteSubscriberRequest"},
+      "output":{"shape":"DeleteSubscriberResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"Delete a Subscriber for a notification"
     },
-    "DescribeBudget" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Get a single budget",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DescribeBudget":{
+      "name":"DescribeBudget",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DescribeBudgetRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DescribeBudget",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DescribeBudgetResponse"
-      }
+      "input":{"shape":"DescribeBudgetRequest"},
+      "output":{"shape":"DescribeBudgetResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"Get a single budget"
     },
-    "DescribeBudgets" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Get all budgets for an account",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidNextTokenException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ExpiredNextTokenException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DescribeBudgets":{
+      "name":"DescribeBudgets",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DescribeBudgetsRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DescribeBudgets",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DescribeBudgetsResponse"
-      }
+      "input":{"shape":"DescribeBudgetsRequest"},
+      "output":{"shape":"DescribeBudgetsResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"ExpiredNextTokenException"}
+      ],
+      "documentation":"Get all budgets for an account"
     },
-    "DescribeNotificationsForBudget" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Get notifications of a budget",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidNextTokenException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ExpiredNextTokenException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DescribeNotificationsForBudget":{
+      "name":"DescribeNotificationsForBudget",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DescribeNotificationsForBudgetRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DescribeNotificationsForBudget",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DescribeNotificationsForBudgetResponse"
-      }
+      "input":{"shape":"DescribeNotificationsForBudgetRequest"},
+      "output":{"shape":"DescribeNotificationsForBudgetResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"ExpiredNextTokenException"}
+      ],
+      "documentation":"Get notifications of a budget"
     },
-    "DescribeSubscribersForNotification" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Get subscribers of a notification",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidNextTokenException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ExpiredNextTokenException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DescribeSubscribersForNotification":{
+      "name":"DescribeSubscribersForNotification",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DescribeSubscribersForNotificationRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DescribeSubscribersForNotification",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DescribeSubscribersForNotificationResponse"
-      }
+      "input":{"shape":"DescribeSubscribersForNotificationRequest"},
+      "output":{"shape":"DescribeSubscribersForNotificationResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"InvalidNextTokenException"},
+        {"shape":"ExpiredNextTokenException"}
+      ],
+      "documentation":"Get subscribers of a notification"
     },
-    "UpdateBudget" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Update the information of a budget already created",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "UpdateBudget":{
+      "name":"UpdateBudget",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "UpdateBudgetRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "UpdateBudget",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "UpdateBudgetResponse"
-      }
+      "input":{"shape":"UpdateBudgetRequest"},
+      "output":{"shape":"UpdateBudgetResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"Update the information of a budget already created"
     },
-    "UpdateNotification" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Update the information about a notification already created",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "UpdateNotification":{
+      "name":"UpdateNotification",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "UpdateNotificationRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "UpdateNotification",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "UpdateNotificationResponse"
-      }
+      "input":{"shape":"UpdateNotificationRequest"},
+      "output":{"shape":"UpdateNotificationResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"Update the information about a notification already created"
     },
-    "UpdateSubscriber" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Update a subscriber",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "NotFoundException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "UpdateSubscriber":{
+      "name":"UpdateSubscriber",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "UpdateSubscriberRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "UpdateSubscriber",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "UpdateSubscriberResponse"
-      }
+      "input":{"shape":"UpdateSubscriberRequest"},
+      "output":{"shape":"UpdateSubscriberResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"NotFoundException"}
+      ],
+      "documentation":"Update a subscriber"
     }
   },
-  "shapes" : {
-    "AccountId" : {
-      "deprecated" : false,
-      "documentation" : "Account Id of the customer. It should be a 12 digit number.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 12,
-      "member" : null,
-      "members" : { },
-      "min" : 12,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+  "shapes":{
+    "AccountId":{
+      "type":"string",
+      "documentation":"Account Id of the customer. It should be a 12 digit number.",
+      "max":12,
+      "min":12
     },
-    "Budget" : {
-      "deprecated" : false,
-      "documentation" : "AWS Budget model",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "BudgetLimit" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Spend",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetType" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetType",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "CalculatedSpend" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "CalculatedSpend",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "CostFilters" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "CostFilters",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "CostTypes" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "CostTypes",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "TimePeriod" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TimePeriod",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "TimeUnit" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TimeUnit",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "Budget":{
+      "type":"structure",
+      "required":[
+        "BudgetName",
+        "BudgetLimit",
+        "CostTypes",
+        "TimeUnit",
+        "TimePeriod",
+        "BudgetType"
+      ],
+      "members":{
+        "BudgetName":{"shape":"BudgetName"},
+        "BudgetLimit":{"shape":"Spend"},
+        "CostFilters":{"shape":"CostFilters"},
+        "CostTypes":{"shape":"CostTypes"},
+        "TimeUnit":{"shape":"TimeUnit"},
+        "TimePeriod":{"shape":"TimePeriod"},
+        "CalculatedSpend":{"shape":"CalculatedSpend"},
+        "BudgetType":{"shape":"BudgetType"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "BudgetName", "BudgetLimit", "CostTypes", "TimeUnit", "TimePeriod", "BudgetType" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"AWS Budget model"
     },
-    "BudgetName" : {
-      "deprecated" : false,
-      "documentation" : "A string represents the budget name. No \":\" character is allowed.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 100,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : "[^:]+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "BudgetName":{
+      "type":"string",
+      "documentation":"A string represents the budget name. No \":\" character is allowed.",
+      "max":100,
+      "pattern":"[^:]+"
     },
-    "BudgetType" : {
-      "deprecated" : false,
-      "documentation" : "The type of a budget. Can be COST or USAGE.",
-      "enum" : [ "USAGE", "COST" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "BudgetType":{
+      "type":"string",
+      "documentation":"The type of a budget. Can be COST or USAGE.",
+      "enum":[
+        "USAGE",
+        "COST"
+      ]
     },
-    "Budgets" : {
-      "deprecated" : false,
-      "documentation" : "A list of budgets",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "Budget",
-        "streaming" : false,
-        "xmlNamespace" : null
+    "Budgets":{
+      "type":"list",
+      "member":{"shape":"Budget"},
+      "documentation":"A list of budgets"
+    },
+    "CalculatedSpend":{
+      "type":"structure",
+      "required":["ActualSpend"],
+      "members":{
+        "ActualSpend":{"shape":"Spend"},
+        "ForecastedSpend":{"shape":"Spend"}
       },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"A structure holds the actual and forecasted spend for a budget."
     },
-    "CalculatedSpend" : {
-      "deprecated" : false,
-      "documentation" : "A structure holds the actual and forecasted spend for a budget.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "ActualSpend" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Spend",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "ForecastedSpend" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Spend",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "ComparisonOperator":{
+      "type":"string",
+      "documentation":"The comparison operator of a notification. Currently we support less than, equal to and greater than.",
+      "enum":[
+        "GREATER_THAN",
+        "LESS_THAN",
+        "EQUAL_TO"
+      ]
+    },
+    "CostFilters":{
+      "type":"map",
+      "key":{"shape":"GenericString"},
+      "value":{"shape":"DimensionValues"},
+      "documentation":"A map represents the cost filters applied to the budget."
+    },
+    "CostTypes":{
+      "type":"structure",
+      "required":[
+        "IncludeTax",
+        "IncludeSubscription",
+        "UseBlended"
+      ],
+      "members":{
+        "IncludeTax":{"shape":"GenericBoolean"},
+        "IncludeSubscription":{"shape":"GenericBoolean"},
+        "UseBlended":{"shape":"GenericBoolean"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "ActualSpend" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This includes the options for getting the cost of a budget."
     },
-    "ComparisonOperator" : {
-      "deprecated" : false,
-      "documentation" : "The comparison operator of a notification. Currently we support less than, equal to and greater than.",
-      "enum" : [ "GREATER_THAN", "LESS_THAN", "EQUAL_TO" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "CostFilters" : {
-      "deprecated" : false,
-      "documentation" : "A map represents the cost filters applied to the budget.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "GenericString",
-        "streaming" : false,
-        "xmlNamespace" : null
+    "CreateBudgetRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "Budget"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "Budget":{"shape":"Budget"},
+        "NotificationsWithSubscribers":{"shape":"NotificationWithSubscribersList"}
       },
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "map",
-      "value" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "DimensionValues",
-        "streaming" : false,
-        "xmlNamespace" : null
+      "documentation":"Request of CreateBudget"
+    },
+    "CreateBudgetResponse":{
+      "type":"structure",
+      "members":{
       },
-      "wrapper" : false
+      "documentation":"Response of CreateBudget"
     },
-    "CostTypes" : {
-      "deprecated" : false,
-      "documentation" : "This includes the options for getting the cost of a budget.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "IncludeSubscription" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericBoolean",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "IncludeTax" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericBoolean",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "UseBlended" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericBoolean",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "CreateNotificationRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName",
+        "Notification",
+        "Subscribers"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"},
+        "Notification":{"shape":"Notification"},
+        "Subscribers":{"shape":"Subscribers"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "IncludeTax", "IncludeSubscription", "UseBlended" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of CreateNotification"
     },
-    "CreateBudgetRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of CreateBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Budget" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Budget",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NotificationsWithSubscribers" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NotificationWithSubscribersList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "CreateNotificationResponse":{
+      "type":"structure",
+      "members":{
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "Budget" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of CreateNotification"
     },
-    "CreateBudgetResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of CreateBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "CreateNotificationRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of CreateNotification",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Notification" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notification",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Subscribers" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Subscribers",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "CreateSubscriberRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName",
+        "Notification",
+        "Subscriber"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"},
+        "Notification":{"shape":"Notification"},
+        "Subscriber":{"shape":"Subscriber"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName", "Notification", "Subscribers" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of CreateSubscriber"
     },
-    "CreateNotificationResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of CreateNotification",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "CreateSubscriberRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of CreateSubscriber",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Notification" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notification",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Subscriber" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Subscriber",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "CreateSubscriberResponse":{
+      "type":"structure",
+      "members":{
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName", "Notification", "Subscriber" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of CreateSubscriber"
     },
-    "CreateSubscriberResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of CreateSubscriber",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "CreationLimitExceededException" : {
-      "deprecated" : false,
-      "documentation" : "The exception is thrown when customer tries to create a record (e.g. budget), but the number this record already exceeds the limitation.",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "CreationLimitExceededException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"errorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"The exception is thrown when customer tries to create a record (e.g. budget), but the number this record already exceeds the limitation.",
+      "exception":true
     },
-    "DeleteBudgetRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of DeleteBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DeleteBudgetRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of DeleteBudget"
     },
-    "DeleteBudgetResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of DeleteBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "DeleteNotificationRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of DeleteNotification",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Notification" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notification",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DeleteBudgetResponse":{
+      "type":"structure",
+      "members":{
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName", "Notification" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of DeleteBudget"
     },
-    "DeleteNotificationResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of DeleteNotification",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "DeleteSubscriberRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of DeleteSubscriber",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Notification" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notification",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Subscriber" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Subscriber",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DeleteNotificationRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName",
+        "Notification"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"},
+        "Notification":{"shape":"Notification"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName", "Notification", "Subscriber" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of DeleteNotification"
     },
-    "DeleteSubscriberResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of DeleteSubscriber",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "DescribeBudgetRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of DescribeBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DeleteNotificationResponse":{
+      "type":"structure",
+      "members":{
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of DeleteNotification"
     },
-    "DescribeBudgetResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of DescribeBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Budget" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Budget",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DeleteSubscriberRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName",
+        "Notification",
+        "Subscriber"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"},
+        "Notification":{"shape":"Notification"},
+        "Subscriber":{"shape":"Subscriber"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of DeleteSubscriber"
     },
-    "DescribeBudgetsRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of DescribeBudgets",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "MaxResults" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "MaxResults",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DeleteSubscriberResponse":{
+      "type":"structure",
+      "members":{
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of DeleteSubscriber"
     },
-    "DescribeBudgetsResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of DescribeBudgets",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Budgets" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Budgets",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DescribeBudgetRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of DescribeBudget"
     },
-    "DescribeNotificationsForBudgetRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of DescribeNotificationsForBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "MaxResults" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "MaxResults",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DescribeBudgetResponse":{
+      "type":"structure",
+      "members":{
+        "Budget":{"shape":"Budget"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of DescribeBudget"
     },
-    "DescribeNotificationsForBudgetResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of GetNotificationsForBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Notifications" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notifications",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DescribeBudgetsRequest":{
+      "type":"structure",
+      "required":["AccountId"],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "MaxResults":{"shape":"MaxResults"},
+        "NextToken":{"shape":"GenericString"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of DescribeBudgets"
     },
-    "DescribeSubscribersForNotificationRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of DescribeSubscribersForNotification",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "MaxResults" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "MaxResults",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Notification" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notification",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DescribeBudgetsResponse":{
+      "type":"structure",
+      "members":{
+        "Budgets":{"shape":"Budgets"},
+        "NextToken":{"shape":"GenericString"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName", "Notification" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of DescribeBudgets"
     },
-    "DescribeSubscribersForNotificationResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of DescribeSubscribersForNotification",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Subscribers" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Subscribers",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DescribeNotificationsForBudgetRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"},
+        "MaxResults":{"shape":"MaxResults"},
+        "NextToken":{"shape":"GenericString"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of DescribeNotificationsForBudget"
     },
-    "DimensionValues" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "GenericString",
-        "streaming" : false,
-        "xmlNamespace" : null
+    "DescribeNotificationsForBudgetResponse":{
+      "type":"structure",
+      "members":{
+        "Notifications":{"shape":"Notifications"},
+        "NextToken":{"shape":"GenericString"}
       },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of GetNotificationsForBudget"
     },
-    "DuplicateRecordException" : {
-      "deprecated" : false,
-      "documentation" : "The exception is thrown when customer tries to create a record (e.g. budget) that already exists.",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DescribeSubscribersForNotificationRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName",
+        "Notification"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"},
+        "Notification":{"shape":"Notification"},
+        "MaxResults":{"shape":"MaxResults"},
+        "NextToken":{"shape":"GenericString"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of DescribeSubscribersForNotification"
     },
-    "ExpiredNextTokenException" : {
-      "deprecated" : false,
-      "documentation" : "This exception is thrown if the paging token is expired - past its TTL",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DescribeSubscribersForNotificationResponse":{
+      "type":"structure",
+      "members":{
+        "Subscribers":{"shape":"Subscribers"},
+        "NextToken":{"shape":"GenericString"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of DescribeSubscribersForNotification"
     },
-    "GenericBoolean" : {
-      "deprecated" : false,
-      "documentation" : "A generic boolean value.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "boolean",
-      "value" : null,
-      "wrapper" : false
+    "DimensionValues":{
+      "type":"list",
+      "member":{"shape":"GenericString"}
     },
-    "GenericString" : {
-      "deprecated" : false,
-      "documentation" : "A generic String.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "GenericTimestamp" : {
-      "deprecated" : false,
-      "documentation" : "A generic timestamp. In Java it is transformed to a Date object.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "timestamp",
-      "value" : null,
-      "wrapper" : false
-    },
-    "InternalErrorException" : {
-      "deprecated" : false,
-      "documentation" : "This exception is thrown on an unknown internal failure.",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DuplicateRecordException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"errorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"The exception is thrown when customer tries to create a record (e.g. budget) that already exists.",
+      "exception":true
     },
-    "InvalidNextTokenException" : {
-      "deprecated" : false,
-      "documentation" : "This exception is thrown if paging token signature didn't match the token, or the paging token isn't for this request",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "ExpiredNextTokenException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"errorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This exception is thrown if the paging token is expired - past its TTL",
+      "exception":true
     },
-    "InvalidParameterException" : {
-      "deprecated" : false,
-      "documentation" : "This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is null.",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "GenericBoolean":{
+      "type":"boolean",
+      "documentation":"A generic boolean value."
+    },
+    "GenericString":{
+      "type":"string",
+      "documentation":"A generic String."
+    },
+    "GenericTimestamp":{
+      "type":"timestamp",
+      "documentation":"A generic timestamp. In Java it is transformed to a Date object."
+    },
+    "InternalErrorException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"errorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This exception is thrown on an unknown internal failure.",
+      "exception":true
     },
-    "MaxResults" : {
-      "deprecated" : false,
-      "documentation" : "An integer to represent how many entries should a pagianted response contains. Maxium is set to 100.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 100,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "integer",
-      "value" : null,
-      "wrapper" : false
-    },
-    "NotFoundException" : {
-      "deprecated" : false,
-      "documentation" : "This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an account ID.",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "errorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "InvalidNextTokenException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"errorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This exception is thrown if paging token signature didn't match the token, or the paging token isn't for this request",
+      "exception":true
     },
-    "Notification" : {
-      "deprecated" : false,
-      "documentation" : "Notification model. Each budget may contain multiple notifications with different settings.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "ComparisonOperator" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ComparisonOperator",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NotificationType" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NotificationType",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Threshold" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NotificationThreshold",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "InvalidParameterException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"errorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "NotificationType", "ComparisonOperator", "Threshold" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is null.",
+      "exception":true
     },
-    "NotificationThreshold" : {
-      "deprecated" : false,
-      "documentation" : "The threshold of the a notification. It should be a number between 0 and 100.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 300,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "double",
-      "value" : null,
-      "wrapper" : false
+    "MaxResults":{
+      "type":"integer",
+      "documentation":"An integer to represent how many entries should a pagianted response contains. Maxium is set to 100.",
+      "box":true,
+      "max":100,
+      "min":1
     },
-    "NotificationType" : {
-      "deprecated" : false,
-      "documentation" : "The type of a notification. It should be ACTUAL or FORECASTED.",
-      "enum" : [ "ACTUAL", "FORECASTED" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "NotificationWithSubscribers" : {
-      "deprecated" : false,
-      "documentation" : "A structure to relate notification and a list of subscribers who belong to the notification.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Notification" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notification",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Subscribers" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Subscribers",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "NotFoundException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"errorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Notification", "Subscribers" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an account ID.",
+      "exception":true
     },
-    "NotificationWithSubscribersList" : {
-      "deprecated" : false,
-      "documentation" : "A list of Notifications, each with a list of subscribers.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 5,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "NotificationWithSubscribers",
-        "streaming" : false,
-        "xmlNamespace" : null
+    "Notification":{
+      "type":"structure",
+      "required":[
+        "NotificationType",
+        "ComparisonOperator",
+        "Threshold"
+      ],
+      "members":{
+        "NotificationType":{"shape":"NotificationType"},
+        "ComparisonOperator":{"shape":"ComparisonOperator"},
+        "Threshold":{"shape":"NotificationThreshold"}
       },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Notification model. Each budget may contain multiple notifications with different settings."
     },
-    "Notifications" : {
-      "deprecated" : false,
-      "documentation" : "A list of notifications.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "Notification",
-        "streaming" : false,
-        "xmlNamespace" : null
+    "NotificationThreshold":{
+      "type":"double",
+      "documentation":"The threshold of the a notification. It should be a number between 0 and 100.",
+      "max":300,
+      "min":0.1
+    },
+    "NotificationType":{
+      "type":"string",
+      "documentation":"The type of a notification. It should be ACTUAL or FORECASTED.",
+      "enum":[
+        "ACTUAL",
+        "FORECASTED"
+      ]
+    },
+    "NotificationWithSubscribers":{
+      "type":"structure",
+      "required":[
+        "Notification",
+        "Subscribers"
+      ],
+      "members":{
+        "Notification":{"shape":"Notification"},
+        "Subscribers":{"shape":"Subscribers"}
       },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"A structure to relate notification and a list of subscribers who belong to the notification."
     },
-    "NumericValue" : {
-      "deprecated" : false,
-      "documentation" : "A string to represent NumericValue.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : "[0-9]*(\\.)?[0-9]+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "NotificationWithSubscribersList":{
+      "type":"list",
+      "member":{"shape":"NotificationWithSubscribers"},
+      "documentation":"A list of Notifications, each with a list of subscribers.",
+      "max":5
     },
-    "SDK_bigdecimal" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "bigdecimal",
-      "value" : null,
-      "wrapper" : false
+    "Notifications":{
+      "type":"list",
+      "member":{"shape":"Notification"},
+      "documentation":"A list of notifications."
     },
-    "Spend" : {
-      "deprecated" : false,
-      "documentation" : "A structure represent either a cost spend or usage spend. Contains an amount and a unit.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Amount" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "SDK_bigdecimal",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Unit" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "NumericValue":{
+      "type":"string",
+      "documentation":"A string to represent NumericValue.",
+      "pattern":"[0-9]*(\\.)?[0-9]+"
+    },
+    "Spend":{
+      "type":"structure",
+      "required":[
+        "Amount",
+        "Unit"
+      ],
+      "members":{
+        "Amount":{"shape":"NumericValue"},
+        "Unit":{"shape":"GenericString"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Amount", "Unit" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"A structure represent either a cost spend or usage spend. Contains an amount and a unit."
     },
-    "Subscriber" : {
-      "deprecated" : false,
-      "documentation" : "Subscriber model. Each notification may contain multiple subscribers with different addresses.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Address" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "SubscriptionType" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "SubscriptionType",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "Subscriber":{
+      "type":"structure",
+      "required":[
+        "SubscriptionType",
+        "Address"
+      ],
+      "members":{
+        "SubscriptionType":{"shape":"SubscriptionType"},
+        "Address":{"shape":"GenericString"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "SubscriptionType", "Address" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Subscriber model. Each notification may contain multiple subscribers with different addresses."
     },
-    "Subscribers" : {
-      "deprecated" : false,
-      "documentation" : "A list of subscribers.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 11,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "Subscriber",
-        "streaming" : false,
-        "xmlNamespace" : null
+    "Subscribers":{
+      "type":"list",
+      "member":{"shape":"Subscriber"},
+      "documentation":"A list of subscribers.",
+      "max":11,
+      "min":1
+    },
+    "SubscriptionType":{
+      "type":"string",
+      "documentation":"The subscription type of the subscriber. It can be SMS or EMAIL.",
+      "enum":[
+        "SNS",
+        "EMAIL"
+      ]
+    },
+    "TimePeriod":{
+      "type":"structure",
+      "required":[
+        "Start",
+        "End"
+      ],
+      "members":{
+        "Start":{"shape":"GenericTimestamp"},
+        "End":{"shape":"GenericTimestamp"}
       },
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"A time period indicated the start date and end date of a budget."
     },
-    "SubscriptionType" : {
-      "deprecated" : false,
-      "documentation" : "The subscription type of the subscriber. It can be SMS or EMAIL.",
-      "enum" : [ "SNS", "EMAIL" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "TimeUnit":{
+      "type":"string",
+      "documentation":"The time unit of the budget. e.g. weekly, monthly, etc.",
+      "enum":[
+        "MONTHLY",
+        "QUARTERLY",
+        "ANNUALLY"
+      ]
     },
-    "TimePeriod" : {
-      "deprecated" : false,
-      "documentation" : "A time period indicated the start date and end date of a budget.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "End" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericTimestamp",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Start" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericTimestamp",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "UpdateBudgetRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "NewBudget"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "NewBudget":{"shape":"Budget"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Start", "End" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of UpdateBudget"
     },
-    "TimeUnit" : {
-      "deprecated" : false,
-      "documentation" : "The time unit of the budget. e.g. weekly, monthly, etc.",
-      "enum" : [ "MONTHLY", "QUARTERLY", "ANNUALLY" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "UpdateBudgetRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of UpdateBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NewBudget" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Budget",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "UpdateBudgetResponse":{
+      "type":"structure",
+      "members":{
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "NewBudget" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of UpdateBudget"
     },
-    "UpdateBudgetResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of UpdateBudget",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "UpdateNotificationRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of UpdateNotification",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NewNotification" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notification",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "OldNotification" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notification",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "UpdateNotificationRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName",
+        "OldNotification",
+        "NewNotification"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"},
+        "OldNotification":{"shape":"Notification"},
+        "NewNotification":{"shape":"Notification"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName", "OldNotification", "NewNotification" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of UpdateNotification"
     },
-    "UpdateNotificationResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of UpdateNotification",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "UpdateSubscriberRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of UpdateSubscriber",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AccountId" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AccountId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "BudgetName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "BudgetName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NewSubscriber" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Subscriber",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Notification" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Notification",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "OldSubscriber" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Subscriber",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "UpdateNotificationResponse":{
+      "type":"structure",
+      "members":{
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "AccountId", "BudgetName", "Notification", "OldSubscriber", "NewSubscriber" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of UpdateNotification"
     },
-    "UpdateSubscriberResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of UpdateSubscriber",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+    "UpdateSubscriberRequest":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "BudgetName",
+        "Notification",
+        "OldSubscriber",
+        "NewSubscriber"
+      ],
+      "members":{
+        "AccountId":{"shape":"AccountId"},
+        "BudgetName":{"shape":"BudgetName"},
+        "Notification":{"shape":"Notification"},
+        "OldSubscriber":{"shape":"Subscriber"},
+        "NewSubscriber":{"shape":"Subscriber"}
+      },
+      "documentation":"Request of UpdateSubscriber"
     },
-    "errorMessage" : {
-      "deprecated" : false,
-      "documentation" : "The error message the exception carries.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "UpdateSubscriberResponse":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"Response of UpdateSubscriber"
+    },
+    "errorMessage":{
+      "type":"string",
+      "documentation":"The error message the exception carries."
     }
   },
-  "documentation" : "All public APIs for AWS Budgets"
+  "documentation":"All public APIs for AWS Budgets"
 }

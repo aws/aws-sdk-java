@@ -64,6 +64,7 @@
     },
     "authPolicyActions" : {
       "actionPrefix" : null,
+      "additionalOperations" : null,
       "fileNamePrefix" : "SQS",
       "skip" : false
     },

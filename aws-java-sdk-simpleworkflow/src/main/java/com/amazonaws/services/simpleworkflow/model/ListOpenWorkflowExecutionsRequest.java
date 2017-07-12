@@ -42,16 +42,24 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only executions of the type specified in the filter are returned.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private WorkflowTypeFilter typeFilter;
     /**
      * <p>
      * If specified, only executions that have the matching tag are listed.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private TagFilter tagFilter;
     /**
@@ -67,9 +75,9 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
     private String nextPageToken;
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -88,8 +96,12 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only workflow executions matching the workflow ID specified in the filter are returned.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private WorkflowExecutionFilter executionFilter;
 
@@ -183,13 +195,19 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only executions of the type specified in the filter are returned.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param typeFilter
      *        If specified, only executions of the type specified in the filter are returned.</p> <note>
+     *        <p>
      *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
      *        You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setTypeFilter(WorkflowTypeFilter typeFilter) {
@@ -200,12 +218,18 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only executions of the type specified in the filter are returned.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only executions of the type specified in the filter are returned.</p> <note>
+     *         <p>
      *         <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
      *         You can specify at most one of these in a request.
+     *         </p>
      */
 
     public WorkflowTypeFilter getTypeFilter() {
@@ -216,13 +240,19 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only executions of the type specified in the filter are returned.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param typeFilter
      *        If specified, only executions of the type specified in the filter are returned.</p> <note>
+     *        <p>
      *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
      *        You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,13 +265,19 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only executions that have the matching tag are listed.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param tagFilter
      *        If specified, only executions that have the matching tag are listed.</p> <note>
+     *        <p>
      *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
      *        You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setTagFilter(TagFilter tagFilter) {
@@ -252,12 +288,18 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only executions that have the matching tag are listed.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only executions that have the matching tag are listed.</p> <note>
+     *         <p>
      *         <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
      *         You can specify at most one of these in a request.
+     *         </p>
      */
 
     public TagFilter getTagFilter() {
@@ -268,13 +310,19 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only executions that have the matching tag are listed.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param tagFilter
      *        If specified, only executions that have the matching tag are listed.</p> <note>
+     *        <p>
      *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
      *        You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,9 +400,9 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -362,9 +410,9 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
+     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
+     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.
@@ -376,16 +424,16 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
      * maximum.
      * </p>
      * 
-     * @return The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
+     * @return The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to
      *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
      *         however, specify a page size <i>smaller</i> than the maximum.</p>
      *         <p>
@@ -399,9 +447,9 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -409,9 +457,9 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
+     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
+     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.
@@ -487,13 +535,20 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only workflow executions matching the workflow ID specified in the filter are returned.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param executionFilter
      *        If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p>
-     *        <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     *        exclusive. You can specify at most one of these in a request.
+     *        <note>
+     *        <p>
+     *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
+     *        You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setExecutionFilter(WorkflowExecutionFilter executionFilter) {
@@ -504,12 +559,19 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only workflow executions matching the workflow ID specified in the filter are returned.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p>
-     *         <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     *         exclusive. You can specify at most one of these in a request.
+     *         <note>
+     *         <p>
+     *         <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
+     *         You can specify at most one of these in a request.
+     *         </p>
      */
 
     public WorkflowExecutionFilter getExecutionFilter() {
@@ -520,13 +582,20 @@ public class ListOpenWorkflowExecutionsRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * If specified, only workflow executions matching the workflow ID specified in the filter are returned.
      * </p>
-     * <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
-     * You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can
+     * specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param executionFilter
      *        If specified, only workflow executions matching the workflow ID specified in the filter are returned.</p>
-     *        <note><code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually
-     *        exclusive. You can specify at most one of these in a request.
+     *        <note>
+     *        <p>
+     *        <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive.
+     *        You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

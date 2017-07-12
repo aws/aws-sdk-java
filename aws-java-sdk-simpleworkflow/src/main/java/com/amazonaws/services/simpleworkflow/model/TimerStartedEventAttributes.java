@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>TimerStarted</code> event.
+ * Provides the details of the <code>TimerStarted</code> event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TimerStartedEventAttributes" target="_top">AWS
@@ -36,16 +36,16 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable, Str
     private String timerId;
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      */
     private String control;
     /**
      * <p>
-     * The duration of time after which the timer will fire.
+     * The duration of time after which the timer fires.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * </p>
      */
     private String startToFireTimeout;
@@ -100,11 +100,11 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent workflow tasks.
      */
 
     public void setControl(String control) {
@@ -113,10 +113,10 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
-     * @return Optional.
+     * @return Data attached to the event that can be used by the decider in subsequent workflow tasks.
      */
 
     public String getControl() {
@@ -125,11 +125,11 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent workflow tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,16 +140,16 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The duration of time after which the timer will fire.
+     * The duration of time after which the timer fires.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * </p>
      * 
      * @param startToFireTimeout
-     *        The duration of time after which the timer will fire.</p>
+     *        The duration of time after which the timer fires.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      */
 
     public void setStartToFireTimeout(String startToFireTimeout) {
@@ -158,15 +158,15 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The duration of time after which the timer will fire.
+     * The duration of time after which the timer fires.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * </p>
      * 
-     * @return The duration of time after which the timer will fire.</p>
+     * @return The duration of time after which the timer fires.</p>
      *         <p>
-     *         The duration is specified in seconds; an integer greater than or equal to 0.
+     *         The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      */
 
     public String getStartToFireTimeout() {
@@ -175,16 +175,16 @@ public class TimerStartedEventAttributes implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The duration of time after which the timer will fire.
+     * The duration of time after which the timer fires.
      * </p>
      * <p>
-     * The duration is specified in seconds; an integer greater than or equal to 0.
+     * The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * </p>
      * 
      * @param startToFireTimeout
-     *        The duration of time after which the timer will fire.</p>
+     *        The duration of time after which the timer fires.</p>
      *        <p>
-     *        The duration is specified in seconds; an integer greater than or equal to 0.
+     *        The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

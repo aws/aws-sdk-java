@@ -1,796 +1,182 @@
 {
-  "authorizers" : { },
-  "metadata" : {
-    "apiVersion" : "2017-01-11",
-    "endpointPrefix" : "entitlement.marketplace",
-    "jsonVersion" : "1.1",
-    "protocol" : "json",
-    "resultWrapped" : false,
-    "serviceAbbreviation" : null,
-    "serviceFullName" : "AWS Marketplace Entitlement Service",
-    "signatureVersion" : "v4",
-    "signingName" : "aws-marketplace",
-    "targetPrefix" : "AWSMPEntitlementService",
-    "uid" : "entitlement.marketplace-2017-01-11",
-    "xmlNamespace" : null
+  "version":"2.0",
+  "metadata":{
+    "apiVersion":"2017-01-11",
+    "endpointPrefix":"entitlement.marketplace",
+    "jsonVersion":"1.1",
+    "protocol":"json",
+    "serviceFullName":"AWS Marketplace Entitlement Service",
+    "signatureVersion":"v4",
+    "signingName":"aws-marketplace",
+    "targetPrefix":"AWSMPEntitlementService",
+    "uid":"entitlement.marketplace-2017-01-11"
   },
-  "operations" : {
-    "GetEntitlements" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>GetEntitlements retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidParameterException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ThrottlingException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalServiceErrorException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+  "operations":{
+    "GetEntitlements":{
+      "name":"GetEntitlements",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "GetEntitlementsRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "GetEntitlements",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "GetEntitlementsResult"
-      }
+      "input":{"shape":"GetEntitlementsRequest"},
+      "output":{"shape":"GetEntitlementsResult"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceErrorException"}
+      ],
+      "documentation":"<p>GetEntitlements retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions.</p>"
     }
   },
-  "shapes" : {
-    "Boolean" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "boolean",
-      "value" : null,
-      "wrapper" : false
-    },
-    "Double" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "double",
-      "value" : null,
-      "wrapper" : false
-    },
-    "Entitlement" : {
-      "deprecated" : false,
-      "documentation" : "<p>An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "CustomerIdentifier" : {
-          "deprecated" : false,
-          "documentation" : "<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NonEmptyString",
-          "streaming" : false,
-          "xmlNamespace" : null
+  "shapes":{
+    "Boolean":{"type":"boolean"},
+    "Double":{"type":"double"},
+    "Entitlement":{
+      "type":"structure",
+      "members":{
+        "ProductCode":{
+          "shape":"ProductCode",
+          "documentation":"<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>"
         },
-        "Dimension" : {
-          "deprecated" : false,
-          "documentation" : "<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NonEmptyString",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Dimension":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>"
         },
-        "ExpirationDate" : {
-          "deprecated" : false,
-          "documentation" : "<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Timestamp",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "CustomerIdentifier":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>"
         },
-        "ProductCode" : {
-          "deprecated" : false,
-          "documentation" : "<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ProductCode",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Value":{
+          "shape":"EntitlementValue",
+          "documentation":"<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>"
         },
-        "Value" : {
-          "deprecated" : false,
-          "documentation" : "<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EntitlementValue",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "ExpirationDate":{
+          "shape":"Timestamp",
+          "documentation":"<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database.</p>"
     },
-    "EntitlementList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "Entitlement",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+    "EntitlementList":{
+      "type":"list",
+      "member":{"shape":"Entitlement"},
+      "min":0
     },
-    "EntitlementValue" : {
-      "deprecated" : false,
-      "documentation" : "<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "BooleanValue" : {
-          "deprecated" : false,
-          "documentation" : "<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Boolean",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "EntitlementValue":{
+      "type":"structure",
+      "members":{
+        "IntegerValue":{
+          "shape":"Integer",
+          "documentation":"<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>"
         },
-        "DoubleValue" : {
-          "deprecated" : false,
-          "documentation" : "<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Double",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "DoubleValue":{
+          "shape":"Double",
+          "documentation":"<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>"
         },
-        "IntegerValue" : {
-          "deprecated" : false,
-          "documentation" : "<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Integer",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "BooleanValue":{
+          "shape":"Boolean",
+          "documentation":"<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>"
         },
-        "StringValue" : {
-          "deprecated" : false,
-          "documentation" : "<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "String",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "StringValue":{
+          "shape":"String",
+          "documentation":"<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>"
     },
-    "ErrorMessage" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "ErrorMessage":{"type":"string"},
+    "FilterValue":{"type":"string"},
+    "FilterValueList":{
+      "type":"list",
+      "member":{"shape":"FilterValue"},
+      "min":1
     },
-    "FilterValue" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "GetEntitlementFilterName":{
+      "type":"string",
+      "enum":[
+        "CUSTOMER_IDENTIFIER",
+        "DIMENSION"
+      ]
     },
-    "FilterValueList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "FilterValue",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+    "GetEntitlementFilters":{
+      "type":"map",
+      "key":{"shape":"GetEntitlementFilterName"},
+      "value":{"shape":"FilterValueList"}
     },
-    "GetEntitlementFilterName" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : [ "CUSTOMER_IDENTIFIER", "DIMENSION" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "GetEntitlementFilters" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "GetEntitlementFilterName",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "map",
-      "value" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "FilterValueList",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "wrapper" : false
-    },
-    "GetEntitlementsRequest" : {
-      "deprecated" : false,
-      "documentation" : "<p>The GetEntitlementsRequest contains parameters for the GetEntitlements operation.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Filter" : {
-          "deprecated" : false,
-          "documentation" : "<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GetEntitlementFilters",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "GetEntitlementsRequest":{
+      "type":"structure",
+      "required":["ProductCode"],
+      "members":{
+        "ProductCode":{
+          "shape":"ProductCode",
+          "documentation":"<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>"
         },
-        "MaxResults" : {
-          "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Integer",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Filter":{
+          "shape":"GetEntitlementFilters",
+          "documentation":"<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>"
         },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : "<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NonEmptyString",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "NextToken":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>"
         },
-        "ProductCode" : {
-          "deprecated" : false,
-          "documentation" : "<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ProductCode",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "MaxResults":{
+          "shape":"Integer",
+          "documentation":"<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "ProductCode" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The GetEntitlementsRequest contains parameters for the GetEntitlements operation.</p>"
     },
-    "GetEntitlementsResult" : {
-      "deprecated" : false,
-      "documentation" : "<p>The GetEntitlementsRequest contains results from the GetEntitlements operation.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Entitlements" : {
-          "deprecated" : false,
-          "documentation" : "<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EntitlementList",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "GetEntitlementsResult":{
+      "type":"structure",
+      "members":{
+        "Entitlements":{
+          "shape":"EntitlementList",
+          "documentation":"<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>"
         },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : "<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NonEmptyString",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "NextToken":{
+          "shape":"NonEmptyString",
+          "documentation":"<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The GetEntitlementsRequest contains results from the GetEntitlements operation.</p>"
     },
-    "Integer" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "integer",
-      "value" : null,
-      "wrapper" : false
-    },
-    "InternalServiceErrorException" : {
-      "deprecated" : false,
-      "documentation" : "<p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : true,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "Integer":{"type":"integer"},
+    "InternalServiceErrorException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ErrorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>An internal error has occurred. Retry your request. If the problem persists, post a message with details on the AWS forums.</p>",
+      "exception":true,
+      "fault":true
     },
-    "InvalidParameterException" : {
-      "deprecated" : false,
-      "documentation" : "<p>One or more parameters in your request was invalid.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "InvalidParameterException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ErrorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>One or more parameters in your request was invalid.</p>",
+      "exception":true
     },
-    "NonEmptyString" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : "\\S+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "NonEmptyString":{
+      "type":"string",
+      "pattern":"\\S+"
     },
-    "ProductCode" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 255,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "ProductCode":{
+      "type":"string",
+      "max":255,
+      "min":1
     },
-    "String" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "ThrottlingException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The calls to the GetEntitlements API are throttled.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "String":{"type":"string"},
+    "ThrottlingException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ErrorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The calls to the GetEntitlements API are throttled.</p>",
+      "exception":true
     },
-    "Timestamp" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "timestamp",
-      "value" : null,
-      "wrapper" : false
-    }
+    "Timestamp":{"type":"timestamp"}
   },
-  "documentation" : "<fullname>AWS Marketplace Entitlement Service</fullname> <p>This reference provides descriptions of the AWS Marketplace Entitlement Service API.</p> <p>AWS Marketplace Entitlement Service is used to determine the entitlement of a customer to a given product. An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database.</p> <p> <b>Getting Entitlement Records</b> </p> <ul> <li> <p> <i>GetEntitlements</i>- Gets the entitlements for a Marketplace product.</p> </li> </ul>"
+  "documentation":"<fullname>AWS Marketplace Entitlement Service</fullname> <p>This reference provides descriptions of the AWS Marketplace Entitlement Service API.</p> <p>AWS Marketplace Entitlement Service is used to determine the entitlement of a customer to a given product. An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database.</p> <p> <b>Getting Entitlement Records</b> </p> <ul> <li> <p> <i>GetEntitlements</i>- Gets the entitlements for a Marketplace product.</p> </li> </ul>"
 }

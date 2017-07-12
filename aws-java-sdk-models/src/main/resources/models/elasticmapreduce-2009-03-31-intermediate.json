@@ -76,6 +76,7 @@
     },
     "authPolicyActions" : {
       "actionPrefix" : null,
+      "additionalOperations" : null,
       "fileNamePrefix" : "ElasticMapReduce",
       "skip" : false
     },

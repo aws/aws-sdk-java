@@ -15,6 +15,8 @@
 
 package com.amazonaws.codegen.model.config.customization;
 
+import java.util.List;
+
 /**
  * Customization configuration for policy actions enums file.
  */
@@ -35,6 +37,12 @@ public class AuthPolicyActions {
      * File name prefix for the actions file.
      */
     private String fileNamePrefix;
+
+    /**
+     * Additional operations to generate in addition to the ones defined in their models. This is useful for actions that are not
+     * defined as operations, like IAM's PassRole action.
+     */
+    private List<String> additionalOperations;
 
     public boolean isSkip() {
         return skip;
@@ -58,5 +66,13 @@ public class AuthPolicyActions {
 
     public void setFileNamePrefix(String fileNamePrefix) {
         this.fileNamePrefix = fileNamePrefix;
+    }
+
+    public List<String> getAdditionalOperations() {
+        return this.additionalOperations;
+    }
+
+    public void setAdditionalOperations(List<String> additionalOperations) {
+        this.additionalOperations = additionalOperations;
     }
 }

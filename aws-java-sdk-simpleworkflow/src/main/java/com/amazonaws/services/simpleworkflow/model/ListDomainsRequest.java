@@ -44,9 +44,9 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String registrationStatus;
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -204,9 +204,9 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -214,9 +214,9 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
+     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
+     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.
@@ -228,16 +228,16 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
      * maximum.
      * </p>
      * 
-     * @return The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
+     * @return The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to
      *         obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
      *         however, specify a page size <i>smaller</i> than the maximum.</p>
      *         <p>
@@ -251,9 +251,9 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to obtain
-     * futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a
-     * page size <i>smaller</i> than the maximum.
+     * The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain futher
+     * pages of results. The default is 1000, which is the maximum allowed page size. You can, however, specify a page
+     * size <i>smaller</i> than the maximum.
      * </p>
      * <p>
      * This is an upper limit only; the actual number of results returned per call may be fewer than the specified
@@ -261,9 +261,9 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param maximumPageSize
-     *        The maximum number of results that will be returned per call. <code>nextPageToken</code> can be used to
-     *        obtain futher pages of results. The default is 1000, which is the maximum allowed page size. You can,
-     *        however, specify a page size <i>smaller</i> than the maximum.</p>
+     *        The maximum number of results that are returned per call. <code>nextPageToken</code> can be used to obtain
+     *        futher pages of results. The default is 1000, which is the maximum allowed page size. You can, however,
+     *        specify a page size <i>smaller</i> than the maximum.</p>
      *        <p>
      *        This is an upper limit only; the actual number of results returned per call may be fewer than the
      *        specified maximum.

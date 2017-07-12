@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.autoscaling.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -47,6 +49,17 @@ public class PutScalingPolicyResultStaxUnmarshaller implements Unmarshaller<PutS
                     putScalingPolicyResult.setPolicyARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("Alarms", targetDepth)) {
+                    putScalingPolicyResult.withAlarms(new ArrayList<Alarm>());
+                    continue;
+                }
+
+                if (context.testExpression("Alarms/member", targetDepth)) {
+                    putScalingPolicyResult.withAlarms(AlarmStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return putScalingPolicyResult;

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>ActivityTaskCanceled</code> event.
+ * Provides the details of the <code>ActivityTaskCanceled</code> event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskCanceledEventAttributes"
@@ -30,7 +30,7 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * Details of the cancellation (if any).
+     * Details of the cancellation.
      * </p>
      */
     private String details;
@@ -60,11 +60,11 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * Details of the cancellation (if any).
+     * Details of the cancellation.
      * </p>
      * 
      * @param details
-     *        Details of the cancellation (if any).
+     *        Details of the cancellation.
      */
 
     public void setDetails(String details) {
@@ -73,10 +73,10 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * Details of the cancellation (if any).
+     * Details of the cancellation.
      * </p>
      * 
-     * @return Details of the cancellation (if any).
+     * @return Details of the cancellation.
      */
 
     public String getDetails() {
@@ -85,11 +85,11 @@ public class ActivityTaskCanceledEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * Details of the cancellation (if any).
+     * Details of the cancellation.
      * </p>
      * 
      * @param details
-     *        Details of the cancellation (if any).
+     *        Details of the cancellation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

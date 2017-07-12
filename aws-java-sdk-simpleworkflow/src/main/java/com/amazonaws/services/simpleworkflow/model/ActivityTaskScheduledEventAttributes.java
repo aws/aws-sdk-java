@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>ActivityTaskScheduled</code> event.
+ * Provides the details of the <code>ActivityTaskScheduled</code> event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskScheduledEventAttributes"
@@ -48,8 +48,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     private String input;
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks. This
-     * data is not sent to the activity.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to
+     * the activity.
      * </p>
      */
     private String control;
@@ -79,8 +79,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
     private TaskList taskList;
     /**
      * <p>
-     * <i>Optional.</i> The priority to assign to the scheduled activity task. If set, this will override any default
-     * priority value that was assigned when the activity type was registered.
+     * The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was
+     * assigned when the activity type was registered.
      * </p>
      * <p>
      * Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
@@ -89,7 +89,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <p>
      * For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      */
     private String taskPriority;
@@ -105,7 +105,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <p>
      * The maximum time before which the worker processing this task must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed out. If
-     * the worker subsequently attempts to record a heartbeat or return a result, it will be ignored.
+     * the worker subsequently attempts to record a heartbeat or return a result, it is ignored.
      * </p>
      */
     private String heartbeatTimeout;
@@ -232,12 +232,13 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks. This
-     * data is not sent to the activity.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to
+     * the activity.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't
+     *        sent to the activity.
      */
 
     public void setControl(String control) {
@@ -246,11 +247,12 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks. This
-     * data is not sent to the activity.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to
+     * the activity.
      * </p>
      * 
-     * @return Optional.
+     * @return Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't
+     *         sent to the activity.
      */
 
     public String getControl() {
@@ -259,12 +261,13 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks. This
-     * data is not sent to the activity.
+     * Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to
+     * the activity.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't
+     *        sent to the activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,8 +438,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * <i>Optional.</i> The priority to assign to the scheduled activity task. If set, this will override any default
-     * priority value that was assigned when the activity type was registered.
+     * The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was
+     * assigned when the activity type was registered.
      * </p>
      * <p>
      * Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
@@ -445,12 +448,12 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <p>
      * For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param taskPriority
-     *        Optional.</i> The priority to assign to the scheduled activity task. If set, this will override any
-     *        default priority value that was assigned when the activity type was registered.</p>
+     *        The priority to assign to the scheduled activity task. If set, this overrides any default priority value
+     *        that was assigned when the activity type was registered.</p>
      *        <p>
      *        Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
@@ -458,7 +461,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      *        <p>
      *        For more information about setting task priority, see <a
      *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
     public void setTaskPriority(String taskPriority) {
@@ -467,8 +470,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * <i>Optional.</i> The priority to assign to the scheduled activity task. If set, this will override any default
-     * priority value that was assigned when the activity type was registered.
+     * The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was
+     * assigned when the activity type was registered.
      * </p>
      * <p>
      * Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
@@ -477,11 +480,11 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <p>
      * For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
-     * @return Optional.</i> The priority to assign to the scheduled activity task. If set, this will override any
-     *         default priority value that was assigned when the activity type was registered.</p>
+     * @return The priority to assign to the scheduled activity task. If set, this overrides any default priority value
+     *         that was assigned when the activity type was registered.</p>
      *         <p>
      *         Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *         <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
@@ -489,7 +492,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      *         <p>
      *         For more information about setting task priority, see <a
      *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *         Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *         Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      */
 
     public String getTaskPriority() {
@@ -498,8 +501,8 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * <i>Optional.</i> The priority to assign to the scheduled activity task. If set, this will override any default
-     * priority value that was assigned when the activity type was registered.
+     * The priority to assign to the scheduled activity task. If set, this overrides any default priority value that was
+     * assigned when the activity type was registered.
      * </p>
      * <p>
      * Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
@@ -508,12 +511,12 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <p>
      * For more information about setting task priority, see <a
      * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     * Priority</a> in the <i>Amazon Simple Workflow Developer Guide</i>.
+     * Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * </p>
      * 
      * @param taskPriority
-     *        Optional.</i> The priority to assign to the scheduled activity task. If set, this will override any
-     *        default priority value that was assigned when the activity type was registered.</p>
+     *        The priority to assign to the scheduled activity task. If set, this overrides any default priority value
+     *        that was assigned when the activity type was registered.</p>
      *        <p>
      *        Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
      *        <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
@@ -521,7 +524,7 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      *        <p>
      *        For more information about setting task priority, see <a
      *        href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
-     *        Priority</a> in the <i>Amazon Simple Workflow Developer Guide
+     *        Priority</a> in the <i>Amazon SWF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -586,13 +589,13 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <p>
      * The maximum time before which the worker processing this task must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed out. If
-     * the worker subsequently attempts to record a heartbeat or return a result, it will be ignored.
+     * the worker subsequently attempts to record a heartbeat or return a result, it is ignored.
      * </p>
      * 
      * @param heartbeatTimeout
      *        The maximum time before which the worker processing this task must report progress by calling
      *        <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed
-     *        out. If the worker subsequently attempts to record a heartbeat or return a result, it will be ignored.
+     *        out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.
      */
 
     public void setHeartbeatTimeout(String heartbeatTimeout) {
@@ -603,12 +606,12 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <p>
      * The maximum time before which the worker processing this task must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed out. If
-     * the worker subsequently attempts to record a heartbeat or return a result, it will be ignored.
+     * the worker subsequently attempts to record a heartbeat or return a result, it is ignored.
      * </p>
      * 
      * @return The maximum time before which the worker processing this task must report progress by calling
      *         <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed
-     *         out. If the worker subsequently attempts to record a heartbeat or return a result, it will be ignored.
+     *         out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.
      */
 
     public String getHeartbeatTimeout() {
@@ -619,13 +622,13 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
      * <p>
      * The maximum time before which the worker processing this task must report progress by calling
      * <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed out. If
-     * the worker subsequently attempts to record a heartbeat or return a result, it will be ignored.
+     * the worker subsequently attempts to record a heartbeat or return a result, it is ignored.
      * </p>
      * 
      * @param heartbeatTimeout
      *        The maximum time before which the worker processing this task must report progress by calling
      *        <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed
-     *        out. If the worker subsequently attempts to record a heartbeat or return a result, it will be ignored.
+     *        out. If the worker subsequently attempts to record a heartbeat or return a result, it is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

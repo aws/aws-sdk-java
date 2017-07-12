@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details for the <code>LambdaFunctionFailed</code> event.
+ * Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/LambdaFunctionFailedEventAttributes"
@@ -30,42 +30,41 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function was
-     * scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up
-     * to this event.
+     * The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled.
+     * To help diagnose issues, use this information to trace back the chain of events leading up to this event.
      * </p>
      */
     private Long scheduledEventId;
     /**
      * <p>
-     * The ID of the <code>LambdaFunctionStarted</code> event recorded in the history.
+     * The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose
+     * issues, use this information to trace back the chain of events leading up to this event.
      * </p>
      */
     private Long startedEventId;
     /**
      * <p>
-     * The reason provided for the failure (if any).
+     * The reason provided for the failure.
      * </p>
      */
     private String reason;
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      */
     private String details;
 
     /**
      * <p>
-     * The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function was
-     * scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up
-     * to this event.
+     * The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled.
+     * To help diagnose issues, use this information to trace back the chain of events leading up to this event.
      * </p>
      * 
      * @param scheduledEventId
-     *        The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function
-     *        was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events
-     *        leading up to this event.
+     *        The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was
+     *        scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to
+     *        this event.
      */
 
     public void setScheduledEventId(Long scheduledEventId) {
@@ -74,14 +73,13 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function was
-     * scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up
-     * to this event.
+     * The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled.
+     * To help diagnose issues, use this information to trace back the chain of events leading up to this event.
      * </p>
      * 
-     * @return The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function
-     *         was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events
-     *         leading up to this event.
+     * @return The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was
+     *         scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to
+     *         this event.
      */
 
     public Long getScheduledEventId() {
@@ -90,15 +88,14 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function was
-     * scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up
-     * to this event.
+     * The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled.
+     * To help diagnose issues, use this information to trace back the chain of events leading up to this event.
      * </p>
      * 
      * @param scheduledEventId
-     *        The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this AWS Lambda function
-     *        was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events
-     *        leading up to this event.
+     *        The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was
+     *        scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to
+     *        this event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +106,13 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the <code>LambdaFunctionStarted</code> event recorded in the history.
+     * The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose
+     * issues, use this information to trace back the chain of events leading up to this event.
      * </p>
      * 
      * @param startedEventId
-     *        The ID of the <code>LambdaFunctionStarted</code> event recorded in the history.
+     *        The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help
+     *        diagnose issues, use this information to trace back the chain of events leading up to this event.
      */
 
     public void setStartedEventId(Long startedEventId) {
@@ -122,10 +121,12 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the <code>LambdaFunctionStarted</code> event recorded in the history.
+     * The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose
+     * issues, use this information to trace back the chain of events leading up to this event.
      * </p>
      * 
-     * @return The ID of the <code>LambdaFunctionStarted</code> event recorded in the history.
+     * @return The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help
+     *         diagnose issues, use this information to trace back the chain of events leading up to this event.
      */
 
     public Long getStartedEventId() {
@@ -134,11 +135,13 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The ID of the <code>LambdaFunctionStarted</code> event recorded in the history.
+     * The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose
+     * issues, use this information to trace back the chain of events leading up to this event.
      * </p>
      * 
      * @param startedEventId
-     *        The ID of the <code>LambdaFunctionStarted</code> event recorded in the history.
+     *        The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help
+     *        diagnose issues, use this information to trace back the chain of events leading up to this event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,11 +152,11 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The reason provided for the failure (if any).
+     * The reason provided for the failure.
      * </p>
      * 
      * @param reason
-     *        The reason provided for the failure (if any).
+     *        The reason provided for the failure.
      */
 
     public void setReason(String reason) {
@@ -162,10 +165,10 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The reason provided for the failure (if any).
+     * The reason provided for the failure.
      * </p>
      * 
-     * @return The reason provided for the failure (if any).
+     * @return The reason provided for the failure.
      */
 
     public String getReason() {
@@ -174,11 +177,11 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The reason provided for the failure (if any).
+     * The reason provided for the failure.
      * </p>
      * 
      * @param reason
-     *        The reason provided for the failure (if any).
+     *        The reason provided for the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +192,11 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      * 
      * @param details
-     *        The details of the failure (if any).
+     *        The details of the failure.
      */
 
     public void setDetails(String details) {
@@ -202,10 +205,10 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      * 
-     * @return The details of the failure (if any).
+     * @return The details of the failure.
      */
 
     public String getDetails() {
@@ -214,11 +217,11 @@ public class LambdaFunctionFailedEventAttributes implements Serializable, Clonea
 
     /**
      * <p>
-     * The details of the failure (if any).
+     * The details of the failure.
      * </p>
      * 
      * @param details
-     *        The details of the failure (if any).
+     *        The details of the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

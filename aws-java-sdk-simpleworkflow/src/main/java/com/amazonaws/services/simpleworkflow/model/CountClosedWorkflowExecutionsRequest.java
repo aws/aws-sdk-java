@@ -35,40 +35,60 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions that meet the start time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      */
     private ExecutionTimeFilter startTimeFilter;
     /**
      * <p>
      * If specified, only workflow executions that meet the close time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      */
     private ExecutionTimeFilter closeTimeFilter;
     /**
      * <p>
      * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private WorkflowExecutionFilter executionFilter;
     /**
      * <p>
      * If specified, indicates the type of the workflow executions to be counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private WorkflowTypeFilter typeFilter;
     /**
      * <p>
      * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private TagFilter tagFilter;
     /**
@@ -76,8 +96,12 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * If specified, only workflow executions that match this close status are counted. This filter has an affect only
      * if <code>executionStatus</code> is specified as <code>CLOSED</code>.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      */
     private CloseStatusFilter closeStatusFilter;
 
@@ -125,13 +149,20 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions that meet the start time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @param startTimeFilter
      *        If specified, only workflow executions that meet the start time criteria of the filter are counted.</p>
-     *        <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
-     *        specify one of these in a request but not both.
+     *        <note>
+     *        <p>
+     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     *        of these in a request but not both.
+     *        </p>
      */
 
     public void setStartTimeFilter(ExecutionTimeFilter startTimeFilter) {
@@ -142,12 +173,19 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions that meet the start time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @return If specified, only workflow executions that meet the start time criteria of the filter are counted.</p>
-     *         <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
-     *         specify one of these in a request but not both.
+     *         <note>
+     *         <p>
+     *         <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify
+     *         one of these in a request but not both.
+     *         </p>
      */
 
     public ExecutionTimeFilter getStartTimeFilter() {
@@ -158,13 +196,20 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions that meet the start time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @param startTimeFilter
      *        If specified, only workflow executions that meet the start time criteria of the filter are counted.</p>
-     *        <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
-     *        specify one of these in a request but not both.
+     *        <note>
+     *        <p>
+     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     *        of these in a request but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,13 +222,20 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions that meet the close time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @param closeTimeFilter
      *        If specified, only workflow executions that meet the close time criteria of the filter are counted.</p>
-     *        <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
-     *        specify one of these in a request but not both.
+     *        <note>
+     *        <p>
+     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     *        of these in a request but not both.
+     *        </p>
      */
 
     public void setCloseTimeFilter(ExecutionTimeFilter closeTimeFilter) {
@@ -194,12 +246,19 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions that meet the close time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @return If specified, only workflow executions that meet the close time criteria of the filter are counted.</p>
-     *         <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
-     *         specify one of these in a request but not both.
+     *         <note>
+     *         <p>
+     *         <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify
+     *         one of these in a request but not both.
+     *         </p>
      */
 
     public ExecutionTimeFilter getCloseTimeFilter() {
@@ -210,13 +269,20 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions that meet the close time criteria of the filter are counted.
      * </p>
-     * <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
-     * of these in a request but not both.</note>
+     * <note>
+     * <p>
+     * <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.
+     * </p>
+     * </note>
      * 
      * @param closeTimeFilter
      *        If specified, only workflow executions that meet the close time criteria of the filter are counted.</p>
-     *        <note><code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must
-     *        specify one of these in a request but not both.
+     *        <note>
+     *        <p>
+     *        <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You must specify one
+     *        of these in a request but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,13 +295,20 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param executionFilter
      *        If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p>
-     *        <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <note>
+     *        <p>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setExecutionFilter(WorkflowExecutionFilter executionFilter) {
@@ -246,12 +319,19 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are
-     *         counted.</p> <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code>
-     *         and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *         counted.</p> <note>
+     *         <p>
+     *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *         </p>
      */
 
     public WorkflowExecutionFilter getExecutionFilter() {
@@ -262,13 +342,20 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param executionFilter
      *        If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p>
-     *        <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
+     *        <note>
+     *        <p>
+     *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,13 +368,19 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, indicates the type of the workflow executions to be counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param typeFilter
      *        If specified, indicates the type of the workflow executions to be counted.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setTypeFilter(WorkflowTypeFilter typeFilter) {
@@ -298,12 +391,18 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, indicates the type of the workflow executions to be counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, indicates the type of the workflow executions to be counted.</p> <note>
+     *         <p>
      *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *         </p>
      */
 
     public WorkflowTypeFilter getTypeFilter() {
@@ -314,13 +413,19 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, indicates the type of the workflow executions to be counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param typeFilter
      *        If specified, indicates the type of the workflow executions to be counted.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,13 +438,19 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param tagFilter
      *        If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setTagFilter(TagFilter tagFilter) {
@@ -350,12 +461,18 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+     *         <p>
      *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *         </p>
      */
 
     public TagFilter getTagFilter() {
@@ -366,13 +483,19 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * <p>
      * If specified, only executions that have a tag that matches the filter are counted.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param tagFilter
      *        If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,14 +509,20 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * If specified, only workflow executions that match this close status are counted. This filter has an affect only
      * if <code>executionStatus</code> is specified as <code>CLOSED</code>.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param closeStatusFilter
      *        If specified, only workflow executions that match this close status are counted. This filter has an affect
      *        only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      */
 
     public void setCloseStatusFilter(CloseStatusFilter closeStatusFilter) {
@@ -405,13 +534,19 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * If specified, only workflow executions that match this close status are counted. This filter has an affect only
      * if <code>executionStatus</code> is specified as <code>CLOSED</code>.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @return If specified, only workflow executions that match this close status are counted. This filter has an
      *         affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+     *         <p>
      *         <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *         <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *         </p>
      */
 
     public CloseStatusFilter getCloseStatusFilter() {
@@ -423,14 +558,20 @@ public class CountClosedWorkflowExecutionsRequest extends com.amazonaws.AmazonWe
      * If specified, only workflow executions that match this close status are counted. This filter has an affect only
      * if <code>executionStatus</code> is specified as <code>CLOSED</code>.
      * </p>
-     * <note><code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
-     * <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</note>
+     * <note>
+     * <p>
+     * <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.
+     * </p>
+     * </note>
      * 
      * @param closeStatusFilter
      *        If specified, only workflow executions that match this close status are counted. This filter has an affect
      *        only if <code>executionStatus</code> is specified as <code>CLOSED</code>.</p> <note>
+     *        <p>
      *        <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code> and
      *        <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

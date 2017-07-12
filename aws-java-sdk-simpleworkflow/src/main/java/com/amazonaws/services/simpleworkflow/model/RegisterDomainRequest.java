@@ -31,8 +31,8 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      */
     private String name;
@@ -45,10 +45,10 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The duration (in days) that records and histories of workflow executions on the domain should be kept by the
-     * service. After the retention period, the workflow execution is not available in the results of visibility calls.
+     * service. After the retention period, the workflow execution isn't available in the results of visibility calls.
      * </p>
      * <p>
-     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will not be
+     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't
      * retained. As soon as the workflow execution completes, the execution record and its history are deleted.
      * </p>
      * <p>
@@ -65,8 +65,8 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
@@ -74,8 +74,9 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        in.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>arn</code>.
      */
 
     public void setName(String name) {
@@ -88,16 +89,17 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @return Name of the domain to register. The name must be unique in the region that the domain is registered
      *         in.</p>
      *         <p>
      *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f
-     *         - \u009f). Also, it must not contain the literal string quotarnquot.
+     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *         <code>arn</code>.
      */
 
     public String getName() {
@@ -110,8 +112,8 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     * \u009f). Also, it must not contain the literal string quotarnquot.
+     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.
      * </p>
      * 
      * @param name
@@ -119,8 +121,9 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      *        in.</p>
      *        <p>
      *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (\u0000-\u001f | \u007f -
-     *        \u009f). Also, it must not contain the literal string quotarnquot.
+     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
+     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     *        <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,10 +175,10 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The duration (in days) that records and histories of workflow executions on the domain should be kept by the
-     * service. After the retention period, the workflow execution is not available in the results of visibility calls.
+     * service. After the retention period, the workflow execution isn't available in the results of visibility calls.
      * </p>
      * <p>
-     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will not be
+     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't
      * retained. As soon as the workflow execution completes, the execution record and its history are deleted.
      * </p>
      * <p>
@@ -186,11 +189,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param workflowExecutionRetentionPeriodInDays
      *        The duration (in days) that records and histories of workflow executions on the domain should be kept by
-     *        the service. After the retention period, the workflow execution is not available in the results of
+     *        the service. After the retention period, the workflow execution isn't available in the results of
      *        visibility calls.</p>
      *        <p>
-     *        If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will
-     *        not be retained. As soon as the workflow execution completes, the execution record and its history are
+     *        If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history
+     *        isn't retained. As soon as the workflow execution completes, the execution record and its history are
      *        deleted.
      *        </p>
      *        <p>
@@ -207,10 +210,10 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The duration (in days) that records and histories of workflow executions on the domain should be kept by the
-     * service. After the retention period, the workflow execution is not available in the results of visibility calls.
+     * service. After the retention period, the workflow execution isn't available in the results of visibility calls.
      * </p>
      * <p>
-     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will not be
+     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't
      * retained. As soon as the workflow execution completes, the execution record and its history are deleted.
      * </p>
      * <p>
@@ -220,12 +223,12 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return The duration (in days) that records and histories of workflow executions on the domain should be kept by
-     *         the service. After the retention period, the workflow execution is not available in the results of
+     *         the service. After the retention period, the workflow execution isn't available in the results of
      *         visibility calls.</p>
      *         <p>
      *         If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history
-     *         will not be retained. As soon as the workflow execution completes, the execution record and its history
-     *         are deleted.
+     *         isn't retained. As soon as the workflow execution completes, the execution record and its history are
+     *         deleted.
      *         </p>
      *         <p>
      *         The maximum workflow execution retention period is 90 days. For more information about Amazon SWF service
@@ -241,10 +244,10 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The duration (in days) that records and histories of workflow executions on the domain should be kept by the
-     * service. After the retention period, the workflow execution is not available in the results of visibility calls.
+     * service. After the retention period, the workflow execution isn't available in the results of visibility calls.
      * </p>
      * <p>
-     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will not be
+     * If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history isn't
      * retained. As soon as the workflow execution completes, the execution record and its history are deleted.
      * </p>
      * <p>
@@ -255,11 +258,11 @@ public class RegisterDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param workflowExecutionRetentionPeriodInDays
      *        The duration (in days) that records and histories of workflow executions on the domain should be kept by
-     *        the service. After the retention period, the workflow execution is not available in the results of
+     *        the service. After the retention period, the workflow execution isn't available in the results of
      *        visibility calls.</p>
      *        <p>
-     *        If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history will
-     *        not be retained. As soon as the workflow execution completes, the execution record and its history are
+     *        If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow execution history
+     *        isn't retained. As soon as the workflow execution completes, the execution record and its history are
      *        deleted.
      *        </p>
      *        <p>

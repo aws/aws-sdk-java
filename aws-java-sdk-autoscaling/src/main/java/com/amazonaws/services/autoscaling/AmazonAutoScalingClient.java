@@ -288,6 +288,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param attachInstancesRequest
+     *        Contains the parameters for AttachInstances.
      * @return Result of the AttachInstances operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -348,6 +349,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param attachLoadBalancerTargetGroupsRequest
+     *        Contains the parameters for AttachLoadBalancerTargetGroups.
      * @return Result of the AttachLoadBalancerTargetGroups operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -411,6 +413,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param attachLoadBalancersRequest
+     *        Contains the parameters for AttachLoadBalancers.
      * @return Result of the AttachLoadBalancers operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -504,6 +507,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param completeLifecycleActionRequest
+     *        Contains the parameters for CompleteLifecycleAction.
      * @return Result of the CompleteLifecycleAction operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -564,6 +568,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param createAutoScalingGroupRequest
+     *        Contains the parameters for CreateAutoScalingGroup.
      * @return Result of the CreateAutoScalingGroup operation returned by the service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration with this name.
@@ -629,6 +634,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param createLaunchConfigurationRequest
+     *        Contains the parameters for CreateLaunchConfiguration.
      * @return Result of the CreateLaunchConfiguration operation returned by the service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration with this name.
@@ -694,6 +700,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param createOrUpdateTagsRequest
+     *        Contains the parameters for CreateOrUpdateTags.
      * @return Result of the CreateOrUpdateTags operation returned by the service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
@@ -703,6 +710,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ResourceInUseException
+     *         The operation can't be performed because the resource is in use.
      * @sample AmazonAutoScaling.CreateOrUpdateTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags" target="_top">AWS
      *      API Documentation</a>
@@ -767,6 +776,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param deleteAutoScalingGroupRequest
+     *        Contains the parameters for DeleteAutoScalingGroup.
      * @return Result of the DeleteAutoScalingGroup operation returned by the service.
      * @throws ScalingActivityInProgressException
      *         The operation can't be performed because there are scaling activities in progress.
@@ -826,6 +836,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param deleteLaunchConfigurationRequest
+     *        Contains the parameters for DeleteLaunchConfiguration.
      * @return Result of the DeleteLaunchConfiguration operation returned by the service.
      * @throws ResourceInUseException
      *         The operation can't be performed because the resource is in use.
@@ -883,6 +894,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param deleteLifecycleHookRequest
+     *        Contains the parameters for DeleteLifecycleHook.
      * @return Result of the DeleteLifecycleHook operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -934,6 +946,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param deleteNotificationConfigurationRequest
+     *        Contains the parameters for DeleteNotificationConfiguration.
      * @return Result of the DeleteNotificationConfiguration operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -990,6 +1003,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param deletePolicyRequest
+     *        Contains the parameters for DeletePolicy.
      * @return Result of the DeletePolicy operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -1040,6 +1054,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param deleteScheduledActionRequest
+     *        Contains the parameters for DeleteScheduledAction.
      * @return Result of the DeleteScheduledAction operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -1091,10 +1106,13 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param deleteTagsRequest
+     *        Contains the parameters for DeleteTags.
      * @return Result of the DeleteTags operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ResourceInUseException
+     *         The operation can't be performed because the resource is in use.
      * @sample AmazonAutoScaling.DeleteTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags" target="_top">AWS API
      *      Documentation</a>
@@ -1258,6 +1276,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeAutoScalingGroupsRequest
+     *        Contains the parameters for DescribeAutoScalingGroups.
      * @return Result of the DescribeAutoScalingGroups operation returned by the service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
@@ -1316,6 +1335,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeAutoScalingInstancesRequest
+     *        Contains the parameters for DescribeAutoScalingInstances.
      * @return Result of the DescribeAutoScalingInstances operation returned by the service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
@@ -1432,6 +1452,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeLaunchConfigurationsRequest
+     *        Contains the parameters for DescribeLaunchConfigurations.
      * @return Result of the DescribeLaunchConfigurations operation returned by the service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
@@ -1546,6 +1567,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeLifecycleHooksRequest
+     *        Contains the parameters for DescribeLifecycleHooks.
      * @return Result of the DescribeLifecycleHooks operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -1597,6 +1619,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeLoadBalancerTargetGroupsRequest
+     *        Contains the parameters for DescribeLoadBalancerTargetGroups.
      * @return Result of the DescribeLoadBalancerTargetGroups operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -1653,6 +1676,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeLoadBalancersRequest
+     *        Contains the parameters for DescribeLoadBalancers.
      * @return Result of the DescribeLoadBalancers operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -1764,6 +1788,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeNotificationConfigurationsRequest
+     *        Contains the parameters for DescribeNotificationConfigurations.
      * @return Result of the DescribeNotificationConfigurations operation returned by the service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
@@ -1824,6 +1849,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describePoliciesRequest
+     *        Contains the parameters for DescribePolicies.
      * @return Result of the DescribePolicies operation returned by the service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
@@ -1882,6 +1908,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeScalingActivitiesRequest
+     *        Contains the parameters for DescribeScalingActivities.
      * @return Result of the DescribeScalingActivities operation returned by the service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
@@ -1997,6 +2024,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeScheduledActionsRequest
+     *        Contains the parameters for DescribeScheduledActions.
      * @return Result of the DescribeScheduledActions operation returned by the service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
@@ -2064,6 +2092,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeTagsRequest
+     *        Contains the parameters for DescribeTags.
      * @return Result of the DescribeTags operation returned by the service.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value is not valid.
@@ -2176,7 +2205,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Removes one or more instances from the specified Auto Scaling group.
      * </p>
      * <p>
-     * After the instances are detached, you can manage them independent of the Auto Scaling group.
+     * After the instances are detached, you can manage them independently from the rest of the Auto Scaling group.
      * </p>
      * <p>
      * If you do not specify the option to decrement the desired capacity, Auto Scaling launches instances to replace
@@ -2194,6 +2223,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param detachInstancesRequest
+     *        Contains the parameters for DetachInstances.
      * @return Result of the DetachInstances operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -2305,6 +2335,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param detachLoadBalancersRequest
+     *        Contains the parameters for DetachLoadBalancers.
      * @return Result of the DetachLoadBalancers operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -2361,6 +2392,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param disableMetricsCollectionRequest
+     *        Contains the parameters for DisableMetricsCollection.
      * @return Result of the DisableMetricsCollection operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -2414,6 +2446,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param enableMetricsCollectionRequest
+     *        Contains the parameters for EnableMetricsCollection.
      * @return Result of the EnableMetricsCollection operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -2461,15 +2494,16 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Moves the specified instances into the standby state.
+     * Moves the specified instances into <code>Standby</code> mode.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily Removing
-     * Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
+     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param enterStandbyRequest
+     *        Contains the parameters for EnteStandby.
      * @return Result of the EnterStandby operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -2520,6 +2554,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param executePolicyRequest
+     *        Contains the parameters for ExecutePolicy.
      * @return Result of the ExecutePolicy operation returned by the service.
      * @throws ScalingActivityInProgressException
      *         The operation can't be performed because there are scaling activities in progress.
@@ -2568,15 +2603,16 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Moves the specified instances out of the standby state.
+     * Moves the specified instances out of <code>Standby</code> mode.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily Removing
-     * Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
+     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param exitStandbyRequest
+     *        Contains the parameters for ExitStandby.
      * @return Result of the ExitStandby operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -2674,6 +2710,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param putLifecycleHookRequest
+     *        Contains the parameters for PutLifecycleHook.
      * @return Result of the PutLifecycleHook operation returned by the service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
@@ -2737,6 +2774,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param putNotificationConfigurationRequest
+     *        Contains the parameters for PutNotificationConfiguration.
      * @return Result of the PutNotificationConfiguration operation returned by the service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
@@ -2799,6 +2837,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param putScalingPolicyRequest
+     *        Contains the parameters for PutScalingPolicy.
      * @return Result of the PutScalingPolicy operation returned by the service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
@@ -2859,6 +2898,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param putScheduledUpdateGroupActionRequest
+     *        Contains the parameters for PutScheduledUpdateGroupAction.
      * @return Result of the PutScheduledUpdateGroupAction operation returned by the service.
      * @throws AlreadyExistsException
      *         You already have an Auto Scaling group or launch configuration with this name.
@@ -2953,6 +2993,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param recordLifecycleActionHeartbeatRequest
+     *        Contains the parameters for RecordLifecycleActionHeartbeat.
      * @return Result of the RecordLifecycleActionHeartbeat operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -3010,6 +3051,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param resumeProcessesRequest
+     *        Contains the parameters for SuspendProcesses and ResumeProcesses.
      * @return Result of the ResumeProcesses operation returned by the service.
      * @throws ResourceInUseException
      *         The operation can't be performed because the resource is in use.
@@ -3068,6 +3110,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param setDesiredCapacityRequest
+     *        Contains the parameters for SetDesiredCapacity.
      * @return Result of the SetDesiredCapacity operation returned by the service.
      * @throws ScalingActivityInProgressException
      *         The operation can't be performed because there are scaling activities in progress.
@@ -3126,6 +3169,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param setInstanceHealthRequest
+     *        Contains the parameters for SetInstanceHealth.
      * @return Result of the SetInstanceHealth operation returned by the service.
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
@@ -3182,6 +3226,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param setInstanceProtectionRequest
+     *        Contains the parameters for SetInstanceProtection.
      * @return Result of the SetInstanceProtection operation returned by the service.
      * @throws LimitExceededException
      *         You have already reached a limit for your Auto Scaling resources (for example, groups, launch
@@ -3248,6 +3293,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param suspendProcessesRequest
+     *        Contains the parameters for SuspendProcesses and ResumeProcesses.
      * @return Result of the SuspendProcesses operation returned by the service.
      * @throws ResourceInUseException
      *         The operation can't be performed because the resource is in use.
@@ -3304,6 +3350,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param terminateInstanceInAutoScalingGroupRequest
+     *        Contains the parameters for TerminateInstanceInAutoScalingGroup.
      * @return Result of the TerminateInstanceInAutoScalingGroup operation returned by the service.
      * @throws ScalingActivityInProgressException
      *         The operation can't be performed because there are scaling activities in progress.
@@ -3358,14 +3405,14 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * Updates the configuration for the specified Auto Scaling group.
      * </p>
      * <p>
-     * The new settings take effect on any scaling activities after this call returns. Scaling activities that are
-     * currently in progress aren't affected.
-     * </p>
-     * <p>
      * To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to
-     * <code>false</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If
+     * <code>False</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If
      * you have previously enabled the collection of group metrics, you can disable it using
      * <a>DisableMetricsCollection</a>.
+     * </p>
+     * <p>
+     * The new settings are registered upon the completion of this call. Any launch configuration settings take effect
+     * on any triggers after this call returns. Scaling activities that are currently in progress aren't affected.
      * </p>
      * <p>
      * Note the following:
@@ -3393,6 +3440,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * </ul>
      * 
      * @param updateAutoScalingGroupRequest
+     *        Contains the parameters for UpdateAutoScalingGroup.
      * @return Result of the UpdateAutoScalingGroup operation returned by the service.
      * @throws ScalingActivityInProgressException
      *         The operation can't be performed because there are scaling activities in progress.

@@ -80,8 +80,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private Integer scalingAdjustment;
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
-     * can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
+     * activities can start.
      * </p>
      */
     private Integer cooldown;
@@ -110,6 +110,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Alarm> alarms;
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     */
+    private TargetTrackingConfiguration targetTrackingConfiguration;
 
     /**
      * <p>
@@ -457,13 +463,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
-     * can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
+     * activities can start.
      * </p>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling
-     *        activities can start.
+     *        The amount of time, in seconds, after a scaling activity completes before any further trigger-related
+     *        scaling activities can start.
      */
 
     public void setCooldown(Integer cooldown) {
@@ -472,12 +478,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
-     * can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
+     * activities can start.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling
-     *         activities can start.
+     * @return The amount of time, in seconds, after a scaling activity completes before any further trigger-related
+     *         scaling activities can start.
      */
 
     public Integer getCooldown() {
@@ -486,13 +492,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
-     * can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
+     * activities can start.
      * </p>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling
-     *        activities can start.
+     *        The amount of time, in seconds, after a scaling activity completes before any further trigger-related
+     *        scaling activities can start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -734,6 +740,46 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * 
+     * @param targetTrackingConfiguration
+     *        A target tracking policy.
+     */
+
+    public void setTargetTrackingConfiguration(TargetTrackingConfiguration targetTrackingConfiguration) {
+        this.targetTrackingConfiguration = targetTrackingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * 
+     * @return A target tracking policy.
+     */
+
+    public TargetTrackingConfiguration getTargetTrackingConfiguration() {
+        return this.targetTrackingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A target tracking policy.
+     * </p>
+     * 
+     * @param targetTrackingConfiguration
+     *        A target tracking policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingPolicy withTargetTrackingConfiguration(TargetTrackingConfiguration targetTrackingConfiguration) {
+        setTargetTrackingConfiguration(targetTrackingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -769,7 +815,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
         if (getEstimatedInstanceWarmup() != null)
             sb.append("EstimatedInstanceWarmup: ").append(getEstimatedInstanceWarmup()).append(",");
         if (getAlarms() != null)
-            sb.append("Alarms: ").append(getAlarms());
+            sb.append("Alarms: ").append(getAlarms()).append(",");
+        if (getTargetTrackingConfiguration() != null)
+            sb.append("TargetTrackingConfiguration: ").append(getTargetTrackingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -836,6 +884,10 @@ public class ScalingPolicy implements Serializable, Cloneable {
             return false;
         if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
             return false;
+        if (other.getTargetTrackingConfiguration() == null ^ this.getTargetTrackingConfiguration() == null)
+            return false;
+        if (other.getTargetTrackingConfiguration() != null && other.getTargetTrackingConfiguration().equals(this.getTargetTrackingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -857,6 +909,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMetricAggregationType() == null) ? 0 : getMetricAggregationType().hashCode());
         hashCode = prime * hashCode + ((getEstimatedInstanceWarmup() == null) ? 0 : getEstimatedInstanceWarmup().hashCode());
         hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
+        hashCode = prime * hashCode + ((getTargetTrackingConfiguration() == null) ? 0 : getTargetTrackingConfiguration().hashCode());
         return hashCode;
     }
 

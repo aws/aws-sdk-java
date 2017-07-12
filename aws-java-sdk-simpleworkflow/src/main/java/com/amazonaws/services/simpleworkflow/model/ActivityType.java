@@ -32,14 +32,22 @@ public class ActivityType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of this activity.
      * </p>
-     * <note>The combination of activity type name and version must be unique within a domain.</note>
+     * <note>
+     * <p>
+     * The combination of activity type name and version must be unique within a domain.
+     * </p>
+     * </note>
      */
     private String name;
     /**
      * <p>
      * The version of this activity.
      * </p>
-     * <note>The combination of activity type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of activity type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      */
     private String version;
 
@@ -47,11 +55,17 @@ public class ActivityType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of this activity.
      * </p>
-     * <note>The combination of activity type name and version must be unique within a domain.</note>
+     * <note>
+     * <p>
+     * The combination of activity type name and version must be unique within a domain.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        The name of this activity.</p> <note>The combination of activity type name and version must be unique
-     *        within a domain.
+     *        The name of this activity.</p> <note>
+     *        <p>
+     *        The combination of activity type name and version must be unique within a domain.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -62,10 +76,16 @@ public class ActivityType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of this activity.
      * </p>
-     * <note>The combination of activity type name and version must be unique within a domain.</note>
+     * <note>
+     * <p>
+     * The combination of activity type name and version must be unique within a domain.
+     * </p>
+     * </note>
      * 
-     * @return The name of this activity.</p> <note>The combination of activity type name and version must be unique
-     *         within a domain.
+     * @return The name of this activity.</p> <note>
+     *         <p>
+     *         The combination of activity type name and version must be unique within a domain.
+     *         </p>
      */
 
     public String getName() {
@@ -76,11 +96,17 @@ public class ActivityType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of this activity.
      * </p>
-     * <note>The combination of activity type name and version must be unique within a domain.</note>
+     * <note>
+     * <p>
+     * The combination of activity type name and version must be unique within a domain.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        The name of this activity.</p> <note>The combination of activity type name and version must be unique
-     *        within a domain.
+     *        The name of this activity.</p> <note>
+     *        <p>
+     *        The combination of activity type name and version must be unique within a domain.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +119,17 @@ public class ActivityType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version of this activity.
      * </p>
-     * <note>The combination of activity type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of activity type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      * 
      * @param version
-     *        The version of this activity.</p> <note>The combination of activity type name and version must be unique
-     *        with in a domain.
+     *        The version of this activity.</p> <note>
+     *        <p>
+     *        The combination of activity type name and version must be unique with in a domain.
+     *        </p>
      */
 
     public void setVersion(String version) {
@@ -108,10 +140,16 @@ public class ActivityType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version of this activity.
      * </p>
-     * <note>The combination of activity type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of activity type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      * 
-     * @return The version of this activity.</p> <note>The combination of activity type name and version must be unique
-     *         with in a domain.
+     * @return The version of this activity.</p> <note>
+     *         <p>
+     *         The combination of activity type name and version must be unique with in a domain.
+     *         </p>
      */
 
     public String getVersion() {
@@ -122,11 +160,17 @@ public class ActivityType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The version of this activity.
      * </p>
-     * <note>The combination of activity type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of activity type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      * 
      * @param version
-     *        The version of this activity.</p> <note>The combination of activity type name and version must be unique
-     *        with in a domain.
+     *        The version of this activity.</p> <note>
+     *        <p>
+     *        The combination of activity type name and version must be unique with in a domain.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

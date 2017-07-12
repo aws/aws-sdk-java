@@ -30,27 +30,42 @@ public class WorkflowType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> The name of the workflow type.
+     * The name of the workflow type.
      * </p>
-     * <note>The combination of workflow type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of workflow type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      */
     private String name;
     /**
      * <p>
-     * <b>Required.</b> The version of the workflow type.
+     * The version of the workflow type.
      * </p>
-     * <note>The combination of workflow type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of workflow type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      */
     private String version;
 
     /**
      * <p>
-     * <b>Required.</b> The name of the workflow type.
+     * The name of the workflow type.
      * </p>
-     * <note>The combination of workflow type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of workflow type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        Required.</b> The name of the workflow type.</p>
+     *        The name of the workflow type.</p> <note>
+     *        <p>
+     *        The combination of workflow type name and version must be unique with in a domain.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -59,11 +74,18 @@ public class WorkflowType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> The name of the workflow type.
+     * The name of the workflow type.
      * </p>
-     * <note>The combination of workflow type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of workflow type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      * 
-     * @return Required.</b> The name of the workflow type.</p>
+     * @return The name of the workflow type.</p> <note>
+     *         <p>
+     *         The combination of workflow type name and version must be unique with in a domain.
+     *         </p>
      */
 
     public String getName() {
@@ -72,12 +94,19 @@ public class WorkflowType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> The name of the workflow type.
+     * The name of the workflow type.
      * </p>
-     * <note>The combination of workflow type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of workflow type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        Required.</b> The name of the workflow type.</p>
+     *        The name of the workflow type.</p> <note>
+     *        <p>
+     *        The combination of workflow type name and version must be unique with in a domain.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,12 +117,19 @@ public class WorkflowType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> The version of the workflow type.
+     * The version of the workflow type.
      * </p>
-     * <note>The combination of workflow type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of workflow type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      * 
      * @param version
-     *        Required.</b> The version of the workflow type.</p>
+     *        The version of the workflow type.</p> <note>
+     *        <p>
+     *        The combination of workflow type name and version must be unique with in a domain.
+     *        </p>
      */
 
     public void setVersion(String version) {
@@ -102,11 +138,18 @@ public class WorkflowType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> The version of the workflow type.
+     * The version of the workflow type.
      * </p>
-     * <note>The combination of workflow type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of workflow type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      * 
-     * @return Required.</b> The version of the workflow type.</p>
+     * @return The version of the workflow type.</p> <note>
+     *         <p>
+     *         The combination of workflow type name and version must be unique with in a domain.
+     *         </p>
      */
 
     public String getVersion() {
@@ -115,12 +158,19 @@ public class WorkflowType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> The version of the workflow type.
+     * The version of the workflow type.
      * </p>
-     * <note>The combination of workflow type name and version must be unique with in a domain.</note>
+     * <note>
+     * <p>
+     * The combination of workflow type name and version must be unique with in a domain.
+     * </p>
+     * </note>
      * 
      * @param version
-     *        Required.</b> The version of the workflow type.</p>
+     *        The version of the workflow type.</p> <note>
+     *        <p>
+     *        The combination of workflow type name and version must be unique with in a domain.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

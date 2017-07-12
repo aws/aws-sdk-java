@@ -23,16 +23,18 @@ import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
 import com.amazonaws.services.securitytoken.model.AssumeRoleRequest;
 import com.amazonaws.services.securitytoken.model.AssumeRoleResult;
 import com.amazonaws.util.ValidationUtils;
-
+import java.io.Closeable;
 import java.util.concurrent.Callable;
 
 /**
  * AWSCredentialsProvider implementation that uses the AWS Security Token Service to assume a Role
  * and create temporary, short-lived sessions to use for authentication.
+ *
+ * This credentials provider uses a background thread to refresh credentials. This background thread can be shut down via the
+ * {@link #close()} method when the credentials provider is no longer used.
  */
 @ThreadSafe
-public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCredentialsProvider {
-
+public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCredentialsProvider, Closeable {
     /**
      * Default duration for started sessions.
      */
@@ -318,6 +320,15 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
 
         AssumeRoleResult assumeRoleResult = securityTokenService.assumeRole(assumeRoleRequest);
         return new SessionCredentialsHolder(assumeRoleResult.getCredentials());
+    }
+
+    /**
+     * Shut down this credentials provider, shutting down the thread that performs asynchronous credential refreshing. This
+     * should not be invoked if the credentials provider is still in use by an AWS client.
+     */
+    @Override
+    public void close() {
+        refreshableTask.close();
     }
 
     /**

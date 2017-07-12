@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>SignalExternalWorkflowExecution</code> decision.
+ * Provides the details of the <code>SignalExternalWorkflowExecution</code> decision.
  * </p>
  * <p>
  * <b>Access Control</b>
@@ -28,16 +28,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
  * </p>
  * <ul>
- * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
- * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * <li>
+ * <p>
+ * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use an <code>Action</code> element to allow or deny permission to call this action.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You cannot use an IAM policy to constrain this action's parameters.
+ * </p>
+ * </li>
  * </ul>
  * <p>
- * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the
- * specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to
- * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+ * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the
+ * specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to
+ * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
- * Amazon SWF Workflows</a>.
+ * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
  * 
  * @see <a
@@ -49,7 +61,7 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the workflow execution to be signaled.
+     * The <code>workflowId</code> of the workflow execution to be signaled.
      * </p>
      */
     private String workflowId;
@@ -61,32 +73,31 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
     private String runId;
     /**
      * <p>
-     * <b>Required.</b> The name of the signal.The target workflow execution will use the signal name and input to
-     * process the signal.
+     * The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      * </p>
      */
     private String signalName;
     /**
      * <p>
-     * <i>Optional.</i> Input data to be provided with the signal. The target workflow execution will use the signal
-     * name and input data to process the signal.
+     * The input data to be provided with the signal. The target workflow execution uses the signal name and input data
+     * to process the signal.
      * </p>
      */
     private String input;
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent decision tasks.
+     * The data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      */
     private String control;
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the workflow execution to be signaled.
+     * The <code>workflowId</code> of the workflow execution to be signaled.
      * </p>
      * 
      * @param workflowId
-     *        Required.</b> The <code>workflowId
+     *        The <code>workflowId</code> of the workflow execution to be signaled.
      */
 
     public void setWorkflowId(String workflowId) {
@@ -95,10 +106,10 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the workflow execution to be signaled.
+     * The <code>workflowId</code> of the workflow execution to be signaled.
      * </p>
      * 
-     * @return Required.</b> The <code>workflowId
+     * @return The <code>workflowId</code> of the workflow execution to be signaled.
      */
 
     public String getWorkflowId() {
@@ -107,11 +118,11 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the workflow execution to be signaled.
+     * The <code>workflowId</code> of the workflow execution to be signaled.
      * </p>
      * 
      * @param workflowId
-     *        Required.</b> The <code>workflowId
+     *        The <code>workflowId</code> of the workflow execution to be signaled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,12 +173,11 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <b>Required.</b> The name of the signal.The target workflow execution will use the signal name and input to
-     * process the signal.
+     * The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      * </p>
      * 
      * @param signalName
-     *        Required.
+     *        The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      */
 
     public void setSignalName(String signalName) {
@@ -176,11 +186,11 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <b>Required.</b> The name of the signal.The target workflow execution will use the signal name and input to
-     * process the signal.
+     * The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      * </p>
      * 
-     * @return Required.
+     * @return The name of the signal.The target workflow execution uses the signal name and input to process the
+     *         signal.
      */
 
     public String getSignalName() {
@@ -189,12 +199,11 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <b>Required.</b> The name of the signal.The target workflow execution will use the signal name and input to
-     * process the signal.
+     * The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      * </p>
      * 
      * @param signalName
-     *        Required.
+     *        The name of the signal.The target workflow execution uses the signal name and input to process the signal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,12 +214,13 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <i>Optional.</i> Input data to be provided with the signal. The target workflow execution will use the signal
-     * name and input data to process the signal.
+     * The input data to be provided with the signal. The target workflow execution uses the signal name and input data
+     * to process the signal.
      * </p>
      * 
      * @param input
-     *        Optional.
+     *        The input data to be provided with the signal. The target workflow execution uses the signal name and
+     *        input data to process the signal.
      */
 
     public void setInput(String input) {
@@ -219,11 +229,12 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <i>Optional.</i> Input data to be provided with the signal. The target workflow execution will use the signal
-     * name and input data to process the signal.
+     * The input data to be provided with the signal. The target workflow execution uses the signal name and input data
+     * to process the signal.
      * </p>
      * 
-     * @return Optional.
+     * @return The input data to be provided with the signal. The target workflow execution uses the signal name and
+     *         input data to process the signal.
      */
 
     public String getInput() {
@@ -232,12 +243,13 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <i>Optional.</i> Input data to be provided with the signal. The target workflow execution will use the signal
-     * name and input data to process the signal.
+     * The input data to be provided with the signal. The target workflow execution uses the signal name and input data
+     * to process the signal.
      * </p>
      * 
      * @param input
-     *        Optional.
+     *        The input data to be provided with the signal. The target workflow execution uses the signal name and
+     *        input data to process the signal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,11 +260,11 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent decision tasks.
+     * The data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        The data attached to the event that can be used by the decider in subsequent decision tasks.
      */
 
     public void setControl(String control) {
@@ -261,10 +273,10 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent decision tasks.
+     * The data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
-     * @return Optional.
+     * @return The data attached to the event that can be used by the decider in subsequent decision tasks.
      */
 
     public String getControl() {
@@ -273,11 +285,11 @@ public class SignalExternalWorkflowExecutionDecisionAttributes implements Serial
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent decision tasks.
+     * The data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        The data attached to the event that can be used by the decider in subsequent decision tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

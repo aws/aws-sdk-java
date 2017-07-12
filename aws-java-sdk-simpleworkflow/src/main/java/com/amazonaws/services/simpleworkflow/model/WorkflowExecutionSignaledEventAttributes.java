@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>WorkflowExecutionSignaled</code> event.
+ * Provides the details of the <code>WorkflowExecutionSignaled</code> event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionSignaledEventAttributes"
@@ -37,8 +37,8 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
     private String signalName;
     /**
      * <p>
-     * Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to
-     * process the signal.
+     * The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process
+     * the signal.
      * </p>
      */
     private String input;
@@ -108,13 +108,13 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to
-     * process the signal.
+     * The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process
+     * the signal.
      * </p>
      * 
      * @param input
-     *        Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how
-     *        to process the signal.
+     *        The inputs provided with the signal. The decider can use the signal name and inputs to determine how to
+     *        process the signal.
      */
 
     public void setInput(String input) {
@@ -123,12 +123,12 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to
-     * process the signal.
+     * The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process
+     * the signal.
      * </p>
      * 
-     * @return Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how
-     *         to process the signal.
+     * @return The inputs provided with the signal. The decider can use the signal name and inputs to determine how to
+     *         process the signal.
      */
 
     public String getInput() {
@@ -137,13 +137,13 @@ public class WorkflowExecutionSignaledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how to
-     * process the signal.
+     * The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process
+     * the signal.
      * </p>
      * 
      * @param input
-     *        Inputs provided with the signal (if any). The decider can use the signal name and inputs to determine how
-     *        to process the signal.
+     *        The inputs provided with the signal. The decider can use the signal name and inputs to determine how to
+     *        process the signal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

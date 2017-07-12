@@ -1,3 +1,19 @@
+# __1.11.161__ __2017-07-12__
+## __AWS Security Token Service__
+  - ### Features
+    - Added the ability to close `STSAssumeRoleSessionCredentialProvider`s and `STSSessionCredentialProvider`s in order to immediately release the thread used for asynchronous credential refreshes.
+
+  - ### Bugfixes
+    - Fixed thread and memory leak triggered by creating a large number of `STSAssumeRoleSessionCredentialProvider`s and `STSSessionCredentialProvider`s.
+
+## __Amazon Simple Workflow Service (SWF)__
+  - ### Features
+    - Added support for attaching control data to Lambda tasks. Control data lets you attach arbitrary strings to your decisions and history events.
+
+## __Auto Scaling__
+  - ### Features
+    - Auto Scaling now supports a new type of scaling policy called target tracking scaling policies that you can use to set up dynamic scaling for your application.
+
 # __1.11.160__ __2017-07-06__
 ## __AWS Directory Service__
   - ### Features

@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Contains the parameters for CreateLaunchConfiguration.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -33,13 +36,7 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     private String launchConfigurationName;
     /**
      * <p>
-     * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p>
-     * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -98,12 +95,11 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     private String userData;
     /**
      * <p>
-     * The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes
-     * from the instance, with the exception of the block device mapping.
+     * The ID of the instance to use to create the launch configuration.
      * </p>
      * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
-     * <code>InstanceType</code>.
+     * The new launch configuration derives attributes from the instance, with the exception of the block device
+     * mapping.
      * </p>
      * <p>
      * To create a launch configuration with a block device mapping or override any other instance attributes, specify
@@ -118,14 +114,8 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     private String instanceId;
     /**
      * <p>
-     * The instance type of the EC2 instance.
-     * </p>
-     * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * The instance type of the EC2 instance. For information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"> Available
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      */
@@ -153,7 +143,7 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling
-     * instances. The default is <code>true</code>.
+     * instances.
      * </p>
      */
     private InstanceMonitoring instanceMonitoring;
@@ -273,24 +263,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p>
-     * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param imageId
-     *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.</p>
-     *        <p>
-     *        If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.
-     *        </p>
-     *        <p>
-     *        For more information, see <a
+     *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
@@ -301,25 +280,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p>
-     * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.</p>
-     *         <p>
-     *         If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.
-     *         </p>
-     *         <p>
-     *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see
+     *         <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in
+     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getImageId() {
@@ -328,24 +296,13 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p>
-     * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the <i>Amazon
      * Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param imageId
-     *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.</p>
-     *        <p>
-     *        If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.
-     *        </p>
-     *        <p>
-     *        For more information, see <a
+     *        The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
      *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -774,12 +731,11 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes
-     * from the instance, with the exception of the block device mapping.
+     * The ID of the instance to use to create the launch configuration.
      * </p>
      * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
-     * <code>InstanceType</code>.
+     * The new launch configuration derives attributes from the instance, with the exception of the block device
+     * mapping.
      * </p>
      * <p>
      * To create a launch configuration with a block device mapping or override any other instance attributes, specify
@@ -792,11 +748,10 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance to use to create the launch configuration. The new launch configuration derives
-     *        attributes from the instance, with the exception of the block device mapping.</p>
+     *        The ID of the instance to use to create the launch configuration.</p>
      *        <p>
-     *        If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
-     *        <code>InstanceType</code>.
+     *        The new launch configuration derives attributes from the instance, with the exception of the block device
+     *        mapping.
      *        </p>
      *        <p>
      *        To create a launch configuration with a block device mapping or override any other instance attributes,
@@ -814,12 +769,11 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes
-     * from the instance, with the exception of the block device mapping.
+     * The ID of the instance to use to create the launch configuration.
      * </p>
      * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
-     * <code>InstanceType</code>.
+     * The new launch configuration derives attributes from the instance, with the exception of the block device
+     * mapping.
      * </p>
      * <p>
      * To create a launch configuration with a block device mapping or override any other instance attributes, specify
@@ -831,11 +785,10 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The ID of the instance to use to create the launch configuration. The new launch configuration derives
-     *         attributes from the instance, with the exception of the block device mapping.</p>
+     * @return The ID of the instance to use to create the launch configuration.</p>
      *         <p>
-     *         If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
-     *         <code>InstanceType</code>.
+     *         The new launch configuration derives attributes from the instance, with the exception of the block device
+     *         mapping.
      *         </p>
      *         <p>
      *         To create a launch configuration with a block device mapping or override any other instance attributes,
@@ -853,12 +806,11 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes
-     * from the instance, with the exception of the block device mapping.
+     * The ID of the instance to use to create the launch configuration.
      * </p>
      * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
-     * <code>InstanceType</code>.
+     * The new launch configuration derives attributes from the instance, with the exception of the block device
+     * mapping.
      * </p>
      * <p>
      * To create a launch configuration with a block device mapping or override any other instance attributes, specify
@@ -871,11 +823,10 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance to use to create the launch configuration. The new launch configuration derives
-     *        attributes from the instance, with the exception of the block device mapping.</p>
+     *        The ID of the instance to use to create the launch configuration.</p>
      *        <p>
-     *        If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and
-     *        <code>InstanceType</code>.
+     *        The new launch configuration derives attributes from the instance, with the exception of the block device
+     *        mapping.
      *        </p>
      *        <p>
      *        To create a launch configuration with a block device mapping or override any other instance attributes,
@@ -895,26 +846,15 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The instance type of the EC2 instance.
-     * </p>
-     * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * The instance type of the EC2 instance. For information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"> Available
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
      * @param instanceType
-     *        The instance type of the EC2 instance.</p>
-     *        <p>
-     *        If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
-     *        </p>
-     *        <p>
-     *        For information about available instance types, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *        The instance type of the EC2 instance. For information about available instance types, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
+     *        Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      */
 
     public void setInstanceType(String instanceType) {
@@ -923,25 +863,14 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The instance type of the EC2 instance.
-     * </p>
-     * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * The instance type of the EC2 instance. For information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"> Available
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
-     * @return The instance type of the EC2 instance.</p>
-     *         <p>
-     *         If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
-     *         </p>
-     *         <p>
-     *         For information about available instance types, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *         >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     * @return The instance type of the EC2 instance. For information about available instance types, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
+     *         Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      */
 
     public String getInstanceType() {
@@ -950,26 +879,15 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The instance type of the EC2 instance.
-     * </p>
-     * <p>
-     * If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
-     * </p>
-     * <p>
-     * For information about available instance types, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+     * The instance type of the EC2 instance. For information about available instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"> Available
      * Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * </p>
      * 
      * @param instanceType
-     *        The instance type of the EC2 instance.</p>
-     *        <p>
-     *        If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.
-     *        </p>
-     *        <p>
-     *        For information about available instance types, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes"
-     *        >Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
+     *        The instance type of the EC2 instance. For information about available instance types, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">
+     *        Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1150,12 +1068,12 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling
-     * instances. The default is <code>true</code>.
+     * instances.
      * </p>
      * 
      * @param instanceMonitoring
      *        Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto
-     *        Scaling instances. The default is <code>true</code>.
+     *        Scaling instances.
      */
 
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
@@ -1165,11 +1083,11 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling
-     * instances. The default is <code>true</code>.
+     * instances.
      * </p>
      * 
      * @return Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto
-     *         Scaling instances. The default is <code>true</code>.
+     *         Scaling instances.
      */
 
     public InstanceMonitoring getInstanceMonitoring() {
@@ -1179,12 +1097,12 @@ public class CreateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling
-     * instances. The default is <code>true</code>.
+     * instances.
      * </p>
      * 
      * @param instanceMonitoring
      *        Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto
-     *        Scaling instances. The default is <code>true</code>.
+     *        Scaling instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

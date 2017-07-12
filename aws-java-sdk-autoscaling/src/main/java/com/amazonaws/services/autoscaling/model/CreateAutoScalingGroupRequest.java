@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Contains the parameters for CreateAutoScalingGroup.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup" target="_top">AWS
  *      API Documentation</a>
@@ -69,8 +72,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
-     * desired capacity, the default is the minimum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group.
      * </p>
      */
     private Integer desiredCapacity;
@@ -458,14 +460,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
-     * desired capacity, the default is the minimum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group.
      * </p>
      * 
      * @param desiredCapacity
      *        The number of EC2 instances that should be running in the group. This number must be greater than or equal
-     *        to the minimum size of the group and less than or equal to the maximum size of the group. If you do not
-     *        specify a desired capacity, the default is the minimum size of the group.
+     *        to the minimum size of the group and less than or equal to the maximum size of the group.
      */
 
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -475,13 +475,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
-     * desired capacity, the default is the minimum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group.
      * </p>
      * 
      * @return The number of EC2 instances that should be running in the group. This number must be greater than or
-     *         equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do
-     *         not specify a desired capacity, the default is the minimum size of the group.
+     *         equal to the minimum size of the group and less than or equal to the maximum size of the group.
      */
 
     public Integer getDesiredCapacity() {
@@ -491,14 +489,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
-     * desired capacity, the default is the minimum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group.
      * </p>
      * 
      * @param desiredCapacity
      *        The number of EC2 instances that should be running in the group. This number must be greater than or equal
-     *        to the minimum size of the group and less than or equal to the maximum size of the group. If you do not
-     *        specify a desired capacity, the default is the minimum size of the group.
+     *        to the minimum size of the group and less than or equal to the maximum size of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

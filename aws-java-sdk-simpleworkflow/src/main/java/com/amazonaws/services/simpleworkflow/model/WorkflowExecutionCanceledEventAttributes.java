@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>WorkflowExecutionCanceled</code> event.
+ * Provides the details of the <code>WorkflowExecutionCanceled</code> event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionCanceledEventAttributes"
@@ -30,7 +30,7 @@ public class WorkflowExecutionCanceledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Details for the cancellation (if any).
+     * The details of the cancellation.
      * </p>
      */
     private String details;
@@ -45,11 +45,11 @@ public class WorkflowExecutionCanceledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Details for the cancellation (if any).
+     * The details of the cancellation.
      * </p>
      * 
      * @param details
-     *        Details for the cancellation (if any).
+     *        The details of the cancellation.
      */
 
     public void setDetails(String details) {
@@ -58,10 +58,10 @@ public class WorkflowExecutionCanceledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Details for the cancellation (if any).
+     * The details of the cancellation.
      * </p>
      * 
-     * @return Details for the cancellation (if any).
+     * @return The details of the cancellation.
      */
 
     public String getDetails() {
@@ -70,11 +70,11 @@ public class WorkflowExecutionCanceledEventAttributes implements Serializable, C
 
     /**
      * <p>
-     * Details for the cancellation (if any).
+     * The details of the cancellation.
      * </p>
      * 
      * @param details
-     *        Details for the cancellation (if any).
+     *        The details of the cancellation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>MarkerRecorded</code> event.
+ * Provides the details of the <code>MarkerRecorded</code> event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/MarkerRecordedEventAttributes" target="_top">AWS
@@ -36,7 +36,7 @@ public class MarkerRecordedEventAttributes implements Serializable, Cloneable, S
     private String markerName;
     /**
      * <p>
-     * Details of the marker (if any).
+     * The details of the marker.
      * </p>
      */
     private String details;
@@ -91,11 +91,11 @@ public class MarkerRecordedEventAttributes implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Details of the marker (if any).
+     * The details of the marker.
      * </p>
      * 
      * @param details
-     *        Details of the marker (if any).
+     *        The details of the marker.
      */
 
     public void setDetails(String details) {
@@ -104,10 +104,10 @@ public class MarkerRecordedEventAttributes implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Details of the marker (if any).
+     * The details of the marker.
      * </p>
      * 
-     * @return Details of the marker (if any).
+     * @return The details of the marker.
      */
 
     public String getDetails() {
@@ -116,11 +116,11 @@ public class MarkerRecordedEventAttributes implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Details of the marker (if any).
+     * The details of the marker.
      * </p>
      * 
      * @param details
-     *        Details of the marker (if any).
+     *        The details of the marker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,6 +25,7 @@
     },
     "authPolicyActions" : {
       "actionPrefix" : "ses",
+      "additionalOperations" : null,
       "fileNamePrefix" : "SimpleEmailService",
       "skip" : false
     },

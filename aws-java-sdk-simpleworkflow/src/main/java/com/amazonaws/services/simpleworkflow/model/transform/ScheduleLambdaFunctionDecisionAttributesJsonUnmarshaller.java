@@ -57,6 +57,10 @@ public class ScheduleLambdaFunctionDecisionAttributesJsonUnmarshaller implements
                     context.nextToken();
                     scheduleLambdaFunctionDecisionAttributes.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("control", targetDepth)) {
+                    context.nextToken();
+                    scheduleLambdaFunctionDecisionAttributes.setControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("input", targetDepth)) {
                     context.nextToken();
                     scheduleLambdaFunctionDecisionAttributes.setInput(context.getUnmarshaller(String.class).unmarshall(context));

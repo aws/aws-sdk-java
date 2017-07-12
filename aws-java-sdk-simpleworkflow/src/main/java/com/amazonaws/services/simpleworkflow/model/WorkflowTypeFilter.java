@@ -31,7 +31,7 @@ public class WorkflowTypeFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * <b>Required.</b> Name of the workflow type.
+     * Name of the workflow type.
      * </p>
      */
     private String name;
@@ -44,11 +44,11 @@ public class WorkflowTypeFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * <b>Required.</b> Name of the workflow type.
+     * Name of the workflow type.
      * </p>
      * 
      * @param name
-     *        Required.
+     *        Name of the workflow type.
      */
 
     public void setName(String name) {
@@ -57,10 +57,10 @@ public class WorkflowTypeFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * <b>Required.</b> Name of the workflow type.
+     * Name of the workflow type.
      * </p>
      * 
-     * @return Required.
+     * @return Name of the workflow type.
      */
 
     public String getName() {
@@ -69,11 +69,11 @@ public class WorkflowTypeFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * <b>Required.</b> Name of the workflow type.
+     * Name of the workflow type.
      * </p>
      * 
      * @param name
-     *        Required.
+     *        Name of the workflow type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

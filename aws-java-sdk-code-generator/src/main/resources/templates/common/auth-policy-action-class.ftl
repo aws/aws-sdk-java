@@ -20,6 +20,9 @@ import com.amazonaws.auth.policy.Action;
         /** Action for the ${operation} operation. */
         ${operation}("${actionPrefix}:${operation}"),
     </#list>
+    <#list additionalOperations as operation>
+        ${operation}("${actionPrefix}:${operation}"),
+    </#list>
 
     ;
 

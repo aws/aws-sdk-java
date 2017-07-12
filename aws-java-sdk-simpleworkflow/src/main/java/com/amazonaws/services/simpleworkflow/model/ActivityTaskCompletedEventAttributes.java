@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>ActivityTaskCompleted</code> event.
+ * Provides the details of the <code>ActivityTaskCompleted</code> event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ActivityTaskCompletedEventAttributes"
@@ -30,7 +30,7 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The results of the activity task (if any).
+     * The results of the activity task.
      * </p>
      */
     private String result;
@@ -52,11 +52,11 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The results of the activity task (if any).
+     * The results of the activity task.
      * </p>
      * 
      * @param result
-     *        The results of the activity task (if any).
+     *        The results of the activity task.
      */
 
     public void setResult(String result) {
@@ -65,10 +65,10 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The results of the activity task (if any).
+     * The results of the activity task.
      * </p>
      * 
-     * @return The results of the activity task (if any).
+     * @return The results of the activity task.
      */
 
     public String getResult() {
@@ -77,11 +77,11 @@ public class ActivityTaskCompletedEventAttributes implements Serializable, Clone
 
     /**
      * <p>
-     * The results of the activity task (if any).
+     * The results of the activity task.
      * </p>
      * 
      * @param result
-     *        The results of the activity task (if any).
+     *        The results of the activity task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

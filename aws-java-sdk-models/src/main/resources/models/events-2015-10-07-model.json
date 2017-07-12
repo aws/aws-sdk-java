@@ -1,3859 +1,1053 @@
 {
-  "authorizers" : { },
-  "metadata" : {
-    "apiVersion" : "2015-10-07",
-    "endpointPrefix" : "events",
-    "jsonVersion" : "1.1",
-    "protocol" : "json",
-    "resultWrapped" : false,
-    "serviceAbbreviation" : null,
-    "serviceFullName" : "Amazon CloudWatch Events",
-    "signatureVersion" : "v4",
-    "signingName" : "events",
-    "targetPrefix" : "AWSEvents",
-    "uid" : "events-2015-10-07",
-    "xmlNamespace" : null
+  "version":"2.0",
+  "metadata":{
+    "apiVersion":"2015-10-07",
+    "endpointPrefix":"events",
+    "jsonVersion":"1.1",
+    "protocol":"json",
+    "serviceFullName":"Amazon CloudWatch Events",
+    "signatureVersion":"v4",
+    "targetPrefix":"AWSEvents",
+    "uid":"events-2015-10-07"
   },
-  "operations" : {
-    "DeleteRule" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Deletes the specified rule.</p> <p>You must remove all targets from a rule using <a>RemoveTargets</a> before you can delete the rule.</p> <p>When you delete a rule, incoming events might continue to match to the deleted rule. Please allow a short period of time for changes to take effect.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ConcurrentModificationException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+  "operations":{
+    "DeleteRule":{
+      "name":"DeleteRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DeleteRuleRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DeleteRule",
-      "output" : null
+      "input":{"shape":"DeleteRuleRequest"},
+      "errors":[
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Deletes the specified rule.</p> <p>You must remove all targets from a rule using <a>RemoveTargets</a> before you can delete the rule.</p> <p>When you delete a rule, incoming events might continue to match to the deleted rule. Please allow a short period of time for changes to take effect.</p>"
     },
-    "DescribeEventBus" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Displays the external AWS accounts that are permitted to write events to your account using your account's event bus, and the associated policy. To enable your account to receive events from other accounts, use <a>PutPermission</a>.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DescribeEventBus":{
+      "name":"DescribeEventBus",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DescribeEventBusRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DescribeEventBus",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DescribeEventBusResponse"
-      }
+      "input":{"shape":"DescribeEventBusRequest"},
+      "output":{"shape":"DescribeEventBusResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Displays the external AWS accounts that are permitted to write events to your account using your account's event bus, and the associated policy. To enable your account to receive events from other accounts, use <a>PutPermission</a>.</p>"
     },
-    "DescribeRule" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Describes the specified rule.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DescribeRule":{
+      "name":"DescribeRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DescribeRuleRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DescribeRule",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DescribeRuleResponse"
-      }
+      "input":{"shape":"DescribeRuleRequest"},
+      "output":{"shape":"DescribeRuleResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Describes the specified rule.</p>"
     },
-    "DisableRule" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.</p> <p>When you disable a rule, incoming events might continue to match to the disabled rule. Please allow a short period of time for changes to take effect.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ConcurrentModificationException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DisableRule":{
+      "name":"DisableRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DisableRuleRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DisableRule",
-      "output" : null
+      "input":{"shape":"DisableRuleRequest"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.</p> <p>When you disable a rule, incoming events might continue to match to the disabled rule. Please allow a short period of time for changes to take effect.</p>"
     },
-    "EnableRule" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Enables the specified rule. If the rule does not exist, the operation fails.</p> <p>When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Please allow a short period of time for changes to take effect.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ConcurrentModificationException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "EnableRule":{
+      "name":"EnableRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "EnableRuleRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "EnableRule",
-      "output" : null
+      "input":{"shape":"EnableRuleRequest"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Enables the specified rule. If the rule does not exist, the operation fails.</p> <p>When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Please allow a short period of time for changes to take effect.</p>"
     },
-    "ListRuleNamesByTarget" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Lists the rules for the specified target. You can see which of the rules in Amazon CloudWatch Events can invoke a specific target in your account.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "ListRuleNamesByTarget":{
+      "name":"ListRuleNamesByTarget",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "ListRuleNamesByTargetRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "ListRuleNamesByTarget",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "ListRuleNamesByTargetResponse"
-      }
+      "input":{"shape":"ListRuleNamesByTargetRequest"},
+      "output":{"shape":"ListRuleNamesByTargetResponse"},
+      "errors":[
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Lists the rules for the specified target. You can see which of the rules in Amazon CloudWatch Events can invoke a specific target in your account.</p>"
     },
-    "ListRules" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Lists your Amazon CloudWatch Events rules. You can either list all the rules or you can provide a prefix to match to the rule names.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "ListRules":{
+      "name":"ListRules",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "ListRulesRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "ListRules",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "ListRulesResponse"
-      }
+      "input":{"shape":"ListRulesRequest"},
+      "output":{"shape":"ListRulesResponse"},
+      "errors":[
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Lists your Amazon CloudWatch Events rules. You can either list all the rules or you can provide a prefix to match to the rule names.</p>"
     },
-    "ListTargetsByRule" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Lists the targets assigned to the specified rule.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "ListTargetsByRule":{
+      "name":"ListTargetsByRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "ListTargetsByRuleRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "ListTargetsByRule",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "ListTargetsByRuleResponse"
-      }
+      "input":{"shape":"ListTargetsByRuleRequest"},
+      "output":{"shape":"ListTargetsByRuleResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Lists the targets assigned to the specified rule.</p>"
     },
-    "PutEvents" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Sends custom events to Amazon CloudWatch Events so that they can be matched to rules.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "PutEvents":{
+      "name":"PutEvents",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "PutEventsRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "PutEvents",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "PutEventsResponse"
-      }
+      "input":{"shape":"PutEventsRequest"},
+      "output":{"shape":"PutEventsResponse"},
+      "errors":[
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Sends custom events to Amazon CloudWatch Events so that they can be matched to rules.</p>"
     },
-    "PutPermission" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Running <code>PutPermission</code> permits the specified AWS account to put events to your account's default <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to your default event bus. </p> <p>For another account to send events to your account, that external account must have a CloudWatch Events rule with your account's default event bus as a target.</p> <p>To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for each of these accounts.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "PolicyLengthExceededException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "PutPermission":{
+      "name":"PutPermission",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "PutPermissionRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "PutPermission",
-      "output" : null
+      "input":{"shape":"PutPermissionRequest"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"PolicyLengthExceededException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Running <code>PutPermission</code> permits the specified AWS account to put events to your account's default <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to your default event bus. </p> <p>For another account to send events to your account, that external account must have a CloudWatch Events rule with your account's default event bus as a target.</p> <p>To enable multiple AWS accounts to put events to your default event bus, run <code>PutPermission</code> once for each of these accounts.</p>"
     },
-    "PutRule" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can disable a rule using <a>DisableRule</a>.</p> <p>When you create or update a rule, incoming events might not immediately start matching to new or updated rules. Please allow a short period of time for changes to take effect.</p> <p>A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as on a schedule.</p> <p>Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidEventPatternException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "LimitExceededException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ConcurrentModificationException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "PutRule":{
+      "name":"PutRule",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "PutRuleRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "PutRule",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "PutRuleResponse"
-      }
+      "input":{"shape":"PutRuleRequest"},
+      "output":{"shape":"PutRuleResponse"},
+      "errors":[
+        {"shape":"InvalidEventPatternException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can disable a rule using <a>DisableRule</a>.</p> <p>When you create or update a rule, incoming events might not immediately start matching to new or updated rules. Please allow a short period of time for changes to take effect.</p> <p>A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as on a schedule.</p> <p>Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.</p>"
     },
-    "PutTargets" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p> <p>Targets are the resources that are invoked when a rule is triggered.</p> <p>You can configure the following as targets for CloudWatch Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li> <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p> </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li> <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p> </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> </ul> <p>Note that creating rules with built-in targets is supported only in the AWS Management Console.</p> <p>For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon Kinesis stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html\">Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>), you can set that account's event bus as a target of the rules in your account. To send the matched events to the other account, specify that account's event bus as the <code>Arn</code> when you run <code>PutTargets</code>. For more information about enabling cross-account events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If none of the following arguments are specified for a target, then the entire event is passed to the target in JSON form (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event is passed to the target).</p> </li> <li> <p>If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.</p> </li> <li> <p>If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.</p> </li> </ul> <p>When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>, you must use JSON dot notation, not bracket notation.</p> <p>When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be immediately invoked. Please allow a short period of time for changes to take effect.</p> <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ConcurrentModificationException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "LimitExceededException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "PutTargets":{
+      "name":"PutTargets",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "PutTargetsRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "PutTargets",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "PutTargetsResponse"
-      }
+      "input":{"shape":"PutTargetsRequest"},
+      "output":{"shape":"PutTargetsResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p> <p>Targets are the resources that are invoked when a rule is triggered.</p> <p>You can configure the following as targets for CloudWatch Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li> <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p> </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li> <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p> </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> </ul> <p>Note that creating rules with built-in targets is supported only in the AWS Management Console.</p> <p>For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon Kinesis stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html\">Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>), you can set that account's event bus as a target of the rules in your account. To send the matched events to the other account, specify that account's event bus as the <code>Arn</code> when you run <code>PutTargets</code>. For more information about enabling cross-account events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If none of the following arguments are specified for a target, then the entire event is passed to the target in JSON form (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event is passed to the target).</p> </li> <li> <p>If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.</p> </li> <li> <p>If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.</p> </li> </ul> <p>When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>, you must use JSON dot notation, not bracket notation.</p> <p>When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be immediately invoked. Please allow a short period of time for changes to take effect.</p> <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>"
     },
-    "RemovePermission" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Revokes the permission of another AWS account to be able to put events to your default event bus. Specify the account to revoke by the <code>StatementId</code> value that you associated with the account when you granted it permission with <code>PutPermission</code>. You can find the <code>StatementId</code> by using <a>DescribeEventBus</a>.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "RemovePermission":{
+      "name":"RemovePermission",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "RemovePermissionRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "RemovePermission",
-      "output" : null
+      "input":{"shape":"RemovePermissionRequest"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Revokes the permission of another AWS account to be able to put events to your default event bus. Specify the account to revoke by the <code>StatementId</code> value that you associated with the account when you granted it permission with <code>PutPermission</code>. You can find the <code>StatementId</code> by using <a>DescribeEventBus</a>.</p>"
     },
-    "RemoveTargets" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.</p> <p>When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Please allow a short period of time for changes to take effect.</p> <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ConcurrentModificationException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "RemoveTargets":{
+      "name":"RemoveTargets",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "RemoveTargetsRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "RemoveTargets",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "RemoveTargetsResponse"
-      }
+      "input":{"shape":"RemoveTargetsRequest"},
+      "output":{"shape":"RemoveTargetsResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.</p> <p>When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Please allow a short period of time for changes to take effect.</p> <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>"
     },
-    "TestEventPattern" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "<p>Tests whether the specified event pattern matches the provided event.</p> <p>Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.</p>",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InvalidEventPatternException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "TestEventPattern":{
+      "name":"TestEventPattern",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "TestEventPatternRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "TestEventPattern",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "TestEventPatternResponse"
-      }
+      "input":{"shape":"TestEventPatternRequest"},
+      "output":{"shape":"TestEventPatternResponse"},
+      "errors":[
+        {"shape":"InvalidEventPatternException"},
+        {"shape":"InternalException"}
+      ],
+      "documentation":"<p>Tests whether the specified event pattern matches the provided event.</p> <p>Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.</p>"
     }
   },
-  "shapes" : {
-    "Action" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 64,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : "events:[a-zA-Z]+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+  "shapes":{
+    "Action":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"events:[a-zA-Z]+"
     },
-    "Arn" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 1600,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "Arn":{
+      "type":"string",
+      "max":1600,
+      "min":1
     },
-    "Boolean" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "boolean",
-      "value" : null,
-      "wrapper" : false
+    "Boolean":{"type":"boolean"},
+    "ConcurrentModificationException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>There is concurrent modification on a rule or target.</p>",
+      "exception":true
     },
-    "ConcurrentModificationException" : {
-      "deprecated" : false,
-      "documentation" : "<p>There is concurrent modification on a rule or target.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+    "DeleteRuleRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule.</p>"
+        }
+      }
     },
-    "DeleteRuleRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Name" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "DescribeEventBusRequest":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DescribeEventBusResponse":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the event bus. Currently, this is always <code>default</code>.</p>"
+        },
+        "Arn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>"
+        },
+        "Policy":{
+          "shape":"String",
+          "documentation":"<p>The policy that enables the external account to send events to your account.</p>"
+        }
+      }
+    },
+    "DescribeRuleRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule.</p>"
+        }
+      }
+    },
+    "DescribeRuleResponse":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule.</p>"
+        },
+        "Arn":{
+          "shape":"RuleArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the rule.</p>"
+        },
+        "EventPattern":{
+          "shape":"EventPattern",
+          "documentation":"<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>"
+        },
+        "ScheduleExpression":{
+          "shape":"ScheduleExpression",
+          "documentation":"<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>"
+        },
+        "State":{
+          "shape":"RuleState",
+          "documentation":"<p>Specifies whether the rule is enabled or disabled.</p>"
+        },
+        "Description":{
+          "shape":"RuleDescription",
+          "documentation":"<p>The description of the rule.</p>"
+        },
+        "RoleArn":{
+          "shape":"RoleArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>"
+        }
+      }
+    },
+    "DisableRuleRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule.</p>"
+        }
+      }
+    },
+    "EcsParameters":{
+      "type":"structure",
+      "required":["TaskDefinitionArn"],
+      "members":{
+        "TaskDefinitionArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the task definition to use if the event target is an Amazon ECS cluster. </p>"
+        },
+        "TaskCount":{
+          "shape":"LimitMin1",
+          "documentation":"<p>The number of tasks to create based on the <code>TaskDefinition</code>. The default is one.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Name" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>The custom parameters to be used when the target is an Amazon ECS cluster.</p>"
     },
-    "DescribeEventBusRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+    "EnableRuleRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule.</p>"
+        }
+      }
     },
-    "DescribeEventBusResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Arn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "String",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "ErrorCode":{"type":"string"},
+    "ErrorMessage":{"type":"string"},
+    "EventId":{"type":"string"},
+    "EventPattern":{
+      "type":"string",
+      "max":2048
+    },
+    "EventResource":{"type":"string"},
+    "EventResourceList":{
+      "type":"list",
+      "member":{"shape":"EventResource"}
+    },
+    "EventTime":{"type":"timestamp"},
+    "InputTransformer":{
+      "type":"structure",
+      "required":["InputTemplate"],
+      "members":{
+        "InputPathsMap":{
+          "shape":"TransformerPaths",
+          "documentation":"<p>Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You must use JSON dot notation, not bracket notation.</p>"
         },
-        "Name" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the event bus. Currently, this is always <code>default</code>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "String",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Policy" : {
-          "deprecated" : false,
-          "documentation" : "<p>The policy that enables the external account to send events to your account.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "String",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "InputTemplate":{
+          "shape":"TransformerInput",
+          "documentation":"<p>Input template where you can use the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.</p>"
     },
-    "DescribeRuleRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Name" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "InputTransformerPathKey":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[A-Za-z0-9\\_\\-]+"
+    },
+    "Integer":{"type":"integer"},
+    "InternalException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>This exception occurs due to unexpected causes.</p>",
+      "exception":true,
+      "fault":true
+    },
+    "InvalidEventPatternException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The event pattern is not valid.</p>",
+      "exception":true
+    },
+    "KinesisParameters":{
+      "type":"structure",
+      "required":["PartitionKeyPath"],
+      "members":{
+        "PartitionKeyPath":{
+          "shape":"TargetPartitionKeyPath",
+          "documentation":"<p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Name" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>"
     },
-    "DescribeRuleResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Arn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleArn",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "LimitExceededException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>You tried to create more rules or add more targets to a rule than is allowed.</p>",
+      "exception":true
+    },
+    "LimitMax100":{
+      "type":"integer",
+      "max":100,
+      "min":1
+    },
+    "LimitMin1":{
+      "type":"integer",
+      "min":1
+    },
+    "ListRuleNamesByTargetRequest":{
+      "type":"structure",
+      "required":["TargetArn"],
+      "members":{
+        "TargetArn":{
+          "shape":"TargetArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the target resource.</p>"
         },
-        "Description" : {
-          "deprecated" : false,
-          "documentation" : "<p>The description of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleDescription",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token returned by a previous call to retrieve the next set of results.</p>"
         },
-        "EventPattern" : {
-          "deprecated" : false,
-          "documentation" : "<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EventPattern",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Limit":{
+          "shape":"LimitMax100",
+          "documentation":"<p>The maximum number of results to return.</p>"
+        }
+      }
+    },
+    "ListRuleNamesByTargetResponse":{
+      "type":"structure",
+      "members":{
+        "RuleNames":{
+          "shape":"RuleNameList",
+          "documentation":"<p>The names of the rules that can invoke the given target.</p>"
         },
-        "Name" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>"
+        }
+      }
+    },
+    "ListRulesRequest":{
+      "type":"structure",
+      "members":{
+        "NamePrefix":{
+          "shape":"RuleName",
+          "documentation":"<p>The prefix matching the rule name.</p>"
         },
-        "RoleArn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RoleArn",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token returned by a previous call to retrieve the next set of results.</p>"
         },
-        "ScheduleExpression" : {
-          "deprecated" : false,
-          "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ScheduleExpression",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Limit":{
+          "shape":"LimitMax100",
+          "documentation":"<p>The maximum number of results to return.</p>"
+        }
+      }
+    },
+    "ListRulesResponse":{
+      "type":"structure",
+      "members":{
+        "Rules":{
+          "shape":"RuleResponseList",
+          "documentation":"<p>The rules that match the specified criteria.</p>"
         },
-        "State" : {
-          "deprecated" : false,
-          "documentation" : "<p>Specifies whether the rule is enabled or disabled.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleState",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>"
+        }
+      }
+    },
+    "ListTargetsByRuleRequest":{
+      "type":"structure",
+      "required":["Rule"],
+      "members":{
+        "Rule":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token returned by a previous call to retrieve the next set of results.</p>"
+        },
+        "Limit":{
+          "shape":"LimitMax100",
+          "documentation":"<p>The maximum number of results to return.</p>"
+        }
+      }
+    },
+    "ListTargetsByRuleResponse":{
+      "type":"structure",
+      "members":{
+        "Targets":{
+          "shape":"TargetList",
+          "documentation":"<p>The targets assigned to the rule.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>"
+        }
+      }
+    },
+    "NextToken":{
+      "type":"string",
+      "max":2048,
+      "min":1
+    },
+    "PolicyLengthExceededException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The event bus policy is too long. For more information, see the limits.</p>",
+      "exception":true
+    },
+    "Principal":{
+      "type":"string",
+      "max":12,
+      "min":1,
+      "pattern":"(\\d{12}|\\*)"
+    },
+    "PutEventsRequest":{
+      "type":"structure",
+      "required":["Entries"],
+      "members":{
+        "Entries":{
+          "shape":"PutEventsRequestEntryList",
+          "documentation":"<p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>"
+        }
+      }
+    },
+    "PutEventsRequestEntry":{
+      "type":"structure",
+      "members":{
+        "Time":{
+          "shape":"EventTime",
+          "documentation":"<p>The timestamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.</p>"
+        },
+        "Source":{
+          "shape":"String",
+          "documentation":"<p>The source of the event.</p>"
+        },
+        "Resources":{
+          "shape":"EventResourceList",
+          "documentation":"<p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>"
+        },
+        "DetailType":{
+          "shape":"String",
+          "documentation":"<p>Free-form string used to decide what fields to expect in the event detail.</p>"
+        },
+        "Detail":{
+          "shape":"String",
+          "documentation":"<p>In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are imposed on its contents.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>Represents an event to be submitted.</p>"
     },
-    "DisableRuleRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Name" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "PutEventsRequestEntryList":{
+      "type":"list",
+      "member":{"shape":"PutEventsRequestEntry"},
+      "max":10,
+      "min":1
+    },
+    "PutEventsResponse":{
+      "type":"structure",
+      "members":{
+        "FailedEntryCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of failed entries.</p>"
+        },
+        "Entries":{
+          "shape":"PutEventsResultEntryList",
+          "documentation":"<p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>"
+        }
+      }
+    },
+    "PutEventsResultEntry":{
+      "type":"structure",
+      "members":{
+        "EventId":{
+          "shape":"EventId",
+          "documentation":"<p>The ID of the event.</p>"
+        },
+        "ErrorCode":{
+          "shape":"ErrorCode",
+          "documentation":"<p>The error code that indicates why the event submission failed.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"ErrorMessage",
+          "documentation":"<p>The error message that explains why the event submission failed.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Name" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>Represents an event that failed to be submitted.</p>"
     },
-    "EcsParameters" : {
-      "deprecated" : false,
-      "documentation" : "<p>The custom parameters to be used when the target is an Amazon ECS cluster.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "TaskCount" : {
-          "deprecated" : false,
-          "documentation" : "<p>The number of tasks to create based on the <code>TaskDefinition</code>. The default is one.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "LimitMin1",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "PutEventsResultEntryList":{
+      "type":"list",
+      "member":{"shape":"PutEventsResultEntry"}
+    },
+    "PutPermissionRequest":{
+      "type":"structure",
+      "required":[
+        "Action",
+        "Principal",
+        "StatementId"
+      ],
+      "members":{
+        "Action":{
+          "shape":"Action",
+          "documentation":"<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>"
         },
-        "TaskDefinitionArn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The ARN of the task definition to use if the event target is an Amazon ECS cluster. </p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Arn",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Principal":{
+          "shape":"Principal",
+          "documentation":"<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>"
+        },
+        "StatementId":{
+          "shape":"StatementId",
+          "documentation":"<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>"
+        }
+      }
+    },
+    "PutRuleRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule that you are creating or updating.</p>"
+        },
+        "ScheduleExpression":{
+          "shape":"ScheduleExpression",
+          "documentation":"<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>"
+        },
+        "EventPattern":{
+          "shape":"EventPattern",
+          "documentation":"<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>"
+        },
+        "State":{
+          "shape":"RuleState",
+          "documentation":"<p>Indicates whether the rule is enabled or disabled.</p>"
+        },
+        "Description":{
+          "shape":"RuleDescription",
+          "documentation":"<p>A description of the rule.</p>"
+        },
+        "RoleArn":{
+          "shape":"RoleArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>"
+        }
+      }
+    },
+    "PutRuleResponse":{
+      "type":"structure",
+      "members":{
+        "RuleArn":{
+          "shape":"RuleArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the rule.</p>"
+        }
+      }
+    },
+    "PutTargetsRequest":{
+      "type":"structure",
+      "required":[
+        "Rule",
+        "Targets"
+      ],
+      "members":{
+        "Rule":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule.</p>"
+        },
+        "Targets":{
+          "shape":"TargetList",
+          "documentation":"<p>The targets to update or add to the rule.</p>"
+        }
+      }
+    },
+    "PutTargetsResponse":{
+      "type":"structure",
+      "members":{
+        "FailedEntryCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of failed entries.</p>"
+        },
+        "FailedEntries":{
+          "shape":"PutTargetsResultEntryList",
+          "documentation":"<p>The failed target entries.</p>"
+        }
+      }
+    },
+    "PutTargetsResultEntry":{
+      "type":"structure",
+      "members":{
+        "TargetId":{
+          "shape":"TargetId",
+          "documentation":"<p>The ID of the target.</p>"
+        },
+        "ErrorCode":{
+          "shape":"ErrorCode",
+          "documentation":"<p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"ErrorMessage",
+          "documentation":"<p>The error message that explains why the target addition failed.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "TaskDefinitionArn" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>Represents a target that failed to be added to a rule.</p>"
     },
-    "EnableRuleRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Name" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "PutTargetsResultEntryList":{
+      "type":"list",
+      "member":{"shape":"PutTargetsResultEntry"}
+    },
+    "RemovePermissionRequest":{
+      "type":"structure",
+      "required":["StatementId"],
+      "members":{
+        "StatementId":{
+          "shape":"StatementId",
+          "documentation":"<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>"
+        }
+      }
+    },
+    "RemoveTargetsRequest":{
+      "type":"structure",
+      "required":[
+        "Rule",
+        "Ids"
+      ],
+      "members":{
+        "Rule":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule.</p>"
+        },
+        "Ids":{
+          "shape":"TargetIdList",
+          "documentation":"<p>The IDs of the targets to remove from the rule.</p>"
+        }
+      }
+    },
+    "RemoveTargetsResponse":{
+      "type":"structure",
+      "members":{
+        "FailedEntryCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of failed entries.</p>"
+        },
+        "FailedEntries":{
+          "shape":"RemoveTargetsResultEntryList",
+          "documentation":"<p>The failed target entries.</p>"
+        }
+      }
+    },
+    "RemoveTargetsResultEntry":{
+      "type":"structure",
+      "members":{
+        "TargetId":{
+          "shape":"TargetId",
+          "documentation":"<p>The ID of the target.</p>"
+        },
+        "ErrorCode":{
+          "shape":"ErrorCode",
+          "documentation":"<p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"ErrorMessage",
+          "documentation":"<p>The error message that explains why the target removal failed.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Name" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>Represents a target that failed to be removed from a rule.</p>"
     },
-    "ErrorCode" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "RemoveTargetsResultEntryList":{
+      "type":"list",
+      "member":{"shape":"RemoveTargetsResultEntry"}
     },
-    "ErrorMessage" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "EventId" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "EventPattern" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 2048,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "EventResource" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "EventResourceList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "EventResource",
-        "streaming" : false,
-        "xmlNamespace" : null
+    "ResourceNotFoundException":{
+      "type":"structure",
+      "members":{
       },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>An entity that you specified does not exist.</p>",
+      "exception":true
     },
-    "EventTime" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "timestamp",
-      "value" : null,
-      "wrapper" : false
+    "RoleArn":{
+      "type":"string",
+      "max":1600,
+      "min":1
     },
-    "InputTransformer" : {
-      "deprecated" : false,
-      "documentation" : "<p>Contains the parameters needed for you to provide custom input to a target based on one or more pieces of data extracted from the event.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "InputPathsMap" : {
-          "deprecated" : false,
-          "documentation" : "<p>Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You must use JSON dot notation, not bracket notation.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TransformerPaths",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "Rule":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"RuleName",
+          "documentation":"<p>The name of the rule.</p>"
         },
-        "InputTemplate" : {
-          "deprecated" : false,
-          "documentation" : "<p>Input template where you can use the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TransformerInput",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Arn":{
+          "shape":"RuleArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the rule.</p>"
+        },
+        "EventPattern":{
+          "shape":"EventPattern",
+          "documentation":"<p>The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>"
+        },
+        "State":{
+          "shape":"RuleState",
+          "documentation":"<p>The state of the rule.</p>"
+        },
+        "Description":{
+          "shape":"RuleDescription",
+          "documentation":"<p>The description of the rule.</p>"
+        },
+        "ScheduleExpression":{
+          "shape":"ScheduleExpression",
+          "documentation":"<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>"
+        },
+        "RoleArn":{
+          "shape":"RoleArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "InputTemplate" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>Contains information about a rule in Amazon CloudWatch Events.</p>"
     },
-    "InputTransformerPathKey" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 256,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : "[A-Za-z0-9\\_\\-]+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "RuleArn":{
+      "type":"string",
+      "max":1600,
+      "min":1
     },
-    "Integer" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "integer",
-      "value" : null,
-      "wrapper" : false
+    "RuleDescription":{
+      "type":"string",
+      "max":512
     },
-    "InternalException" : {
-      "deprecated" : false,
-      "documentation" : "<p>This exception occurs due to unexpected causes.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : true,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+    "RuleName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[\\.\\-_A-Za-z0-9]+"
     },
-    "InvalidEventPatternException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The event pattern is not valid.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+    "RuleNameList":{
+      "type":"list",
+      "member":{"shape":"RuleName"}
     },
-    "KinesisParameters" : {
-      "deprecated" : false,
-      "documentation" : "<p>This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis stream, so that you can control the shard to which the event goes. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "PartitionKeyPath" : {
-          "deprecated" : false,
-          "documentation" : "<p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetPartitionKeyPath",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "RuleResponseList":{
+      "type":"list",
+      "member":{"shape":"Rule"}
+    },
+    "RuleState":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
+    "RunCommandParameters":{
+      "type":"structure",
+      "required":["RunCommandTargets"],
+      "members":{
+        "RunCommandTargets":{
+          "shape":"RunCommandTargets",
+          "documentation":"<p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "PartitionKeyPath" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command. </p>"
     },
-    "LimitExceededException" : {
-      "deprecated" : false,
-      "documentation" : "<p>You tried to create more rules or add more targets to a rule than is allowed.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "LimitMax100" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 100,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "integer",
-      "value" : null,
-      "wrapper" : false
-    },
-    "LimitMin1" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "integer",
-      "value" : null,
-      "wrapper" : false
-    },
-    "ListRuleNamesByTargetRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Limit" : {
-          "deprecated" : false,
-          "documentation" : "<p>The maximum number of results to return.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "LimitMax100",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "RunCommandTarget":{
+      "type":"structure",
+      "required":[
+        "Key",
+        "Values"
+      ],
+      "members":{
+        "Key":{
+          "shape":"RunCommandTargetKey",
+          "documentation":"<p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>"
         },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : "<p>The token returned by a previous call to retrieve the next set of results.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NextToken",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "TargetArn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the target resource.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetArn",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Values":{
+          "shape":"RunCommandTargetValues",
+          "documentation":"<p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "TargetArn" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.</p>"
     },
-    "ListRuleNamesByTargetResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : "<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NextToken",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "RunCommandTargetKey":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"^[\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*$"
+    },
+    "RunCommandTargetValue":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "RunCommandTargetValues":{
+      "type":"list",
+      "member":{"shape":"RunCommandTargetValue"},
+      "max":50,
+      "min":1
+    },
+    "RunCommandTargets":{
+      "type":"list",
+      "member":{"shape":"RunCommandTarget"},
+      "max":5,
+      "min":1
+    },
+    "ScheduleExpression":{
+      "type":"string",
+      "max":256
+    },
+    "StatementId":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9-_]+"
+    },
+    "String":{"type":"string"},
+    "Target":{
+      "type":"structure",
+      "required":[
+        "Id",
+        "Arn"
+      ],
+      "members":{
+        "Id":{
+          "shape":"TargetId",
+          "documentation":"<p>The ID of the target.</p>"
         },
-        "RuleNames" : {
-          "deprecated" : false,
-          "documentation" : "<p>The names of the rules that can invoke the given target.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleNameList",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Arn":{
+          "shape":"TargetArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the target.</p>"
+        },
+        "RoleArn":{
+          "shape":"RoleArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>"
+        },
+        "Input":{
+          "shape":"TargetInput",
+          "documentation":"<p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You must use JSON dot notation, not bracket notation. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>"
+        },
+        "InputPath":{
+          "shape":"TargetInputPath",
+          "documentation":"<p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>"
+        },
+        "InputTransformer":{
+          "shape":"InputTransformer",
+          "documentation":"<p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>"
+        },
+        "KinesisParameters":{
+          "shape":"KinesisParameters",
+          "documentation":"<p>The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>"
+        },
+        "RunCommandParameters":{
+          "shape":"RunCommandParameters",
+          "documentation":"<p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>"
+        },
+        "EcsParameters":{
+          "shape":"EcsParameters",
+          "documentation":"<p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>"
         }
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"<p>Targets are the resources to be invoked when a rule is triggered. Target types include EC2 instances, AWS Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions state machines, Run Command, and built-in targets.</p>"
     },
-    "ListRulesRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Limit" : {
-          "deprecated" : false,
-          "documentation" : "<p>The maximum number of results to return.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "LimitMax100",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "TargetArn":{
+      "type":"string",
+      "max":1600,
+      "min":1
+    },
+    "TargetId":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[\\.\\-_A-Za-z0-9]+"
+    },
+    "TargetIdList":{
+      "type":"list",
+      "member":{"shape":"TargetId"},
+      "max":100,
+      "min":1
+    },
+    "TargetInput":{
+      "type":"string",
+      "max":8192
+    },
+    "TargetInputPath":{
+      "type":"string",
+      "max":256
+    },
+    "TargetList":{
+      "type":"list",
+      "member":{"shape":"Target"},
+      "max":100,
+      "min":1
+    },
+    "TargetPartitionKeyPath":{
+      "type":"string",
+      "max":256
+    },
+    "TestEventPatternRequest":{
+      "type":"structure",
+      "required":[
+        "EventPattern",
+        "Event"
+      ],
+      "members":{
+        "EventPattern":{
+          "shape":"EventPattern",
+          "documentation":"<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>"
         },
-        "NamePrefix" : {
-          "deprecated" : false,
-          "documentation" : "<p>The prefix matching the rule name.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : "<p>The token returned by a previous call to retrieve the next set of results.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NextToken",
-          "streaming" : false,
-          "xmlNamespace" : null
+        "Event":{
+          "shape":"String",
+          "documentation":"<p>The event, in JSON format, to test against the event pattern.</p>"
         }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      }
     },
-    "ListRulesResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : "<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NextToken",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Rules" : {
-          "deprecated" : false,
-          "documentation" : "<p>The rules that match the specified criteria.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleResponseList",
-          "streaming" : false,
-          "xmlNamespace" : null
+    "TestEventPatternResponse":{
+      "type":"structure",
+      "members":{
+        "Result":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the event matches the event pattern.</p>"
         }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      }
     },
-    "ListTargetsByRuleRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Limit" : {
-          "deprecated" : false,
-          "documentation" : "<p>The maximum number of results to return.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "LimitMax100",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : "<p>The token returned by a previous call to retrieve the next set of results.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NextToken",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Rule" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Rule" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+    "TransformerInput":{
+      "type":"string",
+      "max":8192,
+      "min":1
     },
-    "ListTargetsByRuleResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : "<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "NextToken",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Targets" : {
-          "deprecated" : false,
-          "documentation" : "<p>The targets assigned to the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "NextToken" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 2048,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PolicyLengthExceededException" : {
-      "deprecated" : false,
-      "documentation" : "<p>The event bus policy is too long. For more information, see the limits.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "Principal" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 12,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : "(\\d{12}|\\*)",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutEventsRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Entries" : {
-          "deprecated" : false,
-          "documentation" : "<p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "PutEventsRequestEntryList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Entries" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutEventsRequestEntry" : {
-      "deprecated" : false,
-      "documentation" : "<p>Represents an event to be submitted.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Detail" : {
-          "deprecated" : false,
-          "documentation" : "<p>In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are imposed on its contents.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "String",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "DetailType" : {
-          "deprecated" : false,
-          "documentation" : "<p>Free-form string used to decide what fields to expect in the event detail.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "String",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Resources" : {
-          "deprecated" : false,
-          "documentation" : "<p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EventResourceList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Source" : {
-          "deprecated" : false,
-          "documentation" : "<p>The source of the event.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "String",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Time" : {
-          "deprecated" : false,
-          "documentation" : "<p>The timestamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EventTime",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutEventsRequestEntryList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 10,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "PutEventsRequestEntry",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutEventsResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Entries" : {
-          "deprecated" : false,
-          "documentation" : "<p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "PutEventsResultEntryList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "FailedEntryCount" : {
-          "deprecated" : false,
-          "documentation" : "<p>The number of failed entries.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Integer",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutEventsResultEntry" : {
-      "deprecated" : false,
-      "documentation" : "<p>Represents an event that failed to be submitted.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "ErrorCode" : {
-          "deprecated" : false,
-          "documentation" : "<p>The error code that indicates why the event submission failed.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorCode",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "ErrorMessage" : {
-          "deprecated" : false,
-          "documentation" : "<p>The error message that explains why the event submission failed.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "EventId" : {
-          "deprecated" : false,
-          "documentation" : "<p>The ID of the event.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EventId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutEventsResultEntryList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "PutEventsResultEntry",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutPermissionRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Action" : {
-          "deprecated" : false,
-          "documentation" : "<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Action",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Principal" : {
-          "deprecated" : false,
-          "documentation" : "<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Principal",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "StatementId" : {
-          "deprecated" : false,
-          "documentation" : "<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "StatementId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Action", "Principal", "StatementId" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutRuleRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Description" : {
-          "deprecated" : false,
-          "documentation" : "<p>A description of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleDescription",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "EventPattern" : {
-          "deprecated" : false,
-          "documentation" : "<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EventPattern",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Name" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule that you are creating or updating.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "RoleArn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RoleArn",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "ScheduleExpression" : {
-          "deprecated" : false,
-          "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ScheduleExpression",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "State" : {
-          "deprecated" : false,
-          "documentation" : "<p>Indicates whether the rule is enabled or disabled.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleState",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Name" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutRuleResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "RuleArn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleArn",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutTargetsRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Rule" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Targets" : {
-          "deprecated" : false,
-          "documentation" : "<p>The targets to update or add to the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Rule", "Targets" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutTargetsResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "FailedEntries" : {
-          "deprecated" : false,
-          "documentation" : "<p>The failed target entries.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "PutTargetsResultEntryList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "FailedEntryCount" : {
-          "deprecated" : false,
-          "documentation" : "<p>The number of failed entries.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Integer",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutTargetsResultEntry" : {
-      "deprecated" : false,
-      "documentation" : "<p>Represents a target that failed to be added to a rule.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "ErrorCode" : {
-          "deprecated" : false,
-          "documentation" : "<p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorCode",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "ErrorMessage" : {
-          "deprecated" : false,
-          "documentation" : "<p>The error message that explains why the target addition failed.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "TargetId" : {
-          "deprecated" : false,
-          "documentation" : "<p>The ID of the target.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutTargetsResultEntryList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "PutTargetsResultEntry",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RemovePermissionRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "StatementId" : {
-          "deprecated" : false,
-          "documentation" : "<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "StatementId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "StatementId" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RemoveTargetsRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Ids" : {
-          "deprecated" : false,
-          "documentation" : "<p>The IDs of the targets to remove from the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetIdList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Rule" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Rule", "Ids" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RemoveTargetsResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "FailedEntries" : {
-          "deprecated" : false,
-          "documentation" : "<p>The failed target entries.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RemoveTargetsResultEntryList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "FailedEntryCount" : {
-          "deprecated" : false,
-          "documentation" : "<p>The number of failed entries.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Integer",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RemoveTargetsResultEntry" : {
-      "deprecated" : false,
-      "documentation" : "<p>Represents a target that failed to be removed from a rule.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "ErrorCode" : {
-          "deprecated" : false,
-          "documentation" : "<p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorCode",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "ErrorMessage" : {
-          "deprecated" : false,
-          "documentation" : "<p>The error message that explains why the target removal failed.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "TargetId" : {
-          "deprecated" : false,
-          "documentation" : "<p>The ID of the target.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RemoveTargetsResultEntryList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "RemoveTargetsResultEntry",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "ResourceNotFoundException" : {
-      "deprecated" : false,
-      "documentation" : "<p>An entity that you specified does not exist.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RoleArn" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 1600,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "Rule" : {
-      "deprecated" : false,
-      "documentation" : "<p>Contains information about a rule in Amazon CloudWatch Events.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Arn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleArn",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Description" : {
-          "deprecated" : false,
-          "documentation" : "<p>The description of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleDescription",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "EventPattern" : {
-          "deprecated" : false,
-          "documentation" : "<p>The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EventPattern",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Name" : {
-          "deprecated" : false,
-          "documentation" : "<p>The name of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "RoleArn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RoleArn",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "ScheduleExpression" : {
-          "deprecated" : false,
-          "documentation" : "<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ScheduleExpression",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "State" : {
-          "deprecated" : false,
-          "documentation" : "<p>The state of the rule.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RuleState",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RuleArn" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 1600,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RuleDescription" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 512,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RuleName" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 64,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : "[\\.\\-_A-Za-z0-9]+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RuleNameList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "RuleName",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RuleResponseList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "Rule",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RuleState" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : [ "ENABLED", "DISABLED" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RunCommandParameters" : {
-      "deprecated" : false,
-      "documentation" : "<p>This parameter contains the criteria (either InstanceIds or a tag) used to specify which EC2 instances are to be sent the command. </p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "RunCommandTargets" : {
-          "deprecated" : false,
-          "documentation" : "<p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RunCommandTargets",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "RunCommandTargets" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RunCommandTarget" : {
-      "deprecated" : false,
-      "documentation" : "<p>Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each <code>RunCommandTarget</code> block can include only one key, but this key may specify multiple values.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Key" : {
-          "deprecated" : false,
-          "documentation" : "<p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RunCommandTargetKey",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Values" : {
-          "deprecated" : false,
-          "documentation" : "<p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RunCommandTargetValues",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Key", "Values" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RunCommandTargetKey" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 128,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : "^[\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*$",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RunCommandTargetValue" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 256,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RunCommandTargetValues" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 50,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "RunCommandTargetValue",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "RunCommandTargets" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 5,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "RunCommandTarget",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "ScheduleExpression" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 256,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "StatementId" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 64,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : "[a-zA-Z0-9-_]+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "String" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "Target" : {
-      "deprecated" : false,
-      "documentation" : "<p>Targets are the resources to be invoked when a rule is triggered. Target types include EC2 instances, AWS Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions state machines, Run Command, and built-in targets.</p>",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Arn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the target.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetArn",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "EcsParameters" : {
-          "deprecated" : false,
-          "documentation" : "<p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EcsParameters",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Id" : {
-          "deprecated" : false,
-          "documentation" : "<p>The ID of the target.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetId",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Input" : {
-          "deprecated" : false,
-          "documentation" : "<p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You must use JSON dot notation, not bracket notation. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetInput",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "InputPath" : {
-          "deprecated" : false,
-          "documentation" : "<p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TargetInputPath",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "InputTransformer" : {
-          "deprecated" : false,
-          "documentation" : "<p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "InputTransformer",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "KinesisParameters" : {
-          "deprecated" : false,
-          "documentation" : "<p>The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "KinesisParameters",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "RoleArn" : {
-          "deprecated" : false,
-          "documentation" : "<p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RoleArn",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "RunCommandParameters" : {
-          "deprecated" : false,
-          "documentation" : "<p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "RunCommandParameters",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "Id", "Arn" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TargetArn" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 1600,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TargetId" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 64,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : "[\\.\\-_A-Za-z0-9]+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TargetIdList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 100,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "TargetId",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TargetInput" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 8192,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TargetInputPath" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 256,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TargetList" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 100,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "Target",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TargetPartitionKeyPath" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 256,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TestEventPatternRequest" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Event" : {
-          "deprecated" : false,
-          "documentation" : "<p>The event, in JSON format, to test against the event pattern.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "String",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "EventPattern" : {
-          "deprecated" : false,
-          "documentation" : "<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "EventPattern",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "EventPattern", "Event" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TestEventPatternResponse" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Result" : {
-          "deprecated" : false,
-          "documentation" : "<p>Indicates whether the event matches the event pattern.</p>",
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "Boolean",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TransformerInput" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 8192,
-      "member" : null,
-      "members" : { },
-      "min" : 1,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TransformerPaths" : {
-      "deprecated" : false,
-      "documentation" : null,
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "InputTransformerPathKey",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "max" : 10,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "map",
-      "value" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "TargetInputPath",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "wrapper" : false
+    "TransformerPaths":{
+      "type":"map",
+      "key":{"shape":"InputTransformerPathKey"},
+      "value":{"shape":"TargetInputPath"},
+      "max":10
     }
   },
-  "documentation" : "<p>Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state, they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule. For example, you can configure rules to:</p> <ul> <li> <p>Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance enters the running state.</p> </li> <li> <p>Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential security or availability risks.</p> </li> <li> <p>Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.</p> </li> </ul> <p>For more information about the features of Amazon CloudWatch Events, see the <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events\">Amazon CloudWatch Events User Guide</a>.</p>"
+  "documentation":"<p>Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state, they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule. For example, you can configure rules to:</p> <ul> <li> <p>Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance enters the running state.</p> </li> <li> <p>Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential security or availability risks.</p> </li> <li> <p>Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.</p> </li> </ul> <p>For more information about the features of Amazon CloudWatch Events, see the <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events\">Amazon CloudWatch Events User Guide</a>.</p>"
 }

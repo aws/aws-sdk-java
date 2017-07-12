@@ -38,12 +38,12 @@ public class WorkflowExecutionStartedEventAttributesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("childPolicy").build();
     private static final MarshallingInfo<StructuredPojo> TASKLIST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskList").build();
+    private static final MarshallingInfo<String> TASKPRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskPriority").build();
     private static final MarshallingInfo<StructuredPojo> WORKFLOWTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workflowType").build();
     private static final MarshallingInfo<List> TAGLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tagList").build();
-    private static final MarshallingInfo<String> TASKPRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskPriority").build();
     private static final MarshallingInfo<String> CONTINUEDEXECUTIONRUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("continuedExecutionRunId").build();
     private static final MarshallingInfo<StructuredPojo> PARENTWORKFLOWEXECUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -74,9 +74,9 @@ public class WorkflowExecutionStartedEventAttributesMarshaller {
             protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getTaskStartToCloseTimeout(), TASKSTARTTOCLOSETIMEOUT_BINDING);
             protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getChildPolicy(), CHILDPOLICY_BINDING);
             protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getTaskList(), TASKLIST_BINDING);
+            protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getTaskPriority(), TASKPRIORITY_BINDING);
             protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getWorkflowType(), WORKFLOWTYPE_BINDING);
             protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getTagList(), TAGLIST_BINDING);
-            protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getTaskPriority(), TASKPRIORITY_BINDING);
             protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getContinuedExecutionRunId(), CONTINUEDEXECUTIONRUNID_BINDING);
             protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getParentWorkflowExecution(), PARENTWORKFLOWEXECUTION_BINDING);
             protocolMarshaller.marshall(workflowExecutionStartedEventAttributes.getParentInitiatedEventId(), PARENTINITIATEDEVENTID_BINDING);

@@ -70,6 +70,7 @@
     },
     "authPolicyActions" : {
       "actionPrefix" : null,
+      "additionalOperations" : null,
       "fileNamePrefix" : "ElasticLoadBalancing",
       "skip" : false
     },

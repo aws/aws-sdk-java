@@ -68,6 +68,10 @@ public class WorkflowExecutionStartedEventAttributesJsonUnmarshaller implements 
                     context.nextToken();
                     workflowExecutionStartedEventAttributes.setTaskList(TaskListJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("taskPriority", targetDepth)) {
+                    context.nextToken();
+                    workflowExecutionStartedEventAttributes.setTaskPriority(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("workflowType", targetDepth)) {
                     context.nextToken();
                     workflowExecutionStartedEventAttributes.setWorkflowType(WorkflowTypeJsonUnmarshaller.getInstance().unmarshall(context));
@@ -75,10 +79,6 @@ public class WorkflowExecutionStartedEventAttributesJsonUnmarshaller implements 
                 if (context.testExpression("tagList", targetDepth)) {
                     context.nextToken();
                     workflowExecutionStartedEventAttributes.setTagList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
-                }
-                if (context.testExpression("taskPriority", targetDepth)) {
-                    context.nextToken();
-                    workflowExecutionStartedEventAttributes.setTaskPriority(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("continuedExecutionRunId", targetDepth)) {
                     context.nextToken();

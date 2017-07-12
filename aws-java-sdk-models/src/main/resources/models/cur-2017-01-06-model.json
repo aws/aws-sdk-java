@@ -1,1035 +1,263 @@
 {
-  "authorizers" : { },
-  "metadata" : {
-    "apiVersion" : "2017-01-06",
-    "endpointPrefix" : "cur",
-    "jsonVersion" : "1.1",
-    "protocol" : "json",
-    "resultWrapped" : false,
-    "serviceAbbreviation" : null,
-    "serviceFullName" : "AWS Cost and Usage Report Service",
-    "signatureVersion" : "v4",
-    "signingName" : "cur",
-    "targetPrefix" : "AWSOrigamiServiceGatewayService",
-    "uid" : "cur-2017-01-06",
-    "xmlNamespace" : null
+  "version":"2.0",
+  "metadata":{
+    "apiVersion":"2017-01-06",
+    "endpointPrefix":"cur",
+    "jsonVersion":"1.1",
+    "protocol":"json",
+    "serviceFullName":"AWS Cost and Usage Report Service",
+    "signatureVersion":"v4",
+    "signingName":"cur",
+    "targetPrefix":"AWSOrigamiServiceGatewayService",
+    "uid":"cur-2017-01-06"
   },
-  "operations" : {
-    "DeleteReportDefinition" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Delete a specified report definition",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ValidationException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+  "operations":{
+    "DeleteReportDefinition":{
+      "name":"DeleteReportDefinition",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DeleteReportDefinitionRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DeleteReportDefinition",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DeleteReportDefinitionResponse"
-      }
+      "input":{"shape":"DeleteReportDefinitionRequest"},
+      "output":{"shape":"DeleteReportDefinitionResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"Delete a specified report definition"
     },
-    "DescribeReportDefinitions" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Describe a list of report definitions owned by the account",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "DescribeReportDefinitions":{
+      "name":"DescribeReportDefinitions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "DescribeReportDefinitionsRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "DescribeReportDefinitions",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "DescribeReportDefinitionsResponse"
-      }
+      "input":{"shape":"DescribeReportDefinitionsRequest"},
+      "output":{"shape":"DescribeReportDefinitionsResponse"},
+      "errors":[
+        {"shape":"InternalErrorException"}
+      ],
+      "documentation":"Describe a list of report definitions owned by the account"
     },
-    "PutReportDefinition" : {
-      "authorizer" : null,
-      "authtype" : "IAM",
-      "deprecated" : false,
-      "documentation" : "Create a new report definition",
-      "errors" : [ {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "DuplicateReportNameException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ReportLimitReachedException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "InternalErrorException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
-        "shape" : "ValidationException"
-      } ],
-      "http" : {
-        "method" : "POST",
-        "requestUri" : "/",
-        "responseCode" : null
+    "PutReportDefinition":{
+      "name":"PutReportDefinition",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
       },
-      "input" : {
-        "documentation" : null,
-        "locationName" : null,
-        "shape" : "PutReportDefinitionRequest",
-        "xmlNamespace" : null
-      },
-      "name" : "PutReportDefinition",
-      "output" : {
-        "documentation" : null,
-        "locationName" : null,
-        "resultWrapper" : null,
-        "shape" : "PutReportDefinitionResponse"
-      }
+      "input":{"shape":"PutReportDefinitionRequest"},
+      "output":{"shape":"PutReportDefinitionResponse"},
+      "errors":[
+        {"shape":"DuplicateReportNameException"},
+        {"shape":"ReportLimitReachedException"},
+        {"shape":"InternalErrorException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"Create a new report definition"
     }
   },
-  "shapes" : {
-    "AWSRegion" : {
-      "deprecated" : false,
-      "documentation" : "Region of customer S3 bucket.",
-      "enum" : [ "us-east-1", "us-west-1", "us-west-2", "eu-central-1", "eu-west-1", "ap-southeast-1", "ap-southeast-2", "ap-northeast-1" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+  "shapes":{
+    "AWSRegion":{
+      "type":"string",
+      "documentation":"Region of customer S3 bucket.",
+      "enum":[
+        "us-east-1",
+        "us-west-1",
+        "us-west-2",
+        "eu-central-1",
+        "eu-west-1",
+        "ap-southeast-1",
+        "ap-southeast-2",
+        "ap-northeast-1"
+      ]
     },
-    "AdditionalArtifact" : {
-      "deprecated" : false,
-      "documentation" : "Enable support for Redshift and/or QuickSight.",
-      "enum" : [ "REDSHIFT", "QUICKSIGHT" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "AdditionalArtifact":{
+      "type":"string",
+      "documentation":"Enable support for Redshift and/or QuickSight.",
+      "enum":[
+        "REDSHIFT",
+        "QUICKSIGHT"
+      ]
     },
-    "AdditionalArtifactList" : {
-      "deprecated" : false,
-      "documentation" : "A list of additional artifacts.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "AdditionalArtifact",
-        "streaming" : false,
-        "xmlNamespace" : null
+    "AdditionalArtifactList":{
+      "type":"list",
+      "member":{"shape":"AdditionalArtifact"},
+      "documentation":"A list of additional artifacts."
+    },
+    "CompressionFormat":{
+      "type":"string",
+      "documentation":"Preferred compression format for report.",
+      "enum":[
+        "ZIP",
+        "GZIP"
+      ]
+    },
+    "DeleteReportDefinitionRequest":{
+      "type":"structure",
+      "members":{
+        "ReportName":{"shape":"ReportName"}
       },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of DeleteReportDefinition"
     },
-    "CompressionFormat" : {
-      "deprecated" : false,
-      "documentation" : "Preferred compression format for report.",
-      "enum" : [ "ZIP", "GZIP" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "DeleteReportDefinitionRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of DeleteReportDefinition",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "ReportName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ReportName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DeleteReportDefinitionResponse":{
+      "type":"structure",
+      "members":{
+        "ResponseMessage":{"shape":"DeleteResponseMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of DeleteReportDefinition"
     },
-    "DeleteReportDefinitionResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of DeleteReportDefinition",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "ResponseMessage" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "DeleteResponseMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DeleteResponseMessage":{
+      "type":"string",
+      "documentation":"A message indicates if the deletion is successful."
+    },
+    "DescribeReportDefinitionsRequest":{
+      "type":"structure",
+      "members":{
+        "MaxResults":{"shape":"MaxResults"},
+        "NextToken":{"shape":"GenericString"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of DescribeReportDefinitions"
     },
-    "DeleteResponseMessage" : {
-      "deprecated" : false,
-      "documentation" : "A message indicates if the deletion is successful.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "DescribeReportDefinitionsRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of DescribeReportDefinitions",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "MaxResults" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "MaxResults",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DescribeReportDefinitionsResponse":{
+      "type":"structure",
+      "members":{
+        "ReportDefinitions":{"shape":"ReportDefinitionList"},
+        "NextToken":{"shape":"GenericString"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of DescribeReportDefinitions"
     },
-    "DescribeReportDefinitionsResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of DescribeReportDefinitions",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "NextToken" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "GenericString",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "ReportDefinitions" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ReportDefinitionList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "DuplicateReportNameException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This exception is thrown when putting a report preference with a name that already exists.",
+      "exception":true
     },
-    "DuplicateReportNameException" : {
-      "deprecated" : false,
-      "documentation" : "This exception is thrown when putting a report preference with a name that already exists.",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "ErrorMessage":{
+      "type":"string",
+      "documentation":"A message to show the detail of the exception."
+    },
+    "GenericString":{
+      "type":"string",
+      "documentation":"A generic string."
+    },
+    "InternalErrorException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This exception is thrown on a known dependency failure.",
+      "exception":true,
+      "fault":true
     },
-    "ErrorMessage" : {
-      "deprecated" : false,
-      "documentation" : "A message to show the detail of the exception.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "MaxResults":{
+      "type":"integer",
+      "documentation":"The max number of results returned by the operation.",
+      "box":true,
+      "max":5,
+      "min":5
     },
-    "GenericString" : {
-      "deprecated" : false,
-      "documentation" : "A generic string.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "InternalErrorException" : {
-      "deprecated" : false,
-      "documentation" : "This exception is thrown on a known dependency failure.",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : true,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "PutReportDefinitionRequest":{
+      "type":"structure",
+      "required":["ReportDefinition"],
+      "members":{
+        "ReportDefinition":{"shape":"ReportDefinition"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Request of PutReportDefinition"
     },
-    "MaxResults" : {
-      "deprecated" : false,
-      "documentation" : "The max number of results returned by the operation.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 5,
-      "member" : null,
-      "members" : { },
-      "min" : 5,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "integer",
-      "value" : null,
-      "wrapper" : false
-    },
-    "PutReportDefinitionRequest" : {
-      "deprecated" : false,
-      "documentation" : "Request of PutReportDefinition",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "ReportDefinition" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ReportDefinition",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "PutReportDefinitionResponse":{
+      "type":"structure",
+      "members":{
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "ReportDefinition" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"Response of PutReportDefinition"
     },
-    "PutReportDefinitionResponse" : {
-      "deprecated" : false,
-      "documentation" : "Response of PutReportDefinition",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "ReportDefinition" : {
-      "deprecated" : false,
-      "documentation" : "The definition of AWS Cost and Usage Report. Customer can specify the report name, time unit, report format, compression format, S3 bucket and additional artifacts and schema elements in the definition.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "AdditionalArtifacts" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AdditionalArtifactList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "AdditionalSchemaElements" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "SchemaElementList",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Compression" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "CompressionFormat",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "Format" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ReportFormat",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "ReportName" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ReportName",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "S3Bucket" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "S3Bucket",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "S3Prefix" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "S3Prefix",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "S3Region" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "AWSRegion",
-          "streaming" : false,
-          "xmlNamespace" : null
-        },
-        "TimeUnit" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "TimeUnit",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "ReportDefinition":{
+      "type":"structure",
+      "required":[
+        "ReportName",
+        "TimeUnit",
+        "Format",
+        "Compression",
+        "AdditionalSchemaElements",
+        "S3Bucket",
+        "S3Prefix",
+        "S3Region"
+      ],
+      "members":{
+        "ReportName":{"shape":"ReportName"},
+        "TimeUnit":{"shape":"TimeUnit"},
+        "Format":{"shape":"ReportFormat"},
+        "Compression":{"shape":"CompressionFormat"},
+        "AdditionalSchemaElements":{"shape":"SchemaElementList"},
+        "S3Bucket":{"shape":"S3Bucket"},
+        "S3Prefix":{"shape":"S3Prefix"},
+        "S3Region":{"shape":"AWSRegion"},
+        "AdditionalArtifacts":{"shape":"AdditionalArtifactList"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : [ "ReportName", "TimeUnit", "Format", "Compression", "AdditionalSchemaElements", "S3Bucket", "S3Prefix", "S3Region" ],
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"The definition of AWS Cost and Usage Report. Customer can specify the report name, time unit, report format, compression format, S3 bucket and additional artifacts and schema elements in the definition."
     },
-    "ReportDefinitionList" : {
-      "deprecated" : false,
-      "documentation" : "A list of report definitions.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "ReportDefinition",
-        "streaming" : false,
-        "xmlNamespace" : null
+    "ReportDefinitionList":{
+      "type":"list",
+      "member":{"shape":"ReportDefinition"},
+      "documentation":"A list of report definitions."
+    },
+    "ReportFormat":{
+      "type":"string",
+      "documentation":"Preferred format for report.",
+      "enum":["textORcsv"]
+    },
+    "ReportLimitReachedException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
       },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This exception is thrown when the number of report preference reaches max limit. The max number is 5.",
+      "exception":true
     },
-    "ReportFormat" : {
-      "deprecated" : false,
-      "documentation" : "Preferred format for report.",
-      "enum" : [ "textORcsv" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
+    "ReportName":{
+      "type":"string",
+      "documentation":"Preferred name for a report, it has to be unique. Must starts with a number/letter, case sensitive. Limited to 256 characters.",
+      "max":256,
+      "pattern":"[0-9A-Za-z!\\-_.*\\'()]+"
     },
-    "ReportLimitReachedException" : {
-      "deprecated" : false,
-      "documentation" : "This exception is thrown when the number of report preference reaches max limit. The max number is 5.",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
+    "S3Bucket":{
+      "type":"string",
+      "documentation":"Name of customer S3 bucket.",
+      "max":256
+    },
+    "S3Prefix":{
+      "type":"string",
+      "documentation":"Preferred report path prefix. Limited to 256 characters.",
+      "max":256,
+      "pattern":"[0-9A-Za-z!\\-_.*\\'()/]*"
+    },
+    "SchemaElement":{
+      "type":"string",
+      "documentation":"Preference of including Resource IDs. You can include additional details about individual resource IDs in your report.",
+      "enum":["RESOURCES"]
+    },
+    "SchemaElementList":{
+      "type":"list",
+      "member":{"shape":"SchemaElement"},
+      "documentation":"A list of schema elements."
+    },
+    "TimeUnit":{
+      "type":"string",
+      "documentation":"The frequency on which report data are measured and displayed.",
+      "enum":[
+        "HOURLY",
+        "DAILY"
+      ]
+    },
+    "ValidationException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
       },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
-    },
-    "ReportName" : {
-      "deprecated" : false,
-      "documentation" : "Preferred name for a report, it has to be unique. Must starts with a number/letter, case sensitive. Limited to 256 characters.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 256,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : "[0-9A-Za-z!\\-_.*\\'()]+",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "S3Bucket" : {
-      "deprecated" : false,
-      "documentation" : "Name of customer S3 bucket.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 256,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "S3Prefix" : {
-      "deprecated" : false,
-      "documentation" : "Preferred report path prefix. Limited to 256 characters.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 256,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : "[0-9A-Za-z!\\-_.*\\'()/]*",
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "SchemaElement" : {
-      "deprecated" : false,
-      "documentation" : "Preference of including Resource IDs. You can include additional details about individual resource IDs in your report.",
-      "enum" : [ "RESOURCES" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "SchemaElementList" : {
-      "deprecated" : false,
-      "documentation" : "A list of schema elements.",
-      "enum" : null,
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "SchemaElement",
-        "streaming" : false,
-        "xmlNamespace" : null
-      },
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "list",
-      "value" : null,
-      "wrapper" : false
-    },
-    "TimeUnit" : {
-      "deprecated" : false,
-      "documentation" : "The frequency on which report data are measured and displayed.",
-      "enum" : [ "HOURLY", "DAILY" ],
-      "error" : null,
-      "exception" : false,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : { },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "string",
-      "value" : null,
-      "wrapper" : false
-    },
-    "ValidationException" : {
-      "deprecated" : false,
-      "documentation" : "This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid report name, or Delete a report preference with an empty report name.",
-      "enum" : null,
-      "error" : null,
-      "exception" : true,
-      "fault" : false,
-      "flattened" : false,
-      "key" : null,
-      "max" : 0,
-      "member" : null,
-      "members" : {
-        "Message" : {
-          "deprecated" : false,
-          "documentation" : null,
-          "flattened" : false,
-          "idempotencyToken" : false,
-          "jsonvalue" : false,
-          "location" : null,
-          "locationName" : null,
-          "payload" : false,
-          "queryName" : null,
-          "shape" : "ErrorMessage",
-          "streaming" : false,
-          "xmlNamespace" : null
-        }
-      },
-      "min" : 0,
-      "pattern" : null,
-      "payload" : null,
-      "required" : null,
-      "streaming" : false,
-      "type" : "structure",
-      "value" : null,
-      "wrapper" : false
+      "documentation":"This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid report name, or Delete a report preference with an empty report name.",
+      "exception":true
     }
   },
-  "documentation" : "All public APIs for AWS Cost and Usage Report service"
+  "documentation":"All public APIs for AWS Cost and Usage Report service"
 }

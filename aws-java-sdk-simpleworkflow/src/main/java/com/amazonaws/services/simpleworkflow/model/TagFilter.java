@@ -30,18 +30,18 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.
+     * Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      * </p>
      */
     private String tag;
 
     /**
      * <p>
-     * <b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.
+     * Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      * </p>
      * 
      * @param tag
-     *        Required.
+     *        Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      */
 
     public void setTag(String tag) {
@@ -50,10 +50,10 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.
+     * Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      * </p>
      * 
-     * @return Required.
+     * @return Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      */
 
     public String getTag() {
@@ -62,11 +62,11 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>Required.</b> Specifies the tag that must be associated with the execution for it to meet the filter criteria.
+     * Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      * </p>
      * 
      * @param tag
-     *        Required.
+     *        Specifies the tag that must be associated with the execution for it to meet the filter criteria.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

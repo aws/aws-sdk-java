@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
+ * Provides the details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
  * </p>
  * 
  * @see <a
@@ -49,7 +49,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     private String signalName;
     /**
      * <p>
-     * Input provided to the signal (if any).
+     * The input provided to the signal.
      * </p>
      */
     private String input;
@@ -63,7 +63,7 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
     private Long decisionTaskCompletedEventId;
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
+     * Data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      */
     private String control;
@@ -190,11 +190,11 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * Input provided to the signal (if any).
+     * The input provided to the signal.
      * </p>
      * 
      * @param input
-     *        Input provided to the signal (if any).
+     *        The input provided to the signal.
      */
 
     public void setInput(String input) {
@@ -203,10 +203,10 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * Input provided to the signal (if any).
+     * The input provided to the signal.
      * </p>
      * 
-     * @return Input provided to the signal (if any).
+     * @return The input provided to the signal.
      */
 
     public String getInput() {
@@ -215,11 +215,11 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * Input provided to the signal (if any).
+     * The input provided to the signal.
      * </p>
      * 
      * @param input
-     *        Input provided to the signal (if any).
+     *        The input provided to the signal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,11 +282,11 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
+     * Data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent decision tasks.
      */
 
     public void setControl(String control) {
@@ -295,10 +295,10 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
+     * Data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
-     * @return Optional.
+     * @return Data attached to the event that can be used by the decider in subsequent decision tasks.
      */
 
     public String getControl() {
@@ -307,11 +307,11 @@ public class SignalExternalWorkflowExecutionInitiatedEventAttributes implements 
 
     /**
      * <p>
-     * <i>Optional.</i> data attached to the event that can be used by the decider in subsequent decision tasks.
+     * Data attached to the event that can be used by the decider in subsequent decision tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        Data attached to the event that can be used by the decider in subsequent decision tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

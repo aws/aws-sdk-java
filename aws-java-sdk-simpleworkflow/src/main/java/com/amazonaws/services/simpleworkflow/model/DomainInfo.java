@@ -39,10 +39,18 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * The status of the domain:
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for registering
-     * types and creating new workflow executions.</li>
-     * <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
-     * not create new workflow executions in this domain.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
+     * not create new workflow executions in this domain.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -98,19 +106,35 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * The status of the domain:
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for registering
-     * types and creating new workflow executions.</li>
-     * <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
-     * not create new workflow executions in this domain.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
+     * not create new workflow executions in this domain.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the domain:</p>
      *        <ul>
-     *        <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for
-     *        registering types and creating new workflow executions.</li>
-     *        <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You
-     *        should not create new workflow executions in this domain.</li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     *        registering types and creating new workflow executions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You
+     *        should not create new workflow executions in this domain.
+     *        </p>
+     *        </li>
      * @see RegistrationStatus
      */
 
@@ -123,18 +147,34 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * The status of the domain:
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for registering
-     * types and creating new workflow executions.</li>
-     * <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
-     * not create new workflow executions in this domain.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
+     * not create new workflow executions in this domain.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The status of the domain:</p>
      *         <ul>
-     *         <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for
-     *         registering types and creating new workflow executions.</li>
-     *         <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You
-     *         should not create new workflow executions in this domain.</li>
+     *         <li>
+     *         <p>
+     *         <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     *         registering types and creating new workflow executions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use.
+     *         You should not create new workflow executions in this domain.
+     *         </p>
+     *         </li>
      * @see RegistrationStatus
      */
 
@@ -147,19 +187,35 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * The status of the domain:
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for registering
-     * types and creating new workflow executions.</li>
-     * <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
-     * not create new workflow executions in this domain.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
+     * not create new workflow executions in this domain.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the domain:</p>
      *        <ul>
-     *        <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for
-     *        registering types and creating new workflow executions.</li>
-     *        <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You
-     *        should not create new workflow executions in this domain.</li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     *        registering types and creating new workflow executions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You
+     *        should not create new workflow executions in this domain.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */
@@ -174,19 +230,35 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * The status of the domain:
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for registering
-     * types and creating new workflow executions.</li>
-     * <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
-     * not create new workflow executions in this domain.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
+     * not create new workflow executions in this domain.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the domain:</p>
      *        <ul>
-     *        <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for
-     *        registering types and creating new workflow executions.</li>
-     *        <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You
-     *        should not create new workflow executions in this domain.</li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     *        registering types and creating new workflow executions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You
+     *        should not create new workflow executions in this domain.
+     *        </p>
+     *        </li>
      * @see RegistrationStatus
      */
 
@@ -199,19 +271,35 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      * The status of the domain:
      * </p>
      * <ul>
-     * <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for registering
-     * types and creating new workflow executions.</li>
-     * <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
-     * not create new workflow executions in this domain.</li>
+     * <li>
+     * <p>
+     * <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You should
+     * not create new workflow executions in this domain.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The status of the domain:</p>
      *        <ul>
-     *        <li><b>REGISTERED</b>: The domain is properly registered and available. You can use this domain for
-     *        registering types and creating new workflow executions.</li>
-     *        <li><b>DEPRECATED</b>: The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You
-     *        should not create new workflow executions in this domain.</li>
+     *        <li>
+     *        <p>
+     *        <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain for
+     *        registering types and creating new workflow executions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is still in use. You
+     *        should not create new workflow executions in this domain.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistrationStatus
      */

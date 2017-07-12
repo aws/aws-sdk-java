@@ -31,6 +31,8 @@ public class ScheduleLambdaFunctionDecisionAttributesMarshaller {
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> CONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("control").build();
     private static final MarshallingInfo<String> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("input").build();
     private static final MarshallingInfo<String> STARTTOCLOSETIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class ScheduleLambdaFunctionDecisionAttributesMarshaller {
         try {
             protocolMarshaller.marshall(scheduleLambdaFunctionDecisionAttributes.getId(), ID_BINDING);
             protocolMarshaller.marshall(scheduleLambdaFunctionDecisionAttributes.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(scheduleLambdaFunctionDecisionAttributes.getControl(), CONTROL_BINDING);
             protocolMarshaller.marshall(scheduleLambdaFunctionDecisionAttributes.getInput(), INPUT_BINDING);
             protocolMarshaller.marshall(scheduleLambdaFunctionDecisionAttributes.getStartToCloseTimeout(), STARTTOCLOSETIMEOUT_BINDING);
         } catch (Exception e) {

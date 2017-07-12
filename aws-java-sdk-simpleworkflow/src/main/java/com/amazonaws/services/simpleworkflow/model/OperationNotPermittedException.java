@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned when the caller does not have sufficient permissions to invoke the action.
+ * Returned when the caller doesn't have sufficient permissions to invoke the action.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

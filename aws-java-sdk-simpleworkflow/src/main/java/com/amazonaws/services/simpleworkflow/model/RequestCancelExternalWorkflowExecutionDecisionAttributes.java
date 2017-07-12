@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision.
+ * Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.
  * </p>
  * <p>
  * <b>Access Control</b>
@@ -28,16 +28,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * You can use IAM policies to control this decision's access to Amazon SWF resources as follows:
  * </p>
  * <ul>
- * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
- * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
- * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * <li>
+ * <p>
+ * Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use an <code>Action</code> element to allow or deny permission to call this action.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You cannot use an IAM policy to constrain this action's parameters.
+ * </p>
+ * </li>
  * </ul>
  * <p>
- * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the
- * specified constraints, the action fails. The associated event attribute's <b>cause</b> parameter will be set to
- * OPERATION_NOT_PERMITTED. For details and example IAM policies, see <a
+ * If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the
+ * specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to
+ * <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
- * Amazon SWF Workflows</a>.
+ * Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
  * </p>
  * 
  * @see <a
@@ -49,7 +61,7 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the external workflow execution to cancel.
+     * The <code>workflowId</code> of the external workflow execution to cancel.
      * </p>
      */
     private String workflowId;
@@ -61,18 +73,18 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
     private String runId;
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      */
     private String control;
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the external workflow execution to cancel.
+     * The <code>workflowId</code> of the external workflow execution to cancel.
      * </p>
      * 
      * @param workflowId
-     *        Required.</b> The <code>workflowId
+     *        The <code>workflowId</code> of the external workflow execution to cancel.
      */
 
     public void setWorkflowId(String workflowId) {
@@ -81,10 +93,10 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the external workflow execution to cancel.
+     * The <code>workflowId</code> of the external workflow execution to cancel.
      * </p>
      * 
-     * @return Required.</b> The <code>workflowId
+     * @return The <code>workflowId</code> of the external workflow execution to cancel.
      */
 
     public String getWorkflowId() {
@@ -93,11 +105,11 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <b>Required.</b> The <code>workflowId</code> of the external workflow execution to cancel.
+     * The <code>workflowId</code> of the external workflow execution to cancel.
      * </p>
      * 
      * @param workflowId
-     *        Required.</b> The <code>workflowId
+     *        The <code>workflowId</code> of the external workflow execution to cancel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +160,11 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        The data attached to the event that can be used by the decider in subsequent workflow tasks.
      */
 
     public void setControl(String control) {
@@ -161,10 +173,10 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
-     * @return Optional.
+     * @return The data attached to the event that can be used by the decider in subsequent workflow tasks.
      */
 
     public String getControl() {
@@ -173,11 +185,11 @@ public class RequestCancelExternalWorkflowExecutionDecisionAttributes implements
 
     /**
      * <p>
-     * <i>Optional.</i> Data attached to the event that can be used by the decider in subsequent workflow tasks.
+     * The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * </p>
      * 
      * @param control
-     *        Optional.
+     *        The data attached to the event that can be used by the decider in subsequent workflow tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
