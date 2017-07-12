@@ -21,7 +21,6 @@ import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperFieldModel.DynamoDBAttributeType;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
-import com.amazonaws.util.StringUtils;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
@@ -227,6 +226,28 @@ final class StandardAnnotationMaps {
             final DynamoDBTable annotation = actualOf(DynamoDBTable.class);
             if (annotation != null && !annotation.tableName().isEmpty()) {
                 return annotation.tableName();
+            }
+            return null;
+        }
+
+        @Override
+        public String subTypeAttributeName() {
+            final DynamoDBSubTyped annotation = actualOf(DynamoDBSubTyped.class);
+            if (annotation != null && !annotation.attributeName().isEmpty()) {
+                return annotation.attributeName();
+            }
+            return null;
+        }
+
+        @Override
+        public String subTypeAttributeValue() {
+            final DynamoDBSubTyped annotation = actualOf(DynamoDBSubTyped.class);
+            if (annotation != null) {
+                for (DynamoDBSubTyped.SubType subType : annotation.value()) {
+                    if (subType.value().equals(targetType())) {
+                        return subType.name();
+                    }
+                }
             }
             return null;
         }

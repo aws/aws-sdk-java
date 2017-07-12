@@ -49,6 +49,7 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
     private final Map<KeyType,DynamoDBMapperFieldModel<T,Object>> keys;
     private final DynamoDBMapperTableModel.Properties<T> properties;
     private final Class<T> targetType;
+    private final boolean requiresSubTypeAttribute;
 
     /**
      * Constructs a new table model for the specified class.
@@ -62,6 +63,9 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
         this.keys = builder.keys();
         this.properties = builder.properties;
         this.targetType = builder.targetType;
+        this.requiresSubTypeAttribute = properties.subTypeAttributeName() != null &&
+                properties.subTypeAttributeValue() != null &&
+                !fields.containsKey(properties.subTypeAttributeName());
     }
 
     /**
@@ -231,6 +235,16 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
         }
         return copy;
     }
+
+    public String subTypeAttributeName() {
+        return properties.subTypeAttributeName();
+    }
+
+    public String subTypeAttributeValue() {
+        return properties.subTypeAttributeValue();
+    }
+
+    public boolean requiresSubTypeAttribute() { return requiresSubTypeAttribute; }
 
     /**
      * {@inheritDoc}
@@ -456,18 +470,34 @@ public final class DynamoDBMapperTableModel<T> implements DynamoDBTypeConverter<
      * The table model properties.
      */
     static interface Properties<T> {
-        public String tableName();
+        String tableName();
+        String subTypeAttributeName();
+        String subTypeAttributeValue();
 
         static final class Immutable<T> implements Properties<T> {
             private final String tableName;
+            private final String subTypeAttributeName;
+            private final String subTypeAttributeValue;
 
             public Immutable(final Properties<T> properties) {
                 this.tableName = properties.tableName();
+                this.subTypeAttributeName = properties.subTypeAttributeName();
+                this.subTypeAttributeValue = properties.subTypeAttributeValue();
             }
 
             @Override
             public String tableName() {
                 return this.tableName;
+            }
+
+            @Override
+            public String subTypeAttributeName() {
+                return subTypeAttributeName;
+            }
+
+            @Override
+            public String subTypeAttributeValue() {
+                return subTypeAttributeValue;
             }
         }
     }
