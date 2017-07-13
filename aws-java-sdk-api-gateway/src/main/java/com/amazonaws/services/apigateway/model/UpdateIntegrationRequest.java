@@ -27,7 +27,7 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Represents an update integration request's API identifier.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -52,11 +52,11 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Represents an update integration request's API identifier.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Represents an update integration request's API identifier.
+     *        The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -65,10 +65,10 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Represents an update integration request's API identifier.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return Represents an update integration request's API identifier.
+     * @return The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -77,11 +77,11 @@ public class UpdateIntegrationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Represents an update integration request's API identifier.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Represents an update integration request's API identifier.
+     *        The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -665,6 +665,39 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a> and
+     * resets it with the default settings.
+     * </p>
+     * 
+     * @param deleteGatewayResponseRequest
+     *        Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given
+     *        <a>RestApi</a> and resets it with the default settings.
+     * @return A Java Future containing the result of the DeleteGatewayResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsync.DeleteGatewayResponse
+     */
+    java.util.concurrent.Future<DeleteGatewayResponseResult> deleteGatewayResponseAsync(DeleteGatewayResponseRequest deleteGatewayResponseRequest);
+
+    /**
+     * <p>
+     * Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a> and
+     * resets it with the default settings.
+     * </p>
+     * 
+     * @param deleteGatewayResponseRequest
+     *        Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given
+     *        <a>RestApi</a> and resets it with the default settings.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGatewayResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteGatewayResponse
+     */
+    java.util.concurrent.Future<DeleteGatewayResponseResult> deleteGatewayResponseAsync(DeleteGatewayResponseRequest deleteGatewayResponseRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGatewayResponseRequest, DeleteGatewayResponseResult> asyncHandler);
+
+    /**
+     * <p>
      * Represents a delete integration.
      * </p>
      * 
@@ -932,7 +965,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * </p>
      * 
      * @param deleteUsagePlanRequest
-     *        The DELETE request to delete a uasge plan of a given plan Id.
+     *        The DELETE request to delete a usage plan of a given plan Id.
      * @return A Java Future containing the result of the DeleteUsagePlan operation returned by the service.
      * @sample AmazonApiGatewayAsync.DeleteUsagePlan
      */
@@ -944,7 +977,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      * </p>
      * 
      * @param deleteUsagePlanRequest
-     *        The DELETE request to delete a uasge plan of a given plan Id.
+     *        The DELETE request to delete a usage plan of a given plan Id.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1576,6 +1609,72 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      */
     java.util.concurrent.Future<GetExportResult> getExportAsync(GetExportRequest getExportRequest,
             com.amazonaws.handlers.AsyncHandler<GetExportRequest, GetExportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getGatewayResponseRequest
+     *        Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * @return A Java Future containing the result of the GetGatewayResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetGatewayResponse
+     */
+    java.util.concurrent.Future<GetGatewayResponseResult> getGatewayResponseAsync(GetGatewayResponseRequest getGatewayResponseRequest);
+
+    /**
+     * <p>
+     * Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getGatewayResponseRequest
+     *        Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGatewayResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetGatewayResponse
+     */
+    java.util.concurrent.Future<GetGatewayResponseResult> getGatewayResponseAsync(GetGatewayResponseRequest getGatewayResponseRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGatewayResponseRequest, GetGatewayResponseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any
+     * definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     * <a>GatewayResponses</a> collection for the supported response types.
+     * </p>
+     * 
+     * @param getGatewayResponsesRequest
+     *        Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added
+     *        any definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     *        <a>GatewayResponses</a> collection for the supported response types.
+     * @return A Java Future containing the result of the GetGatewayResponses operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetGatewayResponses
+     */
+    java.util.concurrent.Future<GetGatewayResponsesResult> getGatewayResponsesAsync(GetGatewayResponsesRequest getGatewayResponsesRequest);
+
+    /**
+     * <p>
+     * Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any
+     * definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     * <a>GatewayResponses</a> collection for the supported response types.
+     * </p>
+     * 
+     * @param getGatewayResponsesRequest
+     *        Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added
+     *        any definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     *        <a>GatewayResponses</a> collection for the supported response types.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGatewayResponses operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetGatewayResponses
+     */
+    java.util.concurrent.Future<GetGatewayResponsesResult> getGatewayResponsesAsync(GetGatewayResponsesRequest getGatewayResponsesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGatewayResponsesRequest, GetGatewayResponsesResult> asyncHandler);
 
     /**
      * <p>
@@ -2309,11 +2408,44 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Represents a put integration.
+     * Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the given
+     * <a>RestApi</a>.
+     * </p>
+     * 
+     * @param putGatewayResponseRequest
+     *        Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the
+     *        given <a>RestApi</a>.
+     * @return A Java Future containing the result of the PutGatewayResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsync.PutGatewayResponse
+     */
+    java.util.concurrent.Future<PutGatewayResponseResult> putGatewayResponseAsync(PutGatewayResponseRequest putGatewayResponseRequest);
+
+    /**
+     * <p>
+     * Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the given
+     * <a>RestApi</a>.
+     * </p>
+     * 
+     * @param putGatewayResponseRequest
+     *        Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the
+     *        given <a>RestApi</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutGatewayResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.PutGatewayResponse
+     */
+    java.util.concurrent.Future<PutGatewayResponseResult> putGatewayResponseAsync(PutGatewayResponseRequest putGatewayResponseRequest,
+            com.amazonaws.handlers.AsyncHandler<PutGatewayResponseRequest, PutGatewayResponseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets up a method's integration.
      * </p>
      * 
      * @param putIntegrationRequest
-     *        Represents a put integration request.
+     *        Sets up a method's integration.
      * @return A Java Future containing the result of the PutIntegration operation returned by the service.
      * @sample AmazonApiGatewayAsync.PutIntegration
      */
@@ -2321,11 +2453,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Represents a put integration.
+     * Sets up a method's integration.
      * </p>
      * 
      * @param putIntegrationRequest
-     *        Represents a put integration request.
+     *        Sets up a method's integration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2777,6 +2909,35 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param updateGatewayResponseRequest
+     *        Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * @return A Java Future containing the result of the UpdateGatewayResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateGatewayResponse
+     */
+    java.util.concurrent.Future<UpdateGatewayResponseResult> updateGatewayResponseAsync(UpdateGatewayResponseRequest updateGatewayResponseRequest);
+
+    /**
+     * <p>
+     * Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param updateGatewayResponseRequest
+     *        Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGatewayResponse operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateGatewayResponse
+     */
+    java.util.concurrent.Future<UpdateGatewayResponseResult> updateGatewayResponseAsync(UpdateGatewayResponseRequest updateGatewayResponseRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewayResponseRequest, UpdateGatewayResponseResult> asyncHandler);
+
+    /**
+     * <p>
      * Represents an update integration.
      * </p>
      * 
@@ -3040,11 +3201,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Grants a temporary extension to the reamining quota of a usage plan associated with a specified API key.
+     * Grants a temporary extension to the remaining quota of a usage plan associated with a specified API key.
      * </p>
      * 
      * @param updateUsageRequest
-     *        The PATCH request to grant a temporary extension to the reamining quota of a usage plan associated with a
+     *        The PATCH request to grant a temporary extension to the remaining quota of a usage plan associated with a
      *        specified API key.
      * @return A Java Future containing the result of the UpdateUsage operation returned by the service.
      * @sample AmazonApiGatewayAsync.UpdateUsage
@@ -3053,11 +3214,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Grants a temporary extension to the reamining quota of a usage plan associated with a specified API key.
+     * Grants a temporary extension to the remaining quota of a usage plan associated with a specified API key.
      * </p>
      * 
      * @param updateUsageRequest
-     *        The PATCH request to grant a temporary extension to the reamining quota of a usage plan associated with a
+     *        The PATCH request to grant a temporary extension to the remaining quota of a usage plan associated with a
      *        specified API key.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an

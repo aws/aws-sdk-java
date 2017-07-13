@@ -1129,6 +1129,23 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Grants an AWS authorized partner account permission to attach the specified network interface to an instance in
+     * their account.
+     * </p>
+     * <p>
+     * You can grant permission to a single AWS account only, and only one account at a time.
+     * </p>
+     * 
+     * @param createNetworkInterfacePermissionRequest
+     * @return Result of the CreateNetworkInterfacePermission operation returned by the service.
+     * @sample AmazonEC2.CreateNetworkInterfacePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateNetworkInterfacePermissionResult createNetworkInterfacePermission(CreateNetworkInterfacePermissionRequest createNetworkInterfacePermissionRequest);
+
+    /**
+     * <p>
      * Creates a placement group that you launch cluster instances into. You must give the group a name that's unique
      * within the scope of your account.
      * </p>
@@ -1766,6 +1783,21 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     DeleteNetworkInterfaceResult deleteNetworkInterface(DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest);
+
+    /**
+     * <p>
+     * Deletes a permission for a network interface. By default, you cannot delete the permission if the account for
+     * which you're removing the permission has attached the network interface to an instance. However, you can force
+     * delete the permission, regardless of any attachment.
+     * </p>
+     * 
+     * @param deleteNetworkInterfacePermissionRequest
+     * @return Result of the DeleteNetworkInterfacePermission operation returned by the service.
+     * @sample AmazonEC2.DeleteNetworkInterfacePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteNetworkInterfacePermissionResult deleteNetworkInterfacePermission(DeleteNetworkInterfacePermissionRequest deleteNetworkInterfacePermissionRequest);
 
     /**
      * <p>
@@ -2610,8 +2642,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the status of one or more instances. By default, only running instances are described, unless specified
-     * otherwise.
+     * Describes the status of one or more instances. By default, only running instances are described, unless you
+     * specifically indicate to return the status of all instances.
      * </p>
      * <p>
      * Instance status includes the following components:
@@ -2820,6 +2852,20 @@ public interface AmazonEC2 {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeNetworkInterfaceAttributeResult describeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest describeNetworkInterfaceAttributeRequest);
+
+    /**
+     * <p>
+     * Describes the permissions for your network interfaces.
+     * </p>
+     * 
+     * @param describeNetworkInterfacePermissionsRequest
+     * @return Result of the DescribeNetworkInterfacePermissions operation returned by the service.
+     * @sample AmazonEC2.DescribeNetworkInterfacePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeNetworkInterfacePermissionsResult describeNetworkInterfacePermissions(
+            DescribeNetworkInterfacePermissionsRequest describeNetworkInterfacePermissionsRequest);
 
     /**
      * <p>

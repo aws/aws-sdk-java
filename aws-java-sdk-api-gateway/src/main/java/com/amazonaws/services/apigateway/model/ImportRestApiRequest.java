@@ -34,14 +34,18 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Boolean failOnWarnings;
     /**
      * <p>
-     * Custom header parameters as part of the request.
+     * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
+     * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
+     * of
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * .
      * </p>
      */
     private java.util.Map<String, String> parameters;
     /**
      * <p>
      * The POST request body containing external API definitions. Currently, only Swagger definition JSON files are
-     * supported.
+     * supported. The maximum size of the API definition file is 2MB.
      * </p>
      */
     private java.nio.ByteBuffer body;
@@ -108,10 +112,18 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Custom header parameters as part of the request.
+     * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
+     * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
+     * of
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * .
      * </p>
      * 
-     * @return Custom header parameters as part of the request.
+     * @return Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from
+     *         an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS
+     *         CLI command of
+     *         <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     *         .
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -120,11 +132,19 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Custom header parameters as part of the request.
+     * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
+     * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
+     * of
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * .
      * </p>
      * 
      * @param parameters
-     *        Custom header parameters as part of the request.
+     *        Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
+     *        imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI
+     *        command of
+     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     *        .
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -133,11 +153,19 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Custom header parameters as part of the request.
+     * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
+     * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
+     * of
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * .
      * </p>
      * 
      * @param parameters
-     *        Custom header parameters as part of the request.
+     *        Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
+     *        imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI
+     *        command of
+     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,7 +198,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The POST request body containing external API definitions. Currently, only Swagger definition JSON files are
-     * supported.
+     * supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -185,7 +213,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param body
      *        The POST request body containing external API definitions. Currently, only Swagger definition JSON files
-     *        are supported.
+     *        are supported. The maximum size of the API definition file is 2MB.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -195,7 +223,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The POST request body containing external API definitions. Currently, only Swagger definition JSON files are
-     * supported.
+     * supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -206,7 +234,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return The POST request body containing external API definitions. Currently, only Swagger definition JSON files
-     *         are supported.
+     *         are supported. The maximum size of the API definition file is 2MB.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -216,7 +244,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The POST request body containing external API definitions. Currently, only Swagger definition JSON files are
-     * supported.
+     * supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -231,7 +259,7 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param body
      *        The POST request body containing external API definitions. Currently, only Swagger definition JSON files
-     *        are supported.
+     *        are supported. The maximum size of the API definition file is 2MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

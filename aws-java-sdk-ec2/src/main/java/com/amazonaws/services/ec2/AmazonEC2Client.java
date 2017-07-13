@@ -2785,6 +2785,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Grants an AWS authorized partner account permission to attach the specified network interface to an instance in
+     * their account.
+     * </p>
+     * <p>
+     * You can grant permission to a single AWS account only, and only one account at a time.
+     * </p>
+     * 
+     * @param createNetworkInterfacePermissionRequest
+     * @return Result of the CreateNetworkInterfacePermission operation returned by the service.
+     * @sample AmazonEC2.CreateNetworkInterfacePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateNetworkInterfacePermissionResult createNetworkInterfacePermission(CreateNetworkInterfacePermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNetworkInterfacePermission(request);
+    }
+
+    @SdkInternalApi
+    final CreateNetworkInterfacePermissionResult executeCreateNetworkInterfacePermission(
+            CreateNetworkInterfacePermissionRequest createNetworkInterfacePermissionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNetworkInterfacePermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNetworkInterfacePermissionRequest> request = null;
+        Response<CreateNetworkInterfacePermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNetworkInterfacePermissionRequestMarshaller().marshall(super.beforeMarshalling(createNetworkInterfacePermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateNetworkInterfacePermissionResult> responseHandler = new StaxResponseHandler<CreateNetworkInterfacePermissionResult>(
+                    new CreateNetworkInterfacePermissionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a placement group that you launch cluster instances into. You must give the group a name that's unique
      * within the scope of your account.
      * </p>
@@ -4316,6 +4369,57 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteNetworkInterfaceResult> responseHandler = new StaxResponseHandler<DeleteNetworkInterfaceResult>(
                     new DeleteNetworkInterfaceResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a permission for a network interface. By default, you cannot delete the permission if the account for
+     * which you're removing the permission has attached the network interface to an instance. However, you can force
+     * delete the permission, regardless of any attachment.
+     * </p>
+     * 
+     * @param deleteNetworkInterfacePermissionRequest
+     * @return Result of the DeleteNetworkInterfacePermission operation returned by the service.
+     * @sample AmazonEC2.DeleteNetworkInterfacePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteNetworkInterfacePermissionResult deleteNetworkInterfacePermission(DeleteNetworkInterfacePermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNetworkInterfacePermission(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNetworkInterfacePermissionResult executeDeleteNetworkInterfacePermission(
+            DeleteNetworkInterfacePermissionRequest deleteNetworkInterfacePermissionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNetworkInterfacePermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNetworkInterfacePermissionRequest> request = null;
+        Response<DeleteNetworkInterfacePermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNetworkInterfacePermissionRequestMarshaller().marshall(super.beforeMarshalling(deleteNetworkInterfacePermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteNetworkInterfacePermissionResult> responseHandler = new StaxResponseHandler<DeleteNetworkInterfacePermissionResult>(
+                    new DeleteNetworkInterfacePermissionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6499,8 +6603,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the status of one or more instances. By default, only running instances are described, unless specified
-     * otherwise.
+     * Describes the status of one or more instances. By default, only running instances are described, unless you
+     * specifically indicate to return the status of all instances.
      * </p>
      * <p>
      * Instance status includes the following components:
@@ -6969,6 +7073,56 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeNetworkInterfaceAttributeResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfaceAttributeResult>(
                     new DescribeNetworkInterfaceAttributeResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the permissions for your network interfaces.
+     * </p>
+     * 
+     * @param describeNetworkInterfacePermissionsRequest
+     * @return Result of the DescribeNetworkInterfacePermissions operation returned by the service.
+     * @sample AmazonEC2.DescribeNetworkInterfacePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeNetworkInterfacePermissionsResult describeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNetworkInterfacePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNetworkInterfacePermissionsResult executeDescribeNetworkInterfacePermissions(
+            DescribeNetworkInterfacePermissionsRequest describeNetworkInterfacePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNetworkInterfacePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNetworkInterfacePermissionsRequest> request = null;
+        Response<DescribeNetworkInterfacePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNetworkInterfacePermissionsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeNetworkInterfacePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeNetworkInterfacePermissionsResult> responseHandler = new StaxResponseHandler<DescribeNetworkInterfacePermissionsResult>(
+                    new DescribeNetworkInterfacePermissionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

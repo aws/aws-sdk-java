@@ -33,7 +33,7 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String position;
     /**
      * <p>
-     * The maximum number of <a>ApiKeys</a> to get information about.
+     * The maximum number of returned results per page.
      * </p>
      */
     private Integer limit;
@@ -98,11 +98,11 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of <a>ApiKeys</a> to get information about.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>ApiKeys</a> to get information about.
+     *        The maximum number of returned results per page.
      */
 
     public void setLimit(Integer limit) {
@@ -111,10 +111,10 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of <a>ApiKeys</a> to get information about.
+     * The maximum number of returned results per page.
      * </p>
      * 
-     * @return The maximum number of <a>ApiKeys</a> to get information about.
+     * @return The maximum number of returned results per page.
      */
 
     public Integer getLimit() {
@@ -123,11 +123,11 @@ public class GetApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of <a>ApiKeys</a> to get information about.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>ApiKeys</a> to get information about.
+     *        The maximum number of returned results per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

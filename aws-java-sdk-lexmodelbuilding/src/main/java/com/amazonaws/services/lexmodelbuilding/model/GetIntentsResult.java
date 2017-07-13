@@ -25,7 +25,7 @@ public class GetIntentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      */
     private java.util.List<IntentMetadata> intents;
@@ -39,10 +39,10 @@ public class GetIntentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * 
-     * @return An array of <code>Intent</code> objects. For more information, see .
+     * @return An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      */
 
     public java.util.List<IntentMetadata> getIntents() {
@@ -51,11 +51,11 @@ public class GetIntentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param intents
-     *        An array of <code>Intent</code> objects. For more information, see .
+     *        An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      */
 
     public void setIntents(java.util.Collection<IntentMetadata> intents) {
@@ -69,7 +69,7 @@ public class GetIntentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class GetIntentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param intents
-     *        An array of <code>Intent</code> objects. For more information, see .
+     *        An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class GetIntentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param intents
-     *        An array of <code>Intent</code> objects. For more information, see .
+     *        An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,7 +50,7 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For
-     * more information, see .
+     * more information, see <a>PutIntent</a>.
      * </p>
      */
     private Prompt confirmationPrompt;
@@ -64,7 +64,7 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is
-     * fulfilled. For more information, see .
+     * fulfilled. For more information, see <a>PutIntent</a>.
      * </p>
      */
     private FollowUpPrompt followUpPrompt;
@@ -78,13 +78,13 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information,
-     * see .
+     * see <a>PutIntent</a>.
      * </p>
      */
     private CodeHook dialogCodeHook;
     /**
      * <p>
-     * Describes how the intent is fulfilled. For more information, see .
+     * Describes how the intent is fulfilled. For more information, see <a>PutIntent</a>.
      * </p>
      */
     private FulfillmentActivity fulfillmentActivity;
@@ -343,12 +343,12 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For
-     * more information, see .
+     * more information, see <a>PutIntent</a>.
      * </p>
      * 
      * @param confirmationPrompt
      *        If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request.
-     *        For more information, see .
+     *        For more information, see <a>PutIntent</a>.
      */
 
     public void setConfirmationPrompt(Prompt confirmationPrompt) {
@@ -358,11 +358,11 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For
-     * more information, see .
+     * more information, see <a>PutIntent</a>.
      * </p>
      * 
      * @return If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request.
-     *         For more information, see .
+     *         For more information, see <a>PutIntent</a>.
      */
 
     public Prompt getConfirmationPrompt() {
@@ -372,12 +372,12 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request. For
-     * more information, see .
+     * more information, see <a>PutIntent</a>.
      * </p>
      * 
      * @param confirmationPrompt
      *        If defined in the bot, Amazon Lex uses prompt to confirm the intent before fulfilling the user's request.
-     *        For more information, see .
+     *        For more information, see <a>PutIntent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,12 +435,12 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is
-     * fulfilled. For more information, see .
+     * fulfilled. For more information, see <a>PutIntent</a>.
      * </p>
      * 
      * @param followUpPrompt
      *        If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is
-     *        fulfilled. For more information, see .
+     *        fulfilled. For more information, see <a>PutIntent</a>.
      */
 
     public void setFollowUpPrompt(FollowUpPrompt followUpPrompt) {
@@ -450,11 +450,11 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is
-     * fulfilled. For more information, see .
+     * fulfilled. For more information, see <a>PutIntent</a>.
      * </p>
      * 
      * @return If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent
-     *         is fulfilled. For more information, see .
+     *         is fulfilled. For more information, see <a>PutIntent</a>.
      */
 
     public FollowUpPrompt getFollowUpPrompt() {
@@ -464,12 +464,12 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is
-     * fulfilled. For more information, see .
+     * fulfilled. For more information, see <a>PutIntent</a>.
      * </p>
      * 
      * @param followUpPrompt
      *        If defined in the bot, Amazon Lex uses this prompt to solicit additional user activity after the intent is
-     *        fulfilled. For more information, see .
+     *        fulfilled. For more information, see <a>PutIntent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -527,12 +527,12 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information,
-     * see .
+     * see <a>PutIntent</a>.
      * </p>
      * 
      * @param dialogCodeHook
      *        If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more
-     *        information, see .
+     *        information, see <a>PutIntent</a>.
      */
 
     public void setDialogCodeHook(CodeHook dialogCodeHook) {
@@ -542,11 +542,11 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information,
-     * see .
+     * see <a>PutIntent</a>.
      * </p>
      * 
      * @return If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more
-     *         information, see .
+     *         information, see <a>PutIntent</a>.
      */
 
     public CodeHook getDialogCodeHook() {
@@ -556,12 +556,12 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more information,
-     * see .
+     * see <a>PutIntent</a>.
      * </p>
      * 
      * @param dialogCodeHook
      *        If defined in the bot, Amazon Amazon Lex invokes this Lambda function for each user input. For more
-     *        information, see .
+     *        information, see <a>PutIntent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -572,11 +572,11 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Describes how the intent is fulfilled. For more information, see .
+     * Describes how the intent is fulfilled. For more information, see <a>PutIntent</a>.
      * </p>
      * 
      * @param fulfillmentActivity
-     *        Describes how the intent is fulfilled. For more information, see .
+     *        Describes how the intent is fulfilled. For more information, see <a>PutIntent</a>.
      */
 
     public void setFulfillmentActivity(FulfillmentActivity fulfillmentActivity) {
@@ -585,10 +585,10 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Describes how the intent is fulfilled. For more information, see .
+     * Describes how the intent is fulfilled. For more information, see <a>PutIntent</a>.
      * </p>
      * 
-     * @return Describes how the intent is fulfilled. For more information, see .
+     * @return Describes how the intent is fulfilled. For more information, see <a>PutIntent</a>.
      */
 
     public FulfillmentActivity getFulfillmentActivity() {
@@ -597,11 +597,11 @@ public class GetIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Describes how the intent is fulfilled. For more information, see .
+     * Describes how the intent is fulfilled. For more information, see <a>PutIntent</a>.
      * </p>
      * 
      * @param fulfillmentActivity
-     *        Describes how the intent is fulfilled. For more information, see .
+     *        Describes how the intent is fulfilled. For more information, see <a>PutIntent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The DELETE request to delete a uasge plan of a given plan Id.
+ * The DELETE request to delete a usage plan of a given plan Id.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

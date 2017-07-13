@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a put integration request.
+ * Sets up a method's integration.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's API identifier.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -57,9 +57,15 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     private String integrationHttpMethod;
     /**
      * <p>
-     * Specifies a put integration input's Uniform Resource Identifier (URI). When the integration type is HTTP or AWS,
-     * this field is required. For integration with Lambda as an AWS service proxy, this value is of the
-     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations' format.
+     * Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully
+     * formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
+     * <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint.
+     * For AWS services that use the <code>Action=</code> query string parameter, <code>service_api</code> should be a
+     * valid action for the desired service. For RESTful AWS service APIs, <code>path</code> is used to indicate that
+     * the remaining substring in the URI should be treated as the path to the resource, including the initial
+     * <code>/</code>.
      * </p>
      */
     private String uri;
@@ -157,11 +163,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's API identifier.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a put integration request's API identifier.
+     *        The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -170,10 +176,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's API identifier.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return Specifies a put integration request's API identifier.
+     * @return The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -182,11 +188,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's API identifier.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        Specifies a put integration request's API identifier.
+     *        The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,16 +397,28 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's Uniform Resource Identifier (URI). When the integration type is HTTP or AWS,
-     * this field is required. For integration with Lambda as an AWS service proxy, this value is of the
-     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations' format.
+     * Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully
+     * formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
+     * <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint.
+     * For AWS services that use the <code>Action=</code> query string parameter, <code>service_api</code> should be a
+     * valid action for the desired service. For RESTful AWS service APIs, <code>path</code> is used to indicate that
+     * the remaining substring in the URI should be treated as the path to the resource, including the initial
+     * <code>/</code>.
      * </p>
      * 
      * @param uri
-     *        Specifies a put integration input's Uniform Resource Identifier (URI). When the integration type is HTTP
-     *        or AWS, this field is required. For integration with Lambda as an AWS service proxy, this value is of the
-     *        'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
-     *        format.
+     *        Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a
+     *        fully formed, encoded HTTP(S) URL according to the <a
+     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
+     *        specification</a>. For AWS integrations, the URI should be of the form
+     *        <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
+     *        <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right
+     *        endpoint. For AWS services that use the <code>Action=</code> query string parameter,
+     *        <code>service_api</code> should be a valid action for the desired service. For RESTful AWS service APIs,
+     *        <code>path</code> is used to indicate that the remaining substring in the URI should be treated as the
+     *        path to the resource, including the initial <code>/</code>.
      */
 
     public void setUri(String uri) {
@@ -409,15 +427,27 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's Uniform Resource Identifier (URI). When the integration type is HTTP or AWS,
-     * this field is required. For integration with Lambda as an AWS service proxy, this value is of the
-     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations' format.
+     * Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully
+     * formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
+     * <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint.
+     * For AWS services that use the <code>Action=</code> query string parameter, <code>service_api</code> should be a
+     * valid action for the desired service. For RESTful AWS service APIs, <code>path</code> is used to indicate that
+     * the remaining substring in the URI should be treated as the path to the resource, including the initial
+     * <code>/</code>.
      * </p>
      * 
-     * @return Specifies a put integration input's Uniform Resource Identifier (URI). When the integration type is HTTP
-     *         or AWS, this field is required. For integration with Lambda as an AWS service proxy, this value is of the
-     *         'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
-     *         format.
+     * @return Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a
+     *         fully formed, encoded HTTP(S) URL according to the <a
+     *         href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
+     *         specification</a>. For AWS integrations, the URI should be of the form
+     *         <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
+     *         <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right
+     *         endpoint. For AWS services that use the <code>Action=</code> query string parameter,
+     *         <code>service_api</code> should be a valid action for the desired service. For RESTful AWS service APIs,
+     *         <code>path</code> is used to indicate that the remaining substring in the URI should be treated as the
+     *         path to the resource, including the initial <code>/</code>.
      */
 
     public String getUri() {
@@ -426,16 +456,28 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's Uniform Resource Identifier (URI). When the integration type is HTTP or AWS,
-     * this field is required. For integration with Lambda as an AWS service proxy, this value is of the
-     * 'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations' format.
+     * Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a fully
+     * formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     * target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be of the form
+     * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
+     * <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right endpoint.
+     * For AWS services that use the <code>Action=</code> query string parameter, <code>service_api</code> should be a
+     * valid action for the desired service. For RESTful AWS service APIs, <code>path</code> is used to indicate that
+     * the remaining substring in the URI should be treated as the path to the resource, including the initial
+     * <code>/</code>.
      * </p>
      * 
      * @param uri
-     *        Specifies a put integration input's Uniform Resource Identifier (URI). When the integration type is HTTP
-     *        or AWS, this field is required. For integration with Lambda as an AWS service proxy, this value is of the
-     *        'arn:aws:apigateway:&lt;region&gt;:lambda:path/2015-03-31/functions/&lt;functionArn&gt;/invocations'
-     *        format.
+     *        Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations, the URI must be a
+     *        fully formed, encoded HTTP(S) URL according to the <a
+     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
+     *        specification</a>. For AWS integrations, the URI should be of the form
+     *        <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
+     *        <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine the right
+     *        endpoint. For AWS services that use the <code>Action=</code> query string parameter,
+     *        <code>service_api</code> should be a valid action for the desired service. For RESTful AWS service APIs,
+     *        <code>path</code> is used to indicate that the remaining substring in the URI should be treated as the
+     *        path to the resource, including the initial <code>/</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

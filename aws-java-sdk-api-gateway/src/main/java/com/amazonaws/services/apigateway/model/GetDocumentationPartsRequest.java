@@ -28,7 +28,7 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -65,11 +65,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -78,10 +78,10 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -90,11 +90,11 @@ public class GetDocumentationPartsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of the API of the to-be-retrieved documentation parts.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

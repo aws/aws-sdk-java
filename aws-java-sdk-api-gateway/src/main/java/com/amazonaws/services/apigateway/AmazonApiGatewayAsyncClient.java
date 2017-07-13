@@ -974,6 +974,39 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGatewayResponseResult> deleteGatewayResponseAsync(DeleteGatewayResponseRequest request) {
+
+        return deleteGatewayResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayResponseResult> deleteGatewayResponseAsync(final DeleteGatewayResponseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGatewayResponseRequest, DeleteGatewayResponseResult> asyncHandler) {
+        final DeleteGatewayResponseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGatewayResponseResult>() {
+            @Override
+            public DeleteGatewayResponseResult call() throws Exception {
+                DeleteGatewayResponseResult result = null;
+
+                try {
+                    result = executeDeleteGatewayResponse(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(DeleteIntegrationRequest request) {
 
         return deleteIntegrationAsync(request, null);
@@ -2030,6 +2063,72 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetGatewayResponseResult> getGatewayResponseAsync(GetGatewayResponseRequest request) {
+
+        return getGatewayResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayResponseResult> getGatewayResponseAsync(final GetGatewayResponseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGatewayResponseRequest, GetGatewayResponseResult> asyncHandler) {
+        final GetGatewayResponseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGatewayResponseResult>() {
+            @Override
+            public GetGatewayResponseResult call() throws Exception {
+                GetGatewayResponseResult result = null;
+
+                try {
+                    result = executeGetGatewayResponse(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayResponsesResult> getGatewayResponsesAsync(GetGatewayResponsesRequest request) {
+
+        return getGatewayResponsesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayResponsesResult> getGatewayResponsesAsync(final GetGatewayResponsesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGatewayResponsesRequest, GetGatewayResponsesResult> asyncHandler) {
+        final GetGatewayResponsesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGatewayResponsesResult>() {
+            @Override
+            public GetGatewayResponsesResult call() throws Exception {
+                GetGatewayResponsesResult result = null;
+
+                try {
+                    result = executeGetGatewayResponses(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIntegrationResult> getIntegrationAsync(GetIntegrationRequest request) {
 
         return getIntegrationAsync(request, null);
@@ -2888,6 +2987,39 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<PutGatewayResponseResult> putGatewayResponseAsync(PutGatewayResponseRequest request) {
+
+        return putGatewayResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutGatewayResponseResult> putGatewayResponseAsync(final PutGatewayResponseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutGatewayResponseRequest, PutGatewayResponseResult> asyncHandler) {
+        final PutGatewayResponseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutGatewayResponseResult>() {
+            @Override
+            public PutGatewayResponseResult call() throws Exception {
+                PutGatewayResponseResult result = null;
+
+                try {
+                    result = executePutGatewayResponse(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutIntegrationResult> putIntegrationAsync(PutIntegrationRequest request) {
 
         return putIntegrationAsync(request, null);
@@ -3400,6 +3532,39 @@ public class AmazonApiGatewayAsyncClient extends AmazonApiGatewayClient implemen
 
                 try {
                     result = executeUpdateDomainName(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayResponseResult> updateGatewayResponseAsync(UpdateGatewayResponseRequest request) {
+
+        return updateGatewayResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayResponseResult> updateGatewayResponseAsync(final UpdateGatewayResponseRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGatewayResponseRequest, UpdateGatewayResponseResult> asyncHandler) {
+        final UpdateGatewayResponseRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGatewayResponseResult>() {
+            @Override
+            public UpdateGatewayResponseResult call() throws Exception {
+                UpdateGatewayResponseResult result = null;
+
+                try {
+                    result = executeUpdateGatewayResponse(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

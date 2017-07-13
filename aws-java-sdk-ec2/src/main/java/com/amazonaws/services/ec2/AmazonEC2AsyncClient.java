@@ -1764,6 +1764,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNetworkInterfacePermissionResult> createNetworkInterfacePermissionAsync(
+            CreateNetworkInterfacePermissionRequest request) {
+
+        return createNetworkInterfacePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNetworkInterfacePermissionResult> createNetworkInterfacePermissionAsync(
+            final CreateNetworkInterfacePermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateNetworkInterfacePermissionRequest, CreateNetworkInterfacePermissionResult> asyncHandler) {
+        final CreateNetworkInterfacePermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateNetworkInterfacePermissionResult>() {
+            @Override
+            public CreateNetworkInterfacePermissionResult call() throws Exception {
+                CreateNetworkInterfacePermissionResult result = null;
+
+                try {
+                    result = executeCreateNetworkInterfacePermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePlacementGroupResult> createPlacementGroupAsync(CreatePlacementGroupRequest request) {
 
         return createPlacementGroupAsync(request, null);
@@ -2633,6 +2668,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDeleteNetworkInterface(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkInterfacePermissionResult> deleteNetworkInterfacePermissionAsync(
+            DeleteNetworkInterfacePermissionRequest request) {
+
+        return deleteNetworkInterfacePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNetworkInterfacePermissionResult> deleteNetworkInterfacePermissionAsync(
+            final DeleteNetworkInterfacePermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteNetworkInterfacePermissionRequest, DeleteNetworkInterfacePermissionResult> asyncHandler) {
+        final DeleteNetworkInterfacePermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteNetworkInterfacePermissionResult>() {
+            @Override
+            public DeleteNetworkInterfacePermissionResult call() throws Exception {
+                DeleteNetworkInterfacePermissionResult result = null;
+
+                try {
+                    result = executeDeleteNetworkInterfacePermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4700,6 +4770,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDescribeNetworkInterfaceAttribute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNetworkInterfacePermissionsResult> describeNetworkInterfacePermissionsAsync(
+            DescribeNetworkInterfacePermissionsRequest request) {
+
+        return describeNetworkInterfacePermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNetworkInterfacePermissionsResult> describeNetworkInterfacePermissionsAsync(
+            final DescribeNetworkInterfacePermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeNetworkInterfacePermissionsRequest, DescribeNetworkInterfacePermissionsResult> asyncHandler) {
+        final DescribeNetworkInterfacePermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeNetworkInterfacePermissionsResult>() {
+            @Override
+            public DescribeNetworkInterfacePermissionsResult call() throws Exception {
+                DescribeNetworkInterfacePermissionsResult result = null;
+
+                try {
+                    result = executeDescribeNetworkInterfacePermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

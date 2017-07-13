@@ -34,7 +34,7 @@ public class DeleteSlotTypeVersionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To
-     * delete the <code>$LATEST</code> version, use the operation.
+     * delete the <code>$LATEST</code> version, use the <a>DeleteSlotType</a> operation.
      * </p>
      */
     private String version;
@@ -82,12 +82,12 @@ public class DeleteSlotTypeVersionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To
-     * delete the <code>$LATEST</code> version, use the operation.
+     * delete the <code>$LATEST</code> version, use the <a>DeleteSlotType</a> operation.
      * </p>
      * 
      * @param version
      *        The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot
-     *        type. To delete the <code>$LATEST</code> version, use the operation.
+     *        type. To delete the <code>$LATEST</code> version, use the <a>DeleteSlotType</a> operation.
      */
 
     public void setVersion(String version) {
@@ -97,11 +97,11 @@ public class DeleteSlotTypeVersionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To
-     * delete the <code>$LATEST</code> version, use the operation.
+     * delete the <code>$LATEST</code> version, use the <a>DeleteSlotType</a> operation.
      * </p>
      * 
      * @return The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot
-     *         type. To delete the <code>$LATEST</code> version, use the operation.
+     *         type. To delete the <code>$LATEST</code> version, use the <a>DeleteSlotType</a> operation.
      */
 
     public String getVersion() {
@@ -111,12 +111,12 @@ public class DeleteSlotTypeVersionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To
-     * delete the <code>$LATEST</code> version, use the operation.
+     * delete the <code>$LATEST</code> version, use the <a>DeleteSlotType</a> operation.
      * </p>
      * 
      * @param version
      *        The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot
-     *        type. To delete the <code>$LATEST</code> version, use the operation.
+     *        type. To delete the <code>$LATEST</code> version, use the <a>DeleteSlotType</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

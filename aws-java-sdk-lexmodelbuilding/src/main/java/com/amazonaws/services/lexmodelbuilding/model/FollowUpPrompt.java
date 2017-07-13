@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * After an intent is fulfilled, you might prompt the user for additional activity. For example, after the
- * <code>OrderPizza</code> intent is fulfilled (the pizza order is placed with a pizzeria), you might prompt the user to
- * find out whether the user wants to order drinks (another intent you defined in your bot).
+ * A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent
+ * is fulfilled, you might prompt the user to find out whether the user wants to order drinks.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/FollowUpPrompt" target="_top">AWS API
@@ -32,25 +31,25 @@ public class FollowUpPrompt implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Obtains information from the user.
+     * Prompts for information from the user.
      * </p>
      */
     private Prompt prompt;
     /**
      * <p>
-     * If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with
-     * this statement to acknowledge that the intent was canceled.
+     * If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this
+     * statement to acknowledge that the intent was canceled.
      * </p>
      */
     private Statement rejectionStatement;
 
     /**
      * <p>
-     * Obtains information from the user.
+     * Prompts for information from the user.
      * </p>
      * 
      * @param prompt
-     *        Obtains information from the user.
+     *        Prompts for information from the user.
      */
 
     public void setPrompt(Prompt prompt) {
@@ -59,10 +58,10 @@ public class FollowUpPrompt implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Obtains information from the user.
+     * Prompts for information from the user.
      * </p>
      * 
-     * @return Obtains information from the user.
+     * @return Prompts for information from the user.
      */
 
     public Prompt getPrompt() {
@@ -71,11 +70,11 @@ public class FollowUpPrompt implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Obtains information from the user.
+     * Prompts for information from the user.
      * </p>
      * 
      * @param prompt
-     *        Obtains information from the user.
+     *        Prompts for information from the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,12 +85,12 @@ public class FollowUpPrompt implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with
-     * this statement to acknowledge that the intent was canceled.
+     * If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this
+     * statement to acknowledge that the intent was canceled.
      * </p>
      * 
      * @param rejectionStatement
-     *        If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds
+     *        If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds
      *        with this statement to acknowledge that the intent was canceled.
      */
 
@@ -101,11 +100,11 @@ public class FollowUpPrompt implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with
-     * this statement to acknowledge that the intent was canceled.
+     * If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this
+     * statement to acknowledge that the intent was canceled.
      * </p>
      * 
-     * @return If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds
+     * @return If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds
      *         with this statement to acknowledge that the intent was canceled.
      */
 
@@ -115,12 +114,12 @@ public class FollowUpPrompt implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds with
-     * this statement to acknowledge that the intent was canceled.
+     * If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds with this
+     * statement to acknowledge that the intent was canceled.
      * </p>
      * 
      * @param rejectionStatement
-     *        If the user answers "no" to the question defined in <code>confirmationPrompt</code>, Amazon Lex responds
+     *        If the user answers "no" to the question defined in the <code>prompt</code> field, Amazon Lex responds
      *        with this statement to acknowledge that the intent was canceled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

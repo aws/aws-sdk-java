@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The PATCH request to grant a temporary extension to the reamining quota of a usage plan associated with a specified
+ * The PATCH request to grant a temporary extension to the remaining quota of a usage plan associated with a specified
  * API key.
  * </p>
  */

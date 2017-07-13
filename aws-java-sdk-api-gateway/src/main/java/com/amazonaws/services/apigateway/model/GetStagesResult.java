@@ -27,17 +27,17 @@ public class GetStagesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An individual <a>Stage</a> resource.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<Stage> item;
 
     /**
      * <p>
-     * An individual <a>Stage</a> resource.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return An individual <a>Stage</a> resource.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<Stage> getItem() {
@@ -46,11 +46,11 @@ public class GetStagesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An individual <a>Stage</a> resource.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param item
-     *        An individual <a>Stage</a> resource.
+     *        The current page of elements from this collection.
      */
 
     public void setItem(java.util.Collection<Stage> item) {
@@ -64,7 +64,7 @@ public class GetStagesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An individual <a>Stage</a> resource.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class GetStagesResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param item
-     *        An individual <a>Stage</a> resource.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class GetStagesResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * An individual <a>Stage</a> resource.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param item
-     *        An individual <a>Stage</a> resource.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

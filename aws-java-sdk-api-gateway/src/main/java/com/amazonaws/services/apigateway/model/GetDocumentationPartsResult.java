@@ -29,7 +29,7 @@ public class GetDocumentationPartsResult extends com.amazonaws.AmazonWebServiceR
     private String position;
     /**
      * <p>
-     * The current page of <a>DocumentationPart</a> resources in the <a>DocumentationParts</a> collection.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<DocumentationPart> items;
@@ -62,10 +62,10 @@ public class GetDocumentationPartsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The current page of <a>DocumentationPart</a> resources in the <a>DocumentationParts</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return The current page of <a>DocumentationPart</a> resources in the <a>DocumentationParts</a> collection.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<DocumentationPart> getItems() {
@@ -74,11 +74,11 @@ public class GetDocumentationPartsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The current page of <a>DocumentationPart</a> resources in the <a>DocumentationParts</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of <a>DocumentationPart</a> resources in the <a>DocumentationParts</a> collection.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<DocumentationPart> items) {
@@ -92,7 +92,7 @@ public class GetDocumentationPartsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The current page of <a>DocumentationPart</a> resources in the <a>DocumentationParts</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -101,7 +101,7 @@ public class GetDocumentationPartsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param items
-     *        The current page of <a>DocumentationPart</a> resources in the <a>DocumentationParts</a> collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +117,11 @@ public class GetDocumentationPartsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The current page of <a>DocumentationPart</a> resources in the <a>DocumentationParts</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of <a>DocumentationPart</a> resources in the <a>DocumentationParts</a> collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,7 +26,7 @@ public class GetSdkTypesResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String position;
     /**
      * <p>
-     * The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<SdkType> items;
@@ -59,10 +59,10 @@ public class GetSdkTypesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<SdkType> getItems() {
@@ -71,11 +71,11 @@ public class GetSdkTypesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<SdkType> items) {
@@ -89,7 +89,7 @@ public class GetSdkTypesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -98,7 +98,7 @@ public class GetSdkTypesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param items
-     *        The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +114,11 @@ public class GetSdkTypesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

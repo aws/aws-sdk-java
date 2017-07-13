@@ -36,8 +36,10 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Message> messages;
     /**
      * <p>
-     * At runtime, if the client is using the API, Amazon Lex includes the response card in the response. It substitutes
-     * all of the session attributes and slot values for placeholders in the response card.
+     * At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes
+     * the response card in the response. It substitutes all of the session attributes and slot values for placeholders
+     * in the response card.
      * </p>
      */
     private String responseCard;
@@ -114,13 +116,17 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * At runtime, if the client is using the API, Amazon Lex includes the response card in the response. It substitutes
-     * all of the session attributes and slot values for placeholders in the response card.
+     * At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes
+     * the response card in the response. It substitutes all of the session attributes and slot values for placeholders
+     * in the response card.
      * </p>
      * 
      * @param responseCard
-     *        At runtime, if the client is using the API, Amazon Lex includes the response card in the response. It
-     *        substitutes all of the session attributes and slot values for placeholders in the response card.
+     *        At runtime, if the client is using the <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex
+     *        includes the response card in the response. It substitutes all of the session attributes and slot values
+     *        for placeholders in the response card.
      */
 
     public void setResponseCard(String responseCard) {
@@ -129,12 +135,16 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * At runtime, if the client is using the API, Amazon Lex includes the response card in the response. It substitutes
-     * all of the session attributes and slot values for placeholders in the response card.
+     * At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes
+     * the response card in the response. It substitutes all of the session attributes and slot values for placeholders
+     * in the response card.
      * </p>
      * 
-     * @return At runtime, if the client is using the API, Amazon Lex includes the response card in the response. It
-     *         substitutes all of the session attributes and slot values for placeholders in the response card.
+     * @return At runtime, if the client is using the <a
+     *         href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex
+     *         includes the response card in the response. It substitutes all of the session attributes and slot values
+     *         for placeholders in the response card.
      */
 
     public String getResponseCard() {
@@ -143,13 +153,17 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * At runtime, if the client is using the API, Amazon Lex includes the response card in the response. It substitutes
-     * all of the session attributes and slot values for placeholders in the response card.
+     * At runtime, if the client is using the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes
+     * the response card in the response. It substitutes all of the session attributes and slot values for placeholders
+     * in the response card.
      * </p>
      * 
      * @param responseCard
-     *        At runtime, if the client is using the API, Amazon Lex includes the response card in the response. It
-     *        substitutes all of the session attributes and slot values for placeholders in the response card.
+     *        At runtime, if the client is using the <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex
+     *        includes the response card in the response. It substitutes all of the session attributes and slot values
+     *        for placeholders in the response card.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

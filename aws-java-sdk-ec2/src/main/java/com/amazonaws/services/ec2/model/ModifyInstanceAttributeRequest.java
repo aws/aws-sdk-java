@@ -60,7 +60,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API;
-     * otherwise, you can. You cannot use this paramater for Spot Instances.
+     * otherwise, you can. You cannot use this parameter for Spot Instances.
      * </p>
      */
     private Boolean disableApiTermination;
@@ -475,12 +475,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API;
-     * otherwise, you can. You cannot use this paramater for Spot Instances.
+     * otherwise, you can. You cannot use this parameter for Spot Instances.
      * </p>
      * 
      * @param disableApiTermination
      *        If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or
-     *        API; otherwise, you can. You cannot use this paramater for Spot Instances.
+     *        API; otherwise, you can. You cannot use this parameter for Spot Instances.
      */
 
     public void setDisableApiTermination(Boolean disableApiTermination) {
@@ -490,11 +490,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API;
-     * otherwise, you can. You cannot use this paramater for Spot Instances.
+     * otherwise, you can. You cannot use this parameter for Spot Instances.
      * </p>
      * 
      * @return If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or
-     *         API; otherwise, you can. You cannot use this paramater for Spot Instances.
+     *         API; otherwise, you can. You cannot use this parameter for Spot Instances.
      */
 
     public Boolean getDisableApiTermination() {
@@ -504,12 +504,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API;
-     * otherwise, you can. You cannot use this paramater for Spot Instances.
+     * otherwise, you can. You cannot use this parameter for Spot Instances.
      * </p>
      * 
      * @param disableApiTermination
      *        If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or
-     *        API; otherwise, you can. You cannot use this paramater for Spot Instances.
+     *        API; otherwise, you can. You cannot use this parameter for Spot Instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,11 +521,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or API;
-     * otherwise, you can. You cannot use this paramater for Spot Instances.
+     * otherwise, you can. You cannot use this parameter for Spot Instances.
      * </p>
      * 
      * @return If the value is <code>true</code>, you can't terminate the instance using the Amazon EC2 console, CLI, or
-     *         API; otherwise, you can. You cannot use this paramater for Spot Instances.
+     *         API; otherwise, you can. You cannot use this parameter for Spot Instances.
      */
 
     public Boolean isDisableApiTermination() {

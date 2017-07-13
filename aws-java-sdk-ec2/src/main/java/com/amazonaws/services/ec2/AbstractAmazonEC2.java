@@ -274,6 +274,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateNetworkInterfacePermissionResult createNetworkInterfacePermission(CreateNetworkInterfacePermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePlacementGroupResult createPlacementGroup(CreatePlacementGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -405,6 +410,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteNetworkInterfaceResult deleteNetworkInterface(DeleteNetworkInterfaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteNetworkInterfacePermissionResult deleteNetworkInterfacePermission(DeleteNetworkInterfacePermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -750,6 +760,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeNetworkInterfaceAttributeResult describeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeNetworkInterfacePermissionsResult describeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

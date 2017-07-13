@@ -41,7 +41,7 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
     private String basePath;
     /**
      * <p>
-     * The name of the API that you want to apply this mapping to.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -147,11 +147,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the API that you want to apply this mapping to.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The name of the API that you want to apply this mapping to.
+     *        The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -160,10 +160,10 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the API that you want to apply this mapping to.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The name of the API that you want to apply this mapping to.
+     * @return The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -172,11 +172,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the API that you want to apply this mapping to.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The name of the API that you want to apply this mapping to.
+     *        The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -2340,6 +2340,49 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Grants an AWS authorized partner account permission to attach the specified network interface to an instance in
+     * their account.
+     * </p>
+     * <p>
+     * You can grant permission to a single AWS account only, and only one account at a time.
+     * </p>
+     * 
+     * @param createNetworkInterfacePermissionRequest
+     * @return A Java Future containing the result of the CreateNetworkInterfacePermission operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateNetworkInterfacePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkInterfacePermissionResult> createNetworkInterfacePermissionAsync(
+            CreateNetworkInterfacePermissionRequest createNetworkInterfacePermissionRequest);
+
+    /**
+     * <p>
+     * Grants an AWS authorized partner account permission to attach the specified network interface to an instance in
+     * their account.
+     * </p>
+     * <p>
+     * You can grant permission to a single AWS account only, and only one account at a time.
+     * </p>
+     * 
+     * @param createNetworkInterfacePermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNetworkInterfacePermission operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateNetworkInterfacePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNetworkInterfacePermissionResult> createNetworkInterfacePermissionAsync(
+            CreateNetworkInterfacePermissionRequest createNetworkInterfacePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNetworkInterfacePermissionRequest, CreateNetworkInterfacePermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a placement group that you launch cluster instances into. You must give the group a name that's unique
      * within the scope of your account.
      * </p>
@@ -3762,6 +3805,45 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DeleteNetworkInterfaceResult> deleteNetworkInterfaceAsync(DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteNetworkInterfaceRequest, DeleteNetworkInterfaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a permission for a network interface. By default, you cannot delete the permission if the account for
+     * which you're removing the permission has attached the network interface to an instance. However, you can force
+     * delete the permission, regardless of any attachment.
+     * </p>
+     * 
+     * @param deleteNetworkInterfacePermissionRequest
+     * @return A Java Future containing the result of the DeleteNetworkInterfacePermission operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteNetworkInterfacePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkInterfacePermissionResult> deleteNetworkInterfacePermissionAsync(
+            DeleteNetworkInterfacePermissionRequest deleteNetworkInterfacePermissionRequest);
+
+    /**
+     * <p>
+     * Deletes a permission for a network interface. By default, you cannot delete the permission if the account for
+     * which you're removing the permission has attached the network interface to an instance. However, you can force
+     * delete the permission, regardless of any attachment.
+     * </p>
+     * 
+     * @param deleteNetworkInterfacePermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNetworkInterfacePermission operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteNetworkInterfacePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNetworkInterfacePermissionResult> deleteNetworkInterfacePermissionAsync(
+            DeleteNetworkInterfacePermissionRequest deleteNetworkInterfacePermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNetworkInterfacePermissionRequest, DeleteNetworkInterfacePermissionResult> asyncHandler);
 
     /**
      * <p>
@@ -5685,8 +5767,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the status of one or more instances. By default, only running instances are described, unless specified
-     * otherwise.
+     * Describes the status of one or more instances. By default, only running instances are described, unless you
+     * specifically indicate to return the status of all instances.
      * </p>
      * <p>
      * Instance status includes the following components:
@@ -5731,8 +5813,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the status of one or more instances. By default, only running instances are described, unless specified
-     * otherwise.
+     * Describes the status of one or more instances. By default, only running instances are described, unless you
+     * specifically indicate to return the status of all instances.
      * </p>
      * <p>
      * Instance status includes the following components:
@@ -6158,6 +6240,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeNetworkInterfaceAttributeResult> describeNetworkInterfaceAttributeAsync(
             DescribeNetworkInterfaceAttributeRequest describeNetworkInterfaceAttributeRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeNetworkInterfaceAttributeRequest, DescribeNetworkInterfaceAttributeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the permissions for your network interfaces.
+     * </p>
+     * 
+     * @param describeNetworkInterfacePermissionsRequest
+     * @return A Java Future containing the result of the DescribeNetworkInterfacePermissions operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeNetworkInterfacePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNetworkInterfacePermissionsResult> describeNetworkInterfacePermissionsAsync(
+            DescribeNetworkInterfacePermissionsRequest describeNetworkInterfacePermissionsRequest);
+
+    /**
+     * <p>
+     * Describes the permissions for your network interfaces.
+     * </p>
+     * 
+     * @param describeNetworkInterfacePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeNetworkInterfacePermissions operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeNetworkInterfacePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNetworkInterfacePermissionsResult> describeNetworkInterfacePermissionsAsync(
+            DescribeNetworkInterfacePermissionsRequest describeNetworkInterfacePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeNetworkInterfacePermissionsRequest, DescribeNetworkInterfacePermissionsResult> asyncHandler);
 
     /**
      * <p>

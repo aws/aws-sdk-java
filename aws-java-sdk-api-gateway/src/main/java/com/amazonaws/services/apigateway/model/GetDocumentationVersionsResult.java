@@ -33,7 +33,7 @@ public class GetDocumentationVersionsResult extends com.amazonaws.AmazonWebServi
     private String position;
     /**
      * <p>
-     * The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a> collection of an API.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<DocumentationVersion> items;
@@ -66,11 +66,10 @@ public class GetDocumentationVersionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a> collection of an API.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a> collection of
-     *         an API.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<DocumentationVersion> getItems() {
@@ -79,12 +78,11 @@ public class GetDocumentationVersionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a> collection of an API.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a> collection of
-     *        an API.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<DocumentationVersion> items) {
@@ -98,7 +96,7 @@ public class GetDocumentationVersionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a> collection of an API.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -107,8 +105,7 @@ public class GetDocumentationVersionsResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param items
-     *        The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a> collection of
-     *        an API.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,12 +121,11 @@ public class GetDocumentationVersionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a> collection of an API.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a> collection of
-     *        an API.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

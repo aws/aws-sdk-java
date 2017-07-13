@@ -148,6 +148,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public DeleteGatewayResponseResult deleteGatewayResponse(DeleteGatewayResponseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteIntegrationResult deleteIntegration(DeleteIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -308,6 +313,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public GetGatewayResponseResult getGatewayResponse(GetGatewayResponseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGatewayResponsesResult getGatewayResponses(GetGatewayResponsesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetIntegrationResult getIntegration(GetIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -438,6 +453,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public PutGatewayResponseResult putGatewayResponse(PutGatewayResponseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutIntegrationResult putIntegration(PutIntegrationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -514,6 +534,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public UpdateDomainNameResult updateDomainName(UpdateDomainNameRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGatewayResponseResult updateGatewayResponse(UpdateGatewayResponseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

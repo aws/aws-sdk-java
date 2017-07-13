@@ -29,7 +29,7 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String position;
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<RestApi> items;
@@ -62,10 +62,10 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return An array of links to the current page of <a>RestApi</a> resources.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<RestApi> getItems() {
@@ -74,11 +74,11 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        An array of links to the current page of <a>RestApi</a> resources.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<RestApi> items) {
@@ -92,7 +92,7 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -101,7 +101,7 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param items
-     *        An array of links to the current page of <a>RestApi</a> resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +117,11 @@ public class GetRestApisResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of links to the current page of <a>RestApi</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        An array of links to the current page of <a>RestApi</a> resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,7 +35,7 @@ public class GetRequestValidatorsResult extends com.amazonaws.AmazonWebServiceRe
     private String position;
     /**
      * <p>
-     * The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a> collection.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<RequestValidator> items;
@@ -68,10 +68,10 @@ public class GetRequestValidatorsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a> collection.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<RequestValidator> getItems() {
@@ -80,11 +80,11 @@ public class GetRequestValidatorsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a> collection.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<RequestValidator> items) {
@@ -98,7 +98,7 @@ public class GetRequestValidatorsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -107,7 +107,7 @@ public class GetRequestValidatorsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param items
-     *        The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a> collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,11 +123,11 @@ public class GetRequestValidatorsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a> collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of <a>RequestValidator</a> resources in the <a>RequestValidators</a> collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

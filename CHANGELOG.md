@@ -1,3 +1,16 @@
+# __1.11.162__ __2017-07-13__
+## __Amazon API Gateway__
+  - ### Features
+    - Adds support for management of gateway responses.
+
+## __Amazon EC2__
+  - ### Features
+    - X-ENI (or Cross-Account ENI) is a new feature that allows the attachment or association of Elastic Network Interfaces (ENI) between VPCs in different AWS accounts located in the same availability zone. With this new capability, service providers and partners can deliver managed solutions in a variety of new architectural patterns where the provider and consumer of the service are in different AWS accounts.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Fixed broken links to reference and conceptual content.
+
 # __1.11.161__ __2017-07-12__
 ## __AWS Security Token Service__
   - ### Features

@@ -27,7 +27,7 @@ public class UpdateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the <a>RestApi</a> you want to update.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -40,11 +40,11 @@ public class UpdateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the <a>RestApi</a> you want to update.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The ID of the <a>RestApi</a> you want to update.
+     *        The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class UpdateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the <a>RestApi</a> you want to update.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The ID of the <a>RestApi</a> you want to update.
+     * @return The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class UpdateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the <a>RestApi</a> you want to update.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The ID of the <a>RestApi</a> you want to update.
+     *        The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

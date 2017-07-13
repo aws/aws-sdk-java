@@ -33,8 +33,10 @@ public class DeleteUtterancesRequest extends com.amazonaws.AmazonWebServiceReque
     private String botName;
     /**
      * <p>
-     * The unique identifier for the user that made the utterances. This is the user ID that was sent in the or
-     * operation request that contained the utterance.
+     * The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that
+     * contained the utterance.
      * </p>
      */
     private String userId;
@@ -81,13 +83,17 @@ public class DeleteUtterancesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The unique identifier for the user that made the utterances. This is the user ID that was sent in the or
-     * operation request that contained the utterance.
+     * The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that
+     * contained the utterance.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user that made the utterances. This is the user ID that was sent in the or
-     *        operation request that contained the utterance.
+     *        The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request
+     *        that contained the utterance.
      */
 
     public void setUserId(String userId) {
@@ -96,12 +102,16 @@ public class DeleteUtterancesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The unique identifier for the user that made the utterances. This is the user ID that was sent in the or
-     * operation request that contained the utterance.
+     * The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that
+     * contained the utterance.
      * </p>
      * 
-     * @return The unique identifier for the user that made the utterances. This is the user ID that was sent in the or
-     *         operation request that contained the utterance.
+     * @return The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a
+     *         href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     *         href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request
+     *         that contained the utterance.
      */
 
     public String getUserId() {
@@ -110,13 +120,17 @@ public class DeleteUtterancesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The unique identifier for the user that made the utterances. This is the user ID that was sent in the or
-     * operation request that contained the utterance.
+     * The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that
+     * contained the utterance.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user that made the utterances. This is the user ID that was sent in the or
-     *        operation request that contained the utterance.
+     *        The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request
+     *        that contained the utterance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

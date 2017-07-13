@@ -29,7 +29,7 @@ public class GetUsagePlansResult extends com.amazonaws.AmazonWebServiceResult<co
     private String position;
     /**
      * <p>
-     * Gets the current item when enumerating the collection of <a>UsagePlan</a>.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<UsagePlan> items;
@@ -62,10 +62,10 @@ public class GetUsagePlansResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Gets the current item when enumerating the collection of <a>UsagePlan</a>.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return Gets the current item when enumerating the collection of <a>UsagePlan</a>.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<UsagePlan> getItems() {
@@ -74,11 +74,11 @@ public class GetUsagePlansResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Gets the current item when enumerating the collection of <a>UsagePlan</a>.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        Gets the current item when enumerating the collection of <a>UsagePlan</a>.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<UsagePlan> items) {
@@ -92,7 +92,7 @@ public class GetUsagePlansResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Gets the current item when enumerating the collection of <a>UsagePlan</a>.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -101,7 +101,7 @@ public class GetUsagePlansResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param items
-     *        Gets the current item when enumerating the collection of <a>UsagePlan</a>.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +117,11 @@ public class GetUsagePlansResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Gets the current item when enumerating the collection of <a>UsagePlan</a>.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        Gets the current item when enumerating the collection of <a>UsagePlan</a>.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,13 +37,13 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
     private String basePath;
     /**
      * <p>
-     * The name of the API.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The name of the API's stage.
+     * The name of the associated stage.
      * </p>
      */
     private String stage;
@@ -90,11 +90,11 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the API.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The name of the API.
+     *        The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -103,10 +103,10 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the API.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The name of the API.
+     * @return The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -115,11 +115,11 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the API.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The name of the API.
+     *        The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the API's stage.
+     * The name of the associated stage.
      * </p>
      * 
      * @param stage
-     *        The name of the API's stage.
+     *        The name of the associated stage.
      */
 
     public void setStage(String stage) {
@@ -143,10 +143,10 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the API's stage.
+     * The name of the associated stage.
      * </p>
      * 
-     * @return The name of the API's stage.
+     * @return The name of the associated stage.
      */
 
     public String getStage() {
@@ -155,11 +155,11 @@ public class BasePathMapping implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name of the API's stage.
+     * The name of the associated stage.
      * </p>
      * 
      * @param stage
-     *        The name of the API's stage.
+     *        The name of the associated stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -314,6 +314,19 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGatewayResponseResult> deleteGatewayResponseAsync(DeleteGatewayResponseRequest request) {
+
+        return deleteGatewayResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayResponseResult> deleteGatewayResponseAsync(DeleteGatewayResponseRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteGatewayResponseRequest, DeleteGatewayResponseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteIntegrationResult> deleteIntegrationAsync(DeleteIntegrationRequest request) {
 
         return deleteIntegrationAsync(request, null);
@@ -730,6 +743,32 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetGatewayResponseResult> getGatewayResponseAsync(GetGatewayResponseRequest request) {
+
+        return getGatewayResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayResponseResult> getGatewayResponseAsync(GetGatewayResponseRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetGatewayResponseRequest, GetGatewayResponseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayResponsesResult> getGatewayResponsesAsync(GetGatewayResponsesRequest request) {
+
+        return getGatewayResponsesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGatewayResponsesResult> getGatewayResponsesAsync(GetGatewayResponsesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetGatewayResponsesRequest, GetGatewayResponsesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIntegrationResult> getIntegrationAsync(GetIntegrationRequest request) {
 
         return getIntegrationAsync(request, null);
@@ -1068,6 +1107,19 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway impl
     }
 
     @Override
+    public java.util.concurrent.Future<PutGatewayResponseResult> putGatewayResponseAsync(PutGatewayResponseRequest request) {
+
+        return putGatewayResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutGatewayResponseResult> putGatewayResponseAsync(PutGatewayResponseRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutGatewayResponseRequest, PutGatewayResponseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutIntegrationResult> putIntegrationAsync(PutIntegrationRequest request) {
 
         return putIntegrationAsync(request, null);
@@ -1271,6 +1323,19 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway impl
     @Override
     public java.util.concurrent.Future<UpdateDomainNameResult> updateDomainNameAsync(UpdateDomainNameRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainNameRequest, UpdateDomainNameResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayResponseResult> updateGatewayResponseAsync(UpdateGatewayResponseRequest request) {
+
+        return updateGatewayResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayResponseResult> updateGatewayResponseAsync(UpdateGatewayResponseRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewayResponseRequest, UpdateGatewayResponseResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

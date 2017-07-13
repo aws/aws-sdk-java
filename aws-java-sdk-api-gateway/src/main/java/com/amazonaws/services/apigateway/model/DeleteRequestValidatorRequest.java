@@ -27,7 +27,7 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RestApi</a> from which the given <a>RequestValidator</a> is deleted.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -40,11 +40,11 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RestApi</a> from which the given <a>RequestValidator</a> is deleted.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of the <a>RestApi</a> from which the given <a>RequestValidator</a> is deleted.
+     *        The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RestApi</a> from which the given <a>RequestValidator</a> is deleted.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return [Required] The identifier of the <a>RestApi</a> from which the given <a>RequestValidator</a> is deleted.
+     * @return The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class DeleteRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * [Required] The identifier of the <a>RestApi</a> from which the given <a>RequestValidator</a> is deleted.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        [Required] The identifier of the <a>RestApi</a> from which the given <a>RequestValidator</a> is deleted.
+     *        The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

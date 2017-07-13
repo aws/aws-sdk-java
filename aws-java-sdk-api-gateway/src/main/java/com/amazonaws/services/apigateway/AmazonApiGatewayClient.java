@@ -1432,6 +1432,61 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a> and
+     * resets it with the default settings.
+     * </p>
+     * 
+     * @param deleteGatewayResponseRequest
+     *        Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given
+     *        <a>RestApi</a> and resets it with the default settings.
+     * @return Result of the DeleteGatewayResponse operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.DeleteGatewayResponse
+     */
+    @Override
+    public DeleteGatewayResponseResult deleteGatewayResponse(DeleteGatewayResponseRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGatewayResponse(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGatewayResponseResult executeDeleteGatewayResponse(DeleteGatewayResponseRequest deleteGatewayResponseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGatewayResponseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGatewayResponseRequest> request = null;
+        Response<DeleteGatewayResponseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGatewayResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayResponseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGatewayResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteGatewayResponseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Represents a delete integration.
      * </p>
      * 
@@ -1903,7 +1958,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param deleteUsagePlanRequest
-     *        The DELETE request to delete a uasge plan of a given plan Id.
+     *        The DELETE request to delete a usage plan of a given plan Id.
      * @return Result of the DeleteUsagePlan operation returned by the service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
@@ -3019,6 +3074,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetExport
      */
@@ -3049,6 +3105,111 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<GetExportResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(false).withHasStreamingSuccessResponse(false), new GetExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getGatewayResponseRequest
+     *        Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * @return Result of the GetGatewayResponse operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetGatewayResponse
+     */
+    @Override
+    public GetGatewayResponseResult getGatewayResponse(GetGatewayResponseRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGatewayResponse(request);
+    }
+
+    @SdkInternalApi
+    final GetGatewayResponseResult executeGetGatewayResponse(GetGatewayResponseRequest getGatewayResponseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGatewayResponseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGatewayResponseRequest> request = null;
+        Response<GetGatewayResponseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGatewayResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGatewayResponseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGatewayResponseResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGatewayResponseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any
+     * definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     * <a>GatewayResponses</a> collection for the supported response types.
+     * </p>
+     * 
+     * @param getGatewayResponsesRequest
+     *        Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added
+     *        any definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     *        <a>GatewayResponses</a> collection for the supported response types.
+     * @return Result of the GetGatewayResponses operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetGatewayResponses
+     */
+    @Override
+    public GetGatewayResponsesResult getGatewayResponses(GetGatewayResponsesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGatewayResponses(request);
+    }
+
+    @SdkInternalApi
+    final GetGatewayResponsesResult executeGetGatewayResponses(GetGatewayResponsesRequest getGatewayResponsesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGatewayResponsesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGatewayResponsesRequest> request = null;
+        Response<GetGatewayResponsesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGatewayResponsesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGatewayResponsesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGatewayResponsesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGatewayResponsesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3725,6 +3886,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetSdk
      */
@@ -4369,11 +4531,65 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Represents a put integration.
+     * Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the given
+     * <a>RestApi</a>.
+     * </p>
+     * 
+     * @param putGatewayResponseRequest
+     *        Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the
+     *        given <a>RestApi</a>.
+     * @return Result of the PutGatewayResponse operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutGatewayResponse
+     */
+    @Override
+    public PutGatewayResponseResult putGatewayResponse(PutGatewayResponseRequest request) {
+        request = beforeClientExecution(request);
+        return executePutGatewayResponse(request);
+    }
+
+    @SdkInternalApi
+    final PutGatewayResponseResult executePutGatewayResponse(PutGatewayResponseRequest putGatewayResponseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putGatewayResponseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutGatewayResponseRequest> request = null;
+        Response<PutGatewayResponseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutGatewayResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putGatewayResponseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutGatewayResponseResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutGatewayResponseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets up a method's integration.
      * </p>
      * 
      * @param putIntegrationRequest
-     *        Represents a put integration request.
+     *        Sets up a method's integration.
      * @return Result of the PutIntegration operation returned by the service.
      * @throws UnauthorizedException
      * @throws BadRequestException
@@ -5210,6 +5426,58 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param updateGatewayResponseRequest
+     *        Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * @return Result of the UpdateGatewayResponse operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateGatewayResponse
+     */
+    @Override
+    public UpdateGatewayResponseResult updateGatewayResponse(UpdateGatewayResponseRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGatewayResponse(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGatewayResponseResult executeUpdateGatewayResponse(UpdateGatewayResponseRequest updateGatewayResponseRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGatewayResponseRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGatewayResponseRequest> request = null;
+        Response<UpdateGatewayResponseResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGatewayResponseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayResponseRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGatewayResponseResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateGatewayResponseResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Represents an update integration.
      * </p>
      * 
@@ -5681,11 +5949,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Grants a temporary extension to the reamining quota of a usage plan associated with a specified API key.
+     * Grants a temporary extension to the remaining quota of a usage plan associated with a specified API key.
      * </p>
      * 
      * @param updateUsageRequest
-     *        The PATCH request to grant a temporary extension to the reamining quota of a usage plan associated with a
+     *        The PATCH request to grant a temporary extension to the remaining quota of a usage plan associated with a
      *        specified API key.
      * @return Result of the UpdateUsage operation returned by the service.
      * @throws UnauthorizedException

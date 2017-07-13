@@ -463,6 +463,25 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a> and
+     * resets it with the default settings.
+     * </p>
+     * 
+     * @param deleteGatewayResponseRequest
+     *        Clears any customization of a <a>GatewayResponse</a> of a specified response type on the given
+     *        <a>RestApi</a> and resets it with the default settings.
+     * @return Result of the DeleteGatewayResponse operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.DeleteGatewayResponse
+     */
+    DeleteGatewayResponseResult deleteGatewayResponse(DeleteGatewayResponseRequest deleteGatewayResponseRequest);
+
+    /**
+     * <p>
      * Represents a delete integration.
      * </p>
      * 
@@ -616,7 +635,7 @@ public interface AmazonApiGateway {
      * </p>
      * 
      * @param deleteUsagePlanRequest
-     *        The DELETE request to delete a uasge plan of a given plan Id.
+     *        The DELETE request to delete a usage plan of a given plan Id.
      * @return Result of the DeleteUsagePlan operation returned by the service.
      * @throws UnauthorizedException
      * @throws TooManyRequestsException
@@ -952,10 +971,46 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetExport
      */
     GetExportResult getExport(GetExportRequest getExportRequest);
+
+    /**
+     * <p>
+     * Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getGatewayResponseRequest
+     *        Gets a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * @return Result of the GetGatewayResponse operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetGatewayResponse
+     */
+    GetGatewayResponseResult getGatewayResponse(GetGatewayResponseRequest getGatewayResponseRequest);
+
+    /**
+     * <p>
+     * Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added any
+     * definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     * <a>GatewayResponses</a> collection for the supported response types.
+     * </p>
+     * 
+     * @param getGatewayResponsesRequest
+     *        Gets the <a>GatewayResponses</a> collection on the given <a>RestApi</a>. If an API developer has not added
+     *        any definitions for gateway responses, the result will be the Amazon API Gateway-generated default
+     *        <a>GatewayResponses</a> collection for the supported response types.
+     * @return Result of the GetGatewayResponses operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetGatewayResponses
+     */
+    GetGatewayResponsesResult getGatewayResponses(GetGatewayResponsesRequest getGatewayResponsesRequest);
 
     /**
      * <p>
@@ -1167,6 +1222,7 @@ public interface AmazonApiGateway {
      * @throws UnauthorizedException
      * @throws NotFoundException
      * @throws BadRequestException
+     * @throws ConflictException
      * @throws TooManyRequestsException
      * @sample AmazonApiGateway.GetSdk
      */
@@ -1354,11 +1410,30 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
-     * Represents a put integration.
+     * Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the given
+     * <a>RestApi</a>.
+     * </p>
+     * 
+     * @param putGatewayResponseRequest
+     *        Creates a customization of a <a>GatewayResponse</a> of a specified response type and status code on the
+     *        given <a>RestApi</a>.
+     * @return Result of the PutGatewayResponse operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.PutGatewayResponse
+     */
+    PutGatewayResponseResult putGatewayResponse(PutGatewayResponseRequest putGatewayResponseRequest);
+
+    /**
+     * <p>
+     * Sets up a method's integration.
      * </p>
      * 
      * @param putIntegrationRequest
-     *        Represents a put integration request.
+     *        Sets up a method's integration.
      * @return Result of the PutIntegration operation returned by the service.
      * @throws UnauthorizedException
      * @throws BadRequestException
@@ -1627,6 +1702,22 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param updateGatewayResponseRequest
+     *        Updates a <a>GatewayResponse</a> of a specified response type on the given <a>RestApi</a>.
+     * @return Result of the UpdateGatewayResponse operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateGatewayResponse
+     */
+    UpdateGatewayResponseResult updateGatewayResponse(UpdateGatewayResponseRequest updateGatewayResponseRequest);
+
+    /**
+     * <p>
      * Represents an update integration.
      * </p>
      * 
@@ -1780,11 +1871,11 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
-     * Grants a temporary extension to the reamining quota of a usage plan associated with a specified API key.
+     * Grants a temporary extension to the remaining quota of a usage plan associated with a specified API key.
      * </p>
      * 
      * @param updateUsageRequest
-     *        The PATCH request to grant a temporary extension to the reamining quota of a usage plan associated with a
+     *        The PATCH request to grant a temporary extension to the remaining quota of a usage plan associated with a
      *        specified API key.
      * @return Result of the UpdateUsage operation returned by the service.
      * @throws UnauthorizedException

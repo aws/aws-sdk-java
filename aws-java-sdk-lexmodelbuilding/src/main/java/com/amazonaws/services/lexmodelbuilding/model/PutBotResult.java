@@ -37,19 +37,20 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private String description;
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      */
     private java.util.List<Intent> intents;
     /**
      * <p>
-     * The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see .
+     * The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see
+     * <a>PutBot</a>.
      * </p>
      */
     private Prompt clarificationPrompt;
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * </p>
      */
     private Statement abortStatement;
@@ -89,13 +90,14 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see
-     * .
+     * <a>PutBot</a>.
      * </p>
      */
     private Integer idleSessionTTLInSeconds;
     /**
      * <p>
-     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
+     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see
+     * <a>PutBot</a>.
      * </p>
      */
     private String voiceId;
@@ -224,10 +226,10 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * 
-     * @return An array of <code>Intent</code> objects. For more information, see .
+     * @return An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      */
 
     public java.util.List<Intent> getIntents() {
@@ -236,11 +238,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param intents
-     *        An array of <code>Intent</code> objects. For more information, see .
+     *        An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      */
 
     public void setIntents(java.util.Collection<Intent> intents) {
@@ -254,7 +256,7 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -263,7 +265,7 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      * 
      * @param intents
-     *        An array of <code>Intent</code> objects. For more information, see .
+     *        An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +281,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param intents
-     *        An array of <code>Intent</code> objects. For more information, see .
+     *        An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,11 +296,13 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see .
+     * The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see
+     * <a>PutBot</a>.
      * </p>
      * 
      * @param clarificationPrompt
-     *        The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see .
+     *        The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see
+     *        <a>PutBot</a>.
      */
 
     public void setClarificationPrompt(Prompt clarificationPrompt) {
@@ -307,11 +311,12 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see .
+     * The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see
+     * <a>PutBot</a>.
      * </p>
      * 
      * @return The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see
-     *         .
+     *         <a>PutBot</a>.
      */
 
     public Prompt getClarificationPrompt() {
@@ -320,11 +325,13 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see .
+     * The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see
+     * <a>PutBot</a>.
      * </p>
      * 
      * @param clarificationPrompt
-     *        The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see .
+     *        The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see
+     *        <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +342,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see .
+     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      */
 
     public void setAbortStatement(Statement abortStatement) {
@@ -348,10 +355,10 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
-     * @return The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * @return The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      */
 
     public Statement getAbortStatement() {
@@ -360,11 +367,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see .
+     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -653,12 +660,12 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see
-     * .
+     * <a>PutBot</a>.
      * </p>
      * 
      * @param idleSessionTTLInSeconds
      *        The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more
-     *        information, see .
+     *        information, see <a>PutBot</a>.
      */
 
     public void setIdleSessionTTLInSeconds(Integer idleSessionTTLInSeconds) {
@@ -668,11 +675,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see
-     * .
+     * <a>PutBot</a>.
      * </p>
      * 
      * @return The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more
-     *         information, see .
+     *         information, see <a>PutBot</a>.
      */
 
     public Integer getIdleSessionTTLInSeconds() {
@@ -682,12 +689,12 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more information, see
-     * .
+     * <a>PutBot</a>.
      * </p>
      * 
      * @param idleSessionTTLInSeconds
      *        The maximum length of time that Amazon Lex retains the data gathered in a conversation. For more
-     *        information, see .
+     *        information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -698,12 +705,13 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
+     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see
+     * <a>PutBot</a>.
      * </p>
      * 
      * @param voiceId
      *        The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information,
-     *        see .
+     *        see <a>PutBot</a>.
      */
 
     public void setVoiceId(String voiceId) {
@@ -712,11 +720,12 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
+     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see
+     * <a>PutBot</a>.
      * </p>
      * 
      * @return The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information,
-     *         see .
+     *         see <a>PutBot</a>.
      */
 
     public String getVoiceId() {
@@ -725,12 +734,13 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
+     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see
+     * <a>PutBot</a>.
      * </p>
      * 
      * @param voiceId
      *        The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information,
-     *        see .
+     *        see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

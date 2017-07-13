@@ -36,7 +36,7 @@ public class GetApiKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String position;
     /**
      * <p>
-     * The current page of any <a>ApiKey</a> resources in the collection of <a>ApiKey</a> resources.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<ApiKey> items;
@@ -147,10 +147,10 @@ public class GetApiKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The current page of any <a>ApiKey</a> resources in the collection of <a>ApiKey</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return The current page of any <a>ApiKey</a> resources in the collection of <a>ApiKey</a> resources.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<ApiKey> getItems() {
@@ -159,11 +159,11 @@ public class GetApiKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The current page of any <a>ApiKey</a> resources in the collection of <a>ApiKey</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of any <a>ApiKey</a> resources in the collection of <a>ApiKey</a> resources.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<ApiKey> items) {
@@ -177,7 +177,7 @@ public class GetApiKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The current page of any <a>ApiKey</a> resources in the collection of <a>ApiKey</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -186,7 +186,7 @@ public class GetApiKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param items
-     *        The current page of any <a>ApiKey</a> resources in the collection of <a>ApiKey</a> resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +202,11 @@ public class GetApiKeysResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The current page of any <a>ApiKey</a> resources in the collection of <a>ApiKey</a> resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of any <a>ApiKey</a> resources in the collection of <a>ApiKey</a> resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,8 +37,8 @@ public class UtteranceList implements Serializable, Cloneable, StructuredPojo {
     private String botVersion;
     /**
      * <p>
-     * One or more objects that contain information about the utterances that have been made to a bot. The maximum
-     * number of object is 100.
+     * One or more <a>UtteranceData</a> objects that contain information about the utterances that have been made to a
+     * bot. The maximum number of object is 100.
      * </p>
      */
     private java.util.List<UtteranceData> utterances;
@@ -85,12 +85,12 @@ public class UtteranceList implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more objects that contain information about the utterances that have been made to a bot. The maximum
-     * number of object is 100.
+     * One or more <a>UtteranceData</a> objects that contain information about the utterances that have been made to a
+     * bot. The maximum number of object is 100.
      * </p>
      * 
-     * @return One or more objects that contain information about the utterances that have been made to a bot. The
-     *         maximum number of object is 100.
+     * @return One or more <a>UtteranceData</a> objects that contain information about the utterances that have been
+     *         made to a bot. The maximum number of object is 100.
      */
 
     public java.util.List<UtteranceData> getUtterances() {
@@ -99,13 +99,13 @@ public class UtteranceList implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more objects that contain information about the utterances that have been made to a bot. The maximum
-     * number of object is 100.
+     * One or more <a>UtteranceData</a> objects that contain information about the utterances that have been made to a
+     * bot. The maximum number of object is 100.
      * </p>
      * 
      * @param utterances
-     *        One or more objects that contain information about the utterances that have been made to a bot. The
-     *        maximum number of object is 100.
+     *        One or more <a>UtteranceData</a> objects that contain information about the utterances that have been made
+     *        to a bot. The maximum number of object is 100.
      */
 
     public void setUtterances(java.util.Collection<UtteranceData> utterances) {
@@ -119,8 +119,8 @@ public class UtteranceList implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more objects that contain information about the utterances that have been made to a bot. The maximum
-     * number of object is 100.
+     * One or more <a>UtteranceData</a> objects that contain information about the utterances that have been made to a
+     * bot. The maximum number of object is 100.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -129,8 +129,8 @@ public class UtteranceList implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param utterances
-     *        One or more objects that contain information about the utterances that have been made to a bot. The
-     *        maximum number of object is 100.
+     *        One or more <a>UtteranceData</a> objects that contain information about the utterances that have been made
+     *        to a bot. The maximum number of object is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,13 +146,13 @@ public class UtteranceList implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more objects that contain information about the utterances that have been made to a bot. The maximum
-     * number of object is 100.
+     * One or more <a>UtteranceData</a> objects that contain information about the utterances that have been made to a
+     * bot. The maximum number of object is 100.
      * </p>
      * 
      * @param utterances
-     *        One or more objects that contain information about the utterances that have been made to a bot. The
-     *        maximum number of object is 100.
+     *        One or more <a>UtteranceData</a> objects that contain information about the utterances that have been made
+     *        to a bot. The maximum number of object is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

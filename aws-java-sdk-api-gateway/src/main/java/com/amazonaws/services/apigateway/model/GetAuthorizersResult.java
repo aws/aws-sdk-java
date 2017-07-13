@@ -29,7 +29,7 @@ public class GetAuthorizersResult extends com.amazonaws.AmazonWebServiceResult<c
     private String position;
     /**
      * <p>
-     * Gets the current list of <a>Authorizer</a> resources in the collection.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<Authorizer> items;
@@ -62,10 +62,10 @@ public class GetAuthorizersResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Gets the current list of <a>Authorizer</a> resources in the collection.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return Gets the current list of <a>Authorizer</a> resources in the collection.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<Authorizer> getItems() {
@@ -74,11 +74,11 @@ public class GetAuthorizersResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Gets the current list of <a>Authorizer</a> resources in the collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        Gets the current list of <a>Authorizer</a> resources in the collection.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<Authorizer> items) {
@@ -92,7 +92,7 @@ public class GetAuthorizersResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Gets the current list of <a>Authorizer</a> resources in the collection.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -101,7 +101,7 @@ public class GetAuthorizersResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param items
-     *        Gets the current list of <a>Authorizer</a> resources in the collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +117,11 @@ public class GetAuthorizersResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Gets the current list of <a>Authorizer</a> resources in the collection.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        Gets the current list of <a>Authorizer</a> resources in the collection.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

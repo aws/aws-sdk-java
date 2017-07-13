@@ -27,7 +27,7 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the <a>Stage</a> resource to change information about.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -46,11 +46,11 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the <a>Stage</a> resource to change information about.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The identifier of the <a>RestApi</a> resource for the <a>Stage</a> resource to change information about.
+     *        The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the <a>Stage</a> resource to change information about.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The identifier of the <a>RestApi</a> resource for the <a>Stage</a> resource to change information about.
+     * @return The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the <a>RestApi</a> resource for the <a>Stage</a> resource to change information about.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The identifier of the <a>RestApi</a> resource for the <a>Stage</a> resource to change information about.
+     *        The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

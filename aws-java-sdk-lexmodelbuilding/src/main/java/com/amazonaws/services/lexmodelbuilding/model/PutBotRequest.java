@@ -46,10 +46,14 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private java.util.List<Intent> intents;
     /**
      * <p>
-     * When Amazon Lex doesn't understand the user's intent, it uses one of these messages to get clarification. For
-     * example, "Sorry, I didn't understand. Please repeat." Amazon Lex repeats the clarification prompt the number of
-     * times specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it sends the message specified
-     * in <code>abortStatement</code>.
+     * When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how
+     * many times Amazon Lex should repeate the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
+     * Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.
+     * </p>
+     * <p>
+     * When you create a clarification prompt, make sure that it suggests the correct response from the user. for
+     * example, for a bot that orders pizza and drinks, you might create this clarification prompt:
+     * "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      * </p>
      */
     private Prompt clarificationPrompt;
@@ -97,8 +101,8 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly Developer
-     * Guide</i>.
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon Polly
+     * Developer Guide</i>.
      * </p>
      */
     private String voiceId;
@@ -326,17 +330,25 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * When Amazon Lex doesn't understand the user's intent, it uses one of these messages to get clarification. For
-     * example, "Sorry, I didn't understand. Please repeat." Amazon Lex repeats the clarification prompt the number of
-     * times specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it sends the message specified
-     * in <code>abortStatement</code>.
+     * When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how
+     * many times Amazon Lex should repeate the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
+     * Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.
+     * </p>
+     * <p>
+     * When you create a clarification prompt, make sure that it suggests the correct response from the user. for
+     * example, for a bot that orders pizza and drinks, you might create this clarification prompt:
+     * "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      * </p>
      * 
      * @param clarificationPrompt
-     *        When Amazon Lex doesn't understand the user's intent, it uses one of these messages to get clarification.
-     *        For example, "Sorry, I didn't understand. Please repeat." Amazon Lex repeats the clarification prompt the
-     *        number of times specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it sends the
-     *        message specified in <code>abortStatement</code>.
+     *        When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To
+     *        specify how many times Amazon Lex should repeate the clarification prompt, use the
+     *        <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the
+     *        <code>abortStatement</code> field. </p>
+     *        <p>
+     *        When you create a clarification prompt, make sure that it suggests the correct response from the user. for
+     *        example, for a bot that orders pizza and drinks, you might create this clarification prompt:
+     *        "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      */
 
     public void setClarificationPrompt(Prompt clarificationPrompt) {
@@ -345,16 +357,24 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * When Amazon Lex doesn't understand the user's intent, it uses one of these messages to get clarification. For
-     * example, "Sorry, I didn't understand. Please repeat." Amazon Lex repeats the clarification prompt the number of
-     * times specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it sends the message specified
-     * in <code>abortStatement</code>.
+     * When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how
+     * many times Amazon Lex should repeate the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
+     * Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.
+     * </p>
+     * <p>
+     * When you create a clarification prompt, make sure that it suggests the correct response from the user. for
+     * example, for a bot that orders pizza and drinks, you might create this clarification prompt:
+     * "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      * </p>
      * 
-     * @return When Amazon Lex doesn't understand the user's intent, it uses one of these messages to get clarification.
-     *         For example, "Sorry, I didn't understand. Please repeat." Amazon Lex repeats the clarification prompt the
-     *         number of times specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it sends the
-     *         message specified in <code>abortStatement</code>.
+     * @return When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To
+     *         specify how many times Amazon Lex should repeate the clarification prompt, use the
+     *         <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the
+     *         <code>abortStatement</code> field. </p>
+     *         <p>
+     *         When you create a clarification prompt, make sure that it suggests the correct response from the user.
+     *         for example, for a bot that orders pizza and drinks, you might create this clarification prompt:
+     *         "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      */
 
     public Prompt getClarificationPrompt() {
@@ -363,17 +383,25 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * When Amazon Lex doesn't understand the user's intent, it uses one of these messages to get clarification. For
-     * example, "Sorry, I didn't understand. Please repeat." Amazon Lex repeats the clarification prompt the number of
-     * times specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it sends the message specified
-     * in <code>abortStatement</code>.
+     * When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how
+     * many times Amazon Lex should repeate the clarification prompt, use the <code>maxAttempts</code> field. If Amazon
+     * Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field.
+     * </p>
+     * <p>
+     * When you create a clarification prompt, make sure that it suggests the correct response from the user. for
+     * example, for a bot that orders pizza and drinks, you might create this clarification prompt:
+     * "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      * </p>
      * 
      * @param clarificationPrompt
-     *        When Amazon Lex doesn't understand the user's intent, it uses one of these messages to get clarification.
-     *        For example, "Sorry, I didn't understand. Please repeat." Amazon Lex repeats the clarification prompt the
-     *        number of times specified in <code>maxAttempts</code>. If Amazon Lex still can't understand, it sends the
-     *        message specified in <code>abortStatement</code>.
+     *        When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To
+     *        specify how many times Amazon Lex should repeate the clarification prompt, use the
+     *        <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the
+     *        <code>abortStatement</code> field. </p>
+     *        <p>
+     *        When you create a clarification prompt, make sure that it suggests the correct response from the user. for
+     *        example, for a bot that orders pizza and drinks, you might create this clarification prompt:
+     *        "What would you like to do? You can say 'Order a pizza' or 'Order a drink.'"
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -631,15 +659,15 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly Developer
-     * Guide</i>.
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon Polly
+     * Developer Guide</i>.
      * </p>
      * 
      * @param voiceId
      *        The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      *        configured for the voice must match the locale of the bot. For more information, see <a
-     *        href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly
-     *        Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon
+     *        Polly Developer Guide</i>.
      */
 
     public void setVoiceId(String voiceId) {
@@ -650,14 +678,14 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly Developer
-     * Guide</i>.
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon Polly
+     * Developer Guide</i>.
      * </p>
      * 
      * @return The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The
      *         locale configured for the voice must match the locale of the bot. For more information, see <a
-     *         href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly
-     *         Developer Guide</i>.
+     *         href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon
+     *         Polly Developer Guide</i>.
      */
 
     public String getVoiceId() {
@@ -668,15 +696,15 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
-     * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly Developer
-     * Guide</i>.
+     * href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon Polly
+     * Developer Guide</i>.
      * </p>
      * 
      * @param voiceId
      *        The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      *        configured for the voice must match the locale of the bot. For more information, see <a
-     *        href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly
-     *        Developer Guide</i>.
+     *        href="http://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a> in the <i>Amazon
+     *        Polly Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

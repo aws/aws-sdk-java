@@ -27,24 +27,24 @@ public class StageKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The stage name in the <a>RestApi</a> that the stage key references.
+     * The stage name associated with the stage key.
      * </p>
      */
     private String stageName;
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     *        The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class StageKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * @return The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class StageKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     * The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.
+     *        The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class StageKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stage name in the <a>RestApi</a> that the stage key references.
+     * The stage name associated with the stage key.
      * </p>
      * 
      * @param stageName
-     *        The stage name in the <a>RestApi</a> that the stage key references.
+     *        The stage name associated with the stage key.
      */
 
     public void setStageName(String stageName) {
@@ -93,10 +93,10 @@ public class StageKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stage name in the <a>RestApi</a> that the stage key references.
+     * The stage name associated with the stage key.
      * </p>
      * 
-     * @return The stage name in the <a>RestApi</a> that the stage key references.
+     * @return The stage name associated with the stage key.
      */
 
     public String getStageName() {
@@ -105,11 +105,11 @@ public class StageKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stage name in the <a>RestApi</a> that the stage key references.
+     * The stage name associated with the stage key.
      * </p>
      * 
      * @param stageName
-     *        The stage name in the <a>RestApi</a> that the stage key references.
+     *        The stage name associated with the stage key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

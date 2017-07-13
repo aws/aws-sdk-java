@@ -29,8 +29,7 @@ public class GetClientCertificatesResult extends com.amazonaws.AmazonWebServiceR
     private String position;
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
-     * resources.
+     * The current page of elements from this collection.
      * </p>
      */
     private java.util.List<ClientCertificate> items;
@@ -63,12 +62,10 @@ public class GetClientCertificatesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
-     * resources.
+     * The current page of elements from this collection.
      * </p>
      * 
-     * @return The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
-     *         resources.
+     * @return The current page of elements from this collection.
      */
 
     public java.util.List<ClientCertificate> getItems() {
@@ -77,13 +74,11 @@ public class GetClientCertificatesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
-     * resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
-     *        resources.
+     *        The current page of elements from this collection.
      */
 
     public void setItems(java.util.Collection<ClientCertificate> items) {
@@ -97,8 +92,7 @@ public class GetClientCertificatesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
-     * resources.
+     * The current page of elements from this collection.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -107,8 +101,7 @@ public class GetClientCertificatesResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param items
-     *        The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
-     *        resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,13 +117,11 @@ public class GetClientCertificatesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
-     * resources.
+     * The current page of elements from this collection.
      * </p>
      * 
      * @param items
-     *        The current page of any <a>ClientCertificate</a> resources in the collection of <a>ClientCertificate</a>
-     *        resources.
+     *        The current page of elements from this collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

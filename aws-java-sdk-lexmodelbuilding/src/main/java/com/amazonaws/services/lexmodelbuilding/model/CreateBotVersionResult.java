@@ -37,19 +37,20 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     private String description;
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      */
     private java.util.List<Intent> intents;
     /**
      * <p>
-     * The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see .
+     * The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see
+     * <a>PutBot</a>.
      * </p>
      */
     private Prompt clarificationPrompt;
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * </p>
      */
     private Statement abortStatement;
@@ -83,7 +84,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information,
-     * see .
+     * see <a>PutBot</a>.
      * </p>
      */
     private Integer idleSessionTTLInSeconds;
@@ -218,10 +219,10 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * 
-     * @return An array of <code>Intent</code> objects. For more information, see .
+     * @return An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      */
 
     public java.util.List<Intent> getIntents() {
@@ -230,11 +231,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param intents
-     *        An array of <code>Intent</code> objects. For more information, see .
+     *        An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      */
 
     public void setIntents(java.util.Collection<Intent> intents) {
@@ -248,7 +249,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -257,7 +258,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param intents
-     *        An array of <code>Intent</code> objects. For more information, see .
+     *        An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +274,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of <code>Intent</code> objects. For more information, see .
+     * An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param intents
-     *        An array of <code>Intent</code> objects. For more information, see .
+     *        An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,12 +289,13 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see .
+     * The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see
+     * <a>PutBot</a>.
      * </p>
      * 
      * @param clarificationPrompt
      *        The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see
-     *        .
+     *        <a>PutBot</a>.
      */
 
     public void setClarificationPrompt(Prompt clarificationPrompt) {
@@ -302,11 +304,12 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see .
+     * The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see
+     * <a>PutBot</a>.
      * </p>
      * 
      * @return The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see
-     *         .
+     *         <a>PutBot</a>.
      */
 
     public Prompt getClarificationPrompt() {
@@ -315,12 +318,13 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see .
+     * The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see
+     * <a>PutBot</a>.
      * </p>
      * 
      * @param clarificationPrompt
      *        The message that Amazon Lex uses when it doesn't understand the user's request. For more information, see
-     *        .
+     *        <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,11 +335,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see .
+     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      */
 
     public void setAbortStatement(Statement abortStatement) {
@@ -344,10 +348,10 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
-     * @return The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * @return The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      */
 
     public Statement getAbortStatement() {
@@ -356,11 +360,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see .
+     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see .
+     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,12 +602,12 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information,
-     * see .
+     * see <a>PutBot</a>.
      * </p>
      * 
      * @param idleSessionTTLInSeconds
      *        The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more
-     *        information, see .
+     *        information, see <a>PutBot</a>.
      */
 
     public void setIdleSessionTTLInSeconds(Integer idleSessionTTLInSeconds) {
@@ -613,11 +617,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information,
-     * see .
+     * see <a>PutBot</a>.
      * </p>
      * 
      * @return The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more
-     *         information, see .
+     *         information, see <a>PutBot</a>.
      */
 
     public Integer getIdleSessionTTLInSeconds() {
@@ -627,12 +631,12 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more information,
-     * see .
+     * see <a>PutBot</a>.
      * </p>
      * 
      * @param idleSessionTTLInSeconds
      *        The maximum time in seconds that Amazon Lex retains the data gathered in a conversation. For more
-     *        information, see .
+     *        information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
