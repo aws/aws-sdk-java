@@ -85,10 +85,18 @@ public class S3ObjectInputStream extends SdkFilterInputStream {
      */
     @Override
     public void abort() {
+        super.abort();
+
         if (httpRequest != null) {
             httpRequest.abort();
         }
-        IOUtils.closeQuietly(in, null);
+
+        // The default abort() implementation calls abort on the wrapped stream
+        // if it's an SdkFilterInputStream; otherwise we'll need to close the
+        // stream.
+        if (!(in instanceof SdkFilterInputStream)) {
+            IOUtils.closeQuietly(in, null);
+        }
     }
 
     /**

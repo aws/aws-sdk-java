@@ -28,6 +28,19 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<String> exportIds;
     /**
      * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AgentId</code> - ID of the agent whose collected data will be exported
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<ExportFilter> filters;
+    /**
+     * <p>
      * The maximum number of volume results returned by <code>DescribeExportTasks</code> in paginated output. When this
      * parameter is used, <code>DescribeExportTasks</code> only returns <code>maxResults</code> results in a single page
      * along with a <code>nextToken</code> response element.
@@ -111,6 +124,128 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     public DescribeExportTasksRequest withExportIds(java.util.Collection<String> exportIds) {
         setExportIds(exportIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AgentId</code> - ID of the agent whose collected data will be exported
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return One or more filters.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AgentId</code> - ID of the agent whose collected data will be exported
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<ExportFilter> getFilters() {
+        return filters;
+    }
+
+    /**
+     * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AgentId</code> - ID of the agent whose collected data will be exported
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filters
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AgentId</code> - ID of the agent whose collected data will be exported
+     *        </p>
+     *        </li>
+     */
+
+    public void setFilters(java.util.Collection<ExportFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new java.util.ArrayList<ExportFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AgentId</code> - ID of the agent whose collected data will be exported
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AgentId</code> - ID of the agent whose collected data will be exported
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExportTasksRequest withFilters(ExportFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new java.util.ArrayList<ExportFilter>(filters.length));
+        }
+        for (ExportFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more filters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AgentId</code> - ID of the agent whose collected data will be exported
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param filters
+     *        One or more filters.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AgentId</code> - ID of the agent whose collected data will be exported
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExportTasksRequest withFilters(java.util.Collection<ExportFilter> filters) {
+        setFilters(filters);
         return this;
     }
 
@@ -237,6 +372,8 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getExportIds() != null)
             sb.append("ExportIds: ").append(getExportIds()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -259,6 +396,10 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getExportIds() != null && other.getExportIds().equals(this.getExportIds()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -276,6 +417,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getExportIds() == null) ? 0 : getExportIds().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

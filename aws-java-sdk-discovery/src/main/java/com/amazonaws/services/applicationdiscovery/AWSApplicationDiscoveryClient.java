@@ -1283,8 +1283,18 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Export the configuration data about discovered configuration items and relationships to an S3 bucket in a
-     * specified format.
+     * Begins the export of discovered data to an S3 bucket.
+     * </p>
+     * <p>
+     * If you specify <code>agentId</code> in a filter, the task exports up to 72 hours of detailed data collected by
+     * the identified Application Discovery Agent, including network, process, and performance details. A time range for
+     * exported agent data may be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed agent
+     * data is limited to five concurrently running exports.
+     * </p>
+     * <p>
+     * If you do not include an <code>agentId</code> filter, summary data is exported that includes both AWS Agentless
+     * Discovery Connector data and summary data from AWS Discovery Agents. Export of summary data is limited to two
+     * exports per day.
      * </p>
      * 
      * @param startExportTaskRequest

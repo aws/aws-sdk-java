@@ -30,6 +30,8 @@ public class DescribeExportTasksRequestMarshaller {
 
     private static final MarshallingInfo<List> EXPORTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("exportIds").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filters").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class DescribeExportTasksRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeExportTasksRequest.getExportIds(), EXPORTIDS_BINDING);
+            protocolMarshaller.marshall(describeExportTasksRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(describeExportTasksRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeExportTasksRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

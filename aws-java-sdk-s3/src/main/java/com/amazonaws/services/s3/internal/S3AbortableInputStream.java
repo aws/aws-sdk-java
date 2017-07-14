@@ -66,6 +66,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      */
     @Override
     public void abort() {
+        super.abort();
         if (httpRequest != null) {
             httpRequest.abort();
         }
@@ -157,7 +158,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      */
     @Override
     public void close() throws IOException {
-        if (bytesRead >= contentLength || eofReached) {
+        if (readAllBytes() || isAborted()) {
             super.close();
         } else {
             LOG.warn(
@@ -182,5 +183,9 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     @SdkTestInternalApi
     boolean isEofReached() {
         return this.eofReached;
+    }
+
+    private boolean readAllBytes() {
+        return bytesRead >= contentLength || eofReached;
     }
 }

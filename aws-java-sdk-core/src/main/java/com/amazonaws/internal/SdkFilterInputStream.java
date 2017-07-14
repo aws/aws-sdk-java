@@ -27,6 +27,8 @@ import com.amazonaws.AbortedException;
  */
 public class SdkFilterInputStream extends FilterInputStream implements
         MetricAware, Releasable {
+    private volatile boolean aborted = false;
+
     protected SdkFilterInputStream(InputStream in) {
         super(in);
     }
@@ -54,10 +56,18 @@ public class SdkFilterInputStream extends FilterInputStream implements
 
     /**
      * Can be used to provide abortion logic prior to throwing the
-     * AbortedException. No-op by default.
+     * AbortedException. If the wrapped {@code InputStream} is also an instance
+     * of this class, then it will also be aborted, otherwise this is a no-op.
      */
-    protected void abort() {
-        // no-op by default, but subclass such as S3ObjectInputStream may override
+    public void abort() {
+        if (in instanceof SdkFilterInputStream) {
+            ((SdkFilterInputStream) in).abort();
+        }
+        aborted = true;
+    }
+
+    protected boolean isAborted() {
+        return aborted;
     }
 
     @Override

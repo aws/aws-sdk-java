@@ -30,6 +30,12 @@ public class StartExportTaskRequestMarshaller {
 
     private static final MarshallingInfo<List> EXPORTDATAFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exportDataFormat").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filters").build();
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").build();
 
     private static final StartExportTaskRequestMarshaller instance = new StartExportTaskRequestMarshaller();
 
@@ -48,6 +54,9 @@ public class StartExportTaskRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startExportTaskRequest.getExportDataFormat(), EXPORTDATAFORMAT_BINDING);
+            protocolMarshaller.marshall(startExportTaskRequest.getFilters(), FILTERS_BINDING);
+            protocolMarshaller.marshall(startExportTaskRequest.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(startExportTaskRequest.getEndTime(), ENDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

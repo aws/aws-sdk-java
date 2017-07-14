@@ -68,6 +68,18 @@ public class ExportInfoJsonUnmarshaller implements Unmarshaller<ExportInfo, Json
                     context.nextToken();
                     exportInfo.setExportRequestTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("isTruncated", targetDepth)) {
+                    context.nextToken();
+                    exportInfo.setIsTruncated(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("requestedStartTime", targetDepth)) {
+                    context.nextToken();
+                    exportInfo.setRequestedStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("requestedEndTime", targetDepth)) {
+                    context.nextToken();
+                    exportInfo.setRequestedEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

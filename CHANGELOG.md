@@ -1,3 +1,22 @@
+# __1.11.163__ __2017-07-14__
+## __AWS Application Discovery Service__
+  - ### Features
+    - Adding feature to the Export API for Discovery Service to allow filters for the export task to allow export based on per agent id.
+
+## __AWS Marketplace Commerce Analytics__
+  - ### Features
+    - Update to Documentation Model For New Report Cadence / Reformat of Docs
+
+## __Amazon EC2__
+  - ### Features
+    - New EC2 GPU Graphics instance
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fix a bug where a warning about unread data in the `S3ObjectInputStream` is still logged when `close()` is called, even after the stream has been aborted.
+
+      Fixes [#1211](https://github.com/aws/aws-sdk-java/issues/1211)
+
 # __1.11.162__ __2017-07-13__
 ## __Amazon API Gateway__
   - ### Features

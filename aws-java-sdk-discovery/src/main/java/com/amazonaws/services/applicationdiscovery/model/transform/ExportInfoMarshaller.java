@@ -37,6 +37,12 @@ public class ExportInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationsDownloadUrl").build();
     private static final MarshallingInfo<java.util.Date> EXPORTREQUESTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exportRequestTime").build();
+    private static final MarshallingInfo<Boolean> ISTRUNCATED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isTruncated").build();
+    private static final MarshallingInfo<java.util.Date> REQUESTEDSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedStartTime").build();
+    private static final MarshallingInfo<java.util.Date> REQUESTEDENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedEndTime").build();
 
     private static final ExportInfoMarshaller instance = new ExportInfoMarshaller();
 
@@ -59,6 +65,9 @@ public class ExportInfoMarshaller {
             protocolMarshaller.marshall(exportInfo.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(exportInfo.getConfigurationsDownloadUrl(), CONFIGURATIONSDOWNLOADURL_BINDING);
             protocolMarshaller.marshall(exportInfo.getExportRequestTime(), EXPORTREQUESTTIME_BINDING);
+            protocolMarshaller.marshall(exportInfo.getIsTruncated(), ISTRUNCATED_BINDING);
+            protocolMarshaller.marshall(exportInfo.getRequestedStartTime(), REQUESTEDSTARTTIME_BINDING);
+            protocolMarshaller.marshall(exportInfo.getRequestedEndTime(), REQUESTEDENDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
