@@ -38,6 +38,7 @@ application/index.vnd
 application/iotp
 application/ipp
 application/isup
+application/javascript	js
 application/mac-binhex40	hqx
 application/mac-compactpro	cpt
 application/macwriteii
@@ -353,7 +354,6 @@ application/x-futuresplash	spl
 application/x-gtar		gtar
 application/x-gzip		gz
 application/x-hdf		hdf
-application/x-javascript	js
 application/x-java-jnlp-file	jnlp
 application/x-koan		skp skd skt skm
 application/x-latex		latex
