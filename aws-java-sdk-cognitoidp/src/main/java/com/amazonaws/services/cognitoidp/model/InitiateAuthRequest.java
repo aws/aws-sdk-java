@@ -40,8 +40,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     * challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
+     * to be used for next challenge execution.
      * </p>
      * </li>
      * </ul>
@@ -79,7 +79,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
@@ -125,8 +125,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     * challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
+     * to be used for next challenge execution.
      * </p>
      * </li>
      * </ul>
@@ -166,8 +166,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     *        challenge execution.
+     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
+     *        variables to be used for next challenge execution.
      *        </p>
      *        </li>
      *        </ul>
@@ -213,8 +213,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     * challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
+     * to be used for next challenge execution.
      * </p>
      * </li>
      * </ul>
@@ -253,8 +253,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for
-     *         next challenge execution.
+     *         <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
+     *         variables to be used for next challenge execution.
      *         </p>
      *         </li>
      *         </ul>
@@ -300,8 +300,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     * challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
+     * to be used for next challenge execution.
      * </p>
      * </li>
      * </ul>
@@ -341,8 +341,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     *        challenge execution.
+     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
+     *        variables to be used for next challenge execution.
      *        </p>
      *        </li>
      *        </ul>
@@ -390,8 +390,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     * challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
+     * to be used for next challenge execution.
      * </p>
      * </li>
      * </ul>
@@ -431,8 +431,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     *        challenge execution.
+     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
+     *        variables to be used for next challenge execution.
      *        </p>
      *        </li>
      *        </ul>
@@ -478,8 +478,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     * challenge execution.
+     * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
+     * to be used for next challenge execution.
      * </p>
      * </li>
      * </ul>
@@ -519,8 +519,8 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next
-     *        challenge execution.
+     *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
+     *        variables to be used for next challenge execution.
      *        </p>
      *        </li>
      *        </ul>
@@ -564,7 +564,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
@@ -588,7 +588,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     *         For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      *         <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
      *         <code>DEVICE_KEY</code>
      *         </p>
@@ -620,7 +620,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
@@ -645,7 +645,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     *        For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
      *        <code>DEVICE_KEY</code>
      *        </p>
@@ -677,7 +677,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     * For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
@@ -702,7 +702,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code> (required),
+     *        For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
      *        <code>DEVICE_KEY</code>
      *        </p>

@@ -116,6 +116,10 @@ public class UpdateFunctionCodeResultJsonUnmarshaller implements Unmarshaller<Up
                     context.nextToken();
                     updateFunctionCodeResult.setTracingConfig(TracingConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MasterArn", targetDepth)) {
+                    context.nextToken();
+                    updateFunctionCodeResult.setMasterArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

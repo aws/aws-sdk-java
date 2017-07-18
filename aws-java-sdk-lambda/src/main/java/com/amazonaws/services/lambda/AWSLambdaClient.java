@@ -1572,8 +1572,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * This operation requires permission for the <code>lambda:ListFunctions</code> action.
      * </p>
      * <p>
-     * If you are using versioning feature, the response returns list of $LATEST versions of your functions. For
-     * information about the versioning feature, see <a
+     * If you are using the versioning feature, you can list all of your functions or only <code>$LATEST</code>
+     * versions. For information about the versioning feature, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
      * Aliases</a>.
      * </p>
@@ -1583,6 +1583,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The AWS Lambda service encountered an internal error.
      * @throws TooManyRequestsException
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have
+     *         selected a deprecated runtime, such as Node v0.10.42.
      * @sample AWSLambda.ListFunctions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions" target="_top">AWS API
      *      Documentation</a>

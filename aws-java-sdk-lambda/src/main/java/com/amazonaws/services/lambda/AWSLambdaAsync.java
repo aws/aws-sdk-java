@@ -937,8 +937,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * This operation requires permission for the <code>lambda:ListFunctions</code> action.
      * </p>
      * <p>
-     * If you are using versioning feature, the response returns list of $LATEST versions of your functions. For
-     * information about the versioning feature, see <a
+     * If you are using the versioning feature, you can list all of your functions or only <code>$LATEST</code>
+     * versions. For information about the versioning feature, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
      * Aliases</a>.
      * </p>
@@ -960,8 +960,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * This operation requires permission for the <code>lambda:ListFunctions</code> action.
      * </p>
      * <p>
-     * If you are using versioning feature, the response returns list of $LATEST versions of your functions. For
-     * information about the versioning feature, see <a
+     * If you are using the versioning feature, you can list all of your functions or only <code>$LATEST</code>
+     * versions. For information about the versioning feature, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
      * Aliases</a>.
      * </p>

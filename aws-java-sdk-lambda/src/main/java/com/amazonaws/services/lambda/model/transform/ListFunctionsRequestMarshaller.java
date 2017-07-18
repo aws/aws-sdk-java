@@ -27,6 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListFunctionsRequestMarshaller {
 
+    private static final MarshallingInfo<String> MASTERREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MasterRegion").build();
+    private static final MarshallingInfo<String> FUNCTIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("FunctionVersion").build();
     private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Marker").build();
     private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -48,6 +52,8 @@ public class ListFunctionsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listFunctionsRequest.getMasterRegion(), MASTERREGION_BINDING);
+            protocolMarshaller.marshall(listFunctionsRequest.getFunctionVersion(), FUNCTIONVERSION_BINDING);
             protocolMarshaller.marshall(listFunctionsRequest.getMarker(), MARKER_BINDING);
             protocolMarshaller.marshall(listFunctionsRequest.getMaxItems(), MAXITEMS_BINDING);
         } catch (Exception e) {

@@ -49,6 +49,8 @@ public class UserPoolTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoVerifiedAttributes").build();
     private static final MarshallingInfo<List> ALIASATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AliasAttributes").build();
+    private static final MarshallingInfo<List> USERNAMEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsernameAttributes").build();
     private static final MarshallingInfo<String> SMSVERIFICATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SmsVerificationMessage").build();
     private static final MarshallingInfo<String> EMAILVERIFICATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -102,6 +104,7 @@ public class UserPoolTypeMarshaller {
             protocolMarshaller.marshall(userPoolType.getSchemaAttributes(), SCHEMAATTRIBUTES_BINDING);
             protocolMarshaller.marshall(userPoolType.getAutoVerifiedAttributes(), AUTOVERIFIEDATTRIBUTES_BINDING);
             protocolMarshaller.marshall(userPoolType.getAliasAttributes(), ALIASATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(userPoolType.getUsernameAttributes(), USERNAMEATTRIBUTES_BINDING);
             protocolMarshaller.marshall(userPoolType.getSmsVerificationMessage(), SMSVERIFICATIONMESSAGE_BINDING);
             protocolMarshaller.marshall(userPoolType.getEmailVerificationMessage(), EMAILVERIFICATIONMESSAGE_BINDING);
             protocolMarshaller.marshall(userPoolType.getEmailVerificationSubject(), EMAILVERIFICATIONSUBJECT_BINDING);

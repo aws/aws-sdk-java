@@ -89,6 +89,10 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                     context.nextToken();
                     userPoolType.setAliasAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("UsernameAttributes", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setUsernameAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("SmsVerificationMessage", targetDepth)) {
                     context.nextToken();
                     userPoolType.setSmsVerificationMessage(context.getUnmarshaller(String.class).unmarshall(context));

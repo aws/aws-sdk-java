@@ -28,6 +28,36 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <p>
+     * The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only
+     * functions replicated from that region will be returned.
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     * FunctionVersion parameter.
+     * </p>
+     */
+    private String masterRegion;
+    /**
+     * <p>
+     * Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.
+     * </p>
+     * <p>
+     * Valid value:
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * (Amazon Resource Names).
+     * </p>
+     */
+    private String functionVersion;
+    /**
+     * <p>
      * Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If
      * present, indicates where to continue the listing.
      * </p>
@@ -40,6 +70,255 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Integer maxItems;
+
+    /**
+     * <p>
+     * Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <p>
+     * The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only
+     * functions replicated from that region will be returned.
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     * FunctionVersion parameter.
+     * </p>
+     * 
+     * @param masterRegion
+     *        Optional string. If not specified, will return only regular function versions (i.e., non-replicated
+     *        versions).</p>
+     *        <p>
+     *        Valid values are:
+     *        </p>
+     *        <p>
+     *        The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>,
+     *        only functions replicated from that region will be returned.
+     *        </p>
+     *        <p>
+     *        <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     *        FunctionVersion parameter.
+     */
+
+    public void setMasterRegion(String masterRegion) {
+        this.masterRegion = masterRegion;
+    }
+
+    /**
+     * <p>
+     * Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <p>
+     * The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only
+     * functions replicated from that region will be returned.
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     * FunctionVersion parameter.
+     * </p>
+     * 
+     * @return Optional string. If not specified, will return only regular function versions (i.e., non-replicated
+     *         versions).</p>
+     *         <p>
+     *         Valid values are:
+     *         </p>
+     *         <p>
+     *         The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>,
+     *         only functions replicated from that region will be returned.
+     *         </p>
+     *         <p>
+     *         <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     *         FunctionVersion parameter.
+     */
+
+    public String getMasterRegion() {
+        return this.masterRegion;
+    }
+
+    /**
+     * <p>
+     * Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <p>
+     * The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only
+     * functions replicated from that region will be returned.
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     * FunctionVersion parameter.
+     * </p>
+     * 
+     * @param masterRegion
+     *        Optional string. If not specified, will return only regular function versions (i.e., non-replicated
+     *        versions).</p>
+     *        <p>
+     *        Valid values are:
+     *        </p>
+     *        <p>
+     *        The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>,
+     *        only functions replicated from that region will be returned.
+     *        </p>
+     *        <p>
+     *        <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid
+     *        FunctionVersion parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListFunctionsRequest withMasterRegion(String masterRegion) {
+        setMasterRegion(masterRegion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.
+     * </p>
+     * <p>
+     * Valid value:
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * (Amazon Resource Names).
+     * </p>
+     * 
+     * @param functionVersion
+     *        Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be
+     *        returned.</p>
+     *        <p>
+     *        Valid value:
+     *        </p>
+     *        <p>
+     *        <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
+     *        qualified ARNs (Amazon Resource Names).
+     * @see FunctionVersion
+     */
+
+    public void setFunctionVersion(String functionVersion) {
+        this.functionVersion = functionVersion;
+    }
+
+    /**
+     * <p>
+     * Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.
+     * </p>
+     * <p>
+     * Valid value:
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * (Amazon Resource Names).
+     * </p>
+     * 
+     * @return Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be
+     *         returned.</p>
+     *         <p>
+     *         Valid value:
+     *         </p>
+     *         <p>
+     *         <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
+     *         qualified ARNs (Amazon Resource Names).
+     * @see FunctionVersion
+     */
+
+    public String getFunctionVersion() {
+        return this.functionVersion;
+    }
+
+    /**
+     * <p>
+     * Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.
+     * </p>
+     * <p>
+     * Valid value:
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * (Amazon Resource Names).
+     * </p>
+     * 
+     * @param functionVersion
+     *        Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be
+     *        returned.</p>
+     *        <p>
+     *        Valid value:
+     *        </p>
+     *        <p>
+     *        <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
+     *        qualified ARNs (Amazon Resource Names).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FunctionVersion
+     */
+
+    public ListFunctionsRequest withFunctionVersion(String functionVersion) {
+        setFunctionVersion(functionVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.
+     * </p>
+     * <p>
+     * Valid value:
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * (Amazon Resource Names).
+     * </p>
+     * 
+     * @param functionVersion
+     *        Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be
+     *        returned.</p>
+     *        <p>
+     *        Valid value:
+     *        </p>
+     *        <p>
+     *        <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
+     *        qualified ARNs (Amazon Resource Names).
+     * @see FunctionVersion
+     */
+
+    public void setFunctionVersion(FunctionVersion functionVersion) {
+        this.functionVersion = functionVersion.toString();
+    }
+
+    /**
+     * <p>
+     * Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.
+     * </p>
+     * <p>
+     * Valid value:
+     * </p>
+     * <p>
+     * <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs
+     * (Amazon Resource Names).
+     * </p>
+     * 
+     * @param functionVersion
+     *        Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be
+     *        returned.</p>
+     *        <p>
+     *        Valid value:
+     *        </p>
+     *        <p>
+     *        <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully
+     *        qualified ARNs (Amazon Resource Names).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FunctionVersion
+     */
+
+    public ListFunctionsRequest withFunctionVersion(FunctionVersion functionVersion) {
+        setFunctionVersion(functionVersion);
+        return this;
+    }
 
     /**
      * <p>
@@ -144,6 +423,10 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getMasterRegion() != null)
+            sb.append("MasterRegion: ").append(getMasterRegion()).append(",");
+        if (getFunctionVersion() != null)
+            sb.append("FunctionVersion: ").append(getFunctionVersion()).append(",");
         if (getMarker() != null)
             sb.append("Marker: ").append(getMarker()).append(",");
         if (getMaxItems() != null)
@@ -162,6 +445,14 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof ListFunctionsRequest == false)
             return false;
         ListFunctionsRequest other = (ListFunctionsRequest) obj;
+        if (other.getMasterRegion() == null ^ this.getMasterRegion() == null)
+            return false;
+        if (other.getMasterRegion() != null && other.getMasterRegion().equals(this.getMasterRegion()) == false)
+            return false;
+        if (other.getFunctionVersion() == null ^ this.getFunctionVersion() == null)
+            return false;
+        if (other.getFunctionVersion() != null && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
+            return false;
         if (other.getMarker() == null ^ this.getMarker() == null)
             return false;
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
@@ -178,6 +469,8 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getMasterRegion() == null) ? 0 : getMasterRegion().hashCode());
+        hashCode = prime * hashCode + ((getFunctionVersion() == null) ? 0 : getFunctionVersion().hashCode());
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         return hashCode;

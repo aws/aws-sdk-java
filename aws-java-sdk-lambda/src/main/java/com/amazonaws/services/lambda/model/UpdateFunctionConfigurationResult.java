@@ -134,6 +134,12 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private TracingConfigResponse tracingConfig;
+    /**
+     * <p>
+     * Returns the ARN (Amazon Resource Name) of the master function.
+     * </p>
+     */
+    private String masterArn;
 
     /**
      * <p>
@@ -891,6 +897,46 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Returns the ARN (Amazon Resource Name) of the master function.
+     * </p>
+     * 
+     * @param masterArn
+     *        Returns the ARN (Amazon Resource Name) of the master function.
+     */
+
+    public void setMasterArn(String masterArn) {
+        this.masterArn = masterArn;
+    }
+
+    /**
+     * <p>
+     * Returns the ARN (Amazon Resource Name) of the master function.
+     * </p>
+     * 
+     * @return Returns the ARN (Amazon Resource Name) of the master function.
+     */
+
+    public String getMasterArn() {
+        return this.masterArn;
+    }
+
+    /**
+     * <p>
+     * Returns the ARN (Amazon Resource Name) of the master function.
+     * </p>
+     * 
+     * @param masterArn
+     *        Returns the ARN (Amazon Resource Name) of the master function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationResult withMasterArn(String masterArn) {
+        setMasterArn(masterArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -934,7 +980,9 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
         if (getKMSKeyArn() != null)
             sb.append("KMSKeyArn: ").append(getKMSKeyArn()).append(",");
         if (getTracingConfig() != null)
-            sb.append("TracingConfig: ").append(getTracingConfig());
+            sb.append("TracingConfig: ").append(getTracingConfig()).append(",");
+        if (getMasterArn() != null)
+            sb.append("MasterArn: ").append(getMasterArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1017,6 +1065,10 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getTracingConfig() != null && other.getTracingConfig().equals(this.getTracingConfig()) == false)
             return false;
+        if (other.getMasterArn() == null ^ this.getMasterArn() == null)
+            return false;
+        if (other.getMasterArn() != null && other.getMasterArn().equals(this.getMasterArn()) == false)
+            return false;
         return true;
     }
 
@@ -1042,6 +1094,7 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
+        hashCode = prime * hashCode + ((getMasterArn() == null) ? 0 : getMasterArn().hashCode());
         return hashCode;
     }
 

@@ -915,7 +915,7 @@
       "asyncReturnType" : "ListFunctionsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns a list of your Lambda functions. For each function, the response includes the function configuration information. You must use <a>GetFunction</a> to retrieve the code for your function.</p> <p>This operation requires permission for the <code>lambda:ListFunctions</code> action.</p> <p>If you are using versioning feature, the response returns list of $LATEST versions of your functions. For information about the versioning feature, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html\">AWS Lambda Function Versioning and Aliases</a>. </p>",
+      "documentation" : "<p>Returns a list of your Lambda functions. For each function, the response includes the function configuration information. You must use <a>GetFunction</a> to retrieve the code for your function.</p> <p>This operation requires permission for the <code>lambda:ListFunctions</code> action.</p> <p>If you are using the versioning feature, you can list all of your functions or only <code>$LATEST</code> versions. For information about the versioning feature, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html\">AWS Lambda Function Versioning and Aliases</a>. </p>",
       "exceptions" : [ {
         "exceptionName" : "ServiceException",
         "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>",
@@ -924,6 +924,10 @@
         "exceptionName" : "TooManyRequestsException",
         "documentation" : "<p/>",
         "httpStatusCode" : 429
+      }, {
+        "exceptionName" : "InvalidParameterValueException",
+        "documentation" : "<p>One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that AWS Lambda is unable to assume you will get this exception. You will also get this exception if you have selected a deprecated runtime, such as Node v0.10.42. </p>",
+        "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -9142,7 +9146,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
         "enumType" : null,
@@ -9204,7 +9208,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "FunctionArn",
-        "c2jShape" : "FunctionArn",
+        "c2jShape" : "NameSpacedFunctionArn",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
         "enumType" : null,
@@ -10194,6 +10198,68 @@
           "variableSetterType" : "TracingConfigResponse"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "MasterArn",
+        "c2jShape" : "FunctionArn",
+        "deprecated" : false,
+        "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMasterArn",
+        "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "getterMethodName" : "getMasterArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MasterArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MasterArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "MasterArn",
+        "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "setterMethodName" : "setMasterArn",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CodeSha256" : {
@@ -10513,7 +10579,7 @@
         },
         "FunctionArn" : {
           "c2jName" : "FunctionArn",
-          "c2jShape" : "FunctionArn",
+          "c2jShape" : "NameSpacedFunctionArn",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
           "enumType" : null,
@@ -10576,7 +10642,7 @@
         },
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
           "enumType" : null,
@@ -10821,6 +10887,69 @@
             "variableName" : "lastModified",
             "variableType" : "String",
             "documentation" : "<p>The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a href=\"https://www.w3.org/TR/NOTE-datetime\">Date and Time Formats</a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MasterArn" : {
+          "c2jName" : "MasterArn",
+          "c2jShape" : "FunctionArn",
+          "deprecated" : false,
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMasterArn",
+          "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "getterMethodName" : "getMasterArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MasterArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MasterArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "MasterArn",
+          "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "setterMethodName" : "setMasterArn",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -17091,7 +17220,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
         "enumType" : null,
@@ -17153,7 +17282,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "FunctionArn",
-        "c2jShape" : "FunctionArn",
+        "c2jShape" : "NameSpacedFunctionArn",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
         "enumType" : null,
@@ -18143,6 +18272,68 @@
           "variableSetterType" : "TracingConfigResponse"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "MasterArn",
+        "c2jShape" : "FunctionArn",
+        "deprecated" : false,
+        "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMasterArn",
+        "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "getterMethodName" : "getMasterArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MasterArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MasterArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "MasterArn",
+        "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "setterMethodName" : "setMasterArn",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CodeSha256" : {
@@ -18462,7 +18653,7 @@
         },
         "FunctionArn" : {
           "c2jName" : "FunctionArn",
-          "c2jShape" : "FunctionArn",
+          "c2jShape" : "NameSpacedFunctionArn",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
           "enumType" : null,
@@ -18525,7 +18716,7 @@
         },
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
           "enumType" : null,
@@ -18770,6 +18961,69 @@
             "variableName" : "lastModified",
             "variableType" : "String",
             "documentation" : "<p>The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a href=\"https://www.w3.org/TR/NOTE-datetime\">Date and Time Formats</a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MasterArn" : {
+          "c2jName" : "MasterArn",
+          "c2jShape" : "FunctionArn",
+          "deprecated" : false,
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMasterArn",
+          "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "getterMethodName" : "getMasterArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MasterArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MasterArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "MasterArn",
+          "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "setterMethodName" : "setMasterArn",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -19234,6 +19488,48 @@
         "documentation" : null,
         "simpleType" : "FunctionConfiguration",
         "variableSetterType" : "FunctionConfiguration"
+      },
+      "wrapper" : false
+    },
+    "FunctionVersion" : {
+      "c2jName" : "FunctionVersion",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "ALL",
+        "value" : "ALL"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "FunctionVersion",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "FunctionVersion",
+        "variableName" : "functionVersion",
+        "variableType" : "FunctionVersion",
+        "documentation" : null,
+        "simpleType" : "FunctionVersion",
+        "variableSetterType" : "FunctionVersion"
       },
       "wrapper" : false
     },
@@ -21639,7 +21935,7 @@
       },
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
         "enumType" : null,
@@ -21765,7 +22061,7 @@
       "membersAsMap" : {
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The name of the Lambda function for which you want to retrieve the configuration information.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
           "enumType" : null,
@@ -21926,7 +22222,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
         "enumType" : null,
@@ -21988,7 +22284,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "FunctionArn",
-        "c2jShape" : "FunctionArn",
+        "c2jShape" : "NameSpacedFunctionArn",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
         "enumType" : null,
@@ -22978,6 +23274,68 @@
           "variableSetterType" : "TracingConfigResponse"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "MasterArn",
+        "c2jShape" : "FunctionArn",
+        "deprecated" : false,
+        "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMasterArn",
+        "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "getterMethodName" : "getMasterArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MasterArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MasterArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "MasterArn",
+        "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "setterMethodName" : "setMasterArn",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CodeSha256" : {
@@ -23297,7 +23655,7 @@
         },
         "FunctionArn" : {
           "c2jName" : "FunctionArn",
-          "c2jShape" : "FunctionArn",
+          "c2jShape" : "NameSpacedFunctionArn",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
           "enumType" : null,
@@ -23360,7 +23718,7 @@
         },
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
           "enumType" : null,
@@ -23605,6 +23963,69 @@
             "variableName" : "lastModified",
             "variableType" : "String",
             "documentation" : "<p>The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a href=\"https://www.w3.org/TR/NOTE-datetime\">Date and Time Formats</a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MasterArn" : {
+          "c2jName" : "MasterArn",
+          "c2jShape" : "FunctionArn",
+          "deprecated" : false,
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMasterArn",
+          "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "getterMethodName" : "getMasterArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MasterArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MasterArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "MasterArn",
+          "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "setterMethodName" : "setMasterArn",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -24098,7 +24519,7 @@
       },
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The Lambda function name.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
         "enumType" : null,
@@ -24224,7 +24645,7 @@
       "membersAsMap" : {
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The Lambda function name.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
           "enumType" : null,
@@ -24961,7 +25382,7 @@
       },
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>Function name whose resource policy you want to retrieve.</p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
         "enumType" : null,
@@ -25087,7 +25508,7 @@
       "membersAsMap" : {
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>Function name whose resource policy you want to retrieve.</p> <p> You can specify the function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
           "enumType" : null,
@@ -26440,7 +26861,7 @@
       },
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The Lambda function name. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
         "enumType" : null,
@@ -26566,7 +26987,7 @@
       "membersAsMap" : {
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The Lambda function name. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
           "enumType" : null,
@@ -26899,7 +27320,7 @@
       },
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The Lambda function name.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
         "enumType" : null,
@@ -27336,7 +27757,7 @@
         },
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The Lambda function name.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
           "enumType" : null,
@@ -30856,6 +31277,130 @@
         "xmlNameSpaceUri" : null
       },
       "members" : [ {
+        "c2jName" : "MasterRegion",
+        "c2jShape" : "MasterRegion",
+        "deprecated" : false,
+        "documentation" : "<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>\n@param masterRegion Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMasterRegion",
+        "getterDocumentation" : "/**<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>\n@return Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.*/",
+        "getterMethodName" : "getMasterRegion",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "MasterRegion",
+          "queryString" : true,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MasterRegion",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "MasterRegion",
+        "setterDocumentation" : "/**<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>\n@param masterRegion Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.*/",
+        "setterMethodName" : "setMasterRegion",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterRegion",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>\n@param masterRegion Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterRegion",
+          "variableType" : "String",
+          "documentation" : "<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "FunctionVersion",
+        "c2jShape" : "FunctionVersion",
+        "deprecated" : false,
+        "documentation" : "<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>",
+        "enumType" : "FunctionVersion",
+        "fluentSetterDocumentation" : "/**<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>\n@param functionVersion Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionVersion*/",
+        "fluentSetterMethodName" : "withFunctionVersion",
+        "getterDocumentation" : "/**<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>\n@return Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).\n@see FunctionVersion*/",
+        "getterMethodName" : "getFunctionVersion",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "FunctionVersion",
+          "queryString" : true,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FunctionVersion",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "FunctionVersion",
+        "setterDocumentation" : "/**<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>\n@param functionVersion Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).\n@see FunctionVersion*/",
+        "setterMethodName" : "setFunctionVersion",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "functionVersion",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>\n@param functionVersion Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionVersion*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "functionVersion",
+          "variableType" : "String",
+          "documentation" : "<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "Marker",
         "c2jShape" : "String",
         "deprecated" : false,
@@ -30981,6 +31526,69 @@
         "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "FunctionVersion" : {
+          "c2jName" : "FunctionVersion",
+          "c2jShape" : "FunctionVersion",
+          "deprecated" : false,
+          "documentation" : "<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>",
+          "enumType" : "FunctionVersion",
+          "fluentSetterDocumentation" : "/**<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>\n@param functionVersion Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionVersion*/",
+          "fluentSetterMethodName" : "withFunctionVersion",
+          "getterDocumentation" : "/**<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>\n@return Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).\n@see FunctionVersion*/",
+          "getterMethodName" : "getFunctionVersion",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "FunctionVersion",
+            "queryString" : true,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FunctionVersion",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "FunctionVersion",
+          "setterDocumentation" : "/**<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>\n@param functionVersion Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).\n@see FunctionVersion*/",
+          "setterMethodName" : "setFunctionVersion",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "functionVersion",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>\n@param functionVersion Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).\n@return Returns a reference to this object so that method calls can be chained together.\n@see FunctionVersion*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "functionVersion",
+            "variableType" : "String",
+            "documentation" : "<p>Optional string. If not specified, only the unqualified functions ARNs (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p> <code>ALL</code> _ Will return all versions, including <code>$LATEST</code> which will have fully qualified ARNs (Amazon Resource Names).</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Marker" : {
           "c2jName" : "Marker",
           "c2jShape" : "String",
@@ -31039,6 +31647,69 @@
             "variableName" : "marker",
             "variableType" : "String",
             "documentation" : "<p>Optional string. An opaque pagination token returned from a previous <code>ListFunctions</code> operation. If present, indicates where to continue the listing. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MasterRegion" : {
+          "c2jName" : "MasterRegion",
+          "c2jShape" : "MasterRegion",
+          "deprecated" : false,
+          "documentation" : "<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>\n@param masterRegion Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMasterRegion",
+          "getterDocumentation" : "/**<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>\n@return Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.*/",
+          "getterMethodName" : "getMasterRegion",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "MasterRegion",
+            "queryString" : true,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MasterRegion",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "MasterRegion",
+          "setterDocumentation" : "/**<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>\n@param masterRegion Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.*/",
+          "setterMethodName" : "setMasterRegion",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterRegion",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>\n@param masterRegion Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterRegion",
+            "variableType" : "String",
+            "documentation" : "<p>Optional string. If not specified, will return only regular function versions (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from which the functions are replicated. For example, if you specify <code>us-east-1</code>, only functions replicated from that region will be returned.</p> <p> <code>ALL</code> _ Will return all functions from any region. If specified, you also must specify a valid FunctionVersion parameter.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -32083,7 +32754,7 @@
       },
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>Function name whose versions to list. You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
         "enumType" : null,
@@ -32271,7 +32942,7 @@
       "membersAsMap" : {
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>Function name whose versions to list. You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",
           "enumType" : null,
@@ -33565,7 +34236,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
         "enumType" : null,
@@ -33627,7 +34298,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "FunctionArn",
-        "c2jShape" : "FunctionArn",
+        "c2jShape" : "NameSpacedFunctionArn",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
         "enumType" : null,
@@ -34617,6 +35288,68 @@
           "variableSetterType" : "TracingConfigResponse"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "MasterArn",
+        "c2jShape" : "FunctionArn",
+        "deprecated" : false,
+        "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMasterArn",
+        "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "getterMethodName" : "getMasterArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MasterArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MasterArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "MasterArn",
+        "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "setterMethodName" : "setMasterArn",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CodeSha256" : {
@@ -34936,7 +35669,7 @@
         },
         "FunctionArn" : {
           "c2jName" : "FunctionArn",
-          "c2jShape" : "FunctionArn",
+          "c2jShape" : "NameSpacedFunctionArn",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
           "enumType" : null,
@@ -34999,7 +35732,7 @@
         },
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
           "enumType" : null,
@@ -35244,6 +35977,69 @@
             "variableName" : "lastModified",
             "variableType" : "String",
             "documentation" : "<p>The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a href=\"https://www.w3.org/TR/NOTE-datetime\">Date and Time Formats</a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MasterArn" : {
+          "c2jName" : "MasterArn",
+          "c2jShape" : "FunctionArn",
+          "deprecated" : false,
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMasterArn",
+          "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "getterMethodName" : "getMasterArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MasterArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MasterArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "MasterArn",
+          "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "setterMethodName" : "setMasterArn",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -35799,7 +36595,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "StatementId",
-        "c2jShape" : "StatementId",
+        "c2jShape" : "NamespacedStatementId",
         "deprecated" : false,
         "documentation" : "<p>Statement ID of the permission to remove.</p>",
         "enumType" : null,
@@ -36051,7 +36847,7 @@
         },
         "StatementId" : {
           "c2jName" : "StatementId",
-          "c2jShape" : "StatementId",
+          "c2jShape" : "NamespacedStatementId",
           "deprecated" : false,
           "documentation" : "<p>Statement ID of the permission to remove.</p>",
           "enumType" : null,
@@ -42619,7 +43415,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
         "enumType" : null,
@@ -42681,7 +43477,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "FunctionArn",
-        "c2jShape" : "FunctionArn",
+        "c2jShape" : "NameSpacedFunctionArn",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
         "enumType" : null,
@@ -43671,6 +44467,68 @@
           "variableSetterType" : "TracingConfigResponse"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "MasterArn",
+        "c2jShape" : "FunctionArn",
+        "deprecated" : false,
+        "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMasterArn",
+        "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "getterMethodName" : "getMasterArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MasterArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MasterArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "MasterArn",
+        "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "setterMethodName" : "setMasterArn",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CodeSha256" : {
@@ -43990,7 +44848,7 @@
         },
         "FunctionArn" : {
           "c2jName" : "FunctionArn",
-          "c2jShape" : "FunctionArn",
+          "c2jShape" : "NameSpacedFunctionArn",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
           "enumType" : null,
@@ -44053,7 +44911,7 @@
         },
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
           "enumType" : null,
@@ -44298,6 +45156,69 @@
             "variableName" : "lastModified",
             "variableType" : "String",
             "documentation" : "<p>The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a href=\"https://www.w3.org/TR/NOTE-datetime\">Date and Time Formats</a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MasterArn" : {
+          "c2jName" : "MasterArn",
+          "c2jShape" : "FunctionArn",
+          "deprecated" : false,
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMasterArn",
+          "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "getterMethodName" : "getMasterArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MasterArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MasterArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "MasterArn",
+          "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "setterMethodName" : "setMasterArn",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -45289,11 +46210,11 @@
         "c2jName" : "Runtime",
         "c2jShape" : "Runtime",
         "deprecated" : false,
-        "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+        "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
         "enumType" : "Runtime",
-        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
         "fluentSetterMethodName" : "withRuntime",
-        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+        "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
         "getterMethodName" : "getRuntime",
         "getterModel" : {
           "returnType" : "String",
@@ -45325,7 +46246,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Runtime",
-        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+        "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
         "setterMethodName" : "setRuntime",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -45337,12 +46258,12 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+        "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "runtime",
           "variableType" : "String",
-          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -46043,11 +46964,11 @@
           "c2jName" : "Runtime",
           "c2jShape" : "Runtime",
           "deprecated" : false,
-          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+          "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
           "enumType" : "Runtime",
-          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "fluentSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
           "fluentSetterMethodName" : "withRuntime",
-          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+          "getterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@return The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
           "getterMethodName" : "getRuntime",
           "getterModel" : {
             "returnType" : "String",
@@ -46079,7 +47000,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Runtime",
-          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
+          "setterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@see Runtime*/",
           "setterMethodName" : "setRuntime",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -46091,12 +47012,12 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
+          "varargSetterDocumentation" : "/**<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>\n@param runtime The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see Runtime*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "runtime",
             "variableType" : "String",
-            "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter value error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
+            "documentation" : "<p>The runtime environment for the Lambda function.</p> <p>To use the Python runtime v3.6, set the value to \"python3.6\". To use the Python runtime v2.7, set the value to \"python2.7\". To use the Node.js runtime v6.10, set the value to \"nodejs6.10\". To use the Node.js runtime v4.3, set the value to \"nodejs4.3\". To use the Python runtime v3.6, set the value to \"python3.6\".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You must migrate existing functions to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. You can request a one-time extension until June 30, 2017 by going to the Lambda console and following the instructions provided. Failure to do so will result in an invalid parameter error being returned. Note that you will have to follow this procedure for each region that contains functions written in the Node v0.10.42 runtime.</p> </note>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -46328,7 +47249,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "FunctionName",
-        "c2jShape" : "FunctionName",
+        "c2jShape" : "NamespacedFunctionName",
         "deprecated" : false,
         "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
         "enumType" : null,
@@ -46390,7 +47311,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "FunctionArn",
-        "c2jShape" : "FunctionArn",
+        "c2jShape" : "NameSpacedFunctionArn",
         "deprecated" : false,
         "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
         "enumType" : null,
@@ -47380,6 +48301,68 @@
           "variableSetterType" : "TracingConfigResponse"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "MasterArn",
+        "c2jShape" : "FunctionArn",
+        "deprecated" : false,
+        "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMasterArn",
+        "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "getterMethodName" : "getMasterArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MasterArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MasterArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "MasterArn",
+        "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+        "setterMethodName" : "setMasterArn",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "masterArn",
+          "variableType" : "String",
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CodeSha256" : {
@@ -47699,7 +48682,7 @@
         },
         "FunctionArn" : {
           "c2jName" : "FunctionArn",
-          "c2jShape" : "FunctionArn",
+          "c2jShape" : "NameSpacedFunctionArn",
           "deprecated" : false,
           "documentation" : "<p>The Amazon Resource Name (ARN) assigned to the function.</p>",
           "enumType" : null,
@@ -47762,7 +48745,7 @@
         },
         "FunctionName" : {
           "c2jName" : "FunctionName",
-          "c2jShape" : "FunctionName",
+          "c2jShape" : "NamespacedFunctionName",
           "deprecated" : false,
           "documentation" : "<p>The name of the function. Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.</p>",
           "enumType" : null,
@@ -48007,6 +48990,69 @@
             "variableName" : "lastModified",
             "variableType" : "String",
             "documentation" : "<p>The time stamp of the last time you updated the function. The time stamp is conveyed as a string complying with ISO-8601 in this way YYYY-MM-DDThh:mm:ssTZD (e.g., 1997-07-16T19:20:30+01:00). For more information, see <a href=\"https://www.w3.org/TR/NOTE-datetime\">Date and Time Formats</a>.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "MasterArn" : {
+          "c2jName" : "MasterArn",
+          "c2jShape" : "FunctionArn",
+          "deprecated" : false,
+          "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMasterArn",
+          "getterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@return Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "getterMethodName" : "getMasterArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MasterArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MasterArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "MasterArn",
+          "setterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.*/",
+          "setterMethodName" : "setMasterArn",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Returns the ARN (Amazon Resource Name) of the master function.</p>\n@param masterArn Returns the ARN (Amazon Resource Name) of the master function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "masterArn",
+            "variableType" : "String",
+            "documentation" : "<p>Returns the ARN (Amazon Resource Name) of the master function.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

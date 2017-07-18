@@ -90,6 +90,12 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> aliasAttributes;
     /**
      * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     */
+    private java.util.List<String> usernameAttributes;
+    /**
+     * <p>
      * The contents of the SMS verification message.
      * </p>
      */
@@ -762,6 +768,104 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             setAliasAttributes(aliasAttributesCopy);
         } else {
             getAliasAttributes().addAll(aliasAttributesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * 
+     * @return Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @see UsernameAttributeType
+     */
+
+    public java.util.List<String> getUsernameAttributes() {
+        return usernameAttributes;
+    }
+
+    /**
+     * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * 
+     * @param usernameAttributes
+     *        Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @see UsernameAttributeType
+     */
+
+    public void setUsernameAttributes(java.util.Collection<String> usernameAttributes) {
+        if (usernameAttributes == null) {
+            this.usernameAttributes = null;
+            return;
+        }
+
+        this.usernameAttributes = new java.util.ArrayList<String>(usernameAttributes);
+    }
+
+    /**
+     * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUsernameAttributes(java.util.Collection)} or {@link #withUsernameAttributes(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param usernameAttributes
+     *        Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsernameAttributeType
+     */
+
+    public UserPoolType withUsernameAttributes(String... usernameAttributes) {
+        if (this.usernameAttributes == null) {
+            setUsernameAttributes(new java.util.ArrayList<String>(usernameAttributes.length));
+        }
+        for (String ele : usernameAttributes) {
+            this.usernameAttributes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * 
+     * @param usernameAttributes
+     *        Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsernameAttributeType
+     */
+
+    public UserPoolType withUsernameAttributes(java.util.Collection<String> usernameAttributes) {
+        setUsernameAttributes(usernameAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * </p>
+     * 
+     * @param usernameAttributes
+     *        Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsernameAttributeType
+     */
+
+    public UserPoolType withUsernameAttributes(UsernameAttributeType... usernameAttributes) {
+        java.util.ArrayList<String> usernameAttributesCopy = new java.util.ArrayList<String>(usernameAttributes.length);
+        for (UsernameAttributeType value : usernameAttributes) {
+            usernameAttributesCopy.add(value.toString());
+        }
+        if (getUsernameAttributes() == null) {
+            setUsernameAttributes(usernameAttributesCopy);
+        } else {
+            getUsernameAttributes().addAll(usernameAttributesCopy);
         }
         return this;
     }
@@ -1558,6 +1662,8 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             sb.append("AutoVerifiedAttributes: ").append(getAutoVerifiedAttributes()).append(",");
         if (getAliasAttributes() != null)
             sb.append("AliasAttributes: ").append(getAliasAttributes()).append(",");
+        if (getUsernameAttributes() != null)
+            sb.append("UsernameAttributes: ").append(getUsernameAttributes()).append(",");
         if (getSmsVerificationMessage() != null)
             sb.append("SmsVerificationMessage: ").append(getSmsVerificationMessage()).append(",");
         if (getEmailVerificationMessage() != null)
@@ -1638,6 +1744,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAliasAttributes() != null && other.getAliasAttributes().equals(this.getAliasAttributes()) == false)
             return false;
+        if (other.getUsernameAttributes() == null ^ this.getUsernameAttributes() == null)
+            return false;
+        if (other.getUsernameAttributes() != null && other.getUsernameAttributes().equals(this.getUsernameAttributes()) == false)
+            return false;
         if (other.getSmsVerificationMessage() == null ^ this.getSmsVerificationMessage() == null)
             return false;
         if (other.getSmsVerificationMessage() != null && other.getSmsVerificationMessage().equals(this.getSmsVerificationMessage()) == false)
@@ -1708,6 +1818,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSchemaAttributes() == null) ? 0 : getSchemaAttributes().hashCode());
         hashCode = prime * hashCode + ((getAutoVerifiedAttributes() == null) ? 0 : getAutoVerifiedAttributes().hashCode());
         hashCode = prime * hashCode + ((getAliasAttributes() == null) ? 0 : getAliasAttributes().hashCode());
+        hashCode = prime * hashCode + ((getUsernameAttributes() == null) ? 0 : getUsernameAttributes().hashCode());
         hashCode = prime * hashCode + ((getSmsVerificationMessage() == null) ? 0 : getSmsVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationMessage() == null) ? 0 : getEmailVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationSubject() == null) ? 0 : getEmailVerificationSubject().hashCode());
