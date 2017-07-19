@@ -1998,13 +1998,16 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "The type of a budget. Can be COST or USAGE.",
+      "documentation" : "The type of a budget. It should be COST, USAGE, or RI_UTILIZATION.",
       "enums" : [ {
         "name" : "USAGE",
         "value" : "USAGE"
       }, {
         "name" : "COST",
         "value" : "COST"
+      }, {
+        "name" : "RI_UTILIZATION",
+        "value" : "RI_UTILIZATION"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -10753,7 +10756,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "Unit",
-        "c2jShape" : "GenericString",
+        "c2jShape" : "UnitValue",
         "deprecated" : false,
         "documentation" : "",
         "enumType" : null,
@@ -10880,7 +10883,7 @@
         },
         "Unit" : {
           "c2jName" : "Unit",
-          "c2jShape" : "GenericString",
+          "c2jShape" : "UnitValue",
           "deprecated" : false,
           "documentation" : "",
           "enumType" : null,
@@ -11596,8 +11599,11 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "The time unit of the budget. e.g. weekly, monthly, etc.",
+      "documentation" : "The time unit of the budget. e.g. MONTHLY, QUARTERLY, etc.",
       "enums" : [ {
+        "name" : "DAILY",
+        "value" : "DAILY"
+      }, {
         "name" : "MONTHLY",
         "value" : "MONTHLY"
       }, {

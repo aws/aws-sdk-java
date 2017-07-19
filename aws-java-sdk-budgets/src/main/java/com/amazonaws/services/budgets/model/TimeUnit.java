@@ -15,11 +15,12 @@ package com.amazonaws.services.budgets.model;
 import javax.annotation.Generated;
 
 /**
- * The time unit of the budget. e.g. weekly, monthly, etc.
+ * The time unit of the budget. e.g. MONTHLY, QUARTERLY, etc.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TimeUnit {
 
+    DAILY("DAILY"),
     MONTHLY("MONTHLY"),
     QUARTERLY("QUARTERLY"),
     ANNUALLY("ANNUALLY");

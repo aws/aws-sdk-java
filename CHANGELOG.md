@@ -1,3 +1,8 @@
+# __1.11.165__ __2017-07-19__
+## __AWS Budgets__
+  - ### Features
+    - Update budget Management API's to list/create/update RI_UTILIZATION type budget. Update budget Management API's to support DAILY timeUnit for RI_UTILIZATION type budget.
+
 # __1.11.164__ __2017-07-17__
 ## __AWS Lambda__
   - ### Features
