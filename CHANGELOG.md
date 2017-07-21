@@ -1,3 +1,8 @@
+# __1.11.166__ __2017-07-20__
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Amazon EMR now includes the ability to use a custom Amazon Linux AMI and adjustable root volume size when launching a cluster.
+
 # __1.11.165__ __2017-07-19__
 ## __AWS Budgets__
   - ### Features

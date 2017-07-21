@@ -86,8 +86,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String runningAmiVersion;
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The release label for the Amazon EMR release.
      * </p>
      */
     private String releaseLabel;
@@ -147,13 +146,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      */
     private String masterPublicDnsName;
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
@@ -185,6 +179,27 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String scaleDownBehavior;
+    /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * cluster uses a custom AMI.
+     * </p>
+     */
+    private String customAmiId;
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     */
+    private Integer ebsRootVolumeSize;
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     */
+    private String repoUpgradeOnBoot;
 
     /**
      * <p>
@@ -622,13 +637,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The release label for the Amazon EMR release.
      * </p>
      * 
      * @param releaseLabel
-     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     *        instead of ReleaseLabel.
+     *        The release label for the Amazon EMR release.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -637,12 +650,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The release label for the Amazon EMR release.
      * </p>
      * 
-     * @return The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     *         instead of ReleaseLabel.
+     * @return The release label for the Amazon EMR release.
      */
 
     public String getReleaseLabel() {
@@ -651,13 +662,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The release label for the Amazon EMR release.
      * </p>
      * 
      * @param releaseLabel
-     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     *        instead of ReleaseLabel.
+     *        The release label for the Amazon EMR release.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1143,21 +1152,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      * 
-     * @return <p>
-     *         Amazon EMR releases 4.x or later.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         The list of Configurations supplied to the EMR cluster.
+     * @return Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR
+     *         cluster.
      */
 
     public java.util.List<Configuration> getConfigurations() {
@@ -1168,22 +1168,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      * 
      * @param configurations
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The list of Configurations supplied to the EMR cluster.
+     *        Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      */
 
     public void setConfigurations(java.util.Collection<Configuration> configurations) {
@@ -1196,13 +1186,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1211,12 +1196,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param configurations
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The list of Configurations supplied to the EMR cluster.
+     *        Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1231,22 +1211,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of Configurations supplied to the EMR cluster.
+     * Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * </p>
      * 
      * @param configurations
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The list of Configurations supplied to the EMR cluster.
+     *        Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied to the EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1506,6 +1476,181 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * cluster uses a custom AMI.
+     * </p>
+     * 
+     * @param customAmiId
+     *        Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
+     *        the cluster uses a custom AMI.
+     */
+
+    public void setCustomAmiId(String customAmiId) {
+        this.customAmiId = customAmiId;
+    }
+
+    /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * cluster uses a custom AMI.
+     * </p>
+     * 
+     * @return Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
+     *         the cluster uses a custom AMI.
+     */
+
+    public String getCustomAmiId() {
+        return this.customAmiId;
+    }
+
+    /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if the
+     * cluster uses a custom AMI.
+     * </p>
+     * 
+     * @param customAmiId
+     *        Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI if
+     *        the cluster uses a custom AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withCustomAmiId(String customAmiId) {
+        setCustomAmiId(customAmiId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeSize
+     *        The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     *        Available in Amazon EMR version 4.x and later.
+     */
+
+    public void setEbsRootVolumeSize(Integer ebsRootVolumeSize) {
+        this.ebsRootVolumeSize = ebsRootVolumeSize;
+    }
+
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     * 
+     * @return The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     *         Available in Amazon EMR version 4.x and later.
+     */
+
+    public Integer getEbsRootVolumeSize() {
+        return this.ebsRootVolumeSize;
+    }
+
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeSize
+     *        The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     *        Available in Amazon EMR version 4.x and later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withEbsRootVolumeSize(Integer ebsRootVolumeSize) {
+        setEbsRootVolumeSize(ebsRootVolumeSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public void setRepoUpgradeOnBoot(String repoUpgradeOnBoot) {
+        this.repoUpgradeOnBoot = repoUpgradeOnBoot;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @return Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *         the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public String getRepoUpgradeOnBoot() {
+        return this.repoUpgradeOnBoot;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public Cluster withRepoUpgradeOnBoot(String repoUpgradeOnBoot) {
+        setRepoUpgradeOnBoot(repoUpgradeOnBoot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public void setRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
+        this.repoUpgradeOnBoot = repoUpgradeOnBoot.toString();
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from the
+     * Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates that are applied from
+     *        the Amazon Linux AMI package repositories when an instance boots using the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public Cluster withRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
+        setRepoUpgradeOnBoot(repoUpgradeOnBoot);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1557,7 +1702,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getAutoScalingRole() != null)
             sb.append("AutoScalingRole: ").append(getAutoScalingRole()).append(",");
         if (getScaleDownBehavior() != null)
-            sb.append("ScaleDownBehavior: ").append(getScaleDownBehavior());
+            sb.append("ScaleDownBehavior: ").append(getScaleDownBehavior()).append(",");
+        if (getCustomAmiId() != null)
+            sb.append("CustomAmiId: ").append(getCustomAmiId()).append(",");
+        if (getEbsRootVolumeSize() != null)
+            sb.append("EbsRootVolumeSize: ").append(getEbsRootVolumeSize()).append(",");
+        if (getRepoUpgradeOnBoot() != null)
+            sb.append("RepoUpgradeOnBoot: ").append(getRepoUpgradeOnBoot());
         sb.append("}");
         return sb.toString();
     }
@@ -1656,6 +1807,18 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScaleDownBehavior() != null && other.getScaleDownBehavior().equals(this.getScaleDownBehavior()) == false)
             return false;
+        if (other.getCustomAmiId() == null ^ this.getCustomAmiId() == null)
+            return false;
+        if (other.getCustomAmiId() != null && other.getCustomAmiId().equals(this.getCustomAmiId()) == false)
+            return false;
+        if (other.getEbsRootVolumeSize() == null ^ this.getEbsRootVolumeSize() == null)
+            return false;
+        if (other.getEbsRootVolumeSize() != null && other.getEbsRootVolumeSize().equals(this.getEbsRootVolumeSize()) == false)
+            return false;
+        if (other.getRepoUpgradeOnBoot() == null ^ this.getRepoUpgradeOnBoot() == null)
+            return false;
+        if (other.getRepoUpgradeOnBoot() != null && other.getRepoUpgradeOnBoot().equals(this.getRepoUpgradeOnBoot()) == false)
+            return false;
         return true;
     }
 
@@ -1685,6 +1848,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingRole() == null) ? 0 : getAutoScalingRole().hashCode());
         hashCode = prime * hashCode + ((getScaleDownBehavior() == null) ? 0 : getScaleDownBehavior().hashCode());
+        hashCode = prime * hashCode + ((getCustomAmiId() == null) ? 0 : getCustomAmiId().hashCode());
+        hashCode = prime * hashCode + ((getEbsRootVolumeSize() == null) ? 0 : getEbsRootVolumeSize().hashCode());
+        hashCode = prime * hashCode + ((getRepoUpgradeOnBoot() == null) ? 0 : getRepoUpgradeOnBoot().hashCode());
         return hashCode;
     }
 

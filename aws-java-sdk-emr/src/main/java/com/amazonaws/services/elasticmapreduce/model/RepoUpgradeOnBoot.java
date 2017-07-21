@@ -18,20 +18,14 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum ClusterStateChangeReasonCode {
+public enum RepoUpgradeOnBoot {
 
-    INTERNAL_ERROR("INTERNAL_ERROR"),
-    VALIDATION_ERROR("VALIDATION_ERROR"),
-    INSTANCE_FAILURE("INSTANCE_FAILURE"),
-    INSTANCE_FLEET_TIMEOUT("INSTANCE_FLEET_TIMEOUT"),
-    BOOTSTRAP_FAILURE("BOOTSTRAP_FAILURE"),
-    USER_REQUEST("USER_REQUEST"),
-    STEP_FAILURE("STEP_FAILURE"),
-    ALL_STEPS_COMPLETED("ALL_STEPS_COMPLETED");
+    SECURITY("SECURITY"),
+    NONE("NONE");
 
     private String value;
 
-    private ClusterStateChangeReasonCode(String value) {
+    private RepoUpgradeOnBoot(String value) {
         this.value = value;
     }
 
@@ -45,14 +39,14 @@ public enum ClusterStateChangeReasonCode {
      *
      * @param value
      *        real value
-     * @return ClusterStateChangeReasonCode corresponding to the value
+     * @return RepoUpgradeOnBoot corresponding to the value
      */
-    public static ClusterStateChangeReasonCode fromValue(String value) {
+    public static RepoUpgradeOnBoot fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (ClusterStateChangeReasonCode enumEntry : ClusterStateChangeReasonCode.values()) {
+        for (RepoUpgradeOnBoot enumEntry : RepoUpgradeOnBoot.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

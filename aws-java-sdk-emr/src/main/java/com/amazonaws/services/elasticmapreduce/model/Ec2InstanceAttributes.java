@@ -51,10 +51,13 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
-     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
-     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
-     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
-     * cluster launches instances in the EC2-Classic network and uses Requested
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
+     * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
+     * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requestedEc2SubnetIds;
@@ -66,9 +69,12 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     private String ec2AvailabilityZone;
     /**
      * <p>
-     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
-     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
-     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which
+     * to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then
+     * launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR
+     * chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requestedEc2AvailabilityZones;
@@ -232,17 +238,24 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
-     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
-     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
-     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
-     * cluster launches instances in the EC2-Classic network and uses Requested
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
+     * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
+     * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      * 
      * @return Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or
-     *         more Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with
-     *         the best performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches
-     *         all cluster instances within that subnet. If this value is not specified, and the account supports
-     *         EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses Requested
+     *         more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC.
+     *         Amazon EMR chooses the EC2 subnet with the best fit from among the list of
+     *         <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this
+     *         value is not specified, and the account and region support EC2-Classic networks, the cluster launches
+     *         instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
+     *         setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for
+     *         you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be
+     *         specified together.
      */
 
     public java.util.List<String> getRequestedEc2SubnetIds() {
@@ -255,18 +268,25 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
-     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
-     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
-     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
-     * cluster launches instances in the EC2-Classic network and uses Requested
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
+     * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
+     * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      * 
      * @param requestedEc2SubnetIds
      *        Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or
-     *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with
-     *        the best performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches
-     *        all cluster instances within that subnet. If this value is not specified, and the account supports
-     *        EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses Requested
+     *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC.
+     *        Amazon EMR chooses the EC2 subnet with the best fit from among the list of
+     *        <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this
+     *        value is not specified, and the account and region support EC2-Classic networks, the cluster launches
+     *        instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
+     *        setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for
+     *        you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified
+     *        together.
      */
 
     public void setRequestedEc2SubnetIds(java.util.Collection<String> requestedEc2SubnetIds) {
@@ -281,10 +301,13 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
-     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
-     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
-     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
-     * cluster launches instances in the EC2-Classic network and uses Requested
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
+     * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
+     * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -294,10 +317,14 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      * 
      * @param requestedEc2SubnetIds
      *        Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or
-     *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with
-     *        the best performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches
-     *        all cluster instances within that subnet. If this value is not specified, and the account supports
-     *        EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses Requested
+     *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC.
+     *        Amazon EMR chooses the EC2 subnet with the best fit from among the list of
+     *        <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this
+     *        value is not specified, and the account and region support EC2-Classic networks, the cluster launches
+     *        instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
+     *        setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for
+     *        you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified
+     *        together.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,18 +341,25 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     /**
      * <p>
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
-     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
-     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
-     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
-     * cluster launches instances in the EC2-Classic network and uses Requested
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
+     * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
+     * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      * 
      * @param requestedEc2SubnetIds
      *        Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or
-     *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with
-     *        the best performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches
-     *        all cluster instances within that subnet. If this value is not specified, and the account supports
-     *        EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses Requested
+     *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC.
+     *        Amazon EMR chooses the EC2 subnet with the best fit from among the list of
+     *        <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this
+     *        value is not specified, and the account and region support EC2-Classic networks, the cluster launches
+     *        instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
+     *        setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for
+     *        you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified
+     *        together.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,15 +410,21 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
-     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
-     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which
+     * to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then
+     * launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR
+     * chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      * 
-     * @return Applies to clusters configured with the The list of availability zones to choose from. The service will
-     *         choose the availability zone with the best mix of available capacity and lowest cost to launch the
-     *         cluster. If you do not specify this value, the cluster is launched in any availability zone that the
-     *         customer account has access to.
+     * @return Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones
+     *         in which to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon
+     *         EMR chooses the Availability Zone with the best fit from among the list of
+     *         <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that
+     *         Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you.
+     *         <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified
+     *         together.
      */
 
     public java.util.List<String> getRequestedEc2AvailabilityZones() {
@@ -396,16 +436,22 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
-     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
-     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which
+     * to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then
+     * launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR
+     * chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      * 
      * @param requestedEc2AvailabilityZones
-     *        Applies to clusters configured with the The list of availability zones to choose from. The service will
-     *        choose the availability zone with the best mix of available capacity and lowest cost to launch the
-     *        cluster. If you do not specify this value, the cluster is launched in any availability zone that the
-     *        customer account has access to.
+     *        Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones
+     *        in which to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon
+     *        EMR chooses the Availability Zone with the best fit from among the list of
+     *        <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that
+     *        Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you.
+     *        <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified
+     *        together.
      */
 
     public void setRequestedEc2AvailabilityZones(java.util.Collection<String> requestedEc2AvailabilityZones) {
@@ -419,9 +465,12 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
-     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
-     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which
+     * to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then
+     * launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR
+     * chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -430,10 +479,13 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param requestedEc2AvailabilityZones
-     *        Applies to clusters configured with the The list of availability zones to choose from. The service will
-     *        choose the availability zone with the best mix of available capacity and lowest cost to launch the
-     *        cluster. If you do not specify this value, the cluster is launched in any availability zone that the
-     *        customer account has access to.
+     *        Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones
+     *        in which to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon
+     *        EMR chooses the Availability Zone with the best fit from among the list of
+     *        <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that
+     *        Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you.
+     *        <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified
+     *        together.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,16 +501,22 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
-     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
-     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones in which
+     * to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * Availability Zone with the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then
+     * launches all cluster instances within that Availability Zone. If you do not specify this value, Amazon EMR
+     * chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code> and
+     * <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
      * </p>
      * 
      * @param requestedEc2AvailabilityZones
-     *        Applies to clusters configured with the The list of availability zones to choose from. The service will
-     *        choose the availability zone with the best mix of available capacity and lowest cost to launch the
-     *        cluster. If you do not specify this value, the cluster is launched in any availability zone that the
-     *        customer account has access to.
+     *        Applies to clusters configured with the instance fleets option. Specifies one or more Availability Zones
+     *        in which to launch EC2 cluster instances when the EC2-Classic network configuration is supported. Amazon
+     *        EMR chooses the Availability Zone with the best fit from among the list of
+     *        <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster instances within that
+     *        Availability Zone. If you do not specify this value, Amazon EMR chooses the Availability Zone for you.
+     *        <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified
+     *        together.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

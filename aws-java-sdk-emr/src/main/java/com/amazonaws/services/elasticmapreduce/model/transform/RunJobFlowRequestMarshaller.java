@@ -66,6 +66,12 @@ public class RunJobFlowRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoScalingRole").build();
     private static final MarshallingInfo<String> SCALEDOWNBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScaleDownBehavior").build();
+    private static final MarshallingInfo<String> CUSTOMAMIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomAmiId").build();
+    private static final MarshallingInfo<Integer> EBSROOTVOLUMESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EbsRootVolumeSize").build();
+    private static final MarshallingInfo<String> REPOUPGRADEONBOOT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RepoUpgradeOnBoot").build();
 
     private static final RunJobFlowRequestMarshaller instance = new RunJobFlowRequestMarshaller();
 
@@ -102,6 +108,9 @@ public class RunJobFlowRequestMarshaller {
             protocolMarshaller.marshall(runJobFlowRequest.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getAutoScalingRole(), AUTOSCALINGROLE_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getScaleDownBehavior(), SCALEDOWNBEHAVIOR_BINDING);
+            protocolMarshaller.marshall(runJobFlowRequest.getCustomAmiId(), CUSTOMAMIID_BINDING);
+            protocolMarshaller.marshall(runJobFlowRequest.getEbsRootVolumeSize(), EBSROOTVOLUMESIZE_BINDING);
+            protocolMarshaller.marshall(runJobFlowRequest.getRepoUpgradeOnBoot(), REPOUPGRADEONBOOT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -48,8 +48,8 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
     private String logUri;
     /**
      * <p>
-     * The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * currently supported by Amazon EMR, see <a href=
+     * Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used to initialize Amazon EC2 instances
+     * in the job flow. For a list of AMI versions supported by Amazon EMR, see <a href=
      * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      * >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
      * </p>
@@ -280,15 +280,15 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * currently supported by Amazon EMR, see <a href=
+     * Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used to initialize Amazon EC2 instances
+     * in the job flow. For a list of AMI versions supported by Amazon EMR, see <a href=
      * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      * >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
      * </p>
      * 
      * @param amiVersion
-     *        The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     *        currently supported by Amazon EMR, see <a href=
+     *        Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used to initialize Amazon EC2
+     *        instances in the job flow. For a list of AMI versions supported by Amazon EMR, see <a href=
      *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      *        >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
      */
@@ -299,14 +299,14 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * currently supported by Amazon EMR, see <a href=
+     * Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used to initialize Amazon EC2 instances
+     * in the job flow. For a list of AMI versions supported by Amazon EMR, see <a href=
      * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      * >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
      * </p>
      * 
-     * @return The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI
-     *         versions currently supported by Amazon EMR, see <a href=
+     * @return Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used to initialize Amazon EC2
+     *         instances in the job flow. For a list of AMI versions supported by Amazon EMR, see <a href=
      *         "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      *         >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
      */
@@ -317,15 +317,15 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * currently supported by Amazon EMR, see <a href=
+     * Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used to initialize Amazon EC2 instances
+     * in the job flow. For a list of AMI versions supported by Amazon EMR, see <a href=
      * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      * >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
      * </p>
      * 
      * @param amiVersion
-     *        The version of the AMI used to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     *        currently supported by Amazon EMR, see <a href=
+     *        Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used to initialize Amazon EC2
+     *        instances in the job flow. For a list of AMI versions supported by Amazon EMR, see <a href=
      *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
      *        >AMI Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.

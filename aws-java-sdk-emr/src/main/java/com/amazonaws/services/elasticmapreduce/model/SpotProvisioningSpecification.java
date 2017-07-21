@@ -46,8 +46,9 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      * <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
-     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code> to
-     * fulfill the remaining capacity.
+     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand Instances should be provisioned
+     * to fulfill any remaining Spot capacity.
      * </p>
      */
     private String timeoutAction;
@@ -118,15 +119,17 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      * <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
-     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code> to
-     * fulfill the remaining capacity.
+     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand Instances should be provisioned
+     * to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @param timeoutAction
      *        The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      *        <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
      *        provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *        <code>SWITCH_TO_ON_DEMAND</code> to fulfill the remaining capacity.
+     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *        On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @see SpotProvisioningTimeoutAction
      */
 
@@ -138,14 +141,16 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      * <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
-     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code> to
-     * fulfill the remaining capacity.
+     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand Instances should be provisioned
+     * to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @return The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      *         <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
      *         provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *         <code>SWITCH_TO_ON_DEMAND</code> to fulfill the remaining capacity.
+     *         <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *         On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @see SpotProvisioningTimeoutAction
      */
 
@@ -157,15 +162,17 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      * <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
-     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code> to
-     * fulfill the remaining capacity.
+     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand Instances should be provisioned
+     * to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @param timeoutAction
      *        The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      *        <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
      *        provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *        <code>SWITCH_TO_ON_DEMAND</code> to fulfill the remaining capacity.
+     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *        On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotProvisioningTimeoutAction
      */
@@ -179,15 +186,17 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      * <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
-     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code> to
-     * fulfill the remaining capacity.
+     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand Instances should be provisioned
+     * to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @param timeoutAction
      *        The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      *        <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
      *        provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *        <code>SWITCH_TO_ON_DEMAND</code> to fulfill the remaining capacity.
+     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *        On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @see SpotProvisioningTimeoutAction
      */
 
@@ -199,15 +208,17 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      * <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
-     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code> to
-     * fulfill the remaining capacity.
+     * provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
+     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand Instances should be provisioned
+     * to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @param timeoutAction
      *        The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
      *        <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot
      *        provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *        <code>SWITCH_TO_ON_DEMAND</code> to fulfill the remaining capacity.
+     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *        On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotProvisioningTimeoutAction
      */

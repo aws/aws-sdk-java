@@ -70,6 +70,12 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoScalingRole").build();
     private static final MarshallingInfo<String> SCALEDOWNBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScaleDownBehavior").build();
+    private static final MarshallingInfo<String> CUSTOMAMIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomAmiId").build();
+    private static final MarshallingInfo<Integer> EBSROOTVOLUMESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EbsRootVolumeSize").build();
+    private static final MarshallingInfo<String> REPOUPGRADEONBOOT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RepoUpgradeOnBoot").build();
 
     private static final ClusterMarshaller instance = new ClusterMarshaller();
 
@@ -108,6 +114,9 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(cluster.getAutoScalingRole(), AUTOSCALINGROLE_BINDING);
             protocolMarshaller.marshall(cluster.getScaleDownBehavior(), SCALEDOWNBEHAVIOR_BINDING);
+            protocolMarshaller.marshall(cluster.getCustomAmiId(), CUSTOMAMIID_BINDING);
+            protocolMarshaller.marshall(cluster.getEbsRootVolumeSize(), EBSROOTVOLUMESIZE_BINDING);
+            protocolMarshaller.marshall(cluster.getRepoUpgradeOnBoot(), REPOUPGRADEONBOOT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

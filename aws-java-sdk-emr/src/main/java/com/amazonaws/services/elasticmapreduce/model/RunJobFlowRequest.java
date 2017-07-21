@@ -48,31 +48,18 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
     private String additionalInfo;
     /**
-     * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use ReleaseLabel.
-     * </p>
-     * </note>
-     * <p>
-     * The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The version number of the AMI to use, for example, "2.0."
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you can
-     * use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version of Hadoop from
-     * the defaults shown above.
+     * For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, the Linux AMI is determined by
+     * the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the Amazon Machine Image
+     * (AMI) to use when launching Amazon EC2 instances in the job flow. For details about the AMI versions currently
+     * supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported
+     * in EMR</a> in the <i>Amazon EMR Developer Guide</i>.
      * </p>
      * <p>
-     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
-     * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
+     * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20), you
+     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     * from the defaults shown above.
      * </p>
      * <note>
      * <p>
@@ -84,14 +71,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
     private String amiVersion;
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use <code>AmiVersion</code>
+     * instead.
      * </p>
      */
     private String releaseLabel;
@@ -116,7 +98,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -141,7 +123,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -197,25 +179,15 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
     private com.amazonaws.internal.SdkInternalList<SupportedProductConfig> newSupportedProducts;
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.
+     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
+     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Application> applications;
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of configurations supplied for the EMR cluster you are creating.
+     * For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
@@ -276,6 +248,40 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String scaleDownBehavior;
+    /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If
+     * specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom
+     * AMIs in Amazon EMR, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for
+     * the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code>
+     * instead.
+     * </p>
+     * <p>
+     * For information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about
+     * finding an AMI ID, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a
+     * Linux AMI</a>.
+     * </p>
+     */
+    private String customAmiId;
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     */
+    private Integer ebsRootVolumeSize;
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package
+     * repositories to apply automatically when the instance boots using the AMI. If omitted, the default is
+     * <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified,
+     * no updates are applied, and all updates must be applied manually.
+     * </p>
+     */
+    private String repoUpgradeOnBoot;
 
     /**
      * Default constructor for RunJobFlowRequest object. Callers should use the setter or fluent setter (with...)
@@ -425,31 +431,18 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use ReleaseLabel.
-     * </p>
-     * </note>
-     * <p>
-     * The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The version number of the AMI to use, for example, "2.0."
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you can
-     * use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version of Hadoop from
-     * the defaults shown above.
+     * For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, the Linux AMI is determined by
+     * the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the Amazon Machine Image
+     * (AMI) to use when launching Amazon EC2 instances in the job flow. For details about the AMI versions currently
+     * supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported
+     * in EMR</a> in the <i>Amazon EMR Developer Guide</i>.
      * </p>
      * <p>
-     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
-     * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
+     * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20), you
+     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     * from the defaults shown above.
      * </p>
      * <note>
      * <p>
@@ -460,30 +453,16 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param amiVersion
+     *        For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, the Linux AMI is
+     *        determined by the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the
+     *        Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. For details about
+     *        the AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     *        href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions
+     *        Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      *        <p>
-     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use ReleaseLabel.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow.
-     *        The following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        The version number of the AMI to use, for example, "2.0."
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20)
+     *        If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20),
      *        you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version
      *        of Hadoop from the defaults shown above.
-     *        </p>
-     *        <p>
-     *        For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
      *        </p>
      *        <note>
      *        <p>
@@ -499,31 +478,18 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use ReleaseLabel.
-     * </p>
-     * </note>
-     * <p>
-     * The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The version number of the AMI to use, for example, "2.0."
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you can
-     * use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version of Hadoop from
-     * the defaults shown above.
+     * For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, the Linux AMI is determined by
+     * the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the Amazon Machine Image
+     * (AMI) to use when launching Amazon EC2 instances in the job flow. For details about the AMI versions currently
+     * supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported
+     * in EMR</a> in the <i>Amazon EMR Developer Guide</i>.
      * </p>
      * <p>
-     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
-     * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
+     * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20), you
+     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     * from the defaults shown above.
      * </p>
      * <note>
      * <p>
@@ -533,30 +499,16 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * 
-     * @return <p>
-     *         For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use ReleaseLabel.
-     *         </p>
-     *         </note>
+     * @return For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, the Linux AMI is
+     *         determined by the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the
+     *         Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. For details about
+     *         the AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     *         href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions
+     *         Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      *         <p>
-     *         The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow.
-     *         The following values are valid:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         The version number of the AMI to use, for example, "2.0."
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20)
-     *         you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version
-     *         of Hadoop from the defaults shown above.
-     *         </p>
-     *         <p>
-     *         For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
-     *         "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     *         >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
+     *         If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and
+     *         0.20), you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
+     *         version of Hadoop from the defaults shown above.
      *         </p>
      *         <note>
      *         <p>
@@ -572,31 +524,18 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use ReleaseLabel.
-     * </p>
-     * </note>
-     * <p>
-     * The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. The
-     * following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The version number of the AMI to use, for example, "2.0."
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20) you can
-     * use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version of Hadoop from
-     * the defaults shown above.
+     * For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, the Linux AMI is determined by
+     * the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the Amazon Machine Image
+     * (AMI) to use when launching Amazon EC2 instances in the job flow. For details about the AMI versions currently
+     * supported in EMR version 3.x and 2.x, see <a
+     * href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions Supported
+     * in EMR</a> in the <i>Amazon EMR Developer Guide</i>.
      * </p>
      * <p>
-     * For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
-     * "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     * >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
+     * If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20), you
+     * can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version of Hadoop
+     * from the defaults shown above.
      * </p>
      * <note>
      * <p>
@@ -607,30 +546,16 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param amiVersion
+     *        For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, the Linux AMI is
+     *        determined by the <code>ReleaseLabel</code> specified or by <code>CustomAmiID</code>. The version of the
+     *        Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow. For details about
+     *        the AMI versions currently supported in EMR version 3.x and 2.x, see <a
+     *        href="ElasticMapReduce/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI Versions
+     *        Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
      *        <p>
-     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use ReleaseLabel.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The version of the Amazon Machine Image (AMI) to use when launching Amazon EC2 instances in the job flow.
-     *        The following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        The version number of the AMI to use, for example, "2.0."
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20)
+     *        If the AMI supports multiple versions of Hadoop (for example, AMI 1.0 supports both Hadoop 0.18 and 0.20),
      *        you can use the <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the version
      *        of Hadoop from the defaults shown above.
-     *        </p>
-     *        <p>
-     *        For details about the AMI versions currently supported by Amazon Elastic MapReduce, see <a href=
-     *        "http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported"
-     *        >AMI Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic MapReduce Developer Guide.</i>
      *        </p>
      *        <note>
      *        <p>
@@ -648,24 +573,14 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use <code>AmiVersion</code>
+     * instead.
      * </p>
      * 
      * @param releaseLabel
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     *        instead of ReleaseLabel.
+     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use <code>AmiVersion</code>
+     *        instead.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -673,23 +588,13 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use <code>AmiVersion</code>
+     * instead.
      * </p>
      * 
-     * @return <p>
-     *         Amazon EMR releases 4.x or later.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     *         instead of ReleaseLabel.
+     * @return The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use
+     *         <code>AmiVersion</code> instead.
      */
 
     public String getReleaseLabel() {
@@ -697,24 +602,14 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead instead of
-     * ReleaseLabel.
+     * The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use <code>AmiVersion</code>
+     * instead.
      * </p>
      * 
      * @param releaseLabel
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use amiVersion instead
-     *        instead of ReleaseLabel.
+     *        The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x AMIs, use <code>AmiVersion</code>
+     *        instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -912,7 +807,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -934,7 +829,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * 
      * @return <p>
-     *         For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     *         For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      *         </p>
      *         </note>
      *         <p>
@@ -965,7 +860,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -988,7 +883,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param supportedProducts
      *        <p>
-     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      *        </p>
      *        </note>
      *        <p>
@@ -1021,7 +916,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -1049,7 +944,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param supportedProducts
      *        <p>
-     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      *        </p>
      *        </note>
      *        <p>
@@ -1084,7 +979,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -1107,7 +1002,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param supportedProducts
      *        <p>
-     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      *        </p>
      *        </note>
      *        <p>
@@ -1137,7 +1032,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -1192,7 +1087,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * 
      * @return <p>
-     *         For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     *         For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      *         </p>
      *         </note>
      *         <p>
@@ -1257,7 +1152,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -1313,7 +1208,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param newSupportedProducts
      *        <p>
-     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      *        </p>
      *        </note>
      *        <p>
@@ -1380,7 +1275,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -1441,7 +1336,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param newSupportedProducts
      *        <p>
-     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      *        </p>
      *        </note>
      *        <p>
@@ -1510,7 +1405,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <note>
      * <p>
-     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     * For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      * </p>
      * </note>
      * <p>
@@ -1566,7 +1461,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param newSupportedProducts
      *        <p>
-     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and greater, use Applications.
+     *        For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
      *        </p>
      *        </note>
      *        <p>
@@ -1628,23 +1523,13 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.
+     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
+     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      * </p>
      * 
-     * @return <p>
-     *         Amazon EMR releases 4.x or later.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark."
-     *         They are case insensitive.
+     * @return For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are:
+     *         "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      */
 
     public java.util.List<Application> getApplications() {
@@ -1655,24 +1540,14 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.
+     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
+     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      * </p>
      * 
      * @param applications
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark."
-     *        They are case insensitive.
+     *        For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
+     *        "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      */
 
     public void setApplications(java.util.Collection<Application> applications) {
@@ -1685,14 +1560,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.
+     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
+     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1701,13 +1571,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param applications
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark."
-     *        They are case insensitive.
+     *        For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
+     *        "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1722,24 +1587,14 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.
+     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
+     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      * </p>
      * 
      * @param applications
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        A list of applications for the cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark."
-     *        They are case insensitive.
+     *        For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
+     *        "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1749,21 +1604,12 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of configurations supplied for the EMR cluster you are creating.
+     * For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.
      * </p>
      * 
-     * @return <p>
-     *         Amazon EMR releases 4.x or later.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         The list of configurations supplied for the EMR cluster you are creating.
+     * @return For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are
+     *         creating.
      */
 
     public java.util.List<Configuration> getConfigurations() {
@@ -1774,22 +1620,13 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of configurations supplied for the EMR cluster you are creating.
+     * For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.
      * </p>
      * 
      * @param configurations
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The list of configurations supplied for the EMR cluster you are creating.
+     *        For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are
+     *        creating.
      */
 
     public void setConfigurations(java.util.Collection<Configuration> configurations) {
@@ -1802,13 +1639,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of configurations supplied for the EMR cluster you are creating.
+     * For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1817,12 +1649,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param configurations
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The list of configurations supplied for the EMR cluster you are creating.
+     *        For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are
+     *        creating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1837,22 +1665,13 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <note>
      * <p>
-     * Amazon EMR releases 4.x or later.
-     * </p>
-     * </note>
-     * <p>
-     * The list of configurations supplied for the EMR cluster you are creating.
+     * For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are creating.
      * </p>
      * 
      * @param configurations
-     *        <p>
-     *        Amazon EMR releases 4.x or later.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The list of configurations supplied for the EMR cluster you are creating.
+     *        For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR cluster you are
+     *        creating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2353,6 +2172,267 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If
+     * specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom
+     * AMIs in Amazon EMR, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for
+     * the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code>
+     * instead.
+     * </p>
+     * <p>
+     * For information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about
+     * finding an AMI ID, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a
+     * Linux AMI</a>.
+     * </p>
+     * 
+     * @param customAmiId
+     *        Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If
+     *        specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about
+     *        custom AMIs in Amazon EMR, see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in
+     *        the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the
+     *        <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code>
+     *        instead.</p>
+     *        <p>
+     *        For information about creating a custom AMI, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon
+     *        EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For
+     *        information about finding an AMI ID, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>.
+     */
+
+    public void setCustomAmiId(String customAmiId) {
+        this.customAmiId = customAmiId;
+    }
+
+    /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If
+     * specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom
+     * AMIs in Amazon EMR, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for
+     * the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code>
+     * instead.
+     * </p>
+     * <p>
+     * For information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about
+     * finding an AMI ID, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a
+     * Linux AMI</a>.
+     * </p>
+     * 
+     * @return Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If
+     *         specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about
+     *         custom AMIs in Amazon EMR, see <a
+     *         href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a>
+     *         in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the
+     *         <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code>
+     *         instead.</p>
+     *         <p>
+     *         For information about creating a custom AMI, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon
+     *         EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For
+     *         information about finding an AMI ID, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>.
+     */
+
+    public String getCustomAmiId() {
+        return this.customAmiId;
+    }
+
+    /**
+     * <p>
+     * Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If
+     * specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about custom
+     * AMIs in Amazon EMR, see <a href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for
+     * the <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code>
+     * instead.
+     * </p>
+     * <p>
+     * For information about creating a custom AMI, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For information about
+     * finding an AMI ID, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a
+     * Linux AMI</a>.
+     * </p>
+     * 
+     * @param customAmiId
+     *        Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If
+     *        specified, Amazon EMR uses this AMI when it launches cluster EC2 instances. For more information about
+     *        custom AMIs in Amazon EMR, see <a
+     *        href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom AMI</a> in
+     *        the <i>Amazon EMR Management Guide</i>. If omitted, the cluster uses the base Linux AMI for the
+     *        <code>ReleaseLabel</code> specified. For Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code>
+     *        instead.</p>
+     *        <p>
+     *        For information about creating a custom AMI, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon
+     *        EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For
+     *        information about finding an AMI ID, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux AMI</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withCustomAmiId(String customAmiId) {
+        setCustomAmiId(customAmiId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeSize
+     *        The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     *        Available in Amazon EMR version 4.x and later.
+     */
+
+    public void setEbsRootVolumeSize(Integer ebsRootVolumeSize) {
+        this.ebsRootVolumeSize = ebsRootVolumeSize;
+    }
+
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     * 
+     * @return The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     *         Available in Amazon EMR version 4.x and later.
+     */
+
+    public Integer getEbsRootVolumeSize() {
+        return this.ebsRootVolumeSize;
+    }
+
+    /**
+     * <p>
+     * The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance. Available in
+     * Amazon EMR version 4.x and later.
+     * </p>
+     * 
+     * @param ebsRootVolumeSize
+     *        The size, in GiB, of the EBS root device volume of the Linux AMI that is used for each EC2 instance.
+     *        Available in Amazon EMR version 4.x and later.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withEbsRootVolumeSize(Integer ebsRootVolumeSize) {
+        setEbsRootVolumeSize(ebsRootVolumeSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package
+     * repositories to apply automatically when the instance boots using the AMI. If omitted, the default is
+     * <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified,
+     * no updates are applied, and all updates must be applied manually.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI
+     *        package repositories to apply automatically when the instance boots using the AMI. If omitted, the default
+     *        is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is
+     *        specified, no updates are applied, and all updates must be applied manually.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public void setRepoUpgradeOnBoot(String repoUpgradeOnBoot) {
+        this.repoUpgradeOnBoot = repoUpgradeOnBoot;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package
+     * repositories to apply automatically when the instance boots using the AMI. If omitted, the default is
+     * <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified,
+     * no updates are applied, and all updates must be applied manually.
+     * </p>
+     * 
+     * @return Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI
+     *         package repositories to apply automatically when the instance boots using the AMI. If omitted, the
+     *         default is <code>SECURITY</code>, which indicates that only security updates are applied. If
+     *         <code>NONE</code> is specified, no updates are applied, and all updates must be applied manually.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public String getRepoUpgradeOnBoot() {
+        return this.repoUpgradeOnBoot;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package
+     * repositories to apply automatically when the instance boots using the AMI. If omitted, the default is
+     * <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified,
+     * no updates are applied, and all updates must be applied manually.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI
+     *        package repositories to apply automatically when the instance boots using the AMI. If omitted, the default
+     *        is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is
+     *        specified, no updates are applied, and all updates must be applied manually.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public RunJobFlowRequest withRepoUpgradeOnBoot(String repoUpgradeOnBoot) {
+        setRepoUpgradeOnBoot(repoUpgradeOnBoot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package
+     * repositories to apply automatically when the instance boots using the AMI. If omitted, the default is
+     * <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified,
+     * no updates are applied, and all updates must be applied manually.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI
+     *        package repositories to apply automatically when the instance boots using the AMI. If omitted, the default
+     *        is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is
+     *        specified, no updates are applied, and all updates must be applied manually.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public void setRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
+        this.repoUpgradeOnBoot = repoUpgradeOnBoot.toString();
+    }
+
+    /**
+     * <p>
+     * Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI package
+     * repositories to apply automatically when the instance boots using the AMI. If omitted, the default is
+     * <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is specified,
+     * no updates are applied, and all updates must be applied manually.
+     * </p>
+     * 
+     * @param repoUpgradeOnBoot
+     *        Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the Amazon Linux AMI
+     *        package repositories to apply automatically when the instance boots using the AMI. If omitted, the default
+     *        is <code>SECURITY</code>, which indicates that only security updates are applied. If <code>NONE</code> is
+     *        specified, no updates are applied, and all updates must be applied manually.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RepoUpgradeOnBoot
+     */
+
+    public RunJobFlowRequest withRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
+        setRepoUpgradeOnBoot(repoUpgradeOnBoot);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2400,7 +2480,13 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getAutoScalingRole() != null)
             sb.append("AutoScalingRole: ").append(getAutoScalingRole()).append(",");
         if (getScaleDownBehavior() != null)
-            sb.append("ScaleDownBehavior: ").append(getScaleDownBehavior());
+            sb.append("ScaleDownBehavior: ").append(getScaleDownBehavior()).append(",");
+        if (getCustomAmiId() != null)
+            sb.append("CustomAmiId: ").append(getCustomAmiId()).append(",");
+        if (getEbsRootVolumeSize() != null)
+            sb.append("EbsRootVolumeSize: ").append(getEbsRootVolumeSize()).append(",");
+        if (getRepoUpgradeOnBoot() != null)
+            sb.append("RepoUpgradeOnBoot: ").append(getRepoUpgradeOnBoot());
         sb.append("}");
         return sb.toString();
     }
@@ -2491,6 +2577,18 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getScaleDownBehavior() != null && other.getScaleDownBehavior().equals(this.getScaleDownBehavior()) == false)
             return false;
+        if (other.getCustomAmiId() == null ^ this.getCustomAmiId() == null)
+            return false;
+        if (other.getCustomAmiId() != null && other.getCustomAmiId().equals(this.getCustomAmiId()) == false)
+            return false;
+        if (other.getEbsRootVolumeSize() == null ^ this.getEbsRootVolumeSize() == null)
+            return false;
+        if (other.getEbsRootVolumeSize() != null && other.getEbsRootVolumeSize().equals(this.getEbsRootVolumeSize()) == false)
+            return false;
+        if (other.getRepoUpgradeOnBoot() == null ^ this.getRepoUpgradeOnBoot() == null)
+            return false;
+        if (other.getRepoUpgradeOnBoot() != null && other.getRepoUpgradeOnBoot().equals(this.getRepoUpgradeOnBoot()) == false)
+            return false;
         return true;
     }
 
@@ -2518,6 +2616,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingRole() == null) ? 0 : getAutoScalingRole().hashCode());
         hashCode = prime * hashCode + ((getScaleDownBehavior() == null) ? 0 : getScaleDownBehavior().hashCode());
+        hashCode = prime * hashCode + ((getCustomAmiId() == null) ? 0 : getCustomAmiId().hashCode());
+        hashCode = prime * hashCode + ((getEbsRootVolumeSize() == null) ? 0 : getEbsRootVolumeSize().hashCode());
+        hashCode = prime * hashCode + ((getRepoUpgradeOnBoot() == null) ? 0 : getRepoUpgradeOnBoot().hashCode());
         return hashCode;
     }
 
