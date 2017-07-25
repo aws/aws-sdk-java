@@ -1,11 +1,15 @@
 # __1.11.167__ __2017-07-24__
 ## __Amazon AppStream__
   - ### Features
-    - Amazon AppStream 2.0 image builders and fleets can now access applications and network resources that rely on Microsoft Active Directory (AD) for authentication and permissions. This new feature allows you to join your streaming instances to your AD, so you can use your existing AD user management tools. 
+    - Amazon AppStream 2.0 image builders and fleets can now access applications and network resources that rely on Microsoft Active Directory (AD) for authentication and permissions. This new feature allows you to join your streaming instances to your AD, so you can use your existing AD user management tools.
 
 ## __Amazon EC2__
   - ### Features
     - Spot Fleet tagging capability allows customers to automatically tag instances launched by Spot Fleet. You can use this feature to label or distinguish instances created by distinct Spot Fleets. Tagging your EC2 instances also enables you to see instance cost allocation by tag in your AWS bill.
+
+## __Amazon Kinesis__
+  - ### Bugfixes
+    - **Breaking change** to remove an overload of Record#setEncryptionType that takes an enum due to serialization issues with AWS Lambda. See [Issue #1226](https://github.com/aws/aws-sdk-java/issues/1226) for more details.
 
 # __1.11.166__ __2017-07-20__
 ## __Amazon Elastic MapReduce__
@@ -448,7 +452,7 @@
       #### Operation Exceptions Changed
       * `AWSOrganizations.acceptHandshake`
          * Exceptions Removed:
-            * `AlreadyInOrganizationException` 
+            * `AlreadyInOrganizationException`
             * `ConstraintViolationException`
             * `OrganizationFromDifferentSellerOfRecordException`
          * Exceptions Added:
@@ -463,7 +467,7 @@
             * `HandshakeAlreadyInStateException` (new to model)
       * `AWSOrganizations.createOrganization`
          * Exception Removed:
-            * `PaymentInstrumentRequiredException` 
+            * `PaymentInstrumentRequiredException`
          * Exception Added:
             * `ConstraintViolationException`
       * `AWSOrganizations.createPolicy`
@@ -569,7 +573,7 @@
 # __1.11.122__ __2017-04-20__
 ## __AWS Device Farm__
   - ### Features
-    - API Update for AWS Device Farm: Support for Deals and Promotions 
+    - API Update for AWS Device Farm: Support for Deals and Promotions
 
 ## __AWS Direct Connect__
   - ### Features
@@ -598,7 +602,7 @@
 
 ## __AWS Identity and Access Management (IAM)__
   - ### Features
-    - This changes introduces a new IAM role type, Service Linked Role, which works like a normal role but must be managed via services' control. 
+    - This changes introduces a new IAM role type, Service Linked Role, which works like a normal role but must be managed via services' control.
 
 ## __AWS Lambda__
   - ### Features
@@ -632,7 +636,7 @@
 # __1.11.119__ __2017-04-11__
 ## __AWS Batch__
   - ### Features
-    - API Update for AWS Batch: Customer provided AMI for MANAGED Compute Environment 
+    - API Update for AWS Batch: Customer provided AMI for MANAGED Compute Environment
 
 ## __AWS OpsWorks__
   - ### Features
@@ -706,7 +710,7 @@
 
 ## __Amazon EC2__
   - ### Features
-    - Customers can now tag their Amazon EC2 Instances and Amazon EBS Volumes at the time of their creation. You can do this from the EC2 Instance launch wizard or through the RunInstances or CreateVolume APIs. By tagging resources at the time of creation, you can eliminate the need to run custom tagging scripts after resource creation. In addition, you can now set resource-level permissions on the CreateVolume, CreateTags, DeleteTags, and the RunInstances APIs. This allows you to implement stronger security policies by giving you more granular control over which users and groups have access to these APIs. You can also enforce the use of tagging and control what tag keys and values are set on your resources. When you combine tag usage and resource-level IAM policies together, you can ensure your instances and volumes are properly secured upon creation and achieve more accurate cost allocation reporting. These new features are provided at no additional cost. 
+    - Customers can now tag their Amazon EC2 Instances and Amazon EBS Volumes at the time of their creation. You can do this from the EC2 Instance launch wizard or through the RunInstances or CreateVolume APIs. By tagging resources at the time of creation, you can eliminate the need to run custom tagging scripts after resource creation. In addition, you can now set resource-level permissions on the CreateVolume, CreateTags, DeleteTags, and the RunInstances APIs. This allows you to implement stronger security policies by giving you more granular control over which users and groups have access to these APIs. You can also enforce the use of tagging and control what tag keys and values are set on your resources. When you combine tag usage and resource-level IAM policies together, you can ensure your instances and volumes are properly secured upon creation and achieve more accurate cost allocation reporting. These new features are provided at no additional cost.
 
 # __1.11.110__ __2017-03-27__
 ## __Amazon Simple Systems Manager (SSM)__
@@ -782,11 +786,11 @@
       final AmazonEC2 ec2 = AmazonEC2ClientBuilder.defaultClient();
       try {
           ec2.waiters().instanceExists().runAsync(
-              new WaiterParameters<>(new DescribeInstancesRequest()), 
+              new WaiterParameters<>(new DescribeInstancesRequest()),
               new WaiterHandler() {...}
           );
       } finally {
-          ec2.shutdown(); //this will now shutdown the waiters as well as the client    
+          ec2.shutdown(); //this will now shutdown the waiters as well as the client
       }
       ```
 
