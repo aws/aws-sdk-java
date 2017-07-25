@@ -283,7 +283,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
      */
 
     public void setStatus(AttachmentStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -298,7 +298,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
      */
 
     public InstanceNetworkInterfaceAttachment withStatus(AttachmentStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

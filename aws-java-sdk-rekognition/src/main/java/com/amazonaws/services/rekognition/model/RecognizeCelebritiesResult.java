@@ -335,7 +335,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setOrientationCorrection(OrientationCorrection orientationCorrection) {
-        this.orientationCorrection = orientationCorrection.toString();
+        withOrientationCorrection(orientationCorrection);
     }
 
     /**
@@ -371,7 +371,7 @@ public class RecognizeCelebritiesResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public RecognizeCelebritiesResult withOrientationCorrection(OrientationCorrection orientationCorrection) {
-        setOrientationCorrection(orientationCorrection);
+        this.orientationCorrection = orientationCorrection.toString();
         return this;
     }
 

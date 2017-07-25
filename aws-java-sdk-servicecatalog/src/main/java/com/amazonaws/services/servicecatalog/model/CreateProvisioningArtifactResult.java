@@ -197,7 +197,7 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -212,7 +212,7 @@ public class CreateProvisioningArtifactResult extends com.amazonaws.AmazonWebSer
      */
 
     public CreateProvisioningArtifactResult withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

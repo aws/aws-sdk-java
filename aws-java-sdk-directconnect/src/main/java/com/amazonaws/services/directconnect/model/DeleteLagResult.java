@@ -333,7 +333,7 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      */
 
     public void setLagState(LagState lagState) {
-        this.lagState = lagState.toString();
+        withLagState(lagState);
     }
 
     /**
@@ -343,7 +343,7 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      */
 
     public DeleteLagResult withLagState(LagState lagState) {
-        setLagState(lagState);
+        this.lagState = lagState.toString();
         return this;
     }
 

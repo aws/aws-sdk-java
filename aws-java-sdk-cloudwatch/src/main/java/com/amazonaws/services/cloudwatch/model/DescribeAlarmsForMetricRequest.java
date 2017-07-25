@@ -212,7 +212,7 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setStatistic(Statistic statistic) {
-        this.statistic = statistic.toString();
+        withStatistic(statistic);
     }
 
     /**
@@ -229,7 +229,7 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      */
 
     public DescribeAlarmsForMetricRequest withStatistic(Statistic statistic) {
-        setStatistic(statistic);
+        this.statistic = statistic.toString();
         return this;
     }
 
@@ -448,7 +448,7 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setUnit(StandardUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -463,7 +463,7 @@ public class DescribeAlarmsForMetricRequest extends com.amazonaws.AmazonWebServi
      */
 
     public DescribeAlarmsForMetricRequest withUnit(StandardUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 

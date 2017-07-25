@@ -135,7 +135,7 @@ public class StorageRuleType implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setStorageType(StorageType storageType) {
-        this.storageType = storageType.toString();
+        withStorageType(storageType);
     }
 
     /**
@@ -150,7 +150,7 @@ public class StorageRuleType implements Serializable, Cloneable, StructuredPojo 
      */
 
     public StorageRuleType withStorageType(StorageType storageType) {
-        setStorageType(storageType);
+        this.storageType = storageType.toString();
         return this;
     }
 

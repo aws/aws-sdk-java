@@ -475,7 +475,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -485,7 +485,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public BatchWriteItemRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 
@@ -559,7 +559,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
+        withReturnItemCollectionMetrics(returnItemCollectionMetrics);
     }
 
     /**
@@ -578,7 +578,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public BatchWriteItemRequest withReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        setReturnItemCollectionMetrics(returnItemCollectionMetrics);
+        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
         return this;
     }
 

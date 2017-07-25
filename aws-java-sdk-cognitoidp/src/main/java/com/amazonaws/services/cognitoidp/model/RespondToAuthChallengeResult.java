@@ -109,7 +109,7 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
      */
 
     public void setChallengeName(ChallengeNameType challengeName) {
-        this.challengeName = challengeName.toString();
+        withChallengeName(challengeName);
     }
 
     /**
@@ -124,7 +124,7 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
      */
 
     public RespondToAuthChallengeResult withChallengeName(ChallengeNameType challengeName) {
-        setChallengeName(challengeName);
+        this.challengeName = challengeName.toString();
         return this;
     }
 

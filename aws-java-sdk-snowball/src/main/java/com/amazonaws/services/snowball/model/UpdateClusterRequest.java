@@ -359,7 +359,7 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
@@ -374,7 +374,7 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public UpdateClusterRequest withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 

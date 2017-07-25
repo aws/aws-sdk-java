@@ -376,7 +376,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setProtocol(TransportProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -393,7 +393,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PortMapping withProtocol(TransportProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

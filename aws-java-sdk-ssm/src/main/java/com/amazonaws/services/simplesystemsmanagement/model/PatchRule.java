@@ -151,7 +151,7 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setComplianceLevel(PatchComplianceLevel complianceLevel) {
-        this.complianceLevel = complianceLevel.toString();
+        withComplianceLevel(complianceLevel);
     }
 
     /**
@@ -168,7 +168,7 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PatchRule withComplianceLevel(PatchComplianceLevel complianceLevel) {
-        setComplianceLevel(complianceLevel);
+        this.complianceLevel = complianceLevel.toString();
         return this;
     }
 

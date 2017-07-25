@@ -220,7 +220,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
      */
 
     public void setCause(WorkflowExecutionCancelRequestedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -239,7 +239,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes implements Serializ
      */
 
     public WorkflowExecutionCancelRequestedEventAttributes withCause(WorkflowExecutionCancelRequestedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

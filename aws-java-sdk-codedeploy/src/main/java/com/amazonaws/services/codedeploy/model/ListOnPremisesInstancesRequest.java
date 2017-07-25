@@ -207,7 +207,7 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
-        this.registrationStatus = registrationStatus.toString();
+        withRegistrationStatus(registrationStatus);
     }
 
     /**
@@ -245,7 +245,7 @@ public class ListOnPremisesInstancesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public ListOnPremisesInstancesRequest withRegistrationStatus(RegistrationStatus registrationStatus) {
-        setRegistrationStatus(registrationStatus);
+        this.registrationStatus = registrationStatus.toString();
         return this;
     }
 

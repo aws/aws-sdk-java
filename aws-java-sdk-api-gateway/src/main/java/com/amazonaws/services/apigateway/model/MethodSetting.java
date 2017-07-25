@@ -696,7 +696,7 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setUnauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
-        this.unauthorizedCacheControlHeaderStrategy = unauthorizedCacheControlHeaderStrategy.toString();
+        withUnauthorizedCacheControlHeaderStrategy(unauthorizedCacheControlHeaderStrategy);
     }
 
     /**
@@ -717,7 +717,7 @@ public class MethodSetting implements Serializable, Cloneable, StructuredPojo {
      */
 
     public MethodSetting withUnauthorizedCacheControlHeaderStrategy(UnauthorizedCacheControlHeaderStrategy unauthorizedCacheControlHeaderStrategy) {
-        setUnauthorizedCacheControlHeaderStrategy(unauthorizedCacheControlHeaderStrategy);
+        this.unauthorizedCacheControlHeaderStrategy = unauthorizedCacheControlHeaderStrategy.toString();
         return this;
     }
 

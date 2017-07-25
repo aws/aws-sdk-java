@@ -66,6 +66,37 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Creates a directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param createDirectoryConfigRequest
+     * @return A Java Future containing the result of the CreateDirectoryConfig operation returned by the service.
+     * @sample AmazonAppStreamAsync.CreateDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDirectoryConfigResult> createDirectoryConfigAsync(CreateDirectoryConfigRequest createDirectoryConfigRequest);
+
+    /**
+     * <p>
+     * Creates a directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param createDirectoryConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDirectoryConfig operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.CreateDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDirectoryConfigResult> createDirectoryConfigAsync(CreateDirectoryConfigRequest createDirectoryConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDirectoryConfigRequest, CreateDirectoryConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new fleet.
      * </p>
      * 
@@ -163,6 +194,37 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Deletes the directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param deleteDirectoryConfigRequest
+     * @return A Java Future containing the result of the DeleteDirectoryConfig operation returned by the service.
+     * @sample AmazonAppStreamAsync.DeleteDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDirectoryConfigResult> deleteDirectoryConfigAsync(DeleteDirectoryConfigRequest deleteDirectoryConfigRequest);
+
+    /**
+     * <p>
+     * Deletes the directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param deleteDirectoryConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDirectoryConfig operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DeleteDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDirectoryConfigResult> deleteDirectoryConfigAsync(DeleteDirectoryConfigRequest deleteDirectoryConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDirectoryConfigRequest, DeleteDirectoryConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a fleet.
      * </p>
      * 
@@ -224,6 +286,37 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(DeleteStackRequest deleteStackRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list describing the specified directory configurations.
+     * </p>
+     * 
+     * @param describeDirectoryConfigsRequest
+     * @return A Java Future containing the result of the DescribeDirectoryConfigs operation returned by the service.
+     * @sample AmazonAppStreamAsync.DescribeDirectoryConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDirectoryConfigsResult> describeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest describeDirectoryConfigsRequest);
+
+    /**
+     * <p>
+     * Returns a list describing the specified directory configurations.
+     * </p>
+     * 
+     * @param describeDirectoryConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDirectoryConfigs operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DescribeDirectoryConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDirectoryConfigsResult> describeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest describeDirectoryConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDirectoryConfigsRequest, DescribeDirectoryConfigsResult> asyncHandler);
 
     /**
      * <p>
@@ -294,9 +387,9 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     /**
      * <p>
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
-     * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
-     * operation defaults to users authenticated using a streaming URL.
+     * streaming sessions for only that user. To retrieve the next set of items, pass this value for the
+     * <code>nextToken</code> parameter in a subsequent call to this operation. If an authentication type is not
+     * provided, the operation defaults to users authenticated using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -310,9 +403,9 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     /**
      * <p>
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
-     * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
-     * operation defaults to users authenticated using a streaming URL.
+     * streaming sessions for only that user. To retrieve the next set of items, pass this value for the
+     * <code>nextToken</code> parameter in a subsequent call to this operation. If an authentication type is not
+     * provided, the operation defaults to users authenticated using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -331,8 +424,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     /**
      * <p>
      * If stack names are not provided, this operation describes the specified stacks; otherwise, all stacks in the
-     * account are described. Pass the <code>nextToken</code> value in a subsequent call to this operation to retrieve
-     * the next set of items.
+     * account are described. To retrieve the next set of items, pass the <code>nextToken</code> value in a subsequent
+     * call to this operation.
      * </p>
      * 
      * @param describeStacksRequest
@@ -346,8 +439,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     /**
      * <p>
      * If stack names are not provided, this operation describes the specified stacks; otherwise, all stacks in the
-     * account are described. Pass the <code>nextToken</code> value in a subsequent call to this operation to retrieve
-     * the next set of items.
+     * account are described. To retrieve the next set of items, pass the <code>nextToken</code> value in a subsequent
+     * call to this operation.
      * </p>
      * 
      * @param describeStacksRequest
@@ -548,6 +641,37 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<StopFleetResult> stopFleetAsync(StopFleetRequest stopFleetRequest,
             com.amazonaws.handlers.AsyncHandler<StopFleetRequest, StopFleetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param updateDirectoryConfigRequest
+     * @return A Java Future containing the result of the UpdateDirectoryConfig operation returned by the service.
+     * @sample AmazonAppStreamAsync.UpdateDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDirectoryConfigResult> updateDirectoryConfigAsync(UpdateDirectoryConfigRequest updateDirectoryConfigRequest);
+
+    /**
+     * <p>
+     * Updates the directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param updateDirectoryConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDirectoryConfig operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.UpdateDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDirectoryConfigResult> updateDirectoryConfigAsync(UpdateDirectoryConfigRequest updateDirectoryConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDirectoryConfigRequest, UpdateDirectoryConfigResult> asyncHandler);
 
     /**
      * <p>

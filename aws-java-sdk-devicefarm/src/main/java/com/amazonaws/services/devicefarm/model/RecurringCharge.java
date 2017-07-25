@@ -135,7 +135,7 @@ public class RecurringCharge implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setFrequency(RecurringChargeFrequency frequency) {
-        this.frequency = frequency.toString();
+        withFrequency(frequency);
     }
 
     /**
@@ -150,7 +150,7 @@ public class RecurringCharge implements Serializable, Cloneable, StructuredPojo 
      */
 
     public RecurringCharge withFrequency(RecurringChargeFrequency frequency) {
-        setFrequency(frequency);
+        this.frequency = frequency.toString();
         return this;
     }
 

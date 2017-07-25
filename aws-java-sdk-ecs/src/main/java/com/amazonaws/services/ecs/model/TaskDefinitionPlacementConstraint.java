@@ -117,7 +117,7 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
      */
 
     public void setType(TaskDefinitionPlacementConstraintType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -136,7 +136,7 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
      */
 
     public TaskDefinitionPlacementConstraint withType(TaskDefinitionPlacementConstraintType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

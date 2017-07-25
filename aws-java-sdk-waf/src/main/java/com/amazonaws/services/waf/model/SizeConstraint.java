@@ -1448,7 +1448,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setTextTransformation(TextTransformation textTransformation) {
-        this.textTransformation = textTransformation.toString();
+        withTextTransformation(textTransformation);
     }
 
     /**
@@ -1744,7 +1744,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SizeConstraint withTextTransformation(TextTransformation textTransformation) {
-        setTextTransformation(textTransformation);
+        this.textTransformation = textTransformation.toString();
         return this;
     }
 
@@ -1995,7 +1995,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -2058,7 +2058,7 @@ public class SizeConstraint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SizeConstraint withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 

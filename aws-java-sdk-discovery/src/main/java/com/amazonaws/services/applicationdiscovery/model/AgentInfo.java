@@ -372,7 +372,7 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setHealth(AgentStatus health) {
-        this.health = health.toString();
+        withHealth(health);
     }
 
     /**
@@ -387,7 +387,7 @@ public class AgentInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public AgentInfo withHealth(AgentStatus health) {
-        setHealth(health);
+        this.health = health.toString();
         return this;
     }
 

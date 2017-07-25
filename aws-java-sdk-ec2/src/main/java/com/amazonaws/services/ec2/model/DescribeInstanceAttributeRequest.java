@@ -157,7 +157,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
      */
 
     public void setAttribute(InstanceAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -177,7 +177,7 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest im
      */
 
     public DescribeInstanceAttributeRequest withAttribute(InstanceAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

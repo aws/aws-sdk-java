@@ -175,7 +175,7 @@ public class TargetHealth implements Serializable, Cloneable {
      */
 
     public void setState(TargetHealthStateEnum state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -190,7 +190,7 @@ public class TargetHealth implements Serializable, Cloneable {
      */
 
     public TargetHealth withState(TargetHealthStateEnum state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -845,7 +845,7 @@ public class TargetHealth implements Serializable, Cloneable {
      */
 
     public void setReason(TargetHealthReasonEnum reason) {
-        this.reason = reason.toString();
+        withReason(reason);
     }
 
     /**
@@ -1009,7 +1009,7 @@ public class TargetHealth implements Serializable, Cloneable {
      */
 
     public TargetHealth withReason(TargetHealthReasonEnum reason) {
-        setReason(reason);
+        this.reason = reason.toString();
         return this;
     }
 

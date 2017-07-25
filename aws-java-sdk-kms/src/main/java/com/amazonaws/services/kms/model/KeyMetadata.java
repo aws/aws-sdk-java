@@ -471,7 +471,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setKeyUsage(KeyUsageType keyUsage) {
-        this.keyUsage = keyUsage.toString();
+        withKeyUsage(keyUsage);
     }
 
     /**
@@ -490,7 +490,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public KeyMetadata withKeyUsage(KeyUsageType keyUsage) {
-        setKeyUsage(keyUsage);
+        this.keyUsage = keyUsage.toString();
         return this;
     }
 
@@ -584,7 +584,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setKeyState(KeyState keyState) {
-        this.keyState = keyState.toString();
+        withKeyState(keyState);
     }
 
     /**
@@ -608,7 +608,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public KeyMetadata withKeyState(KeyState keyState) {
-        setKeyState(keyState);
+        this.keyState = keyState.toString();
         return this;
     }
 
@@ -786,7 +786,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOrigin(OriginType origin) {
-        this.origin = origin.toString();
+        withOrigin(origin);
     }
 
     /**
@@ -805,7 +805,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public KeyMetadata withOrigin(OriginType origin) {
-        setOrigin(origin);
+        this.origin = origin.toString();
         return this;
     }
 
@@ -871,7 +871,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setExpirationModel(ExpirationModelType expirationModel) {
-        this.expirationModel = expirationModel.toString();
+        withExpirationModel(expirationModel);
     }
 
     /**
@@ -888,7 +888,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public KeyMetadata withExpirationModel(ExpirationModelType expirationModel) {
-        setExpirationModel(expirationModel);
+        this.expirationModel = expirationModel.toString();
         return this;
     }
 
@@ -966,7 +966,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setKeyManager(KeyManagerType keyManager) {
-        this.keyManager = keyManager.toString();
+        withKeyManager(keyManager);
     }
 
     /**
@@ -986,7 +986,7 @@ public class KeyMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public KeyMetadata withKeyManager(KeyManagerType keyManager) {
-        setKeyManager(keyManager);
+        this.keyManager = keyManager.toString();
         return this;
     }
 

@@ -133,7 +133,7 @@ public class InstanceCount implements Serializable, Cloneable {
      */
 
     public void setState(ListingState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -148,7 +148,7 @@ public class InstanceCount implements Serializable, Cloneable {
      */
 
     public InstanceCount withState(ListingState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

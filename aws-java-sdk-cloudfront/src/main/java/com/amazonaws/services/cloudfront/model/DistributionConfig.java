@@ -1251,7 +1251,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      */
 
     public void setPriceClass(PriceClass priceClass) {
-        this.priceClass = priceClass.toString();
+        withPriceClass(priceClass);
     }
 
     /**
@@ -1294,7 +1294,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      */
 
     public DistributionConfig withPriceClass(PriceClass priceClass) {
-        setPriceClass(priceClass);
+        this.priceClass = priceClass.toString();
         return this;
     }
 
@@ -1653,7 +1653,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      */
 
     public void setHttpVersion(HttpVersion httpVersion) {
-        this.httpVersion = httpVersion.toString();
+        withHttpVersion(httpVersion);
     }
 
     /**
@@ -1688,7 +1688,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      */
 
     public DistributionConfig withHttpVersion(HttpVersion httpVersion) {
-        setHttpVersion(httpVersion);
+        this.httpVersion = httpVersion.toString();
         return this;
     }
 

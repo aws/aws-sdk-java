@@ -356,7 +356,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setType(AppType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -371,7 +371,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public UpdateAppRequest withType(AppType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

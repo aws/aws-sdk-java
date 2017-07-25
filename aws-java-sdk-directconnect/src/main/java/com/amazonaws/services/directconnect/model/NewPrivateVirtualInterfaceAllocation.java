@@ -207,7 +207,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
      */
 
     public void setAddressFamily(AddressFamily addressFamily) {
-        this.addressFamily = addressFamily.toString();
+        withAddressFamily(addressFamily);
     }
 
     /**
@@ -217,7 +217,7 @@ public class NewPrivateVirtualInterfaceAllocation implements Serializable, Clone
      */
 
     public NewPrivateVirtualInterfaceAllocation withAddressFamily(AddressFamily addressFamily) {
-        setAddressFamily(addressFamily);
+        this.addressFamily = addressFamily.toString();
         return this;
     }
 

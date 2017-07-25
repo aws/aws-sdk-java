@@ -290,7 +290,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(JobStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -305,7 +305,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public JobDetail withStatus(JobStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

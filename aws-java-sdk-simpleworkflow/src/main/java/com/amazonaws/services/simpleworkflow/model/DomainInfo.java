@@ -263,7 +263,7 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(RegistrationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -305,7 +305,7 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public DomainInfo withStatus(RegistrationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

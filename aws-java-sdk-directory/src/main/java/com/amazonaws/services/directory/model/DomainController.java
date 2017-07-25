@@ -383,7 +383,7 @@ public class DomainController implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setStatus(DomainControllerStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -398,7 +398,7 @@ public class DomainController implements Serializable, Cloneable, StructuredPojo
      */
 
     public DomainController withStatus(DomainControllerStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

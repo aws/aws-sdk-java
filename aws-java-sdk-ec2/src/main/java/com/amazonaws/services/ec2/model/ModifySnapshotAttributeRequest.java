@@ -203,7 +203,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      */
 
     public void setAttribute(SnapshotAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -226,7 +226,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      */
 
     public ModifySnapshotAttributeRequest withAttribute(SnapshotAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 
@@ -397,7 +397,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      */
 
     public void setOperationType(OperationType operationType) {
-        this.operationType = operationType.toString();
+        withOperationType(operationType);
     }
 
     /**
@@ -412,7 +412,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest impl
      */
 
     public ModifySnapshotAttributeRequest withOperationType(OperationType operationType) {
-        setOperationType(operationType);
+        this.operationType = operationType.toString();
         return this;
     }
 

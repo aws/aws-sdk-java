@@ -244,7 +244,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setType(ParameterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -259,7 +259,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public PutParameterRequest withType(ParameterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

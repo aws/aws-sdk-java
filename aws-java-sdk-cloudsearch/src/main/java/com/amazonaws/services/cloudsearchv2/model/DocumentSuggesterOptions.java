@@ -167,7 +167,7 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
      */
 
     public void setFuzzyMatching(SuggesterFuzzyMatching fuzzyMatching) {
-        this.fuzzyMatching = fuzzyMatching.toString();
+        withFuzzyMatching(fuzzyMatching);
     }
 
     /**
@@ -188,7 +188,7 @@ public class DocumentSuggesterOptions implements Serializable, Cloneable {
      */
 
     public DocumentSuggesterOptions withFuzzyMatching(SuggesterFuzzyMatching fuzzyMatching) {
-        setFuzzyMatching(fuzzyMatching);
+        this.fuzzyMatching = fuzzyMatching.toString();
         return this;
     }
 

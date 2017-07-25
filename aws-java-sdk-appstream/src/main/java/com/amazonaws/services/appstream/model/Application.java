@@ -60,7 +60,7 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     private String launchParameters;
     /**
      * <p>
-     * An application can be disabled after image creation if there is a problem.
+     * If there is a problem, an application can be disabled after image creation.
      * </p>
      */
     private Boolean enabled;
@@ -273,11 +273,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An application can be disabled after image creation if there is a problem.
+     * If there is a problem, an application can be disabled after image creation.
      * </p>
      * 
      * @param enabled
-     *        An application can be disabled after image creation if there is a problem.
+     *        If there is a problem, an application can be disabled after image creation.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -286,10 +286,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An application can be disabled after image creation if there is a problem.
+     * If there is a problem, an application can be disabled after image creation.
      * </p>
      * 
-     * @return An application can be disabled after image creation if there is a problem.
+     * @return If there is a problem, an application can be disabled after image creation.
      */
 
     public Boolean getEnabled() {
@@ -298,11 +298,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An application can be disabled after image creation if there is a problem.
+     * If there is a problem, an application can be disabled after image creation.
      * </p>
      * 
      * @param enabled
-     *        An application can be disabled after image creation if there is a problem.
+     *        If there is a problem, an application can be disabled after image creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,10 +313,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An application can be disabled after image creation if there is a problem.
+     * If there is a problem, an application can be disabled after image creation.
      * </p>
      * 
-     * @return An application can be disabled after image creation if there is a problem.
+     * @return If there is a problem, an application can be disabled after image creation.
      */
 
     public Boolean isEnabled() {

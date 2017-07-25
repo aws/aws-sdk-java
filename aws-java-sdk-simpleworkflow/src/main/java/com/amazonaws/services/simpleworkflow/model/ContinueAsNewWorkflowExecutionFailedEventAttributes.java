@@ -166,7 +166,7 @@ public class ContinueAsNewWorkflowExecutionFailedEventAttributes implements Seri
      */
 
     public void setCause(ContinueAsNewWorkflowExecutionFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -196,7 +196,7 @@ public class ContinueAsNewWorkflowExecutionFailedEventAttributes implements Seri
      */
 
     public ContinueAsNewWorkflowExecutionFailedEventAttributes withCause(ContinueAsNewWorkflowExecutionFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

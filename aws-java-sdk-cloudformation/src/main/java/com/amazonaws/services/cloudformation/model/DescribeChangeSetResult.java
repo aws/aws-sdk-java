@@ -544,7 +544,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setExecutionStatus(ExecutionStatus executionStatus) {
-        this.executionStatus = executionStatus.toString();
+        withExecutionStatus(executionStatus);
     }
 
     /**
@@ -565,7 +565,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public DescribeChangeSetResult withExecutionStatus(ExecutionStatus executionStatus) {
-        setExecutionStatus(executionStatus);
+        this.executionStatus = executionStatus.toString();
         return this;
     }
 
@@ -631,7 +631,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setStatus(ChangeSetStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -648,7 +648,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public DescribeChangeSetResult withStatus(ChangeSetStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

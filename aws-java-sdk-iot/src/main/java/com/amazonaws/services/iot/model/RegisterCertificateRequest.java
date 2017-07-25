@@ -237,7 +237,7 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setStatus(CertificateStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -252,7 +252,7 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public RegisterCertificateRequest withStatus(CertificateStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

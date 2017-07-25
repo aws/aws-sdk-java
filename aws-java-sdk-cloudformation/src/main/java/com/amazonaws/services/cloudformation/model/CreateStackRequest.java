@@ -1514,7 +1514,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setOnFailure(OnFailure onFailure) {
-        this.onFailure = onFailure.toString();
+        withOnFailure(onFailure);
     }
 
     /**
@@ -1537,7 +1537,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public CreateStackRequest withOnFailure(OnFailure onFailure) {
-        setOnFailure(onFailure);
+        this.onFailure = onFailure.toString();
         return this;
     }
 

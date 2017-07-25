@@ -96,7 +96,7 @@ public class ScalingAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMarket(MarketType market) {
-        this.market = market.toString();
+        withMarket(market);
     }
 
     /**
@@ -111,7 +111,7 @@ public class ScalingAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ScalingAction withMarket(MarketType market) {
-        setMarket(market);
+        this.market = market.toString();
         return this;
     }
 

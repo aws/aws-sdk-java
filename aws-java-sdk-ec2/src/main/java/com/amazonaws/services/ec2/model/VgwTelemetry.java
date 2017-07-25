@@ -231,7 +231,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      */
 
     public void setStatus(TelemetryStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -246,7 +246,7 @@ public class VgwTelemetry implements Serializable, Cloneable {
      */
 
     public VgwTelemetry withStatus(TelemetryStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

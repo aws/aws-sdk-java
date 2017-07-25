@@ -444,7 +444,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAttribute(DeviceAttribute attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -528,7 +528,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Rule withAttribute(DeviceAttribute attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 
@@ -838,7 +838,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOperator(RuleOperator operator) {
-        this.operator = operator.toString();
+        withOperator(operator);
     }
 
     /**
@@ -916,7 +916,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Rule withOperator(RuleOperator operator) {
-        setOperator(operator);
+        this.operator = operator.toString();
         return this;
     }
 

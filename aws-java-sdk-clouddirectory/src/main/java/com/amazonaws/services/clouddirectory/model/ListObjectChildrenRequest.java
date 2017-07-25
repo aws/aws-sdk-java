@@ -286,7 +286,7 @@ public class ListObjectChildrenRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        this.consistencyLevel = consistencyLevel.toString();
+        withConsistencyLevel(consistencyLevel);
     }
 
     /**
@@ -303,7 +303,7 @@ public class ListObjectChildrenRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public ListObjectChildrenRequest withConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        setConsistencyLevel(consistencyLevel);
+        this.consistencyLevel = consistencyLevel.toString();
         return this;
     }
 

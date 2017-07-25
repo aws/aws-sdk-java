@@ -676,7 +676,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      */
 
     public void setOperation(PatchOperationType operation) {
-        this.operation = operation.toString();
+        withOperation(operation);
     }
 
     /**
@@ -693,7 +693,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      */
 
     public InstancePatchState withOperation(PatchOperationType operation) {
-        setOperation(operation);
+        this.operation = operation.toString();
         return this;
     }
 

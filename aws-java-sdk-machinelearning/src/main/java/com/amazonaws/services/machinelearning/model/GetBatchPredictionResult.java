@@ -594,7 +594,7 @@ public class GetBatchPredictionResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public void setStatus(EntityStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -625,7 +625,7 @@ public class GetBatchPredictionResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public GetBatchPredictionResult withStatus(EntityStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

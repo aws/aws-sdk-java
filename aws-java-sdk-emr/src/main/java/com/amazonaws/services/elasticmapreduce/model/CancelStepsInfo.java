@@ -142,7 +142,7 @@ public class CancelStepsInfo implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setStatus(CancelStepsRequestStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -157,7 +157,7 @@ public class CancelStepsInfo implements Serializable, Cloneable, StructuredPojo 
      */
 
     public CancelStepsInfo withStatus(CancelStepsRequestStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -591,7 +591,7 @@ public class TerminateWorkflowExecutionRequest extends com.amazonaws.AmazonWebSe
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -667,7 +667,7 @@ public class TerminateWorkflowExecutionRequest extends com.amazonaws.AmazonWebSe
      */
 
     public TerminateWorkflowExecutionRequest withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 

@@ -93,7 +93,7 @@ public class AnalysisScheme implements Serializable, Cloneable {
      */
 
     public void setAnalysisSchemeLanguage(AnalysisSchemeLanguage analysisSchemeLanguage) {
-        this.analysisSchemeLanguage = analysisSchemeLanguage.toString();
+        withAnalysisSchemeLanguage(analysisSchemeLanguage);
     }
 
     /**
@@ -103,7 +103,7 @@ public class AnalysisScheme implements Serializable, Cloneable {
      */
 
     public AnalysisScheme withAnalysisSchemeLanguage(AnalysisSchemeLanguage analysisSchemeLanguage) {
-        setAnalysisSchemeLanguage(analysisSchemeLanguage);
+        this.analysisSchemeLanguage = analysisSchemeLanguage.toString();
         return this;
     }
 

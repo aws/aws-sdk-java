@@ -242,7 +242,7 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(PredicateType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -257,7 +257,7 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Predicate withType(PredicateType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

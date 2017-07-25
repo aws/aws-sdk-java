@@ -324,7 +324,7 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      */
 
     public void setEvaluation(EvaluationType evaluation) {
-        this.evaluation = evaluation.toString();
+        withEvaluation(evaluation);
     }
 
     /**
@@ -368,7 +368,7 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      */
 
     public ResourceChangeDetail withEvaluation(EvaluationType evaluation) {
-        setEvaluation(evaluation);
+        this.evaluation = evaluation.toString();
         return this;
     }
 
@@ -694,7 +694,7 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      */
 
     public void setChangeSource(ChangeSource changeSource) {
-        this.changeSource = changeSource.toString();
+        withChangeSource(changeSource);
     }
 
     /**
@@ -776,7 +776,7 @@ public class ResourceChangeDetail implements Serializable, Cloneable {
      */
 
     public ResourceChangeDetail withChangeSource(ChangeSource changeSource) {
-        setChangeSource(changeSource);
+        this.changeSource = changeSource.toString();
         return this;
     }
 

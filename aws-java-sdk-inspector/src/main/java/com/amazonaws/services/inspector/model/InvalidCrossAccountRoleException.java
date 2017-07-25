@@ -157,7 +157,7 @@ public class InvalidCrossAccountRoleException extends com.amazonaws.services.ins
      */
 
     public void setInspectorErrorCode(InvalidCrossAccountRoleErrorCode inspectorErrorCode) {
-        this.inspectorErrorCode = inspectorErrorCode.toString();
+        withInspectorErrorCode(inspectorErrorCode);
     }
 
     /**
@@ -172,7 +172,7 @@ public class InvalidCrossAccountRoleException extends com.amazonaws.services.ins
      */
 
     public InvalidCrossAccountRoleException withInspectorErrorCode(InvalidCrossAccountRoleErrorCode inspectorErrorCode) {
-        setInspectorErrorCode(inspectorErrorCode);
+        this.inspectorErrorCode = inspectorErrorCode.toString();
         return this;
     }
 

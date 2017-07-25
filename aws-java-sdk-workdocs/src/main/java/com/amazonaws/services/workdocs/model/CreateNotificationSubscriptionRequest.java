@@ -192,7 +192,7 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      */
 
     public void setProtocol(SubscriptionProtocolType protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -207,7 +207,7 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      */
 
     public CreateNotificationSubscriptionRequest withProtocol(SubscriptionProtocolType protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
@@ -265,7 +265,7 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      */
 
     public void setSubscriptionType(SubscriptionType subscriptionType) {
-        this.subscriptionType = subscriptionType.toString();
+        withSubscriptionType(subscriptionType);
     }
 
     /**
@@ -280,7 +280,7 @@ public class CreateNotificationSubscriptionRequest extends com.amazonaws.AmazonW
      */
 
     public CreateNotificationSubscriptionRequest withSubscriptionType(SubscriptionType subscriptionType) {
-        setSubscriptionType(subscriptionType);
+        this.subscriptionType = subscriptionType.toString();
         return this;
     }
 

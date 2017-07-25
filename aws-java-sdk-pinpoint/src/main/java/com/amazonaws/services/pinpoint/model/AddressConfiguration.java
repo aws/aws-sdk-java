@@ -122,7 +122,7 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
      */
 
     public void setChannelType(ChannelType channelType) {
-        this.channelType = channelType.toString();
+        withChannelType(channelType);
     }
 
     /**
@@ -135,7 +135,7 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
      */
 
     public AddressConfiguration withChannelType(ChannelType channelType) {
-        setChannelType(channelType);
+        this.channelType = channelType.toString();
         return this;
     }
 

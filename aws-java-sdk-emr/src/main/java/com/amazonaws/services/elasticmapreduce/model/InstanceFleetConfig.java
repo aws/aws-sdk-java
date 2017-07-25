@@ -195,7 +195,7 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
      */
 
     public void setInstanceFleetType(InstanceFleetType instanceFleetType) {
-        this.instanceFleetType = instanceFleetType.toString();
+        withInstanceFleetType(instanceFleetType);
     }
 
     /**
@@ -210,7 +210,7 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceFleetConfig withInstanceFleetType(InstanceFleetType instanceFleetType) {
-        setInstanceFleetType(instanceFleetType);
+        this.instanceFleetType = instanceFleetType.toString();
         return this;
     }
 

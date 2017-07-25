@@ -681,7 +681,7 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setResult(ExecutionResult result) {
-        this.result = result.toString();
+        withResult(result);
     }
 
     /**
@@ -775,7 +775,7 @@ public class Problem implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Problem withResult(ExecutionResult result) {
-        setResult(result);
+        this.result = result.toString();
         return this;
     }
 

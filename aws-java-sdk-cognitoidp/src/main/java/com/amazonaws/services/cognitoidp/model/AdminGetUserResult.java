@@ -604,7 +604,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public void setUserStatus(UserStatusType userStatus) {
-        this.userStatus = userStatus.toString();
+        withUserStatus(userStatus);
     }
 
     /**
@@ -672,7 +672,7 @@ public class AdminGetUserResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public AdminGetUserResult withUserStatus(UserStatusType userStatus) {
-        setUserStatus(userStatus);
+        this.userStatus = userStatus.toString();
         return this;
     }
 

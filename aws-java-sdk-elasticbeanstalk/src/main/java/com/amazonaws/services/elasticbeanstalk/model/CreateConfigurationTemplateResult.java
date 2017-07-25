@@ -602,7 +602,7 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
      */
 
     public void setDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
-        this.deploymentStatus = deploymentStatus.toString();
+        withDeploymentStatus(deploymentStatus);
     }
 
     /**
@@ -666,7 +666,7 @@ public class CreateConfigurationTemplateResult extends com.amazonaws.AmazonWebSe
      */
 
     public CreateConfigurationTemplateResult withDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
-        setDeploymentStatus(deploymentStatus);
+        this.deploymentStatus = deploymentStatus.toString();
         return this;
     }
 

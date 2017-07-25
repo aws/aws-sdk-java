@@ -181,7 +181,7 @@ public class DescribeEnvironmentManagedActionsRequest extends com.amazonaws.Amaz
      */
 
     public void setStatus(ActionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -196,7 +196,7 @@ public class DescribeEnvironmentManagedActionsRequest extends com.amazonaws.Amaz
      */
 
     public DescribeEnvironmentManagedActionsRequest withStatus(ActionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

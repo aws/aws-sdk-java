@@ -154,7 +154,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable, St
      */
 
     public void setState(JobFlowExecutionState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -169,7 +169,7 @@ public class JobFlowExecutionStatusDetail implements Serializable, Cloneable, St
      */
 
     public JobFlowExecutionStatusDetail withState(JobFlowExecutionState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

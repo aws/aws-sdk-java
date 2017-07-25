@@ -719,7 +719,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setStatus(CommandInvocationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -734,7 +734,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public GetCommandInvocationResult withStatus(CommandInvocationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

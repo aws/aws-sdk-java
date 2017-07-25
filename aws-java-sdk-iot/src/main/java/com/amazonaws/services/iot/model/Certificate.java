@@ -207,7 +207,7 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(CertificateStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -227,7 +227,7 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Certificate withStatus(CertificateStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

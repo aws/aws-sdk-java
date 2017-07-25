@@ -500,7 +500,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setKeyUsage(KeyUsageType keyUsage) {
-        this.keyUsage = keyUsage.toString();
+        withKeyUsage(keyUsage);
     }
 
     /**
@@ -520,7 +520,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateKeyRequest withKeyUsage(KeyUsageType keyUsage) {
-        setKeyUsage(keyUsage);
+        this.keyUsage = keyUsage.toString();
         return this;
     }
 
@@ -658,7 +658,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setOrigin(OriginType origin) {
-        this.origin = origin.toString();
+        withOrigin(origin);
     }
 
     /**
@@ -693,7 +693,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateKeyRequest withOrigin(OriginType origin) {
-        setOrigin(origin);
+        this.origin = origin.toString();
         return this;
     }
 

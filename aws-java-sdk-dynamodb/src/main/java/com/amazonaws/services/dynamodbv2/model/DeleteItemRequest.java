@@ -629,7 +629,7 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
-        this.conditionalOperator = conditionalOperator.toString();
+        withConditionalOperator(conditionalOperator);
     }
 
     /**
@@ -649,7 +649,7 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public DeleteItemRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
-        setConditionalOperator(conditionalOperator);
+        this.conditionalOperator = conditionalOperator.toString();
         return this;
     }
 
@@ -867,7 +867,7 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setReturnValues(ReturnValue returnValues) {
-        this.returnValues = returnValues.toString();
+        withReturnValues(returnValues);
     }
 
     /**
@@ -922,7 +922,7 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public DeleteItemRequest withReturnValues(ReturnValue returnValues) {
-        setReturnValues(returnValues);
+        this.returnValues = returnValues.toString();
         return this;
     }
 
@@ -961,7 +961,7 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -971,7 +971,7 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public DeleteItemRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 
@@ -1045,7 +1045,7 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
+        withReturnItemCollectionMetrics(returnItemCollectionMetrics);
     }
 
     /**
@@ -1064,7 +1064,7 @@ public class DeleteItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public DeleteItemRequest withReturnItemCollectionMetrics(ReturnItemCollectionMetrics returnItemCollectionMetrics) {
-        setReturnItemCollectionMetrics(returnItemCollectionMetrics);
+        this.returnItemCollectionMetrics = returnItemCollectionMetrics.toString();
         return this;
     }
 

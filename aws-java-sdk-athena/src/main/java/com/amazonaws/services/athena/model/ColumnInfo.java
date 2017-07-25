@@ -477,7 +477,7 @@ public class ColumnInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setNullable(ColumnNullable nullable) {
-        this.nullable = nullable.toString();
+        withNullable(nullable);
     }
 
     /**
@@ -492,7 +492,7 @@ public class ColumnInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ColumnInfo withNullable(ColumnNullable nullable) {
-        setNullable(nullable);
+        this.nullable = nullable.toString();
         return this;
     }
 

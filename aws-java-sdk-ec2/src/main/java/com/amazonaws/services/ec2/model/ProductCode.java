@@ -133,7 +133,7 @@ public class ProductCode implements Serializable, Cloneable {
      */
 
     public void setProductCodeType(ProductCodeValues productCodeType) {
-        this.productCodeType = productCodeType.toString();
+        withProductCodeType(productCodeType);
     }
 
     /**
@@ -148,7 +148,7 @@ public class ProductCode implements Serializable, Cloneable {
      */
 
     public ProductCode withProductCodeType(ProductCodeValues productCodeType) {
-        setProductCodeType(productCodeType);
+        this.productCodeType = productCodeType.toString();
         return this;
     }
 

@@ -229,7 +229,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setLogDriver(LogDriver logDriver) {
-        this.logDriver = logDriver.toString();
+        withLogDriver(logDriver);
     }
 
     /**
@@ -273,7 +273,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      */
 
     public LogConfiguration withLogDriver(LogDriver logDriver) {
-        setLogDriver(logDriver);
+        this.logDriver = logDriver.toString();
         return this;
     }
 

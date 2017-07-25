@@ -88,7 +88,7 @@ public class VPC implements Serializable, Cloneable {
      */
 
     public void setVPCRegion(VPCRegion vPCRegion) {
-        this.vPCRegion = vPCRegion.toString();
+        withVPCRegion(vPCRegion);
     }
 
     /**
@@ -103,7 +103,7 @@ public class VPC implements Serializable, Cloneable {
      */
 
     public VPC withVPCRegion(VPCRegion vPCRegion) {
-        setVPCRegion(vPCRegion);
+        this.vPCRegion = vPCRegion.toString();
         return this;
     }
 

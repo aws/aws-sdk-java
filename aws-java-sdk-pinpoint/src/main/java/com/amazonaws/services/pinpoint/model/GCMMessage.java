@@ -157,7 +157,7 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAction(Action action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -178,7 +178,7 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
      */
 
     public GCMMessage withAction(Action action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

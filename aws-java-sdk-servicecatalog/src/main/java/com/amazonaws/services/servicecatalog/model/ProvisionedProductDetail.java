@@ -451,7 +451,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      */
 
     public void setStatus(ProvisionedProductStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -500,7 +500,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      */
 
     public ProvisionedProductDetail withStatus(ProvisionedProductStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

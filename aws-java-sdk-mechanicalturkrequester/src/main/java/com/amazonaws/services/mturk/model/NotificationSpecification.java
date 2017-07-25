@@ -164,7 +164,7 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
      */
 
     public void setTransport(NotificationTransport transport) {
-        this.transport = transport.toString();
+        withTransport(transport);
     }
 
     /**
@@ -179,7 +179,7 @@ public class NotificationSpecification implements Serializable, Cloneable, Struc
      */
 
     public NotificationSpecification withTransport(NotificationTransport transport) {
-        setTransport(transport);
+        this.transport = transport.toString();
         return this;
     }
 

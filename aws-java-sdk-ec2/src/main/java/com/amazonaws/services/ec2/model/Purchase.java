@@ -137,7 +137,7 @@ public class Purchase implements Serializable, Cloneable {
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -154,7 +154,7 @@ public class Purchase implements Serializable, Cloneable {
      */
 
     public Purchase withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 
@@ -445,7 +445,7 @@ public class Purchase implements Serializable, Cloneable {
      */
 
     public void setPaymentOption(PaymentOption paymentOption) {
-        this.paymentOption = paymentOption.toString();
+        withPaymentOption(paymentOption);
     }
 
     /**
@@ -460,7 +460,7 @@ public class Purchase implements Serializable, Cloneable {
      */
 
     public Purchase withPaymentOption(PaymentOption paymentOption) {
-        setPaymentOption(paymentOption);
+        this.paymentOption = paymentOption.toString();
         return this;
     }
 

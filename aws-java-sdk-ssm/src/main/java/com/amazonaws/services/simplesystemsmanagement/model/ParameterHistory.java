@@ -174,7 +174,7 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setType(ParameterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -189,7 +189,7 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
      */
 
     public ParameterHistory withType(ParameterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

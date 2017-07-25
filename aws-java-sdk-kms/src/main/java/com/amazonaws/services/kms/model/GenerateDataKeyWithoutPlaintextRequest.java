@@ -441,7 +441,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      */
 
     public void setKeySpec(DataKeySpec keySpec) {
-        this.keySpec = keySpec.toString();
+        withKeySpec(keySpec);
     }
 
     /**
@@ -458,7 +458,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      */
 
     public GenerateDataKeyWithoutPlaintextRequest withKeySpec(DataKeySpec keySpec) {
-        setKeySpec(keySpec);
+        this.keySpec = keySpec.toString();
         return this;
     }
 

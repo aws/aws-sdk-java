@@ -145,7 +145,7 @@ public class UnsubscribeFromEventRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setEvent(InspectorEvent event) {
-        this.event = event.toString();
+        withEvent(event);
     }
 
     /**
@@ -160,7 +160,7 @@ public class UnsubscribeFromEventRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public UnsubscribeFromEventRequest withEvent(InspectorEvent event) {
-        setEvent(event);
+        this.event = event.toString();
         return this;
     }
 

@@ -151,7 +151,7 @@ public class MappingRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMatchType(MappingRuleMatchType matchType) {
-        this.matchType = matchType.toString();
+        withMatchType(matchType);
     }
 
     /**
@@ -167,7 +167,7 @@ public class MappingRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public MappingRule withMatchType(MappingRuleMatchType matchType) {
-        setMatchType(matchType);
+        this.matchType = matchType.toString();
         return this;
     }
 

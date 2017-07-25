@@ -724,7 +724,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(ScalingStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -813,7 +813,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ScalingPolicy withStatus(ScalingStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1059,7 +1059,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setScalingAdjustmentType(ScalingAdjustmentType scalingAdjustmentType) {
-        this.scalingAdjustmentType = scalingAdjustmentType.toString();
+        withScalingAdjustmentType(scalingAdjustmentType);
     }
 
     /**
@@ -1111,7 +1111,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ScalingPolicy withScalingAdjustmentType(ScalingAdjustmentType scalingAdjustmentType) {
-        setScalingAdjustmentType(scalingAdjustmentType);
+        this.scalingAdjustmentType = scalingAdjustmentType.toString();
         return this;
     }
 
@@ -1169,7 +1169,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setComparisonOperator(ComparisonOperatorType comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -1184,7 +1184,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ScalingPolicy withComparisonOperator(ComparisonOperatorType comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 
@@ -1625,7 +1625,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMetricName(MetricName metricName) {
-        this.metricName = metricName.toString();
+        withMetricName(metricName);
     }
 
     /**
@@ -1715,7 +1715,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ScalingPolicy withMetricName(MetricName metricName) {
-        setMetricName(metricName);
+        this.metricName = metricName.toString();
         return this;
     }
 

@@ -129,7 +129,7 @@ public class WAFInvalidParameterException extends com.amazonaws.services.waf.mod
      */
 
     public void setField(ParameterExceptionField field) {
-        this.field = field.toString();
+        withField(field);
     }
 
     /**
@@ -139,7 +139,7 @@ public class WAFInvalidParameterException extends com.amazonaws.services.waf.mod
      */
 
     public WAFInvalidParameterException withField(ParameterExceptionField field) {
-        setField(field);
+        this.field = field.toString();
         return this;
     }
 
@@ -208,7 +208,7 @@ public class WAFInvalidParameterException extends com.amazonaws.services.waf.mod
      */
 
     public void setReason(ParameterExceptionReason reason) {
-        this.reason = reason.toString();
+        withReason(reason);
     }
 
     /**
@@ -218,7 +218,7 @@ public class WAFInvalidParameterException extends com.amazonaws.services.waf.mod
      */
 
     public WAFInvalidParameterException withReason(ParameterExceptionReason reason) {
-        setReason(reason);
+        this.reason = reason.toString();
         return this;
     }
 

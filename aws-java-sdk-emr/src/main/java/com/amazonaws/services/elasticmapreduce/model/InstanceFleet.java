@@ -308,7 +308,7 @@ public class InstanceFleet implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setInstanceFleetType(InstanceFleetType instanceFleetType) {
-        this.instanceFleetType = instanceFleetType.toString();
+        withInstanceFleetType(instanceFleetType);
     }
 
     /**
@@ -323,7 +323,7 @@ public class InstanceFleet implements Serializable, Cloneable, StructuredPojo {
      */
 
     public InstanceFleet withInstanceFleetType(InstanceFleetType instanceFleetType) {
-        setInstanceFleetType(instanceFleetType);
+        this.instanceFleetType = instanceFleetType.toString();
         return this;
     }
 

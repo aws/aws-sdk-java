@@ -132,7 +132,7 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -147,7 +147,7 @@ public class RestoreAddressToClassicResult extends com.amazonaws.AmazonWebServic
      */
 
     public RestoreAddressToClassicResult withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

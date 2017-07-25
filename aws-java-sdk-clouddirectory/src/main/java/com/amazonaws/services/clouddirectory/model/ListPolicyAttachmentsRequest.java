@@ -286,7 +286,7 @@ public class ListPolicyAttachmentsRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        this.consistencyLevel = consistencyLevel.toString();
+        withConsistencyLevel(consistencyLevel);
     }
 
     /**
@@ -303,7 +303,7 @@ public class ListPolicyAttachmentsRequest extends com.amazonaws.AmazonWebService
      */
 
     public ListPolicyAttachmentsRequest withConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        setConsistencyLevel(consistencyLevel);
+        this.consistencyLevel = consistencyLevel.toString();
         return this;
     }
 

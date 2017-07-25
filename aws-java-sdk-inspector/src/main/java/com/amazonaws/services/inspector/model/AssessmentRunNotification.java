@@ -159,7 +159,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      */
 
     public void setEvent(InspectorEvent event) {
-        this.event = event.toString();
+        withEvent(event);
     }
 
     /**
@@ -174,7 +174,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      */
 
     public AssessmentRunNotification withEvent(InspectorEvent event) {
-        setEvent(event);
+        this.event = event.toString();
         return this;
     }
 
@@ -364,7 +364,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      */
 
     public void setSnsPublishStatusCode(AssessmentRunNotificationSnsStatusCode snsPublishStatusCode) {
-        this.snsPublishStatusCode = snsPublishStatusCode.toString();
+        withSnsPublishStatusCode(snsPublishStatusCode);
     }
 
     /**
@@ -379,7 +379,7 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      */
 
     public AssessmentRunNotification withSnsPublishStatusCode(AssessmentRunNotificationSnsStatusCode snsPublishStatusCode) {
-        setSnsPublishStatusCode(snsPublishStatusCode);
+        this.snsPublishStatusCode = snsPublishStatusCode.toString();
         return this;
     }
 

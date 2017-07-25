@@ -380,7 +380,7 @@ public class RadiusSettings implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAuthenticationProtocol(RadiusAuthenticationProtocol authenticationProtocol) {
-        this.authenticationProtocol = authenticationProtocol.toString();
+        withAuthenticationProtocol(authenticationProtocol);
     }
 
     /**
@@ -395,7 +395,7 @@ public class RadiusSettings implements Serializable, Cloneable, StructuredPojo {
      */
 
     public RadiusSettings withAuthenticationProtocol(RadiusAuthenticationProtocol authenticationProtocol) {
-        setAuthenticationProtocol(authenticationProtocol);
+        this.authenticationProtocol = authenticationProtocol.toString();
         return this;
     }
 

@@ -222,7 +222,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      */
 
     public void setStatus(TaskDefinitionFamilyStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -248,7 +248,7 @@ public class ListTaskDefinitionFamiliesRequest extends com.amazonaws.AmazonWebSe
      */
 
     public ListTaskDefinitionFamiliesRequest withStatus(TaskDefinitionFamilyStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

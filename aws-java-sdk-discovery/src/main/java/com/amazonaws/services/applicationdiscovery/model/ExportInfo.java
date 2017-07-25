@@ -173,7 +173,7 @@ public class ExportInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setExportStatus(ExportStatus exportStatus) {
-        this.exportStatus = exportStatus.toString();
+        withExportStatus(exportStatus);
     }
 
     /**
@@ -188,7 +188,7 @@ public class ExportInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ExportInfo withExportStatus(ExportStatus exportStatus) {
-        setExportStatus(exportStatus);
+        this.exportStatus = exportStatus.toString();
         return this;
     }
 

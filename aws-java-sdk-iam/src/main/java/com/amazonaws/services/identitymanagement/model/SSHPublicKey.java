@@ -290,7 +290,7 @@ public class SSHPublicKey implements Serializable, Cloneable {
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -307,7 +307,7 @@ public class SSHPublicKey implements Serializable, Cloneable {
      */
 
     public SSHPublicKey withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

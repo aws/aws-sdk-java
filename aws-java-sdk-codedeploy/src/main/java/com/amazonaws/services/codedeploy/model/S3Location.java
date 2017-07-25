@@ -348,7 +348,7 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setBundleType(BundleType bundleType) {
-        this.bundleType = bundleType.toString();
+        withBundleType(bundleType);
     }
 
     /**
@@ -396,7 +396,7 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      */
 
     public S3Location withBundleType(BundleType bundleType) {
-        setBundleType(bundleType);
+        this.bundleType = bundleType.toString();
         return this;
     }
 

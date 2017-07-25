@@ -327,7 +327,7 @@ public class Placement implements Serializable, Cloneable {
      */
 
     public void setTenancy(Tenancy tenancy) {
-        this.tenancy = tenancy.toString();
+        withTenancy(tenancy);
     }
 
     /**
@@ -346,7 +346,7 @@ public class Placement implements Serializable, Cloneable {
      */
 
     public Placement withTenancy(Tenancy tenancy) {
-        setTenancy(tenancy);
+        this.tenancy = tenancy.toString();
         return this;
     }
 

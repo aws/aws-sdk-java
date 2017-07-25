@@ -244,7 +244,7 @@ public class Listener implements Serializable, Cloneable {
      */
 
     public void setProtocol(ProtocolEnum protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -259,7 +259,7 @@ public class Listener implements Serializable, Cloneable {
      */
 
     public Listener withProtocol(ProtocolEnum protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

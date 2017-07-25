@@ -187,7 +187,7 @@ public class SNSAction implements Serializable, Cloneable {
      */
 
     public void setEncoding(SNSActionEncoding encoding) {
-        this.encoding = encoding.toString();
+        withEncoding(encoding);
     }
 
     /**
@@ -206,7 +206,7 @@ public class SNSAction implements Serializable, Cloneable {
      */
 
     public SNSAction withEncoding(SNSActionEncoding encoding) {
-        setEncoding(encoding);
+        this.encoding = encoding.toString();
         return this;
     }
 

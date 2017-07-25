@@ -164,7 +164,7 @@ public class VpnGateway implements Serializable, Cloneable {
      */
 
     public void setState(VpnState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -179,7 +179,7 @@ public class VpnGateway implements Serializable, Cloneable {
      */
 
     public VpnGateway withState(VpnState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -237,7 +237,7 @@ public class VpnGateway implements Serializable, Cloneable {
      */
 
     public void setType(GatewayType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -252,7 +252,7 @@ public class VpnGateway implements Serializable, Cloneable {
      */
 
     public VpnGateway withType(GatewayType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

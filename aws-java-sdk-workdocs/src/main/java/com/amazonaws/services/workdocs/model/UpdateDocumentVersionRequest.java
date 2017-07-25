@@ -231,7 +231,7 @@ public class UpdateDocumentVersionRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setVersionStatus(DocumentVersionStatus versionStatus) {
-        this.versionStatus = versionStatus.toString();
+        withVersionStatus(versionStatus);
     }
 
     /**
@@ -246,7 +246,7 @@ public class UpdateDocumentVersionRequest extends com.amazonaws.AmazonWebService
      */
 
     public UpdateDocumentVersionRequest withVersionStatus(DocumentVersionStatus versionStatus) {
-        setVersionStatus(versionStatus);
+        this.versionStatus = versionStatus.toString();
         return this;
     }
 

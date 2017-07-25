@@ -242,7 +242,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
-        this.endpointType = endpointType.toString();
+        withEndpointType(endpointType);
     }
 
     /**
@@ -257,7 +257,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateEndpointRequest withEndpointType(ReplicationEndpointTypeValue endpointType) {
-        setEndpointType(endpointType);
+        this.endpointType = endpointType.toString();
         return this;
     }
 
@@ -810,7 +810,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setSslMode(DmsSslModeValue sslMode) {
-        this.sslMode = sslMode.toString();
+        withSslMode(sslMode);
     }
 
     /**
@@ -836,7 +836,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateEndpointRequest withSslMode(DmsSslModeValue sslMode) {
-        setSslMode(sslMode);
+        this.sslMode = sslMode.toString();
         return this;
     }
 

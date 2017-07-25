@@ -95,7 +95,7 @@ public class LookupAttribute implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setAttributeKey(LookupAttributeKey attributeKey) {
-        this.attributeKey = attributeKey.toString();
+        withAttributeKey(attributeKey);
     }
 
     /**
@@ -110,7 +110,7 @@ public class LookupAttribute implements Serializable, Cloneable, StructuredPojo 
      */
 
     public LookupAttribute withAttributeKey(LookupAttributeKey attributeKey) {
-        setAttributeKey(attributeKey);
+        this.attributeKey = attributeKey.toString();
         return this;
     }
 

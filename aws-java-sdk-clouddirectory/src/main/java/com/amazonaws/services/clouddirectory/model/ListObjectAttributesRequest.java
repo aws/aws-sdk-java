@@ -292,7 +292,7 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        this.consistencyLevel = consistencyLevel.toString();
+        withConsistencyLevel(consistencyLevel);
     }
 
     /**
@@ -309,7 +309,7 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public ListObjectAttributesRequest withConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        setConsistencyLevel(consistencyLevel);
+        this.consistencyLevel = consistencyLevel.toString();
         return this;
     }
 

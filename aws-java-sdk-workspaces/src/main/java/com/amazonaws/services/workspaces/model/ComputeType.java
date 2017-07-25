@@ -89,7 +89,7 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setName(Compute name) {
-        this.name = name.toString();
+        withName(name);
     }
 
     /**
@@ -104,7 +104,7 @@ public class ComputeType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ComputeType withName(Compute name) {
-        setName(name);
+        this.name = name.toString();
         return this;
     }
 

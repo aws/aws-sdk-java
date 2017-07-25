@@ -93,7 +93,7 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      */
 
     public void setVerificationStatus(VerificationStatus verificationStatus) {
-        this.verificationStatus = verificationStatus.toString();
+        withVerificationStatus(verificationStatus);
     }
 
     /**
@@ -108,7 +108,7 @@ public class IdentityVerificationAttributes implements Serializable, Cloneable {
      */
 
     public IdentityVerificationAttributes withVerificationStatus(VerificationStatus verificationStatus) {
-        setVerificationStatus(verificationStatus);
+        this.verificationStatus = verificationStatus.toString();
         return this;
     }
 

@@ -488,7 +488,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setSeverity(EventSeverity severity) {
-        this.severity = severity.toString();
+        withSeverity(severity);
     }
 
     /**
@@ -505,7 +505,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public DescribeEventsRequest withSeverity(EventSeverity severity) {
-        setSeverity(severity);
+        this.severity = severity.toString();
         return this;
     }
 

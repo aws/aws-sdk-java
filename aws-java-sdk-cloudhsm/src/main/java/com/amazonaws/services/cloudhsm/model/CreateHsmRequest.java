@@ -331,7 +331,7 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setSubscriptionType(SubscriptionType subscriptionType) {
-        this.subscriptionType = subscriptionType.toString();
+        withSubscriptionType(subscriptionType);
     }
 
     /**
@@ -341,7 +341,7 @@ public class CreateHsmRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateHsmRequest withSubscriptionType(SubscriptionType subscriptionType) {
-        setSubscriptionType(subscriptionType);
+        this.subscriptionType = subscriptionType.toString();
         return this;
     }
 

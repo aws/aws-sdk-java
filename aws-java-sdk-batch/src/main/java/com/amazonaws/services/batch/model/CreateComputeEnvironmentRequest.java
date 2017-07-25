@@ -160,7 +160,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setType(CEType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -175,7 +175,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      */
 
     public CreateComputeEnvironmentRequest withType(CEType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -241,7 +241,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setState(CEState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -258,7 +258,7 @@ public class CreateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      */
 
     public CreateComputeEnvironmentRequest withState(CEState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

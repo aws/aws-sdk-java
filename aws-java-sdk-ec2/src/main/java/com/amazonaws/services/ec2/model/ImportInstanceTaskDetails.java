@@ -185,7 +185,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      */
 
     public void setPlatform(PlatformValues platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -200,7 +200,7 @@ public class ImportInstanceTaskDetails implements Serializable, Cloneable {
      */
 
     public ImportInstanceTaskDetails withPlatform(PlatformValues platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 

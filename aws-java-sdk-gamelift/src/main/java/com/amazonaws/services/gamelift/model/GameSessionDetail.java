@@ -248,7 +248,7 @@ public class GameSessionDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setProtectionPolicy(ProtectionPolicy protectionPolicy) {
-        this.protectionPolicy = protectionPolicy.toString();
+        withProtectionPolicy(protectionPolicy);
     }
 
     /**
@@ -288,7 +288,7 @@ public class GameSessionDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public GameSessionDetail withProtectionPolicy(ProtectionPolicy protectionPolicy) {
-        setProtectionPolicy(protectionPolicy);
+        this.protectionPolicy = protectionPolicy.toString();
         return this;
     }
 

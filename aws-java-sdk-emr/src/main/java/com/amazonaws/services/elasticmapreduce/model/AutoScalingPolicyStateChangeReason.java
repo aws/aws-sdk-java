@@ -113,7 +113,7 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      */
 
     public void setCode(AutoScalingPolicyStateChangeReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -132,7 +132,7 @@ public class AutoScalingPolicyStateChangeReason implements Serializable, Cloneab
      */
 
     public AutoScalingPolicyStateChangeReason withCode(AutoScalingPolicyStateChangeReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

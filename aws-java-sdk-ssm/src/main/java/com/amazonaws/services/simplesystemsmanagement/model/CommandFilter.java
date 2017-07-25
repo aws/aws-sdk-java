@@ -95,7 +95,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setKey(CommandFilterKey key) {
-        this.key = key.toString();
+        withKey(key);
     }
 
     /**
@@ -110,7 +110,7 @@ public class CommandFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public CommandFilter withKey(CommandFilterKey key) {
-        setKey(key);
+        this.key = key.toString();
         return this;
     }
 

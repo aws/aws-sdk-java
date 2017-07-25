@@ -157,7 +157,7 @@ public class LimitExceededException extends com.amazonaws.services.inspector.mod
      */
 
     public void setInspectorErrorCode(LimitExceededErrorCode inspectorErrorCode) {
-        this.inspectorErrorCode = inspectorErrorCode.toString();
+        withInspectorErrorCode(inspectorErrorCode);
     }
 
     /**
@@ -172,7 +172,7 @@ public class LimitExceededException extends com.amazonaws.services.inspector.mod
      */
 
     public LimitExceededException withInspectorErrorCode(LimitExceededErrorCode inspectorErrorCode) {
-        setInspectorErrorCode(inspectorErrorCode);
+        this.inspectorErrorCode = inspectorErrorCode.toString();
         return this;
     }
 

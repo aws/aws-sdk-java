@@ -271,7 +271,7 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setFilterVariable(DataSourceFilterVariable filterVariable) {
-        this.filterVariable = filterVariable.toString();
+        withFilterVariable(filterVariable);
     }
 
     /**
@@ -307,7 +307,7 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public DescribeDataSourcesRequest withFilterVariable(DataSourceFilterVariable filterVariable) {
-        setFilterVariable(filterVariable);
+        this.filterVariable = filterVariable.toString();
         return this;
     }
 
@@ -871,7 +871,7 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setSortOrder(SortOrder sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -899,7 +899,7 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public DescribeDataSourcesRequest withSortOrder(SortOrder sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 

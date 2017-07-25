@@ -191,7 +191,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -206,7 +206,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      */
 
     public ReservedInstancesConfiguration withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -308,7 +308,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      */
 
     public void setScope(Scope scope) {
-        this.scope = scope.toString();
+        withScope(scope);
     }
 
     /**
@@ -324,7 +324,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      */
 
     public ReservedInstancesConfiguration withScope(Scope scope) {
-        setScope(scope);
+        this.scope = scope.toString();
         return this;
     }
 

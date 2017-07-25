@@ -343,7 +343,7 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(LayerType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -358,7 +358,7 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Layer withType(LayerType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

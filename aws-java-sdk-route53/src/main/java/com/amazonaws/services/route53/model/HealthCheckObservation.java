@@ -101,7 +101,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      */
 
     public void setRegion(HealthCheckRegion region) {
-        this.region = region.toString();
+        withRegion(region);
     }
 
     /**
@@ -116,7 +116,7 @@ public class HealthCheckObservation implements Serializable, Cloneable {
      */
 
     public HealthCheckObservation withRegion(HealthCheckRegion region) {
-        setRegion(region);
+        this.region = region.toString();
         return this;
     }
 

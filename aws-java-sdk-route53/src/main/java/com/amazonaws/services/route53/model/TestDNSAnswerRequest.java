@@ -207,7 +207,7 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setRecordType(RRType recordType) {
-        this.recordType = recordType.toString();
+        withRecordType(recordType);
     }
 
     /**
@@ -222,7 +222,7 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public TestDNSAnswerRequest withRecordType(RRType recordType) {
-        setRecordType(recordType);
+        this.recordType = recordType.toString();
         return this;
     }
 

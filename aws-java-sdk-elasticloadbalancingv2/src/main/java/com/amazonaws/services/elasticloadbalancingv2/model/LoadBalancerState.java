@@ -111,7 +111,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      */
 
     public void setCode(LoadBalancerStateEnum code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -130,7 +130,7 @@ public class LoadBalancerState implements Serializable, Cloneable {
      */
 
     public LoadBalancerState withCode(LoadBalancerStateEnum code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

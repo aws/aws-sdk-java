@@ -1044,7 +1044,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(UploadType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1228,7 +1228,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Upload withType(UploadType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -1482,7 +1482,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(UploadStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -1546,7 +1546,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Upload withStatus(UploadStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

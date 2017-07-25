@@ -1024,7 +1024,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public void setSelect(Select select) {
-        this.select = select.toString();
+        withSelect(select);
     }
 
     /**
@@ -1145,7 +1145,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public QueryRequest withSelect(Select select) {
-        setSelect(select);
+        this.select = select.toString();
         return this;
     }
 
@@ -1635,7 +1635,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
-        this.conditionalOperator = conditionalOperator.toString();
+        withConditionalOperator(conditionalOperator);
     }
 
     /**
@@ -1654,7 +1654,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public QueryRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
-        setConditionalOperator(conditionalOperator);
+        this.conditionalOperator = conditionalOperator.toString();
         return this;
     }
 
@@ -1922,7 +1922,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -1932,7 +1932,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      */
 
     public QueryRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 

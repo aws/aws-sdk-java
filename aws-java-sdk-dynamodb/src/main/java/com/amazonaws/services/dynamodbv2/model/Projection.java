@@ -259,7 +259,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setProjectionType(ProjectionType projectionType) {
-        this.projectionType = projectionType.toString();
+        withProjectionType(projectionType);
     }
 
     /**
@@ -309,7 +309,7 @@ public class Projection implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Projection withProjectionType(ProjectionType projectionType) {
-        setProjectionType(projectionType);
+        this.projectionType = projectionType.toString();
         return this;
     }
 

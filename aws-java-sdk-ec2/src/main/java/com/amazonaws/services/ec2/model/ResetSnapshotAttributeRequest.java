@@ -130,7 +130,7 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
      */
 
     public void setAttribute(SnapshotAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -145,7 +145,7 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest imple
      */
 
     public ResetSnapshotAttributeRequest withAttribute(SnapshotAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

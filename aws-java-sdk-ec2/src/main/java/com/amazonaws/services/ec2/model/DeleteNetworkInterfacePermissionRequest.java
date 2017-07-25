@@ -20,7 +20,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DeleteNetworkInterfacePermissionRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DeleteNetworkInterfacePermission.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteNetworkInterfacePermissionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

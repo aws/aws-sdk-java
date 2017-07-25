@@ -95,7 +95,7 @@ public class ExportTaskStatus implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setCode(ExportTaskStatusCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -110,7 +110,7 @@ public class ExportTaskStatus implements Serializable, Cloneable, StructuredPojo
      */
 
     public ExportTaskStatus withCode(ExportTaskStatusCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

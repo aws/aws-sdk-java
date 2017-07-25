@@ -184,7 +184,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      */
 
     public void setAllocationStrategy(AllocationStrategy allocationStrategy) {
-        this.allocationStrategy = allocationStrategy.toString();
+        withAllocationStrategy(allocationStrategy);
     }
 
     /**
@@ -201,7 +201,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      */
 
     public SpotFleetRequestConfigData withAllocationStrategy(AllocationStrategy allocationStrategy) {
-        setAllocationStrategy(allocationStrategy);
+        this.allocationStrategy = allocationStrategy.toString();
         return this;
     }
 
@@ -325,7 +325,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      */
 
     public void setExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
-        this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy.toString();
+        withExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
     }
 
     /**
@@ -342,7 +342,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      */
 
     public SpotFleetRequestConfigData withExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
-        setExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
+        this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy.toString();
         return this;
     }
 
@@ -744,7 +744,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      */
 
     public void setType(FleetType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -769,7 +769,7 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      */
 
     public SpotFleetRequestConfigData withType(FleetType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

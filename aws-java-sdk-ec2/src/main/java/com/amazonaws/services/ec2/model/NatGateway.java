@@ -994,7 +994,7 @@ public class NatGateway implements Serializable, Cloneable {
      */
 
     public void setState(NatGatewayState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -1067,7 +1067,7 @@ public class NatGateway implements Serializable, Cloneable {
      */
 
     public NatGateway withState(NatGatewayState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

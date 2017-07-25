@@ -120,7 +120,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -130,7 +130,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public UpdateJobRequest withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 

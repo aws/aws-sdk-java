@@ -305,7 +305,7 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      */
 
     public void setPrincipalType(PrincipalType principalType) {
-        this.principalType = principalType.toString();
+        withPrincipalType(principalType);
     }
 
     /**
@@ -320,7 +320,7 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      */
 
     public AssociatePrincipalWithPortfolioRequest withPrincipalType(PrincipalType principalType) {
-        setPrincipalType(principalType);
+        this.principalType = principalType.toString();
         return this;
     }
 

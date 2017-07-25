@@ -286,7 +286,7 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setInstanceType(EC2InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -307,7 +307,7 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
      */
 
     public FleetCapacity withInstanceType(EC2InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 

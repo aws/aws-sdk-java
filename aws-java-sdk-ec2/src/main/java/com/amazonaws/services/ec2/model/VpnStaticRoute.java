@@ -139,7 +139,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      */
 
     public void setSource(VpnStaticRouteSource source) {
-        this.source = source.toString();
+        withSource(source);
     }
 
     /**
@@ -154,7 +154,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      */
 
     public VpnStaticRoute withSource(VpnStaticRouteSource source) {
-        setSource(source);
+        this.source = source.toString();
         return this;
     }
 
@@ -212,7 +212,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      */
 
     public void setState(VpnState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -227,7 +227,7 @@ public class VpnStaticRoute implements Serializable, Cloneable {
      */
 
     public VpnStaticRoute withState(VpnState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

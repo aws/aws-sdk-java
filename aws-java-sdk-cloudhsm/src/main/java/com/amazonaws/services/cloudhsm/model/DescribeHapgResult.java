@@ -521,7 +521,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public void setState(CloudHsmObjectState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -536,7 +536,7 @@ public class DescribeHapgResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public DescribeHapgResult withState(CloudHsmObjectState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

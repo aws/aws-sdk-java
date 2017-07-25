@@ -422,7 +422,7 @@ public class RateBasedRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRateKey(RateKey rateKey) {
-        this.rateKey = rateKey.toString();
+        withRateKey(rateKey);
     }
 
     /**
@@ -443,7 +443,7 @@ public class RateBasedRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public RateBasedRule withRateKey(RateKey rateKey) {
-        setRateKey(rateKey);
+        this.rateKey = rateKey.toString();
         return this;
     }
 

@@ -105,7 +105,7 @@ public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(ArtifactStoreType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -120,7 +120,7 @@ public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ArtifactStore withType(ArtifactStoreType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

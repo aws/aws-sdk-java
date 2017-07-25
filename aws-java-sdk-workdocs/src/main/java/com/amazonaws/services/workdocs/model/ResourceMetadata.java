@@ -125,7 +125,7 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setType(ResourceType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -140,7 +140,7 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
      */
 
     public ResourceMetadata withType(ResourceType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

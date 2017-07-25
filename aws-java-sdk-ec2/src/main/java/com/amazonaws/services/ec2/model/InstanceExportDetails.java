@@ -133,7 +133,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      */
 
     public void setTargetEnvironment(ExportEnvironment targetEnvironment) {
-        this.targetEnvironment = targetEnvironment.toString();
+        withTargetEnvironment(targetEnvironment);
     }
 
     /**
@@ -148,7 +148,7 @@ public class InstanceExportDetails implements Serializable, Cloneable {
      */
 
     public InstanceExportDetails withTargetEnvironment(ExportEnvironment targetEnvironment) {
-        setTargetEnvironment(targetEnvironment);
+        this.targetEnvironment = targetEnvironment.toString();
         return this;
     }
 

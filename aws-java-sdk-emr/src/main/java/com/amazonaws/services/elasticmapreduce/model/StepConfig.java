@@ -162,7 +162,7 @@ public class StepConfig implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setActionOnFailure(ActionOnFailure actionOnFailure) {
-        this.actionOnFailure = actionOnFailure.toString();
+        withActionOnFailure(actionOnFailure);
     }
 
     /**
@@ -177,7 +177,7 @@ public class StepConfig implements Serializable, Cloneable, StructuredPojo {
      */
 
     public StepConfig withActionOnFailure(ActionOnFailure actionOnFailure) {
-        setActionOnFailure(actionOnFailure);
+        this.actionOnFailure = actionOnFailure.toString();
         return this;
     }
 

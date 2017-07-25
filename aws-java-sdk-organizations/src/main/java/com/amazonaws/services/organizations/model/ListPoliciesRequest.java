@@ -106,7 +106,7 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setFilter(PolicyType filter) {
-        this.filter = filter.toString();
+        withFilter(filter);
     }
 
     /**
@@ -121,7 +121,7 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public ListPoliciesRequest withFilter(PolicyType filter) {
-        setFilter(filter);
+        this.filter = filter.toString();
         return this;
     }
 

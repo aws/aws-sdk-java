@@ -178,7 +178,7 @@ public class ListDirectoriesRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setState(DirectoryState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -193,7 +193,7 @@ public class ListDirectoriesRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public ListDirectoriesRequest withState(DirectoryState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

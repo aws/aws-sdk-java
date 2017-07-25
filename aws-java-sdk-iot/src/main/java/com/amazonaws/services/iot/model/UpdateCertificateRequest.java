@@ -191,7 +191,7 @@ public class UpdateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setNewStatus(CertificateStatus newStatus) {
-        this.newStatus = newStatus.toString();
+        withNewStatus(newStatus);
     }
 
     /**
@@ -219,7 +219,7 @@ public class UpdateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public UpdateCertificateRequest withNewStatus(CertificateStatus newStatus) {
-        setNewStatus(newStatus);
+        this.newStatus = newStatus.toString();
         return this;
     }
 

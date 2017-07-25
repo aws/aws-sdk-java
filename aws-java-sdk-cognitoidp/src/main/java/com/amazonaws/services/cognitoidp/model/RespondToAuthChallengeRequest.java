@@ -194,7 +194,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setChallengeName(ChallengeNameType challengeName) {
-        this.challengeName = challengeName.toString();
+        withChallengeName(challengeName);
     }
 
     /**
@@ -214,7 +214,7 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      */
 
     public RespondToAuthChallengeRequest withChallengeName(ChallengeNameType challengeName) {
-        setChallengeName(challengeName);
+        this.challengeName = challengeName.toString();
         return this;
     }
 

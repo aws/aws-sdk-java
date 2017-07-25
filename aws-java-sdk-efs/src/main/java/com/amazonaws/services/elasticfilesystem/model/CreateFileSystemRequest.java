@@ -159,7 +159,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setPerformanceMode(PerformanceMode performanceMode) {
-        this.performanceMode = performanceMode.toString();
+        withPerformanceMode(performanceMode);
     }
 
     /**
@@ -180,7 +180,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public CreateFileSystemRequest withPerformanceMode(PerformanceMode performanceMode) {
-        setPerformanceMode(performanceMode);
+        this.performanceMode = performanceMode.toString();
         return this;
     }
 

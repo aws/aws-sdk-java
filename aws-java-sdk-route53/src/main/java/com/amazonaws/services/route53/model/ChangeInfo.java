@@ -209,7 +209,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      */
 
     public void setStatus(ChangeStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -226,7 +226,7 @@ public class ChangeInfo implements Serializable, Cloneable {
      */
 
     public ChangeInfo withStatus(ChangeStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

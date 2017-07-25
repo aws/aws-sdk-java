@@ -196,7 +196,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setProviderType(IdentityProviderTypeType providerType) {
-        this.providerType = providerType.toString();
+        withProviderType(providerType);
     }
 
     /**
@@ -211,7 +211,7 @@ public class CreateIdentityProviderRequest extends com.amazonaws.AmazonWebServic
      */
 
     public CreateIdentityProviderRequest withProviderType(IdentityProviderTypeType providerType) {
-        setProviderType(providerType);
+        this.providerType = providerType.toString();
         return this;
     }
 

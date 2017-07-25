@@ -192,7 +192,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      */
 
     public void setStrategy(PlacementStrategy strategy) {
-        this.strategy = strategy.toString();
+        withStrategy(strategy);
     }
 
     /**
@@ -207,7 +207,7 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest impleme
      */
 
     public CreatePlacementGroupRequest withStrategy(PlacementStrategy strategy) {
-        setStrategy(strategy);
+        this.strategy = strategy.toString();
         return this;
     }
 

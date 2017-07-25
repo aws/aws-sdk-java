@@ -390,7 +390,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -405,7 +405,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public ReservedInstances withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -463,7 +463,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public void setProductDescription(RIProductDescription productDescription) {
-        this.productDescription = productDescription.toString();
+        withProductDescription(productDescription);
     }
 
     /**
@@ -478,7 +478,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public ReservedInstances withProductDescription(RIProductDescription productDescription) {
-        setProductDescription(productDescription);
+        this.productDescription = productDescription.toString();
         return this;
     }
 
@@ -616,7 +616,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public void setState(ReservedInstanceState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -631,7 +631,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public ReservedInstances withState(ReservedInstanceState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -737,7 +737,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -754,7 +754,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public ReservedInstances withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 
@@ -812,7 +812,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public void setInstanceTenancy(Tenancy instanceTenancy) {
-        this.instanceTenancy = instanceTenancy.toString();
+        withInstanceTenancy(instanceTenancy);
     }
 
     /**
@@ -827,7 +827,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public ReservedInstances withInstanceTenancy(Tenancy instanceTenancy) {
-        setInstanceTenancy(instanceTenancy);
+        this.instanceTenancy = instanceTenancy.toString();
         return this;
     }
 
@@ -885,7 +885,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public void setOfferingClass(OfferingClassType offeringClass) {
-        this.offeringClass = offeringClass.toString();
+        withOfferingClass(offeringClass);
     }
 
     /**
@@ -900,7 +900,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public ReservedInstances withOfferingClass(OfferingClassType offeringClass) {
-        setOfferingClass(offeringClass);
+        this.offeringClass = offeringClass.toString();
         return this;
     }
 
@@ -958,7 +958,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public void setOfferingType(OfferingTypeValues offeringType) {
-        this.offeringType = offeringType.toString();
+        withOfferingType(offeringType);
     }
 
     /**
@@ -973,7 +973,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public ReservedInstances withOfferingType(OfferingTypeValues offeringType) {
-        setOfferingType(offeringType);
+        this.offeringType = offeringType.toString();
         return this;
     }
 
@@ -1104,7 +1104,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public void setScope(Scope scope) {
-        this.scope = scope.toString();
+        withScope(scope);
     }
 
     /**
@@ -1119,7 +1119,7 @@ public class ReservedInstances implements Serializable, Cloneable {
      */
 
     public ReservedInstances withScope(Scope scope) {
-        setScope(scope);
+        this.scope = scope.toString();
         return this;
     }
 

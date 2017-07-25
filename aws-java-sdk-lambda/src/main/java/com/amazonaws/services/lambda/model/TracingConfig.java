@@ -111,7 +111,7 @@ public class TracingConfig implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMode(TracingMode mode) {
-        this.mode = mode.toString();
+        withMode(mode);
     }
 
     /**
@@ -131,7 +131,7 @@ public class TracingConfig implements Serializable, Cloneable, StructuredPojo {
      */
 
     public TracingConfig withMode(TracingMode mode) {
-        setMode(mode);
+        this.mode = mode.toString();
         return this;
     }
 

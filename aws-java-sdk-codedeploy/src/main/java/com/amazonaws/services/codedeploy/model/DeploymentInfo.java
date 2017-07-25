@@ -534,7 +534,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(DeploymentStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -549,7 +549,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public DeploymentInfo withStatus(DeploymentStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1000,7 +1000,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setCreator(DeploymentCreator creator) {
-        this.creator = creator.toString();
+        withCreator(creator);
     }
 
     /**
@@ -1048,7 +1048,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public DeploymentInfo withCreator(DeploymentCreator creator) {
-        setCreator(creator);
+        this.creator = creator.toString();
         return this;
     }
 
@@ -1774,7 +1774,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
-        this.fileExistsBehavior = fileExistsBehavior.toString();
+        withFileExistsBehavior(fileExistsBehavior);
     }
 
     /**
@@ -1826,7 +1826,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public DeploymentInfo withFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
-        setFileExistsBehavior(fileExistsBehavior);
+        this.fileExistsBehavior = fileExistsBehavior.toString();
         return this;
     }
 

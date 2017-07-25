@@ -166,7 +166,7 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      */
 
     public void setAttributeDataType(AttributeDataType attributeDataType) {
-        this.attributeDataType = attributeDataType.toString();
+        withAttributeDataType(attributeDataType);
     }
 
     /**
@@ -181,7 +181,7 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      */
 
     public SchemaAttributeType withAttributeDataType(AttributeDataType attributeDataType) {
-        setAttributeDataType(attributeDataType);
+        this.attributeDataType = attributeDataType.toString();
         return this;
     }
 

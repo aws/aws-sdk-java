@@ -135,7 +135,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable, Structure
      */
 
     public void setErrorCode(ErrorCode errorCode) {
-        this.errorCode = errorCode.toString();
+        withErrorCode(errorCode);
     }
 
     /**
@@ -150,7 +150,7 @@ public class UnprocessedIdentityId implements Serializable, Cloneable, Structure
      */
 
     public UnprocessedIdentityId withErrorCode(ErrorCode errorCode) {
-        setErrorCode(errorCode);
+        this.errorCode = errorCode.toString();
         return this;
     }
 

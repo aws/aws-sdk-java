@@ -95,7 +95,7 @@ public class PermissionInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRole(RoleType role) {
-        this.role = role.toString();
+        withRole(role);
     }
 
     /**
@@ -110,7 +110,7 @@ public class PermissionInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PermissionInfo withRole(RoleType role) {
-        setRole(role);
+        this.role = role.toString();
         return this;
     }
 
@@ -168,7 +168,7 @@ public class PermissionInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(RolePermissionType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -183,7 +183,7 @@ public class PermissionInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PermissionInfo withType(RolePermissionType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

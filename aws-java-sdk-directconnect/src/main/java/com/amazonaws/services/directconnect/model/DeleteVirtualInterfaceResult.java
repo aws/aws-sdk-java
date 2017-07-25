@@ -63,7 +63,7 @@ public class DeleteVirtualInterfaceResult extends com.amazonaws.AmazonWebService
      */
 
     public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
-        this.virtualInterfaceState = virtualInterfaceState.toString();
+        withVirtualInterfaceState(virtualInterfaceState);
     }
 
     /**
@@ -73,7 +73,7 @@ public class DeleteVirtualInterfaceResult extends com.amazonaws.AmazonWebService
      */
 
     public DeleteVirtualInterfaceResult withVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
-        setVirtualInterfaceState(virtualInterfaceState);
+        this.virtualInterfaceState = virtualInterfaceState.toString();
         return this;
     }
 

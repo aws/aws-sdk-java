@@ -102,7 +102,7 @@ public class TagSpecification implements Serializable, Cloneable {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -119,7 +119,7 @@ public class TagSpecification implements Serializable, Cloneable {
      */
 
     public TagSpecification withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

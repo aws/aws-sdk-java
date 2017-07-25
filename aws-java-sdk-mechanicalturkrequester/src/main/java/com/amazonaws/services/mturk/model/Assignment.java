@@ -287,7 +287,7 @@ public class Assignment implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAssignmentStatus(AssignmentStatus assignmentStatus) {
-        this.assignmentStatus = assignmentStatus.toString();
+        withAssignmentStatus(assignmentStatus);
     }
 
     /**
@@ -302,7 +302,7 @@ public class Assignment implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Assignment withAssignmentStatus(AssignmentStatus assignmentStatus) {
-        setAssignmentStatus(assignmentStatus);
+        this.assignmentStatus = assignmentStatus.toString();
         return this;
     }
 

@@ -236,7 +236,7 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      */
 
     public void setActionOnTimeout(DeploymentReadyAction actionOnTimeout) {
-        this.actionOnTimeout = actionOnTimeout.toString();
+        withActionOnTimeout(actionOnTimeout);
     }
 
     /**
@@ -282,7 +282,7 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      */
 
     public DeploymentReadyOption withActionOnTimeout(DeploymentReadyAction actionOnTimeout) {
-        setActionOnTimeout(actionOnTimeout);
+        this.actionOnTimeout = actionOnTimeout.toString();
         return this;
     }
 

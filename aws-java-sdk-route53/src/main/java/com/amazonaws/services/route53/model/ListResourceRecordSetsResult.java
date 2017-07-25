@@ -334,7 +334,7 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      */
 
     public void setNextRecordType(RRType nextRecordType) {
-        this.nextRecordType = nextRecordType.toString();
+        withNextRecordType(nextRecordType);
     }
 
     /**
@@ -354,7 +354,7 @@ public class ListResourceRecordSetsResult extends com.amazonaws.AmazonWebService
      */
 
     public ListResourceRecordSetsResult withNextRecordType(RRType nextRecordType) {
-        setNextRecordType(nextRecordType);
+        this.nextRecordType = nextRecordType.toString();
         return this;
     }
 

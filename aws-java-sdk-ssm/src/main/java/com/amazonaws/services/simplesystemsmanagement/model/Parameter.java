@@ -141,7 +141,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(ParameterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -156,7 +156,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Parameter withType(ParameterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

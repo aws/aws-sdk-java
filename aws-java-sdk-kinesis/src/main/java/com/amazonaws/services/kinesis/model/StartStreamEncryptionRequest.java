@@ -248,7 +248,7 @@ public class StartStreamEncryptionRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setEncryptionType(EncryptionType encryptionType) {
-        this.encryptionType = encryptionType.toString();
+        withEncryptionType(encryptionType);
     }
 
     /**
@@ -287,7 +287,7 @@ public class StartStreamEncryptionRequest extends com.amazonaws.AmazonWebService
      */
 
     public StartStreamEncryptionRequest withEncryptionType(EncryptionType encryptionType) {
-        setEncryptionType(encryptionType);
+        this.encryptionType = encryptionType.toString();
         return this;
     }
 

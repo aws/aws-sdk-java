@@ -438,7 +438,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setMigrationType(MigrationTypeValue migrationType) {
-        this.migrationType = migrationType.toString();
+        withMigrationType(migrationType);
     }
 
     /**
@@ -453,7 +453,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      */
 
     public CreateReplicationTaskRequest withMigrationType(MigrationTypeValue migrationType) {
-        setMigrationType(migrationType);
+        this.migrationType = migrationType.toString();
         return this;
     }
 

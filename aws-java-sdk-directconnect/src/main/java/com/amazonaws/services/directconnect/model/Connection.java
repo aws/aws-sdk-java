@@ -206,7 +206,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -216,7 +216,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Connection withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

@@ -162,7 +162,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setMetricName(InstanceMetricName metricName) {
-        this.metricName = metricName.toString();
+        withMetricName(metricName);
     }
 
     /**
@@ -177,7 +177,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      */
 
     public GetInstanceMetricDataRequest withMetricName(InstanceMetricName metricName) {
-        setMetricName(metricName);
+        this.metricName = metricName.toString();
         return this;
     }
 
@@ -355,7 +355,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setUnit(MetricUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -370,7 +370,7 @@ public class GetInstanceMetricDataRequest extends com.amazonaws.AmazonWebService
      */
 
     public GetInstanceMetricDataRequest withUnit(MetricUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 

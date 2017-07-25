@@ -286,7 +286,7 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setSize(DirectorySize size) {
-        this.size = size.toString();
+        withSize(size);
     }
 
     /**
@@ -301,7 +301,7 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public CreateDirectoryRequest withSize(DirectorySize size) {
-        setSize(size);
+        this.size = size.toString();
         return this;
     }
 

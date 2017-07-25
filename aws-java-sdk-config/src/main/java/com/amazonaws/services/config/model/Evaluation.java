@@ -282,7 +282,7 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setComplianceType(ComplianceType complianceType) {
-        this.complianceType = complianceType.toString();
+        withComplianceType(complianceType);
     }
 
     /**
@@ -316,7 +316,7 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Evaluation withComplianceType(ComplianceType complianceType) {
-        setComplianceType(complianceType);
+        this.complianceType = complianceType.toString();
         return this;
     }
 

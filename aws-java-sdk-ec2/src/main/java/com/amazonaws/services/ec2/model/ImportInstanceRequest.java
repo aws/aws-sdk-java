@@ -259,7 +259,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      */
 
     public void setPlatform(PlatformValues platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -274,7 +274,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest implements Se
      */
 
     public ImportInstanceRequest withPlatform(PlatformValues platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 

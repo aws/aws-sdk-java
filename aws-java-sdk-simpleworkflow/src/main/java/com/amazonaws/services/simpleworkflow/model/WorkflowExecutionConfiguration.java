@@ -580,7 +580,7 @@ public class WorkflowExecutionConfiguration implements Serializable, Cloneable, 
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -640,7 +640,7 @@ public class WorkflowExecutionConfiguration implements Serializable, Cloneable, 
      */
 
     public WorkflowExecutionConfiguration withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 

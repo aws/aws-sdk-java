@@ -111,7 +111,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable, Clonea
      */
 
     public void setTimeoutType(ActivityTaskTimeoutType timeoutType) {
-        this.timeoutType = timeoutType.toString();
+        withTimeoutType(timeoutType);
     }
 
     /**
@@ -126,7 +126,7 @@ public class ActivityTaskTimedOutEventAttributes implements Serializable, Clonea
      */
 
     public ActivityTaskTimedOutEventAttributes withTimeoutType(ActivityTaskTimeoutType timeoutType) {
-        setTimeoutType(timeoutType);
+        this.timeoutType = timeoutType.toString();
         return this;
     }
 

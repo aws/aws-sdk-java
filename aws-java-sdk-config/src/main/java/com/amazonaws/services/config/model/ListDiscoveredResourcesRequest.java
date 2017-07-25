@@ -122,7 +122,7 @@ public class ListDiscoveredResourcesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -137,7 +137,7 @@ public class ListDiscoveredResourcesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public ListDiscoveredResourcesRequest withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

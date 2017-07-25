@@ -829,7 +829,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStatus(UserImportJobStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -930,7 +930,7 @@ public class UserImportJobType implements Serializable, Cloneable, StructuredPoj
      */
 
     public UserImportJobType withStatus(UserImportJobStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

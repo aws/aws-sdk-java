@@ -93,7 +93,7 @@ public class VpcCidrBlockState implements Serializable, Cloneable {
      */
 
     public void setState(VpcCidrBlockStateCode state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -108,7 +108,7 @@ public class VpcCidrBlockState implements Serializable, Cloneable {
      */
 
     public VpcCidrBlockState withState(VpcCidrBlockStateCode state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -107,7 +107,7 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      */
 
     public void setStartMode(RangeMode startMode) {
-        this.startMode = startMode.toString();
+        withStartMode(startMode);
     }
 
     /**
@@ -122,7 +122,7 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      */
 
     public TypedAttributeValueRange withStartMode(RangeMode startMode) {
-        setStartMode(startMode);
+        this.startMode = startMode.toString();
         return this;
     }
 
@@ -220,7 +220,7 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      */
 
     public void setEndMode(RangeMode endMode) {
-        this.endMode = endMode.toString();
+        withEndMode(endMode);
     }
 
     /**
@@ -235,7 +235,7 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
      */
 
     public TypedAttributeValueRange withEndMode(RangeMode endMode) {
-        setEndMode(endMode);
+        this.endMode = endMode.toString();
         return this;
     }
 

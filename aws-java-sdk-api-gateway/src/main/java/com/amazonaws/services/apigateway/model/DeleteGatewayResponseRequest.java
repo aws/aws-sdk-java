@@ -341,7 +341,7 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setResponseType(GatewayResponseType responseType) {
-        this.responseType = responseType.toString();
+        withResponseType(responseType);
     }
 
     /**
@@ -402,7 +402,7 @@ public class DeleteGatewayResponseRequest extends com.amazonaws.AmazonWebService
      */
 
     public DeleteGatewayResponseRequest withResponseType(GatewayResponseType responseType) {
-        setResponseType(responseType);
+        this.responseType = responseType.toString();
         return this;
     }
 

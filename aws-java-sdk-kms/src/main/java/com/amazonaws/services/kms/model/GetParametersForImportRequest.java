@@ -274,7 +274,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setWrappingAlgorithm(AlgorithmSpec wrappingAlgorithm) {
-        this.wrappingAlgorithm = wrappingAlgorithm.toString();
+        withWrappingAlgorithm(wrappingAlgorithm);
     }
 
     /**
@@ -295,7 +295,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      */
 
     public GetParametersForImportRequest withWrappingAlgorithm(AlgorithmSpec wrappingAlgorithm) {
-        setWrappingAlgorithm(wrappingAlgorithm);
+        this.wrappingAlgorithm = wrappingAlgorithm.toString();
         return this;
     }
 
@@ -357,7 +357,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setWrappingKeySpec(WrappingKeySpec wrappingKeySpec) {
-        this.wrappingKeySpec = wrappingKeySpec.toString();
+        withWrappingKeySpec(wrappingKeySpec);
     }
 
     /**
@@ -373,7 +373,7 @@ public class GetParametersForImportRequest extends com.amazonaws.AmazonWebServic
      */
 
     public GetParametersForImportRequest withWrappingKeySpec(WrappingKeySpec wrappingKeySpec) {
-        setWrappingKeySpec(wrappingKeySpec);
+        this.wrappingKeySpec = wrappingKeySpec.toString();
         return this;
     }
 

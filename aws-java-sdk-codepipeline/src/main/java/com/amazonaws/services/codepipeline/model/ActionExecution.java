@@ -140,7 +140,7 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setStatus(ActionExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -155,7 +155,7 @@ public class ActionExecution implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ActionExecution withStatus(ActionExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

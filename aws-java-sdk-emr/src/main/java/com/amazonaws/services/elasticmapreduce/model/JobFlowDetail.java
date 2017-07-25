@@ -980,7 +980,7 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        this.scaleDownBehavior = scaleDownBehavior.toString();
+        withScaleDownBehavior(scaleDownBehavior);
     }
 
     /**
@@ -1011,7 +1011,7 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public JobFlowDetail withScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        setScaleDownBehavior(scaleDownBehavior);
+        this.scaleDownBehavior = scaleDownBehavior.toString();
         return this;
     }
 

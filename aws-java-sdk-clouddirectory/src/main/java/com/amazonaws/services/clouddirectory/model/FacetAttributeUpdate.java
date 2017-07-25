@@ -135,7 +135,7 @@ public class FacetAttributeUpdate implements Serializable, Cloneable, Structured
      */
 
     public void setAction(UpdateActionType action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -150,7 +150,7 @@ public class FacetAttributeUpdate implements Serializable, Cloneable, Structured
      */
 
     public FacetAttributeUpdate withAction(UpdateActionType action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

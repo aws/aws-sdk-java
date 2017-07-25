@@ -132,7 +132,7 @@ public class MoveAddressToVpcResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -147,7 +147,7 @@ public class MoveAddressToVpcResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public MoveAddressToVpcResult withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

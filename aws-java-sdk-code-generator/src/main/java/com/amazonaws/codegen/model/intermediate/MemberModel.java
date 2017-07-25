@@ -68,6 +68,8 @@ public class MemberModel extends DocumentationModel {
 
     private boolean isJsonValue;
 
+    private boolean shouldSupressEnumSetter = false;
+
     public String getName() {
         return name;
     }
@@ -550,4 +552,12 @@ public class MemberModel extends DocumentationModel {
         return c2jName;
     }
 
+    public boolean getShouldSupressEnumSetter() {
+        return shouldSupressEnumSetter;
+    }
+
+    public MemberModel setShouldSupressEnumSetter(boolean shouldSupressEnumSetter) {
+        this.shouldSupressEnumSetter = shouldSupressEnumSetter;
+        return this;
+    }
 }

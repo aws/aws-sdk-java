@@ -762,7 +762,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      */
 
     public void setStatus(NetworkInterfaceStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -777,7 +777,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      */
 
     public InstanceNetworkInterface withStatus(NetworkInterfaceStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

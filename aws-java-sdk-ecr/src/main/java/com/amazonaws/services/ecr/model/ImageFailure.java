@@ -141,7 +141,7 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setFailureCode(ImageFailureCode failureCode) {
-        this.failureCode = failureCode.toString();
+        withFailureCode(failureCode);
     }
 
     /**
@@ -156,7 +156,7 @@ public class ImageFailure implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ImageFailure withFailureCode(ImageFailureCode failureCode) {
-        setFailureCode(failureCode);
+        this.failureCode = failureCode.toString();
         return this;
     }
 

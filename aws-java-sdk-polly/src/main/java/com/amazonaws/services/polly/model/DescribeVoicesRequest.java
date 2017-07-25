@@ -106,7 +106,7 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setLanguageCode(LanguageCode languageCode) {
-        this.languageCode = languageCode.toString();
+        withLanguageCode(languageCode);
     }
 
     /**
@@ -124,7 +124,7 @@ public class DescribeVoicesRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public DescribeVoicesRequest withLanguageCode(LanguageCode languageCode) {
-        setLanguageCode(languageCode);
+        this.languageCode = languageCode.toString();
         return this;
     }
 

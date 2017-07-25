@@ -205,7 +205,7 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setRevisionType(RevisionLocationType revisionType) {
-        this.revisionType = revisionType.toString();
+        withRevisionType(revisionType);
     }
 
     /**
@@ -243,7 +243,7 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      */
 
     public RevisionLocation withRevisionType(RevisionLocationType revisionType) {
-        setRevisionType(revisionType);
+        this.revisionType = revisionType.toString();
         return this;
     }
 

@@ -343,7 +343,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setTemplateStage(TemplateStage templateStage) {
-        this.templateStage = templateStage.toString();
+        withTemplateStage(templateStage);
     }
 
     /**
@@ -369,7 +369,7 @@ public class GetTemplateRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public GetTemplateRequest withTemplateStage(TemplateStage templateStage) {
-        setTemplateStage(templateStage);
+        this.templateStage = templateStage.toString();
         return this;
     }
 

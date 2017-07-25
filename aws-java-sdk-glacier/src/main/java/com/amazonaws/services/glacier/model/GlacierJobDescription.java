@@ -308,7 +308,7 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
      */
 
     public void setAction(ActionCode action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -323,7 +323,7 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
      */
 
     public GlacierJobDescription withAction(ActionCode action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 
@@ -560,7 +560,7 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
      */
 
     public void setStatusCode(StatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
@@ -575,7 +575,7 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
      */
 
     public GlacierJobDescription withStatusCode(StatusCode statusCode) {
-        setStatusCode(statusCode);
+        this.statusCode = statusCode.toString();
         return this;
     }
 

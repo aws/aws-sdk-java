@@ -391,7 +391,7 @@ public class Operator implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(OperatorType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -472,7 +472,7 @@ public class Operator implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Operator withType(OperatorType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

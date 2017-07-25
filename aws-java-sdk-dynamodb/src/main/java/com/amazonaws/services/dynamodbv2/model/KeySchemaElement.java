@@ -439,7 +439,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setKeyType(KeyType keyType) {
-        this.keyType = keyType.toString();
+        withKeyType(keyType);
     }
 
     /**
@@ -501,7 +501,7 @@ public class KeySchemaElement implements Serializable, Cloneable, StructuredPojo
      */
 
     public KeySchemaElement withKeyType(KeyType keyType) {
-        setKeyType(keyType);
+        this.keyType = keyType.toString();
         return this;
     }
 

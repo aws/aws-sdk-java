@@ -295,7 +295,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setType(UserType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -310,7 +310,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public UpdateUserRequest withType(UserType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -448,7 +448,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setLocale(LocaleType locale) {
-        this.locale = locale.toString();
+        withLocale(locale);
     }
 
     /**
@@ -463,7 +463,7 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public UpdateUserRequest withLocale(LocaleType locale) {
-        setLocale(locale);
+        this.locale = locale.toString();
         return this;
     }
 

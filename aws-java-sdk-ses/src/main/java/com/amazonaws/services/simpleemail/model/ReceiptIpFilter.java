@@ -102,7 +102,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      */
 
     public void setPolicy(ReceiptFilterPolicy policy) {
-        this.policy = policy.toString();
+        withPolicy(policy);
     }
 
     /**
@@ -117,7 +117,7 @@ public class ReceiptIpFilter implements Serializable, Cloneable {
      */
 
     public ReceiptIpFilter withPolicy(ReceiptFilterPolicy policy) {
-        setPolicy(policy);
+        this.policy = policy.toString();
         return this;
     }
 

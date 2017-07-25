@@ -93,7 +93,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      */
 
     public void setCode(CancelBatchErrorCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -108,7 +108,7 @@ public class CancelSpotFleetRequestsError implements Serializable, Cloneable {
      */
 
     public CancelSpotFleetRequestsError withCode(CancelBatchErrorCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

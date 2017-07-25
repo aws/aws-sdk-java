@@ -346,7 +346,7 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setInstanceFleetType(InstanceFleetType instanceFleetType) {
-        this.instanceFleetType = instanceFleetType.toString();
+        withInstanceFleetType(instanceFleetType);
     }
 
     /**
@@ -361,7 +361,7 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public ListInstancesRequest withInstanceFleetType(InstanceFleetType instanceFleetType) {
-        setInstanceFleetType(instanceFleetType);
+        this.instanceFleetType = instanceFleetType.toString();
         return this;
     }
 

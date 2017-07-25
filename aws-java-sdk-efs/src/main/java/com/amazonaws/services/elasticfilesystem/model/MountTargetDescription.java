@@ -285,7 +285,7 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
      */
 
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
-        this.lifeCycleState = lifeCycleState.toString();
+        withLifeCycleState(lifeCycleState);
     }
 
     /**
@@ -300,7 +300,7 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
      */
 
     public MountTargetDescription withLifeCycleState(LifeCycleState lifeCycleState) {
-        setLifeCycleState(lifeCycleState);
+        this.lifeCycleState = lifeCycleState.toString();
         return this;
     }
 

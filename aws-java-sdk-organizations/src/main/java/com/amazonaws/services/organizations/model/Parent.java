@@ -259,7 +259,7 @@ public class Parent implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(ParentType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -274,7 +274,7 @@ public class Parent implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Parent withType(ParentType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

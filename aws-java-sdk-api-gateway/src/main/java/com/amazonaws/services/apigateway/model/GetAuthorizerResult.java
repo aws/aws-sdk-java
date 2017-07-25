@@ -249,7 +249,7 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
      */
 
     public void setType(AuthorizerType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -266,7 +266,7 @@ public class GetAuthorizerResult extends com.amazonaws.AmazonWebServiceResult<co
      */
 
     public GetAuthorizerResult withType(AuthorizerType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

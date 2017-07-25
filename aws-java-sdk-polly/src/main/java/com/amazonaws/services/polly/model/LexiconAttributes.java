@@ -169,7 +169,7 @@ public class LexiconAttributes implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setLanguageCode(LanguageCode languageCode) {
-        this.languageCode = languageCode.toString();
+        withLanguageCode(languageCode);
     }
 
     /**
@@ -186,7 +186,7 @@ public class LexiconAttributes implements Serializable, Cloneable, StructuredPoj
      */
 
     public LexiconAttributes withLanguageCode(LanguageCode languageCode) {
-        setLanguageCode(languageCode);
+        this.languageCode = languageCode.toString();
         return this;
     }
 

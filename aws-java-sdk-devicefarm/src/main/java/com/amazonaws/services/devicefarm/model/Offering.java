@@ -193,7 +193,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(OfferingType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -208,7 +208,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Offering withType(OfferingType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -266,7 +266,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPlatform(DevicePlatform platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -281,7 +281,7 @@ public class Offering implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Offering withPlatform(DevicePlatform platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 

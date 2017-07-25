@@ -20,7 +20,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.CreateNetworkInterfacePermissionRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for CreateNetworkInterfacePermission.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateNetworkInterfacePermissionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,
@@ -225,7 +227,7 @@ public class CreateNetworkInterfacePermissionRequest extends AmazonWebServiceReq
      */
 
     public void setPermission(InterfacePermissionType permission) {
-        this.permission = permission.toString();
+        withPermission(permission);
     }
 
     /**
@@ -240,7 +242,7 @@ public class CreateNetworkInterfacePermissionRequest extends AmazonWebServiceReq
      */
 
     public CreateNetworkInterfacePermissionRequest withPermission(InterfacePermissionType permission) {
-        setPermission(permission);
+        this.permission = permission.toString();
         return this;
     }
 

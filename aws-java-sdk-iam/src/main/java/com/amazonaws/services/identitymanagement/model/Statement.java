@@ -150,7 +150,7 @@ public class Statement implements Serializable, Cloneable {
      */
 
     public void setSourcePolicyType(PolicySourceType sourcePolicyType) {
-        this.sourcePolicyType = sourcePolicyType.toString();
+        withSourcePolicyType(sourcePolicyType);
     }
 
     /**
@@ -165,7 +165,7 @@ public class Statement implements Serializable, Cloneable {
      */
 
     public Statement withSourcePolicyType(PolicySourceType sourcePolicyType) {
-        setSourcePolicyType(sourcePolicyType);
+        this.sourcePolicyType = sourcePolicyType.toString();
         return this;
     }
 

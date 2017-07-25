@@ -277,7 +277,7 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      */
 
     public void setTimeZone(CloudWatchLogsTimeZone timeZone) {
-        this.timeZone = timeZone.toString();
+        withTimeZone(timeZone);
     }
 
     /**
@@ -292,7 +292,7 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      */
 
     public CloudWatchLogsLogStream withTimeZone(CloudWatchLogsTimeZone timeZone) {
-        setTimeZone(timeZone);
+        this.timeZone = timeZone.toString();
         return this;
     }
 
@@ -565,7 +565,7 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      */
 
     public void setInitialPosition(CloudWatchLogsInitialPosition initialPosition) {
-        this.initialPosition = initialPosition.toString();
+        withInitialPosition(initialPosition);
     }
 
     /**
@@ -582,7 +582,7 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      */
 
     public CloudWatchLogsLogStream withInitialPosition(CloudWatchLogsInitialPosition initialPosition) {
-        setInitialPosition(initialPosition);
+        this.initialPosition = initialPosition.toString();
         return this;
     }
 
@@ -648,7 +648,7 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      */
 
     public void setEncoding(CloudWatchLogsEncoding encoding) {
-        this.encoding = encoding.toString();
+        withEncoding(encoding);
     }
 
     /**
@@ -665,7 +665,7 @@ public class CloudWatchLogsLogStream implements Serializable, Cloneable, Structu
      */
 
     public CloudWatchLogsLogStream withEncoding(CloudWatchLogsEncoding encoding) {
-        setEncoding(encoding);
+        this.encoding = encoding.toString();
         return this;
     }
 

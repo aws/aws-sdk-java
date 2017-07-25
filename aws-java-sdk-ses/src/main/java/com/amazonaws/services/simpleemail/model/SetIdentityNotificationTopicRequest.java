@@ -159,7 +159,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      */
 
     public void setNotificationType(NotificationType notificationType) {
-        this.notificationType = notificationType.toString();
+        withNotificationType(notificationType);
     }
 
     /**
@@ -174,7 +174,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      */
 
     public SetIdentityNotificationTopicRequest withNotificationType(NotificationType notificationType) {
-        setNotificationType(notificationType);
+        this.notificationType = notificationType.toString();
         return this;
     }
 

@@ -146,7 +146,7 @@ public class ResourceChange implements Serializable, Cloneable {
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -163,7 +163,7 @@ public class ResourceChange implements Serializable, Cloneable {
      */
 
     public ResourceChange withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 
@@ -431,7 +431,7 @@ public class ResourceChange implements Serializable, Cloneable {
      */
 
     public void setReplacement(Replacement replacement) {
-        this.replacement = replacement.toString();
+        withReplacement(replacement);
     }
 
     /**
@@ -467,7 +467,7 @@ public class ResourceChange implements Serializable, Cloneable {
      */
 
     public ResourceChange withReplacement(Replacement replacement) {
-        setReplacement(replacement);
+        this.replacement = replacement.toString();
         return this;
     }
 

@@ -213,7 +213,7 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
      */
 
     public void setComparator(Comparator comparator) {
-        this.comparator = comparator.toString();
+        withComparator(comparator);
     }
 
     /**
@@ -238,7 +238,7 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
      */
 
     public QualificationRequirement withComparator(Comparator comparator) {
-        setComparator(comparator);
+        this.comparator = comparator.toString();
         return this;
     }
 

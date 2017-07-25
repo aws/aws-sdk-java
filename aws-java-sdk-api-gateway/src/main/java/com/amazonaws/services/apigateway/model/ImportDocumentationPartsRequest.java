@@ -164,7 +164,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setMode(PutMode mode) {
-        this.mode = mode.toString();
+        withMode(mode);
     }
 
     /**
@@ -183,7 +183,7 @@ public class ImportDocumentationPartsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public ImportDocumentationPartsRequest withMode(PutMode mode) {
-        setMode(mode);
+        this.mode = mode.toString();
         return this;
     }
 

@@ -257,7 +257,7 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
      */
 
     public void setCause(ScheduleActivityTaskFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -287,7 +287,7 @@ public class ScheduleActivityTaskFailedEventAttributes implements Serializable, 
      */
 
     public ScheduleActivityTaskFailedEventAttributes withCause(ScheduleActivityTaskFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

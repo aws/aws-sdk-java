@@ -111,7 +111,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable, Stru
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -129,7 +129,7 @@ public class SqlInjectionMatchSetUpdate implements Serializable, Cloneable, Stru
      */
 
     public SqlInjectionMatchSetUpdate withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

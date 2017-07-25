@@ -568,7 +568,7 @@ public class UpdateIntegrationResponseResult extends com.amazonaws.AmazonWebServ
      */
 
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
-        this.contentHandling = contentHandling.toString();
+        withContentHandling(contentHandling);
     }
 
     /**
@@ -618,7 +618,7 @@ public class UpdateIntegrationResponseResult extends com.amazonaws.AmazonWebServ
      */
 
     public UpdateIntegrationResponseResult withContentHandling(ContentHandlingStrategy contentHandling) {
-        setContentHandling(contentHandling);
+        this.contentHandling = contentHandling.toString();
         return this;
     }
 

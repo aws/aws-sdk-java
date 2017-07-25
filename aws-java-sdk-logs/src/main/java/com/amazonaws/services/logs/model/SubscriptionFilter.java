@@ -300,7 +300,7 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
      */
 
     public void setDistribution(Distribution distribution) {
-        this.distribution = distribution.toString();
+        withDistribution(distribution);
     }
 
     /**
@@ -316,7 +316,7 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
      */
 
     public SubscriptionFilter withDistribution(Distribution distribution) {
-        setDistribution(distribution);
+        this.distribution = distribution.toString();
         return this;
     }
 

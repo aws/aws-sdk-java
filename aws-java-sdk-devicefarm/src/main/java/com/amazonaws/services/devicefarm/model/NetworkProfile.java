@@ -275,7 +275,7 @@ public class NetworkProfile implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(NetworkProfileType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -290,7 +290,7 @@ public class NetworkProfile implements Serializable, Cloneable, StructuredPojo {
      */
 
     public NetworkProfile withType(NetworkProfileType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

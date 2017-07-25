@@ -101,7 +101,7 @@ public class InstanceStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(InstanceState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -116,7 +116,7 @@ public class InstanceStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public InstanceStatus withState(InstanceState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

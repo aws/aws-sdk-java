@@ -340,7 +340,7 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      */
 
     public void setDocumentType(DocumentType documentType) {
-        this.documentType = documentType.toString();
+        withDocumentType(documentType);
     }
 
     /**
@@ -355,7 +355,7 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      */
 
     public DocumentIdentifier withDocumentType(DocumentType documentType) {
-        setDocumentType(documentType);
+        this.documentType = documentType.toString();
         return this;
     }
 

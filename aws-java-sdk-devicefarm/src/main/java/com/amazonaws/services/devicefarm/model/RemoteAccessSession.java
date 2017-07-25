@@ -734,7 +734,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      */
 
     public void setStatus(ExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -842,7 +842,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      */
 
     public RemoteAccessSession withStatus(ExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1192,7 +1192,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      */
 
     public void setResult(ExecutionResult result) {
-        this.result = result.toString();
+        withResult(result);
     }
 
     /**
@@ -1280,7 +1280,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      */
 
     public RemoteAccessSession withResult(ExecutionResult result) {
-        setResult(result);
+        this.result = result.toString();
         return this;
     }
 
@@ -1522,7 +1522,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      */
 
     public void setBillingMethod(BillingMethod billingMethod) {
-        this.billingMethod = billingMethod.toString();
+        withBillingMethod(billingMethod);
     }
 
     /**
@@ -1543,7 +1543,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      */
 
     public RemoteAccessSession withBillingMethod(BillingMethod billingMethod) {
-        setBillingMethod(billingMethod);
+        this.billingMethod = billingMethod.toString();
         return this;
     }
 

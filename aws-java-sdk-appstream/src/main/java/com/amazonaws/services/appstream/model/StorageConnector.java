@@ -95,7 +95,7 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setConnectorType(StorageConnectorType connectorType) {
-        this.connectorType = connectorType.toString();
+        withConnectorType(connectorType);
     }
 
     /**
@@ -110,7 +110,7 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
      */
 
     public StorageConnector withConnectorType(StorageConnectorType connectorType) {
-        setConnectorType(connectorType);
+        this.connectorType = connectorType.toString();
         return this;
     }
 

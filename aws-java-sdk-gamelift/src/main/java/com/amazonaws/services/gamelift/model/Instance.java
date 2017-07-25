@@ -268,7 +268,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -283,7 +283,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Instance withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 
@@ -341,7 +341,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(EC2InstanceType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -356,7 +356,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Instance withType(EC2InstanceType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -578,7 +578,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(InstanceStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -634,7 +634,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Instance withStatus(InstanceStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

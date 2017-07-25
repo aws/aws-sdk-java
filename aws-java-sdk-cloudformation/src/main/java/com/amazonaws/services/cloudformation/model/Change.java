@@ -99,7 +99,7 @@ public class Change implements Serializable, Cloneable {
      */
 
     public void setType(ChangeType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -115,7 +115,7 @@ public class Change implements Serializable, Cloneable {
      */
 
     public Change withType(ChangeType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

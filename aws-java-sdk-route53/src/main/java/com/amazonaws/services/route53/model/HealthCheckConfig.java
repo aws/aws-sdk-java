@@ -1446,7 +1446,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      */
 
     public void setType(HealthCheckType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1598,7 +1598,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      */
 
     public HealthCheckConfig withType(HealthCheckType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -3421,7 +3421,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      */
 
     public void setInsufficientDataHealthStatus(InsufficientDataHealthStatus insufficientDataHealthStatus) {
-        this.insufficientDataHealthStatus = insufficientDataHealthStatus.toString();
+        withInsufficientDataHealthStatus(insufficientDataHealthStatus);
     }
 
     /**
@@ -3475,7 +3475,7 @@ public class HealthCheckConfig implements Serializable, Cloneable {
      */
 
     public HealthCheckConfig withInsufficientDataHealthStatus(InsufficientDataHealthStatus insufficientDataHealthStatus) {
-        setInsufficientDataHealthStatus(insufficientDataHealthStatus);
+        this.insufficientDataHealthStatus = insufficientDataHealthStatus.toString();
         return this;
     }
 

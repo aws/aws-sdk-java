@@ -375,7 +375,7 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setHashKeyType(DynamoKeyType hashKeyType) {
-        this.hashKeyType = hashKeyType.toString();
+        withHashKeyType(hashKeyType);
     }
 
     /**
@@ -390,7 +390,7 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public DynamoDBAction withHashKeyType(DynamoKeyType hashKeyType) {
-        setHashKeyType(hashKeyType);
+        this.hashKeyType = hashKeyType.toString();
         return this;
     }
 
@@ -528,7 +528,7 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRangeKeyType(DynamoKeyType rangeKeyType) {
-        this.rangeKeyType = rangeKeyType.toString();
+        withRangeKeyType(rangeKeyType);
     }
 
     /**
@@ -543,7 +543,7 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public DynamoDBAction withRangeKeyType(DynamoKeyType rangeKeyType) {
-        setRangeKeyType(rangeKeyType);
+        this.rangeKeyType = rangeKeyType.toString();
         return this;
     }
 

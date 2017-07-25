@@ -93,7 +93,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      */
 
     public void setName(VolumeStatusName name) {
-        this.name = name.toString();
+        withName(name);
     }
 
     /**
@@ -108,7 +108,7 @@ public class VolumeStatusDetails implements Serializable, Cloneable {
      */
 
     public VolumeStatusDetails withName(VolumeStatusName name) {
-        setName(name);
+        this.name = name.toString();
         return this;
     }
 

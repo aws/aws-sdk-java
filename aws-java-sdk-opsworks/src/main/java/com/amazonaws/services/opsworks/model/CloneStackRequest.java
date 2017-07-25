@@ -2746,7 +2746,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+        withDefaultRootDeviceType(defaultRootDeviceType);
     }
 
     /**
@@ -2767,7 +2767,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public CloneStackRequest withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        setDefaultRootDeviceType(defaultRootDeviceType);
+        this.defaultRootDeviceType = defaultRootDeviceType.toString();
         return this;
     }
 

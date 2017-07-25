@@ -250,7 +250,7 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setProtocol(IpProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -265,7 +265,7 @@ public class IpPermission implements Serializable, Cloneable, StructuredPojo {
      */
 
     public IpPermission withProtocol(IpProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

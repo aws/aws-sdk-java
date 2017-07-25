@@ -221,7 +221,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
-        this.serviceNamespace = serviceNamespace.toString();
+        withServiceNamespace(serviceNamespace);
     }
 
     /**
@@ -240,7 +240,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      */
 
     public RegisterScalableTargetRequest withServiceNamespace(ServiceNamespace serviceNamespace) {
-        setServiceNamespace(serviceNamespace);
+        this.serviceNamespace = serviceNamespace.toString();
         return this;
     }
 
@@ -926,7 +926,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setScalableDimension(ScalableDimension scalableDimension) {
-        this.scalableDimension = scalableDimension.toString();
+        withScalableDimension(scalableDimension);
     }
 
     /**
@@ -1030,7 +1030,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      */
 
     public RegisterScalableTargetRequest withScalableDimension(ScalableDimension scalableDimension) {
-        setScalableDimension(scalableDimension);
+        this.scalableDimension = scalableDimension.toString();
         return this;
     }
 

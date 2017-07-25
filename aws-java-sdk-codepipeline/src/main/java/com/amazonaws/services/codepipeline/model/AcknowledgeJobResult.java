@@ -87,7 +87,7 @@ public class AcknowledgeJobResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public void setStatus(JobStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -102,7 +102,7 @@ public class AcknowledgeJobResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public AcknowledgeJobResult withStatus(JobStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -143,7 +143,7 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
      */
 
     public void setState(QueryExecutionState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -166,7 +166,7 @@ public class QueryExecutionStatus implements Serializable, Cloneable, Structured
      */
 
     public QueryExecutionStatus withState(QueryExecutionState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

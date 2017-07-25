@@ -135,7 +135,7 @@ public class AssessmentRunStateChange implements Serializable, Cloneable, Struct
      */
 
     public void setState(AssessmentRunState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -150,7 +150,7 @@ public class AssessmentRunStateChange implements Serializable, Cloneable, Struct
      */
 
     public AssessmentRunStateChange withState(AssessmentRunState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

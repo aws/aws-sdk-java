@@ -1201,7 +1201,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+        withDefaultRootDeviceType(defaultRootDeviceType);
     }
 
     /**
@@ -1222,7 +1222,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Stack withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        setDefaultRootDeviceType(defaultRootDeviceType);
+        this.defaultRootDeviceType = defaultRootDeviceType.toString();
         return this;
     }
 

@@ -230,7 +230,7 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setDataSetType(SupportDataSetType dataSetType) {
-        this.dataSetType = dataSetType.toString();
+        withDataSetType(dataSetType);
     }
 
     /**
@@ -270,7 +270,7 @@ public class StartSupportDataExportRequest extends com.amazonaws.AmazonWebServic
      */
 
     public StartSupportDataExportRequest withDataSetType(SupportDataSetType dataSetType) {
-        setDataSetType(dataSetType);
+        this.dataSetType = dataSetType.toString();
         return this;
     }
 

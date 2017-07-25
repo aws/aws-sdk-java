@@ -194,7 +194,7 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(DirectoryState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -210,7 +210,7 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Directory withState(DirectoryState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -1289,7 +1289,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      */
 
     public void setAction(AttributeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -1491,7 +1491,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      */
 
     public AttributeValueUpdate withAction(AttributeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

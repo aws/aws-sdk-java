@@ -92,7 +92,7 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setCampaignStatus(CampaignStatus campaignStatus) {
-        this.campaignStatus = campaignStatus.toString();
+        withCampaignStatus(campaignStatus);
     }
 
     /**
@@ -109,7 +109,7 @@ public class CampaignState implements Serializable, Cloneable, StructuredPojo {
      */
 
     public CampaignState withCampaignStatus(CampaignStatus campaignStatus) {
-        setCampaignStatus(campaignStatus);
+        this.campaignStatus = campaignStatus.toString();
         return this;
     }
 

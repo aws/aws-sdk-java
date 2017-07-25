@@ -47,6 +47,7 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : false
@@ -702,6 +703,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the compute type for the bundle.</p>\n@param name The name of the compute type for the bundle.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Compute*/",
@@ -766,6 +768,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the compute type for the bundle.</p>\n@param name The name of the compute type for the bundle.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Compute*/",
@@ -922,6 +925,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1021,6 +1025,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1061,6 +1066,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags of the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1125,6 +1131,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1225,6 +1232,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1265,6 +1273,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags of the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1446,6 +1455,7 @@
               "simpleType" : "WorkspaceRequest",
               "variableSetterType" : "WorkspaceRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1486,6 +1496,7 @@
           "simpleType" : "List<WorkspaceRequest>",
           "variableSetterType" : "java.util.Collection<WorkspaceRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures that specify the WorkSpaces to create.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspaces(java.util.Collection)} or {@link #withWorkspaces(java.util.Collection)} if you want to override the existing values.</p>\n@param workspaces An array of structures that specify the WorkSpaces to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1587,6 +1598,7 @@
                 "simpleType" : "WorkspaceRequest",
                 "variableSetterType" : "WorkspaceRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1627,6 +1639,7 @@
             "simpleType" : "List<WorkspaceRequest>",
             "variableSetterType" : "java.util.Collection<WorkspaceRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures that specify the WorkSpaces to create.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspaces(java.util.Collection)} or {@link #withWorkspaces(java.util.Collection)} if you want to override the existing values.</p>\n@param workspaces An array of structures that specify the WorkSpaces to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1762,6 +1775,7 @@
               "simpleType" : "FailedCreateWorkspaceRequest",
               "variableSetterType" : "FailedCreateWorkspaceRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1802,6 +1816,7 @@
           "simpleType" : "List<FailedCreateWorkspaceRequest>",
           "variableSetterType" : "java.util.Collection<FailedCreateWorkspaceRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures that represent the WorkSpaces that could not be created.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures that represent the WorkSpaces that could not be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1901,6 +1916,7 @@
               "simpleType" : "Workspace",
               "variableSetterType" : "Workspace"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1941,6 +1957,7 @@
           "simpleType" : "List<Workspace>",
           "variableSetterType" : "java.util.Collection<Workspace>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures that represent the WorkSpaces that were created.</p> <p>Because this operation is asynchronous, the identifier in <code>WorkspaceId</code> is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information will be returned.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPendingRequests(java.util.Collection)} or {@link #withPendingRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param pendingRequests An array of structures that represent the WorkSpaces that were created.</p> <p>Because this operation is asynchronous, the identifier in <code>WorkspaceId</code> is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information will be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2042,6 +2059,7 @@
                 "simpleType" : "FailedCreateWorkspaceRequest",
                 "variableSetterType" : "FailedCreateWorkspaceRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2082,6 +2100,7 @@
             "simpleType" : "List<FailedCreateWorkspaceRequest>",
             "variableSetterType" : "java.util.Collection<FailedCreateWorkspaceRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures that represent the WorkSpaces that could not be created.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures that represent the WorkSpaces that could not be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2182,6 +2201,7 @@
                 "simpleType" : "Workspace",
                 "variableSetterType" : "Workspace"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2222,6 +2242,7 @@
             "simpleType" : "List<Workspace>",
             "variableSetterType" : "java.util.Collection<Workspace>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures that represent the WorkSpaces that were created.</p> <p>Because this operation is asynchronous, the identifier in <code>WorkspaceId</code> is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information will be returned.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPendingRequests(java.util.Collection)} or {@link #withPendingRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param pendingRequests An array of structures that represent the WorkSpaces that were created.</p> <p>Because this operation is asynchronous, the identifier in <code>WorkspaceId</code> is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information will be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2323,6 +2344,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies if the directory is enabled for Amazon WorkDocs.</p>\n@param enableWorkDocs Specifies if the directory is enabled for Amazon WorkDocs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2385,6 +2407,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A public IP address will be attached to all WorkSpaces that are created or rebuilt.</p>\n@param enableInternetAccess A public IP address will be attached to all WorkSpaces that are created or rebuilt.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2447,6 +2470,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.</p>\n@param defaultOu The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2509,6 +2533,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of any custom security groups that are applied to the WorkSpaces when they are created.</p>\n@param customSecurityGroupId The identifier of any custom security groups that are applied to the WorkSpaces when they are created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2571,6 +2596,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The WorkSpace user is an administrator on the WorkSpace.</p>\n@param userEnabledAsLocalAdministrator The WorkSpace user is an administrator on the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2635,6 +2661,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of any custom security groups that are applied to the WorkSpaces when they are created.</p>\n@param customSecurityGroupId The identifier of any custom security groups that are applied to the WorkSpaces when they are created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2698,6 +2725,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.</p>\n@param defaultOu The organizational unit (OU) in the directory that the WorkSpace machine accounts are placed in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2761,6 +2789,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A public IP address will be attached to all WorkSpaces that are created or rebuilt.</p>\n@param enableInternetAccess A public IP address will be attached to all WorkSpaces that are created or rebuilt.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2824,6 +2853,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies if the directory is enabled for Amazon WorkDocs.</p>\n@param enableWorkDocs Specifies if the directory is enabled for Amazon WorkDocs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2887,6 +2917,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The WorkSpace user is an administrator on the WorkSpace.</p>\n@param userEnabledAsLocalAdministrator The WorkSpace user is an administrator on the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2995,6 +3026,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3094,6 +3126,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3134,6 +3167,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag keys of the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The tag keys of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3198,6 +3232,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3298,6 +3333,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3338,6 +3374,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag keys of the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The tag keys of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3482,6 +3519,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3546,6 +3584,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource ID of the request.</p>\n@param resourceId The resource ID of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3681,6 +3720,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3721,6 +3761,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList The list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3822,6 +3863,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3862,6 +3904,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList The list of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4007,6 +4050,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4047,6 +4091,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundleIds(java.util.Collection)} or {@link #withBundleIds(java.util.Collection)} if you want to override the existing values.</p>\n@param bundleIds An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4109,6 +4154,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.</p> </li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4171,6 +4217,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4272,6 +4319,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4312,6 +4360,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundleIds(java.util.Collection)} or {@link #withBundleIds(java.util.Collection)} if you want to override the existing values.</p>\n@param bundleIds An array of strings that contains the identifiers of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4375,6 +4424,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4438,6 +4488,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.</p> </li> </ul>\n@param owner The owner of the bundles to retrieve. This parameter cannot be combined with any other filter parameter.</p> <p>This contains one of the following values:</p> <ul> <li> <p>null- Retrieves the bundles that belong to the account making the call.</p> </li> <li> <p> <code>AMAZON</code>- Retrieves the bundles that are provided by AWS.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4573,6 +4624,7 @@
               "simpleType" : "WorkspaceBundle",
               "variableSetterType" : "WorkspaceBundle"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4613,6 +4665,7 @@
           "simpleType" : "List<WorkspaceBundle>",
           "variableSetterType" : "java.util.Collection<WorkspaceBundle>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures that contain information about the bundles.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundles(java.util.Collection)} or {@link #withBundles(java.util.Collection)} if you want to override the existing values.</p>\n@param bundles An array of structures that contain information about the bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4675,6 +4728,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4776,6 +4830,7 @@
                 "simpleType" : "WorkspaceBundle",
                 "variableSetterType" : "WorkspaceBundle"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4816,6 +4871,7 @@
             "simpleType" : "List<WorkspaceBundle>",
             "variableSetterType" : "java.util.Collection<WorkspaceBundle>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures that contain information about the bundles.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundles(java.util.Collection)} or {@link #withBundles(java.util.Collection)} if you want to override the existing values.</p>\n@param bundles An array of structures that contain information about the bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4879,6 +4935,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5024,6 +5081,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5064,6 +5122,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDirectoryIds(java.util.Collection)} or {@link #withDirectoryIds(java.util.Collection)} if you want to override the existing values.</p>\n@param directoryIds An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5126,6 +5185,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5227,6 +5287,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5267,6 +5328,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDirectoryIds(java.util.Collection)} or {@link #withDirectoryIds(java.util.Collection)} if you want to override the existing values.</p>\n@param directoryIds An array of strings that contains the directory identifiers to retrieve information for. If this member is null, all directories are retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5330,6 +5392,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5465,6 +5528,7 @@
               "simpleType" : "WorkspaceDirectory",
               "variableSetterType" : "WorkspaceDirectory"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5505,6 +5569,7 @@
           "simpleType" : "List<WorkspaceDirectory>",
           "variableSetterType" : "java.util.Collection<WorkspaceDirectory>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures that contain information about the directories.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDirectories(java.util.Collection)} or {@link #withDirectories(java.util.Collection)} if you want to override the existing values.</p>\n@param directories An array of structures that contain information about the directories.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5567,6 +5632,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5668,6 +5734,7 @@
                 "simpleType" : "WorkspaceDirectory",
                 "variableSetterType" : "WorkspaceDirectory"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5708,6 +5775,7 @@
             "simpleType" : "List<WorkspaceDirectory>",
             "variableSetterType" : "java.util.Collection<WorkspaceDirectory>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures that contain information about the directories.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDirectories(java.util.Collection)} or {@link #withDirectories(java.util.Collection)} if you want to override the existing values.</p>\n@param directories An array of structures that contain information about the directories.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5771,6 +5839,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5916,6 +5985,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5956,6 +6026,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of strings that contain the identifiers of the WorkSpaces.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspaceIds(java.util.Collection)} or {@link #withWorkspaceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param workspaceIds An array of strings that contain the identifiers of the WorkSpaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6018,6 +6089,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The next token of the request.</p>\n@param nextToken The next token of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6082,6 +6154,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The next token of the request.</p>\n@param nextToken The next token of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6182,6 +6255,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6222,6 +6296,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of strings that contain the identifiers of the WorkSpaces.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspaceIds(java.util.Collection)} or {@link #withWorkspaceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param workspaceIds An array of strings that contain the identifiers of the WorkSpaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6357,6 +6432,7 @@
               "simpleType" : "WorkspaceConnectionStatus",
               "variableSetterType" : "WorkspaceConnectionStatus"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6397,6 +6473,7 @@
           "simpleType" : "List<WorkspaceConnectionStatus>",
           "variableSetterType" : "java.util.Collection<WorkspaceConnectionStatus>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The connection status of the WorkSpace.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspacesConnectionStatus(java.util.Collection)} or {@link #withWorkspacesConnectionStatus(java.util.Collection)} if you want to override the existing values.</p>\n@param workspacesConnectionStatus The connection status of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6459,6 +6536,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The next token of the result.</p>\n@param nextToken The next token of the result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6523,6 +6601,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The next token of the result.</p>\n@param nextToken The next token of the result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6623,6 +6702,7 @@
                 "simpleType" : "WorkspaceConnectionStatus",
                 "variableSetterType" : "WorkspaceConnectionStatus"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6663,6 +6743,7 @@
             "simpleType" : "List<WorkspaceConnectionStatus>",
             "variableSetterType" : "java.util.Collection<WorkspaceConnectionStatus>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The connection status of the WorkSpace.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspacesConnectionStatus(java.util.Collection)} or {@link #withWorkspacesConnectionStatus(java.util.Collection)} if you want to override the existing values.</p>\n@param workspacesConnectionStatus The connection status of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6808,6 +6889,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6848,6 +6930,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of strings that contain the identifiers of the WorkSpaces for which to retrieve information. This parameter cannot be combined with any other filter parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspaceIds(java.util.Collection)} or {@link #withWorkspaceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param workspaceIds An array of strings that contain the identifiers of the WorkSpaces for which to retrieve information. This parameter cannot be combined with any other filter parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6910,6 +6993,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the directory identifier to which to limit the WorkSpaces. Optionally, you can specify a specific directory user with the <code>UserName</code> parameter. This parameter cannot be combined with any other filter parameter.</p>\n@param directoryId Specifies the directory identifier to which to limit the WorkSpaces. Optionally, you can specify a specific directory user with the <code>UserName</code> parameter. This parameter cannot be combined with any other filter parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6972,6 +7056,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Used with the <code>DirectoryId</code> parameter to specify the directory user for whom to obtain the WorkSpace.</p>\n@param userName Used with the <code>DirectoryId</code> parameter to specify the directory user for whom to obtain the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7034,6 +7119,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that are created from this bundle will be retrieved. This parameter cannot be combined with any other filter parameter.</p>\n@param bundleId The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that are created from this bundle will be retrieved. This parameter cannot be combined with any other filter parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7096,6 +7182,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@param limit The maximum number of items to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7158,6 +7245,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7222,6 +7310,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that are created from this bundle will be retrieved. This parameter cannot be combined with any other filter parameter.</p>\n@param bundleId The identifier of a bundle to obtain the WorkSpaces for. All WorkSpaces that are created from this bundle will be retrieved. This parameter cannot be combined with any other filter parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7285,6 +7374,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the directory identifier to which to limit the WorkSpaces. Optionally, you can specify a specific directory user with the <code>UserName</code> parameter. This parameter cannot be combined with any other filter parameter.</p>\n@param directoryId Specifies the directory identifier to which to limit the WorkSpaces. Optionally, you can specify a specific directory user with the <code>UserName</code> parameter. This parameter cannot be combined with any other filter parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7348,6 +7438,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of items to return.</p>\n@param limit The maximum number of items to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7411,6 +7502,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to this operation. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7474,6 +7566,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Used with the <code>DirectoryId</code> parameter to specify the directory user for whom to obtain the WorkSpace.</p>\n@param userName Used with the <code>DirectoryId</code> parameter to specify the directory user for whom to obtain the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7574,6 +7667,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7614,6 +7708,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of strings that contain the identifiers of the WorkSpaces for which to retrieve information. This parameter cannot be combined with any other filter parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspaceIds(java.util.Collection)} or {@link #withWorkspaceIds(java.util.Collection)} if you want to override the existing values.</p>\n@param workspaceIds An array of strings that contain the identifiers of the WorkSpaces for which to retrieve information. This parameter cannot be combined with any other filter parameter.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, the identifier it returns is not immediately available. If you immediately call <a>DescribeWorkspaces</a> with this identifier, no information is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7749,6 +7844,7 @@
               "simpleType" : "Workspace",
               "variableSetterType" : "Workspace"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7789,6 +7885,7 @@
           "simpleType" : "List<Workspace>",
           "variableSetterType" : "java.util.Collection<Workspace>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures that contain the information about the WorkSpaces.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a newly-created WorkSpace.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspaces(java.util.Collection)} or {@link #withWorkspaces(java.util.Collection)} if you want to override the existing values.</p>\n@param workspaces An array of structures that contain the information about the WorkSpaces.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a newly-created WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7851,6 +7948,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7915,6 +8013,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.</p>\n@param nextToken If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. This token is valid for one day and must be used within that time frame.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8015,6 +8114,7 @@
                 "simpleType" : "Workspace",
                 "variableSetterType" : "Workspace"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8055,6 +8155,7 @@
             "simpleType" : "List<Workspace>",
             "variableSetterType" : "java.util.Collection<Workspace>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures that contain the information about the WorkSpaces.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a newly-created WorkSpace.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWorkspaces(java.util.Collection)} or {@link #withWorkspaces(java.util.Collection)} if you want to override the existing values.</p>\n@param workspaces An array of structures that contain the information about the WorkSpaces.</p> <p>Because the <a>CreateWorkspaces</a> operation is asynchronous, some of this information may be incomplete for a newly-created WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8156,6 +8257,7 @@
           "simpleType" : "WorkspaceRequest",
           "variableSetterType" : "WorkspaceRequest"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace that could not be created.</p>\n@param workspaceRequest A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace that could not be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8218,6 +8320,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code.</p>\n@param errorCode The error code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8280,6 +8383,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The textual error message.</p>\n@param errorMessage The textual error message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8344,6 +8448,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code.</p>\n@param errorCode The error code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8407,6 +8512,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The textual error message.</p>\n@param errorMessage The textual error message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8470,6 +8576,7 @@
             "simpleType" : "WorkspaceRequest",
             "variableSetterType" : "WorkspaceRequest"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace that could not be created.</p>\n@param workspaceRequest A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information about the WorkSpace that could not be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8571,6 +8678,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace.</p>\n@param workspaceId The identifier of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8633,6 +8741,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code.</p>\n@param errorCode The error code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8695,6 +8804,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The textual error message.</p>\n@param errorMessage The textual error message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8759,6 +8869,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code.</p>\n@param errorCode The error code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8822,6 +8933,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The textual error message.</p>\n@param errorMessage The textual error message.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8885,6 +8997,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace.</p>\n@param workspaceId The identifier of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9065,6 +9178,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the WorkSpace.</p>\n@param workspaceId The ID of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9127,6 +9241,7 @@
           "simpleType" : "WorkspaceProperties",
           "variableSetterType" : "WorkspaceProperties"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The WorkSpace properties of the request.</p>\n@param workspaceProperties The WorkSpace properties of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9191,6 +9306,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the WorkSpace.</p>\n@param workspaceId The ID of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9254,6 +9370,7 @@
             "simpleType" : "WorkspaceProperties",
             "variableSetterType" : "WorkspaceProperties"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The WorkSpace properties of the request.</p>\n@param workspaceProperties The WorkSpace properties of the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9427,6 +9544,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace to reboot.</p>\n@param workspaceId The identifier of the WorkSpace to reboot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9491,6 +9609,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace to reboot.</p>\n@param workspaceId The identifier of the WorkSpace to reboot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9636,6 +9755,7 @@
               "simpleType" : "RebootRequest",
               "variableSetterType" : "RebootRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9676,6 +9796,7 @@
           "simpleType" : "List<RebootRequest>",
           "variableSetterType" : "java.util.Collection<RebootRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures that specify the WorkSpaces to reboot.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRebootWorkspaceRequests(java.util.Collection)} or {@link #withRebootWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param rebootWorkspaceRequests An array of structures that specify the WorkSpaces to reboot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9777,6 +9898,7 @@
                 "simpleType" : "RebootRequest",
                 "variableSetterType" : "RebootRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9817,6 +9939,7 @@
             "simpleType" : "List<RebootRequest>",
             "variableSetterType" : "java.util.Collection<RebootRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures that specify the WorkSpaces to reboot.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRebootWorkspaceRequests(java.util.Collection)} or {@link #withRebootWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param rebootWorkspaceRequests An array of structures that specify the WorkSpaces to reboot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9952,6 +10075,7 @@
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9992,6 +10116,7 @@
           "simpleType" : "List<FailedWorkspaceChangeRequest>",
           "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures representing any WorkSpaces that could not be rebooted.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures representing any WorkSpaces that could not be rebooted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10093,6 +10218,7 @@
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10133,6 +10259,7 @@
             "simpleType" : "List<FailedWorkspaceChangeRequest>",
             "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures representing any WorkSpaces that could not be rebooted.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures representing any WorkSpaces that could not be rebooted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10234,6 +10361,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace to rebuild.</p>\n@param workspaceId The identifier of the WorkSpace to rebuild.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10298,6 +10426,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace to rebuild.</p>\n@param workspaceId The identifier of the WorkSpace to rebuild.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10443,6 +10572,7 @@
               "simpleType" : "RebuildRequest",
               "variableSetterType" : "RebuildRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10483,6 +10613,7 @@
           "simpleType" : "List<RebuildRequest>",
           "variableSetterType" : "java.util.Collection<RebuildRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures that specify the WorkSpaces to rebuild.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRebuildWorkspaceRequests(java.util.Collection)} or {@link #withRebuildWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param rebuildWorkspaceRequests An array of structures that specify the WorkSpaces to rebuild.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10584,6 +10715,7 @@
                 "simpleType" : "RebuildRequest",
                 "variableSetterType" : "RebuildRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10624,6 +10756,7 @@
             "simpleType" : "List<RebuildRequest>",
             "variableSetterType" : "java.util.Collection<RebuildRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures that specify the WorkSpaces to rebuild.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRebuildWorkspaceRequests(java.util.Collection)} or {@link #withRebuildWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param rebuildWorkspaceRequests An array of structures that specify the WorkSpaces to rebuild.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10759,6 +10892,7 @@
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10799,6 +10933,7 @@
           "simpleType" : "List<FailedWorkspaceChangeRequest>",
           "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures representing any WorkSpaces that could not be rebuilt.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures representing any WorkSpaces that could not be rebuilt.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10900,6 +11035,7 @@
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10940,6 +11076,7 @@
             "simpleType" : "List<FailedWorkspaceChangeRequest>",
             "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures representing any WorkSpaces that could not be rebuilt.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures representing any WorkSpaces that could not be rebuilt.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11077,6 +11214,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource could not be found.</p>\n@param resourceId The resource could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11141,6 +11279,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource could not be found.</p>\n@param resourceId The resource could not be found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11239,6 +11378,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the resource that is not available.</p>\n@param resourceId The identifier of the resource that is not available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11303,6 +11443,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the resource that is not available.</p>\n@param resourceId The identifier of the resource that is not available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11446,6 +11587,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the WorkSpace.</p>\n@param workspaceId The ID of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11510,6 +11652,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the WorkSpace.</p>\n@param workspaceId The ID of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11655,6 +11798,7 @@
               "simpleType" : "StartRequest",
               "variableSetterType" : "StartRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11695,6 +11839,7 @@
           "simpleType" : "List<StartRequest>",
           "variableSetterType" : "java.util.Collection<StartRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStartWorkspaceRequests(java.util.Collection)} or {@link #withStartWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param startWorkspaceRequests The requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11796,6 +11941,7 @@
                 "simpleType" : "StartRequest",
                 "variableSetterType" : "StartRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11836,6 +11982,7 @@
             "simpleType" : "List<StartRequest>",
             "variableSetterType" : "java.util.Collection<StartRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStartWorkspaceRequests(java.util.Collection)} or {@link #withStartWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param startWorkspaceRequests The requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11971,6 +12118,7 @@
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12011,6 +12159,7 @@
           "simpleType" : "List<FailedWorkspaceChangeRequest>",
           "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The failed requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests The failed requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12112,6 +12261,7 @@
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12152,6 +12302,7 @@
             "simpleType" : "List<FailedWorkspaceChangeRequest>",
             "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The failed requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests The failed requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12253,6 +12404,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the WorkSpace.</p>\n@param workspaceId The ID of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12317,6 +12469,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the WorkSpace.</p>\n@param workspaceId The ID of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12462,6 +12615,7 @@
               "simpleType" : "StopRequest",
               "variableSetterType" : "StopRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12502,6 +12656,7 @@
           "simpleType" : "List<StopRequest>",
           "variableSetterType" : "java.util.Collection<StopRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStopWorkspaceRequests(java.util.Collection)} or {@link #withStopWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param stopWorkspaceRequests The requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12603,6 +12758,7 @@
                 "simpleType" : "StopRequest",
                 "variableSetterType" : "StopRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12643,6 +12799,7 @@
             "simpleType" : "List<StopRequest>",
             "variableSetterType" : "java.util.Collection<StopRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStopWorkspaceRequests(java.util.Collection)} or {@link #withStopWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param stopWorkspaceRequests The requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12778,6 +12935,7 @@
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12818,6 +12976,7 @@
           "simpleType" : "List<FailedWorkspaceChangeRequest>",
           "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The failed requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests The failed requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12919,6 +13078,7 @@
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12959,6 +13119,7 @@
             "simpleType" : "List<FailedWorkspaceChangeRequest>",
             "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The failed requests.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests The failed requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13060,6 +13221,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13122,6 +13284,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13186,6 +13349,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13249,6 +13413,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13350,6 +13515,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace to terminate.</p>\n@param workspaceId The identifier of the WorkSpace to terminate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13414,6 +13580,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace to terminate.</p>\n@param workspaceId The identifier of the WorkSpace to terminate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13559,6 +13726,7 @@
               "simpleType" : "TerminateRequest",
               "variableSetterType" : "TerminateRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13599,6 +13767,7 @@
           "simpleType" : "List<TerminateRequest>",
           "variableSetterType" : "java.util.Collection<TerminateRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures that specify the WorkSpaces to terminate.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTerminateWorkspaceRequests(java.util.Collection)} or {@link #withTerminateWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param terminateWorkspaceRequests An array of structures that specify the WorkSpaces to terminate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13700,6 +13869,7 @@
                 "simpleType" : "TerminateRequest",
                 "variableSetterType" : "TerminateRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13740,6 +13910,7 @@
             "simpleType" : "List<TerminateRequest>",
             "variableSetterType" : "java.util.Collection<TerminateRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures that specify the WorkSpaces to terminate.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTerminateWorkspaceRequests(java.util.Collection)} or {@link #withTerminateWorkspaceRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param terminateWorkspaceRequests An array of structures that specify the WorkSpaces to terminate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13875,6 +14046,7 @@
               "simpleType" : "FailedWorkspaceChangeRequest",
               "variableSetterType" : "FailedWorkspaceChangeRequest"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13915,6 +14087,7 @@
           "simpleType" : "List<FailedWorkspaceChangeRequest>",
           "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of structures representing any WorkSpaces that could not be terminated.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures representing any WorkSpaces that could not be terminated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14016,6 +14189,7 @@
                 "simpleType" : "FailedWorkspaceChangeRequest",
                 "variableSetterType" : "FailedWorkspaceChangeRequest"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14056,6 +14230,7 @@
             "simpleType" : "List<FailedWorkspaceChangeRequest>",
             "variableSetterType" : "java.util.Collection<FailedWorkspaceChangeRequest>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of structures representing any WorkSpaces that could not be terminated.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedRequests(java.util.Collection)} or {@link #withFailedRequests(java.util.Collection)} if you want to override the existing values.</p>\n@param failedRequests An array of structures representing any WorkSpaces that could not be terminated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14193,6 +14368,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The amount of user storage for the bundle.</p>\n@param capacity The amount of user storage for the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14257,6 +14433,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The amount of user storage for the bundle.</p>\n@param capacity The amount of user storage for the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14358,6 +14535,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace.</p>\n@param workspaceId The identifier of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14420,6 +14598,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the AWS Directory Service directory that the WorkSpace belongs to.</p>\n@param directoryId The identifier of the AWS Directory Service directory that the WorkSpace belongs to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14482,6 +14661,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user that the WorkSpace is assigned to.</p>\n@param userName The user that the WorkSpace is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14544,6 +14724,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IP address of the WorkSpace.</p>\n@param ipAddress The IP address of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14606,6 +14787,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The operational state of the WorkSpace.</p>\n@param state The operational state of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.\n@see WorkspaceState*/",
@@ -14668,6 +14850,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the bundle that the WorkSpace was created from.</p>\n@param bundleId The identifier of the bundle that the WorkSpace was created from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14730,6 +14913,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the subnet that the WorkSpace is in.</p>\n@param subnetId The identifier of the subnet that the WorkSpace is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14792,6 +14976,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the WorkSpace could not be created, this contains a textual error message that describes the failure.</p>\n@param errorMessage If the WorkSpace could not be created, this contains a textual error message that describes the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14854,6 +15039,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the WorkSpace could not be created, this contains the error code.</p>\n@param errorCode If the WorkSpace could not be created, this contains the error code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14916,6 +15102,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the WorkSpace as seen by the operating system.</p>\n@param computerName The name of the WorkSpace as seen by the operating system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14978,6 +15165,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n@param volumeEncryptionKey The KMS key used to encrypt data stored on your WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15040,6 +15228,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the data stored on the user volume, or D: drive, is encrypted.</p>\n@param userVolumeEncryptionEnabled Specifies whether the data stored on the user volume, or D: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15102,6 +15291,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the data stored on the root volume, or C: drive, is encrypted.</p>\n@param rootVolumeEncryptionEnabled Specifies whether the data stored on the root volume, or C: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15164,6 +15354,7 @@
           "simpleType" : "WorkspaceProperties",
           "variableSetterType" : "WorkspaceProperties"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param workspaceProperties \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15228,6 +15419,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the bundle that the WorkSpace was created from.</p>\n@param bundleId The identifier of the bundle that the WorkSpace was created from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15291,6 +15483,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the WorkSpace as seen by the operating system.</p>\n@param computerName The name of the WorkSpace as seen by the operating system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15354,6 +15547,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the AWS Directory Service directory that the WorkSpace belongs to.</p>\n@param directoryId The identifier of the AWS Directory Service directory that the WorkSpace belongs to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15417,6 +15611,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the WorkSpace could not be created, this contains the error code.</p>\n@param errorCode If the WorkSpace could not be created, this contains the error code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15480,6 +15675,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the WorkSpace could not be created, this contains a textual error message that describes the failure.</p>\n@param errorMessage If the WorkSpace could not be created, this contains a textual error message that describes the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15543,6 +15739,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IP address of the WorkSpace.</p>\n@param ipAddress The IP address of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15606,6 +15803,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the data stored on the root volume, or C: drive, is encrypted.</p>\n@param rootVolumeEncryptionEnabled Specifies whether the data stored on the root volume, or C: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15669,6 +15867,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The operational state of the WorkSpace.</p>\n@param state The operational state of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.\n@see WorkspaceState*/",
@@ -15732,6 +15931,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the subnet that the WorkSpace is in.</p>\n@param subnetId The identifier of the subnet that the WorkSpace is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15795,6 +15995,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user that the WorkSpace is assigned to.</p>\n@param userName The user that the WorkSpace is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15858,6 +16059,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the data stored on the user volume, or D: drive, is encrypted.</p>\n@param userVolumeEncryptionEnabled Specifies whether the data stored on the user volume, or D: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15921,6 +16123,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n@param volumeEncryptionKey The KMS key used to encrypt data stored on your WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15984,6 +16187,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the WorkSpace.</p>\n@param workspaceId The identifier of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16047,6 +16251,7 @@
             "simpleType" : "WorkspaceProperties",
             "variableSetterType" : "WorkspaceProperties"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param workspaceProperties \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16148,6 +16353,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The bundle identifier.</p>\n@param bundleId The bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16210,6 +16416,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the bundle.</p>\n@param name The name of the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16272,6 +16479,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the bundle is provided by AWS.</p>\n@param owner The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the bundle is provided by AWS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16334,6 +16542,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The bundle description.</p>\n@param description The bundle description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16396,6 +16605,7 @@
           "simpleType" : "UserStorage",
           "variableSetterType" : "UserStorage"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.</p>\n@param userStorage A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16458,6 +16668,7 @@
           "simpleType" : "ComputeType",
           "variableSetterType" : "ComputeType"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A <a>ComputeType</a> object that specifies the compute type for the bundle.</p>\n@param computeType A <a>ComputeType</a> object that specifies the compute type for the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16522,6 +16733,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The bundle identifier.</p>\n@param bundleId The bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16585,6 +16797,7 @@
             "simpleType" : "ComputeType",
             "variableSetterType" : "ComputeType"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A <a>ComputeType</a> object that specifies the compute type for the bundle.</p>\n@param computeType A <a>ComputeType</a> object that specifies the compute type for the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16648,6 +16861,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The bundle description.</p>\n@param description The bundle description.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16711,6 +16925,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the bundle.</p>\n@param name The name of the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16774,6 +16989,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the bundle is provided by AWS.</p>\n@param owner The owner of the bundle. This contains the owner's account identifier, or <code>AMAZON</code> if the bundle is provided by AWS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16837,6 +17053,7 @@
             "simpleType" : "UserStorage",
             "variableSetterType" : "UserStorage"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.</p>\n@param userStorage A <a>UserStorage</a> object that specifies the amount of user storage that the bundle contains.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16938,6 +17155,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the WorkSpace.</p>\n@param workspaceId The ID of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17000,6 +17218,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.</p>\n@param connectionState The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionState*/",
@@ -17062,6 +17281,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp of the connection state check.</p>\n@param connectionStateCheckTimestamp The timestamp of the connection state check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17124,6 +17344,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp of the last known user connection.</p>\n@param lastKnownUserConnectionTimestamp The timestamp of the last known user connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17188,6 +17409,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.</p>\n@param connectionState The connection state of the WorkSpace. Returns UNKOWN if the WorkSpace is in a Stopped state.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionState*/",
@@ -17251,6 +17473,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp of the connection state check.</p>\n@param connectionStateCheckTimestamp The timestamp of the connection state check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17314,6 +17537,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp of the last known user connection.</p>\n@param lastKnownUserConnectionTimestamp The timestamp of the last known user connection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17377,6 +17601,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the WorkSpace.</p>\n@param workspaceId The ID of the WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17478,6 +17703,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The directory identifier.</p>\n@param directoryId The directory identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17540,6 +17766,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The directory alias.</p>\n@param alias The directory alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17602,6 +17829,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the directory.</p>\n@param directoryName The name of the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17664,6 +17892,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>\n@param registrationCode The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17763,6 +17992,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17803,6 +18033,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of strings that contains the identifiers of the subnets used with the directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds An array of strings that contains the identifiers of the subnets used with the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17902,6 +18133,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17942,6 +18174,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of strings that contains the IP addresses of the DNS servers for the directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDnsIpAddresses(java.util.Collection)} or {@link #withDnsIpAddresses(java.util.Collection)} if you want to override the existing values.</p>\n@param dnsIpAddresses An array of strings that contains the IP addresses of the DNS servers for the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18004,6 +18237,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user name for the service account.</p>\n@param customerUserName The user name for the service account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18066,6 +18300,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>\n@param iamRoleId The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18128,6 +18363,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The directory type.</p>\n@param directoryType The directory type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see WorkspaceDirectoryType*/",
@@ -18190,6 +18426,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the security group that is assigned to new WorkSpaces.</p>\n@param workspaceSecurityGroupId The identifier of the security group that is assigned to new WorkSpaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18252,6 +18489,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state of the directory's registration with Amazon WorkSpaces</p>\n@param state The state of the directory's registration with Amazon WorkSpaces\n@return Returns a reference to this object so that method calls can be chained together.\n@see WorkspaceDirectoryState*/",
@@ -18314,6 +18552,7 @@
           "simpleType" : "DefaultWorkspaceCreationProperties",
           "variableSetterType" : "DefaultWorkspaceCreationProperties"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure that specifies the default creation properties for all WorkSpaces in the directory.</p>\n@param workspaceCreationProperties A structure that specifies the default creation properties for all WorkSpaces in the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18378,6 +18617,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The directory alias.</p>\n@param alias The directory alias.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18441,6 +18681,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user name for the service account.</p>\n@param customerUserName The user name for the service account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18504,6 +18745,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The directory identifier.</p>\n@param directoryId The directory identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18567,6 +18809,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the directory.</p>\n@param directoryName The name of the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18630,6 +18873,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The directory type.</p>\n@param directoryType The directory type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see WorkspaceDirectoryType*/",
@@ -18730,6 +18974,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18770,6 +19015,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of strings that contains the IP addresses of the DNS servers for the directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDnsIpAddresses(java.util.Collection)} or {@link #withDnsIpAddresses(java.util.Collection)} if you want to override the existing values.</p>\n@param dnsIpAddresses An array of strings that contains the IP addresses of the DNS servers for the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18833,6 +19079,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>\n@param iamRoleId The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18896,6 +19143,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>\n@param registrationCode The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18959,6 +19207,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state of the directory's registration with Amazon WorkSpaces</p>\n@param state The state of the directory's registration with Amazon WorkSpaces\n@return Returns a reference to this object so that method calls can be chained together.\n@see WorkspaceDirectoryState*/",
@@ -19059,6 +19308,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19099,6 +19349,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of strings that contains the identifiers of the subnets used with the directory.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to override the existing values.</p>\n@param subnetIds An array of strings that contains the identifiers of the subnets used with the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19162,6 +19413,7 @@
             "simpleType" : "DefaultWorkspaceCreationProperties",
             "variableSetterType" : "DefaultWorkspaceCreationProperties"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure that specifies the default creation properties for all WorkSpaces in the directory.</p>\n@param workspaceCreationProperties A structure that specifies the default creation properties for all WorkSpaces in the directory.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19225,6 +19477,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the security group that is assigned to new WorkSpaces.</p>\n@param workspaceSecurityGroupId The identifier of the security group that is assigned to new WorkSpaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19425,6 +19678,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the hour and stopped when no longer being used in order to save on costs.</p>\n@param runningMode The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the hour and stopped when no longer being used in order to save on costs.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RunningMode*/",
@@ -19487,6 +19741,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</p>\n@param runningModeAutoStopTimeoutInMinutes The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19551,6 +19806,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the hour and stopped when no longer being used in order to save on costs.</p>\n@param runningMode The running mode of the WorkSpace. AlwaysOn WorkSpaces are billed monthly. AutoStop WorkSpaces are billed by the hour and stopped when no longer being used in order to save on costs.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RunningMode*/",
@@ -19614,6 +19870,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.</p>\n@param runningModeAutoStopTimeoutInMinutes The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60 minute intervals.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19715,6 +19972,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.</p>\n@param directoryId The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19777,6 +20035,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory specified by the <code>DirectoryId</code> member.</p>\n@param userName The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory specified by the <code>DirectoryId</code> member.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19839,6 +20098,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that are available.</p>\n@param bundleId The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that are available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19901,6 +20161,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n@param volumeEncryptionKey The KMS key used to encrypt data stored on your WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19963,6 +20224,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the data stored on the user volume, or D: drive, is encrypted.</p>\n@param userVolumeEncryptionEnabled Specifies whether the data stored on the user volume, or D: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20025,6 +20287,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the data stored on the root volume, or C: drive, is encrypted.</p>\n@param rootVolumeEncryptionEnabled Specifies whether the data stored on the root volume, or C: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20087,6 +20350,7 @@
           "simpleType" : "WorkspaceProperties",
           "variableSetterType" : "WorkspaceProperties"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param workspaceProperties \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20186,6 +20450,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20226,6 +20491,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags of the WorkSpace request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20290,6 +20556,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that are available.</p>\n@param bundleId The identifier of the bundle to create the WorkSpace from. You can use the <a>DescribeWorkspaceBundles</a> operation to obtain a list of the bundles that are available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20353,6 +20620,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.</p>\n@param directoryId The identifier of the AWS Directory Service directory to create the WorkSpace in. You can use the <a>DescribeWorkspaceDirectories</a> operation to obtain a list of the directories that are available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20416,6 +20684,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the data stored on the root volume, or C: drive, is encrypted.</p>\n@param rootVolumeEncryptionEnabled Specifies whether the data stored on the root volume, or C: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20516,6 +20785,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20556,6 +20826,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags of the WorkSpace request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags of the WorkSpace request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20619,6 +20890,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory specified by the <code>DirectoryId</code> member.</p>\n@param userName The username that the WorkSpace is assigned to. This username must exist in the AWS Directory Service directory specified by the <code>DirectoryId</code> member.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20682,6 +20954,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the data stored on the user volume, or D: drive, is encrypted.</p>\n@param userVolumeEncryptionEnabled Specifies whether the data stored on the user volume, or D: drive, is encrypted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20745,6 +21018,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The KMS key used to encrypt data stored on your WorkSpace.</p>\n@param volumeEncryptionKey The KMS key used to encrypt data stored on your WorkSpace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20808,6 +21082,7 @@
             "simpleType" : "WorkspaceProperties",
             "variableSetterType" : "WorkspaceProperties"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param workspaceProperties \n@return Returns a reference to this object so that method calls can be chained together.*/",

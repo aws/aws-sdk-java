@@ -242,7 +242,7 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setRateKey(RateKey rateKey) {
-        this.rateKey = rateKey.toString();
+        withRateKey(rateKey);
     }
 
     /**
@@ -263,7 +263,7 @@ public class CreateRateBasedRuleRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public CreateRateBasedRuleRequest withRateKey(RateKey rateKey) {
-        setRateKey(rateKey);
+        this.rateKey = rateKey.toString();
         return this;
     }
 

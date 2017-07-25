@@ -92,7 +92,7 @@ public class GetServersResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public void setServerCatalogStatus(ServerCatalogStatus serverCatalogStatus) {
-        this.serverCatalogStatus = serverCatalogStatus.toString();
+        withServerCatalogStatus(serverCatalogStatus);
     }
 
     /**
@@ -102,7 +102,7 @@ public class GetServersResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public GetServersResult withServerCatalogStatus(ServerCatalogStatus serverCatalogStatus) {
-        setServerCatalogStatus(serverCatalogStatus);
+        this.serverCatalogStatus = serverCatalogStatus.toString();
         return this;
     }
 

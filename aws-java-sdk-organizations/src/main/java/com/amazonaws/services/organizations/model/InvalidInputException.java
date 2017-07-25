@@ -161,7 +161,7 @@ public class InvalidInputException extends com.amazonaws.services.organizations.
      */
 
     public void setReason(InvalidInputExceptionReason reason) {
-        this.reason = reason.toString();
+        withReason(reason);
     }
 
     /**
@@ -171,7 +171,7 @@ public class InvalidInputException extends com.amazonaws.services.organizations.
      */
 
     public InvalidInputException withReason(InvalidInputExceptionReason reason) {
-        setReason(reason);
+        this.reason = reason.toString();
         return this;
     }
 

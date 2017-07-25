@@ -178,7 +178,7 @@ public class QuotaSettings implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPeriod(QuotaPeriodType period) {
-        this.period = period.toString();
+        withPeriod(period);
     }
 
     /**
@@ -193,7 +193,7 @@ public class QuotaSettings implements Serializable, Cloneable, StructuredPojo {
      */
 
     public QuotaSettings withPeriod(QuotaPeriodType period) {
-        setPeriod(period);
+        this.period = period.toString();
         return this;
     }
 

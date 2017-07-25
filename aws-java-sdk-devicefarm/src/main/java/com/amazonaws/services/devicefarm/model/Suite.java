@@ -999,7 +999,7 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(TestType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1165,7 +1165,7 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Suite withType(TestType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -1659,7 +1659,7 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(ExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -1773,7 +1773,7 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Suite withStatus(ExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -2147,7 +2147,7 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setResult(ExecutionResult result) {
-        this.result = result.toString();
+        withResult(result);
     }
 
     /**
@@ -2241,7 +2241,7 @@ public class Suite implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Suite withResult(ExecutionResult result) {
-        setResult(result);
+        this.result = result.toString();
         return this;
     }
 

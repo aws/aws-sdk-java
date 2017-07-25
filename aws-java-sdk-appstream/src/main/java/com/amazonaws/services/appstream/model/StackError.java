@@ -95,7 +95,7 @@ public class StackError implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setErrorCode(StackErrorCode errorCode) {
-        this.errorCode = errorCode.toString();
+        withErrorCode(errorCode);
     }
 
     /**
@@ -110,7 +110,7 @@ public class StackError implements Serializable, Cloneable, StructuredPojo {
      */
 
     public StackError withErrorCode(StackErrorCode errorCode) {
-        setErrorCode(errorCode);
+        this.errorCode = errorCode.toString();
         return this;
     }
 

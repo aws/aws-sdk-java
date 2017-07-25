@@ -101,7 +101,7 @@ public class ScalingParameters implements Serializable, Cloneable {
      */
 
     public void setDesiredInstanceType(PartitionInstanceType desiredInstanceType) {
-        this.desiredInstanceType = desiredInstanceType.toString();
+        withDesiredInstanceType(desiredInstanceType);
     }
 
     /**
@@ -117,7 +117,7 @@ public class ScalingParameters implements Serializable, Cloneable {
      */
 
     public ScalingParameters withDesiredInstanceType(PartitionInstanceType desiredInstanceType) {
-        setDesiredInstanceType(desiredInstanceType);
+        this.desiredInstanceType = desiredInstanceType.toString();
         return this;
     }
 

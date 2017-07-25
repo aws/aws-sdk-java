@@ -92,7 +92,7 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setValue(GenderType value) {
-        this.value = value.toString();
+        withValue(value);
     }
 
     /**
@@ -107,7 +107,7 @@ public class Gender implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Gender withValue(GenderType value) {
-        setValue(value);
+        this.value = value.toString();
         return this;
     }
 

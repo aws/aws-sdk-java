@@ -367,7 +367,7 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
-        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
+        withNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
     }
 
     /**
@@ -410,7 +410,7 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      */
 
     public UpdateFleetAttributesRequest withNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
-        setNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
+        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
         return this;
     }
 

@@ -306,7 +306,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public void setAction(ActionCode action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -321,7 +321,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public DescribeJobResult withAction(ActionCode action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 
@@ -558,7 +558,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public void setStatusCode(StatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
@@ -573,7 +573,7 @@ public class DescribeJobResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public DescribeJobResult withStatusCode(StatusCode statusCode) {
-        setStatusCode(statusCode);
+        this.statusCode = statusCode.toString();
         return this;
     }
 

@@ -382,7 +382,7 @@ public class Activity implements Serializable, Cloneable {
      */
 
     public void setStatusCode(ScalingActivityStatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
@@ -397,7 +397,7 @@ public class Activity implements Serializable, Cloneable {
      */
 
     public Activity withStatusCode(ScalingActivityStatusCode statusCode) {
-        setStatusCode(statusCode);
+        this.statusCode = statusCode.toString();
         return this;
     }
 

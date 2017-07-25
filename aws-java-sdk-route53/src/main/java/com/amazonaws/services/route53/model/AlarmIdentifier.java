@@ -145,7 +145,7 @@ public class AlarmIdentifier implements Serializable, Cloneable {
      */
 
     public void setRegion(CloudWatchRegion region) {
-        this.region = region.toString();
+        withRegion(region);
     }
 
     /**
@@ -171,7 +171,7 @@ public class AlarmIdentifier implements Serializable, Cloneable {
      */
 
     public AlarmIdentifier withRegion(CloudWatchRegion region) {
-        setRegion(region);
+        this.region = region.toString();
         return this;
     }
 

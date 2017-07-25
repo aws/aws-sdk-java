@@ -426,50 +426,12 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      *        key.
      *        </p>
      *        </li>
-     * @see EncryptionType
-     */
-
-    public void setEncryptionType(EncryptionType encryptionType) {
-        this.encryptionType = encryptionType.toString();
-    }
-
-    /**
-     * <p>
-     * The encryption type used on the record. This parameter can be one of the following values:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>NONE</code>: Do not encrypt the records in the stream.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
-     * </p>
-     * </li>
-     * </ul>
-     * 
-     * @param encryptionType
-     *        The encryption type used on the record. This parameter can be one of the following values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>NONE</code>: Do not encrypt the records in the stream.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
-     *        key.
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionType
      */
 
     public Record withEncryptionType(EncryptionType encryptionType) {
-        setEncryptionType(encryptionType);
+        this.encryptionType = encryptionType.toString();
         return this;
     }
 

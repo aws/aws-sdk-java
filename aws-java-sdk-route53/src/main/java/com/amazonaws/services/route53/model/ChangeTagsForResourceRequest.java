@@ -216,7 +216,7 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setResourceType(TagResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -254,7 +254,7 @@ public class ChangeTagsForResourceRequest extends com.amazonaws.AmazonWebService
      */
 
     public ChangeTagsForResourceRequest withResourceType(TagResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

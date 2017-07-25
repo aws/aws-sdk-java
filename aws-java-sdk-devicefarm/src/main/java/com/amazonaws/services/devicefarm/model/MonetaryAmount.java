@@ -135,7 +135,7 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setCurrencyCode(CurrencyCode currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -150,7 +150,7 @@ public class MonetaryAmount implements Serializable, Cloneable, StructuredPojo {
      */
 
     public MonetaryAmount withCurrencyCode(CurrencyCode currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 

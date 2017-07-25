@@ -199,7 +199,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setTimeUnit(TimeUnit timeUnit) {
-        this.timeUnit = timeUnit.toString();
+        withTimeUnit(timeUnit);
     }
 
     /**
@@ -209,7 +209,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Budget withTimeUnit(TimeUnit timeUnit) {
-        setTimeUnit(timeUnit);
+        this.timeUnit = timeUnit.toString();
         return this;
     }
 
@@ -300,7 +300,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setBudgetType(BudgetType budgetType) {
-        this.budgetType = budgetType.toString();
+        withBudgetType(budgetType);
     }
 
     /**
@@ -310,7 +310,7 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Budget withBudgetType(BudgetType budgetType) {
-        setBudgetType(budgetType);
+        this.budgetType = budgetType.toString();
         return this;
     }
 

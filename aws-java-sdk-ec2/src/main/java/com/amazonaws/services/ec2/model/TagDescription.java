@@ -185,7 +185,7 @@ public class TagDescription implements Serializable, Cloneable {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -200,7 +200,7 @@ public class TagDescription implements Serializable, Cloneable {
      */
 
     public TagDescription withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

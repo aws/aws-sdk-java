@@ -231,7 +231,7 @@ public class RemoveResourcePermissionRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setPrincipalType(PrincipalType principalType) {
-        this.principalType = principalType.toString();
+        withPrincipalType(principalType);
     }
 
     /**
@@ -246,7 +246,7 @@ public class RemoveResourcePermissionRequest extends com.amazonaws.AmazonWebServ
      */
 
     public RemoveResourcePermissionRequest withPrincipalType(PrincipalType principalType) {
-        setPrincipalType(principalType);
+        this.principalType = principalType.toString();
         return this;
     }
 

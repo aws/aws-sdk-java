@@ -159,7 +159,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(SourceType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -174,7 +174,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Source withType(SourceType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

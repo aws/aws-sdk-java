@@ -600,7 +600,7 @@ public class GetEvaluationResult extends com.amazonaws.AmazonWebServiceResult<co
      */
 
     public void setStatus(EntityStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -632,7 +632,7 @@ public class GetEvaluationResult extends com.amazonaws.AmazonWebServiceResult<co
      */
 
     public GetEvaluationResult withStatus(EntityStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

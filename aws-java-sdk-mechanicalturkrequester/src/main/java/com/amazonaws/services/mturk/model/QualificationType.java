@@ -412,7 +412,7 @@ public class QualificationType implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setQualificationTypeStatus(QualificationTypeStatus qualificationTypeStatus) {
-        this.qualificationTypeStatus = qualificationTypeStatus.toString();
+        withQualificationTypeStatus(qualificationTypeStatus);
     }
 
     /**
@@ -431,7 +431,7 @@ public class QualificationType implements Serializable, Cloneable, StructuredPoj
      */
 
     public QualificationType withQualificationTypeStatus(QualificationTypeStatus qualificationTypeStatus) {
-        setQualificationTypeStatus(qualificationTypeStatus);
+        this.qualificationTypeStatus = qualificationTypeStatus.toString();
         return this;
     }
 

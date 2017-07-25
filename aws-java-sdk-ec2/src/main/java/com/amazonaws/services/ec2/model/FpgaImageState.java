@@ -287,7 +287,7 @@ public class FpgaImageState implements Serializable, Cloneable {
      */
 
     public void setCode(FpgaImageStateCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -345,7 +345,7 @@ public class FpgaImageState implements Serializable, Cloneable {
      */
 
     public FpgaImageState withCode(FpgaImageStateCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

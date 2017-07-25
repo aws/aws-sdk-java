@@ -142,7 +142,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      */
 
     public void setAdjustmentType(AdjustmentType adjustmentType) {
-        this.adjustmentType = adjustmentType.toString();
+        withAdjustmentType(adjustmentType);
     }
 
     /**
@@ -159,7 +159,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      */
 
     public StepScalingPolicyConfiguration withAdjustmentType(AdjustmentType adjustmentType) {
-        setAdjustmentType(adjustmentType);
+        this.adjustmentType = adjustmentType.toString();
         return this;
     }
 
@@ -483,7 +483,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      */
 
     public void setMetricAggregationType(MetricAggregationType metricAggregationType) {
-        this.metricAggregationType = metricAggregationType.toString();
+        withMetricAggregationType(metricAggregationType);
     }
 
     /**
@@ -500,7 +500,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      */
 
     public StepScalingPolicyConfiguration withMetricAggregationType(MetricAggregationType metricAggregationType) {
-        setMetricAggregationType(metricAggregationType);
+        this.metricAggregationType = metricAggregationType.toString();
         return this;
     }
 

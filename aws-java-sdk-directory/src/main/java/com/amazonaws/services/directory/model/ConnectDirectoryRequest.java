@@ -279,7 +279,7 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setSize(DirectorySize size) {
-        this.size = size.toString();
+        withSize(size);
     }
 
     /**
@@ -294,7 +294,7 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public ConnectDirectoryRequest withSize(DirectorySize size) {
-        setSize(size);
+        this.size = size.toString();
         return this;
     }
 

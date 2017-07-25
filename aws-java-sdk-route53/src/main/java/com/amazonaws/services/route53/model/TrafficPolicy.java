@@ -256,7 +256,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      */
 
     public void setType(RRType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -273,7 +273,7 @@ public class TrafficPolicy implements Serializable, Cloneable {
      */
 
     public TrafficPolicy withType(RRType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

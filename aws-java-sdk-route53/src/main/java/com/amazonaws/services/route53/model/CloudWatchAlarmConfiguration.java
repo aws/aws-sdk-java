@@ -231,7 +231,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -248,7 +248,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      */
 
     public CloudWatchAlarmConfiguration withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 
@@ -441,7 +441,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      */
 
     public void setStatistic(Statistic statistic) {
-        this.statistic = statistic.toString();
+        withStatistic(statistic);
     }
 
     /**
@@ -456,7 +456,7 @@ public class CloudWatchAlarmConfiguration implements Serializable, Cloneable {
      */
 
     public CloudWatchAlarmConfiguration withStatistic(Statistic statistic) {
-        setStatistic(statistic);
+        this.statistic = statistic.toString();
         return this;
     }
 

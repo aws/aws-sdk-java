@@ -258,7 +258,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(RuleState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -273,7 +273,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Rule withState(RuleState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

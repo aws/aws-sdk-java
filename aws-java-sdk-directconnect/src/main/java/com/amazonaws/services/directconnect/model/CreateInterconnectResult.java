@@ -149,7 +149,7 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public void setInterconnectState(InterconnectState interconnectState) {
-        this.interconnectState = interconnectState.toString();
+        withInterconnectState(interconnectState);
     }
 
     /**
@@ -159,7 +159,7 @@ public class CreateInterconnectResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public CreateInterconnectResult withInterconnectState(InterconnectState interconnectState) {
-        setInterconnectState(interconnectState);
+        this.interconnectState = interconnectState.toString();
         return this;
     }
 

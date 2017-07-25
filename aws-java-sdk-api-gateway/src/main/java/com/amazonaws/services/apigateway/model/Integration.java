@@ -253,7 +253,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(IntegrationType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -274,7 +274,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Integration withType(IntegrationType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -988,7 +988,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
-        this.contentHandling = contentHandling.toString();
+        withContentHandling(contentHandling);
     }
 
     /**
@@ -1040,7 +1040,7 @@ public class Integration implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Integration withContentHandling(ContentHandlingStrategy contentHandling) {
-        setContentHandling(contentHandling);
+        this.contentHandling = contentHandling.toString();
         return this;
     }
 

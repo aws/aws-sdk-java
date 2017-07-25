@@ -228,7 +228,7 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
      */
 
     public void setStatus(MaintenanceWindowExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -243,7 +243,7 @@ public class GetMaintenanceWindowExecutionResult extends com.amazonaws.AmazonWeb
      */
 
     public GetMaintenanceWindowExecutionResult withStatus(MaintenanceWindowExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

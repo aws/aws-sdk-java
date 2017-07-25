@@ -156,7 +156,7 @@ public class AccessDeniedException extends com.amazonaws.services.inspector.mode
      */
 
     public void setInspectorErrorCode(AccessDeniedErrorCode inspectorErrorCode) {
-        this.inspectorErrorCode = inspectorErrorCode.toString();
+        withInspectorErrorCode(inspectorErrorCode);
     }
 
     /**
@@ -171,7 +171,7 @@ public class AccessDeniedException extends com.amazonaws.services.inspector.mode
      */
 
     public AccessDeniedException withInspectorErrorCode(AccessDeniedErrorCode inspectorErrorCode) {
-        setInspectorErrorCode(inspectorErrorCode);
+        this.inspectorErrorCode = inspectorErrorCode.toString();
         return this;
     }
 

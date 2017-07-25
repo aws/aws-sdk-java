@@ -272,7 +272,7 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      */
 
     public void setVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
+        withVolumeType(volumeType);
     }
 
     /**
@@ -300,7 +300,7 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      */
 
     public ModifyVolumeRequest withVolumeType(VolumeType volumeType) {
-        setVolumeType(volumeType);
+        this.volumeType = volumeType.toString();
         return this;
     }
 

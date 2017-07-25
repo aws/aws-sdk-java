@@ -111,7 +111,7 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setIdentityType(IdentityType identityType) {
-        this.identityType = identityType.toString();
+        withIdentityType(identityType);
     }
 
     /**
@@ -128,7 +128,7 @@ public class ListIdentitiesRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public ListIdentitiesRequest withIdentityType(IdentityType identityType) {
-        setIdentityType(identityType);
+        this.identityType = identityType.toString();
         return this;
     }
 

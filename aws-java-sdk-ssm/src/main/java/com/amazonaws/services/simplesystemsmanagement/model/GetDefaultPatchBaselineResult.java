@@ -130,7 +130,7 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -145,7 +145,7 @@ public class GetDefaultPatchBaselineResult extends com.amazonaws.AmazonWebServic
      */
 
     public GetDefaultPatchBaselineResult withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 

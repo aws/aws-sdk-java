@@ -511,7 +511,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setArchitecture(Architecture architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -526,7 +526,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Instance withArchitecture(Architecture architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
         return this;
     }
 
@@ -610,7 +610,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAutoScalingType(AutoScalingType autoScalingType) {
-        this.autoScalingType = autoScalingType.toString();
+        withAutoScalingType(autoScalingType);
     }
 
     /**
@@ -625,7 +625,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Instance withAutoScalingType(AutoScalingType autoScalingType) {
-        setAutoScalingType(autoScalingType);
+        this.autoScalingType = autoScalingType.toString();
         return this;
     }
 
@@ -1878,7 +1878,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRootDeviceType(RootDeviceType rootDeviceType) {
-        this.rootDeviceType = rootDeviceType.toString();
+        withRootDeviceType(rootDeviceType);
     }
 
     /**
@@ -1897,7 +1897,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Instance withRootDeviceType(RootDeviceType rootDeviceType) {
-        setRootDeviceType(rootDeviceType);
+        this.rootDeviceType = rootDeviceType.toString();
         return this;
     }
 
@@ -2807,7 +2807,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setVirtualizationType(VirtualizationType virtualizationType) {
-        this.virtualizationType = virtualizationType.toString();
+        withVirtualizationType(virtualizationType);
     }
 
     /**
@@ -2822,7 +2822,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Instance withVirtualizationType(VirtualizationType virtualizationType) {
-        setVirtualizationType(virtualizationType);
+        this.virtualizationType = virtualizationType.toString();
         return this;
     }
 

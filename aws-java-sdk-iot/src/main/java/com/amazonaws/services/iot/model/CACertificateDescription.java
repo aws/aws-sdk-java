@@ -203,7 +203,7 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      */
 
     public void setStatus(CACertificateStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -218,7 +218,7 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      */
 
     public CACertificateDescription withStatus(CACertificateStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -404,7 +404,7 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      */
 
     public void setAutoRegistrationStatus(AutoRegistrationStatus autoRegistrationStatus) {
-        this.autoRegistrationStatus = autoRegistrationStatus.toString();
+        withAutoRegistrationStatus(autoRegistrationStatus);
     }
 
     /**
@@ -421,7 +421,7 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      */
 
     public CACertificateDescription withAutoRegistrationStatus(AutoRegistrationStatus autoRegistrationStatus) {
-        setAutoRegistrationStatus(autoRegistrationStatus);
+        this.autoRegistrationStatus = autoRegistrationStatus.toString();
         return this;
     }
 

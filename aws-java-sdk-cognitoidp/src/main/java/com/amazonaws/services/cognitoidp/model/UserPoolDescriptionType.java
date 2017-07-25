@@ -239,7 +239,7 @@ public class UserPoolDescriptionType implements Serializable, Cloneable, Structu
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -254,7 +254,7 @@ public class UserPoolDescriptionType implements Serializable, Cloneable, Structu
      */
 
     public UserPoolDescriptionType withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

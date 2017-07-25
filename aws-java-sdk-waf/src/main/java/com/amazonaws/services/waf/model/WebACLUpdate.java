@@ -102,7 +102,7 @@ public class WebACLUpdate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -118,7 +118,7 @@ public class WebACLUpdate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public WebACLUpdate withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

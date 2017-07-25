@@ -300,7 +300,7 @@ public class OptionStatus implements Serializable, Cloneable {
      */
 
     public void setState(OptionState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -331,7 +331,7 @@ public class OptionStatus implements Serializable, Cloneable {
      */
 
     public OptionStatus withState(OptionState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -181,7 +181,7 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setProtocol(SubscriptionProtocolType protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -196,7 +196,7 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Subscription withProtocol(SubscriptionProtocolType protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

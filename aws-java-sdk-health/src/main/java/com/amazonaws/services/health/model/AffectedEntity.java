@@ -362,7 +362,7 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatusCode(EntityStatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
@@ -379,7 +379,7 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      */
 
     public AffectedEntity withStatusCode(EntityStatusCode statusCode) {
-        setStatusCode(statusCode);
+        this.statusCode = statusCode.toString();
         return this;
     }
 

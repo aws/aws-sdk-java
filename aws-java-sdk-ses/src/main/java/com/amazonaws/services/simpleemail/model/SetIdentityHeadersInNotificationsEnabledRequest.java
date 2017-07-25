@@ -157,7 +157,7 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      */
 
     public void setNotificationType(NotificationType notificationType) {
-        this.notificationType = notificationType.toString();
+        withNotificationType(notificationType);
     }
 
     /**
@@ -172,7 +172,7 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      */
 
     public SetIdentityHeadersInNotificationsEnabledRequest withNotificationType(NotificationType notificationType) {
-        setNotificationType(notificationType);
+        this.notificationType = notificationType.toString();
         return this;
     }
 

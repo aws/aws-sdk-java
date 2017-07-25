@@ -311,7 +311,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setBackupType(BackupType backupType) {
-        this.backupType = backupType.toString();
+        withBackupType(backupType);
     }
 
     /**
@@ -326,7 +326,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Backup withBackupType(BackupType backupType) {
-        setBackupType(backupType);
+        this.backupType = backupType.toString();
         return this;
     }
 
@@ -1061,7 +1061,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(BackupStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -1076,7 +1076,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Backup withStatus(BackupStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

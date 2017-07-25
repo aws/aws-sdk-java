@@ -123,7 +123,7 @@ public class HostOffering implements Serializable, Cloneable {
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -138,7 +138,7 @@ public class HostOffering implements Serializable, Cloneable {
      */
 
     public HostOffering withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 
@@ -356,7 +356,7 @@ public class HostOffering implements Serializable, Cloneable {
      */
 
     public void setPaymentOption(PaymentOption paymentOption) {
-        this.paymentOption = paymentOption.toString();
+        withPaymentOption(paymentOption);
     }
 
     /**
@@ -371,7 +371,7 @@ public class HostOffering implements Serializable, Cloneable {
      */
 
     public HostOffering withPaymentOption(PaymentOption paymentOption) {
-        setPaymentOption(paymentOption);
+        this.paymentOption = paymentOption.toString();
         return this;
     }
 

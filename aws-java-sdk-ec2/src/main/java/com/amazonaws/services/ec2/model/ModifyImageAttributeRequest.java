@@ -320,7 +320,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      */
 
     public void setOperationType(OperationType operationType) {
-        this.operationType = operationType.toString();
+        withOperationType(operationType);
     }
 
     /**
@@ -335,7 +335,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest impleme
      */
 
     public ModifyImageAttributeRequest withOperationType(OperationType operationType) {
-        setOperationType(operationType);
+        this.operationType = operationType.toString();
         return this;
     }
 

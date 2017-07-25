@@ -237,7 +237,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      */
 
     public void setPingStatus(PingStatus pingStatus) {
-        this.pingStatus = pingStatus.toString();
+        withPingStatus(pingStatus);
     }
 
     /**
@@ -252,7 +252,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceInformation withPingStatus(PingStatus pingStatus) {
-        setPingStatus(pingStatus);
+        this.pingStatus = pingStatus.toString();
         return this;
     }
 
@@ -442,7 +442,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      */
 
     public void setPlatformType(PlatformType platformType) {
-        this.platformType = platformType.toString();
+        withPlatformType(platformType);
     }
 
     /**
@@ -457,7 +457,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceInformation withPlatformType(PlatformType platformType) {
-        setPlatformType(platformType);
+        this.platformType = platformType.toString();
         return this;
     }
 
@@ -715,7 +715,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -730,7 +730,7 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceInformation withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

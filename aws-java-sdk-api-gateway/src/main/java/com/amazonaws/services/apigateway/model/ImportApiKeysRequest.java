@@ -189,7 +189,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setFormat(ApiKeysFormat format) {
-        this.format = format.toString();
+        withFormat(format);
     }
 
     /**
@@ -206,7 +206,7 @@ public class ImportApiKeysRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public ImportApiKeysRequest withFormat(ApiKeysFormat format) {
-        setFormat(format);
+        this.format = format.toString();
         return this;
     }
 

@@ -376,7 +376,7 @@ public class BuildConfiguration implements Serializable, Cloneable {
      */
 
     public void setComputeType(ComputeType computeType) {
-        this.computeType = computeType.toString();
+        withComputeType(computeType);
     }
 
     /**
@@ -424,7 +424,7 @@ public class BuildConfiguration implements Serializable, Cloneable {
      */
 
     public BuildConfiguration withComputeType(ComputeType computeType) {
-        setComputeType(computeType);
+        this.computeType = computeType.toString();
         return this;
     }
 

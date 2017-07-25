@@ -243,7 +243,7 @@ public class ActiveInstance implements Serializable, Cloneable {
      */
 
     public void setInstanceHealth(InstanceHealthStatus instanceHealth) {
-        this.instanceHealth = instanceHealth.toString();
+        withInstanceHealth(instanceHealth);
     }
 
     /**
@@ -262,7 +262,7 @@ public class ActiveInstance implements Serializable, Cloneable {
      */
 
     public ActiveInstance withInstanceHealth(InstanceHealthStatus instanceHealth) {
-        setInstanceHealth(instanceHealth);
+        this.instanceHealth = instanceHealth.toString();
         return this;
     }
 

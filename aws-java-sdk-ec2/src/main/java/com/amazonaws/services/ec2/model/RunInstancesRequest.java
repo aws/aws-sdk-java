@@ -565,7 +565,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -589,7 +589,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      */
 
     public RunInstancesRequest withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -1951,7 +1951,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      */
 
     public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
-        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
+        withInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
     }
 
     /**
@@ -1973,7 +1973,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      */
 
     public RunInstancesRequest withInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
-        setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
         return this;
     }
 

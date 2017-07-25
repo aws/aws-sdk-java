@@ -290,7 +290,7 @@ public class ConversionTask implements Serializable, Cloneable {
      */
 
     public void setState(ConversionTaskState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -305,7 +305,7 @@ public class ConversionTask implements Serializable, Cloneable {
      */
 
     public ConversionTask withState(ConversionTaskState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

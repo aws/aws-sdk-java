@@ -380,7 +380,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setSortBy(ApplicationRevisionSortBy sortBy) {
-        this.sortBy = sortBy.toString();
+        withSortBy(sortBy);
     }
 
     /**
@@ -434,7 +434,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public ListApplicationRevisionsRequest withSortBy(ApplicationRevisionSortBy sortBy) {
-        setSortBy(sortBy);
+        this.sortBy = sortBy.toString();
         return this;
     }
 
@@ -632,7 +632,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setSortOrder(SortOrder sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -682,7 +682,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public ListApplicationRevisionsRequest withSortOrder(SortOrder sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 
@@ -968,7 +968,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setDeployed(ListStateFilterAction deployed) {
-        this.deployed = deployed.toString();
+        withDeployed(deployed);
     }
 
     /**
@@ -1016,7 +1016,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public ListApplicationRevisionsRequest withDeployed(ListStateFilterAction deployed) {
-        setDeployed(deployed);
+        this.deployed = deployed.toString();
         return this;
     }
 

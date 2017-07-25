@@ -203,7 +203,7 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -220,7 +220,7 @@ public class PatchBaselineIdentity implements Serializable, Cloneable, Structure
      */
 
     public PatchBaselineIdentity withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 

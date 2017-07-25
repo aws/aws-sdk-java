@@ -103,7 +103,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(ReplicationRunState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -113,7 +113,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ReplicationRun withState(ReplicationRunState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -152,7 +152,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(ReplicationRunType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -162,7 +162,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ReplicationRun withType(ReplicationRunType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

@@ -237,7 +237,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      */
 
     public void setCause(StartChildWorkflowExecutionFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -267,7 +267,7 @@ public class StartChildWorkflowExecutionFailedEventAttributes implements Seriali
      */
 
     public StartChildWorkflowExecutionFailedEventAttributes withCause(StartChildWorkflowExecutionFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

@@ -133,7 +133,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      */
 
     public void setFrequency(RecurringChargeFrequency frequency) {
-        this.frequency = frequency.toString();
+        withFrequency(frequency);
     }
 
     /**
@@ -148,7 +148,7 @@ public class RecurringCharge implements Serializable, Cloneable {
      */
 
     public RecurringCharge withFrequency(RecurringChargeFrequency frequency) {
-        setFrequency(frequency);
+        this.frequency = frequency.toString();
         return this;
     }
 

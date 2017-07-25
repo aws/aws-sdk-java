@@ -199,7 +199,7 @@ public class BotMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -214,7 +214,7 @@ public class BotMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public BotMetadata withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

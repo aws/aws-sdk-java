@@ -771,7 +771,7 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setName(DeploymentCommandName name) {
-        this.name = name.toString();
+        withName(name);
     }
 
     /**
@@ -930,7 +930,7 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      */
 
     public DeploymentCommand withName(DeploymentCommandName name) {
-        setName(name);
+        this.name = name.toString();
         return this;
     }
 

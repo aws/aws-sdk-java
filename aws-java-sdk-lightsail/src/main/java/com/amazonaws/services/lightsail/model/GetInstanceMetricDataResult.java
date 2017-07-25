@@ -90,7 +90,7 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setMetricName(InstanceMetricName metricName) {
-        this.metricName = metricName.toString();
+        withMetricName(metricName);
     }
 
     /**
@@ -105,7 +105,7 @@ public class GetInstanceMetricDataResult extends com.amazonaws.AmazonWebServiceR
      */
 
     public GetInstanceMetricDataResult withMetricName(InstanceMetricName metricName) {
-        setMetricName(metricName);
+        this.metricName = metricName.toString();
         return this;
     }
 

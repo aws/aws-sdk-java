@@ -482,7 +482,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setAutoScalingType(AutoScalingType autoScalingType) {
-        this.autoScalingType = autoScalingType.toString();
+        withAutoScalingType(autoScalingType);
     }
 
     /**
@@ -497,7 +497,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateInstanceRequest withAutoScalingType(AutoScalingType autoScalingType) {
-        setAutoScalingType(autoScalingType);
+        this.autoScalingType = autoScalingType.toString();
         return this;
     }
 
@@ -1227,7 +1227,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setArchitecture(Architecture architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -1247,7 +1247,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateInstanceRequest withArchitecture(Architecture architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
         return this;
     }
 
@@ -1321,7 +1321,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setRootDeviceType(RootDeviceType rootDeviceType) {
-        this.rootDeviceType = rootDeviceType.toString();
+        withRootDeviceType(rootDeviceType);
     }
 
     /**
@@ -1340,7 +1340,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateInstanceRequest withRootDeviceType(RootDeviceType rootDeviceType) {
-        setRootDeviceType(rootDeviceType);
+        this.rootDeviceType = rootDeviceType.toString();
         return this;
     }
 

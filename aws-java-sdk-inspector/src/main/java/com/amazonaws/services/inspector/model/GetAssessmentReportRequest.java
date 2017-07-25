@@ -140,7 +140,7 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setReportFileFormat(ReportFileFormat reportFileFormat) {
-        this.reportFileFormat = reportFileFormat.toString();
+        withReportFileFormat(reportFileFormat);
     }
 
     /**
@@ -155,7 +155,7 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public GetAssessmentReportRequest withReportFileFormat(ReportFileFormat reportFileFormat) {
-        setReportFileFormat(reportFileFormat);
+        this.reportFileFormat = reportFileFormat.toString();
         return this;
     }
 
@@ -233,7 +233,7 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setReportType(ReportType reportType) {
-        this.reportType = reportType.toString();
+        withReportType(reportType);
     }
 
     /**
@@ -253,7 +253,7 @@ public class GetAssessmentReportRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public GetAssessmentReportRequest withReportType(ReportType reportType) {
-        setReportType(reportType);
+        this.reportType = reportType.toString();
         return this;
     }
 

@@ -205,7 +205,7 @@ public class DisassociateConnectionFromLagResult extends com.amazonaws.AmazonWeb
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -215,7 +215,7 @@ public class DisassociateConnectionFromLagResult extends com.amazonaws.AmazonWeb
      */
 
     public DisassociateConnectionFromLagResult withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

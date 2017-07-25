@@ -417,7 +417,7 @@ public class ListIncomingTypedLinksRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        this.consistencyLevel = consistencyLevel.toString();
+        withConsistencyLevel(consistencyLevel);
     }
 
     /**
@@ -432,7 +432,7 @@ public class ListIncomingTypedLinksRequest extends com.amazonaws.AmazonWebServic
      */
 
     public ListIncomingTypedLinksRequest withConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        setConsistencyLevel(consistencyLevel);
+        this.consistencyLevel = consistencyLevel.toString();
         return this;
     }
 

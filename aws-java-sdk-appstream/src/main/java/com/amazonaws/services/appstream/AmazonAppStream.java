@@ -109,11 +109,30 @@ public interface AmazonAppStream {
      *         An API error occurred. Wait a few minutes and try again.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.AssociateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet" target="_top">AWS API
      *      Documentation</a>
      */
     AssociateFleetResult associateFleet(AssociateFleetRequest associateFleetRequest);
+
+    /**
+     * <p>
+     * Creates a directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param createDirectoryConfigRequest
+     * @return Result of the CreateDirectoryConfig operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @sample AmazonAppStream.CreateDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDirectoryConfigResult createDirectoryConfig(CreateDirectoryConfigRequest createDirectoryConfigRequest);
 
     /**
      * <p>
@@ -135,6 +154,10 @@ public interface AmazonAppStream {
      *         The specified role is invalid.
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
      * @sample AmazonAppStream.CreateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -190,6 +213,23 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Deletes the directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param deleteDirectoryConfigRequest
+     * @return Result of the DeleteDirectoryConfig operation returned by the service.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DeleteDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDirectoryConfigResult deleteDirectoryConfig(DeleteDirectoryConfigRequest deleteDirectoryConfigRequest);
+
+    /**
+     * <p>
      * Deletes a fleet.
      * </p>
      * 
@@ -229,6 +269,21 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Returns a list describing the specified directory configurations.
+     * </p>
+     * 
+     * @param describeDirectoryConfigsRequest
+     * @return Result of the DescribeDirectoryConfigs operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DescribeDirectoryConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDirectoryConfigsResult describeDirectoryConfigs(DescribeDirectoryConfigsRequest describeDirectoryConfigsRequest);
+
+    /**
+     * <p>
      * If fleet names are provided, this operation describes the specified fleets; otherwise, all the fleets in the
      * account are described.
      * </p>
@@ -262,9 +317,9 @@ public interface AmazonAppStream {
     /**
      * <p>
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
-     * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
-     * operation defaults to users authenticated using a streaming URL.
+     * streaming sessions for only that user. To retrieve the next set of items, pass this value for the
+     * <code>nextToken</code> parameter in a subsequent call to this operation. If an authentication type is not
+     * provided, the operation defaults to users authenticated using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -280,8 +335,8 @@ public interface AmazonAppStream {
     /**
      * <p>
      * If stack names are not provided, this operation describes the specified stacks; otherwise, all stacks in the
-     * account are described. Pass the <code>nextToken</code> value in a subsequent call to this operation to retrieve
-     * the next set of items.
+     * account are described. To retrieve the next set of items, pass the <code>nextToken</code> value in a subsequent
+     * call to this operation.
      * </p>
      * 
      * @param describeStacksRequest
@@ -392,6 +447,25 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Updates the directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param updateDirectoryConfigRequest
+     * @return Result of the UpdateDirectoryConfig operation returned by the service.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @sample AmazonAppStream.UpdateDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateDirectoryConfigResult updateDirectoryConfig(UpdateDirectoryConfigRequest updateDirectoryConfigRequest);
+
+    /**
+     * <p>
      * Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state.
      * When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can
      * be updated. A fleet cannot be updated in a status of <b>STARTING</b> or <b>STOPPING</b>.
@@ -415,6 +489,8 @@ public interface AmazonAppStream {
      *         An API error occurred. Wait a few minutes and try again.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.UpdateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet" target="_top">AWS API
      *      Documentation</a>

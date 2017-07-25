@@ -151,7 +151,7 @@ public class ListReviewableHITsRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setStatus(ReviewableHITStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -166,7 +166,7 @@ public class ListReviewableHITsRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public ListReviewableHITsRequest withStatus(ReviewableHITStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

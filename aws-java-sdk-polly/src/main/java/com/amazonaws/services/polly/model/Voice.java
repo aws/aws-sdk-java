@@ -114,7 +114,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setGender(Gender gender) {
-        this.gender = gender.toString();
+        withGender(gender);
     }
 
     /**
@@ -129,7 +129,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Voice withGender(Gender gender) {
-        setGender(gender);
+        this.gender = gender.toString();
         return this;
     }
 
@@ -195,7 +195,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setId(VoiceId id) {
-        this.id = id.toString();
+        withId(id);
     }
 
     /**
@@ -212,7 +212,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Voice withId(VoiceId id) {
-        setId(id);
+        this.id = id.toString();
         return this;
     }
 
@@ -270,7 +270,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setLanguageCode(LanguageCode languageCode) {
-        this.languageCode = languageCode.toString();
+        withLanguageCode(languageCode);
     }
 
     /**
@@ -285,7 +285,7 @@ public class Voice implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Voice withLanguageCode(LanguageCode languageCode) {
-        setLanguageCode(languageCode);
+        this.languageCode = languageCode.toString();
         return this;
     }
 

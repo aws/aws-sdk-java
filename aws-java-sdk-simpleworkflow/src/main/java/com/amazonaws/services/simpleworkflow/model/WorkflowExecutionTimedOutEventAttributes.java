@@ -117,7 +117,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable, C
      */
 
     public void setTimeoutType(WorkflowExecutionTimeoutType timeoutType) {
-        this.timeoutType = timeoutType.toString();
+        withTimeoutType(timeoutType);
     }
 
     /**
@@ -132,7 +132,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable, C
      */
 
     public WorkflowExecutionTimedOutEventAttributes withTimeoutType(WorkflowExecutionTimeoutType timeoutType) {
-        setTimeoutType(timeoutType);
+        this.timeoutType = timeoutType.toString();
         return this;
     }
 
@@ -362,7 +362,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable, C
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -420,7 +420,7 @@ public class WorkflowExecutionTimedOutEventAttributes implements Serializable, C
      */
 
     public WorkflowExecutionTimedOutEventAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 

@@ -605,7 +605,7 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public void setStatus(EntityStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -635,7 +635,7 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public GetMLModelResult withStatus(EntityStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1226,7 +1226,7 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public void setMLModelType(MLModelType mLModelType) {
-        this.mLModelType = mLModelType.toString();
+        withMLModelType(mLModelType);
     }
 
     /**
@@ -1252,7 +1252,7 @@ public class GetMLModelResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public GetMLModelResult withMLModelType(MLModelType mLModelType) {
-        setMLModelType(mLModelType);
+        this.mLModelType = mLModelType.toString();
         return this;
     }
 

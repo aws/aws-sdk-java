@@ -363,7 +363,7 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
      */
 
     public void setType(ChannelType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -380,7 +380,7 @@ public class BotChannelAssociation implements Serializable, Cloneable, Structure
      */
 
     public BotChannelAssociation withType(ChannelType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

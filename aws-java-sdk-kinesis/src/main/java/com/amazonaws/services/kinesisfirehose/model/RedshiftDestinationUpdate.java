@@ -508,7 +508,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
      */
 
     public void setS3BackupMode(RedshiftS3BackupMode s3BackupMode) {
-        this.s3BackupMode = s3BackupMode.toString();
+        withS3BackupMode(s3BackupMode);
     }
 
     /**
@@ -523,7 +523,7 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
      */
 
     public RedshiftDestinationUpdate withS3BackupMode(RedshiftS3BackupMode s3BackupMode) {
-        setS3BackupMode(s3BackupMode);
+        this.s3BackupMode = s3BackupMode.toString();
         return this;
     }
 

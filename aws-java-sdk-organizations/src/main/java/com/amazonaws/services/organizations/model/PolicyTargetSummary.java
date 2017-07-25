@@ -442,7 +442,7 @@ public class PolicyTargetSummary implements Serializable, Cloneable, StructuredP
      */
 
     public void setType(TargetType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -457,7 +457,7 @@ public class PolicyTargetSummary implements Serializable, Cloneable, StructuredP
      */
 
     public PolicyTargetSummary withType(TargetType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

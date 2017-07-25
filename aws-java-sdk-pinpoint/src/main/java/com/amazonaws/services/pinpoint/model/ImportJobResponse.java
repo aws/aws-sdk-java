@@ -425,7 +425,7 @@ public class ImportJobResponse implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setJobStatus(JobStatus jobStatus) {
-        this.jobStatus = jobStatus.toString();
+        withJobStatus(jobStatus);
     }
 
     /**
@@ -444,7 +444,7 @@ public class ImportJobResponse implements Serializable, Cloneable, StructuredPoj
      */
 
     public ImportJobResponse withJobStatus(JobStatus jobStatus) {
-        setJobStatus(jobStatus);
+        this.jobStatus = jobStatus.toString();
         return this;
     }
 

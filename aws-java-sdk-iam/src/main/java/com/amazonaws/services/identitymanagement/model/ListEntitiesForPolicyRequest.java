@@ -244,7 +244,7 @@ public class ListEntitiesForPolicyRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setEntityFilter(EntityType entityFilter) {
-        this.entityFilter = entityFilter.toString();
+        withEntityFilter(entityFilter);
     }
 
     /**
@@ -269,7 +269,7 @@ public class ListEntitiesForPolicyRequest extends com.amazonaws.AmazonWebService
      */
 
     public ListEntitiesForPolicyRequest withEntityFilter(EntityType entityFilter) {
-        setEntityFilter(entityFilter);
+        this.entityFilter = entityFilter.toString();
         return this;
     }
 

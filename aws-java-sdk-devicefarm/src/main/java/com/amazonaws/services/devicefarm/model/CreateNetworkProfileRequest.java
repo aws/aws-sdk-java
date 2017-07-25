@@ -272,7 +272,7 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setType(NetworkProfileType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -287,7 +287,7 @@ public class CreateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public CreateNetworkProfileRequest withType(NetworkProfileType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

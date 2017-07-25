@@ -993,7 +993,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      */
 
     public void setOfferingClass(OfferingClassType offeringClass) {
-        this.offeringClass = offeringClass.toString();
+        withOfferingClass(offeringClass);
     }
 
     /**
@@ -1008,7 +1008,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      */
 
     public DescribeReservedInstancesRequest withOfferingClass(OfferingClassType offeringClass) {
-        setOfferingClass(offeringClass);
+        this.offeringClass = offeringClass.toString();
         return this;
     }
 
@@ -1167,7 +1167,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      */
 
     public void setOfferingType(OfferingTypeValues offeringType) {
-        this.offeringType = offeringType.toString();
+        withOfferingType(offeringType);
     }
 
     /**
@@ -1184,7 +1184,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest im
      */
 
     public DescribeReservedInstancesRequest withOfferingType(OfferingTypeValues offeringType) {
-        setOfferingType(offeringType);
+        this.offeringType = offeringType.toString();
         return this;
     }
 

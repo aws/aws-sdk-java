@@ -238,7 +238,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      */
 
     public void setStatus(TableRestoreStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -260,7 +260,7 @@ public class TableRestoreStatus implements Serializable, Cloneable {
      */
 
     public TableRestoreStatus withStatus(TableRestoreStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

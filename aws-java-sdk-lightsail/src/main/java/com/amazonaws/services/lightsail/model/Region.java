@@ -240,7 +240,7 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setName(RegionName name) {
-        this.name = name.toString();
+        withName(name);
     }
 
     /**
@@ -255,7 +255,7 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Region withName(RegionName name) {
-        setName(name);
+        this.name = name.toString();
         return this;
     }
 

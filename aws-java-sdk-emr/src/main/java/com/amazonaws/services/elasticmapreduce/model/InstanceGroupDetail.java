@@ -308,7 +308,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      */
 
     public void setMarket(MarketType market) {
-        this.market = market.toString();
+        withMarket(market);
     }
 
     /**
@@ -323,7 +323,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceGroupDetail withMarket(MarketType market) {
-        setMarket(market);
+        this.market = market.toString();
         return this;
     }
 
@@ -381,7 +381,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      */
 
     public void setInstanceRole(InstanceRoleType instanceRole) {
-        this.instanceRole = instanceRole.toString();
+        withInstanceRole(instanceRole);
     }
 
     /**
@@ -396,7 +396,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceGroupDetail withInstanceRole(InstanceRoleType instanceRole) {
-        setInstanceRole(instanceRole);
+        this.instanceRole = instanceRole.toString();
         return this;
     }
 
@@ -614,7 +614,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      */
 
     public void setState(InstanceGroupState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -629,7 +629,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceGroupDetail withState(InstanceGroupState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

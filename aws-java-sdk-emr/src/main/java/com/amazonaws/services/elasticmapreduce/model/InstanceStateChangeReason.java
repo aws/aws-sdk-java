@@ -95,7 +95,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable, Struc
      */
 
     public void setCode(InstanceStateChangeReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -110,7 +110,7 @@ public class InstanceStateChangeReason implements Serializable, Cloneable, Struc
      */
 
     public InstanceStateChangeReason withCode(InstanceStateChangeReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

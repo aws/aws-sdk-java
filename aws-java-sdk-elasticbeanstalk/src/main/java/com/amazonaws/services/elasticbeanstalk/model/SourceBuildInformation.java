@@ -229,7 +229,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      */
 
     public void setSourceType(SourceType sourceType) {
-        this.sourceType = sourceType.toString();
+        withSourceType(sourceType);
     }
 
     /**
@@ -267,7 +267,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      */
 
     public SourceBuildInformation withSourceType(SourceType sourceType) {
-        setSourceType(sourceType);
+        this.sourceType = sourceType.toString();
         return this;
     }
 
@@ -417,7 +417,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      */
 
     public void setSourceRepository(SourceRepository sourceRepository) {
-        this.sourceRepository = sourceRepository.toString();
+        withSourceRepository(sourceRepository);
     }
 
     /**
@@ -455,7 +455,7 @@ public class SourceBuildInformation implements Serializable, Cloneable {
      */
 
     public SourceBuildInformation withSourceRepository(SourceRepository sourceRepository) {
-        setSourceRepository(sourceRepository);
+        this.sourceRepository = sourceRepository.toString();
         return this;
     }
 

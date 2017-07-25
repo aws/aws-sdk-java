@@ -291,7 +291,7 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
      */
 
     public void setNotificationType(NotificationType notificationType) {
-        this.notificationType = notificationType.toString();
+        withNotificationType(notificationType);
     }
 
     /**
@@ -308,7 +308,7 @@ public class NotificationConfig implements Serializable, Cloneable, StructuredPo
      */
 
     public NotificationConfig withNotificationType(NotificationType notificationType) {
-        setNotificationType(notificationType);
+        this.notificationType = notificationType.toString();
         return this;
     }
 

@@ -111,7 +111,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      */
 
     public void setDomain(DomainType domain) {
-        this.domain = domain.toString();
+        withDomain(domain);
     }
 
     /**
@@ -131,7 +131,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      */
 
     public AllocateAddressRequest withDomain(DomainType domain) {
-        setDomain(domain);
+        this.domain = domain.toString();
         return this;
     }
 

@@ -230,7 +230,7 @@ public class PriceSchedule implements Serializable, Cloneable {
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -247,7 +247,7 @@ public class PriceSchedule implements Serializable, Cloneable {
      */
 
     public PriceSchedule withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 

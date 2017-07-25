@@ -86,7 +86,7 @@ public class GetDefaultPatchBaselineRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -101,7 +101,7 @@ public class GetDefaultPatchBaselineRequest extends com.amazonaws.AmazonWebServi
      */
 
     public GetDefaultPatchBaselineRequest withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 

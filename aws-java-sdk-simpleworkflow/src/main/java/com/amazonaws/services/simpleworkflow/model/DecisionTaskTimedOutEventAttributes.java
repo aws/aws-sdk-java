@@ -104,7 +104,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable, Clonea
      */
 
     public void setTimeoutType(DecisionTaskTimeoutType timeoutType) {
-        this.timeoutType = timeoutType.toString();
+        withTimeoutType(timeoutType);
     }
 
     /**
@@ -119,7 +119,7 @@ public class DecisionTaskTimedOutEventAttributes implements Serializable, Clonea
      */
 
     public DecisionTaskTimedOutEventAttributes withTimeoutType(DecisionTaskTimeoutType timeoutType) {
-        setTimeoutType(timeoutType);
+        this.timeoutType = timeoutType.toString();
         return this;
     }
 

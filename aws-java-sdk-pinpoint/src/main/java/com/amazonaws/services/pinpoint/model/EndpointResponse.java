@@ -271,7 +271,7 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setChannelType(ChannelType channelType) {
-        this.channelType = channelType.toString();
+        withChannelType(channelType);
     }
 
     /**
@@ -288,7 +288,7 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
      */
 
     public EndpointResponse withChannelType(ChannelType channelType) {
-        setChannelType(channelType);
+        this.channelType = channelType.toString();
         return this;
     }
 

@@ -95,7 +95,7 @@ public class FleetError implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setErrorCode(FleetErrorCode errorCode) {
-        this.errorCode = errorCode.toString();
+        withErrorCode(errorCode);
     }
 
     /**
@@ -110,7 +110,7 @@ public class FleetError implements Serializable, Cloneable, StructuredPojo {
      */
 
     public FleetError withErrorCode(FleetErrorCode errorCode) {
-        setErrorCode(errorCode);
+        this.errorCode = errorCode.toString();
         return this;
     }
 

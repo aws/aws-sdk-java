@@ -236,7 +236,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStatus(ExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -251,7 +251,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      */
 
     public ExecutionListItem withStatus(ExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

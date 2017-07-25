@@ -361,7 +361,7 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
-        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
+        withApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
     }
 
     /**
@@ -376,7 +376,7 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public UpdatePatchBaselineRequest withApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
-        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
         return this;
     }
 

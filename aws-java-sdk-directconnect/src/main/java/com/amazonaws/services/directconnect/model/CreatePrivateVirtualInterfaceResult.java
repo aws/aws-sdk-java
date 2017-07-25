@@ -405,7 +405,7 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      */
 
     public void setAddressFamily(AddressFamily addressFamily) {
-        this.addressFamily = addressFamily.toString();
+        withAddressFamily(addressFamily);
     }
 
     /**
@@ -415,7 +415,7 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      */
 
     public CreatePrivateVirtualInterfaceResult withAddressFamily(AddressFamily addressFamily) {
-        setAddressFamily(addressFamily);
+        this.addressFamily = addressFamily.toString();
         return this;
     }
 
@@ -454,7 +454,7 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      */
 
     public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
-        this.virtualInterfaceState = virtualInterfaceState.toString();
+        withVirtualInterfaceState(virtualInterfaceState);
     }
 
     /**
@@ -464,7 +464,7 @@ public class CreatePrivateVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      */
 
     public CreatePrivateVirtualInterfaceResult withVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
-        setVirtualInterfaceState(virtualInterfaceState);
+        this.virtualInterfaceState = virtualInterfaceState.toString();
         return this;
     }
 

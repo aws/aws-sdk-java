@@ -462,7 +462,7 @@ public class HandshakeResource implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setType(HandshakeResourceType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -547,7 +547,7 @@ public class HandshakeResource implements Serializable, Cloneable, StructuredPoj
      */
 
     public HandshakeResource withType(HandshakeResourceType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

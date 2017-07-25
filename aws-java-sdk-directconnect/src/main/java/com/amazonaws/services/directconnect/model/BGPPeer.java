@@ -129,7 +129,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAddressFamily(AddressFamily addressFamily) {
-        this.addressFamily = addressFamily.toString();
+        withAddressFamily(addressFamily);
     }
 
     /**
@@ -139,7 +139,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public BGPPeer withAddressFamily(AddressFamily addressFamily) {
-        setAddressFamily(addressFamily);
+        this.addressFamily = addressFamily.toString();
         return this;
     }
 
@@ -230,7 +230,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setBgpPeerState(BGPPeerState bgpPeerState) {
-        this.bgpPeerState = bgpPeerState.toString();
+        withBgpPeerState(bgpPeerState);
     }
 
     /**
@@ -240,7 +240,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public BGPPeer withBgpPeerState(BGPPeerState bgpPeerState) {
-        setBgpPeerState(bgpPeerState);
+        this.bgpPeerState = bgpPeerState.toString();
         return this;
     }
 
@@ -279,7 +279,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setBgpStatus(BGPStatus bgpStatus) {
-        this.bgpStatus = bgpStatus.toString();
+        withBgpStatus(bgpStatus);
     }
 
     /**
@@ -289,7 +289,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public BGPPeer withBgpStatus(BGPStatus bgpStatus) {
-        setBgpStatus(bgpStatus);
+        this.bgpStatus = bgpStatus.toString();
         return this;
     }
 

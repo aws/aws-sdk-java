@@ -226,7 +226,7 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
      */
 
     public void setStatus(EnvironmentHealth status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -243,7 +243,7 @@ public class DescribeEnvironmentHealthResult extends com.amazonaws.AmazonWebServ
      */
 
     public DescribeEnvironmentHealthResult withStatus(EnvironmentHealth status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

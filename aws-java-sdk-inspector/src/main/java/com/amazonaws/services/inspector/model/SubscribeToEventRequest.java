@@ -141,7 +141,7 @@ public class SubscribeToEventRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setEvent(InspectorEvent event) {
-        this.event = event.toString();
+        withEvent(event);
     }
 
     /**
@@ -156,7 +156,7 @@ public class SubscribeToEventRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public SubscribeToEventRequest withEvent(InspectorEvent event) {
-        setEvent(event);
+        this.event = event.toString();
         return this;
     }
 

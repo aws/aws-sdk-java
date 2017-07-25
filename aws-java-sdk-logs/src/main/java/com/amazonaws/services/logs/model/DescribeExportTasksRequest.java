@@ -148,7 +148,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setStatusCode(ExportTaskStatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
@@ -164,7 +164,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public DescribeExportTasksRequest withStatusCode(ExportTaskStatusCode statusCode) {
-        setStatusCode(statusCode);
+        this.statusCode = statusCode.toString();
         return this;
     }
 

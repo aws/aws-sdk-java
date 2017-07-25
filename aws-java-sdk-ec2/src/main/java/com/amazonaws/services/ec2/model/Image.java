@@ -227,7 +227,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public void setArchitecture(ArchitectureValues architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -242,7 +242,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public Image withArchitecture(ArchitectureValues architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
         return this;
     }
 
@@ -420,7 +420,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public void setImageType(ImageTypeValues imageType) {
-        this.imageType = imageType.toString();
+        withImageType(imageType);
     }
 
     /**
@@ -435,7 +435,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public Image withImageType(ImageTypeValues imageType) {
-        setImageType(imageType);
+        this.imageType = imageType.toString();
         return this;
     }
 
@@ -637,7 +637,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public void setPlatform(PlatformValues platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -652,7 +652,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public Image withPlatform(PlatformValues platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 
@@ -831,7 +831,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public void setState(ImageState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -848,7 +848,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public Image withState(ImageState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -1071,7 +1071,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public void setHypervisor(HypervisorType hypervisor) {
-        this.hypervisor = hypervisor.toString();
+        withHypervisor(hypervisor);
     }
 
     /**
@@ -1086,7 +1086,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public Image withHypervisor(HypervisorType hypervisor) {
-        setHypervisor(hypervisor);
+        this.hypervisor = hypervisor.toString();
         return this;
     }
 
@@ -1270,7 +1270,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public void setRootDeviceType(DeviceType rootDeviceType) {
-        this.rootDeviceType = rootDeviceType.toString();
+        withRootDeviceType(rootDeviceType);
     }
 
     /**
@@ -1285,7 +1285,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public Image withRootDeviceType(DeviceType rootDeviceType) {
-        setRootDeviceType(rootDeviceType);
+        this.rootDeviceType = rootDeviceType.toString();
         return this;
     }
 
@@ -1496,7 +1496,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public void setVirtualizationType(VirtualizationType virtualizationType) {
-        this.virtualizationType = virtualizationType.toString();
+        withVirtualizationType(virtualizationType);
     }
 
     /**
@@ -1511,7 +1511,7 @@ public class Image implements Serializable, Cloneable {
      */
 
     public Image withVirtualizationType(VirtualizationType virtualizationType) {
-        setVirtualizationType(virtualizationType);
+        this.virtualizationType = virtualizationType.toString();
         return this;
     }
 

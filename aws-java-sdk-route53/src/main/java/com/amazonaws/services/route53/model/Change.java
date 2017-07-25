@@ -1261,7 +1261,7 @@ public class Change implements Serializable, Cloneable {
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -1482,7 +1482,7 @@ public class Change implements Serializable, Cloneable {
      */
 
     public Change withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

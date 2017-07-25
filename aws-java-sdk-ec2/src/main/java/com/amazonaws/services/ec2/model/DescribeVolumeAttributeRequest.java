@@ -95,7 +95,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
      */
 
     public void setAttribute(VolumeAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -110,7 +110,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
      */
 
     public DescribeVolumeAttributeRequest withAttribute(VolumeAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

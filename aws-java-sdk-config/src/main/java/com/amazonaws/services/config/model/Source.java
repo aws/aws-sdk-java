@@ -109,7 +109,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOwner(Owner owner) {
-        this.owner = owner.toString();
+        withOwner(owner);
     }
 
     /**
@@ -124,7 +124,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Source withOwner(Owner owner) {
-        setOwner(owner);
+        this.owner = owner.toString();
         return this;
     }
 

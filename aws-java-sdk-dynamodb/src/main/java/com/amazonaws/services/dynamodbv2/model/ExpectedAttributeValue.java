@@ -2294,7 +2294,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -2658,7 +2658,7 @@ public class ExpectedAttributeValue implements Serializable, Cloneable, Structur
      */
 
     public ExpectedAttributeValue withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 

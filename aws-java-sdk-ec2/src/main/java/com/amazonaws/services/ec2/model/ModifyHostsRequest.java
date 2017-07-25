@@ -94,7 +94,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      */
 
     public void setAutoPlacement(AutoPlacement autoPlacement) {
-        this.autoPlacement = autoPlacement.toString();
+        withAutoPlacement(autoPlacement);
     }
 
     /**
@@ -109,7 +109,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      */
 
     public ModifyHostsRequest withAutoPlacement(AutoPlacement autoPlacement) {
-        setAutoPlacement(autoPlacement);
+        this.autoPlacement = autoPlacement.toString();
         return this;
     }
 

@@ -93,7 +93,7 @@ public class GenerateCredentialReportResult extends com.amazonaws.AmazonWebServi
      */
 
     public void setState(ReportStateType state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -108,7 +108,7 @@ public class GenerateCredentialReportResult extends com.amazonaws.AmazonWebServi
      */
 
     public GenerateCredentialReportResult withState(ReportStateType state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

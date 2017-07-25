@@ -197,7 +197,7 @@ public class ChildWorkflowExecutionTimedOutEventAttributes implements Serializab
      */
 
     public void setTimeoutType(WorkflowExecutionTimeoutType timeoutType) {
-        this.timeoutType = timeoutType.toString();
+        withTimeoutType(timeoutType);
     }
 
     /**
@@ -212,7 +212,7 @@ public class ChildWorkflowExecutionTimedOutEventAttributes implements Serializab
      */
 
     public ChildWorkflowExecutionTimedOutEventAttributes withTimeoutType(WorkflowExecutionTimeoutType timeoutType) {
-        setTimeoutType(timeoutType);
+        this.timeoutType = timeoutType.toString();
         return this;
     }
 

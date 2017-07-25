@@ -281,7 +281,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
      */
 
     public void setRuntime(Runtime runtime) {
-        this.runtime = runtime.toString();
+        withRuntime(runtime);
     }
 
     /**
@@ -296,7 +296,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
      */
 
     public GetFunctionConfigurationResult withRuntime(Runtime runtime) {
-        setRuntime(runtime);
+        this.runtime = runtime.toString();
         return this;
     }
 

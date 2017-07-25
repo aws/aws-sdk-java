@@ -226,7 +226,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      */
 
     public void setMarket(MarketType market) {
-        this.market = market.toString();
+        withMarket(market);
     }
 
     /**
@@ -241,7 +241,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceGroupConfig withMarket(MarketType market) {
-        setMarket(market);
+        this.market = market.toString();
         return this;
     }
 
@@ -299,7 +299,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      */
 
     public void setInstanceRole(InstanceRoleType instanceRole) {
-        this.instanceRole = instanceRole.toString();
+        withInstanceRole(instanceRole);
     }
 
     /**
@@ -314,7 +314,7 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceGroupConfig withInstanceRole(InstanceRoleType instanceRole) {
-        setInstanceRole(instanceRole);
+        this.instanceRole = instanceRole.toString();
         return this;
     }
 

@@ -121,7 +121,7 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public void setLoaContentType(LoaContentType loaContentType) {
-        this.loaContentType = loaContentType.toString();
+        withLoaContentType(loaContentType);
     }
 
     /**
@@ -131,7 +131,7 @@ public class DescribeLoaResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public DescribeLoaResult withLoaContentType(LoaContentType loaContentType) {
-        setLoaContentType(loaContentType);
+        this.loaContentType = loaContentType.toString();
         return this;
     }
 

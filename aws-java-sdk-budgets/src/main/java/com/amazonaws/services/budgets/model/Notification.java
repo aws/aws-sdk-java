@@ -64,7 +64,7 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setNotificationType(NotificationType notificationType) {
-        this.notificationType = notificationType.toString();
+        withNotificationType(notificationType);
     }
 
     /**
@@ -74,7 +74,7 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Notification withNotificationType(NotificationType notificationType) {
-        setNotificationType(notificationType);
+        this.notificationType = notificationType.toString();
         return this;
     }
 
@@ -113,7 +113,7 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -123,7 +123,7 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Notification withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 

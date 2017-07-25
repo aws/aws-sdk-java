@@ -200,7 +200,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setResourceType(TagResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -238,7 +238,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public ListTagsForResourceRequest withResourceType(TagResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

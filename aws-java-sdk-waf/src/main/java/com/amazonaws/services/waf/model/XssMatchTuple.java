@@ -1360,7 +1360,7 @@ public class XssMatchTuple implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setTextTransformation(TextTransformation textTransformation) {
-        this.textTransformation = textTransformation.toString();
+        withTextTransformation(textTransformation);
     }
 
     /**
@@ -1647,7 +1647,7 @@ public class XssMatchTuple implements Serializable, Cloneable, StructuredPojo {
      */
 
     public XssMatchTuple withTextTransformation(TextTransformation textTransformation) {
-        setTextTransformation(textTransformation);
+        this.textTransformation = textTransformation.toString();
         return this;
     }
 

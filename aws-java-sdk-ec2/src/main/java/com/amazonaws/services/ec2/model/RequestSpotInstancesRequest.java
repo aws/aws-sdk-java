@@ -709,7 +709,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      */
 
     public void setType(SpotInstanceType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -729,7 +729,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      */
 
     public RequestSpotInstancesRequest withType(SpotInstanceType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

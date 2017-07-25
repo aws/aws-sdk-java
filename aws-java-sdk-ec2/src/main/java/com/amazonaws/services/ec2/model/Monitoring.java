@@ -87,7 +87,7 @@ public class Monitoring implements Serializable, Cloneable {
      */
 
     public void setState(MonitoringState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -102,7 +102,7 @@ public class Monitoring implements Serializable, Cloneable {
      */
 
     public Monitoring withState(MonitoringState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

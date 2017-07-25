@@ -176,7 +176,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setSourceType(SourceType sourceType) {
-        this.sourceType = sourceType.toString();
+        withSourceType(sourceType);
     }
 
     /**
@@ -191,7 +191,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public DescribeEventsRequest withSourceType(SourceType sourceType) {
-        setSourceType(sourceType);
+        this.sourceType = sourceType.toString();
         return this;
     }
 

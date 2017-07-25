@@ -136,7 +136,7 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public void setResourceType(TaggableResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -151,7 +151,7 @@ public class DescribeTagsResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public DescribeTagsResult withResourceType(TaggableResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

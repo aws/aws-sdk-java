@@ -275,7 +275,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
-        this.serviceNamespace = serviceNamespace.toString();
+        withServiceNamespace(serviceNamespace);
     }
 
     /**
@@ -294,7 +294,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public PutScalingPolicyRequest withServiceNamespace(ServiceNamespace serviceNamespace) {
-        setServiceNamespace(serviceNamespace);
+        this.serviceNamespace = serviceNamespace.toString();
         return this;
     }
 
@@ -976,7 +976,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setScalableDimension(ScalableDimension scalableDimension) {
-        this.scalableDimension = scalableDimension.toString();
+        withScalableDimension(scalableDimension);
     }
 
     /**
@@ -1079,7 +1079,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public PutScalingPolicyRequest withScalableDimension(ScalableDimension scalableDimension) {
-        setScalableDimension(scalableDimension);
+        this.scalableDimension = scalableDimension.toString();
         return this;
     }
 
@@ -1173,7 +1173,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setPolicyType(PolicyType policyType) {
-        this.policyType = policyType.toString();
+        withPolicyType(policyType);
     }
 
     /**
@@ -1197,7 +1197,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public PutScalingPolicyRequest withPolicyType(PolicyType policyType) {
-        setPolicyType(policyType);
+        this.policyType = policyType.toString();
         return this;
     }
 

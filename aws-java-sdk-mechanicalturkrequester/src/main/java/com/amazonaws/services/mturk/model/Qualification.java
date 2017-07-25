@@ -316,7 +316,7 @@ public class Qualification implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(QualificationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -331,7 +331,7 @@ public class Qualification implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Qualification withStatus(QualificationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

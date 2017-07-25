@@ -262,7 +262,7 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRequiredBehavior(RequiredAttributeBehavior requiredBehavior) {
-        this.requiredBehavior = requiredBehavior.toString();
+        withRequiredBehavior(requiredBehavior);
     }
 
     /**
@@ -277,7 +277,7 @@ public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
      */
 
     public FacetAttribute withRequiredBehavior(RequiredAttributeBehavior requiredBehavior) {
-        setRequiredBehavior(requiredBehavior);
+        this.requiredBehavior = requiredBehavior.toString();
         return this;
     }
 

@@ -167,7 +167,7 @@ public class DescribeConnectionLoaRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setLoaContentType(LoaContentType loaContentType) {
-        this.loaContentType = loaContentType.toString();
+        withLoaContentType(loaContentType);
     }
 
     /**
@@ -177,7 +177,7 @@ public class DescribeConnectionLoaRequest extends com.amazonaws.AmazonWebService
      */
 
     public DescribeConnectionLoaRequest withLoaContentType(LoaContentType loaContentType) {
-        setLoaContentType(loaContentType);
+        this.loaContentType = loaContentType.toString();
         return this;
     }
 

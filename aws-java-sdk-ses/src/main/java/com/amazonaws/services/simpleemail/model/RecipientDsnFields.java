@@ -250,7 +250,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      */
 
     public void setAction(DsnAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -268,7 +268,7 @@ public class RecipientDsnFields implements Serializable, Cloneable {
      */
 
     public RecipientDsnFields withAction(DsnAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

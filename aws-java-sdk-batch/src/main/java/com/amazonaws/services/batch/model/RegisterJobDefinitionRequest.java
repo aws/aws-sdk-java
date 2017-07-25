@@ -154,7 +154,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setType(JobDefinitionType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -169,7 +169,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      */
 
     public RegisterJobDefinitionRequest withType(JobDefinitionType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

@@ -166,7 +166,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      */
 
     public void setStatus(VolumeStatusInfoStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -181,7 +181,7 @@ public class VolumeStatusInfo implements Serializable, Cloneable {
      */
 
     public VolumeStatusInfo withStatus(VolumeStatusInfoStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

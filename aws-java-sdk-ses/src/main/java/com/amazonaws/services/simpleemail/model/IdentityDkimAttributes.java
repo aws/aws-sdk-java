@@ -173,7 +173,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      */
 
     public void setDkimVerificationStatus(VerificationStatus dkimVerificationStatus) {
-        this.dkimVerificationStatus = dkimVerificationStatus.toString();
+        withDkimVerificationStatus(dkimVerificationStatus);
     }
 
     /**
@@ -190,7 +190,7 @@ public class IdentityDkimAttributes implements Serializable, Cloneable {
      */
 
     public IdentityDkimAttributes withDkimVerificationStatus(VerificationStatus dkimVerificationStatus) {
-        setDkimVerificationStatus(dkimVerificationStatus);
+        this.dkimVerificationStatus = dkimVerificationStatus.toString();
         return this;
     }
 

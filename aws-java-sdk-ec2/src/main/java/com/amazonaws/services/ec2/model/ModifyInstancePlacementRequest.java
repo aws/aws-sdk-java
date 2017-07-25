@@ -107,7 +107,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      */
 
     public void setAffinity(Affinity affinity) {
-        this.affinity = affinity.toString();
+        withAffinity(affinity);
     }
 
     /**
@@ -122,7 +122,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      */
 
     public ModifyInstancePlacementRequest withAffinity(Affinity affinity) {
-        setAffinity(affinity);
+        this.affinity = affinity.toString();
         return this;
     }
 
@@ -260,7 +260,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      */
 
     public void setTenancy(HostTenancy tenancy) {
-        this.tenancy = tenancy.toString();
+        withTenancy(tenancy);
     }
 
     /**
@@ -275,7 +275,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      */
 
     public ModifyInstancePlacementRequest withTenancy(HostTenancy tenancy) {
-        setTenancy(tenancy);
+        this.tenancy = tenancy.toString();
         return this;
     }
 

@@ -220,7 +220,7 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setChannelType(ChannelType channelType) {
-        this.channelType = channelType.toString();
+        withChannelType(channelType);
     }
 
     /**
@@ -237,7 +237,7 @@ public class EndpointRequest implements Serializable, Cloneable, StructuredPojo 
      */
 
     public EndpointRequest withChannelType(ChannelType channelType) {
-        setChannelType(channelType);
+        this.channelType = channelType.toString();
         return this;
     }
 

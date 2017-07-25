@@ -165,7 +165,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setMode(PutMode mode) {
-        this.mode = mode.toString();
+        withMode(mode);
     }
 
     /**
@@ -182,7 +182,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public PutRestApiRequest withMode(PutMode mode) {
-        setMode(mode);
+        this.mode = mode.toString();
         return this;
     }
 

@@ -207,7 +207,7 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(CACertificateStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -227,7 +227,7 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public CACertificate withStatus(CACertificateStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

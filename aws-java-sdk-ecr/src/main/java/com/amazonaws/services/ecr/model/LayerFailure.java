@@ -141,7 +141,7 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setFailureCode(LayerFailureCode failureCode) {
-        this.failureCode = failureCode.toString();
+        withFailureCode(failureCode);
     }
 
     /**
@@ -156,7 +156,7 @@ public class LayerFailure implements Serializable, Cloneable, StructuredPojo {
      */
 
     public LayerFailure withFailureCode(LayerFailureCode failureCode) {
-        setFailureCode(failureCode);
+        this.failureCode = failureCode.toString();
         return this;
     }
 

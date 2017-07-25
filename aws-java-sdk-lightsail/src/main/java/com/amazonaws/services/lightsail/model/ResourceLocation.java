@@ -135,7 +135,7 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setRegionName(RegionName regionName) {
-        this.regionName = regionName.toString();
+        withRegionName(regionName);
     }
 
     /**
@@ -150,7 +150,7 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
      */
 
     public ResourceLocation withRegionName(RegionName regionName) {
-        setRegionName(regionName);
+        this.regionName = regionName.toString();
         return this;
     }
 

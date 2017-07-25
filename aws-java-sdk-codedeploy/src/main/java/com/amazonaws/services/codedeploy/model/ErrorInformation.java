@@ -797,7 +797,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setCode(ErrorCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -968,7 +968,7 @@ public class ErrorInformation implements Serializable, Cloneable, StructuredPojo
      */
 
     public ErrorInformation withCode(ErrorCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

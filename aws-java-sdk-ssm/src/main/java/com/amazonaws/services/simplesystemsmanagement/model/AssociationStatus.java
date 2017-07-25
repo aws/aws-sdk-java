@@ -147,7 +147,7 @@ public class AssociationStatus implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setName(AssociationStatusName name) {
-        this.name = name.toString();
+        withName(name);
     }
 
     /**
@@ -162,7 +162,7 @@ public class AssociationStatus implements Serializable, Cloneable, StructuredPoj
      */
 
     public AssociationStatus withName(AssociationStatusName name) {
-        setName(name);
+        this.name = name.toString();
         return this;
     }
 

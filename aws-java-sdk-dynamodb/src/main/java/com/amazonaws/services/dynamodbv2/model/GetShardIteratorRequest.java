@@ -421,7 +421,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setShardIteratorType(ShardIteratorType shardIteratorType) {
-        this.shardIteratorType = shardIteratorType.toString();
+        withShardIteratorType(shardIteratorType);
     }
 
     /**
@@ -488,7 +488,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public GetShardIteratorRequest withShardIteratorType(ShardIteratorType shardIteratorType) {
-        setShardIteratorType(shardIteratorType);
+        this.shardIteratorType = shardIteratorType.toString();
         return this;
     }
 

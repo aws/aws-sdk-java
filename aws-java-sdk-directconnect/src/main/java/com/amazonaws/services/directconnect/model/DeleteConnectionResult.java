@@ -204,7 +204,7 @@ public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -214,7 +214,7 @@ public class DeleteConnectionResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public DeleteConnectionResult withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

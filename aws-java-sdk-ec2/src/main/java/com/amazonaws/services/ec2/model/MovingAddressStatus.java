@@ -102,7 +102,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      */
 
     public void setMoveStatus(MoveStatus moveStatus) {
-        this.moveStatus = moveStatus.toString();
+        withMoveStatus(moveStatus);
     }
 
     /**
@@ -119,7 +119,7 @@ public class MovingAddressStatus implements Serializable, Cloneable {
      */
 
     public MovingAddressStatus withMoveStatus(MoveStatus moveStatus) {
-        setMoveStatus(moveStatus);
+        this.moveStatus = moveStatus.toString();
         return this;
     }
 

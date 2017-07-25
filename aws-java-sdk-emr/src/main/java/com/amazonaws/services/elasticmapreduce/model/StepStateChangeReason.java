@@ -104,7 +104,7 @@ public class StepStateChangeReason implements Serializable, Cloneable, Structure
      */
 
     public void setCode(StepStateChangeReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -121,7 +121,7 @@ public class StepStateChangeReason implements Serializable, Cloneable, Structure
      */
 
     public StepStateChangeReason withCode(StepStateChangeReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

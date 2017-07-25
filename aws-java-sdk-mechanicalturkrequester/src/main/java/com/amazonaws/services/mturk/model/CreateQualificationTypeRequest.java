@@ -335,7 +335,7 @@ public class CreateQualificationTypeRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setQualificationTypeStatus(QualificationTypeStatus qualificationTypeStatus) {
-        this.qualificationTypeStatus = qualificationTypeStatus.toString();
+        withQualificationTypeStatus(qualificationTypeStatus);
     }
 
     /**
@@ -355,7 +355,7 @@ public class CreateQualificationTypeRequest extends com.amazonaws.AmazonWebServi
      */
 
     public CreateQualificationTypeRequest withQualificationTypeStatus(QualificationTypeStatus qualificationTypeStatus) {
-        setQualificationTypeStatus(qualificationTypeStatus);
+        this.qualificationTypeStatus = qualificationTypeStatus.toString();
         return this;
     }
 

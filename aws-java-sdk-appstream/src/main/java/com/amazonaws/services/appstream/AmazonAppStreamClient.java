@@ -305,6 +305,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         An API error occurred. Wait a few minutes and try again.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.AssociateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -348,6 +350,59 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates a directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param createDirectoryConfigRequest
+     * @return Result of the CreateDirectoryConfig operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @sample AmazonAppStream.CreateDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateDirectoryConfigResult createDirectoryConfig(CreateDirectoryConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDirectoryConfig(request);
+    }
+
+    @SdkInternalApi
+    final CreateDirectoryConfigResult executeCreateDirectoryConfig(CreateDirectoryConfigRequest createDirectoryConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDirectoryConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDirectoryConfigRequest> request = null;
+        Response<CreateDirectoryConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDirectoryConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDirectoryConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDirectoryConfigResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateDirectoryConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new fleet.
      * </p>
      * 
@@ -366,6 +421,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified role is invalid.
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
      * @sample AmazonAppStream.CreateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -526,6 +585,59 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes the directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param deleteDirectoryConfigRequest
+     * @return Result of the DeleteDirectoryConfig operation returned by the service.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DeleteDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteDirectoryConfigResult deleteDirectoryConfig(DeleteDirectoryConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDirectoryConfig(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDirectoryConfigResult executeDeleteDirectoryConfig(DeleteDirectoryConfigRequest deleteDirectoryConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDirectoryConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDirectoryConfigRequest> request = null;
+        Response<DeleteDirectoryConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDirectoryConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDirectoryConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDirectoryConfigResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteDirectoryConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a fleet.
      * </p>
      * 
@@ -623,6 +735,58 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteStackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteStackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list describing the specified directory configurations.
+     * </p>
+     * 
+     * @param describeDirectoryConfigsRequest
+     * @return Result of the DescribeDirectoryConfigs operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DescribeDirectoryConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeDirectoryConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDirectoryConfigsResult describeDirectoryConfigs(DescribeDirectoryConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDirectoryConfigs(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDirectoryConfigsResult executeDescribeDirectoryConfigs(DescribeDirectoryConfigsRequest describeDirectoryConfigsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDirectoryConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDirectoryConfigsRequest> request = null;
+        Response<DescribeDirectoryConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDirectoryConfigsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDirectoryConfigsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDirectoryConfigsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDirectoryConfigsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -738,9 +902,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
-     * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
-     * operation defaults to users authenticated using a streaming URL.
+     * streaming sessions for only that user. To retrieve the next set of items, pass this value for the
+     * <code>nextToken</code> parameter in a subsequent call to this operation. If an authentication type is not
+     * provided, the operation defaults to users authenticated using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -791,8 +955,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * If stack names are not provided, this operation describes the specified stacks; otherwise, all stacks in the
-     * account are described. Pass the <code>nextToken</code> value in a subsequent call to this operation to retrieve
-     * the next set of items.
+     * account are described. To retrieve the next set of items, pass the <code>nextToken</code> value in a subsequent
+     * call to this operation.
      * </p>
      * 
      * @param describeStacksRequest
@@ -1148,6 +1312,61 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Updates the directory configuration with the given parameters.
+     * </p>
+     * 
+     * @param updateDirectoryConfigRequest
+     * @return Result of the UpdateDirectoryConfig operation returned by the service.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @sample AmazonAppStream.UpdateDirectoryConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateDirectoryConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateDirectoryConfigResult updateDirectoryConfig(UpdateDirectoryConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDirectoryConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDirectoryConfigResult executeUpdateDirectoryConfig(UpdateDirectoryConfigRequest updateDirectoryConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDirectoryConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDirectoryConfigRequest> request = null;
+        Response<UpdateDirectoryConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDirectoryConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDirectoryConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDirectoryConfigResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateDirectoryConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state.
      * When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can
      * be updated. A fleet cannot be updated in a status of <b>STARTING</b> or <b>STOPPING</b>.
@@ -1171,6 +1390,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         An API error occurred. Wait a few minutes and try again.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.UpdateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet" target="_top">AWS API
      *      Documentation</a>

@@ -70,6 +70,9 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
+    "supressEnumSetterFor" : {
+      "Record" : [ "EncryptionType" ]
+    },
     "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : true
@@ -1121,6 +1124,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1226,6 +1230,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1260,6 +1265,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The set of key-value pairs to use to create the tags.</p>\n@param tags The set of key-value pairs to use to create the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1324,6 +1330,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1430,6 +1437,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1464,6 +1472,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The set of key-value pairs to use to create the tags.</p>\n@param tags The set of key-value pairs to use to create the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1608,6 +1617,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account but in two different regions can have the same name.</p>\n@param streamName A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account but in two different regions can have the same name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1670,6 +1680,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;</p>\n@param shardCount The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1734,6 +1745,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;</p>\n@param shardCount The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p> <p>DefaultShardLimit;\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1797,6 +1809,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account but in two different regions can have the same name.</p>\n@param streamName A name to identify the stream. The stream name is scoped to the AWS account used by the application that creates the stream. It is also scoped by region. That is, two streams in two different AWS accounts can have the same name, and two streams in the same AWS account but in two different regions can have the same name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1941,6 +1954,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream to modify.</p>\n@param streamName The name of the stream to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2003,6 +2017,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new retention period of the stream, in hours. Must be less than the current retention period.</p>\n@param retentionPeriodHours The new retention period of the stream, in hours. Must be less than the current retention period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2067,6 +2082,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new retention period of the stream, in hours. Must be less than the current retention period.</p>\n@param retentionPeriodHours The new retention period of the stream, in hours. Must be less than the current retention period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2130,6 +2146,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream to modify.</p>\n@param streamName The name of the stream to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2274,6 +2291,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream to delete.</p>\n@param streamName The name of the stream to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2338,6 +2356,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream to delete.</p>\n@param streamName The name of the stream to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2518,6 +2537,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of shards.</p>\n@param shardLimit The maximum number of shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2580,6 +2600,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of open shards.</p>\n@param openShardCount The number of open shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2644,6 +2665,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of open shards.</p>\n@param openShardCount The number of open shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2707,6 +2729,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of shards.</p>\n@param shardLimit The maximum number of shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2815,6 +2838,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream to describe.</p>\n@param streamName The name of the stream to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2877,6 +2901,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater than 100, at most 100 shards are returned.</p>\n@param limit The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater than 100, at most 100 shards are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2939,6 +2964,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the shard to start with.</p>\n@param exclusiveStartShardId The shard ID of the shard to start with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3003,6 +3029,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the shard to start with.</p>\n@param exclusiveStartShardId The shard ID of the shard to start with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3066,6 +3093,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater than 100, at most 100 shards are returned.</p>\n@param limit The maximum number of shards to return in a single call. The default value is 100. If you specify a value greater than 100, at most 100 shards are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3129,6 +3157,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream to describe.</p>\n@param streamName The name of the stream to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3227,6 +3256,7 @@
           "simpleType" : "StreamDescription",
           "variableSetterType" : "StreamDescription"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and whether there are more shards available.</p>\n@param streamDescription The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and whether there are more shards available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3291,6 +3321,7 @@
             "simpleType" : "StreamDescription",
             "variableSetterType" : "StreamDescription"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and whether there are more shards available.</p>\n@param streamDescription The current status of the stream, the stream ARN, an array of shard objects that comprise the stream, and whether there are more shards available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3399,6 +3430,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the Amazon Kinesis stream for which to disable enhanced monitoring.</p>\n@param streamName The name of the Amazon Kinesis stream for which to disable enhanced monitoring.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3498,6 +3530,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -3538,6 +3571,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of shard-level metrics to disable.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" disables every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShardLevelMetrics(java.util.Collection)} or {@link #withShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param shardLevelMetrics List of shard-level metrics to disable.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" disables every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -3639,6 +3673,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -3679,6 +3714,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of shard-level metrics to disable.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" disables every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShardLevelMetrics(java.util.Collection)} or {@link #withShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param shardLevelMetrics List of shard-level metrics to disable.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" disables every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -3742,6 +3778,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the Amazon Kinesis stream for which to disable enhanced monitoring.</p>\n@param streamName The name of the Amazon Kinesis stream for which to disable enhanced monitoring.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3840,6 +3877,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the Amazon Kinesis stream.</p>\n@param streamName The name of the Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3939,6 +3977,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -3979,6 +4018,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCurrentShardLevelMetrics(java.util.Collection)} or {@link #withCurrentShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param currentShardLevelMetrics Represents the current state of the metrics that are in the enhanced state before the operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4078,6 +4118,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4118,6 +4159,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDesiredShardLevelMetrics(java.util.Collection)} or {@link #withDesiredShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param desiredShardLevelMetrics Represents the list of all the metrics that would be in the enhanced state after the operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4219,6 +4261,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4259,6 +4302,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCurrentShardLevelMetrics(java.util.Collection)} or {@link #withCurrentShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param currentShardLevelMetrics Represents the current state of the metrics that are in the enhanced state before the operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4359,6 +4403,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4399,6 +4444,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDesiredShardLevelMetrics(java.util.Collection)} or {@link #withDesiredShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param desiredShardLevelMetrics Represents the list of all the metrics that would be in the enhanced state after the operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4462,6 +4508,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the Amazon Kinesis stream.</p>\n@param streamName The name of the Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4570,6 +4617,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream for which to enable enhanced monitoring.</p>\n@param streamName The name of the stream for which to enable enhanced monitoring.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4669,6 +4717,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4709,6 +4758,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of shard-level metrics to enable.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" enables every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShardLevelMetrics(java.util.Collection)} or {@link #withShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param shardLevelMetrics List of shard-level metrics to enable.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" enables every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4810,6 +4860,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4850,6 +4901,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of shard-level metrics to enable.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" enables every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShardLevelMetrics(java.util.Collection)} or {@link #withShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param shardLevelMetrics List of shard-level metrics to enable.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" enables every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -4913,6 +4965,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream for which to enable enhanced monitoring.</p>\n@param streamName The name of the stream for which to enable enhanced monitoring.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5011,6 +5064,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the Amazon Kinesis stream.</p>\n@param streamName The name of the Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5110,6 +5164,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5150,6 +5205,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCurrentShardLevelMetrics(java.util.Collection)} or {@link #withCurrentShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param currentShardLevelMetrics Represents the current state of the metrics that are in the enhanced state before the operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5249,6 +5305,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5289,6 +5346,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDesiredShardLevelMetrics(java.util.Collection)} or {@link #withDesiredShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param desiredShardLevelMetrics Represents the list of all the metrics that would be in the enhanced state after the operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5390,6 +5448,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5430,6 +5489,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCurrentShardLevelMetrics(java.util.Collection)} or {@link #withCurrentShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param currentShardLevelMetrics Represents the current state of the metrics that are in the enhanced state before the operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5530,6 +5590,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5570,6 +5631,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDesiredShardLevelMetrics(java.util.Collection)} or {@link #withDesiredShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param desiredShardLevelMetrics Represents the list of all the metrics that would be in the enhanced state after the operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5633,6 +5695,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the Amazon Kinesis stream.</p>\n@param streamName The name of the Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5816,6 +5879,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5856,6 +5920,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of shard-level metrics.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" enhances every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShardLevelMetrics(java.util.Collection)} or {@link #withShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param shardLevelMetrics List of shard-level metrics.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" enhances every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5957,6 +6022,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -5997,6 +6063,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of shard-level metrics.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" enhances every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShardLevelMetrics(java.util.Collection)} or {@link #withShardLevelMetrics(java.util.Collection)} if you want to override the existing values.</p>\n@param shardLevelMetrics List of shard-level metrics.</p> <p>The following are the valid shard-level metrics. The value \"<code>ALL</code>\" enhances every metric.</p> <ul> <li> <p> <code>IncomingBytes</code> </p> </li> <li> <p> <code>IncomingRecords</code> </p> </li> <li> <p> <code>OutgoingBytes</code> </p> </li> <li> <p> <code>OutgoingRecords</code> </p> </li> <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html\">Monitoring the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MetricsName*/",
@@ -6141,6 +6208,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>\n@param shardIterator The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6203,6 +6271,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.</p>\n@param limit The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6267,6 +6336,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.</p>\n@param limit The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6330,6 +6400,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.</p>\n@param shardIterator The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6465,6 +6536,7 @@
               "simpleType" : "Record",
               "variableSetterType" : "Record"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6505,6 +6577,7 @@
           "simpleType" : "List<Record>",
           "variableSetterType" : "java.util.Collection<Record>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The data records retrieved from the shard.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records The data records retrieved from the shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6567,6 +6640,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data. </p>\n@param nextShardIterator The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6629,6 +6703,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.</p>\n@param millisBehindLatest The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6693,6 +6768,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.</p>\n@param millisBehindLatest The number of milliseconds the <a>GetRecords</a> response is from the tip of the stream, indicating how far behind current time the consumer is. A value of zero indicates record processing is caught up, and there are no new records to process at this moment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6756,6 +6832,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data. </p>\n@param nextShardIterator The next position in the shard from which to start sequentially reading data records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6856,6 +6933,7 @@
                 "simpleType" : "Record",
                 "variableSetterType" : "Record"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6896,6 +6974,7 @@
             "simpleType" : "List<Record>",
             "variableSetterType" : "java.util.Collection<Record>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The data records retrieved from the shard.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records The data records retrieved from the shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7004,6 +7083,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the Amazon Kinesis stream.</p>\n@param streamName The name of the Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7066,6 +7146,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the Amazon Kinesis shard to get the iterator for.</p>\n@param shardId The shard ID of the Amazon Kinesis shard to get the iterator for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7128,6 +7209,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator types:</p> <ul> <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li> <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li> <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value <code>Timestamp</code>.</p> </li> <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li> <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>\n@param shardIteratorType Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator types:</p> <ul> <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li> <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li> <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value <code>Timestamp</code>.</p> </li> <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li> <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ShardIteratorType*/",
@@ -7190,6 +7272,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>\n@param startingSequenceNumber The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7252,6 +7335,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A timestamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>\n@param timestamp The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A timestamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7316,6 +7400,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the Amazon Kinesis shard to get the iterator for.</p>\n@param shardId The shard ID of the Amazon Kinesis shard to get the iterator for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7379,6 +7464,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator types:</p> <ul> <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li> <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li> <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value <code>Timestamp</code>.</p> </li> <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li> <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li> </ul>\n@param shardIteratorType Determines how the shard iterator is used to start reading data records from the shard.</p> <p>The following are the valid Amazon Kinesis shard iterator types:</p> <ul> <li> <p>AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li> <li> <p>AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific sequence number, provided in the value <code>StartingSequenceNumber</code>.</p> </li> <li> <p>AT_TIMESTAMP - Start reading from the position denoted by a specific timestamp, provided in the value <code>Timestamp</code>.</p> </li> <li> <p>TRIM_HORIZON - Start reading at the last untrimmed record in the shard in the system, which is the oldest data record in the shard.</p> </li> <li> <p>LATEST - Start reading just after the most recent record in the shard, so that you always read the most recent data in the shard.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ShardIteratorType*/",
@@ -7442,6 +7528,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>\n@param startingSequenceNumber The sequence number of the data record in the shard from which to start reading. Used with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7505,6 +7592,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the Amazon Kinesis stream.</p>\n@param streamName The name of the Amazon Kinesis stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7568,6 +7656,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A timestamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).</p>\n@param timestamp The timestamp of the data record from which to start reading. Used with shard iterator type AT_TIMESTAMP. A timestamp is the Unix epoch date with precision in milliseconds. For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7666,6 +7755,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>\n@param shardIterator The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7730,6 +7820,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.</p>\n@param shardIterator The position in the shard from which to start reading data records sequentially. A shard iterator specifies this position using the sequence number of a data record in a shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7831,6 +7922,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The starting hash key of the hash key range.</p>\n@param startingHashKey The starting hash key of the hash key range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7893,6 +7985,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ending hash key of the hash key range.</p>\n@param endingHashKey The ending hash key of the hash key range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7957,6 +8050,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ending hash key of the hash key range.</p>\n@param endingHashKey The ending hash key of the hash key range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8020,6 +8114,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The starting hash key of the hash key range.</p>\n@param startingHashKey The starting hash key of the hash key range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8128,6 +8223,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream to modify.</p>\n@param streamName The name of the stream to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8190,6 +8286,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>\n@param retentionPeriodHours The new retention period of the stream, in hours. Must be more than the current retention period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8254,6 +8351,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new retention period of the stream, in hours. Must be more than the current retention period.</p>\n@param retentionPeriodHours The new retention period of the stream, in hours. Must be more than the current retention period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8317,6 +8415,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream to modify.</p>\n@param streamName The name of the stream to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8749,6 +8848,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of streams to list.</p>\n@param limit The maximum number of streams to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8811,6 +8911,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream to start the list with.</p>\n@param exclusiveStartStreamName The name of the stream to start the list with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8875,6 +8976,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream to start the list with.</p>\n@param exclusiveStartStreamName The name of the stream to start the list with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8938,6 +9040,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of streams to list.</p>\n@param limit The maximum number of streams to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9073,6 +9176,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9113,6 +9217,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStreamNames(java.util.Collection)} or {@link #withStreamNames(java.util.Collection)} if you want to override the existing values.</p>\n@param streamNames The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9175,6 +9280,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If set to <code>true</code>, there are more streams available to list.</p>\n@param hasMoreStreams If set to <code>true</code>, there are more streams available to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9239,6 +9345,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If set to <code>true</code>, there are more streams available to list.</p>\n@param hasMoreStreams If set to <code>true</code>, there are more streams available to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9339,6 +9446,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9379,6 +9487,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStreamNames(java.util.Collection)} or {@link #withStreamNames(java.util.Collection)} if you want to override the existing values.</p>\n@param streamNames The names of the streams that are associated with the AWS account making the <code>ListStreams</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9487,6 +9596,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9549,6 +9659,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>\n@param exclusiveStartTagKey The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9611,6 +9722,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>\n@param limit The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9675,6 +9787,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>. </p>\n@param exclusiveStartTagKey The key to use as the starting point for the list of tags. If this parameter is set, <code>ListTagsForStream</code> gets all tags that occur after <code>ExclusiveStartTagKey</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9738,6 +9851,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.</p>\n@param limit The number of tags to return. If this number is less than the total number of tags associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9801,6 +9915,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9936,6 +10051,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9976,6 +10092,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10038,6 +10155,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>\n@param hasMoreTags If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10102,6 +10220,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>\n@param hasMoreTags If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10202,6 +10321,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10242,6 +10362,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10350,6 +10471,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream for the merge.</p>\n@param streamName The name of the stream for the merge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10412,6 +10534,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>\n@param shardToMerge The shard ID of the shard to combine with the adjacent shard for the merge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10474,6 +10597,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the adjacent shard for the merge.</p>\n@param adjacentShardToMerge The shard ID of the adjacent shard for the merge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10538,6 +10662,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the adjacent shard for the merge.</p>\n@param adjacentShardToMerge The shard ID of the adjacent shard for the merge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10601,6 +10726,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>\n@param shardToMerge The shard ID of the shard to combine with the adjacent shard for the merge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10664,6 +10790,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream for the merge.</p>\n@param streamName The name of the stream for the merge.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10907,6 +11034,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream to put the data record into.</p>\n@param streamName The name of the stream to put the data record into.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10969,6 +11097,7 @@
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).</p>\n@param data The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11031,6 +11160,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>\n@param partitionKey Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11093,6 +11223,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.</p>\n@param explicitHashKey The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11155,6 +11286,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will be coarsely ordered based on arrival time.</p>\n@param sequenceNumberForOrdering Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will be coarsely ordered based on arrival time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11219,6 +11351,7 @@
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).</p>\n@param data The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11282,6 +11415,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.</p>\n@param explicitHashKey The hash value used to explicitly determine the shard the data record is assigned to by overriding the partition key hash.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11345,6 +11479,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>\n@param partitionKey Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11408,6 +11543,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will be coarsely ordered based on arrival time.</p>\n@param sequenceNumberForOrdering Guarantees strictly increasing sequence numbers, for puts from the same client and to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>). If this parameter is not set, records will be coarsely ordered based on arrival time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11471,6 +11607,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream to put the data record into.</p>\n@param streamName The name of the stream to put the data record into.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11569,6 +11706,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the shard where the data record was placed.</p>\n@param shardId The shard ID of the shard where the data record was placed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11631,6 +11769,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>\n@param sequenceNumber The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11693,6 +11832,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The encryption type to use on the record. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type to use on the record. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -11757,6 +11897,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The encryption type to use on the record. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type to use on the record. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -11820,6 +11961,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.</p>\n@param sequenceNumber The sequence number identifier that was assigned to the put data record. The sequence number for the record is unique across all records in the stream. A sequence number is the identifier associated with every record put into the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11883,6 +12025,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the shard where the data record was placed.</p>\n@param shardId The shard ID of the shard where the data record was placed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12028,6 +12171,7 @@
               "simpleType" : "PutRecordsRequestEntry",
               "variableSetterType" : "PutRecordsRequestEntry"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12068,6 +12212,7 @@
           "simpleType" : "List<PutRecordsRequestEntry>",
           "variableSetterType" : "java.util.Collection<PutRecordsRequestEntry>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The records associated with the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records The records associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12130,6 +12275,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The stream name associated with the request.</p>\n@param streamName The stream name associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12231,6 +12377,7 @@
                 "simpleType" : "PutRecordsRequestEntry",
                 "variableSetterType" : "PutRecordsRequestEntry"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12271,6 +12418,7 @@
             "simpleType" : "List<PutRecordsRequestEntry>",
             "variableSetterType" : "java.util.Collection<PutRecordsRequestEntry>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The records associated with the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records The records associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12334,6 +12482,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The stream name associated with the request.</p>\n@param streamName The stream name associated with the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12432,6 +12581,7 @@
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).</p>\n@param data The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12494,6 +12644,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The hash value used to determine explicitly the shard that the data record is assigned to by overriding the partition key hash.</p>\n@param explicitHashKey The hash value used to determine explicitly the shard that the data record is assigned to by overriding the partition key hash.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12556,6 +12707,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>\n@param partitionKey Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12620,6 +12772,7 @@
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).</p>\n@param data The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12683,6 +12836,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The hash value used to determine explicitly the shard that the data record is assigned to by overriding the partition key hash.</p>\n@param explicitHashKey The hash value used to determine explicitly the shard that the data record is assigned to by overriding the partition key hash.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12746,6 +12900,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>\n@param partitionKey Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12847,6 +13002,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>\n@param failedRecordCount The number of unsuccessfully processed records in a <code>PutRecords</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12946,6 +13102,7 @@
               "simpleType" : "PutRecordsResultEntry",
               "variableSetterType" : "PutRecordsResultEntry"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12986,6 +13143,7 @@
           "simpleType" : "List<PutRecordsResultEntry>",
           "variableSetterType" : "java.util.Collection<PutRecordsResultEntry>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of successfully and unsuccessfully processed record results, correlated with the request by natural ordering. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records An array of successfully and unsuccessfully processed record results, correlated with the request by natural ordering. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13048,6 +13206,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The encryption type used on the records. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type used on the records. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -13112,6 +13271,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The encryption type used on the records. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type used on the records. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -13175,6 +13335,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of unsuccessfully processed records in a <code>PutRecords</code> request.</p>\n@param failedRecordCount The number of unsuccessfully processed records in a <code>PutRecords</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13275,6 +13436,7 @@
                 "simpleType" : "PutRecordsResultEntry",
                 "variableSetterType" : "PutRecordsResultEntry"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13315,6 +13477,7 @@
             "simpleType" : "List<PutRecordsResultEntry>",
             "variableSetterType" : "java.util.Collection<PutRecordsResultEntry>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of successfully and unsuccessfully processed record results, correlated with the request by natural ordering. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records An array of successfully and unsuccessfully processed record results, correlated with the request by natural ordering. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to a stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13416,6 +13579,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The sequence number for an individual record result.</p>\n@param sequenceNumber The sequence number for an individual record result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13478,6 +13642,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID for an individual record result.</p>\n@param shardId The shard ID for an individual record result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13540,6 +13705,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code for an individual record result. <code>ErrorCodes</code> can be either <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.</p>\n@param errorCode The error code for an individual record result. <code>ErrorCodes</code> can be either <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13602,6 +13768,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>\"Internal Service Failure\"</code>.</p>\n@param errorMessage The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>\"Internal Service Failure\"</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13666,6 +13833,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code for an individual record result. <code>ErrorCodes</code> can be either <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.</p>\n@param errorCode The error code for an individual record result. <code>ErrorCodes</code> can be either <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13729,6 +13897,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>\"Internal Service Failure\"</code>.</p>\n@param errorMessage The error message for an individual record result. An <code>ErrorCode</code> value of <code>ProvisionedThroughputExceededException</code> has an error message that includes the account ID, stream name, and shard ID. An <code>ErrorCode</code> value of <code>InternalFailure</code> has the error message <code>\"Internal Service Failure\"</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13792,6 +13961,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The sequence number for an individual record result.</p>\n@param sequenceNumber The sequence number for an individual record result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13855,6 +14025,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID for an individual record result.</p>\n@param shardId The shard ID for an individual record result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13956,6 +14127,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the record within its shard.</p>\n@param sequenceNumber The unique identifier of the record within its shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14018,6 +14190,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The approximate time that the record was inserted into the stream.</p>\n@param approximateArrivalTimestamp The approximate time that the record was inserted into the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14080,6 +14253,7 @@
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).</p>\n@param data The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14142,6 +14316,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identifies which shard in the stream the data record is assigned to.</p>\n@param partitionKey Identifies which shard in the stream the data record is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14204,6 +14379,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The encryption type used on the record. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type used on the record. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -14268,6 +14444,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The approximate time that the record was inserted into the stream.</p>\n@param approximateArrivalTimestamp The approximate time that the record was inserted into the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14331,6 +14508,7 @@
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).</p>\n@param data The data blob. The data in the blob is both opaque and immutable to the Amazon Kinesis service, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MB).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14394,6 +14572,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The encryption type used on the record. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type used on the record. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -14457,6 +14636,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identifies which shard in the stream the data record is assigned to.</p>\n@param partitionKey Identifies which shard in the stream the data record is assigned to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14520,6 +14700,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the record within its shard.</p>\n@param sequenceNumber The unique identifier of the record within its shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14628,6 +14809,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14727,6 +14909,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14767,6 +14950,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tag keys. Each corresponding tag is removed from the stream.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A list of tag keys. Each corresponding tag is removed from the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14831,6 +15015,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14931,6 +15116,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14971,6 +15157,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tag keys. Each corresponding tag is removed from the stream.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A list of tag keys. Each corresponding tag is removed from the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15222,6 +15409,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The starting sequence number for the range.</p>\n@param startingSequenceNumber The starting sequence number for the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15284,6 +15472,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>\n@param endingSequenceNumber The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15348,6 +15537,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>\n@param endingSequenceNumber The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15411,6 +15601,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The starting sequence number for the range.</p>\n@param startingSequenceNumber The starting sequence number for the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15512,6 +15703,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the shard within the stream.</p>\n@param shardId The unique identifier of the shard within the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15574,6 +15766,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the shard's parent.</p>\n@param parentShardId The shard ID of the shard's parent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15636,6 +15829,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the shard adjacent to the shard's parent.</p>\n@param adjacentParentShardId The shard ID of the shard adjacent to the shard's parent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15698,6 +15892,7 @@
           "simpleType" : "HashKeyRange",
           "variableSetterType" : "HashKeyRange"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>\n@param hashKeyRange The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15760,6 +15955,7 @@
           "simpleType" : "SequenceNumberRange",
           "variableSetterType" : "SequenceNumberRange"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The range of possible sequence numbers for the shard.</p>\n@param sequenceNumberRange The range of possible sequence numbers for the shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15824,6 +16020,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the shard adjacent to the shard's parent.</p>\n@param adjacentParentShardId The shard ID of the shard adjacent to the shard's parent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15887,6 +16084,7 @@
             "simpleType" : "HashKeyRange",
             "variableSetterType" : "HashKeyRange"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>\n@param hashKeyRange The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15950,6 +16148,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the shard's parent.</p>\n@param parentShardId The shard ID of the shard's parent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16013,6 +16212,7 @@
             "simpleType" : "SequenceNumberRange",
             "variableSetterType" : "SequenceNumberRange"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The range of possible sequence numbers for the shard.</p>\n@param sequenceNumberRange The range of possible sequence numbers for the shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16076,6 +16276,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the shard within the stream.</p>\n@param shardId The unique identifier of the shard within the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16238,6 +16439,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream for the shard split.</p>\n@param streamName The name of the stream for the shard split.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16300,6 +16502,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shard ID of the shard to split.</p>\n@param shardToSplit The shard ID of the shard to split.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16362,6 +16565,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>\n@param newStartingHashKey A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16426,6 +16630,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.</p>\n@param newStartingHashKey A hash key value for the starting hash key of one of the child shards created by the split. The hash key range for a given shard constitutes a set of ordered contiguous positive integers. The value for <code>NewStartingHashKey</code> must be in the range of hash keys being mapped into the shard. The <code>NewStartingHashKey</code> hash key value and all higher hash key values in hash key range are distributed to one of the child shards. All the lower hash key values in the range are distributed to the other child shard.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16489,6 +16694,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shard ID of the shard to split.</p>\n@param shardToSplit The shard ID of the shard to split.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16552,6 +16758,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream for the shard split.</p>\n@param streamName The name of the stream for the shard split.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16696,6 +16903,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream for which to start encrypting records.</p>\n@param streamName The name of the stream for which to start encrypting records.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16758,6 +16966,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The encryption type to use. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type to use. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -16820,6 +17029,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The GUID for the customer-managed KMS key to use for encryption. You can also use a Kinesis-owned master key by specifying the alias <code>aws/kinesis</code>.</p>\n@param keyId The GUID for the customer-managed KMS key to use for encryption. You can also use a Kinesis-owned master key by specifying the alias <code>aws/kinesis</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16884,6 +17094,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The encryption type to use. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type to use. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -16947,6 +17158,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The GUID for the customer-managed KMS key to use for encryption. You can also use a Kinesis-owned master key by specifying the alias <code>aws/kinesis</code>.</p>\n@param keyId The GUID for the customer-managed KMS key to use for encryption. You can also use a Kinesis-owned master key by specifying the alias <code>aws/kinesis</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17010,6 +17222,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream for which to start encrypting records.</p>\n@param streamName The name of the stream for which to start encrypting records.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17154,6 +17367,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream on which to stop encrypting records.</p>\n@param streamName The name of the stream on which to stop encrypting records.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17216,6 +17430,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The encryption type. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -17278,6 +17493,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The GUID for the customer-managed key that was used for encryption.</p>\n@param keyId The GUID for the customer-managed key that was used for encryption.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17342,6 +17558,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The encryption type. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The encryption type. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Not valid for this operation. An <code>InvalidOperationException</code> will be thrown.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -17405,6 +17622,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The GUID for the customer-managed key that was used for encryption.</p>\n@param keyId The GUID for the customer-managed key that was used for encryption.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17468,6 +17686,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream on which to stop encrypting records.</p>\n@param streamName The name of the stream on which to stop encrypting records.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17605,6 +17824,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream being described.</p>\n@param streamName The name of the stream being described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17667,6 +17887,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream being described.</p>\n@param streamARN The Amazon Resource Name (ARN) for the stream being described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17729,6 +17950,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of the stream being described. The stream status is one of the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> </ul>\n@param streamStatus The current status of the stream being described. The stream status is one of the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/",
@@ -17828,6 +18050,7 @@
               "simpleType" : "Shard",
               "variableSetterType" : "Shard"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17868,6 +18091,7 @@
           "simpleType" : "List<Shard>",
           "variableSetterType" : "java.util.Collection<Shard>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The shards that comprise the stream.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShards(java.util.Collection)} or {@link #withShards(java.util.Collection)} if you want to override the existing values.</p>\n@param shards The shards that comprise the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17930,6 +18154,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If set to <code>true</code>, more shards in the stream are available to describe.</p>\n@param hasMoreShards If set to <code>true</code>, more shards in the stream are available to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17992,6 +18217,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current retention period, in hours.</p>\n@param retentionPeriodHours The current retention period, in hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18054,6 +18280,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The approximate time that the stream was created.</p>\n@param streamCreationTimestamp The approximate time that the stream was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18153,6 +18380,7 @@
               "simpleType" : "EnhancedMetrics",
               "variableSetterType" : "EnhancedMetrics"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18193,6 +18421,7 @@
           "simpleType" : "List<EnhancedMetrics>",
           "variableSetterType" : "java.util.Collection<EnhancedMetrics>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Represents the current enhanced monitoring settings of the stream.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEnhancedMonitoring(java.util.Collection)} or {@link #withEnhancedMonitoring(java.util.Collection)} if you want to override the existing values.</p>\n@param enhancedMonitoring Represents the current enhanced monitoring settings of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18255,6 +18484,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The server-side encryption type used on the stream. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -18317,6 +18547,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The GUID for the customer-managed KMS key used for encryption on the stream.</p>\n@param keyId The GUID for the customer-managed KMS key used for encryption on the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18381,6 +18612,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The server-side encryption type used on the stream. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li> </ul>\n@param encryptionType The server-side encryption type used on the stream. This parameter can be one of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionType*/",
@@ -18481,6 +18713,7 @@
                 "simpleType" : "EnhancedMetrics",
                 "variableSetterType" : "EnhancedMetrics"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18521,6 +18754,7 @@
             "simpleType" : "List<EnhancedMetrics>",
             "variableSetterType" : "java.util.Collection<EnhancedMetrics>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Represents the current enhanced monitoring settings of the stream.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEnhancedMonitoring(java.util.Collection)} or {@link #withEnhancedMonitoring(java.util.Collection)} if you want to override the existing values.</p>\n@param enhancedMonitoring Represents the current enhanced monitoring settings of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18584,6 +18818,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If set to <code>true</code>, more shards in the stream are available to describe.</p>\n@param hasMoreShards If set to <code>true</code>, more shards in the stream are available to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18647,6 +18882,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The GUID for the customer-managed KMS key used for encryption on the stream.</p>\n@param keyId The GUID for the customer-managed KMS key used for encryption on the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18710,6 +18946,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current retention period, in hours.</p>\n@param retentionPeriodHours The current retention period, in hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18810,6 +19047,7 @@
                 "simpleType" : "Shard",
                 "variableSetterType" : "Shard"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18850,6 +19088,7 @@
             "simpleType" : "List<Shard>",
             "variableSetterType" : "java.util.Collection<Shard>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The shards that comprise the stream.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setShards(java.util.Collection)} or {@link #withShards(java.util.Collection)} if you want to override the existing values.</p>\n@param shards The shards that comprise the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18913,6 +19152,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the stream being described.</p>\n@param streamARN The Amazon Resource Name (ARN) for the stream being described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18976,6 +19216,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The approximate time that the stream was created.</p>\n@param streamCreationTimestamp The approximate time that the stream was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19039,6 +19280,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream being described.</p>\n@param streamName The name of the stream being described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19102,6 +19344,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of the stream being described. The stream status is one of the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li> </ul>\n@param streamStatus The current status of the stream being described. The stream status is one of the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is being created. Amazon Kinesis immediately returns and sets <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p> <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state until Amazon Kinesis completes the deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is ready for read and write operations or deletion. You should perform read and write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p> <code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamStatus*/",
@@ -19254,6 +19497,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>\n@param key A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19316,6 +19560,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>\n@param value An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19380,6 +19625,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>\n@param key A unique identifier for the tag. Maximum length: 128 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19443,6 +19689,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @</p>\n@param value An optional string, typically used to describe or define the tag. Maximum length: 256 characters. Valid characters: Unicode letters, digits, white space, _ . / = + - % @\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19551,6 +19798,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19613,6 +19861,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new number of shards.</p>\n@param targetShardCount The new number of shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19675,6 +19924,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The scaling type. Uniform scaling creates shards of equal size.</p>\n@param scalingType The scaling type. Uniform scaling creates shards of equal size.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalingType*/",
@@ -19739,6 +19989,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The scaling type. Uniform scaling creates shards of equal size.</p>\n@param scalingType The scaling type. Uniform scaling creates shards of equal size.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalingType*/",
@@ -19802,6 +20053,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19865,6 +20117,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new number of shards.</p>\n@param targetShardCount The new number of shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19963,6 +20216,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20025,6 +20279,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current number of shards.</p>\n@param currentShardCount The current number of shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20087,6 +20342,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The updated number of shards.</p>\n@param targetShardCount The updated number of shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20151,6 +20407,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current number of shards.</p>\n@param currentShardCount The current number of shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20214,6 +20471,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20277,6 +20535,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The updated number of shards.</p>\n@param targetShardCount The updated number of shards.\n@return Returns a reference to this object so that method calls can be chained together.*/",

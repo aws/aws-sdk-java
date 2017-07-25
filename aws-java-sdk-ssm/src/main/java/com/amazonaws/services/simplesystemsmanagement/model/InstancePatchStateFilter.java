@@ -222,7 +222,7 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
      */
 
     public void setType(InstancePatchStateOperatorType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -237,7 +237,7 @@ public class InstancePatchStateFilter implements Serializable, Cloneable, Struct
      */
 
     public InstancePatchStateFilter withType(InstancePatchStateOperatorType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

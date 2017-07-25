@@ -712,7 +712,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      */
 
     public void setAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
-        this.automaticFailover = automaticFailover.toString();
+        withAutomaticFailover(automaticFailover);
     }
 
     /**
@@ -765,7 +765,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
      */
 
     public ReplicationGroup withAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
-        setAutomaticFailover(automaticFailover);
+        this.automaticFailover = automaticFailover.toString();
         return this;
     }
 

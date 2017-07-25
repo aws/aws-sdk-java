@@ -275,7 +275,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setContactType(ContactType contactType) {
-        this.contactType = contactType.toString();
+        withContactType(contactType);
     }
 
     /**
@@ -294,7 +294,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ContactDetail withContactType(ContactType contactType) {
-        setContactType(contactType);
+        this.contactType = contactType.toString();
         return this;
     }
 
@@ -552,7 +552,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setCountryCode(CountryCode countryCode) {
-        this.countryCode = countryCode.toString();
+        withCountryCode(countryCode);
     }
 
     /**
@@ -567,7 +567,7 @@ public class ContactDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ContactDetail withCountryCode(CountryCode countryCode) {
-        setCountryCode(countryCode);
+        this.countryCode = countryCode.toString();
         return this;
     }
 

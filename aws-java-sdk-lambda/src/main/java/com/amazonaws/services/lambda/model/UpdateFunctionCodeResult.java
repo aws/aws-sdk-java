@@ -281,7 +281,7 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public void setRuntime(Runtime runtime) {
-        this.runtime = runtime.toString();
+        withRuntime(runtime);
     }
 
     /**
@@ -296,7 +296,7 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public UpdateFunctionCodeResult withRuntime(Runtime runtime) {
-        setRuntime(runtime);
+        this.runtime = runtime.toString();
         return this;
     }
 

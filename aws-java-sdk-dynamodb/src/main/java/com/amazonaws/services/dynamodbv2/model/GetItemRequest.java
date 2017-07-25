@@ -518,7 +518,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -528,7 +528,7 @@ public class GetItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public GetItemRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 

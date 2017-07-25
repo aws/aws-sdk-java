@@ -218,7 +218,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setStatus(TaskDefinitionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -241,7 +241,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public ListTaskDefinitionsRequest withStatus(TaskDefinitionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -331,7 +331,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setSort(SortOrder sort) {
-        this.sort = sort.toString();
+        withSort(sort);
     }
 
     /**
@@ -354,7 +354,7 @@ public class ListTaskDefinitionsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public ListTaskDefinitionsRequest withSort(SortOrder sort) {
-        setSort(sort);
+        this.sort = sort.toString();
         return this;
     }
 

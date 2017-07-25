@@ -93,7 +93,7 @@ public class VpcAttachment implements Serializable, Cloneable {
      */
 
     public void setState(AttachmentStatus state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -108,7 +108,7 @@ public class VpcAttachment implements Serializable, Cloneable {
      */
 
     public VpcAttachment withState(AttachmentStatus state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

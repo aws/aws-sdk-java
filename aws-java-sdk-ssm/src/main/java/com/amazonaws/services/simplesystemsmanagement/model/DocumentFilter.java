@@ -95,7 +95,7 @@ public class DocumentFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setKey(DocumentFilterKey key) {
-        this.key = key.toString();
+        withKey(key);
     }
 
     /**
@@ -110,7 +110,7 @@ public class DocumentFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public DocumentFilter withKey(DocumentFilterKey key) {
-        setKey(key);
+        this.key = key.toString();
         return this;
     }
 

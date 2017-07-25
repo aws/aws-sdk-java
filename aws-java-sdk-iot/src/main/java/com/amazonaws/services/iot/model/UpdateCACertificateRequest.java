@@ -161,7 +161,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setNewStatus(CACertificateStatus newStatus) {
-        this.newStatus = newStatus.toString();
+        withNewStatus(newStatus);
     }
 
     /**
@@ -181,7 +181,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public UpdateCACertificateRequest withNewStatus(CACertificateStatus newStatus) {
-        setNewStatus(newStatus);
+        this.newStatus = newStatus.toString();
         return this;
     }
 
@@ -239,7 +239,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setNewAutoRegistrationStatus(AutoRegistrationStatus newAutoRegistrationStatus) {
-        this.newAutoRegistrationStatus = newAutoRegistrationStatus.toString();
+        withNewAutoRegistrationStatus(newAutoRegistrationStatus);
     }
 
     /**
@@ -254,7 +254,7 @@ public class UpdateCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public UpdateCACertificateRequest withNewAutoRegistrationStatus(AutoRegistrationStatus newAutoRegistrationStatus) {
-        setNewAutoRegistrationStatus(newAutoRegistrationStatus);
+        this.newAutoRegistrationStatus = newAutoRegistrationStatus.toString();
         return this;
     }
 

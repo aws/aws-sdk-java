@@ -663,7 +663,7 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
-        this.contentHandling = contentHandling.toString();
+        withContentHandling(contentHandling);
     }
 
     /**
@@ -713,7 +713,7 @@ public class PutIntegrationResponseRequest extends com.amazonaws.AmazonWebServic
      */
 
     public PutIntegrationResponseRequest withContentHandling(ContentHandlingStrategy contentHandling) {
-        setContentHandling(contentHandling);
+        this.contentHandling = contentHandling.toString();
         return this;
     }
 

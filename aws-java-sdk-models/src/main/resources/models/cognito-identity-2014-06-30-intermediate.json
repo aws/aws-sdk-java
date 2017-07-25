@@ -34,6 +34,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -1114,6 +1115,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>\n@param providerName The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1176,6 +1178,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The client ID for the Amazon Cognito Identity User Pool.</p>\n@param clientId The client ID for the Amazon Cognito Identity User Pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1238,6 +1241,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1302,6 +1306,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The client ID for the Amazon Cognito Identity User Pool.</p>\n@param clientId The client ID for the Amazon Cognito Identity User Pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1365,6 +1370,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>\n@param providerName The provider name for an Amazon Cognito Identity User Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1428,6 +1434,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>TRUE if server-side token validation is enabled for the identity provider’s token.</p>\n@param serverSideTokenCheck TRUE if server-side token validation is enabled for the identity provider’s token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1572,6 +1579,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1634,6 +1642,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1739,6 +1748,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1773,6 +1783,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1835,6 +1846,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1934,6 +1946,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1974,6 +1987,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2073,6 +2087,7 @@
               "simpleType" : "CognitoIdentityProvider",
               "variableSetterType" : "CognitoIdentityProvider"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2113,6 +2128,7 @@
           "simpleType" : "List<CognitoIdentityProvider>",
           "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of Amazon Cognito Identity user pools and their client IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders An array of Amazon Cognito Identity user pools and their client IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2212,6 +2228,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2252,6 +2269,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2316,6 +2334,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2416,6 +2435,7 @@
                 "simpleType" : "CognitoIdentityProvider",
                 "variableSetterType" : "CognitoIdentityProvider"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2456,6 +2476,7 @@
             "simpleType" : "List<CognitoIdentityProvider>",
             "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of Amazon Cognito Identity user pools and their client IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders An array of Amazon Cognito Identity user pools and their client IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2519,6 +2540,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (<code>.</code>), underscore (<code>_</code>), and dash (<code>-</code>).</p> <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2582,6 +2604,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2682,6 +2705,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2722,6 +2746,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2822,6 +2847,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2862,6 +2888,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2968,6 +2995,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3002,6 +3030,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3100,6 +3129,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3162,6 +3192,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3224,6 +3255,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3329,6 +3361,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3363,6 +3396,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3425,6 +3459,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3524,6 +3559,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3564,6 +3600,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3663,6 +3700,7 @@
               "simpleType" : "CognitoIdentityProvider",
               "variableSetterType" : "CognitoIdentityProvider"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3703,6 +3741,7 @@
           "simpleType" : "List<CognitoIdentityProvider>",
           "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3802,6 +3841,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3842,6 +3882,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3906,6 +3947,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4006,6 +4048,7 @@
                 "simpleType" : "CognitoIdentityProvider",
                 "variableSetterType" : "CognitoIdentityProvider"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4046,6 +4089,7 @@
             "simpleType" : "List<CognitoIdentityProvider>",
             "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4109,6 +4153,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4172,6 +4217,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4235,6 +4281,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4335,6 +4382,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4375,6 +4423,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4475,6 +4524,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4515,6 +4565,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4621,6 +4672,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4655,6 +4707,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4756,6 +4809,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Access Key portion of the credentials.</p>\n@param accessKeyId The Access Key portion of the credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4818,6 +4872,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Secret Access Key portion of the credentials</p>\n@param secretKey The Secret Access Key portion of the credentials\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4880,6 +4935,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Session Token portion of the credentials</p>\n@param sessionToken The Session Token portion of the credentials\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4942,6 +4998,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date at which these credentials will expire.</p>\n@param expiration The date at which these credentials will expire.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5006,6 +5063,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Access Key portion of the credentials.</p>\n@param accessKeyId The Access Key portion of the credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5069,6 +5127,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date at which these credentials will expire.</p>\n@param expiration The date at which these credentials will expire.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5132,6 +5191,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Secret Access Key portion of the credentials</p>\n@param secretKey The Secret Access Key portion of the credentials\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5195,6 +5255,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Session Token portion of the credentials</p>\n@param sessionToken The Session Token portion of the credentials\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5340,6 +5401,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5380,6 +5442,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of 1-60 identities that you want to delete.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIdentityIdsToDelete(java.util.Collection)} or {@link #withIdentityIdsToDelete(java.util.Collection)} if you want to override the existing values.</p>\n@param identityIdsToDelete A list of 1-60 identities that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5481,6 +5544,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5521,6 +5585,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of 1-60 identities that you want to delete.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIdentityIdsToDelete(java.util.Collection)} or {@link #withIdentityIdsToDelete(java.util.Collection)} if you want to override the existing values.</p>\n@param identityIdsToDelete A list of 1-60 identities that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5656,6 +5721,7 @@
               "simpleType" : "UnprocessedIdentityId",
               "variableSetterType" : "UnprocessedIdentityId"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5696,6 +5762,7 @@
           "simpleType" : "List<UnprocessedIdentityId>",
           "variableSetterType" : "java.util.Collection<UnprocessedIdentityId>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedIdentityIds(java.util.Collection)} or {@link #withUnprocessedIdentityIds(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedIdentityIds An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5797,6 +5864,7 @@
                 "simpleType" : "UnprocessedIdentityId",
                 "variableSetterType" : "UnprocessedIdentityId"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5837,6 +5905,7 @@
             "simpleType" : "List<UnprocessedIdentityId>",
             "variableSetterType" : "java.util.Collection<UnprocessedIdentityId>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedIdentityIds(java.util.Collection)} or {@link #withUnprocessedIdentityIds(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedIdentityIds An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5945,6 +6014,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6009,6 +6079,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6153,6 +6224,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6217,6 +6289,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6315,6 +6388,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6377,6 +6451,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6439,6 +6514,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6544,6 +6620,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6578,6 +6655,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6640,6 +6718,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6739,6 +6818,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6779,6 +6859,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6878,6 +6959,7 @@
               "simpleType" : "CognitoIdentityProvider",
               "variableSetterType" : "CognitoIdentityProvider"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6918,6 +7000,7 @@
           "simpleType" : "List<CognitoIdentityProvider>",
           "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7017,6 +7100,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7057,6 +7141,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7121,6 +7206,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7221,6 +7307,7 @@
                 "simpleType" : "CognitoIdentityProvider",
                 "variableSetterType" : "CognitoIdentityProvider"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7261,6 +7348,7 @@
             "simpleType" : "List<CognitoIdentityProvider>",
             "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7324,6 +7412,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7387,6 +7476,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7450,6 +7540,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7550,6 +7641,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7590,6 +7682,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7690,6 +7783,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7730,6 +7824,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7836,6 +7931,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7870,6 +7966,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7978,6 +8075,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8042,6 +8140,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8140,6 +8239,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8239,6 +8339,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8279,6 +8380,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLogins(java.util.Collection)} or {@link #withLogins(java.util.Collection)} if you want to override the existing values.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8341,6 +8443,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Date on which the identity was created.</p>\n@param creationDate Date on which the identity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8403,6 +8506,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Date on which the identity was last modified.</p>\n@param lastModifiedDate Date on which the identity was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8467,6 +8571,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Date on which the identity was created.</p>\n@param creationDate Date on which the identity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8530,6 +8635,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8593,6 +8699,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Date on which the identity was last modified.</p>\n@param lastModifiedDate Date on which the identity was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8693,6 +8800,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8733,6 +8841,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLogins(java.util.Collection)} or {@link #withLogins(java.util.Collection)} if you want to override the existing values.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8958,6 +9067,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9063,6 +9173,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9097,6 +9208,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9159,6 +9271,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>\n@param customRoleArn The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9223,6 +9336,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>\n@param customRoleArn The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9286,6 +9400,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9392,6 +9507,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9426,6 +9542,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9524,6 +9641,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9586,6 +9704,7 @@
           "simpleType" : "Credentials",
           "variableSetterType" : "Credentials"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Credentials for the provided identity ID.</p>\n@param credentials Credentials for the provided identity ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9650,6 +9769,7 @@
             "simpleType" : "Credentials",
             "variableSetterType" : "Credentials"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Credentials for the provided identity ID.</p>\n@param credentials Credentials for the provided identity ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9713,6 +9833,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9821,6 +9942,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A standard AWS account ID (9+ digits).</p>\n@param accountId A standard AWS account ID (9+ digits).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9883,6 +10005,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9988,6 +10111,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10022,6 +10146,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li> </ul>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10086,6 +10211,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A standard AWS account ID (9+ digits).</p>\n@param accountId A standard AWS account ID (9+ digits).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10149,6 +10275,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10255,6 +10382,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10289,6 +10417,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li> </ul>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10387,6 +10516,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10451,6 +10581,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10559,6 +10690,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10623,6 +10755,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10721,6 +10854,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10826,6 +10960,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10860,6 +10995,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>\n@param roles The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10965,6 +11101,7 @@
               "simpleType" : "RoleMapping",
               "variableSetterType" : "RoleMapping"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10999,6 +11136,7 @@
           "simpleType" : "Map<String,RoleMapping>",
           "variableSetterType" : "java.util.Map<String,RoleMapping>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p>\n@param roleMappings How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11063,6 +11201,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11169,6 +11308,7 @@
                 "simpleType" : "RoleMapping",
                 "variableSetterType" : "RoleMapping"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11203,6 +11343,7 @@
             "simpleType" : "Map<String,RoleMapping>",
             "variableSetterType" : "java.util.Map<String,RoleMapping>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p>\n@param roleMappings How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11309,6 +11450,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11343,6 +11485,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>\n@param roles The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11451,6 +11594,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11513,6 +11657,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11618,6 +11763,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11652,6 +11798,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>\"developer_provider_name\": \"developer_user_identifier\"</code>. The developer provider is the \"domain\" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>\"developer_provider_name\": \"developer_user_identifier\"</code>. The developer provider is the \"domain\" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11714,6 +11861,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p>\n@param tokenDuration The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11778,6 +11926,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11841,6 +11990,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11947,6 +12097,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11981,6 +12132,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>\"developer_provider_name\": \"developer_user_identifier\"</code>. The developer provider is the \"domain\" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. Each name-value pair represents a user from a public provider or developer provider. If the user is from a developer provider, the name-value pair will follow the syntax <code>\"developer_provider_name\": \"developer_user_identifier\"</code>. The developer provider is the \"domain\" by which Cognito will refer to your users; you provided this domain while creating/updating the identity pool. The developer user identifier is an identifier from your backend that uniquely identifies a user. When you create an identity pool, you can specify the supported logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12044,6 +12196,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.</p>\n@param tokenDuration The expiration time of the token, in seconds. You can specify a custom expiration time for the token so that you can cache it. If you don't provide an expiration time, the token is valid for 15 minutes. You can exchange the token with Amazon STS for temporary AWS credentials, which are valid for a maximum of one hour. The maximum token duration you can set is 24 hours. You should take care in setting the expiration time for a token, as there are significant security implications: an attacker could use a leaked token to access your AWS resources for the token's duration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12142,6 +12295,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12204,6 +12358,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An OpenID token.</p>\n@param token An OpenID token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12268,6 +12423,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12331,6 +12487,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An OpenID token.</p>\n@param token An OpenID token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12439,6 +12596,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12544,6 +12702,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12578,6 +12737,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12642,6 +12802,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12748,6 +12909,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12782,6 +12944,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12880,6 +13043,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>\n@param identityId A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12942,6 +13106,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An OpenID token, valid for 15 minutes.</p>\n@param token An OpenID token, valid for 15 minutes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13006,6 +13171,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>\n@param identityId A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13069,6 +13235,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An OpenID token, valid for 15 minutes.</p>\n@param token An OpenID token, valid for 15 minutes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13170,6 +13337,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13269,6 +13437,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13309,6 +13478,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLogins(java.util.Collection)} or {@link #withLogins(java.util.Collection)} if you want to override the existing values.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13371,6 +13541,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Date on which the identity was created.</p>\n@param creationDate Date on which the identity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13433,6 +13604,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Date on which the identity was last modified.</p>\n@param lastModifiedDate Date on which the identity was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13497,6 +13669,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Date on which the identity was created.</p>\n@param creationDate Date on which the identity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13560,6 +13733,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13623,6 +13797,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Date on which the identity was last modified.</p>\n@param lastModifiedDate Date on which the identity was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13723,6 +13898,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13763,6 +13939,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLogins(java.util.Collection)} or {@link #withLogins(java.util.Collection)} if you want to override the existing values.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13864,6 +14041,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13926,6 +14104,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13990,6 +14169,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14053,6 +14233,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14305,6 +14486,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14367,6 +14549,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14429,6 +14612,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14491,6 +14675,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>\n@param hideDisabled An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14555,6 +14740,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>\n@param hideDisabled An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14618,6 +14804,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14681,6 +14868,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14744,6 +14932,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14842,6 +15031,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14941,6 +15131,7 @@
               "simpleType" : "IdentityDescription",
               "variableSetterType" : "IdentityDescription"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14981,6 +15172,7 @@
           "simpleType" : "List<IdentityDescription>",
           "variableSetterType" : "java.util.Collection<IdentityDescription>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object containing a set of identities and associated mappings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIdentities(java.util.Collection)} or {@link #withIdentities(java.util.Collection)} if you want to override the existing values.</p>\n@param identities An object containing a set of identities and associated mappings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15043,6 +15235,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15144,6 +15337,7 @@
                 "simpleType" : "IdentityDescription",
                 "variableSetterType" : "IdentityDescription"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15184,6 +15378,7 @@
             "simpleType" : "List<IdentityDescription>",
             "variableSetterType" : "java.util.Collection<IdentityDescription>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object containing a set of identities and associated mappings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIdentities(java.util.Collection)} or {@link #withIdentities(java.util.Collection)} if you want to override the existing values.</p>\n@param identities An object containing a set of identities and associated mappings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15247,6 +15442,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15310,6 +15506,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15418,6 +15615,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15480,6 +15678,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15544,6 +15743,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15607,6 +15807,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15742,6 +15943,7 @@
               "simpleType" : "IdentityPoolShortDescription",
               "variableSetterType" : "IdentityPoolShortDescription"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15782,6 +15984,7 @@
           "simpleType" : "List<IdentityPoolShortDescription>",
           "variableSetterType" : "java.util.Collection<IdentityPoolShortDescription>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identity pools returned by the ListIdentityPools action.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIdentityPools(java.util.Collection)} or {@link #withIdentityPools(java.util.Collection)} if you want to override the existing values.</p>\n@param identityPools The identity pools returned by the ListIdentityPools action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15844,6 +16047,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15945,6 +16149,7 @@
                 "simpleType" : "IdentityPoolShortDescription",
                 "variableSetterType" : "IdentityPoolShortDescription"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15985,6 +16190,7 @@
             "simpleType" : "List<IdentityPoolShortDescription>",
             "variableSetterType" : "java.util.Collection<IdentityPoolShortDescription>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identity pools returned by the ListIdentityPools action.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIdentityPools(java.util.Collection)} or {@link #withIdentityPools(java.util.Collection)} if you want to override the existing values.</p>\n@param identityPools The identity pools returned by the ListIdentityPools action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16048,6 +16254,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A pagination token.</p>\n@param nextToken A pagination token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16156,6 +16363,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16218,6 +16426,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16280,6 +16489,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>\n@param developerUserIdentifier A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16342,6 +16552,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16404,6 +16615,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>\n@param nextToken A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16468,6 +16680,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>\n@param developerUserIdentifier A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16531,6 +16744,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16594,6 +16808,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16657,6 +16872,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of identities to return.</p>\n@param maxResults The maximum number of identities to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16720,6 +16936,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>\n@param nextToken A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16818,6 +17035,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16917,6 +17135,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16957,6 +17176,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeveloperUserIdentifierList(java.util.Collection)} or {@link #withDeveloperUserIdentifierList(java.util.Collection)} if you want to override the existing values.</p>\n@param developerUserIdentifierList This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17019,6 +17239,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>\n@param nextToken A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17120,6 +17341,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17160,6 +17382,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeveloperUserIdentifierList(java.util.Collection)} or {@link #withDeveloperUserIdentifierList(java.util.Collection)} if you want to override the existing values.</p>\n@param developerUserIdentifierList This is the list of developer user identifiers associated with an identity ID. Cognito supports the association of multiple developer user identifiers with an identity ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17223,6 +17446,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17286,6 +17510,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>\n@param nextToken A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17387,6 +17612,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The claim name that must be present in the token, for example, \"isAdmin\" or \"paid\".</p>\n@param claim The claim name that must be present in the token, for example, \"isAdmin\" or \"paid\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17449,6 +17675,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>\n@param matchType The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MappingRuleMatchType*/",
@@ -17511,6 +17738,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A brief string that the claim must match, for example, \"paid\" or \"yes\".</p>\n@param value A brief string that the claim must match, for example, \"paid\" or \"yes\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17573,6 +17801,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The role ARN.</p>\n@param roleARN The role ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17637,6 +17866,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The claim name that must be present in the token, for example, \"isAdmin\" or \"paid\".</p>\n@param claim The claim name that must be present in the token, for example, \"isAdmin\" or \"paid\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17700,6 +17930,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>\n@param matchType The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see MappingRuleMatchType*/",
@@ -17763,6 +17994,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The role ARN.</p>\n@param roleARN The role ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17826,6 +18058,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A brief string that the claim must match, for example, \"paid\" or \"yes\".</p>\n@param value A brief string that the claim must match, for example, \"paid\" or \"yes\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17985,6 +18218,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>\n@param sourceUserIdentifier User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18047,6 +18281,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>\n@param destinationUserIdentifier User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18109,6 +18344,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18171,6 +18407,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18235,6 +18472,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.</p>\n@param destinationUserIdentifier User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18298,6 +18536,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users. This is a (pseudo) domain name that you provide while creating an identity pool. This name acts as a placeholder that allows your backend and the Cognito service to communicate about the developer provider. For the <code>DeveloperProviderName</code>, you can use letters as well as period (.), underscore (_), and dash (-).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18361,6 +18600,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18424,6 +18664,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.</p>\n@param sourceUserIdentifier User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18522,6 +18763,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18586,6 +18828,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18795,6 +19038,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>\n@param type The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RoleMappingType*/",
@@ -18857,6 +19101,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>\n@param ambiguousRoleResolution If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AmbiguousRoleResolutionType*/",
@@ -18919,6 +19164,7 @@
           "simpleType" : "RulesConfigurationType",
           "variableSetterType" : "RulesConfigurationType"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>\n@param rulesConfiguration The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18983,6 +19229,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>\n@param ambiguousRoleResolution If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AmbiguousRoleResolutionType*/",
@@ -19046,6 +19293,7 @@
             "simpleType" : "RulesConfigurationType",
             "variableSetterType" : "RulesConfigurationType"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>\n@param rulesConfiguration The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19109,6 +19357,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>\n@param type The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RoleMappingType*/",
@@ -19292,6 +19541,7 @@
               "simpleType" : "MappingRule",
               "variableSetterType" : "MappingRule"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19332,6 +19582,7 @@
           "simpleType" : "List<MappingRule>",
           "variableSetterType" : "java.util.Collection<MappingRule>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRules(java.util.Collection)} or {@link #withRules(java.util.Collection)} if you want to override the existing values.</p>\n@param rules An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19433,6 +19684,7 @@
                 "simpleType" : "MappingRule",
                 "variableSetterType" : "MappingRule"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19473,6 +19725,7 @@
             "simpleType" : "List<MappingRule>",
             "variableSetterType" : "java.util.Collection<MappingRule>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRules(java.util.Collection)} or {@link #withRules(java.util.Collection)} if you want to override the existing values.</p>\n@param rules An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19581,6 +19834,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19686,6 +19940,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19720,6 +19975,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The map of roles associated with this pool. For a given role, the key will be either \"authenticated\" or \"unauthenticated\" and the value will be the Role ARN.</p>\n@param roles The map of roles associated with this pool. For a given role, the key will be either \"authenticated\" or \"unauthenticated\" and the value will be the Role ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19825,6 +20081,7 @@
               "simpleType" : "RoleMapping",
               "variableSetterType" : "RoleMapping"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19859,6 +20116,7 @@
           "simpleType" : "Map<String,RoleMapping>",
           "variableSetterType" : "java.util.Map<String,RoleMapping>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p> <p>Up to 25 rules can be specified per identity provider.</p>\n@param roleMappings How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p> <p>Up to 25 rules can be specified per identity provider.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19923,6 +20181,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20029,6 +20288,7 @@
                 "simpleType" : "RoleMapping",
                 "variableSetterType" : "RoleMapping"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20063,6 +20323,7 @@
             "simpleType" : "Map<String,RoleMapping>",
             "variableSetterType" : "java.util.Map<String,RoleMapping>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p> <p>Up to 25 rules can be specified per identity provider.</p>\n@param roleMappings How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \"graph.facebook.com\" or \"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\".</p> <p>Up to 25 rules can be specified per identity provider.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20169,6 +20430,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20203,6 +20465,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The map of roles associated with this pool. For a given role, the key will be either \"authenticated\" or \"unauthenticated\" and the value will be the Role ARN.</p>\n@param roles The map of roles associated with this pool. For a given role, the key will be either \"authenticated\" or \"unauthenticated\" and the value will be the Role ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20383,6 +20646,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20445,6 +20709,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20507,6 +20772,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20569,6 +20835,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique ID used by your backend authentication process to identify a user.</p>\n@param developerUserIdentifier A unique ID used by your backend authentication process to identify a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20633,6 +20900,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20696,6 +20964,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique ID used by your backend authentication process to identify a user.</p>\n@param developerUserIdentifier A unique ID used by your backend authentication process to identify a user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20759,6 +21028,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20822,6 +21092,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20966,6 +21237,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21071,6 +21343,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21105,6 +21378,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21204,6 +21478,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21244,6 +21519,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Provider names to unlink from this identity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLoginsToRemove(java.util.Collection)} or {@link #withLoginsToRemove(java.util.Collection)} if you want to override the existing values.</p>\n@param loginsToRemove Provider names to unlink from this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21308,6 +21584,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21414,6 +21691,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21448,6 +21726,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\n@param logins A set of optional name-value pairs that map provider names to provider tokens.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21548,6 +21827,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21588,6 +21868,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Provider names to unlink from this identity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLoginsToRemove(java.util.Collection)} or {@link #withLoginsToRemove(java.util.Collection)} if you want to override the existing values.</p>\n@param loginsToRemove Provider names to unlink from this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21725,6 +22006,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21787,6 +22069,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code indicating the type of error that occurred.</p>\n@param errorCode The error code indicating the type of error that occurred.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
@@ -21851,6 +22134,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code indicating the type of error that occurred.</p>\n@param errorCode The error code indicating the type of error that occurred.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
@@ -21914,6 +22198,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier in the format REGION:GUID.</p>\n@param identityId A unique identifier in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22022,6 +22307,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22084,6 +22370,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22146,6 +22433,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22251,6 +22539,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22285,6 +22574,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22347,6 +22637,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22446,6 +22737,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22486,6 +22778,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22585,6 +22878,7 @@
               "simpleType" : "CognitoIdentityProvider",
               "variableSetterType" : "CognitoIdentityProvider"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22625,6 +22919,7 @@
           "simpleType" : "List<CognitoIdentityProvider>",
           "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22724,6 +23019,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22764,6 +23060,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22828,6 +23125,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22928,6 +23226,7 @@
                 "simpleType" : "CognitoIdentityProvider",
                 "variableSetterType" : "CognitoIdentityProvider"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22968,6 +23267,7 @@
             "simpleType" : "List<CognitoIdentityProvider>",
             "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23031,6 +23331,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23094,6 +23395,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23157,6 +23459,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23257,6 +23560,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23297,6 +23601,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23397,6 +23702,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23437,6 +23743,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23543,6 +23850,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23577,6 +23885,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23675,6 +23984,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23737,6 +24047,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23799,6 +24110,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23904,6 +24216,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -23938,6 +24251,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24000,6 +24314,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24099,6 +24414,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24139,6 +24455,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24238,6 +24555,7 @@
               "simpleType" : "CognitoIdentityProvider",
               "variableSetterType" : "CognitoIdentityProvider"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24278,6 +24596,7 @@
           "simpleType" : "List<CognitoIdentityProvider>",
           "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24377,6 +24696,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24417,6 +24737,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24481,6 +24802,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>TRUE if the identity pool supports unauthenticated logins.</p>\n@param allowUnauthenticatedIdentities TRUE if the identity pool supports unauthenticated logins.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24581,6 +24903,7 @@
                 "simpleType" : "CognitoIdentityProvider",
                 "variableSetterType" : "CognitoIdentityProvider"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24621,6 +24944,7 @@
             "simpleType" : "List<CognitoIdentityProvider>",
             "variableSetterType" : "java.util.Collection<CognitoIdentityProvider>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list representing an Amazon Cognito Identity User Pool and its client ID.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCognitoIdentityProviders(java.util.Collection)} or {@link #withCognitoIdentityProviders(java.util.Collection)} if you want to override the existing values.</p>\n@param cognitoIdentityProviders A list representing an Amazon Cognito Identity User Pool and its client ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24684,6 +25008,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The \"domain\" by which Cognito will refer to your users.</p>\n@param developerProviderName The \"domain\" by which Cognito will refer to your users.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24747,6 +25072,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identity pool ID in the format REGION:GUID.</p>\n@param identityPoolId An identity pool ID in the format REGION:GUID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24810,6 +25136,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A string that you provide.</p>\n@param identityPoolName A string that you provide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24910,6 +25237,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -24950,6 +25278,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of OpendID Connect provider ARNs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOpenIdConnectProviderARNs(java.util.Collection)} or {@link #withOpenIdConnectProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param openIdConnectProviderARNs A list of OpendID Connect provider ARNs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25050,6 +25379,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25090,6 +25420,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSamlProviderARNs(java.util.Collection)} or {@link #withSamlProviderARNs(java.util.Collection)} if you want to override the existing values.</p>\n@param samlProviderARNs An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25196,6 +25527,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -25230,6 +25562,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional key:value pairs mapping provider names to provider app IDs.</p>\n@param supportedLoginProviders Optional key:value pairs mapping provider names to provider app IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",

@@ -206,7 +206,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setResourceType(TaggableResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -221,7 +221,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public DeleteTagsRequest withResourceType(TaggableResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

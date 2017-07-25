@@ -325,7 +325,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setConfigurationItemStatus(ConfigurationItemStatus configurationItemStatus) {
-        this.configurationItemStatus = configurationItemStatus.toString();
+        withConfigurationItemStatus(configurationItemStatus);
     }
 
     /**
@@ -340,7 +340,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      */
 
     public ConfigurationItem withConfigurationItemStatus(ConfigurationItemStatus configurationItemStatus) {
-        setConfigurationItemStatus(configurationItemStatus);
+        this.configurationItemStatus = configurationItemStatus.toString();
         return this;
     }
 
@@ -539,7 +539,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -554,7 +554,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      */
 
     public ConfigurationItem withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

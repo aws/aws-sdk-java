@@ -102,7 +102,7 @@ public class NotifyWorkersFailureStatus implements Serializable, Cloneable, Stru
      */
 
     public void setNotifyWorkersFailureCode(NotifyWorkersFailureCode notifyWorkersFailureCode) {
-        this.notifyWorkersFailureCode = notifyWorkersFailureCode.toString();
+        withNotifyWorkersFailureCode(notifyWorkersFailureCode);
     }
 
     /**
@@ -117,7 +117,7 @@ public class NotifyWorkersFailureStatus implements Serializable, Cloneable, Stru
      */
 
     public NotifyWorkersFailureStatus withNotifyWorkersFailureCode(NotifyWorkersFailureCode notifyWorkersFailureCode) {
-        setNotifyWorkersFailureCode(notifyWorkersFailureCode);
+        this.notifyWorkersFailureCode = notifyWorkersFailureCode.toString();
         return this;
     }
 

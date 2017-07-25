@@ -176,7 +176,7 @@ public class CreateConstraintResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -191,7 +191,7 @@ public class CreateConstraintResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public CreateConstraintResult withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

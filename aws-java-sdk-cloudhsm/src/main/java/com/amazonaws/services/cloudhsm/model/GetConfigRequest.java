@@ -138,7 +138,7 @@ public class GetConfigRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setClientVersion(ClientVersion clientVersion) {
-        this.clientVersion = clientVersion.toString();
+        withClientVersion(clientVersion);
     }
 
     /**
@@ -153,7 +153,7 @@ public class GetConfigRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public GetConfigRequest withClientVersion(ClientVersion clientVersion) {
-        setClientVersion(clientVersion);
+        this.clientVersion = clientVersion.toString();
         return this;
     }
 

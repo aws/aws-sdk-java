@@ -183,7 +183,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
-        this.registrationStatus = registrationStatus.toString();
+        withRegistrationStatus(registrationStatus);
     }
 
     /**
@@ -198,7 +198,7 @@ public class ListDomainsRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public ListDomainsRequest withRegistrationStatus(RegistrationStatus registrationStatus) {
-        setRegistrationStatus(registrationStatus);
+        this.registrationStatus = registrationStatus.toString();
         return this;
     }
 

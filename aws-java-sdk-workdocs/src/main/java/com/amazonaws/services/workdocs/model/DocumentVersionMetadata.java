@@ -361,7 +361,7 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
      */
 
     public void setStatus(DocumentStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -376,7 +376,7 @@ public class DocumentVersionMetadata implements Serializable, Cloneable, Structu
      */
 
     public DocumentVersionMetadata withStatus(DocumentStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -108,7 +108,7 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -123,7 +123,7 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
      */
 
     public ResourceIdentifier withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

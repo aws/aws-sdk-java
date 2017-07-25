@@ -234,7 +234,7 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setRetryMode(StageRetryMode retryMode) {
-        this.retryMode = retryMode.toString();
+        withRetryMode(retryMode);
     }
 
     /**
@@ -249,7 +249,7 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public RetryStageExecutionRequest withRetryMode(StageRetryMode retryMode) {
-        setRetryMode(retryMode);
+        this.retryMode = retryMode.toString();
         return this;
     }
 

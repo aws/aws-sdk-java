@@ -351,7 +351,7 @@ public class AttributeDefinition implements Serializable, Cloneable, StructuredP
      */
 
     public void setAttributeType(ScalarAttributeType attributeType) {
-        this.attributeType = attributeType.toString();
+        withAttributeType(attributeType);
     }
 
     /**
@@ -399,7 +399,7 @@ public class AttributeDefinition implements Serializable, Cloneable, StructuredP
      */
 
     public AttributeDefinition withAttributeType(ScalarAttributeType attributeType) {
-        setAttributeType(attributeType);
+        this.attributeType = attributeType.toString();
         return this;
     }
 

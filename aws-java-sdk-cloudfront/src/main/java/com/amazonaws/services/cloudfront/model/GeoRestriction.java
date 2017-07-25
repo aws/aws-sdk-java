@@ -357,7 +357,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      */
 
     public void setRestrictionType(GeoRestrictionType restrictionType) {
-        this.restrictionType = restrictionType.toString();
+        withRestrictionType(restrictionType);
     }
 
     /**
@@ -411,7 +411,7 @@ public class GeoRestriction implements Serializable, Cloneable {
      */
 
     public GeoRestriction withRestrictionType(GeoRestrictionType restrictionType) {
-        setRestrictionType(restrictionType);
+        this.restrictionType = restrictionType.toString();
         return this;
     }
 

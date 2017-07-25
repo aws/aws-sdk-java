@@ -213,7 +213,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      */
 
     public void setDeliveryStreamStatus(DeliveryStreamStatus deliveryStreamStatus) {
-        this.deliveryStreamStatus = deliveryStreamStatus.toString();
+        withDeliveryStreamStatus(deliveryStreamStatus);
     }
 
     /**
@@ -228,7 +228,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      */
 
     public DeliveryStreamDescription withDeliveryStreamStatus(DeliveryStreamStatus deliveryStreamStatus) {
-        setDeliveryStreamStatus(deliveryStreamStatus);
+        this.deliveryStreamStatus = deliveryStreamStatus.toString();
         return this;
     }
 

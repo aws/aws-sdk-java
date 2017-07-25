@@ -435,7 +435,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      */
 
     public void setInterfaceType(NetworkInterfaceType interfaceType) {
-        this.interfaceType = interfaceType.toString();
+        withInterfaceType(interfaceType);
     }
 
     /**
@@ -450,7 +450,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      */
 
     public NetworkInterface withInterfaceType(NetworkInterfaceType interfaceType) {
-        setInterfaceType(interfaceType);
+        this.interfaceType = interfaceType.toString();
         return this;
     }
 
@@ -1004,7 +1004,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      */
 
     public void setStatus(NetworkInterfaceStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -1019,7 +1019,7 @@ public class NetworkInterface implements Serializable, Cloneable {
      */
 
     public NetworkInterface withStatus(NetworkInterfaceStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

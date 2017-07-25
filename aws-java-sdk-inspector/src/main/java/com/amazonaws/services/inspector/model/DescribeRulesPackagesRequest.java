@@ -162,7 +162,7 @@ public class DescribeRulesPackagesRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setLocale(Locale locale) {
-        this.locale = locale.toString();
+        withLocale(locale);
     }
 
     /**
@@ -177,7 +177,7 @@ public class DescribeRulesPackagesRequest extends com.amazonaws.AmazonWebService
      */
 
     public DescribeRulesPackagesRequest withLocale(Locale locale) {
-        setLocale(locale);
+        this.locale = locale.toString();
         return this;
     }
 

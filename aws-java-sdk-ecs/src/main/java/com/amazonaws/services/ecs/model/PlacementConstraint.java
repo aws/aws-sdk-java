@@ -118,7 +118,7 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      */
 
     public void setType(PlacementConstraintType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -137,7 +137,7 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      */
 
     public PlacementConstraint withType(PlacementConstraintType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

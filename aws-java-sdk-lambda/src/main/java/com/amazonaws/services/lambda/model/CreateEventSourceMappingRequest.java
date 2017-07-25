@@ -479,7 +479,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setStartingPosition(EventSourcePosition startingPosition) {
-        this.startingPosition = startingPosition.toString();
+        withStartingPosition(startingPosition);
     }
 
     /**
@@ -500,7 +500,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      */
 
     public CreateEventSourceMappingRequest withStartingPosition(EventSourcePosition startingPosition) {
-        setStartingPosition(startingPosition);
+        this.startingPosition = startingPosition.toString();
         return this;
     }
 

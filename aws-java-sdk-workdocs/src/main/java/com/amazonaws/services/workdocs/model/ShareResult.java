@@ -153,7 +153,7 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRole(RoleType role) {
-        this.role = role.toString();
+        withRole(role);
     }
 
     /**
@@ -168,7 +168,7 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ShareResult withRole(RoleType role) {
-        setRole(role);
+        this.role = role.toString();
         return this;
     }
 
@@ -226,7 +226,7 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(ShareStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -241,7 +241,7 @@ public class ShareResult implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ShareResult withStatus(ShareStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

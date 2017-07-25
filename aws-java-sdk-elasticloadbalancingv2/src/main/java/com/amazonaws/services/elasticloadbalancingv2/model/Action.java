@@ -93,7 +93,7 @@ public class Action implements Serializable, Cloneable {
      */
 
     public void setType(ActionTypeEnum type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -108,7 +108,7 @@ public class Action implements Serializable, Cloneable {
      */
 
     public Action withType(ActionTypeEnum type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

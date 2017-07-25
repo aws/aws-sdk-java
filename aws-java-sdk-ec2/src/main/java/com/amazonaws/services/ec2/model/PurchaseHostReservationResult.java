@@ -171,7 +171,7 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -188,7 +188,7 @@ public class PurchaseHostReservationResult extends com.amazonaws.AmazonWebServic
      */
 
     public PurchaseHostReservationResult withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 

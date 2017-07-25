@@ -185,17 +185,19 @@
         </#if>
     </#list>
 
-    <#if member.enumType?has_content>
+    <#if member.enumType?has_content && !member.shouldSupressEnumSetter>
     ${setterDoc}
     ${deprecated}
     public void ${setterMethodName}(${member.enumType} ${setter.variableName}) {
-        this.${variableName} = ${setter.variableName}.toString();
+        ${fluentSetterMethodName}(${setter.variableName});
     }
+    </#if>
 
+    <#if member.enumType?has_content>
     ${fluentDoc}
     ${deprecated}
     public ${shapeName} ${fluentSetterMethodName}(${member.enumType} ${setter.variableName}) {
-        ${setterMethodName}(${setter.variableName});
+        this.${variableName} = ${setter.variableName}.toString();
         return this;
     }
     </#if>

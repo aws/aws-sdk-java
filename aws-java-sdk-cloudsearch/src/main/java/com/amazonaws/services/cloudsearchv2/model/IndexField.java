@@ -214,7 +214,7 @@ public class IndexField implements Serializable, Cloneable {
      */
 
     public void setIndexFieldType(IndexFieldType indexFieldType) {
-        this.indexFieldType = indexFieldType.toString();
+        withIndexFieldType(indexFieldType);
     }
 
     /**
@@ -224,7 +224,7 @@ public class IndexField implements Serializable, Cloneable {
      */
 
     public IndexField withIndexFieldType(IndexFieldType indexFieldType) {
-        setIndexFieldType(indexFieldType);
+        this.indexFieldType = indexFieldType.toString();
         return this;
     }
 

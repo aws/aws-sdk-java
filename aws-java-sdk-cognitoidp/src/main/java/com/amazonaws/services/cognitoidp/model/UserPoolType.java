@@ -407,7 +407,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -422,7 +422,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public UserPoolType withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1224,7 +1224,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMfaConfiguration(UserPoolMfaType mfaConfiguration) {
-        this.mfaConfiguration = mfaConfiguration.toString();
+        withMfaConfiguration(mfaConfiguration);
     }
 
     /**
@@ -1274,7 +1274,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public UserPoolType withMfaConfiguration(UserPoolMfaType mfaConfiguration) {
-        setMfaConfiguration(mfaConfiguration);
+        this.mfaConfiguration = mfaConfiguration.toString();
         return this;
     }
 

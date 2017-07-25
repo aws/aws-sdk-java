@@ -471,7 +471,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setNetworkMode(NetworkMode networkMode) {
-        this.networkMode = networkMode.toString();
+        withNetworkMode(networkMode);
     }
 
     /**
@@ -507,7 +507,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      */
 
     public TaskDefinition withNetworkMode(NetworkMode networkMode) {
-        setNetworkMode(networkMode);
+        this.networkMode = networkMode.toString();
         return this;
     }
 
@@ -712,7 +712,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(TaskDefinitionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -727,7 +727,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      */
 
     public TaskDefinition withStatus(TaskDefinitionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

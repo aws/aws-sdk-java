@@ -116,7 +116,7 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
      */
 
     public void setContainerFormat(ContainerFormat containerFormat) {
-        this.containerFormat = containerFormat.toString();
+        withContainerFormat(containerFormat);
     }
 
     /**
@@ -133,7 +133,7 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
      */
 
     public ExportToS3TaskSpecification withContainerFormat(ContainerFormat containerFormat) {
-        setContainerFormat(containerFormat);
+        this.containerFormat = containerFormat.toString();
         return this;
     }
 
@@ -191,7 +191,7 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
      */
 
     public void setDiskImageFormat(DiskImageFormat diskImageFormat) {
-        this.diskImageFormat = diskImageFormat.toString();
+        withDiskImageFormat(diskImageFormat);
     }
 
     /**
@@ -206,7 +206,7 @@ public class ExportToS3TaskSpecification implements Serializable, Cloneable {
      */
 
     public ExportToS3TaskSpecification withDiskImageFormat(DiskImageFormat diskImageFormat) {
-        setDiskImageFormat(diskImageFormat);
+        this.diskImageFormat = diskImageFormat.toString();
         return this;
     }
 

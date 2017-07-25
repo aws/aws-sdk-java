@@ -243,7 +243,7 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public void setStatus(HsmStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -258,7 +258,7 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public DescribeHsmResult withStatus(HsmStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -457,7 +457,7 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public void setSubscriptionType(SubscriptionType subscriptionType) {
-        this.subscriptionType = subscriptionType.toString();
+        withSubscriptionType(subscriptionType);
     }
 
     /**
@@ -467,7 +467,7 @@ public class DescribeHsmResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public DescribeHsmResult withSubscriptionType(SubscriptionType subscriptionType) {
-        setSubscriptionType(subscriptionType);
+        this.subscriptionType = subscriptionType.toString();
         return this;
     }
 

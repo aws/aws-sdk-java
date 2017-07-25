@@ -716,7 +716,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setMfaConfiguration(UserPoolMfaType mfaConfiguration) {
-        this.mfaConfiguration = mfaConfiguration.toString();
+        withMfaConfiguration(mfaConfiguration);
     }
 
     /**
@@ -766,7 +766,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public UpdateUserPoolRequest withMfaConfiguration(UserPoolMfaType mfaConfiguration) {
-        setMfaConfiguration(mfaConfiguration);
+        this.mfaConfiguration = mfaConfiguration.toString();
         return this;
     }
 

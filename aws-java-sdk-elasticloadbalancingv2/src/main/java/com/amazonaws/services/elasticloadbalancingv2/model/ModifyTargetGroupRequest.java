@@ -174,7 +174,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
-        this.healthCheckProtocol = healthCheckProtocol.toString();
+        withHealthCheckProtocol(healthCheckProtocol);
     }
 
     /**
@@ -189,7 +189,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public ModifyTargetGroupRequest withHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
-        setHealthCheckProtocol(healthCheckProtocol);
+        this.healthCheckProtocol = healthCheckProtocol.toString();
         return this;
     }
 

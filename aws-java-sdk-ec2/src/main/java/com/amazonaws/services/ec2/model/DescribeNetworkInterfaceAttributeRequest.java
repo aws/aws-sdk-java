@@ -95,7 +95,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      */
 
     public void setAttribute(NetworkInterfaceAttribute attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -110,7 +110,7 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
      */
 
     public DescribeNetworkInterfaceAttributeRequest withAttribute(NetworkInterfaceAttribute attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

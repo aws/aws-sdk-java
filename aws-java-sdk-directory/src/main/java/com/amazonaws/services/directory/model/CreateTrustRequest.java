@@ -253,7 +253,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setTrustDirection(TrustDirection trustDirection) {
-        this.trustDirection = trustDirection.toString();
+        withTrustDirection(trustDirection);
     }
 
     /**
@@ -268,7 +268,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public CreateTrustRequest withTrustDirection(TrustDirection trustDirection) {
-        setTrustDirection(trustDirection);
+        this.trustDirection = trustDirection.toString();
         return this;
     }
 
@@ -326,7 +326,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setTrustType(TrustType trustType) {
-        this.trustType = trustType.toString();
+        withTrustType(trustType);
     }
 
     /**
@@ -341,7 +341,7 @@ public class CreateTrustRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public CreateTrustRequest withTrustType(TrustType trustType) {
-        setTrustType(trustType);
+        this.trustType = trustType.toString();
         return this;
     }
 

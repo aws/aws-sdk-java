@@ -91,7 +91,7 @@ public class GetAssessmentReportResult extends com.amazonaws.AmazonWebServiceRes
      */
 
     public void setStatus(ReportStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -106,7 +106,7 @@ public class GetAssessmentReportResult extends com.amazonaws.AmazonWebServiceRes
      */
 
     public GetAssessmentReportResult withStatus(ReportStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

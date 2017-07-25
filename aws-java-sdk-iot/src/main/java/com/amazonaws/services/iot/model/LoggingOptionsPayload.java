@@ -132,7 +132,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
      */
 
     public void setLogLevel(LogLevel logLevel) {
-        this.logLevel = logLevel.toString();
+        withLogLevel(logLevel);
     }
 
     /**
@@ -147,7 +147,7 @@ public class LoggingOptionsPayload implements Serializable, Cloneable, Structure
      */
 
     public LoggingOptionsPayload withLogLevel(LogLevel logLevel) {
-        setLogLevel(logLevel);
+        this.logLevel = logLevel.toString();
         return this;
     }
 

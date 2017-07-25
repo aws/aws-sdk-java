@@ -291,7 +291,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      */
 
     public void setResourceStatus(ResourceStatus resourceStatus) {
-        this.resourceStatus = resourceStatus.toString();
+        withResourceStatus(resourceStatus);
     }
 
     /**
@@ -306,7 +306,7 @@ public class StackResourceSummary implements Serializable, Cloneable {
      */
 
     public StackResourceSummary withResourceStatus(ResourceStatus resourceStatus) {
-        setResourceStatus(resourceStatus);
+        this.resourceStatus = resourceStatus.toString();
         return this;
     }
 

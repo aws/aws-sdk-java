@@ -572,7 +572,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(EntityStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -604,7 +604,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      */
 
     public MLModel withStatus(EntityStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1178,7 +1178,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAlgorithm(Algorithm algorithm) {
-        this.algorithm = algorithm.toString();
+        withAlgorithm(algorithm);
     }
 
     /**
@@ -1200,7 +1200,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      */
 
     public MLModel withAlgorithm(Algorithm algorithm) {
-        setAlgorithm(algorithm);
+        this.algorithm = algorithm.toString();
         return this;
     }
 
@@ -1322,7 +1322,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMLModelType(MLModelType mLModelType) {
-        this.mLModelType = mLModelType.toString();
+        withMLModelType(mLModelType);
     }
 
     /**
@@ -1353,7 +1353,7 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      */
 
     public MLModel withMLModelType(MLModelType mLModelType) {
-        setMLModelType(mLModelType);
+        this.mLModelType = mLModelType.toString();
         return this;
     }
 

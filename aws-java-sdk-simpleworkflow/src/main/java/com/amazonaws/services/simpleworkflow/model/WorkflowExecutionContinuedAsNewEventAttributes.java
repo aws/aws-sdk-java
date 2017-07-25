@@ -696,7 +696,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -756,7 +756,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributes implements Serializa
      */
 
     public WorkflowExecutionContinuedAsNewEventAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 

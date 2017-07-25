@@ -165,7 +165,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      */
 
     public void setCause(CompleteWorkflowExecutionFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -195,7 +195,7 @@ public class CompleteWorkflowExecutionFailedEventAttributes implements Serializa
      */
 
     public CompleteWorkflowExecutionFailedEventAttributes withCause(CompleteWorkflowExecutionFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

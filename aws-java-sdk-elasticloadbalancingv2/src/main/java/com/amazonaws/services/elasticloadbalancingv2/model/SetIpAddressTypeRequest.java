@@ -141,7 +141,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setIpAddressType(IpAddressType ipAddressType) {
-        this.ipAddressType = ipAddressType.toString();
+        withIpAddressType(ipAddressType);
     }
 
     /**
@@ -158,7 +158,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public SetIpAddressTypeRequest withIpAddressType(IpAddressType ipAddressType) {
-        setIpAddressType(ipAddressType);
+        this.ipAddressType = ipAddressType.toString();
         return this;
     }
 

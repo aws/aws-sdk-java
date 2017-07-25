@@ -95,7 +95,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable, 
      */
 
     public void setCode(InstanceGroupStateChangeReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -110,7 +110,7 @@ public class InstanceGroupStateChangeReason implements Serializable, Cloneable, 
      */
 
     public InstanceGroupStateChangeReason withCode(InstanceGroupStateChangeReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

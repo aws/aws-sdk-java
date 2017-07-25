@@ -578,7 +578,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      */
 
     public void setProductDescription(RIProductDescription productDescription) {
-        this.productDescription = productDescription.toString();
+        withProductDescription(productDescription);
     }
 
     /**
@@ -593,7 +593,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      */
 
     public SpotInstanceRequest withProductDescription(RIProductDescription productDescription) {
-        setProductDescription(productDescription);
+        this.productDescription = productDescription.toString();
         return this;
     }
 
@@ -755,7 +755,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      */
 
     public void setState(SpotInstanceState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -776,7 +776,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      */
 
     public SpotInstanceRequest withState(SpotInstanceState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -947,7 +947,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      */
 
     public void setType(SpotInstanceType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -962,7 +962,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
      */
 
     public SpotInstanceRequest withType(SpotInstanceType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

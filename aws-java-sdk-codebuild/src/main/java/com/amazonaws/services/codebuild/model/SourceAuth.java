@@ -108,7 +108,7 @@ public class SourceAuth implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(SourceAuthType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -125,7 +125,7 @@ public class SourceAuth implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SourceAuth withType(SourceAuthType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

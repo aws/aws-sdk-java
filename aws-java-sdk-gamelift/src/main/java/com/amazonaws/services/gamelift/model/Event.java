@@ -1374,7 +1374,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setEventCode(EventCode eventCode) {
-        this.eventCode = eventCode.toString();
+        withEventCode(eventCode);
     }
 
     /**
@@ -1649,7 +1649,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Event withEventCode(EventCode eventCode) {
-        setEventCode(eventCode);
+        this.eventCode = eventCode.toString();
         return this;
     }
 

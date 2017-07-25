@@ -181,7 +181,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      */
 
     public void setApplicationStatus(ApplicationStatus applicationStatus) {
-        this.applicationStatus = applicationStatus.toString();
+        withApplicationStatus(applicationStatus);
     }
 
     /**
@@ -196,7 +196,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      */
 
     public ApplicationSummary withApplicationStatus(ApplicationStatus applicationStatus) {
-        setApplicationStatus(applicationStatus);
+        this.applicationStatus = applicationStatus.toString();
         return this;
     }
 

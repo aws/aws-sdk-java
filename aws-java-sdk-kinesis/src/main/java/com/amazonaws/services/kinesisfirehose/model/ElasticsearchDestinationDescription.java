@@ -309,7 +309,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      */
 
     public void setIndexRotationPeriod(ElasticsearchIndexRotationPeriod indexRotationPeriod) {
-        this.indexRotationPeriod = indexRotationPeriod.toString();
+        withIndexRotationPeriod(indexRotationPeriod);
     }
 
     /**
@@ -324,7 +324,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      */
 
     public ElasticsearchDestinationDescription withIndexRotationPeriod(ElasticsearchIndexRotationPeriod indexRotationPeriod) {
-        setIndexRotationPeriod(indexRotationPeriod);
+        this.indexRotationPeriod = indexRotationPeriod.toString();
         return this;
     }
 
@@ -462,7 +462,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      */
 
     public void setS3BackupMode(ElasticsearchS3BackupMode s3BackupMode) {
-        this.s3BackupMode = s3BackupMode.toString();
+        withS3BackupMode(s3BackupMode);
     }
 
     /**
@@ -477,7 +477,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      */
 
     public ElasticsearchDestinationDescription withS3BackupMode(ElasticsearchS3BackupMode s3BackupMode) {
-        setS3BackupMode(s3BackupMode);
+        this.s3BackupMode = s3BackupMode.toString();
         return this;
     }
 

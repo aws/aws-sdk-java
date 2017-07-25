@@ -135,7 +135,7 @@ public class ApprovalResult implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(ApprovalStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -150,7 +150,7 @@ public class ApprovalResult implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ApprovalResult withStatus(ApprovalStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -554,7 +554,7 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setProductType(ProductType productType) {
-        this.productType = productType.toString();
+        withProductType(productType);
     }
 
     /**
@@ -569,7 +569,7 @@ public class CreateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public CreateProductRequest withProductType(ProductType productType) {
-        setProductType(productType);
+        this.productType = productType.toString();
         return this;
     }
 

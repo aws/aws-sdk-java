@@ -198,7 +198,7 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      */
 
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
-        this.endpointType = endpointType.toString();
+        withEndpointType(endpointType);
     }
 
     /**
@@ -213,7 +213,7 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      */
 
     public SupportedEndpointType withEndpointType(ReplicationEndpointTypeValue endpointType) {
-        setEndpointType(endpointType);
+        this.endpointType = endpointType.toString();
         return this;
     }
 

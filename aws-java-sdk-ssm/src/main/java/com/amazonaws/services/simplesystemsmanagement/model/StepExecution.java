@@ -332,7 +332,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStepStatus(AutomationExecutionStatus stepStatus) {
-        this.stepStatus = stepStatus.toString();
+        withStepStatus(stepStatus);
     }
 
     /**
@@ -349,7 +349,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      */
 
     public StepExecution withStepStatus(AutomationExecutionStatus stepStatus) {
-        setStepStatus(stepStatus);
+        this.stepStatus = stepStatus.toString();
         return this;
     }
 

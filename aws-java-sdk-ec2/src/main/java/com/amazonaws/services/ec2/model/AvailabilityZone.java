@@ -105,7 +105,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      */
 
     public void setState(AvailabilityZoneState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -120,7 +120,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      */
 
     public AvailabilityZone withState(AvailabilityZoneState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

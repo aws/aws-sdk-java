@@ -537,7 +537,7 @@ public class Snapshot implements Serializable, Cloneable {
      */
 
     public void setState(SnapshotState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -552,7 +552,7 @@ public class Snapshot implements Serializable, Cloneable {
      */
 
     public Snapshot withState(SnapshotState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

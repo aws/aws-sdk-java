@@ -490,7 +490,7 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setExpirationModel(ExpirationModelType expirationModel) {
-        this.expirationModel = expirationModel.toString();
+        withExpirationModel(expirationModel);
     }
 
     /**
@@ -509,7 +509,7 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public ImportKeyMaterialRequest withExpirationModel(ExpirationModelType expirationModel) {
-        setExpirationModel(expirationModel);
+        this.expirationModel = expirationModel.toString();
         return this;
     }
 

@@ -383,7 +383,7 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -441,7 +441,7 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      */
 
     public WorkflowExecutionTerminatedEventAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 
@@ -515,7 +515,7 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      */
 
     public void setCause(WorkflowExecutionTerminatedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -534,7 +534,7 @@ public class WorkflowExecutionTerminatedEventAttributes implements Serializable,
      */
 
     public WorkflowExecutionTerminatedEventAttributes withCause(WorkflowExecutionTerminatedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

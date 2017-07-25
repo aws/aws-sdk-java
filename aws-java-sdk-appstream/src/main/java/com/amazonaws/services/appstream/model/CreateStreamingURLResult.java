@@ -31,7 +31,7 @@ public class CreateStreamingURLResult extends com.amazonaws.AmazonWebServiceResu
     private String streamingURL;
     /**
      * <p>
-     * Elapsed seconds after the Unix epoch, at which time this URL expires.
+     * Elapsed seconds after the Unix epoch, when this URL expires.
      * </p>
      */
     private java.util.Date expires;
@@ -78,11 +78,11 @@ public class CreateStreamingURLResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Elapsed seconds after the Unix epoch, at which time this URL expires.
+     * Elapsed seconds after the Unix epoch, when this URL expires.
      * </p>
      * 
      * @param expires
-     *        Elapsed seconds after the Unix epoch, at which time this URL expires.
+     *        Elapsed seconds after the Unix epoch, when this URL expires.
      */
 
     public void setExpires(java.util.Date expires) {
@@ -91,10 +91,10 @@ public class CreateStreamingURLResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Elapsed seconds after the Unix epoch, at which time this URL expires.
+     * Elapsed seconds after the Unix epoch, when this URL expires.
      * </p>
      * 
-     * @return Elapsed seconds after the Unix epoch, at which time this URL expires.
+     * @return Elapsed seconds after the Unix epoch, when this URL expires.
      */
 
     public java.util.Date getExpires() {
@@ -103,11 +103,11 @@ public class CreateStreamingURLResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Elapsed seconds after the Unix epoch, at which time this URL expires.
+     * Elapsed seconds after the Unix epoch, when this URL expires.
      * </p>
      * 
      * @param expires
-     *        Elapsed seconds after the Unix epoch, at which time this URL expires.
+     *        Elapsed seconds after the Unix epoch, when this URL expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

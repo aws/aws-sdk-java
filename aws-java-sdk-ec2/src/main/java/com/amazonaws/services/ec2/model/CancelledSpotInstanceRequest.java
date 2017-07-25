@@ -133,7 +133,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      */
 
     public void setState(CancelSpotInstanceRequestState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -148,7 +148,7 @@ public class CancelledSpotInstanceRequest implements Serializable, Cloneable {
      */
 
     public CancelledSpotInstanceRequest withState(CancelSpotInstanceRequestState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

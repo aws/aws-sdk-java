@@ -135,7 +135,7 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(StageExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -150,7 +150,7 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      */
 
     public StageExecution withStatus(StageExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

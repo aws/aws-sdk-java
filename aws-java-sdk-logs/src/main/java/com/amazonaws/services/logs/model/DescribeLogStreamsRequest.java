@@ -329,7 +329,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setOrderBy(OrderBy orderBy) {
-        this.orderBy = orderBy.toString();
+        withOrderBy(orderBy);
     }
 
     /**
@@ -365,7 +365,7 @@ public class DescribeLogStreamsRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public DescribeLogStreamsRequest withOrderBy(OrderBy orderBy) {
-        setOrderBy(orderBy);
+        this.orderBy = orderBy.toString();
         return this;
     }
 

@@ -443,7 +443,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -458,7 +458,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -716,7 +716,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setPlatform(PlatformValues platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -731,7 +731,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withPlatform(PlatformValues platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 
@@ -1270,7 +1270,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setArchitecture(ArchitectureValues architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -1285,7 +1285,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withArchitecture(ArchitectureValues architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
         return this;
     }
 
@@ -1580,7 +1580,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setHypervisor(HypervisorType hypervisor) {
-        this.hypervisor = hypervisor.toString();
+        withHypervisor(hypervisor);
     }
 
     /**
@@ -1595,7 +1595,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withHypervisor(HypervisorType hypervisor) {
-        setHypervisor(hypervisor);
+        this.hypervisor = hypervisor.toString();
         return this;
     }
 
@@ -1693,7 +1693,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setInstanceLifecycle(InstanceLifecycleType instanceLifecycle) {
-        this.instanceLifecycle = instanceLifecycle.toString();
+        withInstanceLifecycle(instanceLifecycle);
     }
 
     /**
@@ -1708,7 +1708,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withInstanceLifecycle(InstanceLifecycleType instanceLifecycle) {
-        setInstanceLifecycle(instanceLifecycle);
+        this.instanceLifecycle = instanceLifecycle.toString();
         return this;
     }
 
@@ -1879,7 +1879,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setRootDeviceType(DeviceType rootDeviceType) {
-        this.rootDeviceType = rootDeviceType.toString();
+        withRootDeviceType(rootDeviceType);
     }
 
     /**
@@ -1894,7 +1894,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withRootDeviceType(DeviceType rootDeviceType) {
-        setRootDeviceType(rootDeviceType);
+        this.rootDeviceType = rootDeviceType.toString();
         return this;
     }
 
@@ -2310,7 +2310,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setVirtualizationType(VirtualizationType virtualizationType) {
-        this.virtualizationType = virtualizationType.toString();
+        withVirtualizationType(virtualizationType);
     }
 
     /**
@@ -2325,7 +2325,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withVirtualizationType(VirtualizationType virtualizationType) {
-        setVirtualizationType(virtualizationType);
+        this.virtualizationType = virtualizationType.toString();
         return this;
     }
 

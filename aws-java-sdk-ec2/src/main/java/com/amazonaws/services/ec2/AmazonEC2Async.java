@@ -2348,6 +2348,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNetworkInterfacePermissionRequest
+     *        Contains the parameters for CreateNetworkInterfacePermission.
      * @return A Java Future containing the result of the CreateNetworkInterfacePermission operation returned by the
      *         service.
      * @sample AmazonEC2Async.CreateNetworkInterfacePermission
@@ -2367,6 +2368,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param createNetworkInterfacePermissionRequest
+     *        Contains the parameters for CreateNetworkInterfacePermission.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -3814,6 +3816,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNetworkInterfacePermissionRequest
+     *        Contains the parameters for DeleteNetworkInterfacePermission.
      * @return A Java Future containing the result of the DeleteNetworkInterfacePermission operation returned by the
      *         service.
      * @sample AmazonEC2Async.DeleteNetworkInterfacePermission
@@ -3831,6 +3834,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param deleteNetworkInterfacePermissionRequest
+     *        Contains the parameters for DeleteNetworkInterfacePermission.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -6247,6 +6251,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNetworkInterfacePermissionsRequest
+     *        Contains the parameters for DescribeNetworkInterfacePermissions.
      * @return A Java Future containing the result of the DescribeNetworkInterfacePermissions operation returned by the
      *         service.
      * @sample AmazonEC2Async.DescribeNetworkInterfacePermissions
@@ -6262,6 +6267,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeNetworkInterfacePermissionsRequest
+     *        Contains the parameters for DescribeNetworkInterfacePermissions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

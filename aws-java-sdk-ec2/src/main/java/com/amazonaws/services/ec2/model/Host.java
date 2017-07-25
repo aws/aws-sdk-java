@@ -137,7 +137,7 @@ public class Host implements Serializable, Cloneable {
      */
 
     public void setAutoPlacement(AutoPlacement autoPlacement) {
-        this.autoPlacement = autoPlacement.toString();
+        withAutoPlacement(autoPlacement);
     }
 
     /**
@@ -152,7 +152,7 @@ public class Host implements Serializable, Cloneable {
      */
 
     public Host withAutoPlacement(AutoPlacement autoPlacement) {
-        setAutoPlacement(autoPlacement);
+        this.autoPlacement = autoPlacement.toString();
         return this;
     }
 
@@ -541,7 +541,7 @@ public class Host implements Serializable, Cloneable {
      */
 
     public void setState(AllocationState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -556,7 +556,7 @@ public class Host implements Serializable, Cloneable {
      */
 
     public Host withState(AllocationState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

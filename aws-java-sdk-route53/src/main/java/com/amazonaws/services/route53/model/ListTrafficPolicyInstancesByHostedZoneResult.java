@@ -264,7 +264,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult extends com.amazonaws.
      */
 
     public void setTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
+        withTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
     }
 
     /**
@@ -283,7 +283,7 @@ public class ListTrafficPolicyInstancesByHostedZoneResult extends com.amazonaws.
      */
 
     public ListTrafficPolicyInstancesByHostedZoneResult withTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
+        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
         return this;
     }
 

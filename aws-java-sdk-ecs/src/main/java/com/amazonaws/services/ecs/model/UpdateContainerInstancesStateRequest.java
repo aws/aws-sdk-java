@@ -218,7 +218,7 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
      */
 
     public void setStatus(ContainerInstanceStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -233,7 +233,7 @@ public class UpdateContainerInstancesStateRequest extends com.amazonaws.AmazonWe
      */
 
     public UpdateContainerInstancesStateRequest withStatus(ContainerInstanceStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -824,7 +824,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
-        this.fileExistsBehavior = fileExistsBehavior.toString();
+        withFileExistsBehavior(fileExistsBehavior);
     }
 
     /**
@@ -882,7 +882,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public CreateDeploymentRequest withFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
-        setFileExistsBehavior(fileExistsBehavior);
+        this.fileExistsBehavior = fileExistsBehavior.toString();
         return this;
     }
 

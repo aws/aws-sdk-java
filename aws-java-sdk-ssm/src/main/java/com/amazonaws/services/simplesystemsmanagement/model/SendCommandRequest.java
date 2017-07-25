@@ -550,7 +550,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setDocumentHashType(DocumentHashType documentHashType) {
-        this.documentHashType = documentHashType.toString();
+        withDocumentHashType(documentHashType);
     }
 
     /**
@@ -573,7 +573,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public SendCommandRequest withDocumentHashType(DocumentHashType documentHashType) {
-        setDocumentHashType(documentHashType);
+        this.documentHashType = documentHashType.toString();
         return this;
     }
 

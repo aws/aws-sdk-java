@@ -683,7 +683,7 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(PlayerSessionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -751,7 +751,7 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PlayerSession withStatus(PlayerSessionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

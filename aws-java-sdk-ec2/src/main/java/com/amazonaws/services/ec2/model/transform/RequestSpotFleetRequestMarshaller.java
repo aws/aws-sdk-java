@@ -381,6 +381,44 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                         request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".WeightedCapacity",
                                 StringUtils.fromDouble(spotFleetRequestConfigDataLaunchSpecificationsListValue.getWeightedCapacity()));
                     }
+
+                    com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification> spotFleetLaunchSpecificationTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification>) spotFleetRequestConfigDataLaunchSpecificationsListValue
+                            .getTagSpecifications();
+                    if (!spotFleetLaunchSpecificationTagSpecificationsList.isEmpty() || !spotFleetLaunchSpecificationTagSpecificationsList.isAutoConstruct()) {
+                        int tagSpecificationsListIndex = 1;
+
+                        for (SpotFleetTagSpecification spotFleetLaunchSpecificationTagSpecificationsListValue : spotFleetLaunchSpecificationTagSpecificationsList) {
+
+                            if (spotFleetLaunchSpecificationTagSpecificationsListValue.getResourceType() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".TagSpecificationSet."
+                                        + tagSpecificationsListIndex + ".ResourceType",
+                                        StringUtils.fromString(spotFleetLaunchSpecificationTagSpecificationsListValue.getResourceType()));
+                            }
+
+                            com.amazonaws.internal.SdkInternalList<Tag> spotFleetTagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) spotFleetLaunchSpecificationTagSpecificationsListValue
+                                    .getTags();
+                            if (!spotFleetTagSpecificationTagsList.isEmpty() || !spotFleetTagSpecificationTagsList.isAutoConstruct()) {
+                                int tagsListIndex = 1;
+
+                                for (Tag spotFleetTagSpecificationTagsListValue : spotFleetTagSpecificationTagsList) {
+
+                                    if (spotFleetTagSpecificationTagsListValue.getKey() != null) {
+                                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                                + ".TagSpecificationSet." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                                StringUtils.fromString(spotFleetTagSpecificationTagsListValue.getKey()));
+                                    }
+
+                                    if (spotFleetTagSpecificationTagsListValue.getValue() != null) {
+                                        request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                                + ".TagSpecificationSet." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                                StringUtils.fromString(spotFleetTagSpecificationTagsListValue.getValue()));
+                                    }
+                                    tagsListIndex++;
+                                }
+                            }
+                            tagSpecificationsListIndex++;
+                        }
+                    }
                     launchSpecificationsListIndex++;
                 }
             }

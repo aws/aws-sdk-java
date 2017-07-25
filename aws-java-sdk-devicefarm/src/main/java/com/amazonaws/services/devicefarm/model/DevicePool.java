@@ -364,7 +364,7 @@ public class DevicePool implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(DevicePoolType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -408,7 +408,7 @@ public class DevicePool implements Serializable, Cloneable, StructuredPojo {
      */
 
     public DevicePool withType(DevicePoolType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

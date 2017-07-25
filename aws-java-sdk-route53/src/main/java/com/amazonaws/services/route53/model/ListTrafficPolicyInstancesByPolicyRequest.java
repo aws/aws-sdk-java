@@ -533,7 +533,7 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      */
 
     public void setTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
+        withTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
     }
 
     /**
@@ -569,7 +569,7 @@ public class ListTrafficPolicyInstancesByPolicyRequest extends com.amazonaws.Ama
      */
 
     public ListTrafficPolicyInstancesByPolicyRequest withTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
+        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
         return this;
     }
 

@@ -303,7 +303,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
      */
 
     public void setLastStatus(RecorderStatus lastStatus) {
-        this.lastStatus = lastStatus.toString();
+        withLastStatus(lastStatus);
     }
 
     /**
@@ -318,7 +318,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
      */
 
     public ConfigurationRecorderStatus withLastStatus(RecorderStatus lastStatus) {
-        setLastStatus(lastStatus);
+        this.lastStatus = lastStatus.toString();
         return this;
     }
 

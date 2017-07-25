@@ -144,6 +144,17 @@ public class SpotFleetLaunchSpecificationStaxUnmarshaller implements Unmarshalle
                     spotFleetLaunchSpecification.setWeightedCapacity(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSpecificationSet", targetDepth)) {
+                    spotFleetLaunchSpecification.withTagSpecifications(new ArrayList<SpotFleetTagSpecification>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSpecificationSet/item", targetDepth)) {
+                    spotFleetLaunchSpecification.withTagSpecifications(SpotFleetTagSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotFleetLaunchSpecification;

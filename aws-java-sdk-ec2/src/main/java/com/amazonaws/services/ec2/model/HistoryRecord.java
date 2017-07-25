@@ -293,7 +293,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      */
 
     public void setEventType(EventType eventType) {
-        this.eventType = eventType.toString();
+        withEventType(eventType);
     }
 
     /**
@@ -342,7 +342,7 @@ public class HistoryRecord implements Serializable, Cloneable {
      */
 
     public HistoryRecord withEventType(EventType eventType) {
-        setEventType(eventType);
+        this.eventType = eventType.toString();
         return this;
     }
 

@@ -111,10 +111,17 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<FleetError> fleetErrors;
     /**
      * <p>
-     * Whether default Internet access is enabled for the fleet.
+     * Whether default internet access is enabled for the fleet.
      * </p>
      */
     private Boolean enableDefaultInternetAccess;
+    /**
+     * <p>
+     * The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join domains
+     * for the AppStream 2.0 streaming instances.
+     * </p>
+     */
+    private DomainJoinInfo domainJoinInfo;
 
     /**
      * <p>
@@ -551,7 +558,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(FleetState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -566,7 +573,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Fleet withState(FleetState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -722,11 +729,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether default Internet access is enabled for the fleet.
+     * Whether default internet access is enabled for the fleet.
      * </p>
      * 
      * @param enableDefaultInternetAccess
-     *        Whether default Internet access is enabled for the fleet.
+     *        Whether default internet access is enabled for the fleet.
      */
 
     public void setEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
@@ -735,10 +742,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether default Internet access is enabled for the fleet.
+     * Whether default internet access is enabled for the fleet.
      * </p>
      * 
-     * @return Whether default Internet access is enabled for the fleet.
+     * @return Whether default internet access is enabled for the fleet.
      */
 
     public Boolean getEnableDefaultInternetAccess() {
@@ -747,11 +754,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether default Internet access is enabled for the fleet.
+     * Whether default internet access is enabled for the fleet.
      * </p>
      * 
      * @param enableDefaultInternetAccess
-     *        Whether default Internet access is enabled for the fleet.
+     *        Whether default internet access is enabled for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -762,14 +769,60 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether default Internet access is enabled for the fleet.
+     * Whether default internet access is enabled for the fleet.
      * </p>
      * 
-     * @return Whether default Internet access is enabled for the fleet.
+     * @return Whether default internet access is enabled for the fleet.
      */
 
     public Boolean isEnableDefaultInternetAccess() {
         return this.enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join domains
+     * for the AppStream 2.0 streaming instances.
+     * </p>
+     * 
+     * @param domainJoinInfo
+     *        The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join
+     *        domains for the AppStream 2.0 streaming instances.
+     */
+
+    public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
+        this.domainJoinInfo = domainJoinInfo;
+    }
+
+    /**
+     * <p>
+     * The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join domains
+     * for the AppStream 2.0 streaming instances.
+     * </p>
+     * 
+     * @return The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join
+     *         domains for the AppStream 2.0 streaming instances.
+     */
+
+    public DomainJoinInfo getDomainJoinInfo() {
+        return this.domainJoinInfo;
+    }
+
+    /**
+     * <p>
+     * The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join domains
+     * for the AppStream 2.0 streaming instances.
+     * </p>
+     * 
+     * @param domainJoinInfo
+     *        The <i>DirectoryName</i> and <i>OrganizationalUnitDistinguishedName</i> values, which are used to join
+     *        domains for the AppStream 2.0 streaming instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
+        setDomainJoinInfo(domainJoinInfo);
+        return this;
     }
 
     /**
@@ -810,7 +863,9 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         if (getFleetErrors() != null)
             sb.append("FleetErrors: ").append(getFleetErrors()).append(",");
         if (getEnableDefaultInternetAccess() != null)
-            sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess());
+            sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess()).append(",");
+        if (getDomainJoinInfo() != null)
+            sb.append("DomainJoinInfo: ").append(getDomainJoinInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -881,6 +936,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnableDefaultInternetAccess() != null && other.getEnableDefaultInternetAccess().equals(this.getEnableDefaultInternetAccess()) == false)
             return false;
+        if (other.getDomainJoinInfo() == null ^ this.getDomainJoinInfo() == null)
+            return false;
+        if (other.getDomainJoinInfo() != null && other.getDomainJoinInfo().equals(this.getDomainJoinInfo()) == false)
+            return false;
         return true;
     }
 
@@ -903,6 +962,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getFleetErrors() == null) ? 0 : getFleetErrors().hashCode());
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
+        hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
         return hashCode;
     }
 

@@ -2660,7 +2660,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setInsufficientDataHealthStatus(InsufficientDataHealthStatus insufficientDataHealthStatus) {
-        this.insufficientDataHealthStatus = insufficientDataHealthStatus.toString();
+        withInsufficientDataHealthStatus(insufficientDataHealthStatus);
     }
 
     /**
@@ -2714,7 +2714,7 @@ public class UpdateHealthCheckRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public UpdateHealthCheckRequest withInsufficientDataHealthStatus(InsufficientDataHealthStatus insufficientDataHealthStatus) {
-        setInsufficientDataHealthStatus(insufficientDataHealthStatus);
+        this.insufficientDataHealthStatus = insufficientDataHealthStatus.toString();
         return this;
     }
 

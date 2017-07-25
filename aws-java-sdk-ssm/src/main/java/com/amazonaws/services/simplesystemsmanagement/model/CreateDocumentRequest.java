@@ -178,7 +178,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setDocumentType(DocumentType documentType) {
-        this.documentType = documentType.toString();
+        withDocumentType(documentType);
     }
 
     /**
@@ -193,7 +193,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateDocumentRequest withDocumentType(DocumentType documentType) {
-        setDocumentType(documentType);
+        this.documentType = documentType.toString();
         return this;
     }
 

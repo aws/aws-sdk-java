@@ -144,7 +144,7 @@ public class ListWorkersWithQualificationTypeRequest extends com.amazonaws.Amazo
      */
 
     public void setStatus(QualificationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -159,7 +159,7 @@ public class ListWorkersWithQualificationTypeRequest extends com.amazonaws.Amazo
      */
 
     public ListWorkersWithQualificationTypeRequest withStatus(QualificationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

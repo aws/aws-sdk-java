@@ -209,7 +209,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      */
 
     public void setOriginProtocolPolicy(OriginProtocolPolicy originProtocolPolicy) {
-        this.originProtocolPolicy = originProtocolPolicy.toString();
+        withOriginProtocolPolicy(originProtocolPolicy);
     }
 
     /**
@@ -224,7 +224,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      */
 
     public CustomOriginConfig withOriginProtocolPolicy(OriginProtocolPolicy originProtocolPolicy) {
-        setOriginProtocolPolicy(originProtocolPolicy);
+        this.originProtocolPolicy = originProtocolPolicy.toString();
         return this;
     }
 

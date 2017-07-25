@@ -450,7 +450,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      */
 
     public void setType(MinimumHealthyHostsType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -535,7 +535,7 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      */
 
     public MinimumHealthyHosts withType(MinimumHealthyHostsType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

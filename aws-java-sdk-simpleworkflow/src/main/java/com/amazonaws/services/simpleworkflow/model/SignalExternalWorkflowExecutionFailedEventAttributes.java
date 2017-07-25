@@ -273,7 +273,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      */
 
     public void setCause(SignalExternalWorkflowExecutionFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -303,7 +303,7 @@ public class SignalExternalWorkflowExecutionFailedEventAttributes implements Ser
      */
 
     public SignalExternalWorkflowExecutionFailedEventAttributes withCause(SignalExternalWorkflowExecutionFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

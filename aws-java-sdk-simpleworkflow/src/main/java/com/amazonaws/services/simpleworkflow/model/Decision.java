@@ -449,7 +449,7 @@ public class Decision implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setDecisionType(DecisionType decisionType) {
-        this.decisionType = decisionType.toString();
+        withDecisionType(decisionType);
     }
 
     /**
@@ -464,7 +464,7 @@ public class Decision implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Decision withDecisionType(DecisionType decisionType) {
-        setDecisionType(decisionType);
+        this.decisionType = decisionType.toString();
         return this;
     }
 

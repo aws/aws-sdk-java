@@ -493,7 +493,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(UserStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -508,7 +508,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      */
 
     public User withStatus(UserStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -566,7 +566,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(UserType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -581,7 +581,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      */
 
     public User withType(UserType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -759,7 +759,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setLocale(LocaleType locale) {
-        this.locale = locale.toString();
+        withLocale(locale);
     }
 
     /**
@@ -774,7 +774,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      */
 
     public User withLocale(LocaleType locale) {
-        setLocale(locale);
+        this.locale = locale.toString();
         return this;
     }
 

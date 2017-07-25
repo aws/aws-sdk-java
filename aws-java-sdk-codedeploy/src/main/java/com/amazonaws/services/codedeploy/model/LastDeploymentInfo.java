@@ -147,7 +147,7 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
      */
 
     public void setStatus(DeploymentStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -162,7 +162,7 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
      */
 
     public LastDeploymentInfo withStatus(DeploymentStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

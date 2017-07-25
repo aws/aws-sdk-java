@@ -221,6 +221,8 @@ public class CustomizationConfig {
      */
     private String transformDirectory = Constants.PACKAGE_NAME_TRANSFORM_SUFFIX;
 
+    private Map<String, List<String>> supressEnumSetterFor;
+
     private CustomizationConfig(){
     }
 
@@ -523,5 +525,15 @@ public class CustomizationConfig {
 
     private boolean shouldSuppress(DeprecatedSuppression suppression) {
         return deprecatedSuppressions != null && deprecatedSuppressions.contains(suppression);
+    }
+
+    public Map<String, List<String>> getSupressEnumSetterFor() {
+        return supressEnumSetterFor;
+    }
+
+    public CustomizationConfig setSupressEnumSetterFor(
+            Map<String, List<String>> supressEnumSetterFor) {
+        this.supressEnumSetterFor = supressEnumSetterFor;
+        return this;
     }
 }

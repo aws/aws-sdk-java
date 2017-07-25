@@ -152,7 +152,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable, Struct
      */
 
     public void setLastStatus(DeliveryStatus lastStatus) {
-        this.lastStatus = lastStatus.toString();
+        withLastStatus(lastStatus);
     }
 
     /**
@@ -177,7 +177,7 @@ public class ConfigStreamDeliveryInfo implements Serializable, Cloneable, Struct
      */
 
     public ConfigStreamDeliveryInfo withLastStatus(DeliveryStatus lastStatus) {
-        setLastStatus(lastStatus);
+        this.lastStatus = lastStatus.toString();
         return this;
     }
 

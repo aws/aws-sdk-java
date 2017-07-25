@@ -364,7 +364,7 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setSegmentType(SegmentType segmentType) {
-        this.segmentType = segmentType.toString();
+        withSegmentType(segmentType);
     }
 
     /**
@@ -385,7 +385,7 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
      */
 
     public SegmentResponse withSegmentType(SegmentType segmentType) {
-        setSegmentType(segmentType);
+        this.segmentType = segmentType.toString();
         return this;
     }
 

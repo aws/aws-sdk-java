@@ -39,6 +39,7 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : false
@@ -956,6 +957,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1055,6 +1057,7 @@
               "simpleType" : "ParameterValue",
               "variableSetterType" : "ParameterValue"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1095,6 +1098,7 @@
           "simpleType" : "List<ParameterValue>",
           "variableSetterType" : "java.util.Collection<ParameterValue>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of parameter values to pass to the pipeline at activation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterValues(java.util.Collection)} or {@link #withParameterValues(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterValues A list of parameter values to pass to the pipeline at activation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1157,6 +1161,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>\n@param startTimestamp The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1258,6 +1263,7 @@
                 "simpleType" : "ParameterValue",
                 "variableSetterType" : "ParameterValue"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1298,6 +1304,7 @@
             "simpleType" : "List<ParameterValue>",
             "variableSetterType" : "java.util.Collection<ParameterValue>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of parameter values to pass to the pipeline at activation.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterValues(java.util.Collection)} or {@link #withParameterValues(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterValues A list of parameter values to pass to the pipeline at activation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1361,6 +1368,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1424,6 +1432,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>\n@param startTimestamp The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1568,6 +1577,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1667,6 +1677,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1707,6 +1718,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags to add, as key/value pairs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags to add, as key/value pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1771,6 +1783,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1871,6 +1884,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1911,6 +1925,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags to add, as key/value pairs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The tags to add, as key/value pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2055,6 +2070,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>\n@param name The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2117,6 +2133,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>\n@param uniqueId A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2179,6 +2196,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description for the pipeline.</p>\n@param description The description for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2278,6 +2296,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2318,6 +2337,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2382,6 +2402,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description for the pipeline.</p>\n@param description The description for the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2445,6 +2466,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>\n@param name The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2545,6 +2567,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2585,6 +2608,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2648,6 +2672,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>\n@param uniqueId A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline. You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the name and unique identifier combination is scoped to the AWS account or IAM user credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2746,6 +2771,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>\n@param pipelineId The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2810,6 +2836,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>\n@param pipelineId The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2918,6 +2945,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2980,6 +3008,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>\n@param cancelActive Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3044,6 +3073,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.</p>\n@param cancelActive Indicates whether to cancel any running objects. The default is true, which sets the state of any running objects to <code>CANCELED</code>. If this value is false, the pipeline is deactivated after all running objects finish.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3107,6 +3137,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3251,6 +3282,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3315,6 +3347,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3459,6 +3492,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline that contains the object definitions.</p>\n@param pipelineId The ID of the pipeline that contains the object definitions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3558,6 +3592,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3598,6 +3633,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setObjectIds(java.util.Collection)} or {@link #withObjectIds(java.util.Collection)} if you want to override the existing values.</p>\n@param objectIds The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3660,6 +3696,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>\n@param evaluateExpressions Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3722,6 +3759,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>\n@param marker The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3786,6 +3824,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>\n@param evaluateExpressions Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3849,6 +3888,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>\n@param marker The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>DescribeObjects</code> with the marker value from the previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3949,6 +3989,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3989,6 +4030,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setObjectIds(java.util.Collection)} or {@link #withObjectIds(java.util.Collection)} if you want to override the existing values.</p>\n@param objectIds The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4052,6 +4094,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline that contains the object definitions.</p>\n@param pipelineId The ID of the pipeline that contains the object definitions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4187,6 +4230,7 @@
               "simpleType" : "PipelineObject",
               "variableSetterType" : "PipelineObject"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4227,6 +4271,7 @@
           "simpleType" : "List<PipelineObject>",
           "variableSetterType" : "java.util.Collection<PipelineObject>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of object definitions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineObjects An array of object definitions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4289,6 +4334,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>\n@param marker The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4351,6 +4397,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether there are more results to return.</p>\n@param hasMoreResults Indicates whether there are more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4415,6 +4462,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether there are more results to return.</p>\n@param hasMoreResults Indicates whether there are more results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4478,6 +4526,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.</p>\n@param marker The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code> again with this marker value. If the value is null, there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4578,6 +4627,7 @@
                 "simpleType" : "PipelineObject",
                 "variableSetterType" : "PipelineObject"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4618,6 +4668,7 @@
             "simpleType" : "List<PipelineObject>",
             "variableSetterType" : "java.util.Collection<PipelineObject>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of object definitions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineObjects An array of object definitions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4763,6 +4814,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4803,6 +4855,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineIds(java.util.Collection)} or {@link #withPipelineIds(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineIds The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4904,6 +4957,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4944,6 +4998,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineIds(java.util.Collection)} or {@link #withPipelineIds(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineIds The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call. To obtain pipeline IDs, call <a>ListPipelines</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5079,6 +5134,7 @@
               "simpleType" : "PipelineDescription",
               "variableSetterType" : "PipelineDescription"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5119,6 +5175,7 @@
           "simpleType" : "List<PipelineDescription>",
           "variableSetterType" : "java.util.Collection<PipelineDescription>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of descriptions for the specified pipelines.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineDescriptionList(java.util.Collection)} or {@link #withPipelineDescriptionList(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineDescriptionList An array of descriptions for the specified pipelines.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5220,6 +5277,7 @@
                 "simpleType" : "PipelineDescription",
                 "variableSetterType" : "PipelineDescription"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5260,6 +5318,7 @@
             "simpleType" : "List<PipelineDescription>",
             "variableSetterType" : "java.util.Collection<PipelineDescription>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of descriptions for the specified pipelines.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineDescriptionList(java.util.Collection)} or {@link #withPipelineDescriptionList(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineDescriptionList An array of descriptions for the specified pipelines.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5368,6 +5427,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5430,6 +5490,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the object.</p>\n@param objectId The ID of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5492,6 +5553,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The expression to evaluate.</p>\n@param expression The expression to evaluate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5556,6 +5618,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The expression to evaluate.</p>\n@param expression The expression to evaluate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5619,6 +5682,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the object.</p>\n@param objectId The ID of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5682,6 +5746,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5780,6 +5845,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The evaluated expression.</p>\n@param evaluatedExpression The evaluated expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5844,6 +5910,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The evaluated expression.</p>\n@param evaluatedExpression The evaluated expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5945,6 +6012,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The field identifier.</p>\n@param key The field identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6007,6 +6075,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The field value, expressed as a String.</p>\n@param stringValue The field value, expressed as a String.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6069,6 +6138,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The field value, expressed as the identifier of another object.</p>\n@param refValue The field value, expressed as the identifier of another object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6133,6 +6203,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The field identifier.</p>\n@param key The field identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6196,6 +6267,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The field value, expressed as the identifier of another object.</p>\n@param refValue The field value, expressed as the identifier of another object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6259,6 +6331,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The field value, expressed as a String.</p>\n@param stringValue The field value, expressed as a String.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6367,6 +6440,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6429,6 +6503,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>\n@param version The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6493,6 +6568,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6556,6 +6632,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.</p>\n@param version The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default) to use the last definition saved to the pipeline or <code>active</code> to use the last definition that was activated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6691,6 +6768,7 @@
               "simpleType" : "PipelineObject",
               "variableSetterType" : "PipelineObject"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6731,6 +6809,7 @@
           "simpleType" : "List<PipelineObject>",
           "variableSetterType" : "java.util.Collection<PipelineObject>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The objects defined in the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineObjects The objects defined in the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6830,6 +6909,7 @@
               "simpleType" : "ParameterObject",
               "variableSetterType" : "ParameterObject"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6870,6 +6950,7 @@
           "simpleType" : "List<ParameterObject>",
           "variableSetterType" : "java.util.Collection<ParameterObject>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The parameter objects used in the pipeline definition.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterObjects(java.util.Collection)} or {@link #withParameterObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterObjects The parameter objects used in the pipeline definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6969,6 +7050,7 @@
               "simpleType" : "ParameterValue",
               "variableSetterType" : "ParameterValue"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7009,6 +7091,7 @@
           "simpleType" : "List<ParameterValue>",
           "variableSetterType" : "java.util.Collection<ParameterValue>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The parameter values used in the pipeline definition.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterValues(java.util.Collection)} or {@link #withParameterValues(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterValues The parameter values used in the pipeline definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7110,6 +7193,7 @@
                 "simpleType" : "ParameterObject",
                 "variableSetterType" : "ParameterObject"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7150,6 +7234,7 @@
             "simpleType" : "List<ParameterObject>",
             "variableSetterType" : "java.util.Collection<ParameterObject>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The parameter objects used in the pipeline definition.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterObjects(java.util.Collection)} or {@link #withParameterObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterObjects The parameter objects used in the pipeline definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7250,6 +7335,7 @@
                 "simpleType" : "ParameterValue",
                 "variableSetterType" : "ParameterValue"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7290,6 +7376,7 @@
             "simpleType" : "List<ParameterValue>",
             "variableSetterType" : "java.util.Collection<ParameterValue>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The parameter values used in the pipeline definition.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterValues(java.util.Collection)} or {@link #withParameterValues(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterValues The parameter values used in the pipeline definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7390,6 +7477,7 @@
                 "simpleType" : "PipelineObject",
                 "variableSetterType" : "PipelineObject"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7430,6 +7518,7 @@
             "simpleType" : "List<PipelineObject>",
             "variableSetterType" : "java.util.Collection<PipelineObject>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The objects defined in the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineObjects The objects defined in the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7531,6 +7620,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>\n@param document A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7593,6 +7683,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>\n@param signature A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7657,6 +7748,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>\n@param document A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7720,6 +7812,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>\n@param signature A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7900,6 +7993,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>\n@param marker The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7964,6 +8058,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.</p>\n@param marker The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>ListPipelines</code> with the marker value from the previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8099,6 +8194,7 @@
               "simpleType" : "PipelineIdName",
               "variableSetterType" : "PipelineIdName"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8139,6 +8235,7 @@
           "simpleType" : "List<PipelineIdName>",
           "variableSetterType" : "java.util.Collection<PipelineIdName>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineIdList(java.util.Collection)} or {@link #withPipelineIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineIdList The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8201,6 +8298,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>\n@param marker The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8263,6 +8361,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether there are more results that can be obtained by a subsequent call.</p>\n@param hasMoreResults Indicates whether there are more results that can be obtained by a subsequent call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8327,6 +8426,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether there are more results that can be obtained by a subsequent call.</p>\n@param hasMoreResults Indicates whether there are more results that can be obtained by a subsequent call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8390,6 +8490,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>\n@param marker The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8490,6 +8591,7 @@
                 "simpleType" : "PipelineIdName",
                 "variableSetterType" : "PipelineIdName"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8530,6 +8632,7 @@
             "simpleType" : "List<PipelineIdName>",
             "variableSetterType" : "java.util.Collection<PipelineIdName>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineIdList(java.util.Collection)} or {@link #withPipelineIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineIdList The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8631,6 +8734,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p> <p> The comparison operators EQ and REF_EQ act on the following fields: </p> <ul> <li>name</li> <li>@sphere</li> <li>parent</li> <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p> <ul> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string \"my\".</p>\n@param type The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p> <p> The comparison operators EQ and REF_EQ act on the following fields: </p> <ul> <li>name</li> <li>@sphere</li> <li>parent</li> <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p> <ul> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string \"my\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see OperatorType*/",
@@ -8730,6 +8834,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8770,6 +8875,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value that the actual field value will be compared with.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The value that the actual field value will be compared with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8834,6 +8940,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p> <p> The comparison operators EQ and REF_EQ act on the following fields: </p> <ul> <li>name</li> <li>@sphere</li> <li>parent</li> <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p> <ul> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string \"my\".</p>\n@param type The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p> <p> The comparison operators EQ and REF_EQ act on the following fields: </p> <ul> <li>name</li> <li>@sphere</li> <li>parent</li> <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields: </p> <ul> <li>@scheduledStartTime</li> <li>@scheduledEndTime</li> <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string \"my\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see OperatorType*/",
@@ -8934,6 +9041,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8974,6 +9082,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value that the actual field value will be compared with.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values The value that the actual field value will be compared with.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9129,6 +9238,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The field identifier.</p>\n@param key The field identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9191,6 +9301,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The field value, expressed as a String.</p>\n@param stringValue The field value, expressed as a String.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9255,6 +9366,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The field identifier.</p>\n@param key The field identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9318,6 +9430,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The field value, expressed as a String.</p>\n@param stringValue The field value, expressed as a String.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9419,6 +9532,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the parameter object. </p>\n@param id The ID of the parameter object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9518,6 +9632,7 @@
               "simpleType" : "ParameterAttribute",
               "variableSetterType" : "ParameterAttribute"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9558,6 +9673,7 @@
           "simpleType" : "List<ParameterAttribute>",
           "variableSetterType" : "java.util.Collection<ParameterAttribute>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The attributes of the parameter object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The attributes of the parameter object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9659,6 +9775,7 @@
                 "simpleType" : "ParameterAttribute",
                 "variableSetterType" : "ParameterAttribute"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9699,6 +9816,7 @@
             "simpleType" : "List<ParameterAttribute>",
             "variableSetterType" : "java.util.Collection<ParameterAttribute>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The attributes of the parameter object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The attributes of the parameter object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9762,6 +9880,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the parameter object. </p>\n@param id The ID of the parameter object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9863,6 +9982,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the parameter value.</p>\n@param id The ID of the parameter value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9925,6 +10045,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The field value, expressed as a String.</p>\n@param stringValue The field value, expressed as a String.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9989,6 +10110,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the parameter value.</p>\n@param id The ID of the parameter value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10052,6 +10174,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The field value, expressed as a String.</p>\n@param stringValue The field value, expressed as a String.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10189,6 +10312,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>\n@param pipelineId The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10251,6 +10375,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the pipeline.</p>\n@param name The name of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10350,6 +10475,7 @@
               "simpleType" : "Field",
               "variableSetterType" : "Field"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10390,6 +10516,7 @@
           "simpleType" : "List<Field>",
           "variableSetterType" : "java.util.Collection<Field>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFields(java.util.Collection)} or {@link #withFields(java.util.Collection)} if you want to override the existing values.</p>\n@param fields A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10452,6 +10579,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Description of the pipeline.</p>\n@param description Description of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10551,6 +10679,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10591,6 +10720,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10655,6 +10785,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Description of the pipeline.</p>\n@param description Description of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10755,6 +10886,7 @@
                 "simpleType" : "Field",
                 "variableSetterType" : "Field"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10795,6 +10927,7 @@
             "simpleType" : "List<Field>",
             "variableSetterType" : "java.util.Collection<Field>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFields(java.util.Collection)} or {@link #withFields(java.util.Collection)} if you want to override the existing values.</p>\n@param fields A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10858,6 +10991,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the pipeline.</p>\n@param name The name of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10921,6 +11055,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>\n@param pipelineId The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11021,6 +11156,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11061,6 +11197,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11162,6 +11299,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>\n@param id The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11224,6 +11362,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the pipeline.</p>\n@param name The name of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11288,6 +11427,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>\n@param id The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11351,6 +11491,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the pipeline.</p>\n@param name The name of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11488,6 +11629,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the object.</p>\n@param id The ID of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11550,6 +11692,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the object.</p>\n@param name The name of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11649,6 +11792,7 @@
               "simpleType" : "Field",
               "variableSetterType" : "Field"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11689,6 +11833,7 @@
           "simpleType" : "List<Field>",
           "variableSetterType" : "java.util.Collection<Field>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Key-value pairs that define the properties of the object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFields(java.util.Collection)} or {@link #withFields(java.util.Collection)} if you want to override the existing values.</p>\n@param fields Key-value pairs that define the properties of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11790,6 +11935,7 @@
                 "simpleType" : "Field",
                 "variableSetterType" : "Field"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11830,6 +11976,7 @@
             "simpleType" : "List<Field>",
             "variableSetterType" : "java.util.Collection<Field>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Key-value pairs that define the properties of the object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFields(java.util.Collection)} or {@link #withFields(java.util.Collection)} if you want to override the existing values.</p>\n@param fields Key-value pairs that define the properties of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11893,6 +12040,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the object.</p>\n@param id The ID of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11956,6 +12104,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the object.</p>\n@param name The name of the object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12064,6 +12213,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>\n@param workerGroup The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12126,6 +12276,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The public DNS name of the calling task runner.</p>\n@param hostname The public DNS name of the calling task runner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12188,6 +12339,7 @@
           "simpleType" : "InstanceIdentity",
           "variableSetterType" : "InstanceIdentity"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html\">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>\n@param instanceIdentity Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html\">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12252,6 +12404,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The public DNS name of the calling task runner.</p>\n@param hostname The public DNS name of the calling task runner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12315,6 +12468,7 @@
             "simpleType" : "InstanceIdentity",
             "variableSetterType" : "InstanceIdentity"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html\">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>\n@param instanceIdentity Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html\">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12378,6 +12532,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>\n@param workerGroup The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12476,6 +12631,7 @@
           "simpleType" : "TaskObject",
           "variableSetterType" : "TaskObject"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.</p>\n@param taskObject The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12540,6 +12696,7 @@
             "simpleType" : "TaskObject",
             "variableSetterType" : "TaskObject"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.</p>\n@param taskObject The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12648,6 +12805,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12747,6 +12905,7 @@
               "simpleType" : "PipelineObject",
               "variableSetterType" : "PipelineObject"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12787,6 +12946,7 @@
           "simpleType" : "List<PipelineObject>",
           "variableSetterType" : "java.util.Collection<PipelineObject>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineObjects The objects that define the pipeline. These objects overwrite the existing pipeline definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12886,6 +13046,7 @@
               "simpleType" : "ParameterObject",
               "variableSetterType" : "ParameterObject"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12926,6 +13087,7 @@
           "simpleType" : "List<ParameterObject>",
           "variableSetterType" : "java.util.Collection<ParameterObject>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The parameter objects used with the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterObjects(java.util.Collection)} or {@link #withParameterObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterObjects The parameter objects used with the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13025,6 +13187,7 @@
               "simpleType" : "ParameterValue",
               "variableSetterType" : "ParameterValue"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13065,6 +13228,7 @@
           "simpleType" : "List<ParameterValue>",
           "variableSetterType" : "java.util.Collection<ParameterValue>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The parameter values used with the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterValues(java.util.Collection)} or {@link #withParameterValues(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterValues The parameter values used with the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13166,6 +13330,7 @@
                 "simpleType" : "ParameterObject",
                 "variableSetterType" : "ParameterObject"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13206,6 +13371,7 @@
             "simpleType" : "List<ParameterObject>",
             "variableSetterType" : "java.util.Collection<ParameterObject>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The parameter objects used with the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterObjects(java.util.Collection)} or {@link #withParameterObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterObjects The parameter objects used with the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13306,6 +13472,7 @@
                 "simpleType" : "ParameterValue",
                 "variableSetterType" : "ParameterValue"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13346,6 +13513,7 @@
             "simpleType" : "List<ParameterValue>",
             "variableSetterType" : "java.util.Collection<ParameterValue>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The parameter values used with the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterValues(java.util.Collection)} or {@link #withParameterValues(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterValues The parameter values used with the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13409,6 +13577,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13509,6 +13678,7 @@
                 "simpleType" : "PipelineObject",
                 "variableSetterType" : "PipelineObject"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13549,6 +13719,7 @@
             "simpleType" : "List<PipelineObject>",
             "variableSetterType" : "java.util.Collection<PipelineObject>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineObjects The objects that define the pipeline. These objects overwrite the existing pipeline definition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13684,6 +13855,7 @@
               "simpleType" : "ValidationError",
               "variableSetterType" : "ValidationError"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13724,6 +13896,7 @@
           "simpleType" : "List<ValidationError>",
           "variableSetterType" : "java.util.Collection<ValidationError>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationErrors(java.util.Collection)} or {@link #withValidationErrors(java.util.Collection)} if you want to override the existing values.</p>\n@param validationErrors The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13823,6 +13996,7 @@
               "simpleType" : "ValidationWarning",
               "variableSetterType" : "ValidationWarning"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13863,6 +14037,7 @@
           "simpleType" : "List<ValidationWarning>",
           "variableSetterType" : "java.util.Collection<ValidationWarning>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationWarnings(java.util.Collection)} or {@link #withValidationWarnings(java.util.Collection)} if you want to override the existing values.</p>\n@param validationWarnings The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13925,6 +14100,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>\n@param errored Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13989,6 +14165,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>\n@param errored Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14089,6 +14266,7 @@
                 "simpleType" : "ValidationError",
                 "variableSetterType" : "ValidationError"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14129,6 +14307,7 @@
             "simpleType" : "List<ValidationError>",
             "variableSetterType" : "java.util.Collection<ValidationError>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationErrors(java.util.Collection)} or {@link #withValidationErrors(java.util.Collection)} if you want to override the existing values.</p>\n@param validationErrors The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14229,6 +14408,7 @@
                 "simpleType" : "ValidationWarning",
                 "variableSetterType" : "ValidationWarning"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14269,6 +14449,7 @@
             "simpleType" : "List<ValidationWarning>",
             "variableSetterType" : "java.util.Collection<ValidationWarning>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationWarnings(java.util.Collection)} or {@link #withValidationWarnings(java.util.Collection)} if you want to override the existing values.</p>\n@param validationWarnings The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14407,6 +14588,7 @@
               "simpleType" : "Selector",
               "variableSetterType" : "Selector"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14447,6 +14629,7 @@
           "simpleType" : "List<Selector>",
           "variableSetterType" : "java.util.Collection<Selector>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSelectors(java.util.Collection)} or {@link #withSelectors(java.util.Collection)} if you want to override the existing values.</p>\n@param selectors List of selectors that define the query. An object must satisfy all of the selectors to match the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14548,6 +14731,7 @@
                 "simpleType" : "Selector",
                 "variableSetterType" : "Selector"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14588,6 +14772,7 @@
             "simpleType" : "List<Selector>",
             "variableSetterType" : "java.util.Collection<Selector>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSelectors(java.util.Collection)} or {@link #withSelectors(java.util.Collection)} if you want to override the existing values.</p>\n@param selectors List of selectors that define the query. An object must satisfy all of the selectors to match the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14696,6 +14881,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14758,6 +14944,7 @@
           "simpleType" : "Query",
           "variableSetterType" : "Query"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>\n@param query The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14820,6 +15007,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>\n@param sphere Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14882,6 +15070,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>\n@param marker The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14944,6 +15133,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>\n@param limit The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15008,6 +15198,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>\n@param limit The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15071,6 +15262,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>\n@param marker The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15134,6 +15326,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15197,6 +15390,7 @@
             "simpleType" : "Query",
             "variableSetterType" : "Query"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>\n@param query The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15260,6 +15454,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>\n@param sphere Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15395,6 +15590,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15435,6 +15631,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifiers that match the query selectors.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIds(java.util.Collection)} or {@link #withIds(java.util.Collection)} if you want to override the existing values.</p>\n@param ids The identifiers that match the query selectors.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15497,6 +15694,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>\n@param marker The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15559,6 +15757,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether there are more results that can be obtained by a subsequent call.</p>\n@param hasMoreResults Indicates whether there are more results that can be obtained by a subsequent call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15623,6 +15822,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether there are more results that can be obtained by a subsequent call.</p>\n@param hasMoreResults Indicates whether there are more results that can be obtained by a subsequent call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15723,6 +15923,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15763,6 +15964,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifiers that match the query selectors.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIds(java.util.Collection)} or {@link #withIds(java.util.Collection)} if you want to override the existing values.</p>\n@param ids The identifiers that match the query selectors.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15826,6 +16028,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>\n@param marker The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15934,6 +16137,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16033,6 +16237,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16073,6 +16278,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The keys of the tags to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The keys of the tags to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16137,6 +16343,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16237,6 +16444,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16277,6 +16485,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The keys of the tags to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The keys of the tags to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16421,6 +16630,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>\n@param taskId The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16520,6 +16730,7 @@
               "simpleType" : "Field",
               "variableSetterType" : "Field"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16560,6 +16771,7 @@
           "simpleType" : "List<Field>",
           "variableSetterType" : "java.util.Collection<Field>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFields(java.util.Collection)} or {@link #withFields(java.util.Collection)} if you want to override the existing values.</p>\n@param fields Key-value pairs that define the properties of the ReportTaskProgressInput object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16661,6 +16873,7 @@
                 "simpleType" : "Field",
                 "variableSetterType" : "Field"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16701,6 +16914,7 @@
             "simpleType" : "List<Field>",
             "variableSetterType" : "java.util.Collection<Field>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFields(java.util.Collection)} or {@link #withFields(java.util.Collection)} if you want to override the existing values.</p>\n@param fields Key-value pairs that define the properties of the ReportTaskProgressInput object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16764,6 +16978,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>\n@param taskId The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16862,6 +17077,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>\n@param canceled If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16926,6 +17142,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>\n@param canceled If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17034,6 +17251,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>\n@param taskrunnerId The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17096,6 +17314,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>\n@param workerGroup The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17158,6 +17377,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The public DNS name of the task runner.</p>\n@param hostname The public DNS name of the task runner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17222,6 +17442,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The public DNS name of the task runner.</p>\n@param hostname The public DNS name of the task runner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17285,6 +17506,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>\n@param taskrunnerId The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17348,6 +17570,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>\n@param workerGroup The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created. You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17446,6 +17669,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether the calling task runner should terminate.</p>\n@param terminate Indicates whether the calling task runner should terminate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17510,6 +17734,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether the calling task runner should terminate.</p>\n@param terminate Indicates whether the calling task runner should terminate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17611,6 +17836,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the field that the operator will be applied to. The field name is the \"key\" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>\n@param fieldName The name of the field that the operator will be applied to. The field name is the \"key\" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17673,6 +17899,7 @@
           "simpleType" : "Operator",
           "variableSetterType" : "Operator"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param operator \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17737,6 +17964,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the field that the operator will be applied to. The field name is the \"key\" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>\n@param fieldName The name of the field that the operator will be applied to. The field name is the \"key\" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17800,6 +18028,7 @@
             "simpleType" : "Operator",
             "variableSetterType" : "Operator"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param operator \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17908,6 +18137,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline that contains the objects.</p>\n@param pipelineId The ID of the pipeline that contains the objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18007,6 +18237,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18047,6 +18278,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setObjectIds(java.util.Collection)} or {@link #withObjectIds(java.util.Collection)} if you want to override the existing values.</p>\n@param objectIds The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18109,6 +18341,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>\n@param status The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18210,6 +18443,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18250,6 +18484,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setObjectIds(java.util.Collection)} or {@link #withObjectIds(java.util.Collection)} if you want to override the existing values.</p>\n@param objectIds The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18313,6 +18548,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline that contains the objects.</p>\n@param pipelineId The ID of the pipeline that contains the objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18376,6 +18612,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>\n@param status The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18520,6 +18757,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>\n@param taskId The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18582,6 +18820,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>\n@param taskStatus If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskStatus*/",
@@ -18644,6 +18883,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string \"Service_\" which is reserved by the system.</p>\n@param errorId If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string \"Service_\" which is reserved by the system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18706,6 +18946,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>\n@param errorMessage If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18768,6 +19009,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>\n@param errorStackTrace If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18832,6 +19074,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string \"Service_\" which is reserved by the system.</p>\n@param errorId If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object. It is used to display error information to the user. It should not start with string \"Service_\" which is reserved by the system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18895,6 +19138,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>\n@param errorMessage If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18958,6 +19202,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.</p>\n@param errorStackTrace If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object. It is used to display error information to the user. The web service does not parse this value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19021,6 +19266,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>\n@param taskId The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19084,6 +19330,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>\n@param taskStatus If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TaskStatus*/",
@@ -19221,6 +19468,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key name of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>\n@param key The key name of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19283,6 +19531,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The optional value portion of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>\n@param value The optional value portion of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19347,6 +19596,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key name of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>\n@param key The key name of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19410,6 +19660,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The optional value portion of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>\n@param value The optional value portion of a tag defined by a user. For more information, see <a href=\"http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html\">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19547,6 +19798,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>\n@param taskId An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19609,6 +19861,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline that provided the task.</p>\n@param pipelineId The ID of the pipeline that provided the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19671,6 +19924,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>\n@param attemptId The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19776,6 +20030,7 @@
               "simpleType" : "PipelineObject",
               "variableSetterType" : "PipelineObject"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19810,6 +20065,7 @@
           "simpleType" : "Map<String,PipelineObject>",
           "variableSetterType" : "java.util.Map<String,PipelineObject>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Connection information for the location where the task runner will publish the output of the task.</p>\n@param objects Connection information for the location where the task runner will publish the output of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19874,6 +20130,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>\n@param attemptId The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19980,6 +20237,7 @@
                 "simpleType" : "PipelineObject",
                 "variableSetterType" : "PipelineObject"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20014,6 +20272,7 @@
             "simpleType" : "Map<String,PipelineObject>",
             "variableSetterType" : "java.util.Map<String,PipelineObject>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Connection information for the location where the task runner will publish the output of the task.</p>\n@param objects Connection information for the location where the task runner will publish the output of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20077,6 +20336,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline that provided the task.</p>\n@param pipelineId The ID of the pipeline that provided the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20140,6 +20400,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>\n@param taskId An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20296,6 +20557,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20395,6 +20657,7 @@
               "simpleType" : "PipelineObject",
               "variableSetterType" : "PipelineObject"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20435,6 +20698,7 @@
           "simpleType" : "List<PipelineObject>",
           "variableSetterType" : "java.util.Collection<PipelineObject>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The objects that define the pipeline changes to validate against the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineObjects The objects that define the pipeline changes to validate against the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20534,6 +20798,7 @@
               "simpleType" : "ParameterObject",
               "variableSetterType" : "ParameterObject"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20574,6 +20839,7 @@
           "simpleType" : "List<ParameterObject>",
           "variableSetterType" : "java.util.Collection<ParameterObject>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The parameter objects used with the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterObjects(java.util.Collection)} or {@link #withParameterObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterObjects The parameter objects used with the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20673,6 +20939,7 @@
               "simpleType" : "ParameterValue",
               "variableSetterType" : "ParameterValue"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20713,6 +20980,7 @@
           "simpleType" : "List<ParameterValue>",
           "variableSetterType" : "java.util.Collection<ParameterValue>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The parameter values used with the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterValues(java.util.Collection)} or {@link #withParameterValues(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterValues The parameter values used with the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20814,6 +21082,7 @@
                 "simpleType" : "ParameterObject",
                 "variableSetterType" : "ParameterObject"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20854,6 +21123,7 @@
             "simpleType" : "List<ParameterObject>",
             "variableSetterType" : "java.util.Collection<ParameterObject>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The parameter objects used with the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterObjects(java.util.Collection)} or {@link #withParameterObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterObjects The parameter objects used with the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20954,6 +21224,7 @@
                 "simpleType" : "ParameterValue",
                 "variableSetterType" : "ParameterValue"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20994,6 +21265,7 @@
             "simpleType" : "List<ParameterValue>",
             "variableSetterType" : "java.util.Collection<ParameterValue>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The parameter values used with the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setParameterValues(java.util.Collection)} or {@link #withParameterValues(java.util.Collection)} if you want to override the existing values.</p>\n@param parameterValues The parameter values used with the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21057,6 +21329,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the pipeline.</p>\n@param pipelineId The ID of the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21157,6 +21430,7 @@
                 "simpleType" : "PipelineObject",
                 "variableSetterType" : "PipelineObject"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21197,6 +21471,7 @@
             "simpleType" : "List<PipelineObject>",
             "variableSetterType" : "java.util.Collection<PipelineObject>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The objects that define the pipeline changes to validate against the pipeline.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPipelineObjects(java.util.Collection)} or {@link #withPipelineObjects(java.util.Collection)} if you want to override the existing values.</p>\n@param pipelineObjects The objects that define the pipeline changes to validate against the pipeline.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21332,6 +21607,7 @@
               "simpleType" : "ValidationError",
               "variableSetterType" : "ValidationError"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21372,6 +21648,7 @@
           "simpleType" : "List<ValidationError>",
           "variableSetterType" : "java.util.Collection<ValidationError>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Any validation errors that were found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationErrors(java.util.Collection)} or {@link #withValidationErrors(java.util.Collection)} if you want to override the existing values.</p>\n@param validationErrors Any validation errors that were found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21471,6 +21748,7 @@
               "simpleType" : "ValidationWarning",
               "variableSetterType" : "ValidationWarning"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21511,6 +21789,7 @@
           "simpleType" : "List<ValidationWarning>",
           "variableSetterType" : "java.util.Collection<ValidationWarning>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Any validation warnings that were found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationWarnings(java.util.Collection)} or {@link #withValidationWarnings(java.util.Collection)} if you want to override the existing values.</p>\n@param validationWarnings Any validation warnings that were found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21573,6 +21852,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether there were validation errors.</p>\n@param errored Indicates whether there were validation errors.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21637,6 +21917,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether there were validation errors.</p>\n@param errored Indicates whether there were validation errors.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21737,6 +22018,7 @@
                 "simpleType" : "ValidationError",
                 "variableSetterType" : "ValidationError"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21777,6 +22059,7 @@
             "simpleType" : "List<ValidationError>",
             "variableSetterType" : "java.util.Collection<ValidationError>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Any validation errors that were found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationErrors(java.util.Collection)} or {@link #withValidationErrors(java.util.Collection)} if you want to override the existing values.</p>\n@param validationErrors Any validation errors that were found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21877,6 +22160,7 @@
                 "simpleType" : "ValidationWarning",
                 "variableSetterType" : "ValidationWarning"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21917,6 +22201,7 @@
             "simpleType" : "List<ValidationWarning>",
             "variableSetterType" : "java.util.Collection<ValidationWarning>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Any validation warnings that were found.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationWarnings(java.util.Collection)} or {@link #withValidationWarnings(java.util.Collection)} if you want to override the existing values.</p>\n@param validationWarnings Any validation warnings that were found.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22018,6 +22303,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the object that contains the validation error.</p>\n@param id The identifier of the object that contains the validation error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22117,6 +22403,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22157,6 +22444,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the validation error.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setErrors(java.util.Collection)} or {@link #withErrors(java.util.Collection)} if you want to override the existing values.</p>\n@param errors A description of the validation error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22258,6 +22546,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22298,6 +22587,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the validation error.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setErrors(java.util.Collection)} or {@link #withErrors(java.util.Collection)} if you want to override the existing values.</p>\n@param errors A description of the validation error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22361,6 +22651,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the object that contains the validation error.</p>\n@param id The identifier of the object that contains the validation error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22462,6 +22753,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the object that contains the validation warning.</p>\n@param id The identifier of the object that contains the validation warning.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22561,6 +22853,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22601,6 +22894,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the validation warning.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWarnings(java.util.Collection)} or {@link #withWarnings(java.util.Collection)} if you want to override the existing values.</p>\n@param warnings A description of the validation warning.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22665,6 +22959,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the object that contains the validation warning.</p>\n@param id The identifier of the object that contains the validation warning.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22765,6 +23060,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22805,6 +23101,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the validation warning.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setWarnings(java.util.Collection)} or {@link #withWarnings(java.util.Collection)} if you want to override the existing values.</p>\n@param warnings A description of the validation warning.\n@return Returns a reference to this object so that method calls can be chained together.*/",

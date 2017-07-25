@@ -106,7 +106,7 @@ public class XssMatchSetUpdate implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -123,7 +123,7 @@ public class XssMatchSetUpdate implements Serializable, Cloneable, StructuredPoj
      */
 
     public XssMatchSetUpdate withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

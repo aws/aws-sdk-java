@@ -138,7 +138,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      */
 
     public void setActivityStatus(ActivityStatus activityStatus) {
-        this.activityStatus = activityStatus.toString();
+        withActivityStatus(activityStatus);
     }
 
     /**
@@ -159,7 +159,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      */
 
     public SpotFleetRequestConfig withActivityStatus(ActivityStatus activityStatus) {
-        setActivityStatus(activityStatus);
+        this.activityStatus = activityStatus.toString();
         return this;
     }
 
@@ -337,7 +337,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      */
 
     public void setSpotFleetRequestState(BatchState spotFleetRequestState) {
-        this.spotFleetRequestState = spotFleetRequestState.toString();
+        withSpotFleetRequestState(spotFleetRequestState);
     }
 
     /**
@@ -352,7 +352,7 @@ public class SpotFleetRequestConfig implements Serializable, Cloneable {
      */
 
     public SpotFleetRequestConfig withSpotFleetRequestState(BatchState spotFleetRequestState) {
-        setSpotFleetRequestState(spotFleetRequestState);
+        this.spotFleetRequestState = spotFleetRequestState.toString();
         return this;
     }
 

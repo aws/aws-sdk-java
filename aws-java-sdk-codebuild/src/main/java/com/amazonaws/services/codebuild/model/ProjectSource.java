@@ -353,7 +353,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(SourceType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -413,7 +413,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ProjectSource withType(SourceType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

@@ -149,7 +149,7 @@ public class DescribeElasticsearchInstanceTypeLimitsRequest extends com.amazonaw
      */
 
     public void setInstanceType(ESPartitionInstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -165,7 +165,7 @@ public class DescribeElasticsearchInstanceTypeLimitsRequest extends com.amazonaw
      */
 
     public DescribeElasticsearchInstanceTypeLimitsRequest withInstanceType(ESPartitionInstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 

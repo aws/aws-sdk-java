@@ -354,7 +354,7 @@ public class InstanceState implements Serializable, Cloneable {
      */
 
     public void setName(InstanceStateName name) {
-        this.name = name.toString();
+        withName(name);
     }
 
     /**
@@ -369,7 +369,7 @@ public class InstanceState implements Serializable, Cloneable {
      */
 
     public InstanceState withName(InstanceStateName name) {
-        setName(name);
+        this.name = name.toString();
         return this;
     }
 

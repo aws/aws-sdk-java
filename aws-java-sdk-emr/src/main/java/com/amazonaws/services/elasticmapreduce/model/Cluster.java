@@ -481,7 +481,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setInstanceCollectionType(InstanceCollectionType instanceCollectionType) {
-        this.instanceCollectionType = instanceCollectionType.toString();
+        withInstanceCollectionType(instanceCollectionType);
     }
 
     /**
@@ -511,7 +511,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Cluster withInstanceCollectionType(InstanceCollectionType instanceCollectionType) {
-        setInstanceCollectionType(instanceCollectionType);
+        this.instanceCollectionType = instanceCollectionType.toString();
         return this;
     }
 
@@ -1439,7 +1439,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        this.scaleDownBehavior = scaleDownBehavior.toString();
+        withScaleDownBehavior(scaleDownBehavior);
     }
 
     /**
@@ -1471,7 +1471,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Cluster withScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        setScaleDownBehavior(scaleDownBehavior);
+        this.scaleDownBehavior = scaleDownBehavior.toString();
         return this;
     }
 
@@ -1629,7 +1629,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
-        this.repoUpgradeOnBoot = repoUpgradeOnBoot.toString();
+        withRepoUpgradeOnBoot(repoUpgradeOnBoot);
     }
 
     /**
@@ -1646,7 +1646,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Cluster withRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
-        setRepoUpgradeOnBoot(repoUpgradeOnBoot);
+        this.repoUpgradeOnBoot = repoUpgradeOnBoot.toString();
         return this;
     }
 

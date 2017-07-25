@@ -132,7 +132,7 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(ActivityType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -147,7 +147,7 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Activity withType(ActivityType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

@@ -246,7 +246,7 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
-        this.playerSessionCreationPolicy = playerSessionCreationPolicy.toString();
+        withPlayerSessionCreationPolicy(playerSessionCreationPolicy);
     }
 
     /**
@@ -261,7 +261,7 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public UpdateGameSessionRequest withPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
-        setPlayerSessionCreationPolicy(playerSessionCreationPolicy);
+        this.playerSessionCreationPolicy = playerSessionCreationPolicy.toString();
         return this;
     }
 
@@ -419,7 +419,7 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setProtectionPolicy(ProtectionPolicy protectionPolicy) {
-        this.protectionPolicy = protectionPolicy.toString();
+        withProtectionPolicy(protectionPolicy);
     }
 
     /**
@@ -459,7 +459,7 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public UpdateGameSessionRequest withProtectionPolicy(ProtectionPolicy protectionPolicy) {
-        setProtectionPolicy(protectionPolicy);
+        this.protectionPolicy = protectionPolicy.toString();
         return this;
     }
 

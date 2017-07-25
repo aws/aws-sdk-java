@@ -281,7 +281,7 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
      */
 
     public void setRuntime(Runtime runtime) {
-        this.runtime = runtime.toString();
+        withRuntime(runtime);
     }
 
     /**
@@ -296,7 +296,7 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
      */
 
     public UpdateFunctionConfigurationResult withRuntime(Runtime runtime) {
-        setRuntime(runtime);
+        this.runtime = runtime.toString();
         return this;
     }
 

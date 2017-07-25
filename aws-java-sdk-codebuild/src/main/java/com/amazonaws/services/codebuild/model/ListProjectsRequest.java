@@ -310,7 +310,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setSortBy(ProjectSortByType sortBy) {
-        this.sortBy = sortBy.toString();
+        withSortBy(sortBy);
     }
 
     /**
@@ -368,7 +368,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public ListProjectsRequest withSortBy(ProjectSortByType sortBy) {
-        setSortBy(sortBy);
+        this.sortBy = sortBy.toString();
         return this;
     }
 
@@ -542,7 +542,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setSortOrder(SortOrderType sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -586,7 +586,7 @@ public class ListProjectsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public ListProjectsRequest withSortOrder(SortOrderType sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 

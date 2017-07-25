@@ -39,6 +39,7 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : false
@@ -649,6 +650,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -713,6 +715,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -818,6 +821,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>\n@param creationToken String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -880,6 +884,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>PerformanceMode</code> of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. This can't be changed after the file system has been created.</p>\n@param performanceMode The <code>PerformanceMode</code> of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. This can't be changed after the file system has been created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PerformanceMode*/",
@@ -944,6 +949,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.</p>\n@param creationToken String of up to 64 ASCII characters. Amazon EFS uses this to ensure idempotent creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1007,6 +1013,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>PerformanceMode</code> of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. This can't be changed after the file system has been created.</p>\n@param performanceMode The <code>PerformanceMode</code> of the file system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second with a tradeoff of slightly higher latencies for most file operations. This can't be changed after the file system has been created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PerformanceMode*/",
@@ -1105,6 +1112,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>\n@param ownerId AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1167,6 +1175,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Opaque string specified in the request.</p>\n@param creationToken Opaque string specified in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1229,6 +1238,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the file system, assigned by Amazon EFS.</p>\n@param fileSystemId ID of the file system, assigned by Amazon EFS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1291,6 +1301,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>\n@param creationTime Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1353,6 +1364,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lifecycle phase of the file system.</p>\n@param lifeCycleState Lifecycle phase of the file system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LifeCycleState*/",
@@ -1415,6 +1427,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>\n@param name You can add tags to a file system, including a <code>Name</code> tag. For more information, see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1477,6 +1490,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.</p>\n@param numberOfMountTargets Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1539,6 +1553,7 @@
           "simpleType" : "FileSystemSize",
           "variableSetterType" : "FileSystemSize"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time. </p>\n@param sizeInBytes Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1601,6 +1616,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>PerformanceMode</code> of the file system.</p>\n@param performanceMode The <code>PerformanceMode</code> of the file system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PerformanceMode*/",
@@ -1665,6 +1681,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>\n@param creationTime Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1728,6 +1745,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Opaque string specified in the request.</p>\n@param creationToken Opaque string specified in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1791,6 +1809,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the file system, assigned by Amazon EFS.</p>\n@param fileSystemId ID of the file system, assigned by Amazon EFS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1854,6 +1873,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lifecycle phase of the file system.</p>\n@param lifeCycleState Lifecycle phase of the file system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LifeCycleState*/",
@@ -1917,6 +1937,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>\n@param name You can add tags to a file system, including a <code>Name</code> tag. For more information, see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1980,6 +2001,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.</p>\n@param numberOfMountTargets Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2043,6 +2065,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>\n@param ownerId AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2106,6 +2129,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>PerformanceMode</code> of the file system.</p>\n@param performanceMode The <code>PerformanceMode</code> of the file system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PerformanceMode*/",
@@ -2169,6 +2193,7 @@
             "simpleType" : "FileSystemSize",
             "variableSetterType" : "FileSystemSize"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time. </p>\n@param sizeInBytes Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2277,6 +2302,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the file system for which to create the mount target.</p>\n@param fileSystemId ID of the file system for which to create the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2339,6 +2365,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the subnet to add the mount target in.</p>\n@param subnetId ID of the subnet to add the mount target in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2401,6 +2428,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Valid IPv4 address within the address range of the specified subnet.</p>\n@param ipAddress Valid IPv4 address within the address range of the specified subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2500,6 +2528,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2540,6 +2569,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroups Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2604,6 +2634,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the file system for which to create the mount target.</p>\n@param fileSystemId ID of the file system for which to create the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2667,6 +2698,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Valid IPv4 address within the address range of the specified subnet.</p>\n@param ipAddress Valid IPv4 address within the address range of the specified subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2767,6 +2799,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2807,6 +2840,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroups Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must be for the same VPC as subnet specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2870,6 +2904,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the subnet to add the mount target in.</p>\n@param subnetId ID of the subnet to add the mount target in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2968,6 +3003,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>AWS account ID that owns the resource.</p>\n@param ownerId AWS account ID that owns the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3030,6 +3066,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>System-assigned mount target ID.</p>\n@param mountTargetId System-assigned mount target ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3092,6 +3129,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the file system for which the mount target is intended.</p>\n@param fileSystemId ID of the file system for which the mount target is intended.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3154,6 +3192,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the mount target's subnet.</p>\n@param subnetId ID of the mount target's subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3216,6 +3255,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lifecycle state of the mount target.</p>\n@param lifeCycleState Lifecycle state of the mount target.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LifeCycleState*/",
@@ -3278,6 +3318,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Address at which the file system may be mounted via the mount target.</p>\n@param ipAddress Address at which the file system may be mounted via the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3340,6 +3381,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the network interface that Amazon EFS created when it created the mount target.</p>\n@param networkInterfaceId ID of the network interface that Amazon EFS created when it created the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3404,6 +3446,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the file system for which the mount target is intended.</p>\n@param fileSystemId ID of the file system for which the mount target is intended.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3467,6 +3510,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Address at which the file system may be mounted via the mount target.</p>\n@param ipAddress Address at which the file system may be mounted via the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3530,6 +3574,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lifecycle state of the mount target.</p>\n@param lifeCycleState Lifecycle state of the mount target.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LifeCycleState*/",
@@ -3593,6 +3638,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>System-assigned mount target ID.</p>\n@param mountTargetId System-assigned mount target ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3656,6 +3702,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the network interface that Amazon EFS created when it created the mount target.</p>\n@param networkInterfaceId ID of the network interface that Amazon EFS created when it created the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3719,6 +3766,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>AWS account ID that owns the resource.</p>\n@param ownerId AWS account ID that owns the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3782,6 +3830,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the mount target's subnet.</p>\n@param subnetId ID of the mount target's subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3890,6 +3939,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>\n@param fileSystemId ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3989,6 +4039,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4029,6 +4080,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4093,6 +4145,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.</p>\n@param fileSystemId ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4193,6 +4246,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4233,6 +4287,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4377,6 +4432,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the file system you want to delete.</p>\n@param fileSystemId ID of the file system you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4441,6 +4497,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the file system you want to delete.</p>\n@param fileSystemId ID of the file system you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4585,6 +4642,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the mount target to delete (String).</p>\n@param mountTargetId ID of the mount target to delete (String).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4649,6 +4707,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the mount target to delete (String).</p>\n@param mountTargetId ID of the mount target to delete (String).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4793,6 +4852,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the file system whose tags you want to delete (String).</p>\n@param fileSystemId ID of the file system whose tags you want to delete (String).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4892,6 +4952,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4932,6 +4993,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of tag keys to delete.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys List of tag keys to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4996,6 +5058,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the file system whose tags you want to delete (String).</p>\n@param fileSystemId ID of the file system whose tags you want to delete (String).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5096,6 +5159,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5136,6 +5200,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of tag keys to delete.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys List of tag keys to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5273,6 +5338,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5337,6 +5403,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5442,6 +5509,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon EFS returns is the minimum of the <code>MaxItems</code> parameter specified in the request and the service's internal maximum number of items per page. </p>\n@param maxItems (Optional) Specifies the maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon EFS returns is the minimum of the <code>MaxItems</code> parameter specified in the request and the service's internal maximum number of items per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5504,6 +5572,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>\n@param marker (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5566,6 +5635,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>\n@param creationToken (Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5628,6 +5698,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) ID of the file system whose description you want to retrieve (String).</p>\n@param fileSystemId (Optional) ID of the file system whose description you want to retrieve (String).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5692,6 +5763,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.</p>\n@param creationToken (Optional) Restricts the list to the file system with this creation token (String). You specify a creation token when you create an Amazon EFS file system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5755,6 +5827,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) ID of the file system whose description you want to retrieve (String).</p>\n@param fileSystemId (Optional) ID of the file system whose description you want to retrieve (String).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5818,6 +5891,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off. </p>\n@param marker (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If present, specifies to continue the list from where the returning call had left off.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5881,6 +5955,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Specifies the maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon EFS returns is the minimum of the <code>MaxItems</code> parameter specified in the request and the service's internal maximum number of items per page. </p>\n@param maxItems (Optional) Specifies the maximum number of file systems to return in the response (integer). This parameter value must be greater than 0. The number of items that Amazon EFS returns is the minimum of the <code>MaxItems</code> parameter specified in the request and the service's internal maximum number of items per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5979,6 +6054,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Present if provided by caller in the request (String).</p>\n@param marker Present if provided by caller in the request (String).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6078,6 +6154,7 @@
               "simpleType" : "FileSystemDescription",
               "variableSetterType" : "FileSystemDescription"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6118,6 +6195,7 @@
           "simpleType" : "List<FileSystemDescription>",
           "variableSetterType" : "java.util.Collection<FileSystemDescription>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Array of file system descriptions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFileSystems(java.util.Collection)} or {@link #withFileSystems(java.util.Collection)} if you want to override the existing values.</p>\n@param fileSystems Array of file system descriptions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6180,6 +6258,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>\n@param nextMarker Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6281,6 +6360,7 @@
                 "simpleType" : "FileSystemDescription",
                 "variableSetterType" : "FileSystemDescription"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6321,6 +6401,7 @@
             "simpleType" : "List<FileSystemDescription>",
             "variableSetterType" : "java.util.Collection<FileSystemDescription>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Array of file system descriptions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFileSystems(java.util.Collection)} or {@link #withFileSystems(java.util.Collection)} if you want to override the existing values.</p>\n@param fileSystems Array of file system descriptions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6384,6 +6465,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Present if provided by caller in the request (String).</p>\n@param marker Present if provided by caller in the request (String).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6447,6 +6529,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>\n@param nextMarker Present if there are more file systems than returned in the response (String). You can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6555,6 +6638,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the mount target whose security groups you want to retrieve.</p>\n@param mountTargetId ID of the mount target whose security groups you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6619,6 +6703,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the mount target whose security groups you want to retrieve.</p>\n@param mountTargetId ID of the mount target whose security groups you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6754,6 +6839,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6794,6 +6880,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Array of security groups.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroups Array of security groups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6895,6 +6982,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6935,6 +7023,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Array of security groups.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroups Array of security groups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7043,6 +7132,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Maximum number of mount targets to return in the response. It must be an integer with a value greater than zero.</p>\n@param maxItems (Optional) Maximum number of mount targets to return in the response. It must be an integer with a value greater than zero.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7105,6 +7195,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>\n@param marker (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7167,6 +7258,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if <code>MountTargetId</code> is not included.</p>\n@param fileSystemId (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if <code>MountTargetId</code> is not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7229,6 +7321,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included.</p>\n@param mountTargetId (Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7293,6 +7386,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if <code>MountTargetId</code> is not included.</p>\n@param fileSystemId (Optional) ID of the file system whose mount targets you want to list (String). It must be included in your request if <code>MountTargetId</code> is not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7356,6 +7450,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.</p>\n@param marker (Optional) Opaque pagination token returned from a previous <code>DescribeMountTargets</code> operation (String). If present, it specifies to continue the list from where the previous returning call left off.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7419,6 +7514,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Maximum number of mount targets to return in the response. It must be an integer with a value greater than zero.</p>\n@param maxItems (Optional) Maximum number of mount targets to return in the response. It must be an integer with a value greater than zero.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7482,6 +7578,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included.</p>\n@param mountTargetId (Optional) ID of the mount target that you want to have described (String). It must be included in your request if <code>FileSystemId</code> is not included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7580,6 +7677,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>\n@param marker If the request included the <code>Marker</code>, the response returns that value in this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7679,6 +7777,7 @@
               "simpleType" : "MountTargetDescription",
               "variableSetterType" : "MountTargetDescription"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7719,6 +7818,7 @@
           "simpleType" : "List<MountTargetDescription>",
           "variableSetterType" : "java.util.Collection<MountTargetDescription>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMountTargets(java.util.Collection)} or {@link #withMountTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param mountTargets Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7781,6 +7881,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>\n@param nextMarker If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7845,6 +7946,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the request included the <code>Marker</code>, the response returns that value in this field.</p>\n@param marker If the request included the <code>Marker</code>, the response returns that value in this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7945,6 +8047,7 @@
                 "simpleType" : "MountTargetDescription",
                 "variableSetterType" : "MountTargetDescription"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7985,6 +8088,7 @@
             "simpleType" : "List<MountTargetDescription>",
             "variableSetterType" : "java.util.Collection<MountTargetDescription>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMountTargets(java.util.Collection)} or {@link #withMountTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param mountTargets Returns the file system's mount targets as an array of <code>MountTargetDescription</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8048,6 +8152,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.</p>\n@param nextMarker If a value is present, there are more mount targets to return. In a subsequent request, you can provide <code>Marker</code> in your request with this value to retrieve the next set of mount targets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8156,6 +8261,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Maximum number of file system tags to return in the response. It must be an integer with a value greater than zero.</p>\n@param maxItems (Optional) Maximum number of file system tags to return in the response. It must be an integer with a value greater than zero.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8218,6 +8324,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>\n@param marker (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8280,6 +8387,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the file system whose tag set you want to retrieve.</p>\n@param fileSystemId ID of the file system whose tag set you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8344,6 +8452,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the file system whose tag set you want to retrieve.</p>\n@param fileSystemId ID of the file system whose tag set you want to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8407,6 +8516,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.</p>\n@param marker (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If present, it specifies to continue the list from where the previous call left off.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8470,6 +8580,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>(Optional) Maximum number of file system tags to return in the response. It must be an integer with a value greater than zero.</p>\n@param maxItems (Optional) Maximum number of file system tags to return in the response. It must be an integer with a value greater than zero.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8568,6 +8679,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>\n@param marker If the request included a <code>Marker</code>, the response returns that value in this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8667,6 +8779,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8707,6 +8820,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags Returns tags associated with the file system as an array of <code>Tag</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8769,6 +8883,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>\n@param nextMarker If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8833,6 +8948,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the request included a <code>Marker</code>, the response returns that value in this field.</p>\n@param marker If the request included a <code>Marker</code>, the response returns that value in this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8896,6 +9012,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.</p>\n@param nextMarker If a value is present, there are more tags to return. In a subsequent request, you can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter in your next request to retrieve the next set of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8996,6 +9113,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9036,6 +9154,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returns tags associated with the file system as an array of <code>Tag</code> objects. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags Returns tags associated with the file system as an array of <code>Tag</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9137,6 +9256,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9199,6 +9319,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param fileSystemId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9263,6 +9384,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9326,6 +9448,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param fileSystemId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9424,6 +9547,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>\n@param ownerId AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9486,6 +9610,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Opaque string specified in the request.</p>\n@param creationToken Opaque string specified in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9548,6 +9673,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the file system, assigned by Amazon EFS.</p>\n@param fileSystemId ID of the file system, assigned by Amazon EFS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9610,6 +9736,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>\n@param creationTime Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9672,6 +9799,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lifecycle phase of the file system.</p>\n@param lifeCycleState Lifecycle phase of the file system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LifeCycleState*/",
@@ -9734,6 +9862,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>\n@param name You can add tags to a file system, including a <code>Name</code> tag. For more information, see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9796,6 +9925,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.</p>\n@param numberOfMountTargets Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9858,6 +9988,7 @@
           "simpleType" : "FileSystemSize",
           "variableSetterType" : "FileSystemSize"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time. </p>\n@param sizeInBytes Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9920,6 +10051,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>PerformanceMode</code> of the file system.</p>\n@param performanceMode The <code>PerformanceMode</code> of the file system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PerformanceMode*/",
@@ -9984,6 +10116,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).</p>\n@param creationTime Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10047,6 +10180,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Opaque string specified in the request.</p>\n@param creationToken Opaque string specified in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10110,6 +10244,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the file system, assigned by Amazon EFS.</p>\n@param fileSystemId ID of the file system, assigned by Amazon EFS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10173,6 +10308,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lifecycle phase of the file system.</p>\n@param lifeCycleState Lifecycle phase of the file system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LifeCycleState*/",
@@ -10236,6 +10372,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>You can add tags to a file system, including a <code>Name</code> tag. For more information, see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field. </p>\n@param name You can add tags to a file system, including a <code>Name</code> tag. For more information, see <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10299,6 +10436,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.</p>\n@param numberOfMountTargets Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10362,6 +10500,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.</p>\n@param ownerId AWS account that created the file system. If the file system was created by an IAM user, the parent account to which the user belongs is the owner.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10425,6 +10564,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>PerformanceMode</code> of the file system.</p>\n@param performanceMode The <code>PerformanceMode</code> of the file system.\n@return Returns a reference to this object so that method calls can be chained together.\n@see PerformanceMode*/",
@@ -10488,6 +10628,7 @@
             "simpleType" : "FileSystemSize",
             "variableSetterType" : "FileSystemSize"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time. </p>\n@param sizeInBytes Latest known metered size (in bytes) of data stored in the file system, in bytes, in its <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value does not represent the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to the file system. That is, the value will represent actual size only if the file system is not modified for a period longer than a couple of hours. Otherwise, the value is not the exact size the file system was at any instant in time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10589,6 +10730,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10653,6 +10795,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10751,6 +10894,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10815,6 +10959,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10913,6 +11058,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10977,6 +11123,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11075,6 +11222,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Latest known metered size (in bytes) of data stored in the file system.</p>\n@param value Latest known metered size (in bytes) of data stored in the file system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11137,6 +11285,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>\n@param timestamp Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11201,6 +11350,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.</p>\n@param timestamp Time at which the size of data, returned in the <code>Value</code> field, was determined. The value is the integer number of seconds since 1970-01-01T00:00:00Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11264,6 +11414,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Latest known metered size (in bytes) of data stored in the file system.</p>\n@param value Latest known metered size (in bytes) of data stored in the file system.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11365,6 +11516,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11429,6 +11581,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11527,6 +11680,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11591,6 +11745,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11689,6 +11844,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11753,6 +11909,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11851,6 +12008,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11915,6 +12073,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12071,6 +12230,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the mount target whose security groups you want to modify.</p>\n@param mountTargetId ID of the mount target whose security groups you want to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12170,6 +12330,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12210,6 +12371,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Array of up to five VPC security group IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroups Array of up to five VPC security group IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12274,6 +12436,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the mount target whose security groups you want to modify.</p>\n@param mountTargetId ID of the mount target whose security groups you want to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12374,6 +12537,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12414,6 +12578,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Array of up to five VPC security group IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want to override the existing values.</p>\n@param securityGroups Array of up to five VPC security group IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12551,6 +12716,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12615,6 +12781,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12713,6 +12880,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>AWS account ID that owns the resource.</p>\n@param ownerId AWS account ID that owns the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12775,6 +12943,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>System-assigned mount target ID.</p>\n@param mountTargetId System-assigned mount target ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12837,6 +13006,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the file system for which the mount target is intended.</p>\n@param fileSystemId ID of the file system for which the mount target is intended.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12899,6 +13069,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the mount target's subnet.</p>\n@param subnetId ID of the mount target's subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12961,6 +13132,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lifecycle state of the mount target.</p>\n@param lifeCycleState Lifecycle state of the mount target.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LifeCycleState*/",
@@ -13023,6 +13195,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Address at which the file system may be mounted via the mount target.</p>\n@param ipAddress Address at which the file system may be mounted via the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13085,6 +13258,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>ID of the network interface that Amazon EFS created when it created the mount target.</p>\n@param networkInterfaceId ID of the network interface that Amazon EFS created when it created the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13149,6 +13323,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the file system for which the mount target is intended.</p>\n@param fileSystemId ID of the file system for which the mount target is intended.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13212,6 +13387,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Address at which the file system may be mounted via the mount target.</p>\n@param ipAddress Address at which the file system may be mounted via the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13275,6 +13451,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lifecycle state of the mount target.</p>\n@param lifeCycleState Lifecycle state of the mount target.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LifeCycleState*/",
@@ -13338,6 +13515,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>System-assigned mount target ID.</p>\n@param mountTargetId System-assigned mount target ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13401,6 +13579,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the network interface that Amazon EFS created when it created the mount target.</p>\n@param networkInterfaceId ID of the network interface that Amazon EFS created when it created the mount target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13464,6 +13643,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>AWS account ID that owns the resource.</p>\n@param ownerId AWS account ID that owns the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13527,6 +13707,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>ID of the mount target's subnet.</p>\n@param subnetId ID of the mount target's subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13628,6 +13809,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13692,6 +13874,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13790,6 +13973,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13854,6 +14038,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13952,6 +14137,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14016,6 +14202,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14159,6 +14346,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14223,6 +14411,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14321,6 +14510,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14385,6 +14575,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14483,6 +14674,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14547,6 +14739,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14645,6 +14838,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Tag key (String). The key can't start with <code>aws:</code>.</p>\n@param key Tag key (String). The key can't start with <code>aws:</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14707,6 +14901,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Value of the tag key.</p>\n@param value Value of the tag key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14771,6 +14966,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Tag key (String). The key can't start with <code>aws:</code>.</p>\n@param key Tag key (String). The key can't start with <code>aws:</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14834,6 +15030,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Value of the tag key.</p>\n@param value Value of the tag key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14935,6 +15132,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14999,6 +15197,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",

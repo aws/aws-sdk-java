@@ -93,7 +93,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      */
 
     public void setGroup(PermissionGroup group) {
-        this.group = group.toString();
+        withGroup(group);
     }
 
     /**
@@ -108,7 +108,7 @@ public class CreateVolumePermission implements Serializable, Cloneable {
      */
 
     public CreateVolumePermission withGroup(PermissionGroup group) {
-        setGroup(group);
+        this.group = group.toString();
         return this;
     }
 

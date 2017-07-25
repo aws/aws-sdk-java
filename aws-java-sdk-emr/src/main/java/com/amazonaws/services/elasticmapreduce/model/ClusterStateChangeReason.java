@@ -95,7 +95,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable, Struct
      */
 
     public void setCode(ClusterStateChangeReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -110,7 +110,7 @@ public class ClusterStateChangeReason implements Serializable, Cloneable, Struct
      */
 
     public ClusterStateChangeReason withCode(ClusterStateChangeReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

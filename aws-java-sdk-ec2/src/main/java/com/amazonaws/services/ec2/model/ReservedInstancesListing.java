@@ -468,7 +468,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      */
 
     public void setStatus(ListingStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -483,7 +483,7 @@ public class ReservedInstancesListing implements Serializable, Cloneable {
      */
 
     public ReservedInstancesListing withStatus(ListingStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

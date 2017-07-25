@@ -215,7 +215,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public void setResourceType(TaggableResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -230,7 +230,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public AddTagsRequest withResourceType(TaggableResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

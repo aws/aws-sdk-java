@@ -295,7 +295,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -310,7 +310,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public ReservedInstancesOffering withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -368,7 +368,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public void setProductDescription(RIProductDescription productDescription) {
-        this.productDescription = productDescription.toString();
+        withProductDescription(productDescription);
     }
 
     /**
@@ -383,7 +383,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public ReservedInstancesOffering withProductDescription(RIProductDescription productDescription) {
-        setProductDescription(productDescription);
+        this.productDescription = productDescription.toString();
         return this;
     }
 
@@ -535,7 +535,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -552,7 +552,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public ReservedInstancesOffering withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 
@@ -610,7 +610,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public void setInstanceTenancy(Tenancy instanceTenancy) {
-        this.instanceTenancy = instanceTenancy.toString();
+        withInstanceTenancy(instanceTenancy);
     }
 
     /**
@@ -625,7 +625,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public ReservedInstancesOffering withInstanceTenancy(Tenancy instanceTenancy) {
-        setInstanceTenancy(instanceTenancy);
+        this.instanceTenancy = instanceTenancy.toString();
         return this;
     }
 
@@ -752,7 +752,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public void setOfferingClass(OfferingClassType offeringClass) {
-        this.offeringClass = offeringClass.toString();
+        withOfferingClass(offeringClass);
     }
 
     /**
@@ -769,7 +769,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public ReservedInstancesOffering withOfferingClass(OfferingClassType offeringClass) {
-        setOfferingClass(offeringClass);
+        this.offeringClass = offeringClass.toString();
         return this;
     }
 
@@ -827,7 +827,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public void setOfferingType(OfferingTypeValues offeringType) {
-        this.offeringType = offeringType.toString();
+        withOfferingType(offeringType);
     }
 
     /**
@@ -842,7 +842,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public ReservedInstancesOffering withOfferingType(OfferingTypeValues offeringType) {
-        setOfferingType(offeringType);
+        this.offeringType = offeringType.toString();
         return this;
     }
 
@@ -1046,7 +1046,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public void setScope(Scope scope) {
-        this.scope = scope.toString();
+        withScope(scope);
     }
 
     /**
@@ -1061,7 +1061,7 @@ public class ReservedInstancesOffering implements Serializable, Cloneable {
      */
 
     public ReservedInstancesOffering withScope(Scope scope) {
-        setScope(scope);
+        this.scope = scope.toString();
         return this;
     }
 

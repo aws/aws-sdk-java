@@ -358,7 +358,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
      */
 
     public void setStatus(MaintenanceWindowExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -373,7 +373,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentity implements Seriali
      */
 
     public MaintenanceWindowExecutionTaskInvocationIdentity withStatus(MaintenanceWindowExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

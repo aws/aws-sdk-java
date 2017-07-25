@@ -123,7 +123,7 @@ public class HandshakeConstraintViolationException extends com.amazonaws.service
      */
 
     public void setReason(HandshakeConstraintViolationExceptionReason reason) {
-        this.reason = reason.toString();
+        withReason(reason);
     }
 
     /**
@@ -133,7 +133,7 @@ public class HandshakeConstraintViolationException extends com.amazonaws.service
      */
 
     public HandshakeConstraintViolationException withReason(HandshakeConstraintViolationExceptionReason reason) {
-        setReason(reason);
+        this.reason = reason.toString();
         return this;
     }
 

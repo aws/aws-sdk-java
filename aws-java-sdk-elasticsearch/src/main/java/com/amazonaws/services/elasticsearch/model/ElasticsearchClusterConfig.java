@@ -120,7 +120,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      */
 
     public void setInstanceType(ESPartitionInstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -135,7 +135,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      */
 
     public ElasticsearchClusterConfig withInstanceType(ESPartitionInstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -369,7 +369,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      */
 
     public void setDedicatedMasterType(ESPartitionInstanceType dedicatedMasterType) {
-        this.dedicatedMasterType = dedicatedMasterType.toString();
+        withDedicatedMasterType(dedicatedMasterType);
     }
 
     /**
@@ -384,7 +384,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      */
 
     public ElasticsearchClusterConfig withDedicatedMasterType(ESPartitionInstanceType dedicatedMasterType) {
-        setDedicatedMasterType(dedicatedMasterType);
+        this.dedicatedMasterType = dedicatedMasterType.toString();
         return this;
     }
 

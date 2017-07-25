@@ -1857,7 +1857,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+        withDefaultRootDeviceType(defaultRootDeviceType);
     }
 
     /**
@@ -1878,7 +1878,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public UpdateStackRequest withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        setDefaultRootDeviceType(defaultRootDeviceType);
+        this.defaultRootDeviceType = defaultRootDeviceType.toString();
         return this;
     }
 

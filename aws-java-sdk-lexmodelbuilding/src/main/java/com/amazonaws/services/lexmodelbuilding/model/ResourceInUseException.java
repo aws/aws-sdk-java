@@ -87,7 +87,7 @@ public class ResourceInUseException extends com.amazonaws.services.lexmodelbuild
      */
 
     public void setReferenceType(ReferenceType referenceType) {
-        this.referenceType = referenceType.toString();
+        withReferenceType(referenceType);
     }
 
     /**
@@ -97,7 +97,7 @@ public class ResourceInUseException extends com.amazonaws.services.lexmodelbuild
      */
 
     public ResourceInUseException withReferenceType(ReferenceType referenceType) {
-        setReferenceType(referenceType);
+        this.referenceType = referenceType.toString();
         return this;
     }
 

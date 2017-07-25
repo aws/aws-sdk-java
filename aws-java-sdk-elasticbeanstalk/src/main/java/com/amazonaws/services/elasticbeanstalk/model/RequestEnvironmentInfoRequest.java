@@ -316,7 +316,7 @@ public class RequestEnvironmentInfoRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setInfoType(EnvironmentInfoType infoType) {
-        this.infoType = infoType.toString();
+        withInfoType(infoType);
     }
 
     /**
@@ -331,7 +331,7 @@ public class RequestEnvironmentInfoRequest extends com.amazonaws.AmazonWebServic
      */
 
     public RequestEnvironmentInfoRequest withInfoType(EnvironmentInfoType infoType) {
-        setInfoType(infoType);
+        this.infoType = infoType.toString();
         return this;
     }
 

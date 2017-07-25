@@ -973,7 +973,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setStatus(EnvironmentStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -1044,7 +1044,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public UpdateEnvironmentResult withStatus(EnvironmentStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1442,7 +1442,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setHealth(EnvironmentHealth health) {
-        this.health = health.toString();
+        withHealth(health);
     }
 
     /**
@@ -1516,7 +1516,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public UpdateEnvironmentResult withHealth(EnvironmentHealth health) {
-        setHealth(health);
+        this.health = health.toString();
         return this;
     }
 
@@ -1590,7 +1590,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setHealthStatus(EnvironmentHealthStatus healthStatus) {
-        this.healthStatus = healthStatus.toString();
+        withHealthStatus(healthStatus);
     }
 
     /**
@@ -1609,7 +1609,7 @@ public class UpdateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public UpdateEnvironmentResult withHealthStatus(EnvironmentHealthStatus healthStatus) {
-        setHealthStatus(healthStatus);
+        this.healthStatus = healthStatus.toString();
         return this;
     }
 

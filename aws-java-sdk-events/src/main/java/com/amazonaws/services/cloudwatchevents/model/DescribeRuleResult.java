@@ -294,7 +294,7 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public void setState(RuleState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -309,7 +309,7 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public DescribeRuleResult withState(RuleState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

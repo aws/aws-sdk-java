@@ -139,7 +139,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setStartReplicationTaskType(StartReplicationTaskTypeValue startReplicationTaskType) {
-        this.startReplicationTaskType = startReplicationTaskType.toString();
+        withStartReplicationTaskType(startReplicationTaskType);
     }
 
     /**
@@ -154,7 +154,7 @@ public class StartReplicationTaskRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public StartReplicationTaskRequest withStartReplicationTaskType(StartReplicationTaskTypeValue startReplicationTaskType) {
-        setStartReplicationTaskType(startReplicationTaskType);
+        this.startReplicationTaskType = startReplicationTaskType.toString();
         return this;
     }
 

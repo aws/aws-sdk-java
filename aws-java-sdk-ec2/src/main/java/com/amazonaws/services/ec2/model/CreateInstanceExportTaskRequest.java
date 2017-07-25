@@ -227,7 +227,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      */
 
     public void setTargetEnvironment(ExportEnvironment targetEnvironment) {
-        this.targetEnvironment = targetEnvironment.toString();
+        withTargetEnvironment(targetEnvironment);
     }
 
     /**
@@ -242,7 +242,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      */
 
     public CreateInstanceExportTaskRequest withTargetEnvironment(ExportEnvironment targetEnvironment) {
-        setTargetEnvironment(targetEnvironment);
+        this.targetEnvironment = targetEnvironment.toString();
         return this;
     }
 

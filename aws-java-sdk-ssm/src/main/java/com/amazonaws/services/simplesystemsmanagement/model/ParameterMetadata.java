@@ -168,7 +168,7 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setType(ParameterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -183,7 +183,7 @@ public class ParameterMetadata implements Serializable, Cloneable, StructuredPoj
      */
 
     public ParameterMetadata withType(ParameterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

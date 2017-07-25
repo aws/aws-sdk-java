@@ -286,7 +286,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setApplicationStatus(ApplicationStatus applicationStatus) {
-        this.applicationStatus = applicationStatus.toString();
+        withApplicationStatus(applicationStatus);
     }
 
     /**
@@ -301,7 +301,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public ApplicationDetail withApplicationStatus(ApplicationStatus applicationStatus) {
-        setApplicationStatus(applicationStatus);
+        this.applicationStatus = applicationStatus.toString();
         return this;
     }
 

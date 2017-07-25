@@ -163,7 +163,7 @@ public class ClusterListEntry implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setClusterState(ClusterState clusterState) {
-        this.clusterState = clusterState.toString();
+        withClusterState(clusterState);
     }
 
     /**
@@ -180,7 +180,7 @@ public class ClusterListEntry implements Serializable, Cloneable, StructuredPojo
      */
 
     public ClusterListEntry withClusterState(ClusterState clusterState) {
-        setClusterState(clusterState);
+        this.clusterState = clusterState.toString();
         return this;
     }
 

@@ -211,7 +211,7 @@ public class RecordMarkerFailedEventAttributes implements Serializable, Cloneabl
      */
 
     public void setCause(RecordMarkerFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -241,7 +241,7 @@ public class RecordMarkerFailedEventAttributes implements Serializable, Cloneabl
      */
 
     public RecordMarkerFailedEventAttributes withCause(RecordMarkerFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

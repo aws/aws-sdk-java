@@ -259,7 +259,7 @@ public class AccessKey implements Serializable, Cloneable {
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -276,7 +276,7 @@ public class AccessKey implements Serializable, Cloneable {
      */
 
     public AccessKey withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

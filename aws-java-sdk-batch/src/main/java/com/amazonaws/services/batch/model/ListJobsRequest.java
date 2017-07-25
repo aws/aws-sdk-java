@@ -158,7 +158,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      */
 
     public void setJobStatus(JobStatus jobStatus) {
-        this.jobStatus = jobStatus.toString();
+        withJobStatus(jobStatus);
     }
 
     /**
@@ -173,7 +173,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      */
 
     public ListJobsRequest withJobStatus(JobStatus jobStatus) {
-        setJobStatus(jobStatus);
+        this.jobStatus = jobStatus.toString();
         return this;
     }
 

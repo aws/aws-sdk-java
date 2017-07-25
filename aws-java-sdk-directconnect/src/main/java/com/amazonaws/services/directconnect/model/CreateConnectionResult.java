@@ -204,7 +204,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -214,7 +214,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public CreateConnectionResult withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

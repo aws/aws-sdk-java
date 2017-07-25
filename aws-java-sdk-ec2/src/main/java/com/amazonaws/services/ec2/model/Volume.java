@@ -498,7 +498,7 @@ public class Volume implements Serializable, Cloneable {
      */
 
     public void setState(VolumeState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -513,7 +513,7 @@ public class Volume implements Serializable, Cloneable {
      */
 
     public Volume withState(VolumeState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -811,7 +811,7 @@ public class Volume implements Serializable, Cloneable {
      */
 
     public void setVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
+        withVolumeType(volumeType);
     }
 
     /**
@@ -830,7 +830,7 @@ public class Volume implements Serializable, Cloneable {
      */
 
     public Volume withVolumeType(VolumeType volumeType) {
-        setVolumeType(volumeType);
+        this.volumeType = volumeType.toString();
         return this;
     }
 

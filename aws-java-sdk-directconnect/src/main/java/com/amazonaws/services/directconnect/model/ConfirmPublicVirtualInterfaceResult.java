@@ -64,7 +64,7 @@ public class ConfirmPublicVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      */
 
     public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
-        this.virtualInterfaceState = virtualInterfaceState.toString();
+        withVirtualInterfaceState(virtualInterfaceState);
     }
 
     /**
@@ -74,7 +74,7 @@ public class ConfirmPublicVirtualInterfaceResult extends com.amazonaws.AmazonWeb
      */
 
     public ConfirmPublicVirtualInterfaceResult withVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
-        setVirtualInterfaceState(virtualInterfaceState);
+        this.virtualInterfaceState = virtualInterfaceState.toString();
         return this;
     }
 

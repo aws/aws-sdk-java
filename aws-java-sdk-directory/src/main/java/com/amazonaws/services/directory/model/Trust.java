@@ -262,7 +262,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setTrustType(TrustType trustType) {
-        this.trustType = trustType.toString();
+        withTrustType(trustType);
     }
 
     /**
@@ -277,7 +277,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Trust withTrustType(TrustType trustType) {
-        setTrustType(trustType);
+        this.trustType = trustType.toString();
         return this;
     }
 
@@ -335,7 +335,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setTrustDirection(TrustDirection trustDirection) {
-        this.trustDirection = trustDirection.toString();
+        withTrustDirection(trustDirection);
     }
 
     /**
@@ -350,7 +350,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Trust withTrustDirection(TrustDirection trustDirection) {
-        setTrustDirection(trustDirection);
+        this.trustDirection = trustDirection.toString();
         return this;
     }
 
@@ -408,7 +408,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setTrustState(TrustState trustState) {
-        this.trustState = trustState.toString();
+        withTrustState(trustState);
     }
 
     /**
@@ -423,7 +423,7 @@ public class Trust implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Trust withTrustState(TrustState trustState) {
-        setTrustState(trustState);
+        this.trustState = trustState.toString();
         return this;
     }
 

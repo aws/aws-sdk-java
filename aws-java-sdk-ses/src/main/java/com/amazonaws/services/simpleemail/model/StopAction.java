@@ -102,7 +102,7 @@ public class StopAction implements Serializable, Cloneable {
      */
 
     public void setScope(StopScope scope) {
-        this.scope = scope.toString();
+        withScope(scope);
     }
 
     /**
@@ -117,7 +117,7 @@ public class StopAction implements Serializable, Cloneable {
      */
 
     public StopAction withScope(StopScope scope) {
-        setScope(scope);
+        this.scope = scope.toString();
         return this;
     }
 

@@ -222,7 +222,7 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setChannelType(ChannelType channelType) {
-        this.channelType = channelType.toString();
+        withChannelType(channelType);
     }
 
     /**
@@ -239,7 +239,7 @@ public class EndpointBatchItem implements Serializable, Cloneable, StructuredPoj
      */
 
     public EndpointBatchItem withChannelType(ChannelType channelType) {
-        setChannelType(channelType);
+        this.channelType = channelType.toString();
         return this;
     }
 

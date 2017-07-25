@@ -169,7 +169,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      */
 
     public void setActionType(ActionType actionType) {
-        this.actionType = actionType.toString();
+        withActionType(actionType);
     }
 
     /**
@@ -184,7 +184,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      */
 
     public ManagedActionHistoryItem withActionType(ActionType actionType) {
-        setActionType(actionType);
+        this.actionType = actionType.toString();
         return this;
     }
 
@@ -282,7 +282,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      */
 
     public void setFailureType(FailureType failureType) {
-        this.failureType = failureType.toString();
+        withFailureType(failureType);
     }
 
     /**
@@ -297,7 +297,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      */
 
     public ManagedActionHistoryItem withFailureType(FailureType failureType) {
-        setFailureType(failureType);
+        this.failureType = failureType.toString();
         return this;
     }
 
@@ -355,7 +355,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      */
 
     public void setStatus(ActionHistoryStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -370,7 +370,7 @@ public class ManagedActionHistoryItem implements Serializable, Cloneable {
      */
 
     public ManagedActionHistoryItem withStatus(ActionHistoryStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

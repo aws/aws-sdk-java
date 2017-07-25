@@ -396,7 +396,7 @@ public class StackResource implements Serializable, Cloneable {
      */
 
     public void setResourceStatus(ResourceStatus resourceStatus) {
-        this.resourceStatus = resourceStatus.toString();
+        withResourceStatus(resourceStatus);
     }
 
     /**
@@ -411,7 +411,7 @@ public class StackResource implements Serializable, Cloneable {
      */
 
     public StackResource withResourceStatus(ResourceStatus resourceStatus) {
-        setResourceStatus(resourceStatus);
+        this.resourceStatus = resourceStatus.toString();
         return this;
     }
 

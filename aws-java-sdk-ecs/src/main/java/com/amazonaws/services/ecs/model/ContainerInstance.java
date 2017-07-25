@@ -802,7 +802,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setAgentUpdateStatus(AgentUpdateStatus agentUpdateStatus) {
-        this.agentUpdateStatus = agentUpdateStatus.toString();
+        withAgentUpdateStatus(agentUpdateStatus);
     }
 
     /**
@@ -819,7 +819,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      */
 
     public ContainerInstance withAgentUpdateStatus(AgentUpdateStatus agentUpdateStatus) {
-        setAgentUpdateStatus(agentUpdateStatus);
+        this.agentUpdateStatus = agentUpdateStatus.toString();
         return this;
     }
 

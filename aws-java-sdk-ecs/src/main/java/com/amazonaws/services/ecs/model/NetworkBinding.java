@@ -229,7 +229,7 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setProtocol(TransportProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -244,7 +244,7 @@ public class NetworkBinding implements Serializable, Cloneable, StructuredPojo {
      */
 
     public NetworkBinding withProtocol(TransportProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

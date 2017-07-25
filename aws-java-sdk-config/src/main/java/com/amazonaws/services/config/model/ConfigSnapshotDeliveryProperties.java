@@ -151,7 +151,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable
      */
 
     public void setDeliveryFrequency(MaximumExecutionFrequency deliveryFrequency) {
-        this.deliveryFrequency = deliveryFrequency.toString();
+        withDeliveryFrequency(deliveryFrequency);
     }
 
     /**
@@ -166,7 +166,7 @@ public class ConfigSnapshotDeliveryProperties implements Serializable, Cloneable
      */
 
     public ConfigSnapshotDeliveryProperties withDeliveryFrequency(MaximumExecutionFrequency deliveryFrequency) {
-        setDeliveryFrequency(deliveryFrequency);
+        this.deliveryFrequency = deliveryFrequency.toString();
         return this;
     }
 

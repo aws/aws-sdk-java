@@ -199,7 +199,7 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setSortOrder(SortOrderType sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -237,7 +237,7 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public ListBuildsRequest withSortOrder(SortOrderType sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 

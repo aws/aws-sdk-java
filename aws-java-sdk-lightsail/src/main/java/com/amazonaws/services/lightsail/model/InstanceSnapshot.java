@@ -383,7 +383,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -398,7 +398,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      */
 
     public InstanceSnapshot withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -456,7 +456,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setState(InstanceSnapshotState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -471,7 +471,7 @@ public class InstanceSnapshot implements Serializable, Cloneable, StructuredPojo
      */
 
     public InstanceSnapshot withState(InstanceSnapshotState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

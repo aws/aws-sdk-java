@@ -150,7 +150,7 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -167,7 +167,7 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      */
 
     public CloudWatchAlarmDefinition withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 
@@ -397,7 +397,7 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      */
 
     public void setStatistic(Statistic statistic) {
-        this.statistic = statistic.toString();
+        withStatistic(statistic);
     }
 
     /**
@@ -412,7 +412,7 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      */
 
     public CloudWatchAlarmDefinition withStatistic(Statistic statistic) {
-        setStatistic(statistic);
+        this.statistic = statistic.toString();
         return this;
     }
 
@@ -518,7 +518,7 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      */
 
     public void setUnit(Unit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -535,7 +535,7 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
      */
 
     public CloudWatchAlarmDefinition withUnit(Unit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 

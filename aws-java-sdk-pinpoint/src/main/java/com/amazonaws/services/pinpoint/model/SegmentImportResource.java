@@ -173,7 +173,7 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
      */
 
     public void setFormat(Format format) {
-        this.format = format.toString();
+        withFormat(format);
     }
 
     /**
@@ -186,7 +186,7 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
      */
 
     public SegmentImportResource withFormat(Format format) {
-        setFormat(format);
+        this.format = format.toString();
         return this;
     }
 

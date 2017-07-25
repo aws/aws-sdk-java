@@ -684,7 +684,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setBuildStatus(StatusType buildStatus) {
-        this.buildStatus = buildStatus.toString();
+        withBuildStatus(buildStatus);
     }
 
     /**
@@ -762,7 +762,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Build withBuildStatus(StatusType buildStatus) {
-        setBuildStatus(buildStatus);
+        this.buildStatus = buildStatus.toString();
         return this;
     }
 

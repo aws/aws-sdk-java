@@ -230,7 +230,7 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -245,7 +245,7 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public GetPatchBaselineResult withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 
@@ -456,7 +456,7 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
-        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
+        withApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
     }
 
     /**
@@ -471,7 +471,7 @@ public class GetPatchBaselineResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public GetPatchBaselineResult withApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
-        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
         return this;
     }
 

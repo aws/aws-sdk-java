@@ -304,7 +304,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setFilterVariable(BatchPredictionFilterVariable filterVariable) {
-        this.filterVariable = filterVariable.toString();
+        withFilterVariable(filterVariable);
     }
 
     /**
@@ -347,7 +347,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public DescribeBatchPredictionsRequest withFilterVariable(BatchPredictionFilterVariable filterVariable) {
-        setFilterVariable(filterVariable);
+        this.filterVariable = filterVariable.toString();
         return this;
     }
 
@@ -914,7 +914,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setSortOrder(SortOrder sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -942,7 +942,7 @@ public class DescribeBatchPredictionsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public DescribeBatchPredictionsRequest withSortOrder(SortOrder sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 

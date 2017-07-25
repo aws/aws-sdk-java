@@ -479,7 +479,7 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStatus(CommandInvocationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -494,7 +494,7 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
      */
 
     public CommandInvocation withStatus(CommandInvocationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -394,7 +394,7 @@ public class Diagnostics implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setErrorCode(LifecycleErrorCode errorCode) {
-        this.errorCode = errorCode.toString();
+        withErrorCode(errorCode);
     }
 
     /**
@@ -472,7 +472,7 @@ public class Diagnostics implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Diagnostics withErrorCode(LifecycleErrorCode errorCode) {
-        setErrorCode(errorCode);
+        this.errorCode = errorCode.toString();
         return this;
     }
 

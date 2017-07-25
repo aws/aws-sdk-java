@@ -101,7 +101,7 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setCategory(ActionCategory category) {
-        this.category = category.toString();
+        withCategory(category);
     }
 
     /**
@@ -116,7 +116,7 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
      */
 
     public DeleteCustomActionTypeRequest withCategory(ActionCategory category) {
-        setCategory(category);
+        this.category = category.toString();
         return this;
     }
 

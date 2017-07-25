@@ -417,7 +417,7 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setProtocol(NetworkProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -479,7 +479,7 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      */
 
     public InstancePortInfo withProtocol(NetworkProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
@@ -577,7 +577,7 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setAccessType(PortAccessType accessType) {
-        this.accessType = accessType.toString();
+        withAccessType(accessType);
     }
 
     /**
@@ -592,7 +592,7 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      */
 
     public InstancePortInfo withAccessType(PortAccessType accessType) {
-        setAccessType(accessType);
+        this.accessType = accessType.toString();
         return this;
     }
 
@@ -690,7 +690,7 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setAccessDirection(AccessDirection accessDirection) {
-        this.accessDirection = accessDirection.toString();
+        withAccessDirection(accessDirection);
     }
 
     /**
@@ -705,7 +705,7 @@ public class InstancePortInfo implements Serializable, Cloneable, StructuredPojo
      */
 
     public InstancePortInfo withAccessDirection(AccessDirection accessDirection) {
-        setAccessDirection(accessDirection);
+        this.accessDirection = accessDirection.toString();
         return this;
     }
 

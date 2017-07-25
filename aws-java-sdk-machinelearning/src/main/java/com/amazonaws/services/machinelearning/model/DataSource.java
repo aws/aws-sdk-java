@@ -615,7 +615,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(EntityStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -644,7 +644,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      */
 
     public DataSource withStatus(EntityStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

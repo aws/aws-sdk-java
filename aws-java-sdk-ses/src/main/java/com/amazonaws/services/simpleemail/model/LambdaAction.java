@@ -324,7 +324,7 @@ public class LambdaAction implements Serializable, Cloneable {
      */
 
     public void setInvocationType(InvocationType invocationType) {
-        this.invocationType = invocationType.toString();
+        withInvocationType(invocationType);
     }
 
     /**
@@ -360,7 +360,7 @@ public class LambdaAction implements Serializable, Cloneable {
      */
 
     public LambdaAction withInvocationType(InvocationType invocationType) {
-        setInvocationType(invocationType);
+        this.invocationType = invocationType.toString();
         return this;
     }
 

@@ -352,7 +352,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAssetType(AssetType assetType) {
-        this.assetType = assetType.toString();
+        withAssetType(assetType);
     }
 
     /**
@@ -367,7 +367,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Finding withAssetType(AssetType assetType) {
-        setAssetType(assetType);
+        this.assetType = assetType.toString();
         return this;
     }
 
@@ -625,7 +625,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setSeverity(Severity severity) {
-        this.severity = severity.toString();
+        withSeverity(severity);
     }
 
     /**
@@ -640,7 +640,7 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Finding withSeverity(Severity severity) {
-        setSeverity(severity);
+        this.severity = severity.toString();
         return this;
     }
 

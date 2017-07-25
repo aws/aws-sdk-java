@@ -223,7 +223,7 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public void setOrientationCorrection(OrientationCorrection orientationCorrection) {
-        this.orientationCorrection = orientationCorrection.toString();
+        withOrientationCorrection(orientationCorrection);
     }
 
     /**
@@ -253,7 +253,7 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public DetectLabelsResult withOrientationCorrection(OrientationCorrection orientationCorrection) {
-        setOrientationCorrection(orientationCorrection);
+        this.orientationCorrection = orientationCorrection.toString();
         return this;
     }
 

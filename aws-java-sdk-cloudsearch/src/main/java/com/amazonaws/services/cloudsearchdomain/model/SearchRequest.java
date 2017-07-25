@@ -2274,7 +2274,7 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public void setQueryParser(QueryParser queryParser) {
-        this.queryParser = queryParser.toString();
+        withQueryParser(queryParser);
     }
 
     /**
@@ -2345,7 +2345,7 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public SearchRequest withQueryParser(QueryParser queryParser) {
-        setQueryParser(queryParser);
+        this.queryParser = queryParser.toString();
         return this;
     }
 

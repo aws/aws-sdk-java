@@ -198,7 +198,7 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(SnapshotType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -213,7 +213,7 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Snapshot withType(SnapshotType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -311,7 +311,7 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(SnapshotStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -326,7 +326,7 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Snapshot withStatus(SnapshotStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

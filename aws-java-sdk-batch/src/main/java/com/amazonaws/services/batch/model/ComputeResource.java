@@ -164,7 +164,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setType(CRType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -179,7 +179,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ComputeResource withType(CRType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

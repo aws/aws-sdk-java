@@ -369,7 +369,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setRuntime(Runtime runtime) {
-        this.runtime = runtime.toString();
+        withRuntime(runtime);
     }
 
     /**
@@ -412,7 +412,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateFunctionRequest withRuntime(Runtime runtime) {
-        setRuntime(runtime);
+        this.runtime = runtime.toString();
         return this;
     }
 

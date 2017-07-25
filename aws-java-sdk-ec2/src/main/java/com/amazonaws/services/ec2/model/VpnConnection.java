@@ -242,7 +242,7 @@ public class VpnConnection implements Serializable, Cloneable {
      */
 
     public void setState(VpnState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -257,7 +257,7 @@ public class VpnConnection implements Serializable, Cloneable {
      */
 
     public VpnConnection withState(VpnState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -315,7 +315,7 @@ public class VpnConnection implements Serializable, Cloneable {
      */
 
     public void setType(GatewayType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -330,7 +330,7 @@ public class VpnConnection implements Serializable, Cloneable {
      */
 
     public VpnConnection withType(GatewayType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

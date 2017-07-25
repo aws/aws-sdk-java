@@ -95,7 +95,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setName(ExtraParamName name) {
-        this.name = name.toString();
+        withName(name);
     }
 
     /**
@@ -110,7 +110,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ExtraParam withName(ExtraParamName name) {
-        setName(name);
+        this.name = name.toString();
         return this;
     }
 

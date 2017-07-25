@@ -260,7 +260,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      */
 
     public void setInputStartingPosition(InputStartingPosition inputStartingPosition) {
-        this.inputStartingPosition = inputStartingPosition.toString();
+        withInputStartingPosition(inputStartingPosition);
     }
 
     /**
@@ -313,7 +313,7 @@ public class InputStartingPositionConfiguration implements Serializable, Cloneab
      */
 
     public InputStartingPositionConfiguration withInputStartingPosition(InputStartingPosition inputStartingPosition) {
-        setInputStartingPosition(inputStartingPosition);
+        this.inputStartingPosition = inputStartingPosition.toString();
         return this;
     }
 

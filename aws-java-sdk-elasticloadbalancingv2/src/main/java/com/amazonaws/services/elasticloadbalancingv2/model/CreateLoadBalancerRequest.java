@@ -418,7 +418,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setScheme(LoadBalancerSchemeEnum scheme) {
-        this.scheme = scheme.toString();
+        withScheme(scheme);
     }
 
     /**
@@ -452,7 +452,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public CreateLoadBalancerRequest withScheme(LoadBalancerSchemeEnum scheme) {
-        setScheme(scheme);
+        this.scheme = scheme.toString();
         return this;
     }
 
@@ -596,7 +596,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setIpAddressType(IpAddressType ipAddressType) {
-        this.ipAddressType = ipAddressType.toString();
+        withIpAddressType(ipAddressType);
     }
 
     /**
@@ -615,7 +615,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public CreateLoadBalancerRequest withIpAddressType(IpAddressType ipAddressType) {
-        setIpAddressType(ipAddressType);
+        this.ipAddressType = ipAddressType.toString();
         return this;
     }
 

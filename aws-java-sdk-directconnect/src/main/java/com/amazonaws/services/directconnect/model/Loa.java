@@ -123,7 +123,7 @@ public class Loa implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setLoaContentType(LoaContentType loaContentType) {
-        this.loaContentType = loaContentType.toString();
+        withLoaContentType(loaContentType);
     }
 
     /**
@@ -133,7 +133,7 @@ public class Loa implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Loa withLoaContentType(LoaContentType loaContentType) {
-        setLoaContentType(loaContentType);
+        this.loaContentType = loaContentType.toString();
         return this;
     }
 

@@ -155,7 +155,7 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setState(CEState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -172,7 +172,7 @@ public class UpdateComputeEnvironmentRequest extends com.amazonaws.AmazonWebServ
      */
 
     public UpdateComputeEnvironmentRequest withState(CEState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -404,7 +404,7 @@ public class AnalysisOptions implements Serializable, Cloneable {
      */
 
     public void setAlgorithmicStemming(AlgorithmicStemming algorithmicStemming) {
-        this.algorithmicStemming = algorithmicStemming.toString();
+        withAlgorithmicStemming(algorithmicStemming);
     }
 
     /**
@@ -427,7 +427,7 @@ public class AnalysisOptions implements Serializable, Cloneable {
      */
 
     public AnalysisOptions withAlgorithmicStemming(AlgorithmicStemming algorithmicStemming) {
-        setAlgorithmicStemming(algorithmicStemming);
+        this.algorithmicStemming = algorithmicStemming.toString();
         return this;
     }
 

@@ -346,7 +346,7 @@ public class ListIndexRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        this.consistencyLevel = consistencyLevel.toString();
+        withConsistencyLevel(consistencyLevel);
     }
 
     /**
@@ -361,7 +361,7 @@ public class ListIndexRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public ListIndexRequest withConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        setConsistencyLevel(consistencyLevel);
+        this.consistencyLevel = consistencyLevel.toString();
         return this;
     }
 

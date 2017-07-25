@@ -333,7 +333,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      */
 
     public void setExecutionStatus(ExecutionStatus executionStatus) {
-        this.executionStatus = executionStatus.toString();
+        withExecutionStatus(executionStatus);
     }
 
     /**
@@ -348,7 +348,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      */
 
     public WorkflowExecutionInfo withExecutionStatus(ExecutionStatus executionStatus) {
-        setExecutionStatus(executionStatus);
+        this.executionStatus = executionStatus.toString();
         return this;
     }
 
@@ -678,7 +678,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      */
 
     public void setCloseStatus(CloseStatus closeStatus) {
-        this.closeStatus = closeStatus.toString();
+        withCloseStatus(closeStatus);
     }
 
     /**
@@ -761,7 +761,7 @@ public class WorkflowExecutionInfo implements Serializable, Cloneable, Structure
      */
 
     public WorkflowExecutionInfo withCloseStatus(CloseStatus closeStatus) {
-        setCloseStatus(closeStatus);
+        this.closeStatus = closeStatus.toString();
         return this;
     }
 

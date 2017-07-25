@@ -98,7 +98,7 @@ public class ListImagesFilter implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setTagStatus(TagStatus tagStatus) {
-        this.tagStatus = tagStatus.toString();
+        withTagStatus(tagStatus);
     }
 
     /**
@@ -115,7 +115,7 @@ public class ListImagesFilter implements Serializable, Cloneable, StructuredPojo
      */
 
     public ListImagesFilter withTagStatus(TagStatus tagStatus) {
-        setTagStatus(tagStatus);
+        this.tagStatus = tagStatus.toString();
         return this;
     }
 

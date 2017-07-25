@@ -95,7 +95,7 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setKey(AssociationFilterKey key) {
-        this.key = key.toString();
+        withKey(key);
     }
 
     /**
@@ -110,7 +110,7 @@ public class AssociationFilter implements Serializable, Cloneable, StructuredPoj
      */
 
     public AssociationFilter withKey(AssociationFilterKey key) {
-        setKey(key);
+        this.key = key.toString();
         return this;
     }
 

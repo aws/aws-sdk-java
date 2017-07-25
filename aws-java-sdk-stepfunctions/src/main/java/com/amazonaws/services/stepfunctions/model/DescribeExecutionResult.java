@@ -246,7 +246,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setStatus(ExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -261,7 +261,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public DescribeExecutionResult withStatus(ExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

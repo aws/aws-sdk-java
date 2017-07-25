@@ -615,7 +615,7 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPhaseType(BuildPhaseType phaseType) {
-        this.phaseType = phaseType.toString();
+        withPhaseType(phaseType);
     }
 
     /**
@@ -733,7 +733,7 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      */
 
     public BuildPhase withPhaseType(BuildPhaseType phaseType) {
-        setPhaseType(phaseType);
+        this.phaseType = phaseType.toString();
         return this;
     }
 
@@ -1043,7 +1043,7 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPhaseStatus(StatusType phaseStatus) {
-        this.phaseStatus = phaseStatus.toString();
+        withPhaseStatus(phaseStatus);
     }
 
     /**
@@ -1121,7 +1121,7 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      */
 
     public BuildPhase withPhaseStatus(StatusType phaseStatus) {
-        setPhaseStatus(phaseStatus);
+        this.phaseStatus = phaseStatus.toString();
         return this;
     }
 

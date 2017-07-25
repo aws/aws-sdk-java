@@ -96,7 +96,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setServerType(ServerType serverType) {
-        this.serverType = serverType.toString();
+        withServerType(serverType);
     }
 
     /**
@@ -106,7 +106,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Server withServerType(ServerType serverType) {
-        setServerType(serverType);
+        this.serverType = serverType.toString();
         return this;
     }
 

@@ -107,7 +107,7 @@ public class InstanceFleetStatus implements Serializable, Cloneable, StructuredP
      */
 
     public void setState(InstanceFleetState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -122,7 +122,7 @@ public class InstanceFleetStatus implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceFleetStatus withState(InstanceFleetState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

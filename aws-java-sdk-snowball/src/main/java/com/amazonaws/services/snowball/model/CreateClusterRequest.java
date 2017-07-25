@@ -178,7 +178,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -194,7 +194,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public CreateClusterRequest withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 
@@ -499,7 +499,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setSnowballType(SnowballType snowballType) {
-        this.snowballType = snowballType.toString();
+        withSnowballType(snowballType);
     }
 
     /**
@@ -516,7 +516,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public CreateClusterRequest withSnowballType(SnowballType snowballType) {
-        setSnowballType(snowballType);
+        this.snowballType = snowballType.toString();
         return this;
     }
 
@@ -786,7 +786,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
@@ -854,7 +854,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public CreateClusterRequest withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 

@@ -196,7 +196,7 @@ public class VolumeModification implements Serializable, Cloneable {
      */
 
     public void setModificationState(VolumeModificationState modificationState) {
-        this.modificationState = modificationState.toString();
+        withModificationState(modificationState);
     }
 
     /**
@@ -211,7 +211,7 @@ public class VolumeModification implements Serializable, Cloneable {
      */
 
     public VolumeModification withModificationState(VolumeModificationState modificationState) {
-        setModificationState(modificationState);
+        this.modificationState = modificationState.toString();
         return this;
     }
 
@@ -389,7 +389,7 @@ public class VolumeModification implements Serializable, Cloneable {
      */
 
     public void setTargetVolumeType(VolumeType targetVolumeType) {
-        this.targetVolumeType = targetVolumeType.toString();
+        withTargetVolumeType(targetVolumeType);
     }
 
     /**
@@ -404,7 +404,7 @@ public class VolumeModification implements Serializable, Cloneable {
      */
 
     public VolumeModification withTargetVolumeType(VolumeType targetVolumeType) {
-        setTargetVolumeType(targetVolumeType);
+        this.targetVolumeType = targetVolumeType.toString();
         return this;
     }
 
@@ -542,7 +542,7 @@ public class VolumeModification implements Serializable, Cloneable {
      */
 
     public void setOriginalVolumeType(VolumeType originalVolumeType) {
-        this.originalVolumeType = originalVolumeType.toString();
+        withOriginalVolumeType(originalVolumeType);
     }
 
     /**
@@ -557,7 +557,7 @@ public class VolumeModification implements Serializable, Cloneable {
      */
 
     public VolumeModification withOriginalVolumeType(VolumeType originalVolumeType) {
-        setOriginalVolumeType(originalVolumeType);
+        this.originalVolumeType = originalVolumeType.toString();
         return this;
     }
 

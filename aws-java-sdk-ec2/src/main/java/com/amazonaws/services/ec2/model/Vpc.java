@@ -215,7 +215,7 @@ public class Vpc implements Serializable, Cloneable {
      */
 
     public void setState(VpcState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -230,7 +230,7 @@ public class Vpc implements Serializable, Cloneable {
      */
 
     public Vpc withState(VpcState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -328,7 +328,7 @@ public class Vpc implements Serializable, Cloneable {
      */
 
     public void setInstanceTenancy(Tenancy instanceTenancy) {
-        this.instanceTenancy = instanceTenancy.toString();
+        withInstanceTenancy(instanceTenancy);
     }
 
     /**
@@ -343,7 +343,7 @@ public class Vpc implements Serializable, Cloneable {
      */
 
     public Vpc withInstanceTenancy(Tenancy instanceTenancy) {
-        setInstanceTenancy(instanceTenancy);
+        this.instanceTenancy = instanceTenancy.toString();
         return this;
     }
 

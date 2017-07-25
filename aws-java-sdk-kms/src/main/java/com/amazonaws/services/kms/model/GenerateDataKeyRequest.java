@@ -493,7 +493,7 @@ public class GenerateDataKeyRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setKeySpec(DataKeySpec keySpec) {
-        this.keySpec = keySpec.toString();
+        withKeySpec(keySpec);
     }
 
     /**
@@ -510,7 +510,7 @@ public class GenerateDataKeyRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public GenerateDataKeyRequest withKeySpec(DataKeySpec keySpec) {
-        setKeySpec(keySpec);
+        this.keySpec = keySpec.toString();
         return this;
     }
 

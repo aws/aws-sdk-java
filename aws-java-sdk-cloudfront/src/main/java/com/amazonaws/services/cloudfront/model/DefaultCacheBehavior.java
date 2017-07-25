@@ -754,7 +754,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      */
 
     public void setViewerProtocolPolicy(ViewerProtocolPolicy viewerProtocolPolicy) {
-        this.viewerProtocolPolicy = viewerProtocolPolicy.toString();
+        withViewerProtocolPolicy(viewerProtocolPolicy);
     }
 
     /**
@@ -845,7 +845,7 @@ public class DefaultCacheBehavior implements Serializable, Cloneable {
      */
 
     public DefaultCacheBehavior withViewerProtocolPolicy(ViewerProtocolPolicy viewerProtocolPolicy) {
-        setViewerProtocolPolicy(viewerProtocolPolicy);
+        this.viewerProtocolPolicy = viewerProtocolPolicy.toString();
         return this;
     }
 

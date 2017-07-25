@@ -181,7 +181,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable, Structu
      */
 
     public void setFault(Fault fault) {
-        this.fault = fault.toString();
+        withFault(fault);
     }
 
     /**
@@ -196,7 +196,7 @@ public class FailedCreateAssociation implements Serializable, Cloneable, Structu
      */
 
     public FailedCreateAssociation withFault(Fault fault) {
-        setFault(fault);
+        this.fault = fault.toString();
         return this;
     }
 

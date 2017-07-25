@@ -512,7 +512,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setChallengeName(ChallengeNameType challengeName) {
-        this.challengeName = challengeName.toString();
+        withChallengeName(challengeName);
     }
 
     /**
@@ -614,7 +614,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public AdminInitiateAuthResult withChallengeName(ChallengeNameType challengeName) {
-        setChallengeName(challengeName);
+        this.challengeName = challengeName.toString();
         return this;
     }
 

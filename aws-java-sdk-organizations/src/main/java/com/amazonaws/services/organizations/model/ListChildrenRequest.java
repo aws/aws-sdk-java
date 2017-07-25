@@ -275,7 +275,7 @@ public class ListChildrenRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setChildType(ChildType childType) {
-        this.childType = childType.toString();
+        withChildType(childType);
     }
 
     /**
@@ -290,7 +290,7 @@ public class ListChildrenRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public ListChildrenRequest withChildType(ChildType childType) {
-        setChildType(childType);
+        this.childType = childType.toString();
         return this;
     }
 

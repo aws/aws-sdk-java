@@ -109,7 +109,7 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRenewalStatus(RenewalStatus renewalStatus) {
-        this.renewalStatus = renewalStatus.toString();
+        withRenewalStatus(renewalStatus);
     }
 
     /**
@@ -126,7 +126,7 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
      */
 
     public RenewalSummary withRenewalStatus(RenewalStatus renewalStatus) {
-        setRenewalStatus(renewalStatus);
+        this.renewalStatus = renewalStatus.toString();
         return this;
     }
 

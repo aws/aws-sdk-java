@@ -95,7 +95,7 @@ public class EnvironmentLanguage implements Serializable, Cloneable, StructuredP
      */
 
     public void setLanguage(LanguageType language) {
-        this.language = language.toString();
+        withLanguage(language);
     }
 
     /**
@@ -110,7 +110,7 @@ public class EnvironmentLanguage implements Serializable, Cloneable, StructuredP
      */
 
     public EnvironmentLanguage withLanguage(LanguageType language) {
-        setLanguage(language);
+        this.language = language.toString();
         return this;
     }
 

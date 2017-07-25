@@ -199,7 +199,7 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable, Stru
      */
 
     public void setStatus(MaintenanceWindowExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -214,7 +214,7 @@ public class MaintenanceWindowExecution implements Serializable, Cloneable, Stru
      */
 
     public MaintenanceWindowExecution withStatus(MaintenanceWindowExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

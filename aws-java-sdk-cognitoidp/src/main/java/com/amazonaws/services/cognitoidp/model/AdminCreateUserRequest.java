@@ -1046,7 +1046,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setMessageAction(MessageActionType messageAction) {
-        this.messageAction = messageAction.toString();
+        withMessageAction(messageAction);
     }
 
     /**
@@ -1065,7 +1065,7 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public AdminCreateUserRequest withMessageAction(MessageActionType messageAction) {
-        setMessageAction(messageAction);
+        this.messageAction = messageAction.toString();
         return this;
     }
 

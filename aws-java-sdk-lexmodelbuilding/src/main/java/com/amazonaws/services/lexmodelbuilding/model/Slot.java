@@ -224,7 +224,7 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setSlotConstraint(SlotConstraint slotConstraint) {
-        this.slotConstraint = slotConstraint.toString();
+        withSlotConstraint(slotConstraint);
     }
 
     /**
@@ -239,7 +239,7 @@ public class Slot implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Slot withSlotConstraint(SlotConstraint slotConstraint) {
-        setSlotConstraint(slotConstraint);
+        this.slotConstraint = slotConstraint.toString();
         return this;
     }
 

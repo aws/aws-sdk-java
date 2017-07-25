@@ -489,7 +489,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public void setChallengeName(ChallengeNameType challengeName) {
-        this.challengeName = challengeName.toString();
+        withChallengeName(challengeName);
     }
 
     /**
@@ -587,7 +587,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public InitiateAuthResult withChallengeName(ChallengeNameType challengeName) {
-        setChallengeName(challengeName);
+        this.challengeName = challengeName.toString();
         return this;
     }
 

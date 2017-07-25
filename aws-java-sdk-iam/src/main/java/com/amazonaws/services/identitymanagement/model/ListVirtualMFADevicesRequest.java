@@ -126,7 +126,7 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setAssignmentStatus(AssignmentStatusType assignmentStatus) {
-        this.assignmentStatus = assignmentStatus.toString();
+        withAssignmentStatus(assignmentStatus);
     }
 
     /**
@@ -145,7 +145,7 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
      */
 
     public ListVirtualMFADevicesRequest withAssignmentStatus(AssignmentStatusType assignmentStatus) {
-        setAssignmentStatus(assignmentStatus);
+        this.assignmentStatus = assignmentStatus.toString();
         return this;
     }
 

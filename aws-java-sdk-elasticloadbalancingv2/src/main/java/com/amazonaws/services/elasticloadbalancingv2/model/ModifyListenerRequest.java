@@ -198,7 +198,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setProtocol(ProtocolEnum protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -213,7 +213,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public ModifyListenerRequest withProtocol(ProtocolEnum protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

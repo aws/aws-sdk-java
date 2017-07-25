@@ -95,7 +95,7 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setKey(PatchFilterKey key) {
-        this.key = key.toString();
+        withKey(key);
     }
 
     /**
@@ -110,7 +110,7 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PatchFilter withKey(PatchFilterKey key) {
-        setKey(key);
+        this.key = key.toString();
         return this;
     }
 

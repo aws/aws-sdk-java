@@ -557,7 +557,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
-        this.eC2InstanceType = eC2InstanceType.toString();
+        withEC2InstanceType(eC2InstanceType);
     }
 
     /**
@@ -578,7 +578,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public CreateFleetRequest withEC2InstanceType(EC2InstanceType eC2InstanceType) {
-        setEC2InstanceType(eC2InstanceType);
+        this.eC2InstanceType = eC2InstanceType.toString();
         return this;
     }
 
@@ -850,7 +850,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
-        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
+        withNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
     }
 
     /**
@@ -896,7 +896,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public CreateFleetRequest withNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
-        setNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
+        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
         return this;
     }
 

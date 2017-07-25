@@ -244,7 +244,7 @@ public class GetSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setEncoding(EncodingType encoding) {
-        this.encoding = encoding.toString();
+        withEncoding(encoding);
     }
 
     /**
@@ -261,7 +261,7 @@ public class GetSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public GetSSHPublicKeyRequest withEncoding(EncodingType encoding) {
-        setEncoding(encoding);
+        this.encoding = encoding.toString();
         return this;
     }
 

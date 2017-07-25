@@ -241,7 +241,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setEndpointType(ReplicationEndpointTypeValue endpointType) {
-        this.endpointType = endpointType.toString();
+        withEndpointType(endpointType);
     }
 
     /**
@@ -256,7 +256,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Endpoint withEndpointType(ReplicationEndpointTypeValue endpointType) {
-        setEndpointType(endpointType);
+        this.endpointType = endpointType.toString();
         return this;
     }
 
@@ -779,7 +779,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setSslMode(DmsSslModeValue sslMode) {
-        this.sslMode = sslMode.toString();
+        withSslMode(sslMode);
     }
 
     /**
@@ -805,7 +805,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Endpoint withSslMode(DmsSslModeValue sslMode) {
-        setSslMode(sslMode);
+        this.sslMode = sslMode.toString();
         return this;
     }
 

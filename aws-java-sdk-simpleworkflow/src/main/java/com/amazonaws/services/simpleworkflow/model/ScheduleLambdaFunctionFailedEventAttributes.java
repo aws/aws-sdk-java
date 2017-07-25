@@ -262,7 +262,7 @@ public class ScheduleLambdaFunctionFailedEventAttributes implements Serializable
      */
 
     public void setCause(ScheduleLambdaFunctionFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -293,7 +293,7 @@ public class ScheduleLambdaFunctionFailedEventAttributes implements Serializable
      */
 
     public ScheduleLambdaFunctionFailedEventAttributes withCause(ScheduleLambdaFunctionFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

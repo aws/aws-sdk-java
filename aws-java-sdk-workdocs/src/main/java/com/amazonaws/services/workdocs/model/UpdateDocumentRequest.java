@@ -277,7 +277,7 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setResourceState(ResourceStateType resourceState) {
-        this.resourceState = resourceState.toString();
+        withResourceState(resourceState);
     }
 
     /**
@@ -292,7 +292,7 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public UpdateDocumentRequest withResourceState(ResourceStateType resourceState) {
-        setResourceState(resourceState);
+        this.resourceState = resourceState.toString();
         return this;
     }
 

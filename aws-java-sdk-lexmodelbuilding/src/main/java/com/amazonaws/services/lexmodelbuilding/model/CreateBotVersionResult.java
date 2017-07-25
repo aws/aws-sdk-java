@@ -451,7 +451,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -472,7 +472,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public CreateBotVersionResult withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -819,7 +819,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setLocale(Locale locale) {
-        this.locale = locale.toString();
+        withLocale(locale);
     }
 
     /**
@@ -834,7 +834,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public CreateBotVersionResult withLocale(Locale locale) {
-        setLocale(locale);
+        this.locale = locale.toString();
         return this;
     }
 

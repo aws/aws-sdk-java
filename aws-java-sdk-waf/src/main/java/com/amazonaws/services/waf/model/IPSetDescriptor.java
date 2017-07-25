@@ -132,7 +132,7 @@ public class IPSetDescriptor implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setType(IPSetDescriptorType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -147,7 +147,7 @@ public class IPSetDescriptor implements Serializable, Cloneable, StructuredPojo 
      */
 
     public IPSetDescriptor withType(IPSetDescriptorType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

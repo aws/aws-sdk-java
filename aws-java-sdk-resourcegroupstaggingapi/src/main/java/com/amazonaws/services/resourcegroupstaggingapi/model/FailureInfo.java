@@ -159,7 +159,7 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setErrorCode(ErrorCode errorCode) {
-        this.errorCode = errorCode.toString();
+        withErrorCode(errorCode);
     }
 
     /**
@@ -178,7 +178,7 @@ public class FailureInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public FailureInfo withErrorCode(ErrorCode errorCode) {
-        setErrorCode(errorCode);
+        this.errorCode = errorCode.toString();
         return this;
     }
 

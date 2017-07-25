@@ -284,7 +284,7 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setFilterVariable(EvaluationFilterVariable filterVariable) {
-        this.filterVariable = filterVariable.toString();
+        withFilterVariable(filterVariable);
     }
 
     /**
@@ -323,7 +323,7 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public DescribeEvaluationsRequest withFilterVariable(EvaluationFilterVariable filterVariable) {
-        setFilterVariable(filterVariable);
+        this.filterVariable = filterVariable.toString();
         return this;
     }
 
@@ -887,7 +887,7 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setSortOrder(SortOrder sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -915,7 +915,7 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public DescribeEvaluationsRequest withSortOrder(SortOrder sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 

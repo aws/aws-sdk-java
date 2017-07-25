@@ -958,7 +958,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      */
 
     public void setStatus(ReportStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -973,7 +973,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest impleme
      */
 
     public ReportInstanceStatusRequest withStatus(ReportStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

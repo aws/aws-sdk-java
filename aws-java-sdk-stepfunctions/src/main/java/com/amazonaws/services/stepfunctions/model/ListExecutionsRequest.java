@@ -154,7 +154,7 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setStatusFilter(ExecutionStatus statusFilter) {
-        this.statusFilter = statusFilter.toString();
+        withStatusFilter(statusFilter);
     }
 
     /**
@@ -169,7 +169,7 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public ListExecutionsRequest withStatusFilter(ExecutionStatus statusFilter) {
-        setStatusFilter(statusFilter);
+        this.statusFilter = statusFilter.toString();
         return this;
     }
 

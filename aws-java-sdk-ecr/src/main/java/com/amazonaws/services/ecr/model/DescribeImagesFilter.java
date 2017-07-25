@@ -98,7 +98,7 @@ public class DescribeImagesFilter implements Serializable, Cloneable, Structured
      */
 
     public void setTagStatus(TagStatus tagStatus) {
-        this.tagStatus = tagStatus.toString();
+        withTagStatus(tagStatus);
     }
 
     /**
@@ -115,7 +115,7 @@ public class DescribeImagesFilter implements Serializable, Cloneable, Structured
      */
 
     public DescribeImagesFilter withTagStatus(TagStatus tagStatus) {
-        setTagStatus(tagStatus);
+        this.tagStatus = tagStatus.toString();
         return this;
     }
 

@@ -365,7 +365,7 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
      */
 
     public void setStatus(DomainStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -380,7 +380,7 @@ public class DomainDescriptionType implements Serializable, Cloneable, Structure
      */
 
     public DomainDescriptionType withStatus(DomainStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

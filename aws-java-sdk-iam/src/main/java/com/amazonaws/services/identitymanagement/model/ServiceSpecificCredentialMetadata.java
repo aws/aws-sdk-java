@@ -167,7 +167,7 @@ public class ServiceSpecificCredentialMetadata implements Serializable, Cloneabl
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -184,7 +184,7 @@ public class ServiceSpecificCredentialMetadata implements Serializable, Cloneabl
      */
 
     public ServiceSpecificCredentialMetadata withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

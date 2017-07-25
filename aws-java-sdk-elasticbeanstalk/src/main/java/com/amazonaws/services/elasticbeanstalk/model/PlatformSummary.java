@@ -209,7 +209,7 @@ public class PlatformSummary implements Serializable, Cloneable {
      */
 
     public void setPlatformStatus(PlatformStatus platformStatus) {
-        this.platformStatus = platformStatus.toString();
+        withPlatformStatus(platformStatus);
     }
 
     /**
@@ -224,7 +224,7 @@ public class PlatformSummary implements Serializable, Cloneable {
      */
 
     public PlatformSummary withPlatformStatus(PlatformStatus platformStatus) {
-        setPlatformStatus(platformStatus);
+        this.platformStatus = platformStatus.toString();
         return this;
     }
 

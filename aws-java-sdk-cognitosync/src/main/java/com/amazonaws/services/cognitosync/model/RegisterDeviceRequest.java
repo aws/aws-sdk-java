@@ -194,7 +194,7 @@ public class RegisterDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setPlatform(Platform platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -209,7 +209,7 @@ public class RegisterDeviceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public RegisterDeviceRequest withPlatform(Platform platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 

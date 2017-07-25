@@ -1946,7 +1946,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setTextTransformation(TextTransformation textTransformation) {
-        this.textTransformation = textTransformation.toString();
+        withTextTransformation(textTransformation);
     }
 
     /**
@@ -2233,7 +2233,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ByteMatchTuple withTextTransformation(TextTransformation textTransformation) {
-        setTextTransformation(textTransformation);
+        this.textTransformation = textTransformation.toString();
         return this;
     }
 
@@ -2779,7 +2779,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPositionalConstraint(PositionalConstraint positionalConstraint) {
-        this.positionalConstraint = positionalConstraint.toString();
+        withPositionalConstraint(positionalConstraint);
     }
 
     /**
@@ -2916,7 +2916,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ByteMatchTuple withPositionalConstraint(PositionalConstraint positionalConstraint) {
-        setPositionalConstraint(positionalConstraint);
+        this.positionalConstraint = positionalConstraint.toString();
         return this;
     }
 

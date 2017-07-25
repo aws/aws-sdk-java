@@ -564,7 +564,7 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setStartRecordType(RRType startRecordType) {
-        this.startRecordType = startRecordType.toString();
+        withStartRecordType(startRecordType);
     }
 
     /**
@@ -656,7 +656,7 @@ public class ListResourceRecordSetsRequest extends com.amazonaws.AmazonWebServic
      */
 
     public ListResourceRecordSetsRequest withStartRecordType(RRType startRecordType) {
-        setStartRecordType(startRecordType);
+        this.startRecordType = startRecordType.toString();
         return this;
     }
 

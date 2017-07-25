@@ -317,7 +317,7 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      */
 
     public void setType(ProvisioningArtifactType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -345,7 +345,7 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      */
 
     public ProvisioningArtifactProperties withType(ProvisioningArtifactType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

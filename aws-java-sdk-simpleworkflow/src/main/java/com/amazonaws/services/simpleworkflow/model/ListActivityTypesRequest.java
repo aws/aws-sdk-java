@@ -208,7 +208,7 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setRegistrationStatus(RegistrationStatus registrationStatus) {
-        this.registrationStatus = registrationStatus.toString();
+        withRegistrationStatus(registrationStatus);
     }
 
     /**
@@ -223,7 +223,7 @@ public class ListActivityTypesRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public ListActivityTypesRequest withRegistrationStatus(RegistrationStatus registrationStatus) {
-        setRegistrationStatus(registrationStatus);
+        this.registrationStatus = registrationStatus.toString();
         return this;
     }
 

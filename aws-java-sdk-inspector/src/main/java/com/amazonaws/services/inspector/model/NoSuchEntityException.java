@@ -156,7 +156,7 @@ public class NoSuchEntityException extends com.amazonaws.services.inspector.mode
      */
 
     public void setInspectorErrorCode(NoSuchEntityErrorCode inspectorErrorCode) {
-        this.inspectorErrorCode = inspectorErrorCode.toString();
+        withInspectorErrorCode(inspectorErrorCode);
     }
 
     /**
@@ -171,7 +171,7 @@ public class NoSuchEntityException extends com.amazonaws.services.inspector.mode
      */
 
     public NoSuchEntityException withInspectorErrorCode(NoSuchEntityErrorCode inspectorErrorCode) {
-        setInspectorErrorCode(inspectorErrorCode);
+        this.inspectorErrorCode = inspectorErrorCode.toString();
         return this;
     }
 

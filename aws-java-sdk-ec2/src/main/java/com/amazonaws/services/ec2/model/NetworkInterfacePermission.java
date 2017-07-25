@@ -277,7 +277,7 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
      */
 
     public void setPermission(InterfacePermissionType permission) {
-        this.permission = permission.toString();
+        withPermission(permission);
     }
 
     /**
@@ -292,7 +292,7 @@ public class NetworkInterfacePermission implements Serializable, Cloneable {
      */
 
     public NetworkInterfacePermission withPermission(InterfacePermissionType permission) {
-        setPermission(permission);
+        this.permission = permission.toString();
         return this;
     }
 

@@ -462,7 +462,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setMigrationType(MigrationTypeValue migrationType) {
-        this.migrationType = migrationType.toString();
+        withMigrationType(migrationType);
     }
 
     /**
@@ -477,7 +477,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ReplicationTask withMigrationType(MigrationTypeValue migrationType) {
-        setMigrationType(migrationType);
+        this.migrationType = migrationType.toString();
         return this;
     }
 

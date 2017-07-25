@@ -87,7 +87,7 @@ public class AcknowledgeThirdPartyJobResult extends com.amazonaws.AmazonWebServi
      */
 
     public void setStatus(JobStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -102,7 +102,7 @@ public class AcknowledgeThirdPartyJobResult extends com.amazonaws.AmazonWebServi
      */
 
     public AcknowledgeThirdPartyJobResult withStatus(JobStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

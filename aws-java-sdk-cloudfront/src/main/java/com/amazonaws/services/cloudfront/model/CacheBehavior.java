@@ -956,7 +956,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      */
 
     public void setViewerProtocolPolicy(ViewerProtocolPolicy viewerProtocolPolicy) {
-        this.viewerProtocolPolicy = viewerProtocolPolicy.toString();
+        withViewerProtocolPolicy(viewerProtocolPolicy);
     }
 
     /**
@@ -1047,7 +1047,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      */
 
     public CacheBehavior withViewerProtocolPolicy(ViewerProtocolPolicy viewerProtocolPolicy) {
-        setViewerProtocolPolicy(viewerProtocolPolicy);
+        this.viewerProtocolPolicy = viewerProtocolPolicy.toString();
         return this;
     }
 

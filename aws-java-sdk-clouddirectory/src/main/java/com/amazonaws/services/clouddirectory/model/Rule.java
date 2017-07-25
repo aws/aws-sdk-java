@@ -95,7 +95,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(RuleType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -110,7 +110,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Rule withType(RuleType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

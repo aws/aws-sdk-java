@@ -487,7 +487,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setStatusFilter(ScalingStatusType statusFilter) {
-        this.statusFilter = statusFilter.toString();
+        withStatusFilter(statusFilter);
     }
 
     /**
@@ -577,7 +577,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public DescribeScalingPoliciesRequest withStatusFilter(ScalingStatusType statusFilter) {
-        setStatusFilter(statusFilter);
+        this.statusFilter = statusFilter.toString();
         return this;
     }
 

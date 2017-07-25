@@ -330,7 +330,7 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(TagFilterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -378,7 +378,7 @@ public class TagFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public TagFilter withType(TagFilterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

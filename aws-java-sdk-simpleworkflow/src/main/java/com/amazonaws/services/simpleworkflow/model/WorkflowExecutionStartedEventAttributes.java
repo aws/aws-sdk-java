@@ -534,7 +534,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable, Cl
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -594,7 +594,7 @@ public class WorkflowExecutionStartedEventAttributes implements Serializable, Cl
      */
 
     public WorkflowExecutionStartedEventAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 

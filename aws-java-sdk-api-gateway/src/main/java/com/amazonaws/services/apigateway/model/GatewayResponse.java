@@ -338,7 +338,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setResponseType(GatewayResponseType responseType) {
-        this.responseType = responseType.toString();
+        withResponseType(responseType);
     }
 
     /**
@@ -397,7 +397,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      */
 
     public GatewayResponse withResponseType(GatewayResponseType responseType) {
-        setResponseType(responseType);
+        this.responseType = responseType.toString();
         return this;
     }
 

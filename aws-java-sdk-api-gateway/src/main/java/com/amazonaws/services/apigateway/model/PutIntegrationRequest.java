@@ -335,7 +335,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setType(IntegrationType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -350,7 +350,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public PutIntegrationRequest withType(IntegrationType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -1178,7 +1178,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
-        this.contentHandling = contentHandling.toString();
+        withContentHandling(contentHandling);
     }
 
     /**
@@ -1230,7 +1230,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public PutIntegrationRequest withContentHandling(ContentHandlingStrategy contentHandling) {
-        setContentHandling(contentHandling);
+        this.contentHandling = contentHandling.toString();
         return this;
     }
 

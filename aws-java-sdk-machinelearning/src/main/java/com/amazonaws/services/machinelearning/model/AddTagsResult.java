@@ -130,7 +130,7 @@ public class AddTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      */
 
     public void setResourceType(TaggableResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -145,7 +145,7 @@ public class AddTagsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      */
 
     public AddTagsResult withResourceType(TaggableResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

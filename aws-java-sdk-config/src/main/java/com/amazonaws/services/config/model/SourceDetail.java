@@ -143,7 +143,7 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setEventSource(EventSource eventSource) {
-        this.eventSource = eventSource.toString();
+        withEventSource(eventSource);
     }
 
     /**
@@ -158,7 +158,7 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SourceDetail withEventSource(EventSource eventSource) {
-        setEventSource(eventSource);
+        this.eventSource = eventSource.toString();
         return this;
     }
 
@@ -472,7 +472,7 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMessageType(MessageType messageType) {
-        this.messageType = messageType.toString();
+        withMessageType(messageType);
     }
 
     /**
@@ -551,7 +551,7 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SourceDetail withMessageType(MessageType messageType) {
-        setMessageType(messageType);
+        this.messageType = messageType.toString();
         return this;
     }
 
@@ -665,7 +665,7 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
-        this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
+        withMaximumExecutionFrequency(maximumExecutionFrequency);
     }
 
     /**
@@ -694,7 +694,7 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SourceDetail withMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
-        setMaximumExecutionFrequency(maximumExecutionFrequency);
+        this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
         return this;
     }
 

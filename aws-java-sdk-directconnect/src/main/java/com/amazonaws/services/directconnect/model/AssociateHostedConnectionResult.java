@@ -204,7 +204,7 @@ public class AssociateHostedConnectionResult extends com.amazonaws.AmazonWebServ
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -214,7 +214,7 @@ public class AssociateHostedConnectionResult extends com.amazonaws.AmazonWebServ
      */
 
     public AssociateHostedConnectionResult withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

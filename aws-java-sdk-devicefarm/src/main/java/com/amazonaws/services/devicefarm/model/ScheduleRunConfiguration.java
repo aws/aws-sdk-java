@@ -411,7 +411,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      */
 
     public void setBillingMethod(BillingMethod billingMethod) {
-        this.billingMethod = billingMethod.toString();
+        withBillingMethod(billingMethod);
     }
 
     /**
@@ -428,7 +428,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
      */
 
     public ScheduleRunConfiguration withBillingMethod(BillingMethod billingMethod) {
-        setBillingMethod(billingMethod);
+        this.billingMethod = billingMethod.toString();
         return this;
     }
 

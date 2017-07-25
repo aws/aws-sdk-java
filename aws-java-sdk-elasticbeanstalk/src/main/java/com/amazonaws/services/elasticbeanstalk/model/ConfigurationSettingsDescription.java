@@ -602,7 +602,7 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      */
 
     public void setDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
-        this.deploymentStatus = deploymentStatus.toString();
+        withDeploymentStatus(deploymentStatus);
     }
 
     /**
@@ -666,7 +666,7 @@ public class ConfigurationSettingsDescription implements Serializable, Cloneable
      */
 
     public ConfigurationSettingsDescription withDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
-        setDeploymentStatus(deploymentStatus);
+        this.deploymentStatus = deploymentStatus.toString();
         return this;
     }
 

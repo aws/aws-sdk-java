@@ -174,7 +174,7 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      */
 
     public void setMailFromDomainStatus(CustomMailFromStatus mailFromDomainStatus) {
-        this.mailFromDomainStatus = mailFromDomainStatus.toString();
+        withMailFromDomainStatus(mailFromDomainStatus);
     }
 
     /**
@@ -195,7 +195,7 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      */
 
     public IdentityMailFromDomainAttributes withMailFromDomainStatus(CustomMailFromStatus mailFromDomainStatus) {
-        setMailFromDomainStatus(mailFromDomainStatus);
+        this.mailFromDomainStatus = mailFromDomainStatus.toString();
         return this;
     }
 
@@ -313,7 +313,7 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      */
 
     public void setBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
-        this.behaviorOnMXFailure = behaviorOnMXFailure.toString();
+        withBehaviorOnMXFailure(behaviorOnMXFailure);
     }
 
     /**
@@ -343,7 +343,7 @@ public class IdentityMailFromDomainAttributes implements Serializable, Cloneable
      */
 
     public IdentityMailFromDomainAttributes withBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
-        setBehaviorOnMXFailure(behaviorOnMXFailure);
+        this.behaviorOnMXFailure = behaviorOnMXFailure.toString();
         return this;
     }
 

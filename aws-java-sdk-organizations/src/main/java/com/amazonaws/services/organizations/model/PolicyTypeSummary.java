@@ -96,7 +96,7 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setType(PolicyType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -111,7 +111,7 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
      */
 
     public PolicyTypeSummary withType(PolicyType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -181,7 +181,7 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStatus(PolicyTypeStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -199,7 +199,7 @@ public class PolicyTypeSummary implements Serializable, Cloneable, StructuredPoj
      */
 
     public PolicyTypeSummary withStatus(PolicyTypeStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

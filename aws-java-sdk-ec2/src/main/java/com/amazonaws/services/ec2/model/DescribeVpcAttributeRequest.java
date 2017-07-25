@@ -95,7 +95,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest impleme
      */
 
     public void setAttribute(VpcAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -110,7 +110,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest impleme
      */
 
     public DescribeVpcAttributeRequest withAttribute(VpcAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

@@ -281,7 +281,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      */
 
     public void setState(PatchComplianceDataState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -296,7 +296,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      */
 
     public PatchComplianceData withState(PatchComplianceDataState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -139,7 +139,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      */
 
     public void setType(EnvironmentType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -154,7 +154,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      */
 
     public ProjectEnvironment withType(EnvironmentType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -384,7 +384,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      */
 
     public void setComputeType(ComputeType computeType) {
-        this.computeType = computeType.toString();
+        withComputeType(computeType);
     }
 
     /**
@@ -432,7 +432,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      */
 
     public ProjectEnvironment withComputeType(ComputeType computeType) {
-        setComputeType(computeType);
+        this.computeType = computeType.toString();
         return this;
     }
 

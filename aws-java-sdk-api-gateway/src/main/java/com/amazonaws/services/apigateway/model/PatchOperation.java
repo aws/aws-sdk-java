@@ -140,7 +140,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOp(Op op) {
-        this.op = op.toString();
+        withOp(op);
     }
 
     /**
@@ -161,7 +161,7 @@ public class PatchOperation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PatchOperation withOp(Op op) {
-        setOp(op);
+        this.op = op.toString();
         return this;
     }
 

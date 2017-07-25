@@ -171,7 +171,7 @@ public class DescribeFindingsRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setLocale(Locale locale) {
-        this.locale = locale.toString();
+        withLocale(locale);
     }
 
     /**
@@ -188,7 +188,7 @@ public class DescribeFindingsRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public DescribeFindingsRequest withLocale(Locale locale) {
-        setLocale(locale);
+        this.locale = locale.toString();
         return this;
     }
 

@@ -150,7 +150,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setDeploymentType(DeploymentType deploymentType) {
-        this.deploymentType = deploymentType.toString();
+        withDeploymentType(deploymentType);
     }
 
     /**
@@ -163,7 +163,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public CreateDeploymentRequest withDeploymentType(DeploymentType deploymentType) {
-        setDeploymentType(deploymentType);
+        this.deploymentType = deploymentType.toString();
         return this;
     }
 

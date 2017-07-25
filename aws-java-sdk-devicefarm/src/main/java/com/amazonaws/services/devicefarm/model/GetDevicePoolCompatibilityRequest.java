@@ -867,7 +867,7 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      */
 
     public void setTestType(TestType testType) {
-        this.testType = testType.toString();
+        withTestType(testType);
     }
 
     /**
@@ -1033,7 +1033,7 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      */
 
     public GetDevicePoolCompatibilityRequest withTestType(TestType testType) {
-        setTestType(testType);
+        this.testType = testType.toString();
         return this;
     }
 

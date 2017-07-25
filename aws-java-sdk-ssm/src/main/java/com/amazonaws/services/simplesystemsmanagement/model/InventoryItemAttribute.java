@@ -135,7 +135,7 @@ public class InventoryItemAttribute implements Serializable, Cloneable, Structur
      */
 
     public void setDataType(InventoryAttributeDataType dataType) {
-        this.dataType = dataType.toString();
+        withDataType(dataType);
     }
 
     /**
@@ -150,7 +150,7 @@ public class InventoryItemAttribute implements Serializable, Cloneable, Structur
      */
 
     public InventoryItemAttribute withDataType(InventoryAttributeDataType dataType) {
-        setDataType(dataType);
+        this.dataType = dataType.toString();
         return this;
     }
 

@@ -429,7 +429,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setAutoScalingType(AutoScalingType autoScalingType) {
-        this.autoScalingType = autoScalingType.toString();
+        withAutoScalingType(autoScalingType);
     }
 
     /**
@@ -444,7 +444,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public UpdateInstanceRequest withAutoScalingType(AutoScalingType autoScalingType) {
-        setAutoScalingType(autoScalingType);
+        this.autoScalingType = autoScalingType.toString();
         return this;
     }
 
@@ -1015,7 +1015,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setArchitecture(Architecture architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -1035,7 +1035,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public UpdateInstanceRequest withArchitecture(Architecture architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
         return this;
     }
 

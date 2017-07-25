@@ -215,7 +215,7 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setSort(ResourceSortType sort) {
-        this.sort = sort.toString();
+        withSort(sort);
     }
 
     /**
@@ -230,7 +230,7 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      */
 
     public DescribeFolderContentsRequest withSort(ResourceSortType sort) {
-        setSort(sort);
+        this.sort = sort.toString();
         return this;
     }
 
@@ -288,7 +288,7 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setOrder(OrderType order) {
-        this.order = order.toString();
+        withOrder(order);
     }
 
     /**
@@ -303,7 +303,7 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      */
 
     public DescribeFolderContentsRequest withOrder(OrderType order) {
-        setOrder(order);
+        this.order = order.toString();
         return this;
     }
 
@@ -441,7 +441,7 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setType(FolderContentType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -456,7 +456,7 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      */
 
     public DescribeFolderContentsRequest withType(FolderContentType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

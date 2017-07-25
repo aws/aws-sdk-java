@@ -110,7 +110,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
      */
 
     public void setExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
-        this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy.toString();
+        withExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
     }
 
     /**
@@ -127,7 +127,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
      */
 
     public ModifySpotFleetRequestRequest withExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
-        setExcessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
+        this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy.toString();
         return this;
     }
 

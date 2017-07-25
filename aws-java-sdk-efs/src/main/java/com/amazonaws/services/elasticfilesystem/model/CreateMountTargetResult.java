@@ -283,7 +283,7 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
-        this.lifeCycleState = lifeCycleState.toString();
+        withLifeCycleState(lifeCycleState);
     }
 
     /**
@@ -298,7 +298,7 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public CreateMountTargetResult withLifeCycleState(LifeCycleState lifeCycleState) {
-        setLifeCycleState(lifeCycleState);
+        this.lifeCycleState = lifeCycleState.toString();
         return this;
     }
 

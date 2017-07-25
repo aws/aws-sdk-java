@@ -161,7 +161,7 @@ public class ConstraintViolationException extends com.amazonaws.services.organiz
      */
 
     public void setReason(ConstraintViolationExceptionReason reason) {
-        this.reason = reason.toString();
+        withReason(reason);
     }
 
     /**
@@ -171,7 +171,7 @@ public class ConstraintViolationException extends com.amazonaws.services.organiz
      */
 
     public ConstraintViolationException withReason(ConstraintViolationExceptionReason reason) {
-        setReason(reason);
+        this.reason = reason.toString();
         return this;
     }
 

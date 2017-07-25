@@ -482,7 +482,7 @@ public class FlowLog implements Serializable, Cloneable {
      */
 
     public void setTrafficType(TrafficType trafficType) {
-        this.trafficType = trafficType.toString();
+        withTrafficType(trafficType);
     }
 
     /**
@@ -497,7 +497,7 @@ public class FlowLog implements Serializable, Cloneable {
      */
 
     public FlowLog withTrafficType(TrafficType trafficType) {
-        setTrafficType(trafficType);
+        this.trafficType = trafficType.toString();
         return this;
     }
 

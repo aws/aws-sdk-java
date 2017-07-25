@@ -229,7 +229,7 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      */
 
     public void setChallengeName(ChallengeNameType challengeName) {
-        this.challengeName = challengeName.toString();
+        withChallengeName(challengeName);
     }
 
     /**
@@ -244,7 +244,7 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      */
 
     public AdminRespondToAuthChallengeRequest withChallengeName(ChallengeNameType challengeName) {
-        setChallengeName(challengeName);
+        this.challengeName = challengeName.toString();
         return this;
     }
 

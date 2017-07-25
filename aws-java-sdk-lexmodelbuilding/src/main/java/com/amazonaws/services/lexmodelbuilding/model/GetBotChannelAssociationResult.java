@@ -320,7 +320,7 @@ public class GetBotChannelAssociationResult extends com.amazonaws.AmazonWebServi
      */
 
     public void setType(ChannelType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -335,7 +335,7 @@ public class GetBotChannelAssociationResult extends com.amazonaws.AmazonWebServi
      */
 
     public GetBotChannelAssociationResult withType(ChannelType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

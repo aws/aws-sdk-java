@@ -319,7 +319,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      */
 
     public void setHashType(DocumentHashType hashType) {
-        this.hashType = hashType.toString();
+        withHashType(hashType);
     }
 
     /**
@@ -342,7 +342,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      */
 
     public DocumentDescription withHashType(DocumentHashType hashType) {
-        setHashType(hashType);
+        this.hashType = hashType.toString();
         return this;
     }
 
@@ -520,7 +520,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      */
 
     public void setStatus(DocumentStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -535,7 +535,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      */
 
     public DocumentDescription withStatus(DocumentStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -847,7 +847,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      */
 
     public void setDocumentType(DocumentType documentType) {
-        this.documentType = documentType.toString();
+        withDocumentType(documentType);
     }
 
     /**
@@ -862,7 +862,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      */
 
     public DocumentDescription withDocumentType(DocumentType documentType) {
-        setDocumentType(documentType);
+        this.documentType = documentType.toString();
         return this;
     }
 

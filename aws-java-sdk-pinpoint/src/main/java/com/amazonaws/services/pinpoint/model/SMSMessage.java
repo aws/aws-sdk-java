@@ -112,7 +112,7 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMessageType(MessageType messageType) {
-        this.messageType = messageType.toString();
+        withMessageType(messageType);
     }
 
     /**
@@ -125,7 +125,7 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SMSMessage withMessageType(MessageType messageType) {
-        setMessageType(messageType);
+        this.messageType = messageType.toString();
         return this;
     }
 

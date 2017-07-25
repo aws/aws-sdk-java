@@ -379,7 +379,7 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setClusterState(ClusterState clusterState) {
-        this.clusterState = clusterState.toString();
+        withClusterState(clusterState);
     }
 
     /**
@@ -394,7 +394,7 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ClusterMetadata withClusterState(ClusterState clusterState) {
-        setClusterState(clusterState);
+        this.clusterState = clusterState.toString();
         return this;
     }
 
@@ -456,7 +456,7 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -472,7 +472,7 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ClusterMetadata withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 
@@ -538,7 +538,7 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setSnowballType(SnowballType snowballType) {
-        this.snowballType = snowballType.toString();
+        withSnowballType(snowballType);
     }
 
     /**
@@ -555,7 +555,7 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ClusterMetadata withSnowballType(SnowballType snowballType) {
-        setSnowballType(snowballType);
+        this.snowballType = snowballType.toString();
         return this;
     }
 
@@ -951,7 +951,7 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
@@ -1019,7 +1019,7 @@ public class ClusterMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ClusterMetadata withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 

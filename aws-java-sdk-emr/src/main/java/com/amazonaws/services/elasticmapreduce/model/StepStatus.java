@@ -108,7 +108,7 @@ public class StepStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(StepState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -123,7 +123,7 @@ public class StepStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public StepStatus withState(StepState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

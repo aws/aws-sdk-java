@@ -324,7 +324,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
-        this.serviceNamespace = serviceNamespace.toString();
+        withServiceNamespace(serviceNamespace);
     }
 
     /**
@@ -343,7 +343,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ScalingPolicy withServiceNamespace(ServiceNamespace serviceNamespace) {
-        setServiceNamespace(serviceNamespace);
+        this.serviceNamespace = serviceNamespace.toString();
         return this;
     }
 
@@ -1025,7 +1025,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setScalableDimension(ScalableDimension scalableDimension) {
-        this.scalableDimension = scalableDimension.toString();
+        withScalableDimension(scalableDimension);
     }
 
     /**
@@ -1128,7 +1128,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ScalingPolicy withScalableDimension(ScalableDimension scalableDimension) {
-        setScalableDimension(scalableDimension);
+        this.scalableDimension = scalableDimension.toString();
         return this;
     }
 
@@ -1186,7 +1186,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPolicyType(PolicyType policyType) {
-        this.policyType = policyType.toString();
+        withPolicyType(policyType);
     }
 
     /**
@@ -1201,7 +1201,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ScalingPolicy withPolicyType(PolicyType policyType) {
-        setPolicyType(policyType);
+        this.policyType = policyType.toString();
         return this;
     }
 

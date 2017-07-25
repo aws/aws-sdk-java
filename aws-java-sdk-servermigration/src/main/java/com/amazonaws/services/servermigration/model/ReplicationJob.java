@@ -141,7 +141,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setServerType(ServerType serverType) {
-        this.serverType = serverType.toString();
+        withServerType(serverType);
     }
 
     /**
@@ -151,7 +151,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ReplicationJob withServerType(ServerType serverType) {
-        setServerType(serverType);
+        this.serverType = serverType.toString();
         return this;
     }
 
@@ -294,7 +294,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setLicenseType(LicenseType licenseType) {
-        this.licenseType = licenseType.toString();
+        withLicenseType(licenseType);
     }
 
     /**
@@ -304,7 +304,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ReplicationJob withLicenseType(LicenseType licenseType) {
-        setLicenseType(licenseType);
+        this.licenseType = licenseType.toString();
         return this;
     }
 
@@ -395,7 +395,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(ReplicationJobState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -405,7 +405,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ReplicationJob withState(ReplicationJobState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

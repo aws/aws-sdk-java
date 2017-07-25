@@ -153,7 +153,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      */
 
     public void setResourceType(MaintenanceWindowResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -168,7 +168,7 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      */
 
     public RegisterTargetWithMaintenanceWindowRequest withResourceType(MaintenanceWindowResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

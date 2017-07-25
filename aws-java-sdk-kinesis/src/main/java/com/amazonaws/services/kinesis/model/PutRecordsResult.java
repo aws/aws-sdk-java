@@ -343,7 +343,7 @@ public class PutRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public void setEncryptionType(EncryptionType encryptionType) {
-        this.encryptionType = encryptionType.toString();
+        withEncryptionType(encryptionType);
     }
 
     /**
@@ -381,7 +381,7 @@ public class PutRecordsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public PutRecordsResult withEncryptionType(EncryptionType encryptionType) {
-        setEncryptionType(encryptionType);
+        this.encryptionType = encryptionType.toString();
         return this;
     }
 

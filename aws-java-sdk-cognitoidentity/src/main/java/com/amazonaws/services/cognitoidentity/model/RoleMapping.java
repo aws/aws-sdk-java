@@ -127,7 +127,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(RoleMappingType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -146,7 +146,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      */
 
     public RoleMapping withType(RoleMappingType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -244,7 +244,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAmbiguousRoleResolution(AmbiguousRoleResolutionType ambiguousRoleResolution) {
-        this.ambiguousRoleResolution = ambiguousRoleResolution.toString();
+        withAmbiguousRoleResolution(ambiguousRoleResolution);
     }
 
     /**
@@ -269,7 +269,7 @@ public class RoleMapping implements Serializable, Cloneable, StructuredPojo {
      */
 
     public RoleMapping withAmbiguousRoleResolution(AmbiguousRoleResolutionType ambiguousRoleResolution) {
-        setAmbiguousRoleResolution(ambiguousRoleResolution);
+        this.ambiguousRoleResolution = ambiguousRoleResolution.toString();
         return this;
     }
 

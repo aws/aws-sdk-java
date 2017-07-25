@@ -96,7 +96,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      */
 
     public void setPredefinedMetricType(MetricType predefinedMetricType) {
-        this.predefinedMetricType = predefinedMetricType.toString();
+        withPredefinedMetricType(predefinedMetricType);
     }
 
     /**
@@ -111,7 +111,7 @@ public class PredefinedMetricSpecification implements Serializable, Cloneable, S
      */
 
     public PredefinedMetricSpecification withPredefinedMetricType(MetricType predefinedMetricType) {
-        setPredefinedMetricType(predefinedMetricType);
+        this.predefinedMetricType = predefinedMetricType.toString();
         return this;
     }
 

@@ -429,7 +429,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setType(AppType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -450,7 +450,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateAppRequest withType(AppType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

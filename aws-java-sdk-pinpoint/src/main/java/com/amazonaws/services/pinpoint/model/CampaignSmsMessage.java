@@ -110,7 +110,7 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
      */
 
     public void setMessageType(MessageType messageType) {
-        this.messageType = messageType.toString();
+        withMessageType(messageType);
     }
 
     /**
@@ -123,7 +123,7 @@ public class CampaignSmsMessage implements Serializable, Cloneable, StructuredPo
      */
 
     public CampaignSmsMessage withMessageType(MessageType messageType) {
-        setMessageType(messageType);
+        this.messageType = messageType.toString();
         return this;
     }
 

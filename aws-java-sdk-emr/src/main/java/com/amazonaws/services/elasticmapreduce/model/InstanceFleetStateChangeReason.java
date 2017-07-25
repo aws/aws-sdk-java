@@ -100,7 +100,7 @@ public class InstanceFleetStateChangeReason implements Serializable, Cloneable, 
      */
 
     public void setCode(InstanceFleetStateChangeReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -115,7 +115,7 @@ public class InstanceFleetStateChangeReason implements Serializable, Cloneable, 
      */
 
     public InstanceFleetStateChangeReason withCode(InstanceFleetStateChangeReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

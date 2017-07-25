@@ -281,7 +281,7 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public void setRuntime(Runtime runtime) {
-        this.runtime = runtime.toString();
+        withRuntime(runtime);
     }
 
     /**
@@ -296,7 +296,7 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public PublishVersionResult withRuntime(Runtime runtime) {
-        setRuntime(runtime);
+        this.runtime = runtime.toString();
         return this;
     }
 

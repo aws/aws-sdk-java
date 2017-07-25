@@ -309,7 +309,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      */
 
     public void setInstanceTenancy(Tenancy instanceTenancy) {
-        this.instanceTenancy = instanceTenancy.toString();
+        withInstanceTenancy(instanceTenancy);
     }
 
     /**
@@ -344,7 +344,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest implements Seriali
      */
 
     public CreateVpcRequest withInstanceTenancy(Tenancy instanceTenancy) {
-        setInstanceTenancy(instanceTenancy);
+        this.instanceTenancy = instanceTenancy.toString();
         return this;
     }
 

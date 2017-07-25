@@ -378,7 +378,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      */
 
     public void setIndexRotationPeriod(ElasticsearchIndexRotationPeriod indexRotationPeriod) {
-        this.indexRotationPeriod = indexRotationPeriod.toString();
+        withIndexRotationPeriod(indexRotationPeriod);
     }
 
     /**
@@ -399,7 +399,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      */
 
     public ElasticsearchDestinationConfiguration withIndexRotationPeriod(ElasticsearchIndexRotationPeriod indexRotationPeriod) {
-        setIndexRotationPeriod(indexRotationPeriod);
+        this.indexRotationPeriod = indexRotationPeriod.toString();
         return this;
     }
 
@@ -593,7 +593,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      */
 
     public void setS3BackupMode(ElasticsearchS3BackupMode s3BackupMode) {
-        this.s3BackupMode = s3BackupMode.toString();
+        withS3BackupMode(s3BackupMode);
     }
 
     /**
@@ -619,7 +619,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      */
 
     public ElasticsearchDestinationConfiguration withS3BackupMode(ElasticsearchS3BackupMode s3BackupMode) {
-        setS3BackupMode(s3BackupMode);
+        this.s3BackupMode = s3BackupMode.toString();
         return this;
     }
 

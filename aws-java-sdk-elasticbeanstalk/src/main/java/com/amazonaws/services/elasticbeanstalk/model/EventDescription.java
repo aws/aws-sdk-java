@@ -455,7 +455,7 @@ public class EventDescription implements Serializable, Cloneable {
      */
 
     public void setSeverity(EventSeverity severity) {
-        this.severity = severity.toString();
+        withSeverity(severity);
     }
 
     /**
@@ -470,7 +470,7 @@ public class EventDescription implements Serializable, Cloneable {
      */
 
     public EventDescription withSeverity(EventSeverity severity) {
-        setSeverity(severity);
+        this.severity = severity.toString();
         return this;
     }
 

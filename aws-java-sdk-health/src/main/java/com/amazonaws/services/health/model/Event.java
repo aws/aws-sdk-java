@@ -288,7 +288,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setEventTypeCategory(EventTypeCategory eventTypeCategory) {
-        this.eventTypeCategory = eventTypeCategory.toString();
+        withEventTypeCategory(eventTypeCategory);
     }
 
     /**
@@ -303,7 +303,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Event withEventTypeCategory(EventTypeCategory eventTypeCategory) {
-        setEventTypeCategory(eventTypeCategory);
+        this.eventTypeCategory = eventTypeCategory.toString();
         return this;
     }
 
@@ -569,7 +569,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatusCode(EventStatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
@@ -586,7 +586,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Event withStatusCode(EventStatusCode statusCode) {
-        setStatusCode(statusCode);
+        this.statusCode = statusCode.toString();
         return this;
     }
 

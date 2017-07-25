@@ -201,7 +201,7 @@ public class EnableStageTransitionRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setTransitionType(StageTransitionType transitionType) {
-        this.transitionType = transitionType.toString();
+        withTransitionType(transitionType);
     }
 
     /**
@@ -219,7 +219,7 @@ public class EnableStageTransitionRequest extends com.amazonaws.AmazonWebService
      */
 
     public EnableStageTransitionRequest withTransitionType(StageTransitionType transitionType) {
-        setTransitionType(transitionType);
+        this.transitionType = transitionType.toString();
         return this;
     }
 

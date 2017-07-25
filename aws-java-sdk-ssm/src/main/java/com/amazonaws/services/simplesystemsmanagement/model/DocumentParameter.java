@@ -149,7 +149,7 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setType(DocumentParameterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -164,7 +164,7 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
      */
 
     public DocumentParameter withType(DocumentParameterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

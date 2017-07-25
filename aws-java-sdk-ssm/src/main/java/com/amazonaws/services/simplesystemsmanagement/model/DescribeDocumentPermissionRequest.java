@@ -132,7 +132,7 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
      */
 
     public void setPermissionType(DocumentPermissionType permissionType) {
-        this.permissionType = permissionType.toString();
+        withPermissionType(permissionType);
     }
 
     /**
@@ -147,7 +147,7 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
      */
 
     public DescribeDocumentPermissionRequest withPermissionType(DocumentPermissionType permissionType) {
-        setPermissionType(permissionType);
+        this.permissionType = permissionType.toString();
         return this;
     }
 

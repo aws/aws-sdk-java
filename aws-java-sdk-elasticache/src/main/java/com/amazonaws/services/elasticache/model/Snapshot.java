@@ -2267,7 +2267,7 @@ public class Snapshot implements Serializable, Cloneable {
      */
 
     public void setAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
-        this.automaticFailover = automaticFailover.toString();
+        withAutomaticFailover(automaticFailover);
     }
 
     /**
@@ -2320,7 +2320,7 @@ public class Snapshot implements Serializable, Cloneable {
      */
 
     public Snapshot withAutomaticFailover(AutomaticFailoverStatus automaticFailover) {
-        setAutomaticFailover(automaticFailover);
+        this.automaticFailover = automaticFailover.toString();
         return this;
     }
 

@@ -95,7 +95,7 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
      */
 
     public void setCode(ImageStateChangeReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -110,7 +110,7 @@ public class ImageStateChangeReason implements Serializable, Cloneable, Structur
      */
 
     public ImageStateChangeReason withCode(ImageStateChangeReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

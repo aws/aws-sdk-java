@@ -156,7 +156,7 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setHistoryItemType(HistoryItemType historyItemType) {
-        this.historyItemType = historyItemType.toString();
+        withHistoryItemType(historyItemType);
     }
 
     /**
@@ -171,7 +171,7 @@ public class DescribeAlarmHistoryRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public DescribeAlarmHistoryRequest withHistoryItemType(HistoryItemType historyItemType) {
-        setHistoryItemType(historyItemType);
+        this.historyItemType = historyItemType.toString();
         return this;
     }
 

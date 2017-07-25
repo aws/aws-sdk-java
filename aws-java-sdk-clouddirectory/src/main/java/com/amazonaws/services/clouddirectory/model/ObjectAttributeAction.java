@@ -95,7 +95,7 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
      */
 
     public void setObjectAttributeActionType(UpdateActionType objectAttributeActionType) {
-        this.objectAttributeActionType = objectAttributeActionType.toString();
+        withObjectAttributeActionType(objectAttributeActionType);
     }
 
     /**
@@ -110,7 +110,7 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
      */
 
     public ObjectAttributeAction withObjectAttributeActionType(UpdateActionType objectAttributeActionType) {
-        setObjectAttributeActionType(objectAttributeActionType);
+        this.objectAttributeActionType = objectAttributeActionType.toString();
         return this;
     }
 

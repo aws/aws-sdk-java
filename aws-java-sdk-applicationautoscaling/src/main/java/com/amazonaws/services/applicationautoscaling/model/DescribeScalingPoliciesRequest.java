@@ -294,7 +294,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
-        this.serviceNamespace = serviceNamespace.toString();
+        withServiceNamespace(serviceNamespace);
     }
 
     /**
@@ -313,7 +313,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public DescribeScalingPoliciesRequest withServiceNamespace(ServiceNamespace serviceNamespace) {
-        setServiceNamespace(serviceNamespace);
+        this.serviceNamespace = serviceNamespace.toString();
         return this;
     }
 
@@ -999,7 +999,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setScalableDimension(ScalableDimension scalableDimension) {
-        this.scalableDimension = scalableDimension.toString();
+        withScalableDimension(scalableDimension);
     }
 
     /**
@@ -1103,7 +1103,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public DescribeScalingPoliciesRequest withScalableDimension(ScalableDimension scalableDimension) {
-        setScalableDimension(scalableDimension);
+        this.scalableDimension = scalableDimension.toString();
         return this;
     }
 

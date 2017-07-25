@@ -205,7 +205,7 @@ public class AllocateConnectionOnInterconnectResult extends com.amazonaws.Amazon
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -215,7 +215,7 @@ public class AllocateConnectionOnInterconnectResult extends com.amazonaws.Amazon
      */
 
     public AllocateConnectionOnInterconnectResult withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

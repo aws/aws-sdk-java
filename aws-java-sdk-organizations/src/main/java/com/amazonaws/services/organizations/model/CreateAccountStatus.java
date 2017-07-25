@@ -271,7 +271,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      */
 
     public void setState(CreateAccountState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -286,7 +286,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      */
 
     public CreateAccountStatus withState(CreateAccountState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -721,7 +721,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      */
 
     public void setFailureReason(CreateAccountFailureReason failureReason) {
-        this.failureReason = failureReason.toString();
+        withFailureReason(failureReason);
     }
 
     /**
@@ -795,7 +795,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      */
 
     public CreateAccountStatus withFailureReason(CreateAccountFailureReason failureReason) {
-        setFailureReason(failureReason);
+        this.failureReason = failureReason.toString();
         return this;
     }
 

@@ -325,7 +325,7 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      */
 
     public void setExecutionStatus(ExecutionStatus executionStatus) {
-        this.executionStatus = executionStatus.toString();
+        withExecutionStatus(executionStatus);
     }
 
     /**
@@ -346,7 +346,7 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      */
 
     public ChangeSetSummary withExecutionStatus(ExecutionStatus executionStatus) {
-        setExecutionStatus(executionStatus);
+        this.executionStatus = executionStatus.toString();
         return this;
     }
 
@@ -412,7 +412,7 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      */
 
     public void setStatus(ChangeSetStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -429,7 +429,7 @@ public class ChangeSetSummary implements Serializable, Cloneable {
      */
 
     public ChangeSetSummary withStatus(ChangeSetStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

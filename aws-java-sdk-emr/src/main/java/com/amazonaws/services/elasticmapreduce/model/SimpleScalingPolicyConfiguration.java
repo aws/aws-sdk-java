@@ -183,7 +183,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      */
 
     public void setAdjustmentType(AdjustmentType adjustmentType) {
-        this.adjustmentType = adjustmentType.toString();
+        withAdjustmentType(adjustmentType);
     }
 
     /**
@@ -215,7 +215,7 @@ public class SimpleScalingPolicyConfiguration implements Serializable, Cloneable
      */
 
     public SimpleScalingPolicyConfiguration withAdjustmentType(AdjustmentType adjustmentType) {
-        setAdjustmentType(adjustmentType);
+        this.adjustmentType = adjustmentType.toString();
         return this;
     }
 

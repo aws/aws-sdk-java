@@ -277,7 +277,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      */
 
     public void setBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
-        this.behaviorOnMXFailure = behaviorOnMXFailure.toString();
+        withBehaviorOnMXFailure(behaviorOnMXFailure);
     }
 
     /**
@@ -305,7 +305,7 @@ public class SetIdentityMailFromDomainRequest extends com.amazonaws.AmazonWebSer
      */
 
     public SetIdentityMailFromDomainRequest withBehaviorOnMXFailure(BehaviorOnMXFailure behaviorOnMXFailure) {
-        setBehaviorOnMXFailure(behaviorOnMXFailure);
+        this.behaviorOnMXFailure = behaviorOnMXFailure.toString();
         return this;
     }
 

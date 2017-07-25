@@ -222,7 +222,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public void setDocumentType(DocumentType documentType) {
-        this.documentType = documentType.toString();
+        withDocumentType(documentType);
     }
 
     /**
@@ -237,7 +237,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public GetDocumentResult withDocumentType(DocumentType documentType) {
-        setDocumentType(documentType);
+        this.documentType = documentType.toString();
         return this;
     }
 

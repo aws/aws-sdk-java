@@ -88,7 +88,7 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setDimensionType(DimensionType dimensionType) {
-        this.dimensionType = dimensionType.toString();
+        withDimensionType(dimensionType);
     }
 
     /**
@@ -103,7 +103,7 @@ public class SetDimension implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SetDimension withDimensionType(DimensionType dimensionType) {
-        setDimensionType(dimensionType);
+        this.dimensionType = dimensionType.toString();
         return this;
     }
 

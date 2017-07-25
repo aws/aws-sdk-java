@@ -868,7 +868,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      */
 
     public void setValueType(ConfigurationOptionValueType valueType) {
-        this.valueType = valueType.toString();
+        withValueType(valueType);
     }
 
     /**
@@ -930,7 +930,7 @@ public class ConfigurationOptionDescription implements Serializable, Cloneable {
      */
 
     public ConfigurationOptionDescription withValueType(ConfigurationOptionValueType valueType) {
-        setValueType(valueType);
+        this.valueType = valueType.toString();
         return this;
     }
 

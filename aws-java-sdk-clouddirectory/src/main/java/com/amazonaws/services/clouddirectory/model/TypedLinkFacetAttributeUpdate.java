@@ -135,7 +135,7 @@ public class TypedLinkFacetAttributeUpdate implements Serializable, Cloneable, S
      */
 
     public void setAction(UpdateActionType action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -150,7 +150,7 @@ public class TypedLinkFacetAttributeUpdate implements Serializable, Cloneable, S
      */
 
     public TypedLinkFacetAttributeUpdate withAction(UpdateActionType action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

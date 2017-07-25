@@ -201,7 +201,7 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      */
 
     public void setTimeoutAction(SpotProvisioningTimeoutAction timeoutAction) {
-        this.timeoutAction = timeoutAction.toString();
+        withTimeoutAction(timeoutAction);
     }
 
     /**
@@ -224,7 +224,7 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
      */
 
     public SpotProvisioningSpecification withTimeoutAction(SpotProvisioningTimeoutAction timeoutAction) {
-        setTimeoutAction(timeoutAction);
+        this.timeoutAction = timeoutAction.toString();
         return this;
     }
 

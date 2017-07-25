@@ -107,7 +107,7 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -122,7 +122,7 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Relationship withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

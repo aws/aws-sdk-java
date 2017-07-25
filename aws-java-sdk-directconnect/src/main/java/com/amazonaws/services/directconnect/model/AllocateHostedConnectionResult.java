@@ -204,7 +204,7 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -214,7 +214,7 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      */
 
     public AllocateHostedConnectionResult withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

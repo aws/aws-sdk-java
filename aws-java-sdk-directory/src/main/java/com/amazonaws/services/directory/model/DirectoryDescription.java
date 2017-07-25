@@ -326,7 +326,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      */
 
     public void setSize(DirectorySize size) {
-        this.size = size.toString();
+        withSize(size);
     }
 
     /**
@@ -341,7 +341,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      */
 
     public DirectoryDescription withSize(DirectorySize size) {
-        setSize(size);
+        this.size = size.toString();
         return this;
     }
 
@@ -634,7 +634,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      */
 
     public void setStage(DirectoryStage stage) {
-        this.stage = stage.toString();
+        withStage(stage);
     }
 
     /**
@@ -649,7 +649,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      */
 
     public DirectoryDescription withStage(DirectoryStage stage) {
-        setStage(stage);
+        this.stage = stage.toString();
         return this;
     }
 
@@ -787,7 +787,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      */
 
     public void setType(DirectoryType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -802,7 +802,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      */
 
     public DirectoryDescription withType(DirectoryType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -995,7 +995,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      */
 
     public void setRadiusStatus(RadiusStatus radiusStatus) {
-        this.radiusStatus = radiusStatus.toString();
+        withRadiusStatus(radiusStatus);
     }
 
     /**
@@ -1010,7 +1010,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      */
 
     public DirectoryDescription withRadiusStatus(RadiusStatus radiusStatus) {
-        setRadiusStatus(radiusStatus);
+        this.radiusStatus = radiusStatus.toString();
         return this;
     }
 

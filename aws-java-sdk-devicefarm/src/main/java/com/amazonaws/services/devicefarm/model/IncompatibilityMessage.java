@@ -446,7 +446,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      */
 
     public void setType(DeviceAttribute type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -530,7 +530,7 @@ public class IncompatibilityMessage implements Serializable, Cloneable, Structur
      */
 
     public IncompatibilityMessage withType(DeviceAttribute type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

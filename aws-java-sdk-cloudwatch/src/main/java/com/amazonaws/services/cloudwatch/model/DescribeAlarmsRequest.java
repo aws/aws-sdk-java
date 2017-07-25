@@ -229,7 +229,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setStateValue(StateValue stateValue) {
-        this.stateValue = stateValue.toString();
+        withStateValue(stateValue);
     }
 
     /**
@@ -244,7 +244,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public DescribeAlarmsRequest withStateValue(StateValue stateValue) {
-        setStateValue(stateValue);
+        this.stateValue = stateValue.toString();
         return this;
     }
 

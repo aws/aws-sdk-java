@@ -408,7 +408,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setType(ArtifactsType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -456,7 +456,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      */
 
     public ProjectArtifacts withType(ArtifactsType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -1158,7 +1158,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setNamespaceType(ArtifactNamespace namespaceType) {
-        this.namespaceType = namespaceType.toString();
+        withNamespaceType(namespaceType);
     }
 
     /**
@@ -1248,7 +1248,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      */
 
     public ProjectArtifacts withNamespaceType(ArtifactNamespace namespaceType) {
-        setNamespaceType(namespaceType);
+        this.namespaceType = namespaceType.toString();
         return this;
     }
 
@@ -1745,7 +1745,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setPackaging(ArtifactPackaging packaging) {
-        this.packaging = packaging.toString();
+        withPackaging(packaging);
     }
 
     /**
@@ -1823,7 +1823,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      */
 
     public ProjectArtifacts withPackaging(ArtifactPackaging packaging) {
-        setPackaging(packaging);
+        this.packaging = packaging.toString();
         return this;
     }
 

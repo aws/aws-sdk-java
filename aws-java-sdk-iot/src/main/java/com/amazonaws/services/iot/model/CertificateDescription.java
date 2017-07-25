@@ -260,7 +260,7 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
      */
 
     public void setStatus(CertificateStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -275,7 +275,7 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
      */
 
     public CertificateDescription withStatus(CertificateStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

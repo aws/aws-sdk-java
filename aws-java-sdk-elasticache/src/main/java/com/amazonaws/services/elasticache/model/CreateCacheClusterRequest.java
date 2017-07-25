@@ -1033,7 +1033,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setAZMode(AZMode aZMode) {
-        this.aZMode = aZMode.toString();
+        withAZMode(aZMode);
     }
 
     /**
@@ -1063,7 +1063,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public CreateCacheClusterRequest withAZMode(AZMode aZMode) {
-        setAZMode(aZMode);
+        this.aZMode = aZMode.toString();
         return this;
     }
 

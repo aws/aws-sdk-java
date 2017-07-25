@@ -145,7 +145,7 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(EncryptionKeyType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -162,7 +162,7 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
      */
 
     public EncryptionKey withType(EncryptionKeyType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

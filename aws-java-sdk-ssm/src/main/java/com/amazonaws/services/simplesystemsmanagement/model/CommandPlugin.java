@@ -297,7 +297,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(CommandPluginStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -312,7 +312,7 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      */
 
     public CommandPlugin withStatus(CommandPluginStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

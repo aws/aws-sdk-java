@@ -420,7 +420,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setAuthType(AuthTypeValue authType) {
-        this.authType = authType.toString();
+        withAuthType(authType);
     }
 
     /**
@@ -446,7 +446,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      */
 
     public MongoDbSettings withAuthType(AuthTypeValue authType) {
-        setAuthType(authType);
+        this.authType = authType.toString();
         return this;
     }
 
@@ -556,7 +556,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setAuthMechanism(AuthMechanismValue authMechanism) {
-        this.authMechanism = authMechanism.toString();
+        withAuthMechanism(authMechanism);
     }
 
     /**
@@ -584,7 +584,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      */
 
     public MongoDbSettings withAuthMechanism(AuthMechanismValue authMechanism) {
-        setAuthMechanism(authMechanism);
+        this.authMechanism = authMechanism.toString();
         return this;
     }
 
@@ -686,7 +686,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setNestingLevel(NestingLevelValue nestingLevel) {
-        this.nestingLevel = nestingLevel.toString();
+        withNestingLevel(nestingLevel);
     }
 
     /**
@@ -712,7 +712,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      */
 
     public MongoDbSettings withNestingLevel(NestingLevelValue nestingLevel) {
-        setNestingLevel(nestingLevel);
+        this.nestingLevel = nestingLevel.toString();
         return this;
     }
 

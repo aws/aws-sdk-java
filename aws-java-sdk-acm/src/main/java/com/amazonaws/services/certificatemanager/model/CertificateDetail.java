@@ -764,7 +764,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStatus(CertificateStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -779,7 +779,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public CertificateDetail withStatus(CertificateStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -891,7 +891,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setRevocationReason(RevocationReason revocationReason) {
-        this.revocationReason = revocationReason.toString();
+        withRevocationReason(revocationReason);
     }
 
     /**
@@ -908,7 +908,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public CertificateDetail withRevocationReason(RevocationReason revocationReason) {
-        setRevocationReason(revocationReason);
+        this.revocationReason = revocationReason.toString();
         return this;
     }
 
@@ -1046,7 +1046,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setKeyAlgorithm(KeyAlgorithm keyAlgorithm) {
-        this.keyAlgorithm = keyAlgorithm.toString();
+        withKeyAlgorithm(keyAlgorithm);
     }
 
     /**
@@ -1061,7 +1061,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public CertificateDetail withKeyAlgorithm(KeyAlgorithm keyAlgorithm) {
-        setKeyAlgorithm(keyAlgorithm);
+        this.keyAlgorithm = keyAlgorithm.toString();
         return this;
     }
 
@@ -1261,7 +1261,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setFailureReason(FailureReason failureReason) {
-        this.failureReason = failureReason.toString();
+        withFailureReason(failureReason);
     }
 
     /**
@@ -1282,7 +1282,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public CertificateDetail withFailureReason(FailureReason failureReason) {
-        setFailureReason(failureReason);
+        this.failureReason = failureReason.toString();
         return this;
     }
 
@@ -1388,7 +1388,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setType(CertificateType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1415,7 +1415,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public CertificateDetail withType(CertificateType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

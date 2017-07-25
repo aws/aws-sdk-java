@@ -462,7 +462,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      */
 
     public void setStatus(ApplicationVersionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -477,7 +477,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      */
 
     public ApplicationVersionDescription withStatus(ApplicationVersionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

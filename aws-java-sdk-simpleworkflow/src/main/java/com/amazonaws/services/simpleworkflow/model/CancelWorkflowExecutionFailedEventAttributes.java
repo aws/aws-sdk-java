@@ -165,7 +165,7 @@ public class CancelWorkflowExecutionFailedEventAttributes implements Serializabl
      */
 
     public void setCause(CancelWorkflowExecutionFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -195,7 +195,7 @@ public class CancelWorkflowExecutionFailedEventAttributes implements Serializabl
      */
 
     public CancelWorkflowExecutionFailedEventAttributes withCause(CancelWorkflowExecutionFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

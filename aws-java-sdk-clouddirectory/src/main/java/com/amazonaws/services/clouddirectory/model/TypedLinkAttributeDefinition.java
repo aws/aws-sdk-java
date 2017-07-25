@@ -159,7 +159,7 @@ public class TypedLinkAttributeDefinition implements Serializable, Cloneable, St
      */
 
     public void setType(FacetAttributeType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -174,7 +174,7 @@ public class TypedLinkAttributeDefinition implements Serializable, Cloneable, St
      */
 
     public TypedLinkAttributeDefinition withType(FacetAttributeType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -385,7 +385,7 @@ public class TypedLinkAttributeDefinition implements Serializable, Cloneable, St
      */
 
     public void setRequiredBehavior(RequiredAttributeBehavior requiredBehavior) {
-        this.requiredBehavior = requiredBehavior.toString();
+        withRequiredBehavior(requiredBehavior);
     }
 
     /**
@@ -400,7 +400,7 @@ public class TypedLinkAttributeDefinition implements Serializable, Cloneable, St
      */
 
     public TypedLinkAttributeDefinition withRequiredBehavior(RequiredAttributeBehavior requiredBehavior) {
-        setRequiredBehavior(requiredBehavior);
+        this.requiredBehavior = requiredBehavior.toString();
         return this;
     }
 

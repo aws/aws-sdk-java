@@ -233,7 +233,7 @@ public class ConditionalForwarder implements Serializable, Cloneable, Structured
      */
 
     public void setReplicationScope(ReplicationScope replicationScope) {
-        this.replicationScope = replicationScope.toString();
+        withReplicationScope(replicationScope);
     }
 
     /**
@@ -250,7 +250,7 @@ public class ConditionalForwarder implements Serializable, Cloneable, Structured
      */
 
     public ConditionalForwarder withReplicationScope(ReplicationScope replicationScope) {
-        setReplicationScope(replicationScope);
+        this.replicationScope = replicationScope.toString();
         return this;
     }
 

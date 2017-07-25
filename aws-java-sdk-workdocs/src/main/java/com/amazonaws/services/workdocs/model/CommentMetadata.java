@@ -192,7 +192,7 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setCommentStatus(CommentStatusType commentStatus) {
-        this.commentStatus = commentStatus.toString();
+        withCommentStatus(commentStatus);
     }
 
     /**
@@ -202,7 +202,7 @@ public class CommentMetadata implements Serializable, Cloneable, StructuredPojo 
      */
 
     public CommentMetadata withCommentStatus(CommentStatusType commentStatus) {
-        setCommentStatus(commentStatus);
+        this.commentStatus = commentStatus.toString();
         return this;
     }
 

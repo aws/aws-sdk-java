@@ -147,7 +147,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      */
 
     public void setFormat(DiskImageFormat format) {
-        this.format = format.toString();
+        withFormat(format);
     }
 
     /**
@@ -162,7 +162,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
      */
 
     public DiskImageDetail withFormat(DiskImageFormat format) {
-        setFormat(format);
+        this.format = format.toString();
         return this;
     }
 

@@ -892,7 +892,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -970,7 +970,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes implements Seriali
      */
 
     public ContinueAsNewWorkflowExecutionDecisionAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 

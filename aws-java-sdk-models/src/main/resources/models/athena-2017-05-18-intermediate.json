@@ -34,6 +34,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
+    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -580,6 +581,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -620,6 +622,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of query IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNamedQueryIds(java.util.Collection)} or {@link #withNamedQueryIds(java.util.Collection)} if you want to override the existing values.</p>\n@param namedQueryIds An array of query IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -721,6 +724,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -761,6 +765,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of query IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNamedQueryIds(java.util.Collection)} or {@link #withNamedQueryIds(java.util.Collection)} if you want to override the existing values.</p>\n@param namedQueryIds An array of query IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -896,6 +901,7 @@
               "simpleType" : "NamedQuery",
               "variableSetterType" : "NamedQuery"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -936,6 +942,7 @@
           "simpleType" : "List<NamedQuery>",
           "variableSetterType" : "java.util.Collection<NamedQuery>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the named query IDs submitted.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNamedQueries(java.util.Collection)} or {@link #withNamedQueries(java.util.Collection)} if you want to override the existing values.</p>\n@param namedQueries Information about the named query IDs submitted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1035,6 +1042,7 @@
               "simpleType" : "UnprocessedNamedQueryId",
               "variableSetterType" : "UnprocessedNamedQueryId"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1075,6 +1083,7 @@
           "simpleType" : "List<UnprocessedNamedQueryId>",
           "variableSetterType" : "java.util.Collection<UnprocessedNamedQueryId>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about provided query IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedNamedQueryIds(java.util.Collection)} or {@link #withUnprocessedNamedQueryIds(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedNamedQueryIds Information about provided query IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1176,6 +1185,7 @@
                 "simpleType" : "NamedQuery",
                 "variableSetterType" : "NamedQuery"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1216,6 +1226,7 @@
             "simpleType" : "List<NamedQuery>",
             "variableSetterType" : "java.util.Collection<NamedQuery>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the named query IDs submitted.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNamedQueries(java.util.Collection)} or {@link #withNamedQueries(java.util.Collection)} if you want to override the existing values.</p>\n@param namedQueries Information about the named query IDs submitted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1316,6 +1327,7 @@
                 "simpleType" : "UnprocessedNamedQueryId",
                 "variableSetterType" : "UnprocessedNamedQueryId"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1356,6 +1368,7 @@
             "simpleType" : "List<UnprocessedNamedQueryId>",
             "variableSetterType" : "java.util.Collection<UnprocessedNamedQueryId>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about provided query IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedNamedQueryIds(java.util.Collection)} or {@link #withUnprocessedNamedQueryIds(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedNamedQueryIds Information about provided query IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1501,6 +1514,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1541,6 +1555,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of query execution IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueryExecutionIds(java.util.Collection)} or {@link #withQueryExecutionIds(java.util.Collection)} if you want to override the existing values.</p>\n@param queryExecutionIds An array of query execution IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1642,6 +1657,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1682,6 +1698,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of query execution IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueryExecutionIds(java.util.Collection)} or {@link #withQueryExecutionIds(java.util.Collection)} if you want to override the existing values.</p>\n@param queryExecutionIds An array of query execution IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1817,6 +1834,7 @@
               "simpleType" : "QueryExecution",
               "variableSetterType" : "QueryExecution"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1857,6 +1875,7 @@
           "simpleType" : "List<QueryExecution>",
           "variableSetterType" : "java.util.Collection<QueryExecution>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about a query execution.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueryExecutions(java.util.Collection)} or {@link #withQueryExecutions(java.util.Collection)} if you want to override the existing values.</p>\n@param queryExecutions Information about a query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1956,6 +1975,7 @@
               "simpleType" : "UnprocessedQueryExecutionId",
               "variableSetterType" : "UnprocessedQueryExecutionId"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1996,6 +2016,7 @@
           "simpleType" : "List<UnprocessedQueryExecutionId>",
           "variableSetterType" : "java.util.Collection<UnprocessedQueryExecutionId>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the query executions that failed to run.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedQueryExecutionIds(java.util.Collection)} or {@link #withUnprocessedQueryExecutionIds(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedQueryExecutionIds Information about the query executions that failed to run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2097,6 +2118,7 @@
                 "simpleType" : "QueryExecution",
                 "variableSetterType" : "QueryExecution"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2137,6 +2159,7 @@
             "simpleType" : "List<QueryExecution>",
             "variableSetterType" : "java.util.Collection<QueryExecution>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about a query execution.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueryExecutions(java.util.Collection)} or {@link #withQueryExecutions(java.util.Collection)} if you want to override the existing values.</p>\n@param queryExecutions Information about a query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2237,6 +2260,7 @@
                 "simpleType" : "UnprocessedQueryExecutionId",
                 "variableSetterType" : "UnprocessedQueryExecutionId"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2277,6 +2301,7 @@
             "simpleType" : "List<UnprocessedQueryExecutionId>",
             "variableSetterType" : "java.util.Collection<UnprocessedQueryExecutionId>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the query executions that failed to run.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedQueryExecutionIds(java.util.Collection)} or {@link #withUnprocessedQueryExecutionIds(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedQueryExecutionIds Information about the query executions that failed to run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2378,6 +2403,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The catalog to which the query results belong.</p>\n@param catalogName The catalog to which the query results belong.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2440,6 +2466,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The schema name (database name) to which the query results belong.</p>\n@param schemaName The schema name (database name) to which the query results belong.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2502,6 +2529,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The table name for the query results.</p>\n@param tableName The table name for the query results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2564,6 +2592,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the column.</p>\n@param name The name of the column.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2626,6 +2655,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A column label.</p>\n@param label A column label.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2688,6 +2718,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The data type of the column.</p>\n@param type The data type of the column.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2750,6 +2781,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>\n@param precision For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2812,6 +2844,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>\n@param scale For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2874,6 +2907,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates the column's nullable status.</p>\n@param nullable Indicates the column's nullable status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ColumnNullable*/",
@@ -2936,6 +2970,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether values in the column are case-sensitive.</p>\n@param caseSensitive Indicates whether values in the column are case-sensitive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3000,6 +3035,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether values in the column are case-sensitive.</p>\n@param caseSensitive Indicates whether values in the column are case-sensitive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3063,6 +3099,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The catalog to which the query results belong.</p>\n@param catalogName The catalog to which the query results belong.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3126,6 +3163,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A column label.</p>\n@param label A column label.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3189,6 +3227,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the column.</p>\n@param name The name of the column.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3252,6 +3291,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates the column's nullable status.</p>\n@param nullable Indicates the column's nullable status.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ColumnNullable*/",
@@ -3315,6 +3355,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>\n@param precision For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3378,6 +3419,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>\n@param scale For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3441,6 +3483,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The schema name (database name) to which the query results belong.</p>\n@param schemaName The schema name (database name) to which the query results belong.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3504,6 +3547,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The table name for the query results.</p>\n@param tableName The table name for the query results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3567,6 +3611,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The data type of the column.</p>\n@param type The data type of the column.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3723,6 +3768,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The plain language name for the query.</p>\n@param name The plain language name for the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3785,6 +3831,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A brief explanation of the query.</p>\n@param description A brief explanation of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3847,6 +3894,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The database to which the query belongs.</p>\n@param database The database to which the query belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3909,6 +3957,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The text of the query itself. In other words, all query statements.</p>\n@param queryString The text of the query itself. In other words, all query statements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3971,6 +4020,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p> </important>\n@param clientRequestToken A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4035,6 +4085,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p> </important>\n@param clientRequestToken A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>CreateNamedQuery</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4098,6 +4149,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The database to which the query belongs.</p>\n@param database The database to which the query belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4161,6 +4213,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A brief explanation of the query.</p>\n@param description A brief explanation of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4224,6 +4277,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The plain language name for the query.</p>\n@param name The plain language name for the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4287,6 +4341,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The text of the query itself. In other words, all query statements.</p>\n@param queryString The text of the query itself. In other words, all query statements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4385,6 +4440,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID of the query.</p>\n@param namedQueryId The unique ID of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4449,6 +4505,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID of the query.</p>\n@param namedQueryId The unique ID of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4550,6 +4607,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the datum.</p>\n@param varCharValue The value of the datum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4614,6 +4672,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the datum.</p>\n@param varCharValue The value of the datum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4722,6 +4781,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID of the query to delete.</p>\n@param namedQueryId The unique ID of the query to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4786,6 +4846,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID of the query to delete.</p>\n@param namedQueryId The unique ID of the query to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4923,6 +4984,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>), server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is used.</p>\n@param encryptionOption Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>), server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionOption*/",
@@ -4985,6 +5047,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or ID.</p>\n@param kmsKey For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5049,6 +5112,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>), server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is used.</p>\n@param encryptionOption Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>), server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is used.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EncryptionOption*/",
@@ -5112,6 +5176,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or ID.</p>\n@param kmsKey For <code>SSE-KMS</code> and <code>CSE-KMS</code>, this is the KMS key ARN or ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5268,6 +5333,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query IDs.</p>\n@param namedQueryId The unique ID of the query. Use <a>ListNamedQueries</a> to get query IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5332,6 +5398,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query IDs.</p>\n@param namedQueryId The unique ID of the query. Use <a>ListNamedQueries</a> to get query IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5430,6 +5497,7 @@
           "simpleType" : "NamedQuery",
           "variableSetterType" : "NamedQuery"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the query.</p>\n@param namedQuery Information about the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5494,6 +5562,7 @@
             "simpleType" : "NamedQuery",
             "variableSetterType" : "NamedQuery"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the query.</p>\n@param namedQuery Information about the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5602,6 +5671,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID of the query execution.</p>\n@param queryExecutionId The unique ID of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5666,6 +5736,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID of the query execution.</p>\n@param queryExecutionId The unique ID of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5764,6 +5835,7 @@
           "simpleType" : "QueryExecution",
           "variableSetterType" : "QueryExecution"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the query execution.</p>\n@param queryExecution Information about the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5828,6 +5900,7 @@
             "simpleType" : "QueryExecution",
             "variableSetterType" : "QueryExecution"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the query execution.</p>\n@param queryExecution Information about the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5936,6 +6009,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID of the query execution.</p>\n@param queryExecutionId The unique ID of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5998,6 +6072,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token that specifies where to start pagination if a previous request was truncated.</p>\n@param nextToken The token that specifies where to start pagination if a previous request was truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6060,6 +6135,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results (rows) to return in this request.</p>\n@param maxResults The maximum number of results (rows) to return in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6124,6 +6200,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results (rows) to return in this request.</p>\n@param maxResults The maximum number of results (rows) to return in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6187,6 +6264,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token that specifies where to start pagination if a previous request was truncated.</p>\n@param nextToken The token that specifies where to start pagination if a previous request was truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6250,6 +6328,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID of the query execution.</p>\n@param queryExecutionId The unique ID of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6348,6 +6427,7 @@
           "simpleType" : "ResultSet",
           "variableSetterType" : "ResultSet"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The results of the query execution.</p>\n@param resultSet The results of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6410,6 +6490,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token to be used by the next request if this request is truncated.</p>\n@param nextToken A token to be used by the next request if this request is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6474,6 +6555,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token to be used by the next request if this request is truncated.</p>\n@param nextToken A token to be used by the next request if this request is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6537,6 +6619,7 @@
             "simpleType" : "ResultSet",
             "variableSetterType" : "ResultSet"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The results of the query execution.</p>\n@param resultSet The results of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6674,6 +6757,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param athenaErrorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6738,6 +6822,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param athenaErrorCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6843,6 +6928,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token that specifies where to start pagination if a previous request was truncated.</p>\n@param nextToken The token that specifies where to start pagination if a previous request was truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6905,6 +6991,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of queries to return in this request.</p>\n@param maxResults The maximum number of queries to return in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6969,6 +7056,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of queries to return in this request.</p>\n@param maxResults The maximum number of queries to return in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7032,6 +7120,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token that specifies where to start pagination if a previous request was truncated.</p>\n@param nextToken The token that specifies where to start pagination if a previous request was truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7167,6 +7256,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7207,6 +7297,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of unique query IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNamedQueryIds(java.util.Collection)} or {@link #withNamedQueryIds(java.util.Collection)} if you want to override the existing values.</p>\n@param namedQueryIds The list of unique query IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7269,6 +7360,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token to be used by the next request if this request is truncated.</p>\n@param nextToken A token to be used by the next request if this request is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7370,6 +7462,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7410,6 +7503,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of unique query IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNamedQueryIds(java.util.Collection)} or {@link #withNamedQueryIds(java.util.Collection)} if you want to override the existing values.</p>\n@param namedQueryIds The list of unique query IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7473,6 +7567,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token to be used by the next request if this request is truncated.</p>\n@param nextToken A token to be used by the next request if this request is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7581,6 +7676,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token that specifies where to start pagination if a previous request was truncated.</p>\n@param nextToken The token that specifies where to start pagination if a previous request was truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7643,6 +7739,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of query executions to return in this request.</p>\n@param maxResults The maximum number of query executions to return in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7707,6 +7804,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of query executions to return in this request.</p>\n@param maxResults The maximum number of query executions to return in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7770,6 +7868,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token that specifies where to start pagination if a previous request was truncated.</p>\n@param nextToken The token that specifies where to start pagination if a previous request was truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7905,6 +8004,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7945,6 +8045,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique IDs of each query execution as an array of strings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueryExecutionIds(java.util.Collection)} or {@link #withQueryExecutionIds(java.util.Collection)} if you want to override the existing values.</p>\n@param queryExecutionIds The unique IDs of each query execution as an array of strings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8007,6 +8108,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token to be used by the next request if this request is truncated.</p>\n@param nextToken A token to be used by the next request if this request is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8071,6 +8173,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token to be used by the next request if this request is truncated.</p>\n@param nextToken A token to be used by the next request if this request is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8171,6 +8274,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8211,6 +8315,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique IDs of each query execution as an array of strings.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueryExecutionIds(java.util.Collection)} or {@link #withQueryExecutionIds(java.util.Collection)} if you want to override the existing values.</p>\n@param queryExecutionIds The unique IDs of each query execution as an array of strings.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8312,6 +8417,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The plain-language name of the query.</p>\n@param name The plain-language name of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8374,6 +8480,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A brief description of the query.</p>\n@param description A brief description of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8436,6 +8543,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The database to which the query belongs.</p>\n@param database The database to which the query belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8498,6 +8606,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SQL query statements that comprise the query.</p>\n@param queryString The SQL query statements that comprise the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8560,6 +8669,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the query.</p>\n@param namedQueryId The unique identifier of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8624,6 +8734,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The database to which the query belongs.</p>\n@param database The database to which the query belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8687,6 +8798,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A brief description of the query.</p>\n@param description A brief description of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8750,6 +8862,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The plain-language name of the query.</p>\n@param name The plain-language name of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8813,6 +8926,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the query.</p>\n@param namedQueryId The unique identifier of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8876,6 +8990,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SQL query statements that comprise the query.</p>\n@param queryString The SQL query statements that comprise the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8977,6 +9092,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for each query execution.</p>\n@param queryExecutionId The unique identifier for each query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9039,6 +9155,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SQL query statements which the query execution ran.</p>\n@param query The SQL query statements which the query execution ran.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9101,6 +9218,7 @@
           "simpleType" : "ResultConfiguration",
           "variableSetterType" : "ResultConfiguration"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results.</p>\n@param resultConfiguration The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9163,6 +9281,7 @@
           "simpleType" : "QueryExecutionContext",
           "variableSetterType" : "QueryExecutionContext"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The database in which the query execution occurred.</p>\n@param queryExecutionContext The database in which the query execution occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9225,6 +9344,7 @@
           "simpleType" : "QueryExecutionStatus",
           "variableSetterType" : "QueryExecutionStatus"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>\n@param status The completion date, current state, submission time, and state change reason (if applicable) for the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9287,6 +9407,7 @@
           "simpleType" : "QueryExecutionStatistics",
           "variableSetterType" : "QueryExecutionStatistics"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The amount of data scanned during the query execution and the amount of time that it took to execute.</p>\n@param statistics The amount of data scanned during the query execution and the amount of time that it took to execute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9351,6 +9472,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SQL query statements which the query execution ran.</p>\n@param query The SQL query statements which the query execution ran.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9414,6 +9536,7 @@
             "simpleType" : "QueryExecutionContext",
             "variableSetterType" : "QueryExecutionContext"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The database in which the query execution occurred.</p>\n@param queryExecutionContext The database in which the query execution occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9477,6 +9600,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for each query execution.</p>\n@param queryExecutionId The unique identifier for each query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9540,6 +9664,7 @@
             "simpleType" : "ResultConfiguration",
             "variableSetterType" : "ResultConfiguration"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results.</p>\n@param resultConfiguration The location in Amazon S3 where query results were stored and the encryption option, if any, used for query results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9603,6 +9728,7 @@
             "simpleType" : "QueryExecutionStatistics",
             "variableSetterType" : "QueryExecutionStatistics"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The amount of data scanned during the query execution and the amount of time that it took to execute.</p>\n@param statistics The amount of data scanned during the query execution and the amount of time that it took to execute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9666,6 +9792,7 @@
             "simpleType" : "QueryExecutionStatus",
             "variableSetterType" : "QueryExecutionStatus"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The completion date, current state, submission time, and state change reason (if applicable) for the query execution.</p>\n@param status The completion date, current state, submission time, and state change reason (if applicable) for the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9767,6 +9894,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the database.</p>\n@param database The name of the database.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9831,6 +9959,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the database.</p>\n@param database The name of the database.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9986,6 +10115,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of milliseconds that the query took to execute.</p>\n@param engineExecutionTimeInMillis The number of milliseconds that the query took to execute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10048,6 +10178,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of bytes in the data that was queried.</p>\n@param dataScannedInBytes The number of bytes in the data that was queried.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10112,6 +10243,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of bytes in the data that was queried.</p>\n@param dataScannedInBytes The number of bytes in the data that was queried.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10175,6 +10307,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of milliseconds that the query took to execute.</p>\n@param engineExecutionTimeInMillis The number of milliseconds that the query took to execute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10276,6 +10409,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state of query execution. <code>SUBMITTED</code> indicates that the query is queued for execution. <code>RUNNING</code> indicates that the query is scanning data and returning results. <code>SUCCEEDED</code> indicates that the query completed without error. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that user input interrupted query execution.</p>\n@param state The state of query execution. <code>SUBMITTED</code> indicates that the query is queued for execution. <code>RUNNING</code> indicates that the query is scanning data and returning results. <code>SUCCEEDED</code> indicates that the query completed without error. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that user input interrupted query execution.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryExecutionState*/",
@@ -10338,6 +10472,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Further detail about the status of the query.</p>\n@param stateChangeReason Further detail about the status of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10400,6 +10535,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the query was submitted.</p>\n@param submissionDateTime The date and time that the query was submitted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10462,6 +10598,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the query completed.</p>\n@param completionDateTime The date and time that the query completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10526,6 +10663,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the query completed.</p>\n@param completionDateTime The date and time that the query completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10589,6 +10727,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state of query execution. <code>SUBMITTED</code> indicates that the query is queued for execution. <code>RUNNING</code> indicates that the query is scanning data and returning results. <code>SUCCEEDED</code> indicates that the query completed without error. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that user input interrupted query execution.</p>\n@param state The state of query execution. <code>SUBMITTED</code> indicates that the query is queued for execution. <code>RUNNING</code> indicates that the query is scanning data and returning results. <code>SUCCEEDED</code> indicates that the query completed without error. <code>FAILED</code> indicates that the query experienced an error and did not complete processing. <code>CANCELLED</code> indicates that user input interrupted query execution.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryExecutionState*/",
@@ -10652,6 +10791,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Further detail about the status of the query.</p>\n@param stateChangeReason Further detail about the status of the query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10715,6 +10855,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the query was submitted.</p>\n@param submissionDateTime The date and time that the query was submitted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10816,6 +10957,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The location in S3 where query results are stored.</p>\n@param outputLocation The location in S3 where query results are stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10878,6 +11020,7 @@
           "simpleType" : "EncryptionConfiguration",
           "variableSetterType" : "EncryptionConfiguration"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If query results are encrypted in S3, indicates the S3 encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key information.</p>\n@param encryptionConfiguration If query results are encrypted in S3, indicates the S3 encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10942,6 +11085,7 @@
             "simpleType" : "EncryptionConfiguration",
             "variableSetterType" : "EncryptionConfiguration"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If query results are encrypted in S3, indicates the S3 encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key information.</p>\n@param encryptionConfiguration If query results are encrypted in S3, indicates the S3 encryption option used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11005,6 +11149,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The location in S3 where query results are stored.</p>\n@param outputLocation The location in S3 where query results are stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11143,6 +11288,7 @@
               "simpleType" : "Row",
               "variableSetterType" : "Row"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11183,6 +11329,7 @@
           "simpleType" : "List<Row>",
           "variableSetterType" : "java.util.Collection<Row>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The rows in the table.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRows(java.util.Collection)} or {@link #withRows(java.util.Collection)} if you want to override the existing values.</p>\n@param rows The rows in the table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11245,6 +11392,7 @@
           "simpleType" : "ResultSetMetadata",
           "variableSetterType" : "ResultSetMetadata"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The metadata that describes the column structure and data types of a table of query results.</p>\n@param resultSetMetadata The metadata that describes the column structure and data types of a table of query results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11309,6 +11457,7 @@
             "simpleType" : "ResultSetMetadata",
             "variableSetterType" : "ResultSetMetadata"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The metadata that describes the column structure and data types of a table of query results.</p>\n@param resultSetMetadata The metadata that describes the column structure and data types of a table of query results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11409,6 +11558,7 @@
                 "simpleType" : "Row",
                 "variableSetterType" : "Row"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11449,6 +11599,7 @@
             "simpleType" : "List<Row>",
             "variableSetterType" : "java.util.Collection<Row>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The rows in the table.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRows(java.util.Collection)} or {@link #withRows(java.util.Collection)} if you want to override the existing values.</p>\n@param rows The rows in the table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11587,6 +11738,7 @@
               "simpleType" : "ColumnInfo",
               "variableSetterType" : "ColumnInfo"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11627,6 +11779,7 @@
           "simpleType" : "List<ColumnInfo>",
           "variableSetterType" : "java.util.Collection<ColumnInfo>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the columns in a query execution result.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setColumnInfo(java.util.Collection)} or {@link #withColumnInfo(java.util.Collection)} if you want to override the existing values.</p>\n@param columnInfo Information about the columns in a query execution result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11728,6 +11881,7 @@
                 "simpleType" : "ColumnInfo",
                 "variableSetterType" : "ColumnInfo"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11768,6 +11922,7 @@
             "simpleType" : "List<ColumnInfo>",
             "variableSetterType" : "java.util.Collection<ColumnInfo>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the columns in a query execution result.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setColumnInfo(java.util.Collection)} or {@link #withColumnInfo(java.util.Collection)} if you want to override the existing values.</p>\n@param columnInfo Information about the columns in a query execution result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11906,6 +12061,7 @@
               "simpleType" : "Datum",
               "variableSetterType" : "Datum"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11946,6 +12102,7 @@
           "simpleType" : "List<Datum>",
           "variableSetterType" : "java.util.Collection<Datum>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The data that populates a row in a query result table.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setData(java.util.Collection)} or {@link #withData(java.util.Collection)} if you want to override the existing values.</p>\n@param data The data that populates a row in a query result table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12047,6 +12204,7 @@
                 "simpleType" : "Datum",
                 "variableSetterType" : "Datum"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12087,6 +12245,7 @@
             "simpleType" : "List<Datum>",
             "variableSetterType" : "java.util.Collection<Datum>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The data that populates a row in a query result table.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setData(java.util.Collection)} or {@link #withData(java.util.Collection)} if you want to override the existing values.</p>\n@param data The data that populates a row in a query result table.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12195,6 +12354,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SQL query statements to be executed.</p>\n@param queryString The SQL query statements to be executed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12257,6 +12417,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p> </important>\n@param clientRequestToken A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12319,6 +12480,7 @@
           "simpleType" : "QueryExecutionContext",
           "variableSetterType" : "QueryExecutionContext"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The database within which the query executes.</p>\n@param queryExecutionContext The database within which the query executes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12381,6 +12543,7 @@
           "simpleType" : "ResultConfiguration",
           "variableSetterType" : "ResultConfiguration"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies information about where and how to save the results of the query execution.</p>\n@param resultConfiguration Specifies information about where and how to save the results of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12445,6 +12608,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p> </important>\n@param clientRequestToken A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS CLI, you must provide this token or the action will fail.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12508,6 +12672,7 @@
             "simpleType" : "QueryExecutionContext",
             "variableSetterType" : "QueryExecutionContext"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The database within which the query executes.</p>\n@param queryExecutionContext The database within which the query executes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12571,6 +12736,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SQL query statements to be executed.</p>\n@param queryString The SQL query statements to be executed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12634,6 +12800,7 @@
             "simpleType" : "ResultConfiguration",
             "variableSetterType" : "ResultConfiguration"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies information about where and how to save the results of the query execution.</p>\n@param resultConfiguration Specifies information about where and how to save the results of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12732,6 +12899,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID of the query that ran as a result of this request.</p>\n@param queryExecutionId The unique ID of the query that ran as a result of this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12796,6 +12964,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID of the query that ran as a result of this request.</p>\n@param queryExecutionId The unique ID of the query that ran as a result of this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12904,6 +13073,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID of the query execution to stop.</p>\n@param queryExecutionId The unique ID of the query execution to stop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12968,6 +13138,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID of the query execution to stop.</p>\n@param queryExecutionId The unique ID of the query execution to stop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13147,6 +13318,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param reason \n@return Returns a reference to this object so that method calls can be chained together.\n@see ThrottleReason*/",
@@ -13211,6 +13383,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param reason \n@return Returns a reference to this object so that method calls can be chained together.\n@see ThrottleReason*/",
@@ -13309,6 +13482,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the named query.</p>\n@param namedQueryId The unique identifier of the named query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13371,6 +13545,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code returned when the processing request for the named query failed, if applicable.</p>\n@param errorCode The error code returned when the processing request for the named query failed, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13433,6 +13608,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error message returned when the processing request for the named query failed, if applicable.</p>\n@param errorMessage The error message returned when the processing request for the named query failed, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13497,6 +13673,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code returned when the processing request for the named query failed, if applicable.</p>\n@param errorCode The error code returned when the processing request for the named query failed, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13560,6 +13737,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error message returned when the processing request for the named query failed, if applicable.</p>\n@param errorMessage The error message returned when the processing request for the named query failed, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13623,6 +13801,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the named query.</p>\n@param namedQueryId The unique identifier of the named query.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13724,6 +13903,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the query execution.</p>\n@param queryExecutionId The unique identifier of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13786,6 +13966,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code returned when the query execution failed to process, if applicable.</p>\n@param errorCode The error code returned when the query execution failed to process, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13848,6 +14029,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error message returned when the query execution failed to process, if applicable.</p>\n@param errorMessage The error message returned when the query execution failed to process, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13912,6 +14094,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code returned when the query execution failed to process, if applicable.</p>\n@param errorCode The error code returned when the query execution failed to process, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13975,6 +14158,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error message returned when the query execution failed to process, if applicable.</p>\n@param errorMessage The error message returned when the query execution failed to process, if applicable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14038,6 +14222,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the query execution.</p>\n@param queryExecutionId The unique identifier of the query execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",

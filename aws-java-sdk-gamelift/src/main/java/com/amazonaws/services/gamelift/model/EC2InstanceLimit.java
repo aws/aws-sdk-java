@@ -129,7 +129,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
-        this.eC2InstanceType = eC2InstanceType.toString();
+        withEC2InstanceType(eC2InstanceType);
     }
 
     /**
@@ -150,7 +150,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
      */
 
     public EC2InstanceLimit withEC2InstanceType(EC2InstanceType eC2InstanceType) {
-        setEC2InstanceType(eC2InstanceType);
+        this.eC2InstanceType = eC2InstanceType.toString();
         return this;
     }
 

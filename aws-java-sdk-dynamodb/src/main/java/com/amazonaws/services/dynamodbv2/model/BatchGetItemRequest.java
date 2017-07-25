@@ -1311,7 +1311,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -1321,7 +1321,7 @@ public class BatchGetItemRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public BatchGetItemRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 

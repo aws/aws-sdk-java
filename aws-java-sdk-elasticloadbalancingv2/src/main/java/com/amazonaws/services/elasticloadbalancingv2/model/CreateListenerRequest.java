@@ -157,7 +157,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setProtocol(ProtocolEnum protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -172,7 +172,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateListenerRequest withProtocol(ProtocolEnum protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

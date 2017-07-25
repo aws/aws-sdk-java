@@ -534,7 +534,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setDistribution(Distribution distribution) {
-        this.distribution = distribution.toString();
+        withDistribution(distribution);
     }
 
     /**
@@ -552,7 +552,7 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
      */
 
     public PutSubscriptionFilterRequest withDistribution(Distribution distribution) {
-        setDistribution(distribution);
+        this.distribution = distribution.toString();
         return this;
     }
 

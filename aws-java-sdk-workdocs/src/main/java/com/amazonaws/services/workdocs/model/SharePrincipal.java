@@ -141,7 +141,7 @@ public class SharePrincipal implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(PrincipalType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -156,7 +156,7 @@ public class SharePrincipal implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SharePrincipal withType(PrincipalType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -214,7 +214,7 @@ public class SharePrincipal implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRole(RoleType role) {
-        this.role = role.toString();
+        withRole(role);
     }
 
     /**
@@ -229,7 +229,7 @@ public class SharePrincipal implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SharePrincipal withRole(RoleType role) {
-        setRole(role);
+        this.role = role.toString();
         return this;
     }
 

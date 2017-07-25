@@ -93,7 +93,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      */
 
     public void setCode(VpcPeeringConnectionStateReasonCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -108,7 +108,7 @@ public class VpcPeeringConnectionStateReason implements Serializable, Cloneable 
      */
 
     public VpcPeeringConnectionStateReason withCode(VpcPeeringConnectionStateReasonCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

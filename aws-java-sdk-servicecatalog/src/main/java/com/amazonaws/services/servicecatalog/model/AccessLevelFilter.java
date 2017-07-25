@@ -172,7 +172,7 @@ public class AccessLevelFilter implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setKey(AccessLevelFilterKey key) {
-        this.key = key.toString();
+        withKey(key);
     }
 
     /**
@@ -204,7 +204,7 @@ public class AccessLevelFilter implements Serializable, Cloneable, StructuredPoj
      */
 
     public AccessLevelFilter withKey(AccessLevelFilterKey key) {
-        setKey(key);
+        this.key = key.toString();
         return this;
     }
 

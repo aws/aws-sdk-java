@@ -54,7 +54,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private String displayName;
     /**
      * <p>
-     * The timestamp when the stack was created.
+     * The time stamp when the stack was created.
      * </p>
      */
     private java.util.Date createdTime;
@@ -233,11 +233,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the stack was created.
+     * The time stamp when the stack was created.
      * </p>
      * 
      * @param createdTime
-     *        The timestamp when the stack was created.
+     *        The time stamp when the stack was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -246,10 +246,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the stack was created.
+     * The time stamp when the stack was created.
      * </p>
      * 
-     * @return The timestamp when the stack was created.
+     * @return The time stamp when the stack was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -258,11 +258,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the stack was created.
+     * The time stamp when the stack was created.
      * </p>
      * 
      * @param createdTime
-     *        The timestamp when the stack was created.
+     *        The time stamp when the stack was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

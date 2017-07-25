@@ -965,7 +965,7 @@ public class Sample implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(SampleType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1163,7 +1163,7 @@ public class Sample implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Sample withType(SampleType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

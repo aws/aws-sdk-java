@@ -606,7 +606,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setUserStatus(UserStatusType userStatus) {
-        this.userStatus = userStatus.toString();
+        withUserStatus(userStatus);
     }
 
     /**
@@ -674,7 +674,7 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public UserType withUserStatus(UserStatusType userStatus) {
-        setUserStatus(userStatus);
+        this.userStatus = userStatus.toString();
         return this;
     }
 

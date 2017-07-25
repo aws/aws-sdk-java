@@ -329,7 +329,7 @@ public class BundleTask implements Serializable, Cloneable {
      */
 
     public void setState(BundleTaskState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -344,7 +344,7 @@ public class BundleTask implements Serializable, Cloneable {
      */
 
     public BundleTask withState(BundleTaskState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -107,7 +107,7 @@ public class SubResourceSummary implements Serializable, Cloneable, StructuredPo
      */
 
     public void setType(SubResourceType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -122,7 +122,7 @@ public class SubResourceSummary implements Serializable, Cloneable, StructuredPo
      */
 
     public SubResourceSummary withType(SubResourceType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

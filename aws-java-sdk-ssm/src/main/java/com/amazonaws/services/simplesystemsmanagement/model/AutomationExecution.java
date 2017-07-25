@@ -344,7 +344,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      */
 
     public void setAutomationExecutionStatus(AutomationExecutionStatus automationExecutionStatus) {
-        this.automationExecutionStatus = automationExecutionStatus.toString();
+        withAutomationExecutionStatus(automationExecutionStatus);
     }
 
     /**
@@ -359,7 +359,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      */
 
     public AutomationExecution withAutomationExecutionStatus(AutomationExecutionStatus automationExecutionStatus) {
-        setAutomationExecutionStatus(automationExecutionStatus);
+        this.automationExecutionStatus = automationExecutionStatus.toString();
         return this;
     }
 

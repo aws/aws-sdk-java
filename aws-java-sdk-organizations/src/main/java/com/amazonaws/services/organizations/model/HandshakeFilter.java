@@ -125,7 +125,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setActionType(ActionType actionType) {
-        this.actionType = actionType.toString();
+        withActionType(actionType);
     }
 
     /**
@@ -145,7 +145,7 @@ public class HandshakeFilter implements Serializable, Cloneable, StructuredPojo 
      */
 
     public HandshakeFilter withActionType(ActionType actionType) {
-        setActionType(actionType);
+        this.actionType = actionType.toString();
         return this;
     }
 

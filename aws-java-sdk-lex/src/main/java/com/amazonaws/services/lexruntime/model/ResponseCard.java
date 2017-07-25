@@ -143,7 +143,7 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setContentType(ContentType contentType) {
-        this.contentType = contentType.toString();
+        withContentType(contentType);
     }
 
     /**
@@ -158,7 +158,7 @@ public class ResponseCard implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ResponseCard withContentType(ContentType contentType) {
-        setContentType(contentType);
+        this.contentType = contentType.toString();
         return this;
     }
 

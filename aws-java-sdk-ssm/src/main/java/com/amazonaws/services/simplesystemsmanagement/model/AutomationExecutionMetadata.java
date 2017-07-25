@@ -257,7 +257,7 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
      */
 
     public void setAutomationExecutionStatus(AutomationExecutionStatus automationExecutionStatus) {
-        this.automationExecutionStatus = automationExecutionStatus.toString();
+        withAutomationExecutionStatus(automationExecutionStatus);
     }
 
     /**
@@ -272,7 +272,7 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
      */
 
     public AutomationExecutionMetadata withAutomationExecutionStatus(AutomationExecutionStatus automationExecutionStatus) {
-        setAutomationExecutionStatus(automationExecutionStatus);
+        this.automationExecutionStatus = automationExecutionStatus.toString();
         return this;
     }
 

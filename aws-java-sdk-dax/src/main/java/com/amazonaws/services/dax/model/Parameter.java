@@ -184,7 +184,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setParameterType(ParameterType parameterType) {
-        this.parameterType = parameterType.toString();
+        withParameterType(parameterType);
     }
 
     /**
@@ -199,7 +199,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Parameter withParameterType(ParameterType parameterType) {
-        setParameterType(parameterType);
+        this.parameterType = parameterType.toString();
         return this;
     }
 
@@ -527,7 +527,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setIsModifiable(IsModifiable isModifiable) {
-        this.isModifiable = isModifiable.toString();
+        withIsModifiable(isModifiable);
     }
 
     /**
@@ -542,7 +542,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Parameter withIsModifiable(IsModifiable isModifiable) {
-        setIsModifiable(isModifiable);
+        this.isModifiable = isModifiable.toString();
         return this;
     }
 
@@ -612,7 +612,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setChangeType(ChangeType changeType) {
-        this.changeType = changeType.toString();
+        withChangeType(changeType);
     }
 
     /**
@@ -630,7 +630,7 @@ public class Parameter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Parameter withChangeType(ChangeType changeType) {
-        setChangeType(changeType);
+        this.changeType = changeType.toString();
         return this;
     }
 

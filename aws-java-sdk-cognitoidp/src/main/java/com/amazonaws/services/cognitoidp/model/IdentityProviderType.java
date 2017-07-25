@@ -211,7 +211,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      */
 
     public void setProviderType(IdentityProviderTypeType providerType) {
-        this.providerType = providerType.toString();
+        withProviderType(providerType);
     }
 
     /**
@@ -226,7 +226,7 @@ public class IdentityProviderType implements Serializable, Cloneable, Structured
      */
 
     public IdentityProviderType withProviderType(IdentityProviderTypeType providerType) {
-        setProviderType(providerType);
+        this.providerType = providerType.toString();
         return this;
     }
 

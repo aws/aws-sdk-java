@@ -132,7 +132,7 @@ public class OrderByElement implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setSortOrder(OrderString sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -147,7 +147,7 @@ public class OrderByElement implements Serializable, Cloneable, StructuredPojo {
      */
 
     public OrderByElement withSortOrder(OrderString sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 

@@ -156,7 +156,7 @@ public class InvalidInputException extends com.amazonaws.services.inspector.mode
      */
 
     public void setInspectorErrorCode(InvalidInputErrorCode inspectorErrorCode) {
-        this.inspectorErrorCode = inspectorErrorCode.toString();
+        withInspectorErrorCode(inspectorErrorCode);
     }
 
     /**
@@ -171,7 +171,7 @@ public class InvalidInputException extends com.amazonaws.services.inspector.mode
      */
 
     public InvalidInputException withInspectorErrorCode(InvalidInputErrorCode inspectorErrorCode) {
-        setInspectorErrorCode(inspectorErrorCode);
+        this.inspectorErrorCode = inspectorErrorCode.toString();
         return this;
     }
 

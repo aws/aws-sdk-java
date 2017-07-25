@@ -92,7 +92,7 @@ public class RecordFormat implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setRecordFormatType(RecordFormatType recordFormatType) {
-        this.recordFormatType = recordFormatType.toString();
+        withRecordFormatType(recordFormatType);
     }
 
     /**
@@ -107,7 +107,7 @@ public class RecordFormat implements Serializable, Cloneable, StructuredPojo {
      */
 
     public RecordFormat withRecordFormatType(RecordFormatType recordFormatType) {
-        setRecordFormatType(recordFormatType);
+        this.recordFormatType = recordFormatType.toString();
         return this;
     }
 

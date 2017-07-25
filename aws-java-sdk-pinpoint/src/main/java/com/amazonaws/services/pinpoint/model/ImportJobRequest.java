@@ -171,7 +171,7 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setFormat(Format format) {
-        this.format = format.toString();
+        withFormat(format);
     }
 
     /**
@@ -184,7 +184,7 @@ public class ImportJobRequest implements Serializable, Cloneable, StructuredPojo
      */
 
     public ImportJobRequest withFormat(Format format) {
-        setFormat(format);
+        this.format = format.toString();
         return this;
     }
 

@@ -135,7 +135,7 @@ public class BlockerDeclaration implements Serializable, Cloneable, StructuredPo
      */
 
     public void setType(BlockerType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -150,7 +150,7 @@ public class BlockerDeclaration implements Serializable, Cloneable, StructuredPo
      */
 
     public BlockerDeclaration withType(BlockerType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

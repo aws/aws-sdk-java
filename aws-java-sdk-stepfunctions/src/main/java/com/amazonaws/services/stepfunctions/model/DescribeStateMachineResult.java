@@ -194,7 +194,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setStatus(StateMachineStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -209,7 +209,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public DescribeStateMachineResult withStatus(StateMachineStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

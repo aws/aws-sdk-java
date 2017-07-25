@@ -91,7 +91,7 @@ public class DestinationSchema implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setRecordFormatType(RecordFormatType recordFormatType) {
-        this.recordFormatType = recordFormatType.toString();
+        withRecordFormatType(recordFormatType);
     }
 
     /**
@@ -106,7 +106,7 @@ public class DestinationSchema implements Serializable, Cloneable, StructuredPoj
      */
 
     public DestinationSchema withRecordFormatType(RecordFormatType recordFormatType) {
-        setRecordFormatType(recordFormatType);
+        this.recordFormatType = recordFormatType.toString();
         return this;
     }
 

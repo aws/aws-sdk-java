@@ -101,7 +101,7 @@ public class FailureDetails implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(FailureType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -116,7 +116,7 @@ public class FailureDetails implements Serializable, Cloneable, StructuredPojo {
      */
 
     public FailureDetails withType(FailureType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

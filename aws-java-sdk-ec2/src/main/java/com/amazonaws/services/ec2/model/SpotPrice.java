@@ -152,7 +152,7 @@ public class SpotPrice implements Serializable, Cloneable {
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -167,7 +167,7 @@ public class SpotPrice implements Serializable, Cloneable {
      */
 
     public SpotPrice withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -225,7 +225,7 @@ public class SpotPrice implements Serializable, Cloneable {
      */
 
     public void setProductDescription(RIProductDescription productDescription) {
-        this.productDescription = productDescription.toString();
+        withProductDescription(productDescription);
     }
 
     /**
@@ -240,7 +240,7 @@ public class SpotPrice implements Serializable, Cloneable {
      */
 
     public SpotPrice withProductDescription(RIProductDescription productDescription) {
-        setProductDescription(productDescription);
+        this.productDescription = productDescription.toString();
         return this;
     }
 

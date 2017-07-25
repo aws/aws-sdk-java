@@ -2135,7 +2135,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        this.scaleDownBehavior = scaleDownBehavior.toString();
+        withScaleDownBehavior(scaleDownBehavior);
     }
 
     /**
@@ -2167,7 +2167,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public RunJobFlowRequest withScaleDownBehavior(ScaleDownBehavior scaleDownBehavior) {
-        setScaleDownBehavior(scaleDownBehavior);
+        this.scaleDownBehavior = scaleDownBehavior.toString();
         return this;
     }
 
@@ -2407,7 +2407,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
-        this.repoUpgradeOnBoot = repoUpgradeOnBoot.toString();
+        withRepoUpgradeOnBoot(repoUpgradeOnBoot);
     }
 
     /**
@@ -2428,7 +2428,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public RunJobFlowRequest withRepoUpgradeOnBoot(RepoUpgradeOnBoot repoUpgradeOnBoot) {
-        setRepoUpgradeOnBoot(repoUpgradeOnBoot);
+        this.repoUpgradeOnBoot = repoUpgradeOnBoot.toString();
         return this;
     }
 

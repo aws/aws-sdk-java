@@ -199,7 +199,7 @@ public class IpRouteInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setIpRouteStatusMsg(IpRouteStatusMsg ipRouteStatusMsg) {
-        this.ipRouteStatusMsg = ipRouteStatusMsg.toString();
+        withIpRouteStatusMsg(ipRouteStatusMsg);
     }
 
     /**
@@ -214,7 +214,7 @@ public class IpRouteInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public IpRouteInfo withIpRouteStatusMsg(IpRouteStatusMsg ipRouteStatusMsg) {
-        setIpRouteStatusMsg(ipRouteStatusMsg);
+        this.ipRouteStatusMsg = ipRouteStatusMsg.toString();
         return this;
     }
 

@@ -95,7 +95,7 @@ public class DescribeActivationsFilter implements Serializable, Cloneable, Struc
      */
 
     public void setFilterKey(DescribeActivationsFilterKeys filterKey) {
-        this.filterKey = filterKey.toString();
+        withFilterKey(filterKey);
     }
 
     /**
@@ -110,7 +110,7 @@ public class DescribeActivationsFilter implements Serializable, Cloneable, Struc
      */
 
     public DescribeActivationsFilter withFilterKey(DescribeActivationsFilterKeys filterKey) {
-        setFilterKey(filterKey);
+        this.filterKey = filterKey.toString();
         return this;
     }
 

@@ -279,7 +279,7 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      */
 
     public void setLastStatus(LastResourceDataSyncStatus lastStatus) {
-        this.lastStatus = lastStatus.toString();
+        withLastStatus(lastStatus);
     }
 
     /**
@@ -294,7 +294,7 @@ public class ResourceDataSyncItem implements Serializable, Cloneable, Structured
      */
 
     public ResourceDataSyncItem withLastStatus(LastResourceDataSyncStatus lastStatus) {
-        setLastStatus(lastStatus);
+        this.lastStatus = lastStatus.toString();
         return this;
     }
 

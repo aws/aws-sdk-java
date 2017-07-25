@@ -157,7 +157,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      */
 
     public void setState(PlacementGroupState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -172,7 +172,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      */
 
     public PlacementGroup withState(PlacementGroupState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -230,7 +230,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      */
 
     public void setStrategy(PlacementStrategy strategy) {
-        this.strategy = strategy.toString();
+        withStrategy(strategy);
     }
 
     /**
@@ -245,7 +245,7 @@ public class PlacementGroup implements Serializable, Cloneable {
      */
 
     public PlacementGroup withStrategy(PlacementStrategy strategy) {
-        setStrategy(strategy);
+        this.strategy = strategy.toString();
         return this;
     }
 

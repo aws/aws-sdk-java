@@ -356,7 +356,7 @@ public class UsageRecordResult implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStatus(UsageRecordResultStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -410,7 +410,7 @@ public class UsageRecordResult implements Serializable, Cloneable, StructuredPoj
      */
 
     public UsageRecordResult withStatus(UsageRecordResultStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

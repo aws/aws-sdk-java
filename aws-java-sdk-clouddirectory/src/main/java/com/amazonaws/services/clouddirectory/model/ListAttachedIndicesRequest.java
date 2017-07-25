@@ -270,7 +270,7 @@ public class ListAttachedIndicesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        this.consistencyLevel = consistencyLevel.toString();
+        withConsistencyLevel(consistencyLevel);
     }
 
     /**
@@ -285,7 +285,7 @@ public class ListAttachedIndicesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public ListAttachedIndicesRequest withConsistencyLevel(ConsistencyLevel consistencyLevel) {
-        setConsistencyLevel(consistencyLevel);
+        this.consistencyLevel = consistencyLevel.toString();
         return this;
     }
 

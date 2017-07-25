@@ -273,7 +273,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
      */
 
     public void setCause(RequestCancelExternalWorkflowExecutionFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -303,7 +303,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes impleme
      */
 
     public RequestCancelExternalWorkflowExecutionFailedEventAttributes withCause(RequestCancelExternalWorkflowExecutionFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

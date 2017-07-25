@@ -342,7 +342,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
@@ -410,7 +410,7 @@ public class ShippingDetails implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ShippingDetails withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 

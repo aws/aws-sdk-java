@@ -191,7 +191,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      */
 
     public void setHistoryItemType(HistoryItemType historyItemType) {
-        this.historyItemType = historyItemType.toString();
+        withHistoryItemType(historyItemType);
     }
 
     /**
@@ -206,7 +206,7 @@ public class AlarmHistoryItem implements Serializable, Cloneable {
      */
 
     public AlarmHistoryItem withHistoryItemType(HistoryItemType historyItemType) {
-        setHistoryItemType(historyItemType);
+        this.historyItemType = historyItemType.toString();
         return this;
     }
 

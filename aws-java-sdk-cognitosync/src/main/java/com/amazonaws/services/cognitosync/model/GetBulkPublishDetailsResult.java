@@ -302,7 +302,7 @@ public class GetBulkPublishDetailsResult extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setBulkPublishStatus(BulkPublishStatus bulkPublishStatus) {
-        this.bulkPublishStatus = bulkPublishStatus.toString();
+        withBulkPublishStatus(bulkPublishStatus);
     }
 
     /**
@@ -339,7 +339,7 @@ public class GetBulkPublishDetailsResult extends com.amazonaws.AmazonWebServiceR
      */
 
     public GetBulkPublishDetailsResult withBulkPublishStatus(BulkPublishStatus bulkPublishStatus) {
-        setBulkPublishStatus(bulkPublishStatus);
+        this.bulkPublishStatus = bulkPublishStatus.toString();
         return this;
     }
 

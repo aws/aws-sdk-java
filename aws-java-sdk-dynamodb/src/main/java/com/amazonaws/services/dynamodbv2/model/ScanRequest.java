@@ -1126,7 +1126,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public void setSelect(Select select) {
-        this.select = select.toString();
+        withSelect(select);
     }
 
     /**
@@ -1247,7 +1247,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public ScanRequest withSelect(Select select) {
-        setSelect(select);
+        this.select = select.toString();
         return this;
     }
 
@@ -1394,7 +1394,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public void setConditionalOperator(ConditionalOperator conditionalOperator) {
-        this.conditionalOperator = conditionalOperator.toString();
+        withConditionalOperator(conditionalOperator);
     }
 
     /**
@@ -1413,7 +1413,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public ScanRequest withConditionalOperator(ConditionalOperator conditionalOperator) {
-        setConditionalOperator(conditionalOperator);
+        this.conditionalOperator = conditionalOperator.toString();
         return this;
     }
 
@@ -1564,7 +1564,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public void setReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        this.returnConsumedCapacity = returnConsumedCapacity.toString();
+        withReturnConsumedCapacity(returnConsumedCapacity);
     }
 
     /**
@@ -1574,7 +1574,7 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      */
 
     public ScanRequest withReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity) {
-        setReturnConsumedCapacity(returnConsumedCapacity);
+        this.returnConsumedCapacity = returnConsumedCapacity.toString();
         return this;
     }
 

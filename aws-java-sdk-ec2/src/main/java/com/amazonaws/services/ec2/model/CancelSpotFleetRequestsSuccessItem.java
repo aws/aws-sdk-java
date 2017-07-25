@@ -99,7 +99,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      */
 
     public void setCurrentSpotFleetRequestState(BatchState currentSpotFleetRequestState) {
-        this.currentSpotFleetRequestState = currentSpotFleetRequestState.toString();
+        withCurrentSpotFleetRequestState(currentSpotFleetRequestState);
     }
 
     /**
@@ -114,7 +114,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      */
 
     public CancelSpotFleetRequestsSuccessItem withCurrentSpotFleetRequestState(BatchState currentSpotFleetRequestState) {
-        setCurrentSpotFleetRequestState(currentSpotFleetRequestState);
+        this.currentSpotFleetRequestState = currentSpotFleetRequestState.toString();
         return this;
     }
 
@@ -172,7 +172,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      */
 
     public void setPreviousSpotFleetRequestState(BatchState previousSpotFleetRequestState) {
-        this.previousSpotFleetRequestState = previousSpotFleetRequestState.toString();
+        withPreviousSpotFleetRequestState(previousSpotFleetRequestState);
     }
 
     /**
@@ -187,7 +187,7 @@ public class CancelSpotFleetRequestsSuccessItem implements Serializable, Cloneab
      */
 
     public CancelSpotFleetRequestsSuccessItem withPreviousSpotFleetRequestState(BatchState previousSpotFleetRequestState) {
-        setPreviousSpotFleetRequestState(previousSpotFleetRequestState);
+        this.previousSpotFleetRequestState = previousSpotFleetRequestState.toString();
         return this;
     }
 

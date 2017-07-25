@@ -211,7 +211,7 @@ public class StartTimerFailedEventAttributes implements Serializable, Cloneable,
      */
 
     public void setCause(StartTimerFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -241,7 +241,7 @@ public class StartTimerFailedEventAttributes implements Serializable, Cloneable,
      */
 
     public StartTimerFailedEventAttributes withCause(StartTimerFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

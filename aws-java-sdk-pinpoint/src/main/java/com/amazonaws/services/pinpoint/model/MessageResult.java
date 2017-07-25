@@ -78,7 +78,7 @@ public class MessageResult implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setDeliveryStatus(DeliveryStatus deliveryStatus) {
-        this.deliveryStatus = deliveryStatus.toString();
+        withDeliveryStatus(deliveryStatus);
     }
 
     /**
@@ -91,7 +91,7 @@ public class MessageResult implements Serializable, Cloneable, StructuredPojo {
      */
 
     public MessageResult withDeliveryStatus(DeliveryStatus deliveryStatus) {
-        setDeliveryStatus(deliveryStatus);
+        this.deliveryStatus = deliveryStatus.toString();
         return this;
     }
 

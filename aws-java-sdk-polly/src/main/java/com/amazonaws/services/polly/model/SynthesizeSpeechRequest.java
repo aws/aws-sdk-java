@@ -233,7 +233,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setOutputFormat(OutputFormat outputFormat) {
-        this.outputFormat = outputFormat.toString();
+        withOutputFormat(outputFormat);
     }
 
     /**
@@ -250,7 +250,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public SynthesizeSpeechRequest withOutputFormat(OutputFormat outputFormat) {
-        setOutputFormat(outputFormat);
+        this.outputFormat = outputFormat.toString();
         return this;
     }
 
@@ -539,7 +539,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setTextType(TextType textType) {
-        this.textType = textType.toString();
+        withTextType(textType);
     }
 
     /**
@@ -556,7 +556,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public SynthesizeSpeechRequest withTextType(TextType textType) {
-        setTextType(textType);
+        this.textType = textType.toString();
         return this;
     }
 
@@ -622,7 +622,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setVoiceId(VoiceId voiceId) {
-        this.voiceId = voiceId.toString();
+        withVoiceId(voiceId);
     }
 
     /**
@@ -639,7 +639,7 @@ public class SynthesizeSpeechRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public SynthesizeSpeechRequest withVoiceId(VoiceId voiceId) {
-        setVoiceId(voiceId);
+        this.voiceId = voiceId.toString();
         return this;
     }
 

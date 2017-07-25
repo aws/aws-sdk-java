@@ -235,7 +235,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
      */
 
     public void setAddressFamily(AddressFamily addressFamily) {
-        this.addressFamily = addressFamily.toString();
+        withAddressFamily(addressFamily);
     }
 
     /**
@@ -245,7 +245,7 @@ public class NewPrivateVirtualInterface implements Serializable, Cloneable, Stru
      */
 
     public NewPrivateVirtualInterface withAddressFamily(AddressFamily addressFamily) {
-        setAddressFamily(addressFamily);
+        this.addressFamily = addressFamily.toString();
         return this;
     }
 

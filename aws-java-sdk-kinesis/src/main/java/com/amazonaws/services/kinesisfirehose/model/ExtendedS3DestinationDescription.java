@@ -331,7 +331,7 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      */
 
     public void setCompressionFormat(CompressionFormat compressionFormat) {
-        this.compressionFormat = compressionFormat.toString();
+        withCompressionFormat(compressionFormat);
     }
 
     /**
@@ -346,7 +346,7 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      */
 
     public ExtendedS3DestinationDescription withCompressionFormat(CompressionFormat compressionFormat) {
-        setCompressionFormat(compressionFormat);
+        this.compressionFormat = compressionFormat.toString();
         return this;
     }
 
@@ -524,7 +524,7 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      */
 
     public void setS3BackupMode(S3BackupMode s3BackupMode) {
-        this.s3BackupMode = s3BackupMode.toString();
+        withS3BackupMode(s3BackupMode);
     }
 
     /**
@@ -539,7 +539,7 @@ public class ExtendedS3DestinationDescription implements Serializable, Cloneable
      */
 
     public ExtendedS3DestinationDescription withS3BackupMode(S3BackupMode s3BackupMode) {
-        setS3BackupMode(s3BackupMode);
+        this.s3BackupMode = s3BackupMode.toString();
         return this;
     }
 

@@ -1031,7 +1031,7 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setUnit(StandardUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -1048,7 +1048,7 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public GetMetricStatisticsRequest withUnit(StandardUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 

@@ -952,7 +952,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setDefaultChildPolicy(ChildPolicy defaultChildPolicy) {
-        this.defaultChildPolicy = defaultChildPolicy.toString();
+        withDefaultChildPolicy(defaultChildPolicy);
     }
 
     /**
@@ -1016,7 +1016,7 @@ public class RegisterWorkflowTypeRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public RegisterWorkflowTypeRequest withDefaultChildPolicy(ChildPolicy defaultChildPolicy) {
-        setDefaultChildPolicy(defaultChildPolicy);
+        this.defaultChildPolicy = defaultChildPolicy.toString();
         return this;
     }
 

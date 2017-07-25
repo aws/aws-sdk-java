@@ -371,7 +371,7 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setResourceState(ResourceStateType resourceState) {
-        this.resourceState = resourceState.toString();
+        withResourceState(resourceState);
     }
 
     /**
@@ -386,7 +386,7 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
      */
 
     public DocumentMetadata withResourceState(ResourceStateType resourceState) {
-        setResourceState(resourceState);
+        this.resourceState = resourceState.toString();
         return this;
     }
 

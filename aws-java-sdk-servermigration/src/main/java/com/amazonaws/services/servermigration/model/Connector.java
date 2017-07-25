@@ -133,7 +133,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(ConnectorStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -143,7 +143,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Connector withStatus(ConnectorStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -283,7 +283,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setVmManagerType(VmManagerType vmManagerType) {
-        this.vmManagerType = vmManagerType.toString();
+        withVmManagerType(vmManagerType);
     }
 
     /**
@@ -293,7 +293,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Connector withVmManagerType(VmManagerType vmManagerType) {
-        setVmManagerType(vmManagerType);
+        this.vmManagerType = vmManagerType.toString();
         return this;
     }
 

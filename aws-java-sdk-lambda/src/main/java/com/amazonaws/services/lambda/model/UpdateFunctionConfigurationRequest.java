@@ -677,7 +677,7 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      */
 
     public void setRuntime(Runtime runtime) {
-        this.runtime = runtime.toString();
+        withRuntime(runtime);
     }
 
     /**
@@ -720,7 +720,7 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      */
 
     public UpdateFunctionConfigurationRequest withRuntime(Runtime runtime) {
-        setRuntime(runtime);
+        this.runtime = runtime.toString();
         return this;
     }
 

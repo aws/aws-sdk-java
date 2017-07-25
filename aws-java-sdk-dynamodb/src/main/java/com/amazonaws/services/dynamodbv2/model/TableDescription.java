@@ -1243,7 +1243,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setTableStatus(TableStatus tableStatus) {
-        this.tableStatus = tableStatus.toString();
+        withTableStatus(tableStatus);
     }
 
     /**
@@ -1301,7 +1301,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      */
 
     public TableDescription withTableStatus(TableStatus tableStatus) {
-        setTableStatus(tableStatus);
+        this.tableStatus = tableStatus.toString();
         return this;
     }
 

@@ -495,7 +495,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setStatus(InstanceStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -573,7 +573,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      */
 
     public InstanceSummary withStatus(InstanceStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -836,7 +836,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -874,7 +874,7 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      */
 
     public InstanceSummary withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 

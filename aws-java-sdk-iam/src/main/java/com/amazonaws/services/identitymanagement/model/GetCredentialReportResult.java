@@ -167,7 +167,7 @@ public class GetCredentialReportResult extends com.amazonaws.AmazonWebServiceRes
      */
 
     public void setReportFormat(ReportFormatType reportFormat) {
-        this.reportFormat = reportFormat.toString();
+        withReportFormat(reportFormat);
     }
 
     /**
@@ -182,7 +182,7 @@ public class GetCredentialReportResult extends com.amazonaws.AmazonWebServiceRes
      */
 
     public GetCredentialReportResult withReportFormat(ReportFormatType reportFormat) {
-        setReportFormat(reportFormat);
+        this.reportFormat = reportFormat.toString();
         return this;
     }
 

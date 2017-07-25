@@ -125,7 +125,7 @@ public class NewBGPPeer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAddressFamily(AddressFamily addressFamily) {
-        this.addressFamily = addressFamily.toString();
+        withAddressFamily(addressFamily);
     }
 
     /**
@@ -135,7 +135,7 @@ public class NewBGPPeer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public NewBGPPeer withAddressFamily(AddressFamily addressFamily) {
-        setAddressFamily(addressFamily);
+        this.addressFamily = addressFamily.toString();
         return this;
     }
 

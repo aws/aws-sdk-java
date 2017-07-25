@@ -320,7 +320,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      */
 
     public void setEndpointStatus(RealtimeEndpointStatus endpointStatus) {
-        this.endpointStatus = endpointStatus.toString();
+        withEndpointStatus(endpointStatus);
     }
 
     /**
@@ -346,7 +346,7 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      */
 
     public RealtimeEndpointInfo withEndpointStatus(RealtimeEndpointStatus endpointStatus) {
-        setEndpointStatus(endpointStatus);
+        this.endpointStatus = endpointStatus.toString();
         return this;
     }
 

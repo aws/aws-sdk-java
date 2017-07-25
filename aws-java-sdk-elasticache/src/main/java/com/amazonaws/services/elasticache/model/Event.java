@@ -153,7 +153,7 @@ public class Event implements Serializable, Cloneable {
      */
 
     public void setSourceType(SourceType sourceType) {
-        this.sourceType = sourceType.toString();
+        withSourceType(sourceType);
     }
 
     /**
@@ -168,7 +168,7 @@ public class Event implements Serializable, Cloneable {
      */
 
     public Event withSourceType(SourceType sourceType) {
-        setSourceType(sourceType);
+        this.sourceType = sourceType.toString();
         return this;
     }
 

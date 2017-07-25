@@ -350,7 +350,7 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
      */
 
     public void setStatus(PipelineExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -410,7 +410,7 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
      */
 
     public PipelineExecutionSummary withStatus(PipelineExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

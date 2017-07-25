@@ -147,7 +147,7 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -162,7 +162,7 @@ public class WorkspaceConnectionStatus implements Serializable, Cloneable, Struc
      */
 
     public WorkspaceConnectionStatus withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

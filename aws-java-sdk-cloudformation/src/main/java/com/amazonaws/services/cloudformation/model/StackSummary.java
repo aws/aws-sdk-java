@@ -376,7 +376,7 @@ public class StackSummary implements Serializable, Cloneable {
      */
 
     public void setStackStatus(StackStatus stackStatus) {
-        this.stackStatus = stackStatus.toString();
+        withStackStatus(stackStatus);
     }
 
     /**
@@ -391,7 +391,7 @@ public class StackSummary implements Serializable, Cloneable {
      */
 
     public StackSummary withStackStatus(StackStatus stackStatus) {
-        setStackStatus(stackStatus);
+        this.stackStatus = stackStatus.toString();
         return this;
     }
 

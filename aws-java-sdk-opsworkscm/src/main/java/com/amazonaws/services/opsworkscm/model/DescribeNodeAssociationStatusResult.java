@@ -261,7 +261,7 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
      */
 
     public void setNodeAssociationStatus(NodeAssociationStatus nodeAssociationStatus) {
-        this.nodeAssociationStatus = nodeAssociationStatus.toString();
+        withNodeAssociationStatus(nodeAssociationStatus);
     }
 
     /**
@@ -315,7 +315,7 @@ public class DescribeNodeAssociationStatusResult extends com.amazonaws.AmazonWeb
      */
 
     public DescribeNodeAssociationStatusResult withNodeAssociationStatus(NodeAssociationStatus nodeAssociationStatus) {
-        setNodeAssociationStatus(nodeAssociationStatus);
+        this.nodeAssociationStatus = nodeAssociationStatus.toString();
         return this;
     }
 

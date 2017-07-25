@@ -109,7 +109,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      */
 
     public void setCode(EventCode code) {
-        this.code = code.toString();
+        withCode(code);
     }
 
     /**
@@ -124,7 +124,7 @@ public class InstanceStatusEvent implements Serializable, Cloneable {
      */
 
     public InstanceStatusEvent withCode(EventCode code) {
-        setCode(code);
+        this.code = code.toString();
         return this;
     }
 

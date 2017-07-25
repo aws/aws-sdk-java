@@ -416,7 +416,7 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
-        this.cacheClusterStatus = cacheClusterStatus.toString();
+        withCacheClusterStatus(cacheClusterStatus);
     }
 
     /**
@@ -431,7 +431,7 @@ public class Stage implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Stage withCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
-        setCacheClusterStatus(cacheClusterStatus);
+        this.cacheClusterStatus = cacheClusterStatus.toString();
         return this;
     }
 

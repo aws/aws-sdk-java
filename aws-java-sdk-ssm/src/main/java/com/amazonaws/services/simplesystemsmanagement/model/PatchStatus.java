@@ -101,7 +101,7 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setDeploymentStatus(PatchDeploymentStatus deploymentStatus) {
-        this.deploymentStatus = deploymentStatus.toString();
+        withDeploymentStatus(deploymentStatus);
     }
 
     /**
@@ -116,7 +116,7 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PatchStatus withDeploymentStatus(PatchDeploymentStatus deploymentStatus) {
-        setDeploymentStatus(deploymentStatus);
+        this.deploymentStatus = deploymentStatus.toString();
         return this;
     }
 
@@ -174,7 +174,7 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setComplianceLevel(PatchComplianceLevel complianceLevel) {
-        this.complianceLevel = complianceLevel.toString();
+        withComplianceLevel(complianceLevel);
     }
 
     /**
@@ -189,7 +189,7 @@ public class PatchStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PatchStatus withComplianceLevel(PatchComplianceLevel complianceLevel) {
-        setComplianceLevel(complianceLevel);
+        this.complianceLevel = complianceLevel.toString();
         return this;
     }
 

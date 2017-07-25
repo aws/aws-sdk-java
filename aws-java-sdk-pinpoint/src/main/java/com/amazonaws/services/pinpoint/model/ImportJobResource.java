@@ -171,7 +171,7 @@ public class ImportJobResource implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setFormat(Format format) {
-        this.format = format.toString();
+        withFormat(format);
     }
 
     /**
@@ -184,7 +184,7 @@ public class ImportJobResource implements Serializable, Cloneable, StructuredPoj
      */
 
     public ImportJobResource withFormat(Format format) {
-        setFormat(format);
+        this.format = format.toString();
         return this;
     }
 

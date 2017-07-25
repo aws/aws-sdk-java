@@ -206,7 +206,7 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setTransitionType(StageTransitionType transitionType) {
-        this.transitionType = transitionType.toString();
+        withTransitionType(transitionType);
     }
 
     /**
@@ -225,7 +225,7 @@ public class DisableStageTransitionRequest extends com.amazonaws.AmazonWebServic
      */
 
     public DisableStageTransitionRequest withTransitionType(StageTransitionType transitionType) {
-        setTransitionType(transitionType);
+        this.transitionType = transitionType.toString();
         return this;
     }
 

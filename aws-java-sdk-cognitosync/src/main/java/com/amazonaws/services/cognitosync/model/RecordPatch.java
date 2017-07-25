@@ -83,7 +83,7 @@ public class RecordPatch implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOp(Operation op) {
-        this.op = op.toString();
+        withOp(op);
     }
 
     /**
@@ -96,7 +96,7 @@ public class RecordPatch implements Serializable, Cloneable, StructuredPojo {
      */
 
     public RecordPatch withOp(Operation op) {
-        setOp(op);
+        this.op = op.toString();
         return this;
     }
 

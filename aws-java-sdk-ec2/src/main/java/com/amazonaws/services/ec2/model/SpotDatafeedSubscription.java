@@ -271,7 +271,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      */
 
     public void setState(DatafeedSubscriptionState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -286,7 +286,7 @@ public class SpotDatafeedSubscription implements Serializable, Cloneable {
      */
 
     public SpotDatafeedSubscription withState(DatafeedSubscriptionState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

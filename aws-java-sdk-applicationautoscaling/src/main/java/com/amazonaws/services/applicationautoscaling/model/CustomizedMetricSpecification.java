@@ -264,7 +264,7 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
      */
 
     public void setStatistic(MetricStatistic statistic) {
-        this.statistic = statistic.toString();
+        withStatistic(statistic);
     }
 
     /**
@@ -279,7 +279,7 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
      */
 
     public CustomizedMetricSpecification withStatistic(MetricStatistic statistic) {
-        setStatistic(statistic);
+        this.statistic = statistic.toString();
         return this;
     }
 

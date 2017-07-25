@@ -109,7 +109,7 @@ public class FacetAttributeDefinition implements Serializable, Cloneable, Struct
      */
 
     public void setType(FacetAttributeType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -124,7 +124,7 @@ public class FacetAttributeDefinition implements Serializable, Cloneable, Struct
      */
 
     public FacetAttributeDefinition withType(FacetAttributeType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

@@ -96,7 +96,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setDeploymentType(DeploymentType deploymentType) {
-        this.deploymentType = deploymentType.toString();
+        withDeploymentType(deploymentType);
     }
 
     /**
@@ -111,7 +111,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      */
 
     public DeploymentStyle withDeploymentType(DeploymentType deploymentType) {
-        setDeploymentType(deploymentType);
+        this.deploymentType = deploymentType.toString();
         return this;
     }
 
@@ -169,7 +169,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setDeploymentOption(DeploymentOption deploymentOption) {
-        this.deploymentOption = deploymentOption.toString();
+        withDeploymentOption(deploymentOption);
     }
 
     /**
@@ -184,7 +184,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
      */
 
     public DeploymentStyle withDeploymentOption(DeploymentOption deploymentOption) {
-        setDeploymentOption(deploymentOption);
+        this.deploymentOption = deploymentOption.toString();
         return this;
     }
 

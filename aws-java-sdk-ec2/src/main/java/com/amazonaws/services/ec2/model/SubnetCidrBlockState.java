@@ -93,7 +93,7 @@ public class SubnetCidrBlockState implements Serializable, Cloneable {
      */
 
     public void setState(SubnetCidrBlockStateCode state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -108,7 +108,7 @@ public class SubnetCidrBlockState implements Serializable, Cloneable {
      */
 
     public SubnetCidrBlockState withState(SubnetCidrBlockStateCode state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

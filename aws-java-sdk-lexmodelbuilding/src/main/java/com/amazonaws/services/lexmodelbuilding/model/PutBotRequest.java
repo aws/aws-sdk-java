@@ -893,7 +893,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public void setProcessBehavior(ProcessBehavior processBehavior) {
-        this.processBehavior = processBehavior.toString();
+        withProcessBehavior(processBehavior);
     }
 
     /**
@@ -916,7 +916,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public PutBotRequest withProcessBehavior(ProcessBehavior processBehavior) {
-        setProcessBehavior(processBehavior);
+        this.processBehavior = processBehavior.toString();
         return this;
     }
 
@@ -1002,7 +1002,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public void setLocale(Locale locale) {
-        this.locale = locale.toString();
+        withLocale(locale);
     }
 
     /**
@@ -1024,7 +1024,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public PutBotRequest withLocale(Locale locale) {
-        setLocale(locale);
+        this.locale = locale.toString();
         return this;
     }
 

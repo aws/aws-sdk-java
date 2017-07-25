@@ -308,7 +308,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setInclude(UserFilterType include) {
-        this.include = include.toString();
+        withInclude(include);
     }
 
     /**
@@ -323,7 +323,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public DescribeUsersRequest withInclude(UserFilterType include) {
-        setInclude(include);
+        this.include = include.toString();
         return this;
     }
 
@@ -381,7 +381,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setOrder(OrderType order) {
-        this.order = order.toString();
+        withOrder(order);
     }
 
     /**
@@ -396,7 +396,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public DescribeUsersRequest withOrder(OrderType order) {
-        setOrder(order);
+        this.order = order.toString();
         return this;
     }
 
@@ -454,7 +454,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setSort(UserSortType sort) {
-        this.sort = sort.toString();
+        withSort(sort);
     }
 
     /**
@@ -469,7 +469,7 @@ public class DescribeUsersRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public DescribeUsersRequest withSort(UserSortType sort) {
-        setSort(sort);
+        this.sort = sort.toString();
         return this;
     }
 

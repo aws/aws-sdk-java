@@ -96,7 +96,7 @@ public class IPSetUpdate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -111,7 +111,7 @@ public class IPSetUpdate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public IPSetUpdate withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

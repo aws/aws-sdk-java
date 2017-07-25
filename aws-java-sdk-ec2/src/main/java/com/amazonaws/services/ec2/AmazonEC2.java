@@ -1137,6 +1137,7 @@ public interface AmazonEC2 {
      * </p>
      * 
      * @param createNetworkInterfacePermissionRequest
+     *        Contains the parameters for CreateNetworkInterfacePermission.
      * @return Result of the CreateNetworkInterfacePermission operation returned by the service.
      * @sample AmazonEC2.CreateNetworkInterfacePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterfacePermission"
@@ -1792,6 +1793,7 @@ public interface AmazonEC2 {
      * </p>
      * 
      * @param deleteNetworkInterfacePermissionRequest
+     *        Contains the parameters for DeleteNetworkInterfacePermission.
      * @return Result of the DeleteNetworkInterfacePermission operation returned by the service.
      * @sample AmazonEC2.DeleteNetworkInterfacePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterfacePermission"
@@ -2859,6 +2861,7 @@ public interface AmazonEC2 {
      * </p>
      * 
      * @param describeNetworkInterfacePermissionsRequest
+     *        Contains the parameters for DescribeNetworkInterfacePermissions.
      * @return Result of the DescribeNetworkInterfacePermissions operation returned by the service.
      * @sample AmazonEC2.DescribeNetworkInterfacePermissions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfacePermissions"

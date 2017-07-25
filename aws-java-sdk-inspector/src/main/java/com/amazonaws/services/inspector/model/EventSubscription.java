@@ -95,7 +95,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setEvent(InspectorEvent event) {
-        this.event = event.toString();
+        withEvent(event);
     }
 
     /**
@@ -110,7 +110,7 @@ public class EventSubscription implements Serializable, Cloneable, StructuredPoj
      */
 
     public EventSubscription withEvent(InspectorEvent event) {
-        setEvent(event);
+        this.event = event.toString();
         return this;
     }
 

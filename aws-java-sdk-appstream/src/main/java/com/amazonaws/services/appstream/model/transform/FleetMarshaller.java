@@ -56,6 +56,8 @@ public class FleetMarshaller {
             .marshallLocationName("FleetErrors").build();
     private static final MarshallingInfo<Boolean> ENABLEDEFAULTINTERNETACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableDefaultInternetAccess").build();
+    private static final MarshallingInfo<StructuredPojo> DOMAINJOININFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainJoinInfo").build();
 
     private static final FleetMarshaller instance = new FleetMarshaller();
 
@@ -87,6 +89,7 @@ public class FleetMarshaller {
             protocolMarshaller.marshall(fleet.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(fleet.getFleetErrors(), FLEETERRORS_BINDING);
             protocolMarshaller.marshall(fleet.getEnableDefaultInternetAccess(), ENABLEDEFAULTINTERNETACCESS_BINDING);
+            protocolMarshaller.marshall(fleet.getDomainJoinInfo(), DOMAINJOININFO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

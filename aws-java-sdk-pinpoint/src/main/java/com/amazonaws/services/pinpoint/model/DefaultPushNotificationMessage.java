@@ -128,7 +128,7 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
      */
 
     public void setAction(Action action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -149,7 +149,7 @@ public class DefaultPushNotificationMessage implements Serializable, Cloneable, 
      */
 
     public DefaultPushNotificationMessage withAction(Action action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

@@ -244,7 +244,7 @@ public class UpdateSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -261,7 +261,7 @@ public class UpdateSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public UpdateSSHPublicKeyRequest withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

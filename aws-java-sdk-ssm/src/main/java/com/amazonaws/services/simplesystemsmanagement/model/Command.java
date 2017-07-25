@@ -694,7 +694,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(CommandStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -709,7 +709,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Command withStatus(CommandStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

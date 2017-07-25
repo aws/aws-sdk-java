@@ -150,7 +150,7 @@ public class Job implements Serializable, Cloneable {
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -160,7 +160,7 @@ public class Job implements Serializable, Cloneable {
      */
 
     public Job withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 

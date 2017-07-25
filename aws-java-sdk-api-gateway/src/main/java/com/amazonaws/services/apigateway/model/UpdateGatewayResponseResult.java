@@ -336,7 +336,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setResponseType(GatewayResponseType responseType) {
-        this.responseType = responseType.toString();
+        withResponseType(responseType);
     }
 
     /**
@@ -395,7 +395,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      */
 
     public UpdateGatewayResponseResult withResponseType(GatewayResponseType responseType) {
-        setResponseType(responseType);
+        this.responseType = responseType.toString();
         return this;
     }
 

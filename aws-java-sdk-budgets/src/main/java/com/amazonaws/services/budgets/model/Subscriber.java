@@ -62,7 +62,7 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setSubscriptionType(SubscriptionType subscriptionType) {
-        this.subscriptionType = subscriptionType.toString();
+        withSubscriptionType(subscriptionType);
     }
 
     /**
@@ -72,7 +72,7 @@ public class Subscriber implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Subscriber withSubscriptionType(SubscriptionType subscriptionType) {
-        setSubscriptionType(subscriptionType);
+        this.subscriptionType = subscriptionType.toString();
         return this;
     }
 

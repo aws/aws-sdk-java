@@ -227,7 +227,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setType(InventoryQueryOperatorType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -243,7 +243,7 @@ public class InventoryFilter implements Serializable, Cloneable, StructuredPojo 
      */
 
     public InventoryFilter withType(InventoryQueryOperatorType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

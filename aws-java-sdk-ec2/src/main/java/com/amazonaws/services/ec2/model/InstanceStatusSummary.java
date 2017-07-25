@@ -166,7 +166,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      */
 
     public void setStatus(SummaryStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -181,7 +181,7 @@ public class InstanceStatusSummary implements Serializable, Cloneable {
      */
 
     public InstanceStatusSummary withStatus(SummaryStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

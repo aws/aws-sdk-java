@@ -112,7 +112,7 @@ public class GetHostReservationPurchasePreviewResult extends com.amazonaws.Amazo
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -129,7 +129,7 @@ public class GetHostReservationPurchasePreviewResult extends com.amazonaws.Amazo
      */
 
     public GetHostReservationPurchasePreviewResult withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 

@@ -132,7 +132,7 @@ public class GetPatchBaselineForPatchGroupRequest extends com.amazonaws.AmazonWe
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -147,7 +147,7 @@ public class GetPatchBaselineForPatchGroupRequest extends com.amazonaws.AmazonWe
      */
 
     public GetPatchBaselineForPatchGroupRequest withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 

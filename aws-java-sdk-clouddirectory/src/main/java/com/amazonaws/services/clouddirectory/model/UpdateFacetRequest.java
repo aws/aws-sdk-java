@@ -270,7 +270,7 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setObjectType(ObjectType objectType) {
-        this.objectType = objectType.toString();
+        withObjectType(objectType);
     }
 
     /**
@@ -286,7 +286,7 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public UpdateFacetRequest withObjectType(ObjectType objectType) {
-        setObjectType(objectType);
+        this.objectType = objectType.toString();
         return this;
     }
 

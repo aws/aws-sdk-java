@@ -649,7 +649,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
-        this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
+        withMaximumExecutionFrequency(maximumExecutionFrequency);
     }
 
     /**
@@ -703,7 +703,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ConfigRule withMaximumExecutionFrequency(MaximumExecutionFrequency maximumExecutionFrequency) {
-        setMaximumExecutionFrequency(maximumExecutionFrequency);
+        this.maximumExecutionFrequency = maximumExecutionFrequency.toString();
         return this;
     }
 
@@ -870,7 +870,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setConfigRuleState(ConfigRuleState configRuleState) {
-        this.configRuleState = configRuleState.toString();
+        withConfigRuleState(configRuleState);
     }
 
     /**
@@ -912,7 +912,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ConfigRule withConfigRuleState(ConfigRuleState configRuleState) {
-        setConfigRuleState(configRuleState);
+        this.configRuleState = configRuleState.toString();
         return this;
     }
 

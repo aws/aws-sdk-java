@@ -268,7 +268,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public void setInvocationType(InvocationType invocationType) {
-        this.invocationType = invocationType.toString();
+        withInvocationType(invocationType);
     }
 
     /**
@@ -294,7 +294,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public InvokeRequest withInvocationType(InvocationType invocationType) {
-        setInvocationType(invocationType);
+        this.invocationType = invocationType.toString();
         return this;
     }
 
@@ -376,7 +376,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public void setLogType(LogType logType) {
-        this.logType = logType.toString();
+        withLogType(logType);
     }
 
     /**
@@ -397,7 +397,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      */
 
     public InvokeRequest withLogType(LogType logType) {
-        setLogType(logType);
+        this.logType = logType.toString();
         return this;
     }
 

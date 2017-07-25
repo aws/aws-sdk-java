@@ -130,7 +130,7 @@ public class GetLoggingOptionsResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setLogLevel(LogLevel logLevel) {
-        this.logLevel = logLevel.toString();
+        withLogLevel(logLevel);
     }
 
     /**
@@ -145,7 +145,7 @@ public class GetLoggingOptionsResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public GetLoggingOptionsResult withLogLevel(LogLevel logLevel) {
-        setLogLevel(logLevel);
+        this.logLevel = logLevel.toString();
         return this;
     }
 

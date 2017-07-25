@@ -436,7 +436,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStatus(PipelineExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -496,7 +496,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      */
 
     public PipelineExecution withStatus(PipelineExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

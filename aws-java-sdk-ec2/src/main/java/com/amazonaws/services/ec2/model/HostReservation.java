@@ -210,7 +210,7 @@ public class HostReservation implements Serializable, Cloneable {
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -227,7 +227,7 @@ public class HostReservation implements Serializable, Cloneable {
      */
 
     public HostReservation withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 
@@ -613,7 +613,7 @@ public class HostReservation implements Serializable, Cloneable {
      */
 
     public void setPaymentOption(PaymentOption paymentOption) {
-        this.paymentOption = paymentOption.toString();
+        withPaymentOption(paymentOption);
     }
 
     /**
@@ -628,7 +628,7 @@ public class HostReservation implements Serializable, Cloneable {
      */
 
     public HostReservation withPaymentOption(PaymentOption paymentOption) {
-        setPaymentOption(paymentOption);
+        this.paymentOption = paymentOption.toString();
         return this;
     }
 
@@ -726,7 +726,7 @@ public class HostReservation implements Serializable, Cloneable {
      */
 
     public void setState(ReservationState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -741,7 +741,7 @@ public class HostReservation implements Serializable, Cloneable {
      */
 
     public HostReservation withState(ReservationState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

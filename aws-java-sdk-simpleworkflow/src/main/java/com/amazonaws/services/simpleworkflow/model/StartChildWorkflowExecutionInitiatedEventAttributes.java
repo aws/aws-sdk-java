@@ -782,7 +782,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -842,7 +842,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes implements Seri
      */
 
     public StartChildWorkflowExecutionInitiatedEventAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 

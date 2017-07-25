@@ -1243,7 +1243,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -1321,7 +1321,7 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      */
 
     public StartWorkflowExecutionRequest withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 

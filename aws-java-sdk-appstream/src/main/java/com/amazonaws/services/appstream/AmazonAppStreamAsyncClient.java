@@ -279,6 +279,39 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDirectoryConfigResult> createDirectoryConfigAsync(CreateDirectoryConfigRequest request) {
+
+        return createDirectoryConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDirectoryConfigResult> createDirectoryConfigAsync(final CreateDirectoryConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDirectoryConfigRequest, CreateDirectoryConfigResult> asyncHandler) {
+        final CreateDirectoryConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDirectoryConfigResult>() {
+            @Override
+            public CreateDirectoryConfigResult call() throws Exception {
+                CreateDirectoryConfigResult result = null;
+
+                try {
+                    result = executeCreateDirectoryConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFleetResult> createFleetAsync(CreateFleetRequest request) {
 
         return createFleetAsync(request, null);
@@ -378,6 +411,39 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDirectoryConfigResult> deleteDirectoryConfigAsync(DeleteDirectoryConfigRequest request) {
+
+        return deleteDirectoryConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDirectoryConfigResult> deleteDirectoryConfigAsync(final DeleteDirectoryConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDirectoryConfigRequest, DeleteDirectoryConfigResult> asyncHandler) {
+        final DeleteDirectoryConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDirectoryConfigResult>() {
+            @Override
+            public DeleteDirectoryConfigResult call() throws Exception {
+                DeleteDirectoryConfigResult result = null;
+
+                try {
+                    result = executeDeleteDirectoryConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest request) {
 
         return deleteFleetAsync(request, null);
@@ -428,6 +494,39 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
 
                 try {
                     result = executeDeleteStack(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectoryConfigsResult> describeDirectoryConfigsAsync(DescribeDirectoryConfigsRequest request) {
+
+        return describeDirectoryConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDirectoryConfigsResult> describeDirectoryConfigsAsync(final DescribeDirectoryConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDirectoryConfigsRequest, DescribeDirectoryConfigsResult> asyncHandler) {
+        final DescribeDirectoryConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDirectoryConfigsResult>() {
+            @Override
+            public DescribeDirectoryConfigsResult call() throws Exception {
+                DescribeDirectoryConfigsResult result = null;
+
+                try {
+                    result = executeDescribeDirectoryConfigs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -758,6 +857,39 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
 
                 try {
                     result = executeStopFleet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectoryConfigResult> updateDirectoryConfigAsync(UpdateDirectoryConfigRequest request) {
+
+        return updateDirectoryConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectoryConfigResult> updateDirectoryConfigAsync(final UpdateDirectoryConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDirectoryConfigRequest, UpdateDirectoryConfigResult> asyncHandler) {
+        final UpdateDirectoryConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDirectoryConfigResult>() {
+            @Override
+            public UpdateDirectoryConfigResult call() throws Exception {
+                UpdateDirectoryConfigResult result = null;
+
+                try {
+                    result = executeUpdateDirectoryConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

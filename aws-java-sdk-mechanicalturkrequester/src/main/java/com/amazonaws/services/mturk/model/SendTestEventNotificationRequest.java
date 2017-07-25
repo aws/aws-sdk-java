@@ -157,7 +157,7 @@ public class SendTestEventNotificationRequest extends com.amazonaws.AmazonWebSer
      */
 
     public void setTestEventType(EventType testEventType) {
-        this.testEventType = testEventType.toString();
+        withTestEventType(testEventType);
     }
 
     /**
@@ -176,7 +176,7 @@ public class SendTestEventNotificationRequest extends com.amazonaws.AmazonWebSer
      */
 
     public SendTestEventNotificationRequest withTestEventType(EventType testEventType) {
-        setTestEventType(testEventType);
+        this.testEventType = testEventType.toString();
         return this;
     }
 

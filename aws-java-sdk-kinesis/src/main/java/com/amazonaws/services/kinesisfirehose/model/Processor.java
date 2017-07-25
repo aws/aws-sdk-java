@@ -95,7 +95,7 @@ public class Processor implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(ProcessorType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -110,7 +110,7 @@ public class Processor implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Processor withType(ProcessorType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

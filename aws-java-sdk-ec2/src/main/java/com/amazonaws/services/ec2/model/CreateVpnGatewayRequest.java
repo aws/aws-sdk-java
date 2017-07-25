@@ -163,7 +163,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
      */
 
     public void setType(GatewayType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -178,7 +178,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
      */
 
     public CreateVpnGatewayRequest withType(GatewayType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

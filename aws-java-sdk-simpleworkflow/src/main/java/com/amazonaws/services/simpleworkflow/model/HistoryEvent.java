@@ -775,7 +775,7 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setEventType(EventType eventType) {
-        this.eventType = eventType.toString();
+        withEventType(eventType);
     }
 
     /**
@@ -790,7 +790,7 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
      */
 
     public HistoryEvent withEventType(EventType eventType) {
-        setEventType(eventType);
+        this.eventType = eventType.toString();
         return this;
     }
 

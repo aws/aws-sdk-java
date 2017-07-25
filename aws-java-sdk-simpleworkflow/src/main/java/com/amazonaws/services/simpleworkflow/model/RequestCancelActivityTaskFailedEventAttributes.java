@@ -211,7 +211,7 @@ public class RequestCancelActivityTaskFailedEventAttributes implements Serializa
      */
 
     public void setCause(RequestCancelActivityTaskFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -241,7 +241,7 @@ public class RequestCancelActivityTaskFailedEventAttributes implements Serializa
      */
 
     public RequestCancelActivityTaskFailedEventAttributes withCause(RequestCancelActivityTaskFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

@@ -162,7 +162,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setReadWriteType(ReadWriteType readWriteType) {
-        this.readWriteType = readWriteType.toString();
+        withReadWriteType(readWriteType);
     }
 
     /**
@@ -186,7 +186,7 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      */
 
     public EventSelector withReadWriteType(ReadWriteType readWriteType) {
-        setReadWriteType(readWriteType);
+        this.readWriteType = readWriteType.toString();
         return this;
     }
 

@@ -1152,7 +1152,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      */
 
     public void setChildPolicy(ChildPolicy childPolicy) {
-        this.childPolicy = childPolicy.toString();
+        withChildPolicy(childPolicy);
     }
 
     /**
@@ -1230,7 +1230,7 @@ public class StartChildWorkflowExecutionDecisionAttributes implements Serializab
      */
 
     public StartChildWorkflowExecutionDecisionAttributes withChildPolicy(ChildPolicy childPolicy) {
-        setChildPolicy(childPolicy);
+        this.childPolicy = childPolicy.toString();
         return this;
     }
 

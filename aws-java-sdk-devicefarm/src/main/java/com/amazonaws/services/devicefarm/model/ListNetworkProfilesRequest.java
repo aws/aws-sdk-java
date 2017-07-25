@@ -139,7 +139,7 @@ public class ListNetworkProfilesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setType(NetworkProfileType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -154,7 +154,7 @@ public class ListNetworkProfilesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public ListNetworkProfilesRequest withType(NetworkProfileType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

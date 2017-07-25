@@ -367,7 +367,7 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      */
 
     public void setIndexRotationPeriod(ElasticsearchIndexRotationPeriod indexRotationPeriod) {
-        this.indexRotationPeriod = indexRotationPeriod.toString();
+        withIndexRotationPeriod(indexRotationPeriod);
     }
 
     /**
@@ -388,7 +388,7 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      */
 
     public ElasticsearchDestinationUpdate withIndexRotationPeriod(ElasticsearchIndexRotationPeriod indexRotationPeriod) {
-        setIndexRotationPeriod(indexRotationPeriod);
+        this.indexRotationPeriod = indexRotationPeriod.toString();
         return this;
     }
 

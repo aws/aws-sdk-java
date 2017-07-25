@@ -198,7 +198,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -215,7 +215,7 @@ public class SSHPublicKeyMetadata implements Serializable, Cloneable {
      */
 
     public SSHPublicKeyMetadata withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

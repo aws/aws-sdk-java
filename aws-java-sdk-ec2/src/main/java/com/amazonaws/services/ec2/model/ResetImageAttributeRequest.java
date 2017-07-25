@@ -129,7 +129,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      */
 
     public void setAttribute(ResetImageAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -144,7 +144,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest implemen
      */
 
     public ResetImageAttributeRequest withAttribute(ResetImageAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

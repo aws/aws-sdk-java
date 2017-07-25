@@ -145,6 +145,12 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * </p>
      */
     private Double weightedCapacity;
+    /**
+     * <p>
+     * The tags to apply during creation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification> tagSpecifications;
 
     /**
      * <p>
@@ -570,7 +576,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -585,7 +591,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      */
 
     public SpotFleetLaunchSpecification withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -1091,6 +1097,79 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The tags to apply during creation.
+     * </p>
+     * 
+     * @return The tags to apply during creation.
+     */
+
+    public java.util.List<SpotFleetTagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply during creation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply during creation.
+     */
+
+    public void setTagSpecifications(java.util.Collection<SpotFleetTagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply during creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withTagSpecifications(SpotFleetTagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<SpotFleetTagSpecification>(tagSpecifications.length));
+        }
+        for (SpotFleetTagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply during creation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpotFleetLaunchSpecification withTagSpecifications(java.util.Collection<SpotFleetTagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1134,7 +1213,9 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
         if (getUserData() != null)
             sb.append("UserData: ").append(getUserData()).append(",");
         if (getWeightedCapacity() != null)
-            sb.append("WeightedCapacity: ").append(getWeightedCapacity());
+            sb.append("WeightedCapacity: ").append(getWeightedCapacity()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -1217,6 +1298,10 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
             return false;
         if (other.getWeightedCapacity() != null && other.getWeightedCapacity().equals(this.getWeightedCapacity()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -1242,6 +1327,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode());
         hashCode = prime * hashCode + ((getWeightedCapacity() == null) ? 0 : getWeightedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

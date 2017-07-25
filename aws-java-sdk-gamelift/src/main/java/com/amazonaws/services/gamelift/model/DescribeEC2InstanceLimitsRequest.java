@@ -120,7 +120,7 @@ public class DescribeEC2InstanceLimitsRequest extends com.amazonaws.AmazonWebSer
      */
 
     public void setEC2InstanceType(EC2InstanceType eC2InstanceType) {
-        this.eC2InstanceType = eC2InstanceType.toString();
+        withEC2InstanceType(eC2InstanceType);
     }
 
     /**
@@ -142,7 +142,7 @@ public class DescribeEC2InstanceLimitsRequest extends com.amazonaws.AmazonWebSer
      */
 
     public DescribeEC2InstanceLimitsRequest withEC2InstanceType(EC2InstanceType eC2InstanceType) {
-        setEC2InstanceType(eC2InstanceType);
+        this.eC2InstanceType = eC2InstanceType.toString();
         return this;
     }
 

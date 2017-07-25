@@ -264,7 +264,7 @@ public class DomainValidation implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setValidationStatus(DomainStatus validationStatus) {
-        this.validationStatus = validationStatus.toString();
+        withValidationStatus(validationStatus);
     }
 
     /**
@@ -279,7 +279,7 @@ public class DomainValidation implements Serializable, Cloneable, StructuredPojo
      */
 
     public DomainValidation withValidationStatus(DomainStatus validationStatus) {
-        setValidationStatus(validationStatus);
+        this.validationStatus = validationStatus.toString();
         return this;
     }
 

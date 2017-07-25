@@ -294,7 +294,7 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -313,7 +313,7 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public CreateBuildRequest withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 

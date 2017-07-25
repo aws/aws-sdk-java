@@ -380,7 +380,7 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(CommentStatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -395,7 +395,7 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Comment withStatus(CommentStatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -469,7 +469,7 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setVisibility(CommentVisibilityType visibility) {
-        this.visibility = visibility.toString();
+        withVisibility(visibility);
     }
 
     /**
@@ -488,7 +488,7 @@ public class Comment implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Comment withVisibility(CommentVisibilityType visibility) {
-        setVisibility(visibility);
+        this.visibility = visibility.toString();
         return this;
     }
 

@@ -84,7 +84,7 @@ public class GetChangeTokenStatusResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setChangeTokenStatus(ChangeTokenStatus changeTokenStatus) {
-        this.changeTokenStatus = changeTokenStatus.toString();
+        withChangeTokenStatus(changeTokenStatus);
     }
 
     /**
@@ -99,7 +99,7 @@ public class GetChangeTokenStatusResult extends com.amazonaws.AmazonWebServiceRe
      */
 
     public GetChangeTokenStatusResult withChangeTokenStatus(ChangeTokenStatus changeTokenStatus) {
-        setChangeTokenStatus(changeTokenStatus);
+        this.changeTokenStatus = changeTokenStatus.toString();
         return this;
     }
 

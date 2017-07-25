@@ -420,7 +420,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setStatus(ContainerInstanceStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -441,7 +441,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      */
 
     public ListContainerInstancesRequest withStatus(ContainerInstanceStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

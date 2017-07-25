@@ -225,7 +225,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      */
 
     public void setEvalDecision(PolicyEvaluationDecisionType evalDecision) {
-        this.evalDecision = evalDecision.toString();
+        withEvalDecision(evalDecision);
     }
 
     /**
@@ -240,7 +240,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      */
 
     public EvaluationResult withEvalDecision(PolicyEvaluationDecisionType evalDecision) {
-        setEvalDecision(evalDecision);
+        this.evalDecision = evalDecision.toString();
         return this;
     }
 

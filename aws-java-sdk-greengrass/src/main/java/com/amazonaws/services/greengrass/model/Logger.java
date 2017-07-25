@@ -83,7 +83,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setComponent(LoggerComponent component) {
-        this.component = component.toString();
+        withComponent(component);
     }
 
     /**
@@ -96,7 +96,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Logger withComponent(LoggerComponent component) {
-        setComponent(component);
+        this.component = component.toString();
         return this;
     }
 
@@ -180,7 +180,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setLevel(LoggerLevel level) {
-        this.level = level.toString();
+        withLevel(level);
     }
 
     /**
@@ -193,7 +193,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Logger withLevel(LoggerLevel level) {
-        setLevel(level);
+        this.level = level.toString();
         return this;
     }
 
@@ -277,7 +277,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(LoggerType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -290,7 +290,7 @@ public class Logger implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Logger withType(LoggerType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

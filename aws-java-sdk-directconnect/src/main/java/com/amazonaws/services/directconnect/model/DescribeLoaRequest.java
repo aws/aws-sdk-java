@@ -280,7 +280,7 @@ public class DescribeLoaRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setLoaContentType(LoaContentType loaContentType) {
-        this.loaContentType = loaContentType.toString();
+        withLoaContentType(loaContentType);
     }
 
     /**
@@ -302,7 +302,7 @@ public class DescribeLoaRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public DescribeLoaRequest withLoaContentType(LoaContentType loaContentType) {
-        setLoaContentType(loaContentType);
+        this.loaContentType = loaContentType.toString();
         return this;
     }
 

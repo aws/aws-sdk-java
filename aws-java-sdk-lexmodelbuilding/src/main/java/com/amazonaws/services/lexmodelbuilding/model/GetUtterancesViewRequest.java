@@ -221,7 +221,7 @@ public class GetUtterancesViewRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setStatusType(StatusType statusType) {
-        this.statusType = statusType.toString();
+        withStatusType(statusType);
     }
 
     /**
@@ -238,7 +238,7 @@ public class GetUtterancesViewRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public GetUtterancesViewRequest withStatusType(StatusType statusType) {
-        setStatusType(statusType);
+        this.statusType = statusType.toString();
         return this;
     }
 

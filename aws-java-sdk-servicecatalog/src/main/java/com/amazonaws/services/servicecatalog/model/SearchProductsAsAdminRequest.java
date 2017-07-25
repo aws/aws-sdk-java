@@ -358,7 +358,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setSortBy(ProductViewSortBy sortBy) {
-        this.sortBy = sortBy.toString();
+        withSortBy(sortBy);
     }
 
     /**
@@ -373,7 +373,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      */
 
     public SearchProductsAsAdminRequest withSortBy(ProductViewSortBy sortBy) {
-        setSortBy(sortBy);
+        this.sortBy = sortBy.toString();
         return this;
     }
 
@@ -431,7 +431,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setSortOrder(SortOrder sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -446,7 +446,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      */
 
     public SearchProductsAsAdminRequest withSortOrder(SortOrder sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 
@@ -593,7 +593,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setProductSource(ProductSource productSource) {
-        this.productSource = productSource.toString();
+        withProductSource(productSource);
     }
 
     /**
@@ -608,7 +608,7 @@ public class SearchProductsAsAdminRequest extends com.amazonaws.AmazonWebService
      */
 
     public SearchProductsAsAdminRequest withProductSource(ProductSource productSource) {
-        setProductSource(productSource);
+        this.productSource = productSource.toString();
         return this;
     }
 

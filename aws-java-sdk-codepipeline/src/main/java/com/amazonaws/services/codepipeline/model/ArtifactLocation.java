@@ -95,7 +95,7 @@ public class ArtifactLocation implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setType(ArtifactLocationType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -110,7 +110,7 @@ public class ArtifactLocation implements Serializable, Cloneable, StructuredPojo
      */
 
     public ArtifactLocation withType(ArtifactLocationType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

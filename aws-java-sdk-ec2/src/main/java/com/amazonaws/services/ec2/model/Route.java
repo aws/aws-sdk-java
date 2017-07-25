@@ -662,7 +662,7 @@ public class Route implements Serializable, Cloneable {
      */
 
     public void setOrigin(RouteOrigin origin) {
-        this.origin = origin.toString();
+        withOrigin(origin);
     }
 
     /**
@@ -710,7 +710,7 @@ public class Route implements Serializable, Cloneable {
      */
 
     public Route withOrigin(RouteOrigin origin) {
-        setOrigin(origin);
+        this.origin = origin.toString();
         return this;
     }
 
@@ -780,7 +780,7 @@ public class Route implements Serializable, Cloneable {
      */
 
     public void setState(RouteState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -798,7 +798,7 @@ public class Route implements Serializable, Cloneable {
      */
 
     public Route withState(RouteState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

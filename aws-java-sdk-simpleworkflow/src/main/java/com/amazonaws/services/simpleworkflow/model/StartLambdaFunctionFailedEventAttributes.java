@@ -224,7 +224,7 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      */
 
     public void setCause(StartLambdaFunctionFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -255,7 +255,7 @@ public class StartLambdaFunctionFailedEventAttributes implements Serializable, C
      */
 
     public StartLambdaFunctionFailedEventAttributes withCause(StartLambdaFunctionFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

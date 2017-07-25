@@ -355,7 +355,7 @@ public class StreamSpecification implements Serializable, Cloneable, StructuredP
      */
 
     public void setStreamViewType(StreamViewType streamViewType) {
-        this.streamViewType = streamViewType.toString();
+        withStreamViewType(streamViewType);
     }
 
     /**
@@ -416,7 +416,7 @@ public class StreamSpecification implements Serializable, Cloneable, StructuredP
      */
 
     public StreamSpecification withStreamViewType(StreamViewType streamViewType) {
-        setStreamViewType(streamViewType);
+        this.streamViewType = streamViewType.toString();
         return this;
     }
 

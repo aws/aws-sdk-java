@@ -390,7 +390,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(RecordStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -438,7 +438,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public RecordDetail withStatus(RecordStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

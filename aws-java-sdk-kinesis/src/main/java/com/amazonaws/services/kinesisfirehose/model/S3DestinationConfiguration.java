@@ -354,7 +354,7 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
      */
 
     public void setCompressionFormat(CompressionFormat compressionFormat) {
-        this.compressionFormat = compressionFormat.toString();
+        withCompressionFormat(compressionFormat);
     }
 
     /**
@@ -378,7 +378,7 @@ public class S3DestinationConfiguration implements Serializable, Cloneable, Stru
      */
 
     public S3DestinationConfiguration withCompressionFormat(CompressionFormat compressionFormat) {
-        setCompressionFormat(compressionFormat);
+        this.compressionFormat = compressionFormat.toString();
         return this;
     }
 

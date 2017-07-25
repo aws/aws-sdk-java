@@ -260,7 +260,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      */
 
     public void setType(CEType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -275,7 +275,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      */
 
     public ComputeEnvironmentDetail withType(CEType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -349,7 +349,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      */
 
     public void setState(CEState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -368,7 +368,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      */
 
     public ComputeEnvironmentDetail withState(CEState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -426,7 +426,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      */
 
     public void setStatus(CEStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -441,7 +441,7 @@ public class ComputeEnvironmentDetail implements Serializable, Cloneable, Struct
      */
 
     public ComputeEnvironmentDetail withStatus(CEStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

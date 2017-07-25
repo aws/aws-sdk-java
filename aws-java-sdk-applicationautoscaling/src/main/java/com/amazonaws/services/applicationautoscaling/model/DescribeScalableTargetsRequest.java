@@ -218,7 +218,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
-        this.serviceNamespace = serviceNamespace.toString();
+        withServiceNamespace(serviceNamespace);
     }
 
     /**
@@ -237,7 +237,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      */
 
     public DescribeScalableTargetsRequest withServiceNamespace(ServiceNamespace serviceNamespace) {
-        setServiceNamespace(serviceNamespace);
+        this.serviceNamespace = serviceNamespace.toString();
         return this;
     }
 
@@ -1034,7 +1034,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setScalableDimension(ScalableDimension scalableDimension) {
-        this.scalableDimension = scalableDimension.toString();
+        withScalableDimension(scalableDimension);
     }
 
     /**
@@ -1139,7 +1139,7 @@ public class DescribeScalableTargetsRequest extends com.amazonaws.AmazonWebServi
      */
 
     public DescribeScalableTargetsRequest withScalableDimension(ScalableDimension scalableDimension) {
-        setScalableDimension(scalableDimension);
+        this.scalableDimension = scalableDimension.toString();
         return this;
     }
 

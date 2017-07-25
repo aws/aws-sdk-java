@@ -93,7 +93,7 @@ public class CloseStatusFilter implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStatus(CloseStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -109,7 +109,7 @@ public class CloseStatusFilter implements Serializable, Cloneable, StructuredPoj
      */
 
     public CloseStatusFilter withStatus(CloseStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

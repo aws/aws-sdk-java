@@ -1647,7 +1647,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setChangeSetType(ChangeSetType changeSetType) {
-        this.changeSetType = changeSetType.toString();
+        withChangeSetType(changeSetType);
     }
 
     /**
@@ -1684,7 +1684,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public CreateChangeSetRequest withChangeSetType(ChangeSetType changeSetType) {
-        setChangeSetType(changeSetType);
+        this.changeSetType = changeSetType.toString();
         return this;
     }
 

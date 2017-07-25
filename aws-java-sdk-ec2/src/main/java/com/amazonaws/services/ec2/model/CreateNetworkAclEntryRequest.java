@@ -473,7 +473,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      */
 
     public void setRuleAction(RuleAction ruleAction) {
-        this.ruleAction = ruleAction.toString();
+        withRuleAction(ruleAction);
     }
 
     /**
@@ -488,7 +488,7 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
      */
 
     public CreateNetworkAclEntryRequest withRuleAction(RuleAction ruleAction) {
-        setRuleAction(ruleAction);
+        this.ruleAction = ruleAction.toString();
         return this;
     }
 

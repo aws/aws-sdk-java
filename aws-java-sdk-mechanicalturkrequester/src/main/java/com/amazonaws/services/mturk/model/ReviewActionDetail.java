@@ -299,7 +299,7 @@ public class ReviewActionDetail implements Serializable, Cloneable, StructuredPo
      */
 
     public void setStatus(ReviewActionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -314,7 +314,7 @@ public class ReviewActionDetail implements Serializable, Cloneable, StructuredPo
      */
 
     public ReviewActionDetail withStatus(ReviewActionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

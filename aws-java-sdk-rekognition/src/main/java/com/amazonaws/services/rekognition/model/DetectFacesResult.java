@@ -246,7 +246,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public void setOrientationCorrection(OrientationCorrection orientationCorrection) {
-        this.orientationCorrection = orientationCorrection.toString();
+        withOrientationCorrection(orientationCorrection);
     }
 
     /**
@@ -281,7 +281,7 @@ public class DetectFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public DetectFacesResult withOrientationCorrection(OrientationCorrection orientationCorrection) {
-        setOrientationCorrection(orientationCorrection);
+        this.orientationCorrection = orientationCorrection.toString();
         return this;
     }
 

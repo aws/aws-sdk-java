@@ -180,7 +180,7 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOperation(OperationType operation) {
-        this.operation = operation.toString();
+        withOperation(operation);
     }
 
     /**
@@ -195,7 +195,7 @@ public class BillingRecord implements Serializable, Cloneable, StructuredPojo {
      */
 
     public BillingRecord withOperation(OperationType operation) {
-        setOperation(operation);
+        this.operation = operation.toString();
         return this;
     }
 

@@ -274,7 +274,7 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(BlueprintType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -289,7 +289,7 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Blueprint withType(BlueprintType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

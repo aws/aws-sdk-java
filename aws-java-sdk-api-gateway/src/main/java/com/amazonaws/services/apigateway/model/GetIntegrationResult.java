@@ -251,7 +251,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public void setType(IntegrationType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -272,7 +272,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public GetIntegrationResult withType(IntegrationType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -986,7 +986,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
-        this.contentHandling = contentHandling.toString();
+        withContentHandling(contentHandling);
     }
 
     /**
@@ -1038,7 +1038,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public GetIntegrationResult withContentHandling(ContentHandlingStrategy contentHandling) {
-        setContentHandling(contentHandling);
+        this.contentHandling = contentHandling.toString();
         return this;
     }
 

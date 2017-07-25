@@ -115,7 +115,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
      */
 
     public void setEventType(EventType eventType) {
-        this.eventType = eventType.toString();
+        withEventType(eventType);
     }
 
     /**
@@ -130,7 +130,7 @@ public class DescribeSpotFleetRequestHistoryRequest extends AmazonWebServiceRequ
      */
 
     public DescribeSpotFleetRequestHistoryRequest withEventType(EventType eventType) {
-        setEventType(eventType);
+        this.eventType = eventType.toString();
         return this;
     }
 

@@ -363,7 +363,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(PolicyType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -378,7 +378,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PolicySummary withType(PolicyType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

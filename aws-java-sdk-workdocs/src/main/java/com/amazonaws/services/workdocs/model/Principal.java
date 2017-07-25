@@ -141,7 +141,7 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(PrincipalType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -156,7 +156,7 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Principal withType(PrincipalType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

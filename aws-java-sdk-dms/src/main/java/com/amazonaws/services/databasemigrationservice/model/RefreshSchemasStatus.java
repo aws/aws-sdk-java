@@ -191,7 +191,7 @@ public class RefreshSchemasStatus implements Serializable, Cloneable, Structured
      */
 
     public void setStatus(RefreshSchemasStatusTypeValue status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -206,7 +206,7 @@ public class RefreshSchemasStatus implements Serializable, Cloneable, Structured
      */
 
     public RefreshSchemasStatus withStatus(RefreshSchemasStatusTypeValue status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

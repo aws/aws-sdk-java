@@ -201,7 +201,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      */
 
     public void setType(RRType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -218,7 +218,7 @@ public class TrafficPolicySummary implements Serializable, Cloneable {
      */
 
     public TrafficPolicySummary withType(RRType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

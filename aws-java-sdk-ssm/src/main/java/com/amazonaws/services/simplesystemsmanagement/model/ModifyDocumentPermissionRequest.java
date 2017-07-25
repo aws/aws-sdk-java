@@ -147,7 +147,7 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setPermissionType(DocumentPermissionType permissionType) {
-        this.permissionType = permissionType.toString();
+        withPermissionType(permissionType);
     }
 
     /**
@@ -162,7 +162,7 @@ public class ModifyDocumentPermissionRequest extends com.amazonaws.AmazonWebServ
      */
 
     public ModifyDocumentPermissionRequest withPermissionType(DocumentPermissionType permissionType) {
-        setPermissionType(permissionType);
+        this.permissionType = permissionType.toString();
         return this;
     }
 

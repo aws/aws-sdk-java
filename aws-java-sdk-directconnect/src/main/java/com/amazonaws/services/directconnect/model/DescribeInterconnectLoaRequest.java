@@ -167,7 +167,7 @@ public class DescribeInterconnectLoaRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setLoaContentType(LoaContentType loaContentType) {
-        this.loaContentType = loaContentType.toString();
+        withLoaContentType(loaContentType);
     }
 
     /**
@@ -177,7 +177,7 @@ public class DescribeInterconnectLoaRequest extends com.amazonaws.AmazonWebServi
      */
 
     public DescribeInterconnectLoaRequest withLoaContentType(LoaContentType loaContentType) {
-        setLoaContentType(loaContentType);
+        this.loaContentType = loaContentType.toString();
         return this;
     }
 

@@ -157,7 +157,7 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public void setStatus(OperationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -172,7 +172,7 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public GetOperationDetailResult withStatus(OperationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -310,7 +310,7 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public void setType(OperationType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -325,7 +325,7 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      */
 
     public GetOperationDetailResult withType(OperationType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

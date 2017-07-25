@@ -258,7 +258,7 @@ public class Child implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(ChildType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -273,7 +273,7 @@ public class Child implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Child withType(ChildType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

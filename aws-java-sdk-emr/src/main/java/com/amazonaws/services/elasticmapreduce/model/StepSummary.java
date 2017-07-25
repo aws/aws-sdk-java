@@ -242,7 +242,7 @@ public class StepSummary implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setActionOnFailure(ActionOnFailure actionOnFailure) {
-        this.actionOnFailure = actionOnFailure.toString();
+        withActionOnFailure(actionOnFailure);
     }
 
     /**
@@ -259,7 +259,7 @@ public class StepSummary implements Serializable, Cloneable, StructuredPojo {
      */
 
     public StepSummary withActionOnFailure(ActionOnFailure actionOnFailure) {
-        setActionOnFailure(actionOnFailure);
+        this.actionOnFailure = actionOnFailure.toString();
         return this;
     }
 

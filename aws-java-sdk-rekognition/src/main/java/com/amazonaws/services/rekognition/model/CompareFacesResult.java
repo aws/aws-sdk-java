@@ -412,7 +412,7 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public void setSourceImageOrientationCorrection(OrientationCorrection sourceImageOrientationCorrection) {
-        this.sourceImageOrientationCorrection = sourceImageOrientationCorrection.toString();
+        withSourceImageOrientationCorrection(sourceImageOrientationCorrection);
     }
 
     /**
@@ -448,7 +448,7 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public CompareFacesResult withSourceImageOrientationCorrection(OrientationCorrection sourceImageOrientationCorrection) {
-        setSourceImageOrientationCorrection(sourceImageOrientationCorrection);
+        this.sourceImageOrientationCorrection = sourceImageOrientationCorrection.toString();
         return this;
     }
 
@@ -594,7 +594,7 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public void setTargetImageOrientationCorrection(OrientationCorrection targetImageOrientationCorrection) {
-        this.targetImageOrientationCorrection = targetImageOrientationCorrection.toString();
+        withTargetImageOrientationCorrection(targetImageOrientationCorrection);
     }
 
     /**
@@ -631,7 +631,7 @@ public class CompareFacesResult extends com.amazonaws.AmazonWebServiceResult<com
      */
 
     public CompareFacesResult withTargetImageOrientationCorrection(OrientationCorrection targetImageOrientationCorrection) {
-        setTargetImageOrientationCorrection(targetImageOrientationCorrection);
+        this.targetImageOrientationCorrection = targetImageOrientationCorrection.toString();
         return this;
     }
 

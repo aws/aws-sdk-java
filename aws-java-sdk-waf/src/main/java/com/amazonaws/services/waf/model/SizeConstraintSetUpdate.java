@@ -112,7 +112,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable, Structu
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -130,7 +130,7 @@ public class SizeConstraintSetUpdate implements Serializable, Cloneable, Structu
      */
 
     public SizeConstraintSetUpdate withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

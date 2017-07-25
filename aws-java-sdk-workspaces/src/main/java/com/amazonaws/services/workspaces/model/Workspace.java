@@ -323,7 +323,7 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(WorkspaceState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -338,7 +338,7 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Workspace withState(WorkspaceState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -186,7 +186,7 @@ public class ApplyEnvironmentManagedActionResult extends com.amazonaws.AmazonWeb
      */
 
     public void setActionType(ActionType actionType) {
-        this.actionType = actionType.toString();
+        withActionType(actionType);
     }
 
     /**
@@ -201,7 +201,7 @@ public class ApplyEnvironmentManagedActionResult extends com.amazonaws.AmazonWeb
      */
 
     public ApplyEnvironmentManagedActionResult withActionType(ActionType actionType) {
-        setActionType(actionType);
+        this.actionType = actionType.toString();
         return this;
     }
 

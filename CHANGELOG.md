@@ -1,3 +1,12 @@
+# __1.11.167__ __2017-07-24__
+## __Amazon AppStream__
+  - ### Features
+    - Amazon AppStream 2.0 image builders and fleets can now access applications and network resources that rely on Microsoft Active Directory (AD) for authentication and permissions. This new feature allows you to join your streaming instances to your AD, so you can use your existing AD user management tools. 
+
+## __Amazon EC2__
+  - ### Features
+    - Spot Fleet tagging capability allows customers to automatically tag instances launched by Spot Fleet. You can use this feature to label or distinguish instances created by distinct Spot Fleets. Tagging your EC2 instances also enables you to see instance cost allocation by tag in your AWS bill.
+
 # __1.11.166__ __2017-07-20__
 ## __Amazon Elastic MapReduce__
   - ### Features

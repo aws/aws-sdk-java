@@ -287,7 +287,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setFunctionVersion(FunctionVersion functionVersion) {
-        this.functionVersion = functionVersion.toString();
+        withFunctionVersion(functionVersion);
     }
 
     /**
@@ -316,7 +316,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public ListFunctionsRequest withFunctionVersion(FunctionVersion functionVersion) {
-        setFunctionVersion(functionVersion);
+        this.functionVersion = functionVersion.toString();
         return this;
     }
 

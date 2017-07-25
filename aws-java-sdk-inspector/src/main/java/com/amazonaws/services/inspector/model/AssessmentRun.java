@@ -298,7 +298,7 @@ public class AssessmentRun implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(AssessmentRunState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -313,7 +313,7 @@ public class AssessmentRun implements Serializable, Cloneable, StructuredPojo {
      */
 
     public AssessmentRun withState(AssessmentRunState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

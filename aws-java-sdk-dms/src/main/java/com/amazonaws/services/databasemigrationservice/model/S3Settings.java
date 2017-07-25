@@ -380,7 +380,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setCompressionType(CompressionTypeValue compressionType) {
-        this.compressionType = compressionType.toString();
+        withCompressionType(compressionType);
     }
 
     /**
@@ -397,7 +397,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      */
 
     public S3Settings withCompressionType(CompressionTypeValue compressionType) {
-        setCompressionType(compressionType);
+        this.compressionType = compressionType.toString();
         return this;
     }
 

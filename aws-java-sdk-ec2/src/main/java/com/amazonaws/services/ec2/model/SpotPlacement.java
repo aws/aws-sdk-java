@@ -243,7 +243,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      */
 
     public void setTenancy(Tenancy tenancy) {
-        this.tenancy = tenancy.toString();
+        withTenancy(tenancy);
     }
 
     /**
@@ -262,7 +262,7 @@ public class SpotPlacement implements Serializable, Cloneable {
      */
 
     public SpotPlacement withTenancy(Tenancy tenancy) {
-        setTenancy(tenancy);
+        this.tenancy = tenancy.toString();
         return this;
     }
 

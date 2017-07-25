@@ -365,7 +365,7 @@ public class MetricDatapoint implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setUnit(MetricUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -380,7 +380,7 @@ public class MetricDatapoint implements Serializable, Cloneable, StructuredPojo 
      */
 
     public MetricDatapoint withUnit(MetricUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 

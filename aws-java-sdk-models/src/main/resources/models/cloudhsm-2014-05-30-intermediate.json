@@ -88,6 +88,7 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
+    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : false
@@ -980,6 +981,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1079,6 +1081,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1119,6 +1122,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1183,6 +1187,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1283,6 +1288,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1323,6 +1329,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1421,6 +1428,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1485,6 +1493,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1758,6 +1767,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The label of the new high-availability partition group.</p>\n@param label The label of the new high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1822,6 +1832,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The label of the new high-availability partition group.</p>\n@param label The label of the new high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1920,6 +1931,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1984,6 +1996,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2092,6 +2105,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the subnet in your VPC in which to place the HSM.</p>\n@param subnetId The identifier of the subnet in your VPC in which to place the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2154,6 +2168,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SSH public key to install on the HSM.</p>\n@param sshKey The SSH public key to install on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2216,6 +2231,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2278,6 +2294,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>\n@param iamRoleArn The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2340,6 +2357,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The external ID from <b>IamRoleArn</b>, if present.</p>\n@param externalId The external ID from <b>IamRoleArn</b>, if present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2402,6 +2420,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -2464,6 +2483,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2526,6 +2546,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2590,6 +2611,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2653,6 +2675,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2716,6 +2739,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The external ID from <b>IamRoleArn</b>, if present.</p>\n@param externalId The external ID from <b>IamRoleArn</b>, if present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2779,6 +2803,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>\n@param iamRoleArn The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2842,6 +2867,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SSH public key to install on the HSM.</p>\n@param sshKey The SSH public key to install on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2905,6 +2931,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the subnet in your VPC in which to place the HSM.</p>\n@param subnetId The identifier of the subnet in your VPC in which to place the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2968,6 +2995,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -3031,6 +3059,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3129,6 +3158,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3193,6 +3223,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3301,6 +3332,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The label for the client.</p>\n@param label The label for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3363,6 +3395,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>\n@param certificate The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3427,6 +3460,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>\n@param certificate The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3490,6 +3524,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The label for the client.</p>\n@param label The label for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3588,6 +3623,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3652,6 +3688,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3760,6 +3797,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to delete.</p>\n@param hapgArn The ARN of the high-availability partition group to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3824,6 +3862,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to delete.</p>\n@param hapgArn The ARN of the high-availability partition group to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3922,6 +3961,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3986,6 +4026,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4094,6 +4135,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM to delete.</p>\n@param hsmArn The ARN of the HSM to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4158,6 +4200,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM to delete.</p>\n@param hsmArn The ARN of the HSM to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4256,6 +4299,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4320,6 +4364,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4428,6 +4473,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client to delete.</p>\n@param clientArn The ARN of the client to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4492,6 +4538,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client to delete.</p>\n@param clientArn The ARN of the client to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4590,6 +4637,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4654,6 +4702,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4762,6 +4811,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to describe.</p>\n@param hapgArn The ARN of the high-availability partition group to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4826,6 +4876,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to describe.</p>\n@param hapgArn The ARN of the high-availability partition group to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4924,6 +4975,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4986,6 +5038,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The serial number of the high-availability partition group.</p>\n@param hapgSerial The serial number of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5085,6 +5138,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5125,6 +5179,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsLastActionFailed \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5224,6 +5279,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5264,6 +5320,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingDeletion \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5363,6 +5420,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5403,6 +5461,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or {@link #withHsmsPendingRegistration(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingRegistration \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5465,6 +5524,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The label for the high-availability partition group.</p>\n@param label The label for the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5527,6 +5587,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the high-availability partition group was last modified.</p>\n@param lastModifiedTimestamp The date and time the high-availability partition group was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5626,6 +5687,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5666,6 +5728,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of partition serial numbers that belong to the high-availability partition group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)} if you want to override the existing values.</p>\n@param partitionSerialList The list of partition serial numbers that belong to the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5728,6 +5791,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state of the high-availability partition group.</p>\n@param state The state of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CloudHsmObjectState*/",
@@ -5792,6 +5856,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5855,6 +5920,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The serial number of the high-availability partition group.</p>\n@param hapgSerial The serial number of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5955,6 +6021,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5995,6 +6062,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsLastActionFailed \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6095,6 +6163,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6135,6 +6204,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingDeletion \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6235,6 +6305,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6275,6 +6346,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or {@link #withHsmsPendingRegistration(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingRegistration \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6338,6 +6410,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The label for the high-availability partition group.</p>\n@param label The label for the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6401,6 +6474,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the high-availability partition group was last modified.</p>\n@param lastModifiedTimestamp The date and time the high-availability partition group was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6501,6 +6575,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6541,6 +6616,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of partition serial numbers that belong to the high-availability partition group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)} if you want to override the existing values.</p>\n@param partitionSerialList The list of partition serial numbers that belong to the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6604,6 +6680,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state of the high-availability partition group.</p>\n@param state The state of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CloudHsmObjectState*/",
@@ -6712,6 +6789,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.</p>\n@param hsmArn The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6774,6 +6852,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be specified.</p>\n@param hsmSerialNumber The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6838,6 +6917,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.</p>\n@param hsmArn The ARN of the HSM. Either the <i>HsmArn</i> or the <i>SerialNumber</i> parameter must be specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6901,6 +6981,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be specified.</p>\n@param hsmSerialNumber The serial number of the HSM. Either the <i>HsmArn</i> or the <i>HsmSerialNumber</i> parameter must be specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6999,6 +7080,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7061,6 +7143,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the HSM.</p>\n@param status The status of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HsmStatus*/",
@@ -7123,6 +7206,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains additional information about the status of the HSM.</p>\n@param statusDetails Contains additional information about the status of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7185,6 +7269,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Availability Zone that the HSM is in.</p>\n@param availabilityZone The Availability Zone that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7247,6 +7332,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>\n@param eniId The identifier of the elastic network interface (ENI) attached to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7309,6 +7395,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IP address assigned to the HSM's ENI.</p>\n@param eniIp The IP address assigned to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7371,6 +7458,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -7433,6 +7521,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The subscription start date.</p>\n@param subscriptionStartDate The subscription start date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7495,6 +7584,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The subscription end date.</p>\n@param subscriptionEndDate The subscription end date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7557,6 +7647,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the VPC that the HSM is in.</p>\n@param vpcId The identifier of the VPC that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7619,6 +7710,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7681,6 +7773,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the IAM role assigned to the HSM.</p>\n@param iamRoleArn The ARN of the IAM role assigned to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7743,6 +7836,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The serial number of the HSM.</p>\n@param serialNumber The serial number of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7805,6 +7899,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the HSM vendor.</p>\n@param vendorName The name of the HSM vendor.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7867,6 +7962,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM model type.</p>\n@param hsmType The HSM model type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7929,6 +8025,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM software version.</p>\n@param softwareVersion The HSM software version.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7991,6 +8088,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The public SSH key.</p>\n@param sshPublicKey The public SSH key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8053,6 +8151,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8115,6 +8214,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URI of the certificate server.</p>\n@param serverCertUri The URI of the certificate server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8177,6 +8277,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8276,6 +8377,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8316,6 +8418,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of partitions on the HSM.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitions(java.util.Collection)} or {@link #withPartitions(java.util.Collection)} if you want to override the existing values.</p>\n@param partitions The list of partitions on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8380,6 +8483,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Availability Zone that the HSM is in.</p>\n@param availabilityZone The Availability Zone that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8443,6 +8547,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>\n@param eniId The identifier of the elastic network interface (ENI) attached to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8506,6 +8611,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IP address assigned to the HSM's ENI.</p>\n@param eniIp The IP address assigned to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8569,6 +8675,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8632,6 +8739,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM model type.</p>\n@param hsmType The HSM model type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8695,6 +8803,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the IAM role assigned to the HSM.</p>\n@param iamRoleArn The ARN of the IAM role assigned to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8795,6 +8904,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8835,6 +8945,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of partitions on the HSM.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitions(java.util.Collection)} or {@link #withPartitions(java.util.Collection)} if you want to override the existing values.</p>\n@param partitions The list of partitions on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8898,6 +9009,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The serial number of the HSM.</p>\n@param serialNumber The serial number of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8961,6 +9073,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9024,6 +9137,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URI of the certificate server.</p>\n@param serverCertUri The URI of the certificate server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9087,6 +9201,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM software version.</p>\n@param softwareVersion The HSM software version.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9150,6 +9265,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9213,6 +9329,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The public SSH key.</p>\n@param sshPublicKey The public SSH key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9276,6 +9393,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the HSM.</p>\n@param status The status of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HsmStatus*/",
@@ -9339,6 +9457,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains additional information about the status of the HSM.</p>\n@param statusDetails Contains additional information about the status of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9402,6 +9521,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9465,6 +9585,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The subscription end date.</p>\n@param subscriptionEndDate The subscription end date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9528,6 +9649,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The subscription start date.</p>\n@param subscriptionStartDate The subscription start date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9591,6 +9713,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -9654,6 +9777,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the HSM vendor.</p>\n@param vendorName The name of the HSM vendor.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9717,6 +9841,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the VPC that the HSM is in.</p>\n@param vpcId The identifier of the VPC that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9825,6 +9950,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9887,6 +10013,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate fingerprint.</p>\n@param certificateFingerprint The certificate fingerprint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9951,6 +10078,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate fingerprint.</p>\n@param certificateFingerprint The certificate fingerprint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10014,6 +10142,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10112,6 +10241,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10174,6 +10304,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate installed on the HSMs used by this client.</p>\n@param certificate The certificate installed on the HSMs used by this client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10236,6 +10367,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate fingerprint.</p>\n@param certificateFingerprint The certificate fingerprint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10298,6 +10430,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the client was last modified.</p>\n@param lastModifiedTimestamp The date and time the client was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10360,6 +10493,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The label of the client.</p>\n@param label The label of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10424,6 +10558,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate installed on the HSMs used by this client.</p>\n@param certificate The certificate installed on the HSMs used by this client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10487,6 +10622,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate fingerprint.</p>\n@param certificateFingerprint The certificate fingerprint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10550,6 +10686,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10613,6 +10750,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The label of the client.</p>\n@param label The label of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10676,6 +10814,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the client was last modified.</p>\n@param lastModifiedTimestamp The date and time the client was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10784,6 +10923,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10846,6 +10986,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The client version.</p>\n@param clientVersion The client version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClientVersion*/",
@@ -10945,6 +11086,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10985,6 +11127,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHapgList(java.util.Collection)} or {@link #withHapgList(java.util.Collection)} if you want to override the existing values.</p>\n@param hapgList A list of ARNs that identify the high-availability partition groups that are associated with the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11049,6 +11192,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11112,6 +11256,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The client version.</p>\n@param clientVersion The client version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClientVersion*/",
@@ -11212,6 +11357,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11252,6 +11398,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHapgList(java.util.Collection)} or {@link #withHapgList(java.util.Collection)} if you want to override the existing values.</p>\n@param hapgList A list of ARNs that identify the high-availability partition groups that are associated with the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11350,6 +11497,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of credentials.</p>\n@param configType The type of credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11412,6 +11560,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The chrystoki.conf configuration file.</p>\n@param configFile The chrystoki.conf configuration file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11474,6 +11623,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate file containing the server.pem files of the HSMs.</p>\n@param configCred The certificate file containing the server.pem files of the HSMs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11538,6 +11688,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate file containing the server.pem files of the HSMs.</p>\n@param configCred The certificate file containing the server.pem files of the HSMs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11601,6 +11752,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The chrystoki.conf configuration file.</p>\n@param configFile The chrystoki.conf configuration file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11664,6 +11816,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of credentials.</p>\n@param configType The type of credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11941,6 +12094,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11981,6 +12135,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAZList(java.util.Collection)} or {@link #withAZList(java.util.Collection)} if you want to override the existing values.</p>\n@param aZList The list of Availability Zones that have available AWS CloudHSM capacity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12082,6 +12237,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12122,6 +12278,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAZList(java.util.Collection)} or {@link #withAZList(java.util.Collection)} if you want to override the existing values.</p>\n@param aZList The list of Availability Zones that have available AWS CloudHSM capacity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12230,6 +12387,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <i>NextToken</i> value from a previous call to <a>ListHapgs</a>. Pass null if this is the first call.</p>\n@param nextToken The <i>NextToken</i> value from a previous call to <a>ListHapgs</a>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12294,6 +12452,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <i>NextToken</i> value from a previous call to <a>ListHapgs</a>. Pass null if this is the first call.</p>\n@param nextToken The <i>NextToken</i> value from a previous call to <a>ListHapgs</a>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12429,6 +12588,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12469,6 +12629,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of high-availability partition groups.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHapgList(java.util.Collection)} or {@link #withHapgList(java.util.Collection)} if you want to override the existing values.</p>\n@param hapgList The list of high-availability partition groups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12531,6 +12692,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value to <a>ListHapgs</a> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value to <a>ListHapgs</a> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12632,6 +12794,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12672,6 +12835,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of high-availability partition groups.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHapgList(java.util.Collection)} or {@link #withHapgList(java.util.Collection)} if you want to override the existing values.</p>\n@param hapgList The list of high-availability partition groups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12735,6 +12899,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value to <a>ListHapgs</a> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value to <a>ListHapgs</a> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12843,6 +13008,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null if this is the first call.</p>\n@param nextToken The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12907,6 +13073,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null if this is the first call.</p>\n@param nextToken The <i>NextToken</i> value from a previous call to <a>ListHsms</a>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13042,6 +13209,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13082,6 +13250,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of ARNs that identify the HSMs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmList(java.util.Collection)} or {@link #withHsmList(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmList The list of ARNs that identify the HSMs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13144,6 +13313,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13245,6 +13415,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13285,6 +13456,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of ARNs that identify the HSMs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmList(java.util.Collection)} or {@link #withHsmList(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmList The list of ARNs that identify the HSMs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13348,6 +13520,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value to <a>ListHsms</a> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13456,6 +13629,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first call.</p>\n@param nextToken The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13520,6 +13694,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first call.</p>\n@param nextToken The <i>NextToken</i> value from a previous call to <a>ListLunaClients</a>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13655,6 +13830,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13695,6 +13871,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of clients.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClientList(java.util.Collection)} or {@link #withClientList(java.util.Collection)} if you want to override the existing values.</p>\n@param clientList The list of clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13757,6 +13934,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13858,6 +14036,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13898,6 +14077,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of clients.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClientList(java.util.Collection)} or {@link #withClientList(java.util.Collection)} if you want to override the existing values.</p>\n@param clientList The list of clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13961,6 +14141,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this to <a>ListLunaClients</a> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14069,6 +14250,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14133,6 +14315,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14268,6 +14451,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14308,6 +14492,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14409,6 +14594,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14449,6 +14635,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14557,6 +14744,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to modify.</p>\n@param hapgArn The ARN of the high-availability partition group to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14619,6 +14807,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new label for the high-availability partition group.</p>\n@param label The new label for the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14718,6 +14907,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14758,6 +14948,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of partition serial numbers to make members of the high-availability partition group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)} if you want to override the existing values.</p>\n@param partitionSerialList The list of partition serial numbers to make members of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14822,6 +15013,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to modify.</p>\n@param hapgArn The ARN of the high-availability partition group to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14885,6 +15077,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new label for the high-availability partition group.</p>\n@param label The new label for the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14985,6 +15178,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15025,6 +15219,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of partition serial numbers to make members of the high-availability partition group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)} if you want to override the existing values.</p>\n@param partitionSerialList The list of partition serial numbers to make members of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15123,6 +15318,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15187,6 +15383,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15295,6 +15492,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM to modify.</p>\n@param hsmArn The ARN of the HSM to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15357,6 +15555,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15419,6 +15618,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15481,6 +15681,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new IAM role ARN.</p>\n@param iamRoleArn The new IAM role ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15543,6 +15744,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new external ID.</p>\n@param externalId The new external ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15605,6 +15807,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15669,6 +15872,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15732,6 +15936,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new external ID.</p>\n@param externalId The new external ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15795,6 +16000,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM to modify.</p>\n@param hsmArn The ARN of the HSM to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15858,6 +16064,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new IAM role ARN.</p>\n@param iamRoleArn The new IAM role ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15921,6 +16128,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15984,6 +16192,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16082,6 +16291,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16146,6 +16356,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16254,6 +16465,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16316,6 +16528,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16380,6 +16593,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16443,6 +16657,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16541,6 +16756,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16605,6 +16821,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16713,6 +16930,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16812,6 +17030,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16852,6 +17071,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16916,6 +17136,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17016,6 +17237,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17056,6 +17278,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17154,6 +17377,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17218,6 +17442,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17361,6 +17586,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17423,6 +17649,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17487,6 +17714,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17550,6 +17778,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",

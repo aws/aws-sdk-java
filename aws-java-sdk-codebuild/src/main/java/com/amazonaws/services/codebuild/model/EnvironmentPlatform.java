@@ -95,7 +95,7 @@ public class EnvironmentPlatform implements Serializable, Cloneable, StructuredP
      */
 
     public void setPlatform(PlatformType platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -110,7 +110,7 @@ public class EnvironmentPlatform implements Serializable, Cloneable, StructuredP
      */
 
     public EnvironmentPlatform withPlatform(PlatformType platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 

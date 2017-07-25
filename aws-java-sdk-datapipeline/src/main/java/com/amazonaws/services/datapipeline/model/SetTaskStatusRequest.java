@@ -171,7 +171,7 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setTaskStatus(TaskStatus taskStatus) {
-        this.taskStatus = taskStatus.toString();
+        withTaskStatus(taskStatus);
     }
 
     /**
@@ -188,7 +188,7 @@ public class SetTaskStatusRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public SetTaskStatusRequest withTaskStatus(TaskStatus taskStatus) {
-        setTaskStatus(taskStatus);
+        this.taskStatus = taskStatus.toString();
         return this;
     }
 

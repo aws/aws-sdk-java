@@ -93,7 +93,7 @@ public class NetworkInterfacePermissionState implements Serializable, Cloneable 
      */
 
     public void setState(NetworkInterfacePermissionStateCode state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -108,7 +108,7 @@ public class NetworkInterfacePermissionState implements Serializable, Cloneable 
      */
 
     public NetworkInterfacePermissionState withState(NetworkInterfacePermissionStateCode state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

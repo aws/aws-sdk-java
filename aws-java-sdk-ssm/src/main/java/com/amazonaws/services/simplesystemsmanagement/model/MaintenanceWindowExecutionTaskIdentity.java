@@ -211,7 +211,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      */
 
     public void setStatus(MaintenanceWindowExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -226,7 +226,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      */
 
     public MaintenanceWindowExecutionTaskIdentity withStatus(MaintenanceWindowExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -444,7 +444,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      */
 
     public void setTaskType(MaintenanceWindowTaskType taskType) {
-        this.taskType = taskType.toString();
+        withTaskType(taskType);
     }
 
     /**
@@ -459,7 +459,7 @@ public class MaintenanceWindowExecutionTaskIdentity implements Serializable, Clo
      */
 
     public MaintenanceWindowExecutionTaskIdentity withTaskType(MaintenanceWindowTaskType taskType) {
-        setTaskType(taskType);
+        this.taskType = taskType.toString();
         return this;
     }
 

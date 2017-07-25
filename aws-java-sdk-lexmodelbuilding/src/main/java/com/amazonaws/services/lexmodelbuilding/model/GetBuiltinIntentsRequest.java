@@ -110,7 +110,7 @@ public class GetBuiltinIntentsRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setLocale(Locale locale) {
-        this.locale = locale.toString();
+        withLocale(locale);
     }
 
     /**
@@ -125,7 +125,7 @@ public class GetBuiltinIntentsRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public GetBuiltinIntentsRequest withLocale(Locale locale) {
-        setLocale(locale);
+        this.locale = locale.toString();
         return this;
     }
 

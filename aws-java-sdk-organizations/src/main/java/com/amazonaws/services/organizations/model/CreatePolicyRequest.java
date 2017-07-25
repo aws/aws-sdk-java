@@ -324,7 +324,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setType(PolicyType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -347,7 +347,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public CreatePolicyRequest withType(PolicyType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

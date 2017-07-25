@@ -309,7 +309,7 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
-        this.lifeCycleState = lifeCycleState.toString();
+        withLifeCycleState(lifeCycleState);
     }
 
     /**
@@ -324,7 +324,7 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public CreateFileSystemResult withLifeCycleState(LifeCycleState lifeCycleState) {
-        setLifeCycleState(lifeCycleState);
+        this.lifeCycleState = lifeCycleState.toString();
         return this;
     }
 
@@ -550,7 +550,7 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setPerformanceMode(PerformanceMode performanceMode) {
-        this.performanceMode = performanceMode.toString();
+        withPerformanceMode(performanceMode);
     }
 
     /**
@@ -565,7 +565,7 @@ public class CreateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public CreateFileSystemResult withPerformanceMode(PerformanceMode performanceMode) {
-        setPerformanceMode(performanceMode);
+        this.performanceMode = performanceMode.toString();
         return this;
     }
 

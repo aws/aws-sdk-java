@@ -273,7 +273,7 @@ public class ListDevicePoolsRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setType(DevicePoolType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -317,7 +317,7 @@ public class ListDevicePoolsRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public ListDevicePoolsRequest withType(DevicePoolType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

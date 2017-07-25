@@ -210,7 +210,7 @@ public class BlueInstanceTerminationOption implements Serializable, Cloneable, S
      */
 
     public void setAction(InstanceAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -250,7 +250,7 @@ public class BlueInstanceTerminationOption implements Serializable, Cloneable, S
      */
 
     public BlueInstanceTerminationOption withAction(InstanceAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

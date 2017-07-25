@@ -242,7 +242,7 @@ public class UpdateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -257,7 +257,7 @@ public class UpdateServiceSpecificCredentialRequest extends com.amazonaws.Amazon
      */
 
     public UpdateServiceSpecificCredentialRequest withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

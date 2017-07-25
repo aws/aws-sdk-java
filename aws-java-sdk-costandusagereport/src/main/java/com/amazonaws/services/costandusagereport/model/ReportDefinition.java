@@ -106,7 +106,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setTimeUnit(TimeUnit timeUnit) {
-        this.timeUnit = timeUnit.toString();
+        withTimeUnit(timeUnit);
     }
 
     /**
@@ -116,7 +116,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      */
 
     public ReportDefinition withTimeUnit(TimeUnit timeUnit) {
-        setTimeUnit(timeUnit);
+        this.timeUnit = timeUnit.toString();
         return this;
     }
 
@@ -155,7 +155,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setFormat(ReportFormat format) {
-        this.format = format.toString();
+        withFormat(format);
     }
 
     /**
@@ -165,7 +165,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      */
 
     public ReportDefinition withFormat(ReportFormat format) {
-        setFormat(format);
+        this.format = format.toString();
         return this;
     }
 
@@ -204,7 +204,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setCompression(CompressionFormat compression) {
-        this.compression = compression.toString();
+        withCompression(compression);
     }
 
     /**
@@ -214,7 +214,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      */
 
     public ReportDefinition withCompression(CompressionFormat compression) {
-        setCompression(compression);
+        this.compression = compression.toString();
         return this;
     }
 
@@ -380,7 +380,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setS3Region(AWSRegion s3Region) {
-        this.s3Region = s3Region.toString();
+        withS3Region(s3Region);
     }
 
     /**
@@ -390,7 +390,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      */
 
     public ReportDefinition withS3Region(AWSRegion s3Region) {
-        setS3Region(s3Region);
+        this.s3Region = s3Region.toString();
         return this;
     }
 

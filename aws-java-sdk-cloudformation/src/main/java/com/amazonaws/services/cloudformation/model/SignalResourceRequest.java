@@ -257,7 +257,7 @@ public class SignalResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setStatus(ResourceSignalStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -274,7 +274,7 @@ public class SignalResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public SignalResourceRequest withStatus(ResourceSignalStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

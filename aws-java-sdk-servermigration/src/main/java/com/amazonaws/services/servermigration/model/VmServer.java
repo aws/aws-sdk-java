@@ -148,7 +148,7 @@ public class VmServer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setVmManagerType(VmManagerType vmManagerType) {
-        this.vmManagerType = vmManagerType.toString();
+        withVmManagerType(vmManagerType);
     }
 
     /**
@@ -158,7 +158,7 @@ public class VmServer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public VmServer withVmManagerType(VmManagerType vmManagerType) {
-        setVmManagerType(vmManagerType);
+        this.vmManagerType = vmManagerType.toString();
         return this;
     }
 

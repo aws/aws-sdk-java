@@ -98,7 +98,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setResourceType(ResourceTypeForTagging resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -113,7 +113,7 @@ public class RemoveTagsFromResourceRequest extends com.amazonaws.AmazonWebServic
      */
 
     public RemoveTagsFromResourceRequest withResourceType(ResourceTypeForTagging resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

@@ -89,7 +89,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setDuration(Duration duration) {
-        this.duration = duration.toString();
+        withDuration(duration);
     }
 
     /**
@@ -104,7 +104,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      */
 
     public RecencyDimension withDuration(Duration duration) {
-        setDuration(duration);
+        this.duration = duration.toString();
         return this;
     }
 
@@ -170,7 +170,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setRecencyType(RecencyType recencyType) {
-        this.recencyType = recencyType.toString();
+        withRecencyType(recencyType);
     }
 
     /**
@@ -187,7 +187,7 @@ public class RecencyDimension implements Serializable, Cloneable, StructuredPojo
      */
 
     public RecencyDimension withRecencyType(RecencyType recencyType) {
-        setRecencyType(recencyType);
+        this.recencyType = recencyType.toString();
         return this;
     }
 

@@ -178,7 +178,7 @@ public class UpdateShardCountRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setScalingType(ScalingType scalingType) {
-        this.scalingType = scalingType.toString();
+        withScalingType(scalingType);
     }
 
     /**
@@ -193,7 +193,7 @@ public class UpdateShardCountRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public UpdateShardCountRequest withScalingType(ScalingType scalingType) {
-        setScalingType(scalingType);
+        this.scalingType = scalingType.toString();
         return this;
     }
 

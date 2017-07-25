@@ -691,7 +691,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable, Struc
      */
 
     public void setDefaultChildPolicy(ChildPolicy defaultChildPolicy) {
-        this.defaultChildPolicy = defaultChildPolicy.toString();
+        withDefaultChildPolicy(defaultChildPolicy);
     }
 
     /**
@@ -755,7 +755,7 @@ public class WorkflowTypeConfiguration implements Serializable, Cloneable, Struc
      */
 
     public WorkflowTypeConfiguration withDefaultChildPolicy(ChildPolicy defaultChildPolicy) {
-        setDefaultChildPolicy(defaultChildPolicy);
+        this.defaultChildPolicy = defaultChildPolicy.toString();
         return this;
     }
 

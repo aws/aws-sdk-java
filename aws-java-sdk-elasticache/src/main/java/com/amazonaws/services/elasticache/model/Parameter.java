@@ -507,7 +507,7 @@ public class Parameter implements Serializable, Cloneable {
      */
 
     public void setChangeType(ChangeType changeType) {
-        this.changeType = changeType.toString();
+        withChangeType(changeType);
     }
 
     /**
@@ -529,7 +529,7 @@ public class Parameter implements Serializable, Cloneable {
      */
 
     public Parameter withChangeType(ChangeType changeType) {
-        setChangeType(changeType);
+        this.changeType = changeType.toString();
         return this;
     }
 

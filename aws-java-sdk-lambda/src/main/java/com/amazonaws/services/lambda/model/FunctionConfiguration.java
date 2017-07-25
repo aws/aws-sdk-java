@@ -283,7 +283,7 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
      */
 
     public void setRuntime(Runtime runtime) {
-        this.runtime = runtime.toString();
+        withRuntime(runtime);
     }
 
     /**
@@ -298,7 +298,7 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
      */
 
     public FunctionConfiguration withRuntime(Runtime runtime) {
-        setRuntime(runtime);
+        this.runtime = runtime.toString();
         return this;
     }
 

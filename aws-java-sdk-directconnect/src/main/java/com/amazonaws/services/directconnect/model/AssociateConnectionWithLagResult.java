@@ -204,7 +204,7 @@ public class AssociateConnectionWithLagResult extends com.amazonaws.AmazonWebSer
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -214,7 +214,7 @@ public class AssociateConnectionWithLagResult extends com.amazonaws.AmazonWebSer
      */
 
     public AssociateConnectionWithLagResult withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

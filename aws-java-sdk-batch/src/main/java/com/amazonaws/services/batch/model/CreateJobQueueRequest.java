@@ -150,7 +150,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setState(JQState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -165,7 +165,7 @@ public class CreateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public CreateJobQueueRequest withState(JQState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

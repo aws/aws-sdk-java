@@ -629,7 +629,7 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStreamViewType(StreamViewType streamViewType) {
-        this.streamViewType = streamViewType.toString();
+        withStreamViewType(streamViewType);
     }
 
     /**
@@ -687,7 +687,7 @@ public class StreamRecord implements Serializable, Cloneable, StructuredPojo {
      */
 
     public StreamRecord withStreamViewType(StreamViewType streamViewType) {
-        setStreamViewType(streamViewType);
+        this.streamViewType = streamViewType.toString();
         return this;
     }
 

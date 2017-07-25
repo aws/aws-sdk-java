@@ -89,7 +89,7 @@ public class TracingConfigResponse implements Serializable, Cloneable, Structure
      */
 
     public void setMode(TracingMode mode) {
-        this.mode = mode.toString();
+        withMode(mode);
     }
 
     /**
@@ -104,7 +104,7 @@ public class TracingConfigResponse implements Serializable, Cloneable, Structure
      */
 
     public TracingConfigResponse withMode(TracingMode mode) {
-        setMode(mode);
+        this.mode = mode.toString();
         return this;
     }
 

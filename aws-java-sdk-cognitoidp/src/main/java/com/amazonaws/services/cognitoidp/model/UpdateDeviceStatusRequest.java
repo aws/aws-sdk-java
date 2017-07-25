@@ -181,7 +181,7 @@ public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
-        this.deviceRememberedStatus = deviceRememberedStatus.toString();
+        withDeviceRememberedStatus(deviceRememberedStatus);
     }
 
     /**
@@ -196,7 +196,7 @@ public class UpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public UpdateDeviceStatusRequest withDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
-        setDeviceRememberedStatus(deviceRememberedStatus);
+        this.deviceRememberedStatus = deviceRememberedStatus.toString();
         return this;
     }
 

@@ -206,7 +206,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      */
 
     public void setAgentHealth(AgentHealth agentHealth) {
-        this.agentHealth = agentHealth.toString();
+        withAgentHealth(agentHealth);
     }
 
     /**
@@ -221,7 +221,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      */
 
     public AssessmentRunAgent withAgentHealth(AgentHealth agentHealth) {
-        setAgentHealth(agentHealth);
+        this.agentHealth = agentHealth.toString();
         return this;
     }
 
@@ -279,7 +279,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      */
 
     public void setAgentHealthCode(AgentHealthCode agentHealthCode) {
-        this.agentHealthCode = agentHealthCode.toString();
+        withAgentHealthCode(agentHealthCode);
     }
 
     /**
@@ -294,7 +294,7 @@ public class AssessmentRunAgent implements Serializable, Cloneable, StructuredPo
      */
 
     public AssessmentRunAgent withAgentHealthCode(AgentHealthCode agentHealthCode) {
-        setAgentHealthCode(agentHealthCode);
+        this.agentHealthCode = agentHealthCode.toString();
         return this;
     }
 

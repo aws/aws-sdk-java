@@ -455,7 +455,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setIamUserAccessToBilling(IAMUserAccessToBilling iamUserAccessToBilling) {
-        this.iamUserAccessToBilling = iamUserAccessToBilling.toString();
+        withIamUserAccessToBilling(iamUserAccessToBilling);
     }
 
     /**
@@ -487,7 +487,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public CreateAccountRequest withIamUserAccessToBilling(IAMUserAccessToBilling iamUserAccessToBilling) {
-        setIamUserAccessToBilling(iamUserAccessToBilling);
+        this.iamUserAccessToBilling = iamUserAccessToBilling.toString();
         return this;
     }
 

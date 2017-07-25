@@ -113,7 +113,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      */
 
     public void setEncryptionOption(EncryptionOption encryptionOption) {
-        this.encryptionOption = encryptionOption.toString();
+        withEncryptionOption(encryptionOption);
     }
 
     /**
@@ -132,7 +132,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      */
 
     public EncryptionConfiguration withEncryptionOption(EncryptionOption encryptionOption) {
-        setEncryptionOption(encryptionOption);
+        this.encryptionOption = encryptionOption.toString();
         return this;
     }
 

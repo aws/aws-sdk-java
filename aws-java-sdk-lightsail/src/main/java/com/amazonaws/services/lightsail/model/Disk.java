@@ -377,7 +377,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -392,7 +392,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Disk withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

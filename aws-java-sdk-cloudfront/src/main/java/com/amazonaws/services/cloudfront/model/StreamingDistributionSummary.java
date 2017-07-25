@@ -578,7 +578,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      */
 
     public void setPriceClass(PriceClass priceClass) {
-        this.priceClass = priceClass.toString();
+        withPriceClass(priceClass);
     }
 
     /**
@@ -588,7 +588,7 @@ public class StreamingDistributionSummary implements Serializable, Cloneable {
      */
 
     public StreamingDistributionSummary withPriceClass(PriceClass priceClass) {
-        setPriceClass(priceClass);
+        this.priceClass = priceClass.toString();
         return this;
     }
 

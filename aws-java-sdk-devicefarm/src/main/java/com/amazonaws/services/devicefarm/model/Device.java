@@ -491,7 +491,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setFormFactor(DeviceFormFactor formFactor) {
-        this.formFactor = formFactor.toString();
+        withFormFactor(formFactor);
     }
 
     /**
@@ -535,7 +535,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Device withFormFactor(DeviceFormFactor formFactor) {
-        setFormFactor(formFactor);
+        this.formFactor = formFactor.toString();
         return this;
     }
 
@@ -709,7 +709,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPlatform(DevicePlatform platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -753,7 +753,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Device withPlatform(DevicePlatform platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 

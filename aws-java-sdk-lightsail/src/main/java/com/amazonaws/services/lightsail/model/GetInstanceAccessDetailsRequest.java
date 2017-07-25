@@ -132,7 +132,7 @@ public class GetInstanceAccessDetailsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setProtocol(InstanceAccessProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -147,7 +147,7 @@ public class GetInstanceAccessDetailsRequest extends com.amazonaws.AmazonWebServ
      */
 
     public GetInstanceAccessDetailsRequest withProtocol(InstanceAccessProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

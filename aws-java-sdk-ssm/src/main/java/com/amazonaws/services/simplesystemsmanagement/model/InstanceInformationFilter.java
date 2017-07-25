@@ -95,7 +95,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable, Struc
      */
 
     public void setKey(InstanceInformationFilterKey key) {
-        this.key = key.toString();
+        withKey(key);
     }
 
     /**
@@ -110,7 +110,7 @@ public class InstanceInformationFilter implements Serializable, Cloneable, Struc
      */
 
     public InstanceInformationFilter withKey(InstanceInformationFilterKey key) {
-        setKey(key);
+        this.key = key.toString();
         return this;
     }
 

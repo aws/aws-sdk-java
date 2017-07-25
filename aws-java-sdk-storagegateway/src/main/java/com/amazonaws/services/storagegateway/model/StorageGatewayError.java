@@ -96,7 +96,7 @@ public class StorageGatewayError implements Serializable, Cloneable, StructuredP
      */
 
     public void setErrorCode(ErrorCode errorCode) {
-        this.errorCode = errorCode.toString();
+        withErrorCode(errorCode);
     }
 
     /**
@@ -111,7 +111,7 @@ public class StorageGatewayError implements Serializable, Cloneable, StructuredP
      */
 
     public StorageGatewayError withErrorCode(ErrorCode errorCode) {
-        setErrorCode(errorCode);
+        this.errorCode = errorCode.toString();
         return this;
     }
 

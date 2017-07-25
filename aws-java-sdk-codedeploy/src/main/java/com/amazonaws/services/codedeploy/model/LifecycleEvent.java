@@ -564,7 +564,7 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(LifecycleEventStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -642,7 +642,7 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
      */
 
     public LifecycleEvent withStatus(LifecycleEventStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

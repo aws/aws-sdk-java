@@ -1005,7 +1005,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setType(UploadType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1197,7 +1197,7 @@ public class CreateUploadRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public CreateUploadRequest withType(UploadType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

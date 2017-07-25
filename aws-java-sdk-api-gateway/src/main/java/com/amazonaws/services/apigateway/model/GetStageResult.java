@@ -414,7 +414,7 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      */
 
     public void setCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
-        this.cacheClusterStatus = cacheClusterStatus.toString();
+        withCacheClusterStatus(cacheClusterStatus);
     }
 
     /**
@@ -429,7 +429,7 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      */
 
     public GetStageResult withCacheClusterStatus(CacheClusterStatus cacheClusterStatus) {
-        setCacheClusterStatus(cacheClusterStatus);
+        this.cacheClusterStatus = cacheClusterStatus.toString();
         return this;
     }
 

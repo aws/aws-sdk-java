@@ -200,7 +200,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
-        this.serviceNamespace = serviceNamespace.toString();
+        withServiceNamespace(serviceNamespace);
     }
 
     /**
@@ -219,7 +219,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      */
 
     public DeregisterScalableTargetRequest withServiceNamespace(ServiceNamespace serviceNamespace) {
-        setServiceNamespace(serviceNamespace);
+        this.serviceNamespace = serviceNamespace.toString();
         return this;
     }
 
@@ -905,7 +905,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setScalableDimension(ScalableDimension scalableDimension) {
-        this.scalableDimension = scalableDimension.toString();
+        withScalableDimension(scalableDimension);
     }
 
     /**
@@ -1009,7 +1009,7 @@ public class DeregisterScalableTargetRequest extends com.amazonaws.AmazonWebServ
      */
 
     public DeregisterScalableTargetRequest withScalableDimension(ScalableDimension scalableDimension) {
-        setScalableDimension(scalableDimension);
+        this.scalableDimension = scalableDimension.toString();
         return this;
     }
 

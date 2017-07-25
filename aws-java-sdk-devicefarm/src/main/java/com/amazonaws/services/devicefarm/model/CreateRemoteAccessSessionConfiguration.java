@@ -89,7 +89,7 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
      */
 
     public void setBillingMethod(BillingMethod billingMethod) {
-        this.billingMethod = billingMethod.toString();
+        withBillingMethod(billingMethod);
     }
 
     /**
@@ -104,7 +104,7 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
      */
 
     public CreateRemoteAccessSessionConfiguration withBillingMethod(BillingMethod billingMethod) {
-        setBillingMethod(billingMethod);
+        this.billingMethod = billingMethod.toString();
         return this;
     }
 

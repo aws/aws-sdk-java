@@ -296,7 +296,7 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public void setStatus(BuildStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -354,7 +354,7 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
 
     public ListBuildsRequest withStatus(BuildStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

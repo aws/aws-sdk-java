@@ -324,7 +324,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      */
 
     public void setType(MaintenanceWindowTaskType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -339,7 +339,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      */
 
     public GetMaintenanceWindowExecutionTaskResult withType(MaintenanceWindowTaskType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -642,7 +642,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      */
 
     public void setStatus(MaintenanceWindowExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -657,7 +657,7 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      */
 
     public GetMaintenanceWindowExecutionTaskResult withStatus(MaintenanceWindowExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

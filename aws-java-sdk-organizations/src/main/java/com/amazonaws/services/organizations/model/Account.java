@@ -392,7 +392,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(AccountStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -407,7 +407,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Account withStatus(AccountStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -465,7 +465,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setJoinedMethod(AccountJoinedMethod joinedMethod) {
-        this.joinedMethod = joinedMethod.toString();
+        withJoinedMethod(joinedMethod);
     }
 
     /**
@@ -480,7 +480,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Account withJoinedMethod(AccountJoinedMethod joinedMethod) {
-        setJoinedMethod(joinedMethod);
+        this.joinedMethod = joinedMethod.toString();
         return this;
     }
 

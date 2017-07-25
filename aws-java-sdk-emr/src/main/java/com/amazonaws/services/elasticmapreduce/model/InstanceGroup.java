@@ -258,7 +258,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMarket(MarketType market) {
-        this.market = market.toString();
+        withMarket(market);
     }
 
     /**
@@ -273,7 +273,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      */
 
     public InstanceGroup withMarket(MarketType market) {
-        setMarket(market);
+        this.market = market.toString();
         return this;
     }
 
@@ -331,7 +331,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setInstanceGroupType(InstanceGroupType instanceGroupType) {
-        this.instanceGroupType = instanceGroupType.toString();
+        withInstanceGroupType(instanceGroupType);
     }
 
     /**
@@ -346,7 +346,7 @@ public class InstanceGroup implements Serializable, Cloneable, StructuredPojo {
      */
 
     public InstanceGroup withInstanceGroupType(InstanceGroupType instanceGroupType) {
-        setInstanceGroupType(instanceGroupType);
+        this.instanceGroupType = instanceGroupType.toString();
         return this;
     }
 

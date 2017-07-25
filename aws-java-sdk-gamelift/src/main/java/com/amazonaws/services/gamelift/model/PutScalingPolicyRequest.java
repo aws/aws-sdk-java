@@ -472,7 +472,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setScalingAdjustmentType(ScalingAdjustmentType scalingAdjustmentType) {
-        this.scalingAdjustmentType = scalingAdjustmentType.toString();
+        withScalingAdjustmentType(scalingAdjustmentType);
     }
 
     /**
@@ -526,7 +526,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public PutScalingPolicyRequest withScalingAdjustmentType(ScalingAdjustmentType scalingAdjustmentType) {
-        setScalingAdjustmentType(scalingAdjustmentType);
+        this.scalingAdjustmentType = scalingAdjustmentType.toString();
         return this;
     }
 
@@ -624,7 +624,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setComparisonOperator(ComparisonOperatorType comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -639,7 +639,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public PutScalingPolicyRequest withComparisonOperator(ComparisonOperatorType comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 
@@ -1040,7 +1040,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setMetricName(MetricName metricName) {
-        this.metricName = metricName.toString();
+        withMetricName(metricName);
     }
 
     /**
@@ -1130,7 +1130,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public PutScalingPolicyRequest withMetricName(MetricName metricName) {
-        setMetricName(metricName);
+        this.metricName = metricName.toString();
         return this;
     }
 

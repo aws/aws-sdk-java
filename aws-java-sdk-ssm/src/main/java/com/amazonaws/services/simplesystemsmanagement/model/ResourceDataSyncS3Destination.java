@@ -187,7 +187,7 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
      */
 
     public void setSyncFormat(ResourceDataSyncS3Format syncFormat) {
-        this.syncFormat = syncFormat.toString();
+        withSyncFormat(syncFormat);
     }
 
     /**
@@ -202,7 +202,7 @@ public class ResourceDataSyncS3Destination implements Serializable, Cloneable, S
      */
 
     public ResourceDataSyncS3Destination withSyncFormat(ResourceDataSyncS3Format syncFormat) {
-        setSyncFormat(syncFormat);
+        this.syncFormat = syncFormat.toString();
         return this;
     }
 

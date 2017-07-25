@@ -105,7 +105,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      */
 
     public void setInfoType(EnvironmentInfoType infoType) {
-        this.infoType = infoType.toString();
+        withInfoType(infoType);
     }
 
     /**
@@ -120,7 +120,7 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
      */
 
     public EnvironmentInfoDescription withInfoType(EnvironmentInfoType infoType) {
-        setInfoType(infoType);
+        this.infoType = infoType.toString();
         return this;
     }
 

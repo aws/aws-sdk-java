@@ -41,7 +41,7 @@ class FleetStopped {
             }
         }
 
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("fleets")), new JmesPathField("state"));
+        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("Fleets")), new JmesPathField("State"));
 
         /**
          * Takes the result and determines whether the state of the resource matches the expected state. To determine
@@ -80,7 +80,7 @@ class FleetStopped {
             }
         }
 
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("fleets")), new JmesPathField("state"));
+        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("Fleets")), new JmesPathField("State"));
 
         /**
          * Takes the result and determines whether the state of the resource matches the expected state. To determine
@@ -119,7 +119,7 @@ class FleetStopped {
             }
         }
 
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("fleets")), new JmesPathField("state"));
+        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("Fleets")), new JmesPathField("State"));
 
         /**
          * Takes the result and determines whether the state of the resource matches the expected state. To determine

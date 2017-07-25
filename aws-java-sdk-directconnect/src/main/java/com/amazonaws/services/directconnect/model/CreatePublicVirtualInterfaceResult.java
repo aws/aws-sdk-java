@@ -404,7 +404,7 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
      */
 
     public void setAddressFamily(AddressFamily addressFamily) {
-        this.addressFamily = addressFamily.toString();
+        withAddressFamily(addressFamily);
     }
 
     /**
@@ -414,7 +414,7 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
      */
 
     public CreatePublicVirtualInterfaceResult withAddressFamily(AddressFamily addressFamily) {
-        setAddressFamily(addressFamily);
+        this.addressFamily = addressFamily.toString();
         return this;
     }
 
@@ -453,7 +453,7 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
      */
 
     public void setVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
-        this.virtualInterfaceState = virtualInterfaceState.toString();
+        withVirtualInterfaceState(virtualInterfaceState);
     }
 
     /**
@@ -463,7 +463,7 @@ public class CreatePublicVirtualInterfaceResult extends com.amazonaws.AmazonWebS
      */
 
     public CreatePublicVirtualInterfaceResult withVirtualInterfaceState(VirtualInterfaceState virtualInterfaceState) {
-        setVirtualInterfaceState(virtualInterfaceState);
+        this.virtualInterfaceState = virtualInterfaceState.toString();
         return this;
     }
 

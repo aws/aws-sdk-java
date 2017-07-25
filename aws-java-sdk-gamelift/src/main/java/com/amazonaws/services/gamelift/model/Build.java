@@ -485,7 +485,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(BuildStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -543,7 +543,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Build withStatus(BuildStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -655,7 +655,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -672,7 +672,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Build withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 

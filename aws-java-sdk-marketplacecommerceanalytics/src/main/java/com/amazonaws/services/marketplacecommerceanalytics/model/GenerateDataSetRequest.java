@@ -1367,7 +1367,7 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setDataSetType(DataSetType dataSetType) {
-        this.dataSetType = dataSetType.toString();
+        withDataSetType(dataSetType);
     }
 
     /**
@@ -1659,7 +1659,7 @@ public class GenerateDataSetRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public GenerateDataSetRequest withDataSetType(DataSetType dataSetType) {
-        setDataSetType(dataSetType);
+        this.dataSetType = dataSetType.toString();
         return this;
     }
 

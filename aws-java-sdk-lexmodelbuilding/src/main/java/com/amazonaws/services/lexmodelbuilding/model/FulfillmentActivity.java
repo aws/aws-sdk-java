@@ -126,7 +126,7 @@ public class FulfillmentActivity implements Serializable, Cloneable, StructuredP
      */
 
     public void setType(FulfillmentActivityType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -143,7 +143,7 @@ public class FulfillmentActivity implements Serializable, Cloneable, StructuredP
      */
 
     public FulfillmentActivity withType(FulfillmentActivityType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

@@ -290,7 +290,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
-        this.serviceNamespace = serviceNamespace.toString();
+        withServiceNamespace(serviceNamespace);
     }
 
     /**
@@ -309,7 +309,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ScalingActivity withServiceNamespace(ServiceNamespace serviceNamespace) {
-        setServiceNamespace(serviceNamespace);
+        this.serviceNamespace = serviceNamespace.toString();
         return this;
     }
 
@@ -991,7 +991,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setScalableDimension(ScalableDimension scalableDimension) {
-        this.scalableDimension = scalableDimension.toString();
+        withScalableDimension(scalableDimension);
     }
 
     /**
@@ -1094,7 +1094,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ScalingActivity withScalableDimension(ScalableDimension scalableDimension) {
-        setScalableDimension(scalableDimension);
+        this.scalableDimension = scalableDimension.toString();
         return this;
     }
 
@@ -1312,7 +1312,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setStatusCode(ScalingActivityStatusCode statusCode) {
-        this.statusCode = statusCode.toString();
+        withStatusCode(statusCode);
     }
 
     /**
@@ -1327,7 +1327,7 @@ public class ScalingActivity implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ScalingActivity withStatusCode(ScalingActivityStatusCode statusCode) {
-        setStatusCode(statusCode);
+        this.statusCode = statusCode.toString();
         return this;
     }
 

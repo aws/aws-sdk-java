@@ -242,7 +242,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setJobState(JobState jobState) {
-        this.jobState = jobState.toString();
+        withJobState(jobState);
     }
 
     /**
@@ -257,7 +257,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public JobMetadata withJobState(JobState jobState) {
-        setJobState(jobState);
+        this.jobState = jobState.toString();
         return this;
     }
 
@@ -315,7 +315,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -330,7 +330,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public JobMetadata withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 
@@ -388,7 +388,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setSnowballType(SnowballType snowballType) {
-        this.snowballType = snowballType.toString();
+        withSnowballType(snowballType);
     }
 
     /**
@@ -403,7 +403,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public JobMetadata withSnowballType(SnowballType snowballType) {
-        setSnowballType(snowballType);
+        this.snowballType = snowballType.toString();
         return this;
     }
 
@@ -782,7 +782,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        this.snowballCapacityPreference = snowballCapacityPreference.toString();
+        withSnowballCapacityPreference(snowballCapacityPreference);
     }
 
     /**
@@ -799,7 +799,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public JobMetadata withSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        setSnowballCapacityPreference(snowballCapacityPreference);
+        this.snowballCapacityPreference = snowballCapacityPreference.toString();
         return this;
     }
 

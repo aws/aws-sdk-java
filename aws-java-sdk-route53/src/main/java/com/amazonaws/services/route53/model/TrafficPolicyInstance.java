@@ -660,7 +660,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      */
 
     public void setTrafficPolicyType(RRType trafficPolicyType) {
-        this.trafficPolicyType = trafficPolicyType.toString();
+        withTrafficPolicyType(trafficPolicyType);
     }
 
     /**
@@ -677,7 +677,7 @@ public class TrafficPolicyInstance implements Serializable, Cloneable {
      */
 
     public TrafficPolicyInstance withTrafficPolicyType(RRType trafficPolicyType) {
-        setTrafficPolicyType(trafficPolicyType);
+        this.trafficPolicyType = trafficPolicyType.toString();
         return this;
     }
 

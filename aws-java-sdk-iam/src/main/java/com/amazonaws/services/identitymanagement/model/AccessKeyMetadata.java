@@ -197,7 +197,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -214,7 +214,7 @@ public class AccessKeyMetadata implements Serializable, Cloneable {
      */
 
     public AccessKeyMetadata withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

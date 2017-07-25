@@ -463,7 +463,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setAuthFlow(AuthFlowType authFlow) {
-        this.authFlow = authFlow.toString();
+        withAuthFlow(authFlow);
     }
 
     /**
@@ -552,7 +552,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public InitiateAuthRequest withAuthFlow(AuthFlowType authFlow) {
-        setAuthFlow(authFlow);
+        this.authFlow = authFlow.toString();
         return this;
     }
 

@@ -95,7 +95,7 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
      */
 
     public void setType(BatchReadExceptionType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -110,7 +110,7 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
      */
 
     public BatchReadException withType(BatchReadExceptionType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

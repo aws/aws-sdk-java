@@ -88,7 +88,7 @@ public class AttributeDimension implements Serializable, Cloneable, StructuredPo
      */
 
     public void setAttributeType(AttributeType attributeType) {
-        this.attributeType = attributeType.toString();
+        withAttributeType(attributeType);
     }
 
     /**
@@ -103,7 +103,7 @@ public class AttributeDimension implements Serializable, Cloneable, StructuredPo
      */
 
     public AttributeDimension withAttributeType(AttributeType attributeType) {
-        setAttributeType(attributeType);
+        this.attributeType = attributeType.toString();
         return this;
     }
 

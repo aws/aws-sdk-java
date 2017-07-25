@@ -196,7 +196,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -211,7 +211,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateJobRequest withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 
@@ -561,7 +561,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        this.snowballCapacityPreference = snowballCapacityPreference.toString();
+        withSnowballCapacityPreference(snowballCapacityPreference);
     }
 
     /**
@@ -578,7 +578,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateJobRequest withSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        setSnowballCapacityPreference(snowballCapacityPreference);
+        this.snowballCapacityPreference = snowballCapacityPreference.toString();
         return this;
     }
 
@@ -848,7 +848,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
@@ -916,7 +916,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateJobRequest withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 
@@ -1068,7 +1068,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setSnowballType(SnowballType snowballType) {
-        this.snowballType = snowballType.toString();
+        withSnowballType(snowballType);
     }
 
     /**
@@ -1085,7 +1085,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public CreateJobRequest withSnowballType(SnowballType snowballType) {
-        setSnowballType(snowballType);
+        this.snowballType = snowballType.toString();
         return this;
     }
 

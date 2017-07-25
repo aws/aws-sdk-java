@@ -245,7 +245,7 @@ public class SchemaExtensionInfo implements Serializable, Cloneable, StructuredP
      */
 
     public void setSchemaExtensionStatus(SchemaExtensionStatus schemaExtensionStatus) {
-        this.schemaExtensionStatus = schemaExtensionStatus.toString();
+        withSchemaExtensionStatus(schemaExtensionStatus);
     }
 
     /**
@@ -260,7 +260,7 @@ public class SchemaExtensionInfo implements Serializable, Cloneable, StructuredP
      */
 
     public SchemaExtensionInfo withSchemaExtensionStatus(SchemaExtensionStatus schemaExtensionStatus) {
-        setSchemaExtensionStatus(schemaExtensionStatus);
+        this.schemaExtensionStatus = schemaExtensionStatus.toString();
         return this;
     }
 

@@ -938,7 +938,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setStatistic(Statistic statistic) {
-        this.statistic = statistic.toString();
+        withStatistic(statistic);
     }
 
     /**
@@ -955,7 +955,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public PutMetricAlarmRequest withStatistic(Statistic statistic) {
-        setStatistic(statistic);
+        this.statistic = statistic.toString();
         return this;
     }
 
@@ -1231,7 +1231,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setUnit(StandardUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -1259,7 +1259,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public PutMetricAlarmRequest withUnit(StandardUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 
@@ -1414,7 +1414,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -1431,7 +1431,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public PutMetricAlarmRequest withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 

@@ -150,7 +150,7 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setLicenseType(LicenseType licenseType) {
-        this.licenseType = licenseType.toString();
+        withLicenseType(licenseType);
     }
 
     /**
@@ -160,7 +160,7 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public CreateReplicationJobRequest withLicenseType(LicenseType licenseType) {
-        setLicenseType(licenseType);
+        this.licenseType = licenseType.toString();
         return this;
     }
 

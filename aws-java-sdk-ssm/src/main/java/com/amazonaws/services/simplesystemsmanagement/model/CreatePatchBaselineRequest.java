@@ -145,7 +145,7 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -162,7 +162,7 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public CreatePatchBaselineRequest withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 
@@ -429,7 +429,7 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
-        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
+        withApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
     }
 
     /**
@@ -448,7 +448,7 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public CreatePatchBaselineRequest withApprovedPatchesComplianceLevel(PatchComplianceLevel approvedPatchesComplianceLevel) {
-        setApprovedPatchesComplianceLevel(approvedPatchesComplianceLevel);
+        this.approvedPatchesComplianceLevel = approvedPatchesComplianceLevel.toString();
         return this;
     }
 

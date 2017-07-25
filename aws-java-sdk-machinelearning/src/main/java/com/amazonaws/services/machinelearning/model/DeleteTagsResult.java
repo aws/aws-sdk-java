@@ -130,7 +130,7 @@ public class DeleteTagsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public void setResourceType(TaggableResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -145,7 +145,7 @@ public class DeleteTagsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public DeleteTagsResult withResourceType(TaggableResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

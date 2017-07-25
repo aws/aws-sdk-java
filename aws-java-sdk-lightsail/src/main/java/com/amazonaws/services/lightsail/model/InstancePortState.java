@@ -399,7 +399,7 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setProtocol(NetworkProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -461,7 +461,7 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      */
 
     public InstancePortState withProtocol(NetworkProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
@@ -519,7 +519,7 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setState(PortState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -534,7 +534,7 @@ public class InstancePortState implements Serializable, Cloneable, StructuredPoj
      */
 
     public InstancePortState withState(PortState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -224,7 +224,7 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -256,7 +256,7 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      */
 
     public ProductViewDetail withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

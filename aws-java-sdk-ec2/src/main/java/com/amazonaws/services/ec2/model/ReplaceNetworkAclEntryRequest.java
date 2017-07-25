@@ -504,7 +504,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      */
 
     public void setRuleAction(RuleAction ruleAction) {
-        this.ruleAction = ruleAction.toString();
+        withRuleAction(ruleAction);
     }
 
     /**
@@ -519,7 +519,7 @@ public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest imple
      */
 
     public ReplaceNetworkAclEntryRequest withRuleAction(RuleAction ruleAction) {
-        setRuleAction(ruleAction);
+        this.ruleAction = ruleAction.toString();
         return this;
     }
 

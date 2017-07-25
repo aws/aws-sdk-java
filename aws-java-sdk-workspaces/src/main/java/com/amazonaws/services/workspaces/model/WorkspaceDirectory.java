@@ -555,7 +555,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      */
 
     public void setDirectoryType(WorkspaceDirectoryType directoryType) {
-        this.directoryType = directoryType.toString();
+        withDirectoryType(directoryType);
     }
 
     /**
@@ -570,7 +570,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      */
 
     public WorkspaceDirectory withDirectoryType(WorkspaceDirectoryType directoryType) {
-        setDirectoryType(directoryType);
+        this.directoryType = directoryType.toString();
         return this;
     }
 
@@ -668,7 +668,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      */
 
     public void setState(WorkspaceDirectoryState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -683,7 +683,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      */
 
     public WorkspaceDirectory withState(WorkspaceDirectoryState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

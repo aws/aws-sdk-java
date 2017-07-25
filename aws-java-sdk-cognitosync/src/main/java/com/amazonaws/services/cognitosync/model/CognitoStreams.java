@@ -230,7 +230,7 @@ public class CognitoStreams implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStreamingStatus(StreamingStatus streamingStatus) {
-        this.streamingStatus = streamingStatus.toString();
+        withStreamingStatus(streamingStatus);
     }
 
     /**
@@ -257,7 +257,7 @@ public class CognitoStreams implements Serializable, Cloneable, StructuredPojo {
      */
 
     public CognitoStreams withStreamingStatus(StreamingStatus streamingStatus) {
-        setStreamingStatus(streamingStatus);
+        this.streamingStatus = streamingStatus.toString();
         return this;
     }
 

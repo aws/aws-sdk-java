@@ -129,7 +129,7 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -144,7 +144,7 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      */
 
     public GetResourceConfigHistoryRequest withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -336,7 +336,7 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      */
 
     public void setChronologicalOrder(ChronologicalOrder chronologicalOrder) {
-        this.chronologicalOrder = chronologicalOrder.toString();
+        withChronologicalOrder(chronologicalOrder);
     }
 
     /**
@@ -353,7 +353,7 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
      */
 
     public GetResourceConfigHistoryRequest withChronologicalOrder(ChronologicalOrder chronologicalOrder) {
-        setChronologicalOrder(chronologicalOrder);
+        this.chronologicalOrder = chronologicalOrder.toString();
         return this;
     }
 

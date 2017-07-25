@@ -107,7 +107,7 @@ public class OfferingStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(OfferingTransactionType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -122,7 +122,7 @@ public class OfferingStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public OfferingStatus withType(OfferingTransactionType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

@@ -539,7 +539,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(GameSessionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -556,7 +556,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      */
 
     public GameSession withStatus(GameSessionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -784,7 +784,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
-        this.playerSessionCreationPolicy = playerSessionCreationPolicy.toString();
+        withPlayerSessionCreationPolicy(playerSessionCreationPolicy);
     }
 
     /**
@@ -799,7 +799,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      */
 
     public GameSession withPlayerSessionCreationPolicy(PlayerSessionCreationPolicy playerSessionCreationPolicy) {
-        setPlayerSessionCreationPolicy(playerSessionCreationPolicy);
+        this.playerSessionCreationPolicy = playerSessionCreationPolicy.toString();
         return this;
     }
 

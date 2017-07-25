@@ -213,7 +213,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setTargetType(TargetType targetType) {
-        this.targetType = targetType.toString();
+        withTargetType(targetType);
     }
 
     /**
@@ -230,7 +230,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Attribute withTargetType(TargetType targetType) {
-        setTargetType(targetType);
+        this.targetType = targetType.toString();
         return this;
     }
 

@@ -96,7 +96,7 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
      */
 
     public void setKey(AutomationExecutionFilterKey key) {
-        this.key = key.toString();
+        withKey(key);
     }
 
     /**
@@ -111,7 +111,7 @@ public class AutomationExecutionFilter implements Serializable, Cloneable, Struc
      */
 
     public AutomationExecutionFilter withKey(AutomationExecutionFilterKey key) {
-        setKey(key);
+        this.key = key.toString();
         return this;
     }
 

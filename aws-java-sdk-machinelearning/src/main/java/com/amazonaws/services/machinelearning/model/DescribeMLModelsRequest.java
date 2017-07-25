@@ -339,7 +339,7 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setFilterVariable(MLModelFilterVariable filterVariable) {
-        this.filterVariable = filterVariable.toString();
+        withFilterVariable(filterVariable);
     }
 
     /**
@@ -390,7 +390,7 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public DescribeMLModelsRequest withFilterVariable(MLModelFilterVariable filterVariable) {
-        setFilterVariable(filterVariable);
+        this.filterVariable = filterVariable.toString();
         return this;
     }
 
@@ -952,7 +952,7 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setSortOrder(SortOrder sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -980,7 +980,7 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public DescribeMLModelsRequest withSortOrder(SortOrder sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 

@@ -436,7 +436,7 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(MatchFieldType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -525,7 +525,7 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      */
 
     public FieldToMatch withType(MatchFieldType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

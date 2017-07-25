@@ -582,7 +582,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setAuthFlow(AuthFlowType authFlow) {
-        this.authFlow = authFlow.toString();
+        withAuthFlow(authFlow);
     }
 
     /**
@@ -677,7 +677,7 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public AdminInitiateAuthRequest withAuthFlow(AuthFlowType authFlow) {
-        setAuthFlow(authFlow);
+        this.authFlow = authFlow.toString();
         return this;
     }
 

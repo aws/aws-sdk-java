@@ -335,7 +335,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setLagState(LagState lagState) {
-        this.lagState = lagState.toString();
+        withLagState(lagState);
     }
 
     /**
@@ -345,7 +345,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Lag withLagState(LagState lagState) {
-        setLagState(lagState);
+        this.lagState = lagState.toString();
         return this;
     }
 

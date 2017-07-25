@@ -54,8 +54,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String displayName;
     /**
      * <p>
-     * The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation succeeds and
-     * <b>FAILED</b> if image creation has failed.
+     * The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If image
+     * creation fails, it moves to <b>FAILED</b>.
      * </p>
      */
     private String state;
@@ -97,7 +97,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Application> applications;
     /**
      * <p>
-     * The timestamp when the image was created.
+     * The time stamp when the image was created.
      * </p>
      */
     private java.util.Date createdTime;
@@ -271,13 +271,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation succeeds and
-     * <b>FAILED</b> if image creation has failed.
+     * The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If image
+     * creation fails, it moves to <b>FAILED</b>.
      * </p>
      * 
      * @param state
-     *        The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation
-     *        succeeds and <b>FAILED</b> if image creation has failed.
+     *        The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If
+     *        image creation fails, it moves to <b>FAILED</b>.
      * @see ImageState
      */
 
@@ -287,12 +287,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation succeeds and
-     * <b>FAILED</b> if image creation has failed.
+     * The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If image
+     * creation fails, it moves to <b>FAILED</b>.
      * </p>
      * 
-     * @return The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation
-     *         succeeds and <b>FAILED</b> if image creation has failed.
+     * @return The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>.
+     *         If image creation fails, it moves to <b>FAILED</b>.
      * @see ImageState
      */
 
@@ -302,13 +302,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation succeeds and
-     * <b>FAILED</b> if image creation has failed.
+     * The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If image
+     * creation fails, it moves to <b>FAILED</b>.
      * </p>
      * 
      * @param state
-     *        The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation
-     *        succeeds and <b>FAILED</b> if image creation has failed.
+     *        The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If
+     *        image creation fails, it moves to <b>FAILED</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageState
      */
@@ -320,35 +320,35 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation succeeds and
-     * <b>FAILED</b> if image creation has failed.
+     * The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If image
+     * creation fails, it moves to <b>FAILED</b>.
      * </p>
      * 
      * @param state
-     *        The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation
-     *        succeeds and <b>FAILED</b> if image creation has failed.
+     *        The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If
+     *        image creation fails, it moves to <b>FAILED</b>.
      * @see ImageState
      */
 
     public void setState(ImageState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
      * <p>
-     * The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation succeeds and
-     * <b>FAILED</b> if image creation has failed.
+     * The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If image
+     * creation fails, it moves to <b>FAILED</b>.
      * </p>
      * 
      * @param state
-     *        The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation
-     *        succeeds and <b>FAILED</b> if image creation has failed.
+     *        The image starts in the <b>PENDING</b> state. If image creation succeeds, it moves to <b>AVAILABLE</b>. If
+     *        image creation fails, it moves to <b>FAILED</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageState
      */
 
     public Image withState(ImageState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -406,7 +406,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setVisibility(VisibilityType visibility) {
-        this.visibility = visibility.toString();
+        withVisibility(visibility);
     }
 
     /**
@@ -421,7 +421,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Image withVisibility(VisibilityType visibility) {
-        setVisibility(visibility);
+        this.visibility = visibility.toString();
         return this;
     }
 
@@ -531,7 +531,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPlatform(PlatformType platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -546,7 +546,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Image withPlatform(PlatformType platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 
@@ -702,11 +702,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the image was created.
+     * The time stamp when the image was created.
      * </p>
      * 
      * @param createdTime
-     *        The timestamp when the image was created.
+     *        The time stamp when the image was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -715,10 +715,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the image was created.
+     * The time stamp when the image was created.
      * </p>
      * 
-     * @return The timestamp when the image was created.
+     * @return The time stamp when the image was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -727,11 +727,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the image was created.
+     * The time stamp when the image was created.
      * </p>
      * 
      * @param createdTime
-     *        The timestamp when the image was created.
+     *        The time stamp when the image was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

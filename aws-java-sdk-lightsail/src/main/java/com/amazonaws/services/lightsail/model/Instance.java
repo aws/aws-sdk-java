@@ -408,7 +408,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -423,7 +423,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Instance withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

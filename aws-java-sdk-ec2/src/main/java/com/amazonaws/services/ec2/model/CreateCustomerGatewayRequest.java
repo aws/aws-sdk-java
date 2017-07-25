@@ -245,7 +245,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      */
 
     public void setType(GatewayType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -260,7 +260,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
      */
 
     public CreateCustomerGatewayRequest withType(GatewayType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

@@ -568,7 +568,7 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      */
 
     public void setContentHandling(ContentHandlingStrategy contentHandling) {
-        this.contentHandling = contentHandling.toString();
+        withContentHandling(contentHandling);
     }
 
     /**
@@ -618,7 +618,7 @@ public class GetIntegrationResponseResult extends com.amazonaws.AmazonWebService
      */
 
     public GetIntegrationResponseResult withContentHandling(ContentHandlingStrategy contentHandling) {
-        setContentHandling(contentHandling);
+        this.contentHandling = contentHandling.toString();
         return this;
     }
 

@@ -249,7 +249,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      */
 
     public void setSeverity(ValidationSeverity severity) {
-        this.severity = severity.toString();
+        withSeverity(severity);
     }
 
     /**
@@ -287,7 +287,7 @@ public class ValidationMessage implements Serializable, Cloneable {
      */
 
     public ValidationMessage withSeverity(ValidationSeverity severity) {
-        setSeverity(severity);
+        this.severity = severity.toString();
         return this;
     }
 

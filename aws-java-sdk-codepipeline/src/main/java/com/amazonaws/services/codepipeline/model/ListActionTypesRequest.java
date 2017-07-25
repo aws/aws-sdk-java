@@ -96,7 +96,7 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setActionOwnerFilter(ActionOwner actionOwnerFilter) {
-        this.actionOwnerFilter = actionOwnerFilter.toString();
+        withActionOwnerFilter(actionOwnerFilter);
     }
 
     /**
@@ -111,7 +111,7 @@ public class ListActionTypesRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public ListActionTypesRequest withActionOwnerFilter(ActionOwner actionOwnerFilter) {
-        setActionOwnerFilter(actionOwnerFilter);
+        this.actionOwnerFilter = actionOwnerFilter.toString();
         return this;
     }
 

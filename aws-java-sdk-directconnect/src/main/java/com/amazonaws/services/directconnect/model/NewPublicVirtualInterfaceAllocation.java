@@ -235,7 +235,7 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
      */
 
     public void setAddressFamily(AddressFamily addressFamily) {
-        this.addressFamily = addressFamily.toString();
+        withAddressFamily(addressFamily);
     }
 
     /**
@@ -245,7 +245,7 @@ public class NewPublicVirtualInterfaceAllocation implements Serializable, Clonea
      */
 
     public NewPublicVirtualInterfaceAllocation withAddressFamily(AddressFamily addressFamily) {
-        setAddressFamily(addressFamily);
+        this.addressFamily = addressFamily.toString();
         return this;
     }
 

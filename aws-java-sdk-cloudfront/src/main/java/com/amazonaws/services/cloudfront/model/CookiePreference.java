@@ -149,7 +149,7 @@ public class CookiePreference implements Serializable, Cloneable {
      */
 
     public void setForward(ItemSelection forward) {
-        this.forward = forward.toString();
+        withForward(forward);
     }
 
     /**
@@ -173,7 +173,7 @@ public class CookiePreference implements Serializable, Cloneable {
      */
 
     public CookiePreference withForward(ItemSelection forward) {
-        setForward(forward);
+        this.forward = forward.toString();
         return this;
     }
 

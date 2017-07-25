@@ -361,7 +361,7 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
      */
 
     public void setType(ProductType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -378,7 +378,7 @@ public class ProductViewSummary implements Serializable, Cloneable, StructuredPo
      */
 
     public ProductViewSummary withType(ProductType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

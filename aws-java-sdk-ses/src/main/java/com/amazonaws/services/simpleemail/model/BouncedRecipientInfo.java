@@ -219,7 +219,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      */
 
     public void setBounceType(BounceType bounceType) {
-        this.bounceType = bounceType.toString();
+        withBounceType(bounceType);
     }
 
     /**
@@ -234,7 +234,7 @@ public class BouncedRecipientInfo implements Serializable, Cloneable {
      */
 
     public BouncedRecipientInfo withBounceType(BounceType bounceType) {
-        setBounceType(bounceType);
+        this.bounceType = bounceType.toString();
         return this;
     }
 

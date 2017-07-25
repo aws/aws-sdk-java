@@ -257,7 +257,7 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setFeatureSet(OrganizationFeatureSet featureSet) {
-        this.featureSet = featureSet.toString();
+        withFeatureSet(featureSet);
     }
 
     /**
@@ -310,7 +310,7 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public CreateOrganizationRequest withFeatureSet(OrganizationFeatureSet featureSet) {
-        setFeatureSet(featureSet);
+        this.featureSet = featureSet.toString();
         return this;
     }
 

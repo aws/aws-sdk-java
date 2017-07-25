@@ -146,7 +146,7 @@ public class PlacementStrategy implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setType(PlacementStrategyType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -171,7 +171,7 @@ public class PlacementStrategy implements Serializable, Cloneable, StructuredPoj
      */
 
     public PlacementStrategy withType(PlacementStrategyType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

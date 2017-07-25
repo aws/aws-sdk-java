@@ -893,7 +893,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -912,7 +912,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public DescribeReservedInstancesOfferingsRequest withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 
@@ -1135,7 +1135,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public void setOfferingClass(OfferingClassType offeringClass) {
-        this.offeringClass = offeringClass.toString();
+        withOfferingClass(offeringClass);
     }
 
     /**
@@ -1150,7 +1150,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public DescribeReservedInstancesOfferingsRequest withOfferingClass(OfferingClassType offeringClass) {
-        setOfferingClass(offeringClass);
+        this.offeringClass = offeringClass.toString();
         return this;
     }
 
@@ -1216,7 +1216,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public void setProductDescription(RIProductDescription productDescription) {
-        this.productDescription = productDescription.toString();
+        withProductDescription(productDescription);
     }
 
     /**
@@ -1233,7 +1233,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public DescribeReservedInstancesOfferingsRequest withProductDescription(RIProductDescription productDescription) {
-        setProductDescription(productDescription);
+        this.productDescription = productDescription.toString();
         return this;
     }
 
@@ -1432,7 +1432,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public void setInstanceTenancy(Tenancy instanceTenancy) {
-        this.instanceTenancy = instanceTenancy.toString();
+        withInstanceTenancy(instanceTenancy);
     }
 
     /**
@@ -1464,7 +1464,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public DescribeReservedInstancesOfferingsRequest withInstanceTenancy(Tenancy instanceTenancy) {
-        setInstanceTenancy(instanceTenancy);
+        this.instanceTenancy = instanceTenancy.toString();
         return this;
     }
 
@@ -1637,7 +1637,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public void setOfferingType(OfferingTypeValues offeringType) {
-        this.offeringType = offeringType.toString();
+        withOfferingType(offeringType);
     }
 
     /**
@@ -1654,7 +1654,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
 
     public DescribeReservedInstancesOfferingsRequest withOfferingType(OfferingTypeValues offeringType) {
-        setOfferingType(offeringType);
+        this.offeringType = offeringType.toString();
         return this;
     }
 

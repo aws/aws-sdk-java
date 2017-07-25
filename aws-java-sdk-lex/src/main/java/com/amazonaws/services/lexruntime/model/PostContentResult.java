@@ -922,7 +922,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public void setDialogState(DialogState dialogState) {
-        this.dialogState = dialogState.toString();
+        withDialogState(dialogState);
     }
 
     /**
@@ -1045,7 +1045,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
 
     public PostContentResult withDialogState(DialogState dialogState) {
-        setDialogState(dialogState);
+        this.dialogState = dialogState.toString();
         return this;
     }
 

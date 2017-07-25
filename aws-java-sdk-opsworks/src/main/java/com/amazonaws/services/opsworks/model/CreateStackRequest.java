@@ -2479,7 +2479,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+        withDefaultRootDeviceType(defaultRootDeviceType);
     }
 
     /**
@@ -2501,7 +2501,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public CreateStackRequest withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
-        setDefaultRootDeviceType(defaultRootDeviceType);
+        this.defaultRootDeviceType = defaultRootDeviceType.toString();
         return this;
     }
 

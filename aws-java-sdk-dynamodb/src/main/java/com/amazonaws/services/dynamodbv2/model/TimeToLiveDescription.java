@@ -95,7 +95,7 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
      */
 
     public void setTimeToLiveStatus(TimeToLiveStatus timeToLiveStatus) {
-        this.timeToLiveStatus = timeToLiveStatus.toString();
+        withTimeToLiveStatus(timeToLiveStatus);
     }
 
     /**
@@ -110,7 +110,7 @@ public class TimeToLiveDescription implements Serializable, Cloneable, Structure
      */
 
     public TimeToLiveDescription withTimeToLiveStatus(TimeToLiveStatus timeToLiveStatus) {
-        setTimeToLiveStatus(timeToLiveStatus);
+        this.timeToLiveStatus = timeToLiveStatus.toString();
         return this;
     }
 

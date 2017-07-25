@@ -84,7 +84,7 @@ public class SetIpAddressTypeResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public void setIpAddressType(IpAddressType ipAddressType) {
-        this.ipAddressType = ipAddressType.toString();
+        withIpAddressType(ipAddressType);
     }
 
     /**
@@ -99,7 +99,7 @@ public class SetIpAddressTypeResult extends com.amazonaws.AmazonWebServiceResult
      */
 
     public SetIpAddressTypeResult withIpAddressType(IpAddressType ipAddressType) {
-        setIpAddressType(ipAddressType);
+        this.ipAddressType = ipAddressType.toString();
         return this;
     }
 

@@ -312,7 +312,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      */
 
     public void setAttribute(InstanceAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -327,7 +327,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      */
 
     public ModifyInstanceAttributeRequest withAttribute(InstanceAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

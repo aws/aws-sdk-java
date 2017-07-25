@@ -369,7 +369,7 @@ public class Datapoint implements Serializable, Cloneable {
      */
 
     public void setUnit(StandardUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -384,7 +384,7 @@ public class Datapoint implements Serializable, Cloneable {
      */
 
     public Datapoint withUnit(StandardUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 

@@ -151,7 +151,7 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setInterconnectState(InterconnectState interconnectState) {
-        this.interconnectState = interconnectState.toString();
+        withInterconnectState(interconnectState);
     }
 
     /**
@@ -161,7 +161,7 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Interconnect withInterconnectState(InterconnectState interconnectState) {
-        setInterconnectState(interconnectState);
+        this.interconnectState = interconnectState.toString();
         return this;
     }
 

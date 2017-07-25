@@ -273,7 +273,7 @@ public class EventTopic implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(TopicStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -288,7 +288,7 @@ public class EventTopic implements Serializable, Cloneable, StructuredPojo {
      */
 
     public EventTopic withStatus(TopicStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

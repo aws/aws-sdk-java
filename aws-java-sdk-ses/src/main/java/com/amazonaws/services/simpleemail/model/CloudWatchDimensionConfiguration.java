@@ -265,7 +265,7 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      */
 
     public void setDimensionValueSource(DimensionValueSource dimensionValueSource) {
-        this.dimensionValueSource = dimensionValueSource.toString();
+        withDimensionValueSource(dimensionValueSource);
     }
 
     /**
@@ -286,7 +286,7 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
      */
 
     public CloudWatchDimensionConfiguration withDimensionValueSource(DimensionValueSource dimensionValueSource) {
-        setDimensionValueSource(dimensionValueSource);
+        this.dimensionValueSource = dimensionValueSource.toString();
         return this;
     }
 

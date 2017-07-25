@@ -113,7 +113,7 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
      */
 
     public void setChallengeName(ChallengeNameType challengeName) {
-        this.challengeName = challengeName.toString();
+        withChallengeName(challengeName);
     }
 
     /**
@@ -129,7 +129,7 @@ public class AdminRespondToAuthChallengeResult extends com.amazonaws.AmazonWebSe
      */
 
     public AdminRespondToAuthChallengeResult withChallengeName(ChallengeNameType challengeName) {
-        setChallengeName(challengeName);
+        this.challengeName = challengeName.toString();
         return this;
     }
 

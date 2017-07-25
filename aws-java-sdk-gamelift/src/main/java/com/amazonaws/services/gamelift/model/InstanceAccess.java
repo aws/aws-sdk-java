@@ -234,7 +234,7 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -249,7 +249,7 @@ public class InstanceAccess implements Serializable, Cloneable, StructuredPojo {
      */
 
     public InstanceAccess withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 

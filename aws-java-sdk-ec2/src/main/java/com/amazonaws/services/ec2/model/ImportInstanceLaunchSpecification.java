@@ -192,7 +192,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      */
 
     public void setArchitecture(ArchitectureValues architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -207,7 +207,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      */
 
     public ImportInstanceLaunchSpecification withArchitecture(ArchitectureValues architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
         return this;
     }
 
@@ -419,7 +419,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      */
 
     public void setInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
-        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
+        withInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
     }
 
     /**
@@ -436,7 +436,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      */
 
     public ImportInstanceLaunchSpecification withInstanceInitiatedShutdownBehavior(ShutdownBehavior instanceInitiatedShutdownBehavior) {
-        setInstanceInitiatedShutdownBehavior(instanceInitiatedShutdownBehavior);
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior.toString();
         return this;
     }
 
@@ -510,7 +510,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -529,7 +529,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
      */
 
     public ImportInstanceLaunchSpecification withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 

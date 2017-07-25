@@ -297,7 +297,7 @@ public class Address implements Serializable, Cloneable {
      */
 
     public void setDomain(DomainType domain) {
-        this.domain = domain.toString();
+        withDomain(domain);
     }
 
     /**
@@ -314,7 +314,7 @@ public class Address implements Serializable, Cloneable {
      */
 
     public Address withDomain(DomainType domain) {
-        setDomain(domain);
+        this.domain = domain.toString();
         return this;
     }
 

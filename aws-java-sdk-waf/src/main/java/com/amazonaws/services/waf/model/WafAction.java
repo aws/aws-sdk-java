@@ -268,7 +268,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(WafActionType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -322,7 +322,7 @@ public class WafAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public WafAction withType(WafActionType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

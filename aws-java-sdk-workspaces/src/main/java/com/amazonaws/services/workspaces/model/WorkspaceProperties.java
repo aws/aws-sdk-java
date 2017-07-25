@@ -104,7 +104,7 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      */
 
     public void setRunningMode(RunningMode runningMode) {
-        this.runningMode = runningMode.toString();
+        withRunningMode(runningMode);
     }
 
     /**
@@ -121,7 +121,7 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
      */
 
     public WorkspaceProperties withRunningMode(RunningMode runningMode) {
-        setRunningMode(runningMode);
+        this.runningMode = runningMode.toString();
         return this;
     }
 

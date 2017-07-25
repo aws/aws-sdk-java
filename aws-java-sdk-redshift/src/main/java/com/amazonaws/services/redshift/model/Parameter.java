@@ -412,7 +412,7 @@ public class Parameter implements Serializable, Cloneable {
      */
 
     public void setApplyType(ParameterApplyType applyType) {
-        this.applyType = applyType.toString();
+        withApplyType(applyType);
     }
 
     /**
@@ -435,7 +435,7 @@ public class Parameter implements Serializable, Cloneable {
      */
 
     public Parameter withApplyType(ParameterApplyType applyType) {
-        setApplyType(applyType);
+        this.applyType = applyType.toString();
         return this;
     }
 

@@ -674,7 +674,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(HandshakeState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -760,7 +760,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Handshake withState(HandshakeState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -904,7 +904,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAction(ActionType action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -919,7 +919,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Handshake withAction(ActionType action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

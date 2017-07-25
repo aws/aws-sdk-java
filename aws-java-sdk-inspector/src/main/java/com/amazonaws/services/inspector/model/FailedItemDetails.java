@@ -95,7 +95,7 @@ public class FailedItemDetails implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setFailureCode(FailedItemErrorCode failureCode) {
-        this.failureCode = failureCode.toString();
+        withFailureCode(failureCode);
     }
 
     /**
@@ -110,7 +110,7 @@ public class FailedItemDetails implements Serializable, Cloneable, StructuredPoj
      */
 
     public FailedItemDetails withFailureCode(FailedItemErrorCode failureCode) {
-        setFailureCode(failureCode);
+        this.failureCode = failureCode.toString();
         return this;
     }
 

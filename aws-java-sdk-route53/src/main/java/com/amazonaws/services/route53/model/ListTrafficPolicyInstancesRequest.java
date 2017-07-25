@@ -366,7 +366,7 @@ public class ListTrafficPolicyInstancesRequest extends com.amazonaws.AmazonWebSe
      */
 
     public void setTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
+        withTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
     }
 
     /**
@@ -396,7 +396,7 @@ public class ListTrafficPolicyInstancesRequest extends com.amazonaws.AmazonWebSe
      */
 
     public ListTrafficPolicyInstancesRequest withTrafficPolicyInstanceTypeMarker(RRType trafficPolicyInstanceTypeMarker) {
-        setTrafficPolicyInstanceTypeMarker(trafficPolicyInstanceTypeMarker);
+        this.trafficPolicyInstanceTypeMarker = trafficPolicyInstanceTypeMarker.toString();
         return this;
     }
 

@@ -235,7 +235,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setResourceType(ResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -250,7 +250,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Operation withResourceType(ResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -480,7 +480,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOperationType(OperationType operationType) {
-        this.operationType = operationType.toString();
+        withOperationType(operationType);
     }
 
     /**
@@ -495,7 +495,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Operation withOperationType(OperationType operationType) {
-        setOperationType(operationType);
+        this.operationType = operationType.toString();
         return this;
     }
 
@@ -553,7 +553,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(OperationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -568,7 +568,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Operation withStatus(OperationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -586,7 +586,7 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(EntityStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -618,7 +618,7 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Evaluation withStatus(EntityStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

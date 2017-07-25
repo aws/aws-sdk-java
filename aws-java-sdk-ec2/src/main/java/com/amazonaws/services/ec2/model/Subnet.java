@@ -378,7 +378,7 @@ public class Subnet implements Serializable, Cloneable {
      */
 
     public void setState(SubnetState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -393,7 +393,7 @@ public class Subnet implements Serializable, Cloneable {
      */
 
     public Subnet withState(SubnetState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

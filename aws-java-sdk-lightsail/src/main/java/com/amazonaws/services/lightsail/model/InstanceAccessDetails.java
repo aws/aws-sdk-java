@@ -345,7 +345,7 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
      */
 
     public void setProtocol(InstanceAccessProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -360,7 +360,7 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
      */
 
     public InstanceAccessDetails withProtocol(InstanceAccessProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

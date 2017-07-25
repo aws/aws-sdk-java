@@ -187,7 +187,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -206,7 +206,7 @@ public class PurchaseHostReservationRequest extends AmazonWebServiceRequest impl
      */
 
     public PurchaseHostReservationRequest withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 

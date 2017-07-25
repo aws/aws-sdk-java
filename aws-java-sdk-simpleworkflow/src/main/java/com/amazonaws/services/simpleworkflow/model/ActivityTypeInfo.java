@@ -153,7 +153,7 @@ public class ActivityTypeInfo implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setStatus(RegistrationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -168,7 +168,7 @@ public class ActivityTypeInfo implements Serializable, Cloneable, StructuredPojo
      */
 
     public ActivityTypeInfo withStatus(RegistrationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -234,7 +234,7 @@ public class ContextEntry implements Serializable, Cloneable {
      */
 
     public void setContextKeyType(ContextKeyTypeEnum contextKeyType) {
-        this.contextKeyType = contextKeyType.toString();
+        withContextKeyType(contextKeyType);
     }
 
     /**
@@ -249,7 +249,7 @@ public class ContextEntry implements Serializable, Cloneable {
      */
 
     public ContextEntry withContextKeyType(ContextKeyTypeEnum contextKeyType) {
-        setContextKeyType(contextKeyType);
+        this.contextKeyType = contextKeyType.toString();
         return this;
     }
 

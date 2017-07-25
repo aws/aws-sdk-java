@@ -222,7 +222,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setProtocol(ProtocolEnum protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -237,7 +237,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public CreateTargetGroupRequest withProtocol(ProtocolEnum protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
@@ -385,7 +385,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public void setHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
-        this.healthCheckProtocol = healthCheckProtocol.toString();
+        withHealthCheckProtocol(healthCheckProtocol);
     }
 
     /**
@@ -401,7 +401,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      */
 
     public CreateTargetGroupRequest withHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
-        setHealthCheckProtocol(healthCheckProtocol);
+        this.healthCheckProtocol = healthCheckProtocol.toString();
         return this;
     }
 

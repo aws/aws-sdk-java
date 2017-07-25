@@ -352,7 +352,7 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setSortBy(ProductViewSortBy sortBy) {
-        this.sortBy = sortBy.toString();
+        withSortBy(sortBy);
     }
 
     /**
@@ -367,7 +367,7 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public SearchProductsRequest withSortBy(ProductViewSortBy sortBy) {
-        setSortBy(sortBy);
+        this.sortBy = sortBy.toString();
         return this;
     }
 
@@ -425,7 +425,7 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setSortOrder(SortOrder sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -440,7 +440,7 @@ public class SearchProductsRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public SearchProductsRequest withSortOrder(SortOrder sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 

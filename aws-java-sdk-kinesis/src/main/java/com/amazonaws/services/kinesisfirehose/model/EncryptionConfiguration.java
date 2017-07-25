@@ -95,7 +95,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      */
 
     public void setNoEncryptionConfig(NoEncryptionConfig noEncryptionConfig) {
-        this.noEncryptionConfig = noEncryptionConfig.toString();
+        withNoEncryptionConfig(noEncryptionConfig);
     }
 
     /**
@@ -110,7 +110,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      */
 
     public EncryptionConfiguration withNoEncryptionConfig(NoEncryptionConfig noEncryptionConfig) {
-        setNoEncryptionConfig(noEncryptionConfig);
+        this.noEncryptionConfig = noEncryptionConfig.toString();
         return this;
     }
 

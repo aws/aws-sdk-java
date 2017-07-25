@@ -527,7 +527,7 @@ public class Parameter implements Serializable, Cloneable {
      */
 
     public void setApplyMethod(ApplyMethod applyMethod) {
-        this.applyMethod = applyMethod.toString();
+        withApplyMethod(applyMethod);
     }
 
     /**
@@ -542,7 +542,7 @@ public class Parameter implements Serializable, Cloneable {
      */
 
     public Parameter withApplyMethod(ApplyMethod applyMethod) {
-        setApplyMethod(applyMethod);
+        this.applyMethod = applyMethod.toString();
         return this;
     }
 

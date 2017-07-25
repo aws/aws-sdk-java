@@ -148,7 +148,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
      */
 
     public void setState(StepExecutionState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -163,7 +163,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable, Struc
      */
 
     public StepExecutionStatusDetail withState(StepExecutionState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -381,7 +381,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      */
 
     public void setRuleAction(RuleAction ruleAction) {
-        this.ruleAction = ruleAction.toString();
+        withRuleAction(ruleAction);
     }
 
     /**
@@ -396,7 +396,7 @@ public class NetworkAclEntry implements Serializable, Cloneable {
      */
 
     public NetworkAclEntry withRuleAction(RuleAction ruleAction) {
-        setRuleAction(ruleAction);
+        this.ruleAction = ruleAction.toString();
         return this;
     }
 

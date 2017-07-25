@@ -334,7 +334,7 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setMLModelType(MLModelType mLModelType) {
-        this.mLModelType = mLModelType.toString();
+        withMLModelType(mLModelType);
     }
 
     /**
@@ -367,7 +367,7 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public CreateMLModelRequest withMLModelType(MLModelType mLModelType) {
-        setMLModelType(mLModelType);
+        this.mLModelType = mLModelType.toString();
         return this;
     }
 

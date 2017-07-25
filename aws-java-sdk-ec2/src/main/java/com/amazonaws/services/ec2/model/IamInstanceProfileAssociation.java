@@ -231,7 +231,7 @@ public class IamInstanceProfileAssociation implements Serializable, Cloneable {
      */
 
     public void setState(IamInstanceProfileAssociationState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -246,7 +246,7 @@ public class IamInstanceProfileAssociation implements Serializable, Cloneable {
      */
 
     public IamInstanceProfileAssociation withState(IamInstanceProfileAssociationState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

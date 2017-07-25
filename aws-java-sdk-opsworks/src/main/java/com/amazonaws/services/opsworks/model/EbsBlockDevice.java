@@ -257,7 +257,7 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
+        withVolumeType(volumeType);
     }
 
     /**
@@ -274,7 +274,7 @@ public class EbsBlockDevice implements Serializable, Cloneable, StructuredPojo {
      */
 
     public EbsBlockDevice withVolumeType(VolumeType volumeType) {
-        setVolumeType(volumeType);
+        this.volumeType = volumeType.toString();
         return this;
     }
 

@@ -339,7 +339,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -356,7 +356,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      */
 
     public UpdateAccessKeyRequest withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -341,7 +341,7 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setAuthenticationType(AuthenticationType authenticationType) {
-        this.authenticationType = authenticationType.toString();
+        withAuthenticationType(authenticationType);
     }
 
     /**
@@ -360,7 +360,7 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public DescribeSessionsRequest withAuthenticationType(AuthenticationType authenticationType) {
-        setAuthenticationType(authenticationType);
+        this.authenticationType = authenticationType.toString();
         return this;
     }
 

@@ -101,7 +101,7 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(ClusterState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -116,7 +116,7 @@ public class ClusterStatus implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ClusterStatus withState(ClusterState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

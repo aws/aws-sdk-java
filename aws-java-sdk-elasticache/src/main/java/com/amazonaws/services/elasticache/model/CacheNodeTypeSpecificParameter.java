@@ -542,7 +542,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      */
 
     public void setChangeType(ChangeType changeType) {
-        this.changeType = changeType.toString();
+        withChangeType(changeType);
     }
 
     /**
@@ -564,7 +564,7 @@ public class CacheNodeTypeSpecificParameter implements Serializable, Cloneable {
      */
 
     public CacheNodeTypeSpecificParameter withChangeType(ChangeType changeType) {
-        setChangeType(changeType);
+        this.changeType = changeType.toString();
         return this;
     }
 

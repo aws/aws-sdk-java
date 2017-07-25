@@ -147,7 +147,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setStatus(OperationStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -162,7 +162,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      */
 
     public OperationSummary withStatus(OperationStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -220,7 +220,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setType(OperationType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -235,7 +235,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      */
 
     public OperationSummary withType(OperationType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

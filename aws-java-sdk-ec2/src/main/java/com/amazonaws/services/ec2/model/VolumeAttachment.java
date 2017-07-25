@@ -237,7 +237,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      */
 
     public void setState(VolumeAttachmentState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -252,7 +252,7 @@ public class VolumeAttachment implements Serializable, Cloneable {
      */
 
     public VolumeAttachment withState(VolumeAttachmentState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -1039,7 +1039,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMaintenanceStatus(MaintenanceStatus maintenanceStatus) {
-        this.maintenanceStatus = maintenanceStatus.toString();
+        withMaintenanceStatus(maintenanceStatus);
     }
 
     /**
@@ -1054,7 +1054,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Server withMaintenanceStatus(MaintenanceStatus maintenanceStatus) {
-        setMaintenanceStatus(maintenanceStatus);
+        this.maintenanceStatus = maintenanceStatus.toString();
         return this;
     }
 
@@ -1318,7 +1318,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(ServerStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -1335,7 +1335,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Server withStatus(ServerStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

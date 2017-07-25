@@ -358,7 +358,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      */
 
     public void setNetworkMode(NetworkMode networkMode) {
-        this.networkMode = networkMode.toString();
+        withNetworkMode(networkMode);
     }
 
     /**
@@ -400,7 +400,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      */
 
     public RegisterTaskDefinitionRequest withNetworkMode(NetworkMode networkMode) {
-        setNetworkMode(networkMode);
+        this.networkMode = networkMode.toString();
         return this;
     }
 

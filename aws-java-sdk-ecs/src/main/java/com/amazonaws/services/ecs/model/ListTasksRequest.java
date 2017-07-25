@@ -633,7 +633,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setDesiredStatus(DesiredStatus desiredStatus) {
-        this.desiredStatus = desiredStatus.toString();
+        withDesiredStatus(desiredStatus);
     }
 
     /**
@@ -668,7 +668,7 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public ListTasksRequest withDesiredStatus(DesiredStatus desiredStatus) {
-        setDesiredStatus(desiredStatus);
+        this.desiredStatus = desiredStatus.toString();
         return this;
     }
 

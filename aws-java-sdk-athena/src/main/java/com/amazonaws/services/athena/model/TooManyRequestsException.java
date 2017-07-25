@@ -72,7 +72,7 @@ public class TooManyRequestsException extends com.amazonaws.services.athena.mode
      */
 
     public void setReason(ThrottleReason reason) {
-        this.reason = reason.toString();
+        withReason(reason);
     }
 
     /**
@@ -82,7 +82,7 @@ public class TooManyRequestsException extends com.amazonaws.services.athena.mode
      */
 
     public TooManyRequestsException withReason(ThrottleReason reason) {
-        setReason(reason);
+        this.reason = reason.toString();
         return this;
     }
 

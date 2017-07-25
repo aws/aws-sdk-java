@@ -512,7 +512,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable, Str
      */
 
     public void setType(ActionConfigurationPropertyType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -527,7 +527,7 @@ public class ActionConfigurationProperty implements Serializable, Cloneable, Str
      */
 
     public ActionConfigurationProperty withType(ActionConfigurationPropertyType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

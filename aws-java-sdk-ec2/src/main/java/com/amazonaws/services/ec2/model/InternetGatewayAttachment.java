@@ -93,7 +93,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      */
 
     public void setState(AttachmentStatus state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -108,7 +108,7 @@ public class InternetGatewayAttachment implements Serializable, Cloneable {
      */
 
     public InternetGatewayAttachment withState(AttachmentStatus state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

@@ -313,7 +313,7 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
      */
 
     public void setFilter(PolicyType filter) {
-        this.filter = filter.toString();
+        withFilter(filter);
     }
 
     /**
@@ -328,7 +328,7 @@ public class ListPoliciesForTargetRequest extends com.amazonaws.AmazonWebService
      */
 
     public ListPoliciesForTargetRequest withFilter(PolicyType filter) {
-        setFilter(filter);
+        this.filter = filter.toString();
         return this;
     }
 

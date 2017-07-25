@@ -196,7 +196,7 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
      */
 
     public void setResourceType(MaintenanceWindowResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -211,7 +211,7 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
      */
 
     public MaintenanceWindowTarget withResourceType(MaintenanceWindowResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

@@ -277,7 +277,7 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setResourceState(ResourceStateType resourceState) {
-        this.resourceState = resourceState.toString();
+        withResourceState(resourceState);
     }
 
     /**
@@ -292,7 +292,7 @@ public class UpdateFolderRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public UpdateFolderRequest withResourceState(ResourceStateType resourceState) {
-        setResourceState(resourceState);
+        this.resourceState = resourceState.toString();
         return this;
     }
 

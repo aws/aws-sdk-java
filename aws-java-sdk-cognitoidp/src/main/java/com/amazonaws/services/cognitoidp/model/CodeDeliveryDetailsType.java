@@ -141,7 +141,7 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
      */
 
     public void setDeliveryMedium(DeliveryMediumType deliveryMedium) {
-        this.deliveryMedium = deliveryMedium.toString();
+        withDeliveryMedium(deliveryMedium);
     }
 
     /**
@@ -156,7 +156,7 @@ public class CodeDeliveryDetailsType implements Serializable, Cloneable, Structu
      */
 
     public CodeDeliveryDetailsType withDeliveryMedium(DeliveryMediumType deliveryMedium) {
-        setDeliveryMedium(deliveryMedium);
+        this.deliveryMedium = deliveryMedium.toString();
         return this;
     }
 

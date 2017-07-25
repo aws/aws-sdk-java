@@ -197,7 +197,7 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setScope(PolicyScopeType scope) {
-        this.scope = scope.toString();
+        withScope(scope);
     }
 
     /**
@@ -227,7 +227,7 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public ListPoliciesRequest withScope(PolicyScopeType scope) {
-        setScope(scope);
+        this.scope = scope.toString();
         return this;
     }
 

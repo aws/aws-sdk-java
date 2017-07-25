@@ -596,7 +596,7 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setHITStatus(HITStatus hITStatus) {
-        this.hITStatus = hITStatus.toString();
+        withHITStatus(hITStatus);
     }
 
     /**
@@ -613,7 +613,7 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      */
 
     public HIT withHITStatus(HITStatus hITStatus) {
-        setHITStatus(hITStatus);
+        this.hITStatus = hITStatus.toString();
         return this;
     }
 
@@ -1009,7 +1009,7 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setHITReviewStatus(HITReviewStatus hITReviewStatus) {
-        this.hITReviewStatus = hITReviewStatus.toString();
+        withHITReviewStatus(hITReviewStatus);
     }
 
     /**
@@ -1026,7 +1026,7 @@ public class HIT implements Serializable, Cloneable, StructuredPojo {
      */
 
     public HIT withHITReviewStatus(HITReviewStatus hITReviewStatus) {
-        setHITReviewStatus(hITReviewStatus);
+        this.hITReviewStatus = hITReviewStatus.toString();
         return this;
     }
 

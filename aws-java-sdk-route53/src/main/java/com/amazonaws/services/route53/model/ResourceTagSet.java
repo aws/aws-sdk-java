@@ -203,7 +203,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      */
 
     public void setResourceType(TagResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -241,7 +241,7 @@ public class ResourceTagSet implements Serializable, Cloneable {
      */
 
     public ResourceTagSet withResourceType(TagResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

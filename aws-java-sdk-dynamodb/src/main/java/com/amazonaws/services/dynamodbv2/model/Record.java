@@ -338,7 +338,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setEventName(OperationType eventName) {
-        this.eventName = eventName.toString();
+        withEventName(eventName);
     }
 
     /**
@@ -386,7 +386,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Record withEventName(OperationType eventName) {
-        setEventName(eventName);
+        this.eventName = eventName.toString();
         return this;
     }
 

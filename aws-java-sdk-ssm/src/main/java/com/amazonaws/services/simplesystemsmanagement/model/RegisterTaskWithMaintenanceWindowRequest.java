@@ -358,7 +358,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      */
 
     public void setTaskType(MaintenanceWindowTaskType taskType) {
-        this.taskType = taskType.toString();
+        withTaskType(taskType);
     }
 
     /**
@@ -373,7 +373,7 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      */
 
     public RegisterTaskWithMaintenanceWindowRequest withTaskType(MaintenanceWindowTaskType taskType) {
-        setTaskType(taskType);
+        this.taskType = taskType.toString();
         return this;
     }
 

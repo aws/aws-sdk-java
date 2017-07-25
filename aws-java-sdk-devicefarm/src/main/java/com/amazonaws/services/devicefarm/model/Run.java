@@ -1045,7 +1045,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(TestType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1211,7 +1211,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Run withType(TestType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -1385,7 +1385,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setPlatform(DevicePlatform platform) {
-        this.platform = platform.toString();
+        withPlatform(platform);
     }
 
     /**
@@ -1429,7 +1429,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Run withPlatform(DevicePlatform platform) {
-        setPlatform(platform);
+        this.platform = platform.toString();
         return this;
     }
 
@@ -1923,7 +1923,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(ExecutionStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -2037,7 +2037,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Run withStatus(ExecutionStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -2411,7 +2411,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setResult(ExecutionResult result) {
-        this.result = result.toString();
+        withResult(result);
     }
 
     /**
@@ -2505,7 +2505,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Run withResult(ExecutionResult result) {
-        setResult(result);
+        this.result = result.toString();
         return this;
     }
 
@@ -2811,7 +2811,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setBillingMethod(BillingMethod billingMethod) {
-        this.billingMethod = billingMethod.toString();
+        withBillingMethod(billingMethod);
     }
 
     /**
@@ -2828,7 +2828,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Run withBillingMethod(BillingMethod billingMethod) {
-        setBillingMethod(billingMethod);
+        this.billingMethod = billingMethod.toString();
         return this;
     }
 

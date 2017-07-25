@@ -95,7 +95,7 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
      */
 
     public void setState(AutoScalingPolicyState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -110,7 +110,7 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable, Structu
      */
 
     public AutoScalingPolicyStatus withState(AutoScalingPolicyState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

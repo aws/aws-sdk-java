@@ -227,7 +227,7 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
-        this.deviceRememberedStatus = deviceRememberedStatus.toString();
+        withDeviceRememberedStatus(deviceRememberedStatus);
     }
 
     /**
@@ -242,7 +242,7 @@ public class AdminUpdateDeviceStatusRequest extends com.amazonaws.AmazonWebServi
      */
 
     public AdminUpdateDeviceStatusRequest withDeviceRememberedStatus(DeviceRememberedStatusType deviceRememberedStatus) {
-        setDeviceRememberedStatus(deviceRememberedStatus);
+        this.deviceRememberedStatus = deviceRememberedStatus.toString();
         return this;
     }
 

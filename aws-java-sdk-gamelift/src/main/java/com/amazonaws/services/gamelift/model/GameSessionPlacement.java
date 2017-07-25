@@ -498,7 +498,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      */
 
     public void setStatus(GameSessionPlacementState status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -560,7 +560,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      */
 
     public GameSessionPlacement withStatus(GameSessionPlacementState status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

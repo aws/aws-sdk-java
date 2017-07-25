@@ -101,7 +101,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable, StructuredP
      */
 
     public void setState(InstanceGroupState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -116,7 +116,7 @@ public class InstanceGroupStatus implements Serializable, Cloneable, StructuredP
      */
 
     public InstanceGroupStatus withState(InstanceGroupState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

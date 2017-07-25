@@ -174,7 +174,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      */
 
     public void setEvalResourceDecision(PolicyEvaluationDecisionType evalResourceDecision) {
-        this.evalResourceDecision = evalResourceDecision.toString();
+        withEvalResourceDecision(evalResourceDecision);
     }
 
     /**
@@ -191,7 +191,7 @@ public class ResourceSpecificResult implements Serializable, Cloneable {
      */
 
     public ResourceSpecificResult withEvalResourceDecision(PolicyEvaluationDecisionType evalResourceDecision) {
-        setEvalResourceDecision(evalResourceDecision);
+        this.evalResourceDecision = evalResourceDecision.toString();
         return this;
     }
 

@@ -360,7 +360,7 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public void setResponseType(GatewayResponseType responseType) {
-        this.responseType = responseType.toString();
+        withResponseType(responseType);
     }
 
     /**
@@ -421,7 +421,7 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      */
 
     public PutGatewayResponseRequest withResponseType(GatewayResponseType responseType) {
-        setResponseType(responseType);
+        this.responseType = responseType.toString();
         return this;
     }
 

@@ -455,7 +455,7 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      */
 
     public void setStatus(Status status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -475,7 +475,7 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      */
 
     public GetBotResult withStatus(Status status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -831,7 +831,7 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      */
 
     public void setLocale(Locale locale) {
-        this.locale = locale.toString();
+        withLocale(locale);
     }
 
     /**
@@ -846,7 +846,7 @@ public class GetBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      */
 
     public GetBotResult withLocale(Locale locale) {
-        setLocale(locale);
+        this.locale = locale.toString();
         return this;
     }
 

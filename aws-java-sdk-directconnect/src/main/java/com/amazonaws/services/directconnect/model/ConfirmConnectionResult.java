@@ -63,7 +63,7 @@ public class ConfirmConnectionResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public void setConnectionState(ConnectionState connectionState) {
-        this.connectionState = connectionState.toString();
+        withConnectionState(connectionState);
     }
 
     /**
@@ -73,7 +73,7 @@ public class ConfirmConnectionResult extends com.amazonaws.AmazonWebServiceResul
      */
 
     public ConfirmConnectionResult withConnectionState(ConnectionState connectionState) {
-        setConnectionState(connectionState);
+        this.connectionState = connectionState.toString();
         return this;
     }
 

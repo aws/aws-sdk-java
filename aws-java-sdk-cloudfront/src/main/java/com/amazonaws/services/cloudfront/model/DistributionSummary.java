@@ -641,7 +641,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      */
 
     public void setPriceClass(PriceClass priceClass) {
-        this.priceClass = priceClass.toString();
+        withPriceClass(priceClass);
     }
 
     /**
@@ -651,7 +651,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      */
 
     public DistributionSummary withPriceClass(PriceClass priceClass) {
-        setPriceClass(priceClass);
+        this.priceClass = priceClass.toString();
         return this;
     }
 
@@ -869,7 +869,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      */
 
     public void setHttpVersion(HttpVersion httpVersion) {
-        this.httpVersion = httpVersion.toString();
+        withHttpVersion(httpVersion);
     }
 
     /**
@@ -888,7 +888,7 @@ public class DistributionSummary implements Serializable, Cloneable {
      */
 
     public DistributionSummary withHttpVersion(HttpVersion httpVersion) {
-        setHttpVersion(httpVersion);
+        this.httpVersion = httpVersion.toString();
         return this;
     }
 

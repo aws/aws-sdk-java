@@ -446,7 +446,7 @@ public class StackEvent implements Serializable, Cloneable {
      */
 
     public void setResourceStatus(ResourceStatus resourceStatus) {
-        this.resourceStatus = resourceStatus.toString();
+        withResourceStatus(resourceStatus);
     }
 
     /**
@@ -461,7 +461,7 @@ public class StackEvent implements Serializable, Cloneable {
      */
 
     public StackEvent withResourceStatus(ResourceStatus resourceStatus) {
-        setResourceStatus(resourceStatus);
+        this.resourceStatus = resourceStatus.toString();
         return this;
     }
 

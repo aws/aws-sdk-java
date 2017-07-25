@@ -688,7 +688,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public void setStateValue(StateValue stateValue) {
-        this.stateValue = stateValue.toString();
+        withStateValue(stateValue);
     }
 
     /**
@@ -703,7 +703,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public MetricAlarm withStateValue(StateValue stateValue) {
-        setStateValue(stateValue);
+        this.stateValue = stateValue.toString();
         return this;
     }
 
@@ -969,7 +969,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public void setStatistic(Statistic statistic) {
-        this.statistic = statistic.toString();
+        withStatistic(statistic);
     }
 
     /**
@@ -986,7 +986,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public MetricAlarm withStatistic(Statistic statistic) {
-        setStatistic(statistic);
+        this.statistic = statistic.toString();
         return this;
     }
 
@@ -1197,7 +1197,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public void setUnit(StandardUnit unit) {
-        this.unit = unit.toString();
+        withUnit(unit);
     }
 
     /**
@@ -1212,7 +1212,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public MetricAlarm withUnit(StandardUnit unit) {
-        setUnit(unit);
+        this.unit = unit.toString();
         return this;
     }
 
@@ -1358,7 +1358,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -1375,7 +1375,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      */
 
     public MetricAlarm withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 

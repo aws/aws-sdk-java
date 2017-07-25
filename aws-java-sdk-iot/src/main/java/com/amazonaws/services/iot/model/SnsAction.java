@@ -218,7 +218,7 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMessageFormat(MessageFormat messageFormat) {
-        this.messageFormat = messageFormat.toString();
+        withMessageFormat(messageFormat);
     }
 
     /**
@@ -242,7 +242,7 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      */
 
     public SnsAction withMessageFormat(MessageFormat messageFormat) {
-        setMessageFormat(messageFormat);
+        this.messageFormat = messageFormat.toString();
         return this;
     }
 

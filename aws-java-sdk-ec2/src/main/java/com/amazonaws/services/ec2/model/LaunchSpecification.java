@@ -551,7 +551,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      */
 
     public void setInstanceType(InstanceType instanceType) {
-        this.instanceType = instanceType.toString();
+        withInstanceType(instanceType);
     }
 
     /**
@@ -566,7 +566,7 @@ public class LaunchSpecification implements Serializable, Cloneable {
      */
 
     public LaunchSpecification withInstanceType(InstanceType instanceType) {
-        setInstanceType(instanceType);
+        this.instanceType = instanceType.toString();
         return this;
     }
 

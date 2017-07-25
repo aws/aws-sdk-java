@@ -262,7 +262,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public void setRoutingStrategyType(RoutingStrategyType routingStrategyType) {
-        this.routingStrategyType = routingStrategyType.toString();
+        withRoutingStrategyType(routingStrategyType);
     }
 
     /**
@@ -311,7 +311,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
 
     public ListAliasesRequest withRoutingStrategyType(RoutingStrategyType routingStrategyType) {
-        setRoutingStrategyType(routingStrategyType);
+        this.routingStrategyType = routingStrategyType.toString();
         return this;
     }
 

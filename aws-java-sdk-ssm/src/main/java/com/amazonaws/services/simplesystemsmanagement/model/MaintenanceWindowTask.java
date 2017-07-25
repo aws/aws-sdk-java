@@ -272,7 +272,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      */
 
     public void setType(MaintenanceWindowTaskType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -287,7 +287,7 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      */
 
     public MaintenanceWindowTask withType(MaintenanceWindowTaskType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

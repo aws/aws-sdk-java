@@ -20,7 +20,9 @@ import com.amazonaws.Request;
 import com.amazonaws.services.ec2.model.transform.DescribeNetworkInterfacePermissionsRequestMarshaller;
 
 /**
- * 
+ * <p>
+ * Contains the parameters for DescribeNetworkInterfacePermissions.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNetworkInterfacePermissionsRequest extends AmazonWebServiceRequest implements Serializable, Cloneable,

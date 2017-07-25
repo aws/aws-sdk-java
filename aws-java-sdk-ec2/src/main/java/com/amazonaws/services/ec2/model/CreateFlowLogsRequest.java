@@ -351,7 +351,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      */
 
     public void setResourceType(FlowLogsResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -366,7 +366,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      */
 
     public CreateFlowLogsRequest withResourceType(FlowLogsResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 
@@ -424,7 +424,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      */
 
     public void setTrafficType(TrafficType trafficType) {
-        this.trafficType = trafficType.toString();
+        withTrafficType(trafficType);
     }
 
     /**
@@ -439,7 +439,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      */
 
     public CreateFlowLogsRequest withTrafficType(TrafficType trafficType) {
-        setTrafficType(trafficType);
+        this.trafficType = trafficType.toString();
         return this;
     }
 

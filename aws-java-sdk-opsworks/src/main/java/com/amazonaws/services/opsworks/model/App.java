@@ -452,7 +452,7 @@ public class App implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(AppType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -467,7 +467,7 @@ public class App implements Serializable, Cloneable, StructuredPojo {
      */
 
     public App withType(AppType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

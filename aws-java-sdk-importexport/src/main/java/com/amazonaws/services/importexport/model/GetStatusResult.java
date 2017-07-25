@@ -114,7 +114,7 @@ public class GetStatusResult extends com.amazonaws.AmazonWebServiceResult<com.am
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -124,7 +124,7 @@ public class GetStatusResult extends com.amazonaws.AmazonWebServiceResult<com.am
      */
 
     public GetStatusResult withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 

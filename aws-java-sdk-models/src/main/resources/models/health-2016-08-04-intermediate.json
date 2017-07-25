@@ -34,6 +34,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
+    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -341,6 +342,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>\n@param entityArn The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -403,6 +405,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -465,6 +468,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the affected entity.</p>\n@param entityValue The ID of the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -527,6 +531,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The 12-digit AWS account number that contains the affected entity.</p>\n@param awsAccountId The 12-digit AWS account number that contains the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -589,6 +594,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The most recent time that the entity was updated.</p>\n@param lastUpdatedTime The most recent time that the entity was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -651,6 +657,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>\n@param statusCode The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityStatusCode*/",
@@ -756,6 +763,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -790,6 +798,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n@param tags A map of entity tags attached to the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -854,6 +863,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The 12-digit AWS account number that contains the affected entity.</p>\n@param awsAccountId The 12-digit AWS account number that contains the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -917,6 +927,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code> </p>\n@param entityArn The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i> </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -980,6 +991,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the affected entity.</p>\n@param entityValue The ID of the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1043,6 +1055,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1106,6 +1119,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The most recent time that the entity was updated.</p>\n@param lastUpdatedTime The most recent time that the entity was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1169,6 +1183,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>\n@param statusCode The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityStatusCode*/",
@@ -1275,6 +1290,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1309,6 +1325,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n@param tags A map of entity tags attached to the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1410,6 +1427,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The starting date and time of a time range.</p>\n@param from The starting date and time of a time range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1472,6 +1490,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ending date and time of a time range.</p>\n@param to The ending date and time of a time range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1536,6 +1555,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The starting date and time of a time range.</p>\n@param from The starting date and time of a time range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1599,6 +1619,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ending date and time of a time range.</p>\n@param to The ending date and time of a time range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1707,6 +1728,7 @@
           "simpleType" : "EntityFilter",
           "variableSetterType" : "EntityFilter"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Values to narrow the results returned. At least one event ARN is required. </p>\n@param filter Values to narrow the results returned. At least one event ARN is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1769,6 +1791,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1831,6 +1854,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1893,6 +1917,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1957,6 +1982,7 @@
             "simpleType" : "EntityFilter",
             "variableSetterType" : "EntityFilter"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Values to narrow the results returned. At least one event ARN is required. </p>\n@param filter Values to narrow the results returned. At least one event ARN is required.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2020,6 +2046,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2083,6 +2110,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2146,6 +2174,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2281,6 +2310,7 @@
               "simpleType" : "AffectedEntity",
               "variableSetterType" : "AffectedEntity"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2321,6 +2351,7 @@
           "simpleType" : "List<AffectedEntity>",
           "variableSetterType" : "java.util.Collection<AffectedEntity>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The entities that match the filter criteria.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntities(java.util.Collection)} or {@link #withEntities(java.util.Collection)} if you want to override the existing values.</p>\n@param entities The entities that match the filter criteria.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2383,6 +2414,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2484,6 +2516,7 @@
                 "simpleType" : "AffectedEntity",
                 "variableSetterType" : "AffectedEntity"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2524,6 +2557,7 @@
             "simpleType" : "List<AffectedEntity>",
             "variableSetterType" : "java.util.Collection<AffectedEntity>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The entities that match the filter criteria.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntities(java.util.Collection)} or {@link #withEntities(java.util.Collection)} if you want to override the existing values.</p>\n@param entities The entities that match the filter criteria.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2587,6 +2621,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2732,6 +2767,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2772,6 +2808,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventArns(java.util.Collection)} or {@link #withEventArns(java.util.Collection)} if you want to override the existing values.</p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2873,6 +2910,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2913,6 +2951,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventArns(java.util.Collection)} or {@link #withEventArns(java.util.Collection)} if you want to override the existing values.</p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3048,6 +3087,7 @@
               "simpleType" : "EntityAggregate",
               "variableSetterType" : "EntityAggregate"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3088,6 +3128,7 @@
           "simpleType" : "List<EntityAggregate>",
           "variableSetterType" : "java.util.Collection<EntityAggregate>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of entities that are affected by each of the specified events.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityAggregates(java.util.Collection)} or {@link #withEntityAggregates(java.util.Collection)} if you want to override the existing values.</p>\n@param entityAggregates The number of entities that are affected by each of the specified events.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3189,6 +3230,7 @@
                 "simpleType" : "EntityAggregate",
                 "variableSetterType" : "EntityAggregate"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3229,6 +3271,7 @@
             "simpleType" : "List<EntityAggregate>",
             "variableSetterType" : "java.util.Collection<EntityAggregate>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of entities that are affected by each of the specified events.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityAggregates(java.util.Collection)} or {@link #withEntityAggregates(java.util.Collection)} if you want to override the existing values.</p>\n@param entityAggregates The number of entities that are affected by each of the specified events.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3337,6 +3380,7 @@
           "simpleType" : "EventFilter",
           "variableSetterType" : "EventFilter"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3399,6 +3443,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The only currently supported value is <code>eventTypeCategory</code>.</p>\n@param aggregateField The only currently supported value is <code>eventTypeCategory</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventAggregateField*/",
@@ -3461,6 +3506,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3523,6 +3569,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3587,6 +3634,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The only currently supported value is <code>eventTypeCategory</code>.</p>\n@param aggregateField The only currently supported value is <code>eventTypeCategory</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventAggregateField*/",
@@ -3650,6 +3698,7 @@
             "simpleType" : "EventFilter",
             "variableSetterType" : "EventFilter"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3713,6 +3762,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3776,6 +3826,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3911,6 +3962,7 @@
               "simpleType" : "EventAggregate",
               "variableSetterType" : "EventAggregate"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3951,6 +4003,7 @@
           "simpleType" : "List<EventAggregate>",
           "variableSetterType" : "java.util.Collection<EventAggregate>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of events in each category that meet the optional filter criteria.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventAggregates(java.util.Collection)} or {@link #withEventAggregates(java.util.Collection)} if you want to override the existing values.</p>\n@param eventAggregates The number of events in each category that meet the optional filter criteria.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4013,6 +4066,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4114,6 +4168,7 @@
                 "simpleType" : "EventAggregate",
                 "variableSetterType" : "EventAggregate"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4154,6 +4209,7 @@
             "simpleType" : "List<EventAggregate>",
             "variableSetterType" : "java.util.Collection<EventAggregate>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of events in each category that meet the optional filter criteria.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventAggregates(java.util.Collection)} or {@link #withEventAggregates(java.util.Collection)} if you want to override the existing values.</p>\n@param eventAggregates The number of events in each category that meet the optional filter criteria.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4217,6 +4273,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4362,6 +4419,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4402,6 +4460,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventArns(java.util.Collection)} or {@link #withEventArns(java.util.Collection)} if you want to override the existing values.</p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4464,6 +4523,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4565,6 +4625,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4605,6 +4666,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventArns(java.util.Collection)} or {@link #withEventArns(java.util.Collection)} if you want to override the existing values.</p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4668,6 +4730,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4803,6 +4866,7 @@
               "simpleType" : "EventDetails",
               "variableSetterType" : "EventDetails"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4843,6 +4907,7 @@
           "simpleType" : "List<EventDetails>",
           "variableSetterType" : "java.util.Collection<EventDetails>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the events that could be retrieved.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSuccessfulSet(java.util.Collection)} or {@link #withSuccessfulSet(java.util.Collection)} if you want to override the existing values.</p>\n@param successfulSet Information about the events that could be retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4942,6 +5007,7 @@
               "simpleType" : "EventDetailsErrorItem",
               "variableSetterType" : "EventDetailsErrorItem"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4982,6 +5048,7 @@
           "simpleType" : "List<EventDetailsErrorItem>",
           "variableSetterType" : "java.util.Collection<EventDetailsErrorItem>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Error messages for any events that could not be retrieved.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedSet(java.util.Collection)} or {@link #withFailedSet(java.util.Collection)} if you want to override the existing values.</p>\n@param failedSet Error messages for any events that could not be retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5083,6 +5150,7 @@
                 "simpleType" : "EventDetailsErrorItem",
                 "variableSetterType" : "EventDetailsErrorItem"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5123,6 +5191,7 @@
             "simpleType" : "List<EventDetailsErrorItem>",
             "variableSetterType" : "java.util.Collection<EventDetailsErrorItem>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Error messages for any events that could not be retrieved.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedSet(java.util.Collection)} or {@link #withFailedSet(java.util.Collection)} if you want to override the existing values.</p>\n@param failedSet Error messages for any events that could not be retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5223,6 +5292,7 @@
                 "simpleType" : "EventDetails",
                 "variableSetterType" : "EventDetails"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5263,6 +5333,7 @@
             "simpleType" : "List<EventDetails>",
             "variableSetterType" : "java.util.Collection<EventDetails>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the events that could be retrieved.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSuccessfulSet(java.util.Collection)} or {@link #withSuccessfulSet(java.util.Collection)} if you want to override the existing values.</p>\n@param successfulSet Information about the events that could be retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5371,6 +5442,7 @@
           "simpleType" : "EventTypeFilter",
           "variableSetterType" : "EventTypeFilter"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5433,6 +5505,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5495,6 +5568,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5557,6 +5631,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5621,6 +5696,7 @@
             "simpleType" : "EventTypeFilter",
             "variableSetterType" : "EventTypeFilter"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5684,6 +5760,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5747,6 +5824,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5810,6 +5888,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5945,6 +6024,7 @@
               "simpleType" : "EventType",
               "variableSetterType" : "EventType"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5985,6 +6065,7 @@
           "simpleType" : "List<EventType>",
           "variableSetterType" : "java.util.Collection<EventType>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6047,6 +6128,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6148,6 +6230,7 @@
                 "simpleType" : "EventType",
                 "variableSetterType" : "EventType"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6188,6 +6271,7 @@
             "simpleType" : "List<EventType>",
             "variableSetterType" : "java.util.Collection<EventType>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes A list of event types that match the filter criteria. Event types have a category (<code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>), a service (for example, <code>EC2</code>, <code>RDS</code>, <code>DATAPIPELINE</code>, <code>BILLING</code>), and a code (in the format <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6251,6 +6335,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6359,6 +6444,7 @@
           "simpleType" : "EventFilter",
           "variableSetterType" : "EventFilter"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6421,6 +6507,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6483,6 +6570,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6545,6 +6633,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6609,6 +6698,7 @@
             "simpleType" : "EventFilter",
             "variableSetterType" : "EventFilter"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Values to narrow the results returned.</p>\n@param filter Values to narrow the results returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6672,6 +6762,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The locale (language) to return information in. English (en) is the default and the only supported value at this time.</p>\n@param locale The locale (language) to return information in. English (en) is the default and the only supported value at this time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6735,6 +6826,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>\n@param maxResults The maximum number of items to return in one batch, between 10 and 100, inclusive.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6798,6 +6890,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6933,6 +7026,7 @@
               "simpleType" : "Event",
               "variableSetterType" : "Event"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6973,6 +7067,7 @@
           "simpleType" : "List<Event>",
           "variableSetterType" : "java.util.Collection<Event>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The events that match the specified filter criteria.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events The events that match the specified filter criteria.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7035,6 +7130,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7136,6 +7232,7 @@
                 "simpleType" : "Event",
                 "variableSetterType" : "Event"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7176,6 +7273,7 @@
             "simpleType" : "List<Event>",
             "variableSetterType" : "java.util.Collection<Event>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The events that match the specified filter criteria.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events The events that match the specified filter criteria.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7239,6 +7337,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>\n@param nextToken If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7340,6 +7439,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7402,6 +7502,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number entities that match the criteria for the specified events.</p>\n@param count The number entities that match the criteria for the specified events.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7466,6 +7567,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number entities that match the criteria for the specified events.</p>\n@param count The number entities that match the criteria for the specified events.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7529,6 +7631,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7667,6 +7770,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7707,6 +7811,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventArns(java.util.Collection)} or {@link #withEventArns(java.util.Collection)} if you want to override the existing values.</p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7806,6 +7911,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7846,6 +7952,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of entity ARNs (unique identifiers).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityArns(java.util.Collection)} or {@link #withEntityArns(java.util.Collection)} if you want to override the existing values.</p>\n@param entityArns A list of entity ARNs (unique identifiers).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7945,6 +8052,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7985,6 +8093,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of IDs for affected entities.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityValues(java.util.Collection)} or {@link #withEntityValues(java.util.Collection)} if you want to override the existing values.</p>\n@param entityValues A list of IDs for affected entities.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8084,6 +8193,7 @@
               "simpleType" : "DateTimeRange",
               "variableSetterType" : "DateTimeRange"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8124,6 +8234,7 @@
           "simpleType" : "List<DateTimeRange>",
           "variableSetterType" : "java.util.Collection<DateTimeRange>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the most recent dates and times that the entity was updated.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLastUpdatedTimes(java.util.Collection)} or {@link #withLastUpdatedTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param lastUpdatedTimes A list of the most recent dates and times that the entity was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8266,6 +8377,7 @@
                   "simpleType" : "String",
                   "variableSetterType" : "String"
                 },
+                "shouldSupressEnumSetter" : false,
                 "simple" : true,
                 "unmarshallingType" : null,
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8300,6 +8412,7 @@
               "simpleType" : "Map<String,String>",
               "variableSetterType" : "java.util.Map<String,String>"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8340,6 +8453,7 @@
           "simpleType" : "Map<String,String>>",
           "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A map of entity tags attached to the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8439,6 +8553,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityStatusCode*/",
@@ -8479,6 +8594,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStatusCodes(java.util.Collection)} or {@link #withStatusCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param statusCodes A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityStatusCode*/",
@@ -8580,6 +8696,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8620,6 +8737,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of entity ARNs (unique identifiers).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityArns(java.util.Collection)} or {@link #withEntityArns(java.util.Collection)} if you want to override the existing values.</p>\n@param entityArns A list of entity ARNs (unique identifiers).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8720,6 +8838,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8760,6 +8879,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of IDs for affected entities.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityValues(java.util.Collection)} or {@link #withEntityValues(java.util.Collection)} if you want to override the existing values.</p>\n@param entityValues A list of IDs for affected entities.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8860,6 +8980,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8900,6 +9021,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventArns(java.util.Collection)} or {@link #withEventArns(java.util.Collection)} if you want to override the existing values.</p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9000,6 +9122,7 @@
                 "simpleType" : "DateTimeRange",
                 "variableSetterType" : "DateTimeRange"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9040,6 +9163,7 @@
             "simpleType" : "List<DateTimeRange>",
             "variableSetterType" : "java.util.Collection<DateTimeRange>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the most recent dates and times that the entity was updated.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLastUpdatedTimes(java.util.Collection)} or {@link #withLastUpdatedTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param lastUpdatedTimes A list of the most recent dates and times that the entity was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9140,6 +9264,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityStatusCode*/",
@@ -9180,6 +9305,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStatusCodes(java.util.Collection)} or {@link #withStatusCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param statusCodes A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see EntityStatusCode*/",
@@ -9323,6 +9449,7 @@
                     "simpleType" : "String",
                     "variableSetterType" : "String"
                   },
+                  "shouldSupressEnumSetter" : false,
                   "simple" : true,
                   "unmarshallingType" : null,
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9357,6 +9484,7 @@
                 "simpleType" : "Map<String,String>",
                 "variableSetterType" : "java.util.Map<String,String>"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9397,6 +9525,7 @@
             "simpleType" : "Map<String,String>>",
             "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A map of entity tags attached to the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9546,6 +9675,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>\n@param arn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9608,6 +9738,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param service The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9670,6 +9801,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n@param eventTypeCode The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9732,6 +9864,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The </p>\n@param eventTypeCategory The\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -9794,6 +9927,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS region name of the event.</p>\n@param region The AWS region name of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9856,6 +9990,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Availability Zone of the event. For example, us-east-1a.</p>\n@param availabilityZone The AWS Availability Zone of the event. For example, us-east-1a.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9918,6 +10053,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the event began.</p>\n@param startTime The date and time that the event began.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9980,6 +10116,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the event ended.</p>\n@param endTime The date and time that the event ended.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10042,6 +10179,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The most recent date and time that the event was updated.</p>\n@param lastUpdatedTime The most recent date and time that the event was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10104,6 +10242,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>\n@param statusCode The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventStatusCode*/",
@@ -10168,6 +10307,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>\n@param arn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10231,6 +10371,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Availability Zone of the event. For example, us-east-1a.</p>\n@param availabilityZone The AWS Availability Zone of the event. For example, us-east-1a.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10294,6 +10435,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the event ended.</p>\n@param endTime The date and time that the event ended.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10357,6 +10499,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The </p>\n@param eventTypeCategory The\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -10420,6 +10563,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n@param eventTypeCode The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10483,6 +10627,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The most recent date and time that the event was updated.</p>\n@param lastUpdatedTime The most recent date and time that the event was updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10546,6 +10691,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS region name of the event.</p>\n@param region The AWS region name of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10609,6 +10755,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param service The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10672,6 +10819,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the event began.</p>\n@param startTime The date and time that the event began.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10735,6 +10883,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.</p>\n@param statusCode The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>, and <code>upcoming</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventStatusCode*/",
@@ -10836,6 +10985,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The issue type for the associated count.</p>\n@param aggregateValue The issue type for the associated count.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10898,6 +11048,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of events of the associated issue type.</p>\n@param count The number of events of the associated issue type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10962,6 +11113,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The issue type for the associated count.</p>\n@param aggregateValue The issue type for the associated count.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11025,6 +11177,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of events of the associated issue type.</p>\n@param count The number of events of the associated issue type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11168,6 +11321,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The most recent description of the event.</p>\n@param latestDescription The most recent description of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11232,6 +11386,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The most recent description of the event.</p>\n@param latestDescription The most recent description of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11333,6 +11488,7 @@
           "simpleType" : "Event",
           "variableSetterType" : "Event"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Summary information about the event.</p>\n@param event Summary information about the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11395,6 +11551,7 @@
           "simpleType" : "EventDescription",
           "variableSetterType" : "EventDescription"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The most recent description of the event.</p>\n@param eventDescription The most recent description of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11500,6 +11657,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11534,6 +11692,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Additional metadata about the event.</p>\n@param eventMetadata Additional metadata about the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11598,6 +11757,7 @@
             "simpleType" : "Event",
             "variableSetterType" : "Event"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Summary information about the event.</p>\n@param event Summary information about the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11661,6 +11821,7 @@
             "simpleType" : "EventDescription",
             "variableSetterType" : "EventDescription"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The most recent description of the event.</p>\n@param eventDescription The most recent description of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11767,6 +11928,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11801,6 +11963,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Additional metadata about the event.</p>\n@param eventMetadata Additional metadata about the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11902,6 +12065,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11964,6 +12128,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the error.</p>\n@param errorName The name of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12026,6 +12191,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A message that describes the error.</p>\n@param errorMessage A message that describes the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12090,6 +12256,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A message that describes the error.</p>\n@param errorMessage A message that describes the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12153,6 +12320,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the error.</p>\n@param errorName The name of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12216,6 +12384,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code> </p>\n@param eventArn The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i> </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12354,6 +12523,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12394,6 +12564,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventArns(java.util.Collection)} or {@link #withEventArns(java.util.Collection)} if you want to override the existing values.</p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12493,6 +12664,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12533,6 +12705,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeCodes(java.util.Collection)} or {@link #withEventTypeCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeCodes A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12632,6 +12805,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12672,6 +12846,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12771,6 +12946,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12811,6 +12987,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of AWS regions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRegions(java.util.Collection)} or {@link #withRegions(java.util.Collection)} if you want to override the existing values.</p>\n@param regions A list of AWS regions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12910,6 +13087,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12950,6 +13128,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of AWS availability zones.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if you want to override the existing values.</p>\n@param availabilityZones A list of AWS availability zones.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13049,6 +13228,7 @@
               "simpleType" : "DateTimeRange",
               "variableSetterType" : "DateTimeRange"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13089,6 +13269,7 @@
           "simpleType" : "List<DateTimeRange>",
           "variableSetterType" : "java.util.Collection<DateTimeRange>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of dates and times that the event began.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStartTimes(java.util.Collection)} or {@link #withStartTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param startTimes A list of dates and times that the event began.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13188,6 +13369,7 @@
               "simpleType" : "DateTimeRange",
               "variableSetterType" : "DateTimeRange"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13228,6 +13410,7 @@
           "simpleType" : "List<DateTimeRange>",
           "variableSetterType" : "java.util.Collection<DateTimeRange>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of dates and times that the event ended.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEndTimes(java.util.Collection)} or {@link #withEndTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param endTimes A list of dates and times that the event ended.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13327,6 +13510,7 @@
               "simpleType" : "DateTimeRange",
               "variableSetterType" : "DateTimeRange"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13367,6 +13551,7 @@
           "simpleType" : "List<DateTimeRange>",
           "variableSetterType" : "java.util.Collection<DateTimeRange>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of dates and times that the event was last updated.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLastUpdatedTimes(java.util.Collection)} or {@link #withLastUpdatedTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param lastUpdatedTimes A list of dates and times that the event was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13466,6 +13651,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13506,6 +13692,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of entity ARNs (unique identifiers).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityArns(java.util.Collection)} or {@link #withEntityArns(java.util.Collection)} if you want to override the existing values.</p>\n@param entityArns A list of entity ARNs (unique identifiers).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13605,6 +13792,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13645,6 +13833,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityValues(java.util.Collection)} or {@link #withEntityValues(java.util.Collection)} if you want to override the existing values.</p>\n@param entityValues A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13744,6 +13933,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -13784,6 +13974,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeCategories(java.util.Collection)} or {@link #withEventTypeCategories(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeCategories A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -13926,6 +14117,7 @@
                   "simpleType" : "String",
                   "variableSetterType" : "String"
                 },
+                "shouldSupressEnumSetter" : false,
                 "simple" : true,
                 "unmarshallingType" : null,
                 "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13960,6 +14152,7 @@
               "simpleType" : "Map<String,String>",
               "variableSetterType" : "java.util.Map<String,String>"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14000,6 +14193,7 @@
           "simpleType" : "Map<String,String>>",
           "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A map of entity tags attached to the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14099,6 +14293,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventStatusCode*/",
@@ -14139,6 +14334,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event status codes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventStatusCodes(java.util.Collection)} or {@link #withEventStatusCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventStatusCodes A list of event status codes.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventStatusCode*/",
@@ -14240,6 +14436,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14280,6 +14477,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of AWS availability zones.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if you want to override the existing values.</p>\n@param availabilityZones A list of AWS availability zones.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14380,6 +14578,7 @@
                 "simpleType" : "DateTimeRange",
                 "variableSetterType" : "DateTimeRange"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14420,6 +14619,7 @@
             "simpleType" : "List<DateTimeRange>",
             "variableSetterType" : "java.util.Collection<DateTimeRange>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of dates and times that the event ended.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEndTimes(java.util.Collection)} or {@link #withEndTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param endTimes A list of dates and times that the event ended.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14520,6 +14720,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14560,6 +14761,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of entity ARNs (unique identifiers).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityArns(java.util.Collection)} or {@link #withEntityArns(java.util.Collection)} if you want to override the existing values.</p>\n@param entityArns A list of entity ARNs (unique identifiers).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14660,6 +14862,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14700,6 +14903,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityValues(java.util.Collection)} or {@link #withEntityValues(java.util.Collection)} if you want to override the existing values.</p>\n@param entityValues A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14800,6 +15004,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14840,6 +15045,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventArns(java.util.Collection)} or {@link #withEventArns(java.util.Collection)} if you want to override the existing values.</p>\n@param eventArns A list of event ARNs (unique identifiers). For example: <code>\"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331\", \"arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14940,6 +15146,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventStatusCode*/",
@@ -14980,6 +15187,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event status codes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventStatusCodes(java.util.Collection)} or {@link #withEventStatusCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventStatusCodes A list of event status codes.\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventStatusCode*/",
@@ -15080,6 +15288,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -15120,6 +15329,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeCategories(java.util.Collection)} or {@link #withEventTypeCategories(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeCategories A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -15220,6 +15430,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15260,6 +15471,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeCodes(java.util.Collection)} or {@link #withEventTypeCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeCodes A list of unique identifiers for event types. For example, <code>\"AWS_EC2_SYSTEM_MAINTENANCE_EVENT\",\"AWS_RDS_MAINTENANCE_SCHEDULED\"</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15360,6 +15572,7 @@
                 "simpleType" : "DateTimeRange",
                 "variableSetterType" : "DateTimeRange"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15400,6 +15613,7 @@
             "simpleType" : "List<DateTimeRange>",
             "variableSetterType" : "java.util.Collection<DateTimeRange>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of dates and times that the event was last updated.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLastUpdatedTimes(java.util.Collection)} or {@link #withLastUpdatedTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param lastUpdatedTimes A list of dates and times that the event was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15500,6 +15714,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15540,6 +15755,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of AWS regions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRegions(java.util.Collection)} or {@link #withRegions(java.util.Collection)} if you want to override the existing values.</p>\n@param regions A list of AWS regions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15640,6 +15856,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15680,6 +15897,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15780,6 +15998,7 @@
                 "simpleType" : "DateTimeRange",
                 "variableSetterType" : "DateTimeRange"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15820,6 +16039,7 @@
             "simpleType" : "List<DateTimeRange>",
             "variableSetterType" : "java.util.Collection<DateTimeRange>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of dates and times that the event began.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStartTimes(java.util.Collection)} or {@link #withStartTimes(java.util.Collection)} if you want to override the existing values.</p>\n@param startTimes A list of dates and times that the event began.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15963,6 +16183,7 @@
                     "simpleType" : "String",
                     "variableSetterType" : "String"
                   },
+                  "shouldSupressEnumSetter" : false,
                   "simple" : true,
                   "unmarshallingType" : null,
                   "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15997,6 +16218,7 @@
                 "simpleType" : "Map<String,String>",
                 "variableSetterType" : "java.util.Map<String,String>"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16037,6 +16259,7 @@
             "simpleType" : "Map<String,String>>",
             "variableSetterType" : "java.util.Collection<java.util.Map<String,String>>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A map of entity tags attached to the affected entity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A map of entity tags attached to the affected entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16186,6 +16409,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param service The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16248,6 +16472,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n@param code The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16310,6 +16535,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n@param category A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -16374,6 +16600,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n@param category A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -16437,6 +16664,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>\n@param code The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16500,6 +16728,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n@param service The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16686,6 +16915,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16726,6 +16956,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event type codes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeCodes(java.util.Collection)} or {@link #withEventTypeCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeCodes A list of event type codes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16825,6 +17056,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16865,6 +17097,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16964,6 +17197,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -17004,6 +17238,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeCategories(java.util.Collection)} or {@link #withEventTypeCategories(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeCategories A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -17105,6 +17340,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -17145,6 +17381,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeCategories(java.util.Collection)} or {@link #withEventTypeCategories(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeCategories A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>, or <code>accountNotification</code>).\n@return Returns a reference to this object so that method calls can be chained together.\n@see EventTypeCategory*/",
@@ -17245,6 +17482,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17285,6 +17523,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event type codes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeCodes(java.util.Collection)} or {@link #withEventTypeCodes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeCodes A list of event type codes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17385,6 +17624,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17425,6 +17665,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",

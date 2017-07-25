@@ -202,7 +202,7 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      */
 
     public void setAction(GreenFleetProvisioningAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -242,7 +242,7 @@ public class GreenFleetProvisioningOption implements Serializable, Cloneable, St
      */
 
     public GreenFleetProvisioningOption withAction(GreenFleetProvisioningAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

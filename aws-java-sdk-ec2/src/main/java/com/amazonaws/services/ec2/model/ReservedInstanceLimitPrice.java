@@ -149,7 +149,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      */
 
     public void setCurrencyCode(CurrencyCodeValues currencyCode) {
-        this.currencyCode = currencyCode.toString();
+        withCurrencyCode(currencyCode);
     }
 
     /**
@@ -166,7 +166,7 @@ public class ReservedInstanceLimitPrice implements Serializable, Cloneable {
      */
 
     public ReservedInstanceLimitPrice withCurrencyCode(CurrencyCodeValues currencyCode) {
-        setCurrencyCode(currencyCode);
+        this.currencyCode = currencyCode.toString();
         return this;
     }
 

@@ -888,7 +888,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setStatus(FleetStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -974,7 +974,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      */
 
     public FleetAttributes withStatus(FleetStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 
@@ -1391,7 +1391,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
-        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
+        withNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
     }
 
     /**
@@ -1431,7 +1431,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      */
 
     public FleetAttributes withNewGameSessionProtectionPolicy(ProtectionPolicy newGameSessionProtectionPolicy) {
-        setNewGameSessionProtectionPolicy(newGameSessionProtectionPolicy);
+        this.newGameSessionProtectionPolicy = newGameSessionProtectionPolicy.toString();
         return this;
     }
 
@@ -1497,7 +1497,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setOperatingSystem(OperatingSystem operatingSystem) {
-        this.operatingSystem = operatingSystem.toString();
+        withOperatingSystem(operatingSystem);
     }
 
     /**
@@ -1514,7 +1514,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      */
 
     public FleetAttributes withOperatingSystem(OperatingSystem operatingSystem) {
-        setOperatingSystem(operatingSystem);
+        this.operatingSystem = operatingSystem.toString();
         return this;
     }
 

@@ -515,7 +515,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setMarket(MarketType market) {
-        this.market = market.toString();
+        withMarket(market);
     }
 
     /**
@@ -530,7 +530,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Instance withMarket(MarketType market) {
-        setMarket(market);
+        this.market = market.toString();
         return this;
     }
 

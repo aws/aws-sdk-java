@@ -195,7 +195,7 @@ public class Difference implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setChangeType(ChangeTypeEnum changeType) {
-        this.changeType = changeType.toString();
+        withChangeType(changeType);
     }
 
     /**
@@ -210,7 +210,7 @@ public class Difference implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Difference withChangeType(ChangeTypeEnum changeType) {
-        setChangeType(changeType);
+        this.changeType = changeType.toString();
         return this;
     }
 

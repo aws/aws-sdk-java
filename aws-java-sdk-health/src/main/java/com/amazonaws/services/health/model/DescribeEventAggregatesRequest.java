@@ -147,7 +147,7 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public void setAggregateField(EventAggregateField aggregateField) {
-        this.aggregateField = aggregateField.toString();
+        withAggregateField(aggregateField);
     }
 
     /**
@@ -162,7 +162,7 @@ public class DescribeEventAggregatesRequest extends com.amazonaws.AmazonWebServi
      */
 
     public DescribeEventAggregatesRequest withAggregateField(EventAggregateField aggregateField) {
-        setAggregateField(aggregateField);
+        this.aggregateField = aggregateField.toString();
         return this;
     }
 

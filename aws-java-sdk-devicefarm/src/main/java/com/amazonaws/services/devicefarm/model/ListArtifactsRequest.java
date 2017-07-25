@@ -318,7 +318,7 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setType(ArtifactCategory type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -372,7 +372,7 @@ public class ListArtifactsRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public ListArtifactsRequest withType(ArtifactCategory type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

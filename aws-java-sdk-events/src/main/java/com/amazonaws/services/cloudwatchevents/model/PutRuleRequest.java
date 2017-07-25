@@ -250,7 +250,7 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public void setState(RuleState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -265,7 +265,7 @@ public class PutRuleRequest extends com.amazonaws.AmazonWebServiceRequest implem
      */
 
     public PutRuleRequest withState(RuleState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

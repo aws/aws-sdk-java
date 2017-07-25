@@ -201,7 +201,7 @@ public class TestDNSAnswerResult extends com.amazonaws.AmazonWebServiceResult<co
      */
 
     public void setRecordType(RRType recordType) {
-        this.recordType = recordType.toString();
+        withRecordType(recordType);
     }
 
     /**
@@ -216,7 +216,7 @@ public class TestDNSAnswerResult extends com.amazonaws.AmazonWebServiceResult<co
      */
 
     public TestDNSAnswerResult withRecordType(RRType recordType) {
-        setRecordType(recordType);
+        this.recordType = recordType.toString();
         return this;
     }
 

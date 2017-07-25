@@ -118,7 +118,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setCategory(ActionCategory category) {
-        this.category = category.toString();
+        withCategory(category);
     }
 
     /**
@@ -135,7 +135,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ActionTypeId withCategory(ActionCategory category) {
-        setCategory(category);
+        this.category = category.toString();
         return this;
     }
 
@@ -193,7 +193,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setOwner(ActionOwner owner) {
-        this.owner = owner.toString();
+        withOwner(owner);
     }
 
     /**
@@ -208,7 +208,7 @@ public class ActionTypeId implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ActionTypeId withOwner(ActionOwner owner) {
-        setOwner(owner);
+        this.owner = owner.toString();
         return this;
     }
 

@@ -452,7 +452,7 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(WafRuleType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -473,7 +473,7 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      */
 
     public ActivatedRule withType(WafRuleType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

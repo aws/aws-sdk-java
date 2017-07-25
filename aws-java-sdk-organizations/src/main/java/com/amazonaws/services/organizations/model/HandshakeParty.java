@@ -160,7 +160,7 @@ public class HandshakeParty implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(HandshakePartyType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -175,7 +175,7 @@ public class HandshakeParty implements Serializable, Cloneable, StructuredPojo {
      */
 
     public HandshakeParty withType(HandshakePartyType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

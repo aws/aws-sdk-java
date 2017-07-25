@@ -100,7 +100,7 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setName(UlimitName name) {
-        this.name = name.toString();
+        withName(name);
     }
 
     /**
@@ -115,7 +115,7 @@ public class Ulimit implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Ulimit withName(UlimitName name) {
-        setName(name);
+        this.name = name.toString();
         return this;
     }
 

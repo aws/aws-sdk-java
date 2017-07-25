@@ -127,7 +127,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public void setResourceType(TaggableResourceType resourceType) {
-        this.resourceType = resourceType.toString();
+        withResourceType(resourceType);
     }
 
     /**
@@ -142,7 +142,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
 
     public DescribeTagsRequest withResourceType(TaggableResourceType resourceType) {
-        setResourceType(resourceType);
+        this.resourceType = resourceType.toString();
         return this;
     }
 

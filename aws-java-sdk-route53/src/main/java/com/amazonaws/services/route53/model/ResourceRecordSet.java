@@ -1723,7 +1723,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      */
 
     public void setType(RRType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1865,7 +1865,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      */
 
     public ResourceRecordSet withType(RRType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -2599,7 +2599,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      */
 
     public void setRegion(ResourceRecordSetRegion region) {
-        this.region = region.toString();
+        withRegion(region);
     }
 
     /**
@@ -2694,7 +2694,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      */
 
     public ResourceRecordSet withRegion(ResourceRecordSetRegion region) {
-        setRegion(region);
+        this.region = region.toString();
         return this;
     }
 
@@ -3511,7 +3511,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      */
 
     public void setFailover(ResourceRecordSetFailover failover) {
-        this.failover = failover.toString();
+        withFailover(failover);
     }
 
     /**
@@ -3650,7 +3650,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      */
 
     public ResourceRecordSet withFailover(ResourceRecordSetFailover failover) {
-        setFailover(failover);
+        this.failover = failover.toString();
         return this;
     }
 

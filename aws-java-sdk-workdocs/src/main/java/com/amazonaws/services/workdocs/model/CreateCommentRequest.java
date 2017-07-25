@@ -393,7 +393,7 @@ public class CreateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public void setVisibility(CommentVisibilityType visibility) {
-        this.visibility = visibility.toString();
+        withVisibility(visibility);
     }
 
     /**
@@ -412,7 +412,7 @@ public class CreateCommentRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
 
     public CreateCommentRequest withVisibility(CommentVisibilityType visibility) {
-        setVisibility(visibility);
+        this.visibility = visibility.toString();
         return this;
     }
 

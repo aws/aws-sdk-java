@@ -312,7 +312,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      */
 
     public void setAutomaticFailoverStatus(PendingAutomaticFailoverStatus automaticFailoverStatus) {
-        this.automaticFailoverStatus = automaticFailoverStatus.toString();
+        withAutomaticFailoverStatus(automaticFailoverStatus);
     }
 
     /**
@@ -365,7 +365,7 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      */
 
     public ReplicationGroupPendingModifiedValues withAutomaticFailoverStatus(PendingAutomaticFailoverStatus automaticFailoverStatus) {
-        setAutomaticFailoverStatus(automaticFailoverStatus);
+        this.automaticFailoverStatus = automaticFailoverStatus.toString();
         return this;
     }
 

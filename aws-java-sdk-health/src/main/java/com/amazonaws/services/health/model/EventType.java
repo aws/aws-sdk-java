@@ -202,7 +202,7 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setCategory(EventTypeCategory category) {
-        this.category = category.toString();
+        withCategory(category);
     }
 
     /**
@@ -219,7 +219,7 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public EventType withCategory(EventTypeCategory category) {
-        setCategory(category);
+        this.category = category.toString();
         return this;
     }
 

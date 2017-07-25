@@ -184,7 +184,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      */
 
     public void setAttribute(InstanceAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -209,7 +209,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest imple
      */
 
     public ResetInstanceAttributeRequest withAttribute(InstanceAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

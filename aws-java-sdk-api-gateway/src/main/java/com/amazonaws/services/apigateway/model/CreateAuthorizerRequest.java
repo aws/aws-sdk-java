@@ -220,7 +220,7 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setType(AuthorizerType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -235,7 +235,7 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public CreateAuthorizerRequest withType(AuthorizerType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

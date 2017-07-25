@@ -155,7 +155,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setSortBy(SortByEnum sortBy) {
-        this.sortBy = sortBy.toString();
+        withSortBy(sortBy);
     }
 
     /**
@@ -170,7 +170,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public ListRepositoriesRequest withSortBy(SortByEnum sortBy) {
-        setSortBy(sortBy);
+        this.sortBy = sortBy.toString();
         return this;
     }
 
@@ -228,7 +228,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setOrder(OrderEnum order) {
-        this.order = order.toString();
+        withOrder(order);
     }
 
     /**
@@ -243,7 +243,7 @@ public class ListRepositoriesRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public ListRepositoriesRequest withOrder(OrderEnum order) {
-        setOrder(order);
+        this.order = order.toString();
         return this;
     }
 

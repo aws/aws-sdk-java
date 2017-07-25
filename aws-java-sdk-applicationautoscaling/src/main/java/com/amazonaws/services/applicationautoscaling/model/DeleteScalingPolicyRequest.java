@@ -245,7 +245,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setServiceNamespace(ServiceNamespace serviceNamespace) {
-        this.serviceNamespace = serviceNamespace.toString();
+        withServiceNamespace(serviceNamespace);
     }
 
     /**
@@ -264,7 +264,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public DeleteScalingPolicyRequest withServiceNamespace(ServiceNamespace serviceNamespace) {
-        setServiceNamespace(serviceNamespace);
+        this.serviceNamespace = serviceNamespace.toString();
         return this;
     }
 
@@ -946,7 +946,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setScalableDimension(ScalableDimension scalableDimension) {
-        this.scalableDimension = scalableDimension.toString();
+        withScalableDimension(scalableDimension);
     }
 
     /**
@@ -1049,7 +1049,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public DeleteScalingPolicyRequest withScalableDimension(ScalableDimension scalableDimension) {
-        setScalableDimension(scalableDimension);
+        this.scalableDimension = scalableDimension.toString();
         return this;
     }
 

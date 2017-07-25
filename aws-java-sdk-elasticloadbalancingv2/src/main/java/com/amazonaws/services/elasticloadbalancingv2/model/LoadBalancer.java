@@ -413,7 +413,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      */
 
     public void setScheme(LoadBalancerSchemeEnum scheme) {
-        this.scheme = scheme.toString();
+        withScheme(scheme);
     }
 
     /**
@@ -441,7 +441,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      */
 
     public LoadBalancer withScheme(LoadBalancerSchemeEnum scheme) {
-        setScheme(scheme);
+        this.scheme = scheme.toString();
         return this;
     }
 
@@ -579,7 +579,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      */
 
     public void setType(LoadBalancerTypeEnum type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -594,7 +594,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      */
 
     public LoadBalancer withType(LoadBalancerTypeEnum type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 
@@ -800,7 +800,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      */
 
     public void setIpAddressType(IpAddressType ipAddressType) {
-        this.ipAddressType = ipAddressType.toString();
+        withIpAddressType(ipAddressType);
     }
 
     /**
@@ -817,7 +817,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      */
 
     public LoadBalancer withIpAddressType(IpAddressType ipAddressType) {
-        setIpAddressType(ipAddressType);
+        this.ipAddressType = ipAddressType.toString();
         return this;
     }
 

@@ -206,7 +206,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(JQState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -221,7 +221,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public JobQueueDetail withState(JQState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -279,7 +279,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setStatus(JQStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -294,7 +294,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      */
 
     public JobQueueDetail withStatus(JQStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

@@ -158,7 +158,7 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setVolumeType(VolumeType volumeType) {
-        this.volumeType = volumeType.toString();
+        withVolumeType(volumeType);
     }
 
     /**
@@ -173,7 +173,7 @@ public class EBSOptions implements Serializable, Cloneable, StructuredPojo {
      */
 
     public EBSOptions withVolumeType(VolumeType volumeType) {
-        setVolumeType(volumeType);
+        this.volumeType = volumeType.toString();
         return this;
     }
 

@@ -306,7 +306,7 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
      */
 
     public void setStatus(ReachabilityStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -360,7 +360,7 @@ public class GetContactReachabilityStatusResult extends com.amazonaws.AmazonWebS
      */
 
     public GetContactReachabilityStatusResult withStatus(ReachabilityStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

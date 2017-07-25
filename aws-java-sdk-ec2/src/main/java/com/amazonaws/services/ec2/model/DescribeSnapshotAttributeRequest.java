@@ -130,7 +130,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      */
 
     public void setAttribute(SnapshotAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -145,7 +145,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest im
      */
 
     public DescribeSnapshotAttributeRequest withAttribute(SnapshotAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

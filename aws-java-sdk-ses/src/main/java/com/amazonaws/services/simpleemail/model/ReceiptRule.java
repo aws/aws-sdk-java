@@ -357,7 +357,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      */
 
     public void setTlsPolicy(TlsPolicy tlsPolicy) {
-        this.tlsPolicy = tlsPolicy.toString();
+        withTlsPolicy(tlsPolicy);
     }
 
     /**
@@ -376,7 +376,7 @@ public class ReceiptRule implements Serializable, Cloneable {
      */
 
     public ReceiptRule withTlsPolicy(TlsPolicy tlsPolicy) {
-        setTlsPolicy(tlsPolicy);
+        this.tlsPolicy = tlsPolicy.toString();
         return this;
     }
 

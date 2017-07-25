@@ -330,7 +330,7 @@ public class EC2TagFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(EC2TagFilterType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -378,7 +378,7 @@ public class EC2TagFilter implements Serializable, Cloneable, StructuredPojo {
      */
 
     public EC2TagFilter withType(EC2TagFilterType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

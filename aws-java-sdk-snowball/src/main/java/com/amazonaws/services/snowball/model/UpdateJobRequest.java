@@ -360,7 +360,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setShippingOption(ShippingOption shippingOption) {
-        this.shippingOption = shippingOption.toString();
+        withShippingOption(shippingOption);
     }
 
     /**
@@ -375,7 +375,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public UpdateJobRequest withShippingOption(ShippingOption shippingOption) {
-        setShippingOption(shippingOption);
+        this.shippingOption = shippingOption.toString();
         return this;
     }
 
@@ -481,7 +481,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public void setSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        this.snowballCapacityPreference = snowballCapacityPreference.toString();
+        withSnowballCapacityPreference(snowballCapacityPreference);
     }
 
     /**
@@ -498,7 +498,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      */
 
     public UpdateJobRequest withSnowballCapacityPreference(SnowballCapacity snowballCapacityPreference) {
-        setSnowballCapacityPreference(snowballCapacityPreference);
+        this.snowballCapacityPreference = snowballCapacityPreference.toString();
         return this;
     }
 

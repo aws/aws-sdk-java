@@ -316,7 +316,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      */
 
     public void setState(State state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -331,7 +331,7 @@ public class VpcEndpoint implements Serializable, Cloneable {
      */
 
     public VpcEndpoint withState(State state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

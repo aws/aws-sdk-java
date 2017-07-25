@@ -140,7 +140,7 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setObjectType(ObjectType objectType) {
-        this.objectType = objectType.toString();
+        withObjectType(objectType);
     }
 
     /**
@@ -156,7 +156,7 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Facet withObjectType(ObjectType objectType) {
-        setObjectType(objectType);
+        this.objectType = objectType.toString();
         return this;
     }
 

@@ -241,7 +241,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public void setOrientationCorrection(OrientationCorrection orientationCorrection) {
-        this.orientationCorrection = orientationCorrection.toString();
+        withOrientationCorrection(orientationCorrection);
     }
 
     /**
@@ -274,7 +274,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      */
 
     public IndexFacesResult withOrientationCorrection(OrientationCorrection orientationCorrection) {
-        setOrientationCorrection(orientationCorrection);
+        this.orientationCorrection = orientationCorrection.toString();
         return this;
     }
 

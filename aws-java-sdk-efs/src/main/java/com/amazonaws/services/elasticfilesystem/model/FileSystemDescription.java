@@ -311,7 +311,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
      */
 
     public void setLifeCycleState(LifeCycleState lifeCycleState) {
-        this.lifeCycleState = lifeCycleState.toString();
+        withLifeCycleState(lifeCycleState);
     }
 
     /**
@@ -326,7 +326,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
      */
 
     public FileSystemDescription withLifeCycleState(LifeCycleState lifeCycleState) {
-        setLifeCycleState(lifeCycleState);
+        this.lifeCycleState = lifeCycleState.toString();
         return this;
     }
 
@@ -552,7 +552,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
      */
 
     public void setPerformanceMode(PerformanceMode performanceMode) {
-        this.performanceMode = performanceMode.toString();
+        withPerformanceMode(performanceMode);
     }
 
     /**
@@ -567,7 +567,7 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
      */
 
     public FileSystemDescription withPerformanceMode(PerformanceMode performanceMode) {
-        setPerformanceMode(performanceMode);
+        this.performanceMode = performanceMode.toString();
         return this;
     }
 

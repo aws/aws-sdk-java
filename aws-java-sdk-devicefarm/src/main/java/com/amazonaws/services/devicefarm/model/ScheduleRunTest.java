@@ -955,7 +955,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setType(TestType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1121,7 +1121,7 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      */
 
     public ScheduleRunTest withType(TestType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

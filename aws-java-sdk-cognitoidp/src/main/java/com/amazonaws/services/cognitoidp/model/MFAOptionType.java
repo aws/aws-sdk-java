@@ -95,7 +95,7 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setDeliveryMedium(DeliveryMediumType deliveryMedium) {
-        this.deliveryMedium = deliveryMedium.toString();
+        withDeliveryMedium(deliveryMedium);
     }
 
     /**
@@ -110,7 +110,7 @@ public class MFAOptionType implements Serializable, Cloneable, StructuredPojo {
      */
 
     public MFAOptionType withDeliveryMedium(DeliveryMediumType deliveryMedium) {
-        setDeliveryMedium(deliveryMedium);
+        this.deliveryMedium = deliveryMedium.toString();
         return this;
     }
 

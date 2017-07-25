@@ -95,7 +95,7 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
      */
 
     public void setParameterName(ProcessorParameterName parameterName) {
-        this.parameterName = parameterName.toString();
+        withParameterName(parameterName);
     }
 
     /**
@@ -110,7 +110,7 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
      */
 
     public ProcessorParameter withParameterName(ProcessorParameterName parameterName) {
-        setParameterName(parameterName);
+        this.parameterName = parameterName.toString();
         return this;
     }
 

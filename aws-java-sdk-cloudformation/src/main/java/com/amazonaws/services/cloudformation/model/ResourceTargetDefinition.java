@@ -115,7 +115,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      */
 
     public void setAttribute(ResourceAttribute attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -132,7 +132,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      */
 
     public ResourceTargetDefinition withAttribute(ResourceAttribute attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 
@@ -276,7 +276,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      */
 
     public void setRequiresRecreation(RequiresRecreation requiresRecreation) {
-        this.requiresRecreation = requiresRecreation.toString();
+        withRequiresRecreation(requiresRecreation);
     }
 
     /**
@@ -301,7 +301,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      */
 
     public ResourceTargetDefinition withRequiresRecreation(RequiresRecreation requiresRecreation) {
-        setRequiresRecreation(requiresRecreation);
+        this.requiresRecreation = requiresRecreation.toString();
         return this;
     }
 

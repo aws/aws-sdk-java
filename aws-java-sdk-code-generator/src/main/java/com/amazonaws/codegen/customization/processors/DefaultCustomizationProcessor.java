@@ -34,7 +34,8 @@ public final class DefaultCustomizationProcessor {
                 new RemoveExceptionMessagePropertyProcessor(),
                 new RenameShapesProcessor(config.getRenameShapes()),
                 new SendEmptyAutoConstructedListAsEmptyListProcessor(config.getSendEmptyAutoConstructedListAsEmptyList()),
-                new SendEmptyNonAutoConstructedListAsEmptyListProcessor(config)
+                new SendEmptyNonAutoConstructedListAsEmptyListProcessor(config),
+                new SupressEnumSetterProcessor(config.getSupressEnumSetterFor())
                 );
     }
 }

@@ -146,7 +146,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      */
 
     public void setName(StatusName name) {
-        this.name = name.toString();
+        withName(name);
     }
 
     /**
@@ -161,7 +161,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      */
 
     public InstanceStatusDetails withName(StatusName name) {
-        setName(name);
+        this.name = name.toString();
         return this;
     }
 
@@ -219,7 +219,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -234,7 +234,7 @@ public class InstanceStatusDetails implements Serializable, Cloneable {
      */
 
     public InstanceStatusDetails withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

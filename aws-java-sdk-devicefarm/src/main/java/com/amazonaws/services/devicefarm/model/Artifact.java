@@ -1269,7 +1269,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(ArtifactType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -1523,7 +1523,7 @@ public class Artifact implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Artifact withType(ArtifactType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

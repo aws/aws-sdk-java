@@ -237,7 +237,7 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setCannedAcl(CannedAccessControlList cannedAcl) {
-        this.cannedAcl = cannedAcl.toString();
+        withCannedAcl(cannedAcl);
     }
 
     /**
@@ -255,7 +255,7 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
      */
 
     public S3Action withCannedAcl(CannedAccessControlList cannedAcl) {
-        setCannedAcl(cannedAcl);
+        this.cannedAcl = cannedAcl.toString();
         return this;
     }
 

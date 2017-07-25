@@ -198,7 +198,7 @@ public class LambdaFunctionTimedOutEventAttributes implements Serializable, Clon
      */
 
     public void setTimeoutType(LambdaFunctionTimeoutType timeoutType) {
-        this.timeoutType = timeoutType.toString();
+        withTimeoutType(timeoutType);
     }
 
     /**
@@ -213,7 +213,7 @@ public class LambdaFunctionTimedOutEventAttributes implements Serializable, Clon
      */
 
     public LambdaFunctionTimedOutEventAttributes withTimeoutType(LambdaFunctionTimeoutType timeoutType) {
-        setTimeoutType(timeoutType);
+        this.timeoutType = timeoutType.toString();
         return this;
     }
 

@@ -393,7 +393,7 @@ public class ServiceSpecificCredential implements Serializable, Cloneable {
      */
 
     public void setStatus(StatusType status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -410,7 +410,7 @@ public class ServiceSpecificCredential implements Serializable, Cloneable {
      */
 
     public ServiceSpecificCredential withStatus(StatusType status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

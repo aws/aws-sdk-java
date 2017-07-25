@@ -147,7 +147,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      */
 
     public void setAutoPlacement(AutoPlacement autoPlacement) {
-        this.autoPlacement = autoPlacement.toString();
+        withAutoPlacement(autoPlacement);
     }
 
     /**
@@ -169,7 +169,7 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
      */
 
     public AllocateHostsRequest withAutoPlacement(AutoPlacement autoPlacement) {
-        setAutoPlacement(autoPlacement);
+        this.autoPlacement = autoPlacement.toString();
         return this;
     }
 

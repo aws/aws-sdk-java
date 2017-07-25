@@ -247,7 +247,7 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setEncryptionType(EncryptionType encryptionType) {
-        this.encryptionType = encryptionType.toString();
+        withEncryptionType(encryptionType);
     }
 
     /**
@@ -286,7 +286,7 @@ public class StopStreamEncryptionRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public StopStreamEncryptionRequest withEncryptionType(EncryptionType encryptionType) {
-        setEncryptionType(encryptionType);
+        this.encryptionType = encryptionType.toString();
         return this;
     }
 

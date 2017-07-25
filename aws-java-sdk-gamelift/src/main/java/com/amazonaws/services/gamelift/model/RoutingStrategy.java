@@ -361,7 +361,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      */
 
     public void setType(RoutingStrategyType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -408,7 +408,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      */
 
     public RoutingStrategy withType(RoutingStrategyType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

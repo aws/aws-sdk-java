@@ -246,7 +246,7 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setComplianceType(ComplianceType complianceType) {
-        this.complianceType = complianceType.toString();
+        withComplianceType(complianceType);
     }
 
     /**
@@ -294,7 +294,7 @@ public class Compliance implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Compliance withComplianceType(ComplianceType complianceType) {
-        setComplianceType(complianceType);
+        this.complianceType = complianceType.toString();
         return this;
     }
 

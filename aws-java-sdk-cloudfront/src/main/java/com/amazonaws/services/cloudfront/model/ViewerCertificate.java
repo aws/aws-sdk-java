@@ -820,7 +820,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      */
 
     public void setSSLSupportMethod(SSLSupportMethod sSLSupportMethod) {
-        this.sSLSupportMethod = sSLSupportMethod.toString();
+        withSSLSupportMethod(sSLSupportMethod);
     }
 
     /**
@@ -934,7 +934,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      */
 
     public ViewerCertificate withSSLSupportMethod(SSLSupportMethod sSLSupportMethod) {
-        setSSLSupportMethod(sSLSupportMethod);
+        this.sSLSupportMethod = sSLSupportMethod.toString();
         return this;
     }
 
@@ -1144,7 +1144,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      */
 
     public void setMinimumProtocolVersion(MinimumProtocolVersion minimumProtocolVersion) {
-        this.minimumProtocolVersion = minimumProtocolVersion.toString();
+        withMinimumProtocolVersion(minimumProtocolVersion);
     }
 
     /**
@@ -1197,7 +1197,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      */
 
     public ViewerCertificate withMinimumProtocolVersion(MinimumProtocolVersion minimumProtocolVersion) {
-        setMinimumProtocolVersion(minimumProtocolVersion);
+        this.minimumProtocolVersion = minimumProtocolVersion.toString();
         return this;
     }
 
@@ -2111,7 +2111,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      */
     @Deprecated
     public void setCertificateSource(CertificateSource certificateSource) {
-        this.certificateSource = certificateSource.toString();
+        withCertificateSource(certificateSource);
     }
 
     /**
@@ -2132,7 +2132,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      */
     @Deprecated
     public ViewerCertificate withCertificateSource(CertificateSource certificateSource) {
-        setCertificateSource(certificateSource);
+        this.certificateSource = certificateSource.toString();
         return this;
     }
 

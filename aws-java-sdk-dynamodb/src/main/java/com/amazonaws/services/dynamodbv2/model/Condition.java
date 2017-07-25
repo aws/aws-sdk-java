@@ -1914,7 +1914,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setComparisonOperator(ComparisonOperator comparisonOperator) {
-        this.comparisonOperator = comparisonOperator.toString();
+        withComparisonOperator(comparisonOperator);
     }
 
     /**
@@ -2286,7 +2286,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Condition withComparisonOperator(ComparisonOperator comparisonOperator) {
-        setComparisonOperator(comparisonOperator);
+        this.comparisonOperator = comparisonOperator.toString();
         return this;
     }
 

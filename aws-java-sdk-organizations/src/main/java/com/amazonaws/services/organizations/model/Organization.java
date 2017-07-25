@@ -311,7 +311,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setFeatureSet(OrganizationFeatureSet featureSet) {
-        this.featureSet = featureSet.toString();
+        withFeatureSet(featureSet);
     }
 
     /**
@@ -334,7 +334,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Organization withFeatureSet(OrganizationFeatureSet featureSet) {
-        setFeatureSet(featureSet);
+        this.featureSet = featureSet.toString();
         return this;
     }
 

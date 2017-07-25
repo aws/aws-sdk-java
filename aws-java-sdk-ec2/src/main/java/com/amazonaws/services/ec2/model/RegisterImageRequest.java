@@ -265,7 +265,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      */
 
     public void setArchitecture(ArchitectureValues architecture) {
-        this.architecture = architecture.toString();
+        withArchitecture(architecture);
     }
 
     /**
@@ -287,7 +287,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      */
 
     public RegisterImageRequest withArchitecture(ArchitectureValues architecture) {
-        setArchitecture(architecture);
+        this.architecture = architecture.toString();
         return this;
     }
 

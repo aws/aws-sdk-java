@@ -178,7 +178,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public void setTargetType(TargetType targetType) {
-        this.targetType = targetType.toString();
+        withTargetType(targetType);
     }
 
     /**
@@ -193,7 +193,7 @@ public class ListAttributesRequest extends com.amazonaws.AmazonWebServiceRequest
      */
 
     public ListAttributesRequest withTargetType(TargetType targetType) {
-        setTargetType(targetType);
+        this.targetType = targetType.toString();
         return this;
     }
 

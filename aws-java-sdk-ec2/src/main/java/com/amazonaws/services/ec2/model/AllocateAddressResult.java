@@ -194,7 +194,7 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
      */
 
     public void setDomain(DomainType domain) {
-        this.domain = domain.toString();
+        withDomain(domain);
     }
 
     /**
@@ -211,7 +211,7 @@ public class AllocateAddressResult extends com.amazonaws.AmazonWebServiceResult<
      */
 
     public AllocateAddressResult withDomain(DomainType domain) {
-        setDomain(domain);
+        this.domain = domain.toString();
         return this;
     }
 

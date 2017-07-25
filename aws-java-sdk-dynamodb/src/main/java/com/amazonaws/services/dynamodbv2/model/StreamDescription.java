@@ -594,7 +594,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStreamStatus(StreamStatus streamStatus) {
-        this.streamStatus = streamStatus.toString();
+        withStreamStatus(streamStatus);
     }
 
     /**
@@ -652,7 +652,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      */
 
     public StreamDescription withStreamStatus(StreamStatus streamStatus) {
-        setStreamStatus(streamStatus);
+        this.streamStatus = streamStatus.toString();
         return this;
     }
 
@@ -882,7 +882,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      */
 
     public void setStreamViewType(StreamViewType streamViewType) {
-        this.streamViewType = streamViewType.toString();
+        withStreamViewType(streamViewType);
     }
 
     /**
@@ -940,7 +940,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      */
 
     public StreamDescription withStreamViewType(StreamViewType streamViewType) {
-        setStreamViewType(streamViewType);
+        this.streamViewType = streamViewType.toString();
         return this;
     }
 

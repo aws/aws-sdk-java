@@ -99,7 +99,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable, StructuredPo
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -114,7 +114,7 @@ public class ByteMatchSetUpdate implements Serializable, Cloneable, StructuredPo
      */
 
     public ByteMatchSetUpdate withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

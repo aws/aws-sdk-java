@@ -102,7 +102,7 @@ public class BatchWriteException extends com.amazonaws.services.clouddirectory.m
      */
 
     public void setType(BatchWriteExceptionType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -112,7 +112,7 @@ public class BatchWriteException extends com.amazonaws.services.clouddirectory.m
      */
 
     public BatchWriteException withType(BatchWriteExceptionType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

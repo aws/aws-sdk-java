@@ -110,7 +110,7 @@ public class ConfigurationTag implements Serializable, Cloneable, StructuredPojo
      */
 
     public void setConfigurationType(ConfigurationItemType configurationType) {
-        this.configurationType = configurationType.toString();
+        withConfigurationType(configurationType);
     }
 
     /**
@@ -125,7 +125,7 @@ public class ConfigurationTag implements Serializable, Cloneable, StructuredPojo
      */
 
     public ConfigurationTag withConfigurationType(ConfigurationItemType configurationType) {
-        setConfigurationType(configurationType);
+        this.configurationType = configurationType.toString();
         return this;
     }
 

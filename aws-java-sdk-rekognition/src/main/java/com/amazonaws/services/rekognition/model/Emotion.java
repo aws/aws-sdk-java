@@ -92,7 +92,7 @@ public class Emotion implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(EmotionName type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -107,7 +107,7 @@ public class Emotion implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Emotion withType(EmotionName type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

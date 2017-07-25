@@ -34,6 +34,7 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
+    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -767,6 +768,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the project to which you will add the IAM user.</p>\n@param projectId The ID of the project to which you will add the IAM user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -829,6 +831,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -891,6 +894,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.</p>\n@param userArn The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -953,6 +957,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>\n@param projectRole The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1015,6 +1020,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>\n@param remoteAccessAllowed Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1079,6 +1085,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested the team member association to the project. This token can be used to repeat the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1142,6 +1149,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the project to which you will add the IAM user.</p>\n@param projectId The ID of the project to which you will add the IAM user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1205,6 +1213,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.</p>\n@param projectRole The AWS CodeStar project role that will apply to this user. This role determines what actions a user can take in an AWS CodeStar project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1268,6 +1277,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.</p>\n@param remoteAccessAllowed Whether the team member is allowed to use an SSH public/private key pair to remotely access project resources, for example Amazon EC2 instances.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1331,6 +1341,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.</p>\n@param userArn The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1429,6 +1440,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user- or system-generated token from the initial request that can be used to repeat the request. </p>\n@param clientRequestToken The user- or system-generated token from the initial request that can be used to repeat the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1493,6 +1505,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user- or system-generated token from the initial request that can be used to repeat the request. </p>\n@param clientRequestToken The user- or system-generated token from the initial request that can be used to repeat the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1637,6 +1650,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param name Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1699,6 +1713,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param id Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1761,6 +1776,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param description Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1823,6 +1839,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param clientRequestToken Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1887,6 +1904,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param clientRequestToken Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1950,6 +1968,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param description Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2013,6 +2032,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param id Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2076,6 +2096,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param name Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2174,6 +2195,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param id Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2236,6 +2258,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param arn Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2298,6 +2321,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param clientRequestToken Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2360,6 +2384,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param projectTemplateId Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2424,6 +2449,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param arn Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2487,6 +2513,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param clientRequestToken Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2550,6 +2577,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param id Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2613,6 +2641,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param projectTemplateId Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2721,6 +2750,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2783,6 +2813,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>\n@param displayName The name that will be displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2845,6 +2876,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that will be displayed as part of the user's profile in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2907,6 +2939,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2971,6 +3004,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>\n@param displayName The name that will be displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3034,6 +3068,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address that will be displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that will be displayed as part of the user's profile in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3097,6 +3132,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3160,6 +3196,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3258,6 +3295,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3320,6 +3358,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3382,6 +3421,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3444,6 +3484,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3506,6 +3547,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the user profile was created, in timestamp format.</p>\n@param createdTimestamp The date the user profile was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3568,6 +3610,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date the user profile was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3632,6 +3675,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the user profile was created, in timestamp format.</p>\n@param createdTimestamp The date the user profile was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3695,6 +3739,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3758,6 +3803,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3821,6 +3867,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date the user profile was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3884,6 +3931,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3947,6 +3995,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4055,6 +4104,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the project to be deleted in AWS CodeStar.</p>\n@param id The ID of the project to be deleted in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4117,6 +4167,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4179,6 +4230,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>\n@param deleteStack Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4243,6 +4295,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project deletion. This token can be used to repeat the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4306,6 +4359,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.</p>\n@param deleteStack Whether to send a delete request for the primary stack in AWS CloudFormation originally used to generate the project and its resources. This option will delete all AWS resources for the project (except for any buckets in Amazon S3) as well as deleting the project itself. Recommended for most use cases.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4369,6 +4423,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the project to be deleted in AWS CodeStar.</p>\n@param id The ID of the project to be deleted in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4467,6 +4522,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>\n@param stackId The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4529,6 +4585,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted project.</p>\n@param projectArn The Amazon Resource Name (ARN) of the deleted project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4593,6 +4650,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted project.</p>\n@param projectArn The Amazon Resource Name (ARN) of the deleted project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4656,6 +4714,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>\n@param stackId The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4764,6 +4823,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>\n@param userArn The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4828,6 +4888,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>\n@param userArn The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4926,6 +4987,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>\n@param userArn The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4990,6 +5052,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>\n@param userArn The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5098,6 +5161,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5162,6 +5226,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5260,6 +5325,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The display name for the project.</p>\n@param name The display name for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5322,6 +5388,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5384,6 +5451,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the project.</p>\n@param arn The Amazon Resource Name (ARN) for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5446,6 +5514,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5508,6 +5577,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project creation. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5570,6 +5640,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the project was created, in timestamp format.</p>\n@param createdTimeStamp The date and time the project was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5632,6 +5703,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>\n@param stackId The ID of the primary stack in AWS CloudFormation used to generate resources for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5694,6 +5766,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID for the AWS CodeStar project template used to create the project.</p>\n@param projectTemplateId The ID for the AWS CodeStar project template used to create the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5758,6 +5831,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the project.</p>\n@param arn The Amazon Resource Name (ARN) for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5821,6 +5895,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A user- or system-generated token that identifies the entity that requested project creation. </p>\n@param clientRequestToken A user- or system-generated token that identifies the entity that requested project creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5884,6 +5959,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the project was created, in timestamp format.</p>\n@param createdTimeStamp The date and time the project was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5947,6 +6023,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6010,6 +6087,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param id The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6073,6 +6151,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The display name for the project.</p>\n@param name The display name for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6136,6 +6215,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID for the AWS CodeStar project template used to create the project.</p>\n@param projectTemplateId The ID for the AWS CodeStar project template used to create the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6199,6 +6279,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the primary stack in AWS CloudFormation used to generate resources for the project.</p>\n@param stackId The ID of the primary stack in AWS CloudFormation used to generate resources for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6307,6 +6388,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user.</p>\n@param userArn The Amazon Resource Name (ARN) of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6371,6 +6453,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user.</p>\n@param userArn The Amazon Resource Name (ARN) of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6469,6 +6552,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user.</p>\n@param userArn The Amazon Resource Name (ARN) of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6531,6 +6615,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").</p>\n@param displayName The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6593,6 +6678,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address for the user. Optional.</p>\n@param emailAddress The email address for the user. Optional.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6655,6 +6741,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6717,6 +6804,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>\n@param createdTimestamp The date and time when the user profile was created in AWS CodeStar, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6779,6 +6867,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time when the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date and time when the user profile was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6843,6 +6932,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the user profile was created in AWS CodeStar, in timestamp format.</p>\n@param createdTimestamp The date and time when the user profile was created in AWS CodeStar, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6906,6 +6996,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").</p>\n@param displayName The display name shown for the user in AWS CodeStar projects. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6969,6 +7060,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address for the user. Optional.</p>\n@param emailAddress The email address for the user. Optional.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7032,6 +7124,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time when the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date and time when the user profile was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7095,6 +7188,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user. This SSH public key is associated with the user profile, and can be used in conjunction with the associated private key for access to project resources, such as Amazon EC2 instances, if a project owner grants remote access to those resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7158,6 +7252,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user.</p>\n@param userArn The Amazon Resource Name (ARN) of the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7266,6 +7361,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>\n@param projectId The ID of the AWS CodeStar project from which you want to remove a team member.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7328,6 +7424,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>\n@param userArn The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7392,6 +7489,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>\n@param projectId The ID of the AWS CodeStar project from which you want to remove a team member.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7455,6 +7553,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.</p>\n@param userArn The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7707,6 +7806,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token to be used to return the next set of results, if the results cannot be returned in one response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7769,6 +7869,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum amount of data that can be contained in a single set of results.</p>\n@param maxResults The maximum amount of data that can be contained in a single set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7833,6 +7934,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum amount of data that can be contained in a single set of results.</p>\n@param maxResults The maximum amount of data that can be contained in a single set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7896,6 +7998,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token to be used to return the next set of results, if the results cannot be returned in one response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8031,6 +8134,7 @@
               "simpleType" : "ProjectSummary",
               "variableSetterType" : "ProjectSummary"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8071,6 +8175,7 @@
           "simpleType" : "List<ProjectSummary>",
           "variableSetterType" : "java.util.Collection<ProjectSummary>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of projects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects A list of projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8133,6 +8238,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8197,6 +8303,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8297,6 +8404,7 @@
                 "simpleType" : "ProjectSummary",
                 "variableSetterType" : "ProjectSummary"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8337,6 +8445,7 @@
             "simpleType" : "List<ProjectSummary>",
             "variableSetterType" : "java.util.Collection<ProjectSummary>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of projects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects A list of projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8445,6 +8554,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8507,6 +8617,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8569,6 +8680,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>he maximum amount of data that can be contained in a single set of results.</p>\n@param maxResults he maximum amount of data that can be contained in a single set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8633,6 +8745,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>he maximum amount of data that can be contained in a single set of results.</p>\n@param maxResults he maximum amount of data that can be contained in a single set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8696,6 +8809,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8759,6 +8873,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8894,6 +9009,7 @@
               "simpleType" : "Resource",
               "variableSetterType" : "Resource"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8934,6 +9050,7 @@
           "simpleType" : "List<Resource>",
           "variableSetterType" : "java.util.Collection<Resource>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of resources associated with the project. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to override the existing values.</p>\n@param resources An array of resources associated with the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8996,6 +9113,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9060,6 +9178,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9160,6 +9279,7 @@
                 "simpleType" : "Resource",
                 "variableSetterType" : "Resource"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9200,6 +9320,7 @@
             "simpleType" : "List<Resource>",
             "variableSetterType" : "java.util.Collection<Resource>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of resources associated with the project. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to override the existing values.</p>\n@param resources An array of resources associated with the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9308,6 +9429,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the project for which you want to list team members.</p>\n@param projectId The ID of the project for which you want to list team members.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9370,6 +9492,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9432,6 +9555,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of team members you want returned in a response.</p>\n@param maxResults The maximum number of team members you want returned in a response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9496,6 +9620,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of team members you want returned in a response.</p>\n@param maxResults The maximum number of team members you want returned in a response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9559,6 +9684,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9622,6 +9748,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the project for which you want to list team members.</p>\n@param projectId The ID of the project for which you want to list team members.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9757,6 +9884,7 @@
               "simpleType" : "TeamMember",
               "variableSetterType" : "TeamMember"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9797,6 +9925,7 @@
           "simpleType" : "List<TeamMember>",
           "variableSetterType" : "java.util.Collection<TeamMember>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of team member objects for the project.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTeamMembers(java.util.Collection)} or {@link #withTeamMembers(java.util.Collection)} if you want to override the existing values.</p>\n@param teamMembers A list of team member objects for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9859,6 +9988,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9923,6 +10053,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10023,6 +10154,7 @@
                 "simpleType" : "TeamMember",
                 "variableSetterType" : "TeamMember"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10063,6 +10195,7 @@
             "simpleType" : "List<TeamMember>",
             "variableSetterType" : "java.util.Collection<TeamMember>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of team member objects for the project.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTeamMembers(java.util.Collection)} or {@link #withTeamMembers(java.util.Collection)} if you want to override the existing values.</p>\n@param teamMembers A list of team member objects for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10171,6 +10304,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10233,6 +10367,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return in a response.</p>\n@param maxResults The maximum number of results to return in a response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10297,6 +10432,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return in a response.</p>\n@param maxResults The maximum number of results to return in a response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10360,6 +10496,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>\n@param nextToken The continuation token for the next set of results, if the results cannot be returned in one response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10495,6 +10632,7 @@
               "simpleType" : "UserProfileSummary",
               "variableSetterType" : "UserProfileSummary"
             },
+            "shouldSupressEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10535,6 +10673,7 @@
           "simpleType" : "List<UserProfileSummary>",
           "variableSetterType" : "java.util.Collection<UserProfileSummary>"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>All the user profiles configured in AWS CodeStar for an AWS account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUserProfiles(java.util.Collection)} or {@link #withUserProfiles(java.util.Collection)} if you want to override the existing values.</p>\n@param userProfiles All the user profiles configured in AWS CodeStar for an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10597,6 +10736,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10661,6 +10801,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>\n@param nextToken The continuation token to use when requesting the next set of results, if there are more results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10761,6 +10902,7 @@
                 "simpleType" : "UserProfileSummary",
                 "variableSetterType" : "UserProfileSummary"
               },
+              "shouldSupressEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10801,6 +10943,7 @@
             "simpleType" : "List<UserProfileSummary>",
             "variableSetterType" : "java.util.Collection<UserProfileSummary>"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>All the user profiles configured in AWS CodeStar for an AWS account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUserProfiles(java.util.Collection)} or {@link #withUserProfiles(java.util.Collection)} if you want to override the existing values.</p>\n@param userProfiles All the user profiles configured in AWS CodeStar for an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11046,6 +11189,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11108,6 +11252,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the project.</p>\n@param projectArn The Amazon Resource Name (ARN) of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11172,6 +11317,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the project.</p>\n@param projectArn The Amazon Resource Name (ARN) of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11235,6 +11381,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11336,6 +11483,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param id The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11400,6 +11548,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource.</p>\n@param id The Amazon Resource Name (ARN) of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11501,6 +11650,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11563,6 +11713,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the AWS CodeStar User Guide. </p>\n@param projectRole The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the AWS CodeStar User Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11625,6 +11776,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>\n@param remoteAccessAllowed Whether the user is allowed to remotely access project resources using an SSH public/private key pair.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11689,6 +11841,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the AWS CodeStar User Guide. </p>\n@param projectRole The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the AWS CodeStar User Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11752,6 +11905,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>\n@param remoteAccessAllowed Whether the user is allowed to remotely access project resources using an SSH public/private key pair.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11815,6 +11969,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11995,6 +12150,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the project you want to update.</p>\n@param id The ID of the project you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12057,6 +12213,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project you want to update.</p>\n@param name The name of the project you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12119,6 +12276,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12183,6 +12341,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the project, if any.</p>\n@param description The description of the project, if any.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12246,6 +12405,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the project you want to update.</p>\n@param id The ID of the project you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12309,6 +12469,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project you want to update.</p>\n@param name The name of the project you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12453,6 +12614,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12515,6 +12677,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>\n@param userArn The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12577,6 +12740,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the AWS CodeStar User Guide.</p>\n@param projectRole The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the AWS CodeStar User Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12639,6 +12803,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>\n@param remoteAccessAllowed Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12703,6 +12868,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the project.</p>\n@param projectId The ID of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12766,6 +12932,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the AWS CodeStar User Guide.</p>\n@param projectRole The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href=\"http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html\">Working with Teams</a> in the AWS CodeStar User Guide.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12829,6 +12996,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.</p>\n@param remoteAccessAllowed Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile. Even if this is set to True, the user must associate a public key with their profile before the user can access resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12892,6 +13060,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.</p>\n@param userArn The Amazon Resource Name (ARN) of the user for whom you want to change team membership attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12990,6 +13159,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>\n@param userArn The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13052,6 +13222,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The project role granted to the user.</p>\n@param projectRole The project role granted to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13114,6 +13285,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>\n@param remoteAccessAllowed Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13178,6 +13350,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The project role granted to the user.</p>\n@param projectRole The project role granted to the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13241,6 +13414,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>\n@param remoteAccessAllowed Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13304,6 +13478,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>\n@param userArn The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13412,6 +13587,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>\n@param userArn The name that will be displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13474,6 +13650,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13536,6 +13713,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13598,6 +13776,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13662,6 +13841,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13725,6 +13905,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13788,6 +13969,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13851,6 +14033,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name that will be displayed as the friendly name for the user in AWS CodeStar.</p>\n@param userArn The name that will be displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13949,6 +14132,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14011,6 +14195,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14073,6 +14258,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14135,6 +14321,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14197,6 +14384,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the user profile was created, in timestamp format.</p>\n@param createdTimestamp The date the user profile was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14259,6 +14447,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date the user profile was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14323,6 +14512,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the user profile was created, in timestamp format.</p>\n@param createdTimestamp The date the user profile was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14386,6 +14576,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>\n@param displayName The name that is displayed as the friendly name for the user in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14449,6 +14640,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address that is displayed as part of the user's profile in AWS CodeStar.</p>\n@param emailAddress The email address that is displayed as part of the user's profile in AWS CodeStar.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14512,6 +14704,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the user profile was last modified, in timestamp format.</p>\n@param lastModifiedTimestamp The date the user profile was last modified, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14575,6 +14768,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. This is the public portion of the public/private keypair the user can use to access project resources if a project owner allows the user remote access to those resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14638,6 +14832,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14811,6 +15006,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14873,6 +15069,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").</p>\n@param displayName The display name of a user in AWS CodeStar. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14935,6 +15132,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address associated with the user.</p>\n@param emailAddress The email address associated with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14997,6 +15195,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
+        "shouldSupressEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15061,6 +15260,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The display name of a user in AWS CodeStar. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").</p>\n@param displayName The display name of a user in AWS CodeStar. For example, this could be set to both first and last name (\"Mary Major\") or a single name (\"Mary\"). The display name is also used to generate the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the display name, the first character that appears after the space will be used as the second character in the user initial icon. The initial icon displays a maximum of two characters, so a display name with more than one space (for example \"Mary Jane Major\") would generate an initial icon using the first character and the first character after the space (\"MJ\", not \"MM\").\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15124,6 +15324,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address associated with the user.</p>\n@param emailAddress The email address associated with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15187,6 +15388,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.</p>\n@param sshPublicKey The SSH public key associated with the user in AWS CodeStar. If a project owner allows the user remote access to project resources, this public key will be used along with the user's private key for SSH access.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15250,6 +15452,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
+          "shouldSupressEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the user in IAM.</p>\n@param userArn The Amazon Resource Name (ARN) of the user in IAM.\n@return Returns a reference to this object so that method calls can be chained together.*/",

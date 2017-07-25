@@ -389,7 +389,7 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setResourceState(ResourceStateType resourceState) {
-        this.resourceState = resourceState.toString();
+        withResourceState(resourceState);
     }
 
     /**
@@ -404,7 +404,7 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
      */
 
     public FolderMetadata withResourceState(ResourceStateType resourceState) {
-        setResourceState(resourceState);
+        this.resourceState = resourceState.toString();
         return this;
     }
 

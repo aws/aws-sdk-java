@@ -179,7 +179,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      */
 
     public void setAttribute(ImageAttributeName attribute) {
-        this.attribute = attribute.toString();
+        withAttribute(attribute);
     }
 
     /**
@@ -203,7 +203,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      */
 
     public DescribeImageAttributeRequest withAttribute(ImageAttributeName attribute) {
-        setAttribute(attribute);
+        this.attribute = attribute.toString();
         return this;
     }
 

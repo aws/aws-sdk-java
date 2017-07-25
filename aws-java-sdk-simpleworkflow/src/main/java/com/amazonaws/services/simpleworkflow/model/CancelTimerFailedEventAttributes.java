@@ -211,7 +211,7 @@ public class CancelTimerFailedEventAttributes implements Serializable, Cloneable
      */
 
     public void setCause(CancelTimerFailedCause cause) {
-        this.cause = cause.toString();
+        withCause(cause);
     }
 
     /**
@@ -241,7 +241,7 @@ public class CancelTimerFailedEventAttributes implements Serializable, Cloneable
      */
 
     public CancelTimerFailedEventAttributes withCause(CancelTimerFailedCause cause) {
-        setCause(cause);
+        this.cause = cause.toString();
         return this;
     }
 

@@ -181,7 +181,7 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setProtocol(NetworkProtocol protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -196,7 +196,7 @@ public class PortInfo implements Serializable, Cloneable, StructuredPojo {
      */
 
     public PortInfo withProtocol(NetworkProtocol protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 

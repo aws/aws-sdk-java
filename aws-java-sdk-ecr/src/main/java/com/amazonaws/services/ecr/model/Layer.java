@@ -147,7 +147,7 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setLayerAvailability(LayerAvailability layerAvailability) {
-        this.layerAvailability = layerAvailability.toString();
+        withLayerAvailability(layerAvailability);
     }
 
     /**
@@ -162,7 +162,7 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Layer withLayerAvailability(LayerAvailability layerAvailability) {
-        setLayerAvailability(layerAvailability);
+        this.layerAvailability = layerAvailability.toString();
         return this;
     }
 

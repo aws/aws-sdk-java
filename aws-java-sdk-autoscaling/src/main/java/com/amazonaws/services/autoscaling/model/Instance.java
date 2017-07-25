@@ -198,7 +198,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public void setLifecycleState(LifecycleState lifecycleState) {
-        this.lifecycleState = lifecycleState.toString();
+        withLifecycleState(lifecycleState);
     }
 
     /**
@@ -213,7 +213,7 @@ public class Instance implements Serializable, Cloneable {
      */
 
     public Instance withLifecycleState(LifecycleState lifecycleState) {
-        setLifecycleState(lifecycleState);
+        this.lifecycleState = lifecycleState.toString();
         return this;
     }
 

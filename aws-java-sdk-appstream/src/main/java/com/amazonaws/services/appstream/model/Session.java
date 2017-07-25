@@ -280,7 +280,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setState(SessionState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -295,7 +295,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Session withState(SessionState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 
@@ -361,7 +361,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAuthenticationType(AuthenticationType authenticationType) {
-        this.authenticationType = authenticationType.toString();
+        withAuthenticationType(authenticationType);
     }
 
     /**
@@ -378,7 +378,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Session withAuthenticationType(AuthenticationType authenticationType) {
-        setAuthenticationType(authenticationType);
+        this.authenticationType = authenticationType.toString();
         return this;
     }
 

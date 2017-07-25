@@ -100,7 +100,7 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(LandmarkType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -115,7 +115,7 @@ public class Landmark implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Landmark withType(LandmarkType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

@@ -251,7 +251,7 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setType(AuthorizerType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -268,7 +268,7 @@ public class Authorizer implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Authorizer withType(AuthorizerType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

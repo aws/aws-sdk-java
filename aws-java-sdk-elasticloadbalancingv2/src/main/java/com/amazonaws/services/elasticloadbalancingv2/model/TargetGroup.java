@@ -245,7 +245,7 @@ public class TargetGroup implements Serializable, Cloneable {
      */
 
     public void setProtocol(ProtocolEnum protocol) {
-        this.protocol = protocol.toString();
+        withProtocol(protocol);
     }
 
     /**
@@ -260,7 +260,7 @@ public class TargetGroup implements Serializable, Cloneable {
      */
 
     public TargetGroup withProtocol(ProtocolEnum protocol) {
-        setProtocol(protocol);
+        this.protocol = protocol.toString();
         return this;
     }
 
@@ -398,7 +398,7 @@ public class TargetGroup implements Serializable, Cloneable {
      */
 
     public void setHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
-        this.healthCheckProtocol = healthCheckProtocol.toString();
+        withHealthCheckProtocol(healthCheckProtocol);
     }
 
     /**
@@ -413,7 +413,7 @@ public class TargetGroup implements Serializable, Cloneable {
      */
 
     public TargetGroup withHealthCheckProtocol(ProtocolEnum healthCheckProtocol) {
-        setHealthCheckProtocol(healthCheckProtocol);
+        this.healthCheckProtocol = healthCheckProtocol.toString();
         return this;
     }
 

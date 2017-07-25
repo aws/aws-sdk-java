@@ -277,7 +277,7 @@ public class ExportTask implements Serializable, Cloneable {
      */
 
     public void setState(ExportTaskState state) {
-        this.state = state.toString();
+        withState(state);
     }
 
     /**
@@ -292,7 +292,7 @@ public class ExportTask implements Serializable, Cloneable {
      */
 
     public ExportTask withState(ExportTaskState state) {
-        setState(state);
+        this.state = state.toString();
         return this;
     }
 

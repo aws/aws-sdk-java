@@ -107,7 +107,7 @@ public class GetBuiltinSlotTypesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public void setLocale(Locale locale) {
-        this.locale = locale.toString();
+        withLocale(locale);
     }
 
     /**
@@ -122,7 +122,7 @@ public class GetBuiltinSlotTypesRequest extends com.amazonaws.AmazonWebServiceRe
      */
 
     public GetBuiltinSlotTypesRequest withLocale(Locale locale) {
-        setLocale(locale);
+        this.locale = locale.toString();
         return this;
     }
 

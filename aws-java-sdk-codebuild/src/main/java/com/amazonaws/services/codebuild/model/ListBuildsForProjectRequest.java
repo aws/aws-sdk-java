@@ -245,7 +245,7 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public void setSortOrder(SortOrderType sortOrder) {
-        this.sortOrder = sortOrder.toString();
+        withSortOrder(sortOrder);
     }
 
     /**
@@ -283,7 +283,7 @@ public class ListBuildsForProjectRequest extends com.amazonaws.AmazonWebServiceR
      */
 
     public ListBuildsForProjectRequest withSortOrder(SortOrderType sortOrder) {
-        setSortOrder(sortOrder);
+        this.sortOrder = sortOrder.toString();
         return this;
     }
 

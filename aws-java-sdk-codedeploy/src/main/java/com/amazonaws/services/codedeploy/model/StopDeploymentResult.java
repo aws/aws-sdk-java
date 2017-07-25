@@ -197,7 +197,7 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public void setStatus(StopStatus status) {
-        this.status = status.toString();
+        withStatus(status);
     }
 
     /**
@@ -235,7 +235,7 @@ public class StopDeploymentResult extends com.amazonaws.AmazonWebServiceResult<c
      */
 
     public StopDeploymentResult withStatus(StopStatus status) {
-        setStatus(status);
+        this.status = status.toString();
         return this;
     }
 

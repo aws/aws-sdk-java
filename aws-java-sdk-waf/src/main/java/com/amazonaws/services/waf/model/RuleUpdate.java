@@ -105,7 +105,7 @@ public class RuleUpdate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setAction(ChangeAction action) {
-        this.action = action.toString();
+        withAction(action);
     }
 
     /**
@@ -122,7 +122,7 @@ public class RuleUpdate implements Serializable, Cloneable, StructuredPojo {
      */
 
     public RuleUpdate withAction(ChangeAction action) {
-        setAction(action);
+        this.action = action.toString();
         return this;
     }
 

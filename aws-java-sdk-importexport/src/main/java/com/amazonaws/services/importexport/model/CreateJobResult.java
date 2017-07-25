@@ -94,7 +94,7 @@ public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
      */
 
     public void setJobType(JobType jobType) {
-        this.jobType = jobType.toString();
+        withJobType(jobType);
     }
 
     /**
@@ -104,7 +104,7 @@ public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
      */
 
     public CreateJobResult withJobType(JobType jobType) {
-        setJobType(jobType);
+        this.jobType = jobType.toString();
         return this;
     }
 

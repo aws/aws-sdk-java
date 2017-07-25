@@ -726,7 +726,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      */
 
     public void setIndexStatus(IndexStatus indexStatus) {
-        this.indexStatus = indexStatus.toString();
+        withIndexStatus(indexStatus);
     }
 
     /**
@@ -784,7 +784,7 @@ public class GlobalSecondaryIndexDescription implements Serializable, Cloneable,
      */
 
     public GlobalSecondaryIndexDescription withIndexStatus(IndexStatus indexStatus) {
-        setIndexStatus(indexStatus);
+        this.indexStatus = indexStatus.toString();
         return this;
     }
 

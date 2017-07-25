@@ -175,7 +175,7 @@ public class DocumentationPartLocation implements Serializable, Cloneable, Struc
      */
 
     public void setType(DocumentationPartType type) {
-        this.type = type.toString();
+        withType(type);
     }
 
     /**
@@ -201,7 +201,7 @@ public class DocumentationPartLocation implements Serializable, Cloneable, Struc
      */
 
     public DocumentationPartLocation withType(DocumentationPartType type) {
-        setType(type);
+        this.type = type.toString();
         return this;
     }
 

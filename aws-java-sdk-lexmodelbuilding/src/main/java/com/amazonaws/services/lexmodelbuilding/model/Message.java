@@ -95,7 +95,7 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
      */
 
     public void setContentType(ContentType contentType) {
-        this.contentType = contentType.toString();
+        withContentType(contentType);
     }
 
     /**
@@ -110,7 +110,7 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
      */
 
     public Message withContentType(ContentType contentType) {
-        setContentType(contentType);
+        this.contentType = contentType.toString();
         return this;
     }
 

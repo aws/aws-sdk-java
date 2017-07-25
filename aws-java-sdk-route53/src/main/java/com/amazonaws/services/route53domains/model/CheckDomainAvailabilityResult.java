@@ -682,7 +682,7 @@ public class CheckDomainAvailabilityResult extends com.amazonaws.AmazonWebServic
      */
 
     public void setAvailability(DomainAvailability availability) {
-        this.availability = availability.toString();
+        withAvailability(availability);
     }
 
     /**
@@ -829,7 +829,7 @@ public class CheckDomainAvailabilityResult extends com.amazonaws.AmazonWebServic
      */
 
     public CheckDomainAvailabilityResult withAvailability(DomainAvailability availability) {
-        setAvailability(availability);
+        this.availability = availability.toString();
         return this;
     }
 

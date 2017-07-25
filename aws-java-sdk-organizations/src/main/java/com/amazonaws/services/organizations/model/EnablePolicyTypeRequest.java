@@ -164,7 +164,7 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public void setPolicyType(PolicyType policyType) {
-        this.policyType = policyType.toString();
+        withPolicyType(policyType);
     }
 
     /**
@@ -179,7 +179,7 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
      */
 
     public EnablePolicyTypeRequest withPolicyType(PolicyType policyType) {
-        setPolicyType(policyType);
+        this.policyType = policyType.toString();
         return this;
     }
 
