@@ -57,6 +57,11 @@ public class OutputStaxUnmarshaller implements Unmarshaller<Output, StaxUnmarsha
                     output.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ExportName", targetDepth)) {
+                    output.setExportName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return output;

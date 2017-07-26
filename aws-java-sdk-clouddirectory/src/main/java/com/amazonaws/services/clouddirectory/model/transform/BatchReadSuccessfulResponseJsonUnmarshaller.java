@@ -56,6 +56,44 @@ public class BatchReadSuccessfulResponseJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     batchReadSuccessfulResponse.setListObjectChildren(BatchListObjectChildrenResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("GetObjectInformation", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse.setGetObjectInformation(BatchGetObjectInformationResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ListAttachedIndices", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse.setListAttachedIndices(BatchListAttachedIndicesResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ListObjectParentPaths", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse.setListObjectParentPaths(BatchListObjectParentPathsResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ListObjectPolicies", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse.setListObjectPolicies(BatchListObjectPoliciesResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ListPolicyAttachments", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse.setListPolicyAttachments(BatchListPolicyAttachmentsResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LookupPolicy", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse.setLookupPolicy(BatchLookupPolicyResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ListIndex", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse.setListIndex(BatchListIndexResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ListOutgoingTypedLinks", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse
+                            .setListOutgoingTypedLinks(BatchListOutgoingTypedLinksResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ListIncomingTypedLinks", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse
+                            .setListIncomingTypedLinks(BatchListIncomingTypedLinksResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

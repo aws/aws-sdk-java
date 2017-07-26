@@ -41,6 +41,18 @@ public class BatchWriteOperationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddFacetToObject").build();
     private static final MarshallingInfo<StructuredPojo> REMOVEFACETFROMOBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoveFacetFromObject").build();
+    private static final MarshallingInfo<StructuredPojo> ATTACHPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttachPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> CREATEINDEX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateIndex").build();
+    private static final MarshallingInfo<StructuredPojo> ATTACHTOINDEX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttachToIndex").build();
+    private static final MarshallingInfo<StructuredPojo> DETACHFROMINDEX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DetachFromIndex").build();
+    private static final MarshallingInfo<StructuredPojo> ATTACHTYPEDLINK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttachTypedLink").build();
+    private static final MarshallingInfo<StructuredPojo> DETACHTYPEDLINK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DetachTypedLink").build();
 
     private static final BatchWriteOperationMarshaller instance = new BatchWriteOperationMarshaller();
 
@@ -65,6 +77,12 @@ public class BatchWriteOperationMarshaller {
             protocolMarshaller.marshall(batchWriteOperation.getDeleteObject(), DELETEOBJECT_BINDING);
             protocolMarshaller.marshall(batchWriteOperation.getAddFacetToObject(), ADDFACETTOOBJECT_BINDING);
             protocolMarshaller.marshall(batchWriteOperation.getRemoveFacetFromObject(), REMOVEFACETFROMOBJECT_BINDING);
+            protocolMarshaller.marshall(batchWriteOperation.getAttachPolicy(), ATTACHPOLICY_BINDING);
+            protocolMarshaller.marshall(batchWriteOperation.getCreateIndex(), CREATEINDEX_BINDING);
+            protocolMarshaller.marshall(batchWriteOperation.getAttachToIndex(), ATTACHTOINDEX_BINDING);
+            protocolMarshaller.marshall(batchWriteOperation.getDetachFromIndex(), DETACHFROMINDEX_BINDING);
+            protocolMarshaller.marshall(batchWriteOperation.getAttachTypedLink(), ATTACHTYPEDLINK_BINDING);
+            protocolMarshaller.marshall(batchWriteOperation.getDetachTypedLink(), DETACHTYPEDLINK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

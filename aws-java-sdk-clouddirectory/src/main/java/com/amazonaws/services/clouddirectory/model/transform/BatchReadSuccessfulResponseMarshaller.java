@@ -31,6 +31,24 @@ public class BatchReadSuccessfulResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectAttributes").build();
     private static final MarshallingInfo<StructuredPojo> LISTOBJECTCHILDREN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectChildren").build();
+    private static final MarshallingInfo<StructuredPojo> GETOBJECTINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GetObjectInformation").build();
+    private static final MarshallingInfo<StructuredPojo> LISTATTACHEDINDICES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListAttachedIndices").build();
+    private static final MarshallingInfo<StructuredPojo> LISTOBJECTPARENTPATHS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectParentPaths").build();
+    private static final MarshallingInfo<StructuredPojo> LISTOBJECTPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectPolicies").build();
+    private static final MarshallingInfo<StructuredPojo> LISTPOLICYATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListPolicyAttachments").build();
+    private static final MarshallingInfo<StructuredPojo> LOOKUPPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LookupPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> LISTINDEX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListIndex").build();
+    private static final MarshallingInfo<StructuredPojo> LISTOUTGOINGTYPEDLINKS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListOutgoingTypedLinks").build();
+    private static final MarshallingInfo<StructuredPojo> LISTINCOMINGTYPEDLINKS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListIncomingTypedLinks").build();
 
     private static final BatchReadSuccessfulResponseMarshaller instance = new BatchReadSuccessfulResponseMarshaller();
 
@@ -50,6 +68,15 @@ public class BatchReadSuccessfulResponseMarshaller {
         try {
             protocolMarshaller.marshall(batchReadSuccessfulResponse.getListObjectAttributes(), LISTOBJECTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(batchReadSuccessfulResponse.getListObjectChildren(), LISTOBJECTCHILDREN_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getGetObjectInformation(), GETOBJECTINFORMATION_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getListAttachedIndices(), LISTATTACHEDINDICES_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getListObjectParentPaths(), LISTOBJECTPARENTPATHS_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getListObjectPolicies(), LISTOBJECTPOLICIES_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getListPolicyAttachments(), LISTPOLICYATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getLookupPolicy(), LOOKUPPOLICY_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getListIndex(), LISTINDEX_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getListOutgoingTypedLinks(), LISTOUTGOINGTYPEDLINKS_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getListIncomingTypedLinks(), LISTINCOMINGTYPEDLINKS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

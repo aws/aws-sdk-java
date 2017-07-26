@@ -28,7 +28,15 @@ public enum BatchWriteExceptionType {
     FacetValidationException("FacetValidationException"),
     ObjectNotDetachedException("ObjectNotDetachedException"),
     ResourceNotFoundException("ResourceNotFoundException"),
-    AccessDeniedException("AccessDeniedException");
+    AccessDeniedException("AccessDeniedException"),
+    InvalidAttachmentException("InvalidAttachmentException"),
+    NotIndexException("NotIndexException"),
+    IndexedAttributeMissingException("IndexedAttributeMissingException"),
+    ObjectAlreadyDetachedException("ObjectAlreadyDetachedException"),
+    NotPolicyException("NotPolicyException"),
+    DirectoryNotEnabledException("DirectoryNotEnabledException"),
+    LimitExceededException("LimitExceededException"),
+    UnsupportedIndexTypeException("UnsupportedIndexTypeException");
 
     private String value;
 

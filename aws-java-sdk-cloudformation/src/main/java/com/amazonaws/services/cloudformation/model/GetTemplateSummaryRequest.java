@@ -66,6 +66,12 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String stackName;
+    /**
+     * <p>
+     * The name or unique ID of the stack set from which the stack was created.
+     * </p>
+     */
+    private String stackSetName;
 
     /**
      * <p>
@@ -299,6 +305,46 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name or unique ID of the stack set from which the stack was created.
+     * </p>
+     * 
+     * @param stackSetName
+     *        The name or unique ID of the stack set from which the stack was created.
+     */
+
+    public void setStackSetName(String stackSetName) {
+        this.stackSetName = stackSetName;
+    }
+
+    /**
+     * <p>
+     * The name or unique ID of the stack set from which the stack was created.
+     * </p>
+     * 
+     * @return The name or unique ID of the stack set from which the stack was created.
+     */
+
+    public String getStackSetName() {
+        return this.stackSetName;
+    }
+
+    /**
+     * <p>
+     * The name or unique ID of the stack set from which the stack was created.
+     * </p>
+     * 
+     * @param stackSetName
+     *        The name or unique ID of the stack set from which the stack was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateSummaryRequest withStackSetName(String stackSetName) {
+        setStackSetName(stackSetName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -314,7 +360,9 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
         if (getTemplateURL() != null)
             sb.append("TemplateURL: ").append(getTemplateURL()).append(",");
         if (getStackName() != null)
-            sb.append("StackName: ").append(getStackName());
+            sb.append("StackName: ").append(getStackName()).append(",");
+        if (getStackSetName() != null)
+            sb.append("StackSetName: ").append(getStackSetName());
         sb.append("}");
         return sb.toString();
     }
@@ -341,6 +389,10 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false)
             return false;
+        if (other.getStackSetName() == null ^ this.getStackSetName() == null)
+            return false;
+        if (other.getStackSetName() != null && other.getStackSetName().equals(this.getStackSetName()) == false)
+            return false;
         return true;
     }
 
@@ -352,6 +404,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode());
         hashCode = prime * hashCode + ((getTemplateURL() == null) ? 0 : getTemplateURL().hashCode());
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         return hashCode;
     }
 

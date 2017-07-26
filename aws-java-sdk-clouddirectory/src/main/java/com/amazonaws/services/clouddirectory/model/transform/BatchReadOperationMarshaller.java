@@ -31,6 +31,24 @@ public class BatchReadOperationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectAttributes").build();
     private static final MarshallingInfo<StructuredPojo> LISTOBJECTCHILDREN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectChildren").build();
+    private static final MarshallingInfo<StructuredPojo> LISTATTACHEDINDICES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListAttachedIndices").build();
+    private static final MarshallingInfo<StructuredPojo> LISTOBJECTPARENTPATHS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectParentPaths").build();
+    private static final MarshallingInfo<StructuredPojo> GETOBJECTINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GetObjectInformation").build();
+    private static final MarshallingInfo<StructuredPojo> LISTOBJECTPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectPolicies").build();
+    private static final MarshallingInfo<StructuredPojo> LISTPOLICYATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListPolicyAttachments").build();
+    private static final MarshallingInfo<StructuredPojo> LOOKUPPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LookupPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> LISTINDEX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListIndex").build();
+    private static final MarshallingInfo<StructuredPojo> LISTOUTGOINGTYPEDLINKS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListOutgoingTypedLinks").build();
+    private static final MarshallingInfo<StructuredPojo> LISTINCOMINGTYPEDLINKS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListIncomingTypedLinks").build();
 
     private static final BatchReadOperationMarshaller instance = new BatchReadOperationMarshaller();
 
@@ -50,6 +68,15 @@ public class BatchReadOperationMarshaller {
         try {
             protocolMarshaller.marshall(batchReadOperation.getListObjectAttributes(), LISTOBJECTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getListObjectChildren(), LISTOBJECTCHILDREN_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getListAttachedIndices(), LISTATTACHEDINDICES_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getListObjectParentPaths(), LISTOBJECTPARENTPATHS_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getGetObjectInformation(), GETOBJECTINFORMATION_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getListObjectPolicies(), LISTOBJECTPOLICIES_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getListPolicyAttachments(), LISTPOLICYATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getLookupPolicy(), LOOKUPPOLICY_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getListIndex(), LISTINDEX_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getListOutgoingTypedLinks(), LISTOUTGOINGTYPEDLINKS_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getListIncomingTypedLinks(), LISTINCOMINGTYPEDLINKS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -149,7 +149,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources in the
-     * stack. You can specify a maximum of 10 tags.
+     * stack. You can specify a maximum of 50 tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -1262,11 +1262,11 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources in the
-     * stack. You can specify a maximum of 10 tags.
+     * stack. You can specify a maximum of 50 tags.
      * </p>
      * 
      * @return Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources
-     *         in the stack. You can specify a maximum of 10 tags.
+     *         in the stack. You can specify a maximum of 50 tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1279,12 +1279,12 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources in the
-     * stack. You can specify a maximum of 10 tags.
+     * stack. You can specify a maximum of 50 tags.
      * </p>
      * 
      * @param tags
      *        Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources
-     *        in the stack. You can specify a maximum of 10 tags.
+     *        in the stack. You can specify a maximum of 50 tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1299,7 +1299,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources in the
-     * stack. You can specify a maximum of 10 tags.
+     * stack. You can specify a maximum of 50 tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1309,7 +1309,7 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param tags
      *        Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources
-     *        in the stack. You can specify a maximum of 10 tags.
+     *        in the stack. You can specify a maximum of 50 tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1326,12 +1326,12 @@ public class CreateChangeSetRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources in the
-     * stack. You can specify a maximum of 10 tags.
+     * stack. You can specify a maximum of 50 tags.
      * </p>
      * 
      * @param tags
      *        Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to resources
-     *        in the stack. You can specify a maximum of 10 tags.
+     *        in the stack. You can specify a maximum of 50 tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

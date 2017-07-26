@@ -77,6 +77,30 @@ public class BatchWriteOperationResponseJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     batchWriteOperationResponse.setRemoveFacetFromObject(BatchRemoveFacetFromObjectResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AttachPolicy", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperationResponse.setAttachPolicy(BatchAttachPolicyResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CreateIndex", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperationResponse.setCreateIndex(BatchCreateIndexResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AttachToIndex", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperationResponse.setAttachToIndex(BatchAttachToIndexResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DetachFromIndex", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperationResponse.setDetachFromIndex(BatchDetachFromIndexResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AttachTypedLink", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperationResponse.setAttachTypedLink(BatchAttachTypedLinkResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DetachTypedLink", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperationResponse.setDetachTypedLink(BatchDetachTypedLinkResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

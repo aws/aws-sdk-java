@@ -76,6 +76,30 @@ public class BatchWriteOperationJsonUnmarshaller implements Unmarshaller<BatchWr
                     context.nextToken();
                     batchWriteOperation.setRemoveFacetFromObject(BatchRemoveFacetFromObjectJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AttachPolicy", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperation.setAttachPolicy(BatchAttachPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CreateIndex", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperation.setCreateIndex(BatchCreateIndexJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AttachToIndex", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperation.setAttachToIndex(BatchAttachToIndexJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DetachFromIndex", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperation.setDetachFromIndex(BatchDetachFromIndexJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AttachTypedLink", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperation.setAttachTypedLink(BatchAttachTypedLinkJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DetachTypedLink", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperation.setDetachTypedLink(BatchDetachTypedLinkJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

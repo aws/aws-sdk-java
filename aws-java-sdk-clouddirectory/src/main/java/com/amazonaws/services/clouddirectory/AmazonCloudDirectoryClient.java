@@ -798,6 +798,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidAttachmentException
@@ -2122,6 +2124,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws FacetValidationException
@@ -3159,6 +3163,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
@@ -3712,6 +3718,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException

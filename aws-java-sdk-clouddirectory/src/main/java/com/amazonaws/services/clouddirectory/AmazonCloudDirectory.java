@@ -356,6 +356,8 @@ public interface AmazonCloudDirectory {
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidAttachmentException
@@ -1085,6 +1087,8 @@ public interface AmazonCloudDirectory {
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws FacetValidationException
@@ -1627,6 +1631,8 @@ public interface AmazonCloudDirectory {
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
@@ -1933,6 +1939,8 @@ public interface AmazonCloudDirectory {
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException

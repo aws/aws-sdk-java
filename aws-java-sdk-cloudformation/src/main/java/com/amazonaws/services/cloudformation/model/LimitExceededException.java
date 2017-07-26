@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Quota for the resource has already been reached.
+ * The quota for the resource has already been reached.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

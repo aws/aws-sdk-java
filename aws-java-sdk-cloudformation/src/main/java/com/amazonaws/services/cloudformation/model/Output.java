@@ -44,6 +44,12 @@ public class Output implements Serializable, Cloneable {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The name of the export associated with the output.
+     * </p>
+     */
+    private String exportName;
 
     /**
      * <p>
@@ -166,6 +172,46 @@ public class Output implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The name of the export associated with the output.
+     * </p>
+     * 
+     * @param exportName
+     *        The name of the export associated with the output.
+     */
+
+    public void setExportName(String exportName) {
+        this.exportName = exportName;
+    }
+
+    /**
+     * <p>
+     * The name of the export associated with the output.
+     * </p>
+     * 
+     * @return The name of the export associated with the output.
+     */
+
+    public String getExportName() {
+        return this.exportName;
+    }
+
+    /**
+     * <p>
+     * The name of the export associated with the output.
+     * </p>
+     * 
+     * @param exportName
+     *        The name of the export associated with the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withExportName(String exportName) {
+        setExportName(exportName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -181,7 +227,9 @@ public class Output implements Serializable, Cloneable {
         if (getOutputValue() != null)
             sb.append("OutputValue: ").append(getOutputValue()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getExportName() != null)
+            sb.append("ExportName: ").append(getExportName());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class Output implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getExportName() == null ^ this.getExportName() == null)
+            return false;
+        if (other.getExportName() != null && other.getExportName().equals(this.getExportName()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +271,7 @@ public class Output implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOutputKey() == null) ? 0 : getOutputKey().hashCode());
         hashCode = prime * hashCode + ((getOutputValue() == null) ? 0 : getOutputValue().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getExportName() == null) ? 0 : getExportName().hashCode());
         return hashCode;
     }
 

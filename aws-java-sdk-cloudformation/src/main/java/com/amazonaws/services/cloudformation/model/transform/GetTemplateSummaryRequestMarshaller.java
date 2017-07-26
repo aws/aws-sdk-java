@@ -52,6 +52,10 @@ public class GetTemplateSummaryRequestMarshaller implements Marshaller<Request<G
             request.addParameter("StackName", StringUtils.fromString(getTemplateSummaryRequest.getStackName()));
         }
 
+        if (getTemplateSummaryRequest.getStackSetName() != null) {
+            request.addParameter("StackSetName", StringUtils.fromString(getTemplateSummaryRequest.getStackSetName()));
+        }
+
         return request;
     }
 

@@ -59,12 +59,32 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public CreateStackInstancesResult createStackInstances(CreateStackInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateStackSetResult createStackSet(CreateStackSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteChangeSetResult deleteChangeSet(DeleteChangeSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteStackResult deleteStack(DeleteStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteStackInstancesResult deleteStackInstances(DeleteStackInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteStackSetResult deleteStackSet(DeleteStackSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,12 +104,27 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public DescribeStackInstanceResult describeStackInstance(DescribeStackInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeStackResourcesResult describeStackResources(DescribeStackResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStackSetResult describeStackSet(DescribeStackSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStackSetOperationResult describeStackSetOperation(DescribeStackSetOperationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,7 +189,27 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public ListStackInstancesResult listStackInstances(ListStackInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListStackResourcesResult listStackResources(ListStackResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStackSetOperationResultsResult listStackSetOperationResults(ListStackSetOperationResultsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStackSetOperationsResult listStackSetOperations(ListStackSetOperationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStackSetsResult listStackSets(ListStackSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,7 +234,17 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public StopStackSetOperationResult stopStackSetOperation(StopStackSetOperationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateStackResult updateStack(UpdateStackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateStackSetResult updateStackSet(UpdateStackSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

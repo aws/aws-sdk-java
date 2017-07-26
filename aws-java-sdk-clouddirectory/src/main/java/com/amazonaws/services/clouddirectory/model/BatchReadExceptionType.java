@@ -25,7 +25,14 @@ public enum BatchReadExceptionType {
     ResourceNotFoundException("ResourceNotFoundException"),
     InvalidNextTokenException("InvalidNextTokenException"),
     AccessDeniedException("AccessDeniedException"),
-    NotNodeException("NotNodeException");
+    NotNodeException("NotNodeException"),
+    FacetValidationException("FacetValidationException"),
+    CannotListParentOfRootException("CannotListParentOfRootException"),
+    NotIndexException("NotIndexException"),
+    NotPolicyException("NotPolicyException"),
+    DirectoryNotEnabledException("DirectoryNotEnabledException"),
+    LimitExceededException("LimitExceededException"),
+    InternalServiceException("InternalServiceException");
 
     private String value;
 

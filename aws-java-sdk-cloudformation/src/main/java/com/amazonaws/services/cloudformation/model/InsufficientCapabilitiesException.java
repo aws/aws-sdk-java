@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The template contains resources with capabilities that were not specified in the Capabilities parameter.
+ * The template contains resources with capabilities that weren't specified in the Capabilities parameter.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

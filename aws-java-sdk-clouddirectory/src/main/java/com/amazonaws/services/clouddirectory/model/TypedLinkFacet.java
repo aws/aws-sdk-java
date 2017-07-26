@@ -47,7 +47,7 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
      * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.
+     * <a>ListIncomingTypedLinks</a> for details.
      * </p>
      */
     private java.util.List<String> identityAttributeOrder;
@@ -182,12 +182,12 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
      * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.
+     * <a>ListIncomingTypedLinks</a> for details.
      * </p>
      * 
      * @return The set of attributes that distinguish links made from this facet from each other, in the order of
      *         significance. Listing typed links can filter on the values of these attributes. See
-     *         <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypeLinks</a> for details.
+     *         <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypedLinks</a> for details.
      */
 
     public java.util.List<String> getIdentityAttributeOrder() {
@@ -198,13 +198,13 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
      * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.
+     * <a>ListIncomingTypedLinks</a> for details.
      * </p>
      * 
      * @param identityAttributeOrder
      *        The set of attributes that distinguish links made from this facet from each other, in the order of
      *        significance. Listing typed links can filter on the values of these attributes. See
-     *        <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypeLinks</a> for details.
+     *        <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypedLinks</a> for details.
      */
 
     public void setIdentityAttributeOrder(java.util.Collection<String> identityAttributeOrder) {
@@ -220,7 +220,7 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
      * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.
+     * <a>ListIncomingTypedLinks</a> for details.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -231,7 +231,7 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
      * @param identityAttributeOrder
      *        The set of attributes that distinguish links made from this facet from each other, in the order of
      *        significance. Listing typed links can filter on the values of these attributes. See
-     *        <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypeLinks</a> for details.
+     *        <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypedLinks</a> for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,13 +249,13 @@ public class TypedLinkFacet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The set of attributes that distinguish links made from this facet from each other, in the order of significance.
      * Listing typed links can filter on the values of these attributes. See <a>ListOutgoingTypedLinks</a> and
-     * <a>ListIncomingTypeLinks</a> for details.
+     * <a>ListIncomingTypedLinks</a> for details.
      * </p>
      * 
      * @param identityAttributeOrder
      *        The set of attributes that distinguish links made from this facet from each other, in the order of
      *        significance. Listing typed links can filter on the values of these attributes. See
-     *        <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypeLinks</a> for details.
+     *        <a>ListOutgoingTypedLinks</a> and <a>ListIncomingTypedLinks</a> for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
