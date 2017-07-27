@@ -3755,6 +3755,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeElasticGpusResult> describeElasticGpusAsync(DescribeElasticGpusRequest request) {
+
+        return describeElasticGpusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeElasticGpusResult> describeElasticGpusAsync(final DescribeElasticGpusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeElasticGpusRequest, DescribeElasticGpusResult> asyncHandler) {
+        final DescribeElasticGpusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeElasticGpusResult>() {
+            @Override
+            public DescribeElasticGpusResult call() throws Exception {
+                DescribeElasticGpusResult result = null;
+
+                try {
+                    result = executeDescribeElasticGpus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest request) {
 
         return describeExportTasksAsync(request, null);

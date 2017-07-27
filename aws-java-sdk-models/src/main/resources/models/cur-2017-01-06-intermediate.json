@@ -18,7 +18,10 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : null,
+    "deprecatedSuppressions" : [ "EnumSetterOverload" ],
+    "emitLegacyEnumSetterFor" : {
+      "ReportDefinition" : [ "TimeUnit", "Format", "Compression", "S3Region" ]
+    },
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -34,7 +37,6 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
-    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -417,7 +419,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -482,7 +484,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -581,7 +583,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param responseMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -646,7 +648,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param responseMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -755,7 +757,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -818,7 +820,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -883,7 +885,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -947,7 +949,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1083,7 +1085,7 @@
               "simpleType" : "ReportDefinition",
               "variableSetterType" : "ReportDefinition"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1124,7 +1126,7 @@
           "simpleType" : "List<ReportDefinition>",
           "variableSetterType" : "java.util.Collection<ReportDefinition>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReportDefinitions(java.util.Collection)} or {@link #withReportDefinitions(java.util.Collection)} if you want to override the existing values.</p>\n@param reportDefinitions \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1187,7 +1189,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1252,7 +1254,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1353,7 +1355,7 @@
                 "simpleType" : "ReportDefinition",
                 "variableSetterType" : "ReportDefinition"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1394,7 +1396,7 @@
             "simpleType" : "List<ReportDefinition>",
             "variableSetterType" : "java.util.Collection<ReportDefinition>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReportDefinitions(java.util.Collection)} or {@link #withReportDefinitions(java.util.Collection)} if you want to override the existing values.</p>\n@param reportDefinitions \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1575,7 +1577,7 @@
           "simpleType" : "ReportDefinition",
           "variableSetterType" : "ReportDefinition"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param reportDefinition \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1640,7 +1642,7 @@
             "simpleType" : "ReportDefinition",
             "variableSetterType" : "ReportDefinition"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param reportDefinition \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1778,7 +1780,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1841,7 +1843,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param timeUnit \n@return Returns a reference to this object so that method calls can be chained together.\n@see TimeUnit*/",
@@ -1904,7 +1906,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param format \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportFormat*/",
@@ -1967,7 +1969,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param compression \n@return Returns a reference to this object so that method calls can be chained together.\n@see CompressionFormat*/",
@@ -2067,7 +2069,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
@@ -2108,7 +2110,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalSchemaElements(java.util.Collection)} or {@link #withAdditionalSchemaElements(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalSchemaElements \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
@@ -2171,7 +2173,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param s3Bucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2234,7 +2236,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param s3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2297,7 +2299,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param s3Region \n@return Returns a reference to this object so that method calls can be chained together.\n@see AWSRegion*/",
@@ -2397,7 +2399,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
@@ -2438,7 +2440,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalArtifacts(java.util.Collection)} or {@link #withAdditionalArtifacts(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalArtifacts \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
@@ -2540,7 +2542,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
@@ -2581,7 +2583,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalArtifacts(java.util.Collection)} or {@link #withAdditionalArtifacts(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalArtifacts \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
@@ -2682,7 +2684,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
@@ -2723,7 +2725,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalSchemaElements(java.util.Collection)} or {@link #withAdditionalSchemaElements(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalSchemaElements \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
@@ -2787,7 +2789,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param compression \n@return Returns a reference to this object so that method calls can be chained together.\n@see CompressionFormat*/",
@@ -2851,7 +2853,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param format \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportFormat*/",
@@ -2915,7 +2917,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2979,7 +2981,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param s3Bucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3043,7 +3045,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param s3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3107,7 +3109,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param s3Region \n@return Returns a reference to this object so that method calls can be chained together.\n@see AWSRegion*/",
@@ -3171,7 +3173,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param timeUnit \n@return Returns a reference to this object so that method calls can be chained together.\n@see TimeUnit*/",

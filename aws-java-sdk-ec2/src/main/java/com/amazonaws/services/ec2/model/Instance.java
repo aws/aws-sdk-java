@@ -205,6 +205,12 @@ public class Instance implements Serializable, Cloneable {
     private String instanceLifecycle;
     /**
      * <p>
+     * The Elastic GPU associated with the instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ElasticGpuAssociation> elasticGpuAssociations;
+    /**
+     * <p>
      * [EC2-VPC] One or more network interfaces for the instance.
      * </p>
      */
@@ -1714,6 +1720,79 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Elastic GPU associated with the instance.
+     * </p>
+     * 
+     * @return The Elastic GPU associated with the instance.
+     */
+
+    public java.util.List<ElasticGpuAssociation> getElasticGpuAssociations() {
+        if (elasticGpuAssociations == null) {
+            elasticGpuAssociations = new com.amazonaws.internal.SdkInternalList<ElasticGpuAssociation>();
+        }
+        return elasticGpuAssociations;
+    }
+
+    /**
+     * <p>
+     * The Elastic GPU associated with the instance.
+     * </p>
+     * 
+     * @param elasticGpuAssociations
+     *        The Elastic GPU associated with the instance.
+     */
+
+    public void setElasticGpuAssociations(java.util.Collection<ElasticGpuAssociation> elasticGpuAssociations) {
+        if (elasticGpuAssociations == null) {
+            this.elasticGpuAssociations = null;
+            return;
+        }
+
+        this.elasticGpuAssociations = new com.amazonaws.internal.SdkInternalList<ElasticGpuAssociation>(elasticGpuAssociations);
+    }
+
+    /**
+     * <p>
+     * The Elastic GPU associated with the instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setElasticGpuAssociations(java.util.Collection)} or
+     * {@link #withElasticGpuAssociations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param elasticGpuAssociations
+     *        The Elastic GPU associated with the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withElasticGpuAssociations(ElasticGpuAssociation... elasticGpuAssociations) {
+        if (this.elasticGpuAssociations == null) {
+            setElasticGpuAssociations(new com.amazonaws.internal.SdkInternalList<ElasticGpuAssociation>(elasticGpuAssociations.length));
+        }
+        for (ElasticGpuAssociation ele : elasticGpuAssociations) {
+            this.elasticGpuAssociations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Elastic GPU associated with the instance.
+     * </p>
+     * 
+     * @param elasticGpuAssociations
+     *        The Elastic GPU associated with the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withElasticGpuAssociations(java.util.Collection<ElasticGpuAssociation> elasticGpuAssociations) {
+        setElasticGpuAssociations(elasticGpuAssociations);
+        return this;
+    }
+
+    /**
+     * <p>
      * [EC2-VPC] One or more network interfaces for the instance.
      * </p>
      * 
@@ -2396,6 +2475,8 @@ public class Instance implements Serializable, Cloneable {
             sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getInstanceLifecycle() != null)
             sb.append("InstanceLifecycle: ").append(getInstanceLifecycle()).append(",");
+        if (getElasticGpuAssociations() != null)
+            sb.append("ElasticGpuAssociations: ").append(getElasticGpuAssociations()).append(",");
         if (getNetworkInterfaces() != null)
             sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
         if (getRootDeviceName() != null)
@@ -2542,6 +2623,10 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getInstanceLifecycle() != null && other.getInstanceLifecycle().equals(this.getInstanceLifecycle()) == false)
             return false;
+        if (other.getElasticGpuAssociations() == null ^ this.getElasticGpuAssociations() == null)
+            return false;
+        if (other.getElasticGpuAssociations() != null && other.getElasticGpuAssociations().equals(this.getElasticGpuAssociations()) == false)
+            return false;
         if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null)
             return false;
         if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false)
@@ -2618,6 +2703,7 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode());
         hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
         hashCode = prime * hashCode + ((getInstanceLifecycle() == null) ? 0 : getInstanceLifecycle().hashCode());
+        hashCode = prime * hashCode + ((getElasticGpuAssociations() == null) ? 0 : getElasticGpuAssociations().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode());
         hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode());

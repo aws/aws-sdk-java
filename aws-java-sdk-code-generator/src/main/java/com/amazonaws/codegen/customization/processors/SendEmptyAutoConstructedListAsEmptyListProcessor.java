@@ -20,13 +20,12 @@ import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.service.ServiceModel;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
 final public class SendEmptyAutoConstructedListAsEmptyListProcessor implements
-        CodegenCustomizationProcessor {
+                                                                    CodegenCustomizationProcessor {
 
     private Map<String, List<String>> sendEmptyQueryString;
 
@@ -64,28 +63,30 @@ final public class SendEmptyAutoConstructedListAsEmptyListProcessor implements
      * are list shapes.
      */
     private void sanityCheck(IntermediateModel intermediateModel) {
-        for (Entry<String, List<String>> entry : sendEmptyQueryString.entrySet()) {
-            String shapeName = entry.getKey();
-            List<String> members = entry.getValue();
-
-            ShapeModel shapeModel = intermediateModel.getShapes().get(shapeName);
-            if (shapeModel == null) {
+        sendEmptyQueryString.forEach((shapeName, memberNames) -> {
+            ShapeModel shape = intermediateModel.getShapes().get(shapeName);
+            if (shape == null) {
                 throw new IllegalStateException(
                         String.format("Cannot find shape [%s] in the model when processing "
-                                + "customization config sendEmptyQueryStringParam.%s", shapeName, shapeName));
+                                      + "customization config sendEmptyQueryStringParam.%s", shapeName, shapeName));
             }
-            for (String memberName : members) {
-                MemberModel memberModel = shapeModel.getMemberByName(memberName);
-                if (memberModel == null) {
+            memberNames.forEach(memberName -> {
+                if (shape.getMemberByName(memberName) == null) {
                     throw new IllegalStateException(
                             String.format("Cannot find member [%s] in the model when processing "
-                                    + "customization config sendEmptyQueryStringParam.%s", memberName, shapeName));
+                                          + "customization config sendEmptyQueryStringParam.%s", memberName, shapeName));
                 }
-                if (!memberModel.isList()) {
-                    throw new IllegalStateException(
-                            String.format("Member %s from shape %s must be a list", memberName, shapeName));
-                }
-            }
+            });
+            memberNames.stream()
+                       .map(shape::getMemberByC2jName)
+                       .forEach(member -> assertIsListMember(shapeName, member));
+        });
+    }
+
+    private void assertIsListMember(String shapeName, MemberModel member) {
+        if (!member.isList()) {
+            throw new IllegalStateException(
+                    String.format("Member %s from shape %s must be a list", member.getC2jName(), shapeName));
         }
     }
 

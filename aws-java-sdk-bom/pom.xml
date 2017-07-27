@@ -5,13 +5,13 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.169-SNAPSHOT</version>
+    <version>1.11.169</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-bom</artifactId>
   <packaging>pom</packaging>
   <name>AWS SDK for Java - BOM</name>
-  <description>The AWS SDK for Java - BOM module holds the dependency mangements for individual java clients.</description>
+  <description>The AWS SDK for Java - BOM module provides dependency management for individual java clients.</description>
   <url>https://aws.amazon.com/sdkforjava</url>
   <dependencyManagement>
     <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->

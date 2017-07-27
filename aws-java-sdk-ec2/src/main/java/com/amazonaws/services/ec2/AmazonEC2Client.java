@@ -5835,6 +5835,55 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes the Elastic GPUs associated with your instances. For more information about Elastic GPUs, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-gpus.html">Amazon EC2 Elastic GPUs</a>.
+     * </p>
+     * 
+     * @param describeElasticGpusRequest
+     * @return Result of the DescribeElasticGpus operation returned by the service.
+     * @sample AmazonEC2.DescribeElasticGpus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeElasticGpusResult describeElasticGpus(DescribeElasticGpusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticGpus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticGpusResult executeDescribeElasticGpus(DescribeElasticGpusRequest describeElasticGpusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeElasticGpusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeElasticGpusRequest> request = null;
+        Response<DescribeElasticGpusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeElasticGpusRequestMarshaller().marshall(super.beforeMarshalling(describeElasticGpusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeElasticGpusResult> responseHandler = new StaxResponseHandler<DescribeElasticGpusResult>(
+                    new DescribeElasticGpusResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes one or more of your export tasks.
      * </p>
      * 

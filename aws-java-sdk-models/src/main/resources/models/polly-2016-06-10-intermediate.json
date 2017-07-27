@@ -13,7 +13,13 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : null,
+    "deprecatedSuppressions" : [ "EnumSetterOverload" ],
+    "emitLegacyEnumSetterFor" : {
+      "DescribeVoicesInput" : [ "LanguageCode" ],
+      "LexiconAttributes" : [ "LanguageCode" ],
+      "SynthesizeSpeechInput" : [ "OutputFormat", "TextType", "VoiceId" ],
+      "Voice" : [ "Gender", "Id", "LanguageCode" ]
+    },
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : "com.amazonaws.services.polly.presign.AmazonPollyPresigners",
@@ -29,7 +35,6 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
-    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -400,7 +405,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -465,7 +470,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -610,7 +615,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>\n@param languageCode The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -673,7 +678,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -738,7 +743,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>\n@param languageCode The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -802,7 +807,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -938,7 +943,7 @@
               "simpleType" : "Voice",
               "variableSetterType" : "Voice"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -979,7 +984,7 @@
           "simpleType" : "List<Voice>",
           "variableSetterType" : "java.util.Collection<Voice>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of voices with their properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVoices(java.util.Collection)} or {@link #withVoices(java.util.Collection)} if you want to override the existing values.</p>\n@param voices A list of voices with their properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1042,7 +1047,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1107,7 +1112,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1208,7 +1213,7 @@
                 "simpleType" : "Voice",
                 "variableSetterType" : "Voice"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1249,7 +1254,7 @@
             "simpleType" : "List<Voice>",
             "variableSetterType" : "java.util.Collection<Voice>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of voices with their properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVoices(java.util.Collection)} or {@link #withVoices(java.util.Collection)} if you want to override the existing values.</p>\n@param voices A list of voices with their properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1403,7 +1408,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1468,7 +1473,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1567,7 +1572,7 @@
           "simpleType" : "Lexicon",
           "variableSetterType" : "Lexicon"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lexicon object that provides name and the string content of the lexicon. </p>\n@param lexicon Lexicon object that provides name and the string content of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1630,7 +1635,7 @@
           "simpleType" : "LexiconAttributes",
           "variableSetterType" : "LexiconAttributes"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>\n@param lexiconAttributes Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1695,7 +1700,7 @@
             "simpleType" : "Lexicon",
             "variableSetterType" : "Lexicon"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lexicon object that provides name and the string content of the lexicon. </p>\n@param lexicon Lexicon object that provides name and the string content of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1759,7 +1764,7 @@
             "simpleType" : "LexiconAttributes",
             "variableSetterType" : "LexiconAttributes"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>\n@param lexiconAttributes Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2116,7 +2121,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2179,7 +2184,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2244,7 +2249,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2308,7 +2313,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2410,7 +2415,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>\n@param alphabet Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2473,7 +2478,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>\n@param languageCode Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -2536,7 +2541,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Date lexicon was last modified (a timestamp value).</p>\n@param lastModified Date lexicon was last modified (a timestamp value).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2599,7 +2604,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the lexicon.</p>\n@param lexiconArn Amazon Resource Name (ARN) of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2662,7 +2667,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Number of lexemes in the lexicon.</p>\n@param lexemesCount Number of lexemes in the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2725,7 +2730,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Total size of the lexicon, in characters.</p>\n@param size Total size of the lexicon, in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2790,7 +2795,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>\n@param alphabet Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2854,7 +2859,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>\n@param languageCode Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -2918,7 +2923,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Date lexicon was last modified (a timestamp value).</p>\n@param lastModified Date lexicon was last modified (a timestamp value).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2982,7 +2987,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Number of lexemes in the lexicon.</p>\n@param lexemesCount Number of lexemes in the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3046,7 +3051,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the lexicon.</p>\n@param lexiconArn Amazon Resource Name (ARN) of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3110,7 +3115,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Total size of the lexicon, in characters.</p>\n@param size Total size of the lexicon, in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3212,7 +3217,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3275,7 +3280,7 @@
           "simpleType" : "LexiconAttributes",
           "variableSetterType" : "LexiconAttributes"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Provides lexicon metadata.</p>\n@param attributes Provides lexicon metadata.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3340,7 +3345,7 @@
             "simpleType" : "LexiconAttributes",
             "variableSetterType" : "LexiconAttributes"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Provides lexicon metadata.</p>\n@param attributes Provides lexicon metadata.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3404,7 +3409,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3585,7 +3590,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>\n@param nextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3650,7 +3655,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>\n@param nextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3786,7 +3791,7 @@
               "simpleType" : "LexiconDescription",
               "variableSetterType" : "LexiconDescription"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3827,7 +3832,7 @@
           "simpleType" : "List<LexiconDescription>",
           "variableSetterType" : "java.util.Collection<LexiconDescription>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of lexicon names and attributes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexicons(java.util.Collection)} or {@link #withLexicons(java.util.Collection)} if you want to override the existing values.</p>\n@param lexicons A list of lexicon names and attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3890,7 +3895,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3992,7 +3997,7 @@
                 "simpleType" : "LexiconDescription",
                 "variableSetterType" : "LexiconDescription"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4033,7 +4038,7 @@
             "simpleType" : "List<LexiconDescription>",
             "variableSetterType" : "java.util.Collection<LexiconDescription>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of lexicon names and attributes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexicons(java.util.Collection)} or {@link #withLexicons(java.util.Collection)} if you want to override the existing values.</p>\n@param lexicons A list of lexicon names and attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4097,7 +4102,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4365,7 +4370,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4428,7 +4433,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4493,7 +4498,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4557,7 +4562,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4862,7 +4867,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4903,7 +4908,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4966,7 +4971,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
@@ -5029,7 +5034,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5129,7 +5134,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -5170,7 +5175,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -5233,7 +5238,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>\n@param text Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5296,7 +5301,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.</p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
@@ -5359,7 +5364,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation. </p>\n@param voiceId Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -5461,7 +5466,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5502,7 +5507,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5566,7 +5571,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
@@ -5630,7 +5635,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5731,7 +5736,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -5772,7 +5777,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
@@ -5836,7 +5841,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>\n@param text Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5900,7 +5905,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.</p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
@@ -5964,7 +5969,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation. </p>\n@param voiceId Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -6063,7 +6068,7 @@
           "simpleType" : "InputStream",
           "variableSetterType" : "java.io.InputStream"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Stream containing the synthesized speech. </p>\n@param audioStream Stream containing the synthesized speech.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6126,7 +6131,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6189,7 +6194,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Number of characters synthesized.</p>\n@param requestCharacters Number of characters synthesized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6254,7 +6259,7 @@
             "simpleType" : "InputStream",
             "variableSetterType" : "java.io.InputStream"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Stream containing the synthesized speech. </p>\n@param audioStream Stream containing the synthesized speech.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6318,7 +6323,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6382,7 +6387,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Number of characters synthesized.</p>\n@param requestCharacters Number of characters synthesized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6637,7 +6642,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Gender of the voice.</p>\n@param gender Gender of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Gender*/",
@@ -6700,7 +6705,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>\n@param id Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -6763,7 +6768,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Language code of the voice.</p>\n@param languageCode Language code of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -6826,7 +6831,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Human readable name of the language in English.</p>\n@param languageName Human readable name of the language in English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6889,7 +6894,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>\n@param name Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6954,7 +6959,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Gender of the voice.</p>\n@param gender Gender of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Gender*/",
@@ -7018,7 +7023,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>\n@param id Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
@@ -7082,7 +7087,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Language code of the voice.</p>\n@param languageCode Language code of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
@@ -7146,7 +7151,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Human readable name of the language in English.</p>\n@param languageName Human readable name of the language in English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7210,7 +7215,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>\n@param name Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",

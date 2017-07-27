@@ -18,7 +18,12 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : null,
+    "deprecatedSuppressions" : [ "EnumSetterOverload" ],
+    "emitLegacyEnumSetterFor" : {
+      "DescribeRuleResponse" : [ "State" ],
+      "PutRuleRequest" : [ "State" ],
+      "Rule" : [ "State" ]
+    },
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -34,7 +39,6 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
-    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -736,7 +740,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -801,7 +805,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -982,7 +986,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1045,7 +1049,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1108,7 +1112,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1173,7 +1177,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the account permitted to write events to the current account.</p>\n@param arn The Amazon Resource Name (ARN) of the account permitted to write events to the current account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1237,7 +1241,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the event bus. Currently, this is always <code>default</code>.</p>\n@param name The name of the event bus. Currently, this is always <code>default</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1301,7 +1305,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The policy that enables the external account to send events to your account.</p>\n@param policy The policy that enables the external account to send events to your account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1410,7 +1414,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1475,7 +1479,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1574,7 +1578,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1637,7 +1641,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param arn The Amazon Resource Name (ARN) of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1700,7 +1704,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1763,7 +1767,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1826,7 +1830,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the rule is enabled or disabled.</p>\n@param state Specifies whether the rule is enabled or disabled.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RuleState*/",
@@ -1889,7 +1893,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the rule.</p>\n@param description The description of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1952,7 +1956,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role associated with the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2017,7 +2021,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param arn The Amazon Resource Name (ARN) of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2081,7 +2085,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the rule.</p>\n@param description The description of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2145,7 +2149,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2209,7 +2213,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2273,7 +2277,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role associated with the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2337,7 +2341,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2401,7 +2405,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the rule is enabled or disabled.</p>\n@param state Specifies whether the rule is enabled or disabled.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RuleState*/",
@@ -2510,7 +2514,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2575,7 +2579,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2713,7 +2717,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the task definition to use if the event target is an Amazon ECS cluster. </p>\n@param taskDefinitionArn The ARN of the task definition to use if the event target is an Amazon ECS cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2776,7 +2780,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of tasks to create based on the <code>TaskDefinition</code>. The default is one.</p>\n@param taskCount The number of tasks to create based on the <code>TaskDefinition</code>. The default is one.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2841,7 +2845,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of tasks to create based on the <code>TaskDefinition</code>. The default is one.</p>\n@param taskCount The number of tasks to create based on the <code>TaskDefinition</code>. The default is one.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2905,7 +2909,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the task definition to use if the event target is an Amazon ECS cluster. </p>\n@param taskDefinitionArn The ARN of the task definition to use if the event target is an Amazon ECS cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3014,7 +3018,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3079,7 +3083,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3260,7 +3264,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3295,7 +3299,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You must use JSON dot notation, not bracket notation.</p>\n@param inputPathsMap Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You must use JSON dot notation, not bracket notation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3358,7 +3362,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Input template where you can use the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target.</p>\n@param inputTemplate Input template where you can use the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3466,7 +3470,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3501,7 +3505,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You must use JSON dot notation, not bracket notation.</p>\n@param inputPathsMap Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You must use JSON dot notation, not bracket notation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3565,7 +3569,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Input template where you can use the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target.</p>\n@param inputTemplate Input template where you can use the values of the keys from <code>InputPathsMap</code> to customize the data sent to the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3739,7 +3743,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n@param partitionKeyPath The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3804,7 +3808,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>\n@param partitionKeyPath The JSON path to be extracted from the event and used as the partition key. For more information, see <a href=\"http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key\">Amazon Kinesis Streams Key Concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3949,7 +3953,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the target resource.</p>\n@param targetArn The Amazon Resource Name (ARN) of the target resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4012,7 +4016,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4075,7 +4079,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4140,7 +4144,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4204,7 +4208,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4268,7 +4272,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the target resource.</p>\n@param targetArn The Amazon Resource Name (ARN) of the target resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4404,7 +4408,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4445,7 +4449,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The names of the rules that can invoke the given target.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRuleNames(java.util.Collection)} or {@link #withRuleNames(java.util.Collection)} if you want to override the existing values.</p>\n@param ruleNames The names of the rules that can invoke the given target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4508,7 +4512,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4573,7 +4577,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4674,7 +4678,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4715,7 +4719,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The names of the rules that can invoke the given target.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRuleNames(java.util.Collection)} or {@link #withRuleNames(java.util.Collection)} if you want to override the existing values.</p>\n@param ruleNames The names of the rules that can invoke the given target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4824,7 +4828,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The prefix matching the rule name.</p>\n@param namePrefix The prefix matching the rule name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4887,7 +4891,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4950,7 +4954,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5015,7 +5019,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5079,7 +5083,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The prefix matching the rule name.</p>\n@param namePrefix The prefix matching the rule name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5143,7 +5147,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5279,7 +5283,7 @@
               "simpleType" : "Rule",
               "variableSetterType" : "Rule"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5320,7 +5324,7 @@
           "simpleType" : "List<Rule>",
           "variableSetterType" : "java.util.Collection<Rule>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The rules that match the specified criteria.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRules(java.util.Collection)} or {@link #withRules(java.util.Collection)} if you want to override the existing values.</p>\n@param rules The rules that match the specified criteria.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5383,7 +5387,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5448,7 +5452,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5549,7 +5553,7 @@
                 "simpleType" : "Rule",
                 "variableSetterType" : "Rule"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5590,7 +5594,7 @@
             "simpleType" : "List<Rule>",
             "variableSetterType" : "java.util.Collection<Rule>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The rules that match the specified criteria.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRules(java.util.Collection)} or {@link #withRules(java.util.Collection)} if you want to override the existing values.</p>\n@param rules The rules that match the specified criteria.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5699,7 +5703,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5762,7 +5766,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5825,7 +5829,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5890,7 +5894,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return.</p>\n@param limit The maximum number of results to return.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5954,7 +5958,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token returned by a previous call to retrieve the next set of results.</p>\n@param nextToken The token returned by a previous call to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6018,7 +6022,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6154,7 +6158,7 @@
               "simpleType" : "Target",
               "variableSetterType" : "Target"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6195,7 +6199,7 @@
           "simpleType" : "List<Target>",
           "variableSetterType" : "java.util.Collection<Target>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The targets assigned to the rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets The targets assigned to the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6258,7 +6262,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6323,7 +6327,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>\n@param nextToken Indicates whether there are additional results to retrieve. If there are no more results, the value is null.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6424,7 +6428,7 @@
                 "simpleType" : "Target",
                 "variableSetterType" : "Target"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6465,7 +6469,7 @@
             "simpleType" : "List<Target>",
             "variableSetterType" : "java.util.Collection<Target>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The targets assigned to the rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets The targets assigned to the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6647,7 +6651,7 @@
               "simpleType" : "PutEventsRequestEntry",
               "variableSetterType" : "PutEventsRequestEntry"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6688,7 +6692,7 @@
           "simpleType" : "List<PutEventsRequestEntry>",
           "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param entries The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6790,7 +6794,7 @@
                 "simpleType" : "PutEventsRequestEntry",
                 "variableSetterType" : "PutEventsRequestEntry"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6831,7 +6835,7 @@
             "simpleType" : "List<PutEventsRequestEntry>",
             "variableSetterType" : "java.util.Collection<PutEventsRequestEntry>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param entries The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6930,7 +6934,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The timestamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.</p>\n@param time The timestamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6993,7 +6997,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The source of the event.</p>\n@param source The source of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7093,7 +7097,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7134,7 +7138,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to override the existing values.</p>\n@param resources AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7197,7 +7201,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Free-form string used to decide what fields to expect in the event detail.</p>\n@param detailType Free-form string used to decide what fields to expect in the event detail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7260,7 +7264,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are imposed on its contents.</p>\n@param detail In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are imposed on its contents.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7325,7 +7329,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are imposed on its contents.</p>\n@param detail In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are imposed on its contents.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7389,7 +7393,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Free-form string used to decide what fields to expect in the event detail.</p>\n@param detailType Free-form string used to decide what fields to expect in the event detail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7490,7 +7494,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7531,7 +7535,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to override the existing values.</p>\n@param resources AWS resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7595,7 +7599,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The source of the event.</p>\n@param source The source of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7659,7 +7663,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The timestamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.</p>\n@param time The timestamp of the event, per <a href=\"https://www.rfc-editor.org/rfc/rfc3339.txt\">RFC3339</a>. If no timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7761,7 +7765,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7861,7 +7865,7 @@
               "simpleType" : "PutEventsResultEntry",
               "variableSetterType" : "PutEventsResultEntry"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7902,7 +7906,7 @@
           "simpleType" : "List<PutEventsResultEntry>",
           "variableSetterType" : "java.util.Collection<PutEventsResultEntry>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param entries The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8004,7 +8008,7 @@
                 "simpleType" : "PutEventsResultEntry",
                 "variableSetterType" : "PutEventsResultEntry"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8045,7 +8049,7 @@
             "simpleType" : "List<PutEventsResultEntry>",
             "variableSetterType" : "java.util.Collection<PutEventsResultEntry>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param entries The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8109,7 +8113,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8211,7 +8215,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the event.</p>\n@param eventId The ID of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8274,7 +8278,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code that indicates why the event submission failed.</p>\n@param errorCode The error code that indicates why the event submission failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8337,7 +8341,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error message that explains why the event submission failed.</p>\n@param errorMessage The error message that explains why the event submission failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8402,7 +8406,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code that indicates why the event submission failed.</p>\n@param errorCode The error code that indicates why the event submission failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8466,7 +8470,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error message that explains why the event submission failed.</p>\n@param errorMessage The error message that explains why the event submission failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8530,7 +8534,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the event.</p>\n@param eventId The ID of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8639,7 +8643,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8702,7 +8706,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8765,7 +8769,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8830,7 +8834,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.</p>\n@param action The action that you are enabling the other account to perform. Currently, this must be <code>events:PutEvents</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8894,7 +8898,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.</p>\n@param principal The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify \"*\" to permit any account to put events to your default event bus.</p> <p>If you specify \"*\", avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an <code>account</code> field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8958,7 +8962,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.</p>\n@param statementId An identifier string for the external account that you are granting permissions to. If you later want to revoke the permission for this external account, specify this <code>StatementId</code> when you run <a>RemovePermission</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9103,7 +9107,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule that you are creating or updating.</p>\n@param name The name of the rule that you are creating or updating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9166,7 +9170,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9229,7 +9233,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9292,7 +9296,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether the rule is enabled or disabled.</p>\n@param state Indicates whether the rule is enabled or disabled.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RuleState*/",
@@ -9355,7 +9359,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A description of the rule.</p>\n@param description A description of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9418,7 +9422,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role associated with the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9483,7 +9487,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A description of the rule.</p>\n@param description A description of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9547,7 +9551,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9611,7 +9615,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule that you are creating or updating.</p>\n@param name The name of the rule that you are creating or updating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9675,7 +9679,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role associated with the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9739,7 +9743,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\" or \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9803,7 +9807,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether the rule is enabled or disabled.</p>\n@param state Indicates whether the rule is enabled or disabled.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RuleState*/",
@@ -9902,7 +9906,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param ruleArn The Amazon Resource Name (ARN) of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9967,7 +9971,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param ruleArn The Amazon Resource Name (ARN) of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10076,7 +10080,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10176,7 +10180,7 @@
               "simpleType" : "Target",
               "variableSetterType" : "Target"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10217,7 +10221,7 @@
           "simpleType" : "List<Target>",
           "variableSetterType" : "java.util.Collection<Target>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The targets to update or add to the rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets The targets to update or add to the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10282,7 +10286,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10383,7 +10387,7 @@
                 "simpleType" : "Target",
                 "variableSetterType" : "Target"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10424,7 +10428,7 @@
             "simpleType" : "List<Target>",
             "variableSetterType" : "java.util.Collection<Target>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The targets to update or add to the rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets The targets to update or add to the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10523,7 +10527,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10623,7 +10627,7 @@
               "simpleType" : "PutTargetsResultEntry",
               "variableSetterType" : "PutTargetsResultEntry"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10664,7 +10668,7 @@
           "simpleType" : "List<PutTargetsResultEntry>",
           "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The failed target entries.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedEntries(java.util.Collection)} or {@link #withFailedEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param failedEntries The failed target entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10766,7 +10770,7 @@
                 "simpleType" : "PutTargetsResultEntry",
                 "variableSetterType" : "PutTargetsResultEntry"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10807,7 +10811,7 @@
             "simpleType" : "List<PutTargetsResultEntry>",
             "variableSetterType" : "java.util.Collection<PutTargetsResultEntry>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The failed target entries.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedEntries(java.util.Collection)} or {@link #withFailedEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param failedEntries The failed target entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10871,7 +10875,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10973,7 +10977,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the target.</p>\n@param targetId The ID of the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11036,7 +11040,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>\n@param errorCode The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11099,7 +11103,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error message that explains why the target addition failed.</p>\n@param errorMessage The error message that explains why the target addition failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11164,7 +11168,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>\n@param errorCode The error code that indicates why the target addition failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11228,7 +11232,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error message that explains why the target addition failed.</p>\n@param errorMessage The error message that explains why the target addition failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11292,7 +11296,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the target.</p>\n@param targetId The ID of the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11401,7 +11405,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11466,7 +11470,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>\n@param statementId The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11611,7 +11615,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11711,7 +11715,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11752,7 +11756,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IDs of the targets to remove from the rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIds(java.util.Collection)} or {@link #withIds(java.util.Collection)} if you want to override the existing values.</p>\n@param ids The IDs of the targets to remove from the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11854,7 +11858,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11895,7 +11899,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IDs of the targets to remove from the rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIds(java.util.Collection)} or {@link #withIds(java.util.Collection)} if you want to override the existing values.</p>\n@param ids The IDs of the targets to remove from the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11959,7 +11963,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param rule The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12058,7 +12062,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12158,7 +12162,7 @@
               "simpleType" : "RemoveTargetsResultEntry",
               "variableSetterType" : "RemoveTargetsResultEntry"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12199,7 +12203,7 @@
           "simpleType" : "List<RemoveTargetsResultEntry>",
           "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The failed target entries.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedEntries(java.util.Collection)} or {@link #withFailedEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param failedEntries The failed target entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12301,7 +12305,7 @@
                 "simpleType" : "RemoveTargetsResultEntry",
                 "variableSetterType" : "RemoveTargetsResultEntry"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12342,7 +12346,7 @@
             "simpleType" : "List<RemoveTargetsResultEntry>",
             "variableSetterType" : "java.util.Collection<RemoveTargetsResultEntry>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The failed target entries.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFailedEntries(java.util.Collection)} or {@link #withFailedEntries(java.util.Collection)} if you want to override the existing values.</p>\n@param failedEntries The failed target entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12406,7 +12410,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of failed entries.</p>\n@param failedEntryCount The number of failed entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12508,7 +12512,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the target.</p>\n@param targetId The ID of the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12571,7 +12575,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>\n@param errorCode The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12634,7 +12638,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error message that explains why the target removal failed.</p>\n@param errorMessage The error message that explains why the target removal failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12699,7 +12703,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.</p>\n@param errorCode The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>, too many requests were made at the same time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12763,7 +12767,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error message that explains why the target removal failed.</p>\n@param errorMessage The error message that explains why the target removal failed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12827,7 +12831,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the target.</p>\n@param targetId The ID of the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12965,7 +12969,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13028,7 +13032,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param arn The Amazon Resource Name (ARN) of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13091,7 +13095,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13154,7 +13158,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state of the rule.</p>\n@param state The state of the rule.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RuleState*/",
@@ -13217,7 +13221,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the rule.</p>\n@param description The description of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13280,7 +13284,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13343,7 +13347,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>\n@param roleArn The Amazon Resource Name (ARN) of the role that is used for target invocation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13408,7 +13412,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the rule.</p>\n@param arn The Amazon Resource Name (ARN) of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13472,7 +13476,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the rule.</p>\n@param description The description of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13536,7 +13540,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern of the rule. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13600,7 +13604,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the rule.</p>\n@param name The name of the rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13664,7 +13668,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>\n@param roleArn The Amazon Resource Name (ARN) of the role that is used for target invocation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13728,7 +13732,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".</p>\n@param scheduleExpression The scheduling expression. For example, \"cron(0 20 * * ? *)\", \"rate(5 minutes)\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13792,7 +13796,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state of the rule.</p>\n@param state The state of the rule.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RuleState*/",
@@ -13976,7 +13980,7 @@
               "simpleType" : "RunCommandTarget",
               "variableSetterType" : "RunCommandTarget"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14017,7 +14021,7 @@
           "simpleType" : "List<RunCommandTarget>",
           "variableSetterType" : "java.util.Collection<RunCommandTarget>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRunCommandTargets(java.util.Collection)} or {@link #withRunCommandTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param runCommandTargets Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14119,7 +14123,7 @@
                 "simpleType" : "RunCommandTarget",
                 "variableSetterType" : "RunCommandTarget"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14160,7 +14164,7 @@
             "simpleType" : "List<RunCommandTarget>",
             "variableSetterType" : "java.util.Collection<RunCommandTarget>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRunCommandTargets(java.util.Collection)} or {@link #withRunCommandTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param runCommandTargets Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14262,7 +14266,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>\n@param key Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14362,7 +14366,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14403,7 +14407,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14468,7 +14472,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.</p>\n@param key Can be either <code>tag:</code> <i>tag-key</i> or <code>InstanceIds</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14569,7 +14573,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14610,7 +14614,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the existing values.</p>\n@param values If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code> is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>, <code>Values</code> is a list of Amazon EC2 instance IDs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14712,7 +14716,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the target.</p>\n@param id The ID of the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14775,7 +14779,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the target.</p>\n@param arn The Amazon Resource Name (ARN) of the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14838,7 +14842,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14901,7 +14905,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You must use JSON dot notation, not bracket notation. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>\n@param input Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You must use JSON dot notation, not bracket notation. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14964,7 +14968,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>\n@param inputPath The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15027,7 +15031,7 @@
           "simpleType" : "InputTransformer",
           "variableSetterType" : "InputTransformer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>\n@param inputTransformer Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15090,7 +15094,7 @@
           "simpleType" : "KinesisParameters",
           "variableSetterType" : "KinesisParameters"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>\n@param kinesisParameters The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15153,7 +15157,7 @@
           "simpleType" : "RunCommandParameters",
           "variableSetterType" : "RunCommandParameters"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>\n@param runCommandParameters Parameters used when you are using the rule to invoke Amazon EC2 Run Command.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15216,7 +15220,7 @@
           "simpleType" : "EcsParameters",
           "variableSetterType" : "EcsParameters"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>\n@param ecsParameters Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15281,7 +15285,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the target.</p>\n@param arn The Amazon Resource Name (ARN) of the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15345,7 +15349,7 @@
             "simpleType" : "EcsParameters",
             "variableSetterType" : "EcsParameters"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>\n@param ecsParameters Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html\">Task Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15409,7 +15413,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the target.</p>\n@param id The ID of the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15473,7 +15477,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You must use JSON dot notation, not bracket notation. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>\n@param input Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You must use JSON dot notation, not bracket notation. For more information, see <a href=\"http://www.rfc-editor.org/rfc/rfc7159.txt\">The JavaScript Object Notation (JSON) Data Interchange Format</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15537,7 +15541,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.</p>\n@param inputPath The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a href=\"http://goessner.net/articles/JsonPath/\">JSONPath</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15601,7 +15605,7 @@
             "simpleType" : "InputTransformer",
             "variableSetterType" : "InputTransformer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.</p>\n@param inputTransformer Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15665,7 +15669,7 @@
             "simpleType" : "KinesisParameters",
             "variableSetterType" : "KinesisParameters"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.</p>\n@param kinesisParameters The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15729,7 +15733,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15793,7 +15797,7 @@
             "simpleType" : "RunCommandParameters",
             "variableSetterType" : "RunCommandParameters"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>\n@param runCommandParameters Parameters used when you are using the rule to invoke Amazon EC2 Run Command.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15902,7 +15906,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15965,7 +15969,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The event, in JSON format, to test against the event pattern.</p>\n@param event The event, in JSON format, to test against the event pattern.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16030,7 +16034,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The event, in JSON format, to test against the event pattern.</p>\n@param event The event, in JSON format, to test against the event pattern.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16094,7 +16098,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>\n@param eventPattern The event pattern. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEventsandEventPatterns.html\">Events and Event Patterns</a> in the <i>Amazon CloudWatch Events User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16193,7 +16197,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether the event matches the event pattern.</p>\n@param result Indicates whether the event matches the event pattern.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16258,7 +16262,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether the event matches the event pattern.</p>\n@param result Indicates whether the event matches the event pattern.\n@return Returns a reference to this object so that method calls can be chained together.*/",

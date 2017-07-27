@@ -16,7 +16,6 @@
 package com.amazonaws.codegen.model.config.customization;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-
 import java.util.Arrays;
 
 /**
@@ -33,7 +32,13 @@ public enum DeprecatedSuppression {
      * Methods that mutate a client (eg: setRegion) were deprecated in v1.11.84 of the SDK
      * This suppresses creation of those methods on the client interface
      */
-    ClientMutationMethods;
+    ClientMutationMethods,
+
+    /**
+     * Overloads for setters breaks the POJO contract so we don't emit them for new usages. Only the fluent setter should
+     * have an enum overload.
+     */
+    EnumSetterOverload;
 
     @JsonCreator
     public static DeprecatedSuppression fromValue(String value) {

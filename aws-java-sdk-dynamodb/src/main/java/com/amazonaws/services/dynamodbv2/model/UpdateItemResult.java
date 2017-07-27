@@ -28,9 +28,12 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only appears if
-     * <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element
-     * represents one attribute.
+     * A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by
+     * the <code>ReturnValues</code> parameter.
+     * </p>
+     * <p>
+     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
+     * than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      */
     private java.util.Map<String, AttributeValue> attributes;
@@ -79,14 +82,19 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only appears if
-     * <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element
-     * represents one attribute.
+     * A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by
+     * the <code>ReturnValues</code> parameter.
+     * </p>
+     * <p>
+     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
+     * than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      * 
-     * @return A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only
-     *         appears if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the
-     *         request. Each element represents one attribute.
+     * @return A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as
+     *         determined by the <code>ReturnValues</code> parameter.</p>
+     *         <p>
+     *         The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something
+     *         other than <code>NONE</code> in the request. Each element represents one attribute.
      */
 
     public java.util.Map<String, AttributeValue> getAttributes() {
@@ -95,15 +103,20 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only appears if
-     * <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element
-     * represents one attribute.
+     * A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by
+     * the <code>ReturnValues</code> parameter.
+     * </p>
+     * <p>
+     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
+     * than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      * 
      * @param attributes
-     *        A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only
-     *        appears if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the
-     *        request. Each element represents one attribute.
+     *        A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as
+     *        determined by the <code>ReturnValues</code> parameter.</p>
+     *        <p>
+     *        The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something
+     *        other than <code>NONE</code> in the request. Each element represents one attribute.
      */
 
     public void setAttributes(java.util.Map<String, AttributeValue> attributes) {
@@ -112,15 +125,20 @@ public class UpdateItemResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only appears if
-     * <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the request. Each element
-     * represents one attribute.
+     * A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as determined by
+     * the <code>ReturnValues</code> parameter.
+     * </p>
+     * <p>
+     * The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something other
+     * than <code>NONE</code> in the request. Each element represents one attribute.
      * </p>
      * 
      * @param attributes
-     *        A map of attribute values as they appeared before the <code>UpdateItem</code> operation. This map only
-     *        appears if <code>ReturnValues</code> was specified as something other than <code>NONE</code> in the
-     *        request. Each element represents one attribute.
+     *        A map of attribute values as they appear before or after the <code>UpdateItem</code> operation, as
+     *        determined by the <code>ReturnValues</code> parameter.</p>
+     *        <p>
+     *        The <code>Attributes</code> map is only present if <code>ReturnValues</code> was specified as something
+     *        other than <code>NONE</code> in the request. Each element represents one attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,12 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : null,
+    "deprecatedSuppressions" : [ "EnumSetterOverload" ],
+    "emitLegacyEnumSetterFor" : {
+      "CertificateDetail" : [ "Status", "RevocationReason", "KeyAlgorithm", "FailureReason", "Type" ],
+      "DomainValidation" : [ "ValidationStatus" ],
+      "RenewalSummary" : [ "RenewalStatus" ]
+    },
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -34,7 +39,6 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
-    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -525,7 +529,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM Certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -625,7 +629,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -666,7 +670,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key-value pair that defines the tag. The tag value is optional.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The key-value pair that defines the tag. The tag value is optional.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -731,7 +735,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM Certificate to which the tag is to be applied. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -832,7 +836,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -873,7 +877,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key-value pair that defines the tag. The tag value is optional.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The key-value pair that defines the tag. The tag value is optional.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1011,7 +1015,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1074,7 +1078,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The fully qualified domain name for the certificate, such as www.example.com or example.com.</p>\n@param domainName The fully qualified domain name for the certificate, such as www.example.com or example.com.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1174,7 +1178,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1215,7 +1219,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubjectAlternativeNames(java.util.Collection)} or {@link #withSubjectAlternativeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param subjectAlternativeNames One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1315,7 +1319,7 @@
               "simpleType" : "DomainValidation",
               "variableSetterType" : "DomainValidation"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1356,7 +1360,7 @@
           "simpleType" : "List<DomainValidation>",
           "variableSetterType" : "java.util.Collection<DomainValidation>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains information about the initial validation of each domain name that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainValidationOptions(java.util.Collection)} or {@link #withDomainValidationOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param domainValidationOptions Contains information about the initial validation of each domain name that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1419,7 +1423,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The serial number of the certificate.</p>\n@param serial The serial number of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1482,7 +1486,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the entity that is associated with the public key contained in the certificate.</p>\n@param subject The name of the entity that is associated with the public key contained in the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1545,7 +1549,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the certificate authority that issued and signed the certificate.</p>\n@param issuer The name of the certificate authority that issued and signed the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1608,7 +1612,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the certificate was requested. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param createdAt The time at which the certificate was requested. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1671,7 +1675,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param issuedAt The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1734,7 +1738,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time at which the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>.</p>\n@param importedAt The date and time at which the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1797,7 +1801,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
@@ -1860,7 +1864,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.</p>\n@param revokedAt The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1923,7 +1927,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.</p>\n@param revocationReason The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RevocationReason*/",
@@ -1986,7 +1990,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time before which the certificate is not valid.</p>\n@param notBefore The time before which the certificate is not valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2049,7 +2053,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time after which the certificate is not valid.</p>\n@param notAfter The time after which the certificate is not valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2112,7 +2116,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The algorithm that was used to generate the key pair (the public and private key).</p>\n@param keyAlgorithm The algorithm that was used to generate the key pair (the public and private key).\n@return Returns a reference to this object so that method calls can be chained together.\n@see KeyAlgorithm*/",
@@ -2175,7 +2179,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The algorithm that was used to sign the certificate.</p>\n@param signatureAlgorithm The algorithm that was used to sign the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2275,7 +2279,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2316,7 +2320,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInUseBy(java.util.Collection)} or {@link #withInUseBy(java.util.Collection)} if you want to override the existing values.</p>\n@param inUseBy A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2379,7 +2383,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param failureReason The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureReason*/",
@@ -2442,7 +2446,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html\">Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param type The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html\">Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateType*/",
@@ -2505,7 +2509,7 @@
           "simpleType" : "RenewalSummary",
           "variableSetterType" : "RenewalSummary"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains information about the status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param renewalSummary Contains information about the status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2570,7 +2574,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2634,7 +2638,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the certificate was requested. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param createdAt The time at which the certificate was requested. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2698,7 +2702,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The fully qualified domain name for the certificate, such as www.example.com or example.com.</p>\n@param domainName The fully qualified domain name for the certificate, such as www.example.com or example.com.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2799,7 +2803,7 @@
                 "simpleType" : "DomainValidation",
                 "variableSetterType" : "DomainValidation"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2840,7 +2844,7 @@
             "simpleType" : "List<DomainValidation>",
             "variableSetterType" : "java.util.Collection<DomainValidation>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains information about the initial validation of each domain name that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainValidationOptions(java.util.Collection)} or {@link #withDomainValidationOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param domainValidationOptions Contains information about the initial validation of each domain name that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2904,7 +2908,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param failureReason The reason the certificate request failed. This value exists only when the certificate status is <code>FAILED</code>. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed\">Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureReason*/",
@@ -2968,7 +2972,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time at which the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>.</p>\n@param importedAt The date and time at which the certificate was imported. This value exists only when the certificate type is <code>IMPORTED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3069,7 +3073,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3110,7 +3114,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInUseBy(java.util.Collection)} or {@link #withInUseBy(java.util.Collection)} if you want to override the existing values.</p>\n@param inUseBy A list of ARNs for the AWS resources that are using the certificate. A certificate can be used by multiple AWS resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3174,7 +3178,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param issuedAt The time at which the certificate was issued. This value exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3238,7 +3242,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the certificate authority that issued and signed the certificate.</p>\n@param issuer The name of the certificate authority that issued and signed the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3302,7 +3306,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The algorithm that was used to generate the key pair (the public and private key).</p>\n@param keyAlgorithm The algorithm that was used to generate the key pair (the public and private key).\n@return Returns a reference to this object so that method calls can be chained together.\n@see KeyAlgorithm*/",
@@ -3366,7 +3370,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time after which the certificate is not valid.</p>\n@param notAfter The time after which the certificate is not valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3430,7 +3434,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time before which the certificate is not valid.</p>\n@param notBefore The time before which the certificate is not valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3494,7 +3498,7 @@
             "simpleType" : "RenewalSummary",
             "variableSetterType" : "RenewalSummary"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains information about the status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n@param renewalSummary Contains information about the status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3558,7 +3562,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.</p>\n@param revocationReason The reason the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RevocationReason*/",
@@ -3622,7 +3626,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.</p>\n@param revokedAt The time at which the certificate was revoked. This value exists only when the certificate status is <code>REVOKED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3686,7 +3690,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The serial number of the certificate.</p>\n@param serial The serial number of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3750,7 +3754,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The algorithm that was used to sign the certificate.</p>\n@param signatureAlgorithm The algorithm that was used to sign the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3814,7 +3818,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the certificate.</p>\n@param status The status of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
@@ -3878,7 +3882,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the entity that is associated with the public key contained in the certificate.</p>\n@param subject The name of the entity that is associated with the public key contained in the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3979,7 +3983,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4020,7 +4024,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubjectAlternativeNames(java.util.Collection)} or {@link #withSubjectAlternativeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param subjectAlternativeNames One or more domain names (subject alternative names) included in the certificate. This list contains the domain names that are bound to the public key that is contained in the certificate. The subject alternative names include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect to the website.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4084,7 +4088,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html\">Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.</p>\n@param type The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> for imported certificates. For more information about the differences between certificates that you import and those that ACM provides, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html\">Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateType*/",
@@ -4246,7 +4250,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4309,7 +4313,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>\n@param domainName Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4374,7 +4378,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn Amazon Resource Name (ARN) of the certificate. This is of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4438,7 +4442,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.</p>\n@param domainName Fully qualified domain name (FQDN), such as www.example.com or example.com, for the certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4592,7 +4596,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4657,7 +4661,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM Certificate to be deleted. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4802,7 +4806,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4867,7 +4871,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4966,7 +4970,7 @@
           "simpleType" : "CertificateDetail",
           "variableSetterType" : "CertificateDetail"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Metadata about an ACM certificate.</p>\n@param certificate Metadata about an ACM certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5031,7 +5035,7 @@
             "simpleType" : "CertificateDetail",
             "variableSetterType" : "CertificateDetail"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Metadata about an ACM certificate.</p>\n@param certificate Metadata about an ACM certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5181,7 +5185,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>\n@param domainName A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5281,7 +5285,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5322,7 +5326,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of email addresses that ACM used to send domain validation emails.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationEmails(java.util.Collection)} or {@link #withValidationEmails(java.util.Collection)} if you want to override the existing values.</p>\n@param validationEmails A list of email addresses that ACM used to send domain validation emails.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5385,7 +5389,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The domain name that ACM used to send domain validation emails.</p>\n@param validationDomain The domain name that ACM used to send domain validation emails.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5448,7 +5452,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The validation status of the domain name.</p>\n@param validationStatus The validation status of the domain name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DomainStatus*/",
@@ -5513,7 +5517,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.</p>\n@param domainName A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code> or <code>example.com</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5577,7 +5581,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The domain name that ACM used to send domain validation emails.</p>\n@param validationDomain The domain name that ACM used to send domain validation emails.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5678,7 +5682,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5719,7 +5723,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of email addresses that ACM used to send domain validation emails.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValidationEmails(java.util.Collection)} or {@link #withValidationEmails(java.util.Collection)} if you want to override the existing values.</p>\n@param validationEmails A list of email addresses that ACM used to send domain validation emails.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5783,7 +5787,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The validation status of the domain name.</p>\n@param validationStatus The validation status of the domain name.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DomainStatus*/",
@@ -5885,7 +5889,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A fully qualified domain name (FQDN) in the certificate request.</p>\n@param domainName A fully qualified domain name (FQDN) in the certificate request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5948,7 +5952,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li> </ul>\n@param validationDomain The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6013,7 +6017,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A fully qualified domain name (FQDN) in the certificate request.</p>\n@param domainName A fully qualified domain name (FQDN) in the certificate request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6077,7 +6081,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li> </ul>\n@param validationDomain The domain name that you want ACM to use to send you validation emails. This domain name is the suffix of the email addresses that you want ACM to use. This must be the same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For example, if you request a certificate for <code>testing.example.com</code>, you can specify <code>example.com</code> for this value. In that case, ACM sends domain validation emails to the following five addresses:</p> <ul> <li> <p>admin@example.com</p> </li> <li> <p>administrator@example.com</p> </li> <li> <p>hostmaster@example.com</p> </li> <li> <p>postmaster@example.com</p> </li> <li> <p>webmaster@example.com</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6240,7 +6244,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6305,7 +6309,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains a certificate ARN in the following format:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6404,7 +6408,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String that contains the ACM Certificate represented by the ARN specified at input.</p>\n@param certificate String that contains the ACM Certificate represented by the ARN specified at input.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6467,7 +6471,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate chain that contains the root certificate issued by the certificate authority (CA).</p>\n@param certificateChain The certificate chain that contains the root certificate issued by the certificate authority (CA).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6532,7 +6536,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String that contains the ACM Certificate represented by the ARN specified at input.</p>\n@param certificate String that contains the ACM Certificate represented by the ARN specified at input.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6596,7 +6600,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate chain that contains the root certificate issued by the certificate authority (CA).</p>\n@param certificateChain The certificate chain that contains the root certificate issued by the certificate authority (CA).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6705,7 +6709,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.</p>\n@param certificateArn The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6768,7 +6772,7 @@
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate to import. It must meet the following requirements:</p> <ul> <li> <p>Must be PEM-encoded.</p> </li> <li> <p>Must contain a 1024-bit or 2048-bit RSA public key.</p> </li> <li> <p>Must be valid at the time of import. You cannot import a certificate before its validity period begins (the certificate's <code>NotBefore</code> date) or after it expires (the certificate's <code>NotAfter</code> date).</p> </li> </ul>\n@param certificate The certificate to import. It must meet the following requirements:</p> <ul> <li> <p>Must be PEM-encoded.</p> </li> <li> <p>Must contain a 1024-bit or 2048-bit RSA public key.</p> </li> <li> <p>Must be valid at the time of import. You cannot import a certificate before its validity period begins (the certificate's <code>NotBefore</code> date) or after it expires (the certificate's <code>NotAfter</code> date).</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6831,7 +6835,7 @@
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The private key that matches the public key in the certificate. It must meet the following requirements:</p> <ul> <li> <p>Must be PEM-encoded.</p> </li> <li> <p>Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.</p> </li> </ul>\n@param privateKey The private key that matches the public key in the certificate. It must meet the following requirements:</p> <ul> <li> <p>Must be PEM-encoded.</p> </li> <li> <p>Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6894,7 +6898,7 @@
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate chain. It must be PEM-encoded.</p>\n@param certificateChain The certificate chain. It must be PEM-encoded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6959,7 +6963,7 @@
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate to import. It must meet the following requirements:</p> <ul> <li> <p>Must be PEM-encoded.</p> </li> <li> <p>Must contain a 1024-bit or 2048-bit RSA public key.</p> </li> <li> <p>Must be valid at the time of import. You cannot import a certificate before its validity period begins (the certificate's <code>NotBefore</code> date) or after it expires (the certificate's <code>NotAfter</code> date).</p> </li> </ul>\n@param certificate The certificate to import. It must meet the following requirements:</p> <ul> <li> <p>Must be PEM-encoded.</p> </li> <li> <p>Must contain a 1024-bit or 2048-bit RSA public key.</p> </li> <li> <p>Must be valid at the time of import. You cannot import a certificate before its validity period begins (the certificate's <code>NotBefore</code> date) or after it expires (the certificate's <code>NotAfter</code> date).</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7023,7 +7027,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.</p>\n@param certificateArn The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7087,7 +7091,7 @@
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate chain. It must be PEM-encoded.</p>\n@param certificateChain The certificate chain. It must be PEM-encoded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7151,7 +7155,7 @@
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The private key that matches the public key in the certificate. It must meet the following requirements:</p> <ul> <li> <p>Must be PEM-encoded.</p> </li> <li> <p>Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.</p> </li> </ul>\n@param privateKey The private key that matches the public key in the certificate. It must meet the following requirements:</p> <ul> <li> <p>Must be PEM-encoded.</p> </li> <li> <p>Must be unencrypted. You cannot import a private key that is protected by a password or passphrase.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7250,7 +7254,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of the imported certificate.</p>\n@param certificateArn The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of the imported certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7315,7 +7319,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of the imported certificate.</p>\n@param certificateArn The <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Name (ARN)</a> of the imported certificate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7689,7 +7693,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
@@ -7730,7 +7734,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status or statuses on which to filter the list of ACM Certificates.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCertificateStatuses(java.util.Collection)} or {@link #withCertificateStatuses(java.util.Collection)} if you want to override the existing values.</p>\n@param certificateStatuses The status or statuses on which to filter the list of ACM Certificates.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
@@ -7793,7 +7797,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>\n@param nextToken Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7856,7 +7860,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>\n@param maxItems Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7958,7 +7962,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
@@ -7999,7 +8003,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status or statuses on which to filter the list of ACM Certificates.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCertificateStatuses(java.util.Collection)} or {@link #withCertificateStatuses(java.util.Collection)} if you want to override the existing values.</p>\n@param certificateStatuses The status or statuses on which to filter the list of ACM Certificates.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CertificateStatus*/",
@@ -8063,7 +8067,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.</p>\n@param maxItems Use this parameter when paginating results to specify the maximum number of items to return in the response. If additional items exist beyond the number you specify, the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code> value in a subsequent request to retrieve additional items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8127,7 +8131,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>\n@param nextToken Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8226,7 +8230,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>\n@param nextToken When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8326,7 +8330,7 @@
               "simpleType" : "CertificateSummary",
               "variableSetterType" : "CertificateSummary"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8367,7 +8371,7 @@
           "simpleType" : "List<CertificateSummary>",
           "variableSetterType" : "java.util.Collection<CertificateSummary>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of ACM Certificates.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCertificateSummaryList(java.util.Collection)} or {@link #withCertificateSummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param certificateSummaryList A list of ACM Certificates.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8469,7 +8473,7 @@
                 "simpleType" : "CertificateSummary",
                 "variableSetterType" : "CertificateSummary"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8510,7 +8514,7 @@
             "simpleType" : "List<CertificateSummary>",
             "variableSetterType" : "java.util.Collection<CertificateSummary>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of ACM Certificates.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCertificateSummaryList(java.util.Collection)} or {@link #withCertificateSummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param certificateSummaryList A list of ACM Certificates.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8574,7 +8578,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.</p>\n@param nextToken When the list is truncated, this value is present and contains the value to use for the <code>NextToken</code> parameter in a subsequent pagination request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8683,7 +8687,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate for which you want to list the tags. This has the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM Certificate for which you want to list the tags. This has the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8748,7 +8752,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate for which you want to list the tags. This has the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM Certificate for which you want to list the tags. This has the following form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8884,7 +8888,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8925,7 +8929,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key-value pairs that define the applied tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The key-value pairs that define the applied tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9027,7 +9031,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9068,7 +9072,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key-value pairs that define the applied tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The key-value pairs that define the applied tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9177,7 +9181,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9277,7 +9281,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9318,7 +9322,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key-value pair that defines the tag to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The key-value pair that defines the tag to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9383,7 +9387,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>\n@param certificateArn String that contains the ARN of the ACM Certificate with one or more tags that you want to remove. This must be of the form:</p> <p> <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p> <p>For more information about ARNs, see <a href=\"http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9484,7 +9488,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9525,7 +9529,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key-value pair that defines the tag to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags The key-value pair that defines the tag to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9714,7 +9718,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> of the certificate.</p>\n@param renewalStatus The status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RenewalStatus*/",
@@ -9814,7 +9818,7 @@
               "simpleType" : "DomainValidation",
               "variableSetterType" : "DomainValidation"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9855,7 +9859,7 @@
           "simpleType" : "List<DomainValidation>",
           "variableSetterType" : "java.util.Collection<DomainValidation>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a>. This is different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainValidationOptions(java.util.Collection)} or {@link #withDomainValidationOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param domainValidationOptions Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a>. This is different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9957,7 +9961,7 @@
                 "simpleType" : "DomainValidation",
                 "variableSetterType" : "DomainValidation"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9998,7 +10002,7 @@
             "simpleType" : "List<DomainValidation>",
             "variableSetterType" : "java.util.Collection<DomainValidation>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a>. This is different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainValidationOptions(java.util.Collection)} or {@link #withDomainValidationOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param domainValidationOptions Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a>. This is different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10062,7 +10066,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> of the certificate.</p>\n@param renewalStatus The status of ACM's <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html\">managed renewal</a> of the certificate.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RenewalStatus*/",
@@ -10171,7 +10175,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p> <p> The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets. </p> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets. </p> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets. </p>\n@param domainName Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p> <p> The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets. </p> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets. </p> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10271,7 +10275,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10312,7 +10316,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must request a limit increase. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html\">Limits</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubjectAlternativeNames(java.util.Collection)} or {@link #withSubjectAlternativeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param subjectAlternativeNames Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must request a limit increase. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html\">Limits</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10375,7 +10379,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>\n@param idempotencyToken Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10475,7 +10479,7 @@
               "simpleType" : "DomainValidationOption",
               "variableSetterType" : "DomainValidationOption"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10516,7 +10520,7 @@
           "simpleType" : "List<DomainValidationOption>",
           "variableSetterType" : "java.util.Collection<DomainValidationOption>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The domain name that you want ACM to use to send you emails to validate your ownership of the domain.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainValidationOptions(java.util.Collection)} or {@link #withDomainValidationOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param domainValidationOptions The domain name that you want ACM to use to send you emails to validate your ownership of the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10581,7 +10585,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p> <p> The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets. </p> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets. </p> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets. </p>\n@param domainName Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. </p> <p> The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: </p> <p> <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets. </p> <p> <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets. </p> <p> <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10682,7 +10686,7 @@
                 "simpleType" : "DomainValidationOption",
                 "variableSetterType" : "DomainValidationOption"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10723,7 +10727,7 @@
             "simpleType" : "List<DomainValidationOption>",
             "variableSetterType" : "java.util.Collection<DomainValidationOption>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The domain name that you want ACM to use to send you emails to validate your ownership of the domain.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainValidationOptions(java.util.Collection)} or {@link #withDomainValidationOptions(java.util.Collection)} if you want to override the existing values.</p>\n@param domainValidationOptions The domain name that you want ACM to use to send you emails to validate your ownership of the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10787,7 +10791,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.</p>\n@param idempotencyToken Customer chosen string that can be used to distinguish between calls to <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if you call <code>RequestCertificate</code> multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10888,7 +10892,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10929,7 +10933,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must request a limit increase. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html\">Limits</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubjectAlternativeNames(java.util.Collection)} or {@link #withSubjectAlternativeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param subjectAlternativeNames Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must request a limit increase. For more information, see <a href=\"http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html\">Limits</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11028,7 +11032,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11093,7 +11097,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn String that contains the ARN of the issued certificate. This must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11238,7 +11242,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request.</p> <p>The ARN must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request.</p> <p>The ARN must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11301,7 +11305,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>\n@param domain The fully qualified domain name (FQDN) of the certificate that needs to be validated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11364,7 +11368,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li> </ul>\n@param validationDomain The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11429,7 +11433,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request.</p> <p>The ARN must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code> </p>\n@param certificateArn String that contains the ARN of the requested certificate. The certificate ARN is generated and returned by the <a>RequestCertificate</a> action as soon as the request is made. By default, using this parameter causes email to be sent to all top-level domains you specified in the certificate request.</p> <p>The ARN must be of the form:</p> <p> <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11493,7 +11497,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The fully qualified domain name (FQDN) of the certificate that needs to be validated.</p>\n@param domain The fully qualified domain name (FQDN) of the certificate that needs to be validated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11557,7 +11561,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li> </ul>\n@param validationDomain The base validation domain that will act as the suffix of the email addresses that are used to send the emails. This must be the same as the <code>Domain</code> value or a superdomain of the <code>Domain</code> value. For example, if you requested a certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical contact, and administrative contact in WHOIS and the following five addresses:</p> <ul> <li> <p>admin@subdomain.example.com</p> </li> <li> <p>administrator@subdomain.example.com</p> </li> <li> <p>hostmaster@subdomain.example.com</p> </li> <li> <p>postmaster@subdomain.example.com</p> </li> <li> <p>webmaster@subdomain.example.com</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11836,7 +11840,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11899,7 +11903,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11964,7 +11968,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12028,7 +12032,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",

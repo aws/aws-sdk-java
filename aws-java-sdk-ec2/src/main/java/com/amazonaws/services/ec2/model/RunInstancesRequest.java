@@ -262,6 +262,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String privateIpAddress;
     /**
      * <p>
+     * An Elastic GPU to associate with the instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification> elasticGpuSpecification;
+    /**
+     * <p>
      * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
      * applied to all instances or volumes that are created during launch.
      * </p>
@@ -2122,6 +2128,79 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
+     * An Elastic GPU to associate with the instance.
+     * </p>
+     * 
+     * @return An Elastic GPU to associate with the instance.
+     */
+
+    public java.util.List<ElasticGpuSpecification> getElasticGpuSpecification() {
+        if (elasticGpuSpecification == null) {
+            elasticGpuSpecification = new com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification>();
+        }
+        return elasticGpuSpecification;
+    }
+
+    /**
+     * <p>
+     * An Elastic GPU to associate with the instance.
+     * </p>
+     * 
+     * @param elasticGpuSpecification
+     *        An Elastic GPU to associate with the instance.
+     */
+
+    public void setElasticGpuSpecification(java.util.Collection<ElasticGpuSpecification> elasticGpuSpecification) {
+        if (elasticGpuSpecification == null) {
+            this.elasticGpuSpecification = null;
+            return;
+        }
+
+        this.elasticGpuSpecification = new com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification>(elasticGpuSpecification);
+    }
+
+    /**
+     * <p>
+     * An Elastic GPU to associate with the instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setElasticGpuSpecification(java.util.Collection)} or
+     * {@link #withElasticGpuSpecification(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param elasticGpuSpecification
+     *        An Elastic GPU to associate with the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withElasticGpuSpecification(ElasticGpuSpecification... elasticGpuSpecification) {
+        if (this.elasticGpuSpecification == null) {
+            setElasticGpuSpecification(new com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification>(elasticGpuSpecification.length));
+        }
+        for (ElasticGpuSpecification ele : elasticGpuSpecification) {
+            this.elasticGpuSpecification.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An Elastic GPU to associate with the instance.
+     * </p>
+     * 
+     * @param elasticGpuSpecification
+     *        An Elastic GPU to associate with the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withElasticGpuSpecification(java.util.Collection<ElasticGpuSpecification> elasticGpuSpecification) {
+        setElasticGpuSpecification(elasticGpuSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
      * applied to all instances or volumes that are created during launch.
      * </p>
@@ -2271,6 +2350,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
         if (getPrivateIpAddress() != null)
             sb.append("PrivateIpAddress: ").append(getPrivateIpAddress()).append(",");
+        if (getElasticGpuSpecification() != null)
+            sb.append("ElasticGpuSpecification: ").append(getElasticGpuSpecification()).append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
@@ -2384,6 +2465,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
             return false;
+        if (other.getElasticGpuSpecification() == null ^ this.getElasticGpuSpecification() == null)
+            return false;
+        if (other.getElasticGpuSpecification() != null && other.getElasticGpuSpecification().equals(this.getElasticGpuSpecification()) == false)
+            return false;
         if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
@@ -2420,6 +2505,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getInstanceInitiatedShutdownBehavior() == null) ? 0 : getInstanceInitiatedShutdownBehavior().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getElasticGpuSpecification() == null) ? 0 : getElasticGpuSpecification().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }

@@ -17,6 +17,7 @@ package com.amazonaws.codegen.customization.processors;
 import com.amazonaws.codegen.customization.CodegenCustomizationProcessor;
 import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
+import com.amazonaws.codegen.model.intermediate.MemberModel;
 import com.amazonaws.codegen.model.service.ServiceModel;
 
 public class SendEmptyNonAutoConstructedListAsEmptyListProcessor implements
@@ -39,8 +40,8 @@ public class SendEmptyNonAutoConstructedListAsEmptyListProcessor implements
             intermediateModel.getShapes().values().stream()
                     .filter(s -> s.getMembers() != null)
                     .flatMap(s -> s.getMembers().stream())
-                    .filter(m -> m.isList())
-                    .map(m -> m.getListModel())
+                    .filter(MemberModel::isList)
+                    .map(MemberModel::getListModel)
                     .forEach(m -> m.setMarshallNonAutoConstructedEmptyLists(true));
         }
     }

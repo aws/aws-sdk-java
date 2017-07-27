@@ -68,7 +68,19 @@ public class MetricDatum implements Serializable, Cloneable {
      * </p>
      */
     private String unit;
-
+    /**
+     * <p>
+     * Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that
+     * CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this
+     * metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution
+     * is available only for custom metrics. For more information about high-resolution metrics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics"
+     * >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * This field is optional, if you do not specify it the default of 60 is used.
+     * </p>
+     */
     private Integer storageResolution;
 
     /**
@@ -408,7 +420,28 @@ public class MetricDatum implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that
+     * CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this
+     * metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution
+     * is available only for custom metrics. For more information about high-resolution metrics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics"
+     * >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * This field is optional, if you do not specify it the default of 60 is used.
+     * </p>
+     * 
      * @param storageResolution
+     *        Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that
+     *        CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies
+     *        this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently,
+     *        high resolution is available only for custom metrics. For more information about high-resolution metrics,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics"
+     *        >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
+     *        <p>
+     *        This field is optional, if you do not specify it the default of 60 is used.
      */
 
     public void setStorageResolution(Integer storageResolution) {
@@ -416,7 +449,27 @@ public class MetricDatum implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that
+     * CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this
+     * metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution
+     * is available only for custom metrics. For more information about high-resolution metrics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics"
+     * >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * This field is optional, if you do not specify it the default of 60 is used.
+     * </p>
+     * 
+     * @return Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that
+     *         CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies
+     *         this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently,
+     *         high resolution is available only for custom metrics. For more information about high-resolution metrics,
+     *         see <a href=
+     *         "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics"
+     *         >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
+     *         <p>
+     *         This field is optional, if you do not specify it the default of 60 is used.
      */
 
     public Integer getStorageResolution() {
@@ -424,7 +477,28 @@ public class MetricDatum implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that
+     * CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies this
+     * metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution
+     * is available only for custom metrics. For more information about high-resolution metrics, see <a href=
+     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics"
+     * >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * This field is optional, if you do not specify it the default of 60 is used.
+     * </p>
+     * 
      * @param storageResolution
+     *        Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that
+     *        CloudWatch stores the metric with sub-minute resolution down to one second. Setting this to 60 specifies
+     *        this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently,
+     *        high resolution is available only for custom metrics. For more information about high-resolution metrics,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics"
+     *        >High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
+     *        <p>
+     *        This field is optional, if you do not specify it the default of 60 is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -355,6 +355,21 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             request.addParameter("PrivateIpAddress", StringUtils.fromString(runInstancesRequest.getPrivateIpAddress()));
         }
 
+        com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification> runInstancesRequestElasticGpuSpecificationList = (com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification>) runInstancesRequest
+                .getElasticGpuSpecification();
+        if (!runInstancesRequestElasticGpuSpecificationList.isEmpty() || !runInstancesRequestElasticGpuSpecificationList.isAutoConstruct()) {
+            int elasticGpuSpecificationListIndex = 1;
+
+            for (ElasticGpuSpecification runInstancesRequestElasticGpuSpecificationListValue : runInstancesRequestElasticGpuSpecificationList) {
+
+                if (runInstancesRequestElasticGpuSpecificationListValue.getType() != null) {
+                    request.addParameter("ElasticGpuSpecification." + elasticGpuSpecificationListIndex + ".Type",
+                            StringUtils.fromString(runInstancesRequestElasticGpuSpecificationListValue.getType()));
+                }
+                elasticGpuSpecificationListIndex++;
+            }
+        }
+
         com.amazonaws.internal.SdkInternalList<TagSpecification> runInstancesRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) runInstancesRequest
                 .getTagSpecifications();
         if (!runInstancesRequestTagSpecificationsList.isEmpty() || !runInstancesRequestTagSpecificationsList.isAutoConstruct()) {

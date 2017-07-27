@@ -589,6 +589,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeElasticGpusResult describeElasticGpus(DescribeElasticGpusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -60,7 +60,7 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private java.util.Map<String, AttributeValue> item;
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -602,12 +602,12 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     * @return This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *         href=
      *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *         >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -619,13 +619,13 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
-     *        This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -637,13 +637,13 @@ public class PutItemRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
-     *        This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.

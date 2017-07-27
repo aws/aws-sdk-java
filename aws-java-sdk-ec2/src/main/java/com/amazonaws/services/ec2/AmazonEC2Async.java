@@ -5098,6 +5098,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes the Elastic GPUs associated with your instances. For more information about Elastic GPUs, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-gpus.html">Amazon EC2 Elastic GPUs</a>.
+     * </p>
+     * 
+     * @param describeElasticGpusRequest
+     * @return A Java Future containing the result of the DescribeElasticGpus operation returned by the service.
+     * @sample AmazonEC2Async.DescribeElasticGpus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeElasticGpusResult> describeElasticGpusAsync(DescribeElasticGpusRequest describeElasticGpusRequest);
+
+    /**
+     * <p>
+     * Describes the Elastic GPUs associated with your instances. For more information about Elastic GPUs, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-gpus.html">Amazon EC2 Elastic GPUs</a>.
+     * </p>
+     * 
+     * @param describeElasticGpusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeElasticGpus operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeElasticGpus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeElasticGpusResult> describeElasticGpusAsync(DescribeElasticGpusRequest describeElasticGpusRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeElasticGpusRequest, DescribeElasticGpusResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes one or more of your export tasks.
      * </p>
      * 

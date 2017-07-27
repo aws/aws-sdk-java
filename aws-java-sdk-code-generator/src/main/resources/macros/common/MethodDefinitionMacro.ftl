@@ -185,7 +185,7 @@
         </#if>
     </#list>
 
-    <#if member.enumType?has_content && !member.shouldSupressEnumSetter>
+    <#if member.enumType?has_content && member.shouldEmitLegacyEnumSetter>
     ${setterDoc}
     ${deprecated}
     public void ${setterMethodName}(${member.enumType} ${setter.variableName}) {

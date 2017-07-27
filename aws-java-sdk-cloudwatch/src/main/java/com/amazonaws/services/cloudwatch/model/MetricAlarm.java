@@ -174,7 +174,7 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods
      * with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used,
-     * the alarm will always be evaluated and possibly change state no matter how many data points are available.
+     * the alarm is always evaluated and possibly changes state no matter how many data points are available.
      * </p>
      */
     private String evaluateLowSampleCountPercentile;
@@ -1429,14 +1429,14 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods
      * with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used,
-     * the alarm will always be evaluated and possibly change state no matter how many data points are available.
+     * the alarm is always evaluated and possibly changes state no matter how many data points are available.
      * </p>
      * 
      * @param evaluateLowSampleCountPercentile
      *        Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during
      *        periods with too few data points to be statistically significant. If <code>evaluate</code> or this
-     *        parameter is not used, the alarm will always be evaluated and possibly change state no matter how many
-     *        data points are available.
+     *        parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data
+     *        points are available.
      */
 
     public void setEvaluateLowSampleCountPercentile(String evaluateLowSampleCountPercentile) {
@@ -1447,13 +1447,13 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods
      * with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used,
-     * the alarm will always be evaluated and possibly change state no matter how many data points are available.
+     * the alarm is always evaluated and possibly changes state no matter how many data points are available.
      * </p>
      * 
      * @return Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during
      *         periods with too few data points to be statistically significant. If <code>evaluate</code> or this
-     *         parameter is not used, the alarm will always be evaluated and possibly change state no matter how many
-     *         data points are available.
+     *         parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data
+     *         points are available.
      */
 
     public String getEvaluateLowSampleCountPercentile() {
@@ -1464,14 +1464,14 @@ public class MetricAlarm implements Serializable, Cloneable {
      * <p>
      * Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods
      * with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used,
-     * the alarm will always be evaluated and possibly change state no matter how many data points are available.
+     * the alarm is always evaluated and possibly changes state no matter how many data points are available.
      * </p>
      * 
      * @param evaluateLowSampleCountPercentile
      *        Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during
      *        periods with too few data points to be statistically significant. If <code>evaluate</code> or this
-     *        parameter is not used, the alarm will always be evaluated and possibly change state no matter how many
-     *        data points are available.
+     *        parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data
+     *        points are available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

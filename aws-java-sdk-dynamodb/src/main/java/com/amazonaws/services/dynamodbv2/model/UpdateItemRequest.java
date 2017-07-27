@@ -56,7 +56,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.Map<String, AttributeValueUpdate> attributeUpdates;
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
@@ -72,8 +72,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String conditionalOperator;
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -106,10 +106,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      */
     private String returnValues;
@@ -422,8 +422,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -459,10 +459,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      */
     public UpdateItemRequest(String tableName, java.util.Map<String, AttributeValue> key, java.util.Map<String, AttributeValueUpdate> attributeUpdates,
             String returnValues) {
@@ -490,8 +490,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html"
      *        >AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -527,10 +527,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      */
     public UpdateItemRequest(String tableName, java.util.Map<String, AttributeValue> key, java.util.Map<String, AttributeValueUpdate> attributeUpdates,
             ReturnValue returnValues) {
@@ -749,12 +749,12 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
-     * @return This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     * @return This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *         href=
      *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *         >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -766,13 +766,13 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
-     *        This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -784,13 +784,13 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a href=
+     * This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      * >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param expected
-     *        This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more information, see <a
+     *        This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more information, see <a
      *        href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html"
      *        >Expected</a> in the <i>Amazon DynamoDB Developer Guide</i>.
@@ -923,8 +923,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -957,15 +957,15 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1000,10 +1000,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      * @see ReturnValue
      */
 
@@ -1013,8 +1013,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -1047,14 +1047,14 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
-     * @return Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *         after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     * @return Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *         are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1089,10 +1089,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </ul>
      *         <p>
      *         There is no additional cost associated with requesting a return value aside from the small network and
-     *         processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *         processing overhead of receiving a larger response. No read capacity units are consumed.
      *         </p>
      *         <p>
-     *         Values returned are strongly consistent
+     *         The values returned are strongly consistent.
      * @see ReturnValue
      */
 
@@ -1102,8 +1102,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -1136,15 +1136,15 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1179,10 +1179,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReturnValue
      */
@@ -1194,8 +1194,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -1228,15 +1228,15 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1271,10 +1271,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      * @see ReturnValue
      */
 
@@ -1284,8 +1284,8 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they
-     * were updated. For <code>UpdateItem</code>, the valid values are:
+     * Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they are
+     * updated. For <code>UpdateItem</code>, the valid values are:
      * </p>
      * <ul>
      * <li>
@@ -1318,15 +1318,15 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      * <p>
      * There is no additional cost associated with requesting a return value aside from the small network and processing
-     * overhead of receiving a larger response. No Read Capacity Units are consumed.
+     * overhead of receiving a larger response. No read capacity units are consumed.
      * </p>
      * <p>
-     * Values returned are strongly consistent
+     * The values returned are strongly consistent.
      * </p>
      * 
      * @param returnValues
-     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or
-     *        after they were updated. For <code>UpdateItem</code>, the valid values are:</p>
+     *        Use <code>ReturnValues</code> if you want to get the item attributes as they appear before or after they
+     *        are updated. For <code>UpdateItem</code>, the valid values are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1361,10 +1361,10 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </ul>
      *        <p>
      *        There is no additional cost associated with requesting a return value aside from the small network and
-     *        processing overhead of receiving a larger response. No Read Capacity Units are consumed.
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
      *        </p>
      *        <p>
-     *        Values returned are strongly consistent
+     *        The values returned are strongly consistent.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReturnValue
      */

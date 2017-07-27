@@ -23,7 +23,14 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : null,
+    "deprecatedSuppressions" : [ "EnumSetterOverload" ],
+    "emitLegacyEnumSetterFor" : {
+      "DescribeExecutionOutput" : [ "status" ],
+      "DescribeStateMachineOutput" : [ "status" ],
+      "ExecutionListItem" : [ "status" ],
+      "HistoryEvent" : [ "type" ],
+      "ListExecutionsInput" : [ "statusFilter" ]
+    },
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -39,7 +46,6 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
-    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -832,7 +838,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -895,7 +901,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -960,7 +966,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1024,7 +1030,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1162,7 +1168,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1225,7 +1231,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the activity.</p>\n@param name The name of the activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1288,7 +1294,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the activity was created.</p>\n@param creationDate The date the activity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1353,7 +1359,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1417,7 +1423,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the activity was created.</p>\n@param creationDate The date the activity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1481,7 +1487,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the activity.</p>\n@param name The name of the activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1583,7 +1589,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1646,7 +1652,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1711,7 +1717,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1775,7 +1781,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1877,7 +1883,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the scheduled activity.</p>\n@param resource The Amazon Resource Name (ARN) of the scheduled activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1940,7 +1946,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON data input to the activity task.</p>\n@param input The JSON data input to the activity task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2003,7 +2009,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum allowed duration of the activity task.</p>\n@param timeoutInSeconds The maximum allowed duration of the activity task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2066,7 +2072,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum allowed duration between two heartbeats for the activity task.</p>\n@param heartbeatInSeconds The maximum allowed duration between two heartbeats for the activity task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2131,7 +2137,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum allowed duration between two heartbeats for the activity task.</p>\n@param heartbeatInSeconds The maximum allowed duration between two heartbeats for the activity task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2195,7 +2201,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON data input to the activity task.</p>\n@param input The JSON data input to the activity task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2259,7 +2265,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the scheduled activity.</p>\n@param resource The Amazon Resource Name (ARN) of the scheduled activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2323,7 +2329,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum allowed duration of the activity task.</p>\n@param timeoutInSeconds The maximum allowed duration of the activity task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2425,7 +2431,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the worker that the task was assigned to. These names are provided by the workers when calling <a>GetActivityTask</a>.</p>\n@param workerName The name of the worker that the task was assigned to. These names are provided by the workers when calling <a>GetActivityTask</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2490,7 +2496,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the worker that the task was assigned to. These names are provided by the workers when calling <a>GetActivityTask</a>.</p>\n@param workerName The name of the worker that the task was assigned to. These names are provided by the workers when calling <a>GetActivityTask</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2592,7 +2598,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON data output by the activity task.</p>\n@param output The JSON data output by the activity task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2657,7 +2663,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON data output by the activity task.</p>\n@param output The JSON data output by the activity task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2759,7 +2765,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2822,7 +2828,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2887,7 +2893,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2951,7 +2957,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3096,7 +3102,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the activity to create. This name must be unique for your AWS account and region.</p>\n@param name The name of the activity to create. This name must be unique for your AWS account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3161,7 +3167,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the activity to create. This name must be unique for your AWS account and region.</p>\n@param name The name of the activity to create. This name must be unique for your AWS account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3260,7 +3266,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the created activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the created activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3323,7 +3329,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the activity was created.</p>\n@param creationDate The date the activity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3388,7 +3394,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the created activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the created activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3452,7 +3458,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the activity was created.</p>\n@param creationDate The date the activity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3561,7 +3567,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the state machine. This name must be unique for your AWS account and region.</p>\n@param name The name of the state machine. This name must be unique for your AWS account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3624,7 +3630,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon States Language definition of the state machine.</p>\n@param definition The Amazon States Language definition of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3687,7 +3693,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role to use for this state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3752,7 +3758,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon States Language definition of the state machine.</p>\n@param definition The Amazon States Language definition of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3816,7 +3822,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the state machine. This name must be unique for your AWS account and region.</p>\n@param name The name of the state machine. This name must be unique for your AWS account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3880,7 +3886,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role to use for this state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3979,7 +3985,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the created state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4042,7 +4048,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the state machine was created.</p>\n@param creationDate The date the state machine was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4107,7 +4113,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the state machine was created.</p>\n@param creationDate The date the state machine was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4171,7 +4177,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the created state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the created state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4280,7 +4286,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to delete.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4345,7 +4351,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to delete.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4490,7 +4496,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to delete.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4555,7 +4561,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to delete.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4700,7 +4706,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to describe.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4765,7 +4771,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to describe.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4864,7 +4870,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4927,7 +4933,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the activity.</p>\n@param name The name of the activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4990,7 +4996,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the activity was created.</p>\n@param creationDate The date the activity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5055,7 +5061,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the activity.</p>\n@param activityArn The Amazon Resource Name (ARN) that identifies the activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5119,7 +5125,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the activity was created.</p>\n@param creationDate The date the activity was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5183,7 +5189,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the activity.</p>\n@param name The name of the activity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5292,7 +5298,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution to describe.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5357,7 +5363,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution to describe.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5456,7 +5462,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5519,7 +5525,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the executed stated machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the executed stated machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5582,7 +5588,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the execution.</p>\n@param name The name of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5645,7 +5651,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of the execution.</p>\n@param status The current status of the execution.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExecutionStatus*/",
@@ -5708,7 +5714,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the execution was started.</p>\n@param startDate The date the execution was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5771,7 +5777,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the execution has already ended, the date the execution stopped.</p>\n@param stopDate If the execution has already ended, the date the execution stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5834,7 +5840,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON input data of the execution.</p>\n@param input The JSON input data of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5897,7 +5903,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON output data of the execution.</p>\n@param output The JSON output data of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5962,7 +5968,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6026,7 +6032,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON input data of the execution.</p>\n@param input The JSON input data of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6090,7 +6096,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the execution.</p>\n@param name The name of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6154,7 +6160,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON output data of the execution.</p>\n@param output The JSON output data of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6218,7 +6224,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the execution was started.</p>\n@param startDate The date the execution was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6282,7 +6288,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the executed stated machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the executed stated machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6346,7 +6352,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of the execution.</p>\n@param status The current status of the execution.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExecutionStatus*/",
@@ -6410,7 +6416,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the execution has already ended, the date the execution stopped.</p>\n@param stopDate If the execution has already ended, the date the execution stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6519,7 +6525,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to describe.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6584,7 +6590,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to describe.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6683,7 +6689,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6746,7 +6752,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the state machine.</p>\n@param name The name of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6809,7 +6815,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of the state machine.</p>\n@param status The current status of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StateMachineStatus*/",
@@ -6872,7 +6878,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon States Language definition of the state machine.</p>\n@param definition The Amazon States Language definition of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6935,7 +6941,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used for executing this state machine.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role used for executing this state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6998,7 +7004,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the state machine was created.</p>\n@param creationDate The date the state machine was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7063,7 +7069,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the state machine was created.</p>\n@param creationDate The date the state machine was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7127,7 +7133,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon States Language definition of the state machine.</p>\n@param definition The Amazon States Language definition of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7191,7 +7197,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the state machine.</p>\n@param name The name of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7255,7 +7261,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used for executing this state machine.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role used for executing this state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7319,7 +7325,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7383,7 +7389,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of the state machine.</p>\n@param status The current status of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.\n@see StateMachineStatus*/",
@@ -7485,7 +7491,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7548,7 +7554,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7613,7 +7619,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7677,7 +7683,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7851,7 +7857,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7914,7 +7920,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7979,7 +7985,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8043,7 +8049,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8181,7 +8187,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8244,7 +8250,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the executed state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the executed state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8307,7 +8313,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the execution.</p>\n@param name The name of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8370,7 +8376,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of the execution.</p>\n@param status The current status of the execution.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExecutionStatus*/",
@@ -8433,7 +8439,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the execution started.</p>\n@param startDate The date the execution started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8496,7 +8502,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the execution already ended, the date the execution stopped.</p>\n@param stopDate If the execution already ended, the date the execution stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8561,7 +8567,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8625,7 +8631,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the execution.</p>\n@param name The name of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8689,7 +8695,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the execution started.</p>\n@param startDate The date the execution started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8753,7 +8759,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the executed state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the executed state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8817,7 +8823,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of the execution.</p>\n@param status The current status of the execution.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExecutionStatus*/",
@@ -8881,7 +8887,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the execution already ended, the date the execution stopped.</p>\n@param stopDate If the execution already ended, the date the execution stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8983,7 +8989,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON data input to the execution.</p>\n@param input The JSON data input to the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9046,7 +9052,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9111,7 +9117,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON data input to the execution.</p>\n@param input The JSON data input to the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9175,7 +9181,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.</p>\n@param roleArn The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9331,7 +9337,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON data output by the execution.</p>\n@param output The JSON data output by the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9396,7 +9402,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON data output by the execution.</p>\n@param output The JSON data output by the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9498,7 +9504,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9561,7 +9567,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9626,7 +9632,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9690,7 +9696,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9799,7 +9805,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to retrieve tasks from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9862,7 +9868,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name will be used when it is logged in the execution history.</p>\n@param workerName An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name will be used when it is logged in the execution history.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9927,7 +9933,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from.</p>\n@param activityArn The Amazon Resource Name (ARN) of the activity to retrieve tasks from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9991,7 +9997,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name will be used when it is logged in the execution history.</p>\n@param workerName An arbitrary name may be provided in order to identify the worker that the task is assigned to. This name will be used when it is logged in the execution history.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10090,7 +10096,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or <a>SendTaskFailure</a> in order to report the progress or completion of the task.</p>\n@param taskToken A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or <a>SendTaskFailure</a> in order to report the progress or completion of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10153,7 +10159,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON input data for the task.</p>\n@param input The JSON input data for the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10218,7 +10224,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON input data for the task.</p>\n@param input The JSON input data for the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10282,7 +10288,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or <a>SendTaskFailure</a> in order to report the progress or completion of the task.</p>\n@param taskToken A token that identifies the scheduled task. This token must be copied and included in subsequent calls to <a>SendTaskHeartbeat</a>, <a>SendTaskSuccess</a> or <a>SendTaskFailure</a> in order to report the progress or completion of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10391,7 +10397,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10454,7 +10460,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10517,7 +10523,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lists events in descending order of their <code>timeStamp</code>.</p>\n@param reverseOrder Lists events in descending order of their <code>timeStamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10580,7 +10586,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10645,7 +10651,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10709,7 +10715,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10773,7 +10779,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10837,7 +10843,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lists events in descending order of their <code>timeStamp</code>.</p>\n@param reverseOrder Lists events in descending order of their <code>timeStamp</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10973,7 +10979,7 @@
               "simpleType" : "HistoryEvent",
               "variableSetterType" : "HistoryEvent"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11014,7 +11020,7 @@
           "simpleType" : "List<HistoryEvent>",
           "variableSetterType" : "java.util.Collection<HistoryEvent>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of events that occurred in the execution.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events The list of events that occurred in the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11077,7 +11083,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11179,7 +11185,7 @@
                 "simpleType" : "HistoryEvent",
                 "variableSetterType" : "HistoryEvent"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11220,7 +11226,7 @@
             "simpleType" : "List<HistoryEvent>",
             "variableSetterType" : "java.util.Collection<HistoryEvent>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of events that occurred in the execution.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events The list of events that occurred in the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11284,7 +11290,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11386,7 +11392,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the event occured.</p>\n@param timestamp The date the event occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11449,7 +11455,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the event.</p>\n@param type The type of the event.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HistoryEventType*/",
@@ -11512,7 +11518,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The id of the event. Events are numbered sequentially, starting at one.</p>\n@param id The id of the event. Events are numbered sequentially, starting at one.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11575,7 +11581,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The id of the previous event.</p>\n@param previousEventId The id of the previous event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11638,7 +11644,7 @@
           "simpleType" : "ActivityFailedEventDetails",
           "variableSetterType" : "ActivityFailedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param activityFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11701,7 +11707,7 @@
           "simpleType" : "ActivityScheduleFailedEventDetails",
           "variableSetterType" : "ActivityScheduleFailedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param activityScheduleFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11764,7 +11770,7 @@
           "simpleType" : "ActivityScheduledEventDetails",
           "variableSetterType" : "ActivityScheduledEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param activityScheduledEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11827,7 +11833,7 @@
           "simpleType" : "ActivityStartedEventDetails",
           "variableSetterType" : "ActivityStartedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param activityStartedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11890,7 +11896,7 @@
           "simpleType" : "ActivitySucceededEventDetails",
           "variableSetterType" : "ActivitySucceededEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param activitySucceededEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11953,7 +11959,7 @@
           "simpleType" : "ActivityTimedOutEventDetails",
           "variableSetterType" : "ActivityTimedOutEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param activityTimedOutEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12016,7 +12022,7 @@
           "simpleType" : "ExecutionFailedEventDetails",
           "variableSetterType" : "ExecutionFailedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param executionFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12079,7 +12085,7 @@
           "simpleType" : "ExecutionStartedEventDetails",
           "variableSetterType" : "ExecutionStartedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param executionStartedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12142,7 +12148,7 @@
           "simpleType" : "ExecutionSucceededEventDetails",
           "variableSetterType" : "ExecutionSucceededEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param executionSucceededEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12205,7 +12211,7 @@
           "simpleType" : "ExecutionAbortedEventDetails",
           "variableSetterType" : "ExecutionAbortedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param executionAbortedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12268,7 +12274,7 @@
           "simpleType" : "ExecutionTimedOutEventDetails",
           "variableSetterType" : "ExecutionTimedOutEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param executionTimedOutEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12331,7 +12337,7 @@
           "simpleType" : "LambdaFunctionFailedEventDetails",
           "variableSetterType" : "LambdaFunctionFailedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param lambdaFunctionFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12394,7 +12400,7 @@
           "simpleType" : "LambdaFunctionScheduleFailedEventDetails",
           "variableSetterType" : "LambdaFunctionScheduleFailedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param lambdaFunctionScheduleFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12457,7 +12463,7 @@
           "simpleType" : "LambdaFunctionScheduledEventDetails",
           "variableSetterType" : "LambdaFunctionScheduledEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param lambdaFunctionScheduledEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12520,7 +12526,7 @@
           "simpleType" : "LambdaFunctionStartFailedEventDetails",
           "variableSetterType" : "LambdaFunctionStartFailedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param lambdaFunctionStartFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12583,7 +12589,7 @@
           "simpleType" : "LambdaFunctionSucceededEventDetails",
           "variableSetterType" : "LambdaFunctionSucceededEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param lambdaFunctionSucceededEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12646,7 +12652,7 @@
           "simpleType" : "LambdaFunctionTimedOutEventDetails",
           "variableSetterType" : "LambdaFunctionTimedOutEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param lambdaFunctionTimedOutEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12709,7 +12715,7 @@
           "simpleType" : "StateEnteredEventDetails",
           "variableSetterType" : "StateEnteredEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param stateEnteredEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12772,7 +12778,7 @@
           "simpleType" : "StateExitedEventDetails",
           "variableSetterType" : "StateExitedEventDetails"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param stateExitedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12837,7 +12843,7 @@
             "simpleType" : "ActivityFailedEventDetails",
             "variableSetterType" : "ActivityFailedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param activityFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12901,7 +12907,7 @@
             "simpleType" : "ActivityScheduleFailedEventDetails",
             "variableSetterType" : "ActivityScheduleFailedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param activityScheduleFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12965,7 +12971,7 @@
             "simpleType" : "ActivityScheduledEventDetails",
             "variableSetterType" : "ActivityScheduledEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param activityScheduledEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13029,7 +13035,7 @@
             "simpleType" : "ActivityStartedEventDetails",
             "variableSetterType" : "ActivityStartedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param activityStartedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13093,7 +13099,7 @@
             "simpleType" : "ActivitySucceededEventDetails",
             "variableSetterType" : "ActivitySucceededEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param activitySucceededEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13157,7 +13163,7 @@
             "simpleType" : "ActivityTimedOutEventDetails",
             "variableSetterType" : "ActivityTimedOutEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param activityTimedOutEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13221,7 +13227,7 @@
             "simpleType" : "ExecutionAbortedEventDetails",
             "variableSetterType" : "ExecutionAbortedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param executionAbortedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13285,7 +13291,7 @@
             "simpleType" : "ExecutionFailedEventDetails",
             "variableSetterType" : "ExecutionFailedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param executionFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13349,7 +13355,7 @@
             "simpleType" : "ExecutionStartedEventDetails",
             "variableSetterType" : "ExecutionStartedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param executionStartedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13413,7 +13419,7 @@
             "simpleType" : "ExecutionSucceededEventDetails",
             "variableSetterType" : "ExecutionSucceededEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param executionSucceededEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13477,7 +13483,7 @@
             "simpleType" : "ExecutionTimedOutEventDetails",
             "variableSetterType" : "ExecutionTimedOutEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param executionTimedOutEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13541,7 +13547,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The id of the event. Events are numbered sequentially, starting at one.</p>\n@param id The id of the event. Events are numbered sequentially, starting at one.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13605,7 +13611,7 @@
             "simpleType" : "LambdaFunctionFailedEventDetails",
             "variableSetterType" : "LambdaFunctionFailedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param lambdaFunctionFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13669,7 +13675,7 @@
             "simpleType" : "LambdaFunctionScheduleFailedEventDetails",
             "variableSetterType" : "LambdaFunctionScheduleFailedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param lambdaFunctionScheduleFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13733,7 +13739,7 @@
             "simpleType" : "LambdaFunctionScheduledEventDetails",
             "variableSetterType" : "LambdaFunctionScheduledEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param lambdaFunctionScheduledEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13797,7 +13803,7 @@
             "simpleType" : "LambdaFunctionStartFailedEventDetails",
             "variableSetterType" : "LambdaFunctionStartFailedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param lambdaFunctionStartFailedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13861,7 +13867,7 @@
             "simpleType" : "LambdaFunctionSucceededEventDetails",
             "variableSetterType" : "LambdaFunctionSucceededEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param lambdaFunctionSucceededEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13925,7 +13931,7 @@
             "simpleType" : "LambdaFunctionTimedOutEventDetails",
             "variableSetterType" : "LambdaFunctionTimedOutEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param lambdaFunctionTimedOutEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13989,7 +13995,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The id of the previous event.</p>\n@param previousEventId The id of the previous event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14053,7 +14059,7 @@
             "simpleType" : "StateEnteredEventDetails",
             "variableSetterType" : "StateEnteredEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param stateEnteredEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14117,7 +14123,7 @@
             "simpleType" : "StateExitedEventDetails",
             "variableSetterType" : "StateExitedEventDetails"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param stateExitedEventDetails \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14181,7 +14187,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the event occured.</p>\n@param timestamp The date the event occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14245,7 +14251,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the event.</p>\n@param type The type of the event.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HistoryEventType*/",
@@ -14695,7 +14701,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14758,7 +14764,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14823,7 +14829,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14887,7 +14893,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14989,7 +14995,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15052,7 +15058,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15117,7 +15123,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15181,7 +15187,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15283,7 +15289,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>\n@param resource The Amazon Resource Name (ARN) of the scheduled lambda function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15346,7 +15352,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON data input to the lambda function.</p>\n@param input The JSON data input to the lambda function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15409,7 +15415,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum allowed duration of the lambda function.</p>\n@param timeoutInSeconds The maximum allowed duration of the lambda function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15474,7 +15480,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON data input to the lambda function.</p>\n@param input The JSON data input to the lambda function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15538,7 +15544,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>\n@param resource The Amazon Resource Name (ARN) of the scheduled lambda function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15602,7 +15608,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum allowed duration of the lambda function.</p>\n@param timeoutInSeconds The maximum allowed duration of the lambda function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15704,7 +15710,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15767,7 +15773,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15832,7 +15838,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15896,7 +15902,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15998,7 +16004,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON data output by the lambda function.</p>\n@param output The JSON data output by the lambda function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16063,7 +16069,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON data output by the lambda function.</p>\n@param output The JSON data output by the lambda function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16165,7 +16171,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16228,7 +16234,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16293,7 +16299,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the timeout.</p>\n@param cause A more detailed explanation of the cause of the timeout.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16357,7 +16363,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code of the failure.</p>\n@param error The error code of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16466,7 +16472,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16529,7 +16535,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16594,7 +16600,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16658,7 +16664,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16794,7 +16800,7 @@
               "simpleType" : "ActivityListItem",
               "variableSetterType" : "ActivityListItem"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16835,7 +16841,7 @@
           "simpleType" : "List<ActivityListItem>",
           "variableSetterType" : "java.util.Collection<ActivityListItem>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of activities.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setActivities(java.util.Collection)} or {@link #withActivities(java.util.Collection)} if you want to override the existing values.</p>\n@param activities The list of activities.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16898,7 +16904,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17000,7 +17006,7 @@
                 "simpleType" : "ActivityListItem",
                 "variableSetterType" : "ActivityListItem"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17041,7 +17047,7 @@
             "simpleType" : "List<ActivityListItem>",
             "variableSetterType" : "java.util.Collection<ActivityListItem>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of activities.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setActivities(java.util.Collection)} or {@link #withActivities(java.util.Collection)} if you want to override the existing values.</p>\n@param activities The list of activities.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17105,7 +17111,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17214,7 +17220,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine whose executions will be listed.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine whose executions will be listed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17277,7 +17283,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If specified, only list the executions whose current execution status matches the given filter.</p>\n@param statusFilter If specified, only list the executions whose current execution status matches the given filter.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExecutionStatus*/",
@@ -17340,7 +17346,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17403,7 +17409,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17468,7 +17474,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17532,7 +17538,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17596,7 +17602,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine whose executions will be listed.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine whose executions will be listed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17660,7 +17666,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If specified, only list the executions whose current execution status matches the given filter.</p>\n@param statusFilter If specified, only list the executions whose current execution status matches the given filter.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ExecutionStatus*/",
@@ -17796,7 +17802,7 @@
               "simpleType" : "ExecutionListItem",
               "variableSetterType" : "ExecutionListItem"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17837,7 +17843,7 @@
           "simpleType" : "List<ExecutionListItem>",
           "variableSetterType" : "java.util.Collection<ExecutionListItem>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of matching executions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExecutions(java.util.Collection)} or {@link #withExecutions(java.util.Collection)} if you want to override the existing values.</p>\n@param executions The list of matching executions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17900,7 +17906,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18002,7 +18008,7 @@
                 "simpleType" : "ExecutionListItem",
                 "variableSetterType" : "ExecutionListItem"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18043,7 +18049,7 @@
             "simpleType" : "List<ExecutionListItem>",
             "variableSetterType" : "java.util.Collection<ExecutionListItem>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of matching executions.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setExecutions(java.util.Collection)} or {@link #withExecutions(java.util.Collection)} if you want to override the existing values.</p>\n@param executions The list of matching executions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18107,7 +18113,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18216,7 +18222,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18279,7 +18285,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18344,7 +18350,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.</p>\n@param maxResults The maximum number of results that will be returned per call. <code>nextToken</code> can be used to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000.</p> <p>This is an upper limit only; the actual number of results returned per call may be fewer than the specified maximum.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18408,7 +18414,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18544,7 +18550,7 @@
               "simpleType" : "StateMachineListItem",
               "variableSetterType" : "StateMachineListItem"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18585,7 +18591,7 @@
           "simpleType" : "List<StateMachineListItem>",
           "variableSetterType" : "java.util.Collection<StateMachineListItem>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStateMachines(java.util.Collection)} or {@link #withStateMachines(java.util.Collection)} if you want to override the existing values.</p>\n@param stateMachines \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18648,7 +18654,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18713,7 +18719,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.</p>\n@param nextToken If a <code>nextToken</code> is returned, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>nextToken</code>. Keep all other arguments unchanged.</p> <p>The configured <code>maxResults</code> determines how many results can be returned in a single call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18814,7 +18820,7 @@
                 "simpleType" : "StateMachineListItem",
                 "variableSetterType" : "StateMachineListItem"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18855,7 +18861,7 @@
             "simpleType" : "List<StateMachineListItem>",
             "variableSetterType" : "java.util.Collection<StateMachineListItem>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStateMachines(java.util.Collection)} or {@link #withStateMachines(java.util.Collection)} if you want to override the existing values.</p>\n@param stateMachines \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18964,7 +18970,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19027,7 +19033,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An arbitrary error code that identifies the cause of the failure.</p>\n@param error An arbitrary error code that identifies the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19090,7 +19096,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19155,7 +19161,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the failure.</p>\n@param cause A more detailed explanation of the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19219,7 +19225,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An arbitrary error code that identifies the cause of the failure.</p>\n@param error An arbitrary error code that identifies the cause of the failure.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19283,7 +19289,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19428,7 +19434,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19493,7 +19499,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19638,7 +19644,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19701,7 +19707,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON output of the task.</p>\n@param output The JSON output of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19766,7 +19772,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON output of the task.</p>\n@param output The JSON output of the task.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19830,7 +19836,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).</p>\n@param taskToken The token that represents this task. Task tokens are generated by the service when the tasks are assigned to a worker (see GetActivityTask::taskToken).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19975,7 +19981,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to execute.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to execute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20038,7 +20044,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the execution. This name must be unique for your AWS account and region.</p>\n@param name The name of the execution. This name must be unique for your AWS account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20101,7 +20107,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON input data for the execution.</p>\n@param input The JSON input data for the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20166,7 +20172,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON input data for the execution.</p>\n@param input The JSON input data for the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20230,7 +20236,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the execution. This name must be unique for your AWS account and region.</p>\n@param name The name of the execution. This name must be unique for your AWS account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20294,7 +20300,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the state machine to execute.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) of the state machine to execute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20393,7 +20399,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20456,7 +20462,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the execution was started.</p>\n@param startDate The date the execution was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20521,7 +20527,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the execution.</p>\n@param executionArn The Amazon Resource Name (ARN) that identifies the execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20585,7 +20591,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the execution was started.</p>\n@param startDate The date the execution was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20687,7 +20693,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the state.</p>\n@param name The name of the state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20750,7 +20756,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON input data to the state.</p>\n@param input The JSON input data to the state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20815,7 +20821,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON input data to the state.</p>\n@param input The JSON input data to the state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20879,7 +20885,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the state.</p>\n@param name The name of the state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20981,7 +20987,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the state.</p>\n@param name The name of the state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21044,7 +21050,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The JSON output data of the state.</p>\n@param output The JSON output data of the state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21109,7 +21115,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the state.</p>\n@param name The name of the state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21173,7 +21179,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The JSON output data of the state.</p>\n@param output The JSON output data of the state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21419,7 +21425,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21482,7 +21488,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the state machine.</p>\n@param name The name of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21545,7 +21551,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the state machine was created.</p>\n@param creationDate The date the state machine was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21610,7 +21616,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the state machine was created.</p>\n@param creationDate The date the state machine was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21674,7 +21680,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the state machine.</p>\n@param name The name of the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21738,7 +21744,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the state machine.</p>\n@param stateMachineArn The Amazon Resource Name (ARN) that identifies the state machine.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21892,7 +21898,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution to stop.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution to stop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21955,7 +21961,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An arbitrary error code that identifies the cause of the termination.</p>\n@param error An arbitrary error code that identifies the cause of the termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22018,7 +22024,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the termination.</p>\n@param cause A more detailed explanation of the cause of the termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22083,7 +22089,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A more detailed explanation of the cause of the termination.</p>\n@param cause A more detailed explanation of the cause of the termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22147,7 +22153,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An arbitrary error code that identifies the cause of the termination.</p>\n@param error An arbitrary error code that identifies the cause of the termination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22211,7 +22217,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the execution to stop.</p>\n@param executionArn The Amazon Resource Name (ARN) of the execution to stop.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22310,7 +22316,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date the execution was stopped.</p>\n@param stopDate The date the execution was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -22375,7 +22381,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date the execution was stopped.</p>\n@param stopDate The date the execution was stopped.\n@return Returns a reference to this object so that method calls can be chained together.*/",

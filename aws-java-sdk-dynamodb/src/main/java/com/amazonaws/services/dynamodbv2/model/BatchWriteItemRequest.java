@@ -42,10 +42,10 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
-     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
-     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
+     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
+     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
@@ -108,7 +108,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
      *        this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *        <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value
      *        for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition
@@ -156,10 +156,10 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
-     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
-     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
+     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
+     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
@@ -198,7 +198,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *         <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
      *         this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *         <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a
      *         value for the partition key. For a composite primary key, you must provide values for <i>both</i> the
@@ -247,10 +247,10 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
-     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
-     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
+     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
+     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
@@ -290,7 +290,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
      *        this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *        <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value
      *        for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition
@@ -339,10 +339,10 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in this
-     * map consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of
-     * the key attributes. For example, with a simple primary key, you only need to provide a value for the partition
-     * key. For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
+     * <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in this map
+     * consists of an attribute name and an attribute value. For each primary key, you must provide <i>all</i> of the
+     * key attributes. For example, with a simple primary key, you only need to provide a value for the partition key.
+     * For a composite primary key, you must provide values for <i>both</i> the partition key and the sort key.
      * </p>
      * </li>
      * </ul>
@@ -382,7 +382,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the ! item. Each entry in
+     *        <code>Key</code> - A map of primary key attribute values that uniquely identify the item. Each entry in
      *        this map consists of an attribute name and an attribute value. For each primary key, you must provide
      *        <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide a value
      *        for the partition key. For a composite primary key, you must provide values for <i>both</i> the partition

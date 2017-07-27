@@ -18,7 +18,8 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : null,
+    "deprecatedSuppressions" : [ "EnumSetterOverload" ],
+    "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -51,7 +52,6 @@
     },
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : true,
-    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : false
@@ -666,7 +666,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>\n@param attachmentSetId The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -766,7 +766,7 @@
               "simpleType" : "Attachment",
               "variableSetterType" : "Attachment"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -807,7 +807,7 @@
           "simpleType" : "List<Attachment>",
           "variableSetterType" : "java.util.Collection<Attachment>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per attachment.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to override the existing values.</p>\n@param attachments One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per attachment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -872,7 +872,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>\n@param attachmentSetId The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -973,7 +973,7 @@
                 "simpleType" : "Attachment",
                 "variableSetterType" : "Attachment"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1014,7 +1014,7 @@
             "simpleType" : "List<Attachment>",
             "variableSetterType" : "java.util.Collection<Attachment>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per attachment.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to override the existing values.</p>\n@param attachments One or more attachments to add to the set. The limit is 3 attachments per set, and the size limit is 5 MB per attachment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1113,7 +1113,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>\n@param attachmentSetId The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1176,7 +1176,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time and date when the attachment set expires.</p>\n@param expiryTime The time and date when the attachment set expires.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1241,7 +1241,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>\n@param attachmentSetId The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1305,7 +1305,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time and date when the attachment set expires.</p>\n@param expiryTime The time and date when the attachment set expires.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1414,7 +1414,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1477,7 +1477,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The body of an email communication to add to the support case.</p>\n@param communicationBody The body of an email communication to add to the support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1577,7 +1577,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1618,7 +1618,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email addresses in the CC line of an email to be added to the support case.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCcEmailAddresses(java.util.Collection)} or {@link #withCcEmailAddresses(java.util.Collection)} if you want to override the existing values.</p>\n@param ccEmailAddresses The email addresses in the CC line of an email to be added to the support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1681,7 +1681,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>\n@param attachmentSetId The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <a>AddAttachmentsToSet</a>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1746,7 +1746,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>\n@param attachmentSetId The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <a>AddAttachmentsToSet</a>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1810,7 +1810,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1911,7 +1911,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1952,7 +1952,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email addresses in the CC line of an email to be added to the support case.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCcEmailAddresses(java.util.Collection)} or {@link #withCcEmailAddresses(java.util.Collection)} if you want to override the existing values.</p>\n@param ccEmailAddresses The email addresses in the CC line of an email to be added to the support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2016,7 +2016,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The body of an email communication to add to the support case.</p>\n@param communicationBody The body of an email communication to add to the support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2115,7 +2115,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.</p>\n@param result True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2180,7 +2180,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.</p>\n@param result True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2282,7 +2282,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the attachment file.</p>\n@param fileName The name of the attachment file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2345,7 +2345,7 @@
           "simpleType" : "ByteBuffer",
           "variableSetterType" : "java.nio.ByteBuffer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content of the attachment file.</p>\n@param data The content of the attachment file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2410,7 +2410,7 @@
             "simpleType" : "ByteBuffer",
             "variableSetterType" : "java.nio.ByteBuffer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content of the attachment file.</p>\n@param data The content of the attachment file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2474,7 +2474,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the attachment file.</p>\n@param fileName The name of the attachment file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2576,7 +2576,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the attachment.</p>\n@param attachmentId The ID of the attachment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2639,7 +2639,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The file name of the attachment.</p>\n@param fileName The file name of the attachment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2704,7 +2704,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the attachment.</p>\n@param attachmentId The ID of the attachment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2768,7 +2768,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The file name of the attachment.</p>\n@param fileName The file name of the attachment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3086,7 +3086,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3149,7 +3149,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>\n@param displayId The ID displayed for the case in the AWS Support Center. This is a numeric string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3212,7 +3212,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The subject line for the case in the AWS Support Center.</p>\n@param subject The subject line for the case in the AWS Support Center.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3275,7 +3275,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the case.</p>\n@param status The status of the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3338,7 +3338,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the AWS service returned by the call to <a>DescribeServices</a>.</p>\n@param serviceCode The code for the AWS service returned by the call to <a>DescribeServices</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3401,7 +3401,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The category of problem for the AWS Support case.</p>\n@param categoryCode The category of problem for the AWS Support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3464,7 +3464,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>\n@param severityCode The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3527,7 +3527,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address of the account that submitted the case.</p>\n@param submittedBy The email address of the account that submitted the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3590,7 +3590,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time that the case was case created in the AWS Support Center.</p>\n@param timeCreated The time that the case was case created in the AWS Support Center.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3653,7 +3653,7 @@
           "simpleType" : "RecentCaseCommunications",
           "variableSetterType" : "RecentCaseCommunications"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>\n@param recentCommunications The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3753,7 +3753,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3794,7 +3794,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email addresses that receive copies of communication about the case.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCcEmailAddresses(java.util.Collection)} or {@link #withCcEmailAddresses(java.util.Collection)} if you want to override the existing values.</p>\n@param ccEmailAddresses The email addresses that receive copies of communication about the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3857,7 +3857,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3922,7 +3922,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3986,7 +3986,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The category of problem for the AWS Support case.</p>\n@param categoryCode The category of problem for the AWS Support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4087,7 +4087,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4128,7 +4128,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email addresses that receive copies of communication about the case.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCcEmailAddresses(java.util.Collection)} or {@link #withCcEmailAddresses(java.util.Collection)} if you want to override the existing values.</p>\n@param ccEmailAddresses The email addresses that receive copies of communication about the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4192,7 +4192,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID displayed for the case in the AWS Support Center. This is a numeric string.</p>\n@param displayId The ID displayed for the case in the AWS Support Center. This is a numeric string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4256,7 +4256,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4320,7 +4320,7 @@
             "simpleType" : "RecentCaseCommunications",
             "variableSetterType" : "RecentCaseCommunications"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>\n@param recentCommunications The five most recent communications between you and AWS Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4384,7 +4384,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the AWS service returned by the call to <a>DescribeServices</a>.</p>\n@param serviceCode The code for the AWS service returned by the call to <a>DescribeServices</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4448,7 +4448,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>\n@param severityCode The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4512,7 +4512,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the case.</p>\n@param status The status of the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4576,7 +4576,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The subject line for the case in the AWS Support Center.</p>\n@param subject The subject line for the case in the AWS Support Center.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4640,7 +4640,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address of the account that submitted the case.</p>\n@param submittedBy The email address of the account that submitted the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4704,7 +4704,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time that the case was case created in the AWS Support Center.</p>\n@param timeCreated The time that the case was case created in the AWS Support Center.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4842,7 +4842,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The category code for the support case.</p>\n@param code The category code for the support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4905,7 +4905,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The category name for the support case.</p>\n@param name The category name for the support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4970,7 +4970,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The category code for the support case.</p>\n@param code The category code for the support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5034,7 +5034,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The category name for the support case.</p>\n@param name The category name for the support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5136,7 +5136,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5199,7 +5199,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The text of the communication between the customer and AWS Support.</p>\n@param body The text of the communication between the customer and AWS Support.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5262,7 +5262,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The email address of the account that submitted the AWS Support case.</p>\n@param submittedBy The email address of the account that submitted the AWS Support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5325,7 +5325,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time the communication was created.</p>\n@param timeCreated The time the communication was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5425,7 +5425,7 @@
               "simpleType" : "AttachmentDetails",
               "variableSetterType" : "AttachmentDetails"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5466,7 +5466,7 @@
           "simpleType" : "List<AttachmentDetails>",
           "variableSetterType" : "java.util.Collection<AttachmentDetails>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about the attachments to the case communication.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttachmentSet(java.util.Collection)} or {@link #withAttachmentSet(java.util.Collection)} if you want to override the existing values.</p>\n@param attachmentSet Information about the attachments to the case communication.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5568,7 +5568,7 @@
                 "simpleType" : "AttachmentDetails",
                 "variableSetterType" : "AttachmentDetails"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5609,7 +5609,7 @@
             "simpleType" : "List<AttachmentDetails>",
             "variableSetterType" : "java.util.Collection<AttachmentDetails>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about the attachments to the case communication.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttachmentSet(java.util.Collection)} or {@link #withAttachmentSet(java.util.Collection)} if you want to override the existing values.</p>\n@param attachmentSet Information about the attachments to the case communication.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5673,7 +5673,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The text of the communication between the customer and AWS Support.</p>\n@param body The text of the communication between the customer and AWS Support.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5737,7 +5737,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5801,7 +5801,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The email address of the account that submitted the AWS Support case.</p>\n@param submittedBy The email address of the account that submitted the AWS Support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5865,7 +5865,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time the communication was created.</p>\n@param timeCreated The time the communication was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5974,7 +5974,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The title of the AWS Support case.</p>\n@param subject The title of the AWS Support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6037,7 +6037,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the AWS service returned by the call to <a>DescribeServices</a>.</p>\n@param serviceCode The code for the AWS service returned by the call to <a>DescribeServices</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6100,7 +6100,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p> </note>\n@param severityCode The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6163,7 +6163,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The category of problem for the AWS Support case.</p>\n@param categoryCode The category of problem for the AWS Support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6226,7 +6226,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.</p>\n@param communicationBody The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6326,7 +6326,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6367,7 +6367,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of email addresses that AWS Support copies on case correspondence.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCcEmailAddresses(java.util.Collection)} or {@link #withCcEmailAddresses(java.util.Collection)} if you want to override the existing values.</p>\n@param ccEmailAddresses A list of email addresses that AWS Support copies on case correspondence.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6430,7 +6430,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6493,7 +6493,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\"</p>\n@param issueType The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\"\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6556,7 +6556,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.</p>\n@param attachmentSetId The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6621,7 +6621,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.</p>\n@param attachmentSetId The ID of a set of one or more attachments for the case. Create the set by using <a>AddAttachmentsToSet</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6685,7 +6685,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The category of problem for the AWS Support case.</p>\n@param categoryCode The category of problem for the AWS Support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6786,7 +6786,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6827,7 +6827,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of email addresses that AWS Support copies on case correspondence.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCcEmailAddresses(java.util.Collection)} or {@link #withCcEmailAddresses(java.util.Collection)} if you want to override the existing values.</p>\n@param ccEmailAddresses A list of email addresses that AWS Support copies on case correspondence.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6891,7 +6891,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.</p>\n@param communicationBody The communication body text when you create an AWS Support case by calling <a>CreateCase</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6955,7 +6955,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\"</p>\n@param issueType The type of issue for the case. You can specify either \"customer-service\" or \"technical.\" If you do not indicate a value, the default is \"technical.\"\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7019,7 +7019,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7083,7 +7083,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the AWS service returned by the call to <a>DescribeServices</a>.</p>\n@param serviceCode The code for the AWS service returned by the call to <a>DescribeServices</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7147,7 +7147,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p> </note>\n@param severityCode The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p> <note> <p>The availability of severity levels depends on each customer's support subscription. In other words, your subscription may not necessarily require the urgent level of response time.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7211,7 +7211,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The title of the AWS Support case.</p>\n@param subject The title of the AWS Support case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7310,7 +7310,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7375,7 +7375,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7520,7 +7520,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>\n@param attachmentId The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7585,7 +7585,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>\n@param attachmentId The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7684,7 +7684,7 @@
           "simpleType" : "Attachment",
           "variableSetterType" : "Attachment"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The attachment content and file name.</p>\n@param attachment The attachment content and file name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7749,7 +7749,7 @@
             "simpleType" : "Attachment",
             "variableSetterType" : "Attachment"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The attachment content and file name.</p>\n@param attachment The attachment content and file name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7895,7 +7895,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7936,7 +7936,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCaseIdList(java.util.Collection)} or {@link #withCaseIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param caseIdList A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7999,7 +7999,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID displayed for a case in the AWS Support Center user interface.</p>\n@param displayId The ID displayed for a case in the AWS Support Center user interface.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8062,7 +8062,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param afterTime The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8125,7 +8125,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param beforeTime The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8188,7 +8188,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is <i>false</i>.</p>\n@param includeResolvedCases Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is <i>false</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8251,7 +8251,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8314,7 +8314,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return before paginating.</p>\n@param maxResults The maximum number of results to return before paginating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8377,7 +8377,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8440,7 +8440,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is <i>true</i>.</p>\n@param includeCommunications Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is <i>true</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8505,7 +8505,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param afterTime The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8569,7 +8569,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param beforeTime The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8670,7 +8670,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8711,7 +8711,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCaseIdList(java.util.Collection)} or {@link #withCaseIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param caseIdList A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8775,7 +8775,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID displayed for a case in the AWS Support Center user interface.</p>\n@param displayId The ID displayed for a case in the AWS Support Center user interface.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8839,7 +8839,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is <i>true</i>.</p>\n@param includeCommunications Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is <i>true</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8903,7 +8903,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is <i>false</i>.</p>\n@param includeResolvedCases Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is <i>false</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8967,7 +8967,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9031,7 +9031,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return before paginating.</p>\n@param maxResults The maximum number of results to return before paginating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9095,7 +9095,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9231,7 +9231,7 @@
               "simpleType" : "CaseDetails",
               "variableSetterType" : "CaseDetails"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9272,7 +9272,7 @@
           "simpleType" : "List<CaseDetails>",
           "variableSetterType" : "java.util.Collection<CaseDetails>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The details for the cases that match the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCases(java.util.Collection)} or {@link #withCases(java.util.Collection)} if you want to override the existing values.</p>\n@param cases The details for the cases that match the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9335,7 +9335,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9437,7 +9437,7 @@
                 "simpleType" : "CaseDetails",
                 "variableSetterType" : "CaseDetails"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9478,7 +9478,7 @@
             "simpleType" : "List<CaseDetails>",
             "variableSetterType" : "java.util.Collection<CaseDetails>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The details for the cases that match the request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCases(java.util.Collection)} or {@link #withCases(java.util.Collection)} if you want to override the existing values.</p>\n@param cases The details for the cases that match the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9542,7 +9542,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9651,7 +9651,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9714,7 +9714,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param beforeTime The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9777,7 +9777,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param afterTime The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9840,7 +9840,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9903,7 +9903,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return before paginating.</p>\n@param maxResults The maximum number of results to return before paginating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9968,7 +9968,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param afterTime The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10032,7 +10032,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>\n@param beforeTime The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10096,7 +10096,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10160,7 +10160,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return before paginating.</p>\n@param maxResults The maximum number of results to return before paginating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10224,7 +10224,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10360,7 +10360,7 @@
               "simpleType" : "Communication",
               "variableSetterType" : "Communication"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10401,7 +10401,7 @@
           "simpleType" : "List<Communication>",
           "variableSetterType" : "java.util.Collection<Communication>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The communications for the case.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCommunications(java.util.Collection)} or {@link #withCommunications(java.util.Collection)} if you want to override the existing values.</p>\n@param communications The communications for the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10464,7 +10464,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10566,7 +10566,7 @@
                 "simpleType" : "Communication",
                 "variableSetterType" : "Communication"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10607,7 +10607,7 @@
             "simpleType" : "List<Communication>",
             "variableSetterType" : "java.util.Collection<Communication>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The communications for the case.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCommunications(java.util.Collection)} or {@link #withCommunications(java.util.Collection)} if you want to override the existing values.</p>\n@param communications The communications for the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10671,7 +10671,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10817,7 +10817,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10858,7 +10858,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JSON-formatted list of service codes available for AWS services.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServiceCodeList(java.util.Collection)} or {@link #withServiceCodeList(java.util.Collection)} if you want to override the existing values.</p>\n@param serviceCodeList A JSON-formatted list of service codes available for AWS services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10921,7 +10921,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10986,7 +10986,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11087,7 +11087,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11128,7 +11128,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JSON-formatted list of service codes available for AWS services.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServiceCodeList(java.util.Collection)} or {@link #withServiceCodeList(java.util.Collection)} if you want to override the existing values.</p>\n@param serviceCodeList A JSON-formatted list of service codes available for AWS services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11264,7 +11264,7 @@
               "simpleType" : "Service",
               "variableSetterType" : "Service"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11305,7 +11305,7 @@
           "simpleType" : "List<Service>",
           "variableSetterType" : "java.util.Collection<Service>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JSON-formatted list of AWS services.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services A JSON-formatted list of AWS services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11407,7 +11407,7 @@
                 "simpleType" : "Service",
                 "variableSetterType" : "Service"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11448,7 +11448,7 @@
             "simpleType" : "List<Service>",
             "variableSetterType" : "java.util.Collection<Service>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JSON-formatted list of AWS services.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setServices(java.util.Collection)} or {@link #withServices(java.util.Collection)} if you want to override the existing values.</p>\n@param services A JSON-formatted list of AWS services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11557,7 +11557,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11622,7 +11622,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11758,7 +11758,7 @@
               "simpleType" : "SeverityLevel",
               "variableSetterType" : "SeverityLevel"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11799,7 +11799,7 @@
           "simpleType" : "List<SeverityLevel>",
           "variableSetterType" : "java.util.Collection<SeverityLevel>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSeverityLevels(java.util.Collection)} or {@link #withSeverityLevels(java.util.Collection)} if you want to override the existing values.</p>\n@param severityLevels The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11901,7 +11901,7 @@
                 "simpleType" : "SeverityLevel",
                 "variableSetterType" : "SeverityLevel"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11942,7 +11942,7 @@
             "simpleType" : "List<SeverityLevel>",
             "variableSetterType" : "java.util.Collection<SeverityLevel>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSeverityLevels(java.util.Collection)} or {@link #withSeverityLevels(java.util.Collection)} if you want to override the existing values.</p>\n@param severityLevels The available severity levels for the support case. Available severity levels are defined by your service level agreement with AWS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12088,7 +12088,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12129,7 +12129,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCheckIds(java.util.Collection)} or {@link #withCheckIds(java.util.Collection)} if you want to override the existing values.</p>\n@param checkIds The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12231,7 +12231,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12272,7 +12272,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCheckIds(java.util.Collection)} or {@link #withCheckIds(java.util.Collection)} if you want to override the existing values.</p>\n@param checkIds The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12408,7 +12408,7 @@
               "simpleType" : "TrustedAdvisorCheckRefreshStatus",
               "variableSetterType" : "TrustedAdvisorCheckRefreshStatus"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12449,7 +12449,7 @@
           "simpleType" : "List<TrustedAdvisorCheckRefreshStatus>",
           "variableSetterType" : "java.util.Collection<TrustedAdvisorCheckRefreshStatus>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The refresh status of the specified Trusted Advisor checks.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStatuses(java.util.Collection)} or {@link #withStatuses(java.util.Collection)} if you want to override the existing values.</p>\n@param statuses The refresh status of the specified Trusted Advisor checks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12551,7 +12551,7 @@
                 "simpleType" : "TrustedAdvisorCheckRefreshStatus",
                 "variableSetterType" : "TrustedAdvisorCheckRefreshStatus"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12592,7 +12592,7 @@
             "simpleType" : "List<TrustedAdvisorCheckRefreshStatus>",
             "variableSetterType" : "java.util.Collection<TrustedAdvisorCheckRefreshStatus>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The refresh status of the specified Trusted Advisor checks.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStatuses(java.util.Collection)} or {@link #withStatuses(java.util.Collection)} if you want to override the existing values.</p>\n@param statuses The refresh status of the specified Trusted Advisor checks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12701,7 +12701,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12764,7 +12764,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12829,7 +12829,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12893,7 +12893,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12992,7 +12992,7 @@
           "simpleType" : "TrustedAdvisorCheckResult",
           "variableSetterType" : "TrustedAdvisorCheckResult"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The detailed results of the Trusted Advisor check.</p>\n@param result The detailed results of the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13057,7 +13057,7 @@
             "simpleType" : "TrustedAdvisorCheckResult",
             "variableSetterType" : "TrustedAdvisorCheckResult"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The detailed results of the Trusted Advisor check.</p>\n@param result The detailed results of the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13203,7 +13203,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13244,7 +13244,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IDs of the Trusted Advisor checks.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCheckIds(java.util.Collection)} or {@link #withCheckIds(java.util.Collection)} if you want to override the existing values.</p>\n@param checkIds The IDs of the Trusted Advisor checks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13346,7 +13346,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13387,7 +13387,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IDs of the Trusted Advisor checks.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCheckIds(java.util.Collection)} or {@link #withCheckIds(java.util.Collection)} if you want to override the existing values.</p>\n@param checkIds The IDs of the Trusted Advisor checks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13523,7 +13523,7 @@
               "simpleType" : "TrustedAdvisorCheckSummary",
               "variableSetterType" : "TrustedAdvisorCheckSummary"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13564,7 +13564,7 @@
           "simpleType" : "List<TrustedAdvisorCheckSummary>",
           "variableSetterType" : "java.util.Collection<TrustedAdvisorCheckSummary>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The summary information for the requested Trusted Advisor checks.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSummaries(java.util.Collection)} or {@link #withSummaries(java.util.Collection)} if you want to override the existing values.</p>\n@param summaries The summary information for the requested Trusted Advisor checks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13666,7 +13666,7 @@
                 "simpleType" : "TrustedAdvisorCheckSummary",
                 "variableSetterType" : "TrustedAdvisorCheckSummary"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13707,7 +13707,7 @@
             "simpleType" : "List<TrustedAdvisorCheckSummary>",
             "variableSetterType" : "java.util.Collection<TrustedAdvisorCheckSummary>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The summary information for the requested Trusted Advisor checks.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSummaries(java.util.Collection)} or {@link #withSummaries(java.util.Collection)} if you want to override the existing values.</p>\n@param summaries The summary information for the requested Trusted Advisor checks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13816,7 +13816,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13881,7 +13881,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.</p>\n@param language The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English (\"en\") and Japanese (\"ja\"). Language parameters must be passed explicitly for operations that take them.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14017,7 +14017,7 @@
               "simpleType" : "TrustedAdvisorCheckDescription",
               "variableSetterType" : "TrustedAdvisorCheckDescription"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14058,7 +14058,7 @@
           "simpleType" : "List<TrustedAdvisorCheckDescription>",
           "variableSetterType" : "java.util.Collection<TrustedAdvisorCheckDescription>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about all available Trusted Advisor checks.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChecks(java.util.Collection)} or {@link #withChecks(java.util.Collection)} if you want to override the existing values.</p>\n@param checks Information about all available Trusted Advisor checks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14160,7 +14160,7 @@
                 "simpleType" : "TrustedAdvisorCheckDescription",
                 "variableSetterType" : "TrustedAdvisorCheckDescription"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14201,7 +14201,7 @@
             "simpleType" : "List<TrustedAdvisorCheckDescription>",
             "variableSetterType" : "java.util.Collection<TrustedAdvisorCheckDescription>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about all available Trusted Advisor checks.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChecks(java.util.Collection)} or {@link #withChecks(java.util.Collection)} if you want to override the existing values.</p>\n@param checks Information about all available Trusted Advisor checks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14376,7 +14376,7 @@
               "simpleType" : "Communication",
               "variableSetterType" : "Communication"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14417,7 +14417,7 @@
           "simpleType" : "List<Communication>",
           "variableSetterType" : "java.util.Collection<Communication>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The five most recent communications associated with the case.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCommunications(java.util.Collection)} or {@link #withCommunications(java.util.Collection)} if you want to override the existing values.</p>\n@param communications The five most recent communications associated with the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14480,7 +14480,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14582,7 +14582,7 @@
                 "simpleType" : "Communication",
                 "variableSetterType" : "Communication"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14623,7 +14623,7 @@
             "simpleType" : "List<Communication>",
             "variableSetterType" : "java.util.Collection<Communication>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The five most recent communications associated with the case.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCommunications(java.util.Collection)} or {@link #withCommunications(java.util.Collection)} if you want to override the existing values.</p>\n@param communications The five most recent communications associated with the case.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14687,7 +14687,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A resumption point for pagination.</p>\n@param nextToken A resumption point for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14796,7 +14796,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>\n@param checkId The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14861,7 +14861,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.</p>\n@param checkId The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14960,7 +14960,7 @@
           "simpleType" : "TrustedAdvisorCheckRefreshStatus",
           "variableSetterType" : "TrustedAdvisorCheckRefreshStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>\n@param status The current refresh status for a check, including the amount of time until the check is eligible for refresh.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15025,7 +15025,7 @@
             "simpleType" : "TrustedAdvisorCheckRefreshStatus",
             "variableSetterType" : "TrustedAdvisorCheckRefreshStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>\n@param status The current refresh status for a check, including the amount of time until the check is eligible for refresh.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15134,7 +15134,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15199,7 +15199,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>\n@param caseId The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15298,7 +15298,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the case when the <a>ResolveCase</a> request was sent.</p>\n@param initialCaseStatus The status of the case when the <a>ResolveCase</a> request was sent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15361,7 +15361,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the case after the <a>ResolveCase</a> request was processed.</p>\n@param finalCaseStatus The status of the case after the <a>ResolveCase</a> request was processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15426,7 +15426,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the case after the <a>ResolveCase</a> request was processed.</p>\n@param finalCaseStatus The status of the case after the <a>ResolveCase</a> request was processed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15490,7 +15490,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the case when the <a>ResolveCase</a> request was sent.</p>\n@param initialCaseStatus The status of the case when the <a>ResolveCase</a> request was sent.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15592,7 +15592,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The code for an AWS service returned by the <a>DescribeServices</a> response. The <code>name</code> element contains the corresponding friendly name.</p>\n@param code The code for an AWS service returned by the <a>DescribeServices</a> response. The <code>name</code> element contains the corresponding friendly name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15655,7 +15655,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.</p>\n@param name The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15755,7 +15755,7 @@
               "simpleType" : "Category",
               "variableSetterType" : "Category"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15796,7 +15796,7 @@
           "simpleType" : "List<Category>",
           "variableSetterType" : "java.util.Collection<Category>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCategories(java.util.Collection)} or {@link #withCategories(java.util.Collection)} if you want to override the existing values.</p>\n@param categories A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15898,7 +15898,7 @@
                 "simpleType" : "Category",
                 "variableSetterType" : "Category"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15939,7 +15939,7 @@
             "simpleType" : "List<Category>",
             "variableSetterType" : "java.util.Collection<Category>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCategories(java.util.Collection)} or {@link #withCategories(java.util.Collection)} if you want to override the existing values.</p>\n@param categories A list of categories that describe the type of support issue a case describes. Categories consist of a category name and a category code. Category names and codes are passed to AWS Support when you call <a>CreateCase</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16003,7 +16003,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The code for an AWS service returned by the <a>DescribeServices</a> response. The <code>name</code> element contains the corresponding friendly name.</p>\n@param code The code for an AWS service returned by the <a>DescribeServices</a> response. The <code>name</code> element contains the corresponding friendly name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16067,7 +16067,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.</p>\n@param name The friendly name for an AWS service. The <code>code</code> element contains the corresponding code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16169,7 +16169,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One of four values: \"low,\" \"medium,\" \"high,\" and \"urgent\". These values correspond to response times returned to the caller in <code>severityLevel.name</code>. </p>\n@param code One of four values: \"low,\" \"medium,\" \"high,\" and \"urgent\". These values correspond to response times returned to the caller in <code>severityLevel.name</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16232,7 +16232,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the severity level that corresponds to the severity level code.</p>\n@param name The name of the severity level that corresponds to the severity level code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16297,7 +16297,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One of four values: \"low,\" \"medium,\" \"high,\" and \"urgent\". These values correspond to response times returned to the caller in <code>severityLevel.name</code>. </p>\n@param code One of four values: \"low,\" \"medium,\" \"high,\" and \"urgent\". These values correspond to response times returned to the caller in <code>severityLevel.name</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16361,7 +16361,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the severity level that corresponds to the severity level code.</p>\n@param name The name of the severity level that corresponds to the severity level code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16463,7 +16463,7 @@
           "simpleType" : "TrustedAdvisorCostOptimizingSummary",
           "variableSetterType" : "TrustedAdvisorCostOptimizingSummary"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>\n@param costOptimizing The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16528,7 +16528,7 @@
             "simpleType" : "TrustedAdvisorCostOptimizingSummary",
             "variableSetterType" : "TrustedAdvisorCostOptimizingSummary"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.</p>\n@param costOptimizing The summary information about cost savings for a Trusted Advisor check that is in the Cost Optimizing category.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16630,7 +16630,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param id The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16693,7 +16693,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The display name for the Trusted Advisor check.</p>\n@param name The display name for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16756,7 +16756,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).</p>\n@param description The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16819,7 +16819,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The category of the Trusted Advisor check.</p>\n@param category The category of the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16919,7 +16919,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16960,7 +16960,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMetadata(java.util.Collection)} or {@link #withMetadata(java.util.Collection)} if you want to override the existing values.</p>\n@param metadata The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17025,7 +17025,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The category of the Trusted Advisor check.</p>\n@param category The category of the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17089,7 +17089,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).</p>\n@param description The description of the Trusted Advisor check, which includes the alert criteria and recommended actions (contains HTML markup).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17153,7 +17153,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param id The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17254,7 +17254,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17295,7 +17295,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMetadata(java.util.Collection)} or {@link #withMetadata(java.util.Collection)} if you want to override the existing values.</p>\n@param metadata The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17359,7 +17359,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The display name for the Trusted Advisor check.</p>\n@param name The display name for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17461,7 +17461,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17524,7 +17524,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the Trusted Advisor check for which a refresh has been requested: \"none\", \"enqueued\", \"processing\", \"success\", or \"abandoned\".</p>\n@param status The status of the Trusted Advisor check for which a refresh has been requested: \"none\", \"enqueued\", \"processing\", \"success\", or \"abandoned\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17587,7 +17587,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>\n@param millisUntilNextRefreshable The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17652,7 +17652,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17716,7 +17716,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.</p>\n@param millisUntilNextRefreshable The amount of time, in milliseconds, until the Trusted Advisor check is eligible for refresh.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17780,7 +17780,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the Trusted Advisor check for which a refresh has been requested: \"none\", \"enqueued\", \"processing\", \"success\", or \"abandoned\".</p>\n@param status The status of the Trusted Advisor check for which a refresh has been requested: \"none\", \"enqueued\", \"processing\", \"success\", or \"abandoned\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17882,7 +17882,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17945,7 +17945,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time of the last refresh of the check.</p>\n@param timestamp The time of the last refresh of the check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18008,7 +18008,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".</p>\n@param status The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18071,7 +18071,7 @@
           "simpleType" : "TrustedAdvisorResourcesSummary",
           "variableSetterType" : "TrustedAdvisorResourcesSummary"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param resourcesSummary \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18134,7 +18134,7 @@
           "simpleType" : "TrustedAdvisorCategorySpecificSummary",
           "variableSetterType" : "TrustedAdvisorCategorySpecificSummary"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>\n@param categorySpecificSummary Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18234,7 +18234,7 @@
               "simpleType" : "TrustedAdvisorResourceDetail",
               "variableSetterType" : "TrustedAdvisorResourceDetail"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18275,7 +18275,7 @@
           "simpleType" : "List<TrustedAdvisorResourceDetail>",
           "variableSetterType" : "java.util.Collection<TrustedAdvisorResourceDetail>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The details about each resource listed in the check result.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFlaggedResources(java.util.Collection)} or {@link #withFlaggedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param flaggedResources The details about each resource listed in the check result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18340,7 +18340,7 @@
             "simpleType" : "TrustedAdvisorCategorySpecificSummary",
             "variableSetterType" : "TrustedAdvisorCategorySpecificSummary"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>\n@param categorySpecificSummary Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18404,7 +18404,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18505,7 +18505,7 @@
                 "simpleType" : "TrustedAdvisorResourceDetail",
                 "variableSetterType" : "TrustedAdvisorResourceDetail"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18546,7 +18546,7 @@
             "simpleType" : "List<TrustedAdvisorResourceDetail>",
             "variableSetterType" : "java.util.Collection<TrustedAdvisorResourceDetail>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The details about each resource listed in the check result.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFlaggedResources(java.util.Collection)} or {@link #withFlaggedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param flaggedResources The details about each resource listed in the check result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18610,7 +18610,7 @@
             "simpleType" : "TrustedAdvisorResourcesSummary",
             "variableSetterType" : "TrustedAdvisorResourcesSummary"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param resourcesSummary \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18674,7 +18674,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".</p>\n@param status The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18738,7 +18738,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time of the last refresh of the check.</p>\n@param timestamp The time of the last refresh of the check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18840,7 +18840,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18903,7 +18903,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time of the last refresh of the check.</p>\n@param timestamp The time of the last refresh of the check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18966,7 +18966,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".</p>\n@param status The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19029,7 +19029,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the Trusted Advisor check has flagged resources.</p>\n@param hasFlaggedResources Specifies whether the Trusted Advisor check has flagged resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19092,7 +19092,7 @@
           "simpleType" : "TrustedAdvisorResourcesSummary",
           "variableSetterType" : "TrustedAdvisorResourcesSummary"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param resourcesSummary \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19155,7 +19155,7 @@
           "simpleType" : "TrustedAdvisorCategorySpecificSummary",
           "variableSetterType" : "TrustedAdvisorCategorySpecificSummary"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>\n@param categorySpecificSummary Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19220,7 +19220,7 @@
             "simpleType" : "TrustedAdvisorCategorySpecificSummary",
             "variableSetterType" : "TrustedAdvisorCategorySpecificSummary"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.</p>\n@param categorySpecificSummary Summary information that relates to the category of the check. Cost Optimizing is the only category that is currently supported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19284,7 +19284,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the Trusted Advisor check.</p>\n@param checkId The unique identifier for the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19348,7 +19348,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the Trusted Advisor check has flagged resources.</p>\n@param hasFlaggedResources Specifies whether the Trusted Advisor check has flagged resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19412,7 +19412,7 @@
             "simpleType" : "TrustedAdvisorResourcesSummary",
             "variableSetterType" : "TrustedAdvisorResourcesSummary"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param resourcesSummary \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19476,7 +19476,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".</p>\n@param status The alert status of the check: \"ok\" (green), \"warning\" (yellow), \"error\" (red), or \"not_available\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19540,7 +19540,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time of the last refresh of the check.</p>\n@param timestamp The time of the last refresh of the check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19642,7 +19642,7 @@
           "simpleType" : "Double",
           "variableSetterType" : "Double"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The estimated monthly savings that might be realized if the recommended actions are taken.</p>\n@param estimatedMonthlySavings The estimated monthly savings that might be realized if the recommended actions are taken.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19705,7 +19705,7 @@
           "simpleType" : "Double",
           "variableSetterType" : "Double"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The estimated percentage of savings that might be realized if the recommended actions are taken.</p>\n@param estimatedPercentMonthlySavings The estimated percentage of savings that might be realized if the recommended actions are taken.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19770,7 +19770,7 @@
             "simpleType" : "Double",
             "variableSetterType" : "Double"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The estimated monthly savings that might be realized if the recommended actions are taken.</p>\n@param estimatedMonthlySavings The estimated monthly savings that might be realized if the recommended actions are taken.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19834,7 +19834,7 @@
             "simpleType" : "Double",
             "variableSetterType" : "Double"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The estimated percentage of savings that might be realized if the recommended actions are taken.</p>\n@param estimatedPercentMonthlySavings The estimated percentage of savings that might be realized if the recommended actions are taken.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19936,7 +19936,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status code for the resource identified in the Trusted Advisor check.</p>\n@param status The status code for the resource identified in the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19999,7 +19999,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS region in which the identified resource is located.</p>\n@param region The AWS region in which the identified resource is located.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20062,7 +20062,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the identified resource.</p>\n@param resourceId The unique identifier for the identified resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20125,7 +20125,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>\n@param isSuppressed Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20225,7 +20225,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20266,7 +20266,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a> object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMetadata(java.util.Collection)} or {@link #withMetadata(java.util.Collection)} if you want to override the existing values.</p>\n@param metadata Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a> object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20331,7 +20331,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.</p>\n@param isSuppressed Specifies whether the AWS resource was ignored by Trusted Advisor because it was marked as suppressed by the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20432,7 +20432,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20473,7 +20473,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a> object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMetadata(java.util.Collection)} or {@link #withMetadata(java.util.Collection)} if you want to override the existing values.</p>\n@param metadata Additional information about the identified resource. The exact metadata and its order can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a> object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20537,7 +20537,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS region in which the identified resource is located.</p>\n@param region The AWS region in which the identified resource is located.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20601,7 +20601,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the identified resource.</p>\n@param resourceId The unique identifier for the identified resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20665,7 +20665,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status code for the resource identified in the Trusted Advisor check.</p>\n@param status The status code for the resource identified in the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20767,7 +20767,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of AWS resources that were analyzed by the Trusted Advisor check.</p>\n@param resourcesProcessed The number of AWS resources that were analyzed by the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20830,7 +20830,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>\n@param resourcesFlagged The number of AWS resources that were flagged (listed) by the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20893,7 +20893,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>\n@param resourcesIgnored The number of AWS resources ignored by Trusted Advisor because information was unavailable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20956,7 +20956,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>\n@param resourcesSuppressed The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21021,7 +21021,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of AWS resources that were flagged (listed) by the Trusted Advisor check.</p>\n@param resourcesFlagged The number of AWS resources that were flagged (listed) by the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21085,7 +21085,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of AWS resources ignored by Trusted Advisor because information was unavailable.</p>\n@param resourcesIgnored The number of AWS resources ignored by Trusted Advisor because information was unavailable.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21149,7 +21149,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of AWS resources that were analyzed by the Trusted Advisor check.</p>\n@param resourcesProcessed The number of AWS resources that were analyzed by the Trusted Advisor check.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21213,7 +21213,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.</p>\n@param resourcesSuppressed The number of AWS resources ignored by Trusted Advisor because they were marked as suppressed by the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",

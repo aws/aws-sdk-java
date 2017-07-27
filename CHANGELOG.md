@@ -1,3 +1,16 @@
+# __1.11.169__ __2017-07-26__
+## __Amazon CloudWatch__
+  - ### Features
+    - This release adds high resolution features to CloudWatch, with support for Custom Metrics down to 1 second and Alarms down to 10 seconds.
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Corrected a typo.
+
+## __Amazon EC2__
+  - ### Features
+    - Amazon EC2 Elastic GPUs allow you to easily attach low-cost graphics acceleration to current generation EC2 instances. With Amazon EC2 Elastic GPUs, you can configure the right amount of graphics acceleration to your particular workload without being constrained by fixed hardware configurations and limited GPU selection.
+
 # __1.11.168__ __2017-07-25__
 ## __AWS Cloud Formation__
   - ### Features

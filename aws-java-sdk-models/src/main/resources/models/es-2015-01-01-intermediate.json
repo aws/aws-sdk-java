@@ -18,7 +18,13 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : null,
+    "deprecatedSuppressions" : [ "EnumSetterOverload" ],
+    "emitLegacyEnumSetterFor" : {
+      "DescribeElasticsearchInstanceTypeLimitsRequest" : [ "InstanceType" ],
+      "EBSOptions" : [ "VolumeType" ],
+      "ElasticsearchClusterConfig" : [ "InstanceType", "DedicatedMasterType" ],
+      "OptionStatus" : [ "State" ]
+    },
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -34,7 +40,6 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
-    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -719,7 +724,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies\" target=\"_blank\"> Configuring Access Policies</a>for more information.</p>\n@param options The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies\" target=\"_blank\"> Configuring Access Policies</a>for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -782,7 +787,7 @@
           "simpleType" : "OptionStatus",
           "variableSetterType" : "OptionStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>\n@param status The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -847,7 +852,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies\" target=\"_blank\"> Configuring Access Policies</a>for more information.</p>\n@param options The access policy configured for the Elasticsearch domain. Access policies may be resource-based, IP-based, or IAM-based. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies\" target=\"_blank\"> Configuring Access Policies</a>for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -911,7 +916,7 @@
             "simpleType" : "OptionStatus",
             "variableSetterType" : "OptionStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>\n@param status The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1020,7 +1025,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specify the <code>ARN</code> for which you want to add the tags.</p>\n@param aRN Specify the <code>ARN</code> for which you want to add the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1120,7 +1125,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1161,7 +1166,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList List of <code>Tag</code> that need to be added for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1226,7 +1231,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specify the <code>ARN</code> for which you want to add the tags.</p>\n@param aRN Specify the <code>ARN</code> for which you want to add the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1327,7 +1332,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1368,7 +1373,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList List of <code>Tag</code> that need to be added for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1506,7 +1511,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> etc. <br/> Attributes and their details: <br/> <ul> <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <a>ESPartitionInstanceType</a> </code> can support as master node. <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> upto which you don't need any master nodes to govern them. </ul> </p>\n@param limitName Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> etc. <br/> Attributes and their details: <br/> <ul> <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <a>ESPartitionInstanceType</a> </code> can support as master node. <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> upto which you don't need any master nodes to govern them. </ul>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1606,7 +1611,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1647,7 +1652,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLimitValues(java.util.Collection)} or {@link #withLimitValues(java.util.Collection)} if you want to override the existing values.</p>\n@param limitValues Value for given <code> <a>AdditionalLimit$LimitName</a> </code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1712,7 +1717,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> etc. <br/> Attributes and their details: <br/> <ul> <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <a>ESPartitionInstanceType</a> </code> can support as master node. <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> upto which you don't need any master nodes to govern them. </ul> </p>\n@param limitName Name of Additional Limit is specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> etc. <br/> Attributes and their details: <br/> <ul> <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in Master node only to specify how much data nodes upto which given <code> <a>ESPartitionInstanceType</a> </code> can support as master node. <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present in Data node only to specify how much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> upto which you don't need any master nodes to govern them. </ul>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1813,7 +1818,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1854,7 +1859,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLimitValues(java.util.Collection)} or {@link #withLimitValues(java.util.Collection)} if you want to override the existing values.</p>\n@param limitValues Value for given <code> <a>AdditionalLimit$LimitName</a> </code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1999,7 +2004,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2034,7 +2039,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>\n@param options Specifies the status of advanced options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2097,7 +2102,7 @@
           "simpleType" : "OptionStatus",
           "variableSetterType" : "OptionStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>\n@param status Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2205,7 +2210,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2240,7 +2245,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the status of advanced options for the specified Elasticsearch domain.</p>\n@param options Specifies the status of advanced options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2304,7 +2309,7 @@
             "simpleType" : "OptionStatus",
             "variableSetterType" : "OptionStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.</p>\n@param status Specifies the status of <code>OptionStatus</code> for advanced options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2449,7 +2454,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>\n@param domainName The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2512,7 +2517,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String of format X.Y to specify version for the Elasticsearch domain eg. \"1.5\" or \"2.3\". For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>\n@param elasticsearchVersion String of format X.Y to specify version for the Elasticsearch domain eg. \"1.5\" or \"2.3\". For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2575,7 +2580,7 @@
           "simpleType" : "ElasticsearchClusterConfig",
           "variableSetterType" : "ElasticsearchClusterConfig"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>\n@param elasticsearchClusterConfig Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2638,7 +2643,7 @@
           "simpleType" : "EBSOptions",
           "variableSetterType" : "EBSOptions"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>\n@param eBSOptions Options to enable, disable and specify the type and size of EBS storage volumes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2701,7 +2706,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> IAM access policy as a JSON-formatted string.</p>\n@param accessPolicies IAM access policy as a JSON-formatted string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2764,7 +2769,7 @@
           "simpleType" : "SnapshotOptions",
           "variableSetterType" : "SnapshotOptions"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>\n@param snapshotOptions Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2870,7 +2875,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2905,7 +2910,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.</p>\n@param advancedOptions Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2970,7 +2975,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> IAM access policy as a JSON-formatted string.</p>\n@param accessPolicies IAM access policy as a JSON-formatted string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3077,7 +3082,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3112,7 +3117,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.</p>\n@param advancedOptions Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3176,7 +3181,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>\n@param domainName The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3240,7 +3245,7 @@
             "simpleType" : "EBSOptions",
             "variableSetterType" : "EBSOptions"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>\n@param eBSOptions Options to enable, disable and specify the type and size of EBS storage volumes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3304,7 +3309,7 @@
             "simpleType" : "ElasticsearchClusterConfig",
             "variableSetterType" : "ElasticsearchClusterConfig"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>\n@param elasticsearchClusterConfig Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3368,7 +3373,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String of format X.Y to specify version for the Elasticsearch domain eg. \"1.5\" or \"2.3\". For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>\n@param elasticsearchVersion String of format X.Y to specify version for the Elasticsearch domain eg. \"1.5\" or \"2.3\". For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3432,7 +3437,7 @@
             "simpleType" : "SnapshotOptions",
             "variableSetterType" : "SnapshotOptions"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>\n@param snapshotOptions Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3531,7 +3536,7 @@
           "simpleType" : "ElasticsearchDomainStatus",
           "variableSetterType" : "ElasticsearchDomainStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the newly created Elasticsearch domain. </p>\n@param domainStatus The status of the newly created Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3596,7 +3601,7 @@
             "simpleType" : "ElasticsearchDomainStatus",
             "variableSetterType" : "ElasticsearchDomainStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the newly created Elasticsearch domain. </p>\n@param domainStatus The status of the newly created Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3705,7 +3710,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the Elasticsearch domain that you want to permanently delete.</p>\n@param domainName The name of the Elasticsearch domain that you want to permanently delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3770,7 +3775,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the Elasticsearch domain that you want to permanently delete.</p>\n@param domainName The name of the Elasticsearch domain that you want to permanently delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3869,7 +3874,7 @@
           "simpleType" : "ElasticsearchDomainStatus",
           "variableSetterType" : "ElasticsearchDomainStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the Elasticsearch domain being deleted.</p>\n@param domainStatus The status of the Elasticsearch domain being deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3934,7 +3939,7 @@
             "simpleType" : "ElasticsearchDomainStatus",
             "variableSetterType" : "ElasticsearchDomainStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the Elasticsearch domain being deleted.</p>\n@param domainStatus The status of the Elasticsearch domain being deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4043,7 +4048,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Elasticsearch domain that you want to get information about.</p>\n@param domainName The Elasticsearch domain that you want to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4108,7 +4113,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Elasticsearch domain that you want to get information about.</p>\n@param domainName The Elasticsearch domain that you want to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4207,7 +4212,7 @@
           "simpleType" : "ElasticsearchDomainConfig",
           "variableSetterType" : "ElasticsearchDomainConfig"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>\n@param domainConfig The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4272,7 +4277,7 @@
             "simpleType" : "ElasticsearchDomainConfig",
             "variableSetterType" : "ElasticsearchDomainConfig"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>\n@param domainConfig The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4381,7 +4386,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the Elasticsearch domain for which you want information.</p>\n@param domainName The name of the Elasticsearch domain for which you want information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4446,7 +4451,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the Elasticsearch domain for which you want information.</p>\n@param domainName The name of the Elasticsearch domain for which you want information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4545,7 +4550,7 @@
           "simpleType" : "ElasticsearchDomainStatus",
           "variableSetterType" : "ElasticsearchDomainStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of the Elasticsearch domain.</p>\n@param domainStatus The current status of the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4610,7 +4615,7 @@
             "simpleType" : "ElasticsearchDomainStatus",
             "variableSetterType" : "ElasticsearchDomainStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of the Elasticsearch domain.</p>\n@param domainStatus The current status of the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4756,7 +4761,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4797,7 +4802,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Elasticsearch domains for which you want information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainNames(java.util.Collection)} or {@link #withDomainNames(java.util.Collection)} if you want to override the existing values.</p>\n@param domainNames The Elasticsearch domains for which you want information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4899,7 +4904,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4940,7 +4945,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Elasticsearch domains for which you want information.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainNames(java.util.Collection)} or {@link #withDomainNames(java.util.Collection)} if you want to override the existing values.</p>\n@param domainNames The Elasticsearch domains for which you want information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5076,7 +5081,7 @@
               "simpleType" : "ElasticsearchDomainStatus",
               "variableSetterType" : "ElasticsearchDomainStatus"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5117,7 +5122,7 @@
           "simpleType" : "List<ElasticsearchDomainStatus>",
           "variableSetterType" : "java.util.Collection<ElasticsearchDomainStatus>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainStatusList(java.util.Collection)} or {@link #withDomainStatusList(java.util.Collection)} if you want to override the existing values.</p>\n@param domainStatusList The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5219,7 +5224,7 @@
                 "simpleType" : "ElasticsearchDomainStatus",
                 "variableSetterType" : "ElasticsearchDomainStatus"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5260,7 +5265,7 @@
             "simpleType" : "List<ElasticsearchDomainStatus>",
             "variableSetterType" : "java.util.Collection<ElasticsearchDomainStatus>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainStatusList(java.util.Collection)} or {@link #withDomainStatusList(java.util.Collection)} if you want to override the existing values.</p>\n@param domainStatusList The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5369,7 +5374,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <a>Limits</a> </code> for existing domain. </p>\n@param domainName DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <a>Limits</a> </code> for existing domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5432,7 +5437,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <a>Limits</a> </code> are needed. </p>\n@param instanceType The instance type for an Elasticsearch cluster for which Elasticsearch <code> <a>Limits</a> </code> are needed.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -5495,7 +5500,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed. </p>\n@param elasticsearchVersion Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5560,7 +5565,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <a>Limits</a> </code> for existing domain. </p>\n@param domainName DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <a>Limits</a> </code> for existing domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5624,7 +5629,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed. </p>\n@param elasticsearchVersion Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5688,7 +5693,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <a>Limits</a> </code> are needed. </p>\n@param instanceType The instance type for an Elasticsearch cluster for which Elasticsearch <code> <a>Limits</a> </code> are needed.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -5830,7 +5835,7 @@
               "simpleType" : "Limits",
               "variableSetterType" : "Limits"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5865,7 +5870,7 @@
           "simpleType" : "Map<String,Limits>",
           "variableSetterType" : "java.util.Map<String,Limits>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param limitsByRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5973,7 +5978,7 @@
                 "simpleType" : "Limits",
                 "variableSetterType" : "Limits"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6008,7 +6013,7 @@
             "simpleType" : "Map<String,Limits>",
             "variableSetterType" : "java.util.Map<String,Limits>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param limitsByRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6146,7 +6151,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the <code>DomainName</code>.</p>\n@param domainName Specifies the <code>DomainName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6211,7 +6216,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the <code>DomainName</code>.</p>\n@param domainName Specifies the <code>DomainName</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6313,7 +6318,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies whether EBS-based storage is enabled.</p>\n@param eBSEnabled Specifies whether EBS-based storage is enabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6376,7 +6381,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the volume type for EBS-based storage.</p>\n@param volumeType Specifies the volume type for EBS-based storage.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VolumeType*/",
@@ -6439,7 +6444,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Integer to specify the size of an EBS volume.</p>\n@param volumeSize Integer to specify the size of an EBS volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6502,7 +6507,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>\n@param iops Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6567,7 +6572,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies whether EBS-based storage is enabled.</p>\n@param eBSEnabled Specifies whether EBS-based storage is enabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6631,7 +6636,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</p>\n@param iops Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6695,7 +6700,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Integer to specify the size of an EBS volume.</p>\n@param volumeSize Integer to specify the size of an EBS volume.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6759,7 +6764,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the volume type for EBS-based storage.</p>\n@param volumeType Specifies the volume type for EBS-based storage.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VolumeType*/",
@@ -6861,7 +6866,7 @@
           "simpleType" : "EBSOptions",
           "variableSetterType" : "EBSOptions"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the EBS options for the specified Elasticsearch domain.</p>\n@param options Specifies the EBS options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6924,7 +6929,7 @@
           "simpleType" : "OptionStatus",
           "variableSetterType" : "OptionStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the status of the EBS options for the specified Elasticsearch domain.</p>\n@param status Specifies the status of the EBS options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6989,7 +6994,7 @@
             "simpleType" : "EBSOptions",
             "variableSetterType" : "EBSOptions"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the EBS options for the specified Elasticsearch domain.</p>\n@param options Specifies the EBS options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7053,7 +7058,7 @@
             "simpleType" : "OptionStatus",
             "variableSetterType" : "OptionStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the status of the EBS options for the specified Elasticsearch domain.</p>\n@param status Specifies the status of the EBS options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7296,7 +7301,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The instance type for an Elasticsearch cluster.</p>\n@param instanceType The instance type for an Elasticsearch cluster.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -7359,7 +7364,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of instances in the specified domain cluster.</p>\n@param instanceCount The number of instances in the specified domain cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7422,7 +7427,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A boolean value to indicate whether a dedicated master node is enabled. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes\" target=\"_blank\">About Dedicated Master Nodes</a> for more information.</p>\n@param dedicatedMasterEnabled A boolean value to indicate whether a dedicated master node is enabled. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes\" target=\"_blank\">About Dedicated Master Nodes</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7485,7 +7490,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A boolean value to indicate whether zone awareness is enabled. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness\" target=\"_blank\">About Zone Awareness</a> for more information.</p>\n@param zoneAwarenessEnabled A boolean value to indicate whether zone awareness is enabled. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness\" target=\"_blank\">About Zone Awareness</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7548,7 +7553,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The instance type for a dedicated master node.</p>\n@param dedicatedMasterType The instance type for a dedicated master node.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -7611,7 +7616,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Total number of dedicated master nodes, active and on standby, for the cluster.</p>\n@param dedicatedMasterCount Total number of dedicated master nodes, active and on standby, for the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7676,7 +7681,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Total number of dedicated master nodes, active and on standby, for the cluster.</p>\n@param dedicatedMasterCount Total number of dedicated master nodes, active and on standby, for the cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7740,7 +7745,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A boolean value to indicate whether a dedicated master node is enabled. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes\" target=\"_blank\">About Dedicated Master Nodes</a> for more information.</p>\n@param dedicatedMasterEnabled A boolean value to indicate whether a dedicated master node is enabled. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes\" target=\"_blank\">About Dedicated Master Nodes</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7804,7 +7809,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The instance type for a dedicated master node.</p>\n@param dedicatedMasterType The instance type for a dedicated master node.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -7868,7 +7873,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of instances in the specified domain cluster.</p>\n@param instanceCount The number of instances in the specified domain cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7932,7 +7937,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The instance type for an Elasticsearch cluster.</p>\n@param instanceType The instance type for an Elasticsearch cluster.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -7996,7 +8001,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A boolean value to indicate whether zone awareness is enabled. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness\" target=\"_blank\">About Zone Awareness</a> for more information.</p>\n@param zoneAwarenessEnabled A boolean value to indicate whether zone awareness is enabled. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness\" target=\"_blank\">About Zone Awareness</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8098,7 +8103,7 @@
           "simpleType" : "ElasticsearchClusterConfig",
           "variableSetterType" : "ElasticsearchClusterConfig"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the cluster configuration for the specified Elasticsearch domain.</p>\n@param options Specifies the cluster configuration for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8161,7 +8166,7 @@
           "simpleType" : "OptionStatus",
           "variableSetterType" : "OptionStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the status of the configuration for the specified Elasticsearch domain.</p>\n@param status Specifies the status of the configuration for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8226,7 +8231,7 @@
             "simpleType" : "ElasticsearchClusterConfig",
             "variableSetterType" : "ElasticsearchClusterConfig"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the cluster configuration for the specified Elasticsearch domain.</p>\n@param options Specifies the cluster configuration for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8290,7 +8295,7 @@
             "simpleType" : "OptionStatus",
             "variableSetterType" : "OptionStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the status of the configuration for the specified Elasticsearch domain.</p>\n@param status Specifies the status of the configuration for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8392,7 +8397,7 @@
           "simpleType" : "ElasticsearchVersionStatus",
           "variableSetterType" : "ElasticsearchVersionStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>String of format X.Y to specify version for the Elasticsearch domain.</p>\n@param elasticsearchVersion String of format X.Y to specify version for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8455,7 +8460,7 @@
           "simpleType" : "ElasticsearchClusterConfigStatus",
           "variableSetterType" : "ElasticsearchClusterConfigStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch domain.</p>\n@param elasticsearchClusterConfig Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8518,7 +8523,7 @@
           "simpleType" : "EBSOptionsStatus",
           "variableSetterType" : "EBSOptionsStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>\n@param eBSOptions Specifies the <code>EBSOptions</code> for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8581,7 +8586,7 @@
           "simpleType" : "AccessPoliciesStatus",
           "variableSetterType" : "AccessPoliciesStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>IAM access policy as a JSON-formatted string.</p>\n@param accessPolicies IAM access policy as a JSON-formatted string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8644,7 +8649,7 @@
           "simpleType" : "SnapshotOptionsStatus",
           "variableSetterType" : "SnapshotOptionsStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>\n@param snapshotOptions Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8707,7 +8712,7 @@
           "simpleType" : "AdvancedOptionsStatus",
           "variableSetterType" : "AdvancedOptionsStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuring Advanced Options</a> for more information.</p>\n@param advancedOptions Specifies the <code>AdvancedOptions</code> for the domain. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuring Advanced Options</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8772,7 +8777,7 @@
             "simpleType" : "AccessPoliciesStatus",
             "variableSetterType" : "AccessPoliciesStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>IAM access policy as a JSON-formatted string.</p>\n@param accessPolicies IAM access policy as a JSON-formatted string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8836,7 +8841,7 @@
             "simpleType" : "AdvancedOptionsStatus",
             "variableSetterType" : "AdvancedOptionsStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the <code>AdvancedOptions</code> for the domain. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuring Advanced Options</a> for more information.</p>\n@param advancedOptions Specifies the <code>AdvancedOptions</code> for the domain. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuring Advanced Options</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8900,7 +8905,7 @@
             "simpleType" : "EBSOptionsStatus",
             "variableSetterType" : "EBSOptionsStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the <code>EBSOptions</code> for the Elasticsearch domain.</p>\n@param eBSOptions Specifies the <code>EBSOptions</code> for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8964,7 +8969,7 @@
             "simpleType" : "ElasticsearchClusterConfigStatus",
             "variableSetterType" : "ElasticsearchClusterConfigStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch domain.</p>\n@param elasticsearchClusterConfig Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9028,7 +9033,7 @@
             "simpleType" : "ElasticsearchVersionStatus",
             "variableSetterType" : "ElasticsearchVersionStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>String of format X.Y to specify version for the Elasticsearch domain.</p>\n@param elasticsearchVersion String of format X.Y to specify version for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9092,7 +9097,7 @@
             "simpleType" : "SnapshotOptionsStatus",
             "variableSetterType" : "SnapshotOptionsStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.</p>\n@param snapshotOptions Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9194,7 +9199,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the specified Elasticsearch domain.</p>\n@param domainId The unique identifier for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9257,7 +9262,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>\n@param domainName The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9320,7 +9325,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html\" target=\"_blank\">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>\n@param aRN The Amazon resource name (ARN) of an Elasticsearch domain. See <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html\" target=\"_blank\">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9383,7 +9388,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The domain creation status. <code>True</code> if the creation of an Elasticsearch domain is complete. <code>False</code> if domain creation is still in progress.</p>\n@param created The domain creation status. <code>True</code> if the creation of an Elasticsearch domain is complete. <code>False</code> if domain creation is still in progress.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9446,7 +9451,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned.</p>\n@param deleted The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9509,7 +9514,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Elasticsearch domain endpoint that you use to submit index and search requests.</p>\n@param endpoint The Elasticsearch domain endpoint that you use to submit index and search requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9572,7 +9577,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is processing configuration changes. <code>False</code> if the configuration is active.</p>\n@param processing The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is processing configuration changes. <code>False</code> if the configuration is active.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9635,7 +9640,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param elasticsearchVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9698,7 +9703,7 @@
           "simpleType" : "ElasticsearchClusterConfig",
           "variableSetterType" : "ElasticsearchClusterConfig"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type and number of instances in the domain cluster.</p>\n@param elasticsearchClusterConfig The type and number of instances in the domain cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9761,7 +9766,7 @@
           "simpleType" : "EBSOptions",
           "variableSetterType" : "EBSOptions"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>EBSOptions</code> for the specified domain. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs\" target=\"_blank\">Configuring EBS-based Storage</a> for more information.</p>\n@param eBSOptions The <code>EBSOptions</code> for the specified domain. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs\" target=\"_blank\">Configuring EBS-based Storage</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9824,7 +9829,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> IAM access policy as a JSON-formatted string.</p>\n@param accessPolicies IAM access policy as a JSON-formatted string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9887,7 +9892,7 @@
           "simpleType" : "SnapshotOptions",
           "variableSetterType" : "SnapshotOptions"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the status of the <code>SnapshotOptions</code></p>\n@param snapshotOptions Specifies the status of the <code>SnapshotOptions</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9993,7 +9998,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10028,7 +10033,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the status of the <code>AdvancedOptions</code></p>\n@param advancedOptions Specifies the status of the <code>AdvancedOptions</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10093,7 +10098,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon resource name (ARN) of an Elasticsearch domain. See <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html\" target=\"_blank\">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>\n@param aRN The Amazon resource name (ARN) of an Elasticsearch domain. See <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html\" target=\"_blank\">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10157,7 +10162,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> IAM access policy as a JSON-formatted string.</p>\n@param accessPolicies IAM access policy as a JSON-formatted string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10264,7 +10269,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10299,7 +10304,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the status of the <code>AdvancedOptions</code></p>\n@param advancedOptions Specifies the status of the <code>AdvancedOptions</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10363,7 +10368,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The domain creation status. <code>True</code> if the creation of an Elasticsearch domain is complete. <code>False</code> if domain creation is still in progress.</p>\n@param created The domain creation status. <code>True</code> if the creation of an Elasticsearch domain is complete. <code>False</code> if domain creation is still in progress.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10427,7 +10432,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned.</p>\n@param deleted The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10491,7 +10496,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the specified Elasticsearch domain.</p>\n@param domainId The unique identifier for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10555,7 +10560,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>\n@param domainName The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10619,7 +10624,7 @@
             "simpleType" : "EBSOptions",
             "variableSetterType" : "EBSOptions"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>EBSOptions</code> for the specified domain. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs\" target=\"_blank\">Configuring EBS-based Storage</a> for more information.</p>\n@param eBSOptions The <code>EBSOptions</code> for the specified domain. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs\" target=\"_blank\">Configuring EBS-based Storage</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10683,7 +10688,7 @@
             "simpleType" : "ElasticsearchClusterConfig",
             "variableSetterType" : "ElasticsearchClusterConfig"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type and number of instances in the domain cluster.</p>\n@param elasticsearchClusterConfig The type and number of instances in the domain cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10747,7 +10752,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param elasticsearchVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10811,7 +10816,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Elasticsearch domain endpoint that you use to submit index and search requests.</p>\n@param endpoint The Elasticsearch domain endpoint that you use to submit index and search requests.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10875,7 +10880,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is processing configuration changes. <code>False</code> if the configuration is active.</p>\n@param processing The status of the Elasticsearch domain configuration. <code>True</code> if Amazon Elasticsearch Service is processing configuration changes. <code>False</code> if the configuration is active.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10939,7 +10944,7 @@
             "simpleType" : "SnapshotOptions",
             "variableSetterType" : "SnapshotOptions"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the status of the <code>SnapshotOptions</code></p>\n@param snapshotOptions Specifies the status of the <code>SnapshotOptions</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11041,7 +11046,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the Elasticsearch version for the specified Elasticsearch domain.</p>\n@param options Specifies the Elasticsearch version for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11104,7 +11109,7 @@
           "simpleType" : "OptionStatus",
           "variableSetterType" : "OptionStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.</p>\n@param status Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11169,7 +11174,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the Elasticsearch version for the specified Elasticsearch domain.</p>\n@param options Specifies the Elasticsearch version for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11233,7 +11238,7 @@
             "simpleType" : "OptionStatus",
             "variableSetterType" : "OptionStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.</p>\n@param status Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11335,7 +11340,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param minimumInstanceCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11398,7 +11403,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maximumInstanceCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11463,7 +11468,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maximumInstanceCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11527,7 +11532,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param minimumInstanceCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11629,7 +11634,7 @@
           "simpleType" : "InstanceCountLimits",
           "variableSetterType" : "InstanceCountLimits"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param instanceCountLimits \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11694,7 +11699,7 @@
             "simpleType" : "InstanceCountLimits",
             "variableSetterType" : "InstanceCountLimits"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param instanceCountLimits \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11941,7 +11946,7 @@
               "simpleType" : "StorageType",
               "variableSetterType" : "StorageType"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11982,7 +11987,7 @@
           "simpleType" : "List<StorageType>",
           "variableSetterType" : "java.util.Collection<StorageType>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>StorageType represents the list of storage related types and attributes that are available for given InstanceType. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStorageTypes(java.util.Collection)} or {@link #withStorageTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param storageTypes StorageType represents the list of storage related types and attributes that are available for given InstanceType.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12045,7 +12050,7 @@
           "simpleType" : "InstanceLimits",
           "variableSetterType" : "InstanceLimits"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param instanceLimits \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12145,7 +12150,7 @@
               "simpleType" : "AdditionalLimit",
               "variableSetterType" : "AdditionalLimit"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12186,7 +12191,7 @@
           "simpleType" : "List<AdditionalLimit>",
           "variableSetterType" : "java.util.Collection<AdditionalLimit>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> List of additional limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> . </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalLimits(java.util.Collection)} or {@link #withAdditionalLimits(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalLimits List of additional limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12288,7 +12293,7 @@
                 "simpleType" : "AdditionalLimit",
                 "variableSetterType" : "AdditionalLimit"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12329,7 +12334,7 @@
             "simpleType" : "List<AdditionalLimit>",
             "variableSetterType" : "java.util.Collection<AdditionalLimit>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> List of additional limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> . </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalLimits(java.util.Collection)} or {@link #withAdditionalLimits(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalLimits List of additional limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12393,7 +12398,7 @@
             "simpleType" : "InstanceLimits",
             "variableSetterType" : "InstanceLimits"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param instanceLimits \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12494,7 +12499,7 @@
                 "simpleType" : "StorageType",
                 "variableSetterType" : "StorageType"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12535,7 +12540,7 @@
             "simpleType" : "List<StorageType>",
             "variableSetterType" : "java.util.Collection<StorageType>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>StorageType represents the list of storage related types and attributes that are available for given InstanceType. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStorageTypes(java.util.Collection)} or {@link #withStorageTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param storageTypes StorageType represents the list of storage related types and attributes that are available for given InstanceType.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12717,7 +12722,7 @@
               "simpleType" : "DomainInfo",
               "variableSetterType" : "DomainInfo"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12758,7 +12763,7 @@
           "simpleType" : "List<DomainInfo>",
           "variableSetterType" : "java.util.Collection<DomainInfo>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of Elasticsearch domain names.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainNames(java.util.Collection)} or {@link #withDomainNames(java.util.Collection)} if you want to override the existing values.</p>\n@param domainNames List of Elasticsearch domain names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12860,7 +12865,7 @@
                 "simpleType" : "DomainInfo",
                 "variableSetterType" : "DomainInfo"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12901,7 +12906,7 @@
             "simpleType" : "List<DomainInfo>",
             "variableSetterType" : "java.util.Collection<DomainInfo>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of Elasticsearch domain names.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainNames(java.util.Collection)} or {@link #withDomainNames(java.util.Collection)} if you want to override the existing values.</p>\n@param domainNames List of Elasticsearch domain names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13010,7 +13015,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>\n@param elasticsearchVersion Version of Elasticsearch for which list of supported elasticsearch instance types are needed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13073,7 +13078,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>\n@param domainName DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13136,7 +13141,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>\n@param maxResults Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13199,7 +13204,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>\n@param nextToken NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13264,7 +13269,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. </p>\n@param domainName DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13328,7 +13333,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>\n@param elasticsearchVersion Version of Elasticsearch for which list of supported elasticsearch instance types are needed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13392,7 +13397,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. </p>\n@param maxResults Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13456,7 +13461,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination. </p>\n@param nextToken NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13592,7 +13597,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -13633,7 +13638,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> List of instance types supported by Amazon Elasticsearch service for given <code> <a>ElasticsearchVersion</a> </code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setElasticsearchInstanceTypes(java.util.Collection)} or {@link #withElasticsearchInstanceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param elasticsearchInstanceTypes List of instance types supported by Amazon Elasticsearch service for given <code> <a>ElasticsearchVersion</a> </code>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -13696,7 +13701,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>\n@param nextToken In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13798,7 +13803,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -13839,7 +13844,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> List of instance types supported by Amazon Elasticsearch service for given <code> <a>ElasticsearchVersion</a> </code> </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setElasticsearchInstanceTypes(java.util.Collection)} or {@link #withElasticsearchInstanceTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param elasticsearchInstanceTypes List of instance types supported by Amazon Elasticsearch service for given <code> <a>ElasticsearchVersion</a> </code>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ESPartitionInstanceType*/",
@@ -13903,7 +13908,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>\n@param nextToken In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14012,7 +14017,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>\n@param maxResults Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14075,7 +14080,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14140,7 +14145,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>\n@param maxResults Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14204,7 +14209,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14340,7 +14345,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14381,7 +14386,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setElasticsearchVersions(java.util.Collection)} or {@link #withElasticsearchVersions(java.util.Collection)} if you want to override the existing values.</p>\n@param elasticsearchVersions \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14444,7 +14449,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14546,7 +14551,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14587,7 +14592,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setElasticsearchVersions(java.util.Collection)} or {@link #withElasticsearchVersions(java.util.Collection)} if you want to override the existing values.</p>\n@param elasticsearchVersions \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14651,7 +14656,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14760,7 +14765,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>\n@param aRN Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14825,7 +14830,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>\n@param aRN Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14961,7 +14966,7 @@
               "simpleType" : "Tag",
               "variableSetterType" : "Tag"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15002,7 +15007,7 @@
           "simpleType" : "List<Tag>",
           "variableSetterType" : "java.util.Collection<Tag>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList List of <code>Tag</code> for the requested Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15104,7 +15109,7 @@
                 "simpleType" : "Tag",
                 "variableSetterType" : "Tag"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15145,7 +15150,7 @@
             "simpleType" : "List<Tag>",
             "variableSetterType" : "java.util.Collection<Tag>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList List of <code>Tag</code> for the requested Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15295,7 +15300,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Timestamp which tells the creation date for the entity.</p>\n@param creationDate Timestamp which tells the creation date for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15358,7 +15363,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Timestamp which tells the last updated time for the entity.</p>\n@param updateDate Timestamp which tells the last updated time for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15421,7 +15426,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the latest version for the entity.</p>\n@param updateVersion Specifies the latest version for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15484,7 +15489,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>\n@param state Provides the <code>OptionState</code> for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OptionState*/",
@@ -15547,7 +15552,7 @@
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether the Elasticsearch domain is being deleted.</p>\n@param pendingDeletion Indicates whether the Elasticsearch domain is being deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15612,7 +15617,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Timestamp which tells the creation date for the entity.</p>\n@param creationDate Timestamp which tells the creation date for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15676,7 +15681,7 @@
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether the Elasticsearch domain is being deleted.</p>\n@param pendingDeletion Indicates whether the Elasticsearch domain is being deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15740,7 +15745,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Provides the <code>OptionState</code> for the Elasticsearch domain.</p>\n@param state Provides the <code>OptionState</code> for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OptionState*/",
@@ -15804,7 +15809,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Timestamp which tells the last updated time for the entity.</p>\n@param updateDate Timestamp which tells the last updated time for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15868,7 +15873,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the latest version for the entity.</p>\n@param updateVersion Specifies the latest version for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15977,7 +15982,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>\n@param aRN Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16077,7 +16082,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16118,7 +16123,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16183,7 +16188,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>\n@param aRN Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16284,7 +16289,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16325,7 +16330,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16535,7 +16540,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.</p>\n@param automatedSnapshotStartHour Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16600,7 +16605,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.</p>\n@param automatedSnapshotStartHour Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16702,7 +16707,7 @@
           "simpleType" : "SnapshotOptions",
           "variableSetterType" : "SnapshotOptions"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>\n@param options Specifies the daily snapshot options specified for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16765,7 +16770,7 @@
           "simpleType" : "OptionStatus",
           "variableSetterType" : "OptionStatus"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the status of a daily automated snapshot.</p>\n@param status Specifies the status of a daily automated snapshot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16830,7 +16835,7 @@
             "simpleType" : "SnapshotOptions",
             "variableSetterType" : "SnapshotOptions"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>\n@param options Specifies the daily snapshot options specified for the Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16894,7 +16899,7 @@
             "simpleType" : "OptionStatus",
             "variableSetterType" : "OptionStatus"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the status of a daily automated snapshot.</p>\n@param status Specifies the status of a daily automated snapshot.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16996,7 +17001,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param storageTypeName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17059,7 +17064,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param storageSubTypeName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17159,7 +17164,7 @@
               "simpleType" : "StorageTypeLimit",
               "variableSetterType" : "StorageTypeLimit"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17200,7 +17205,7 @@
           "simpleType" : "List<StorageTypeLimit>",
           "variableSetterType" : "java.util.Collection<StorageTypeLimit>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of limits that are applicable for given storage type. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStorageTypeLimits(java.util.Collection)} or {@link #withStorageTypeLimits(java.util.Collection)} if you want to override the existing values.</p>\n@param storageTypeLimits List of limits that are applicable for given storage type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17265,7 +17270,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param storageSubTypeName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17366,7 +17371,7 @@
                 "simpleType" : "StorageTypeLimit",
                 "variableSetterType" : "StorageTypeLimit"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17407,7 +17412,7 @@
             "simpleType" : "List<StorageTypeLimit>",
             "variableSetterType" : "java.util.Collection<StorageTypeLimit>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of limits that are applicable for given storage type. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStorageTypeLimits(java.util.Collection)} or {@link #withStorageTypeLimits(java.util.Collection)} if you want to override the existing values.</p>\n@param storageTypeLimits List of limits that are applicable for given storage type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17471,7 +17476,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param storageTypeName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17573,7 +17578,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Name of storage limits that are applicable for given storage type. If <code> <a>StorageType</a> </code> is ebs, following storage options are applicable <ol> <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. </ol> </p>\n@param limitName Name of storage limits that are applicable for given storage type. If <code> <a>StorageType</a> </code> is ebs, following storage options are applicable <ol> <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. </ol>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17673,7 +17678,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17714,7 +17719,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLimitValues(java.util.Collection)} or {@link #withLimitValues(java.util.Collection)} if you want to override the existing values.</p>\n@param limitValues Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17779,7 +17784,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Name of storage limits that are applicable for given storage type. If <code> <a>StorageType</a> </code> is ebs, following storage options are applicable <ol> <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. </ol> </p>\n@param limitName Name of storage limits that are applicable for given storage type. If <code> <a>StorageType</a> </code> is ebs, following storage options are applicable <ol> <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for given storage type.It can be empty if it is not applicable. <li>MaximumIops</li> Maximum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. <li>MinimumIops</li> Minimum amount of Iops that is applicable for given storage type.It can be empty if it is not applicable. </ol>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17880,7 +17885,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17921,7 +17926,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLimitValues(java.util.Collection)} or {@link #withLimitValues(java.util.Collection)} if you want to override the existing values.</p>\n@param limitValues Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18023,7 +18028,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>\n@param key Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18086,7 +18091,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and do not have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>\n@param value Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and do not have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18151,7 +18156,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.</p>\n@param key Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18215,7 +18220,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and do not have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code></p>\n@param value Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and do not have to be unique in a tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center : Trinity</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18324,7 +18329,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the Elasticsearch domain that you are updating. </p>\n@param domainName The name of the Elasticsearch domain that you are updating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18387,7 +18392,7 @@
           "simpleType" : "ElasticsearchClusterConfig",
           "variableSetterType" : "ElasticsearchClusterConfig"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type and number of instances to instantiate for the domain cluster.</p>\n@param elasticsearchClusterConfig The type and number of instances to instantiate for the domain cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18450,7 +18455,7 @@
           "simpleType" : "EBSOptions",
           "variableSetterType" : "EBSOptions"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specify the type and size of the EBS volume that you want to use. </p>\n@param eBSOptions Specify the type and size of the EBS volume that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18513,7 +18518,7 @@
           "simpleType" : "SnapshotOptions",
           "variableSetterType" : "SnapshotOptions"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>\n@param snapshotOptions Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18619,7 +18624,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18654,7 +18659,7 @@
           "simpleType" : "Map<String,String>",
           "variableSetterType" : "java.util.Map<String,String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.</p>\n@param advancedOptions Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18717,7 +18722,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>IAM access policy as a JSON-formatted string.</p>\n@param accessPolicies IAM access policy as a JSON-formatted string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18782,7 +18787,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>IAM access policy as a JSON-formatted string.</p>\n@param accessPolicies IAM access policy as a JSON-formatted string.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18889,7 +18894,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18924,7 +18929,7 @@
             "simpleType" : "Map<String,String>",
             "variableSetterType" : "java.util.Map<String,String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.</p>\n@param advancedOptions Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options\" target=\"_blank\">Configuration Advanced Options</a> for more information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18988,7 +18993,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the Elasticsearch domain that you are updating. </p>\n@param domainName The name of the Elasticsearch domain that you are updating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19052,7 +19057,7 @@
             "simpleType" : "EBSOptions",
             "variableSetterType" : "EBSOptions"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specify the type and size of the EBS volume that you want to use. </p>\n@param eBSOptions Specify the type and size of the EBS volume that you want to use.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19116,7 +19121,7 @@
             "simpleType" : "ElasticsearchClusterConfig",
             "variableSetterType" : "ElasticsearchClusterConfig"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type and number of instances to instantiate for the domain cluster.</p>\n@param elasticsearchClusterConfig The type and number of instances to instantiate for the domain cluster.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19180,7 +19185,7 @@
             "simpleType" : "SnapshotOptions",
             "variableSetterType" : "SnapshotOptions"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>\n@param snapshotOptions Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19279,7 +19284,7 @@
           "simpleType" : "ElasticsearchDomainConfig",
           "variableSetterType" : "ElasticsearchDomainConfig"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the updated Elasticsearch domain. </p>\n@param domainConfig The status of the updated Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19344,7 +19349,7 @@
             "simpleType" : "ElasticsearchDomainConfig",
             "variableSetterType" : "ElasticsearchDomainConfig"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the updated Elasticsearch domain. </p>\n@param domainConfig The status of the updated Elasticsearch domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",

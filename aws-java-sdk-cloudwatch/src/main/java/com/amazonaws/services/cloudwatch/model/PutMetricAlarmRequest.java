@@ -127,9 +127,21 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Dimension> dimensions;
     /**
      * <p>
-     * The period, in seconds, over which the specified statistic is applied. An alarm's total current evaluation period
-     * can be no longer than one day, so this number multiplied by <code>EvaluationPeriods</code> must be 86,400 or
-     * less.
+     * The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple
+     * of 60.
+     * </p>
+     * <p>
+     * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
+     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
+     * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
+     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
+     * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * <p>
+     * An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by
+     * <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.
      * </p>
      */
     private Integer period;
@@ -149,7 +161,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The number of periods over which data is compared to the specified threshold. An alarm's total current evaluation
-     * period can be no longer than one day, so this number multiplied by <code>Period</code> must be 86,400 or less.
+     * period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400
+     * seconds.
      * </p>
      */
     private Integer evaluationPeriods;
@@ -1074,15 +1087,38 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The period, in seconds, over which the specified statistic is applied. An alarm's total current evaluation period
-     * can be no longer than one day, so this number multiplied by <code>EvaluationPeriods</code> must be 86,400 or
-     * less.
+     * The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple
+     * of 60.
+     * </p>
+     * <p>
+     * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
+     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
+     * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
+     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
+     * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * <p>
+     * An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by
+     * <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.
      * </p>
      * 
      * @param period
-     *        The period, in seconds, over which the specified statistic is applied. An alarm's total current evaluation
-     *        period can be no longer than one day, so this number multiplied by <code>EvaluationPeriods</code> must be
-     *        86,400 or less.
+     *        The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any
+     *        multiple of 60.</p>
+     *        <p>
+     *        Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
+     *        <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     *        sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
+     *        this case, it does not receive data for the attempts that do not correspond to a one-minute data
+     *        resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this
+     *        alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about
+     *        pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     *        </p>
+     *        <p>
+     *        An alarm's total current evaluation period can be no longer than one day, so <code>Period</code>
+     *        multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.
      */
 
     public void setPeriod(Integer period) {
@@ -1091,14 +1127,37 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The period, in seconds, over which the specified statistic is applied. An alarm's total current evaluation period
-     * can be no longer than one day, so this number multiplied by <code>EvaluationPeriods</code> must be 86,400 or
-     * less.
+     * The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple
+     * of 60.
+     * </p>
+     * <p>
+     * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
+     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
+     * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
+     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
+     * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * <p>
+     * An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by
+     * <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.
      * </p>
      * 
-     * @return The period, in seconds, over which the specified statistic is applied. An alarm's total current
-     *         evaluation period can be no longer than one day, so this number multiplied by
-     *         <code>EvaluationPeriods</code> must be 86,400 or less.
+     * @return The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any
+     *         multiple of 60.</p>
+     *         <p>
+     *         Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
+     *         <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     *         sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
+     *         this case, it does not receive data for the attempts that do not correspond to a one-minute data
+     *         resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets
+     *         this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information
+     *         about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     *         </p>
+     *         <p>
+     *         An alarm's total current evaluation period can be no longer than one day, so <code>Period</code>
+     *         multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.
      */
 
     public Integer getPeriod() {
@@ -1107,15 +1166,38 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The period, in seconds, over which the specified statistic is applied. An alarm's total current evaluation period
-     * can be no longer than one day, so this number multiplied by <code>EvaluationPeriods</code> must be 86,400 or
-     * less.
+     * The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple
+     * of 60.
+     * </p>
+     * <p>
+     * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
+     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
+     * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
+     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
+     * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * <p>
+     * An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by
+     * <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.
      * </p>
      * 
      * @param period
-     *        The period, in seconds, over which the specified statistic is applied. An alarm's total current evaluation
-     *        period can be no longer than one day, so this number multiplied by <code>EvaluationPeriods</code> must be
-     *        86,400 or less.
+     *        The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any
+     *        multiple of 60.</p>
+     *        <p>
+     *        Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
+     *        <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     *        sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
+     *        this case, it does not receive data for the attempts that do not correspond to a one-minute data
+     *        resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this
+     *        alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about
+     *        pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     *        </p>
+     *        <p>
+     *        An alarm's total current evaluation period can be no longer than one day, so <code>Period</code>
+     *        multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1266,13 +1348,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The number of periods over which data is compared to the specified threshold. An alarm's total current evaluation
-     * period can be no longer than one day, so this number multiplied by <code>Period</code> must be 86,400 or less.
+     * period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400
+     * seconds.
      * </p>
      * 
      * @param evaluationPeriods
      *        The number of periods over which data is compared to the specified threshold. An alarm's total current
-     *        evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> must be
-     *        86,400 or less.
+     *        evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot
+     *        be more than 86,400 seconds.
      */
 
     public void setEvaluationPeriods(Integer evaluationPeriods) {
@@ -1282,12 +1365,13 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The number of periods over which data is compared to the specified threshold. An alarm's total current evaluation
-     * period can be no longer than one day, so this number multiplied by <code>Period</code> must be 86,400 or less.
+     * period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400
+     * seconds.
      * </p>
      * 
      * @return The number of periods over which data is compared to the specified threshold. An alarm's total current
-     *         evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> must be
-     *         86,400 or less.
+     *         evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot
+     *         be more than 86,400 seconds.
      */
 
     public Integer getEvaluationPeriods() {
@@ -1297,13 +1381,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The number of periods over which data is compared to the specified threshold. An alarm's total current evaluation
-     * period can be no longer than one day, so this number multiplied by <code>Period</code> must be 86,400 or less.
+     * period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400
+     * seconds.
      * </p>
      * 
      * @param evaluationPeriods
      *        The number of periods over which data is compared to the specified threshold. An alarm's total current
-     *        evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> must be
-     *        86,400 or less.
+     *        evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot
+     *        be more than 86,400 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

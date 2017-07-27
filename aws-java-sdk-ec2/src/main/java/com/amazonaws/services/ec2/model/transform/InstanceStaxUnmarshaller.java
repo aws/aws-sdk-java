@@ -195,6 +195,16 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("elasticGpuAssociationSet", targetDepth)) {
+                    instance.withElasticGpuAssociations(new ArrayList<ElasticGpuAssociation>());
+                    continue;
+                }
+
+                if (context.testExpression("elasticGpuAssociationSet/item", targetDepth)) {
+                    instance.withElasticGpuAssociations(ElasticGpuAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("networkInterfaceSet", targetDepth)) {
                     instance.withNetworkInterfaces(new ArrayList<InstanceNetworkInterface>());
                     continue;

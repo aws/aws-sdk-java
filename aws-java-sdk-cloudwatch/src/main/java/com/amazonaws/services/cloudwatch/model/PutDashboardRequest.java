@@ -29,7 +29,7 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard,
      * replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid
-     * characters are A-Z, a-z, 0-9, ".", "-", and "_".
+     * characters are A-Z, a-z, 0-9, "-", and "_".
      * </p>
      */
     private String dashboardName;
@@ -48,13 +48,13 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard,
      * replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid
-     * characters are A-Z, a-z, 0-9, ".", "-", and "_".
+     * characters are A-Z, a-z, 0-9, "-", and "_".
      * </p>
      * 
      * @param dashboardName
      *        The name of the dashboard. If a dashboard with this name already exists, this call modifies that
      *        dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is
-     *        255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".
+     *        255, and valid characters are A-Z, a-z, 0-9, "-", and "_".
      */
 
     public void setDashboardName(String dashboardName) {
@@ -65,12 +65,12 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard,
      * replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid
-     * characters are A-Z, a-z, 0-9, ".", "-", and "_".
+     * characters are A-Z, a-z, 0-9, "-", and "_".
      * </p>
      * 
      * @return The name of the dashboard. If a dashboard with this name already exists, this call modifies that
      *         dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is
-     *         255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".
+     *         255, and valid characters are A-Z, a-z, 0-9, "-", and "_".
      */
 
     public String getDashboardName() {
@@ -81,13 +81,13 @@ public class PutDashboardRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard,
      * replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid
-     * characters are A-Z, a-z, 0-9, ".", "-", and "_".
+     * characters are A-Z, a-z, 0-9, "-", and "_".
      * </p>
      * 
      * @param dashboardName
      *        The name of the dashboard. If a dashboard with this name already exists, this call modifies that
      *        dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is
-     *        255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_".
+     *        255, and valid characters are A-Z, a-z, 0-9, "-", and "_".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

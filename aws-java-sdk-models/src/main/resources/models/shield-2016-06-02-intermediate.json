@@ -18,7 +18,10 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : null,
+    "deprecatedSuppressions" : [ "EnumSetterOverload" ],
+    "emitLegacyEnumSetterFor" : {
+      "SubResourceSummary" : [ "Type" ]
+    },
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -34,7 +37,6 @@
     "simpleMethods" : null,
     "skipInterfaceAdditions" : false,
     "skipSmokeTests" : false,
-    "supressEnumSetterFor" : null,
     "transformDirectory" : "transform",
     "useAutoConstructList" : false,
     "useAutoConstructMap" : false
@@ -495,7 +497,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier (ID) of the attack.</p>\n@param attackId The unique identifier (ID) of the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -558,7 +560,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource that was attacked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -658,7 +660,7 @@
               "simpleType" : "SubResourceSummary",
               "variableSetterType" : "SubResourceSummary"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -699,7 +701,7 @@
           "simpleType" : "List<SubResourceSummary>",
           "variableSetterType" : "java.util.Collection<SubResourceSummary>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubResources(java.util.Collection)} or {@link #withSubResources(java.util.Collection)} if you want to override the existing values.</p>\n@param subResources If applicable, additional detail about the resource being attacked, for example, IP address or URL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -762,7 +764,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time the attack started, in the format 2016-12-16T13:50Z.</p>\n@param startTime The time the attack started, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -825,7 +827,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>\n@param endTime The time the attack ended, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -925,7 +927,7 @@
               "simpleType" : "SummarizedCounter",
               "variableSetterType" : "SummarizedCounter"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -966,7 +968,7 @@
           "simpleType" : "List<SummarizedCounter>",
           "variableSetterType" : "java.util.Collection<SummarizedCounter>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of counters that describe the attack for the specified time period.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttackCounters(java.util.Collection)} or {@link #withAttackCounters(java.util.Collection)} if you want to override the existing values.</p>\n@param attackCounters List of counters that describe the attack for the specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1066,7 +1068,7 @@
               "simpleType" : "Mitigation",
               "variableSetterType" : "Mitigation"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1107,7 +1109,7 @@
           "simpleType" : "List<Mitigation>",
           "variableSetterType" : "java.util.Collection<Mitigation>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of mitigation actions taken for the attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMitigations(java.util.Collection)} or {@link #withMitigations(java.util.Collection)} if you want to override the existing values.</p>\n@param mitigations List of mitigation actions taken for the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1209,7 +1211,7 @@
                 "simpleType" : "SummarizedCounter",
                 "variableSetterType" : "SummarizedCounter"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1250,7 +1252,7 @@
             "simpleType" : "List<SummarizedCounter>",
             "variableSetterType" : "java.util.Collection<SummarizedCounter>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of counters that describe the attack for the specified time period.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttackCounters(java.util.Collection)} or {@link #withAttackCounters(java.util.Collection)} if you want to override the existing values.</p>\n@param attackCounters List of counters that describe the attack for the specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1314,7 +1316,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier (ID) of the attack.</p>\n@param attackId The unique identifier (ID) of the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1378,7 +1380,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time the attack ended, in the format 2016-12-16T13:50Z.</p>\n@param endTime The time the attack ended, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1479,7 +1481,7 @@
                 "simpleType" : "Mitigation",
                 "variableSetterType" : "Mitigation"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1520,7 +1522,7 @@
             "simpleType" : "List<Mitigation>",
             "variableSetterType" : "java.util.Collection<Mitigation>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of mitigation actions taken for the attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMitigations(java.util.Collection)} or {@link #withMitigations(java.util.Collection)} if you want to override the existing values.</p>\n@param mitigations List of mitigation actions taken for the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1584,7 +1586,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource that was attacked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1648,7 +1650,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time the attack started, in the format 2016-12-16T13:50Z.</p>\n@param startTime The time the attack started, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1749,7 +1751,7 @@
                 "simpleType" : "SubResourceSummary",
                 "variableSetterType" : "SubResourceSummary"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1790,7 +1792,7 @@
             "simpleType" : "List<SubResourceSummary>",
             "variableSetterType" : "java.util.Collection<SubResourceSummary>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSubResources(java.util.Collection)} or {@link #withSubResources(java.util.Collection)} if you want to override the existing values.</p>\n@param subResources If applicable, additional detail about the resource being attacked, for example, IP address or URL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1892,7 +1894,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier (ID) of the attack.</p>\n@param attackId The unique identifier (ID) of the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1955,7 +1957,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource that was attacked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2018,7 +2020,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start time of the attack, in the format 2016-12-16T13:50Z.</p>\n@param startTime The start time of the attack, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2081,7 +2083,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>\n@param endTime The end time of the attack, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2181,7 +2183,7 @@
               "simpleType" : "AttackVectorDescription",
               "variableSetterType" : "AttackVectorDescription"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2222,7 +2224,7 @@
           "simpleType" : "List<AttackVectorDescription>",
           "variableSetterType" : "java.util.Collection<AttackVectorDescription>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of attacks for a specified time period.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttackVectors(java.util.Collection)} or {@link #withAttackVectors(java.util.Collection)} if you want to override the existing values.</p>\n@param attackVectors The list of attacks for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2287,7 +2289,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier (ID) of the attack.</p>\n@param attackId The unique identifier (ID) of the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2388,7 +2390,7 @@
                 "simpleType" : "AttackVectorDescription",
                 "variableSetterType" : "AttackVectorDescription"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2429,7 +2431,7 @@
             "simpleType" : "List<AttackVectorDescription>",
             "variableSetterType" : "java.util.Collection<AttackVectorDescription>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of attacks for a specified time period.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttackVectors(java.util.Collection)} or {@link #withAttackVectors(java.util.Collection)} if you want to override the existing values.</p>\n@param attackVectors The list of attacks for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2493,7 +2495,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The end time of the attack, in the format 2016-12-16T13:50Z.</p>\n@param endTime The end time of the attack, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2557,7 +2559,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource that was attacked.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2621,7 +2623,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start time of the attack, in the format 2016-12-16T13:50Z.</p>\n@param startTime The start time of the attack, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2723,7 +2725,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The attack type, for example, SNMP reflection or SYN flood.</p>\n@param vectorType The attack type, for example, SNMP reflection or SYN flood.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2788,7 +2790,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The attack type, for example, SNMP reflection or SYN flood.</p>\n@param vectorType The attack type, for example, SNMP reflection or SYN flood.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2897,7 +2899,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Friendly name for the <code>Protection</code> you are creating.</p>\n@param name Friendly name for the <code>Protection</code> you are creating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2960,7 +2962,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource to be protected.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource to be protected.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3025,7 +3027,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Friendly name for the <code>Protection</code> you are creating.</p>\n@param name Friendly name for the <code>Protection</code> you are creating.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3089,7 +3091,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource to be protected.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the resource to be protected.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3188,7 +3190,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object that is created.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object that is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3253,7 +3255,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object that is created.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object that is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3444,7 +3446,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object to be deleted.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3509,7 +3511,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object to be deleted.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3736,7 +3738,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier (ID) for the attack that to be described.</p>\n@param attackId The unique identifier (ID) for the attack that to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3801,7 +3803,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier (ID) for the attack that to be described.</p>\n@param attackId The unique identifier (ID) for the attack that to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3900,7 +3902,7 @@
           "simpleType" : "AttackDetail",
           "variableSetterType" : "AttackDetail"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The attack that is described.</p>\n@param attack The attack that is described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3965,7 +3967,7 @@
             "simpleType" : "AttackDetail",
             "variableSetterType" : "AttackDetail"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The attack that is described.</p>\n@param attack The attack that is described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4074,7 +4076,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object that is described.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object that is described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4139,7 +4141,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier (ID) for the <a>Protection</a> object that is described.</p>\n@param protectionId The unique identifier (ID) for the <a>Protection</a> object that is described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4238,7 +4240,7 @@
           "simpleType" : "Protection",
           "variableSetterType" : "Protection"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <a>Protection</a> object that is described.</p>\n@param protection The <a>Protection</a> object that is described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4303,7 +4305,7 @@
             "simpleType" : "Protection",
             "variableSetterType" : "Protection"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <a>Protection</a> object that is described.</p>\n@param protection The <a>Protection</a> object that is described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4448,7 +4450,7 @@
           "simpleType" : "Subscription",
           "variableSetterType" : "Subscription"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Shield Advanced subscription details for an account.</p>\n@param subscription The AWS Shield Advanced subscription details for an account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4513,7 +4515,7 @@
             "simpleType" : "Subscription",
             "variableSetterType" : "Subscription"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Shield Advanced subscription details for an account.</p>\n@param subscription The AWS Shield Advanced subscription details for an account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4759,7 +4761,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4822,7 +4824,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param limit \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4887,7 +4889,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param limit \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4951,7 +4953,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5094,7 +5096,7 @@
               "simpleType" : "String",
               "variableSetterType" : "String"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5135,7 +5137,7 @@
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceArns(java.util.Collection)} or {@link #withResourceArns(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceArns The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5198,7 +5200,7 @@
           "simpleType" : "TimeRange",
           "variableSetterType" : "TimeRange"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time period for the attacks.</p>\n@param startTime The time period for the attacks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5261,7 +5263,7 @@
           "simpleType" : "TimeRange",
           "variableSetterType" : "TimeRange"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The end of the time period for the attacks.</p>\n@param endTime The end of the time period for the attacks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5324,7 +5326,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5387,7 +5389,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.</p>\n@param maxResults The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5452,7 +5454,7 @@
             "simpleType" : "TimeRange",
             "variableSetterType" : "TimeRange"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The end of the time period for the attacks.</p>\n@param endTime The end of the time period for the attacks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5516,7 +5518,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.</p>\n@param maxResults The maximum number of <a>AttackSummary</a> objects to be returned. If this is left blank, the first 20 results will be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5580,7 +5582,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListAttacksRequest.NextMarker</code> value from a previous call to <code>ListAttacksRequest</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5681,7 +5683,7 @@
                 "simpleType" : "String",
                 "variableSetterType" : "String"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5722,7 +5724,7 @@
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceArns(java.util.Collection)} or {@link #withResourceArns(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceArns The ARN (Amazon Resource Name) of the resource that was attacked. If this is left blank, all applicable resources for this account will be included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5786,7 +5788,7 @@
             "simpleType" : "TimeRange",
             "variableSetterType" : "TimeRange"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time period for the attacks.</p>\n@param startTime The time period for the attacks.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5922,7 +5924,7 @@
               "simpleType" : "AttackSummary",
               "variableSetterType" : "AttackSummary"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5963,7 +5965,7 @@
           "simpleType" : "List<AttackSummary>",
           "variableSetterType" : "java.util.Collection<AttackSummary>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The attack information for the specified time range.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttackSummaries(java.util.Collection)} or {@link #withAttackSummaries(java.util.Collection)} if you want to override the existing values.</p>\n@param attackSummaries The attack information for the specified time range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6026,7 +6028,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.</p>\n@param nextToken The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6128,7 +6130,7 @@
                 "simpleType" : "AttackSummary",
                 "variableSetterType" : "AttackSummary"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6169,7 +6171,7 @@
             "simpleType" : "List<AttackSummary>",
             "variableSetterType" : "java.util.Collection<AttackSummary>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The attack information for the specified time range.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttackSummaries(java.util.Collection)} or {@link #withAttackSummaries(java.util.Collection)} if you want to override the existing values.</p>\n@param attackSummaries The attack information for the specified time range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6233,7 +6235,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.</p>\n@param nextToken The token returned by a previous call to indicate that there is more data available. If not null, more results are available. Pass this value for the <code>NextMarker</code> parameter in a subsequent call to <code>ListAttacks</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6342,7 +6344,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6405,7 +6407,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.</p>\n@param maxResults The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6470,7 +6472,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.</p>\n@param maxResults The maximum number of <a>Protection</a> objects to be returned. If this is left blank the first 20 results will be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6534,7 +6536,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>ListProtectionsRequest.NextToken</code> value from a previous call to <code>ListProtections</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6670,7 +6672,7 @@
               "simpleType" : "Protection",
               "variableSetterType" : "Protection"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6711,7 +6713,7 @@
           "simpleType" : "List<Protection>",
           "variableSetterType" : "java.util.Collection<Protection>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The array of enabled <a>Protection</a> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProtections(java.util.Collection)} or {@link #withProtections(java.util.Collection)} if you want to override the existing values.</p>\n@param protections The array of enabled <a>Protection</a> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6774,7 +6776,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6839,7 +6841,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.</p>\n@param nextToken If you specify a value for <code>MaxResults</code> and you have more Protections than the value of MaxResults, AWS Shield Advanced returns a NextToken value in the response that allows you to list another group of Protections. For the second and subsequent ListProtections requests, specify the value of NextToken from the previous response to get information about another batch of Protections.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6940,7 +6942,7 @@
                 "simpleType" : "Protection",
                 "variableSetterType" : "Protection"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6981,7 +6983,7 @@
             "simpleType" : "List<Protection>",
             "variableSetterType" : "java.util.Collection<Protection>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The array of enabled <a>Protection</a> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProtections(java.util.Collection)} or {@link #withProtections(java.util.Collection)} if you want to override the existing values.</p>\n@param protections The array of enabled <a>Protection</a> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7119,7 +7121,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the mitigation taken for this attack.</p>\n@param mitigationName The name of the mitigation taken for this attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7184,7 +7186,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the mitigation taken for this attack.</p>\n@param mitigationName The name of the mitigation taken for this attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7322,7 +7324,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier (ID) of the protection.</p>\n@param id The unique identifier (ID) of the protection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7385,7 +7387,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The friendly name of the protection. For example, <code>My CloudFront distributions</code>.</p>\n@param name The friendly name of the protection. For example, <code>My CloudFront distributions</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7448,7 +7450,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the AWS resource that is protected.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7513,7 +7515,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier (ID) of the protection.</p>\n@param id The unique identifier (ID) of the protection.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7577,7 +7579,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The friendly name of the protection. For example, <code>My CloudFront distributions</code>.</p>\n@param name The friendly name of the protection. For example, <code>My CloudFront distributions</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7641,7 +7643,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>\n@param resourceArn The ARN (Amazon Resource Name) of the AWS resource that is protected.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7815,7 +7817,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>SubResource</code> type.</p>\n@param type The <code>SubResource</code> type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubResourceType*/",
@@ -7878,7 +7880,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier (ID) of the <code>SubResource</code>.</p>\n@param id The unique identifier (ID) of the <code>SubResource</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7978,7 +7980,7 @@
               "simpleType" : "SummarizedAttackVector",
               "variableSetterType" : "SummarizedAttackVector"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8019,7 +8021,7 @@
           "simpleType" : "List<SummarizedAttackVector>",
           "variableSetterType" : "java.util.Collection<SummarizedAttackVector>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of attack types and associated counters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttackVectors(java.util.Collection)} or {@link #withAttackVectors(java.util.Collection)} if you want to override the existing values.</p>\n@param attackVectors The list of attack types and associated counters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8119,7 +8121,7 @@
               "simpleType" : "SummarizedCounter",
               "variableSetterType" : "SummarizedCounter"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8160,7 +8162,7 @@
           "simpleType" : "List<SummarizedCounter>",
           "variableSetterType" : "java.util.Collection<SummarizedCounter>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The counters that describe the details of the attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCounters(java.util.Collection)} or {@link #withCounters(java.util.Collection)} if you want to override the existing values.</p>\n@param counters The counters that describe the details of the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8262,7 +8264,7 @@
                 "simpleType" : "SummarizedAttackVector",
                 "variableSetterType" : "SummarizedAttackVector"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8303,7 +8305,7 @@
             "simpleType" : "List<SummarizedAttackVector>",
             "variableSetterType" : "java.util.Collection<SummarizedAttackVector>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of attack types and associated counters.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttackVectors(java.util.Collection)} or {@link #withAttackVectors(java.util.Collection)} if you want to override the existing values.</p>\n@param attackVectors The list of attack types and associated counters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8404,7 +8406,7 @@
                 "simpleType" : "SummarizedCounter",
                 "variableSetterType" : "SummarizedCounter"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8445,7 +8447,7 @@
             "simpleType" : "List<SummarizedCounter>",
             "variableSetterType" : "java.util.Collection<SummarizedCounter>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The counters that describe the details of the attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setCounters(java.util.Collection)} or {@link #withCounters(java.util.Collection)} if you want to override the existing values.</p>\n@param counters The counters that describe the details of the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8509,7 +8511,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier (ID) of the <code>SubResource</code>.</p>\n@param id The unique identifier (ID) of the <code>SubResource</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8573,7 +8575,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>SubResource</code> type.</p>\n@param type The <code>SubResource</code> type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SubResourceType*/",
@@ -8720,7 +8722,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start time of the subscription, in the format \"2016-12-16T13:50Z\".</p>\n@param startTime The start time of the subscription, in the format \"2016-12-16T13:50Z\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8783,7 +8785,7 @@
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The length, in seconds, of the AWS Shield Advanced subscription for the account.</p>\n@param timeCommitmentInSeconds The length, in seconds, of the AWS Shield Advanced subscription for the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8848,7 +8850,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start time of the subscription, in the format \"2016-12-16T13:50Z\".</p>\n@param startTime The start time of the subscription, in the format \"2016-12-16T13:50Z\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8912,7 +8914,7 @@
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The length, in seconds, of the AWS Shield Advanced subscription for the account.</p>\n@param timeCommitmentInSeconds The length, in seconds, of the AWS Shield Advanced subscription for the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9014,7 +9016,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The attack type, for example, SNMP reflection or SYN flood.</p>\n@param vectorType The attack type, for example, SNMP reflection or SYN flood.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9114,7 +9116,7 @@
               "simpleType" : "SummarizedCounter",
               "variableSetterType" : "SummarizedCounter"
             },
-            "shouldSupressEnumSetter" : false,
+            "shouldEmitLegacyEnumSetter" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9155,7 +9157,7 @@
           "simpleType" : "List<SummarizedCounter>",
           "variableSetterType" : "java.util.Collection<SummarizedCounter>"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of counters that describe the details of the attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVectorCounters(java.util.Collection)} or {@link #withVectorCounters(java.util.Collection)} if you want to override the existing values.</p>\n@param vectorCounters The list of counters that describe the details of the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9257,7 +9259,7 @@
                 "simpleType" : "SummarizedCounter",
                 "variableSetterType" : "SummarizedCounter"
               },
-              "shouldSupressEnumSetter" : false,
+              "shouldEmitLegacyEnumSetter" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9298,7 +9300,7 @@
             "simpleType" : "List<SummarizedCounter>",
             "variableSetterType" : "java.util.Collection<SummarizedCounter>"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of counters that describe the details of the attack.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVectorCounters(java.util.Collection)} or {@link #withVectorCounters(java.util.Collection)} if you want to override the existing values.</p>\n@param vectorCounters The list of counters that describe the details of the attack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9362,7 +9364,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The attack type, for example, SNMP reflection or SYN flood.</p>\n@param vectorType The attack type, for example, SNMP reflection or SYN flood.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9464,7 +9466,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The counter name.</p>\n@param name The counter name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9527,7 +9529,7 @@
           "simpleType" : "Double",
           "variableSetterType" : "Double"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum value of the counter for a specified time period.</p>\n@param max The maximum value of the counter for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9590,7 +9592,7 @@
           "simpleType" : "Double",
           "variableSetterType" : "Double"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The average value of the counter for a specified time period.</p>\n@param average The average value of the counter for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9653,7 +9655,7 @@
           "simpleType" : "Double",
           "variableSetterType" : "Double"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The total of counter values for a specified time period.</p>\n@param sum The total of counter values for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9716,7 +9718,7 @@
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of counters for a specified time period.</p>\n@param n The number of counters for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9779,7 +9781,7 @@
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unit of the counters.</p>\n@param unit The unit of the counters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9844,7 +9846,7 @@
             "simpleType" : "Double",
             "variableSetterType" : "Double"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The average value of the counter for a specified time period.</p>\n@param average The average value of the counter for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9908,7 +9910,7 @@
             "simpleType" : "Double",
             "variableSetterType" : "Double"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum value of the counter for a specified time period.</p>\n@param max The maximum value of the counter for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9972,7 +9974,7 @@
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of counters for a specified time period.</p>\n@param n The number of counters for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10036,7 +10038,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The counter name.</p>\n@param name The counter name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10100,7 +10102,7 @@
             "simpleType" : "Double",
             "variableSetterType" : "Double"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The total of counter values for a specified time period.</p>\n@param sum The total of counter values for a specified time period.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10164,7 +10166,7 @@
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unit of the counters.</p>\n@param unit The unit of the counters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10266,7 +10268,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start time, in the format 2016-12-16T13:50Z.</p>\n@param fromInclusive The start time, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10329,7 +10331,7 @@
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
-        "shouldSupressEnumSetter" : false,
+        "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The end time, in the format 2016-12-16T15:50Z.</p>\n@param toExclusive The end time, in the format 2016-12-16T15:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10394,7 +10396,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start time, in the format 2016-12-16T13:50Z.</p>\n@param fromInclusive The start time, in the format 2016-12-16T13:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10458,7 +10460,7 @@
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
-          "shouldSupressEnumSetter" : false,
+          "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The end time, in the format 2016-12-16T15:50Z.</p>\n@param toExclusive The end time, in the format 2016-12-16T15:50Z.\n@return Returns a reference to this object so that method calls can be chained together.*/",

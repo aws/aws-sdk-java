@@ -2351,6 +2351,20 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes the Elastic GPUs associated with your instances. For more information about Elastic GPUs, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-gpus.html">Amazon EC2 Elastic GPUs</a>.
+     * </p>
+     * 
+     * @param describeElasticGpusRequest
+     * @return Result of the DescribeElasticGpus operation returned by the service.
+     * @sample AmazonEC2.DescribeElasticGpus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeElasticGpusResult describeElasticGpus(DescribeElasticGpusRequest describeElasticGpusRequest);
+
+    /**
+     * <p>
      * Describes one or more of your export tasks.
      * </p>
      * 
