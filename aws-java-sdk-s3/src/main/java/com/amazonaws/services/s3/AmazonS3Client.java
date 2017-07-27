@@ -2885,7 +2885,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // delegate directly to it.
             ((Presigner) signer).presignRequest(
                     request,
-                    CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider).getCredentials(),
+                            CredentialUtils.getCredentialsProvider(request.getOriginalRequest(),
+                                    awsCredentialsProvider instanceof S3ContextAwareCredentialsProvider ?
+                                            ((S3ContextAwareCredentialsProvider) awsCredentialsProvider).getCredentialsProvider(bucketName, key) :
+                                            awsCredentialsProvider
+                            ).getCredentials(),
                     req.getExpiration()
             );
         } else {
@@ -3603,7 +3607,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         resourcePath = resourcePath.replaceAll("(?<=/)/", "%2F");
 
         new S3QueryStringSigner(methodName.toString(), resourcePath, expiration)
-            .sign(request, CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider).getCredentials());
+            .sign(request, CredentialUtils.getCredentialsProvider(request.getOriginalRequest(),
+                    awsCredentialsProvider instanceof S3ContextAwareCredentialsProvider ?
+                            ((S3ContextAwareCredentialsProvider) awsCredentialsProvider).getCredentialsProvider(bucketName, key) :
+                            awsCredentialsProvider
+            ).getCredentials());
 
         // The Amazon S3 DevPay token header is a special exception and can be safely moved
         // from the request's headers into the query string to ensure that it travels along
@@ -4221,7 +4229,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                         new S3V4AuthErrorRetryStrategy(buildDefaultEndpointResolver(getProtocol(request), bucket, key)));
             }
 
-            executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
+            executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(),
+                    awsCredentialsProvider instanceof S3ContextAwareCredentialsProvider ?
+                            ((S3ContextAwareCredentialsProvider) awsCredentialsProvider).getCredentialsProvider(bucket, key) :
+                            awsCredentialsProvider));
 
             validateRequestBeforeTransmit(request);
             response = client.execute(request, responseHandler, errorResponseHandler, executionContext);
