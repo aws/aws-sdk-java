@@ -28,13 +28,13 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The Amazon Kinesis Analytics application name.
+     * The Kinesis Analytics application name.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * The version ID of the Amazon Kinesis Analytics application.
+     * The version ID of the Kinesis Analytics application.
      * </p>
      */
     private Long currentApplicationVersionId;
@@ -48,11 +48,11 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The Amazon Kinesis Analytics application name.
+     * The Kinesis Analytics application name.
      * </p>
      * 
      * @param applicationName
-     *        The Amazon Kinesis Analytics application name.
+     *        The Kinesis Analytics application name.
      */
 
     public void setApplicationName(String applicationName) {
@@ -61,10 +61,10 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The Amazon Kinesis Analytics application name.
+     * The Kinesis Analytics application name.
      * </p>
      * 
-     * @return The Amazon Kinesis Analytics application name.
+     * @return The Kinesis Analytics application name.
      */
 
     public String getApplicationName() {
@@ -73,11 +73,11 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The Amazon Kinesis Analytics application name.
+     * The Kinesis Analytics application name.
      * </p>
      * 
      * @param applicationName
-     *        The Amazon Kinesis Analytics application name.
+     *        The Kinesis Analytics application name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The version ID of the Amazon Kinesis Analytics application.
+     * The version ID of the Kinesis Analytics application.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the Amazon Kinesis Analytics application.
+     *        The version ID of the Kinesis Analytics application.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -101,10 +101,10 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The version ID of the Amazon Kinesis Analytics application.
+     * The version ID of the Kinesis Analytics application.
      * </p>
      * 
-     * @return The version ID of the Amazon Kinesis Analytics application.
+     * @return The version ID of the Kinesis Analytics application.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -113,11 +113,11 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The version ID of the Amazon Kinesis Analytics application.
+     * The version ID of the Kinesis Analytics application.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the Amazon Kinesis Analytics application.
+     *        The version ID of the Kinesis Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

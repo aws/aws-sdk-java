@@ -821,6 +821,34 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet in each Availability
+     * Zone. For more information about the components of a default VPC, see <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default VPC and Default Subnets</a>
+     * in the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the default VPC
+     * yourself.
+     * </p>
+     * <p>
+     * You can create a default VPC if you deleted your previous default VPC. You cannot have more than one default VPC
+     * per region.
+     * </p>
+     * <p>
+     * If your account supports EC2-Classic, you cannot use this action to create a default VPC in a region that
+     * supports EC2-Classic. If you want a default VPC in a region that supports EC2-Classic, see
+     * "I really want a default VPC for my existing EC2 account. Is that possible?" in the <a
+     * href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default VPCs FAQ</a>.
+     * </p>
+     * 
+     * @param createDefaultVpcRequest
+     *        Contains the parameters for CreateDefaultVpc.
+     * @return Result of the CreateDefaultVpc operation returned by the service.
+     * @sample AmazonEC2.CreateDefaultVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultVpc" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateDefaultVpcResult createDefaultVpc(CreateDefaultVpcRequest createDefaultVpcRequest);
+
+    /**
+     * <p>
      * Creates a set of DHCP options for your VPC. After creating the set, you must associate it with the VPC, causing
      * all existing and new instances that you launch in the VPC to use this set of DHCP options. The following are the
      * individual DHCP options you can specify. For more information about the options, see <a

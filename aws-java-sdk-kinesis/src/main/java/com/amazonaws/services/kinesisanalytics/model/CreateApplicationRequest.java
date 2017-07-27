@@ -84,9 +84,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.
      * </p>
      */
     private java.util.List<CloudWatchLoggingOption> cloudWatchLoggingOptions;
@@ -558,15 +557,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.
      * </p>
      * 
      * @return Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
      *         more information, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
-     *         >Monitoring Configuration Errors</a>.
+     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *         CloudWatch Logs</a>.
      */
 
     public java.util.List<CloudWatchLoggingOption> getCloudWatchLoggingOptions() {
@@ -576,16 +574,15 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
      *        Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
-     *        >Monitoring Configuration Errors</a>.
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        CloudWatch Logs</a>.
      */
 
     public void setCloudWatchLoggingOptions(java.util.Collection<CloudWatchLoggingOption> cloudWatchLoggingOptions) {
@@ -600,9 +597,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -613,8 +609,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param cloudWatchLoggingOptions
      *        Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
-     *        >Monitoring Configuration Errors</a>.
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -631,16 +627,15 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working
+     * with Amazon CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
      *        Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
-     *        >Monitoring Configuration Errors</a>.
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

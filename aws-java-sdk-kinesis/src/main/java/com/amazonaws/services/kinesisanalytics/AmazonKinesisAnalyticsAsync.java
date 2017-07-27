@@ -32,8 +32,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * <p>
      * Adds a CloudWatch log stream to monitor application configuration errors. For more information about using
      * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param addApplicationCloudWatchLoggingOptionRequest
@@ -51,8 +51,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * <p>
      * Adds a CloudWatch log stream to monitor application configuration errors. For more information about using
      * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param addApplicationCloudWatchLoggingOptionRequest
@@ -402,8 +402,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * <p>
      * Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with
      * Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param deleteApplicationCloudWatchLoggingOptionRequest
@@ -421,8 +421,8 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * <p>
      * Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with
      * Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param deleteApplicationCloudWatchLoggingOptionRequest

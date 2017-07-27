@@ -91,10 +91,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private java.util.List<ReferenceDataSourceDescription> referenceDataSourceDescriptions;
     /**
      * <p>
-     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
-     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      */
     private java.util.List<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions;
@@ -645,16 +645,16 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
-     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
-     * @return Describes the CloudWatch log streams configured to receive application messages. For more information
-     *         about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
-     *         >Monitoring Configuration Errors</a>.
+     * @return Describes the CloudWatch log streams that are configured to receive application messages. For more
+     *         information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *         CloudWatch Logs</a>.
      */
 
     public java.util.List<CloudWatchLoggingOptionDescription> getCloudWatchLoggingOptionDescriptions() {
@@ -663,17 +663,17 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
-     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param cloudWatchLoggingOptionDescriptions
-     *        Describes the CloudWatch log streams configured to receive application messages. For more information
-     *        about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
-     *        >Monitoring Configuration Errors</a>.
+     *        Describes the CloudWatch log streams that are configured to receive application messages. For more
+     *        information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        CloudWatch Logs</a>.
      */
 
     public void setCloudWatchLoggingOptionDescriptions(java.util.Collection<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions) {
@@ -687,10 +687,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
-     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -700,10 +700,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param cloudWatchLoggingOptionDescriptions
-     *        Describes the CloudWatch log streams configured to receive application messages. For more information
-     *        about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
-     *        >Monitoring Configuration Errors</a>.
+     *        Describes the CloudWatch log streams that are configured to receive application messages. For more
+     *        information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -719,17 +719,17 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
-     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * Describes the CloudWatch log streams that are configured to receive application messages. For more information
+     * about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param cloudWatchLoggingOptionDescriptions
-     *        Describes the CloudWatch log streams configured to receive application messages. For more information
-     *        about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
-     *        >Monitoring Configuration Errors</a>.
+     *        Describes the CloudWatch log streams that are configured to receive application messages. For more
+     *        information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon
+     *        CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

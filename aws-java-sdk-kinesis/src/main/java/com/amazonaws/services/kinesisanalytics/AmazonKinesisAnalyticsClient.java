@@ -91,6 +91,9 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.kinesisanalytics.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.kinesisanalytics.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceProvisionedThroughputExceededException").withModeledClass(
                                     com.amazonaws.services.kinesisanalytics.model.ResourceProvisionedThroughputExceededException.class))
                     .addErrorMetadata(
@@ -285,8 +288,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * <p>
      * Adds a CloudWatch log stream to monitor application configuration errors. For more information about using
      * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param addApplicationCloudWatchLoggingOptionRequest
@@ -374,6 +377,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws CodeValidationException
+     *         User-provided application code (query) is invalid. This can be a simple syntax error.
      * @sample AmazonKinesisAnalytics.AddApplicationInput
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput"
      *      target="_top">AWS API Documentation</a>
@@ -718,8 +723,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      * <p>
      * Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with
      * Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param deleteApplicationCloudWatchLoggingOptionRequest
@@ -997,6 +1002,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *         ProvisionedThroughputExceededException. For more information, see <a
      *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the
      *         Amazon Kinesis Streams API Reference.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable, back off and retry the operation.
      * @sample AmazonKinesisAnalytics.DiscoverInputSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"
      *      target="_top">AWS API Documentation</a>

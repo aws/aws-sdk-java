@@ -92,8 +92,8 @@ public interface AmazonKinesisAnalytics {
      * <p>
      * Adds a CloudWatch log stream to monitor application configuration errors. For more information about using
      * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param addApplicationCloudWatchLoggingOptionRequest
@@ -144,6 +144,8 @@ public interface AmazonKinesisAnalytics {
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
+     * @throws CodeValidationException
+     *         User-provided application code (query) is invalid. This can be a simple syntax error.
      * @sample AmazonKinesisAnalytics.AddApplicationInput
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput"
      *      target="_top">AWS API Documentation</a>
@@ -310,8 +312,8 @@ public interface AmazonKinesisAnalytics {
      * <p>
      * Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with
      * Amazon Kinesis Analytics applications, see <a
-     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
-     * Configuration Errors</a>.
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-logs.html">Working with Amazon CloudWatch
+     * Logs</a>.
      * </p>
      * 
      * @param deleteApplicationCloudWatchLoggingOptionRequest
@@ -443,6 +445,8 @@ public interface AmazonKinesisAnalytics {
      *         ProvisionedThroughputExceededException. For more information, see <a
      *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the
      *         Amazon Kinesis Streams API Reference.
+     * @throws ServiceUnavailableException
+     *         The service is unavailable, back off and retry the operation.
      * @sample AmazonKinesisAnalytics.DiscoverInputSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"
      *      target="_top">AWS API Documentation</a>

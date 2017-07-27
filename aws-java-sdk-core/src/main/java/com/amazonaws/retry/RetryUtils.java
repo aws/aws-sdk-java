@@ -24,6 +24,7 @@ public class RetryUtils {
 
     static final Set<String> THROTTLING_ERROR_CODES = new HashSet<String>(9);
     static final Set<String> CLOCK_SKEW_ERROR_CODES = new HashSet<String>(6);
+    static final Set<String> RETRYABLE_ERROR_CODES = new HashSet<String>(1);
     static final Set<Integer> RETRYABLE_STATUS_CODES = new HashSet<Integer>(4);
 
     static {
@@ -43,6 +44,8 @@ public class RetryUtils {
         CLOCK_SKEW_ERROR_CODES.add("SignatureDoesNotMatch");
         CLOCK_SKEW_ERROR_CODES.add("AuthFailure");
         CLOCK_SKEW_ERROR_CODES.add("RequestInTheFuture");
+
+        RETRYABLE_ERROR_CODES.add("PriorRequestNotComplete");
 
         RETRYABLE_STATUS_CODES.add(HttpStatus.SC_INTERNAL_SERVER_ERROR);
         RETRYABLE_STATUS_CODES.add(HttpStatus.SC_BAD_GATEWAY);
@@ -65,7 +68,11 @@ public class RetryUtils {
      * @return True if the exception resulted from a retryable service error, otherwise false.
      */
     public static boolean isRetryableServiceException(SdkBaseException exception) {
-        return isAse(exception) && RETRYABLE_STATUS_CODES.contains(toAse(exception).getStatusCode());
+        if (!isAse(exception)) {
+            return false;
+        }
+        AmazonServiceException ase = toAse(exception);
+        return RETRYABLE_STATUS_CODES.contains(ase.getStatusCode()) || RETRYABLE_ERROR_CODES.contains(ase.getErrorCode());
     }
 
     /**

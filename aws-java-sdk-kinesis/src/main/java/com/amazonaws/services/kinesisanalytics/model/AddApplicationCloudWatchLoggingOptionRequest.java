@@ -28,31 +28,31 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Amazon Kinesis Analytics application name.
+     * The Kinesis Analytics application name.
      * </p>
      */
     private String applicationName;
     /**
      * <p>
-     * The version ID of the Amazon Kinesis Analytics application.
+     * The version ID of the Kinesis Analytics application.
      * </p>
      */
     private Long currentApplicationVersionId;
     /**
      * <p>
-     * Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application messages to CloudWatch,
-     * the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     * Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application
+     * messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      * </p>
      */
     private CloudWatchLoggingOption cloudWatchLoggingOption;
 
     /**
      * <p>
-     * The Amazon Kinesis Analytics application name.
+     * The Kinesis Analytics application name.
      * </p>
      * 
      * @param applicationName
-     *        The Amazon Kinesis Analytics application name.
+     *        The Kinesis Analytics application name.
      */
 
     public void setApplicationName(String applicationName) {
@@ -61,10 +61,10 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Amazon Kinesis Analytics application name.
+     * The Kinesis Analytics application name.
      * </p>
      * 
-     * @return The Amazon Kinesis Analytics application name.
+     * @return The Kinesis Analytics application name.
      */
 
     public String getApplicationName() {
@@ -73,11 +73,11 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The Amazon Kinesis Analytics application name.
+     * The Kinesis Analytics application name.
      * </p>
      * 
      * @param applicationName
-     *        The Amazon Kinesis Analytics application name.
+     *        The Kinesis Analytics application name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The version ID of the Amazon Kinesis Analytics application.
+     * The version ID of the Kinesis Analytics application.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the Amazon Kinesis Analytics application.
+     *        The version ID of the Kinesis Analytics application.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -101,10 +101,10 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The version ID of the Amazon Kinesis Analytics application.
+     * The version ID of the Kinesis Analytics application.
      * </p>
      * 
-     * @return The version ID of the Amazon Kinesis Analytics application.
+     * @return The version ID of the Kinesis Analytics application.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -113,11 +113,11 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The version ID of the Amazon Kinesis Analytics application.
+     * The version ID of the Kinesis Analytics application.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the Amazon Kinesis Analytics application.
+     *        The version ID of the Kinesis Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,13 +128,14 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application messages to CloudWatch,
-     * the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     * Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application
+     * messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      * </p>
      * 
      * @param cloudWatchLoggingOption
-     *        Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application messages to
-     *        CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     *        Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write
+     *        application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code>
+     *        policy action enabled.
      */
 
     public void setCloudWatchLoggingOption(CloudWatchLoggingOption cloudWatchLoggingOption) {
@@ -143,12 +144,13 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application messages to CloudWatch,
-     * the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     * Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application
+     * messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      * </p>
      * 
-     * @return Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application messages to
-     *         CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     * @return Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write
+     *         application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code>
+     *         policy action enabled.
      */
 
     public CloudWatchLoggingOption getCloudWatchLoggingOption() {
@@ -157,13 +159,14 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application messages to CloudWatch,
-     * the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     * Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write application
+     * messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      * </p>
      * 
      * @param cloudWatchLoggingOption
-     *        Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application messages to
-     *        CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     *        Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN. Note: To write
+     *        application messages to CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code>
+     *        policy action enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

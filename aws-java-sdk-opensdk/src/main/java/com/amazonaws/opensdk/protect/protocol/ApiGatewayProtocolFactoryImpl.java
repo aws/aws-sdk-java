@@ -22,6 +22,8 @@ import com.amazonaws.opensdk.internal.BaseException;
 import com.amazonaws.opensdk.internal.protocol.ApiGatewayErrorResponseHandler;
 import com.amazonaws.opensdk.internal.protocol.ApiGatewayErrorUnmarshaller;
 import com.amazonaws.opensdk.internal.protocol.ApiGatewayResponseHandler;
+import com.amazonaws.protocol.MarshallLocation;
+import com.amazonaws.protocol.MarshallingType;
 import com.amazonaws.protocol.OperationInfo;
 import com.amazonaws.protocol.ProtocolRequestMarshaller;
 import com.amazonaws.protocol.json.JsonClientMetadata;
@@ -35,7 +37,7 @@ import com.amazonaws.protocol.json.SdkStructuredPlainJsonFactory;
 import com.amazonaws.protocol.json.StructuredJsonGenerator;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
-
+import com.amazonaws.util.DateUtils;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -72,6 +74,8 @@ public final class ApiGatewayProtocolFactoryImpl implements SdkJsonMarshallerFac
                 .operationInfo(operationInfo)
                 .originalRequest(origRequest)
                 .sendExplicitNullForPayload(true)
+                .marshallerOverride(MarshallLocation.PAYLOAD, MarshallingType.DATE,
+                                    (val, generator) -> generator.writeValue(DateUtils.formatISO8601Date(val)))
                 .build();
     }
 

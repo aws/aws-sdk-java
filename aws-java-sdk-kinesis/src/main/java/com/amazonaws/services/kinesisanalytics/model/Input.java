@@ -44,12 +44,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN) and an
      * IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
+     * <p>
+     * Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
+     * </p>
      */
     private KinesisStreamsInput kinesisStreamsInput;
     /**
      * <p>
      * If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the Firehose delivery stream's
      * ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     * </p>
+     * <p>
+     * Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
      * </p>
      */
     private KinesisFirehoseInput kinesisFirehoseInput;
@@ -137,10 +143,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN) and an
      * IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
+     * <p>
+     * Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
+     * </p>
      * 
      * @param kinesisStreamsInput
      *        If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN)
-     *        and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     *        and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+     *        <p>
+     *        Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
      */
 
     public void setKinesisStreamsInput(KinesisStreamsInput kinesisStreamsInput) {
@@ -152,9 +163,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN) and an
      * IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
+     * <p>
+     * Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
+     * </p>
      * 
      * @return If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN)
-     *         and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     *         and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+     *         <p>
+     *         Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
      */
 
     public KinesisStreamsInput getKinesisStreamsInput() {
@@ -166,10 +182,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN) and an
      * IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
+     * <p>
+     * Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
+     * </p>
      * 
      * @param kinesisStreamsInput
      *        If the streaming source is an Amazon Kinesis stream, identifies the stream's Amazon Resource Name (ARN)
-     *        and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     *        and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.</p>
+     *        <p>
+     *        Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,10 +204,16 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the Firehose delivery stream's
      * ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
+     * <p>
+     * Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
+     * </p>
      * 
      * @param kinesisFirehoseInput
      *        If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the Firehose delivery
-     *        stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     *        stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your
+     *        behalf.</p>
+     *        <p>
+     *        Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
      */
 
     public void setKinesisFirehoseInput(KinesisFirehoseInput kinesisFirehoseInput) {
@@ -198,9 +225,15 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the Firehose delivery stream's
      * ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
+     * <p>
+     * Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
+     * </p>
      * 
      * @return If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the Firehose delivery
-     *         stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     *         stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your
+     *         behalf.</p>
+     *         <p>
+     *         Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
      */
 
     public KinesisFirehoseInput getKinesisFirehoseInput() {
@@ -212,10 +245,16 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the Firehose delivery stream's
      * ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
      * </p>
+     * <p>
+     * Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
+     * </p>
      * 
      * @param kinesisFirehoseInput
      *        If the streaming source is an Amazon Kinesis Firehose delivery stream, identifies the Firehose delivery
-     *        stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your behalf.
+     *        stream's ARN and an IAM role that enables Amazon Kinesis Analytics to access the stream on your
+     *        behalf.</p>
+     *        <p>
+     *        Note: Either <code>KinesisStreamsInput</code> or <code>KinesisFirehoseInput</code> is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

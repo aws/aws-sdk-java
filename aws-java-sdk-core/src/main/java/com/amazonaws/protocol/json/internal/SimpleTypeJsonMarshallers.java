@@ -20,7 +20,7 @@ import com.amazonaws.internal.SdkInternalMap;
 import com.amazonaws.protocol.MarshallLocation;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.json.StructuredJsonGenerator;
-
+import com.amazonaws.protocol.json.StructuredJsonMarshaller;
 import java.math.BigDecimal;
 import java.nio.ByteBuffer;
 import java.util.Date;
@@ -154,6 +154,23 @@ public class SimpleTypeJsonMarshallers {
             return !(map.isEmpty() && map instanceof SdkInternalMap && ((SdkInternalMap) map).isAutoConstruct());
         }
     };
+
+    /**
+     * Adapt a {@link StructuredJsonMarshaller} to a {@link JsonMarshaller}. {@link JsonMarshaller} has a lot of internal
+     * stuff so we don't want to expose all that across module boundaries.
+     *
+     * @param toAdapt Marshaller to adapt.
+     * @param <T>     Type of thing being marshalled.
+     * @return Adapted marshaller.
+     */
+    public static <T> JsonMarshaller<T> adapt(final StructuredJsonMarshaller<T> toAdapt) {
+        return new BaseJsonMarshaller<T>() {
+            @Override
+            public void marshall(T val, StructuredJsonGenerator jsonGenerator, JsonMarshallerContext context) {
+                toAdapt.marshall(val, jsonGenerator);
+            }
+        };
+    }
 
     /**
      * Base marshaller that emits the field name if present. The field name may be null in cases like

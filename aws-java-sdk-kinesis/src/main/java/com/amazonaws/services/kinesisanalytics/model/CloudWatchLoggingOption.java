@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a description of CloudWatch logging options, including the log stream ARN and the role ARN.
+ * Provides a description of CloudWatch logging options, including the log stream Amazon Resource Name (ARN) and the
+ * role ARN.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CloudWatchLoggingOption"
@@ -37,7 +38,7 @@ public class CloudWatchLoggingOption implements Serializable, Cloneable, Structu
     /**
      * <p>
      * IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the
-     * IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     * IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      * </p>
      */
     private String roleARN;
@@ -85,12 +86,12 @@ public class CloudWatchLoggingOption implements Serializable, Cloneable, Structu
     /**
      * <p>
      * IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the
-     * IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     * IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      * </p>
      * 
      * @param roleARN
      *        IAM ARN of the role to use to send application messages. Note: To write application messages to
-     *        CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     *        CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      */
 
     public void setRoleARN(String roleARN) {
@@ -100,11 +101,11 @@ public class CloudWatchLoggingOption implements Serializable, Cloneable, Structu
     /**
      * <p>
      * IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the
-     * IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     * IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      * </p>
      * 
      * @return IAM ARN of the role to use to send application messages. Note: To write application messages to
-     *         CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     *         CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      */
 
     public String getRoleARN() {
@@ -114,12 +115,12 @@ public class CloudWatchLoggingOption implements Serializable, Cloneable, Structu
     /**
      * <p>
      * IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the
-     * IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     * IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      * </p>
      * 
      * @param roleARN
      *        IAM ARN of the role to use to send application messages. Note: To write application messages to
-     *        CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.
+     *        CloudWatch, the IAM role that is used must have the <code>PutLogEvents</code> policy action enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

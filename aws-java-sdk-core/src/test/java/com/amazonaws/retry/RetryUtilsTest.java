@@ -45,4 +45,13 @@ public class RetryUtilsTest {
         assertFalse("InternalFailure error code should be false", RetryUtils.isThrottlingException(ase));
     }
 
+    @Test
+    public void retriesOnPriorRequestNotCompleteErrorCode() {
+        AmazonServiceException ase = new AmazonServiceException("msg");
+        ase.setStatusCode(500);
+        ase.setErrorCode("PriorRequestNotComplete");
+        assertTrue("PriorRequestNotComplete should be retried", RetryUtils.isRetryableServiceException(ase));
+
+    }
+
 }

@@ -209,6 +209,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateDefaultVpcResult createDefaultVpc(CreateDefaultVpcRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDhcpOptionsResult createDhcpOptions(CreateDhcpOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -132,6 +132,8 @@ public abstract class AbstractS3ResponseHandler<T>
             } else if (key.equalsIgnoreCase(Headers.ETAG)) {
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
             } else if (key.equalsIgnoreCase(Headers.EXPIRES)) {
+                // Set the raw header then try to parse it as a date
+                metadata.setHeader(Headers.EXPIRES, header.getValue());
                 try {
                     metadata.setHttpExpiresDate(DateUtils.parseRFC822Date(header.getValue()));
                 } catch (Exception pe) {

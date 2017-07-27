@@ -15,11 +15,15 @@
 package com.amazonaws.protocol.json;
 
 import com.amazonaws.annotation.SdkProtectedApi;
+import com.amazonaws.protocol.MarshallLocation;
+import com.amazonaws.protocol.MarshallingType;
 import com.amazonaws.protocol.OperationInfo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 import com.amazonaws.protocol.ProtocolRequestMarshaller;
 import com.amazonaws.protocol.json.internal.JsonProtocolMarshaller;
+import com.amazonaws.protocol.json.internal.MarshallerRegistry;
 import com.amazonaws.protocol.json.internal.NullAsEmptyBodyProtocolRequestMarshaller;
+import com.amazonaws.protocol.json.internal.SimpleTypeJsonMarshallers;
 
 /**
  * Builder to create an appropriate implementation of {@link ProtocolMarshaller} for JSON based services.
@@ -34,6 +38,7 @@ public class JsonProtocolMarshallerBuilder<T> {
     private OperationInfo operationInfo;
     private boolean sendExplicitNullForPayload;
     private T originalRequest;
+    private MarshallerRegistry.Builder marshallerRegistry;
 
     public static <T> JsonProtocolMarshallerBuilder<T> standard() {
         return new JsonProtocolMarshallerBuilder<T>();
@@ -68,11 +73,33 @@ public class JsonProtocolMarshallerBuilder<T> {
         return this;
     }
 
+    /**
+     * Registers an override for the marshaller registry.
+     *
+     * @param marshallLocation Location to override marshaller for.
+     * @param marshallingType  Type to override marshaller for.
+     * @param marshaller       Marshaller to use for the given location and type.
+     * @param <MarshallT>      Type of thing being marshalled.
+     * @return This builder for method chaining.
+     */
+    public <MarshallT> JsonProtocolMarshallerBuilder<T> marshallerOverride(MarshallLocation marshallLocation,
+                                                                           MarshallingType<MarshallT> marshallingType,
+                                                                           StructuredJsonMarshaller<MarshallT> marshaller) {
+        if (marshallerRegistry == null) {
+            this.marshallerRegistry = MarshallerRegistry.builder();
+        }
+        marshallerRegistry.addMarshaller(marshallLocation, marshallingType, SimpleTypeJsonMarshallers.adapt(marshaller));
+        return this;
+    }
+
     public ProtocolRequestMarshaller<T> build() {
         final ProtocolRequestMarshaller<T> protocolMarshaller = new JsonProtocolMarshaller<T>(jsonGenerator,
                                                                                               contentType,
                                                                                               operationInfo,
-                                                                                              originalRequest);
-        return sendExplicitNullForPayload ? protocolMarshaller : new NullAsEmptyBodyProtocolRequestMarshaller<T>(protocolMarshaller);
+                                                                                              originalRequest,
+                                                                                              marshallerRegistry);
+        return sendExplicitNullForPayload ? protocolMarshaller :
+                new NullAsEmptyBodyProtocolRequestMarshaller<T>(protocolMarshaller);
     }
+
 }

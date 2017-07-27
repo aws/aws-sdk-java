@@ -17,6 +17,7 @@ package com.amazonaws.transform;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.util.Base64;
 import com.amazonaws.util.DateUtils;
+import com.fasterxml.jackson.core.JsonToken;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -180,13 +181,18 @@ public class SimpleTypeJsonUnmarshallers {
     }
 
     /**
-     * Unmarshaller for Date values - JSON dates come in as epoch seconds.
+     * Unmarshaller for Date values - JSON dates come in as epoch seconds for AWS services and ISO8601 string
+     * for API Gateway fronted services..
      */
     public static class DateJsonUnmarshaller implements Unmarshaller<Date, JsonUnmarshallerContext> {
         public Date unmarshall(JsonUnmarshallerContext unmarshallerContext)
                 throws Exception {
-            return DateUtils.parseServiceSpecificDate(unmarshallerContext
-                    .readText());
+            // If value is string, assume ISO8601. Otherwise parse as epoch seconds.
+            if (unmarshallerContext.getCurrentToken() == JsonToken.VALUE_STRING) {
+                return DateUtils.parseISO8601Date(unmarshallerContext.readText());
+            } else {
+                return DateUtils.parseServiceSpecificDate(unmarshallerContext.readText());
+            }
         }
 
         private static final DateJsonUnmarshaller instance = new DateJsonUnmarshaller();

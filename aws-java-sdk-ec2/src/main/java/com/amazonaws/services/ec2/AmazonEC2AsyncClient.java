@@ -1343,6 +1343,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDefaultVpcResult> createDefaultVpcAsync(CreateDefaultVpcRequest request) {
+
+        return createDefaultVpcAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDefaultVpcResult> createDefaultVpcAsync(final CreateDefaultVpcRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDefaultVpcRequest, CreateDefaultVpcResult> asyncHandler) {
+        final CreateDefaultVpcRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDefaultVpcResult>() {
+            @Override
+            public CreateDefaultVpcResult call() throws Exception {
+                CreateDefaultVpcResult result = null;
+
+                try {
+                    result = executeCreateDefaultVpc(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDhcpOptionsResult> createDhcpOptionsAsync(CreateDhcpOptionsRequest request) {
 
         return createDhcpOptionsAsync(request, null);

@@ -18,7 +18,6 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
-
 import java.io.IOException;
 
 /**
@@ -40,8 +39,8 @@ public class PredefinedRetryPolicies {
     public static final int DEFAULT_MAX_ERROR_RETRY = 3;
 
     /**
-     * SDK default retry policy (except for AmazonDynamoDBClient,
-     * whose constructor will replace the DEFAULT with DYNAMODB_DEFAULT.)
+     * SDK default retry policy. Amazon DynamoDB has a custom retry policy that is used when no
+     * {@link ClientConfiguration} is provided.
      */
     public static final RetryPolicy DEFAULT;
 
