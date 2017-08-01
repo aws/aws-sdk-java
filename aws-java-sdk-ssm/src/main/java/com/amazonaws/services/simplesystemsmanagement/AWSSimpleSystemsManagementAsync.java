@@ -612,7 +612,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Delete a list of parameters.
+     * Delete a list of parameters. This API is used to delete parameters by using the Amazon EC2 console.
      * </p>
      * 
      * @param deleteParametersRequest
@@ -625,7 +625,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Delete a list of parameters.
+     * Delete a list of parameters. This API is used to delete parameters by using the Amazon EC2 console.
      * </p>
      * 
      * @param deleteParametersRequest
@@ -1512,6 +1512,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Get information about a parameter.
      * </p>
+     * <p>
+     * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
+     * response includes information up to the limit specified. The number of items returned, however, can be between
+     * zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the
+     * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
+     * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
+     * </p>
      * 
      * @param describeParametersRequest
      * @return A Java Future containing the result of the DescribeParameters operation returned by the service.
@@ -1524,6 +1531,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Get information about a parameter.
+     * </p>
+     * <p>
+     * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
+     * response includes information up to the limit specified. The number of items returned, however, can be between
+     * zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the
+     * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
+     * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
      * </p>
      * 
      * @param describeParametersRequest
@@ -2059,6 +2073,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
      * Systems Manager Parameters</a>.
      * </p>
+     * <p>
+     * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
+     * response includes information up to the limit specified. The number of items returned, however, can be between
+     * zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the
+     * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
+     * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
+     * </p>
      * 
      * @param getParametersByPathRequest
      * @return A Java Future containing the result of the GetParametersByPath operation returned by the service.
@@ -2073,6 +2094,13 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Retrieve parameters in a specific hierarchy. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
      * Systems Manager Parameters</a>.
+     * </p>
+     * <p>
+     * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
+     * response includes information up to the limit specified. The number of items returned, however, can be between
+     * zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the
+     * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
+     * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
      * </p>
      * 
      * @param getParametersByPathRequest
@@ -2708,6 +2736,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest removeTagsFromResourceRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sends a signal to an Automation execution to change the current behavior or status of the execution.
+     * </p>
+     * 
+     * @param sendAutomationSignalRequest
+     * @return A Java Future containing the result of the SendAutomationSignal operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.SendAutomationSignal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SendAutomationSignalResult> sendAutomationSignalAsync(SendAutomationSignalRequest sendAutomationSignalRequest);
+
+    /**
+     * <p>
+     * Sends a signal to an Automation execution to change the current behavior or status of the execution.
+     * </p>
+     * 
+     * @param sendAutomationSignalRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendAutomationSignal operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.SendAutomationSignal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SendAutomationSignalResult> sendAutomationSignalAsync(SendAutomationSignalRequest sendAutomationSignalRequest,
+            com.amazonaws.handlers.AsyncHandler<SendAutomationSignalRequest, SendAutomationSignalResult> asyncHandler);
 
     /**
      * <p>

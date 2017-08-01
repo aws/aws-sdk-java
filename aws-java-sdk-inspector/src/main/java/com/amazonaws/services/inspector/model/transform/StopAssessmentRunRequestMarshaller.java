@@ -29,6 +29,8 @@ public class StopAssessmentRunRequestMarshaller {
 
     private static final MarshallingInfo<String> ASSESSMENTRUNARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentRunArn").build();
+    private static final MarshallingInfo<String> STOPACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopAction").build();
 
     private static final StopAssessmentRunRequestMarshaller instance = new StopAssessmentRunRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class StopAssessmentRunRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(stopAssessmentRunRequest.getAssessmentRunArn(), ASSESSMENTRUNARN_BINDING);
+            protocolMarshaller.marshall(stopAssessmentRunRequest.getStopAction(), STOPACTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

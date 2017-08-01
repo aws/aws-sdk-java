@@ -1,3 +1,12 @@
+# __1.11.171__ __2017-07-31__
+## __Amazon Inspector__
+  - ### Features
+    - Inspector's StopAssessmentRun API has been updated with a new input option - stopAction. This request parameter can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default value, and the previous behavior) stops the AWS agent data collection and begins the results evaluation for findings generation based on the data collected so far. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Adds a SendAutomationSignal API to SSM Service. This API is used to send a signal to an automation execution to change the current behavior or status of the execution.
+
 # __1.11.170__ __2017-07-27__
 ## __Amazon EC2__
   - ### Features

@@ -20,6 +20,7 @@ import com.amazonaws.ProxyAuthenticationMethod;
 import com.amazonaws.Request;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.apache.request.impl.ApacheHttpRequestFactory;
+import com.amazonaws.http.apache.request.impl.HttpGetWithBody;
 import com.amazonaws.http.request.HttpRequestFactory;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.util.IOUtils;
@@ -37,7 +38,6 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpHeaders;
 import org.apache.http.client.config.AuthSchemes;
 import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpHead;
 import org.apache.http.client.methods.HttpPatch;
 import org.apache.http.client.methods.HttpPost;
@@ -126,8 +126,7 @@ public class ApacheDefaultHttpRequestFactoryTest {
     @Test
     public void get_request_returns_correct_apache_requests() throws IOException, URISyntaxException {
         final Request<Object> request = newDefaultRequest(HttpMethodName.GET);
-        Assert.assertThat(requestFactory.create(request, settings), Matchers.instanceOf(HttpGet
-                .class));
+        Assert.assertThat(requestFactory.create(request, settings), Matchers.instanceOf(HttpGetWithBody.class));
     }
 
     @Test

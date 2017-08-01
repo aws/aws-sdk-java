@@ -31,7 +31,8 @@ public enum AssessmentRunState {
     FAILED("FAILED"),
     ERROR("ERROR"),
     COMPLETED("COMPLETED"),
-    COMPLETED_WITH_ERRORS("COMPLETED_WITH_ERRORS");
+    COMPLETED_WITH_ERRORS("COMPLETED_WITH_ERRORS"),
+    CANCELED("CANCELED");
 
     private String value;
 

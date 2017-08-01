@@ -143,6 +143,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvocationDoesNotExist").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAutomationSignalException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationSignalException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.AlreadyExistsException.class))
                     .addErrorMetadata(
@@ -1436,7 +1439,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Delete a list of parameters.
+     * Delete a list of parameters. This API is used to delete parameters by using the Amazon EC2 console.
      * </p>
      * 
      * @param deleteParametersRequest
@@ -2965,6 +2968,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * <p>
      * Get information about a parameter.
      * </p>
+     * <p>
+     * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
+     * response includes information up to the limit specified. The number of items returned, however, can be between
+     * zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the
+     * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
+     * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
+     * </p>
      * 
      * @param describeParametersRequest
      * @return Result of the DescribeParameters operation returned by the service.
@@ -3905,6 +3915,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Retrieve parameters in a specific hierarchy. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
      * Systems Manager Parameters</a>.
+     * </p>
+     * <p>
+     * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
+     * response includes information up to the limit specified. The number of items returned, however, can be between
+     * zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the
+     * results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>.
+     * You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.
      * </p>
      * 
      * @param getParametersByPathRequest
@@ -5077,6 +5094,60 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<RemoveTagsFromResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RemoveTagsFromResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sends a signal to an Automation execution to change the current behavior or status of the execution.
+     * </p>
+     * 
+     * @param sendAutomationSignalRequest
+     * @return Result of the SendAutomationSignal operation returned by the service.
+     * @throws AutomationExecutionNotFoundException
+     *         There is no automation execution information for the requested automation execution ID.
+     * @throws InvalidAutomationSignalException
+     *         The signal is not valid for the current Automation execution.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.SendAutomationSignal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public SendAutomationSignalResult sendAutomationSignal(SendAutomationSignalRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendAutomationSignal(request);
+    }
+
+    @SdkInternalApi
+    final SendAutomationSignalResult executeSendAutomationSignal(SendAutomationSignalRequest sendAutomationSignalRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendAutomationSignalRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendAutomationSignalRequest> request = null;
+        Response<SendAutomationSignalResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendAutomationSignalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendAutomationSignalRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendAutomationSignalResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendAutomationSignalResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

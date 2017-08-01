@@ -2825,6 +2825,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<SendAutomationSignalResult> sendAutomationSignalAsync(SendAutomationSignalRequest request) {
+
+        return sendAutomationSignalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendAutomationSignalResult> sendAutomationSignalAsync(final SendAutomationSignalRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendAutomationSignalRequest, SendAutomationSignalResult> asyncHandler) {
+        final SendAutomationSignalRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendAutomationSignalResult>() {
+            @Override
+            public SendAutomationSignalResult call() throws Exception {
+                SendAutomationSignalResult result = null;
+
+                try {
+                    result = executeSendAutomationSignal(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SendCommandResult> sendCommandAsync(SendCommandRequest request) {
 
         return sendCommandAsync(request, null);

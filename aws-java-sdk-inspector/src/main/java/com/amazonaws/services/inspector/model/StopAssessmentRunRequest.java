@@ -31,6 +31,14 @@ public class StopAssessmentRunRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String assessmentRunArn;
+    /**
+     * <p>
+     * An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default
+     * value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.
+     * </p>
+     */
+    private String stopAction;
 
     /**
      * <p>
@@ -73,6 +81,85 @@ public class StopAssessmentRunRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default
+     * value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.
+     * </p>
+     * 
+     * @param stopAction
+     *        An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the
+     *        default value), stops the AWS agent from collecting data and begins the results evaluation and the
+     *        findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no
+     *        findings are generated.
+     * @see StopAction
+     */
+
+    public void setStopAction(String stopAction) {
+        this.stopAction = stopAction;
+    }
+
+    /**
+     * <p>
+     * An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default
+     * value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.
+     * </p>
+     * 
+     * @return An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the
+     *         default value), stops the AWS agent from collecting data and begins the results evaluation and the
+     *         findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no
+     *         findings are generated.
+     * @see StopAction
+     */
+
+    public String getStopAction() {
+        return this.stopAction;
+    }
+
+    /**
+     * <p>
+     * An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default
+     * value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.
+     * </p>
+     * 
+     * @param stopAction
+     *        An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the
+     *        default value), stops the AWS agent from collecting data and begins the results evaluation and the
+     *        findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no
+     *        findings are generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StopAction
+     */
+
+    public StopAssessmentRunRequest withStopAction(String stopAction) {
+        setStopAction(stopAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the default
+     * value), stops the AWS agent from collecting data and begins the results evaluation and the findings generation
+     * process. SKIP_EVALUATION cancels the assessment run immediately, after which no findings are generated.
+     * </p>
+     * 
+     * @param stopAction
+     *        An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION (the
+     *        default value), stops the AWS agent from collecting data and begins the results evaluation and the
+     *        findings generation process. SKIP_EVALUATION cancels the assessment run immediately, after which no
+     *        findings are generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StopAction
+     */
+
+    public StopAssessmentRunRequest withStopAction(StopAction stopAction) {
+        this.stopAction = stopAction.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -84,7 +171,9 @@ public class StopAssessmentRunRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessmentRunArn() != null)
-            sb.append("AssessmentRunArn: ").append(getAssessmentRunArn());
+            sb.append("AssessmentRunArn: ").append(getAssessmentRunArn()).append(",");
+        if (getStopAction() != null)
+            sb.append("StopAction: ").append(getStopAction());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +192,10 @@ public class StopAssessmentRunRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getAssessmentRunArn() != null && other.getAssessmentRunArn().equals(this.getAssessmentRunArn()) == false)
             return false;
+        if (other.getStopAction() == null ^ this.getStopAction() == null)
+            return false;
+        if (other.getStopAction() != null && other.getStopAction().equals(this.getStopAction()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +205,7 @@ public class StopAssessmentRunRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAssessmentRunArn() == null) ? 0 : getAssessmentRunArn().hashCode());
+        hashCode = prime * hashCode + ((getStopAction() == null) ? 0 : getStopAction().hashCode());
         return hashCode;
     }
 

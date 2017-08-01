@@ -22,6 +22,7 @@ public enum AutomationExecutionStatus {
 
     Pending("Pending"),
     InProgress("InProgress"),
+    Waiting("Waiting"),
     Success("Success"),
     TimedOut("TimedOut"),
     Cancelled("Cancelled"),

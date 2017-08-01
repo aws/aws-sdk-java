@@ -13,11 +13,10 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.model;
-import java.io.Serializable;
-
-import java.util.Map;
 
 import com.amazonaws.AmazonServiceException;
+import java.io.Serializable;
+import java.util.Map;
 
 /**
  * Provides an extension of the AmazonServiceException
@@ -167,6 +166,16 @@ public class AmazonS3Exception extends AmazonServiceException implements Seriali
     public String toString() {
         return super.toString() + ", "
             + "S3 Extended Request ID: " + getExtendedRequestId();
+    }
+
+    @Override
+    public String getMessage() {
+        return getErrorMessage()
+               + " (Service: " + getServiceName()
+               + "; Status Code: " + getStatusCode()
+               + "; Error Code: " + getErrorCode()
+               + "; Request ID: " + getRequestId()
+               + "; S3 Extended Request ID: " + getExtendedRequestId() + ")";
     }
 
     /**

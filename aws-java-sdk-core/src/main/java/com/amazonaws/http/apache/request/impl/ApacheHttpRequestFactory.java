@@ -36,7 +36,6 @@ import org.apache.http.client.config.AuthSchemes;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpHead;
 import org.apache.http.client.methods.HttpOptions;
 import org.apache.http.client.methods.HttpPatch;
@@ -121,7 +120,7 @@ public class ApacheHttpRequestFactory implements
             case HEAD:
                 return new HttpHead(uri);
             case GET:
-                return new HttpGet(uri);
+                return wrapEntity(request, new HttpGetWithBody(uri), encodedParams);
             case DELETE:
                 return new HttpDelete(uri);
             case OPTIONS:

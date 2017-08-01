@@ -424,6 +424,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public SendAutomationSignalResult sendAutomationSignal(SendAutomationSignalRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendCommandResult sendCommand(SendCommandRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
