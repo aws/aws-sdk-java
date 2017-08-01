@@ -29,6 +29,8 @@ public class CampaignEmailMessageMarshaller {
 
     private static final MarshallingInfo<String> BODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Body").build();
+    private static final MarshallingInfo<String> FROMADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FromAddress").build();
     private static final MarshallingInfo<String> HTMLBODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("HtmlBody").build();
     private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class CampaignEmailMessageMarshaller {
 
         try {
             protocolMarshaller.marshall(campaignEmailMessage.getBody(), BODY_BINDING);
+            protocolMarshaller.marshall(campaignEmailMessage.getFromAddress(), FROMADDRESS_BINDING);
             protocolMarshaller.marshall(campaignEmailMessage.getHtmlBody(), HTMLBODY_BINDING);
             protocolMarshaller.marshall(campaignEmailMessage.getTitle(), TITLE_BINDING);
         } catch (Exception e) {

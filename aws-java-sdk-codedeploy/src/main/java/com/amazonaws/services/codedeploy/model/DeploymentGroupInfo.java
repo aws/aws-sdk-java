@@ -54,13 +54,15 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     private String deploymentConfigName;
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
+     * tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFilters;
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of
+     * the specified tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFilters;
@@ -131,6 +133,21 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private LastDeploymentInfo lastAttemptedDeployment;
+    /**
+     * <p>
+     * Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances
+     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * </p>
+     */
+    private EC2TagSet ec2TagSet;
+    /**
+     * <p>
+     * Information about groups of tags applied to an on-premises instance. The deployment group includes only
+     * on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     * onPremisesInstanceTagFilters.
+     * </p>
+     */
+    private OnPremisesTagSet onPremisesTagSet;
 
     /**
      * <p>
@@ -294,10 +311,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
+     * tags.
      * </p>
      * 
-     * @return The Amazon EC2 tags on which to filter.
+     * @return The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the
+     *         specified tags.
      */
 
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
@@ -309,11 +328,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
+     * tags.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags on which to filter.
+     *        The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the
+     *        specified tags.
      */
 
     public void setEc2TagFilters(java.util.Collection<EC2TagFilter> ec2TagFilters) {
@@ -327,7 +348,8 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
+     * tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -336,7 +358,8 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags on which to filter.
+     *        The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the
+     *        specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,11 +375,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified
+     * tags.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags on which to filter.
+     *        The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the
+     *        specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,10 +392,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of
+     * the specified tags.
      * </p>
      * 
-     * @return The on-premises instance tags on which to filter.
+     * @return The on-premises instance tags on which to filter. The deployment group includes on-premises instances
+     *         with any of the specified tags.
      */
 
     public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
@@ -382,11 +409,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of
+     * the specified tags.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags on which to filter.
+     *        The on-premises instance tags on which to filter. The deployment group includes on-premises instances with
+     *        any of the specified tags.
      */
 
     public void setOnPremisesInstanceTagFilters(java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
@@ -400,7 +429,8 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of
+     * the specified tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -409,7 +439,8 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags on which to filter.
+     *        The on-premises instance tags on which to filter. The deployment group includes on-premises instances with
+     *        any of the specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,11 +456,13 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of
+     * the specified tags.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags on which to filter.
+     *        The on-premises instance tags on which to filter. The deployment group includes on-premises instances with
+     *        any of the specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -951,6 +984,104 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances
+     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * </p>
+     * 
+     * @param ec2TagSet
+     *        Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2
+     *        instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     */
+
+    public void setEc2TagSet(EC2TagSet ec2TagSet) {
+        this.ec2TagSet = ec2TagSet;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances
+     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * </p>
+     * 
+     * @return Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2
+     *         instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     */
+
+    public EC2TagSet getEc2TagSet() {
+        return this.ec2TagSet;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances
+     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * </p>
+     * 
+     * @param ec2TagSet
+     *        Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2
+     *        instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentGroupInfo withEc2TagSet(EC2TagSet ec2TagSet) {
+        setEc2TagSet(ec2TagSet);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to an on-premises instance. The deployment group includes only
+     * on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     * onPremisesInstanceTagFilters.
+     * </p>
+     * 
+     * @param onPremisesTagSet
+     *        Information about groups of tags applied to an on-premises instance. The deployment group includes only
+     *        on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     *        onPremisesInstanceTagFilters.
+     */
+
+    public void setOnPremisesTagSet(OnPremisesTagSet onPremisesTagSet) {
+        this.onPremisesTagSet = onPremisesTagSet;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to an on-premises instance. The deployment group includes only
+     * on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     * onPremisesInstanceTagFilters.
+     * </p>
+     * 
+     * @return Information about groups of tags applied to an on-premises instance. The deployment group includes only
+     *         on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     *         onPremisesInstanceTagFilters.
+     */
+
+    public OnPremisesTagSet getOnPremisesTagSet() {
+        return this.onPremisesTagSet;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to an on-premises instance. The deployment group includes only
+     * on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     * onPremisesInstanceTagFilters.
+     * </p>
+     * 
+     * @param onPremisesTagSet
+     *        Information about groups of tags applied to an on-premises instance. The deployment group includes only
+     *        on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     *        onPremisesInstanceTagFilters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentGroupInfo withOnPremisesTagSet(OnPremisesTagSet onPremisesTagSet) {
+        setOnPremisesTagSet(onPremisesTagSet);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -994,7 +1125,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
         if (getLastSuccessfulDeployment() != null)
             sb.append("LastSuccessfulDeployment: ").append(getLastSuccessfulDeployment()).append(",");
         if (getLastAttemptedDeployment() != null)
-            sb.append("LastAttemptedDeployment: ").append(getLastAttemptedDeployment());
+            sb.append("LastAttemptedDeployment: ").append(getLastAttemptedDeployment()).append(",");
+        if (getEc2TagSet() != null)
+            sb.append("Ec2TagSet: ").append(getEc2TagSet()).append(",");
+        if (getOnPremisesTagSet() != null)
+            sb.append("OnPremisesTagSet: ").append(getOnPremisesTagSet());
         sb.append("}");
         return sb.toString();
     }
@@ -1078,6 +1213,14 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getLastAttemptedDeployment() != null && other.getLastAttemptedDeployment().equals(this.getLastAttemptedDeployment()) == false)
             return false;
+        if (other.getEc2TagSet() == null ^ this.getEc2TagSet() == null)
+            return false;
+        if (other.getEc2TagSet() != null && other.getEc2TagSet().equals(this.getEc2TagSet()) == false)
+            return false;
+        if (other.getOnPremisesTagSet() == null ^ this.getOnPremisesTagSet() == null)
+            return false;
+        if (other.getOnPremisesTagSet() != null && other.getOnPremisesTagSet().equals(this.getOnPremisesTagSet()) == false)
+            return false;
         return true;
     }
 
@@ -1103,6 +1246,8 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getLoadBalancerInfo() == null) ? 0 : getLoadBalancerInfo().hashCode());
         hashCode = prime * hashCode + ((getLastSuccessfulDeployment() == null) ? 0 : getLastSuccessfulDeployment().hashCode());
         hashCode = prime * hashCode + ((getLastAttemptedDeployment() == null) ? 0 : getLastAttemptedDeployment().hashCode());
+        hashCode = prime * hashCode + ((getEc2TagSet() == null) ? 0 : getEc2TagSet().hashCode());
+        hashCode = prime * hashCode + ((getOnPremisesTagSet() == null) ? 0 : getOnPremisesTagSet().hashCode());
         return hashCode;
     }
 

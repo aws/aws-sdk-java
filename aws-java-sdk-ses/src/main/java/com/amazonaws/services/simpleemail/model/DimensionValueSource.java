@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum DimensionValueSource {
 
     MessageTag("messageTag"),
-    EmailHeader("emailHeader");
+    EmailHeader("emailHeader"),
+    LinkTag("linkTag");
 
     private String value;
 

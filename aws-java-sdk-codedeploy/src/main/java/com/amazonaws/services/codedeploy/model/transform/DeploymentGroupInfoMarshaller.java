@@ -62,6 +62,10 @@ public class DeploymentGroupInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastSuccessfulDeployment").build();
     private static final MarshallingInfo<StructuredPojo> LASTATTEMPTEDDEPLOYMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAttemptedDeployment").build();
+    private static final MarshallingInfo<StructuredPojo> EC2TAGSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ec2TagSet").build();
+    private static final MarshallingInfo<StructuredPojo> ONPREMISESTAGSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("onPremisesTagSet").build();
 
     private static final DeploymentGroupInfoMarshaller instance = new DeploymentGroupInfoMarshaller();
 
@@ -96,6 +100,8 @@ public class DeploymentGroupInfoMarshaller {
             protocolMarshaller.marshall(deploymentGroupInfo.getLoadBalancerInfo(), LOADBALANCERINFO_BINDING);
             protocolMarshaller.marshall(deploymentGroupInfo.getLastSuccessfulDeployment(), LASTSUCCESSFULDEPLOYMENT_BINDING);
             protocolMarshaller.marshall(deploymentGroupInfo.getLastAttemptedDeployment(), LASTATTEMPTEDDEPLOYMENT_BINDING);
+            protocolMarshaller.marshall(deploymentGroupInfo.getEc2TagSet(), EC2TAGSET_BINDING);
+            protocolMarshaller.marshall(deploymentGroupInfo.getOnPremisesTagSet(), ONPREMISESTAGSET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

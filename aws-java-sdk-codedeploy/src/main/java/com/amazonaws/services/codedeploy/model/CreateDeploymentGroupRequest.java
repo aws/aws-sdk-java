@@ -60,14 +60,14 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
-     * tags.
+     * tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFilters;
     /**
      * <p>
      * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
-     * any of the specified tags.
+     * any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFilters;
@@ -122,6 +122,21 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private LoadBalancerInfo loadBalancerInfo;
+    /**
+     * <p>
+     * Information about groups of tags applied to EC2 instances. The deployment group will include only EC2 instances
+     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * </p>
+     */
+    private EC2TagSet ec2TagSet;
+    /**
+     * <p>
+     * Information about groups of tags applied to on-premises instances. The deployment group will include only
+     * on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     * onPremisesInstanceTagFilters.
+     * </p>
+     */
+    private OnPremisesTagSet onPremisesTagSet;
 
     /**
      * <p>
@@ -309,11 +324,11 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
-     * tags.
+     * tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      * 
      * @return The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the
-     *         specified tags.
+     *         specified tags. Cannot be used in the same call as ec2TagSet.
      */
 
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
@@ -326,12 +341,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
-     * tags.
+     * tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      * 
      * @param ec2TagFilters
      *        The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the
-     *        specified tags.
+     *        specified tags. Cannot be used in the same call as ec2TagSet.
      */
 
     public void setEc2TagFilters(java.util.Collection<EC2TagFilter> ec2TagFilters) {
@@ -346,7 +361,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
-     * tags.
+     * tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -356,7 +371,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param ec2TagFilters
      *        The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the
-     *        specified tags.
+     *        specified tags. Cannot be used in the same call as ec2TagSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,12 +388,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
-     * tags.
+     * tags. Cannot be used in the same call as ec2TagSet.
      * </p>
      * 
      * @param ec2TagFilters
      *        The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the
-     *        specified tags.
+     *        specified tags. Cannot be used in the same call as ec2TagSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,11 +405,11 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
-     * any of the specified tags.
+     * any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
      * </p>
      * 
      * @return The on-premises instance tags on which to filter. The deployment group will include on-premises instances
-     *         with any of the specified tags.
+     *         with any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
      */
 
     public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
@@ -407,12 +422,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
-     * any of the specified tags.
+     * any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
      *        The on-premises instance tags on which to filter. The deployment group will include on-premises instances
-     *        with any of the specified tags.
+     *        with any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
      */
 
     public void setOnPremisesInstanceTagFilters(java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
@@ -427,7 +442,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
-     * any of the specified tags.
+     * any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -437,7 +452,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param onPremisesInstanceTagFilters
      *        The on-premises instance tags on which to filter. The deployment group will include on-premises instances
-     *        with any of the specified tags.
+     *        with any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -454,12 +469,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
-     * any of the specified tags.
+     * any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
      *        The on-premises instance tags on which to filter. The deployment group will include on-premises instances
-     *        with any of the specified tags.
+     *        with any of the specified tags. Cannot be used in the same call as OnPremisesTagSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -880,6 +895,104 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Information about groups of tags applied to EC2 instances. The deployment group will include only EC2 instances
+     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * </p>
+     * 
+     * @param ec2TagSet
+     *        Information about groups of tags applied to EC2 instances. The deployment group will include only EC2
+     *        instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     */
+
+    public void setEc2TagSet(EC2TagSet ec2TagSet) {
+        this.ec2TagSet = ec2TagSet;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to EC2 instances. The deployment group will include only EC2 instances
+     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * </p>
+     * 
+     * @return Information about groups of tags applied to EC2 instances. The deployment group will include only EC2
+     *         instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     */
+
+    public EC2TagSet getEc2TagSet() {
+        return this.ec2TagSet;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to EC2 instances. The deployment group will include only EC2 instances
+     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * </p>
+     * 
+     * @param ec2TagSet
+     *        Information about groups of tags applied to EC2 instances. The deployment group will include only EC2
+     *        instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentGroupRequest withEc2TagSet(EC2TagSet ec2TagSet) {
+        setEc2TagSet(ec2TagSet);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to on-premises instances. The deployment group will include only
+     * on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     * onPremisesInstanceTagFilters.
+     * </p>
+     * 
+     * @param onPremisesTagSet
+     *        Information about groups of tags applied to on-premises instances. The deployment group will include only
+     *        on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     *        onPremisesInstanceTagFilters.
+     */
+
+    public void setOnPremisesTagSet(OnPremisesTagSet onPremisesTagSet) {
+        this.onPremisesTagSet = onPremisesTagSet;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to on-premises instances. The deployment group will include only
+     * on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     * onPremisesInstanceTagFilters.
+     * </p>
+     * 
+     * @return Information about groups of tags applied to on-premises instances. The deployment group will include only
+     *         on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     *         onPremisesInstanceTagFilters.
+     */
+
+    public OnPremisesTagSet getOnPremisesTagSet() {
+        return this.onPremisesTagSet;
+    }
+
+    /**
+     * <p>
+     * Information about groups of tags applied to on-premises instances. The deployment group will include only
+     * on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     * onPremisesInstanceTagFilters.
+     * </p>
+     * 
+     * @param onPremisesTagSet
+     *        Information about groups of tags applied to on-premises instances. The deployment group will include only
+     *        on-premises instances identified by all the tag groups. Cannot be used in the same call as
+     *        onPremisesInstanceTagFilters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentGroupRequest withOnPremisesTagSet(OnPremisesTagSet onPremisesTagSet) {
+        setOnPremisesTagSet(onPremisesTagSet);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -915,7 +1028,11 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
         if (getBlueGreenDeploymentConfiguration() != null)
             sb.append("BlueGreenDeploymentConfiguration: ").append(getBlueGreenDeploymentConfiguration()).append(",");
         if (getLoadBalancerInfo() != null)
-            sb.append("LoadBalancerInfo: ").append(getLoadBalancerInfo());
+            sb.append("LoadBalancerInfo: ").append(getLoadBalancerInfo()).append(",");
+        if (getEc2TagSet() != null)
+            sb.append("Ec2TagSet: ").append(getEc2TagSet()).append(",");
+        if (getOnPremisesTagSet() != null)
+            sb.append("OnPremisesTagSet: ").append(getOnPremisesTagSet());
         sb.append("}");
         return sb.toString();
     }
@@ -983,6 +1100,14 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getLoadBalancerInfo() != null && other.getLoadBalancerInfo().equals(this.getLoadBalancerInfo()) == false)
             return false;
+        if (other.getEc2TagSet() == null ^ this.getEc2TagSet() == null)
+            return false;
+        if (other.getEc2TagSet() != null && other.getEc2TagSet().equals(this.getEc2TagSet()) == false)
+            return false;
+        if (other.getOnPremisesTagSet() == null ^ this.getOnPremisesTagSet() == null)
+            return false;
+        if (other.getOnPremisesTagSet() != null && other.getOnPremisesTagSet().equals(this.getOnPremisesTagSet()) == false)
+            return false;
         return true;
     }
 
@@ -1004,6 +1129,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDeploymentStyle() == null) ? 0 : getDeploymentStyle().hashCode());
         hashCode = prime * hashCode + ((getBlueGreenDeploymentConfiguration() == null) ? 0 : getBlueGreenDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerInfo() == null) ? 0 : getLoadBalancerInfo().hashCode());
+        hashCode = prime * hashCode + ((getEc2TagSet() == null) ? 0 : getEc2TagSet().hashCode());
+        hashCode = prime * hashCode + ((getOnPremisesTagSet() == null) ? 0 : getOnPremisesTagSet().hashCode());
         return hashCode;
     }
 

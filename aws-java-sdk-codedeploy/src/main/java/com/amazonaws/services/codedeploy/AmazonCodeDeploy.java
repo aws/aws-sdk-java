@@ -594,6 +594,14 @@ public interface AmazonCodeDeploy {
      * @throws InvalidBlueGreenDeploymentConfigurationException
      *         The configuration for the blue/green deployment group was provided in an invalid format. For information
      *         about deployment configuration format, see <a>CreateDeploymentConfig</a>.
+     * @throws InvalidEC2TagCombinationException
+     *         A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of these data types
+     *         can be used in a single call.
+     * @throws InvalidOnPremisesTagCombinationException
+     *         A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these
+     *         data types can be used in a single call.
+     * @throws TagSetListLimitExceededException
+     *         The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.
      * @sample AmazonCodeDeploy.CreateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1321,6 +1329,14 @@ public interface AmazonCodeDeploy {
      * @throws InvalidBlueGreenDeploymentConfigurationException
      *         The configuration for the blue/green deployment group was provided in an invalid format. For information
      *         about deployment configuration format, see <a>CreateDeploymentConfig</a>.
+     * @throws InvalidEC2TagCombinationException
+     *         A call was submitted that specified both Ec2TagFilters and Ec2TagSet, but only one of these data types
+     *         can be used in a single call.
+     * @throws InvalidOnPremisesTagCombinationException
+     *         A call was submitted that specified both OnPremisesTagFilters and OnPremisesTagSet, but only one of these
+     *         data types can be used in a single call.
+     * @throws TagSetListLimitExceededException
+     *         The number of tag groups included in the tag set list exceeded the maximum allowed limit of 3.
      * @sample AmazonCodeDeploy.UpdateDeploymentGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroup"
      *      target="_top">AWS API Documentation</a>

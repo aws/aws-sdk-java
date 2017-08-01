@@ -56,6 +56,10 @@ public class UpdateDeploymentGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blueGreenDeploymentConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> LOADBALANCERINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loadBalancerInfo").build();
+    private static final MarshallingInfo<StructuredPojo> EC2TAGSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ec2TagSet").build();
+    private static final MarshallingInfo<StructuredPojo> ONPREMISESTAGSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("onPremisesTagSet").build();
 
     private static final UpdateDeploymentGroupRequestMarshaller instance = new UpdateDeploymentGroupRequestMarshaller();
 
@@ -87,6 +91,8 @@ public class UpdateDeploymentGroupRequestMarshaller {
             protocolMarshaller.marshall(updateDeploymentGroupRequest.getDeploymentStyle(), DEPLOYMENTSTYLE_BINDING);
             protocolMarshaller.marshall(updateDeploymentGroupRequest.getBlueGreenDeploymentConfiguration(), BLUEGREENDEPLOYMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateDeploymentGroupRequest.getLoadBalancerInfo(), LOADBALANCERINFO_BINDING);
+            protocolMarshaller.marshall(updateDeploymentGroupRequest.getEc2TagSet(), EC2TAGSET_BINDING);
+            protocolMarshaller.marshall(updateDeploymentGroupRequest.getOnPremisesTagSet(), ONPREMISESTAGSET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

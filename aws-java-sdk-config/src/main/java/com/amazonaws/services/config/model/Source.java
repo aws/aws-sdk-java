@@ -44,7 +44,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
      * </p>
      */
     private String sourceIdentifier;
@@ -137,7 +137,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
      * </p>
      * 
      * @param sourceIdentifier
@@ -147,7 +147,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *        >Using AWS Managed Config Rules</a>.</p>
      *        <p>
      *        For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such
-     *        as <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
+     *        as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -163,7 +163,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
      * </p>
      * 
      * @return For AWS Config managed rules, a predefined identifier from a list. For example,
@@ -172,7 +172,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *         >Using AWS Managed Config Rules</a>.</p>
      *         <p>
      *         For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function,
-     *         such as <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
+     *         such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
      */
 
     public String getSourceIdentifier() {
@@ -188,7 +188,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such as
-     * <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
+     * <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
      * </p>
      * 
      * @param sourceIdentifier
@@ -198,7 +198,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
      *        >Using AWS Managed Config Rules</a>.</p>
      *        <p>
      *        For custom rules, the identifier is the Amazon Resource Name (ARN) of the rule's AWS Lambda function, such
-     *        as <code>arn:aws:lambda:us-east-1:123456789012:function:custom_rule_name</code>.
+     *        as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

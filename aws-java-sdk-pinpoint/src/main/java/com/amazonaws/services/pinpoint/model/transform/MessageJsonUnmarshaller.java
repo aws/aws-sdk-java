@@ -76,6 +76,10 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
                     context.nextToken();
                     message.setMediaUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RawContent", targetDepth)) {
+                    context.nextToken();
+                    message.setRawContent(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SilentPush", targetDepth)) {
                     context.nextToken();
                     message.setSilentPush(context.getUnmarshaller(Boolean.class).unmarshall(context));

@@ -22,12 +22,13 @@ import javax.annotation.Generated;
  * <note>
  * <p>
  * When you create or update an event destination, you must provide one, and only one, destination. The destination can
- * be either Amazon CloudWatch or Amazon Kinesis Firehose.
+ * be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple Notification Service (Amazon SNS).
  * </p>
  * </note>
  * <p>
  * Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon
- * CloudWatch or Amazon Kinesis Firehose. For information about using configuration sets, see the <a
+ * CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using
+ * configuration sets, see the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
  * Guide</a>.
  * </p>
@@ -84,6 +85,13 @@ public class EventDestination implements Serializable, Cloneable {
      * </p>
      */
     private CloudWatchDestination cloudWatchDestination;
+    /**
+     * <p>
+     * An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
+     * destination.
+     * </p>
+     */
+    private SNSDestination sNSDestination;
 
     /**
      * <p>
@@ -456,6 +464,52 @@ public class EventDestination implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
+     * destination.
+     * </p>
+     * 
+     * @param sNSDestination
+     *        An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS)
+     *        event destination.
+     */
+
+    public void setSNSDestination(SNSDestination sNSDestination) {
+        this.sNSDestination = sNSDestination;
+    }
+
+    /**
+     * <p>
+     * An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
+     * destination.
+     * </p>
+     * 
+     * @return An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS)
+     *         event destination.
+     */
+
+    public SNSDestination getSNSDestination() {
+        return this.sNSDestination;
+    }
+
+    /**
+     * <p>
+     * An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event
+     * destination.
+     * </p>
+     * 
+     * @param sNSDestination
+     *        An object that contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS)
+     *        event destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventDestination withSNSDestination(SNSDestination sNSDestination) {
+        setSNSDestination(sNSDestination);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -475,7 +529,9 @@ public class EventDestination implements Serializable, Cloneable {
         if (getKinesisFirehoseDestination() != null)
             sb.append("KinesisFirehoseDestination: ").append(getKinesisFirehoseDestination()).append(",");
         if (getCloudWatchDestination() != null)
-            sb.append("CloudWatchDestination: ").append(getCloudWatchDestination());
+            sb.append("CloudWatchDestination: ").append(getCloudWatchDestination()).append(",");
+        if (getSNSDestination() != null)
+            sb.append("SNSDestination: ").append(getSNSDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +566,10 @@ public class EventDestination implements Serializable, Cloneable {
             return false;
         if (other.getCloudWatchDestination() != null && other.getCloudWatchDestination().equals(this.getCloudWatchDestination()) == false)
             return false;
+        if (other.getSNSDestination() == null ^ this.getSNSDestination() == null)
+            return false;
+        if (other.getSNSDestination() != null && other.getSNSDestination().equals(this.getSNSDestination()) == false)
+            return false;
         return true;
     }
 
@@ -523,6 +583,7 @@ public class EventDestination implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMatchingEventTypes() == null) ? 0 : getMatchingEventTypes().hashCode());
         hashCode = prime * hashCode + ((getKinesisFirehoseDestination() == null) ? 0 : getKinesisFirehoseDestination().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchDestination() == null) ? 0 : getCloudWatchDestination().hashCode());
+        hashCode = prime * hashCode + ((getSNSDestination() == null) ? 0 : getSNSDestination().hashCode());
         return hashCode;
     }
 

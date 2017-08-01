@@ -15,9 +15,6 @@ package com.amazonaws.services.pinpoint.model;
 import java.io.Serializable;
 import javax.annotation.Generated;
 
-/**
- * PutEventStream Response
- */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutEventStreamResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

@@ -1,3 +1,28 @@
+# __1.11.172__ __2017-08-01__
+## __AWS CodeDeploy__
+  - ### Features
+    - AWS CodeDeploy now supports the use of multiple tag groups in a single deployment group (an intersection of tags) to identify the instances for a deployment. When you create or update a deployment group, use the new ec2TagSet and onPremisesTagSet structures to specify up to three groups of tags. Only instances that are identified by at least one tag in each of the tag groups are included in the deployment group.
+
+## __AWS Config__
+  - ### Features
+    - Added new API, GetDiscoveredResourceCounts, which returns the resource types, the number of each resource type, and the total number of resources that AWS Config is recording in the given region for your AWS account.
+
+## __Amazon EC2__
+  - ### Features
+    - Ec2 SpotInstanceRequestFulfilled waiter update
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release of the Pinpoint SDK enables App management - create, delete, update operations, Raw Content delivery for APNs and GCM campaign messages and From Address override.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - This update adds information about publishing email open and click events. This update also adds information about publishing email events to Amazon Simple Notification Service (Amazon SNS).
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Add TargetInService and TargetDeregistered waiters 
+
 # __1.11.171__ __2017-07-31__
 ## __Amazon Inspector__
   - ### Features

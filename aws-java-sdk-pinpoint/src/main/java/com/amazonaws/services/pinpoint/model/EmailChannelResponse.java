@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EmailChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** Application id */
+    /** The unique ID of the application to which the email channel belongs. */
     private String applicationId;
     /** The date that the settings were last updated in ISO 8601 format. */
     private String creationDate;
@@ -49,10 +49,10 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     private Integer version;
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      * 
      * @param applicationId
-     *        Application id
+     *        The unique ID of the application to which the email channel belongs.
      */
 
     public void setApplicationId(String applicationId) {
@@ -60,9 +60,9 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      * 
-     * @return Application id
+     * @return The unique ID of the application to which the email channel belongs.
      */
 
     public String getApplicationId() {
@@ -70,10 +70,10 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Application id
+     * The unique ID of the application to which the email channel belongs.
      * 
      * @param applicationId
-     *        Application id
+     *        The unique ID of the application to which the email channel belongs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

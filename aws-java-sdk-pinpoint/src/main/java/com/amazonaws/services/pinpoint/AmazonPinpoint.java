@@ -89,6 +89,27 @@ public interface AmazonPinpoint {
     void setRegion(Region region);
 
     /**
+     * Used to create an app.
+     * 
+     * @param createAppRequest
+     * @return Result of the CreateApp operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.CreateApp
+     */
+    CreateAppResult createApp(CreateAppRequest createAppRequest);
+
+    /**
      * Creates or updates a campaign.
      * 
      * @param createCampaignRequest
@@ -192,6 +213,27 @@ public interface AmazonPinpoint {
      * @sample AmazonPinpoint.DeleteApnsSandboxChannel
      */
     DeleteApnsSandboxChannelResult deleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest);
+
+    /**
+     * Deletes an app.
+     * 
+     * @param deleteAppRequest
+     * @return Result of the DeleteApp operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteApp
+     */
+    DeleteAppResult deleteApp(DeleteAppRequest deleteAppRequest);
 
     /**
      * Deletes a campaign.
@@ -363,6 +405,27 @@ public interface AmazonPinpoint {
     GetApnsSandboxChannelResult getApnsSandboxChannel(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest);
 
     /**
+     * Returns information about an app.
+     * 
+     * @param getAppRequest
+     * @return Result of the GetApp operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetApp
+     */
+    GetAppResult getApp(GetAppRequest getAppRequest);
+
+    /**
      * Used to request the settings for an app.
      * 
      * @param getApplicationSettingsRequest
@@ -382,6 +445,27 @@ public interface AmazonPinpoint {
      * @sample AmazonPinpoint.GetApplicationSettings
      */
     GetApplicationSettingsResult getApplicationSettings(GetApplicationSettingsRequest getApplicationSettingsRequest);
+
+    /**
+     * Returns information about your apps.
+     * 
+     * @param getAppsRequest
+     * @return Result of the GetApps operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetApps
+     */
+    GetAppsResult getApps(GetAppsRequest getAppsRequest);
 
     /**
      * Returns information about a campaign.

@@ -37,7 +37,7 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     private String lastModifiedBy;
     /** Last date this was updated */
     private String lastModifiedDate;
-    /** The platform type. Will be APNS. */
+    /** The platform type. Will be APNS_SANDBOX. */
     private String platform;
     /** Version of channel */
     private Integer version;
@@ -301,10 +301,10 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      * 
      * @param platform
-     *        The platform type. Will be APNS.
+     *        The platform type. Will be APNS_SANDBOX.
      */
 
     public void setPlatform(String platform) {
@@ -312,9 +312,9 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      * 
-     * @return The platform type. Will be APNS.
+     * @return The platform type. Will be APNS_SANDBOX.
      */
 
     public String getPlatform() {
@@ -322,10 +322,10 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. Will be APNS_SANDBOX.
      * 
      * @param platform
-     *        The platform type. Will be APNS.
+     *        The platform type. Will be APNS_SANDBOX.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

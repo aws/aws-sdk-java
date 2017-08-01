@@ -24,7 +24,9 @@ public enum EventType {
     Reject("reject"),
     Bounce("bounce"),
     Complaint("complaint"),
-    Delivery("delivery");
+    Delivery("delivery"),
+    Open("open"),
+    Click("click");
 
     private String value;
 

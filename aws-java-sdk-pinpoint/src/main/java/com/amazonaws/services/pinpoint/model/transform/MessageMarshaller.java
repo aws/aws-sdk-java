@@ -41,6 +41,8 @@ public class MessageMarshaller {
             .marshallLocationName("JsonBody").build();
     private static final MarshallingInfo<String> MEDIAURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MediaUrl").build();
+    private static final MarshallingInfo<String> RAWCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RawContent").build();
     private static final MarshallingInfo<Boolean> SILENTPUSH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SilentPush").build();
     private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +73,7 @@ public class MessageMarshaller {
             protocolMarshaller.marshall(message.getImageUrl(), IMAGEURL_BINDING);
             protocolMarshaller.marshall(message.getJsonBody(), JSONBODY_BINDING);
             protocolMarshaller.marshall(message.getMediaUrl(), MEDIAURL_BINDING);
+            protocolMarshaller.marshall(message.getRawContent(), RAWCONTENT_BINDING);
             protocolMarshaller.marshall(message.getSilentPush(), SILENTPUSH_BINDING);
             protocolMarshaller.marshall(message.getTitle(), TITLE_BINDING);
             protocolMarshaller.marshall(message.getUrl(), URL_BINDING);

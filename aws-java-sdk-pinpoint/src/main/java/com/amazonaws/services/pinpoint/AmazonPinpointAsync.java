@@ -29,6 +29,29 @@ import com.amazonaws.services.pinpoint.model.*;
 public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
+     * Used to create an app.
+     * 
+     * @param createAppRequest
+     * @return A Java Future containing the result of the CreateApp operation returned by the service.
+     * @sample AmazonPinpointAsync.CreateApp
+     */
+    java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest createAppRequest);
+
+    /**
+     * Used to create an app.
+     * 
+     * @param createAppRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApp operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.CreateApp
+     */
+    java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest createAppRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAppRequest, CreateAppResult> asyncHandler);
+
+    /**
      * Creates or updates a campaign.
      * 
      * @param createCampaignRequest
@@ -142,6 +165,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<DeleteApnsSandboxChannelResult> deleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApnsSandboxChannelRequest, DeleteApnsSandboxChannelResult> asyncHandler);
+
+    /**
+     * Deletes an app.
+     * 
+     * @param deleteAppRequest
+     * @return A Java Future containing the result of the DeleteApp operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteApp
+     */
+    java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest deleteAppRequest);
+
+    /**
+     * Deletes an app.
+     * 
+     * @param deleteAppRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApp operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteApp
+     */
+    java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest deleteAppRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler);
 
     /**
      * Deletes a campaign.
@@ -330,6 +376,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetApnsSandboxChannelRequest, GetApnsSandboxChannelResult> asyncHandler);
 
     /**
+     * Returns information about an app.
+     * 
+     * @param getAppRequest
+     * @return A Java Future containing the result of the GetApp operation returned by the service.
+     * @sample AmazonPinpointAsync.GetApp
+     */
+    java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest getAppRequest);
+
+    /**
+     * Returns information about an app.
+     * 
+     * @param getAppRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApp operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetApp
+     */
+    java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest getAppRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAppRequest, GetAppResult> asyncHandler);
+
+    /**
      * Used to request the settings for an app.
      * 
      * @param getApplicationSettingsRequest
@@ -351,6 +420,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<GetApplicationSettingsResult> getApplicationSettingsAsync(GetApplicationSettingsRequest getApplicationSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<GetApplicationSettingsRequest, GetApplicationSettingsResult> asyncHandler);
+
+    /**
+     * Returns information about your apps.
+     * 
+     * @param getAppsRequest
+     * @return A Java Future containing the result of the GetApps operation returned by the service.
+     * @sample AmazonPinpointAsync.GetApps
+     */
+    java.util.concurrent.Future<GetAppsResult> getAppsAsync(GetAppsRequest getAppsRequest);
+
+    /**
+     * Returns information about your apps.
+     * 
+     * @param getAppsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApps operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetApps
+     */
+    java.util.concurrent.Future<GetAppsResult> getAppsAsync(GetAppsRequest getAppsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAppsRequest, GetAppsResult> asyncHandler);
 
     /**
      * Returns information about a campaign.

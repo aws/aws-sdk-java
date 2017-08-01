@@ -25,7 +25,11 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
 
     /** Body override. If specified will override default body. */
     private String bodyOverride;
-    /** Type of channel of this address */
+    /**
+     * The channel type.
+     * 
+     * Valid values: GCM | APNS | SMS | EMAIL
+     */
     private String channelType;
     /**
      * A map of custom attributes to attributes to be attached to the message for this address. This payload is added to
@@ -77,10 +81,14 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Type of channel of this address
+     * The channel type.
+     * 
+     * Valid values: GCM | APNS | SMS | EMAIL
      * 
      * @param channelType
-     *        Type of channel of this address
+     *        The channel type.
+     * 
+     *        Valid values: GCM | APNS | SMS | EMAIL
      * @see ChannelType
      */
 
@@ -89,9 +97,13 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Type of channel of this address
+     * The channel type.
      * 
-     * @return Type of channel of this address
+     * Valid values: GCM | APNS | SMS | EMAIL
+     * 
+     * @return The channel type.
+     * 
+     *         Valid values: GCM | APNS | SMS | EMAIL
      * @see ChannelType
      */
 
@@ -100,10 +112,14 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Type of channel of this address
+     * The channel type.
+     * 
+     * Valid values: GCM | APNS | SMS | EMAIL
      * 
      * @param channelType
-     *        Type of channel of this address
+     *        The channel type.
+     * 
+     *        Valid values: GCM | APNS | SMS | EMAIL
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -114,10 +130,14 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Type of channel of this address
+     * The channel type.
+     * 
+     * Valid values: GCM | APNS | SMS | EMAIL
      * 
      * @param channelType
-     *        Type of channel of this address
+     *        The channel type.
+     * 
+     *        Valid values: GCM | APNS | SMS | EMAIL
      * @see ChannelType
      */
 
@@ -126,10 +146,14 @@ public class AddressConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Type of channel of this address
+     * The channel type.
+     * 
+     * Valid values: GCM | APNS | SMS | EMAIL
      * 
      * @param channelType
-     *        Type of channel of this address
+     *        The channel type.
+     * 
+     *        Valid values: GCM | APNS | SMS | EMAIL
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */

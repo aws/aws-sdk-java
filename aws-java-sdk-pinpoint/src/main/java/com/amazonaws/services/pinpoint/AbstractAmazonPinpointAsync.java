@@ -28,6 +28,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest request) {
+
+        return createAppAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAppResult> createAppAsync(CreateAppRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAppRequest, CreateAppResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCampaignResult> createCampaignAsync(CreateCampaignRequest request) {
 
         return createCampaignAsync(request, null);
@@ -88,6 +101,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<DeleteApnsSandboxChannelResult> deleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApnsSandboxChannelRequest, DeleteApnsSandboxChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest request) {
+
+        return deleteAppAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppRequest, DeleteAppResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -197,6 +223,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest request) {
+
+        return getAppAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppResult> getAppAsync(GetAppRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAppRequest, GetAppResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetApplicationSettingsResult> getApplicationSettingsAsync(GetApplicationSettingsRequest request) {
 
         return getApplicationSettingsAsync(request, null);
@@ -205,6 +244,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<GetApplicationSettingsResult> getApplicationSettingsAsync(GetApplicationSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetApplicationSettingsRequest, GetApplicationSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppsResult> getAppsAsync(GetAppsRequest request) {
+
+        return getAppsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAppsResult> getAppsAsync(GetAppsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAppsRequest, GetAppsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

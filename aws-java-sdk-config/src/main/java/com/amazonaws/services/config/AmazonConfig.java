@@ -629,13 +629,101 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Returns the resource types, the number of each resource type, and the total number of resources that AWS Config
+     * is recording in this region for your AWS account.
+     * </p>
+     * <p class="title">
+     * <b>Example</b>
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * AWS Config is recording three resource types in the US East (Ohio) Region for your account: 25 EC2 instances, 20
+     * IAM users, and 15 S3 buckets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify that you want all resource
+     * types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AWS Config returns the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The resource types (EC2 instances, IAM users, and S3 buckets)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of each resource type (25, 20, and 15)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The total number of all resources (60)
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ol>
+     * <p>
+     * The response is paginated. By default, AWS Config lists 100 <a>ResourceCount</a> objects on each page. You can
+     * customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code>
+     * string. To get the next page of results, run the request again and specify the string for the
+     * <code>nextToken</code> parameter.
+     * </p>
+     * <note>
+     * <p>
+     * If you make a call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately receive resource
+     * counts in the following situations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You are a new AWS Config customer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You just enabled resource recording
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * It may take a few minutes for AWS Config to record and count your resources. Wait a few minutes and then retry
+     * the <a>GetDiscoveredResourceCounts</a> action.
+     * </p>
+     * </note>
+     * 
+     * @param getDiscoveredResourceCountsRequest
+     * @return Result of the GetDiscoveredResourceCounts operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.GetDiscoveredResourceCounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDiscoveredResourceCountsResult getDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest getDiscoveredResourceCountsRequest);
+
+    /**
+     * <p>
      * Returns a list of configuration items for the specified resource. The list contains details about each state of
      * the resource during the specified time interval.
      * </p>
      * <p>
-     * The response is paginated, and by default, AWS Config returns a limit of 10 configuration items per page. You can
+     * The response is paginated. By default, AWS Config returns a limit of 10 configuration items per page. You can
      * customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code>
-     * string, and to get the next page of results, run the request again and enter this string for the
+     * string. To get the next page of results, run the request again and specify the string for the
      * <code>nextToken</code> parameter.
      * </p>
      * <note>
@@ -682,10 +770,9 @@ public interface AmazonConfig {
      * </p>
      * </note>
      * <p>
-     * The response is paginated, and by default AWS Config lists 100 resource identifiers on each page. You can
-     * customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code>
-     * string, and to get the next page of results, run the request again and enter this string for the
-     * <code>nextToken</code> parameter.
+     * The response is paginated. By default, AWS Config lists 100 resource identifiers on each page. You can customize
+     * this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get
+     * the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.
      * </p>
      * 
      * @param listDiscoveredResourcesRequest

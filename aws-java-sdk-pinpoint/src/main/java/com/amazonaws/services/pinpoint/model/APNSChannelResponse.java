@@ -29,7 +29,7 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     private String creationDate;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /** Channel ID. Not used, only for backwards compatibility. */
+    /** Channel ID. Not used. Present only for backwards compatibility. */
     private String id;
     /** Is this channel archived */
     private Boolean isArchived;
@@ -155,10 +155,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        Channel ID. Not used. Present only for backwards compatibility.
      */
 
     public void setId(String id) {
@@ -166,9 +166,9 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      * 
-     * @return Channel ID. Not used, only for backwards compatibility.
+     * @return Channel ID. Not used. Present only for backwards compatibility.
      */
 
     public String getId() {
@@ -176,10 +176,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * Channel ID. Not used. Present only for backwards compatibility.
      * 
      * @param id
-     *        Channel ID. Not used, only for backwards compatibility.
+     *        Channel ID. Not used. Present only for backwards compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

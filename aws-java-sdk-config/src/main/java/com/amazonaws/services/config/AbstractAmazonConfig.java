@@ -173,6 +173,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public GetDiscoveredResourceCountsResult getDiscoveredResourceCounts(GetDiscoveredResourceCountsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetResourceConfigHistoryResult getResourceConfigHistory(GetResourceConfigHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -38,6 +38,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public CreateAppResult createApp(CreateAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCampaignResult createCampaign(CreateCampaignRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -59,6 +64,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public DeleteApnsSandboxChannelResult deleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAppResult deleteApp(DeleteAppRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,7 +113,17 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public GetAppResult getApp(GetAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetApplicationSettingsResult getApplicationSettings(GetApplicationSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAppsResult getApps(GetAppsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

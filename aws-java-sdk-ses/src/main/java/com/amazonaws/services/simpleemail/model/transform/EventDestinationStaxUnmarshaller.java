@@ -74,6 +74,11 @@ public class EventDestinationStaxUnmarshaller implements Unmarshaller<EventDesti
                     eventDestination.setCloudWatchDestination(CloudWatchDestinationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SNSDestination", targetDepth)) {
+                    eventDestination.setSNSDestination(SNSDestinationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return eventDestination;

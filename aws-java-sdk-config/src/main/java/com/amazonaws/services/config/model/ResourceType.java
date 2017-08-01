@@ -54,7 +54,8 @@ public enum ResourceType {
     AWSRedshiftClusterSecurityGroup("AWS::Redshift::ClusterSecurityGroup"),
     AWSRedshiftClusterSubnetGroup("AWS::Redshift::ClusterSubnetGroup"),
     AWSRedshiftEventSubscription("AWS::Redshift::EventSubscription"),
-    AWSCloudWatchAlarm("AWS::CloudWatch::Alarm");
+    AWSCloudWatchAlarm("AWS::CloudWatch::Alarm"),
+    AWSCloudFormationStack("AWS::CloudFormation::Stack");
 
     private String value;
 

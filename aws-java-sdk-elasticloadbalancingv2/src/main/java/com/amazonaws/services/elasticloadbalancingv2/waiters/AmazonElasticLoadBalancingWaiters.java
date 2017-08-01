@@ -59,6 +59,32 @@ public class AmazonElasticLoadBalancingWaiters {
     }
 
     /**
+     * Builds a TargetDeregistered waiter by using custom parameters waiterParameters and other parameters defined in
+     * the waiters specification, and then polls until it determines whether the resource entered the desired state or
+     * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeTargetHealthRequest> targetDeregistered() {
+
+        return new WaiterBuilder<DescribeTargetHealthRequest, DescribeTargetHealthResult>().withSdkFunction(new DescribeTargetHealthFunction(client))
+                .withAcceptors(new TargetDeregistered.IsInvalidTargetMatcher(), new TargetDeregistered.IsUnusedMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a TargetInService waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeTargetHealthRequest> targetInService() {
+
+        return new WaiterBuilder<DescribeTargetHealthRequest, DescribeTargetHealthResult>().withSdkFunction(new DescribeTargetHealthFunction(client))
+                .withAcceptors(new TargetInService.IsHealthyMatcher(), new TargetInService.IsInvalidInstanceMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a LoadBalancerExists waiter by using custom parameters waiterParameters and other parameters defined in
      * the waiters specification, and then polls until it determines whether the resource entered the desired state or
      * not, where polling criteria is bound by either default polling strategy or custom polling strategy.

@@ -177,7 +177,7 @@ public interface AmazonSimpleEmailService {
      * <note>
      * <p>
      * When you create or update an event destination, you must provide one, and only one, destination. The destination
-     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * can be Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS).
      * </p>
      * </note>
      * <p>
@@ -206,6 +206,9 @@ public interface AmazonSimpleEmailService {
      *         Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.
      * @throws InvalidFirehoseDestinationException
      *         Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.
+     * @throws InvalidSNSDestinationException
+     *         Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is invalid. See the error
+     *         message for details.
      * @throws LimitExceededException
      *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
      *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
@@ -792,6 +795,20 @@ public interface AmazonSimpleEmailService {
      * identities) the verification token for each identity.
      * </p>
      * <p>
+     * The verification status of an email address is "Pending" until the email address owner clicks the link within the
+     * verification email that Amazon SES sent to that address. If the email address owner clicks the link within 24
+     * hours, the verification status of the email address changes to "Success". If the link is not clicked within 24
+     * hours, the verification status changes to "Failed." In that case, if you still want to verify the email address,
+     * you must restart the verification process from the beginning.
+     * </p>
+     * <p>
+     * For domain identities, the domain's verification status is "Pending" as Amazon SES searches for the required TXT
+     * record in the DNS settings of the domain. When Amazon SES detects the record, the domain's verification status
+     * changes to "Success". If Amazon SES is unable to detect the record within 72 hours, the domain's verification
+     * status changes to "Failed." In that case, if you still want to verify the domain, you must restart the
+     * verification process from the beginning.
+     * </p>
+     * <p>
      * This action is throttled at one request per second and can only get verification attributes for up to 100
      * identities at a time.
      * </p>
@@ -1150,6 +1167,12 @@ public interface AmazonSimpleEmailService {
      * </li>
      * <li>
      * <p>
+     * You must provide at least one recipient email address. The recipient address can be a To: address, a CC: address,
+     * or a BCC: address. If any email address you provide is invalid, Amazon SES rejects the entire email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Amazon SES has a limit on the total number of recipients per message. The combined number of To:, CC: and BCC:
      * email addresses cannot exceed 50. If you need to send an email message to a larger audience, you can divide your
      * recipient list into groups of 50 or fewer, and then call Amazon SES repeatedly to send the message to each group.
@@ -1210,6 +1233,12 @@ public interface AmazonSimpleEmailService {
      * <li>
      * <p>
      * The total size of the message cannot exceed 10 MB. This includes any attachments that are part of the message.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You must provide at least one recipient email address. The recipient address can be a To: address, a CC: address,
+     * or a BCC: address. If any email address you provide is invalid, Amazon SES rejects the entire email.
      * </p>
      * </li>
      * <li>
@@ -1533,12 +1562,13 @@ public interface AmazonSimpleEmailService {
      * <note>
      * <p>
      * When you create or update an event destination, you must provide one, and only one, destination. The destination
-     * can be either Amazon CloudWatch or Amazon Kinesis Firehose.
+     * can be Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS).
      * </p>
      * </note>
      * <p>
      * Event destinations are associated with configuration sets, which enable you to publish email sending events to
-     * Amazon CloudWatch or Amazon Kinesis Firehose. For information about using configuration sets, see the <a
+     * Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information
+     * about using configuration sets, see the <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
      * Guide</a>.
      * </p>
@@ -1560,6 +1590,9 @@ public interface AmazonSimpleEmailService {
      *         Indicates that the Amazon CloudWatch destination is invalid. See the error message for details.
      * @throws InvalidFirehoseDestinationException
      *         Indicates that the Amazon Kinesis Firehose destination is invalid. See the error message for details.
+     * @throws InvalidSNSDestinationException
+     *         Indicates that the Amazon Simple Notification Service (Amazon SNS) destination is invalid. See the error
+     *         message for details.
      * @sample AmazonSimpleEmailService.UpdateConfigurationSetEventDestination
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateConfigurationSetEventDestination"
      *      target="_top">AWS API Documentation</a>

@@ -32,6 +32,8 @@ public class TargetInstancesMarshaller {
             .marshallLocationName("tagFilters").build();
     private static final MarshallingInfo<List> AUTOSCALINGGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoScalingGroups").build();
+    private static final MarshallingInfo<StructuredPojo> EC2TAGSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ec2TagSet").build();
 
     private static final TargetInstancesMarshaller instance = new TargetInstancesMarshaller();
 
@@ -51,6 +53,7 @@ public class TargetInstancesMarshaller {
         try {
             protocolMarshaller.marshall(targetInstances.getTagFilters(), TAGFILTERS_BINDING);
             protocolMarshaller.marshall(targetInstances.getAutoScalingGroups(), AUTOSCALINGGROUPS_BINDING);
+            protocolMarshaller.marshall(targetInstances.getEc2TagSet(), EC2TAGSET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

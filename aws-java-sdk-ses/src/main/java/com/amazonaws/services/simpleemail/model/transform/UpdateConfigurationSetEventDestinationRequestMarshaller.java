@@ -114,6 +114,14 @@ public class UpdateConfigurationSetEventDestinationRequestMarshaller implements
                     }
                 }
             }
+
+            SNSDestination sNSDestination = eventDestination.getSNSDestination();
+            if (sNSDestination != null) {
+
+                if (sNSDestination.getTopicARN() != null) {
+                    request.addParameter("EventDestination.SNSDestination.TopicARN", StringUtils.fromString(sNSDestination.getTopicARN()));
+                }
+            }
         }
 
         return request;

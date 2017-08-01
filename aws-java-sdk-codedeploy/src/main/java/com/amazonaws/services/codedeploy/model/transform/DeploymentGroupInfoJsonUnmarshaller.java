@@ -119,6 +119,14 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                     context.nextToken();
                     deploymentGroupInfo.setLastAttemptedDeployment(LastDeploymentInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ec2TagSet", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setEc2TagSet(EC2TagSetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("onPremisesTagSet", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setOnPremisesTagSet(OnPremisesTagSetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
