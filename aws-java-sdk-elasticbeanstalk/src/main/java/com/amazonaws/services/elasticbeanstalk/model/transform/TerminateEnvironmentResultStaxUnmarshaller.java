@@ -145,6 +145,10 @@ public class TerminateEnvironmentResultStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("EnvironmentArn", targetDepth)) {
+                    terminateEnvironmentResult.setEnvironmentArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return terminateEnvironmentResult;

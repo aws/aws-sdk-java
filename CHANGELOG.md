@@ -1,3 +1,8 @@
+# __1.11.173__ __2017-08-08__
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - Add support for paginating the result of DescribeEnvironments     Include the ARN of described environments in DescribeEnvironments output
+
 # __1.11.172__ __2017-08-01__
 ## __AWS CodeDeploy__
   - ### Features

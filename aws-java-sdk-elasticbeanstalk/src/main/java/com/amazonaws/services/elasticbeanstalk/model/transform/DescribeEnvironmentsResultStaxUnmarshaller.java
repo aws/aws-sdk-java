@@ -55,6 +55,10 @@ public class DescribeEnvironmentsResultStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("NextToken", targetDepth)) {
+                    describeEnvironmentsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeEnvironmentsResult;

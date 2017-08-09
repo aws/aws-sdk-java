@@ -55,6 +55,10 @@ public class ComposeEnvironmentsResultStaxUnmarshaller implements Unmarshaller<C
                     continue;
                 }
 
+                if (context.testExpression("NextToken", targetDepth)) {
+                    composeEnvironmentsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return composeEnvironmentsResult;

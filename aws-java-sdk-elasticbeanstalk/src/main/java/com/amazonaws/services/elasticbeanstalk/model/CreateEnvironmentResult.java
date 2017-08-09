@@ -58,7 +58,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     private String solutionStackName;
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      */
     private String platformArn;
@@ -208,6 +208,12 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EnvironmentLink> environmentLinks;
+    /**
+     * <p>
+     * The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     * </p>
+     */
+    private String environmentArn;
 
     /**
      * <p>
@@ -411,11 +417,11 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the custom platform.
+     *        The ARN of the platform.
      */
 
     public void setPlatformArn(String platformArn) {
@@ -424,10 +430,10 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      * 
-     * @return The ARN of the custom platform.
+     * @return The ARN of the platform.
      */
 
     public String getPlatformArn() {
@@ -436,11 +442,11 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the custom platform.
+     *        The ARN of the platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1767,6 +1773,47 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     * </p>
+     * 
+     * @param environmentArn
+     *        The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     */
+
+    public void setEnvironmentArn(String environmentArn) {
+        this.environmentArn = environmentArn;
+    }
+
+    /**
+     * <p>
+     * The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     * </p>
+     * 
+     * @return The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an
+     *         ARN.
+     */
+
+    public String getEnvironmentArn() {
+        return this.environmentArn;
+    }
+
+    /**
+     * <p>
+     * The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     * </p>
+     * 
+     * @param environmentArn
+     *        The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentResult withEnvironmentArn(String environmentArn) {
+        setEnvironmentArn(environmentArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1814,7 +1861,9 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
         if (getTier() != null)
             sb.append("Tier: ").append(getTier()).append(",");
         if (getEnvironmentLinks() != null)
-            sb.append("EnvironmentLinks: ").append(getEnvironmentLinks());
+            sb.append("EnvironmentLinks: ").append(getEnvironmentLinks()).append(",");
+        if (getEnvironmentArn() != null)
+            sb.append("EnvironmentArn: ").append(getEnvironmentArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1905,6 +1954,10 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getEnvironmentLinks() != null && other.getEnvironmentLinks().equals(this.getEnvironmentLinks()) == false)
             return false;
+        if (other.getEnvironmentArn() == null ^ this.getEnvironmentArn() == null)
+            return false;
+        if (other.getEnvironmentArn() != null && other.getEnvironmentArn().equals(this.getEnvironmentArn()) == false)
+            return false;
         return true;
     }
 
@@ -1932,6 +1985,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentLinks() == null) ? 0 : getEnvironmentLinks().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentArn() == null) ? 0 : getEnvironmentArn().hashCode());
         return hashCode;
     }
 

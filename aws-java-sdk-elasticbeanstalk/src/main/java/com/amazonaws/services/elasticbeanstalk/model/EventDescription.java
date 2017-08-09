@@ -64,7 +64,7 @@ public class EventDescription implements Serializable, Cloneable {
     private String environmentName;
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      */
     private String platformArn;
@@ -323,11 +323,11 @@ public class EventDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the custom platform.
+     *        The ARN of the platform.
      */
 
     public void setPlatformArn(String platformArn) {
@@ -336,10 +336,10 @@ public class EventDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      * 
-     * @return The ARN of the custom platform.
+     * @return The ARN of the platform.
      */
 
     public String getPlatformArn() {
@@ -348,11 +348,11 @@ public class EventDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the custom platform.
+     *        The ARN of the platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

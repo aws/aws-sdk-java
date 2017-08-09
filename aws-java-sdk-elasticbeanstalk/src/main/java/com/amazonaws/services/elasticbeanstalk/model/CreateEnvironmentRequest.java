@@ -42,8 +42,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens.
-     * It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified
+     * name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
      * Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore
@@ -114,7 +114,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private String solutionStackName;
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      */
     private String platformArn;
@@ -155,8 +155,9 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <p>
      *        Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
-     *        hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified
-     *        name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     *        hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account.
+     *        If the specified name already exists in the region, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
      *        Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and
@@ -234,8 +235,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens.
-     * It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified
+     * name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
      * Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore
@@ -246,8 +247,9 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        A unique name for the deployment environment. Used in the application URL.</p>
      *        <p>
      *        Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
-     *        hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified
-     *        name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     *        hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account.
+     *        If the specified name already exists in the region, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
      *        Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and
@@ -264,8 +266,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens.
-     * It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified
+     * name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
      * Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore
@@ -275,8 +277,9 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * @return A unique name for the deployment environment. Used in the application URL.</p>
      *         <p>
      *         Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
-     *         hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified
-     *         name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     *         hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account.
+     *         If the specified name already exists in the region, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterValue</code> error.
      *         </p>
      *         <p>
      *         Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and
@@ -293,8 +296,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens.
-     * It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already
-     * exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     * It cannot start or end with a hyphen. This name must be unique within a region in your account. If the specified
+     * name already exists in the region, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
      * </p>
      * <p>
      * Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore
@@ -305,8 +308,9 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        A unique name for the deployment environment. Used in the application URL.</p>
      *        <p>
      *        Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and
-     *        hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified
-     *        name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.
+     *        hyphens. It cannot start or end with a hyphen. This name must be unique within a region in your account.
+     *        If the specified name already exists in the region, AWS Elastic Beanstalk returns an
+     *        <code>InvalidParameterValue</code> error.
      *        </p>
      *        <p>
      *        Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and
@@ -755,11 +759,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the custom platform.
+     *        The ARN of the platform.
      */
 
     public void setPlatformArn(String platformArn) {
@@ -768,10 +772,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      * 
-     * @return The ARN of the custom platform.
+     * @return The ARN of the platform.
      */
 
     public String getPlatformArn() {
@@ -780,11 +784,11 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the custom platform.
+     * The ARN of the platform.
      * </p>
      * 
      * @param platformArn
-     *        The ARN of the custom platform.
+     *        The ARN of the platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

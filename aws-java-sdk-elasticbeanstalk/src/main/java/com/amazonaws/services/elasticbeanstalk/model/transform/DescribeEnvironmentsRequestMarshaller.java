@@ -82,6 +82,14 @@ public class DescribeEnvironmentsRequestMarshaller implements Marshaller<Request
             request.addParameter("IncludedDeletedBackTo", StringUtils.fromDate(describeEnvironmentsRequest.getIncludedDeletedBackTo()));
         }
 
+        if (describeEnvironmentsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeEnvironmentsRequest.getMaxRecords()));
+        }
+
+        if (describeEnvironmentsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeEnvironmentsRequest.getNextToken()));
+        }
+
         return request;
     }
 

@@ -64,7 +64,7 @@ public class Deployment implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * For in-progress deployments, the time that the deloyment started.
+     * For in-progress deployments, the time that the deployment started.
      * </p>
      * <p>
      * For completed deployments, the time that the deployment ended.
@@ -299,14 +299,14 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For in-progress deployments, the time that the deloyment started.
+     * For in-progress deployments, the time that the deployment started.
      * </p>
      * <p>
      * For completed deployments, the time that the deployment ended.
      * </p>
      * 
      * @param deploymentTime
-     *        For in-progress deployments, the time that the deloyment started.</p>
+     *        For in-progress deployments, the time that the deployment started.</p>
      *        <p>
      *        For completed deployments, the time that the deployment ended.
      */
@@ -317,13 +317,13 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For in-progress deployments, the time that the deloyment started.
+     * For in-progress deployments, the time that the deployment started.
      * </p>
      * <p>
      * For completed deployments, the time that the deployment ended.
      * </p>
      * 
-     * @return For in-progress deployments, the time that the deloyment started.</p>
+     * @return For in-progress deployments, the time that the deployment started.</p>
      *         <p>
      *         For completed deployments, the time that the deployment ended.
      */
@@ -334,14 +334,14 @@ public class Deployment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For in-progress deployments, the time that the deloyment started.
+     * For in-progress deployments, the time that the deployment started.
      * </p>
      * <p>
      * For completed deployments, the time that the deployment ended.
      * </p>
      * 
      * @param deploymentTime
-     *        For in-progress deployments, the time that the deloyment started.</p>
+     *        For in-progress deployments, the time that the deployment started.</p>
      *        <p>
      *        For completed deployments, the time that the deployment ended.
      * @return Returns a reference to this object so that method calls can be chained together.

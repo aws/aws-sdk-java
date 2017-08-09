@@ -145,6 +145,10 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Upd
                     continue;
                 }
 
+                if (context.testExpression("EnvironmentArn", targetDepth)) {
+                    updateEnvironmentResult.setEnvironmentArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return updateEnvironmentResult;

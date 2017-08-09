@@ -34,7 +34,7 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
     private com.amazonaws.internal.SdkInternalList<ApplicationVersionDescription> applicationVersions;
     /**
      * <p>
-     * For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * In a paginated request, the token that you can pass in a subsequent request to get the next response page.
      * </p>
      */
     private String nextToken;
@@ -114,11 +114,11 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * In a paginated request, the token that you can pass in a subsequent request to get the next response page.
      * </p>
      * 
      * @param nextToken
-     *        For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     *        In a paginated request, the token that you can pass in a subsequent request to get the next response page.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,10 +127,11 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * In a paginated request, the token that you can pass in a subsequent request to get the next response page.
      * </p>
      * 
-     * @return For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * @return In a paginated request, the token that you can pass in a subsequent request to get the next response
+     *         page.
      */
 
     public String getNextToken() {
@@ -139,11 +140,11 @@ public class DescribeApplicationVersionsResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     * In a paginated request, the token that you can pass in a subsequent request to get the next response page.
      * </p>
      * 
      * @param nextToken
-     *        For a paginated request, the token that you can pass in a subsequent request to get the next page.
+     *        In a paginated request, the token that you can pass in a subsequent request to get the next response page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
