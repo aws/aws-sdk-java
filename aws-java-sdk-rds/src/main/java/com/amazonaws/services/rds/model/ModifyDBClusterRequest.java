@@ -179,8 +179,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -219,8 +219,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1219,8 +1219,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1254,8 +1254,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
-     *        blocks available, see <a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
+     *        time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1295,8 +1295,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1329,8 +1329,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The daily time range during which automated backups are created if automated backups are enabled, using
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
-     *         blocks available, see <a
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
+     *         time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
@@ -1370,8 +1370,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1405,8 +1405,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
-     *        blocks available, see <a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
+     *        time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1450,8 +1450,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1468,7 +1468,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
      *        random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
@@ -1492,8 +1492,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1509,8 +1509,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
-     *         random day of the week. To see the time blocks available, see <a
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on
+     *         a random day of the week. To see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
@@ -1533,8 +1533,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1551,7 +1551,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
      *        random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>

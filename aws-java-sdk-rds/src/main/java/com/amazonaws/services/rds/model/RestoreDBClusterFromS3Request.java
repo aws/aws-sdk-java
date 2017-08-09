@@ -221,8 +221,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -261,8 +261,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -295,7 +295,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * region.
+     * Region.
      * </p>
      */
     private String kmsKeyId;
@@ -1593,8 +1593,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1628,8 +1628,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
-     *        blocks available, see <a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
+     *        time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1669,8 +1669,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1703,8 +1703,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @return The daily time range during which automated backups are created if automated backups are enabled using
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
-     *         blocks available, see <a
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
+     *         time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
@@ -1744,8 +1744,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1779,8 +1779,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
-     *        blocks available, see <a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
+     *        time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1824,8 +1824,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1842,7 +1842,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
      *        random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
@@ -1866,8 +1866,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1883,8 +1883,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
-     *         random day of the week. To see the time blocks available, see <a
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on
+     *         a random day of the week. To see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
@@ -1907,8 +1907,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1925,7 +1925,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
      *        random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
@@ -2063,7 +2063,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * region.
+     * Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -2077,7 +2077,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        each AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2097,7 +2097,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * region.
+     * Region.
      * </p>
      * 
      * @return The KMS key identifier for an encrypted DB cluster.</p>
@@ -2110,7 +2110,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      *         <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates
      *         the default encryption key for your AWS account. Your AWS account has a different default encryption key
-     *         for each AWS region.
+     *         for each AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -2130,7 +2130,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * region.
+     * Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -2144,7 +2144,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

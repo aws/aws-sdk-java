@@ -28,30 +28,30 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source region name.
+     * The name of the source AWS Region.
      * </p>
      */
     private String regionName;
     /**
      * <p>
-     * The source region endpoint.
+     * The endpoint for the source AWS Region endpoint.
      * </p>
      */
     private String endpoint;
     /**
      * <p>
-     * The status of the source region.
+     * The status of the source AWS Region.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * The source region name.
+     * The name of the source AWS Region.
      * </p>
      * 
      * @param regionName
-     *        The source region name.
+     *        The name of the source AWS Region.
      */
 
     public void setRegionName(String regionName) {
@@ -60,10 +60,10 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source region name.
+     * The name of the source AWS Region.
      * </p>
      * 
-     * @return The source region name.
+     * @return The name of the source AWS Region.
      */
 
     public String getRegionName() {
@@ -72,11 +72,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source region name.
+     * The name of the source AWS Region.
      * </p>
      * 
      * @param regionName
-     *        The source region name.
+     *        The name of the source AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source region endpoint.
+     * The endpoint for the source AWS Region endpoint.
      * </p>
      * 
      * @param endpoint
-     *        The source region endpoint.
+     *        The endpoint for the source AWS Region endpoint.
      */
 
     public void setEndpoint(String endpoint) {
@@ -100,10 +100,10 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source region endpoint.
+     * The endpoint for the source AWS Region endpoint.
      * </p>
      * 
-     * @return The source region endpoint.
+     * @return The endpoint for the source AWS Region endpoint.
      */
 
     public String getEndpoint() {
@@ -112,11 +112,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The source region endpoint.
+     * The endpoint for the source AWS Region endpoint.
      * </p>
      * 
      * @param endpoint
-     *        The source region endpoint.
+     *        The endpoint for the source AWS Region endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +127,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the source region.
+     * The status of the source AWS Region.
      * </p>
      * 
      * @param status
-     *        The status of the source region.
+     *        The status of the source AWS Region.
      */
 
     public void setStatus(String status) {
@@ -140,10 +140,10 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the source region.
+     * The status of the source AWS Region.
      * </p>
      * 
-     * @return The status of the source region.
+     * @return The status of the source AWS Region.
      */
 
     public String getStatus() {
@@ -152,11 +152,11 @@ public class SourceRegion implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the source region.
+     * The status of the source AWS Region.
      * </p>
      * 
      * @param status
-     *        The status of the source region.
+     *        The status of the source AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

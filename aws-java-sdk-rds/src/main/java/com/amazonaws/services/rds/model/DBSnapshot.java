@@ -145,14 +145,14 @@ public class DBSnapshot implements Serializable, Cloneable {
     private Integer percentProgress;
     /**
      * <p>
-     * The region that the DB snapshot was created in or copied from.
+     * The AWS Region that the DB snapshot was created in or copied from.
      * </p>
      */
     private String sourceRegion;
     /**
      * <p>
-     * The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross
-     * region copy.
+     * The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of
+     * cross-customer or cross-region copy.
      * </p>
      */
     private String sourceDBSnapshotIdentifier;
@@ -888,11 +888,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region that the DB snapshot was created in or copied from.
+     * The AWS Region that the DB snapshot was created in or copied from.
      * </p>
      * 
      * @param sourceRegion
-     *        The region that the DB snapshot was created in or copied from.
+     *        The AWS Region that the DB snapshot was created in or copied from.
      */
 
     public void setSourceRegion(String sourceRegion) {
@@ -901,10 +901,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region that the DB snapshot was created in or copied from.
+     * The AWS Region that the DB snapshot was created in or copied from.
      * </p>
      * 
-     * @return The region that the DB snapshot was created in or copied from.
+     * @return The AWS Region that the DB snapshot was created in or copied from.
      */
 
     public String getSourceRegion() {
@@ -913,11 +913,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region that the DB snapshot was created in or copied from.
+     * The AWS Region that the DB snapshot was created in or copied from.
      * </p>
      * 
      * @param sourceRegion
-     *        The region that the DB snapshot was created in or copied from.
+     *        The AWS Region that the DB snapshot was created in or copied from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -928,13 +928,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross
-     * region copy.
+     * The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of
+     * cross-customer or cross-region copy.
      * </p>
      * 
      * @param sourceDBSnapshotIdentifier
-     *        The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or
-     *        cross region copy.
+     *        The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case
+     *        of cross-customer or cross-region copy.
      */
 
     public void setSourceDBSnapshotIdentifier(String sourceDBSnapshotIdentifier) {
@@ -943,12 +943,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross
-     * region copy.
+     * The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of
+     * cross-customer or cross-region copy.
      * </p>
      * 
-     * @return The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or
-     *         cross region copy.
+     * @return The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in
+     *         case of cross-customer or cross-region copy.
      */
 
     public String getSourceDBSnapshotIdentifier() {
@@ -957,13 +957,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or cross
-     * region copy.
+     * The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of
+     * cross-customer or cross-region copy.
      * </p>
      * 
      * @param sourceDBSnapshotIdentifier
-     *        The DB snapshot Arn that the DB snapshot was copied from. It only has value in case of cross customer or
-     *        cross region copy.
+     *        The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case
+     *        of cross-customer or cross-region copy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

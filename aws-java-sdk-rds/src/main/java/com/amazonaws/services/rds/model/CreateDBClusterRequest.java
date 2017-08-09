@@ -224,8 +224,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -264,8 +264,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -305,24 +305,24 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * region.
+     * Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another region, you must set <code>KmsKeyId</code> to
-     * a KMS key ID that is valid in the destination region. This key is used to encrypt the Read Replica in that
-     * region.
+     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
+     * AWS Region.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source region where the DB cluster will be replicated from. You only need to specify
+     * in the source AWS Region where the DB cluster will be replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
      * </p>
      * <p>
      * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
-     * in the source region that contains the encrypted DB cluster to be copied.
+     * in the source AWS Region that contains the encrypted DB cluster to be copied.
      * </p>
      * <p>
      * The pre-signed URL request must contain the following parameter values:
@@ -331,20 +331,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in the
-     * destination region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination region, and the action contained in the pre-signed URL.
+     * destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action
+     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the region that Aurora Read Replica will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
+     * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
+     * are copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
      * would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      * </p>
      * </li>
@@ -1627,8 +1627,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1662,8 +1662,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
-     *        blocks available, see <a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
+     *        time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1703,8 +1703,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1737,8 +1737,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The daily time range during which automated backups are created if automated backups are enabled using
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
-     *         blocks available, see <a
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
+     *         time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
@@ -1778,8 +1778,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time blocks
-     * available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the time
+     * blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1813,8 +1813,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region. To see the time
-     *        blocks available, see <a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region. To see the
+     *        time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
@@ -1858,8 +1858,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1876,7 +1876,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
      *        random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
@@ -1900,8 +1900,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1917,8 +1917,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
-     *         random day of the week. To see the time blocks available, see <a
+     *         Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on
+     *         a random day of the week. To see the time blocks available, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
@@ -1941,8 +1941,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day
-     * of the week. To see the time blocks available, see <a
+     * Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random
+     * day of the week. To see the time blocks available, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -1959,7 +1959,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a
+     *        Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a
      *        random day of the week. To see the time blocks available, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting
      *        the Preferred Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
@@ -2143,12 +2143,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * region.
+     * Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another region, you must set <code>KmsKeyId</code> to
-     * a KMS key ID that is valid in the destination region. This key is used to encrypt the Read Replica in that
-     * region.
+     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
+     * AWS Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -2162,12 +2162,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        each AWS Region.
      *        </p>
      *        <p>
-     *        If you create a Read Replica of an encrypted DB cluster in another region, you must set
-     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination region. This key is used to encrypt
-     *        the Read Replica in that region.
+     *        If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set
+     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     *        encrypt the Read Replica in that AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2187,12 +2187,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * region.
+     * Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another region, you must set <code>KmsKeyId</code> to
-     * a KMS key ID that is valid in the destination region. This key is used to encrypt the Read Replica in that
-     * region.
+     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
+     * AWS Region.
      * </p>
      * 
      * @return The KMS key identifier for an encrypted DB cluster.</p>
@@ -2205,12 +2205,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      *         <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates
      *         the default encryption key for your AWS account. Your AWS account has a different default encryption key
-     *         for each AWS region.
+     *         for each AWS Region.
      *         </p>
      *         <p>
-     *         If you create a Read Replica of an encrypted DB cluster in another region, you must set
-     *         <code>KmsKeyId</code> to a KMS key ID that is valid in the destination region. This key is used to
-     *         encrypt the Read Replica in that region.
+     *         If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set
+     *         <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     *         encrypt the Read Replica in that AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -2230,12 +2230,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      * <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * region.
+     * Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another region, you must set <code>KmsKeyId</code> to
-     * a KMS key ID that is valid in the destination region. This key is used to encrypt the Read Replica in that
-     * region.
+     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
+     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
+     * AWS Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -2249,12 +2249,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
      *        <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the
      *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
-     *        each AWS region.
+     *        each AWS Region.
      *        </p>
      *        <p>
-     *        If you create a Read Replica of an encrypted DB cluster in another region, you must set
-     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination region. This key is used to encrypt
-     *        the Read Replica in that region.
+     *        If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set
+     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     *        encrypt the Read Replica in that AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2266,12 +2266,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source region where the DB cluster will be replicated from. You only need to specify
+     * in the source AWS Region where the DB cluster will be replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
      * </p>
      * <p>
      * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
-     * in the source region that contains the encrypted DB cluster to be copied.
+     * in the source AWS Region that contains the encrypted DB cluster to be copied.
      * </p>
      * <p>
      * The pre-signed URL request must contain the following parameter values:
@@ -2280,20 +2280,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in the
-     * destination region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination region, and the action contained in the pre-signed URL.
+     * destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action
+     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the region that Aurora Read Replica will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
+     * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
+     * are copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
      * would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      * </p>
      * </li>
@@ -2308,12 +2308,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param preSignedUrl
      *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
-     *        called in the source region where the DB cluster will be replicated from. You only need to specify
+     *        called in the source AWS Region where the DB cluster will be replicated from. You only need to specify
      *        <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB
      *        cluster.</p>
      *        <p>
      *        The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be
-     *        executed in the source region that contains the encrypted DB cluster to be copied.
+     *        executed in the source AWS Region that contains the encrypted DB cluster to be copied.
      *        </p>
      *        <p>
      *        The pre-signed URL request must contain the following parameter values:
@@ -2322,19 +2322,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     *        the destination region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
-     *        action that is called in the destination region, and the action contained in the pre-signed URL.
+     *        the destination AWS Region. This should refer to the same KMS key for both the
+     *        <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action contained
+     *        in the pre-signed URL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The name of the region that Aurora Read Replica will be created in.
+     *        <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be
-     *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For
+     *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
      *        example, if you are copying an encrypted DB cluster from the us-west-2 region, then your
      *        <code>ReplicationSourceIdentifier</code> would look like Example:
      *        <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
@@ -2356,12 +2357,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source region where the DB cluster will be replicated from. You only need to specify
+     * in the source AWS Region where the DB cluster will be replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
      * </p>
      * <p>
      * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
-     * in the source region that contains the encrypted DB cluster to be copied.
+     * in the source AWS Region that contains the encrypted DB cluster to be copied.
      * </p>
      * <p>
      * The pre-signed URL request must contain the following parameter values:
@@ -2370,20 +2371,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in the
-     * destination region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination region, and the action contained in the pre-signed URL.
+     * destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action
+     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the region that Aurora Read Replica will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
+     * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
+     * are copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
      * would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      * </p>
      * </li>
@@ -2397,12 +2398,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to
-     *         be called in the source region where the DB cluster will be replicated from. You only need to specify
+     *         be called in the source AWS Region where the DB cluster will be replicated from. You only need to specify
      *         <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB
      *         cluster.</p>
      *         <p>
      *         The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be
-     *         executed in the source region that contains the encrypted DB cluster to be copied.
+     *         executed in the source AWS Region that contains the encrypted DB cluster to be copied.
      *         </p>
      *         <p>
      *         The pre-signed URL request must contain the following parameter values:
@@ -2411,20 +2412,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <li>
      *         <p>
      *         <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster
-     *         in the destination region. This should refer to the same KMS key for both the
-     *         <code>CreateDBCluster</code> action that is called in the destination region, and the action contained in
-     *         the pre-signed URL.
+     *         in the destination AWS Region. This should refer to the same KMS key for both the
+     *         <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action
+     *         contained in the pre-signed URL.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DestinationRegion</code> - The name of the region that Aurora Read Replica will be created in.
+     *         <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be
-     *         copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For
+     *         copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
      *         example, if you are copying an encrypted DB cluster from the us-west-2 region, then your
      *         <code>ReplicationSourceIdentifier</code> would look like Example:
      *         <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
@@ -2446,12 +2447,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
-     * in the source region where the DB cluster will be replicated from. You only need to specify
+     * in the source AWS Region where the DB cluster will be replicated from. You only need to specify
      * <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB cluster.
      * </p>
      * <p>
      * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
-     * in the source region that contains the encrypted DB cluster to be copied.
+     * in the source AWS Region that contains the encrypted DB cluster to be copied.
      * </p>
      * <p>
      * The pre-signed URL request must contain the following parameter values:
@@ -2460,20 +2461,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in the
-     * destination region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action that
-     * is called in the destination region, and the action contained in the pre-signed URL.
+     * destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code> action
+     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DestinationRegion</code> - The name of the region that Aurora Read Replica will be created in.
+     * <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be copied.
-     * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
-     * copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
+     * This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For example, if you
+     * are copying an encrypted DB cluster from the us-west-2 region, then your <code>ReplicationSourceIdentifier</code>
      * would look like Example: <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.
      * </p>
      * </li>
@@ -2488,12 +2489,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param preSignedUrl
      *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
-     *        called in the source region where the DB cluster will be replicated from. You only need to specify
+     *        called in the source AWS Region where the DB cluster will be replicated from. You only need to specify
      *        <code>PreSignedUrl</code> when you are performing cross-region replication from an encrypted DB
      *        cluster.</p>
      *        <p>
      *        The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be
-     *        executed in the source region that contains the encrypted DB cluster to be copied.
+     *        executed in the source AWS Region that contains the encrypted DB cluster to be copied.
      *        </p>
      *        <p>
      *        The pre-signed URL request must contain the following parameter values:
@@ -2502,19 +2503,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     *        the destination region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
-     *        action that is called in the destination region, and the action contained in the pre-signed URL.
+     *        the destination AWS Region. This should refer to the same KMS key for both the
+     *        <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action contained
+     *        in the pre-signed URL.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DestinationRegion</code> - The name of the region that Aurora Read Replica will be created in.
+     *        <code>DestinationRegion</code> - The name of the AWS Region that Aurora Read Replica will be created in.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the encrypted DB cluster to be
-     *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For
+     *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
      *        example, if you are copying an encrypted DB cluster from the us-west-2 region, then your
      *        <code>ReplicationSourceIdentifier</code> would look like Example:
      *        <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.

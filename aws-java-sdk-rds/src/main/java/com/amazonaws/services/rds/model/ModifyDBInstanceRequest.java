@@ -215,6 +215,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -257,12 +264,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean applyImmediately;
     /**
      * <p>
-     * The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".
+     * The new password for the master user. Can be any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
      * element exists in the <code>PendingModifiedValues</code> element of the operation response.
+     * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The password for the master user is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Default: Uses existing setting
@@ -307,6 +321,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * another non-zero value, the change is asynchronously applied as soon as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The retention period for automated backups is managed by the DB cluster. For more information,
+     * see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Default: Uses existing setting
      * </p>
      * <p>
@@ -341,6 +362,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The daily time range during which automated backups are created if automated backups are enabled, as determined
      * by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter does not result in an outage and the
      * change is asynchronously applied as soon as possible.
+     * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Constraints:
@@ -410,7 +438,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>true</code> for this request.
      * </p>
      * <p>
-     * For major version upgrades, if a non-default DB parameter group is currently in use, a new DB parameter group in
+     * For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the
      * default for that DB parameter group family.
      * </p>
@@ -724,6 +752,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
+     * see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
      * </p>
      * <ul>
      * <li>
@@ -1989,6 +2027,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -2011,6 +2056,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied
      *         as soon as possible.</p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more
+     *         information, see <a>ModifyDBCluster</a>.
+     *         </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -2045,6 +2097,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -2068,6 +2127,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param vpcSecurityGroupIds
      *        A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied
      *        as soon as possible.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more
+     *        information, see <a>ModifyDBCluster</a>.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2104,6 +2170,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -2132,6 +2205,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param vpcSecurityGroupIds
      *        A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied
      *        as soon as possible.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more
+     *        information, see <a>ModifyDBCluster</a>.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2170,6 +2250,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -2193,6 +2280,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param vpcSecurityGroupIds
      *        A list of EC2 VPC security groups to authorize on this DB instance. This change is asynchronously applied
      *        as soon as possible.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. The associated list of EC2 VPC security groups is managed by the DB cluster. For more
+     *        information, see <a>ModifyDBCluster</a>.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2378,12 +2472,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".
+     * The new password for the master user. Can be any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
      * element exists in the <code>PendingModifiedValues</code> element of the operation response.
+     * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The password for the master user is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Default: Uses existing setting
@@ -2401,13 +2502,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @param masterUserPassword
-     *        The new password for the DB instance master user. Can be any printable ASCII character except "/",
-     *        """, or "@".</p>
+     *        The new password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
      *        <p>
      *        Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      *        possible. Between the time of the request and the completion of the request, the
      *        <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the
      *        operation response.
+     *        </p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. The password for the master user is managed by the DB cluster. For more information, see
+     *        <a>ModifyDBCluster</a>.
      *        </p>
      *        <p>
      *        Default: Uses existing setting
@@ -2430,12 +2537,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".
+     * The new password for the master user. Can be any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
      * element exists in the <code>PendingModifiedValues</code> element of the operation response.
+     * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The password for the master user is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Default: Uses existing setting
@@ -2452,13 +2566,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </note>
      * 
-     * @return The new password for the DB instance master user. Can be any printable ASCII character except "/",
-     *         """, or "@".</p>
+     * @return The new password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
      *         <p>
      *         Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      *         possible. Between the time of the request and the completion of the request, the
      *         <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the
      *         operation response.
+     *         </p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. The password for the master user is managed by the DB cluster. For more information, see
+     *         <a>ModifyDBCluster</a>.
      *         </p>
      *         <p>
      *         Default: Uses existing setting
@@ -2481,12 +2601,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new password for the DB instance master user. Can be any printable ASCII character except "/", """, or "@".
+     * The new password for the master user. Can be any printable ASCII character except "/", """, or "@".
      * </p>
      * <p>
      * Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      * possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code>
      * element exists in the <code>PendingModifiedValues</code> element of the operation response.
+     * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The password for the master user is managed by the DB cluster. For more information, see
+     * <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Default: Uses existing setting
@@ -2504,13 +2631,19 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @param masterUserPassword
-     *        The new password for the DB instance master user. Can be any printable ASCII character except "/",
-     *        """, or "@".</p>
+     *        The new password for the master user. Can be any printable ASCII character except "/", """, or "@".</p>
      *        <p>
      *        Changing this parameter does not result in an outage and the change is asynchronously applied as soon as
      *        possible. Between the time of the request and the completion of the request, the
      *        <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the
      *        operation response.
+     *        </p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. The password for the master user is managed by the DB cluster. For more information, see
+     *        <a>ModifyDBCluster</a>.
      *        </p>
      *        <p>
      *        Default: Uses existing setting
@@ -2636,6 +2769,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * another non-zero value, the change is asynchronously applied as soon as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The retention period for automated backups is managed by the DB cluster. For more information,
+     * see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Default: Uses existing setting
      * </p>
      * <p>
@@ -2673,6 +2813,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request. If you change the
      *        parameter from one non-zero value to another non-zero value, the change is asynchronously applied as soon
      *        as possible.
+     *        </p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. The retention period for automated backups is managed by the DB cluster. For more
+     *        information, see <a>ModifyDBCluster</a>.
      *        </p>
      *        <p>
      *        Default: Uses existing setting
@@ -2719,6 +2866,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * another non-zero value, the change is asynchronously applied as soon as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The retention period for automated backups is managed by the DB cluster. For more information,
+     * see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Default: Uses existing setting
      * </p>
      * <p>
@@ -2755,6 +2909,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request. If you change the
      *         parameter from one non-zero value to another non-zero value, the change is asynchronously applied as soon
      *         as possible.
+     *         </p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. The retention period for automated backups is managed by the DB cluster. For more
+     *         information, see <a>ModifyDBCluster</a>.
      *         </p>
      *         <p>
      *         Default: Uses existing setting
@@ -2801,6 +2962,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * another non-zero value, the change is asynchronously applied as soon as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The retention period for automated backups is managed by the DB cluster. For more information,
+     * see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Default: Uses existing setting
      * </p>
      * <p>
@@ -2838,6 +3006,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request. If you change the
      *        parameter from one non-zero value to another non-zero value, the change is asynchronously applied as soon
      *        as possible.
+     *        </p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. The retention period for automated backups is managed by the DB cluster. For more
+     *        information, see <a>ModifyDBCluster</a>.
      *        </p>
      *        <p>
      *        Default: Uses existing setting
@@ -2881,6 +3056,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -2910,6 +3092,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        The daily time range during which automated backups are created if automated backups are enabled, as
      *        determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter does not result in
      *        an outage and the change is asynchronously applied as soon as possible. </p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
+     *        information, see <a>ModifyDBCluster</a>.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2947,6 +3136,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -2975,6 +3171,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @return The daily time range during which automated backups are created if automated backups are enabled, as
      *         determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter does not result
      *         in an outage and the change is asynchronously applied as soon as possible. </p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For
+     *         more information, see <a>ModifyDBCluster</a>.
+     *         </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -3012,6 +3215,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -3041,6 +3251,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        The daily time range during which automated backups are created if automated backups are enabled, as
      *        determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter does not result in
      *        an outage and the change is asynchronously applied as soon as possible. </p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. The daily time range for creating automated backups is managed by the DB cluster. For more
+     *        information, see <a>ModifyDBCluster</a>.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -3307,7 +3524,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>true</code> for this request.
      * </p>
      * <p>
-     * For major version upgrades, if a non-default DB parameter group is currently in use, a new DB parameter group in
+     * For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the
      * default for that DB parameter group family.
      * </p>
@@ -3320,7 +3537,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
      *        parameter is set to <code>true</code> for this request. </p>
      *        <p>
-     *        For major version upgrades, if a non-default DB parameter group is currently in use, a new DB parameter
+     *        For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter
      *        group in the DB parameter group family for the new engine version must be specified. The new DB parameter
      *        group can be the default for that DB parameter group family.
      *        </p>
@@ -3339,7 +3556,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>true</code> for this request.
      * </p>
      * <p>
-     * For major version upgrades, if a non-default DB parameter group is currently in use, a new DB parameter group in
+     * For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the
      * default for that DB parameter group family.
      * </p>
@@ -3351,7 +3568,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
      *         parameter is set to <code>true</code> for this request. </p>
      *         <p>
-     *         For major version upgrades, if a non-default DB parameter group is currently in use, a new DB parameter
+     *         For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter
      *         group in the DB parameter group family for the new engine version must be specified. The new DB parameter
      *         group can be the default for that DB parameter group family.
      *         </p>
@@ -3370,7 +3587,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>true</code> for this request.
      * </p>
      * <p>
-     * For major version upgrades, if a non-default DB parameter group is currently in use, a new DB parameter group in
+     * For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter group in
      * the DB parameter group family for the new engine version must be specified. The new DB parameter group can be the
      * default for that DB parameter group family.
      * </p>
@@ -3383,7 +3600,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
      *        parameter is set to <code>true</code> for this request. </p>
      *        <p>
-     *        For major version upgrades, if a non-default DB parameter group is currently in use, a new DB parameter
+     *        For major version upgrades, if a nondefault DB parameter group is currently in use, a new DB parameter
      *        group in the DB parameter group family for the new engine version must be specified. The new DB parameter
      *        group can be the default for that DB parameter group family.
      *        </p>
@@ -5340,6 +5557,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * You can enable IAM database authentication for the following database engines
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
+     * see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5361,6 +5588,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
+     *        </p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
+     *        information, see <a>ModifyDBCluster</a>.
+     *        </p>
+     *        <p>
+     *        <b>MySQL</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -5390,6 +5627,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * You can enable IAM database authentication for the following database engines
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
+     * see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5410,6 +5657,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines
+     *         </p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
+     *         information, see <a>ModifyDBCluster</a>.
+     *         </p>
+     *         <p>
+     *         <b>MySQL</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -5439,6 +5696,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * You can enable IAM database authentication for the following database engines
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
+     * see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5460,6 +5727,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
+     *        </p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
+     *        information, see <a>ModifyDBCluster</a>.
+     *        </p>
+     *        <p>
+     *        <b>MySQL</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -5491,6 +5768,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * You can enable IAM database authentication for the following database engines
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
+     * see <a>ModifyDBCluster</a>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5511,6 +5798,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines
+     *         </p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
+     *         information, see <a>ModifyDBCluster</a>.
+     *         </p>
+     *         <p>
+     *         <b>MySQL</b>
      *         </p>
      *         <ul>
      *         <li>

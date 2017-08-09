@@ -36,7 +36,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
      * </p>
      * </li>
      * <li>
@@ -350,7 +350,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -408,7 +408,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
      * </p>
      * </li>
      * <li>
@@ -434,7 +434,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -466,7 +466,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
      * </p>
      * </li>
      * <li>
@@ -491,7 +491,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)
+     *         Must contain from 1 to 63 alphanumeric characters or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -523,7 +523,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)
+     * Must contain from 1 to 63 alphanumeric characters or hyphens
      * </p>
      * </li>
      * <li>
@@ -549,7 +549,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL Server)
+     *        Must contain from 1 to 63 alphanumeric characters or hyphens
      *        </p>
      *        </li>
      *        <li>

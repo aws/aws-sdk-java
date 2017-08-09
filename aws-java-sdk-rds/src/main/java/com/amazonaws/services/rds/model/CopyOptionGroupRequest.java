@@ -43,14 +43,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the source option group is in the same region as the copy, specify a valid option group identifier, for
+     * If the source option group is in the same AWS Region as the copy, specify a valid option group identifier, for
      * example <code>my-option-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source option group is in a different region than the copy, specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * If the source option group is in a different AWS Region than the copy, specify a valid option group ARN, for
+     * example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      * </p>
      * </li>
      * </ul>
@@ -116,14 +116,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the source option group is in the same region as the copy, specify a valid option group identifier, for
+     * If the source option group is in the same AWS Region as the copy, specify a valid option group identifier, for
      * example <code>my-option-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source option group is in a different region than the copy, specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * If the source option group is in a different AWS Region than the copy, specify a valid option group ARN, for
+     * example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      * </p>
      * </li>
      * </ul>
@@ -143,14 +143,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        If the source option group is in the same region as the copy, specify a valid option group identifier, for
-     *        example <code>my-option-group</code>, or a valid ARN.
+     *        If the source option group is in the same AWS Region as the copy, specify a valid option group identifier,
+     *        for example <code>my-option-group</code>, or a valid ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source option group is in a different region than the copy, specify a valid option group ARN, for
-     *        example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     *        If the source option group is in a different AWS Region than the copy, specify a valid option group ARN,
+     *        for example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      *        </p>
      *        </li>
      */
@@ -176,14 +176,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the source option group is in the same region as the copy, specify a valid option group identifier, for
+     * If the source option group is in the same AWS Region as the copy, specify a valid option group identifier, for
      * example <code>my-option-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source option group is in a different region than the copy, specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * If the source option group is in a different AWS Region than the copy, specify a valid option group ARN, for
+     * example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      * </p>
      * </li>
      * </ul>
@@ -202,14 +202,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         If the source option group is in the same region as the copy, specify a valid option group identifier,
-     *         for example <code>my-option-group</code>, or a valid ARN.
+     *         If the source option group is in the same AWS Region as the copy, specify a valid option group
+     *         identifier, for example <code>my-option-group</code>, or a valid ARN.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source option group is in a different region than the copy, specify a valid option group ARN, for
-     *         example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     *         If the source option group is in a different AWS Region than the copy, specify a valid option group ARN,
+     *         for example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      *         </p>
      *         </li>
      */
@@ -235,14 +235,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * If the source option group is in the same region as the copy, specify a valid option group identifier, for
+     * If the source option group is in the same AWS Region as the copy, specify a valid option group identifier, for
      * example <code>my-option-group</code>, or a valid ARN.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source option group is in a different region than the copy, specify a valid option group ARN, for example
-     * <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     * If the source option group is in a different AWS Region than the copy, specify a valid option group ARN, for
+     * example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      * </p>
      * </li>
      * </ul>
@@ -262,14 +262,14 @@ public class CopyOptionGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        If the source option group is in the same region as the copy, specify a valid option group identifier, for
-     *        example <code>my-option-group</code>, or a valid ARN.
+     *        If the source option group is in the same AWS Region as the copy, specify a valid option group identifier,
+     *        for example <code>my-option-group</code>, or a valid ARN.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source option group is in a different region than the copy, specify a valid option group ARN, for
-     *        example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
+     *        If the source option group is in a different AWS Region than the copy, specify a valid option group ARN,
+     *        for example <code>arn:aws:rds:us-west-2:123456789012:og:special-options</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

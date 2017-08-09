@@ -1,3 +1,8 @@
+# __1.11.174__ __2017-08-09__
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - Documentation updates for RDS.
+
 # __1.11.173__ __2017-08-08__
 ## __AWS Elastic Beanstalk__
   - ### Features

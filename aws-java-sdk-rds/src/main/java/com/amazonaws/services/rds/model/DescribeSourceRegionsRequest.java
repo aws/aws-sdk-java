@@ -28,7 +28,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source region name. For example, <code>us-east-1</code>.
+     * The source AWS Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -73,7 +73,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source region name. For example, <code>us-east-1</code>.
+     * The source AWS Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -87,7 +87,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param regionName
-     *        The source region name. For example, <code>us-east-1</code>.</p>
+     *        The source AWS Region name. For example, <code>us-east-1</code>.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -105,7 +105,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source region name. For example, <code>us-east-1</code>.
+     * The source AWS Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -118,7 +118,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * 
-     * @return The source region name. For example, <code>us-east-1</code>.</p>
+     * @return The source AWS Region name. For example, <code>us-east-1</code>.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -136,7 +136,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The source region name. For example, <code>us-east-1</code>.
+     * The source AWS Region name. For example, <code>us-east-1</code>.
      * </p>
      * <p>
      * Constraints:
@@ -150,7 +150,7 @@ public class DescribeSourceRegionsRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param regionName
-     *        The source region name. For example, <code>us-east-1</code>.</p>
+     *        The source AWS Region name. For example, <code>us-east-1</code>.</p>
      *        <p>
      *        Constraints:
      *        </p>
