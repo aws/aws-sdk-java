@@ -9535,6 +9535,9 @@
         "name" : "ANDROID",
         "value" : "ANDROID"
       }, {
+        "name" : "DOTNET",
+        "value" : "DOTNET"
+      }, {
         "name" : "BASE",
         "value" : "BASE"
       } ],
@@ -17617,6 +17620,9 @@
       }, {
         "name" : "S3",
         "value" : "S3"
+      }, {
+        "name" : "BITBUCKET",
+        "value" : "BITBUCKET"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

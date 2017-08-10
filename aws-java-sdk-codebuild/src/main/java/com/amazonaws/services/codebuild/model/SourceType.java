@@ -23,7 +23,8 @@ public enum SourceType {
     CODECOMMIT("CODECOMMIT"),
     CODEPIPELINE("CODEPIPELINE"),
     GITHUB("GITHUB"),
-    S3("S3");
+    S3("S3"),
+    BITBUCKET("BITBUCKET");
 
     private String value;
 

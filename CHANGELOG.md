@@ -1,3 +1,12 @@
+# __1.11.175__ __2017-08-10__
+## __AWS CodeBuild__
+  - ### Features
+    - Supporting Bitbucket as source type in AWS CodeBuild.
+
+## __Amazon CloudDirectory__
+  - ### Features
+    - Enable BatchDetachPolicy
+
 # __1.11.174__ __2017-08-09__
 ## __Amazon Relational Database Service (RDS)__
   - ### Features

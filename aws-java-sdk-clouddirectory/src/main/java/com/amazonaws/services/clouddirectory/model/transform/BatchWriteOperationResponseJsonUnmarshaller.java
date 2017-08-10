@@ -81,6 +81,10 @@ public class BatchWriteOperationResponseJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     batchWriteOperationResponse.setAttachPolicy(BatchAttachPolicyResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DetachPolicy", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperationResponse.setDetachPolicy(BatchDetachPolicyResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CreateIndex", targetDepth)) {
                     context.nextToken();
                     batchWriteOperationResponse.setCreateIndex(BatchCreateIndexResponseJsonUnmarshaller.getInstance().unmarshall(context));

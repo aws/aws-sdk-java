@@ -78,6 +78,12 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
     private BatchAttachPolicyResponse attachPolicy;
     /**
      * <p>
+     * Detaches a policy from a <a>Directory</a>.
+     * </p>
+     */
+    private BatchDetachPolicyResponse detachPolicy;
+    /**
+     * <p>
      * Creates an index object. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
      * information.
@@ -435,6 +441,46 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * Detaches a policy from a <a>Directory</a>.
+     * </p>
+     * 
+     * @param detachPolicy
+     *        Detaches a policy from a <a>Directory</a>.
+     */
+
+    public void setDetachPolicy(BatchDetachPolicyResponse detachPolicy) {
+        this.detachPolicy = detachPolicy;
+    }
+
+    /**
+     * <p>
+     * Detaches a policy from a <a>Directory</a>.
+     * </p>
+     * 
+     * @return Detaches a policy from a <a>Directory</a>.
+     */
+
+    public BatchDetachPolicyResponse getDetachPolicy() {
+        return this.detachPolicy;
+    }
+
+    /**
+     * <p>
+     * Detaches a policy from a <a>Directory</a>.
+     * </p>
+     * 
+     * @param detachPolicy
+     *        Detaches a policy from a <a>Directory</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchWriteOperationResponse withDetachPolicy(BatchDetachPolicyResponse detachPolicy) {
+        setDetachPolicy(detachPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
      * Creates an index object. See <a
      * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a> for more
      * information.
@@ -696,6 +742,8 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
             sb.append("RemoveFacetFromObject: ").append(getRemoveFacetFromObject()).append(",");
         if (getAttachPolicy() != null)
             sb.append("AttachPolicy: ").append(getAttachPolicy()).append(",");
+        if (getDetachPolicy() != null)
+            sb.append("DetachPolicy: ").append(getDetachPolicy()).append(",");
         if (getCreateIndex() != null)
             sb.append("CreateIndex: ").append(getCreateIndex()).append(",");
         if (getAttachToIndex() != null)
@@ -752,6 +800,10 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
             return false;
         if (other.getAttachPolicy() != null && other.getAttachPolicy().equals(this.getAttachPolicy()) == false)
             return false;
+        if (other.getDetachPolicy() == null ^ this.getDetachPolicy() == null)
+            return false;
+        if (other.getDetachPolicy() != null && other.getDetachPolicy().equals(this.getDetachPolicy()) == false)
+            return false;
         if (other.getCreateIndex() == null ^ this.getCreateIndex() == null)
             return false;
         if (other.getCreateIndex() != null && other.getCreateIndex().equals(this.getCreateIndex()) == false)
@@ -788,6 +840,7 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getAddFacetToObject() == null) ? 0 : getAddFacetToObject().hashCode());
         hashCode = prime * hashCode + ((getRemoveFacetFromObject() == null) ? 0 : getRemoveFacetFromObject().hashCode());
         hashCode = prime * hashCode + ((getAttachPolicy() == null) ? 0 : getAttachPolicy().hashCode());
+        hashCode = prime * hashCode + ((getDetachPolicy() == null) ? 0 : getDetachPolicy().hashCode());
         hashCode = prime * hashCode + ((getCreateIndex() == null) ? 0 : getCreateIndex().hashCode());
         hashCode = prime * hashCode + ((getAttachToIndex() == null) ? 0 : getAttachToIndex().hashCode());
         hashCode = prime * hashCode + ((getDetachFromIndex() == null) ? 0 : getDetachFromIndex().hashCode());

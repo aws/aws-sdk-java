@@ -27,6 +27,7 @@ public enum LanguageType {
     GOLANG("GOLANG"),
     DOCKER("DOCKER"),
     ANDROID("ANDROID"),
+    DOTNET("DOTNET"),
     BASE("BASE");
 
     private String value;

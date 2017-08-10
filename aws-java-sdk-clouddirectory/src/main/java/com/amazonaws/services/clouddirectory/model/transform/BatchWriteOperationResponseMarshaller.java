@@ -43,6 +43,8 @@ public class BatchWriteOperationResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoveFacetFromObject").build();
     private static final MarshallingInfo<StructuredPojo> ATTACHPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttachPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> DETACHPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DetachPolicy").build();
     private static final MarshallingInfo<StructuredPojo> CREATEINDEX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateIndex").build();
     private static final MarshallingInfo<StructuredPojo> ATTACHTOINDEX_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -78,6 +80,7 @@ public class BatchWriteOperationResponseMarshaller {
             protocolMarshaller.marshall(batchWriteOperationResponse.getAddFacetToObject(), ADDFACETTOOBJECT_BINDING);
             protocolMarshaller.marshall(batchWriteOperationResponse.getRemoveFacetFromObject(), REMOVEFACETFROMOBJECT_BINDING);
             protocolMarshaller.marshall(batchWriteOperationResponse.getAttachPolicy(), ATTACHPOLICY_BINDING);
+            protocolMarshaller.marshall(batchWriteOperationResponse.getDetachPolicy(), DETACHPOLICY_BINDING);
             protocolMarshaller.marshall(batchWriteOperationResponse.getCreateIndex(), CREATEINDEX_BINDING);
             protocolMarshaller.marshall(batchWriteOperationResponse.getAttachToIndex(), ATTACHTOINDEX_BINDING);
             protocolMarshaller.marshall(batchWriteOperationResponse.getDetachFromIndex(), DETACHFROMINDEX_BINDING);
