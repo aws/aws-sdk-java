@@ -20,7 +20,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum IdentityProviderTypeType {
 
-    SAML("SAML");
+    SAML("SAML"),
+    Facebook("Facebook"),
+    Google("Google"),
+    LoginWithAmazon("LoginWithAmazon");
 
     private String value;
 

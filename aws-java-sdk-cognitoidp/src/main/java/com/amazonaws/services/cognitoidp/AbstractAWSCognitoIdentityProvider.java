@@ -68,6 +68,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public AdminDisableProviderForUserResult adminDisableProviderForUser(AdminDisableProviderForUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AdminDisableUserResult adminDisableUser(AdminDisableUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +99,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public AdminInitiateAuthResult adminInitiateAuth(AdminInitiateAuthRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AdminLinkProviderForUserResult adminLinkProviderForUser(AdminLinkProviderForUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -173,6 +183,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public CreateResourceServerResult createResourceServer(CreateResourceServerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUserImportJobResult createUserImportJob(CreateUserImportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -203,6 +218,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public DeleteResourceServerResult deleteResourceServer(DeleteResourceServerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteUserResult deleteUser(DeleteUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +249,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public DescribeIdentityProviderResult describeIdentityProvider(DescribeIdentityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeResourceServerResult describeResourceServer(DescribeResourceServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -283,6 +308,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public GetUICustomizationResult getUICustomization(GetUICustomizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUserResult getUser(GetUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -314,6 +344,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public ListIdentityProvidersResult listIdentityProviders(ListIdentityProvidersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceServersResult listResourceServers(ListResourceServersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -353,6 +388,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public SetUICustomizationResult setUICustomization(SetUICustomizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetUserSettingsResult setUserSettings(SetUserSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -384,6 +424,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
 
     @Override
     public UpdateIdentityProviderResult updateIdentityProvider(UpdateIdentityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateResourceServerResult updateResourceServer(UpdateResourceServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

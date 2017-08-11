@@ -23,7 +23,8 @@ public enum DomainStatusType {
     CREATING("CREATING"),
     DELETING("DELETING"),
     UPDATING("UPDATING"),
-    ACTIVE("ACTIVE");
+    ACTIVE("ACTIVE"),
+    FAILED("FAILED");
 
     private String value;
 

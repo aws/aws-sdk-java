@@ -47,6 +47,8 @@ public class CreateUserPoolRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailVerificationMessage").build();
     private static final MarshallingInfo<String> EMAILVERIFICATIONSUBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailVerificationSubject").build();
+    private static final MarshallingInfo<StructuredPojo> VERIFICATIONMESSAGETEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerificationMessageTemplate").build();
     private static final MarshallingInfo<String> SMSAUTHENTICATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SmsAuthenticationMessage").build();
     private static final MarshallingInfo<String> MFACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -89,6 +91,7 @@ public class CreateUserPoolRequestMarshaller {
             protocolMarshaller.marshall(createUserPoolRequest.getSmsVerificationMessage(), SMSVERIFICATIONMESSAGE_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getEmailVerificationMessage(), EMAILVERIFICATIONMESSAGE_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getEmailVerificationSubject(), EMAILVERIFICATIONSUBJECT_BINDING);
+            protocolMarshaller.marshall(createUserPoolRequest.getVerificationMessageTemplate(), VERIFICATIONMESSAGETEMPLATE_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getSmsAuthenticationMessage(), SMSAUTHENTICATIONMESSAGE_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getMfaConfiguration(), MFACONFIGURATION_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getDeviceConfiguration(), DEVICECONFIGURATION_BINDING);

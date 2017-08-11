@@ -30,6 +30,8 @@ public class LoadBalancerInfoMarshaller {
 
     private static final MarshallingInfo<List> ELBINFOLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("elbInfoList").build();
+    private static final MarshallingInfo<List> TARGETGROUPINFOLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetGroupInfoList").build();
 
     private static final LoadBalancerInfoMarshaller instance = new LoadBalancerInfoMarshaller();
 
@@ -48,6 +50,7 @@ public class LoadBalancerInfoMarshaller {
 
         try {
             protocolMarshaller.marshall(loadBalancerInfo.getElbInfoList(), ELBINFOLIST_BINDING);
+            protocolMarshaller.marshall(loadBalancerInfo.getTargetGroupInfoList(), TARGETGROUPINFOLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

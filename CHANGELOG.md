@@ -1,3 +1,16 @@
+# __1.11.176__ __2017-08-11__
+## __AWS CodeDeploy__
+  - ### Features
+    - Adds support for specifying Application Load Balancers in deployment groups, for both in-place and blue/green deployments.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - We have added support for features for Amazon Cognito User Pools that enable application developers to easily add and customize a sign-up and sign-in user experience, use OAuth 2.0, and integrate with Facebook, Google, Login with Amazon, and SAML-based identity providers.
+
+## __Amazon EC2__
+  - ### Features
+    - Provides customers an opportunity to recover an EIP that was released
+
 # __1.11.175__ __2017-08-10__
 ## __AWS CodeBuild__
   - ### Features

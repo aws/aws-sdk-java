@@ -36,7 +36,7 @@ public class DescribeUserPoolClientRequest extends com.amazonaws.AmazonWebServic
     private String userPoolId;
     /**
      * <p>
-     * The ID of the client associated with the user pool.
+     * The app client ID of the app associated with the user pool.
      * </p>
      */
     private String clientId;
@@ -83,11 +83,11 @@ public class DescribeUserPoolClientRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the client associated with the user pool.
+     * The app client ID of the app associated with the user pool.
      * </p>
      * 
      * @param clientId
-     *        The ID of the client associated with the user pool.
+     *        The app client ID of the app associated with the user pool.
      */
 
     public void setClientId(String clientId) {
@@ -96,10 +96,10 @@ public class DescribeUserPoolClientRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the client associated with the user pool.
+     * The app client ID of the app associated with the user pool.
      * </p>
      * 
-     * @return The ID of the client associated with the user pool.
+     * @return The app client ID of the app associated with the user pool.
      */
 
     public String getClientId() {
@@ -108,11 +108,11 @@ public class DescribeUserPoolClientRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the client associated with the user pool.
+     * The app client ID of the app associated with the user pool.
      * </p>
      * 
      * @param clientId
-     *        The ID of the client associated with the user pool.
+     *        The app client ID of the app associated with the user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

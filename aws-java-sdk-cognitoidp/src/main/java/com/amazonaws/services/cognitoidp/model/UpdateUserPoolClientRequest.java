@@ -84,7 +84,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> callbackURLs;
     /**
      * <p>
-     * A list ofallowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the identity providers.
      * </p>
      */
     private java.util.List<String> logoutURLs;
@@ -659,10 +659,10 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list ofallowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the identity providers.
      * </p>
      * 
-     * @return A list ofallowed logout URLs for the identity providers.
+     * @return A list of allowed logout URLs for the identity providers.
      */
 
     public java.util.List<String> getLogoutURLs() {
@@ -671,11 +671,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list ofallowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the identity providers.
      * </p>
      * 
      * @param logoutURLs
-     *        A list ofallowed logout URLs for the identity providers.
+     *        A list of allowed logout URLs for the identity providers.
      */
 
     public void setLogoutURLs(java.util.Collection<String> logoutURLs) {
@@ -689,7 +689,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list ofallowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the identity providers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -698,7 +698,7 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param logoutURLs
-     *        A list ofallowed logout URLs for the identity providers.
+     *        A list of allowed logout URLs for the identity providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -714,11 +714,11 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list ofallowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the identity providers.
      * </p>
      * 
      * @param logoutURLs
-     *        A list ofallowed logout URLs for the identity providers.
+     *        A list of allowed logout URLs for the identity providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

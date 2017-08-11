@@ -85,6 +85,13 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String emailVerificationSubject;
     /**
      * <p>
+     * The template for the verification message that the user sees when the app requests permission to access the
+     * user's information.
+     * </p>
+     */
+    private VerificationMessageTemplateType verificationMessageTemplate;
+    /**
+     * <p>
      * A string representing the SMS authentication message.
      * </p>
      */
@@ -680,6 +687,52 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The template for the verification message that the user sees when the app requests permission to access the
+     * user's information.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for the verification message that the user sees when the app requests permission to access
+     *        the user's information.
+     */
+
+    public void setVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        this.verificationMessageTemplate = verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for the verification message that the user sees when the app requests permission to access the
+     * user's information.
+     * </p>
+     * 
+     * @return The template for the verification message that the user sees when the app requests permission to access
+     *         the user's information.
+     */
+
+    public VerificationMessageTemplateType getVerificationMessageTemplate() {
+        return this.verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for the verification message that the user sees when the app requests permission to access the
+     * user's information.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for the verification message that the user sees when the app requests permission to access
+     *        the user's information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserPoolRequest withVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        setVerificationMessageTemplate(verificationMessageTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
      * A string representing the SMS authentication message.
      * </p>
      * 
@@ -1127,6 +1180,8 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("EmailVerificationMessage: ").append(getEmailVerificationMessage()).append(",");
         if (getEmailVerificationSubject() != null)
             sb.append("EmailVerificationSubject: ").append(getEmailVerificationSubject()).append(",");
+        if (getVerificationMessageTemplate() != null)
+            sb.append("VerificationMessageTemplate: ").append(getVerificationMessageTemplate()).append(",");
         if (getSmsAuthenticationMessage() != null)
             sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
         if (getMfaConfiguration() != null)
@@ -1193,6 +1248,10 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEmailVerificationSubject() != null && other.getEmailVerificationSubject().equals(this.getEmailVerificationSubject()) == false)
             return false;
+        if (other.getVerificationMessageTemplate() == null ^ this.getVerificationMessageTemplate() == null)
+            return false;
+        if (other.getVerificationMessageTemplate() != null && other.getVerificationMessageTemplate().equals(this.getVerificationMessageTemplate()) == false)
+            return false;
         if (other.getSmsAuthenticationMessage() == null ^ this.getSmsAuthenticationMessage() == null)
             return false;
         if (other.getSmsAuthenticationMessage() != null && other.getSmsAuthenticationMessage().equals(this.getSmsAuthenticationMessage()) == false)
@@ -1242,6 +1301,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSmsVerificationMessage() == null) ? 0 : getSmsVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationMessage() == null) ? 0 : getEmailVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationSubject() == null) ? 0 : getEmailVerificationSubject().hashCode());
+        hashCode = prime * hashCode + ((getVerificationMessageTemplate() == null) ? 0 : getVerificationMessageTemplate().hashCode());
         hashCode = prime * hashCode + ((getSmsAuthenticationMessage() == null) ? 0 : getSmsAuthenticationMessage().hashCode());
         hashCode = prime * hashCode + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());

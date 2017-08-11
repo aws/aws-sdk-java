@@ -451,6 +451,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<AdminDisableProviderForUserResult> adminDisableProviderForUserAsync(AdminDisableProviderForUserRequest request) {
+
+        return adminDisableProviderForUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminDisableProviderForUserResult> adminDisableProviderForUserAsync(final AdminDisableProviderForUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminDisableProviderForUserRequest, AdminDisableProviderForUserResult> asyncHandler) {
+        final AdminDisableProviderForUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminDisableProviderForUserResult>() {
+            @Override
+            public AdminDisableProviderForUserResult call() throws Exception {
+                AdminDisableProviderForUserResult result = null;
+
+                try {
+                    result = executeAdminDisableProviderForUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AdminDisableUserResult> adminDisableUserAsync(AdminDisableUserRequest request) {
 
         return adminDisableUserAsync(request, null);
@@ -633,6 +666,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeAdminInitiateAuth(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminLinkProviderForUserResult> adminLinkProviderForUserAsync(AdminLinkProviderForUserRequest request) {
+
+        return adminLinkProviderForUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AdminLinkProviderForUserResult> adminLinkProviderForUserAsync(final AdminLinkProviderForUserRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AdminLinkProviderForUserRequest, AdminLinkProviderForUserResult> asyncHandler) {
+        final AdminLinkProviderForUserRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AdminLinkProviderForUserResult>() {
+            @Override
+            public AdminLinkProviderForUserResult call() throws Exception {
+                AdminLinkProviderForUserResult result = null;
+
+                try {
+                    result = executeAdminLinkProviderForUser(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1144,6 +1210,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResourceServerResult> createResourceServerAsync(CreateResourceServerRequest request) {
+
+        return createResourceServerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourceServerResult> createResourceServerAsync(final CreateResourceServerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateResourceServerRequest, CreateResourceServerResult> asyncHandler) {
+        final CreateResourceServerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateResourceServerResult>() {
+            @Override
+            public CreateResourceServerResult call() throws Exception {
+                CreateResourceServerResult result = null;
+
+                try {
+                    result = executeCreateResourceServer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(CreateUserImportJobRequest request) {
 
         return createUserImportJobAsync(request, null);
@@ -1342,6 +1441,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourceServerResult> deleteResourceServerAsync(DeleteResourceServerRequest request) {
+
+        return deleteResourceServerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourceServerResult> deleteResourceServerAsync(final DeleteResourceServerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourceServerRequest, DeleteResourceServerResult> asyncHandler) {
+        final DeleteResourceServerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourceServerResult>() {
+            @Override
+            public DeleteResourceServerResult call() throws Exception {
+                DeleteResourceServerResult result = null;
+
+                try {
+                    result = executeDeleteResourceServer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
@@ -1524,6 +1656,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeDescribeIdentityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourceServerResult> describeResourceServerAsync(DescribeResourceServerRequest request) {
+
+        return describeResourceServerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourceServerResult> describeResourceServerAsync(final DescribeResourceServerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeResourceServerRequest, DescribeResourceServerResult> asyncHandler) {
+        final DescribeResourceServerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeResourceServerResult>() {
+            @Override
+            public DescribeResourceServerResult call() throws Exception {
+                DescribeResourceServerResult result = null;
+
+                try {
+                    result = executeDescribeResourceServer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1872,6 +2037,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<GetUICustomizationResult> getUICustomizationAsync(GetUICustomizationRequest request) {
+
+        return getUICustomizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUICustomizationResult> getUICustomizationAsync(final GetUICustomizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUICustomizationRequest, GetUICustomizationResult> asyncHandler) {
+        final GetUICustomizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetUICustomizationResult>() {
+            @Override
+            public GetUICustomizationResult call() throws Exception {
+                GetUICustomizationResult result = null;
+
+                try {
+                    result = executeGetUICustomization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest request) {
 
         return getUserAsync(request, null);
@@ -2089,6 +2287,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeListIdentityProviders(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceServersResult> listResourceServersAsync(ListResourceServersRequest request) {
+
+        return listResourceServersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceServersResult> listResourceServersAsync(final ListResourceServersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourceServersRequest, ListResourceServersResult> asyncHandler) {
+        final ListResourceServersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourceServersResult>() {
+            @Override
+            public ListResourceServersResult call() throws Exception {
+                ListResourceServersResult result = null;
+
+                try {
+                    result = executeListResourceServers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2336,6 +2567,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<SetUICustomizationResult> setUICustomizationAsync(SetUICustomizationRequest request) {
+
+        return setUICustomizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetUICustomizationResult> setUICustomizationAsync(final SetUICustomizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetUICustomizationRequest, SetUICustomizationResult> asyncHandler) {
+        final SetUICustomizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetUICustomizationResult>() {
+            @Override
+            public SetUICustomizationResult call() throws Exception {
+                SetUICustomizationResult result = null;
+
+                try {
+                    result = executeSetUICustomization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SetUserSettingsResult> setUserSettingsAsync(SetUserSettingsRequest request) {
 
         return setUserSettingsAsync(request, null);
@@ -2551,6 +2815,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeUpdateIdentityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceServerResult> updateResourceServerAsync(UpdateResourceServerRequest request) {
+
+        return updateResourceServerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceServerResult> updateResourceServerAsync(final UpdateResourceServerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateResourceServerRequest, UpdateResourceServerResult> asyncHandler) {
+        final UpdateResourceServerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateResourceServerResult>() {
+            @Override
+            public UpdateResourceServerResult call() throws Exception {
+                UpdateResourceServerResult result = null;
+
+                try {
+                    result = executeUpdateResourceServer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

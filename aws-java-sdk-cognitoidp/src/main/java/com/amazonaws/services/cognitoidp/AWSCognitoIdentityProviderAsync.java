@@ -275,6 +275,99 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Disables the user from signing in with the specified external (SAML or social) identity provider. If the user to
+     * disable is a Cognito User Pools native username + password user, they are not permitted to use their password to
+     * sign-in. If the user to disable is a linked external IdP user, any link between that user and an existing user is
+     * removed. The next time the external user (no longer attached to the previously linked
+     * <code>DestinationUser</code>) signs in, they must create a new user account. See <a
+     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+     * </p>
+     * <p>
+     * This action is enabled only for admin access and requires developer credentials.
+     * </p>
+     * <p>
+     * The <code>ProviderName</code> must match the value specified when creating an IdP for the pool.
+     * </p>
+     * <p>
+     * To disable a native username + password user, the <code>ProviderName</code> value must be <code>Cognito</code>
+     * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>, with the
+     * <code>ProviderAttributeValue</code> being the name that is used in the user pool for the user.
+     * </p>
+     * <p>
+     * The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code> for social identity providers.
+     * The <code>ProviderAttributeValue</code> must always be the exact subject that was used when the user was
+     * originally linked as a source user.
+     * </p>
+     * <p>
+     * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign-in,
+     * the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were
+     * used for the <code>SourceUser</code> when the identities were originally linked in the <a
+     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If the linking was done with
+     * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here). However, if the
+     * user has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
+     * <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+     * </p>
+     * 
+     * @param adminDisableProviderForUserRequest
+     * @return A Java Future containing the result of the AdminDisableProviderForUser operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminDisableProviderForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableProviderForUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminDisableProviderForUserResult> adminDisableProviderForUserAsync(
+            AdminDisableProviderForUserRequest adminDisableProviderForUserRequest);
+
+    /**
+     * <p>
+     * Disables the user from signing in with the specified external (SAML or social) identity provider. If the user to
+     * disable is a Cognito User Pools native username + password user, they are not permitted to use their password to
+     * sign-in. If the user to disable is a linked external IdP user, any link between that user and an existing user is
+     * removed. The next time the external user (no longer attached to the previously linked
+     * <code>DestinationUser</code>) signs in, they must create a new user account. See <a
+     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+     * </p>
+     * <p>
+     * This action is enabled only for admin access and requires developer credentials.
+     * </p>
+     * <p>
+     * The <code>ProviderName</code> must match the value specified when creating an IdP for the pool.
+     * </p>
+     * <p>
+     * To disable a native username + password user, the <code>ProviderName</code> value must be <code>Cognito</code>
+     * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>, with the
+     * <code>ProviderAttributeValue</code> being the name that is used in the user pool for the user.
+     * </p>
+     * <p>
+     * The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code> for social identity providers.
+     * The <code>ProviderAttributeValue</code> must always be the exact subject that was used when the user was
+     * originally linked as a source user.
+     * </p>
+     * <p>
+     * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign-in,
+     * the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were
+     * used for the <code>SourceUser</code> when the identities were originally linked in the <a
+     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If the linking was done with
+     * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here). However, if the
+     * user has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
+     * <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+     * </p>
+     * 
+     * @param adminDisableProviderForUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminDisableProviderForUser operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminDisableProviderForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableProviderForUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminDisableProviderForUserResult> adminDisableProviderForUserAsync(
+            AdminDisableProviderForUserRequest adminDisableProviderForUserRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminDisableProviderForUserRequest, AdminDisableProviderForUserResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables the specified user as an administrator. Works on any user.
      * </p>
      * <p>
@@ -506,6 +599,79 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<AdminInitiateAuthResult> adminInitiateAuthAsync(AdminInitiateAuthRequest adminInitiateAuthRequest,
             com.amazonaws.handlers.AsyncHandler<AdminInitiateAuthRequest, AdminInitiateAuthResult> asyncHandler);
+
+    /**
+     * <p>
+     * Links an existing user account in a user pool (<code>DestinationUser</code>) to an identity from an external
+     * identity provider (<code>SourceUser</code>) based on a specified attribute name and value from the external
+     * identity provider. This allows you to create a link from the existing user account to an external federated user
+     * identity that has not yet been used to sign in, so that the federated user identity can be used to sign in as the
+     * existing user account.
+     * </p>
+     * <p>
+     * For example, if there is an existing user with a username and password, this API links that user to a federated
+     * user identity, so that when the federated user identity is used, the user signs in as the existing user account.
+     * </p>
+     * <important>
+     * <p>
+     * Because this API allows a user with an external federated identity to sign in as an existing user in the user
+     * pool, it is critical that it only be used with external identity providers and provider attributes that have been
+     * trusted by the application owner.
+     * </p>
+     * </important>
+     * <p>
+     * See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+     * </p>
+     * <p>
+     * This action is enabled only for admin access and requires developer credentials.
+     * </p>
+     * 
+     * @param adminLinkProviderForUserRequest
+     * @return A Java Future containing the result of the AdminLinkProviderForUser operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.AdminLinkProviderForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminLinkProviderForUserResult> adminLinkProviderForUserAsync(AdminLinkProviderForUserRequest adminLinkProviderForUserRequest);
+
+    /**
+     * <p>
+     * Links an existing user account in a user pool (<code>DestinationUser</code>) to an identity from an external
+     * identity provider (<code>SourceUser</code>) based on a specified attribute name and value from the external
+     * identity provider. This allows you to create a link from the existing user account to an external federated user
+     * identity that has not yet been used to sign in, so that the federated user identity can be used to sign in as the
+     * existing user account.
+     * </p>
+     * <p>
+     * For example, if there is an existing user with a username and password, this API links that user to a federated
+     * user identity, so that when the federated user identity is used, the user signs in as the existing user account.
+     * </p>
+     * <important>
+     * <p>
+     * Because this API allows a user with an external federated identity to sign in as an existing user in the user
+     * pool, it is critical that it only be used with external identity providers and provider attributes that have been
+     * trusted by the application owner.
+     * </p>
+     * </important>
+     * <p>
+     * See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+     * </p>
+     * <p>
+     * This action is enabled only for admin access and requires developer credentials.
+     * </p>
+     * 
+     * @param adminLinkProviderForUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AdminLinkProviderForUser operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.AdminLinkProviderForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AdminLinkProviderForUserResult> adminLinkProviderForUserAsync(AdminLinkProviderForUserRequest adminLinkProviderForUserRequest,
+            com.amazonaws.handlers.AsyncHandler<AdminLinkProviderForUserRequest, AdminLinkProviderForUserResult> asyncHandler);
 
     /**
      * <p>
@@ -1088,6 +1254,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Creates a new OAuth2.0 resource server and defines custom scopes in it.
+     * </p>
+     * 
+     * @param createResourceServerRequest
+     * @return A Java Future containing the result of the CreateResourceServer operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.CreateResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResourceServerResult> createResourceServerAsync(CreateResourceServerRequest createResourceServerRequest);
+
+    /**
+     * <p>
+     * Creates a new OAuth2.0 resource server and defines custom scopes in it.
+     * </p>
+     * 
+     * @param createResourceServerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateResourceServer operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.CreateResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateResourceServerResult> createResourceServerAsync(CreateResourceServerRequest createResourceServerRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateResourceServerRequest, CreateResourceServerResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates the user import job.
      * </p>
      * 
@@ -1286,7 +1483,38 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Allows a user to delete one's self.
+     * Deletes a resource server.
+     * </p>
+     * 
+     * @param deleteResourceServerRequest
+     * @return A Java Future containing the result of the DeleteResourceServer operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.DeleteResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceServerResult> deleteResourceServerAsync(DeleteResourceServerRequest deleteResourceServerRequest);
+
+    /**
+     * <p>
+     * Deletes a resource server.
+     * </p>
+     * 
+     * @param deleteResourceServerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourceServer operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceServerResult> deleteResourceServerAsync(DeleteResourceServerRequest deleteResourceServerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceServerRequest, DeleteResourceServerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows a user to delete himself or herself.
      * </p>
      * 
      * @param deleteUserRequest
@@ -1300,7 +1528,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Allows a user to delete one's self.
+     * Allows a user to delete himself or herself.
      * </p>
      * 
      * @param deleteUserRequest
@@ -1477,6 +1705,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<DescribeIdentityProviderResult> describeIdentityProviderAsync(DescribeIdentityProviderRequest describeIdentityProviderRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeIdentityProviderRequest, DescribeIdentityProviderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a resource server.
+     * </p>
+     * 
+     * @param describeResourceServerRequest
+     * @return A Java Future containing the result of the DescribeResourceServer operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.DescribeResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeResourceServerResult> describeResourceServerAsync(DescribeResourceServerRequest describeResourceServerRequest);
+
+    /**
+     * <p>
+     * Describes a resource server.
+     * </p>
+     * 
+     * @param describeResourceServerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeResourceServer operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.DescribeResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeResourceServerResult> describeResourceServerAsync(DescribeResourceServerRequest describeResourceServerRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeResourceServerRequest, DescribeResourceServerResult> asyncHandler);
 
     /**
      * <p>
@@ -1824,6 +2083,41 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Gets the UI Customization information for a particular app client's app UI, if there is something set. If nothing
+     * is set for the particular client, but there is an existing pool level customization (app <code>clientId</code>
+     * will be <code>ALL</code>), then that is returned. If nothing is present, then an empty shape is returned.
+     * </p>
+     * 
+     * @param getUICustomizationRequest
+     * @return A Java Future containing the result of the GetUICustomization operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.GetUICustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUICustomization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetUICustomizationResult> getUICustomizationAsync(GetUICustomizationRequest getUICustomizationRequest);
+
+    /**
+     * <p>
+     * Gets the UI Customization information for a particular app client's app UI, if there is something set. If nothing
+     * is set for the particular client, but there is an existing pool level customization (app <code>clientId</code>
+     * will be <code>ALL</code>), then that is returned. If nothing is present, then an empty shape is returned.
+     * </p>
+     * 
+     * @param getUICustomizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUICustomization operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.GetUICustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUICustomization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetUICustomizationResult> getUICustomizationAsync(GetUICustomizationRequest getUICustomizationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUICustomizationRequest, GetUICustomizationResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the user attributes and metadata for a user.
      * </p>
      * 
@@ -2058,6 +2352,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<ListIdentityProvidersResult> listIdentityProvidersAsync(ListIdentityProvidersRequest listIdentityProvidersRequest,
             com.amazonaws.handlers.AsyncHandler<ListIdentityProvidersRequest, ListIdentityProvidersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the resource servers for a user pool.
+     * </p>
+     * 
+     * @param listResourceServersRequest
+     * @return A Java Future containing the result of the ListResourceServers operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.ListResourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListResourceServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceServersResult> listResourceServersAsync(ListResourceServersRequest listResourceServersRequest);
+
+    /**
+     * <p>
+     * Lists the resource servers for a user pool.
+     * </p>
+     * 
+     * @param listResourceServersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceServers operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.ListResourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListResourceServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceServersResult> listResourceServersAsync(ListResourceServersRequest listResourceServersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceServersRequest, ListResourceServersResult> asyncHandler);
 
     /**
      * <p>
@@ -2296,6 +2621,63 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Sets the UI customization information for a user pool's built-in app UI.
+     * </p>
+     * <p>
+     * You can specify app UI customization settings for a single client (with a specific <code>clientId</code>) or for
+     * all clients (by setting the <code>clientId</code> to <code>ALL</code>). If you specify <code>ALL</code>, the
+     * default configuration will be used for every client that has no UI customization set previously. If you specify
+     * UI customization settings for a particular client, it will no longer fall back to the <code>ALL</code>
+     * configuration.
+     * </p>
+     * <note>
+     * <p>
+     * To use this API, your user pool must have a domain associated with it. Otherwise, there is no place to host the
+     * app's pages, and the service will throw an error.
+     * </p>
+     * </note>
+     * 
+     * @param setUICustomizationRequest
+     * @return A Java Future containing the result of the SetUICustomization operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.SetUICustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SetUICustomizationResult> setUICustomizationAsync(SetUICustomizationRequest setUICustomizationRequest);
+
+    /**
+     * <p>
+     * Sets the UI customization information for a user pool's built-in app UI.
+     * </p>
+     * <p>
+     * You can specify app UI customization settings for a single client (with a specific <code>clientId</code>) or for
+     * all clients (by setting the <code>clientId</code> to <code>ALL</code>). If you specify <code>ALL</code>, the
+     * default configuration will be used for every client that has no UI customization set previously. If you specify
+     * UI customization settings for a particular client, it will no longer fall back to the <code>ALL</code>
+     * configuration.
+     * </p>
+     * <note>
+     * <p>
+     * To use this API, your user pool must have a domain associated with it. Otherwise, there is no place to host the
+     * app's pages, and the service will throw an error.
+     * </p>
+     * </note>
+     * 
+     * @param setUICustomizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetUICustomization operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.SetUICustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SetUICustomizationResult> setUICustomizationAsync(SetUICustomizationRequest setUICustomizationRequest,
+            com.amazonaws.handlers.AsyncHandler<SetUICustomizationRequest, SetUICustomizationResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the user settings like multi-factor authentication (MFA). If MFA is to be removed for a particular attribute
      * pass the attribute with code delivery as null. If null list is passed, all MFA options are removed.
      * </p>
@@ -2528,6 +2910,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<UpdateIdentityProviderResult> updateIdentityProviderAsync(UpdateIdentityProviderRequest updateIdentityProviderRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIdentityProviderRequest, UpdateIdentityProviderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the name and scopes of resource server. All other fields are read-only.
+     * </p>
+     * 
+     * @param updateResourceServerRequest
+     * @return A Java Future containing the result of the UpdateResourceServer operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.UpdateResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceServerResult> updateResourceServerAsync(UpdateResourceServerRequest updateResourceServerRequest);
+
+    /**
+     * <p>
+     * Updates the name and scopes of resource server. All other fields are read-only.
+     * </p>
+     * 
+     * @param updateResourceServerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateResourceServer operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceServerResult> updateResourceServerAsync(UpdateResourceServerRequest updateResourceServerRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourceServerRequest, UpdateResourceServerResult> asyncHandler);
 
     /**
      * <p>

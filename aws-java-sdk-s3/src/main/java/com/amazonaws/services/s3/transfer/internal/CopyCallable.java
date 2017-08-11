@@ -36,7 +36,7 @@ import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.CopyPartRequest;
-import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
+import com.amazonaws.services.s3.model.EncryptedInitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
@@ -213,7 +213,7 @@ public class CopyCallable implements Callable<CopyResult> {
      */
     private String initiateMultipartUpload(CopyObjectRequest origReq) {
 
-        InitiateMultipartUploadRequest req = new InitiateMultipartUploadRequest(
+        EncryptedInitiateMultipartUploadRequest req = new EncryptedInitiateMultipartUploadRequest(
                 origReq.getDestinationBucketName(),
                 origReq.getDestinationKey()).withCannedACL(
                 origReq.getCannedAccessControlList())
@@ -225,6 +225,8 @@ public class CopyCallable implements Callable<CopyResult> {
                 .withGeneralProgressListener(origReq.getGeneralProgressListener())
                 .withRequestMetricCollector(origReq.getRequestMetricCollector())
            ;
+
+        req.setCreateEncryptionMaterial(false);
 
         ObjectMetadata newObjectMetadata = origReq.getNewObjectMetadata();
         if (newObjectMetadata == null){

@@ -28,18 +28,18 @@ public class AdminCreateUserResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The user returned in the request to create a new user.
+     * The newly created user.
      * </p>
      */
     private UserType user;
 
     /**
      * <p>
-     * The user returned in the request to create a new user.
+     * The newly created user.
      * </p>
      * 
      * @param user
-     *        The user returned in the request to create a new user.
+     *        The newly created user.
      */
 
     public void setUser(UserType user) {
@@ -48,10 +48,10 @@ public class AdminCreateUserResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The user returned in the request to create a new user.
+     * The newly created user.
      * </p>
      * 
-     * @return The user returned in the request to create a new user.
+     * @return The newly created user.
      */
 
     public UserType getUser() {
@@ -60,11 +60,11 @@ public class AdminCreateUserResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The user returned in the request to create a new user.
+     * The newly created user.
      * </p>
      * 
      * @param user
-     *        The user returned in the request to create a new user.
+     *        The newly created user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

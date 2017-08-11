@@ -36,6 +36,12 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * </p>
      */
     private String domain;
+    /**
+     * <p>
+     * [EC2-VPC] The Elastic IP address to recover.
+     * </p>
+     */
+    private String address;
 
     /**
      * <p>
@@ -136,6 +142,46 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
+     * <p>
+     * [EC2-VPC] The Elastic IP address to recover.
+     * </p>
+     * 
+     * @param address
+     *        [EC2-VPC] The Elastic IP address to recover.
+     */
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The Elastic IP address to recover.
+     * </p>
+     * 
+     * @return [EC2-VPC] The Elastic IP address to recover.
+     */
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    /**
+     * <p>
+     * [EC2-VPC] The Elastic IP address to recover.
+     * </p>
+     * 
+     * @param address
+     *        [EC2-VPC] The Elastic IP address to recover.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateAddressRequest withAddress(String address) {
+        setAddress(address);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -158,7 +204,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDomain() != null)
-            sb.append("Domain: ").append(getDomain());
+            sb.append("Domain: ").append(getDomain()).append(",");
+        if (getAddress() != null)
+            sb.append("Address: ").append(getAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +225,10 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
             return false;
         if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
+        if (other.getAddress() == null ^ this.getAddress() == null)
+            return false;
+        if (other.getAddress() != null && other.getAddress().equals(this.getAddress()) == false)
+            return false;
         return true;
     }
 
@@ -186,6 +238,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getAddress() == null) ? 0 : getAddress().hashCode());
         return hashCode;
     }
 

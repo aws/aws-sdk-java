@@ -105,6 +105,10 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                     context.nextToken();
                     userPoolType.setEmailVerificationSubject(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VerificationMessageTemplate", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setVerificationMessageTemplate(VerificationMessageTemplateTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SmsAuthenticationMessage", targetDepth)) {
                     context.nextToken();
                     userPoolType.setSmsAuthenticationMessage(context.getUnmarshaller(String.class).unmarshall(context));

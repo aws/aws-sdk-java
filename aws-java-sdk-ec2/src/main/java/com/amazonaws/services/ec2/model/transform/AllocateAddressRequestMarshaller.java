@@ -44,6 +44,10 @@ public class AllocateAddressRequestMarshaller implements Marshaller<Request<Allo
             request.addParameter("Domain", StringUtils.fromString(allocateAddressRequest.getDomain()));
         }
 
+        if (allocateAddressRequest.getAddress() != null) {
+            request.addParameter("Address", StringUtils.fromString(allocateAddressRequest.getAddress()));
+        }
+
         return request;
     }
 

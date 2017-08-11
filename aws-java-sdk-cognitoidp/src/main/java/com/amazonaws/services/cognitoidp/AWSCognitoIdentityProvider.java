@@ -313,6 +313,65 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Disables the user from signing in with the specified external (SAML or social) identity provider. If the user to
+     * disable is a Cognito User Pools native username + password user, they are not permitted to use their password to
+     * sign-in. If the user to disable is a linked external IdP user, any link between that user and an existing user is
+     * removed. The next time the external user (no longer attached to the previously linked
+     * <code>DestinationUser</code>) signs in, they must create a new user account. See <a
+     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+     * </p>
+     * <p>
+     * This action is enabled only for admin access and requires developer credentials.
+     * </p>
+     * <p>
+     * The <code>ProviderName</code> must match the value specified when creating an IdP for the pool.
+     * </p>
+     * <p>
+     * To disable a native username + password user, the <code>ProviderName</code> value must be <code>Cognito</code>
+     * and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>, with the
+     * <code>ProviderAttributeValue</code> being the name that is used in the user pool for the user.
+     * </p>
+     * <p>
+     * The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code> for social identity providers.
+     * The <code>ProviderAttributeValue</code> must always be the exact subject that was used when the user was
+     * originally linked as a source user.
+     * </p>
+     * <p>
+     * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign-in,
+     * the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were
+     * used for the <code>SourceUser</code> when the identities were originally linked in the <a
+     * href="API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a> call. (If the linking was done with
+     * <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here). However, if the
+     * user has already signed in, the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and
+     * <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+     * </p>
+     * 
+     * @param adminDisableProviderForUserRequest
+     * @return Result of the AdminDisableProviderForUser operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws AliasExistsException
+     *         This exception is thrown when a user tries to confirm the account with an email or phone number that has
+     *         already been supplied as an alias from a different account. This exception tells user that an account
+     *         with this email or phone already exists.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminDisableProviderForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableProviderForUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AdminDisableProviderForUserResult adminDisableProviderForUser(AdminDisableProviderForUserRequest adminDisableProviderForUserRequest);
+
+    /**
+     * <p>
      * Disables the specified user as an administrator. Works on any user.
      * </p>
      * <p>
@@ -509,6 +568,56 @@ public interface AWSCognitoIdentityProvider {
      *      API Documentation</a>
      */
     AdminInitiateAuthResult adminInitiateAuth(AdminInitiateAuthRequest adminInitiateAuthRequest);
+
+    /**
+     * <p>
+     * Links an existing user account in a user pool (<code>DestinationUser</code>) to an identity from an external
+     * identity provider (<code>SourceUser</code>) based on a specified attribute name and value from the external
+     * identity provider. This allows you to create a link from the existing user account to an external federated user
+     * identity that has not yet been used to sign in, so that the federated user identity can be used to sign in as the
+     * existing user account.
+     * </p>
+     * <p>
+     * For example, if there is an existing user with a username and password, this API links that user to a federated
+     * user identity, so that when the federated user identity is used, the user signs in as the existing user account.
+     * </p>
+     * <important>
+     * <p>
+     * Because this API allows a user with an external federated identity to sign in as an existing user in the user
+     * pool, it is critical that it only be used with external identity providers and provider attributes that have been
+     * trusted by the application owner.
+     * </p>
+     * </important>
+     * <p>
+     * See also <a href="API_AdminDisableProviderForUser.html">AdminDisableProviderForUser</a>.
+     * </p>
+     * <p>
+     * This action is enabled only for admin access and requires developer credentials.
+     * </p>
+     * 
+     * @param adminLinkProviderForUserRequest
+     * @return Result of the AdminLinkProviderForUser operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws UserNotFoundException
+     *         This exception is thrown when a user is not found.
+     * @throws AliasExistsException
+     *         This exception is thrown when a user tries to confirm the account with an email or phone number that has
+     *         already been supplied as an alias from a different account. This exception tells user that an account
+     *         with this email or phone already exists.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.AdminLinkProviderForUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminLinkProviderForUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AdminLinkProviderForUserResult adminLinkProviderForUser(AdminLinkProviderForUserRequest adminLinkProviderForUserRequest);
 
     /**
      * <p>
@@ -1073,6 +1182,31 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Creates a new OAuth2.0 resource server and defines custom scopes in it.
+     * </p>
+     * 
+     * @param createResourceServerRequest
+     * @return Result of the CreateResourceServer operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.CreateResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateResourceServerResult createResourceServer(CreateResourceServerRequest createResourceServerRequest);
+
+    /**
+     * <p>
      * Creates the user import job.
      * </p>
      * 
@@ -1239,7 +1373,30 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Allows a user to delete one's self.
+     * Deletes a resource server.
+     * </p>
+     * 
+     * @param deleteResourceServerRequest
+     * @return Result of the DeleteResourceServer operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DeleteResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteResourceServerResult deleteResourceServer(DeleteResourceServerRequest deleteResourceServerRequest);
+
+    /**
+     * <p>
+     * Allows a user to delete himself or herself.
      * </p>
      * 
      * @param deleteUserRequest
@@ -1391,6 +1548,29 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeIdentityProviderResult describeIdentityProvider(DescribeIdentityProviderRequest describeIdentityProviderRequest);
+
+    /**
+     * <p>
+     * Describes a resource server.
+     * </p>
+     * 
+     * @param describeResourceServerRequest
+     * @return Result of the DescribeResourceServer operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DescribeResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeResourceServerResult describeResourceServer(DescribeResourceServerRequest describeResourceServerRequest);
 
     /**
      * <p>
@@ -1681,6 +1861,31 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Gets the UI Customization information for a particular app client's app UI, if there is something set. If nothing
+     * is set for the particular client, but there is an existing pool level customization (app <code>clientId</code>
+     * will be <code>ALL</code>), then that is returned. If nothing is present, then an empty shape is returned.
+     * </p>
+     * 
+     * @param getUICustomizationRequest
+     * @return Result of the GetUICustomization operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.GetUICustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUICustomization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetUICustomizationResult getUICustomization(GetUICustomizationRequest getUICustomizationRequest);
+
+    /**
+     * <p>
      * Gets the user attributes and metadata for a user.
      * </p>
      * 
@@ -1912,6 +2117,29 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Lists the resource servers for a user pool.
+     * </p>
+     * 
+     * @param listResourceServersRequest
+     * @return Result of the ListResourceServers operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.ListResourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListResourceServers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResourceServersResult listResourceServers(ListResourceServersRequest listResourceServersRequest);
+
+    /**
+     * <p>
      * Lists the user import jobs.
      * </p>
      * 
@@ -2139,6 +2367,42 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Sets the UI customization information for a user pool's built-in app UI.
+     * </p>
+     * <p>
+     * You can specify app UI customization settings for a single client (with a specific <code>clientId</code>) or for
+     * all clients (by setting the <code>clientId</code> to <code>ALL</code>). If you specify <code>ALL</code>, the
+     * default configuration will be used for every client that has no UI customization set previously. If you specify
+     * UI customization settings for a particular client, it will no longer fall back to the <code>ALL</code>
+     * configuration.
+     * </p>
+     * <note>
+     * <p>
+     * To use this API, your user pool must have a domain associated with it. Otherwise, there is no place to host the
+     * app's pages, and the service will throw an error.
+     * </p>
+     * </note>
+     * 
+     * @param setUICustomizationRequest
+     * @return Result of the SetUICustomization operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.SetUICustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SetUICustomizationResult setUICustomization(SetUICustomizationRequest setUICustomizationRequest);
+
+    /**
+     * <p>
      * Sets the user settings like multi-factor authentication (MFA). If MFA is to be removed for a particular attribute
      * pass the attribute with code delivery as null. If null list is passed, all MFA options are removed.
      * </p>
@@ -2348,6 +2612,29 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateIdentityProviderResult updateIdentityProvider(UpdateIdentityProviderRequest updateIdentityProviderRequest);
+
+    /**
+     * <p>
+     * Updates the name and scopes of resource server. All other fields are read-only.
+     * </p>
+     * 
+     * @param updateResourceServerRequest
+     * @return Result of the UpdateResourceServer operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.UpdateResourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateResourceServer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateResourceServerResult updateResourceServer(UpdateResourceServerRequest updateResourceServerRequest);
 
     /**
      * <p>

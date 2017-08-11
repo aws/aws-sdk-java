@@ -30,7 +30,7 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the client associated with the user pool.
+     * The ID of the app client associated with the user pool.
      * </p>
      */
     private String clientId;
@@ -66,11 +66,11 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the client associated with the user pool.
+     * The ID of the app client associated with the user pool.
      * </p>
      * 
      * @param clientId
-     *        The ID of the client associated with the user pool.
+     *        The ID of the app client associated with the user pool.
      */
 
     public void setClientId(String clientId) {
@@ -79,10 +79,10 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the client associated with the user pool.
+     * The ID of the app client associated with the user pool.
      * </p>
      * 
-     * @return The ID of the client associated with the user pool.
+     * @return The ID of the app client associated with the user pool.
      */
 
     public String getClientId() {
@@ -91,11 +91,11 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the client associated with the user pool.
+     * The ID of the app client associated with the user pool.
      * </p>
      * 
      * @param clientId
-     *        The ID of the client associated with the user pool.
+     *        The ID of the app client associated with the user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

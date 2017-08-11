@@ -114,6 +114,12 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private String emailVerificationSubject;
     /**
      * <p>
+     * The template for verification messages.
+     * </p>
+     */
+    private VerificationMessageTemplateType verificationMessageTemplate;
+    /**
+     * <p>
      * The contents of the SMS authentication message.
      * </p>
      */
@@ -992,6 +998,46 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for verification messages.
+     */
+
+    public void setVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        this.verificationMessageTemplate = verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @return The template for verification messages.
+     */
+
+    public VerificationMessageTemplateType getVerificationMessageTemplate() {
+        return this.verificationMessageTemplate;
+    }
+
+    /**
+     * <p>
+     * The template for verification messages.
+     * </p>
+     * 
+     * @param verificationMessageTemplate
+     *        The template for verification messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withVerificationMessageTemplate(VerificationMessageTemplateType verificationMessageTemplate) {
+        setVerificationMessageTemplate(verificationMessageTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
      * The contents of the SMS authentication message.
      * </p>
      * 
@@ -1670,6 +1716,8 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             sb.append("EmailVerificationMessage: ").append(getEmailVerificationMessage()).append(",");
         if (getEmailVerificationSubject() != null)
             sb.append("EmailVerificationSubject: ").append(getEmailVerificationSubject()).append(",");
+        if (getVerificationMessageTemplate() != null)
+            sb.append("VerificationMessageTemplate: ").append(getVerificationMessageTemplate()).append(",");
         if (getSmsAuthenticationMessage() != null)
             sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
         if (getMfaConfiguration() != null)
@@ -1760,6 +1808,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEmailVerificationSubject() != null && other.getEmailVerificationSubject().equals(this.getEmailVerificationSubject()) == false)
             return false;
+        if (other.getVerificationMessageTemplate() == null ^ this.getVerificationMessageTemplate() == null)
+            return false;
+        if (other.getVerificationMessageTemplate() != null && other.getVerificationMessageTemplate().equals(this.getVerificationMessageTemplate()) == false)
+            return false;
         if (other.getSmsAuthenticationMessage() == null ^ this.getSmsAuthenticationMessage() == null)
             return false;
         if (other.getSmsAuthenticationMessage() != null && other.getSmsAuthenticationMessage().equals(this.getSmsAuthenticationMessage()) == false)
@@ -1822,6 +1874,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSmsVerificationMessage() == null) ? 0 : getSmsVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationMessage() == null) ? 0 : getEmailVerificationMessage().hashCode());
         hashCode = prime * hashCode + ((getEmailVerificationSubject() == null) ? 0 : getEmailVerificationSubject().hashCode());
+        hashCode = prime * hashCode + ((getVerificationMessageTemplate() == null) ? 0 : getVerificationMessageTemplate().hashCode());
         hashCode = prime * hashCode + ((getSmsAuthenticationMessage() == null) ? 0 : getSmsAuthenticationMessage().hashCode());
         hashCode = prime * hashCode + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());

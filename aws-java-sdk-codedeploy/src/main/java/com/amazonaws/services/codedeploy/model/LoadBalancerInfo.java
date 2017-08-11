@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the load balancer used in a deployment.
+ * Information about the Elastic Load Balancing load balancer or target group used in a deployment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LoadBalancerInfo" target="_top">AWS API
@@ -30,17 +30,27 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
+     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ELBInfo> elbInfoList;
+    /**
+     * <p>
+     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
+     * Balancing, target groups are used with Application Load Balancers.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TargetGroupInfo> targetGroupInfoList;
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
+     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      * 
-     * @return An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
+     * @return An array containing information about the load balancer to use for load balancing in a deployment. In
+     *         Elastic Load Balancing, load balancers are used with Classic Load Balancers.
      */
 
     public java.util.List<ELBInfo> getElbInfoList() {
@@ -52,11 +62,13 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
+     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      * 
      * @param elbInfoList
-     *        An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
+     *        An array containing information about the load balancer to use for load balancing in a deployment. In
+     *        Elastic Load Balancing, load balancers are used with Classic Load Balancers.
      */
 
     public void setElbInfoList(java.util.Collection<ELBInfo> elbInfoList) {
@@ -70,7 +82,8 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
+     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +92,8 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param elbInfoList
-     *        An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
+     *        An array containing information about the load balancer to use for load balancing in a deployment. In
+     *        Elastic Load Balancing, load balancers are used with Classic Load Balancers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,16 +109,99 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
+     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      * 
      * @param elbInfoList
-     *        An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
+     *        An array containing information about the load balancer to use for load balancing in a deployment. In
+     *        Elastic Load Balancing, load balancers are used with Classic Load Balancers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoadBalancerInfo withElbInfoList(java.util.Collection<ELBInfo> elbInfoList) {
         setElbInfoList(elbInfoList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
+     * Balancing, target groups are used with Application Load Balancers.
+     * </p>
+     * 
+     * @return An array containing information about the target group to use for load balancing in a deployment. In
+     *         Elastic Load Balancing, target groups are used with Application Load Balancers.
+     */
+
+    public java.util.List<TargetGroupInfo> getTargetGroupInfoList() {
+        if (targetGroupInfoList == null) {
+            targetGroupInfoList = new com.amazonaws.internal.SdkInternalList<TargetGroupInfo>();
+        }
+        return targetGroupInfoList;
+    }
+
+    /**
+     * <p>
+     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
+     * Balancing, target groups are used with Application Load Balancers.
+     * </p>
+     * 
+     * @param targetGroupInfoList
+     *        An array containing information about the target group to use for load balancing in a deployment. In
+     *        Elastic Load Balancing, target groups are used with Application Load Balancers.
+     */
+
+    public void setTargetGroupInfoList(java.util.Collection<TargetGroupInfo> targetGroupInfoList) {
+        if (targetGroupInfoList == null) {
+            this.targetGroupInfoList = null;
+            return;
+        }
+
+        this.targetGroupInfoList = new com.amazonaws.internal.SdkInternalList<TargetGroupInfo>(targetGroupInfoList);
+    }
+
+    /**
+     * <p>
+     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
+     * Balancing, target groups are used with Application Load Balancers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetGroupInfoList(java.util.Collection)} or {@link #withTargetGroupInfoList(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param targetGroupInfoList
+     *        An array containing information about the target group to use for load balancing in a deployment. In
+     *        Elastic Load Balancing, target groups are used with Application Load Balancers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoadBalancerInfo withTargetGroupInfoList(TargetGroupInfo... targetGroupInfoList) {
+        if (this.targetGroupInfoList == null) {
+            setTargetGroupInfoList(new com.amazonaws.internal.SdkInternalList<TargetGroupInfo>(targetGroupInfoList.length));
+        }
+        for (TargetGroupInfo ele : targetGroupInfoList) {
+            this.targetGroupInfoList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
+     * Balancing, target groups are used with Application Load Balancers.
+     * </p>
+     * 
+     * @param targetGroupInfoList
+     *        An array containing information about the target group to use for load balancing in a deployment. In
+     *        Elastic Load Balancing, target groups are used with Application Load Balancers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoadBalancerInfo withTargetGroupInfoList(java.util.Collection<TargetGroupInfo> targetGroupInfoList) {
+        setTargetGroupInfoList(targetGroupInfoList);
         return this;
     }
 
@@ -120,7 +217,9 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getElbInfoList() != null)
-            sb.append("ElbInfoList: ").append(getElbInfoList());
+            sb.append("ElbInfoList: ").append(getElbInfoList()).append(",");
+        if (getTargetGroupInfoList() != null)
+            sb.append("TargetGroupInfoList: ").append(getTargetGroupInfoList());
         sb.append("}");
         return sb.toString();
     }
@@ -139,6 +238,10 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getElbInfoList() != null && other.getElbInfoList().equals(this.getElbInfoList()) == false)
             return false;
+        if (other.getTargetGroupInfoList() == null ^ this.getTargetGroupInfoList() == null)
+            return false;
+        if (other.getTargetGroupInfoList() != null && other.getTargetGroupInfoList().equals(this.getTargetGroupInfoList()) == false)
+            return false;
         return true;
     }
 
@@ -148,6 +251,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getElbInfoList() == null) ? 0 : getElbInfoList().hashCode());
+        hashCode = prime * hashCode + ((getTargetGroupInfoList() == null) ? 0 : getTargetGroupInfoList().hashCode());
         return hashCode;
     }
 
