@@ -68,8 +68,8 @@ import com.amazonaws.services.storagegateway.model.*;
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/general/latest/gr/rande.html#sg_region">AWS Storage Gateway
- * Regions and Endpoints</a>: Provides a list of each region and endpoints available for use with AWS Storage Gateway.
+ * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage Gateway Regions and
+ * Endpoints:</a> Provides a list of each region and endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
  * </ul>
@@ -966,8 +966,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape.
-     * This operation is only supported in the tape gateway architecture.
+     * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A
+     * barcode is unique and can not be reused if it has already been used on a tape . This applies to barcodes used on
+     * deleted tapes. This operation is only supported in the tape gateway. architecture.
      * </p>
      * <note>
      * <p>
@@ -987,8 +988,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape.
-     * This operation is only supported in the tape gateway architecture.
+     * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A
+     * barcode is unique and can not be reused if it has already been used on a tape . This applies to barcodes used on
+     * deleted tapes. This operation is only supported in the tape gateway. architecture.
      * </p>
      * <note>
      * <p>
@@ -2593,7 +2595,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
-     * added or removed since the gateway last listed the bucket's contents and cached the results.
+     * added, removed or replaced since the gateway last listed the bucket's contents and cached the results.
      * </p>
      * 
      * @param refreshCacheRequest
@@ -2607,7 +2609,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
-     * added or removed since the gateway last listed the bucket's contents and cached the results.
+     * added, removed or replaced since the gateway last listed the bucket's contents and cached the results.
      * </p>
      * 
      * @param refreshCacheRequest

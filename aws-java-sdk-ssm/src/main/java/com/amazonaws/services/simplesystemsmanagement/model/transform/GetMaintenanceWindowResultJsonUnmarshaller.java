@@ -56,6 +56,10 @@ public class GetMaintenanceWindowResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     getMaintenanceWindowResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    getMaintenanceWindowResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Schedule", targetDepth)) {
                     context.nextToken();
                     getMaintenanceWindowResult.setSchedule(context.getUnmarshaller(String.class).unmarshall(context));

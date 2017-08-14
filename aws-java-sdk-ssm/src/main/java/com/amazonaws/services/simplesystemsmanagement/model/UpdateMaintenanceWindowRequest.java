@@ -39,6 +39,12 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     private String name;
     /**
      * <p>
+     * An optional description for the update request.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The schedule of the Maintenance Window in the form of a cron or rate expression.
      * </p>
      */
@@ -68,6 +74,13 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private Boolean enabled;
+    /**
+     * <p>
+     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
+     * this API request. Optional fields that are not specified will be set to null.
+     * </p>
+     */
+    private Boolean replace;
 
     /**
      * <p>
@@ -146,6 +159,46 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     public UpdateMaintenanceWindowRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional description for the update request.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the update request.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the update request.
+     * </p>
+     * 
+     * @return An optional description for the update request.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the update request.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the update request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMaintenanceWindowRequest withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -384,6 +437,66 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
+     * this API request. Optional fields that are not specified will be set to null.
+     * </p>
+     * 
+     * @param replace
+     *        If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also
+     *        required for this API request. Optional fields that are not specified will be set to null.
+     */
+
+    public void setReplace(Boolean replace) {
+        this.replace = replace;
+    }
+
+    /**
+     * <p>
+     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
+     * this API request. Optional fields that are not specified will be set to null.
+     * </p>
+     * 
+     * @return If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also
+     *         required for this API request. Optional fields that are not specified will be set to null.
+     */
+
+    public Boolean getReplace() {
+        return this.replace;
+    }
+
+    /**
+     * <p>
+     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
+     * this API request. Optional fields that are not specified will be set to null.
+     * </p>
+     * 
+     * @param replace
+     *        If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also
+     *        required for this API request. Optional fields that are not specified will be set to null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateMaintenanceWindowRequest withReplace(Boolean replace) {
+        setReplace(replace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
+     * this API request. Optional fields that are not specified will be set to null.
+     * </p>
+     * 
+     * @return If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also
+     *         required for this API request. Optional fields that are not specified will be set to null.
+     */
+
+    public Boolean isReplace() {
+        return this.replace;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -398,6 +511,8 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
             sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSchedule() != null)
             sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getDuration() != null)
@@ -407,7 +522,9 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
         if (getAllowUnassociatedTargets() != null)
             sb.append("AllowUnassociatedTargets: ").append(getAllowUnassociatedTargets()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: ").append(getEnabled());
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getReplace() != null)
+            sb.append("Replace: ").append(getReplace());
         sb.append("}");
         return sb.toString();
     }
@@ -430,6 +547,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getSchedule() == null ^ this.getSchedule() == null)
             return false;
         if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
@@ -450,6 +571,10 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
+        if (other.getReplace() == null ^ this.getReplace() == null)
+            return false;
+        if (other.getReplace() != null && other.getReplace().equals(this.getReplace()) == false)
+            return false;
         return true;
     }
 
@@ -460,11 +585,13 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getWindowId() == null) ? 0 : getWindowId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());
         hashCode = prime * hashCode + ((getAllowUnassociatedTargets() == null) ? 0 : getAllowUnassociatedTargets().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getReplace() == null) ? 0 : getReplace().hashCode());
         return hashCode;
     }
 

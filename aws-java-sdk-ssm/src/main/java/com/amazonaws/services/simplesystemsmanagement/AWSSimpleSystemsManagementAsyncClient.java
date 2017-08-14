@@ -2069,6 +2069,74 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<GetMaintenanceWindowExecutionTaskInvocationResult> getMaintenanceWindowExecutionTaskInvocationAsync(
+            GetMaintenanceWindowExecutionTaskInvocationRequest request) {
+
+        return getMaintenanceWindowExecutionTaskInvocationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMaintenanceWindowExecutionTaskInvocationResult> getMaintenanceWindowExecutionTaskInvocationAsync(
+            final GetMaintenanceWindowExecutionTaskInvocationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowExecutionTaskInvocationRequest, GetMaintenanceWindowExecutionTaskInvocationResult> asyncHandler) {
+        final GetMaintenanceWindowExecutionTaskInvocationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMaintenanceWindowExecutionTaskInvocationResult>() {
+            @Override
+            public GetMaintenanceWindowExecutionTaskInvocationResult call() throws Exception {
+                GetMaintenanceWindowExecutionTaskInvocationResult result = null;
+
+                try {
+                    result = executeGetMaintenanceWindowExecutionTaskInvocation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMaintenanceWindowTaskResult> getMaintenanceWindowTaskAsync(GetMaintenanceWindowTaskRequest request) {
+
+        return getMaintenanceWindowTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMaintenanceWindowTaskResult> getMaintenanceWindowTaskAsync(final GetMaintenanceWindowTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowTaskRequest, GetMaintenanceWindowTaskResult> asyncHandler) {
+        final GetMaintenanceWindowTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMaintenanceWindowTaskResult>() {
+            @Override
+            public GetMaintenanceWindowTaskResult call() throws Exception {
+                GetMaintenanceWindowTaskResult result = null;
+
+                try {
+                    result = executeGetMaintenanceWindowTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetParameterResult> getParameterAsync(GetParameterRequest request) {
 
         return getParameterAsync(request, null);
@@ -2367,6 +2435,72 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<ListComplianceItemsResult> listComplianceItemsAsync(ListComplianceItemsRequest request) {
+
+        return listComplianceItemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComplianceItemsResult> listComplianceItemsAsync(final ListComplianceItemsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListComplianceItemsRequest, ListComplianceItemsResult> asyncHandler) {
+        final ListComplianceItemsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListComplianceItemsResult>() {
+            @Override
+            public ListComplianceItemsResult call() throws Exception {
+                ListComplianceItemsResult result = null;
+
+                try {
+                    result = executeListComplianceItems(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComplianceSummariesResult> listComplianceSummariesAsync(ListComplianceSummariesRequest request) {
+
+        return listComplianceSummariesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListComplianceSummariesResult> listComplianceSummariesAsync(final ListComplianceSummariesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListComplianceSummariesRequest, ListComplianceSummariesResult> asyncHandler) {
+        final ListComplianceSummariesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListComplianceSummariesResult>() {
+            @Override
+            public ListComplianceSummariesResult call() throws Exception {
+                ListComplianceSummariesResult result = null;
+
+                try {
+                    result = executeListComplianceSummaries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDocumentVersionsResult> listDocumentVersionsAsync(ListDocumentVersionsRequest request) {
 
         return listDocumentVersionsAsync(request, null);
@@ -2489,6 +2623,41 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<ListResourceComplianceSummariesResult> listResourceComplianceSummariesAsync(
+            ListResourceComplianceSummariesRequest request) {
+
+        return listResourceComplianceSummariesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceComplianceSummariesResult> listResourceComplianceSummariesAsync(
+            final ListResourceComplianceSummariesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourceComplianceSummariesRequest, ListResourceComplianceSummariesResult> asyncHandler) {
+        final ListResourceComplianceSummariesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourceComplianceSummariesResult>() {
+            @Override
+            public ListResourceComplianceSummariesResult call() throws Exception {
+                ListResourceComplianceSummariesResult result = null;
+
+                try {
+                    result = executeListResourceComplianceSummaries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResourceDataSyncResult> listResourceDataSyncAsync(ListResourceDataSyncRequest request) {
 
         return listResourceDataSyncAsync(request, null);
@@ -2572,6 +2741,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeModifyDocumentPermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutComplianceItemsResult> putComplianceItemsAsync(PutComplianceItemsRequest request) {
+
+        return putComplianceItemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutComplianceItemsResult> putComplianceItemsAsync(final PutComplianceItemsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutComplianceItemsRequest, PutComplianceItemsResult> asyncHandler) {
+        final PutComplianceItemsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutComplianceItemsResult>() {
+            @Override
+            public PutComplianceItemsResult call() throws Exception {
+                PutComplianceItemsResult result = null;
+
+                try {
+                    result = executePutComplianceItems(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3106,6 +3308,73 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeUpdateMaintenanceWindow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMaintenanceWindowTargetResult> updateMaintenanceWindowTargetAsync(UpdateMaintenanceWindowTargetRequest request) {
+
+        return updateMaintenanceWindowTargetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMaintenanceWindowTargetResult> updateMaintenanceWindowTargetAsync(
+            final UpdateMaintenanceWindowTargetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowTargetRequest, UpdateMaintenanceWindowTargetResult> asyncHandler) {
+        final UpdateMaintenanceWindowTargetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMaintenanceWindowTargetResult>() {
+            @Override
+            public UpdateMaintenanceWindowTargetResult call() throws Exception {
+                UpdateMaintenanceWindowTargetResult result = null;
+
+                try {
+                    result = executeUpdateMaintenanceWindowTarget(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMaintenanceWindowTaskResult> updateMaintenanceWindowTaskAsync(UpdateMaintenanceWindowTaskRequest request) {
+
+        return updateMaintenanceWindowTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMaintenanceWindowTaskResult> updateMaintenanceWindowTaskAsync(final UpdateMaintenanceWindowTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowTaskRequest, UpdateMaintenanceWindowTaskResult> asyncHandler) {
+        final UpdateMaintenanceWindowTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMaintenanceWindowTaskResult>() {
+            @Override
+            public UpdateMaintenanceWindowTaskResult call() throws Exception {
+                UpdateMaintenanceWindowTaskResult result = null;
+
+                try {
+                    result = executeUpdateMaintenanceWindowTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

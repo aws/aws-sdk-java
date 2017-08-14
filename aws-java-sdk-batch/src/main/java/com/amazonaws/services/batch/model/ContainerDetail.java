@@ -127,6 +127,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      */
     private String taskArn;
 
+    private String logStreamName;
+
     /**
      * <p>
      * The image used to start the container.
@@ -956,6 +958,32 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * @param logStreamName
+     */
+
+    public void setLogStreamName(String logStreamName) {
+        this.logStreamName = logStreamName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getLogStreamName() {
+        return this.logStreamName;
+    }
+
+    /**
+     * @param logStreamName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withLogStreamName(String logStreamName) {
+        setLogStreamName(logStreamName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -997,7 +1025,9 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         if (getContainerInstanceArn() != null)
             sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn()).append(",");
         if (getTaskArn() != null)
-            sb.append("TaskArn: ").append(getTaskArn());
+            sb.append("TaskArn: ").append(getTaskArn()).append(",");
+        if (getLogStreamName() != null)
+            sb.append("LogStreamName: ").append(getLogStreamName());
         sb.append("}");
         return sb.toString();
     }
@@ -1076,6 +1106,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTaskArn() != null && other.getTaskArn().equals(this.getTaskArn()) == false)
             return false;
+        if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
+            return false;
+        if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false)
+            return false;
         return true;
     }
 
@@ -1100,6 +1134,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode());
         return hashCode;
     }
 

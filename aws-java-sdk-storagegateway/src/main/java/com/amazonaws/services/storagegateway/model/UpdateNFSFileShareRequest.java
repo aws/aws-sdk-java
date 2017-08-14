@@ -93,7 +93,7 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String squash;
     /**
      * <p>
-     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
+     * Sets the write status of a file share: "true" if the write status is read-only, otherwise "false".
      * </p>
      */
     private Boolean readOnly;
@@ -555,11 +555,11 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
+     * Sets the write status of a file share: "true" if the write status is read-only, otherwise "false".
      * </p>
      * 
      * @param readOnly
-     *        Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
+     *        Sets the write status of a file share: "true" if the write status is read-only, otherwise "false".
      */
 
     public void setReadOnly(Boolean readOnly) {
@@ -568,10 +568,10 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
+     * Sets the write status of a file share: "true" if the write status is read-only, otherwise "false".
      * </p>
      * 
-     * @return Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
+     * @return Sets the write status of a file share: "true" if the write status is read-only, otherwise "false".
      */
 
     public Boolean getReadOnly() {
@@ -580,11 +580,11 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
+     * Sets the write status of a file share: "true" if the write status is read-only, otherwise "false".
      * </p>
      * 
      * @param readOnly
-     *        Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
+     *        Sets the write status of a file share: "true" if the write status is read-only, otherwise "false".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,10 +595,10 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
+     * Sets the write status of a file share: "true" if the write status is read-only, otherwise "false".
      * </p>
      * 
-     * @return Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
+     * @return Sets the write status of a file share: "true" if the write status is read-only, otherwise "false".
      */
 
     public Boolean isReadOnly() {

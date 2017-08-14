@@ -42,13 +42,15 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private String windowTaskId;
     /**
      * <p>
-     * The ARN of the task to execute.
+     * TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, the
+     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's
+     * the State Machine ARN.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The type of task.
+     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * </p>
      */
     private String type;
@@ -68,8 +70,8 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> taskParameters;
     /**
      * <p>
-     * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
-     * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
+     * The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks that
+     * have the same priority are scheduled in parallel.
      * </p>
      */
     private Integer priority;
@@ -97,6 +99,18 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
      * </p>
      */
     private String maxErrors;
+    /**
+     * <p>
+     * The task name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * A description of the task.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -180,11 +194,15 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the task to execute.
+     * TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, the
+     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's
+     * the State Machine ARN.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task to execute.
+     *        TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
+     *        the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION
+     *        tasks, it's the State Machine ARN.
      */
 
     public void setTaskArn(String taskArn) {
@@ -193,10 +211,14 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the task to execute.
+     * TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, the
+     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's
+     * the State Machine ARN.
      * </p>
      * 
-     * @return The ARN of the task to execute.
+     * @return TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
+     *         the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION
+     *         tasks, it's the State Machine ARN.
      */
 
     public String getTaskArn() {
@@ -205,11 +227,15 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the task to execute.
+     * TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, the
+     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's
+     * the State Machine ARN.
      * </p>
      * 
      * @param taskArn
-     *        The ARN of the task to execute.
+     *        TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
+     *        the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION
+     *        tasks, it's the State Machine ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +246,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task.
+     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * </p>
      * 
      * @param type
-     *        The type of task.
+     *        The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * @see MaintenanceWindowTaskType
      */
 
@@ -234,10 +260,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task.
+     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * </p>
      * 
-     * @return The type of task.
+     * @return The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or
+     *         STEP_FUNCTION.
      * @see MaintenanceWindowTaskType
      */
 
@@ -247,11 +274,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task.
+     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * </p>
      * 
      * @param type
-     *        The type of task.
+     *        The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -263,11 +290,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task.
+     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * </p>
      * 
      * @param type
-     *        The type of task.
+     *        The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * @see MaintenanceWindowTaskType
      */
 
@@ -277,11 +304,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of task.
+     * The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * </p>
      * 
      * @param type
-     *        The type of task.
+     *        The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or STEP_FUNCTION.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaintenanceWindowTaskType
      */
@@ -443,14 +470,13 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
-     * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
+     * The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks that
+     * have the same priority are scheduled in parallel.
      * </p>
      * 
      * @param priority
-     *        The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in
-     *        a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in
-     *        parallel.
+     *        The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks
+     *        that have the same priority are scheduled in parallel.
      */
 
     public void setPriority(Integer priority) {
@@ -459,13 +485,12 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
-     * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
+     * The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks that
+     * have the same priority are scheduled in parallel.
      * </p>
      * 
-     * @return The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks
-     *         in a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled
-     *         in parallel.
+     * @return The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks
+     *         that have the same priority are scheduled in parallel.
      */
 
     public Integer getPriority() {
@@ -474,14 +499,13 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
-     * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
+     * The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks that
+     * have the same priority are scheduled in parallel.
      * </p>
      * 
      * @param priority
-     *        The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in
-     *        a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in
-     *        parallel.
+     *        The priority of the task in the Maintenance Window. The lower the number, the higher the priority. Tasks
+     *        that have the same priority are scheduled in parallel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -651,6 +675,86 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The task name.
+     * </p>
+     * 
+     * @param name
+     *        The task name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The task name.
+     * </p>
+     * 
+     * @return The task name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The task name.
+     * </p>
+     * 
+     * @param name
+     *        The task name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MaintenanceWindowTask withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the task.
+     * </p>
+     * 
+     * @param description
+     *        A description of the task.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the task.
+     * </p>
+     * 
+     * @return A description of the task.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the task.
+     * </p>
+     * 
+     * @param description
+     *        A description of the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MaintenanceWindowTask withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -682,7 +786,11 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
         if (getMaxConcurrency() != null)
             sb.append("MaxConcurrency: ").append(getMaxConcurrency()).append(",");
         if (getMaxErrors() != null)
-            sb.append("MaxErrors: ").append(getMaxErrors());
+            sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -741,6 +849,14 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
             return false;
         if (other.getMaxErrors() != null && other.getMaxErrors().equals(this.getMaxErrors()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -760,6 +876,8 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

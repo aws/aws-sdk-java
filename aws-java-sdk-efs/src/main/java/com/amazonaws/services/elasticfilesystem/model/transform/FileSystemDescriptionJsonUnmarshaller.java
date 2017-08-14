@@ -84,6 +84,14 @@ public class FileSystemDescriptionJsonUnmarshaller implements Unmarshaller<FileS
                     context.nextToken();
                     fileSystemDescription.setPerformanceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Encrypted", targetDepth)) {
+                    context.nextToken();
+                    fileSystemDescription.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    fileSystemDescription.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

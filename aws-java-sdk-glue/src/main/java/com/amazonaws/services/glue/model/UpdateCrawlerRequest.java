@@ -1,0 +1,619 @@
+/*
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.glue.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawler" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * Name of the new <code>Crawler</code>.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The AWS ARN of the IAM role used by the new <code>Crawler</code> to access customer resources.
+     * </p>
+     */
+    private String role;
+    /**
+     * <p>
+     * The Glue <code>Database</code> where results will be stored, such as:
+     * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+     * </p>
+     */
+    private String databaseName;
+    /**
+     * <p>
+     * A description of the new <code>Crawler</code>.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * A list of collection of targets to crawl.
+     * </p>
+     */
+    private CrawlerTargets targets;
+    /**
+     * <p>
+     * A cron expression that can be used as a Cloudwatch event (see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
+     * Expression Syntax</a>. For example, to run every day at 12:15 UTC, specify: <code>cron(15 12 * * ? *)</code>.
+     * </p>
+     */
+    private String schedule;
+    /**
+     * <p>
+     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
+     * included in a crawl, but these custom classifiers always override the default classifiers for a given
+     * classification.
+     * </p>
+     */
+    private java.util.List<String> classifiers;
+    /**
+     * <p>
+     * The table prefix used for catalog tables created.
+     * </p>
+     */
+    private String tablePrefix;
+    /**
+     * <p>
+     * Policy for the crawler's update and deletion behavior.
+     * </p>
+     */
+    private SchemaChangePolicy schemaChangePolicy;
+
+    /**
+     * <p>
+     * Name of the new <code>Crawler</code>.
+     * </p>
+     * 
+     * @param name
+     *        Name of the new <code>Crawler</code>.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * Name of the new <code>Crawler</code>.
+     * </p>
+     * 
+     * @return Name of the new <code>Crawler</code>.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * Name of the new <code>Crawler</code>.
+     * </p>
+     * 
+     * @param name
+     *        Name of the new <code>Crawler</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS ARN of the IAM role used by the new <code>Crawler</code> to access customer resources.
+     * </p>
+     * 
+     * @param role
+     *        The AWS ARN of the IAM role used by the new <code>Crawler</code> to access customer resources.
+     */
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    /**
+     * <p>
+     * The AWS ARN of the IAM role used by the new <code>Crawler</code> to access customer resources.
+     * </p>
+     * 
+     * @return The AWS ARN of the IAM role used by the new <code>Crawler</code> to access customer resources.
+     */
+
+    public String getRole() {
+        return this.role;
+    }
+
+    /**
+     * <p>
+     * The AWS ARN of the IAM role used by the new <code>Crawler</code> to access customer resources.
+     * </p>
+     * 
+     * @param role
+     *        The AWS ARN of the IAM role used by the new <code>Crawler</code> to access customer resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withRole(String role) {
+        setRole(role);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Glue <code>Database</code> where results will be stored, such as:
+     * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+     * </p>
+     * 
+     * @param databaseName
+     *        The Glue <code>Database</code> where results will be stored, such as:
+     *        <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+     */
+
+    public void setDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+    }
+
+    /**
+     * <p>
+     * The Glue <code>Database</code> where results will be stored, such as:
+     * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+     * </p>
+     * 
+     * @return The Glue <code>Database</code> where results will be stored, such as:
+     *         <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+     */
+
+    public String getDatabaseName() {
+        return this.databaseName;
+    }
+
+    /**
+     * <p>
+     * The Glue <code>Database</code> where results will be stored, such as:
+     * <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+     * </p>
+     * 
+     * @param databaseName
+     *        The Glue <code>Database</code> where results will be stored, such as:
+     *        <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withDatabaseName(String databaseName) {
+        setDatabaseName(databaseName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the new <code>Crawler</code>.
+     * </p>
+     * 
+     * @param description
+     *        A description of the new <code>Crawler</code>.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the new <code>Crawler</code>.
+     * </p>
+     * 
+     * @return A description of the new <code>Crawler</code>.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the new <code>Crawler</code>.
+     * </p>
+     * 
+     * @param description
+     *        A description of the new <code>Crawler</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of collection of targets to crawl.
+     * </p>
+     * 
+     * @param targets
+     *        A list of collection of targets to crawl.
+     */
+
+    public void setTargets(CrawlerTargets targets) {
+        this.targets = targets;
+    }
+
+    /**
+     * <p>
+     * A list of collection of targets to crawl.
+     * </p>
+     * 
+     * @return A list of collection of targets to crawl.
+     */
+
+    public CrawlerTargets getTargets() {
+        return this.targets;
+    }
+
+    /**
+     * <p>
+     * A list of collection of targets to crawl.
+     * </p>
+     * 
+     * @param targets
+     *        A list of collection of targets to crawl.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withTargets(CrawlerTargets targets) {
+        setTargets(targets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A cron expression that can be used as a Cloudwatch event (see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
+     * Expression Syntax</a>. For example, to run every day at 12:15 UTC, specify: <code>cron(15 12 * * ? *)</code>.
+     * </p>
+     * 
+     * @param schedule
+     *        A cron expression that can be used as a Cloudwatch event (see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
+     *        Expression Syntax</a>. For example, to run every day at 12:15 UTC, specify:
+     *        <code>cron(15 12 * * ? *)</code>.
+     */
+
+    public void setSchedule(String schedule) {
+        this.schedule = schedule;
+    }
+
+    /**
+     * <p>
+     * A cron expression that can be used as a Cloudwatch event (see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
+     * Expression Syntax</a>. For example, to run every day at 12:15 UTC, specify: <code>cron(15 12 * * ? *)</code>.
+     * </p>
+     * 
+     * @return A cron expression that can be used as a Cloudwatch event (see <a
+     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
+     *         Expression Syntax</a>. For example, to run every day at 12:15 UTC, specify:
+     *         <code>cron(15 12 * * ? *)</code>.
+     */
+
+    public String getSchedule() {
+        return this.schedule;
+    }
+
+    /**
+     * <p>
+     * A cron expression that can be used as a Cloudwatch event (see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
+     * Expression Syntax</a>. For example, to run every day at 12:15 UTC, specify: <code>cron(15 12 * * ? *)</code>.
+     * </p>
+     * 
+     * @param schedule
+     *        A cron expression that can be used as a Cloudwatch event (see <a
+     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">CloudWatch Schedule
+     *        Expression Syntax</a>. For example, to run every day at 12:15 UTC, specify:
+     *        <code>cron(15 12 * * ? *)</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withSchedule(String schedule) {
+        setSchedule(schedule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
+     * included in a crawl, but these custom classifiers always override the default classifiers for a given
+     * classification.
+     * </p>
+     * 
+     * @return A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS
+     *         classifiers are included in a crawl, but these custom classifiers always override the default classifiers
+     *         for a given classification.
+     */
+
+    public java.util.List<String> getClassifiers() {
+        return classifiers;
+    }
+
+    /**
+     * <p>
+     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
+     * included in a crawl, but these custom classifiers always override the default classifiers for a given
+     * classification.
+     * </p>
+     * 
+     * @param classifiers
+     *        A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS
+     *        classifiers are included in a crawl, but these custom classifiers always override the default classifiers
+     *        for a given classification.
+     */
+
+    public void setClassifiers(java.util.Collection<String> classifiers) {
+        if (classifiers == null) {
+            this.classifiers = null;
+            return;
+        }
+
+        this.classifiers = new java.util.ArrayList<String>(classifiers);
+    }
+
+    /**
+     * <p>
+     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
+     * included in a crawl, but these custom classifiers always override the default classifiers for a given
+     * classification.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setClassifiers(java.util.Collection)} or {@link #withClassifiers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param classifiers
+     *        A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS
+     *        classifiers are included in a crawl, but these custom classifiers always override the default classifiers
+     *        for a given classification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withClassifiers(String... classifiers) {
+        if (this.classifiers == null) {
+            setClassifiers(new java.util.ArrayList<String>(classifiers.length));
+        }
+        for (String ele : classifiers) {
+            this.classifiers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS classifiers are
+     * included in a crawl, but these custom classifiers always override the default classifiers for a given
+     * classification.
+     * </p>
+     * 
+     * @param classifiers
+     *        A list of custom <code>Classifier</code> names that the user has registered. By default, all AWS
+     *        classifiers are included in a crawl, but these custom classifiers always override the default classifiers
+     *        for a given classification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withClassifiers(java.util.Collection<String> classifiers) {
+        setClassifiers(classifiers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The table prefix used for catalog tables created.
+     * </p>
+     * 
+     * @param tablePrefix
+     *        The table prefix used for catalog tables created.
+     */
+
+    public void setTablePrefix(String tablePrefix) {
+        this.tablePrefix = tablePrefix;
+    }
+
+    /**
+     * <p>
+     * The table prefix used for catalog tables created.
+     * </p>
+     * 
+     * @return The table prefix used for catalog tables created.
+     */
+
+    public String getTablePrefix() {
+        return this.tablePrefix;
+    }
+
+    /**
+     * <p>
+     * The table prefix used for catalog tables created.
+     * </p>
+     * 
+     * @param tablePrefix
+     *        The table prefix used for catalog tables created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withTablePrefix(String tablePrefix) {
+        setTablePrefix(tablePrefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Policy for the crawler's update and deletion behavior.
+     * </p>
+     * 
+     * @param schemaChangePolicy
+     *        Policy for the crawler's update and deletion behavior.
+     */
+
+    public void setSchemaChangePolicy(SchemaChangePolicy schemaChangePolicy) {
+        this.schemaChangePolicy = schemaChangePolicy;
+    }
+
+    /**
+     * <p>
+     * Policy for the crawler's update and deletion behavior.
+     * </p>
+     * 
+     * @return Policy for the crawler's update and deletion behavior.
+     */
+
+    public SchemaChangePolicy getSchemaChangePolicy() {
+        return this.schemaChangePolicy;
+    }
+
+    /**
+     * <p>
+     * Policy for the crawler's update and deletion behavior.
+     * </p>
+     * 
+     * @param schemaChangePolicy
+     *        Policy for the crawler's update and deletion behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCrawlerRequest withSchemaChangePolicy(SchemaChangePolicy schemaChangePolicy) {
+        setSchemaChangePolicy(schemaChangePolicy);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getRole() != null)
+            sb.append("Role: ").append(getRole()).append(",");
+        if (getDatabaseName() != null)
+            sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTargets() != null)
+            sb.append("Targets: ").append(getTargets()).append(",");
+        if (getSchedule() != null)
+            sb.append("Schedule: ").append(getSchedule()).append(",");
+        if (getClassifiers() != null)
+            sb.append("Classifiers: ").append(getClassifiers()).append(",");
+        if (getTablePrefix() != null)
+            sb.append("TablePrefix: ").append(getTablePrefix()).append(",");
+        if (getSchemaChangePolicy() != null)
+            sb.append("SchemaChangePolicy: ").append(getSchemaChangePolicy());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof UpdateCrawlerRequest == false)
+            return false;
+        UpdateCrawlerRequest other = (UpdateCrawlerRequest) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getRole() == null ^ this.getRole() == null)
+            return false;
+        if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
+            return false;
+        if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
+            return false;
+        if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getTargets() == null ^ this.getTargets() == null)
+            return false;
+        if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
+            return false;
+        if (other.getSchedule() == null ^ this.getSchedule() == null)
+            return false;
+        if (other.getSchedule() != null && other.getSchedule().equals(this.getSchedule()) == false)
+            return false;
+        if (other.getClassifiers() == null ^ this.getClassifiers() == null)
+            return false;
+        if (other.getClassifiers() != null && other.getClassifiers().equals(this.getClassifiers()) == false)
+            return false;
+        if (other.getTablePrefix() == null ^ this.getTablePrefix() == null)
+            return false;
+        if (other.getTablePrefix() != null && other.getTablePrefix().equals(this.getTablePrefix()) == false)
+            return false;
+        if (other.getSchemaChangePolicy() == null ^ this.getSchemaChangePolicy() == null)
+            return false;
+        if (other.getSchemaChangePolicy() != null && other.getSchemaChangePolicy().equals(this.getSchemaChangePolicy()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
+        hashCode = prime * hashCode + ((getClassifiers() == null) ? 0 : getClassifiers().hashCode());
+        hashCode = prime * hashCode + ((getTablePrefix() == null) ? 0 : getTablePrefix().hashCode());
+        hashCode = prime * hashCode + ((getSchemaChangePolicy() == null) ? 0 : getSchemaChangePolicy().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public UpdateCrawlerRequest clone() {
+        return (UpdateCrawlerRequest) super.clone();
+    }
+
+}

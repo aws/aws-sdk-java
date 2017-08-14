@@ -54,6 +54,18 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
     private String ownerInformation;
     /**
      * <p>
+     * An optional name for the target.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * An optional description for the target.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * User-provided idempotency token.
      * </p>
      */
@@ -309,6 +321,86 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
 
     /**
      * <p>
+     * An optional name for the target.
+     * </p>
+     * 
+     * @param name
+     *        An optional name for the target.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * An optional name for the target.
+     * </p>
+     * 
+     * @return An optional name for the target.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * An optional name for the target.
+     * </p>
+     * 
+     * @param name
+     *        An optional name for the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTargetWithMaintenanceWindowRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional description for the target.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the target.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the target.
+     * </p>
+     * 
+     * @return An optional description for the target.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the target.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTargetWithMaintenanceWindowRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
      * User-provided idempotency token.
      * </p>
      * 
@@ -366,6 +458,10 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
             sb.append("Targets: ").append(getTargets()).append(",");
         if (getOwnerInformation() != null)
             sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
@@ -398,6 +494,14 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
             return false;
         if (other.getOwnerInformation() != null && other.getOwnerInformation().equals(this.getOwnerInformation()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -414,6 +518,8 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getOwnerInformation() == null) ? 0 : getOwnerInformation().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }

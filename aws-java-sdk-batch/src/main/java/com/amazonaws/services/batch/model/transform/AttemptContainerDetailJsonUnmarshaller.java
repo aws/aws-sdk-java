@@ -64,6 +64,10 @@ public class AttemptContainerDetailJsonUnmarshaller implements Unmarshaller<Atte
                     context.nextToken();
                     attemptContainerDetail.setReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("logStreamName", targetDepth)) {
+                    context.nextToken();
+                    attemptContainerDetail.setLogStreamName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

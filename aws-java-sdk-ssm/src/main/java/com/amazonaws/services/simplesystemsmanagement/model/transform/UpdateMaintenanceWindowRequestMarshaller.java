@@ -31,6 +31,8 @@ public class UpdateMaintenanceWindowRequestMarshaller {
             .marshallLocationName("WindowId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> SCHEDULE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Schedule").build();
     private static final MarshallingInfo<Integer> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -41,6 +43,8 @@ public class UpdateMaintenanceWindowRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowUnassociatedTargets").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
+    private static final MarshallingInfo<Boolean> REPLACE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Replace").build();
 
     private static final UpdateMaintenanceWindowRequestMarshaller instance = new UpdateMaintenanceWindowRequestMarshaller();
 
@@ -60,11 +64,13 @@ public class UpdateMaintenanceWindowRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getWindowId(), WINDOWID_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateMaintenanceWindowRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getDuration(), DURATION_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getCutoff(), CUTOFF_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getAllowUnassociatedTargets(), ALLOWUNASSOCIATEDTARGETS_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(updateMaintenanceWindowRequest.getReplace(), REPLACE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

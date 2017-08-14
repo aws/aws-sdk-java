@@ -56,6 +56,10 @@ public class MaintenanceWindowIdentityJsonUnmarshaller implements Unmarshaller<M
                     context.nextToken();
                     maintenanceWindowIdentity.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowIdentity.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     context.nextToken();
                     maintenanceWindowIdentity.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));

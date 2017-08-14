@@ -20,7 +20,10 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MaintenanceWindowTaskType {
 
-    RUN_COMMAND("RUN_COMMAND");
+    RUN_COMMAND("RUN_COMMAND"),
+    AUTOMATION("AUTOMATION"),
+    STEP_FUNCTIONS("STEP_FUNCTIONS"),
+    LAMBDA("LAMBDA");
 
     private String value;
 

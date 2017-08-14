@@ -658,6 +658,9 @@ public interface AWSSimpleSystemsManagement {
      *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @throws TargetInUseException
+     *         You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow operation, but
+     *         the target is still referenced in a task.
      * @sample AWSSimpleSystemsManagement.DeregisterTargetFromMaintenanceWindow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow"
      *      target="_top">AWS API Documentation</a>
@@ -1056,8 +1059,8 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Lists the executions of a Maintenance Window (meaning, information about when the Maintenance Window was
-     * scheduled to be active and information about tasks registered and run with the Maintenance Window).
+     * Lists the executions of a Maintenance Window. This includes information about when the Maintenance Window was
+     * scheduled to be active, and information about tasks registered and run with the Maintenance Window.
      * </p>
      * 
      * @param describeMaintenanceWindowExecutionsRequest
@@ -1403,6 +1406,42 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Retrieves a task invocation. A task invocation is a specific task executing on a specific target. Maintenance
+     * Windows report status for all invocations.
+     * </p>
+     * 
+     * @param getMaintenanceWindowExecutionTaskInvocationRequest
+     * @return Result of the GetMaintenanceWindowExecutionTaskInvocation operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecutionTaskInvocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMaintenanceWindowExecutionTaskInvocationResult getMaintenanceWindowExecutionTaskInvocation(
+            GetMaintenanceWindowExecutionTaskInvocationRequest getMaintenanceWindowExecutionTaskInvocationRequest);
+
+    /**
+     * <p>
+     * Lists the tasks in a Maintenance Window.
+     * </p>
+     * 
+     * @param getMaintenanceWindowTaskRequest
+     * @return Result of the GetMaintenanceWindowTask operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetMaintenanceWindowTaskResult getMaintenanceWindowTask(GetMaintenanceWindowTaskRequest getMaintenanceWindowTaskRequest);
+
+    /**
+     * <p>
      * Get information about a parameter by using the parameter name.
      * </p>
      * 
@@ -1621,6 +1660,53 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * For a specified resource ID, this API returns a list of compliance statuses for different resource types.
+     * Currently, you can only specify one resource ID per call. List results depend on the criteria specified in the
+     * filter.
+     * </p>
+     * 
+     * @param listComplianceItemsRequest
+     * @return Result of the ListComplianceItems operation returned by the service.
+     * @throws InvalidResourceTypeException
+     *         The resource type is not valid. If you are attempting to tag an instance, the instance must be a
+     *         registered, managed instance.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListComplianceItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListComplianceItemsResult listComplianceItems(ListComplianceItemsRequest listComplianceItemsRequest);
+
+    /**
+     * <p>
+     * Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call
+     * can return State Manager associations, patches, or custom compliance types according to the filter criteria you
+     * specify.
+     * </p>
+     * 
+     * @param listComplianceSummariesRequest
+     * @return Result of the ListComplianceSummaries operation returned by the service.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.ListComplianceSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListComplianceSummariesResult listComplianceSummaries(ListComplianceSummariesRequest listComplianceSummariesRequest);
+
+    /**
+     * <p>
      * List all versions for a document.
      * </p>
      * 
@@ -1703,6 +1789,26 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Returns a resource-level summary count. The summary includes information about compliant and non-compliant
+     * statuses and detailed compliance-item severity counts, according to the filter criteria you specify.
+     * </p>
+     * 
+     * @param listResourceComplianceSummariesRequest
+     * @return Result of the ListResourceComplianceSummaries operation returned by the service.
+     * @throws InvalidFilterException
+     *         The filter name is not valid. Verify the you entered the correct name and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.ListResourceComplianceSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResourceComplianceSummariesResult listResourceComplianceSummaries(ListResourceComplianceSummariesRequest listResourceComplianceSummariesRequest);
+
+    /**
+     * <p>
      * Lists your resource data sync configurations. Includes information about the last time a sync attempted to start,
      * the last sync status, and the last time a sync successfully completed.
      * </p>
@@ -1775,6 +1881,36 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Registers a compliance type and other compliance details on a designated resource. This API lets you register
+     * custom compliance details with a resource. This call overwrites existing compliance information on the resource,
+     * so you must provide a full list of compliance items each time you send the request.
+     * </p>
+     * 
+     * @param putComplianceItemsRequest
+     * @return Result of the PutComplianceItems operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidItemContentException
+     *         One or more content items is not valid.
+     * @throws TotalSizeLimitExceededException
+     *         The size of inventory data has exceeded the total size limit for the resource.
+     * @throws ItemSizeLimitExceededException
+     *         The inventory item size has exceeded the size limit.
+     * @throws ComplianceTypeCountLimitExceededException
+     *         You specified too many custom compliance types. You can specify a maximum of 10 different types.
+     * @throws InvalidResourceTypeException
+     *         The resource type is not valid. If you are attempting to tag an instance, the instance must be a
+     *         registered, managed instance.
+     * @throws InvalidResourceIdException
+     *         The resource ID is not valid. Verify that you entered the correct ID and try again.
+     * @sample AWSSimpleSystemsManagement.PutComplianceItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutComplianceItemsResult putComplianceItems(PutComplianceItemsRequest putComplianceItemsRequest);
+
+    /**
+     * <p>
      * Bulk update custom inventory items on one more instance. The request adds an inventory item, if it doesn't
      * already exist, or updates an inventory item, if it does exist.
      * </p>
@@ -1814,6 +1950,15 @@ public interface AWSSimpleSystemsManagement {
      * @throws UnsupportedInventorySchemaVersionException
      *         Inventory item type schema version has to match supported versions in the service. Check output of
      *         GetInventorySchema to see the available schema version for each type.
+     * @throws UnsupportedInventoryItemContextException
+     *         The <code>Context</code> attribute you specified for the <code>InventoryItem</code> is not allowed for
+     *         this inventory type. You can only use the <code>Context</code> attribute with inventory types like
+     *         <code>AWS:ComplianceItem</code>.
+     * @throws InvalidInventoryItemContextException
+     *         You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>
+     *         . Verify the keys and values, and try again.
+     * @throws SubTypeCountLimitExceededException
+     *         The sub-type count exceeded the limit for the inventory type.
      * @sample AWSSimpleSystemsManagement.PutInventory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory" target="_top">AWS API
      *      Documentation</a>
@@ -1946,6 +2091,9 @@ public interface AWSSimpleSystemsManagement {
      * @throws ResourceLimitExceededException
      *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
      *         Windows have been created).
+     * @throws FeatureNotAvailableException
+     *         You attempted to register a LAMBDA or STEP_FUNCTION task in a region where there corresponding service is
+     *         not available.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterTaskWithMaintenanceWindow
@@ -2230,6 +2378,86 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     UpdateMaintenanceWindowResult updateMaintenanceWindow(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Modifies the target of an existing Maintenance Window. You can't change the target type, but you can change the
+     * following:
+     * </p>
+     * <p>
+     * The target from being an ID target to a Tag target, or a Tag target to an ID target.
+     * </p>
+     * <p>
+     * The IDs of an ID target.
+     * </p>
+     * <p>
+     * The tags of a Tag target.
+     * </p>
+     * <p>
+     * The Owner.
+     * </p>
+     * <p>
+     * The Name.
+     * </p>
+     * <p>
+     * The Description.
+     * </p>
+     * <p>
+     * Also note that if a parameter is null, then the corresponding field is not modified.
+     * </p>
+     * 
+     * @param updateMaintenanceWindowTargetRequest
+     * @return Result of the UpdateMaintenanceWindowTarget operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindowTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMaintenanceWindowTargetResult updateMaintenanceWindowTarget(UpdateMaintenanceWindowTargetRequest updateMaintenanceWindowTargetRequest);
+
+    /**
+     * <p>
+     * Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the
+     * following:
+     * </p>
+     * <p>
+     * The Task Arn. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
+     * </p>
+     * <p>
+     * The service role ARN.
+     * </p>
+     * <p>
+     * The task parameters.
+     * </p>
+     * <p>
+     * The task priority.
+     * </p>
+     * <p>
+     * The task MaxConcurrency and MaxErrors.
+     * </p>
+     * <p>
+     * The log location.
+     * </p>
+     * <p>
+     * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
+     * fields required by the RegisterTaskWithMaintenanceWindow operation are required for this request. Optional fields
+     * that aren't specified are be set to null.
+     * </p>
+     * 
+     * @param updateMaintenanceWindowTaskRequest
+     * @return Result of the UpdateMaintenanceWindowTask operation returned by the service.
+     * @throws DoesNotExistException
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindowTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMaintenanceWindowTaskResult updateMaintenanceWindowTask(UpdateMaintenanceWindowTaskRequest updateMaintenanceWindowTaskRequest);
 
     /**
      * <p>

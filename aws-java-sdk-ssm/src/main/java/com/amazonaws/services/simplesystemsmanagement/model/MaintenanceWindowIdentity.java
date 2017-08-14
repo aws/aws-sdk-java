@@ -42,6 +42,12 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
     private String name;
     /**
      * <p>
+     * A description of the Maintenance Window.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * Whether the Maintenance Window is enabled.
      * </p>
      */
@@ -137,6 +143,46 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
 
     public MaintenanceWindowIdentity withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the Maintenance Window.
+     * </p>
+     * 
+     * @param description
+     *        A description of the Maintenance Window.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the Maintenance Window.
+     * </p>
+     * 
+     * @return A description of the Maintenance Window.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the Maintenance Window.
+     * </p>
+     * 
+     * @param description
+     *        A description of the Maintenance Window.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MaintenanceWindowIdentity withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -293,6 +339,8 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
             sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getDuration() != null)
@@ -321,6 +369,10 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
@@ -343,6 +395,7 @@ public class MaintenanceWindowIdentity implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getWindowId() == null) ? 0 : getWindowId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());

@@ -62,6 +62,14 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, String>> content;
+    /**
+     * <p>
+     * A map of associated properties for a specified inventory type. For example, with this attribute, you can specify
+     * the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.
+     * </p>
+     */
+    private java.util.Map<String, String> context;
 
     /**
      * <p>
@@ -321,6 +329,79 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A map of associated properties for a specified inventory type. For example, with this attribute, you can specify
+     * the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.
+     * </p>
+     * 
+     * @return A map of associated properties for a specified inventory type. For example, with this attribute, you can
+     *         specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties
+     *         of the <code>AWS:ComplianceItem</code> type.
+     */
+
+    public java.util.Map<String, String> getContext() {
+        return context;
+    }
+
+    /**
+     * <p>
+     * A map of associated properties for a specified inventory type. For example, with this attribute, you can specify
+     * the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.
+     * </p>
+     * 
+     * @param context
+     *        A map of associated properties for a specified inventory type. For example, with this attribute, you can
+     *        specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties
+     *        of the <code>AWS:ComplianceItem</code> type.
+     */
+
+    public void setContext(java.util.Map<String, String> context) {
+        this.context = context;
+    }
+
+    /**
+     * <p>
+     * A map of associated properties for a specified inventory type. For example, with this attribute, you can specify
+     * the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.
+     * </p>
+     * 
+     * @param context
+     *        A map of associated properties for a specified inventory type. For example, with this attribute, you can
+     *        specify the <code>ExecutionId</code>, <code>ExecutionType</code>, <code>ComplianceType</code> properties
+     *        of the <code>AWS:ComplianceItem</code> type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InventoryItem withContext(java.util.Map<String, String> context) {
+        setContext(context);
+        return this;
+    }
+
+    public InventoryItem addContextEntry(String key, String value) {
+        if (null == this.context) {
+            this.context = new java.util.HashMap<String, String>();
+        }
+        if (this.context.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.context.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Context.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InventoryItem clearContextEntries() {
+        this.context = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -340,7 +421,9 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
         if (getContentHash() != null)
             sb.append("ContentHash: ").append(getContentHash()).append(",");
         if (getContent() != null)
-            sb.append("Content: ").append(getContent());
+            sb.append("Content: ").append(getContent()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append(getContext());
         sb.append("}");
         return sb.toString();
     }
@@ -375,6 +458,10 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
             return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
         return true;
     }
 
@@ -388,6 +475,7 @@ public class InventoryItem implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCaptureTime() == null) ? 0 : getCaptureTime().hashCode());
         hashCode = prime * hashCode + ((getContentHash() == null) ? 0 : getContentHash().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         return hashCode;
     }
 

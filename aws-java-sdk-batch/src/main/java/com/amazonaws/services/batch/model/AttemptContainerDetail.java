@@ -54,6 +54,8 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
      */
     private String reason;
 
+    private String logStreamName;
+
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon ECS container instance that hosts the job attempt.
@@ -221,6 +223,32 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
     }
 
     /**
+     * @param logStreamName
+     */
+
+    public void setLogStreamName(String logStreamName) {
+        this.logStreamName = logStreamName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getLogStreamName() {
+        return this.logStreamName;
+    }
+
+    /**
+     * @param logStreamName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttemptContainerDetail withLogStreamName(String logStreamName) {
+        setLogStreamName(logStreamName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -238,7 +266,9 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
         if (getExitCode() != null)
             sb.append("ExitCode: ").append(getExitCode()).append(",");
         if (getReason() != null)
-            sb.append("Reason: ").append(getReason());
+            sb.append("Reason: ").append(getReason()).append(",");
+        if (getLogStreamName() != null)
+            sb.append("LogStreamName: ").append(getLogStreamName());
         sb.append("}");
         return sb.toString();
     }
@@ -269,6 +299,10 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
             return false;
         if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
+        if (other.getLogStreamName() == null ^ this.getLogStreamName() == null)
+            return false;
+        if (other.getLogStreamName() != null && other.getLogStreamName().equals(this.getLogStreamName()) == false)
+            return false;
         return true;
     }
 
@@ -281,6 +315,7 @@ public class AttemptContainerDetail implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getLogStreamName() == null) ? 0 : getLogStreamName().hashCode());
         return hashCode;
     }
 

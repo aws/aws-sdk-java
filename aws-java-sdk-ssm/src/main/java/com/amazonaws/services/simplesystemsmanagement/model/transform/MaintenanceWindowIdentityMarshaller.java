@@ -31,6 +31,8 @@ public class MaintenanceWindowIdentityMarshaller {
             .marshallLocationName("WindowId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<Integer> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -56,6 +58,7 @@ public class MaintenanceWindowIdentityMarshaller {
         try {
             protocolMarshaller.marshall(maintenanceWindowIdentity.getWindowId(), WINDOWID_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowIdentity.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getDuration(), DURATION_BINDING);
             protocolMarshaller.marshall(maintenanceWindowIdentity.getCutoff(), CUTOFF_BINDING);

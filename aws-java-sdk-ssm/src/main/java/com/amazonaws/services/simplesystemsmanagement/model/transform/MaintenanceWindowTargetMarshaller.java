@@ -38,6 +38,10 @@ public class MaintenanceWindowTargetMarshaller {
             .marshallLocationName("Targets").build();
     private static final MarshallingInfo<String> OWNERINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerInformation").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
 
     private static final MaintenanceWindowTargetMarshaller instance = new MaintenanceWindowTargetMarshaller();
 
@@ -60,6 +64,8 @@ public class MaintenanceWindowTargetMarshaller {
             protocolMarshaller.marshall(maintenanceWindowTarget.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(maintenanceWindowTarget.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(maintenanceWindowTarget.getOwnerInformation(), OWNERINFORMATION_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowTarget.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowTarget.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

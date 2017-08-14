@@ -31,6 +31,10 @@ public class CreateFileSystemRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationToken").build();
     private static final MarshallingInfo<String> PERFORMANCEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerformanceMode").build();
+    private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Encrypted").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
 
     private static final CreateFileSystemRequestMarshaller instance = new CreateFileSystemRequestMarshaller();
 
@@ -50,6 +54,8 @@ public class CreateFileSystemRequestMarshaller {
         try {
             protocolMarshaller.marshall(createFileSystemRequest.getCreationToken(), CREATIONTOKEN_BINDING);
             protocolMarshaller.marshall(createFileSystemRequest.getPerformanceMode(), PERFORMANCEMODE_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getEncrypted(), ENCRYPTED_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

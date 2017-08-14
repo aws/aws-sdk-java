@@ -65,6 +65,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> taskParameters;
     /**
      * <p>
+     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
+     * fields should be empty.
+     * </p>
+     */
+    private MaintenanceWindowTaskInvocationParameters taskInvocationParameters;
+    /**
+     * <p>
      * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
      * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
      * </p>
@@ -88,6 +95,18 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      */
     private LoggingInfo loggingInfo;
+    /**
+     * <p>
+     * An optional name for the task.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * An optional description for the task.
+     * </p>
+     */
+    private String description;
     /**
      * <p>
      * User-provided idempotency token.
@@ -440,6 +459,52 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
+     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
+     * fields should be empty.
+     * </p>
+     * 
+     * @param taskInvocationParameters
+     *        Parameters the task should use during execution. Populate only the fields that match the task type. All
+     *        other fields should be empty.
+     */
+
+    public void setTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters taskInvocationParameters) {
+        this.taskInvocationParameters = taskInvocationParameters;
+    }
+
+    /**
+     * <p>
+     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
+     * fields should be empty.
+     * </p>
+     * 
+     * @return Parameters the task should use during execution. Populate only the fields that match the task type. All
+     *         other fields should be empty.
+     */
+
+    public MaintenanceWindowTaskInvocationParameters getTaskInvocationParameters() {
+        return this.taskInvocationParameters;
+    }
+
+    /**
+     * <p>
+     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
+     * fields should be empty.
+     * </p>
+     * 
+     * @param taskInvocationParameters
+     *        Parameters the task should use during execution. Populate only the fields that match the task type. All
+     *        other fields should be empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskWithMaintenanceWindowRequest withTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters taskInvocationParameters) {
+        setTaskInvocationParameters(taskInvocationParameters);
+        return this;
+    }
+
+    /**
+     * <p>
      * The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a
      * Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
      * </p>
@@ -609,6 +674,86 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
+     * An optional name for the task.
+     * </p>
+     * 
+     * @param name
+     *        An optional name for the task.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * An optional name for the task.
+     * </p>
+     * 
+     * @return An optional name for the task.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * An optional name for the task.
+     * </p>
+     * 
+     * @param name
+     *        An optional name for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskWithMaintenanceWindowRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional description for the task.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the task.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the task.
+     * </p>
+     * 
+     * @return An optional description for the task.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * An optional description for the task.
+     * </p>
+     * 
+     * @param description
+     *        An optional description for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskWithMaintenanceWindowRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
      * User-provided idempotency token.
      * </p>
      * 
@@ -670,6 +815,8 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
             sb.append("TaskType: ").append(getTaskType()).append(",");
         if (getTaskParameters() != null)
             sb.append("TaskParameters: ").append(getTaskParameters()).append(",");
+        if (getTaskInvocationParameters() != null)
+            sb.append("TaskInvocationParameters: ").append(getTaskInvocationParameters()).append(",");
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getMaxConcurrency() != null)
@@ -678,6 +825,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
             sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getLoggingInfo() != null)
             sb.append("LoggingInfo: ").append(getLoggingInfo()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
@@ -718,6 +869,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
             return false;
         if (other.getTaskParameters() != null && other.getTaskParameters().equals(this.getTaskParameters()) == false)
             return false;
+        if (other.getTaskInvocationParameters() == null ^ this.getTaskInvocationParameters() == null)
+            return false;
+        if (other.getTaskInvocationParameters() != null && other.getTaskInvocationParameters().equals(this.getTaskInvocationParameters()) == false)
+            return false;
         if (other.getPriority() == null ^ this.getPriority() == null)
             return false;
         if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
@@ -733,6 +888,14 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         if (other.getLoggingInfo() == null ^ this.getLoggingInfo() == null)
             return false;
         if (other.getLoggingInfo() != null && other.getLoggingInfo().equals(this.getLoggingInfo()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
@@ -752,10 +915,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTaskType() == null) ? 0 : getTaskType().hashCode());
         hashCode = prime * hashCode + ((getTaskParameters() == null) ? 0 : getTaskParameters().hashCode());
+        hashCode = prime * hashCode + ((getTaskInvocationParameters() == null) ? 0 : getTaskInvocationParameters().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getLoggingInfo() == null) ? 0 : getLoggingInfo().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }

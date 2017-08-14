@@ -1370,8 +1370,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Lists the executions of a Maintenance Window (meaning, information about when the Maintenance Window was
-     * scheduled to be active and information about tasks registered and run with the Maintenance Window).
+     * Lists the executions of a Maintenance Window. This includes information about when the Maintenance Window was
+     * scheduled to be active, and information about tasks registered and run with the Maintenance Window.
      * </p>
      * 
      * @param describeMaintenanceWindowExecutionsRequest
@@ -1386,8 +1386,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Lists the executions of a Maintenance Window (meaning, information about when the Maintenance Window was
-     * scheduled to be active and information about tasks registered and run with the Maintenance Window).
+     * Lists the executions of a Maintenance Window. This includes information about when the Maintenance Window was
+     * scheduled to be active, and information about tasks registered and run with the Maintenance Window.
      * </p>
      * 
      * @param describeMaintenanceWindowExecutionsRequest
@@ -1976,6 +1976,74 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Retrieves a task invocation. A task invocation is a specific task executing on a specific target. Maintenance
+     * Windows report status for all invocations.
+     * </p>
+     * 
+     * @param getMaintenanceWindowExecutionTaskInvocationRequest
+     * @return A Java Future containing the result of the GetMaintenanceWindowExecutionTaskInvocation operation returned
+     *         by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetMaintenanceWindowExecutionTaskInvocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowExecutionTaskInvocationResult> getMaintenanceWindowExecutionTaskInvocationAsync(
+            GetMaintenanceWindowExecutionTaskInvocationRequest getMaintenanceWindowExecutionTaskInvocationRequest);
+
+    /**
+     * <p>
+     * Retrieves a task invocation. A task invocation is a specific task executing on a specific target. Maintenance
+     * Windows report status for all invocations.
+     * </p>
+     * 
+     * @param getMaintenanceWindowExecutionTaskInvocationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMaintenanceWindowExecutionTaskInvocation operation returned
+     *         by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetMaintenanceWindowExecutionTaskInvocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowExecutionTaskInvocationResult> getMaintenanceWindowExecutionTaskInvocationAsync(
+            GetMaintenanceWindowExecutionTaskInvocationRequest getMaintenanceWindowExecutionTaskInvocationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowExecutionTaskInvocationRequest, GetMaintenanceWindowExecutionTaskInvocationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the tasks in a Maintenance Window.
+     * </p>
+     * 
+     * @param getMaintenanceWindowTaskRequest
+     * @return A Java Future containing the result of the GetMaintenanceWindowTask operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetMaintenanceWindowTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowTaskResult> getMaintenanceWindowTaskAsync(GetMaintenanceWindowTaskRequest getMaintenanceWindowTaskRequest);
+
+    /**
+     * <p>
+     * Lists the tasks in a Maintenance Window.
+     * </p>
+     * 
+     * @param getMaintenanceWindowTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMaintenanceWindowTask operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetMaintenanceWindowTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowTaskResult> getMaintenanceWindowTaskAsync(GetMaintenanceWindowTaskRequest getMaintenanceWindowTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowTaskRequest, GetMaintenanceWindowTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Get information about a parameter by using the parameter name.
      * </p>
      * 
@@ -2283,6 +2351,76 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * For a specified resource ID, this API returns a list of compliance statuses for different resource types.
+     * Currently, you can only specify one resource ID per call. List results depend on the criteria specified in the
+     * filter.
+     * </p>
+     * 
+     * @param listComplianceItemsRequest
+     * @return A Java Future containing the result of the ListComplianceItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListComplianceItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListComplianceItemsResult> listComplianceItemsAsync(ListComplianceItemsRequest listComplianceItemsRequest);
+
+    /**
+     * <p>
+     * For a specified resource ID, this API returns a list of compliance statuses for different resource types.
+     * Currently, you can only specify one resource ID per call. List results depend on the criteria specified in the
+     * filter.
+     * </p>
+     * 
+     * @param listComplianceItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListComplianceItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListComplianceItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListComplianceItemsResult> listComplianceItemsAsync(ListComplianceItemsRequest listComplianceItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListComplianceItemsRequest, ListComplianceItemsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call
+     * can return State Manager associations, patches, or custom compliance types according to the filter criteria you
+     * specify.
+     * </p>
+     * 
+     * @param listComplianceSummariesRequest
+     * @return A Java Future containing the result of the ListComplianceSummaries operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListComplianceSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListComplianceSummariesResult> listComplianceSummariesAsync(ListComplianceSummariesRequest listComplianceSummariesRequest);
+
+    /**
+     * <p>
+     * Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call
+     * can return State Manager associations, patches, or custom compliance types according to the filter criteria you
+     * specify.
+     * </p>
+     * 
+     * @param listComplianceSummariesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListComplianceSummaries operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListComplianceSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListComplianceSummaries" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListComplianceSummariesResult> listComplianceSummariesAsync(ListComplianceSummariesRequest listComplianceSummariesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListComplianceSummariesRequest, ListComplianceSummariesResult> asyncHandler);
+
+    /**
+     * <p>
      * List all versions for a document.
      * </p>
      * 
@@ -2388,6 +2526,43 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest listInventoryEntriesRequest,
             com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a resource-level summary count. The summary includes information about compliant and non-compliant
+     * statuses and detailed compliance-item severity counts, according to the filter criteria you specify.
+     * </p>
+     * 
+     * @param listResourceComplianceSummariesRequest
+     * @return A Java Future containing the result of the ListResourceComplianceSummaries operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.ListResourceComplianceSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceComplianceSummariesResult> listResourceComplianceSummariesAsync(
+            ListResourceComplianceSummariesRequest listResourceComplianceSummariesRequest);
+
+    /**
+     * <p>
+     * Returns a resource-level summary count. The summary includes information about compliant and non-compliant
+     * statuses and detailed compliance-item severity counts, according to the filter criteria you specify.
+     * </p>
+     * 
+     * @param listResourceComplianceSummariesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceComplianceSummaries operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListResourceComplianceSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceComplianceSummariesResult> listResourceComplianceSummariesAsync(
+            ListResourceComplianceSummariesRequest listResourceComplianceSummariesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceComplianceSummariesRequest, ListResourceComplianceSummariesResult> asyncHandler);
 
     /**
      * <p>
@@ -2501,6 +2676,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Registers a compliance type and other compliance details on a designated resource. This API lets you register
+     * custom compliance details with a resource. This call overwrites existing compliance information on the resource,
+     * so you must provide a full list of compliance items each time you send the request.
+     * </p>
+     * 
+     * @param putComplianceItemsRequest
+     * @return A Java Future containing the result of the PutComplianceItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.PutComplianceItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutComplianceItemsResult> putComplianceItemsAsync(PutComplianceItemsRequest putComplianceItemsRequest);
+
+    /**
+     * <p>
+     * Registers a compliance type and other compliance details on a designated resource. This API lets you register
+     * custom compliance details with a resource. This call overwrites existing compliance information on the resource,
+     * so you must provide a full list of compliance items each time you send the request.
+     * </p>
+     * 
+     * @param putComplianceItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutComplianceItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.PutComplianceItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutComplianceItemsResult> putComplianceItemsAsync(PutComplianceItemsRequest putComplianceItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutComplianceItemsRequest, PutComplianceItemsResult> asyncHandler);
 
     /**
      * <p>
@@ -3021,6 +3231,166 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<UpdateMaintenanceWindowResult> updateMaintenanceWindowAsync(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the target of an existing Maintenance Window. You can't change the target type, but you can change the
+     * following:
+     * </p>
+     * <p>
+     * The target from being an ID target to a Tag target, or a Tag target to an ID target.
+     * </p>
+     * <p>
+     * The IDs of an ID target.
+     * </p>
+     * <p>
+     * The tags of a Tag target.
+     * </p>
+     * <p>
+     * The Owner.
+     * </p>
+     * <p>
+     * The Name.
+     * </p>
+     * <p>
+     * The Description.
+     * </p>
+     * <p>
+     * Also note that if a parameter is null, then the corresponding field is not modified.
+     * </p>
+     * 
+     * @param updateMaintenanceWindowTargetRequest
+     * @return A Java Future containing the result of the UpdateMaintenanceWindowTarget operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateMaintenanceWindowTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMaintenanceWindowTargetResult> updateMaintenanceWindowTargetAsync(
+            UpdateMaintenanceWindowTargetRequest updateMaintenanceWindowTargetRequest);
+
+    /**
+     * <p>
+     * Modifies the target of an existing Maintenance Window. You can't change the target type, but you can change the
+     * following:
+     * </p>
+     * <p>
+     * The target from being an ID target to a Tag target, or a Tag target to an ID target.
+     * </p>
+     * <p>
+     * The IDs of an ID target.
+     * </p>
+     * <p>
+     * The tags of a Tag target.
+     * </p>
+     * <p>
+     * The Owner.
+     * </p>
+     * <p>
+     * The Name.
+     * </p>
+     * <p>
+     * The Description.
+     * </p>
+     * <p>
+     * Also note that if a parameter is null, then the corresponding field is not modified.
+     * </p>
+     * 
+     * @param updateMaintenanceWindowTargetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMaintenanceWindowTarget operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateMaintenanceWindowTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMaintenanceWindowTargetResult> updateMaintenanceWindowTargetAsync(
+            UpdateMaintenanceWindowTargetRequest updateMaintenanceWindowTargetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowTargetRequest, UpdateMaintenanceWindowTargetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the
+     * following:
+     * </p>
+     * <p>
+     * The Task Arn. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
+     * </p>
+     * <p>
+     * The service role ARN.
+     * </p>
+     * <p>
+     * The task parameters.
+     * </p>
+     * <p>
+     * The task priority.
+     * </p>
+     * <p>
+     * The task MaxConcurrency and MaxErrors.
+     * </p>
+     * <p>
+     * The log location.
+     * </p>
+     * <p>
+     * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
+     * fields required by the RegisterTaskWithMaintenanceWindow operation are required for this request. Optional fields
+     * that aren't specified are be set to null.
+     * </p>
+     * 
+     * @param updateMaintenanceWindowTaskRequest
+     * @return A Java Future containing the result of the UpdateMaintenanceWindowTask operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateMaintenanceWindowTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMaintenanceWindowTaskResult> updateMaintenanceWindowTaskAsync(
+            UpdateMaintenanceWindowTaskRequest updateMaintenanceWindowTaskRequest);
+
+    /**
+     * <p>
+     * Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the
+     * following:
+     * </p>
+     * <p>
+     * The Task Arn. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
+     * </p>
+     * <p>
+     * The service role ARN.
+     * </p>
+     * <p>
+     * The task parameters.
+     * </p>
+     * <p>
+     * The task priority.
+     * </p>
+     * <p>
+     * The task MaxConcurrency and MaxErrors.
+     * </p>
+     * <p>
+     * The log location.
+     * </p>
+     * <p>
+     * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
+     * fields required by the RegisterTaskWithMaintenanceWindow operation are required for this request. Optional fields
+     * that aren't specified are be set to null.
+     * </p>
+     * 
+     * @param updateMaintenanceWindowTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMaintenanceWindowTask operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateMaintenanceWindowTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMaintenanceWindowTaskResult> updateMaintenanceWindowTaskAsync(
+            UpdateMaintenanceWindowTaskRequest updateMaintenanceWindowTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowTaskRequest, UpdateMaintenanceWindowTaskResult> asyncHandler);
 
     /**
      * <p>

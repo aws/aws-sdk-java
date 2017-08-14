@@ -50,6 +50,11 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The barcode that you want to assign to the tape.
      * </p>
+     * <note>
+     * <p>
+     * Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.
+     * </p>
+     * </note>
      */
     private String tapeBarcode;
 
@@ -167,9 +172,17 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The barcode that you want to assign to the tape.
      * </p>
+     * <note>
+     * <p>
+     * Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.
+     * </p>
+     * </note>
      * 
      * @param tapeBarcode
-     *        The barcode that you want to assign to the tape.
+     *        The barcode that you want to assign to the tape.</p> <note>
+     *        <p>
+     *        Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.
+     *        </p>
      */
 
     public void setTapeBarcode(String tapeBarcode) {
@@ -180,8 +193,16 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The barcode that you want to assign to the tape.
      * </p>
+     * <note>
+     * <p>
+     * Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.
+     * </p>
+     * </note>
      * 
-     * @return The barcode that you want to assign to the tape.
+     * @return The barcode that you want to assign to the tape.</p> <note>
+     *         <p>
+     *         Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.
+     *         </p>
      */
 
     public String getTapeBarcode() {
@@ -192,9 +213,17 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The barcode that you want to assign to the tape.
      * </p>
+     * <note>
+     * <p>
+     * Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.
+     * </p>
+     * </note>
      * 
      * @param tapeBarcode
-     *        The barcode that you want to assign to the tape.
+     *        The barcode that you want to assign to the tape.</p> <note>
+     *        <p>
+     *        Barcodes cannot be reused. This includes barcodes used for tapes that have been deleted.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

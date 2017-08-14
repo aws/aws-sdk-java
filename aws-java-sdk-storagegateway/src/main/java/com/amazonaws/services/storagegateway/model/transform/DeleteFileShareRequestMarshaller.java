@@ -29,6 +29,8 @@ public class DeleteFileShareRequestMarshaller {
 
     private static final MarshallingInfo<String> FILESHAREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareARN").build();
+    private static final MarshallingInfo<Boolean> FORCEDELETE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForceDelete").build();
 
     private static final DeleteFileShareRequestMarshaller instance = new DeleteFileShareRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteFileShareRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteFileShareRequest.getFileShareARN(), FILESHAREARN_BINDING);
+            protocolMarshaller.marshall(deleteFileShareRequest.getForceDelete(), FORCEDELETE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

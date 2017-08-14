@@ -56,6 +56,10 @@ public class UpdateMaintenanceWindowResultJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     updateMaintenanceWindowResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    updateMaintenanceWindowResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Schedule", targetDepth)) {
                     context.nextToken();
                     updateMaintenanceWindowResult.setSchedule(context.getUnmarshaller(String.class).unmarshall(context));

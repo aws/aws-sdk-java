@@ -38,6 +38,10 @@ public class RegisterTargetWithMaintenanceWindowRequestMarshaller {
             .marshallLocationName("Targets").build();
     private static final MarshallingInfo<String> OWNERINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerInformation").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -62,6 +66,8 @@ public class RegisterTargetWithMaintenanceWindowRequestMarshaller {
             protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getOwnerInformation(), OWNERINFORMATION_BINDING);
+            protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(registerTargetWithMaintenanceWindowRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

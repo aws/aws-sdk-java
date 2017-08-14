@@ -90,6 +90,19 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
      * </p>
      */
     private String performanceMode;
+    /**
+     * <p>
+     * A boolean value that, if true, indicates that the file system is encrypted.
+     * </p>
+     */
+    private Boolean encrypted;
+    /**
+     * <p>
+     * The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     * encrypted file system.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -572,6 +585,104 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A boolean value that, if true, indicates that the file system is encrypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        A boolean value that, if true, indicates that the file system is encrypted.
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * <p>
+     * A boolean value that, if true, indicates that the file system is encrypted.
+     * </p>
+     * 
+     * @return A boolean value that, if true, indicates that the file system is encrypted.
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * A boolean value that, if true, indicates that the file system is encrypted.
+     * </p>
+     * 
+     * @param encrypted
+     *        A boolean value that, if true, indicates that the file system is encrypted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemDescription withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean value that, if true, indicates that the file system is encrypted.
+     * </p>
+     * 
+     * @return A boolean value that, if true, indicates that the file system is encrypted.
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     * encrypted file system.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     *        encrypted file system.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     * encrypted file system.
+     * </p>
+     * 
+     * @return The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     *         encrypted file system.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     * encrypted file system.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The id of an AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+     *        encrypted file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemDescription withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -599,7 +710,11 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
         if (getSizeInBytes() != null)
             sb.append("SizeInBytes: ").append(getSizeInBytes()).append(",");
         if (getPerformanceMode() != null)
-            sb.append("PerformanceMode: ").append(getPerformanceMode());
+            sb.append("PerformanceMode: ").append(getPerformanceMode()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -650,6 +765,14 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
             return false;
         if (other.getPerformanceMode() != null && other.getPerformanceMode().equals(this.getPerformanceMode()) == false)
             return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -667,6 +790,8 @@ public class FileSystemDescription implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getNumberOfMountTargets() == null) ? 0 : getNumberOfMountTargets().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getPerformanceMode() == null) ? 0 : getPerformanceMode().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

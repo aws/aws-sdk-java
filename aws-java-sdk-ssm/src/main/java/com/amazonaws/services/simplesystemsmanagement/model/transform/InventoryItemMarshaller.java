@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -38,6 +39,8 @@ public class InventoryItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentHash").build();
     private static final MarshallingInfo<List> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Content").build();
+    private static final MarshallingInfo<Map> CONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Context").build();
 
     private static final InventoryItemMarshaller instance = new InventoryItemMarshaller();
 
@@ -60,6 +63,7 @@ public class InventoryItemMarshaller {
             protocolMarshaller.marshall(inventoryItem.getCaptureTime(), CAPTURETIME_BINDING);
             protocolMarshaller.marshall(inventoryItem.getContentHash(), CONTENTHASH_BINDING);
             protocolMarshaller.marshall(inventoryItem.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(inventoryItem.getContext(), CONTEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

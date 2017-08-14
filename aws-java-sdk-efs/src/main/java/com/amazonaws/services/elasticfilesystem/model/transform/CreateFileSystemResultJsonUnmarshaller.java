@@ -84,6 +84,14 @@ public class CreateFileSystemResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createFileSystemResult.setPerformanceMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Encrypted", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemResult.setEncrypted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

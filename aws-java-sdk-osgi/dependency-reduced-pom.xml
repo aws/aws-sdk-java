@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.176</version>
+    <version>1.11.177</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.176</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.177</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.176</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.177</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,18 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS CloudHSM V2</title>
+                      <packages>com.amazonaws.services.cloudhsmv2*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Glue</title>
+                      <packages>com.amazonaws.services.glue*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Migration Hub</title>
+                      <packages>com.amazonaws.services.migrationhub*</packages>
+                    </group>
                     <group>
                       <title>Amazon DynamoDB Accelerator (DAX)</title>
                       <packages>com.amazonaws.services.dax*</packages>
@@ -631,10 +643,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.176</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.177</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.176</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.177</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -648,6 +660,18 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS CloudHSM V2</title>
+                      <packages>com.amazonaws.services.cloudhsmv2*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Glue</title>
+                      <packages>com.amazonaws.services.glue*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Migration Hub</title>
+                      <packages>com.amazonaws.services.migrationhub*</packages>
+                    </group>
                     <group>
                       <title>Amazon DynamoDB Accelerator (DAX)</title>
                       <packages>com.amazonaws.services.dax*</packages>
@@ -1144,10 +1168,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.176</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.177</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.176</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.177</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1161,6 +1185,18 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>AWS CloudHSM V2</title>
+                  <packages>com.amazonaws.services.cloudhsmv2*</packages>
+                </group>
+                <group>
+                  <title>AWS Glue</title>
+                  <packages>com.amazonaws.services.glue*</packages>
+                </group>
+                <group>
+                  <title>AWS Migration Hub</title>
+                  <packages>com.amazonaws.services.migrationhub*</packages>
+                </group>
                 <group>
                   <title>Amazon DynamoDB Accelerator (DAX)</title>
                   <packages>com.amazonaws.services.dax*</packages>
@@ -1870,7 +1906,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.176-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.177-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

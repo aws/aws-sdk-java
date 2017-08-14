@@ -54,7 +54,7 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private String volumeStatus;
     /**
      * <p>
-     * The size of the volume in bytes.
+     * The size, in bytes, of the volume capacity.
      * </p>
      */
     private Long volumeSizeInBytes;
@@ -248,11 +248,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The size of the volume in bytes.
+     * The size, in bytes, of the volume capacity.
      * </p>
      * 
      * @param volumeSizeInBytes
-     *        The size of the volume in bytes.
+     *        The size, in bytes, of the volume capacity.
      */
 
     public void setVolumeSizeInBytes(Long volumeSizeInBytes) {
@@ -261,10 +261,10 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The size of the volume in bytes.
+     * The size, in bytes, of the volume capacity.
      * </p>
      * 
-     * @return The size of the volume in bytes.
+     * @return The size, in bytes, of the volume capacity.
      */
 
     public Long getVolumeSizeInBytes() {
@@ -273,11 +273,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The size of the volume in bytes.
+     * The size, in bytes, of the volume capacity.
      * </p>
      * 
      * @param volumeSizeInBytes
-     *        The size of the volume in bytes.
+     *        The size, in bytes, of the volume capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

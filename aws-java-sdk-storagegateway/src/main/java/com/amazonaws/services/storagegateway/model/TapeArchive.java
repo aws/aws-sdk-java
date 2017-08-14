@@ -78,7 +78,7 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This value is not available for tapes created prior to May,13 2015.
+     * This value is not available for tapes created prior to May 13, 2015.
      * </p>
      * </note>
      */
@@ -386,14 +386,14 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This value is not available for tapes created prior to May,13 2015.
+     * This value is not available for tapes created prior to May 13, 2015.
      * </p>
      * </note>
      * 
      * @param tapeUsedInBytes
      *        The size, in bytes, of data written to the virtual tape.</p> <note>
      *        <p>
-     *        This value is not available for tapes created prior to May,13 2015.
+     *        This value is not available for tapes created prior to May 13, 2015.
      *        </p>
      */
 
@@ -407,13 +407,13 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This value is not available for tapes created prior to May,13 2015.
+     * This value is not available for tapes created prior to May 13, 2015.
      * </p>
      * </note>
      * 
      * @return The size, in bytes, of data written to the virtual tape.</p> <note>
      *         <p>
-     *         This value is not available for tapes created prior to May,13 2015.
+     *         This value is not available for tapes created prior to May 13, 2015.
      *         </p>
      */
 
@@ -427,14 +427,14 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This value is not available for tapes created prior to May,13 2015.
+     * This value is not available for tapes created prior to May 13, 2015.
      * </p>
      * </note>
      * 
      * @param tapeUsedInBytes
      *        The size, in bytes, of data written to the virtual tape.</p> <note>
      *        <p>
-     *        This value is not available for tapes created prior to May,13 2015.
+     *        This value is not available for tapes created prior to May 13, 2015.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

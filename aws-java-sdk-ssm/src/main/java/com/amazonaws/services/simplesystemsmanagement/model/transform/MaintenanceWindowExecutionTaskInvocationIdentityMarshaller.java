@@ -35,6 +35,8 @@ public class MaintenanceWindowExecutionTaskInvocationIdentityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvocationId").build();
     private static final MarshallingInfo<String> EXECUTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionId").build();
+    private static final MarshallingInfo<String> TASKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TaskType").build();
     private static final MarshallingInfo<String> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Parameters").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +73,7 @@ public class MaintenanceWindowExecutionTaskInvocationIdentityMarshaller {
             protocolMarshaller.marshall(maintenanceWindowExecutionTaskInvocationIdentity.getTaskExecutionId(), TASKEXECUTIONID_BINDING);
             protocolMarshaller.marshall(maintenanceWindowExecutionTaskInvocationIdentity.getInvocationId(), INVOCATIONID_BINDING);
             protocolMarshaller.marshall(maintenanceWindowExecutionTaskInvocationIdentity.getExecutionId(), EXECUTIONID_BINDING);
+            protocolMarshaller.marshall(maintenanceWindowExecutionTaskInvocationIdentity.getTaskType(), TASKTYPE_BINDING);
             protocolMarshaller.marshall(maintenanceWindowExecutionTaskInvocationIdentity.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(maintenanceWindowExecutionTaskInvocationIdentity.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(maintenanceWindowExecutionTaskInvocationIdentity.getStatusDetails(), STATUSDETAILS_BINDING);

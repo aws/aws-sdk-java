@@ -65,6 +65,10 @@ public class MaintenanceWindowExecutionTaskInvocationIdentityJsonUnmarshaller im
                     context.nextToken();
                     maintenanceWindowExecutionTaskInvocationIdentity.setExecutionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TaskType", targetDepth)) {
+                    context.nextToken();
+                    maintenanceWindowExecutionTaskInvocationIdentity.setTaskType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     maintenanceWindowExecutionTaskInvocationIdentity.setParameters(context.getUnmarshaller(String.class).unmarshall(context));

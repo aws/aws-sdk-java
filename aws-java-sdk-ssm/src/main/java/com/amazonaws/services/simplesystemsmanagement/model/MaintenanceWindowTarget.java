@@ -61,6 +61,18 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
      * </p>
      */
     private String ownerInformation;
+    /**
+     * <p>
+     * The target name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * A description of the target.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -351,6 +363,86 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The target name.
+     * </p>
+     * 
+     * @param name
+     *        The target name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The target name.
+     * </p>
+     * 
+     * @return The target name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The target name.
+     * </p>
+     * 
+     * @param name
+     *        The target name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MaintenanceWindowTarget withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A description of the target.
+     * </p>
+     * 
+     * @param description
+     *        A description of the target.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the target.
+     * </p>
+     * 
+     * @return A description of the target.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the target.
+     * </p>
+     * 
+     * @param description
+     *        A description of the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MaintenanceWindowTarget withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -370,7 +462,11 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
         if (getTargets() != null)
             sb.append("Targets: ").append(getTargets()).append(",");
         if (getOwnerInformation() != null)
-            sb.append("OwnerInformation: ").append(getOwnerInformation());
+            sb.append("OwnerInformation: ").append(getOwnerInformation()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -405,6 +501,14 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
             return false;
         if (other.getOwnerInformation() != null && other.getOwnerInformation().equals(this.getOwnerInformation()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -418,6 +522,8 @@ public class MaintenanceWindowTarget implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getOwnerInformation() == null) ? 0 : getOwnerInformation().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

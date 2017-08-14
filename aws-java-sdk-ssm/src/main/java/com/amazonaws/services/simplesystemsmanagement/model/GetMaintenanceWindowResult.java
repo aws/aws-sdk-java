@@ -37,6 +37,12 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     private String name;
     /**
      * <p>
+     * The description of the Maintenance Window.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The schedule of the Maintenance Window in the form of a cron or rate expression.
      * </p>
      */
@@ -156,6 +162,46 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
     public GetMaintenanceWindowResult withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the Maintenance Window.
+     * </p>
+     * 
+     * @param description
+     *        The description of the Maintenance Window.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the Maintenance Window.
+     * </p>
+     * 
+     * @return The description of the Maintenance Window.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the Maintenance Window.
+     * </p>
+     * 
+     * @param description
+     *        The description of the Maintenance Window.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowResult withDescription(String description) {
+        setDescription(description);
         return this;
     }
 
@@ -488,6 +534,8 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("WindowId: ").append(getWindowId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getSchedule() != null)
             sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getDuration() != null)
@@ -523,6 +571,10 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         if (other.getSchedule() == null ^ this.getSchedule() == null)
             return false;
@@ -562,6 +614,7 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getWindowId() == null) ? 0 : getWindowId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());

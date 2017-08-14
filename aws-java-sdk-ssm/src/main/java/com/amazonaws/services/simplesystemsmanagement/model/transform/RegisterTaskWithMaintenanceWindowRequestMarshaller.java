@@ -43,6 +43,8 @@ public class RegisterTaskWithMaintenanceWindowRequestMarshaller {
             .marshallLocationName("TaskType").build();
     private static final MarshallingInfo<Map> TASKPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TaskParameters").build();
+    private static final MarshallingInfo<StructuredPojo> TASKINVOCATIONPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaskInvocationParameters").build();
     private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Priority").build();
     private static final MarshallingInfo<String> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,10 @@ public class RegisterTaskWithMaintenanceWindowRequestMarshaller {
             .marshallLocationName("MaxErrors").build();
     private static final MarshallingInfo<StructuredPojo> LOGGINGINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingInfo").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -77,10 +83,13 @@ public class RegisterTaskWithMaintenanceWindowRequestMarshaller {
             protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getServiceRoleArn(), SERVICEROLEARN_BINDING);
             protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getTaskType(), TASKTYPE_BINDING);
             protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getTaskParameters(), TASKPARAMETERS_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getTaskInvocationParameters(), TASKINVOCATIONPARAMETERS_BINDING);
             protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getMaxErrors(), MAXERRORS_BINDING);
             protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getLoggingInfo(), LOGGINGINFO_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(registerTaskWithMaintenanceWindowRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

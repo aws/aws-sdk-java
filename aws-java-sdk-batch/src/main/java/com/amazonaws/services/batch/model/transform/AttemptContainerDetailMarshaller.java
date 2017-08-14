@@ -35,6 +35,8 @@ public class AttemptContainerDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exitCode").build();
     private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("reason").build();
+    private static final MarshallingInfo<String> LOGSTREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logStreamName").build();
 
     private static final AttemptContainerDetailMarshaller instance = new AttemptContainerDetailMarshaller();
 
@@ -56,6 +58,7 @@ public class AttemptContainerDetailMarshaller {
             protocolMarshaller.marshall(attemptContainerDetail.getTaskArn(), TASKARN_BINDING);
             protocolMarshaller.marshall(attemptContainerDetail.getExitCode(), EXITCODE_BINDING);
             protocolMarshaller.marshall(attemptContainerDetail.getReason(), REASON_BINDING);
+            protocolMarshaller.marshall(attemptContainerDetail.getLogStreamName(), LOGSTREAMNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

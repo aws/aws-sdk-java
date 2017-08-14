@@ -33,6 +33,8 @@ public class GetInventorySchemaRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<Boolean> SUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubType").build();
 
     private static final GetInventorySchemaRequestMarshaller instance = new GetInventorySchemaRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class GetInventorySchemaRequestMarshaller {
             protocolMarshaller.marshall(getInventorySchemaRequest.getTypeName(), TYPENAME_BINDING);
             protocolMarshaller.marshall(getInventorySchemaRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getInventorySchemaRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(getInventorySchemaRequest.getSubType(), SUBTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -31,6 +31,8 @@ public class DeregisterTargetFromMaintenanceWindowRequestMarshaller {
             .marshallLocationName("WindowId").build();
     private static final MarshallingInfo<String> WINDOWTARGETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WindowTargetId").build();
+    private static final MarshallingInfo<Boolean> SAFE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Safe").build();
 
     private static final DeregisterTargetFromMaintenanceWindowRequestMarshaller instance = new DeregisterTargetFromMaintenanceWindowRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DeregisterTargetFromMaintenanceWindowRequestMarshaller {
         try {
             protocolMarshaller.marshall(deregisterTargetFromMaintenanceWindowRequest.getWindowId(), WINDOWID_BINDING);
             protocolMarshaller.marshall(deregisterTargetFromMaintenanceWindowRequest.getWindowTargetId(), WINDOWTARGETID_BINDING);
+            protocolMarshaller.marshall(deregisterTargetFromMaintenanceWindowRequest.getSafe(), SAFE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
