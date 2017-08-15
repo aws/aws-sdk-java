@@ -222,6 +222,52 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * JSON that you want to provide to your Lambda function as input.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param payload
+     *        JSON that you want to provide to your Lambda function as input.
+     */
+    public void setPayload(String payload) {
+        setPayload(new com.amazonaws.adapters.types.StringToByteBufferAdapter().adapt(payload));
+    }
+
+    /**
+     * <p>
+     * JSON that you want to provide to your Lambda function as input.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param payload
+     *        JSON that you want to provide to your Lambda function as input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    public MaintenanceWindowLambdaParameters withPayload(String payload) {
+        setPayload(new com.amazonaws.adapters.types.StringToByteBufferAdapter().adapt(payload));
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.

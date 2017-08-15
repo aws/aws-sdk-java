@@ -1,3 +1,8 @@
+# __1.11.178__ __2017-08-15__
+## __Amazon EC2__
+  - ### Features
+    - Fixed bug in EC2 clients preventing HostReservation from being set
+
 # __1.11.177__ __2017-08-14__
 ## __AWS Batch__
   - ### Features

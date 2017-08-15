@@ -50,7 +50,7 @@ public class DescribeHostReservationsResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
-                if (context.testExpression("hostReservationSet/member", targetDepth)) {
+                if (context.testExpression("hostReservationSet/item", targetDepth)) {
                     describeHostReservationsResult.withHostReservationSet(HostReservationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
