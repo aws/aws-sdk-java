@@ -89,8 +89,8 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To specify the start of the result set, do not specify a value. If a player session
-     * ID is specified, this parameter is ignored.
+     * previous call to this action. To start at the beginning of the result set, do not specify a value. If a player
+     * session ID is specified, this parameter is ignored.
      * </p>
      */
     private String nextToken;
@@ -463,13 +463,13 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To specify the start of the result set, do not specify a value. If a player session
-     * ID is specified, this parameter is ignored.
+     * previous call to this action. To start at the beginning of the result set, do not specify a value. If a player
+     * session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param nextToken
      *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To specify the start of the result set, do not specify a value. If a
+     *        a previous call to this action. To start at the beginning of the result set, do not specify a value. If a
      *        player session ID is specified, this parameter is ignored.
      */
 
@@ -480,13 +480,13 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To specify the start of the result set, do not specify a value. If a player session
-     * ID is specified, this parameter is ignored.
+     * previous call to this action. To start at the beginning of the result set, do not specify a value. If a player
+     * session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
-     *         with a previous call to this action. To specify the start of the result set, do not specify a value. If a
-     *         player session ID is specified, this parameter is ignored.
+     *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *         If a player session ID is specified, this parameter is ignored.
      */
 
     public String getNextToken() {
@@ -496,13 +496,13 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To specify the start of the result set, do not specify a value. If a player session
-     * ID is specified, this parameter is ignored.
+     * previous call to this action. To start at the beginning of the result set, do not specify a value. If a player
+     * session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param nextToken
      *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To specify the start of the result set, do not specify a value. If a
+     *        a previous call to this action. To start at the beginning of the result set, do not specify a value. If a
      *        player session ID is specified, this parameter is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

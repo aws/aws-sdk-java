@@ -110,6 +110,10 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                     gameSessionPlacement.setPlacedPlayerSessions(new ListUnmarshaller<PlacedPlayerSession>(PlacedPlayerSessionJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("GameSessionData", targetDepth)) {
+                    context.nextToken();
+                    gameSessionPlacement.setGameSessionData(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

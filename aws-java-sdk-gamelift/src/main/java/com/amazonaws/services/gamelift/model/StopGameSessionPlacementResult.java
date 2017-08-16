@@ -28,18 +28,21 @@ public class StopGameSessionPlacementResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
+     * Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time
+     * stamp.
      * </p>
      */
     private GameSessionPlacement gameSessionPlacement;
 
     /**
      * <p>
-     * Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
+     * Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time
+     * stamp.
      * </p>
      * 
      * @param gameSessionPlacement
-     *        Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
+     *        Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end
+     *        time stamp.
      */
 
     public void setGameSessionPlacement(GameSessionPlacement gameSessionPlacement) {
@@ -48,10 +51,12 @@ public class StopGameSessionPlacementResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
+     * Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time
+     * stamp.
      * </p>
      * 
-     * @return Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
+     * @return Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end
+     *         time stamp.
      */
 
     public GameSessionPlacement getGameSessionPlacement() {
@@ -60,11 +65,13 @@ public class StopGameSessionPlacementResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
+     * Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time
+     * stamp.
      * </p>
      * 
      * @param gameSessionPlacement
-     *        Object that describes the canceled game session placement, with Cancelled status and an end time stamp.
+     *        Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end
+     *        time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

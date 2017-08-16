@@ -38,6 +38,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public AcceptMatchResult acceptMatch(AcceptMatchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAliasResult createAlias(CreateAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -59,6 +64,16 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public CreateGameSessionQueueResult createGameSessionQueue(CreateGameSessionQueueRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMatchmakingConfigurationResult createMatchmakingConfiguration(CreateMatchmakingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMatchmakingRuleSetResult createMatchmakingRuleSet(CreateMatchmakingRuleSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +104,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public DeleteGameSessionQueueResult deleteGameSessionQueue(DeleteGameSessionQueueRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMatchmakingConfigurationResult deleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,6 +183,21 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public DescribeMatchmakingResult describeMatchmaking(DescribeMatchmakingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMatchmakingConfigurationsResult describeMatchmakingConfigurations(DescribeMatchmakingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMatchmakingRuleSetsResult describeMatchmakingRuleSets(DescribeMatchmakingRuleSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePlayerSessionsResult describePlayerSessions(DescribePlayerSessionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -228,7 +263,17 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public StartMatchmakingResult startMatchmaking(StartMatchmakingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopGameSessionPlacementResult stopGameSessionPlacement(StopGameSessionPlacementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopMatchmakingResult stopMatchmaking(StopMatchmakingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -268,7 +313,17 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public UpdateMatchmakingConfigurationResult updateMatchmakingConfiguration(UpdateMatchmakingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ValidateMatchmakingRuleSetResult validateMatchmakingRuleSet(ValidateMatchmakingRuleSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

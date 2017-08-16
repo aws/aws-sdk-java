@@ -19,9 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Properties describing a player session. A player session represents either a player reservation for a game session or
- * actual player activity in a game session. A player session object (including player data) is automatically passed to
- * a game session when the player connects to the game session and is validated.
+ * Properties describing a player session. Player session objects are created either by creating a player session for a
+ * specific game session, or as part of a game session placement. A player session represents either a player
+ * reservation for a game session (status <code>RESERVED</code>) or actual player activity in a game session (status
+ * <code>ACTIVE</code>). A player session object (including player data) is automatically passed to a game session when
+ * the player connects to the game session and is validated.
+ * </p>
+ * <p>
+ * When a player disconnects, the player session status changes to <code>COMPLETED</code>. Once the session ends, the
+ * player session object is retained for 30 days and then removed.
  * </p>
  * <p>
  * Player-session-related operations include:

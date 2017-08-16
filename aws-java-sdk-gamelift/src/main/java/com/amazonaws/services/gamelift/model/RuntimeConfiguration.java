@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A collection of server process configurations that describe what processes to run on each instance in a fleet. All
- * fleets must have a runtime configuration. Each instance in the fleet launches the server processes specified in the
+ * fleets must have a run-time configuration. Each instance in the fleet launches the server processes specified in the
  * run-time configuration and launches new ones as existing processes end. Each instance regularly checks for an updated
  * run-time configuration and follows the new instructions.
  * </p>

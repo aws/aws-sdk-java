@@ -79,8 +79,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * The <a href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a> for Amazon GameLift provides a
  * web interface to manage your Amazon GameLift settings and resources. The console includes a dashboard for tracking
- * key resources, includings builds and fleets, and displays usage and performance metrics for your games as
- * customizable graphs.
+ * key resources, including builds and fleets, and displays usage and performance metrics for your games as customizable
+ * graphs.
  * </p>
  * </li>
  * <li>
@@ -137,8 +137,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <b>Managing Games and Players</b>
  * </p>
  * <p>
- * These actions allow you to start new game sessions, find existing game sessions, track status and other game session
- * information, and enable access for players to join game sessions.
+ * Use these actions to start new game sessions, find existing game sessions, track game session status and other
+ * information, and enable player access to game sessions.
  * </p>
  * <ul>
  * <li>
@@ -148,20 +148,21 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions that match a set of criteria.
+ * <a>SearchGameSessions</a> – Retrieve all available game sessions or search for game sessions that match a set of
+ * criteria.
  * </p>
  * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
- * <b>Start a new game session</b>
+ * <b>Start new game sessions</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * Game session placement – Use a queue to process requests for new game sessions and place them on the best available
- * fleet. Placement requests are asynchronous; game sessions are started whenever acceptable resources become available.
+ * Start new games with Queues to find the best available hosting resources across multiple regions, minimize player
+ * latency, and balance game session activity for efficiency and cost effectiveness.
  * </p>
  * <ul>
  * <li>
@@ -183,7 +184,34 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a>CreateGameSession</a> – Request a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
+ * <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Start new game sessions with FlexMatch matchmaking</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>StartMatchmaking</a> – Request matchmaking for one players or a group who want to play together.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMatchmaking</a> – Get details on a matchmaking request, including status.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>AcceptMatch</a> – Register that a player accepts a proposed match, for matches that require player acceptance.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopMatchmaking</a> – Cancel a matchmaking request.
  * </p>
  * </li>
  * </ul>
@@ -466,7 +494,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a>DescribeGameSessionQueues</a> – Get data on all game session queues defined in a Amazon GameLift region.
+ * <a>DescribeGameSessionQueues</a> – Retrieve game session queues defined in a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
@@ -477,6 +505,49 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a>DeleteGameSessionQueue</a> – Remove a game session queue from the region.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Manage FlexMatch resources</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateMatchmakingConfiguration</a> – Create a matchmaking configuration with instructions for building a player
+ * group and placing in a new game session.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMatchmakingConfigurations</a> – Retrieve matchmaking configurations defined a Amazon GameLift region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateMatchmakingConfiguration</a> – Change settings for matchmaking configuration. queue.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteMatchmakingConfiguration</a> – Remove a matchmaking configuration from the region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateMatchmakingRuleSet</a> – Create a set of rules to use when searching for player matches.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMatchmakingRuleSets</a> – Retrieve matchmaking rule sets defined in a Amazon GameLift region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ValidateMatchmakingRuleSet</a> – Verify syntax for a set of matchmaking rules.
  * </p>
  * </li>
  * </ul>
@@ -693,6 +764,39 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptMatchResult> acceptMatchAsync(AcceptMatchRequest request) {
+
+        return acceptMatchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptMatchResult> acceptMatchAsync(final AcceptMatchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptMatchRequest, AcceptMatchResult> asyncHandler) {
+        final AcceptMatchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptMatchResult>() {
+            @Override
+            public AcceptMatchResult call() throws Exception {
+                AcceptMatchResult result = null;
+
+                try {
+                    result = executeAcceptMatch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest request) {
 
         return createAliasAsync(request, null);
@@ -842,6 +946,73 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
 
                 try {
                     result = executeCreateGameSessionQueue(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMatchmakingConfigurationResult> createMatchmakingConfigurationAsync(CreateMatchmakingConfigurationRequest request) {
+
+        return createMatchmakingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMatchmakingConfigurationResult> createMatchmakingConfigurationAsync(
+            final CreateMatchmakingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMatchmakingConfigurationRequest, CreateMatchmakingConfigurationResult> asyncHandler) {
+        final CreateMatchmakingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMatchmakingConfigurationResult>() {
+            @Override
+            public CreateMatchmakingConfigurationResult call() throws Exception {
+                CreateMatchmakingConfigurationResult result = null;
+
+                try {
+                    result = executeCreateMatchmakingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMatchmakingRuleSetResult> createMatchmakingRuleSetAsync(CreateMatchmakingRuleSetRequest request) {
+
+        return createMatchmakingRuleSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMatchmakingRuleSetResult> createMatchmakingRuleSetAsync(final CreateMatchmakingRuleSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMatchmakingRuleSetRequest, CreateMatchmakingRuleSetResult> asyncHandler) {
+        final CreateMatchmakingRuleSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMatchmakingRuleSetResult>() {
+            @Override
+            public CreateMatchmakingRuleSetResult call() throws Exception {
+                CreateMatchmakingRuleSetResult result = null;
+
+                try {
+                    result = executeCreateMatchmakingRuleSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1040,6 +1211,40 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
 
                 try {
                     result = executeDeleteGameSessionQueue(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMatchmakingConfigurationResult> deleteMatchmakingConfigurationAsync(DeleteMatchmakingConfigurationRequest request) {
+
+        return deleteMatchmakingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMatchmakingConfigurationResult> deleteMatchmakingConfigurationAsync(
+            final DeleteMatchmakingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMatchmakingConfigurationRequest, DeleteMatchmakingConfigurationResult> asyncHandler) {
+        final DeleteMatchmakingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMatchmakingConfigurationResult>() {
+            @Override
+            public DeleteMatchmakingConfigurationResult call() throws Exception {
+                DeleteMatchmakingConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteMatchmakingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1518,6 +1723,107 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeMatchmakingResult> describeMatchmakingAsync(DescribeMatchmakingRequest request) {
+
+        return describeMatchmakingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMatchmakingResult> describeMatchmakingAsync(final DescribeMatchmakingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMatchmakingRequest, DescribeMatchmakingResult> asyncHandler) {
+        final DescribeMatchmakingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMatchmakingResult>() {
+            @Override
+            public DescribeMatchmakingResult call() throws Exception {
+                DescribeMatchmakingResult result = null;
+
+                try {
+                    result = executeDescribeMatchmaking(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMatchmakingConfigurationsResult> describeMatchmakingConfigurationsAsync(
+            DescribeMatchmakingConfigurationsRequest request) {
+
+        return describeMatchmakingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMatchmakingConfigurationsResult> describeMatchmakingConfigurationsAsync(
+            final DescribeMatchmakingConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMatchmakingConfigurationsRequest, DescribeMatchmakingConfigurationsResult> asyncHandler) {
+        final DescribeMatchmakingConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMatchmakingConfigurationsResult>() {
+            @Override
+            public DescribeMatchmakingConfigurationsResult call() throws Exception {
+                DescribeMatchmakingConfigurationsResult result = null;
+
+                try {
+                    result = executeDescribeMatchmakingConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMatchmakingRuleSetsResult> describeMatchmakingRuleSetsAsync(DescribeMatchmakingRuleSetsRequest request) {
+
+        return describeMatchmakingRuleSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMatchmakingRuleSetsResult> describeMatchmakingRuleSetsAsync(final DescribeMatchmakingRuleSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMatchmakingRuleSetsRequest, DescribeMatchmakingRuleSetsResult> asyncHandler) {
+        final DescribeMatchmakingRuleSetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMatchmakingRuleSetsResult>() {
+            @Override
+            public DescribeMatchmakingRuleSetsResult call() throws Exception {
+                DescribeMatchmakingRuleSetsResult result = null;
+
+                try {
+                    result = executeDescribeMatchmakingRuleSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePlayerSessionsResult> describePlayerSessionsAsync(DescribePlayerSessionsRequest request) {
 
         return describePlayerSessionsAsync(request, null);
@@ -1947,6 +2253,39 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<StartMatchmakingResult> startMatchmakingAsync(StartMatchmakingRequest request) {
+
+        return startMatchmakingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMatchmakingResult> startMatchmakingAsync(final StartMatchmakingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMatchmakingRequest, StartMatchmakingResult> asyncHandler) {
+        final StartMatchmakingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMatchmakingResult>() {
+            @Override
+            public StartMatchmakingResult call() throws Exception {
+                StartMatchmakingResult result = null;
+
+                try {
+                    result = executeStartMatchmaking(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopGameSessionPlacementResult> stopGameSessionPlacementAsync(StopGameSessionPlacementRequest request) {
 
         return stopGameSessionPlacementAsync(request, null);
@@ -1964,6 +2303,39 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
 
                 try {
                     result = executeStopGameSessionPlacement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMatchmakingResult> stopMatchmakingAsync(StopMatchmakingRequest request) {
+
+        return stopMatchmakingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMatchmakingResult> stopMatchmakingAsync(final StopMatchmakingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopMatchmakingRequest, StopMatchmakingResult> asyncHandler) {
+        final StopMatchmakingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopMatchmakingResult>() {
+            @Override
+            public StopMatchmakingResult call() throws Exception {
+                StopMatchmakingResult result = null;
+
+                try {
+                    result = executeStopMatchmaking(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2211,6 +2583,40 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateMatchmakingConfigurationResult> updateMatchmakingConfigurationAsync(UpdateMatchmakingConfigurationRequest request) {
+
+        return updateMatchmakingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMatchmakingConfigurationResult> updateMatchmakingConfigurationAsync(
+            final UpdateMatchmakingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMatchmakingConfigurationRequest, UpdateMatchmakingConfigurationResult> asyncHandler) {
+        final UpdateMatchmakingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMatchmakingConfigurationResult>() {
+            @Override
+            public UpdateMatchmakingConfigurationResult call() throws Exception {
+                UpdateMatchmakingConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateMatchmakingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRuntimeConfigurationResult> updateRuntimeConfigurationAsync(UpdateRuntimeConfigurationRequest request) {
 
         return updateRuntimeConfigurationAsync(request, null);
@@ -2228,6 +2634,39 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
 
                 try {
                     result = executeUpdateRuntimeConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateMatchmakingRuleSetResult> validateMatchmakingRuleSetAsync(ValidateMatchmakingRuleSetRequest request) {
+
+        return validateMatchmakingRuleSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateMatchmakingRuleSetResult> validateMatchmakingRuleSetAsync(final ValidateMatchmakingRuleSetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ValidateMatchmakingRuleSetRequest, ValidateMatchmakingRuleSetResult> asyncHandler) {
+        final ValidateMatchmakingRuleSetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ValidateMatchmakingRuleSetResult>() {
+            @Override
+            public ValidateMatchmakingRuleSetResult call() throws Exception {
+                ValidateMatchmakingRuleSetResult result = null;
+
+                try {
+                    result = executeValidateMatchmakingRuleSet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

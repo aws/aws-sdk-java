@@ -44,8 +44,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     private String gameSessionQueueName;
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
@@ -63,7 +66,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     private String gameSessionName;
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
      * connected to AWS regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
@@ -75,6 +78,16 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private java.util.List<DesiredPlayerSession> desiredPlayerSessions;
+    /**
+     * <p>
+     * Set of developer-defined game session properties, formatted as a single string value. This data is included in
+     * the <a>GameSession</a> object, which is passed to the game server with a request to start a new game session (see
+     * <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
+     * </p>
+     */
+    private String gameSessionData;
 
     /**
      * <p>
@@ -170,12 +183,18 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      * 
-     * @return Set of developer-defined properties for a game session. These properties are passed to the server process
-     *         hosting the game session.
+     * @return Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These
+     *         properties are included in the <a>GameSession</a> object, which is passed to the game server with a
+     *         request to start a new game session (see <a href=
+     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *         >Start a Game Session</a>).
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -184,13 +203,19 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameProperties
-     *        Set of developer-defined properties for a game session. These properties are passed to the server process
-     *        hosting the game session.
+     *        Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These
+     *        properties are included in the <a>GameSession</a> object, which is passed to the game server with a
+     *        request to start a new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
      */
 
     public void setGameProperties(java.util.Collection<GameProperty> gameProperties) {
@@ -204,8 +229,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -214,8 +242,11 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param gameProperties
-     *        Set of developer-defined properties for a game session. These properties are passed to the server process
-     *        hosting the game session.
+     *        Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These
+     *        properties are included in the <a>GameSession</a> object, which is passed to the game server with a
+     *        request to start a new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,13 +262,19 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameProperties
-     *        Set of developer-defined properties for a game session. These properties are passed to the server process
-     *        hosting the game session.
+     *        Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These
+     *        properties are included in the <a>GameSession</a> object, which is passed to the game server with a
+     *        request to start a new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,13 +365,13 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
      * connected to AWS regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
      * 
-     * @return Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing
-     *         when connected to AWS regions. This information is used to try to place the new game session where it can
+     * @return Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     *         connected to AWS regions. This information is used to try to place the new game session where it can
      *         offer the best possible gameplay experience for the players.
      */
 
@@ -344,15 +381,15 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
      * connected to AWS regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
      * 
      * @param playerLatencies
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing
-     *        when connected to AWS regions. This information is used to try to place the new game session where it can
-     *        offer the best possible gameplay experience for the players.
+     *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     *        connected to AWS regions. This information is used to try to place the new game session where it can offer
+     *        the best possible gameplay experience for the players.
      */
 
     public void setPlayerLatencies(java.util.Collection<PlayerLatency> playerLatencies) {
@@ -366,7 +403,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
      * connected to AWS regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
@@ -377,9 +414,9 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param playerLatencies
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing
-     *        when connected to AWS regions. This information is used to try to place the new game session where it can
-     *        offer the best possible gameplay experience for the players.
+     *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     *        connected to AWS regions. This information is used to try to place the new game session where it can offer
+     *        the best possible gameplay experience for the players.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,15 +432,15 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing when
+     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
      * connected to AWS regions. This information is used to try to place the new game session where it can offer the
      * best possible gameplay experience for the players.
      * </p>
      * 
      * @param playerLatencies
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that players are experiencing
-     *        when connected to AWS regions. This information is used to try to place the new game session where it can
-     *        offer the best possible gameplay experience for the players.
+     *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     *        connected to AWS regions. This information is used to try to place the new game session where it can offer
+     *        the best possible gameplay experience for the players.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,6 +520,70 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Set of developer-defined game session properties, formatted as a single string value. This data is included in
+     * the <a>GameSession</a> object, which is passed to the game server with a request to start a new game session (see
+     * <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
+     * </p>
+     * 
+     * @param gameSessionData
+     *        Set of developer-defined game session properties, formatted as a single string value. This data is
+     *        included in the <a>GameSession</a> object, which is passed to the game server with a request to start a
+     *        new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
+     */
+
+    public void setGameSessionData(String gameSessionData) {
+        this.gameSessionData = gameSessionData;
+    }
+
+    /**
+     * <p>
+     * Set of developer-defined game session properties, formatted as a single string value. This data is included in
+     * the <a>GameSession</a> object, which is passed to the game server with a request to start a new game session (see
+     * <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
+     * </p>
+     * 
+     * @return Set of developer-defined game session properties, formatted as a single string value. This data is
+     *         included in the <a>GameSession</a> object, which is passed to the game server with a request to start a
+     *         new game session (see <a href=
+     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *         >Start a Game Session</a>).
+     */
+
+    public String getGameSessionData() {
+        return this.gameSessionData;
+    }
+
+    /**
+     * <p>
+     * Set of developer-defined game session properties, formatted as a single string value. This data is included in
+     * the <a>GameSession</a> object, which is passed to the game server with a request to start a new game session (see
+     * <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
+     * </p>
+     * 
+     * @param gameSessionData
+     *        Set of developer-defined game session properties, formatted as a single string value. This data is
+     *        included in the <a>GameSession</a> object, which is passed to the game server with a request to start a
+     *        new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartGameSessionPlacementRequest withGameSessionData(String gameSessionData) {
+        setGameSessionData(gameSessionData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -506,7 +607,9 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
         if (getPlayerLatencies() != null)
             sb.append("PlayerLatencies: ").append(getPlayerLatencies()).append(",");
         if (getDesiredPlayerSessions() != null)
-            sb.append("DesiredPlayerSessions: ").append(getDesiredPlayerSessions());
+            sb.append("DesiredPlayerSessions: ").append(getDesiredPlayerSessions()).append(",");
+        if (getGameSessionData() != null)
+            sb.append("GameSessionData: ").append(getGameSessionData());
         sb.append("}");
         return sb.toString();
     }
@@ -549,6 +652,10 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDesiredPlayerSessions() != null && other.getDesiredPlayerSessions().equals(this.getDesiredPlayerSessions()) == false)
             return false;
+        if (other.getGameSessionData() == null ^ this.getGameSessionData() == null)
+            return false;
+        if (other.getGameSessionData() != null && other.getGameSessionData().equals(this.getGameSessionData()) == false)
+            return false;
         return true;
     }
 
@@ -564,6 +671,7 @@ public class StartGameSessionPlacementRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getGameSessionName() == null) ? 0 : getGameSessionName().hashCode());
         hashCode = prime * hashCode + ((getPlayerLatencies() == null) ? 0 : getPlayerLatencies().hashCode());
         hashCode = prime * hashCode + ((getDesiredPlayerSessions() == null) ? 0 : getDesiredPlayerSessions().hashCode());
+        hashCode = prime * hashCode + ((getGameSessionData() == null) ? 0 : getGameSessionData().hashCode());
         return hashCode;
     }
 

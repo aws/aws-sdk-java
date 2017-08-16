@@ -61,8 +61,8 @@
  * <p>
  * The <a href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a> for Amazon GameLift provides a
  * web interface to manage your Amazon GameLift settings and resources. The console includes a dashboard for tracking
- * key resources, includings builds and fleets, and displays usage and performance metrics for your games as
- * customizable graphs.
+ * key resources, including builds and fleets, and displays usage and performance metrics for your games as customizable
+ * graphs.
  * </p>
  * </li>
  * <li>
@@ -119,8 +119,8 @@
  * <b>Managing Games and Players</b>
  * </p>
  * <p>
- * These actions allow you to start new game sessions, find existing game sessions, track status and other game session
- * information, and enable access for players to join game sessions.
+ * Use these actions to start new game sessions, find existing game sessions, track game session status and other
+ * information, and enable player access to game sessions.
  * </p>
  * <ul>
  * <li>
@@ -130,20 +130,21 @@
  * <ul>
  * <li>
  * <p>
- * <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions that match a set of criteria.
+ * <a>SearchGameSessions</a> – Retrieve all available game sessions or search for game sessions that match a set of
+ * criteria.
  * </p>
  * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
- * <b>Start a new game session</b>
+ * <b>Start new game sessions</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * Game session placement – Use a queue to process requests for new game sessions and place them on the best available
- * fleet. Placement requests are asynchronous; game sessions are started whenever acceptable resources become available.
+ * Start new games with Queues to find the best available hosting resources across multiple regions, minimize player
+ * latency, and balance game session activity for efficiency and cost effectiveness.
  * </p>
  * <ul>
  * <li>
@@ -165,7 +166,34 @@
  * </li>
  * <li>
  * <p>
- * <a>CreateGameSession</a> – Request a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
+ * <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Start new game sessions with FlexMatch matchmaking</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>StartMatchmaking</a> – Request matchmaking for one players or a group who want to play together.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMatchmaking</a> – Get details on a matchmaking request, including status.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>AcceptMatch</a> – Register that a player accepts a proposed match, for matches that require player acceptance.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopMatchmaking</a> – Cancel a matchmaking request.
  * </p>
  * </li>
  * </ul>
@@ -448,7 +476,7 @@
  * </li>
  * <li>
  * <p>
- * <a>DescribeGameSessionQueues</a> – Get data on all game session queues defined in a Amazon GameLift region.
+ * <a>DescribeGameSessionQueues</a> – Retrieve game session queues defined in a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
@@ -459,6 +487,49 @@
  * <li>
  * <p>
  * <a>DeleteGameSessionQueue</a> – Remove a game session queue from the region.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Manage FlexMatch resources</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateMatchmakingConfiguration</a> – Create a matchmaking configuration with instructions for building a player
+ * group and placing in a new game session.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMatchmakingConfigurations</a> – Retrieve matchmaking configurations defined a Amazon GameLift region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateMatchmakingConfiguration</a> – Change settings for matchmaking configuration. queue.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteMatchmakingConfiguration</a> – Remove a matchmaking configuration from the region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateMatchmakingRuleSet</a> – Create a set of rules to use when searching for player matches.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMatchmakingRuleSets</a> – Retrieve matchmaking rule sets defined in a Amazon GameLift region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ValidateMatchmakingRuleSet</a> – Verify syntax for a set of matchmaking rules.
  * </p>
  * </li>
  * </ul>

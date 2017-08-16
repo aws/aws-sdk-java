@@ -44,6 +44,8 @@ public class CreateGameSessionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionId").build();
     private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
+    private static final MarshallingInfo<String> GAMESESSIONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionData").build();
 
     private static final CreateGameSessionRequestMarshaller instance = new CreateGameSessionRequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateGameSessionRequestMarshaller {
             protocolMarshaller.marshall(createGameSessionRequest.getCreatorId(), CREATORID_BINDING);
             protocolMarshaller.marshall(createGameSessionRequest.getGameSessionId(), GAMESESSIONID_BINDING);
             protocolMarshaller.marshall(createGameSessionRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
+            protocolMarshaller.marshall(createGameSessionRequest.getGameSessionData(), GAMESESSIONDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

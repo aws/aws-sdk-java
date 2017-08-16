@@ -1,3 +1,8 @@
+# __1.11.179__ __2017-08-16__
+## __Amazon GameLift__
+  - ### Features
+    - The Matchmaking Grouping Service is a new feature that groups player match requests for a given game together into game sessions based on developer configured rules.
+
 # __1.11.178__ __2017-08-15__
 ## __Amazon EC2__
   - ### Features

@@ -22,6 +22,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Properties describing a game session.
  * </p>
  * <p>
+ * A game session in ACTIVE status can host players. When a game session ends, its status is set to
+ * <code>TERMINATED</code>.
+ * </p>
+ * <p>
+ * Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token
+ * values after this time. Game session logs are retained for 14 days.
+ * </p>
+ * <p>
  * Game-session-related operations include:
  * </p>
  * <ul>
@@ -140,8 +148,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
@@ -172,6 +183,16 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String creatorId;
+    /**
+     * <p>
+     * Set of developer-defined game session properties, formatted as a single string value. This data is included in
+     * the <a>GameSession</a> object, which is passed to the game server with a request to start a new game session (see
+     * <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
+     * </p>
+     */
+    private String gameSessionData;
 
     /**
      * <p>
@@ -562,12 +583,18 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      * 
-     * @return Set of developer-defined properties for a game session. These properties are passed to the server process
-     *         hosting the game session.
+     * @return Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These
+     *         properties are included in the <a>GameSession</a> object, which is passed to the game server with a
+     *         request to start a new game session (see <a href=
+     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *         >Start a Game Session</a>).
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -576,13 +603,19 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameProperties
-     *        Set of developer-defined properties for a game session. These properties are passed to the server process
-     *        hosting the game session.
+     *        Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These
+     *        properties are included in the <a>GameSession</a> object, which is passed to the game server with a
+     *        request to start a new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
      */
 
     public void setGameProperties(java.util.Collection<GameProperty> gameProperties) {
@@ -596,8 +629,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -606,8 +642,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param gameProperties
-     *        Set of developer-defined properties for a game session. These properties are passed to the server process
-     *        hosting the game session.
+     *        Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These
+     *        properties are included in the <a>GameSession</a> object, which is passed to the game server with a
+     *        request to start a new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,13 +662,19 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of developer-defined properties for a game session. These properties are passed to the server process hosting
-     * the game session.
+     * Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These properties
+     * are included in the <a>GameSession</a> object, which is passed to the game server with a request to start a new
+     * game session (see <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameProperties
-     *        Set of developer-defined properties for a game session. These properties are passed to the server process
-     *        hosting the game session.
+     *        Set of developer-defined properties for a game session, formatted as a set of type:value pairs. These
+     *        properties are included in the <a>GameSession</a> object, which is passed to the game server with a
+     *        request to start a new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -850,6 +895,70 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Set of developer-defined game session properties, formatted as a single string value. This data is included in
+     * the <a>GameSession</a> object, which is passed to the game server with a request to start a new game session (see
+     * <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
+     * </p>
+     * 
+     * @param gameSessionData
+     *        Set of developer-defined game session properties, formatted as a single string value. This data is
+     *        included in the <a>GameSession</a> object, which is passed to the game server with a request to start a
+     *        new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
+     */
+
+    public void setGameSessionData(String gameSessionData) {
+        this.gameSessionData = gameSessionData;
+    }
+
+    /**
+     * <p>
+     * Set of developer-defined game session properties, formatted as a single string value. This data is included in
+     * the <a>GameSession</a> object, which is passed to the game server with a request to start a new game session (see
+     * <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
+     * </p>
+     * 
+     * @return Set of developer-defined game session properties, formatted as a single string value. This data is
+     *         included in the <a>GameSession</a> object, which is passed to the game server with a request to start a
+     *         new game session (see <a href=
+     *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *         >Start a Game Session</a>).
+     */
+
+    public String getGameSessionData() {
+        return this.gameSessionData;
+    }
+
+    /**
+     * <p>
+     * Set of developer-defined game session properties, formatted as a single string value. This data is included in
+     * the <a>GameSession</a> object, which is passed to the game server with a request to start a new game session (see
+     * <a href=
+     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     * >Start a Game Session</a>).
+     * </p>
+     * 
+     * @param gameSessionData
+     *        Set of developer-defined game session properties, formatted as a single string value. This data is
+     *        included in the <a>GameSession</a> object, which is passed to the game server with a request to start a
+     *        new game session (see <a href=
+     *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
+     *        >Start a Game Session</a>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GameSession withGameSessionData(String gameSessionData) {
+        setGameSessionData(gameSessionData);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -885,7 +994,9 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
         if (getPlayerSessionCreationPolicy() != null)
             sb.append("PlayerSessionCreationPolicy: ").append(getPlayerSessionCreationPolicy()).append(",");
         if (getCreatorId() != null)
-            sb.append("CreatorId: ").append(getCreatorId());
+            sb.append("CreatorId: ").append(getCreatorId()).append(",");
+        if (getGameSessionData() != null)
+            sb.append("GameSessionData: ").append(getGameSessionData());
         sb.append("}");
         return sb.toString();
     }
@@ -952,6 +1063,10 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatorId() != null && other.getCreatorId().equals(this.getCreatorId()) == false)
             return false;
+        if (other.getGameSessionData() == null ^ this.getGameSessionData() == null)
+            return false;
+        if (other.getGameSessionData() != null && other.getGameSessionData().equals(this.getGameSessionData()) == false)
+            return false;
         return true;
     }
 
@@ -973,6 +1088,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getPlayerSessionCreationPolicy() == null) ? 0 : getPlayerSessionCreationPolicy().hashCode());
         hashCode = prime * hashCode + ((getCreatorId() == null) ? 0 : getCreatorId().hashCode());
+        hashCode = prime * hashCode + ((getGameSessionData() == null) ? 0 : getGameSessionData().hashCode());
         return hashCode;
     }
 

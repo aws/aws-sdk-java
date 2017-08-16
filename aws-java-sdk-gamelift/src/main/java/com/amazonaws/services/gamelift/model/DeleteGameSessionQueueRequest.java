@@ -30,18 +30,19 @@ public class DeleteGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with queue. Queue names must be unique within each region.
+     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Descriptive label that is associated with queue. Queue names must be unique within each region.
+     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with queue. Queue names must be unique within each region.
+     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        region.
      */
 
     public void setName(String name) {
@@ -50,10 +51,11 @@ public class DeleteGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with queue. Queue names must be unique within each region.
+     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
      * </p>
      * 
-     * @return Descriptive label that is associated with queue. Queue names must be unique within each region.
+     * @return Descriptive label that is associated with game session queue. Queue names must be unique within each
+     *         region.
      */
 
     public String getName() {
@@ -62,11 +64,12 @@ public class DeleteGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Descriptive label that is associated with queue. Queue names must be unique within each region.
+     * Descriptive label that is associated with game session queue. Queue names must be unique within each region.
      * </p>
      * 
      * @param name
-     *        Descriptive label that is associated with queue. Queue names must be unique within each region.
+     *        Descriptive label that is associated with game session queue. Queue names must be unique within each
+     *        region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -64,7 +64,7 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To specify the start of the result set, do not specify a value.
+     * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
@@ -293,12 +293,12 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To specify the start of the result set, do not specify a value.
+     * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To specify the start of the result set, do not specify a value.
+     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -308,11 +308,11 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To specify the start of the result set, do not specify a value.
+     * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
-     *         with a previous call to this action. To specify the start of the result set, do not specify a value.
+     *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
      */
 
     public String getNextToken() {
@@ -322,12 +322,12 @@ public class DescribeGameSessionsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To specify the start of the result set, do not specify a value.
+     * previous call to this action. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To specify the start of the result set, do not specify a value.
+     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
