@@ -52,6 +52,10 @@ public class DirectMessageConfigurationJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     directMessageConfiguration.setAPNSMessage(APNSMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BaiduMessage", targetDepth)) {
+                    context.nextToken();
+                    directMessageConfiguration.setBaiduMessage(BaiduMessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DefaultMessage", targetDepth)) {
                     context.nextToken();
                     directMessageConfiguration.setDefaultMessage(DefaultMessageJsonUnmarshaller.getInstance().unmarshall(context));

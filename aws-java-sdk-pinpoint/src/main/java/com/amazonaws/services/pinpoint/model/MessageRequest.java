@@ -33,6 +33,11 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
      * notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
      */
     private java.util.Map<String, String> context;
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
+     * Address Configuration as the value.
+     */
+    private java.util.Map<String, EndpointSendConfiguration> endpoints;
     /** Message configuration. */
     private DirectMessageConfiguration messageConfiguration;
 
@@ -159,6 +164,67 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
+     * Address Configuration as the value.
+     * 
+     * @return A map of destination addresses, with the address as the key(Email address, phone number or push token)
+     *         and the Address Configuration as the value.
+     */
+
+    public java.util.Map<String, EndpointSendConfiguration> getEndpoints() {
+        return endpoints;
+    }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
+     * Address Configuration as the value.
+     * 
+     * @param endpoints
+     *        A map of destination addresses, with the address as the key(Email address, phone number or push token) and
+     *        the Address Configuration as the value.
+     */
+
+    public void setEndpoints(java.util.Map<String, EndpointSendConfiguration> endpoints) {
+        this.endpoints = endpoints;
+    }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
+     * Address Configuration as the value.
+     * 
+     * @param endpoints
+     *        A map of destination addresses, with the address as the key(Email address, phone number or push token) and
+     *        the Address Configuration as the value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageRequest withEndpoints(java.util.Map<String, EndpointSendConfiguration> endpoints) {
+        setEndpoints(endpoints);
+        return this;
+    }
+
+    public MessageRequest addEndpointsEntry(String key, EndpointSendConfiguration value) {
+        if (null == this.endpoints) {
+            this.endpoints = new java.util.HashMap<String, EndpointSendConfiguration>();
+        }
+        if (this.endpoints.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.endpoints.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Endpoints.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageRequest clearEndpointsEntries() {
+        this.endpoints = null;
+        return this;
+    }
+
+    /**
      * Message configuration.
      * 
      * @param messageConfiguration
@@ -207,6 +273,8 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
             sb.append("Addresses: ").append(getAddresses()).append(",");
         if (getContext() != null)
             sb.append("Context: ").append(getContext()).append(",");
+        if (getEndpoints() != null)
+            sb.append("Endpoints: ").append(getEndpoints()).append(",");
         if (getMessageConfiguration() != null)
             sb.append("MessageConfiguration: ").append(getMessageConfiguration());
         sb.append("}");
@@ -231,6 +299,10 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
             return false;
+        if (other.getEndpoints() == null ^ this.getEndpoints() == null)
+            return false;
+        if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
+            return false;
         if (other.getMessageConfiguration() == null ^ this.getMessageConfiguration() == null)
             return false;
         if (other.getMessageConfiguration() != null && other.getMessageConfiguration().equals(this.getMessageConfiguration()) == false)
@@ -245,6 +317,7 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAddresses() == null) ? 0 : getAddresses().hashCode());
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
+        hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         hashCode = prime * hashCode + ((getMessageConfiguration() == null) ? 0 : getMessageConfiguration().hashCode());
         return hashCode;
     }

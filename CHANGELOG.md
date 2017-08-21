@@ -1,3 +1,16 @@
+# __1.11.180__ __2017-08-21__
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fixes a bug where the client time offset is not updated for clock skew errors when retries are disabled.
+
+## __Amazon Kinesis Firehose__
+  - ### Features
+    - This change will allow customers to attach a Firehose delivery stream to an existing Kinesis stream directly. You no longer need a forwarder to move data from a Kinesis stream to a Firehose delivery stream. You can now run your streaming applications on your Kinesis stream and easily attach a Firehose delivery stream to it for data delivery to S3, Redshift, or Elasticsearch concurrently.
+
+## __Amazon Route 53__
+  - ### Features
+    - Amazon Route 53 now supports CAA resource record type. A CAA record controls which certificate authorities are allowed to issue certificates for the domain or subdomain.
+
 # __1.11.179__ __2017-08-16__
 ## __Amazon GameLift__
   - ### Features

@@ -27,11 +27,37 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
-     * multiple delivery streams with the same name if they are in different accounts or different regions.
+     * The name of the delivery stream. This name must be unique per AWS account in the same region. If the delivery
+     * streams are in different accounts or different regions, you can have multiple delivery streams with the same
+     * name.
      * </p>
      */
     private String deliveryStreamName;
+    /**
+     * <p>
+     * The delivery stream type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String deliveryStreamType;
+    /**
+     * <p>
+     * When a Kinesis stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a>
+     * containing the Kinesis stream ARN and the role ARN for the source stream.
+     * </p>
+     */
+    private KinesisStreamSourceConfiguration kinesisStreamSourceConfiguration;
     /**
      * <p>
      * [Deprecated] The destination in Amazon S3. You can specify only one destination.
@@ -60,13 +86,15 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
-     * multiple delivery streams with the same name if they are in different accounts or different regions.
+     * The name of the delivery stream. This name must be unique per AWS account in the same region. If the delivery
+     * streams are in different accounts or different regions, you can have multiple delivery streams with the same
+     * name.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
-     *        multiple delivery streams with the same name if they are in different accounts or different regions.
+     *        The name of the delivery stream. This name must be unique per AWS account in the same region. If the
+     *        delivery streams are in different accounts or different regions, you can have multiple delivery streams
+     *        with the same name.
      */
 
     public void setDeliveryStreamName(String deliveryStreamName) {
@@ -75,12 +103,14 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
-     * multiple delivery streams with the same name if they are in different accounts or different regions.
+     * The name of the delivery stream. This name must be unique per AWS account in the same region. If the delivery
+     * streams are in different accounts or different regions, you can have multiple delivery streams with the same
+     * name.
      * </p>
      * 
-     * @return The name of the delivery stream. This name must be unique per AWS account in the same region. You can
-     *         have multiple delivery streams with the same name if they are in different accounts or different regions.
+     * @return The name of the delivery stream. This name must be unique per AWS account in the same region. If the
+     *         delivery streams are in different accounts or different regions, you can have multiple delivery streams
+     *         with the same name.
      */
 
     public String getDeliveryStreamName() {
@@ -89,18 +119,220 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
-     * multiple delivery streams with the same name if they are in different accounts or different regions.
+     * The name of the delivery stream. This name must be unique per AWS account in the same region. If the delivery
+     * streams are in different accounts or different regions, you can have multiple delivery streams with the same
+     * name.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream. This name must be unique per AWS account in the same region. You can have
-     *        multiple delivery streams with the same name if they are in different accounts or different regions.
+     *        The name of the delivery stream. This name must be unique per AWS account in the same region. If the
+     *        delivery streams are in different accounts or different regions, you can have multiple delivery streams
+     *        with the same name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDeliveryStreamRequest withDeliveryStreamName(String deliveryStreamName) {
         setDeliveryStreamName(deliveryStreamName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     * @see DeliveryStreamType
+     */
+
+    public void setDeliveryStreamType(String deliveryStreamType) {
+        this.deliveryStreamType = deliveryStreamType;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The delivery stream type. This parameter can be one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *         </p>
+     *         </li>
+     * @see DeliveryStreamType
+     */
+
+    public String getDeliveryStreamType() {
+        return this.deliveryStreamType;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeliveryStreamType
+     */
+
+    public CreateDeliveryStreamRequest withDeliveryStreamType(String deliveryStreamType) {
+        setDeliveryStreamType(deliveryStreamType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This parameter can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This parameter can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeliveryStreamType
+     */
+
+    public CreateDeliveryStreamRequest withDeliveryStreamType(DeliveryStreamType deliveryStreamType) {
+        this.deliveryStreamType = deliveryStreamType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * When a Kinesis stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a>
+     * containing the Kinesis stream ARN and the role ARN for the source stream.
+     * </p>
+     * 
+     * @param kinesisStreamSourceConfiguration
+     *        When a Kinesis stream is used as the source for the delivery stream, a
+     *        <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and the role ARN for the source
+     *        stream.
+     */
+
+    public void setKinesisStreamSourceConfiguration(KinesisStreamSourceConfiguration kinesisStreamSourceConfiguration) {
+        this.kinesisStreamSourceConfiguration = kinesisStreamSourceConfiguration;
+    }
+
+    /**
+     * <p>
+     * When a Kinesis stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a>
+     * containing the Kinesis stream ARN and the role ARN for the source stream.
+     * </p>
+     * 
+     * @return When a Kinesis stream is used as the source for the delivery stream, a
+     *         <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and the role ARN for the source
+     *         stream.
+     */
+
+    public KinesisStreamSourceConfiguration getKinesisStreamSourceConfiguration() {
+        return this.kinesisStreamSourceConfiguration;
+    }
+
+    /**
+     * <p>
+     * When a Kinesis stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a>
+     * containing the Kinesis stream ARN and the role ARN for the source stream.
+     * </p>
+     * 
+     * @param kinesisStreamSourceConfiguration
+     *        When a Kinesis stream is used as the source for the delivery stream, a
+     *        <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and the role ARN for the source
+     *        stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeliveryStreamRequest withKinesisStreamSourceConfiguration(KinesisStreamSourceConfiguration kinesisStreamSourceConfiguration) {
+        setKinesisStreamSourceConfiguration(kinesisStreamSourceConfiguration);
         return this;
     }
 
@@ -277,6 +509,10 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getDeliveryStreamName() != null)
             sb.append("DeliveryStreamName: ").append(getDeliveryStreamName()).append(",");
+        if (getDeliveryStreamType() != null)
+            sb.append("DeliveryStreamType: ").append(getDeliveryStreamType()).append(",");
+        if (getKinesisStreamSourceConfiguration() != null)
+            sb.append("KinesisStreamSourceConfiguration: ").append(getKinesisStreamSourceConfiguration()).append(",");
         if (getS3DestinationConfiguration() != null)
             sb.append("S3DestinationConfiguration: ").append(getS3DestinationConfiguration()).append(",");
         if (getExtendedS3DestinationConfiguration() != null)
@@ -302,6 +538,15 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getDeliveryStreamName() == null ^ this.getDeliveryStreamName() == null)
             return false;
         if (other.getDeliveryStreamName() != null && other.getDeliveryStreamName().equals(this.getDeliveryStreamName()) == false)
+            return false;
+        if (other.getDeliveryStreamType() == null ^ this.getDeliveryStreamType() == null)
+            return false;
+        if (other.getDeliveryStreamType() != null && other.getDeliveryStreamType().equals(this.getDeliveryStreamType()) == false)
+            return false;
+        if (other.getKinesisStreamSourceConfiguration() == null ^ this.getKinesisStreamSourceConfiguration() == null)
+            return false;
+        if (other.getKinesisStreamSourceConfiguration() != null
+                && other.getKinesisStreamSourceConfiguration().equals(this.getKinesisStreamSourceConfiguration()) == false)
             return false;
         if (other.getS3DestinationConfiguration() == null ^ this.getS3DestinationConfiguration() == null)
             return false;
@@ -331,6 +576,8 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryStreamType() == null) ? 0 : getDeliveryStreamType().hashCode());
+        hashCode = prime * hashCode + ((getKinesisStreamSourceConfiguration() == null) ? 0 : getKinesisStreamSourceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getS3DestinationConfiguration() == null) ? 0 : getS3DestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getExtendedS3DestinationConfiguration() == null) ? 0 : getExtendedS3DestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRedshiftDestinationConfiguration() == null) ? 0 : getRedshiftDestinationConfiguration().hashCode());

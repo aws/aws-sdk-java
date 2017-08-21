@@ -32,7 +32,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>Amazon Kinesis Firehose API Reference</fullname>
  * <p>
- * Amazon Kinesis Firehose is a fully-managed service that delivers real-time streaming data to destinations such as
+ * Amazon Kinesis Firehose is a fully managed service that delivers real-time streaming data to destinations such as
  * Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch Service (Amazon ES), and Amazon Redshift.
  * </p>
  */
@@ -330,6 +330,39 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
 
                 try {
                     result = executeDescribeDeliveryStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKinesisStreamResult> getKinesisStreamAsync(GetKinesisStreamRequest request) {
+
+        return getKinesisStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKinesisStreamResult> getKinesisStreamAsync(final GetKinesisStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetKinesisStreamRequest, GetKinesisStreamResult> asyncHandler) {
+        final GetKinesisStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetKinesisStreamResult>() {
+            @Override
+            public GetKinesisStreamResult call() throws Exception {
+                GetKinesisStreamResult result = null;
+
+                try {
+                    result = executeGetKinesisStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

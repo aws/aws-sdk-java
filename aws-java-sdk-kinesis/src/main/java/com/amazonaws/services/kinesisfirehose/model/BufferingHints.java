@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes hints for the buffering to perform before delivering data to the destination. Please note that these
- * options are treated as hints, and therefore Firehose may choose to use different values when it is optimal.
+ * options are treated as hints, and therefore Kinesis Firehose may choose to use different values when it is optimal.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/BufferingHints" target="_top">AWS API

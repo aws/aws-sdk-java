@@ -33,6 +33,27 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer limit;
     /**
      * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.
+     * </p>
+     */
+    private String deliveryStreamType;
+    /**
+     * <p>
      * The name of the delivery stream to start the list with.
      * </p>
      */
@@ -75,6 +96,181 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
 
     public ListDeliveryStreamsRequest withLimit(Integer limit) {
         setLimit(limit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.
+     * </p>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.
+     * @see DeliveryStreamType
+     */
+
+    public void setDeliveryStreamType(String deliveryStreamType) {
+        this.deliveryStreamType = deliveryStreamType;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.
+     * </p>
+     * 
+     * @return The delivery stream type. This can be one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.
+     * @see DeliveryStreamType
+     */
+
+    public String getDeliveryStreamType() {
+        return this.deliveryStreamType;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.
+     * </p>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeliveryStreamType
+     */
+
+    public ListDeliveryStreamsRequest withDeliveryStreamType(String deliveryStreamType) {
+        setDeliveryStreamType(deliveryStreamType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.
+     * </p>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeliveryStreamType
+     */
+
+    public ListDeliveryStreamsRequest withDeliveryStreamType(DeliveryStreamType deliveryStreamType) {
+        this.deliveryStreamType = deliveryStreamType.toString();
         return this;
     }
 
@@ -131,6 +327,8 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
         sb.append("{");
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
+        if (getDeliveryStreamType() != null)
+            sb.append("DeliveryStreamType: ").append(getDeliveryStreamType()).append(",");
         if (getExclusiveStartDeliveryStreamName() != null)
             sb.append("ExclusiveStartDeliveryStreamName: ").append(getExclusiveStartDeliveryStreamName());
         sb.append("}");
@@ -151,6 +349,10 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getLimit() != null && other.getLimit().equals(this.getLimit()) == false)
             return false;
+        if (other.getDeliveryStreamType() == null ^ this.getDeliveryStreamType() == null)
+            return false;
+        if (other.getDeliveryStreamType() != null && other.getDeliveryStreamType().equals(this.getDeliveryStreamType()) == false)
+            return false;
         if (other.getExclusiveStartDeliveryStreamName() == null ^ this.getExclusiveStartDeliveryStreamName() == null)
             return false;
         if (other.getExclusiveStartDeliveryStreamName() != null
@@ -165,6 +367,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryStreamType() == null) ? 0 : getDeliveryStreamType().hashCode());
         hashCode = prime * hashCode + ((getExclusiveStartDeliveryStreamName() == null) ? 0 : getExclusiveStartDeliveryStreamName().hashCode());
         return hashCode;
     }

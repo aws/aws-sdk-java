@@ -52,6 +52,14 @@ public class CampaignLimitsJsonUnmarshaller implements Unmarshaller<CampaignLimi
                     context.nextToken();
                     campaignLimits.setDaily(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("MaximumDuration", targetDepth)) {
+                    context.nextToken();
+                    campaignLimits.setMaximumDuration(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("MessagesPerSecond", targetDepth)) {
+                    context.nextToken();
+                    campaignLimits.setMessagesPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Total", targetDepth)) {
                     context.nextToken();
                     campaignLimits.setTotal(context.getUnmarshaller(Integer.class).unmarshall(context));

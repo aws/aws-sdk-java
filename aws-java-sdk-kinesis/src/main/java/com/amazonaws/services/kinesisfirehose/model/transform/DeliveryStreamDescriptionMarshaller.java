@@ -34,12 +34,16 @@ public class DeliveryStreamDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamARN").build();
     private static final MarshallingInfo<String> DELIVERYSTREAMSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamStatus").build();
+    private static final MarshallingInfo<String> DELIVERYSTREAMTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamType").build();
     private static final MarshallingInfo<String> VERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("VersionId").build();
     private static final MarshallingInfo<java.util.Date> CREATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Source").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Destinations").build();
     private static final MarshallingInfo<Boolean> HASMOREDESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -64,9 +68,11 @@ public class DeliveryStreamDescriptionMarshaller {
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamName(), DELIVERYSTREAMNAME_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamARN(), DELIVERYSTREAMARN_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamStatus(), DELIVERYSTREAMSTATUS_BINDING);
+            protocolMarshaller.marshall(deliveryStreamDescription.getDeliveryStreamType(), DELIVERYSTREAMTYPE_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getVersionId(), VERSIONID_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getCreateTimestamp(), CREATETIMESTAMP_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getLastUpdateTimestamp(), LASTUPDATETIMESTAMP_BINDING);
+            protocolMarshaller.marshall(deliveryStreamDescription.getSource(), SOURCE_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getDestinations(), DESTINATIONS_BINDING);
             protocolMarshaller.marshall(deliveryStreamDescription.getHasMoreDestinations(), HASMOREDESTINATIONS_BINDING);
         } catch (Exception e) {

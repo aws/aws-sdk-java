@@ -67,6 +67,19 @@ public class AbstractAmazonKinesisFirehoseAsync extends AbstractAmazonKinesisFir
     }
 
     @Override
+    public java.util.concurrent.Future<GetKinesisStreamResult> getKinesisStreamAsync(GetKinesisStreamRequest request) {
+
+        return getKinesisStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetKinesisStreamResult> getKinesisStreamAsync(GetKinesisStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetKinesisStreamRequest, GetKinesisStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDeliveryStreamsResult> listDeliveryStreamsAsync(ListDeliveryStreamsRequest request) {
 
         return listDeliveryStreamsAsync(request, null);

@@ -60,6 +60,10 @@ public class DeliveryStreamDescriptionJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     deliveryStreamDescription.setDeliveryStreamStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeliveryStreamType", targetDepth)) {
+                    context.nextToken();
+                    deliveryStreamDescription.setDeliveryStreamType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("VersionId", targetDepth)) {
                     context.nextToken();
                     deliveryStreamDescription.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +75,10 @@ public class DeliveryStreamDescriptionJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("LastUpdateTimestamp", targetDepth)) {
                     context.nextToken();
                     deliveryStreamDescription.setLastUpdateTimestamp(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("Source", targetDepth)) {
+                    context.nextToken();
+                    deliveryStreamDescription.setSource(SourceDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Destinations", targetDepth)) {
                     context.nextToken();

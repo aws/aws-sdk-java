@@ -29,6 +29,8 @@ public class ListDeliveryStreamsRequestMarshaller {
 
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> DELIVERYSTREAMTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamType").build();
     private static final MarshallingInfo<String> EXCLUSIVESTARTDELIVERYSTREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusiveStartDeliveryStreamName").build();
 
@@ -49,6 +51,7 @@ public class ListDeliveryStreamsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listDeliveryStreamsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listDeliveryStreamsRequest.getDeliveryStreamType(), DELIVERYSTREAMTYPE_BINDING);
             protocolMarshaller.marshall(listDeliveryStreamsRequest.getExclusiveStartDeliveryStreamName(), EXCLUSIVESTARTDELIVERYSTREAMNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

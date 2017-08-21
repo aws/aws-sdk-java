@@ -30,7 +30,7 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifically override existing encryption information to ensure no encryption is used.
+     * Specifically override existing encryption information to ensure that no encryption is used.
      * </p>
      */
     private String noEncryptionConfig;
@@ -43,11 +43,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifically override existing encryption information to ensure no encryption is used.
+     * Specifically override existing encryption information to ensure that no encryption is used.
      * </p>
      * 
      * @param noEncryptionConfig
-     *        Specifically override existing encryption information to ensure no encryption is used.
+     *        Specifically override existing encryption information to ensure that no encryption is used.
      * @see NoEncryptionConfig
      */
 
@@ -57,10 +57,10 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifically override existing encryption information to ensure no encryption is used.
+     * Specifically override existing encryption information to ensure that no encryption is used.
      * </p>
      * 
-     * @return Specifically override existing encryption information to ensure no encryption is used.
+     * @return Specifically override existing encryption information to ensure that no encryption is used.
      * @see NoEncryptionConfig
      */
 
@@ -70,11 +70,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifically override existing encryption information to ensure no encryption is used.
+     * Specifically override existing encryption information to ensure that no encryption is used.
      * </p>
      * 
      * @param noEncryptionConfig
-     *        Specifically override existing encryption information to ensure no encryption is used.
+     *        Specifically override existing encryption information to ensure that no encryption is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoEncryptionConfig
      */
@@ -86,11 +86,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifically override existing encryption information to ensure no encryption is used.
+     * Specifically override existing encryption information to ensure that no encryption is used.
      * </p>
      * 
      * @param noEncryptionConfig
-     *        Specifically override existing encryption information to ensure no encryption is used.
+     *        Specifically override existing encryption information to ensure that no encryption is used.
      * @see NoEncryptionConfig
      */
 
@@ -100,11 +100,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifically override existing encryption information to ensure no encryption is used.
+     * Specifically override existing encryption information to ensure that no encryption is used.
      * </p>
      * 
      * @param noEncryptionConfig
-     *        Specifically override existing encryption information to ensure no encryption is used.
+     *        Specifically override existing encryption information to ensure that no encryption is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoEncryptionConfig
      */

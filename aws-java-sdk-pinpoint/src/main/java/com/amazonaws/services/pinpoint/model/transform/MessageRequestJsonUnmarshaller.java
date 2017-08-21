@@ -58,6 +58,11 @@ public class MessageRequestJsonUnmarshaller implements Unmarshaller<MessageReque
                     messageRequest.setContext(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("Endpoints", targetDepth)) {
+                    context.nextToken();
+                    messageRequest.setEndpoints(new MapUnmarshaller<String, EndpointSendConfiguration>(context.getUnmarshaller(String.class),
+                            EndpointSendConfigurationJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("MessageConfiguration", targetDepth)) {
                     context.nextToken();
                     messageRequest.setMessageConfiguration(DirectMessageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

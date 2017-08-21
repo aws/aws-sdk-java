@@ -19,6 +19,7 @@ import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.util.IOUtils;
+import com.amazonaws.util.Throwables;
 import java.io.IOException;
 import java.io.InputStream;
 import org.apache.commons.logging.Log;
@@ -41,7 +42,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     private long markedBytes;
     private boolean eofReached = false;
 
-    public S3AbortableInputStream(InputStream in, HttpRequestBase httpRequest, long contentLength) {
+    S3AbortableInputStream(InputStream in, HttpRequestBase httpRequest, long contentLength) {
         super(in);
         this.httpRequest = httpRequest;
         this.contentLength = contentLength;
@@ -53,7 +54,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      * Aborts the underlying http request without reading any more data and
      * closes the stream.
      * <p>
-     * By default Apache {@link HttpClient} tries to reuse http connections by
+     * By default Apache {@link org.apache.http.client.HttpClient} tries to reuse http connections by
      * reading to the end of an attached input stream on
      * {@link InputStream#close()}. This is efficient from a socket pool
      * management perspective, but for objects with large payloads can incur
@@ -62,7 +63,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      * reusing an http connection in order to not read unnecessary information
      * from S3.
      *
-     * @see EofSensorInputStream
+     * @see org.apache.http.conn.EofSensorInputStream
      */
     @Override
     public void abort() {
@@ -94,12 +95,16 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      */
     @Override
     public int read() throws IOException {
-        int value = super.read();
-        eofReached = value == -1;
-        if (!eofReached) {
-            bytesRead++;
+        try {
+            int value = super.read();
+            eofReached = value == -1;
+            if (!eofReached) {
+                bytesRead++;
+            }
+            return value;
+        } catch (Exception e) {
+            return onException(e);
         }
-        return value;
     }
 
     /**
@@ -108,6 +113,7 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     @Override
     public int read(byte[] b) throws IOException {
         return read(b, 0, b.length);
+
     }
 
     /**
@@ -115,12 +121,16 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
      */
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
-        int value = super.read(b, off, len);
-        eofReached = value == -1;
-        if (!eofReached) {
-            bytesRead += value;
+        try {
+            int value = super.read(b, off, len);
+            eofReached = value == -1;
+            if (!eofReached) {
+                bytesRead += value;
+            }
+            return value;
+        } catch (Exception e) {
+            return onException(e);
         }
-        return value;
     }
 
     @Override
@@ -141,11 +151,15 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
 
     @Override
     public synchronized long skip(long n) throws IOException {
-        long skipped = super.skip(n);
-        if (skipped > 0) {
-            bytesRead += skipped;
+        try {
+            long skipped = super.skip(n);
+            if (skipped > 0) {
+                bytesRead += skipped;
+            }
+            return skipped;
+        } catch (Exception e) {
+            return onException(e);
         }
-        return skipped;
     }
 
     /**
@@ -183,6 +197,25 @@ public final class S3AbortableInputStream extends SdkFilterInputStream {
     @SdkTestInternalApi
     boolean isEofReached() {
         return this.eofReached;
+    }
+
+    /**
+     * Marks the input stream as EOF since no further reads should be done.
+     *
+     * @param e Exception thrown by delegate stream.
+     * @return Noting, just for return signature.
+     * @throws IOException or {@link RuntimeException}
+     */
+    private int onException(Exception e) throws IOException {
+        eofReached = true;
+        if (e instanceof IOException) {
+            throw (IOException) e;
+        } else if (e instanceof RuntimeException) {
+            throw (RuntimeException) e;
+        } else {
+            // Impossible since InputStream throws no other checked exceptions.
+            throw Throwables.failure(e);
+        }
     }
 
     private boolean readAllBytes() {

@@ -30,7 +30,8 @@ public enum RRType {
     PTR("PTR"),
     SRV("SRV"),
     SPF("SPF"),
-    AAAA("AAAA");
+    AAAA("AAAA"),
+    CAA("CAA");
 
     private String value;
 

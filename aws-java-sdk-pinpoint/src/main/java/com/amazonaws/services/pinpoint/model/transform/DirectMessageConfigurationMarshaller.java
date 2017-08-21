@@ -29,6 +29,8 @@ public class DirectMessageConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> APNSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("APNSMessage").build();
+    private static final MarshallingInfo<StructuredPojo> BAIDUMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaiduMessage").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULTMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultMessage").build();
     private static final MarshallingInfo<StructuredPojo> DEFAULTPUSHNOTIFICATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -55,6 +57,7 @@ public class DirectMessageConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(directMessageConfiguration.getAPNSMessage(), APNSMESSAGE_BINDING);
+            protocolMarshaller.marshall(directMessageConfiguration.getBaiduMessage(), BAIDUMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getDefaultMessage(), DEFAULTMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getDefaultPushNotificationMessage(), DEFAULTPUSHNOTIFICATIONMESSAGE_BINDING);
             protocolMarshaller.marshall(directMessageConfiguration.getGCMMessage(), GCMMESSAGE_BINDING);

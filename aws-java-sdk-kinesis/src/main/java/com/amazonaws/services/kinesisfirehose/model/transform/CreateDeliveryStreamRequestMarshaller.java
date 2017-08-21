@@ -29,6 +29,10 @@ public class CreateDeliveryStreamRequestMarshaller {
 
     private static final MarshallingInfo<String> DELIVERYSTREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamName").build();
+    private static final MarshallingInfo<String> DELIVERYSTREAMTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStreamType").build();
+    private static final MarshallingInfo<StructuredPojo> KINESISSTREAMSOURCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisStreamSourceConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> S3DESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DestinationConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> EXTENDEDS3DESTINATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -55,6 +59,8 @@ public class CreateDeliveryStreamRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createDeliveryStreamRequest.getDeliveryStreamName(), DELIVERYSTREAMNAME_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getDeliveryStreamType(), DELIVERYSTREAMTYPE_BINDING);
+            protocolMarshaller.marshall(createDeliveryStreamRequest.getKinesisStreamSourceConfiguration(), KINESISSTREAMSOURCECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDeliveryStreamRequest.getS3DestinationConfiguration(), S3DESTINATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDeliveryStreamRequest.getExtendedS3DestinationConfiguration(), EXTENDEDS3DESTINATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDeliveryStreamRequest.getRedshiftDestinationConfiguration(), REDSHIFTDESTINATIONCONFIGURATION_BINDING);

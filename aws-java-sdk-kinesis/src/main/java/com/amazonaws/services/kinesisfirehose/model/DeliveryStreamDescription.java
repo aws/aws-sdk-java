@@ -48,6 +48,24 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
     private String deliveryStreamStatus;
     /**
      * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String deliveryStreamType;
+    /**
+     * <p>
      * Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID
      * is required when updating the destination. This is so that the service knows it is applying the changes to the
      * correct version of the delivery stream.
@@ -66,6 +84,13 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * </p>
      */
     private java.util.Date lastUpdateTimestamp;
+    /**
+     * <p>
+     * If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
+     * <a>SourceDescription</a> object describing the source Kinesis stream.
+     * </p>
+     */
+    private SourceDescription source;
     /**
      * <p>
      * The destinations.
@@ -234,6 +259,194 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     * @see DeliveryStreamType
+     */
+
+    public void setDeliveryStreamType(String deliveryStreamType) {
+        this.deliveryStreamType = deliveryStreamType;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The delivery stream type. This can be one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *         </p>
+     *         </li>
+     * @see DeliveryStreamType
+     */
+
+    public String getDeliveryStreamType() {
+        return this.deliveryStreamType;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeliveryStreamType
+     */
+
+    public DeliveryStreamDescription withDeliveryStreamType(String deliveryStreamType) {
+        setDeliveryStreamType(deliveryStreamType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     * @see DeliveryStreamType
+     */
+
+    public void setDeliveryStreamType(DeliveryStreamType deliveryStreamType) {
+        withDeliveryStreamType(deliveryStreamType);
+    }
+
+    /**
+     * <p>
+     * The delivery stream type. This can be one of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deliveryStreamType
+     *        The delivery stream type. This can be one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DirectPut</code>: Provider applications access the delivery stream directly.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeliveryStreamType
+     */
+
+    public DeliveryStreamDescription withDeliveryStreamType(DeliveryStreamType deliveryStreamType) {
+        this.deliveryStreamType = deliveryStreamType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID
      * is required when updating the destination. This is so that the service knows it is applying the changes to the
      * correct version of the delivery stream.
@@ -361,6 +574,52 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     public DeliveryStreamDescription withLastUpdateTimestamp(java.util.Date lastUpdateTimestamp) {
         setLastUpdateTimestamp(lastUpdateTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
+     * <a>SourceDescription</a> object describing the source Kinesis stream.
+     * </p>
+     * 
+     * @param source
+     *        If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
+     *        <a>SourceDescription</a> object describing the source Kinesis stream.
+     */
+
+    public void setSource(SourceDescription source) {
+        this.source = source;
+    }
+
+    /**
+     * <p>
+     * If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
+     * <a>SourceDescription</a> object describing the source Kinesis stream.
+     * </p>
+     * 
+     * @return If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
+     *         <a>SourceDescription</a> object describing the source Kinesis stream.
+     */
+
+    public SourceDescription getSource() {
+        return this.source;
+    }
+
+    /**
+     * <p>
+     * If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
+     * <a>SourceDescription</a> object describing the source Kinesis stream.
+     * </p>
+     * 
+     * @param source
+     *        If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
+     *        <a>SourceDescription</a> object describing the source Kinesis stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeliveryStreamDescription withSource(SourceDescription source) {
+        setSource(source);
         return this;
     }
 
@@ -503,12 +762,16 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
             sb.append("DeliveryStreamARN: ").append(getDeliveryStreamARN()).append(",");
         if (getDeliveryStreamStatus() != null)
             sb.append("DeliveryStreamStatus: ").append(getDeliveryStreamStatus()).append(",");
+        if (getDeliveryStreamType() != null)
+            sb.append("DeliveryStreamType: ").append(getDeliveryStreamType()).append(",");
         if (getVersionId() != null)
             sb.append("VersionId: ").append(getVersionId()).append(",");
         if (getCreateTimestamp() != null)
             sb.append("CreateTimestamp: ").append(getCreateTimestamp()).append(",");
         if (getLastUpdateTimestamp() != null)
             sb.append("LastUpdateTimestamp: ").append(getLastUpdateTimestamp()).append(",");
+        if (getSource() != null)
+            sb.append("Source: ").append(getSource()).append(",");
         if (getDestinations() != null)
             sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getHasMoreDestinations() != null)
@@ -539,6 +802,10 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
             return false;
         if (other.getDeliveryStreamStatus() != null && other.getDeliveryStreamStatus().equals(this.getDeliveryStreamStatus()) == false)
             return false;
+        if (other.getDeliveryStreamType() == null ^ this.getDeliveryStreamType() == null)
+            return false;
+        if (other.getDeliveryStreamType() != null && other.getDeliveryStreamType().equals(this.getDeliveryStreamType()) == false)
+            return false;
         if (other.getVersionId() == null ^ this.getVersionId() == null)
             return false;
         if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
@@ -550,6 +817,10 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
         if (other.getLastUpdateTimestamp() == null ^ this.getLastUpdateTimestamp() == null)
             return false;
         if (other.getLastUpdateTimestamp() != null && other.getLastUpdateTimestamp().equals(this.getLastUpdateTimestamp()) == false)
+            return false;
+        if (other.getSource() == null ^ this.getSource() == null)
+            return false;
+        if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
         if (other.getDestinations() == null ^ this.getDestinations() == null)
             return false;
@@ -570,9 +841,11 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getDeliveryStreamName() == null) ? 0 : getDeliveryStreamName().hashCode());
         hashCode = prime * hashCode + ((getDeliveryStreamARN() == null) ? 0 : getDeliveryStreamARN().hashCode());
         hashCode = prime * hashCode + ((getDeliveryStreamStatus() == null) ? 0 : getDeliveryStreamStatus().hashCode());
+        hashCode = prime * hashCode + ((getDeliveryStreamType() == null) ? 0 : getDeliveryStreamType().hashCode());
         hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
         hashCode = prime * hashCode + ((getCreateTimestamp() == null) ? 0 : getCreateTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTimestamp() == null) ? 0 : getLastUpdateTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getHasMoreDestinations() == null) ? 0 : getHasMoreDestinations().hashCode());
         return hashCode;

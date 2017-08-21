@@ -33,12 +33,16 @@ public enum PinpointActions implements Action {
     CreateImportJob("pinpoint:CreateImportJob"),
     /** Action for the CreateSegment operation. */
     CreateSegment("pinpoint:CreateSegment"),
+    /** Action for the DeleteAdmChannel operation. */
+    DeleteAdmChannel("pinpoint:DeleteAdmChannel"),
     /** Action for the DeleteApnsChannel operation. */
     DeleteApnsChannel("pinpoint:DeleteApnsChannel"),
     /** Action for the DeleteApnsSandboxChannel operation. */
     DeleteApnsSandboxChannel("pinpoint:DeleteApnsSandboxChannel"),
     /** Action for the DeleteApp operation. */
     DeleteApp("pinpoint:DeleteApp"),
+    /** Action for the DeleteBaiduChannel operation. */
+    DeleteBaiduChannel("pinpoint:DeleteBaiduChannel"),
     /** Action for the DeleteCampaign operation. */
     DeleteCampaign("pinpoint:DeleteCampaign"),
     /** Action for the DeleteEmailChannel operation. */
@@ -51,6 +55,8 @@ public enum PinpointActions implements Action {
     DeleteSegment("pinpoint:DeleteSegment"),
     /** Action for the DeleteSmsChannel operation. */
     DeleteSmsChannel("pinpoint:DeleteSmsChannel"),
+    /** Action for the GetAdmChannel operation. */
+    GetAdmChannel("pinpoint:GetAdmChannel"),
     /** Action for the GetApnsChannel operation. */
     GetApnsChannel("pinpoint:GetApnsChannel"),
     /** Action for the GetApnsSandboxChannel operation. */
@@ -61,6 +67,8 @@ public enum PinpointActions implements Action {
     GetApplicationSettings("pinpoint:GetApplicationSettings"),
     /** Action for the GetApps operation. */
     GetApps("pinpoint:GetApps"),
+    /** Action for the GetBaiduChannel operation. */
+    GetBaiduChannel("pinpoint:GetBaiduChannel"),
     /** Action for the GetCampaign operation. */
     GetCampaign("pinpoint:GetCampaign"),
     /** Action for the GetCampaignActivities operation. */
@@ -99,12 +107,18 @@ public enum PinpointActions implements Action {
     PutEventStream("pinpoint:PutEventStream"),
     /** Action for the SendMessages operation. */
     SendMessages("pinpoint:SendMessages"),
+    /** Action for the SendUsersMessages operation. */
+    SendUsersMessages("pinpoint:SendUsersMessages"),
+    /** Action for the UpdateAdmChannel operation. */
+    UpdateAdmChannel("pinpoint:UpdateAdmChannel"),
     /** Action for the UpdateApnsChannel operation. */
     UpdateApnsChannel("pinpoint:UpdateApnsChannel"),
     /** Action for the UpdateApnsSandboxChannel operation. */
     UpdateApnsSandboxChannel("pinpoint:UpdateApnsSandboxChannel"),
     /** Action for the UpdateApplicationSettings operation. */
     UpdateApplicationSettings("pinpoint:UpdateApplicationSettings"),
+    /** Action for the UpdateBaiduChannel operation. */
+    UpdateBaiduChannel("pinpoint:UpdateBaiduChannel"),
     /** Action for the UpdateCampaign operation. */
     UpdateCampaign("pinpoint:UpdateCampaign"),
     /** Action for the UpdateEmailChannel operation. */
