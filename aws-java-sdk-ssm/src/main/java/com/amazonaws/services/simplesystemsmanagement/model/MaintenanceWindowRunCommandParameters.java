@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Parameters for a RUN_COMMAND task type.
+ * The parameters for a RUN_COMMAND task type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowRunCommandParameters"
@@ -36,19 +36,19 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
     private String comment;
     /**
      * <p>
-     * The Sha256 or Sha1 hash created by the system when the document was created. Sha1 hashes have been deprecated.
+     * The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.
      * </p>
      */
     private String documentHash;
     /**
      * <p>
-     * Sha256 or Sha1. Sha1 hashes have been deprecated.
+     * SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
      * </p>
      */
     private String documentHashType;
     /**
      * <p>
-     * Configurations for sending notifications about command status changes on a per instance basis.
+     * Configurations for sending notifications about command status changes on a per-instance basis.
      * </p>
      */
     private NotificationConfig notificationConfig;
@@ -66,19 +66,19 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
     private String outputS3KeyPrefix;
     /**
      * <p>
-     * Parameters for the RUN_COMMAND task execution.
+     * The parameters for the RUN_COMMAND task execution.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
     /**
      * <p>
-     * The IAM service role that to assume during task execution.
+     * The IAM service role to assume during task execution.
      * </p>
      */
     private String serviceRoleArn;
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not execute.
+     * If this time is reached and the command has not already started executing, it doesn not execute.
      * </p>
      */
     private Integer timeoutSeconds;
@@ -125,11 +125,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The Sha256 or Sha1 hash created by the system when the document was created. Sha1 hashes have been deprecated.
+     * The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.
      * </p>
      * 
      * @param documentHash
-     *        The Sha256 or Sha1 hash created by the system when the document was created. Sha1 hashes have been
+     *        The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been
      *        deprecated.
      */
 
@@ -139,10 +139,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The Sha256 or Sha1 hash created by the system when the document was created. Sha1 hashes have been deprecated.
+     * The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.
      * </p>
      * 
-     * @return The Sha256 or Sha1 hash created by the system when the document was created. Sha1 hashes have been
+     * @return The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been
      *         deprecated.
      */
 
@@ -152,11 +152,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The Sha256 or Sha1 hash created by the system when the document was created. Sha1 hashes have been deprecated.
+     * The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.
      * </p>
      * 
      * @param documentHash
-     *        The Sha256 or Sha1 hash created by the system when the document was created. Sha1 hashes have been
+     *        The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been
      *        deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -168,11 +168,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Sha256 or Sha1. Sha1 hashes have been deprecated.
+     * SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
      * </p>
      * 
      * @param documentHashType
-     *        Sha256 or Sha1. Sha1 hashes have been deprecated.
+     *        SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
      * @see DocumentHashType
      */
 
@@ -182,10 +182,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Sha256 or Sha1. Sha1 hashes have been deprecated.
+     * SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
      * </p>
      * 
-     * @return Sha256 or Sha1. Sha1 hashes have been deprecated.
+     * @return SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
      * @see DocumentHashType
      */
 
@@ -195,11 +195,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Sha256 or Sha1. Sha1 hashes have been deprecated.
+     * SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
      * </p>
      * 
      * @param documentHashType
-     *        Sha256 or Sha1. Sha1 hashes have been deprecated.
+     *        SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentHashType
      */
@@ -211,11 +211,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Sha256 or Sha1. Sha1 hashes have been deprecated.
+     * SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
      * </p>
      * 
      * @param documentHashType
-     *        Sha256 or Sha1. Sha1 hashes have been deprecated.
+     *        SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentHashType
      */
@@ -227,11 +227,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Configurations for sending notifications about command status changes on a per instance basis.
+     * Configurations for sending notifications about command status changes on a per-instance basis.
      * </p>
      * 
      * @param notificationConfig
-     *        Configurations for sending notifications about command status changes on a per instance basis.
+     *        Configurations for sending notifications about command status changes on a per-instance basis.
      */
 
     public void setNotificationConfig(NotificationConfig notificationConfig) {
@@ -240,10 +240,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Configurations for sending notifications about command status changes on a per instance basis.
+     * Configurations for sending notifications about command status changes on a per-instance basis.
      * </p>
      * 
-     * @return Configurations for sending notifications about command status changes on a per instance basis.
+     * @return Configurations for sending notifications about command status changes on a per-instance basis.
      */
 
     public NotificationConfig getNotificationConfig() {
@@ -252,11 +252,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Configurations for sending notifications about command status changes on a per instance basis.
+     * Configurations for sending notifications about command status changes on a per-instance basis.
      * </p>
      * 
      * @param notificationConfig
-     *        Configurations for sending notifications about command status changes on a per instance basis.
+     *        Configurations for sending notifications about command status changes on a per-instance basis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,10 +347,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Parameters for the RUN_COMMAND task execution.
+     * The parameters for the RUN_COMMAND task execution.
      * </p>
      * 
-     * @return Parameters for the RUN_COMMAND task execution.
+     * @return The parameters for the RUN_COMMAND task execution.
      */
 
     public java.util.Map<String, java.util.List<String>> getParameters() {
@@ -359,11 +359,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Parameters for the RUN_COMMAND task execution.
+     * The parameters for the RUN_COMMAND task execution.
      * </p>
      * 
      * @param parameters
-     *        Parameters for the RUN_COMMAND task execution.
+     *        The parameters for the RUN_COMMAND task execution.
      */
 
     public void setParameters(java.util.Map<String, java.util.List<String>> parameters) {
@@ -372,11 +372,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Parameters for the RUN_COMMAND task execution.
+     * The parameters for the RUN_COMMAND task execution.
      * </p>
      * 
      * @param parameters
-     *        Parameters for the RUN_COMMAND task execution.
+     *        The parameters for the RUN_COMMAND task execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -408,11 +408,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The IAM service role that to assume during task execution.
+     * The IAM service role to assume during task execution.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role that to assume during task execution.
+     *        The IAM service role to assume during task execution.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -421,10 +421,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The IAM service role that to assume during task execution.
+     * The IAM service role to assume during task execution.
      * </p>
      * 
-     * @return The IAM service role that to assume during task execution.
+     * @return The IAM service role to assume during task execution.
      */
 
     public String getServiceRoleArn() {
@@ -433,11 +433,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The IAM service role that to assume during task execution.
+     * The IAM service role to assume during task execution.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role that to assume during task execution.
+     *        The IAM service role to assume during task execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,11 +448,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not execute.
+     * If this time is reached and the command has not already started executing, it doesn not execute.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it will not execute.
+     *        If this time is reached and the command has not already started executing, it doesn not execute.
      */
 
     public void setTimeoutSeconds(Integer timeoutSeconds) {
@@ -461,10 +461,10 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not execute.
+     * If this time is reached and the command has not already started executing, it doesn not execute.
      * </p>
      * 
-     * @return If this time is reached and the command has not already started executing, it will not execute.
+     * @return If this time is reached and the command has not already started executing, it doesn not execute.
      */
 
     public Integer getTimeoutSeconds() {
@@ -473,11 +473,11 @@ public class MaintenanceWindowRunCommandParameters implements Serializable, Clon
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not execute.
+     * If this time is reached and the command has not already started executing, it doesn not execute.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it will not execute.
+     *        If this time is reached and the command has not already started executing, it doesn not execute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

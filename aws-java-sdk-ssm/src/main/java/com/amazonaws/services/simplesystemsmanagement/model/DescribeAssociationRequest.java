@@ -43,6 +43,14 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String associationId;
+    /**
+     * <p>
+     * Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for
+     * this parameter, or omit this parameter. To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association, use ListAssociationVersions.
+     * </p>
+     */
+    private String associationVersion;
 
     /**
      * <p>
@@ -165,6 +173,61 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for
+     * this parameter, or omit this parameter. To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association, use ListAssociationVersions.
+     * </p>
+     * 
+     * @param associationVersion
+     *        Specify the association version to retrieve. To view the latest version, either specify
+     *        <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for an
+     *        instance, use ListInstanceAssociations. To get a list of versions for a specific association, use
+     *        ListAssociationVersions.
+     */
+
+    public void setAssociationVersion(String associationVersion) {
+        this.associationVersion = associationVersion;
+    }
+
+    /**
+     * <p>
+     * Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for
+     * this parameter, or omit this parameter. To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association, use ListAssociationVersions.
+     * </p>
+     * 
+     * @return Specify the association version to retrieve. To view the latest version, either specify
+     *         <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for
+     *         an instance, use ListInstanceAssociations. To get a list of versions for a specific association, use
+     *         ListAssociationVersions.
+     */
+
+    public String getAssociationVersion() {
+        return this.associationVersion;
+    }
+
+    /**
+     * <p>
+     * Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for
+     * this parameter, or omit this parameter. To view a list of all associations for an instance, use
+     * ListInstanceAssociations. To get a list of versions for a specific association, use ListAssociationVersions.
+     * </p>
+     * 
+     * @param associationVersion
+     *        Specify the association version to retrieve. To view the latest version, either specify
+     *        <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for an
+     *        instance, use ListInstanceAssociations. To get a list of versions for a specific association, use
+     *        ListAssociationVersions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssociationRequest withAssociationVersion(String associationVersion) {
+        setAssociationVersion(associationVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -180,7 +243,9 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAssociationId() != null)
-            sb.append("AssociationId: ").append(getAssociationId());
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
+        if (getAssociationVersion() != null)
+            sb.append("AssociationVersion: ").append(getAssociationVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +272,10 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
             return false;
+        if (other.getAssociationVersion() == null ^ this.getAssociationVersion() == null)
+            return false;
+        if (other.getAssociationVersion() != null && other.getAssociationVersion().equals(this.getAssociationVersion()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +287,7 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
+        hashCode = prime * hashCode + ((getAssociationVersion() == null) ? 0 : getAssociationVersion().hashCode());
         return hashCode;
     }
 

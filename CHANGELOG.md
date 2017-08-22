@@ -1,3 +1,8 @@
+# __1.11.181__ __2017-08-22__
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Changes to associations in Systems Manager State Manager can now be recorded. Previously, when you edited associations, you could not go back and review older association settings. Now, associations are versioned, and can be named using human-readable strings, allowing you to see a trail of association changes. You can also perform rate-based scheduling, which allows you to schedule associations more granularly.
+
 # __1.11.180__ __2017-08-21__
 ## __AWS SDK for Java__
   - ### Bugfixes

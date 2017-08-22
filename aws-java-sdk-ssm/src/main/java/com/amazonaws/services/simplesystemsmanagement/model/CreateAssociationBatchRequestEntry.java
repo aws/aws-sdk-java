@@ -70,6 +70,12 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
      * </p>
      */
     private InstanceAssociationOutputLocation outputLocation;
+    /**
+     * <p>
+     * Specify a descriptive name for the association.
+     * </p>
+     */
+    private String associationName;
 
     /**
      * <p>
@@ -406,6 +412,46 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * Specify a descriptive name for the association.
+     * </p>
+     * 
+     * @param associationName
+     *        Specify a descriptive name for the association.
+     */
+
+    public void setAssociationName(String associationName) {
+        this.associationName = associationName;
+    }
+
+    /**
+     * <p>
+     * Specify a descriptive name for the association.
+     * </p>
+     * 
+     * @return Specify a descriptive name for the association.
+     */
+
+    public String getAssociationName() {
+        return this.associationName;
+    }
+
+    /**
+     * <p>
+     * Specify a descriptive name for the association.
+     * </p>
+     * 
+     * @param associationName
+     *        Specify a descriptive name for the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationBatchRequestEntry withAssociationName(String associationName) {
+        setAssociationName(associationName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -429,7 +475,9 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         if (getScheduleExpression() != null)
             sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
         if (getOutputLocation() != null)
-            sb.append("OutputLocation: ").append(getOutputLocation());
+            sb.append("OutputLocation: ").append(getOutputLocation()).append(",");
+        if (getAssociationName() != null)
+            sb.append("AssociationName: ").append(getAssociationName());
         sb.append("}");
         return sb.toString();
     }
@@ -472,6 +520,10 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
             return false;
         if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
             return false;
+        if (other.getAssociationName() == null ^ this.getAssociationName() == null)
+            return false;
+        if (other.getAssociationName() != null && other.getAssociationName().equals(this.getAssociationName()) == false)
+            return false;
         return true;
     }
 
@@ -487,6 +539,7 @@ public class CreateAssociationBatchRequestEntry implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
         hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
+        hashCode = prime * hashCode + ((getAssociationName() == null) ? 0 : getAssociationName().hashCode());
         return hashCode;
     }
 

@@ -60,6 +60,10 @@ public class InstanceAssociationJsonUnmarshaller implements Unmarshaller<Instanc
                     context.nextToken();
                     instanceAssociation.setContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AssociationVersion", targetDepth)) {
+                    context.nextToken();
+                    instanceAssociation.setAssociationVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

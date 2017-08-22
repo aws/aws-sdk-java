@@ -76,8 +76,8 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     private Boolean enabled;
     /**
      * <p>
-     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
-     * this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
      * </p>
      */
     private Boolean replace;
@@ -438,13 +438,13 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
-     * this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also
-     *        required for this API request. Optional fields that are not specified will be set to null.
+     *        If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
+     *        this API request. Optional fields that are not specified are set to null.
      */
 
     public void setReplace(Boolean replace) {
@@ -453,12 +453,12 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
-     * this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
      * </p>
      * 
-     * @return If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also
-     *         required for this API request. Optional fields that are not specified will be set to null.
+     * @return If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
+     *         this API request. Optional fields that are not specified are set to null.
      */
 
     public Boolean getReplace() {
@@ -467,13 +467,13 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
-     * this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also
-     *        required for this API request. Optional fields that are not specified will be set to null.
+     *        If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
+     *        this API request. Optional fields that are not specified are set to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,12 +484,12 @@ public class UpdateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also required for
-     * this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.
      * </p>
      * 
-     * @return If you specify True, then all fields that are required by the CreateMaintenanceWindow API are also
-     *         required for this API request. Optional fields that are not specified will be set to null.
+     * @return If True, then all fields that are required by the CreateMaintenanceWindow action are also required for
+     *         this API request. Optional fields that are not specified are set to null.
      */
 
     public Boolean isReplace() {

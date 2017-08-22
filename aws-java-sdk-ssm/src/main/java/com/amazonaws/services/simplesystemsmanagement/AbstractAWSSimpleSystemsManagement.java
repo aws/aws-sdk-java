@@ -350,6 +350,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public ListAssociationVersionsResult listAssociationVersions(ListAssociationVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAssociationsResult listAssociations(ListAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

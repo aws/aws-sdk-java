@@ -52,6 +52,12 @@ import com.amazonaws.util.AWSServiceMetrics;
  * request/response metrics captured to Amazon CloudWatch using AWS credentials
  * obtained via the {@link DefaultAWSCredentialsProviderChain}.
  * <p>
+ * By default, the metrics are uploaded to the us-east-1 region. You can
+ * change the region by changing the system property as
+ * -Dcom.amazonaws.sdk.enableDefaultMetrics=cloudwatchRegion={newregion}
+ * See #CLOUDWATCH_REGION
+ * </p>
+ * <p>
  * For additional optional attributes that can be specified for the system
  * property, please read the javadoc of the individual fields of
  * this class for more details.

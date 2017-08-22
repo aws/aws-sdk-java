@@ -27,7 +27,7 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution the task is part of.
+     * The ID of the Maintenance Window execution for which the task is a part.
      * </p>
      */
     private String windowExecutionId;
@@ -46,11 +46,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution the task is part of.
+     * The ID of the Maintenance Window execution for which the task is a part.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution the task is part of.
+     *        The ID of the Maintenance Window execution for which the task is a part.
      */
 
     public void setWindowExecutionId(String windowExecutionId) {
@@ -59,10 +59,10 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution the task is part of.
+     * The ID of the Maintenance Window execution for which the task is a part.
      * </p>
      * 
-     * @return The ID of the Maintenance Window execution the task is part of.
+     * @return The ID of the Maintenance Window execution for which the task is a part.
      */
 
     public String getWindowExecutionId() {
@@ -71,11 +71,11 @@ public class GetMaintenanceWindowExecutionTaskInvocationRequest extends com.amaz
 
     /**
      * <p>
-     * The ID of the Maintenance Window execution the task is part of.
+     * The ID of the Maintenance Window execution for which the task is a part.
      * </p>
      * 
      * @param windowExecutionId
-     *        The ID of the Maintenance Window execution the task is part of.
+     *        The ID of the Maintenance Window execution for which the task is a part.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

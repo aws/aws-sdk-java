@@ -60,6 +60,10 @@ public class AssociationJsonUnmarshaller implements Unmarshaller<Association, Js
                     context.nextToken();
                     association.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AssociationVersion", targetDepth)) {
+                    context.nextToken();
+                    association.setAssociationVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
                     context.nextToken();
                     association.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
@@ -79,6 +83,10 @@ public class AssociationJsonUnmarshaller implements Unmarshaller<Association, Js
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
                     context.nextToken();
                     association.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AssociationName", targetDepth)) {
+                    context.nextToken();
+                    association.setAssociationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

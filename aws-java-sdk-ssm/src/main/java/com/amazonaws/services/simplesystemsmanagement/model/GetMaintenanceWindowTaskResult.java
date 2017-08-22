@@ -43,9 +43,9 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * TaskArn is the resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the
-     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION
-     * tasks, the TaskArn is the State Machine ARN.
+     * The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn is the
+     * SSM Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value
+     * is the state machine ARN.
      * </p>
      */
     private String taskArn;
@@ -94,7 +94,7 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
     private String maxErrors;
     /**
      * <p>
-     * The location in Amazon S3 where the task results will be logged.
+     * The location in Amazon S3 where the task results are logged.
      * </p>
      */
     private LoggingInfo loggingInfo;
@@ -266,15 +266,15 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * TaskArn is the resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the
-     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION
-     * tasks, the TaskArn is the State Machine ARN.
+     * The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn is the
+     * SSM Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value
+     * is the state machine ARN.
      * </p>
      * 
      * @param taskArn
-     *        TaskArn is the resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types,
-     *        the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, TaskArn is the Function Name/ARN. For
-     *        STEP_FUNCTION tasks, the TaskArn is the State Machine ARN.
+     *        The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn
+     *        is the SSM Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION
+     *        tasks, the value is the state machine ARN.
      */
 
     public void setTaskArn(String taskArn) {
@@ -283,14 +283,14 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * TaskArn is the resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the
-     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION
-     * tasks, the TaskArn is the State Machine ARN.
+     * The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn is the
+     * SSM Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value
+     * is the state machine ARN.
      * </p>
      * 
-     * @return TaskArn is the resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types,
-     *         the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, TaskArn is the Function Name/ARN. For
-     *         STEP_FUNCTION tasks, the TaskArn is the State Machine ARN.
+     * @return The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn
+     *         is the SSM Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION
+     *         tasks, the value is the state machine ARN.
      */
 
     public String getTaskArn() {
@@ -299,15 +299,15 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * TaskArn is the resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the
-     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, TaskArn is the Function Name/ARN. For STEP_FUNCTION
-     * tasks, the TaskArn is the State Machine ARN.
+     * The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn is the
+     * SSM Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value
+     * is the state machine ARN.
      * </p>
      * 
      * @param taskArn
-     *        TaskArn is the resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types,
-     *        the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, TaskArn is the Function Name/ARN. For
-     *        STEP_FUNCTION tasks, the TaskArn is the State Machine ARN.
+     *        The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn
+     *        is the SSM Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION
+     *        tasks, the value is the state machine ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -644,11 +644,11 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location in Amazon S3 where the task results will be logged.
+     * The location in Amazon S3 where the task results are logged.
      * </p>
      * 
      * @param loggingInfo
-     *        The location in Amazon S3 where the task results will be logged.
+     *        The location in Amazon S3 where the task results are logged.
      */
 
     public void setLoggingInfo(LoggingInfo loggingInfo) {
@@ -657,10 +657,10 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location in Amazon S3 where the task results will be logged.
+     * The location in Amazon S3 where the task results are logged.
      * </p>
      * 
-     * @return The location in Amazon S3 where the task results will be logged.
+     * @return The location in Amazon S3 where the task results are logged.
      */
 
     public LoggingInfo getLoggingInfo() {
@@ -669,11 +669,11 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location in Amazon S3 where the task results will be logged.
+     * The location in Amazon S3 where the task results are logged.
      * </p>
      * 
      * @param loggingInfo
-     *        The location in Amazon S3 where the task results will be logged.
+     *        The location in Amazon S3 where the task results are logged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

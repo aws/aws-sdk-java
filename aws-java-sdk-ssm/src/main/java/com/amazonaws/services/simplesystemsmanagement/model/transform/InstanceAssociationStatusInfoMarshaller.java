@@ -33,6 +33,8 @@ public class InstanceAssociationStatusInfoMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
+    private static final MarshallingInfo<String> ASSOCIATIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationVersion").build();
     private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -47,6 +49,8 @@ public class InstanceAssociationStatusInfoMarshaller {
             .marshallLocationName("ErrorCode").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTURL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputUrl").build();
+    private static final MarshallingInfo<String> ASSOCIATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationName").build();
 
     private static final InstanceAssociationStatusInfoMarshaller instance = new InstanceAssociationStatusInfoMarshaller();
 
@@ -67,6 +71,7 @@ public class InstanceAssociationStatusInfoMarshaller {
             protocolMarshaller.marshall(instanceAssociationStatusInfo.getAssociationId(), ASSOCIATIONID_BINDING);
             protocolMarshaller.marshall(instanceAssociationStatusInfo.getName(), NAME_BINDING);
             protocolMarshaller.marshall(instanceAssociationStatusInfo.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+            protocolMarshaller.marshall(instanceAssociationStatusInfo.getAssociationVersion(), ASSOCIATIONVERSION_BINDING);
             protocolMarshaller.marshall(instanceAssociationStatusInfo.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(instanceAssociationStatusInfo.getExecutionDate(), EXECUTIONDATE_BINDING);
             protocolMarshaller.marshall(instanceAssociationStatusInfo.getStatus(), STATUS_BINDING);
@@ -74,6 +79,7 @@ public class InstanceAssociationStatusInfoMarshaller {
             protocolMarshaller.marshall(instanceAssociationStatusInfo.getExecutionSummary(), EXECUTIONSUMMARY_BINDING);
             protocolMarshaller.marshall(instanceAssociationStatusInfo.getErrorCode(), ERRORCODE_BINDING);
             protocolMarshaller.marshall(instanceAssociationStatusInfo.getOutputUrl(), OUTPUTURL_BINDING);
+            protocolMarshaller.marshall(instanceAssociationStatusInfo.getAssociationName(), ASSOCIATIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

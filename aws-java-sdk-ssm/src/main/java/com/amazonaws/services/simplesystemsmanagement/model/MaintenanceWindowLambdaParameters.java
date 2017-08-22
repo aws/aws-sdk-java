@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Parameters for a LAMBDA task type.
+ * The parameters for a LAMBDA task type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowLambdaParameters"
@@ -30,36 +30,35 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Using the ClientContext you can pass client-specific information to the Lambda function you are invoking. You can
-     * then process the client information in your Lambda function as you choose through the context variable.
+     * Pass client-specific information to the Lambda function that you are invoking. You can then process the client
+     * information in your Lambda function as you choose through the context variable.
      * </p>
      */
     private String clientContext;
     /**
      * <p>
-     * You can use this optional parameter to specify a Lambda function version or alias name. If you specify a function
-     * version, the API uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias
-     * name, the API uses the alias ARN to invoke the Lambda function version to which the alias points.
+     * (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action uses
+     * the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the action uses
+     * the alias ARN to invoke the Lambda function version to which the alias points.
      * </p>
      */
     private String qualifier;
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * JSON to provide to your Lambda function as input.
      * </p>
      */
     private java.nio.ByteBuffer payload;
 
     /**
      * <p>
-     * Using the ClientContext you can pass client-specific information to the Lambda function you are invoking. You can
-     * then process the client information in your Lambda function as you choose through the context variable.
+     * Pass client-specific information to the Lambda function that you are invoking. You can then process the client
+     * information in your Lambda function as you choose through the context variable.
      * </p>
      * 
      * @param clientContext
-     *        Using the ClientContext you can pass client-specific information to the Lambda function you are invoking.
-     *        You can then process the client information in your Lambda function as you choose through the context
-     *        variable.
+     *        Pass client-specific information to the Lambda function that you are invoking. You can then process the
+     *        client information in your Lambda function as you choose through the context variable.
      */
 
     public void setClientContext(String clientContext) {
@@ -68,13 +67,12 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Using the ClientContext you can pass client-specific information to the Lambda function you are invoking. You can
-     * then process the client information in your Lambda function as you choose through the context variable.
+     * Pass client-specific information to the Lambda function that you are invoking. You can then process the client
+     * information in your Lambda function as you choose through the context variable.
      * </p>
      * 
-     * @return Using the ClientContext you can pass client-specific information to the Lambda function you are invoking.
-     *         You can then process the client information in your Lambda function as you choose through the context
-     *         variable.
+     * @return Pass client-specific information to the Lambda function that you are invoking. You can then process the
+     *         client information in your Lambda function as you choose through the context variable.
      */
 
     public String getClientContext() {
@@ -83,14 +81,13 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Using the ClientContext you can pass client-specific information to the Lambda function you are invoking. You can
-     * then process the client information in your Lambda function as you choose through the context variable.
+     * Pass client-specific information to the Lambda function that you are invoking. You can then process the client
+     * information in your Lambda function as you choose through the context variable.
      * </p>
      * 
      * @param clientContext
-     *        Using the ClientContext you can pass client-specific information to the Lambda function you are invoking.
-     *        You can then process the client information in your Lambda function as you choose through the context
-     *        variable.
+     *        Pass client-specific information to the Lambda function that you are invoking. You can then process the
+     *        client information in your Lambda function as you choose through the context variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,16 +98,15 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * You can use this optional parameter to specify a Lambda function version or alias name. If you specify a function
-     * version, the API uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias
-     * name, the API uses the alias ARN to invoke the Lambda function version to which the alias points.
+     * (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action uses
+     * the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the action uses
+     * the alias ARN to invoke the Lambda function version to which the alias points.
      * </p>
      * 
      * @param qualifier
-     *        You can use this optional parameter to specify a Lambda function version or alias name. If you specify a
-     *        function version, the API uses the qualified function ARN to invoke a specific Lambda function. If you
-     *        specify an alias name, the API uses the alias ARN to invoke the Lambda function version to which the alias
-     *        points.
+     *        (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action
+     *        uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the
+     *        action uses the alias ARN to invoke the Lambda function version to which the alias points.
      */
 
     public void setQualifier(String qualifier) {
@@ -119,15 +115,14 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * You can use this optional parameter to specify a Lambda function version or alias name. If you specify a function
-     * version, the API uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias
-     * name, the API uses the alias ARN to invoke the Lambda function version to which the alias points.
+     * (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action uses
+     * the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the action uses
+     * the alias ARN to invoke the Lambda function version to which the alias points.
      * </p>
      * 
-     * @return You can use this optional parameter to specify a Lambda function version or alias name. If you specify a
-     *         function version, the API uses the qualified function ARN to invoke a specific Lambda function. If you
-     *         specify an alias name, the API uses the alias ARN to invoke the Lambda function version to which the
-     *         alias points.
+     * @return (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action
+     *         uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the
+     *         action uses the alias ARN to invoke the Lambda function version to which the alias points.
      */
 
     public String getQualifier() {
@@ -136,16 +131,15 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * You can use this optional parameter to specify a Lambda function version or alias name. If you specify a function
-     * version, the API uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias
-     * name, the API uses the alias ARN to invoke the Lambda function version to which the alias points.
+     * (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action uses
+     * the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the action uses
+     * the alias ARN to invoke the Lambda function version to which the alias points.
      * </p>
      * 
      * @param qualifier
-     *        You can use this optional parameter to specify a Lambda function version or alias name. If you specify a
-     *        function version, the API uses the qualified function ARN to invoke a specific Lambda function. If you
-     *        specify an alias name, the API uses the alias ARN to invoke the Lambda function version to which the alias
-     *        points.
+     *        (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action
+     *        uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the
+     *        action uses the alias ARN to invoke the Lambda function version to which the alias points.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,7 +150,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * JSON to provide to your Lambda function as input.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -170,7 +164,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
      * </p>
      * 
      * @param payload
-     *        JSON that you want to provide to your Lambda function as input.
+     *        JSON to provide to your Lambda function as input.
      */
 
     public void setPayload(java.nio.ByteBuffer payload) {
@@ -179,7 +173,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * JSON to provide to your Lambda function as input.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -189,7 +183,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
      * {@code position}.
      * </p>
      * 
-     * @return JSON that you want to provide to your Lambda function as input.
+     * @return JSON to provide to your Lambda function as input.
      */
 
     public java.nio.ByteBuffer getPayload() {
@@ -198,7 +192,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * JSON to provide to your Lambda function as input.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -212,7 +206,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
      * </p>
      * 
      * @param payload
-     *        JSON that you want to provide to your Lambda function as input.
+     *        JSON to provide to your Lambda function as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,7 +217,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * JSON to provide to your Lambda function as input.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -237,7 +231,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
      * </p>
      * 
      * @param payload
-     *        JSON that you want to provide to your Lambda function as input.
+     *        JSON to provide to your Lambda function as input.
      */
     public void setPayload(String payload) {
         setPayload(new com.amazonaws.adapters.types.StringToByteBufferAdapter().adapt(payload));
@@ -245,7 +239,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * JSON to provide to your Lambda function as input.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -259,7 +253,7 @@ public class MaintenanceWindowLambdaParameters implements Serializable, Cloneabl
      * </p>
      * 
      * @param payload
-     *        JSON that you want to provide to your Lambda function as input.
+     *        JSON to provide to your Lambda function as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     public MaintenanceWindowLambdaParameters withPayload(String payload) {

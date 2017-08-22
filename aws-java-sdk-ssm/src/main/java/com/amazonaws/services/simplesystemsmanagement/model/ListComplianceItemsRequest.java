@@ -33,15 +33,15 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
     private com.amazonaws.internal.SdkInternalList<ComplianceStringFilter> filters;
     /**
      * <p>
-     * The ID for the resources from which you want to get compliance information. Currently, you can only specify one
-     * resource ID.
+     * The ID for the resources from which to get compliance information. Currently, you can only specify one resource
+     * ID.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceIds;
     /**
      * <p>
-     * The type of resource from which you want to get compliance information. Currently, the only supported resource
-     * type is <code>ManagedInstance</code>.
+     * The type of resource from which to get compliance information. Currently, the only supported resource type is
+     * <code>ManagedInstance</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceTypes;
@@ -134,12 +134,12 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID for the resources from which you want to get compliance information. Currently, you can only specify one
-     * resource ID.
+     * The ID for the resources from which to get compliance information. Currently, you can only specify one resource
+     * ID.
      * </p>
      * 
-     * @return The ID for the resources from which you want to get compliance information. Currently, you can only
-     *         specify one resource ID.
+     * @return The ID for the resources from which to get compliance information. Currently, you can only specify one
+     *         resource ID.
      */
 
     public java.util.List<String> getResourceIds() {
@@ -151,13 +151,13 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID for the resources from which you want to get compliance information. Currently, you can only specify one
-     * resource ID.
+     * The ID for the resources from which to get compliance information. Currently, you can only specify one resource
+     * ID.
      * </p>
      * 
      * @param resourceIds
-     *        The ID for the resources from which you want to get compliance information. Currently, you can only
-     *        specify one resource ID.
+     *        The ID for the resources from which to get compliance information. Currently, you can only specify one
+     *        resource ID.
      */
 
     public void setResourceIds(java.util.Collection<String> resourceIds) {
@@ -171,8 +171,8 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID for the resources from which you want to get compliance information. Currently, you can only specify one
-     * resource ID.
+     * The ID for the resources from which to get compliance information. Currently, you can only specify one resource
+     * ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -181,8 +181,8 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param resourceIds
-     *        The ID for the resources from which you want to get compliance information. Currently, you can only
-     *        specify one resource ID.
+     *        The ID for the resources from which to get compliance information. Currently, you can only specify one
+     *        resource ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,13 +198,13 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID for the resources from which you want to get compliance information. Currently, you can only specify one
-     * resource ID.
+     * The ID for the resources from which to get compliance information. Currently, you can only specify one resource
+     * ID.
      * </p>
      * 
      * @param resourceIds
-     *        The ID for the resources from which you want to get compliance information. Currently, you can only
-     *        specify one resource ID.
+     *        The ID for the resources from which to get compliance information. Currently, you can only specify one
+     *        resource ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,12 +215,12 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of resource from which you want to get compliance information. Currently, the only supported resource
-     * type is <code>ManagedInstance</code>.
+     * The type of resource from which to get compliance information. Currently, the only supported resource type is
+     * <code>ManagedInstance</code>.
      * </p>
      * 
-     * @return The type of resource from which you want to get compliance information. Currently, the only supported
-     *         resource type is <code>ManagedInstance</code>.
+     * @return The type of resource from which to get compliance information. Currently, the only supported resource
+     *         type is <code>ManagedInstance</code>.
      */
 
     public java.util.List<String> getResourceTypes() {
@@ -232,13 +232,13 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of resource from which you want to get compliance information. Currently, the only supported resource
-     * type is <code>ManagedInstance</code>.
+     * The type of resource from which to get compliance information. Currently, the only supported resource type is
+     * <code>ManagedInstance</code>.
      * </p>
      * 
      * @param resourceTypes
-     *        The type of resource from which you want to get compliance information. Currently, the only supported
-     *        resource type is <code>ManagedInstance</code>.
+     *        The type of resource from which to get compliance information. Currently, the only supported resource type
+     *        is <code>ManagedInstance</code>.
      */
 
     public void setResourceTypes(java.util.Collection<String> resourceTypes) {
@@ -252,8 +252,8 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of resource from which you want to get compliance information. Currently, the only supported resource
-     * type is <code>ManagedInstance</code>.
+     * The type of resource from which to get compliance information. Currently, the only supported resource type is
+     * <code>ManagedInstance</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -262,8 +262,8 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param resourceTypes
-     *        The type of resource from which you want to get compliance information. Currently, the only supported
-     *        resource type is <code>ManagedInstance</code>.
+     *        The type of resource from which to get compliance information. Currently, the only supported resource type
+     *        is <code>ManagedInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,13 +279,13 @@ public class ListComplianceItemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of resource from which you want to get compliance information. Currently, the only supported resource
-     * type is <code>ManagedInstance</code>.
+     * The type of resource from which to get compliance information. Currently, the only supported resource type is
+     * <code>ManagedInstance</code>.
      * </p>
      * 
      * @param resourceTypes
-     *        The type of resource from which you want to get compliance information. Currently, the only supported
-     *        resource type is <code>ManagedInstance</code>.
+     *        The type of resource from which to get compliance information. Currently, the only supported resource type
+     *        is <code>ManagedInstance</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

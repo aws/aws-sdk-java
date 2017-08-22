@@ -43,6 +43,8 @@ public class CreateAssociationBatchRequestEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleExpression").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputLocation").build();
+    private static final MarshallingInfo<String> ASSOCIATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationName").build();
 
     private static final CreateAssociationBatchRequestEntryMarshaller instance = new CreateAssociationBatchRequestEntryMarshaller();
 
@@ -67,6 +69,7 @@ public class CreateAssociationBatchRequestEntryMarshaller {
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getScheduleExpression(), SCHEDULEEXPRESSION_BINDING);
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getOutputLocation(), OUTPUTLOCATION_BINDING);
+            protocolMarshaller.marshall(createAssociationBatchRequestEntry.getAssociationName(), ASSOCIATIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

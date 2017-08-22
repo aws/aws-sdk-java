@@ -65,8 +65,8 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
     private java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> taskParameters;
     /**
      * <p>
-     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
-     * fields should be empty.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
      * </p>
      */
     private MaintenanceWindowTaskInvocationParameters taskInvocationParameters;
@@ -459,13 +459,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
-     * fields should be empty.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
      * </p>
      * 
      * @param taskInvocationParameters
-     *        Parameters the task should use during execution. Populate only the fields that match the task type. All
-     *        other fields should be empty.
+     *        The parameters that the task should use during execution. Populate only the fields that match the task
+     *        type. All other fields should be empty.
      */
 
     public void setTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters taskInvocationParameters) {
@@ -474,12 +474,12 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
-     * fields should be empty.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
      * </p>
      * 
-     * @return Parameters the task should use during execution. Populate only the fields that match the task type. All
-     *         other fields should be empty.
+     * @return The parameters that the task should use during execution. Populate only the fields that match the task
+     *         type. All other fields should be empty.
      */
 
     public MaintenanceWindowTaskInvocationParameters getTaskInvocationParameters() {
@@ -488,13 +488,13 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
-     * fields should be empty.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
      * </p>
      * 
      * @param taskInvocationParameters
-     *        Parameters the task should use during execution. Populate only the fields that match the task type. All
-     *        other fields should be empty.
+     *        The parameters that the task should use during execution. Populate only the fields that match the task
+     *        type. All other fields should be empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -61,8 +61,8 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<ComplianceItemEntry> items;
     /**
      * <p>
-     * MD5 or Sha256 content hash. The content hash is used to determine if existing information should be overwritten
-     * or ignored. If the content hashes match, ,the request to put compliance information is ignored.
+     * MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten
+     * or ignored. If the content hashes match, the request to put compliance information is ignored.
      * </p>
      */
     private String itemContentHash;
@@ -328,14 +328,13 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * MD5 or Sha256 content hash. The content hash is used to determine if existing information should be overwritten
-     * or ignored. If the content hashes match, ,the request to put compliance information is ignored.
+     * MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten
+     * or ignored. If the content hashes match, the request to put compliance information is ignored.
      * </p>
      * 
      * @param itemContentHash
-     *        MD5 or Sha256 content hash. The content hash is used to determine if existing information should be
-     *        overwritten or ignored. If the content hashes match, ,the request to put compliance information is
-     *        ignored.
+     *        MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be
+     *        overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.
      */
 
     public void setItemContentHash(String itemContentHash) {
@@ -344,12 +343,12 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * MD5 or Sha256 content hash. The content hash is used to determine if existing information should be overwritten
-     * or ignored. If the content hashes match, ,the request to put compliance information is ignored.
+     * MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten
+     * or ignored. If the content hashes match, the request to put compliance information is ignored.
      * </p>
      * 
-     * @return MD5 or Sha256 content hash. The content hash is used to determine if existing information should be
-     *         overwritten or ignored. If the content hashes match, ,the request to put compliance information is
+     * @return MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be
+     *         overwritten or ignored. If the content hashes match, the request to put compliance information is
      *         ignored.
      */
 
@@ -359,14 +358,13 @@ public class PutComplianceItemsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * MD5 or Sha256 content hash. The content hash is used to determine if existing information should be overwritten
-     * or ignored. If the content hashes match, ,the request to put compliance information is ignored.
+     * MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten
+     * or ignored. If the content hashes match, the request to put compliance information is ignored.
      * </p>
      * 
      * @param itemContentHash
-     *        MD5 or Sha256 content hash. The content hash is used to determine if existing information should be
-     *        overwritten or ignored. If the content hashes match, ,the request to put compliance information is
-     *        ignored.
+     *        MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be
+     *        overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,13 +25,13 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Maintenance Window ID that was updated.
+     * The ID of the Maintenance Window that was updated.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The Maintenance Window task ID that was updated.
+     * The task ID of the Maintenance Window that was updated.
      * </p>
      */
     private String windowTaskId;
@@ -104,11 +104,11 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Maintenance Window ID that was updated.
+     * The ID of the Maintenance Window that was updated.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID that was updated.
+     *        The ID of the Maintenance Window that was updated.
      */
 
     public void setWindowId(String windowId) {
@@ -117,10 +117,10 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Maintenance Window ID that was updated.
+     * The ID of the Maintenance Window that was updated.
      * </p>
      * 
-     * @return The Maintenance Window ID that was updated.
+     * @return The ID of the Maintenance Window that was updated.
      */
 
     public String getWindowId() {
@@ -129,11 +129,11 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Maintenance Window ID that was updated.
+     * The ID of the Maintenance Window that was updated.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID that was updated.
+     *        The ID of the Maintenance Window that was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Maintenance Window task ID that was updated.
+     * The task ID of the Maintenance Window that was updated.
      * </p>
      * 
      * @param windowTaskId
-     *        The Maintenance Window task ID that was updated.
+     *        The task ID of the Maintenance Window that was updated.
      */
 
     public void setWindowTaskId(String windowTaskId) {
@@ -157,10 +157,10 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Maintenance Window task ID that was updated.
+     * The task ID of the Maintenance Window that was updated.
      * </p>
      * 
-     * @return The Maintenance Window task ID that was updated.
+     * @return The task ID of the Maintenance Window that was updated.
      */
 
     public String getWindowTaskId() {
@@ -169,11 +169,11 @@ public class UpdateMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Maintenance Window task ID that was updated.
+     * The task ID of the Maintenance Window that was updated.
      * </p>
      * 
      * @param windowTaskId
-     *        The Maintenance Window task ID that was updated.
+     *        The task ID of the Maintenance Window that was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

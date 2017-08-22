@@ -36,7 +36,7 @@ public class ComplianceStringFilter implements Serializable, Cloneable, Structur
     private String key;
     /**
      * <p>
-     * The value you want to search for.
+     * The value for which to search.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
@@ -90,10 +90,10 @@ public class ComplianceStringFilter implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The value you want to search for.
+     * The value for which to search.
      * </p>
      * 
-     * @return The value you want to search for.
+     * @return The value for which to search.
      */
 
     public java.util.List<String> getValues() {
@@ -105,11 +105,11 @@ public class ComplianceStringFilter implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The value you want to search for.
+     * The value for which to search.
      * </p>
      * 
      * @param values
-     *        The value you want to search for.
+     *        The value for which to search.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -123,7 +123,7 @@ public class ComplianceStringFilter implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The value you want to search for.
+     * The value for which to search.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -132,7 +132,7 @@ public class ComplianceStringFilter implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param values
-     *        The value you want to search for.
+     *        The value for which to search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class ComplianceStringFilter implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The value you want to search for.
+     * The value for which to search.
      * </p>
      * 
      * @param values
-     *        The value you want to search for.
+     *        The value for which to search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

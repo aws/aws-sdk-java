@@ -48,6 +48,12 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
     private String documentVersion;
     /**
      * <p>
+     * The version of the association applied to the instance.
+     * </p>
+     */
+    private String associationVersion;
+    /**
+     * <p>
      * The instance ID where the association was created.
      * </p>
      */
@@ -88,6 +94,12 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
      * </p>
      */
     private InstanceAssociationOutputUrl outputUrl;
+    /**
+     * <p>
+     * The name of the association applied to the instance.
+     * </p>
+     */
+    private String associationName;
 
     /**
      * <p>
@@ -206,6 +218,46 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
 
     public InstanceAssociationStatusInfo withDocumentVersion(String documentVersion) {
         setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the association applied to the instance.
+     * </p>
+     * 
+     * @param associationVersion
+     *        The version of the association applied to the instance.
+     */
+
+    public void setAssociationVersion(String associationVersion) {
+        this.associationVersion = associationVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the association applied to the instance.
+     * </p>
+     * 
+     * @return The version of the association applied to the instance.
+     */
+
+    public String getAssociationVersion() {
+        return this.associationVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the association applied to the instance.
+     * </p>
+     * 
+     * @param associationVersion
+     *        The version of the association applied to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAssociationStatusInfo withAssociationVersion(String associationVersion) {
+        setAssociationVersion(associationVersion);
         return this;
     }
 
@@ -490,6 +542,46 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The name of the association applied to the instance.
+     * </p>
+     * 
+     * @param associationName
+     *        The name of the association applied to the instance.
+     */
+
+    public void setAssociationName(String associationName) {
+        this.associationName = associationName;
+    }
+
+    /**
+     * <p>
+     * The name of the association applied to the instance.
+     * </p>
+     * 
+     * @return The name of the association applied to the instance.
+     */
+
+    public String getAssociationName() {
+        return this.associationName;
+    }
+
+    /**
+     * <p>
+     * The name of the association applied to the instance.
+     * </p>
+     * 
+     * @param associationName
+     *        The name of the association applied to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAssociationStatusInfo withAssociationName(String associationName) {
+        setAssociationName(associationName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -506,6 +598,8 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
             sb.append("Name: ").append(getName()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
+        if (getAssociationVersion() != null)
+            sb.append("AssociationVersion: ").append(getAssociationVersion()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getExecutionDate() != null)
@@ -519,7 +613,9 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
         if (getErrorCode() != null)
             sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getOutputUrl() != null)
-            sb.append("OutputUrl: ").append(getOutputUrl());
+            sb.append("OutputUrl: ").append(getOutputUrl()).append(",");
+        if (getAssociationName() != null)
+            sb.append("AssociationName: ").append(getAssociationName());
         sb.append("}");
         return sb.toString();
     }
@@ -545,6 +641,10 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
         if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
             return false;
         if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
+            return false;
+        if (other.getAssociationVersion() == null ^ this.getAssociationVersion() == null)
+            return false;
+        if (other.getAssociationVersion() != null && other.getAssociationVersion().equals(this.getAssociationVersion()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
@@ -574,6 +674,10 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
             return false;
         if (other.getOutputUrl() != null && other.getOutputUrl().equals(this.getOutputUrl()) == false)
             return false;
+        if (other.getAssociationName() == null ^ this.getAssociationName() == null)
+            return false;
+        if (other.getAssociationName() != null && other.getAssociationName().equals(this.getAssociationName()) == false)
+            return false;
         return true;
     }
 
@@ -585,6 +689,7 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getAssociationVersion() == null) ? 0 : getAssociationVersion().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getExecutionDate() == null) ? 0 : getExecutionDate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
@@ -592,6 +697,7 @@ public class InstanceAssociationStatusInfo implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getExecutionSummary() == null) ? 0 : getExecutionSummary().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getOutputUrl() == null) ? 0 : getOutputUrl().hashCode());
+        hashCode = prime * hashCode + ((getAssociationName() == null) ? 0 : getAssociationName().hashCode());
         return hashCode;
     }
 

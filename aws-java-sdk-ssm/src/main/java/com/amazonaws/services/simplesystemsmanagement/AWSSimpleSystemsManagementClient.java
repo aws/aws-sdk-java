@@ -182,6 +182,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("AssociationLimitExceeded").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AssociationVersionLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AssociationVersionLimitExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTarget").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException.class))
                     .addErrorMetadata(
@@ -283,6 +286,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceInformationFilterValue").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAssociationVersion").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidAssociationVersionException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StatusUnchanged").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class))
@@ -1913,6 +1919,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @return Result of the DescribeAssociation operation returned by the service.
      * @throws AssociationDoesNotExistException
      *         The specified association does not exist.
+     * @throws InvalidAssociationVersionException
+     *         The version you specified is not valid. Use ListAssociationVersions to view all versions of an
+     *         association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the
+     *         latest version of the association.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
@@ -4220,6 +4230,62 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Retrieves all versions of an association for a specific association ID.
+     * </p>
+     * 
+     * @param listAssociationVersionsRequest
+     * @return Result of the ListAssociationVersions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws AssociationDoesNotExistException
+     *         The specified association does not exist.
+     * @sample AWSSimpleSystemsManagement.ListAssociationVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociationVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListAssociationVersionsResult listAssociationVersions(ListAssociationVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssociationVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListAssociationVersionsResult executeListAssociationVersions(ListAssociationVersionsRequest listAssociationVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAssociationVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssociationVersionsRequest> request = null;
+        Response<ListAssociationVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssociationVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAssociationVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssociationVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAssociationVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the associations for the specified Systems Manager document or instance.
      * </p>
      * 
@@ -4418,7 +4484,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * For a specified resource ID, this API returns a list of compliance statuses for different resource types.
+     * For a specified resource ID, this API action returns a list of compliance statuses for different resource types.
      * Currently, you can only specify one resource ID per call. List results depend on the criteria specified in the
      * filter.
      * </p>
@@ -4480,8 +4546,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call
-     * can return State Manager associations, patches, or custom compliance types according to the filter criteria you
-     * specify.
+     * can return State Manager associations, patches, or custom compliance types according to the filter criteria that
+     * you specify.
      * </p>
      * 
      * @param listComplianceSummariesRequest
@@ -4959,9 +5025,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Registers a compliance type and other compliance details on a designated resource. This API lets you register
+     * Registers a compliance type and other compliance details on a designated resource. This action lets you register
      * custom compliance details with a resource. This call overwrites existing compliance information on the resource,
-     * so you must provide a full list of compliance items each time you send the request.
+     * so you must provide a full list of compliance items each time that you send the request.
      * </p>
      * 
      * @param putComplianceItemsRequest
@@ -5064,8 +5130,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         Inventory item type schema version has to match supported versions in the service. Check output of
      *         GetInventorySchema to see the available schema version for each type.
      * @throws UnsupportedInventoryItemContextException
-     *         The <code>Context</code> attribute you specified for the <code>InventoryItem</code> is not allowed for
-     *         this inventory type. You can only use the <code>Context</code> attribute with inventory types like
+     *         The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> is not allowed
+     *         for this inventory type. You can only use the <code>Context</code> attribute with inventory types like
      *         <code>AWS:ComplianceItem</code>.
      * @throws InvalidInventoryItemContextException
      *         You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>
@@ -5386,7 +5452,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
      *         Windows have been created).
      * @throws FeatureNotAvailableException
-     *         You attempted to register a LAMBDA or STEP_FUNCTION task in a region where there corresponding service is
+     *         You attempted to register a LAMBDA or STEP_FUNCTION task in a region where the corresponding service is
      *         not available.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
@@ -5750,8 +5816,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Updates an association. You can only update the document version, schedule, parameters, and Amazon S3 output of
-     * an association.
+     * Updates an association. You can update the association name and version, the document version, schedule,
+     * parameters, and Amazon S3 output.
      * </p>
      * 
      * @param updateAssociationRequest
@@ -5778,6 +5844,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidTargetException
      *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
      *         might not have permission to perform the operation.
+     * @throws InvalidAssociationVersionException
+     *         The version you specified is not valid. Use ListAssociationVersions to view all versions of an
+     *         association according to the association ID. Or, use the <code>$LATEST</code> parameter to view the
+     *         latest version of the association.
+     * @throws AssociationVersionLimitExceededException
+     *         You have reached the maximum number versions allowed for an association. Each association has a limit of
+     *         1,000 versions.
      * @sample AWSSimpleSystemsManagement.UpdateAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation" target="_top">AWS API
      *      Documentation</a>
@@ -6081,22 +6154,22 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * The target from being an ID target to a Tag target, or a Tag target to an ID target.
      * </p>
      * <p>
-     * The IDs of an ID target.
+     * IDs for an ID target.
      * </p>
      * <p>
-     * The tags of a Tag target.
+     * Tags for a Tag target.
      * </p>
      * <p>
-     * The Owner.
+     * Owner.
      * </p>
      * <p>
-     * The Name.
+     * Name.
      * </p>
      * <p>
-     * The Description.
+     * Description.
      * </p>
      * <p>
-     * Also note that if a parameter is null, then the corresponding field is not modified.
+     * If a parameter is null, then the corresponding field is not modified.
      * </p>
      * 
      * @param updateMaintenanceWindowTargetRequest
@@ -6151,30 +6224,30 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the
-     * following:
+     * following values:
      * </p>
      * <p>
-     * The Task Arn. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
+     * Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
      * </p>
      * <p>
-     * The service role ARN.
+     * Service role ARN.
      * </p>
      * <p>
-     * The task parameters.
+     * Task parameters.
      * </p>
      * <p>
-     * The task priority.
+     * Task priority.
      * </p>
      * <p>
-     * The task MaxConcurrency and MaxErrors.
+     * Task MaxConcurrency and MaxErrors.
      * </p>
      * <p>
-     * The log location.
+     * Log location.
      * </p>
      * <p>
      * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the RegisterTaskWithMaintenanceWindow operation are required for this request. Optional fields
-     * that aren't specified are be set to null.
+     * fields required by the RegisterTaskWithMaintenanceWindow action are required for this request. Optional fields
+     * that aren't specified are set to null.
      * </p>
      * 
      * @param updateMaintenanceWindowTaskRequest

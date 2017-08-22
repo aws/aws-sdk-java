@@ -26,7 +26,8 @@ public class ListComplianceSummariesResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns
-     * State Manager associations, patches, or custom compliance types according to the filter criteria you specified.
+     * State Manager associations, patches, or custom compliance types according to the filter criteria that you
+     * specified.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ComplianceSummaryItem> complianceSummaryItems;
@@ -40,12 +41,13 @@ public class ListComplianceSummariesResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns
-     * State Manager associations, patches, or custom compliance types according to the filter criteria you specified.
+     * State Manager associations, patches, or custom compliance types according to the filter criteria that you
+     * specified.
      * </p>
      * 
      * @return A list of compliant and non-compliant summary counts based on compliance types. For example, this call
      *         returns State Manager associations, patches, or custom compliance types according to the filter criteria
-     *         you specified.
+     *         that you specified.
      */
 
     public java.util.List<ComplianceSummaryItem> getComplianceSummaryItems() {
@@ -58,13 +60,14 @@ public class ListComplianceSummariesResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns
-     * State Manager associations, patches, or custom compliance types according to the filter criteria you specified.
+     * State Manager associations, patches, or custom compliance types according to the filter criteria that you
+     * specified.
      * </p>
      * 
      * @param complianceSummaryItems
      *        A list of compliant and non-compliant summary counts based on compliance types. For example, this call
      *        returns State Manager associations, patches, or custom compliance types according to the filter criteria
-     *        you specified.
+     *        that you specified.
      */
 
     public void setComplianceSummaryItems(java.util.Collection<ComplianceSummaryItem> complianceSummaryItems) {
@@ -79,7 +82,8 @@ public class ListComplianceSummariesResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns
-     * State Manager associations, patches, or custom compliance types according to the filter criteria you specified.
+     * State Manager associations, patches, or custom compliance types according to the filter criteria that you
+     * specified.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,7 +94,7 @@ public class ListComplianceSummariesResult extends com.amazonaws.AmazonWebServic
      * @param complianceSummaryItems
      *        A list of compliant and non-compliant summary counts based on compliance types. For example, this call
      *        returns State Manager associations, patches, or custom compliance types according to the filter criteria
-     *        you specified.
+     *        that you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,13 +111,14 @@ public class ListComplianceSummariesResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of compliant and non-compliant summary counts based on compliance types. For example, this call returns
-     * State Manager associations, patches, or custom compliance types according to the filter criteria you specified.
+     * State Manager associations, patches, or custom compliance types according to the filter criteria that you
+     * specified.
      * </p>
      * 
      * @param complianceSummaryItems
      *        A list of compliant and non-compliant summary counts based on compliance types. For example, this call
      *        returns State Manager associations, patches, or custom compliance types according to the filter criteria
-     *        you specified.
+     *        that you specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

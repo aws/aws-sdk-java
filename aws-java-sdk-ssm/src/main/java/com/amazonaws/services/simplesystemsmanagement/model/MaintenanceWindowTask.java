@@ -42,9 +42,9 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
     private String windowTaskId;
     /**
      * <p>
-     * TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, the
-     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's
-     * the State Machine ARN.
+     * The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, <code>TaskArn</code>
+     * is the SSM document name or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's
+     * the state machine ARN.
      * </p>
      */
     private String taskArn;
@@ -194,15 +194,15 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, the
-     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's
-     * the State Machine ARN.
+     * The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, <code>TaskArn</code>
+     * is the SSM document name or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's
+     * the state machine ARN.
      * </p>
      * 
      * @param taskArn
-     *        TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
-     *        the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION
-     *        tasks, it's the State Machine ARN.
+     *        The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
+     *        <code>TaskArn</code> is the SSM document name or ARN. For LAMBDA tasks, it's the function name or ARN. For
+     *        STEP_FUNCTION tasks, it's the state machine ARN.
      */
 
     public void setTaskArn(String taskArn) {
@@ -211,14 +211,14 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, the
-     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's
-     * the State Machine ARN.
+     * The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, <code>TaskArn</code>
+     * is the SSM document name or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's
+     * the state machine ARN.
      * </p>
      * 
-     * @return TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
-     *         the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION
-     *         tasks, it's the State Machine ARN.
+     * @return The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
+     *         <code>TaskArn</code> is the SSM document name or ARN. For LAMBDA tasks, it's the function name or ARN.
+     *         For STEP_FUNCTION tasks, it's the state machine ARN.
      */
 
     public String getTaskArn() {
@@ -227,15 +227,15 @@ public class MaintenanceWindowTask implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, the
-     * TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION tasks, it's
-     * the State Machine ARN.
+     * The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types, <code>TaskArn</code>
+     * is the SSM document name or ARN. For LAMBDA tasks, it's the function name or ARN. For STEP_FUNCTION tasks, it's
+     * the state machine ARN.
      * </p>
      * 
      * @param taskArn
-     *        TaskArn is the resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
-     *        the TaskArn is the SSM Document Name/ARN. For LAMBDA tasks, it's the Function Name/ARN. For STEP_FUNCTION
-     *        tasks, it's the State Machine ARN.
+     *        The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
+     *        <code>TaskArn</code> is the SSM document name or ARN. For LAMBDA tasks, it's the function name or ARN. For
+     *        STEP_FUNCTION tasks, it's the state machine ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

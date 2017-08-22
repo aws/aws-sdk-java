@@ -60,6 +60,10 @@ public class InstanceAssociationStatusInfoJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     instanceAssociationStatusInfo.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AssociationVersion", targetDepth)) {
+                    context.nextToken();
+                    instanceAssociationStatusInfo.setAssociationVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InstanceId", targetDepth)) {
                     context.nextToken();
                     instanceAssociationStatusInfo.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +91,10 @@ public class InstanceAssociationStatusInfoJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("OutputUrl", targetDepth)) {
                     context.nextToken();
                     instanceAssociationStatusInfo.setOutputUrl(InstanceAssociationOutputUrlJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AssociationName", targetDepth)) {
+                    context.nextToken();
+                    instanceAssociationStatusInfo.setAssociationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

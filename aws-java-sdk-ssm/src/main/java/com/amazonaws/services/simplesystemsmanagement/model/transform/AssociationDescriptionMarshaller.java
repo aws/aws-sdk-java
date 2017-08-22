@@ -33,6 +33,8 @@ public class AssociationDescriptionMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<String> ASSOCIATIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationVersion").build();
     private static final MarshallingInfo<java.util.Date> DATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Date").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEASSOCIATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -57,6 +59,8 @@ public class AssociationDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastExecutionDate").build();
     private static final MarshallingInfo<java.util.Date> LASTSUCCESSFULEXECUTIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulExecutionDate").build();
+    private static final MarshallingInfo<String> ASSOCIATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationName").build();
 
     private static final AssociationDescriptionMarshaller instance = new AssociationDescriptionMarshaller();
 
@@ -76,6 +80,7 @@ public class AssociationDescriptionMarshaller {
         try {
             protocolMarshaller.marshall(associationDescription.getName(), NAME_BINDING);
             protocolMarshaller.marshall(associationDescription.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(associationDescription.getAssociationVersion(), ASSOCIATIONVERSION_BINDING);
             protocolMarshaller.marshall(associationDescription.getDate(), DATE_BINDING);
             protocolMarshaller.marshall(associationDescription.getLastUpdateAssociationDate(), LASTUPDATEASSOCIATIONDATE_BINDING);
             protocolMarshaller.marshall(associationDescription.getStatus(), STATUS_BINDING);
@@ -88,6 +93,7 @@ public class AssociationDescriptionMarshaller {
             protocolMarshaller.marshall(associationDescription.getOutputLocation(), OUTPUTLOCATION_BINDING);
             protocolMarshaller.marshall(associationDescription.getLastExecutionDate(), LASTEXECUTIONDATE_BINDING);
             protocolMarshaller.marshall(associationDescription.getLastSuccessfulExecutionDate(), LASTSUCCESSFULEXECUTIONDATE_BINDING);
+            protocolMarshaller.marshall(associationDescription.getAssociationName(), ASSOCIATIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -49,6 +49,12 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
     private String associationId;
     /**
      * <p>
+     * The association version.
+     * </p>
+     */
+    private String associationVersion;
+    /**
+     * <p>
      * The version of the document used in the association.
      * </p>
      */
@@ -77,6 +83,12 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String scheduleExpression;
+    /**
+     * <p>
+     * The association name.
+     * </p>
+     */
+    private String associationName;
 
     /**
      * <p>
@@ -201,6 +213,46 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
 
     public Association withAssociationId(String associationId) {
         setAssociationId(associationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The association version.
+     * </p>
+     * 
+     * @param associationVersion
+     *        The association version.
+     */
+
+    public void setAssociationVersion(String associationVersion) {
+        this.associationVersion = associationVersion;
+    }
+
+    /**
+     * <p>
+     * The association version.
+     * </p>
+     * 
+     * @return The association version.
+     */
+
+    public String getAssociationVersion() {
+        return this.associationVersion;
+    }
+
+    /**
+     * <p>
+     * The association version.
+     * </p>
+     * 
+     * @param associationVersion
+     *        The association version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Association withAssociationVersion(String associationVersion) {
+        setAssociationVersion(associationVersion);
         return this;
     }
 
@@ -438,6 +490,46 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The association name.
+     * </p>
+     * 
+     * @param associationName
+     *        The association name.
+     */
+
+    public void setAssociationName(String associationName) {
+        this.associationName = associationName;
+    }
+
+    /**
+     * <p>
+     * The association name.
+     * </p>
+     * 
+     * @return The association name.
+     */
+
+    public String getAssociationName() {
+        return this.associationName;
+    }
+
+    /**
+     * <p>
+     * The association name.
+     * </p>
+     * 
+     * @param associationName
+     *        The association name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Association withAssociationName(String associationName) {
+        setAssociationName(associationName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -454,6 +546,8 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getAssociationId() != null)
             sb.append("AssociationId: ").append(getAssociationId()).append(",");
+        if (getAssociationVersion() != null)
+            sb.append("AssociationVersion: ").append(getAssociationVersion()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getTargets() != null)
@@ -463,7 +557,9 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
         if (getOverview() != null)
             sb.append("Overview: ").append(getOverview()).append(",");
         if (getScheduleExpression() != null)
-            sb.append("ScheduleExpression: ").append(getScheduleExpression());
+            sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
+        if (getAssociationName() != null)
+            sb.append("AssociationName: ").append(getAssociationName());
         sb.append("}");
         return sb.toString();
     }
@@ -490,6 +586,10 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
             return false;
+        if (other.getAssociationVersion() == null ^ this.getAssociationVersion() == null)
+            return false;
+        if (other.getAssociationVersion() != null && other.getAssociationVersion().equals(this.getAssociationVersion()) == false)
+            return false;
         if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
             return false;
         if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
@@ -510,6 +610,10 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScheduleExpression() != null && other.getScheduleExpression().equals(this.getScheduleExpression()) == false)
             return false;
+        if (other.getAssociationName() == null ^ this.getAssociationName() == null)
+            return false;
+        if (other.getAssociationName() != null && other.getAssociationName().equals(this.getAssociationName()) == false)
+            return false;
         return true;
     }
 
@@ -521,11 +625,13 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
+        hashCode = prime * hashCode + ((getAssociationVersion() == null) ? 0 : getAssociationVersion().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getLastExecutionDate() == null) ? 0 : getLastExecutionDate().hashCode());
         hashCode = prime * hashCode + ((getOverview() == null) ? 0 : getOverview().hashCode());
         hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
+        hashCode = prime * hashCode + ((getAssociationName() == null) ? 0 : getAssociationName().hashCode());
         return hashCode;
     }
 

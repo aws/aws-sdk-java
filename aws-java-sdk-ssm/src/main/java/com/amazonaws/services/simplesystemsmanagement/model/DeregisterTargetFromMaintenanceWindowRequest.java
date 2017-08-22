@@ -40,7 +40,7 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
     /**
      * <p>
      * The system checks if the target is being referenced by a task. If the target is being referenced, the system
-     * returns and error and does not deregister the target from the Maintenance Window.
+     * returns an error and does not deregister the target from the Maintenance Window.
      * </p>
      */
     private Boolean safe;
@@ -128,12 +128,12 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
     /**
      * <p>
      * The system checks if the target is being referenced by a task. If the target is being referenced, the system
-     * returns and error and does not deregister the target from the Maintenance Window.
+     * returns an error and does not deregister the target from the Maintenance Window.
      * </p>
      * 
      * @param safe
      *        The system checks if the target is being referenced by a task. If the target is being referenced, the
-     *        system returns and error and does not deregister the target from the Maintenance Window.
+     *        system returns an error and does not deregister the target from the Maintenance Window.
      */
 
     public void setSafe(Boolean safe) {
@@ -143,11 +143,11 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
     /**
      * <p>
      * The system checks if the target is being referenced by a task. If the target is being referenced, the system
-     * returns and error and does not deregister the target from the Maintenance Window.
+     * returns an error and does not deregister the target from the Maintenance Window.
      * </p>
      * 
      * @return The system checks if the target is being referenced by a task. If the target is being referenced, the
-     *         system returns and error and does not deregister the target from the Maintenance Window.
+     *         system returns an error and does not deregister the target from the Maintenance Window.
      */
 
     public Boolean getSafe() {
@@ -157,12 +157,12 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
     /**
      * <p>
      * The system checks if the target is being referenced by a task. If the target is being referenced, the system
-     * returns and error and does not deregister the target from the Maintenance Window.
+     * returns an error and does not deregister the target from the Maintenance Window.
      * </p>
      * 
      * @param safe
      *        The system checks if the target is being referenced by a task. If the target is being referenced, the
-     *        system returns and error and does not deregister the target from the Maintenance Window.
+     *        system returns an error and does not deregister the target from the Maintenance Window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,11 +174,11 @@ public class DeregisterTargetFromMaintenanceWindowRequest extends com.amazonaws.
     /**
      * <p>
      * The system checks if the target is being referenced by a task. If the target is being referenced, the system
-     * returns and error and does not deregister the target from the Maintenance Window.
+     * returns an error and does not deregister the target from the Maintenance Window.
      * </p>
      * 
      * @return The system checks if the target is being referenced by a task. If the target is being referenced, the
-     *         system returns and error and does not deregister the target from the Maintenance Window.
+     *         system returns an error and does not deregister the target from the Maintenance Window.
      */
 
     public Boolean isSafe() {

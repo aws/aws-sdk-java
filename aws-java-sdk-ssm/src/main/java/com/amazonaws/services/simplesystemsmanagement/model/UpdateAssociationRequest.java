@@ -68,6 +68,20 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
+    /**
+     * <p>
+     * The name of the association that you want to update.
+     * </p>
+     */
+    private String associationName;
+    /**
+     * <p>
+     * This parameter is provided for concurrency control purposes. You must specify the latest association version in
+     * the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.
+     * </p>
+     */
+    private String associationVersion;
 
     /**
      * <p>
@@ -410,6 +424,98 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The name of the association that you want to update.
+     * </p>
+     * 
+     * @param associationName
+     *        The name of the association that you want to update.
+     */
+
+    public void setAssociationName(String associationName) {
+        this.associationName = associationName;
+    }
+
+    /**
+     * <p>
+     * The name of the association that you want to update.
+     * </p>
+     * 
+     * @return The name of the association that you want to update.
+     */
+
+    public String getAssociationName() {
+        return this.associationName;
+    }
+
+    /**
+     * <p>
+     * The name of the association that you want to update.
+     * </p>
+     * 
+     * @param associationName
+     *        The name of the association that you want to update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withAssociationName(String associationName) {
+        setAssociationName(associationName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter is provided for concurrency control purposes. You must specify the latest association version in
+     * the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.
+     * </p>
+     * 
+     * @param associationVersion
+     *        This parameter is provided for concurrency control purposes. You must specify the latest association
+     *        version in the service. If you want to ensure that this request succeeds, either specify
+     *        <code>$LATEST</code>, or omit this parameter.
+     */
+
+    public void setAssociationVersion(String associationVersion) {
+        this.associationVersion = associationVersion;
+    }
+
+    /**
+     * <p>
+     * This parameter is provided for concurrency control purposes. You must specify the latest association version in
+     * the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.
+     * </p>
+     * 
+     * @return This parameter is provided for concurrency control purposes. You must specify the latest association
+     *         version in the service. If you want to ensure that this request succeeds, either specify
+     *         <code>$LATEST</code>, or omit this parameter.
+     */
+
+    public String getAssociationVersion() {
+        return this.associationVersion;
+    }
+
+    /**
+     * <p>
+     * This parameter is provided for concurrency control purposes. You must specify the latest association version in
+     * the service. If you want to ensure that this request succeeds, either specify <code>$LATEST</code>, or omit this
+     * parameter.
+     * </p>
+     * 
+     * @param associationVersion
+     *        This parameter is provided for concurrency control purposes. You must specify the latest association
+     *        version in the service. If you want to ensure that this request succeeds, either specify
+     *        <code>$LATEST</code>, or omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withAssociationVersion(String associationVersion) {
+        setAssociationVersion(associationVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -433,7 +539,11 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getTargets() != null)
-            sb.append("Targets: ").append(getTargets());
+            sb.append("Targets: ").append(getTargets()).append(",");
+        if (getAssociationName() != null)
+            sb.append("AssociationName: ").append(getAssociationName()).append(",");
+        if (getAssociationVersion() != null)
+            sb.append("AssociationVersion: ").append(getAssociationVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -476,6 +586,14 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
             return false;
+        if (other.getAssociationName() == null ^ this.getAssociationName() == null)
+            return false;
+        if (other.getAssociationName() != null && other.getAssociationName().equals(this.getAssociationName()) == false)
+            return false;
+        if (other.getAssociationVersion() == null ^ this.getAssociationVersion() == null)
+            return false;
+        if (other.getAssociationVersion() != null && other.getAssociationVersion().equals(this.getAssociationVersion()) == false)
+            return false;
         return true;
     }
 
@@ -491,6 +609,8 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
+        hashCode = prime * hashCode + ((getAssociationName() == null) ? 0 : getAssociationName().hashCode());
+        hashCode = prime * hashCode + ((getAssociationVersion() == null) ? 0 : getAssociationVersion().hashCode());
         return hashCode;
     }
 

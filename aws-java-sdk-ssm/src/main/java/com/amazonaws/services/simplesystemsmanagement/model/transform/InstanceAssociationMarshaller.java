@@ -33,6 +33,8 @@ public class InstanceAssociationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
     private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Content").build();
+    private static final MarshallingInfo<String> ASSOCIATIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationVersion").build();
 
     private static final InstanceAssociationMarshaller instance = new InstanceAssociationMarshaller();
 
@@ -53,6 +55,7 @@ public class InstanceAssociationMarshaller {
             protocolMarshaller.marshall(instanceAssociation.getAssociationId(), ASSOCIATIONID_BINDING);
             protocolMarshaller.marshall(instanceAssociation.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(instanceAssociation.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(instanceAssociation.getAssociationVersion(), ASSOCIATIONVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

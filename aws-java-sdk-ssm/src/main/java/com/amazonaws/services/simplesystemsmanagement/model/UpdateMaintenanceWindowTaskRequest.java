@@ -27,38 +27,38 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Maintenance Window ID that contains the task that you want to modify.
+     * The Maintenance Window ID that contains the task to modify.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The task ID that you want to modify.
+     * The task ID to modify.
      * </p>
      */
     private String windowTaskId;
     /**
      * <p>
-     * The targets (either instances or tags) that you want to modify. Instances are specified using
+     * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * The task ARN that you want to modify.
+     * The task ARN to modify.
      * </p>
      */
     private String taskArn;
     /**
      * <p>
-     * The IAM service role ARN that you want to modify. The system assumes this role during task exectuion.
+     * The IAM service role ARN to modify. The system assumes this role during task execution.
      * </p>
      */
     private String serviceRoleArn;
     /**
      * <p>
-     * The parameters that you want to modify. The map has the following format:
+     * The parameters to modify. The map has the following format:
      * </p>
      * <p>
      * Key: string, between 1 and 255 characters
@@ -70,15 +70,15 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
     private java.util.Map<String, MaintenanceWindowTaskParameterValueExpression> taskParameters;
     /**
      * <p>
-     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
-     * fields should be empty.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
      * </p>
      */
     private MaintenanceWindowTaskInvocationParameters taskInvocationParameters;
     /**
      * <p>
-     * The new task priority that you want to specify. The lower the number, the higher the priority. Tasks that have
-     * the same priority are scheduled in parallel.
+     * The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same
+     * priority are scheduled in parallel.
      * </p>
      */
     private Integer priority;
@@ -91,44 +91,44 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
     private String maxConcurrency;
     /**
      * <p>
-     * The new <code>MaxErrors</code> value you want to specify. <code>MaxErrors</code> is the maximum number of errors
-     * that are allowed before the task stops being scheduled.
+     * The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are
+     * allowed before the task stops being scheduled.
      * </p>
      */
     private String maxErrors;
     /**
      * <p>
-     * The new logging location in Amazon S3 that you want to specify.
+     * The new logging location in Amazon S3 to specify.
      * </p>
      */
     private LoggingInfo loggingInfo;
     /**
      * <p>
-     * The new task name that you want to specify.
+     * The new task name to specify.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The new task description that you want to specify.
+     * The new task description to specify.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow API are also
-     * required for this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * this API request. Optional fields that are not specified are set to null.
      * </p>
      */
     private Boolean replace;
 
     /**
      * <p>
-     * The Maintenance Window ID that contains the task that you want to modify.
+     * The Maintenance Window ID that contains the task to modify.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID that contains the task that you want to modify.
+     *        The Maintenance Window ID that contains the task to modify.
      */
 
     public void setWindowId(String windowId) {
@@ -137,10 +137,10 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Maintenance Window ID that contains the task that you want to modify.
+     * The Maintenance Window ID that contains the task to modify.
      * </p>
      * 
-     * @return The Maintenance Window ID that contains the task that you want to modify.
+     * @return The Maintenance Window ID that contains the task to modify.
      */
 
     public String getWindowId() {
@@ -149,11 +149,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Maintenance Window ID that contains the task that you want to modify.
+     * The Maintenance Window ID that contains the task to modify.
      * </p>
      * 
      * @param windowId
-     *        The Maintenance Window ID that contains the task that you want to modify.
+     *        The Maintenance Window ID that contains the task to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +164,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The task ID that you want to modify.
+     * The task ID to modify.
      * </p>
      * 
      * @param windowTaskId
-     *        The task ID that you want to modify.
+     *        The task ID to modify.
      */
 
     public void setWindowTaskId(String windowTaskId) {
@@ -177,10 +177,10 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The task ID that you want to modify.
+     * The task ID to modify.
      * </p>
      * 
-     * @return The task ID that you want to modify.
+     * @return The task ID to modify.
      */
 
     public String getWindowTaskId() {
@@ -189,11 +189,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The task ID that you want to modify.
+     * The task ID to modify.
      * </p>
      * 
      * @param windowTaskId
-     *        The task ID that you want to modify.
+     *        The task ID to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +204,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The targets (either instances or tags) that you want to modify. Instances are specified using
+     * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
      * 
-     * @return The targets (either instances or tags) that you want to modify. Instances are specified using
+     * @return The targets (either instances or tags) to modify. Instances are specified using
      *         Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      */
 
@@ -221,12 +221,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The targets (either instances or tags) that you want to modify. Instances are specified using
+     * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags) that you want to modify. Instances are specified using
+     *        The targets (either instances or tags) to modify. Instances are specified using
      *        Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      */
 
@@ -241,7 +241,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The targets (either instances or tags) that you want to modify. Instances are specified using
+     * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
      * <p>
@@ -251,7 +251,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags) that you want to modify. Instances are specified using
+     *        The targets (either instances or tags) to modify. Instances are specified using
      *        Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -268,12 +268,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The targets (either instances or tags) that you want to modify. Instances are specified using
+     * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags) that you want to modify. Instances are specified using
+     *        The targets (either instances or tags) to modify. Instances are specified using
      *        Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -285,11 +285,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The task ARN that you want to modify.
+     * The task ARN to modify.
      * </p>
      * 
      * @param taskArn
-     *        The task ARN that you want to modify.
+     *        The task ARN to modify.
      */
 
     public void setTaskArn(String taskArn) {
@@ -298,10 +298,10 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The task ARN that you want to modify.
+     * The task ARN to modify.
      * </p>
      * 
-     * @return The task ARN that you want to modify.
+     * @return The task ARN to modify.
      */
 
     public String getTaskArn() {
@@ -310,11 +310,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The task ARN that you want to modify.
+     * The task ARN to modify.
      * </p>
      * 
      * @param taskArn
-     *        The task ARN that you want to modify.
+     *        The task ARN to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,11 +325,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The IAM service role ARN that you want to modify. The system assumes this role during task exectuion.
+     * The IAM service role ARN to modify. The system assumes this role during task execution.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role ARN that you want to modify. The system assumes this role during task exectuion.
+     *        The IAM service role ARN to modify. The system assumes this role during task execution.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -338,10 +338,10 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The IAM service role ARN that you want to modify. The system assumes this role during task exectuion.
+     * The IAM service role ARN to modify. The system assumes this role during task execution.
      * </p>
      * 
-     * @return The IAM service role ARN that you want to modify. The system assumes this role during task exectuion.
+     * @return The IAM service role ARN to modify. The system assumes this role during task execution.
      */
 
     public String getServiceRoleArn() {
@@ -350,11 +350,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The IAM service role ARN that you want to modify. The system assumes this role during task exectuion.
+     * The IAM service role ARN to modify. The system assumes this role during task execution.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The IAM service role ARN that you want to modify. The system assumes this role during task exectuion.
+     *        The IAM service role ARN to modify. The system assumes this role during task execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,7 +365,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parameters that you want to modify. The map has the following format:
+     * The parameters to modify. The map has the following format:
      * </p>
      * <p>
      * Key: string, between 1 and 255 characters
@@ -374,7 +374,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
-     * @return The parameters that you want to modify. The map has the following format:</p>
+     * @return The parameters to modify. The map has the following format:</p>
      *         <p>
      *         Key: string, between 1 and 255 characters
      *         </p>
@@ -388,7 +388,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parameters that you want to modify. The map has the following format:
+     * The parameters to modify. The map has the following format:
      * </p>
      * <p>
      * Key: string, between 1 and 255 characters
@@ -398,7 +398,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param taskParameters
-     *        The parameters that you want to modify. The map has the following format:</p>
+     *        The parameters to modify. The map has the following format:</p>
      *        <p>
      *        Key: string, between 1 and 255 characters
      *        </p>
@@ -412,7 +412,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parameters that you want to modify. The map has the following format:
+     * The parameters to modify. The map has the following format:
      * </p>
      * <p>
      * Key: string, between 1 and 255 characters
@@ -422,7 +422,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param taskParameters
-     *        The parameters that you want to modify. The map has the following format:</p>
+     *        The parameters to modify. The map has the following format:</p>
      *        <p>
      *        Key: string, between 1 and 255 characters
      *        </p>
@@ -459,13 +459,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
-     * fields should be empty.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
      * </p>
      * 
      * @param taskInvocationParameters
-     *        Parameters the task should use during execution. Populate only the fields that match the task type. All
-     *        other fields should be empty.
+     *        The parameters that the task should use during execution. Populate only the fields that match the task
+     *        type. All other fields should be empty.
      */
 
     public void setTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters taskInvocationParameters) {
@@ -474,12 +474,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
-     * fields should be empty.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
      * </p>
      * 
-     * @return Parameters the task should use during execution. Populate only the fields that match the task type. All
-     *         other fields should be empty.
+     * @return The parameters that the task should use during execution. Populate only the fields that match the task
+     *         type. All other fields should be empty.
      */
 
     public MaintenanceWindowTaskInvocationParameters getTaskInvocationParameters() {
@@ -488,13 +488,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Parameters the task should use during execution. Populate only the fields that match the task type. All other
-     * fields should be empty.
+     * The parameters that the task should use during execution. Populate only the fields that match the task type. All
+     * other fields should be empty.
      * </p>
      * 
      * @param taskInvocationParameters
-     *        Parameters the task should use during execution. Populate only the fields that match the task type. All
-     *        other fields should be empty.
+     *        The parameters that the task should use during execution. Populate only the fields that match the task
+     *        type. All other fields should be empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -505,13 +505,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new task priority that you want to specify. The lower the number, the higher the priority. Tasks that have
-     * the same priority are scheduled in parallel.
+     * The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same
+     * priority are scheduled in parallel.
      * </p>
      * 
      * @param priority
-     *        The new task priority that you want to specify. The lower the number, the higher the priority. Tasks that
-     *        have the same priority are scheduled in parallel.
+     *        The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same
+     *        priority are scheduled in parallel.
      */
 
     public void setPriority(Integer priority) {
@@ -520,12 +520,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new task priority that you want to specify. The lower the number, the higher the priority. Tasks that have
-     * the same priority are scheduled in parallel.
+     * The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same
+     * priority are scheduled in parallel.
      * </p>
      * 
-     * @return The new task priority that you want to specify. The lower the number, the higher the priority. Tasks that
-     *         have the same priority are scheduled in parallel.
+     * @return The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same
+     *         priority are scheduled in parallel.
      */
 
     public Integer getPriority() {
@@ -534,13 +534,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new task priority that you want to specify. The lower the number, the higher the priority. Tasks that have
-     * the same priority are scheduled in parallel.
+     * The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same
+     * priority are scheduled in parallel.
      * </p>
      * 
      * @param priority
-     *        The new task priority that you want to specify. The lower the number, the higher the priority. Tasks that
-     *        have the same priority are scheduled in parallel.
+     *        The new task priority to specify. The lower the number, the higher the priority. Tasks that have the same
+     *        priority are scheduled in parallel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -597,13 +597,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new <code>MaxErrors</code> value you want to specify. <code>MaxErrors</code> is the maximum number of errors
-     * that are allowed before the task stops being scheduled.
+     * The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are
+     * allowed before the task stops being scheduled.
      * </p>
      * 
      * @param maxErrors
-     *        The new <code>MaxErrors</code> value you want to specify. <code>MaxErrors</code> is the maximum number of
-     *        errors that are allowed before the task stops being scheduled.
+     *        The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors
+     *        that are allowed before the task stops being scheduled.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -612,12 +612,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new <code>MaxErrors</code> value you want to specify. <code>MaxErrors</code> is the maximum number of errors
-     * that are allowed before the task stops being scheduled.
+     * The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are
+     * allowed before the task stops being scheduled.
      * </p>
      * 
-     * @return The new <code>MaxErrors</code> value you want to specify. <code>MaxErrors</code> is the maximum number of
-     *         errors that are allowed before the task stops being scheduled.
+     * @return The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors
+     *         that are allowed before the task stops being scheduled.
      */
 
     public String getMaxErrors() {
@@ -626,13 +626,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new <code>MaxErrors</code> value you want to specify. <code>MaxErrors</code> is the maximum number of errors
-     * that are allowed before the task stops being scheduled.
+     * The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are
+     * allowed before the task stops being scheduled.
      * </p>
      * 
      * @param maxErrors
-     *        The new <code>MaxErrors</code> value you want to specify. <code>MaxErrors</code> is the maximum number of
-     *        errors that are allowed before the task stops being scheduled.
+     *        The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors
+     *        that are allowed before the task stops being scheduled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -643,11 +643,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new logging location in Amazon S3 that you want to specify.
+     * The new logging location in Amazon S3 to specify.
      * </p>
      * 
      * @param loggingInfo
-     *        The new logging location in Amazon S3 that you want to specify.
+     *        The new logging location in Amazon S3 to specify.
      */
 
     public void setLoggingInfo(LoggingInfo loggingInfo) {
@@ -656,10 +656,10 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new logging location in Amazon S3 that you want to specify.
+     * The new logging location in Amazon S3 to specify.
      * </p>
      * 
-     * @return The new logging location in Amazon S3 that you want to specify.
+     * @return The new logging location in Amazon S3 to specify.
      */
 
     public LoggingInfo getLoggingInfo() {
@@ -668,11 +668,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new logging location in Amazon S3 that you want to specify.
+     * The new logging location in Amazon S3 to specify.
      * </p>
      * 
      * @param loggingInfo
-     *        The new logging location in Amazon S3 that you want to specify.
+     *        The new logging location in Amazon S3 to specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -683,11 +683,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new task name that you want to specify.
+     * The new task name to specify.
      * </p>
      * 
      * @param name
-     *        The new task name that you want to specify.
+     *        The new task name to specify.
      */
 
     public void setName(String name) {
@@ -696,10 +696,10 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new task name that you want to specify.
+     * The new task name to specify.
      * </p>
      * 
-     * @return The new task name that you want to specify.
+     * @return The new task name to specify.
      */
 
     public String getName() {
@@ -708,11 +708,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new task name that you want to specify.
+     * The new task name to specify.
      * </p>
      * 
      * @param name
-     *        The new task name that you want to specify.
+     *        The new task name to specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -723,11 +723,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new task description that you want to specify.
+     * The new task description to specify.
      * </p>
      * 
      * @param description
-     *        The new task description that you want to specify.
+     *        The new task description to specify.
      */
 
     public void setDescription(String description) {
@@ -736,10 +736,10 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new task description that you want to specify.
+     * The new task description to specify.
      * </p>
      * 
-     * @return The new task description that you want to specify.
+     * @return The new task description to specify.
      */
 
     public String getDescription() {
@@ -748,11 +748,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The new task description that you want to specify.
+     * The new task description to specify.
      * </p>
      * 
      * @param description
-     *        The new task description that you want to specify.
+     *        The new task description to specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -763,13 +763,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow API are also
-     * required for this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow API are
-     *        also required for this API request. Optional fields that are not specified will be set to null.
+     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     *        required for this API request. Optional fields that are not specified are set to null.
      */
 
     public void setReplace(Boolean replace) {
@@ -778,12 +778,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow API are also
-     * required for this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
-     * @return If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow API are
-     *         also required for this API request. Optional fields that are not specified will be set to null.
+     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     *         required for this API request. Optional fields that are not specified are set to null.
      */
 
     public Boolean getReplace() {
@@ -792,13 +792,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow API are also
-     * required for this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow API are
-     *        also required for this API request. Optional fields that are not specified will be set to null.
+     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     *        required for this API request. Optional fields that are not specified are set to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -809,12 +809,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow API are also
-     * required for this API request. Optional fields that are not specified will be set to null.
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
-     * @return If you specify True, then all fields that are required by the RegisterTaskWithMaintenanceWndow API are
-     *         also required for this API request. Optional fields that are not specified will be set to null.
+     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     *         required for this API request. Optional fields that are not specified are set to null.
      */
 
     public Boolean isReplace() {

@@ -32,7 +32,7 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The compliance type. For example, Association (for a State Manager association), Patch, or Custom:
-     * <code>string</code> are all valide compliance types.
+     * <code>string</code> are all valid compliance types.
      * </p>
      */
     private String complianceType;
@@ -71,7 +71,7 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The severity of the compliance status. Severity can be one of the following: Critical, HIGH, Medium, Low,
+     * The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low,
      * Informational, Unspecified.
      * </p>
      */
@@ -93,12 +93,12 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The compliance type. For example, Association (for a State Manager association), Patch, or Custom:
-     * <code>string</code> are all valide compliance types.
+     * <code>string</code> are all valid compliance types.
      * </p>
      * 
      * @param complianceType
      *        The compliance type. For example, Association (for a State Manager association), Patch, or Custom:
-     *        <code>string</code> are all valide compliance types.
+     *        <code>string</code> are all valid compliance types.
      */
 
     public void setComplianceType(String complianceType) {
@@ -108,11 +108,11 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The compliance type. For example, Association (for a State Manager association), Patch, or Custom:
-     * <code>string</code> are all valide compliance types.
+     * <code>string</code> are all valid compliance types.
      * </p>
      * 
      * @return The compliance type. For example, Association (for a State Manager association), Patch, or Custom:
-     *         <code>string</code> are all valide compliance types.
+     *         <code>string</code> are all valid compliance types.
      */
 
     public String getComplianceType() {
@@ -122,12 +122,12 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The compliance type. For example, Association (for a State Manager association), Patch, or Custom:
-     * <code>string</code> are all valide compliance types.
+     * <code>string</code> are all valid compliance types.
      * </p>
      * 
      * @param complianceType
      *        The compliance type. For example, Association (for a State Manager association), Patch, or Custom:
-     *        <code>string</code> are all valide compliance types.
+     *        <code>string</code> are all valid compliance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,12 +375,12 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the compliance status. Severity can be one of the following: Critical, HIGH, Medium, Low,
+     * The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low,
      * Informational, Unspecified.
      * </p>
      * 
      * @param severity
-     *        The severity of the compliance status. Severity can be one of the following: Critical, HIGH, Medium, Low,
+     *        The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low,
      *        Informational, Unspecified.
      * @see ComplianceSeverity
      */
@@ -391,11 +391,11 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the compliance status. Severity can be one of the following: Critical, HIGH, Medium, Low,
+     * The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low,
      * Informational, Unspecified.
      * </p>
      * 
-     * @return The severity of the compliance status. Severity can be one of the following: Critical, HIGH, Medium, Low,
+     * @return The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low,
      *         Informational, Unspecified.
      * @see ComplianceSeverity
      */
@@ -406,12 +406,12 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the compliance status. Severity can be one of the following: Critical, HIGH, Medium, Low,
+     * The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low,
      * Informational, Unspecified.
      * </p>
      * 
      * @param severity
-     *        The severity of the compliance status. Severity can be one of the following: Critical, HIGH, Medium, Low,
+     *        The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low,
      *        Informational, Unspecified.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceSeverity
@@ -424,12 +424,12 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity of the compliance status. Severity can be one of the following: Critical, HIGH, Medium, Low,
+     * The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low,
      * Informational, Unspecified.
      * </p>
      * 
      * @param severity
-     *        The severity of the compliance status. Severity can be one of the following: Critical, HIGH, Medium, Low,
+     *        The severity of the compliance status. Severity can be one of the following: Critical, High, Medium, Low,
      *        Informational, Unspecified.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceSeverity

@@ -56,6 +56,10 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                     context.nextToken();
                     associationDescription.setInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AssociationVersion", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setAssociationVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Date", targetDepth)) {
                     context.nextToken();
                     associationDescription.setDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
@@ -104,6 +108,10 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                 if (context.testExpression("LastSuccessfulExecutionDate", targetDepth)) {
                     context.nextToken();
                     associationDescription.setLastSuccessfulExecutionDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("AssociationName", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setAssociationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

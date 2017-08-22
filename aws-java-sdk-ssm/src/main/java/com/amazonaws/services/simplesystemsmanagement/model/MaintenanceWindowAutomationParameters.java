@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Parameters for an AUTOMATION task type.
+ * The parameters for an AUTOMATION task type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowAutomationParameters"
@@ -30,24 +30,24 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The version of an SSM Automation document to use during task execution.
+     * The version of an Automation document to use during task execution.
      * </p>
      */
     private String documentVersion;
     /**
      * <p>
-     * Parameters for the AUTOMATION task.
+     * The parameters for the AUTOMATION task.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
 
     /**
      * <p>
-     * The version of an SSM Automation document to use during task execution.
+     * The version of an Automation document to use during task execution.
      * </p>
      * 
      * @param documentVersion
-     *        The version of an SSM Automation document to use during task execution.
+     *        The version of an Automation document to use during task execution.
      */
 
     public void setDocumentVersion(String documentVersion) {
@@ -56,10 +56,10 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The version of an SSM Automation document to use during task execution.
+     * The version of an Automation document to use during task execution.
      * </p>
      * 
-     * @return The version of an SSM Automation document to use during task execution.
+     * @return The version of an Automation document to use during task execution.
      */
 
     public String getDocumentVersion() {
@@ -68,11 +68,11 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * The version of an SSM Automation document to use during task execution.
+     * The version of an Automation document to use during task execution.
      * </p>
      * 
      * @param documentVersion
-     *        The version of an SSM Automation document to use during task execution.
+     *        The version of an Automation document to use during task execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Parameters for the AUTOMATION task.
+     * The parameters for the AUTOMATION task.
      * </p>
      * 
-     * @return Parameters for the AUTOMATION task.
+     * @return The parameters for the AUTOMATION task.
      */
 
     public java.util.Map<String, java.util.List<String>> getParameters() {
@@ -95,11 +95,11 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Parameters for the AUTOMATION task.
+     * The parameters for the AUTOMATION task.
      * </p>
      * 
      * @param parameters
-     *        Parameters for the AUTOMATION task.
+     *        The parameters for the AUTOMATION task.
      */
 
     public void setParameters(java.util.Map<String, java.util.List<String>> parameters) {
@@ -108,11 +108,11 @@ public class MaintenanceWindowAutomationParameters implements Serializable, Clon
 
     /**
      * <p>
-     * Parameters for the AUTOMATION task.
+     * The parameters for the AUTOMATION task.
      * </p>
      * 
      * @param parameters
-     *        Parameters for the AUTOMATION task.
+     *        The parameters for the AUTOMATION task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
