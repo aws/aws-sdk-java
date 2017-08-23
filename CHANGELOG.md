@@ -1,3 +1,8 @@
+# __1.11.182__ __2017-08-23__
+## __Amazon AppStream__
+  - ### Features
+    - Documentation updates for appstream
+
 # __1.11.181__ __2017-08-22__
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

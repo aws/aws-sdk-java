@@ -106,6 +106,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.memory.8xlarge
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
      * </ul>
      */
     private String instanceType;
@@ -308,6 +328,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.memory.8xlarge
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param instanceType
@@ -372,6 +412,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        stream.memory.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.16xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
      *        </p>
      *        </li>
      */
@@ -446,6 +506,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.memory.8xlarge
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The instance type of compute resources for the fleet. Fleet instances are launched from this instance
@@ -509,6 +589,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         stream.memory.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-pro.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-pro.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-pro.16xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics-desktop.2xlarge
      *         </p>
      *         </li>
      */
@@ -583,6 +683,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * stream.memory.8xlarge
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-pro.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param instanceType
@@ -647,6 +767,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        stream.memory.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-pro.16xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics-desktop.2xlarge
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
