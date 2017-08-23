@@ -190,7 +190,7 @@ public enum CloudFrontUrlSigner {
                     ;
             return signedUrl;
         } catch (InvalidKeyException e) {
-            throw new AmazonClientException("Coudln't sign url", e);
+            throw new AmazonClientException("Couldn't sign url", e);
         }
     }
 
