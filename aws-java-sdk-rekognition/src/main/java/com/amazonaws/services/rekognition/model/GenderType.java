@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum GenderType {
 
-    MALE("MALE"),
-    FEMALE("FEMALE");
+    Male("Male"),
+    Female("Female");
 
     private String value;
 

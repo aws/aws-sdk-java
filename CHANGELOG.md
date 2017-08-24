@@ -1,3 +1,8 @@
+# __1.11.183__ __2017-08-24__
+## __Amazon Rekognition__
+  - ### Features
+    - Update the enum value of LandmarkType and GenderType to be consistent with service response
+
 # __1.11.182__ __2017-08-23__
 ## __Amazon AppStream__
   - ### Features

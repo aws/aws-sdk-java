@@ -14509,11 +14509,11 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
-        "name" : "MALE",
-        "value" : "MALE"
+        "name" : "Male",
+        "value" : "Male"
       }, {
-        "name" : "FEMALE",
-        "value" : "FEMALE"
+        "name" : "Female",
+        "value" : "Female"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -17504,11 +17504,11 @@
         "c2jName" : "X",
         "c2jShape" : "Float",
         "deprecated" : false,
-        "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
+        "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withX",
-        "getterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@return x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
+        "getterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@return x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
         "getterMethodName" : "getX",
         "getterModel" : {
           "returnType" : "Float",
@@ -17540,7 +17540,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "X",
-        "setterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
+        "setterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
         "setterMethodName" : "setX",
         "setterModel" : {
           "variableDeclarationType" : "Float",
@@ -17553,12 +17553,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Float",
           "variableName" : "x",
           "variableType" : "Float",
-          "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
+          "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
           "simpleType" : "Float",
           "variableSetterType" : "Float"
         },
@@ -17567,11 +17567,11 @@
         "c2jName" : "Y",
         "c2jShape" : "Float",
         "deprecated" : false,
-        "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
+        "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withY",
-        "getterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@return y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
+        "getterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@return y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
         "getterMethodName" : "getY",
         "getterModel" : {
           "returnType" : "Float",
@@ -17603,7 +17603,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "Y",
-        "setterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
+        "setterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
         "setterMethodName" : "setY",
         "setterModel" : {
           "variableDeclarationType" : "Float",
@@ -17616,12 +17616,12 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Float",
           "variableName" : "y",
           "variableType" : "Float",
-          "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
+          "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
           "simpleType" : "Float",
           "variableSetterType" : "Float"
         },
@@ -17696,11 +17696,11 @@
           "c2jName" : "X",
           "c2jShape" : "Float",
           "deprecated" : false,
-          "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
+          "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withX",
-          "getterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@return x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
+          "getterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@return x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
           "getterMethodName" : "getX",
           "getterModel" : {
             "returnType" : "Float",
@@ -17732,7 +17732,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "X",
-          "setterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
+          "setterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.*/",
           "setterMethodName" : "setX",
           "setterModel" : {
             "variableDeclarationType" : "Float",
@@ -17745,12 +17745,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>\n@param x x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Float",
             "variableName" : "x",
             "variableType" : "Float",
-            "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ration of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
+            "documentation" : "<p>x-coordinate from the top left of the landmark expressed as the ratio of the width of the image. For example, if the images is 700x200 and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>",
             "simpleType" : "Float",
             "variableSetterType" : "Float"
           },
@@ -17760,11 +17760,11 @@
           "c2jName" : "Y",
           "c2jShape" : "Float",
           "deprecated" : false,
-          "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
+          "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withY",
-          "getterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@return y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
+          "getterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@return y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
           "getterMethodName" : "getY",
           "getterModel" : {
             "returnType" : "Float",
@@ -17796,7 +17796,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "Y",
-          "setterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
+          "setterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.*/",
           "setterMethodName" : "setY",
           "setterModel" : {
             "variableDeclarationType" : "Float",
@@ -17809,12 +17809,12 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>\n@param y y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Float",
             "variableName" : "y",
             "variableType" : "Float",
-            "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ration of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
+            "documentation" : "<p>y-coordinate from the top left of the landmark expressed as the ratio of the height of the image. For example, if the images is 700x200 and the y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>",
             "simpleType" : "Float",
             "variableSetterType" : "Float"
           },
@@ -17852,80 +17852,80 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
-        "name" : "EYE_LEFT",
-        "value" : "EYE_LEFT"
+        "name" : "EyeLeft",
+        "value" : "eyeLeft"
       }, {
-        "name" : "EYE_RIGHT",
-        "value" : "EYE_RIGHT"
+        "name" : "EyeRight",
+        "value" : "eyeRight"
       }, {
-        "name" : "NOSE",
-        "value" : "NOSE"
+        "name" : "Nose",
+        "value" : "nose"
       }, {
-        "name" : "MOUTH_LEFT",
-        "value" : "MOUTH_LEFT"
+        "name" : "MouthLeft",
+        "value" : "mouthLeft"
       }, {
-        "name" : "MOUTH_RIGHT",
-        "value" : "MOUTH_RIGHT"
+        "name" : "MouthRight",
+        "value" : "mouthRight"
       }, {
-        "name" : "LEFT_EYEBROW_LEFT",
-        "value" : "LEFT_EYEBROW_LEFT"
+        "name" : "LeftEyeBrowLeft",
+        "value" : "leftEyeBrowLeft"
       }, {
-        "name" : "LEFT_EYEBROW_RIGHT",
-        "value" : "LEFT_EYEBROW_RIGHT"
+        "name" : "LeftEyeBrowRight",
+        "value" : "leftEyeBrowRight"
       }, {
-        "name" : "LEFT_EYEBROW_UP",
-        "value" : "LEFT_EYEBROW_UP"
+        "name" : "LeftEyeBrowUp",
+        "value" : "leftEyeBrowUp"
       }, {
-        "name" : "RIGHT_EYEBROW_LEFT",
-        "value" : "RIGHT_EYEBROW_LEFT"
+        "name" : "RightEyeBrowLeft",
+        "value" : "rightEyeBrowLeft"
       }, {
-        "name" : "RIGHT_EYEBROW_RIGHT",
-        "value" : "RIGHT_EYEBROW_RIGHT"
+        "name" : "RightEyeBrowRight",
+        "value" : "rightEyeBrowRight"
       }, {
-        "name" : "RIGHT_EYEBROW_UP",
-        "value" : "RIGHT_EYEBROW_UP"
+        "name" : "RightEyeBrowUp",
+        "value" : "rightEyeBrowUp"
       }, {
-        "name" : "LEFT_EYE_LEFT",
-        "value" : "LEFT_EYE_LEFT"
+        "name" : "LeftEyeLeft",
+        "value" : "leftEyeLeft"
       }, {
-        "name" : "LEFT_EYE_RIGHT",
-        "value" : "LEFT_EYE_RIGHT"
+        "name" : "LeftEyeRight",
+        "value" : "leftEyeRight"
       }, {
-        "name" : "LEFT_EYE_UP",
-        "value" : "LEFT_EYE_UP"
+        "name" : "LeftEyeUp",
+        "value" : "leftEyeUp"
       }, {
-        "name" : "LEFT_EYE_DOWN",
-        "value" : "LEFT_EYE_DOWN"
+        "name" : "LeftEyeDown",
+        "value" : "leftEyeDown"
       }, {
-        "name" : "RIGHT_EYE_LEFT",
-        "value" : "RIGHT_EYE_LEFT"
+        "name" : "RightEyeLeft",
+        "value" : "rightEyeLeft"
       }, {
-        "name" : "RIGHT_EYE_RIGHT",
-        "value" : "RIGHT_EYE_RIGHT"
+        "name" : "RightEyeRight",
+        "value" : "rightEyeRight"
       }, {
-        "name" : "RIGHT_EYE_UP",
-        "value" : "RIGHT_EYE_UP"
+        "name" : "RightEyeUp",
+        "value" : "rightEyeUp"
       }, {
-        "name" : "RIGHT_EYE_DOWN",
-        "value" : "RIGHT_EYE_DOWN"
+        "name" : "RightEyeDown",
+        "value" : "rightEyeDown"
       }, {
-        "name" : "NOSE_LEFT",
-        "value" : "NOSE_LEFT"
+        "name" : "NoseLeft",
+        "value" : "noseLeft"
       }, {
-        "name" : "NOSE_RIGHT",
-        "value" : "NOSE_RIGHT"
+        "name" : "NoseRight",
+        "value" : "noseRight"
       }, {
-        "name" : "MOUTH_UP",
-        "value" : "MOUTH_UP"
+        "name" : "MouthUp",
+        "value" : "mouthUp"
       }, {
-        "name" : "MOUTH_DOWN",
-        "value" : "MOUTH_DOWN"
+        "name" : "MouthDown",
+        "value" : "mouthDown"
       }, {
-        "name" : "LEFT_PUPIL",
-        "value" : "LEFT_PUPIL"
+        "name" : "LeftPupil",
+        "value" : "leftPupil"
       }, {
-        "name" : "RIGHT_PUPIL",
-        "value" : "RIGHT_PUPIL"
+        "name" : "RightPupil",
+        "value" : "rightPupil"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -25370,23 +25370,23 @@
               "Top" : 0.33666667342185974
             },
             "Landmarks" : [ {
-              "Type" : "EYE_LEFT",
+              "Type" : "eyeLeft",
               "X" : 0.6394737362861633,
               "Y" : 0.40819624066352844
             }, {
-              "Type" : "EYE_RIGHT",
+              "Type" : "eyeRight",
               "X" : 0.7266660928726196,
               "Y" : 0.41039225459098816
             }, {
-              "Type" : "NOSE_LEFT",
+              "Type" : "eyeRight",
               "X" : 0.6912462115287781,
               "Y" : 0.44240960478782654
             }, {
-              "Type" : "MOUTH_DOWN",
+              "Type" : "mouthDown",
               "X" : 0.6306198239326477,
               "Y" : 0.46700039505958557
             }, {
-              "Type" : "MOUTH_UP",
+              "Type" : "mouthUp",
               "X" : 0.7215608954429626,
               "Y" : 0.47114261984825134
             } ],
@@ -25472,23 +25472,23 @@
                 "Top" : 0.4933333396911621
               },
               "Landmarks" : [ {
-                "Type" : "EYE_LEFT",
+                "Type" : "eyeLeft",
                 "X" : 0.3976764678955078,
                 "Y" : 0.6248345971107483
               }, {
-                "Type" : "EYE_RIGHT",
+                "Type" : "eyeRight",
                 "X" : 0.4810936450958252,
                 "Y" : 0.6317117214202881
               }, {
-                "Type" : "NOSE_LEFT",
+                "Type" : "noseLeft",
                 "X" : 0.41986238956451416,
                 "Y" : 0.7111940383911133
               }, {
-                "Type" : "MOUTH_DOWN",
+                "Type" : "mouthDown",
                 "X" : 0.40525302290916443,
                 "Y" : 0.7497701048851013
               }, {
-                "Type" : "MOUTH_UP",
+                "Type" : "mouthUp",
                 "X" : 0.4753248989582062,
                 "Y" : 0.7558549642562866
               } ],
@@ -25523,23 +25523,23 @@
                 "Top" : 0.15111111104488373
               },
               "Landmarks" : [ {
-                "Type" : "EYE_LEFT",
+                "Type" : "eyeLeft",
                 "X" : 0.6006892323493958,
                 "Y" : 0.290842205286026
               }, {
-                "Type" : "EYE_RIGHT",
+                "Type" : "eyeRight",
                 "X" : 0.6808141469955444,
                 "Y" : 0.29609042406082153
               }, {
-                "Type" : "NOSE_LEFT",
+                "Type" : "noseLeft",
                 "X" : 0.6395332217216492,
                 "Y" : 0.3522595763206482
               }, {
-                "Type" : "MOUTH_DOWN",
+                "Type" : "mouthDown",
                 "X" : 0.5892083048820496,
                 "Y" : 0.38689887523651123
               }, {
-                "Type" : "MOUTH_UP",
+                "Type" : "mouthUp",
                 "X" : 0.674560010433197,
                 "Y" : 0.394125759601593
               } ],
