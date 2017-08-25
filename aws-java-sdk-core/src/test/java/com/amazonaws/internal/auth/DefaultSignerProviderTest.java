@@ -111,6 +111,27 @@ public class DefaultSignerProviderTest {
     }
 
     @Test
+    public void testSignerRegionWhenUsingNonStandardEndpoint() throws URISyntaxException {
+        when(mockClient.getServiceName()).thenReturn("MockService");
+        when(mockClient.getEndpointPrefix()).thenReturn("MockEndpointPrefix");
+
+        Request<?> signerAwareRequest = new DefaultRequest<FooSignedRequest>(new FooSignedRequest(), "MockService");
+        String bjsEndpoint = "https://MockEndpointPrefix.cn-north-1.amazonaws.com.cn";
+        signerAwareRequest.setEndpoint(new URI(bjsEndpoint));
+
+        SignerProviderContext ctx = SignerProviderContext.builder()
+                .withRequest(signerAwareRequest)
+                .build();
+
+        Signer signer = defaultSignerProvider.getSigner(ctx);
+
+        FooSigner fooSigner = (FooSigner) signer;
+
+        assertThat(fooSigner.getRegionName(), is(equalTo("cn-north-1")));
+        assertThat(fooSigner.getServiceName(), is(equalTo("MockService")));
+    }
+
+    @Test
     public void usesDefaultSignerWhenNoRequest() {
         SignerProviderContext ctx = SignerProviderContext.builder().build();
         assertThat(defaultSignerProvider.getSigner(ctx) == DEFAULT_SIGNER, is(true));

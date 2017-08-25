@@ -84,6 +84,38 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             request.addParameter("DisableRollback", StringUtils.fromBoolean(createStackRequest.getDisableRollback()));
         }
 
+        RollbackConfiguration rollbackConfiguration = createStackRequest.getRollbackConfiguration();
+        if (rollbackConfiguration != null) {
+
+            com.amazonaws.internal.SdkInternalList<RollbackTrigger> rollbackTriggersList = (com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration
+                    .getRollbackTriggers();
+            if (rollbackTriggersList.isEmpty() && !rollbackTriggersList.isAutoConstruct()) {
+                request.addParameter("RollbackConfiguration.RollbackTriggers", "");
+            }
+            if (!rollbackTriggersList.isEmpty() || !rollbackTriggersList.isAutoConstruct()) {
+                int rollbackTriggersListIndex = 1;
+
+                for (RollbackTrigger rollbackTriggersListValue : rollbackTriggersList) {
+
+                    if (rollbackTriggersListValue.getArn() != null) {
+                        request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Arn",
+                                StringUtils.fromString(rollbackTriggersListValue.getArn()));
+                    }
+
+                    if (rollbackTriggersListValue.getType() != null) {
+                        request.addParameter("RollbackConfiguration.RollbackTriggers.member." + rollbackTriggersListIndex + ".Type",
+                                StringUtils.fromString(rollbackTriggersListValue.getType()));
+                    }
+                    rollbackTriggersListIndex++;
+                }
+            }
+
+            if (rollbackConfiguration.getMonitoringTimeInMinutes() != null) {
+                request.addParameter("RollbackConfiguration.MonitoringTimeInMinutes",
+                        StringUtils.fromInteger(rollbackConfiguration.getMonitoringTimeInMinutes()));
+            }
+        }
+
         if (createStackRequest.getTimeoutInMinutes() != null) {
             request.addParameter("TimeoutInMinutes", StringUtils.fromInteger(createStackRequest.getTimeoutInMinutes()));
         }

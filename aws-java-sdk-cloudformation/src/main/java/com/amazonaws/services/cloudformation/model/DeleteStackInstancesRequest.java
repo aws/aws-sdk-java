@@ -54,6 +54,11 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a
      * retained stack or add an existing, saved stack to a new stack set.
      * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * >Stack set operation options</a>.
+     * </p>
      */
     private Boolean retainStacks;
     /**
@@ -306,10 +311,19 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a
      * retained stack or add an existing, saved stack to a new stack set.
      * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * >Stack set operation options</a>.
+     * </p>
      * 
      * @param retainStacks
      *        Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't
-     *        reassociate a retained stack or add an existing, saved stack to a new stack set.
+     *        reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *        >Stack set operation options</a>.
      */
 
     public void setRetainStacks(Boolean retainStacks) {
@@ -321,9 +335,18 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a
      * retained stack or add an existing, saved stack to a new stack set.
      * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * >Stack set operation options</a>.
+     * </p>
      * 
      * @return Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't
-     *         reassociate a retained stack or add an existing, saved stack to a new stack set.
+     *         reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *         >Stack set operation options</a>.
      */
 
     public Boolean getRetainStacks() {
@@ -335,10 +358,19 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a
      * retained stack or add an existing, saved stack to a new stack set.
      * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * >Stack set operation options</a>.
+     * </p>
      * 
      * @param retainStacks
      *        Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't
-     *        reassociate a retained stack or add an existing, saved stack to a new stack set.
+     *        reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *        >Stack set operation options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,9 +384,18 @@ public class DeleteStackInstancesRequest extends com.amazonaws.AmazonWebServiceR
      * Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't reassociate a
      * retained stack or add an existing, saved stack to a new stack set.
      * </p>
+     * <p>
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * >Stack set operation options</a>.
+     * </p>
      * 
      * @return Removes the stack instances from the specified stack set, but doesn't delete the stacks. You can't
-     *         reassociate a retained stack or add an existing, saved stack to a new stack set.
+     *         reassociate a retained stack or add an existing, saved stack to a new stack set.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *         >Stack set operation options</a>.
      */
 
     public Boolean isRetainStacks() {

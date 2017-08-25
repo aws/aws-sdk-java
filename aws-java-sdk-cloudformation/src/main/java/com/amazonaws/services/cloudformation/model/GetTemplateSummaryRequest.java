@@ -37,7 +37,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      */
     private String templateBody;
@@ -50,7 +50,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      */
     private String templateURL;
@@ -62,13 +62,17 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      */
     private String stackName;
     /**
      * <p>
      * The name or unique ID of the stack set from which the stack was created.
+     * </p>
+     * <p>
+     * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      */
     private String stackSetName;
@@ -82,7 +86,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      * 
      * @param templateBody
@@ -92,7 +96,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     *        <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      */
 
     public void setTemplateBody(String templateBody) {
@@ -108,7 +112,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      * 
      * @return Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
@@ -117,7 +121,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
      *         Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     *         <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     *         <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      */
 
     public String getTemplateBody() {
@@ -133,7 +137,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      * 
      * @param templateBody
@@ -143,7 +147,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     *        <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,7 +165,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      * 
      * @param templateURL
@@ -171,7 +175,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     *        <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      */
 
     public void setTemplateURL(String templateURL) {
@@ -187,7 +191,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      * 
      * @return Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
@@ -196,7 +200,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
      *         Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     *         <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     *         <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      */
 
     public String getTemplateURL() {
@@ -212,7 +216,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      * 
      * @param templateURL
@@ -222,7 +226,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     *        <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,7 +243,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      * 
      * @param stackName
@@ -248,7 +252,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        must specify the unique stack ID.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     *        <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      */
 
     public void setStackName(String stackName) {
@@ -263,7 +267,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      * 
      * @return The name or the stack ID that is associated with the stack, which are not always interchangeable. For
@@ -271,7 +275,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *         must specify the unique stack ID.</p>
      *         <p>
      *         Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     *         <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     *         <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      */
 
     public String getStackName() {
@@ -286,7 +290,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     * <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * </p>
      * 
      * @param stackName
@@ -295,7 +299,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        must specify the unique stack ID.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
-     *        <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,9 +312,16 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name or unique ID of the stack set from which the stack was created.
      * </p>
+     * <p>
+     * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * </p>
      * 
      * @param stackSetName
-     *        The name or unique ID of the stack set from which the stack was created.
+     *        The name or unique ID of the stack set from which the stack was created.</p>
+     *        <p>
+     *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
+     *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      */
 
     public void setStackSetName(String stackSetName) {
@@ -321,8 +332,15 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name or unique ID of the stack set from which the stack was created.
      * </p>
+     * <p>
+     * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * </p>
      * 
-     * @return The name or unique ID of the stack set from which the stack was created.
+     * @return The name or unique ID of the stack set from which the stack was created.</p>
+     *         <p>
+     *         Conditional: You must specify only one of the following parameters: <code>StackName</code>,
+     *         <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      */
 
     public String getStackSetName() {
@@ -333,9 +351,16 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The name or unique ID of the stack set from which the stack was created.
      * </p>
+     * <p>
+     * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
+     * </p>
      * 
      * @param stackSetName
-     *        The name or unique ID of the stack set from which the stack was created.
+     *        The name or unique ID of the stack set from which the stack was created.</p>
+     *        <p>
+     *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
+     *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

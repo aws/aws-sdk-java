@@ -88,6 +88,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean disableRollback;
     /**
      * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     */
+    private RollbackConfiguration rollbackConfiguration;
+    /**
+     * <p>
      * The amount of time that can pass before the stack status becomes CREATE_FAILED; if <code>DisableRollback</code>
      * is not set or is set to <code>false</code>, the stack will be rolled back.
      * </p>
@@ -634,6 +641,52 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public Boolean isDisableRollback() {
         return this.disableRollback;
+    }
+
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     * 
+     * @param rollbackConfiguration
+     *        The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and
+     *        for the specified monitoring period afterwards.
+     */
+
+    public void setRollbackConfiguration(RollbackConfiguration rollbackConfiguration) {
+        this.rollbackConfiguration = rollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     * 
+     * @return The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations,
+     *         and for the specified monitoring period afterwards.
+     */
+
+    public RollbackConfiguration getRollbackConfiguration() {
+        return this.rollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     * 
+     * @param rollbackConfiguration
+     *        The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and
+     *        for the specified monitoring period afterwards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withRollbackConfiguration(RollbackConfiguration rollbackConfiguration) {
+        setRollbackConfiguration(rollbackConfiguration);
+        return this;
     }
 
     /**
@@ -1892,6 +1945,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getDisableRollback() != null)
             sb.append("DisableRollback: ").append(getDisableRollback()).append(",");
+        if (getRollbackConfiguration() != null)
+            sb.append("RollbackConfiguration: ").append(getRollbackConfiguration()).append(",");
         if (getTimeoutInMinutes() != null)
             sb.append("TimeoutInMinutes: ").append(getTimeoutInMinutes()).append(",");
         if (getNotificationARNs() != null)
@@ -1946,6 +2001,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDisableRollback() != null && other.getDisableRollback().equals(this.getDisableRollback()) == false)
             return false;
+        if (other.getRollbackConfiguration() == null ^ this.getRollbackConfiguration() == null)
+            return false;
+        if (other.getRollbackConfiguration() != null && other.getRollbackConfiguration().equals(this.getRollbackConfiguration()) == false)
+            return false;
         if (other.getTimeoutInMinutes() == null ^ this.getTimeoutInMinutes() == null)
             return false;
         if (other.getTimeoutInMinutes() != null && other.getTimeoutInMinutes().equals(this.getTimeoutInMinutes()) == false)
@@ -1999,6 +2058,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getTemplateURL() == null) ? 0 : getTemplateURL().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getDisableRollback() == null) ? 0 : getDisableRollback().hashCode());
+        hashCode = prime * hashCode + ((getRollbackConfiguration() == null) ? 0 : getRollbackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());

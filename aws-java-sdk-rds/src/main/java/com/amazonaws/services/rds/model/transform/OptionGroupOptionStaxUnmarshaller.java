@@ -110,6 +110,21 @@ public class OptionGroupOptionStaxUnmarshaller implements Unmarshaller<OptionGro
                     continue;
                 }
 
+                if (context.testExpression("RequiresAutoMinorEngineVersionUpgrade", targetDepth)) {
+                    optionGroupOption.setRequiresAutoMinorEngineVersionUpgrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("VpcOnly", targetDepth)) {
+                    optionGroupOption.setVpcOnly(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsOptionVersionDowngrade", targetDepth)) {
+                    optionGroupOption.setSupportsOptionVersionDowngrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("OptionGroupOptionSettings", targetDepth)) {
                     optionGroupOption.withOptionGroupOptionSettings(new ArrayList<OptionGroupOptionSetting>());
                     continue;

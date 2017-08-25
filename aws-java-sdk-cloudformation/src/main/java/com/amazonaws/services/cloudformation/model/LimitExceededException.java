@@ -18,6 +18,11 @@ import javax.annotation.Generated;
  * <p>
  * The quota for the resource has already been reached.
  * </p>
+ * <p>
+ * For information on stack set limitations, see <a
+ * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html">Limitations of
+ * StackSets</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.cloudformation.model.AmazonCloudFormationException {

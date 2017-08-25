@@ -85,6 +85,11 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     continue;
                 }
 
+                if (context.testExpression("RollbackConfiguration", targetDepth)) {
+                    stack.setRollbackConfiguration(RollbackConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("StackStatus", targetDepth)) {
                     stack.setStackStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

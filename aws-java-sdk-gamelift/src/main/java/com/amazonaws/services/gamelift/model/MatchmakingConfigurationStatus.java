@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MatchmakingConfigurationStatus {
 
-    CANCELED("CANCELED"),
-    COMPLETE("COMPLETE"),
+    CANCELLED("CANCELLED"),
+    COMPLETED("COMPLETED"),
     FAILED("FAILED"),
     PLACING("PLACING"),
     QUEUED("QUEUED"),

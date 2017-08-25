@@ -202,33 +202,153 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MySQL</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>Oracle</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 10 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 10 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096
-     * (Express Edition and Web Edition)
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 20 to 16384.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 100 to 16384.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 1024.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 20 to 1024.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private Integer allocatedStorage;
     /**
@@ -765,6 +885,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.1.23</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>10.1.19</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -776,6 +901,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.31</code> (supported in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.0.28</code> (supported in all AWS regions)
@@ -1392,39 +1522,160 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>MySQL</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 5 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>MariaDB</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 5 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 5 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>Oracle</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 10 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 10 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>SQL Server</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to
-     *        4096 (Express Edition and Web Edition)
+     *        Constraints to the amount of storage for each storage type are the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Web and Express editions: Must be an integer from 20 to 16384.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Web and Express editions: Must be an integer from 100 to 16384.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enterprise and Standard editions: Must be an integer from 200 to 1024.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Web and Express editions: Must be an integer from 20 to 1024.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance. Note that not all instance classes are available in
-     *        all regions for all DB engines.
-     *        </p>
+     *        all regions for all DB engines.</p>
      *        <p>
-     *        Valid Values:
-     *        <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large | db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
+     *        Valid Values: <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
+     *        |db.m2.2xlarge | db.m2.4xlarge | db.m3.medium | db.m3.large | db.m3.xlarge | db.m3.2xlarge | db.m4.large |
+     *        db.m4.xlarge | db.m4.2xlarge | db.m4.4xlarge | db.m4.10xlarge | db.r3.large | db.r3.xlarge | db.r3.2xlarge
+     *        | db.r3.4xlarge | db.r3.8xlarge | db.t2.micro | db.t2.small | db.t2.medium | db.t2.large</code>
      * @param engine
      *        The name of the database engine to be used for this instance.
      *        </p>
@@ -2633,33 +2884,153 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MySQL</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>Oracle</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 10 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 10 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096
-     * (Express Edition and Web Edition)
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 20 to 16384.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 100 to 16384.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 1024.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 20 to 1024.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param allocatedStorage
      *        The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
@@ -2677,32 +3048,152 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>MySQL</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 5 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>MariaDB</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 5 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 5 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>Oracle</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 10 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 10 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>SQL Server</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to
-     *        4096 (Express Edition and Web Edition)
+     *        Constraints to the amount of storage for each storage type are the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Web and Express editions: Must be an integer from 20 to 16384.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Web and Express editions: Must be an integer from 100 to 16384.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enterprise and Standard editions: Must be an integer from 200 to 1024.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Web and Express editions: Must be an integer from 20 to 1024.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -2727,33 +3218,153 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MySQL</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>Oracle</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 10 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 10 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096
-     * (Express Edition and Web Edition)
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 20 to 16384.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 100 to 16384.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 1024.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 20 to 1024.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @return The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
      *         <p>
@@ -2770,32 +3381,152 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>MySQL</b>
      *         </p>
      *         <p>
-     *         Constraints: Must be an integer from 5 to 6144.
+     *         Constraints to the amount of storage for each storage type are the following:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         <b>MariaDB</b>
      *         </p>
      *         <p>
-     *         Constraints: Must be an integer from 5 to 6144.
+     *         Constraints to the amount of storage for each storage type are the following:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         <b>PostgreSQL</b>
      *         </p>
      *         <p>
-     *         Constraints: Must be an integer from 5 to 6144.
+     *         Constraints to the amount of storage for each storage type are the following:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         <b>Oracle</b>
      *         </p>
      *         <p>
-     *         Constraints: Must be an integer from 10 to 6144.
+     *         Constraints to the amount of storage for each storage type are the following:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Magnetic storage (standard): Must be an integer from 10 to 3072.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         <b>SQL Server</b>
      *         </p>
      *         <p>
-     *         Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to
-     *         4096 (Express Edition and Web Edition)
+     *         Constraints to the amount of storage for each storage type are the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         General Purpose (SSD) storage (gp2):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Web and Express editions: Must be an integer from 20 to 16384.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Provisioned IOPS storage (io1):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Web and Express editions: Must be an integer from 100 to 16384.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Magnetic storage (standard):
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Enterprise and Standard editions: Must be an integer from 200 to 1024.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Web and Express editions: Must be an integer from 20 to 1024.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      */
 
     public Integer getAllocatedStorage() {
@@ -2820,33 +3551,153 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>MySQL</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>MariaDB</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 5 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 5 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>Oracle</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 10 to 6144.
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard): Must be an integer from 10 to 3072.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>SQL Server</b>
      * </p>
      * <p>
-     * Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to 4096
-     * (Express Edition and Web Edition)
+     * Constraints to the amount of storage for each storage type are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * General Purpose (SSD) storage (gp2):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 20 to 16384.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned IOPS storage (io1):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 100 to 16384.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Magnetic storage (standard):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Enterprise and Standard editions: Must be an integer from 200 to 1024.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Web and Express editions: Must be an integer from 20 to 1024.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param allocatedStorage
      *        The amount of storage (in gigabytes) to be initially allocated for the database instance.</p>
@@ -2864,32 +3715,152 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>MySQL</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 5 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>MariaDB</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 5 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 5 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 5 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 5 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>Oracle</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 10 to 6144.
+     *        Constraints to the amount of storage for each storage type are the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2): Must be an integer from 10 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1): Must be an integer from 100 to 6144.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard): Must be an integer from 10 to 3072.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        <b>SQL Server</b>
      *        </p>
      *        <p>
-     *        Constraints: Must be an integer from 200 to 4096 (Standard Edition and Enterprise Edition) or from 20 to
-     *        4096 (Express Edition and Web Edition)
+     *        Constraints to the amount of storage for each storage type are the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        General Purpose (SSD) storage (gp2):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Web and Express editions: Must be an integer from 20 to 16384.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Provisioned IOPS storage (io1):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enterprise and Standard editions: Must be an integer from 200 to 16384.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Web and Express editions: Must be an integer from 100 to 16384.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Magnetic storage (standard):
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Enterprise and Standard editions: Must be an integer from 200 to 1024.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Web and Express editions: Must be an integer from 20 to 1024.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6121,6 +7092,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.1.23</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>10.1.19</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -6132,6 +7108,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.31</code> (supported in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.0.28</code> (supported in all AWS regions)
@@ -6445,6 +7426,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>10.1.23</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>10.1.19</code> (supported in all AWS regions)
      *        </p>
      *        </li>
@@ -6456,6 +7442,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.0.31</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>10.0.28</code> (supported in all AWS regions)
@@ -6783,6 +7774,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.1.23</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>10.1.19</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -6794,6 +7790,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.31</code> (supported in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.0.28</code> (supported in all AWS regions)
@@ -7106,6 +8107,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>10.1.23</code> (supported in all AWS regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>10.1.19</code> (supported in all AWS regions)
      *         </p>
      *         </li>
@@ -7117,6 +8123,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </ul>
      *         <p/>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>10.0.31</code> (supported in all AWS regions)
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>10.0.28</code> (supported in all AWS regions)
@@ -7444,6 +8455,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.1.23</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>10.1.19</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -7455,6 +8471,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.31</code> (supported in all AWS regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.0.28</code> (supported in all AWS regions)
@@ -7768,6 +8789,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>10.1.23</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>10.1.19</code> (supported in all AWS regions)
      *        </p>
      *        </li>
@@ -7779,6 +8805,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.0.31</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>10.0.28</code> (supported in all AWS regions)

@@ -1,3 +1,20 @@
+# __1.11.184__ __2017-08-25__
+## __AWS Cloud Formation__
+  - ### Features
+    - Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fixed bug in SigV4 signing for services that have different signing name and endpoint prefix when sending requests to non-standard endpoints like China region.
+
+## __Amazon GameLift__
+  - ### Features
+    - Update spelling of MatchmakingTicket status values for internal consistency.
+
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - Option group options now contain additional properties that identify requirements for certain options. Check these properties to determine if your DB instance must be in a VPC or have auto minor upgrade turned on before you can use an option. Check to see if you can downgrade the version of an option after you have installed it.
+
 # __1.11.183__ __2017-08-24__
 ## __Amazon Rekognition__
   - ### Features

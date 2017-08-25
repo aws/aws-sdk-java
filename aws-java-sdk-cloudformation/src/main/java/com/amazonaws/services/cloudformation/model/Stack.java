@@ -71,6 +71,13 @@ public class Stack implements Serializable, Cloneable {
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     */
+    private RollbackConfiguration rollbackConfiguration;
+    /**
+     * <p>
      * Current status of the stack.
      * </p>
      */
@@ -453,6 +460,52 @@ public class Stack implements Serializable, Cloneable {
 
     public Stack withLastUpdatedTime(java.util.Date lastUpdatedTime) {
         setLastUpdatedTime(lastUpdatedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     * 
+     * @param rollbackConfiguration
+     *        The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and
+     *        for the specified monitoring period afterwards.
+     */
+
+    public void setRollbackConfiguration(RollbackConfiguration rollbackConfiguration) {
+        this.rollbackConfiguration = rollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     * 
+     * @return The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations,
+     *         and for the specified monitoring period afterwards.
+     */
+
+    public RollbackConfiguration getRollbackConfiguration() {
+        return this.rollbackConfiguration;
+    }
+
+    /**
+     * <p>
+     * The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for
+     * the specified monitoring period afterwards.
+     * </p>
+     * 
+     * @param rollbackConfiguration
+     *        The rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and
+     *        for the specified monitoring period afterwards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withRollbackConfiguration(RollbackConfiguration rollbackConfiguration) {
+        setRollbackConfiguration(rollbackConfiguration);
         return this;
     }
 
@@ -1147,6 +1200,8 @@ public class Stack implements Serializable, Cloneable {
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getRollbackConfiguration() != null)
+            sb.append("RollbackConfiguration: ").append(getRollbackConfiguration()).append(",");
         if (getStackStatus() != null)
             sb.append("StackStatus: ").append(getStackStatus()).append(",");
         if (getStackStatusReason() != null)
@@ -1207,6 +1262,10 @@ public class Stack implements Serializable, Cloneable {
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
+        if (other.getRollbackConfiguration() == null ^ this.getRollbackConfiguration() == null)
+            return false;
+        if (other.getRollbackConfiguration() != null && other.getRollbackConfiguration().equals(this.getRollbackConfiguration()) == false)
+            return false;
         if (other.getStackStatus() == null ^ this.getStackStatus() == null)
             return false;
         if (other.getStackStatus() != null && other.getStackStatus().equals(this.getStackStatus()) == false)
@@ -1258,6 +1317,7 @@ public class Stack implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getRollbackConfiguration() == null) ? 0 : getRollbackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStackStatus() == null) ? 0 : getStackStatus().hashCode());
         hashCode = prime * hashCode + ((getStackStatusReason() == null) ? 0 : getStackStatusReason().hashCode());
         hashCode = prime * hashCode + ((getDisableRollback() == null) ? 0 : getDisableRollback().hashCode());

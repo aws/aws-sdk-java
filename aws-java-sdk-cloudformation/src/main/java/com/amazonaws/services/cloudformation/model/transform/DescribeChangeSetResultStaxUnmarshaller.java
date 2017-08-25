@@ -110,6 +110,11 @@ public class DescribeChangeSetResultStaxUnmarshaller implements Unmarshaller<Des
                     continue;
                 }
 
+                if (context.testExpression("RollbackConfiguration", targetDepth)) {
+                    describeChangeSetResult.setRollbackConfiguration(RollbackConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Capabilities", targetDepth)) {
                     describeChangeSetResult.withCapabilities(new ArrayList<String>());
                     continue;

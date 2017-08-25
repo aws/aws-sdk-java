@@ -16,6 +16,7 @@ package com.amazonaws;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkProtectedApi;
+import com.amazonaws.auth.EndpointPrefixAwareSigner;
 import com.amazonaws.auth.RegionAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
@@ -274,7 +275,7 @@ public abstract class AmazonWebServiceClient {
                     "Endpoint is not set. Use setEndpoint to set an endpoint before performing any request.");
         }
         String service = getServiceNameIntern();
-        String region = AwsHostNameUtils.parseRegionName(uri.getHost(), service);
+        String region = AwsHostNameUtils.parseRegionName(uri.getHost(), getEndpointPrefix());
         return computeSignerByServiceRegion(
                 service, region, signerRegionOverride, isRegionIdAsSignerParam);
     }
@@ -306,7 +307,8 @@ public abstract class AmazonWebServiceClient {
              ? SignerFactory.getSigner(serviceName, regionId)
              : SignerFactory.getSignerByTypeAndService(signerType, serviceName)
              ;
-         if (signer instanceof RegionAwareSigner) {
+
+        if (signer instanceof RegionAwareSigner) {
              // Overrides the default region computed
              RegionAwareSigner regionAwareSigner = (RegionAwareSigner)signer;
             // (signerRegionOverride != null) means that it is likely to be AWS
@@ -317,6 +319,16 @@ public abstract class AmazonWebServiceClient {
              else if (regionId != null && isRegionIdAsSignerParam)
                  regionAwareSigner.setRegionName(regionId);
          }
+
+         if (signer instanceof EndpointPrefixAwareSigner) {
+             EndpointPrefixAwareSigner endpointPrefixAwareSigner = (EndpointPrefixAwareSigner) signer;
+             /*
+              * This will be used to compute the region name required for signing
+              * if signerRegionOverride is not provided
+              */
+             endpointPrefixAwareSigner.setEndpointPrefix(endpointPrefix);
+         }
+
          return signer;
     }
 

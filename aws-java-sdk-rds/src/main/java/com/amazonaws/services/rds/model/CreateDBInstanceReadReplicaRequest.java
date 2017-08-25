@@ -54,7 +54,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Can specify a DB instance that is a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or
-     * later.
+     * later (9.4.7 and higher for cross region replication).
      * </p>
      * </li>
      * <li>
@@ -411,7 +411,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        Can specify a DB instance that is a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5
-     *        or later.
+     *        or later (9.4.7 and higher for cross region replication).
      *        </p>
      *        </li>
      *        <li>
@@ -508,7 +508,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Can specify a DB instance that is a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or
-     * later.
+     * later (9.4.7 and higher for cross region replication).
      * </p>
      * </li>
      * <li>
@@ -552,7 +552,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        Can specify a DB instance that is a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5
-     *        or later.
+     *        or later (9.4.7 and higher for cross region replication).
      *        </p>
      *        </li>
      *        <li>
@@ -603,7 +603,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Can specify a DB instance that is a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or
-     * later.
+     * later (9.4.7 and higher for cross region replication).
      * </p>
      * </li>
      * <li>
@@ -646,7 +646,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         Can specify a DB instance that is a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5
-     *         or later.
+     *         or later (9.4.7 and higher for cross region replication).
      *         </p>
      *         </li>
      *         <li>
@@ -697,7 +697,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * <li>
      * <p>
      * Can specify a DB instance that is a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5 or
-     * later.
+     * later (9.4.7 and higher for cross region replication).
      * </p>
      * </li>
      * <li>
@@ -741,7 +741,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        Can specify a DB instance that is a PostgreSQL DB instance only if the source is running PostgreSQL 9.3.5
-     *        or later.
+     *        or later (9.4.7 and higher for cross region replication).
      *        </p>
      *        </li>
      *        <li>

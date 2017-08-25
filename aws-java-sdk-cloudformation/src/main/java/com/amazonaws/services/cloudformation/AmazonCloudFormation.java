@@ -48,425 +48,6 @@ import com.amazonaws.services.cloudformation.waiters.AmazonCloudFormationWaiters
  * AWS product, you can find the product's technical documentation at <a
  * href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
  * </p>
- * <p>
- * <i>APIs for stacks </i>
- * </p>
- * <p>
- * When you use AWS CloudFormation, you manage related resources as a single unit called a stack. You create, update,
- * and delete a collection of resources by creating, updating, and deleting stacks. All the resources in a stack are
- * defined by the stack's AWS CloudFormation template.
- * </p>
- * <p>
- * Actions
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">
- * CancelUpdateStack</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html">
- * ContinueUpdateRollback</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html">CreateStack</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html">DeleteStack</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackEvents.html">
- * DescribeStackEvents</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResource.html">
- * DescribeStackResource</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResources.html">
- * DescribeStackResources</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStacks.html">DescribeStacks</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_EstimateTemplateCost.html">
- * EstimateTemplateCost</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetStackPolicy.html">GetStackPolicy</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplate.html">GetTemplate</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplateSummary.html">
- * GetTemplateSummary</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListExports.html">ListExports</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListImports.html">ListImports</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackResources.html">
- * ListStackResources</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStacks.html">ListStacks</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html">SetStackPolicy</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html">UpdateStack</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ValidateTemplate.html">ValidateTemplate<
- * /a>
- * </p>
- * </li>
- * </ul>
- * <p>
- * Data Types
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Export.html">Export</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ParameterConstraints.html">
- * ParameterConstraints</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ParameterDeclaration.html">
- * ParameterDeclaration</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Stack.html">Stack</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackEvent.html">StackEvent</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResource.html">StackResource</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResourceDetail.html">
- * StackResourceDetail</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackResourceSummary.html">
- * StackResourceSummary</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSummary.html">StackSummary</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Tag.html">Tag</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_TemplateParameter.html">
- * TemplateParameter</a>
- * </p>
- * </li>
- * </ul>
- * <p>
- * <i>APIs for change sets</i>
- * </p>
- * <p>
- * If you need to make changes to the running resources in a stack, you update the stack. Before making changes to your
- * resources, you can generate a change set, which is summary of your proposed changes. Change sets allow you to see how
- * your changes might impact your running resources, especially for critical resources, before implementing them.
- * </p>
- * <p>
- * Actions
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html">DeleteChangeSet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeChangeSet.html">
- * DescribeChangeSet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet<
- * /a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListChangeSets.html">ListChangeSets</a>
- * </p>
- * </li>
- * </ul>
- * <p>
- * Data Types
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Change.html">Change</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ChangeSetSummary.html">ChangeSetSummary<
- * /a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceChange.html">ResourceChange</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceChangeDetail.html">
- * ResourceChangeDetail</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ResourceTargetDefinition.html">
- * ResourceTargetDefinition</a>
- * </p>
- * </li>
- * </ul>
- * <p>
- * <i>APIs for stack sets</i>
- * </p>
- * <p>
- * AWS CloudFormation StackSets lets you create a collection, or stack set, of stacks that can automatically and safely
- * provision a common set of AWS resources across multiple AWS accounts and multiple AWS regions from a single AWS
- * CloudFormation template. When you create a stack set, AWS CloudFormation provisions a stack in each of the specified
- * accounts and regions by using the supplied AWS CloudFormation template and parameters. Stack sets let you manage a
- * common set of AWS resources in a selection of accounts and regions in a single operation.
- * </p>
- * <p>
- * Actions
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">
- * CreateStackInstances</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackSet.html">CreateStackSet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackInstances.html">
- * DeleteStackInstances</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStackSet.html">DeleteStackSet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackInstance.html">
- * DescribeStackInstance</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSet.html">DescribeStackSet<
- * /a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackSetOperation.html">
- * DescribeStackSetOperation</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackInstances.html">
- * ListStackInstances</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperationResults">
- * ListStackSetOperationResults</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetOperations">
- * ListStackSetOperations</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSets">ListStackSets</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StopStackSetOperation.html">
- * StopStackSetOperation</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
- * </p>
- * </li>
- * </ul>
- * <p>
- * Data Types
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackInstance.html.html">StackInstance</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackInstanceSummary.html.html">
- * StackInstanceSummary</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSet.html">StackSet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperation.html.html">
- * StackSetOperation</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationPreferences.html.html">
- * StackSetOperationPreferences</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href=
- * "http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationResultSummary.html.html"
- * >StackSetOperationResultSummary</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetOperationSummary.html.html">
- * StackSetOperationSummary</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_StackSetSummary.html">StackSetSummary</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Tag.html">Tag</a>
- * </p>
- * </li>
- * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonCloudFormation {
@@ -609,7 +190,11 @@ public interface AmazonCloudFormation {
      * @throws InsufficientCapabilitiesException
      *         The template contains resources with capabilities that weren't specified in the Capabilities parameter.
      * @throws LimitExceededException
-     *         The quota for the resource has already been reached.
+     *         The quota for the resource has already been reached.</p>
+     *         <p>
+     *         For information on stack set limitations, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html"
+     *         >Limitations of StackSets</a>.
      * @sample AmazonCloudFormation.CreateChangeSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet" target="_top">AWS
      *      API Documentation</a>
@@ -626,7 +211,11 @@ public interface AmazonCloudFormation {
      *        The input for <a>CreateStack</a> action.
      * @return Result of the CreateStack operation returned by the service.
      * @throws LimitExceededException
-     *         The quota for the resource has already been reached.
+     *         The quota for the resource has already been reached.</p>
+     *         <p>
+     *         For information on stack set limitations, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html"
+     *         >Limitations of StackSets</a>.
      * @throws AlreadyExistsException
      *         The resource with the name requested already exists.
      * @throws TokenAlreadyExistsException
@@ -660,7 +249,11 @@ public interface AmazonCloudFormation {
      * @throws InvalidOperationException
      *         The specified operation isn't valid.
      * @throws LimitExceededException
-     *         The quota for the resource has already been reached.
+     *         The quota for the resource has already been reached.</p>
+     *         <p>
+     *         For information on stack set limitations, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html"
+     *         >Limitations of StackSets</a>.
      * @sample AmazonCloudFormation.CreateStackInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances"
      *      target="_top">AWS API Documentation</a>
@@ -679,7 +272,11 @@ public interface AmazonCloudFormation {
      * @throws CreatedButModifiedException
      *         The specified resource exists, but has been changed.
      * @throws LimitExceededException
-     *         The quota for the resource has already been reached.
+     *         The quota for the resource has already been reached.</p>
+     *         <p>
+     *         For information on stack set limitations, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-limitations.html"
+     *         >Limitations of StackSets</a>.
      * @sample AmazonCloudFormation.CreateStackSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet" target="_top">AWS
      *      API Documentation</a>
@@ -1059,11 +656,11 @@ public interface AmazonCloudFormation {
      * <p>
      * Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for
      * viewing parameter information, such as default parameter values and parameter types, before you create or update
-     * a stack.
+     * a stack or stack set.
      * </p>
      * <p>
      * You can use the <code>GetTemplateSummary</code> action when you submit a template, or you can get template
-     * information for a running or deleted stack.
+     * information for a stack set, or a running or deleted stack.
      * </p>
      * <p>
      * For deleted stacks, <code>GetTemplateSummary</code> returns the template information for up to 90 days after the

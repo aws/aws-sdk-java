@@ -63,7 +63,7 @@ public class DefaultSignerProvider extends SignerProvider {
     private String getSigningRegionForRequestURI(URI uri) {
         String regionName = awsClient.getSignerRegionOverride();
         if (regionName == null) {
-            regionName = AwsHostNameUtils.parseRegion(uri.getHost(), awsClient.getServiceName());
+            regionName = AwsHostNameUtils.parseRegion(uri.getHost(), awsClient.getEndpointPrefix());
         }
         return regionName;
     }
