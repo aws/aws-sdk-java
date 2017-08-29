@@ -31,6 +31,12 @@ public class AssociateVpcCidrBlockResult extends com.amazonaws.AmazonWebServiceR
     private VpcIpv6CidrBlockAssociation ipv6CidrBlockAssociation;
     /**
      * <p>
+     * Information about the IPv4 CIDR block association.
+     * </p>
+     */
+    private VpcCidrBlockAssociation cidrBlockAssociation;
+    /**
+     * <p>
      * The ID of the VPC.
      * </p>
      */
@@ -73,6 +79,46 @@ public class AssociateVpcCidrBlockResult extends com.amazonaws.AmazonWebServiceR
 
     public AssociateVpcCidrBlockResult withIpv6CidrBlockAssociation(VpcIpv6CidrBlockAssociation ipv6CidrBlockAssociation) {
         setIpv6CidrBlockAssociation(ipv6CidrBlockAssociation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the IPv4 CIDR block association.
+     * </p>
+     * 
+     * @param cidrBlockAssociation
+     *        Information about the IPv4 CIDR block association.
+     */
+
+    public void setCidrBlockAssociation(VpcCidrBlockAssociation cidrBlockAssociation) {
+        this.cidrBlockAssociation = cidrBlockAssociation;
+    }
+
+    /**
+     * <p>
+     * Information about the IPv4 CIDR block association.
+     * </p>
+     * 
+     * @return Information about the IPv4 CIDR block association.
+     */
+
+    public VpcCidrBlockAssociation getCidrBlockAssociation() {
+        return this.cidrBlockAssociation;
+    }
+
+    /**
+     * <p>
+     * Information about the IPv4 CIDR block association.
+     * </p>
+     * 
+     * @param cidrBlockAssociation
+     *        Information about the IPv4 CIDR block association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateVpcCidrBlockResult withCidrBlockAssociation(VpcCidrBlockAssociation cidrBlockAssociation) {
+        setCidrBlockAssociation(cidrBlockAssociation);
         return this;
     }
 
@@ -129,6 +175,8 @@ public class AssociateVpcCidrBlockResult extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getIpv6CidrBlockAssociation() != null)
             sb.append("Ipv6CidrBlockAssociation: ").append(getIpv6CidrBlockAssociation()).append(",");
+        if (getCidrBlockAssociation() != null)
+            sb.append("CidrBlockAssociation: ").append(getCidrBlockAssociation()).append(",");
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
@@ -149,6 +197,10 @@ public class AssociateVpcCidrBlockResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getIpv6CidrBlockAssociation() != null && other.getIpv6CidrBlockAssociation().equals(this.getIpv6CidrBlockAssociation()) == false)
             return false;
+        if (other.getCidrBlockAssociation() == null ^ this.getCidrBlockAssociation() == null)
+            return false;
+        if (other.getCidrBlockAssociation() != null && other.getCidrBlockAssociation().equals(this.getCidrBlockAssociation()) == false)
+            return false;
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
@@ -162,6 +214,7 @@ public class AssociateVpcCidrBlockResult extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIpv6CidrBlockAssociation() == null) ? 0 : getIpv6CidrBlockAssociation().hashCode());
+        hashCode = prime * hashCode + ((getCidrBlockAssociation() == null) ? 0 : getCidrBlockAssociation().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         return hashCode;
     }

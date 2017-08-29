@@ -14,6 +14,8 @@
  */
 package com.amazonaws;
 
+import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
+
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.auth.EndpointPrefixAwareSigner;
@@ -41,15 +43,11 @@ import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.Classes;
 import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.StringUtils;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.net.URI;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-
-import static com.amazonaws.SDKGlobalConfiguration.PROFILING_SYSTEM_PROPERTY;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Abstract base class for Amazon Web Service Java clients.
@@ -237,6 +235,62 @@ public abstract class AmazonWebServiceClient {
     /** Returns the endpoint as a URI. */
     private URI toURI(String endpoint) throws IllegalArgumentException {
         return RuntimeHttpUtils.toUri(endpoint, clientConfiguration);
+    }
+
+    /**
+     * Allows specifying the endpoint along with signing information (service name and signing region). This method will
+     * overwrite any information set previously by any set/with/configure Region/Endpoint methods.
+     * <p>
+     * Overrides the default endpoint for this client
+     * ("http://dynamodb.us-east-1.amazonaws.com/") and explicitly provides an
+     * AWS region ID and AWS service name to use when the client calculates a
+     * signature for requests. In almost all cases, this region ID and service
+     * name are automatically determined from the endpoint, and callers should
+     * use the simpler one-argument form of setEndpoint instead of this method.
+     * <p>
+     * Callers can pass in just the endpoint (ex:
+     * "dynamodb.us-east-1.amazonaws.com/") or a full URL, including the
+     * protocol (ex: "http://dynamodb.us-east-1.amazonaws.com/"). If the
+     * protocol is not specified here, the default protocol from this client's
+     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * <p>
+     * For more information on using AWS regions with the AWS SDK for Java, and
+     * a complete list of all available endpoints for all AWS services, see: <a
+     * href=
+     * "http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912"
+     * > http://developer.amazonwebservices.com/connect/entry.jspa?externalID=
+     * 3912</a>
+     *
+     * @param endpoint
+     *            The endpoint (ex: "dynamodb.us-east-1.amazonaws.com/") or a
+     *            full URL, including the protocol (ex:
+     *            "http://dynamodb.us-east-1.amazonaws.com/") of the region
+     *            specific AWS endpoint this client will communicate with.
+     * @param serviceName
+     *            This parameter is ignored.
+     * @param regionId
+     *            The ID of the region in which this service resides AND the
+     *            overriding region for signing purposes.
+     *
+     * @throws IllegalArgumentException
+     *             If any problems are detected with the specified endpoint.
+     * @deprecated Please use the client builders instead. The
+     * {@link AwsClientBuilder#withEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)} method on the builder allows
+     * setting both endpoint and signing region. See
+     * <a href="http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/creating-clients.html">Creating Service Clients</a>
+     * for more information.
+     */
+    @Deprecated
+    public void setEndpoint(String endpoint, String serviceName, String regionId) {
+        URI uri = toURI(endpoint);
+        Signer signer = computeSignerByServiceRegion(serviceName, regionId,
+                                                     regionId, true);
+        synchronized (this) {
+            setServiceNameIntern(serviceName);
+            this.signerProvider = createSignerProvider(signer);
+            this.endpoint = uri;
+            this.signerRegionOverride = regionId;
+        }
     }
 
     /**

@@ -72,6 +72,11 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted during AMI creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.
      * </p>
      * </li>
@@ -170,6 +175,11 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted during AMI creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.
      * </p>
      * </li>
@@ -221,6 +231,11 @@ public class StateReason implements Serializable, Cloneable {
      *        <p>
      *        <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using the
      *        <code>shutdown -h</code> command from the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted during AMI creation.
      *        </p>
      *        </li>
      *        <li>
@@ -285,6 +300,11 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted during AMI creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.
      * </p>
      * </li>
@@ -335,6 +355,11 @@ public class StateReason implements Serializable, Cloneable {
      *         <p>
      *         <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using the
      *         <code>shutdown -h</code> command from the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted during AMI creation.
      *         </p>
      *         </li>
      *         <li>
@@ -399,6 +424,11 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted during AMI creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.
      * </p>
      * </li>
@@ -450,6 +480,11 @@ public class StateReason implements Serializable, Cloneable {
      *        <p>
      *        <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using the
      *        <code>shutdown -h</code> command from the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted during AMI creation.
      *        </p>
      *        </li>
      *        <li>

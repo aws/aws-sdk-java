@@ -1,3 +1,12 @@
+# __1.11.185__ __2017-08-29__
+## __AWS Config__
+  - ### Features
+    - Increased the internal size limit of resourceId
+
+## __Amazon EC2__
+  - ### Features
+    - Provides capability to add secondary CIDR blocks to a VPC.
+
 # __1.11.184__ __2017-08-25__
 ## __AWS Cloud Formation__
   - ### Features

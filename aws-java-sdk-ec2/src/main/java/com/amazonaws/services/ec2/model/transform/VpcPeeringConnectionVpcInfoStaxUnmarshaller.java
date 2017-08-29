@@ -60,6 +60,16 @@ public class VpcPeeringConnectionVpcInfoStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("cidrBlockSet", targetDepth)) {
+                    vpcPeeringConnectionVpcInfo.withCidrBlockSet(new ArrayList<CidrBlock>());
+                    continue;
+                }
+
+                if (context.testExpression("cidrBlockSet/item", targetDepth)) {
+                    vpcPeeringConnectionVpcInfo.withCidrBlockSet(CidrBlockStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ownerId", targetDepth)) {
                     vpcPeeringConnectionVpcInfo.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

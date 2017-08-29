@@ -80,6 +80,16 @@ public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerCo
                     continue;
                 }
 
+                if (context.testExpression("cidrBlockAssociationSet", targetDepth)) {
+                    vpc.withCidrBlockAssociationSet(new ArrayList<VpcCidrBlockAssociation>());
+                    continue;
+                }
+
+                if (context.testExpression("cidrBlockAssociationSet/item", targetDepth)) {
+                    vpc.withCidrBlockAssociationSet(VpcCidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("isDefault", targetDepth)) {
                     vpc.setIsDefault(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

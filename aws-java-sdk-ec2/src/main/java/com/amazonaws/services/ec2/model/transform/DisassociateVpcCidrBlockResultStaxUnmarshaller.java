@@ -48,6 +48,11 @@ public class DisassociateVpcCidrBlockResultStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("cidrBlockAssociation", targetDepth)) {
+                    disassociateVpcCidrBlockResult.setCidrBlockAssociation(VpcCidrBlockAssociationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("vpcId", targetDepth)) {
                     disassociateVpcCidrBlockResult.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

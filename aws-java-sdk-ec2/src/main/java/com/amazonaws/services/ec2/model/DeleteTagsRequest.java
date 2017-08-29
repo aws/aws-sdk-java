@@ -29,15 +29,16 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     * The IDs of one or more resources.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resources;
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
-     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
-     * empty string.
+     * One or more tags to delete. If you omit this parameter, we delete all tags for the specified resources. Specify a
+     * tag key and an optional tag value to delete specific tags. If you specify a tag key without a tag value, we
+     * delete any tag with this key regardless of its value. If you specify a tag key with an empty string as the tag
+     * value, we delete the tag only if its value is an empty string.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -54,7 +55,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      * initialize any additional object members.
      * 
      * @param resources
-     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     *        The IDs of one or more resources.
      */
     public DeleteTagsRequest(java.util.List<String> resources) {
         setResources(resources);
@@ -62,10 +63,10 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     * The IDs of one or more resources.
      * </p>
      * 
-     * @return The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     * @return The IDs of one or more resources.
      */
 
     public java.util.List<String> getResources() {
@@ -77,11 +78,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     * The IDs of one or more resources.
      * </p>
      * 
      * @param resources
-     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     *        The IDs of one or more resources.
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -95,7 +96,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     * The IDs of one or more resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -104,7 +105,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      * </p>
      * 
      * @param resources
-     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     *        The IDs of one or more resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +121,11 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     * The IDs of one or more resources.
      * </p>
      * 
      * @param resources
-     *        The ID of the resource. For example, ami-1a2b3c4d. You can specify more than one resource ID.
+     *        The IDs of one or more resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,14 +136,16 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
-     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
-     * empty string.
+     * One or more tags to delete. If you omit this parameter, we delete all tags for the specified resources. Specify a
+     * tag key and an optional tag value to delete specific tags. If you specify a tag key without a tag value, we
+     * delete any tag with this key regardless of its value. If you specify a tag key with an empty string as the tag
+     * value, we delete the tag only if its value is an empty string.
      * </p>
      * 
-     * @return One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of
-     *         its value. If you specify this parameter with an empty string as the value, we delete the key only if its
-     *         value is an empty string.
+     * @return One or more tags to delete. If you omit this parameter, we delete all tags for the specified resources.
+     *         Specify a tag key and an optional tag value to delete specific tags. If you specify a tag key without a
+     *         tag value, we delete any tag with this key regardless of its value. If you specify a tag key with an
+     *         empty string as the tag value, we delete the tag only if its value is an empty string.
      */
 
     public java.util.List<Tag> getTags() {
@@ -154,15 +157,17 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
-     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
-     * empty string.
+     * One or more tags to delete. If you omit this parameter, we delete all tags for the specified resources. Specify a
+     * tag key and an optional tag value to delete specific tags. If you specify a tag key without a tag value, we
+     * delete any tag with this key regardless of its value. If you specify a tag key with an empty string as the tag
+     * value, we delete the tag only if its value is an empty string.
      * </p>
      * 
      * @param tags
-     *        One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of
-     *        its value. If you specify this parameter with an empty string as the value, we delete the key only if its
-     *        value is an empty string.
+     *        One or more tags to delete. If you omit this parameter, we delete all tags for the specified resources.
+     *        Specify a tag key and an optional tag value to delete specific tags. If you specify a tag key without a
+     *        tag value, we delete any tag with this key regardless of its value. If you specify a tag key with an empty
+     *        string as the tag value, we delete the tag only if its value is an empty string.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -176,9 +181,10 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
-     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
-     * empty string.
+     * One or more tags to delete. If you omit this parameter, we delete all tags for the specified resources. Specify a
+     * tag key and an optional tag value to delete specific tags. If you specify a tag key without a tag value, we
+     * delete any tag with this key regardless of its value. If you specify a tag key with an empty string as the tag
+     * value, we delete the tag only if its value is an empty string.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -187,9 +193,10 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
      * </p>
      * 
      * @param tags
-     *        One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of
-     *        its value. If you specify this parameter with an empty string as the value, we delete the key only if its
-     *        value is an empty string.
+     *        One or more tags to delete. If you omit this parameter, we delete all tags for the specified resources.
+     *        Specify a tag key and an optional tag value to delete specific tags. If you specify a tag key without a
+     *        tag value, we delete any tag with this key regardless of its value. If you specify a tag key with an empty
+     *        string as the tag value, we delete the tag only if its value is an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,15 +212,17 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest implements Serial
 
     /**
      * <p>
-     * One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of its
-     * value. If you specify this parameter with an empty string as the value, we delete the key only if its value is an
-     * empty string.
+     * One or more tags to delete. If you omit this parameter, we delete all tags for the specified resources. Specify a
+     * tag key and an optional tag value to delete specific tags. If you specify a tag key without a tag value, we
+     * delete any tag with this key regardless of its value. If you specify a tag key with an empty string as the tag
+     * value, we delete the tag only if its value is an empty string.
      * </p>
      * 
      * @param tags
-     *        One or more tags to delete. If you omit the <code>value</code> parameter, we delete the tag regardless of
-     *        its value. If you specify this parameter with an empty string as the value, we delete the key only if its
-     *        value is an empty string.
+     *        One or more tags to delete. If you omit this parameter, we delete all tags for the specified resources.
+     *        Specify a tag key and an optional tag value to delete specific tags. If you specify a tag key without a
+     *        tag value, we delete any tag with this key regardless of its value. If you specify a tag key with an empty
+     *        string as the tag value, we delete the tag only if its value is an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
