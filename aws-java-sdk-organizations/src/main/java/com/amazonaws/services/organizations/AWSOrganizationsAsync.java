@@ -450,8 +450,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <important>
      * <p>
-     * You cannot remove accounts that are created with this operation from an organization. That also means that you
-     * cannot delete an organization that contains an account that is created with this operation.
+     * When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the
+     * information required for the account to operate as a standalone account, such as a payment method and signing the
+     * End User Licence Agreement (EULA) is <i>not</i> automatically collected. If you must remove an account from your
+     * organization later, you can do so only after you provide the missing information. Follow the steps at <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+     * Organizations User Guide</i>.
      * </p>
      * </important> <note>
      * <p>
@@ -466,6 +471,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
+     * <important>
+     * <p>
+     * If you get an exception that indicates that you exceeded your account limits for the organization or that you
+     * can"t add an account because your organization is still initializing, please contact <a href="
+     * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
+     * </p>
+     * </important>
      * 
      * @param createAccountRequest
      * @return A Java Future containing the result of the CreateAccount operation returned by the service.
@@ -495,8 +507,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <important>
      * <p>
-     * You cannot remove accounts that are created with this operation from an organization. That also means that you
-     * cannot delete an organization that contains an account that is created with this operation.
+     * When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the
+     * information required for the account to operate as a standalone account, such as a payment method and signing the
+     * End User Licence Agreement (EULA) is <i>not</i> automatically collected. If you must remove an account from your
+     * organization later, you can do so only after you provide the missing information. Follow the steps at <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+     * Organizations User Guide</i>.
      * </p>
      * </important> <note>
      * <p>
@@ -511,6 +528,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
+     * <important>
+     * <p>
+     * If you get an exception that indicates that you exceeded your account limits for the organization or that you
+     * can"t add an account because your organization is still initializing, please contact <a href="
+     * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
+     * </p>
+     * </important>
      * 
      * @param createAccountRequest
      * @param asyncHandler
@@ -742,12 +766,6 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Deletes the organization. You can delete an organization only by using credentials from the master account. The
      * organization must be empty of member accounts, OUs, and policies.
      * </p>
-     * <important>
-     * <p>
-     * If you create any accounts using Organizations operations or the Organizations console, you can't remove those
-     * accounts from the organization, which means that you can't delete the organization.
-     * </p>
-     * </important>
      * 
      * @param deleteOrganizationRequest
      * @return A Java Future containing the result of the DeleteOrganization operation returned by the service.
@@ -762,12 +780,6 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Deletes the organization. You can delete an organization only by using credentials from the master account. The
      * organization must be empty of member accounts, OUs, and policies.
      * </p>
-     * <important>
-     * <p>
-     * If you create any accounts using Organizations operations or the Organizations console, you can't remove those
-     * accounts from the organization, which means that you can't delete the organization.
-     * </p>
-     * </important>
      * 
      * @param deleteOrganizationRequest
      * @param asyncHandler
@@ -1336,10 +1348,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <important>
      * <p>
-     * You can invite AWS accounts only from the same reseller as the master account. For example, if your
-     * organization's master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS reseller in India,
-     * then you can only invite other AISPL accounts to your organization. You can't combine accounts from AISPL and
-     * AWS. For more information, see <a
+     * You can invite AWS accounts only from the same seller as the master account. For example, if your organization's
+     * master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, then you can
+     * only invite other AISPL accounts to your organization. You can't combine accounts from AISPL and AWS, or any
+     * other AWS seller. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
      * >Consolidated Billing in India</a>.
      * </p>
@@ -1347,6 +1359,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
+     * <important>
+     * <p>
+     * If you get an exception that indicates that you exceeded your account limits for the organization or that you
+     * can"t add an account because your organization is still initializing, please contact <a href="
+     * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
+     * </p>
+     * </important>
      * 
      * @param inviteAccountToOrganizationRequest
      * @return A Java Future containing the result of the InviteAccountToOrganization operation returned by the service.
@@ -1365,10 +1384,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <important>
      * <p>
-     * You can invite AWS accounts only from the same reseller as the master account. For example, if your
-     * organization's master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS reseller in India,
-     * then you can only invite other AISPL accounts to your organization. You can't combine accounts from AISPL and
-     * AWS. For more information, see <a
+     * You can invite AWS accounts only from the same seller as the master account. For example, if your organization's
+     * master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, then you can
+     * only invite other AISPL accounts to your organization. You can't combine accounts from AISPL and AWS, or any
+     * other AWS seller. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
      * >Consolidated Billing in India</a>.
      * </p>
@@ -1376,6 +1395,13 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
+     * <important>
+     * <p>
+     * If you get an exception that indicates that you exceeded your account limits for the organization or that you
+     * can"t add an account because your organization is still initializing, please contact <a href="
+     * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
+     * </p>
+     * </important>
      * 
      * @param inviteAccountToOrganizationRequest
      * @param asyncHandler
@@ -1411,8 +1437,16 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * If you created the account using the AWS Organizations console, the Organizations API, or the Organizations CLI
-     * commands, then you cannot remove the account.
+     * You can leave an organization as a member account only if the account is configured with the information required
+     * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
+     * console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically
+     * collected. For each account that you want to make standalone, you must accept the End User License Agreement
+     * (EULA), choose a support plan, provide and verify the required contact information, and provide a current payment
+     * method. AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the
+     * account is not attached to an organization. Follow the steps at <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+     * Organizations User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1455,8 +1489,16 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * If you created the account using the AWS Organizations console, the Organizations API, or the Organizations CLI
-     * commands, then you cannot remove the account.
+     * You can leave an organization as a member account only if the account is configured with the information required
+     * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
+     * console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically
+     * collected. For each account that you want to make standalone, you must accept the End User License Agreement
+     * (EULA), choose a support plan, provide and verify the required contact information, and provide a current payment
+     * method. AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the
+     * account is not attached to an organization. Follow the steps at <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+     * Organizations User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -2026,9 +2068,17 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * You can remove only accounts that were created outside your organization and invited to join. If you created the
-     * account using the AWS Organizations console, the Organizations API, or the Organizations CLI commands, then you
-     * cannot remove the account.
+     * You can remove an account from your organization only if the account is configured with the information required
+     * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
+     * console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically
+     * collected. For an account that you want to make standalone, you must accept the End User License Agreement
+     * (EULA), choose a support plan, provide and verify the required contact information, and provide a current payment
+     * method. AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the
+     * account is not attached to an organization. To remove an account that does not yet have this information, you
+     * must sign in as the member account and follow the steps at <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+     * Organizations User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -2070,9 +2120,17 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * You can remove only accounts that were created outside your organization and invited to join. If you created the
-     * account using the AWS Organizations console, the Organizations API, or the Organizations CLI commands, then you
-     * cannot remove the account.
+     * You can remove an account from your organization only if the account is configured with the information required
+     * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
+     * console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically
+     * collected. For an account that you want to make standalone, you must accept the End User License Agreement
+     * (EULA), choose a support plan, provide and verify the required contact information, and provide a current payment
+     * method. AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the
+     * account is not attached to an organization. To remove an account that does not yet have this information, you
+     * must sign in as the member account and follow the steps at <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+     * Organizations User Guide</i>.
      * </p>
      * </li>
      * <li>

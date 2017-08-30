@@ -93,7 +93,7 @@
       }
     },
     "skipInterfaceAdditions" : false,
-    "skipSmokeTests" : false,
+    "skipSmokeTests" : true,
     "transformDirectory" : "transform",
     "useAutoConstructList" : true,
     "useAutoConstructMap" : false

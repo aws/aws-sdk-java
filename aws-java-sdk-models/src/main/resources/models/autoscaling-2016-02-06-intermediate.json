@@ -15271,6 +15271,69 @@
           "variableSetterType" : "Integer"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "DisableScaleIn",
+        "c2jShape" : "DisableScaleIn",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param disableScaleIn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDisableScaleIn",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getDisableScaleIn",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "DisableScaleIn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DisableScaleIn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "DisableScaleIn",
+        "setterDocumentation" : "/**\n@param disableScaleIn */",
+        "setterMethodName" : "setDisableScaleIn",
+        "setterModel" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "disableScaleIn",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param disableScaleIn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "disableScaleIn",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "CustomizedMetricSpecification" : {
@@ -15334,6 +15397,70 @@
             "documentation" : "<p>Reserved for future use.</p>",
             "simpleType" : "CustomizedMetricSpecification",
             "variableSetterType" : "CustomizedMetricSpecification"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DisableScaleIn" : {
+          "c2jName" : "DisableScaleIn",
+          "c2jShape" : "DisableScaleIn",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param disableScaleIn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDisableScaleIn",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getDisableScaleIn",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "DisableScaleIn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DisableScaleIn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "DisableScaleIn",
+          "setterDocumentation" : "/**\n@param disableScaleIn */",
+          "setterMethodName" : "setDisableScaleIn",
+          "setterModel" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "disableScaleIn",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param disableScaleIn \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "disableScaleIn",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         },

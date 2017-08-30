@@ -1,3 +1,12 @@
+# __1.11.186__ __2017-08-30__
+## __AWS Organizations__
+  - ### Features
+    - The exception ConstraintViolationException now contains a new reason subcode MASTERACCOUNT_MISSING_CONTACT_INFO to make it easier to understand why attempting to remove an account from an Organization can fail. We also improved several other of the text descriptions and examples.
+
+## __Application Auto Scaling__
+  - ### Features
+    - Application Auto Scaling now supports the DisableScaleIn option for Target Tracking Scaling Policies. This allows customers to create scaling policies that will only add capacity to the target.
+
 # __1.11.185__ __2017-08-29__
 ## __AWS Config__
   - ### Features

@@ -24,7 +24,13 @@ import javax.annotation.Generated;
  * ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization.
  * <b>Note</b>: deleted and closed accounts still count toward your limit.
  * </p>
- * </li>
+ * <important>
+ * <p>
+ * If you get an exception that indicates that you exceeded your account limits for the organization or that you
+ * can"t add an account because your organization is still initializing, please contact <a href="
+ * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
+ * </p>
+ * </important></li>
  * <li>
  * <p>
  * HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.

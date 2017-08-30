@@ -37,6 +37,8 @@ public class TargetTrackingScalingPolicyConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScaleOutCooldown").build();
     private static final MarshallingInfo<Integer> SCALEINCOOLDOWN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScaleInCooldown").build();
+    private static final MarshallingInfo<Boolean> DISABLESCALEIN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableScaleIn").build();
 
     private static final TargetTrackingScalingPolicyConfigurationMarshaller instance = new TargetTrackingScalingPolicyConfigurationMarshaller();
 
@@ -59,6 +61,7 @@ public class TargetTrackingScalingPolicyConfigurationMarshaller {
             protocolMarshaller.marshall(targetTrackingScalingPolicyConfiguration.getCustomizedMetricSpecification(), CUSTOMIZEDMETRICSPECIFICATION_BINDING);
             protocolMarshaller.marshall(targetTrackingScalingPolicyConfiguration.getScaleOutCooldown(), SCALEOUTCOOLDOWN_BINDING);
             protocolMarshaller.marshall(targetTrackingScalingPolicyConfiguration.getScaleInCooldown(), SCALEINCOOLDOWN_BINDING);
+            protocolMarshaller.marshall(targetTrackingScalingPolicyConfiguration.getDisableScaleIn(), DISABLESCALEIN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

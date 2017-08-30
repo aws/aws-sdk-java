@@ -71,6 +71,10 @@ public class TargetTrackingScalingPolicyConfigurationJsonUnmarshaller implements
                     context.nextToken();
                     targetTrackingScalingPolicyConfiguration.setScaleInCooldown(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("DisableScaleIn", targetDepth)) {
+                    context.nextToken();
+                    targetTrackingScalingPolicyConfiguration.setDisableScaleIn(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

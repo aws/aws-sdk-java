@@ -72,6 +72,8 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      */
     private Integer scaleInCooldown;
 
+    private Boolean disableScaleIn;
+
     /**
      * <p>
      * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
@@ -345,6 +347,40 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     }
 
     /**
+     * @param disableScaleIn
+     */
+
+    public void setDisableScaleIn(Boolean disableScaleIn) {
+        this.disableScaleIn = disableScaleIn;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getDisableScaleIn() {
+        return this.disableScaleIn;
+    }
+
+    /**
+     * @param disableScaleIn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TargetTrackingScalingPolicyConfiguration withDisableScaleIn(Boolean disableScaleIn) {
+        setDisableScaleIn(disableScaleIn);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isDisableScaleIn() {
+        return this.disableScaleIn;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -364,7 +400,9 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
         if (getScaleOutCooldown() != null)
             sb.append("ScaleOutCooldown: ").append(getScaleOutCooldown()).append(",");
         if (getScaleInCooldown() != null)
-            sb.append("ScaleInCooldown: ").append(getScaleInCooldown());
+            sb.append("ScaleInCooldown: ").append(getScaleInCooldown()).append(",");
+        if (getDisableScaleIn() != null)
+            sb.append("DisableScaleIn: ").append(getDisableScaleIn());
         sb.append("}");
         return sb.toString();
     }
@@ -401,6 +439,10 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
             return false;
         if (other.getScaleInCooldown() != null && other.getScaleInCooldown().equals(this.getScaleInCooldown()) == false)
             return false;
+        if (other.getDisableScaleIn() == null ^ this.getDisableScaleIn() == null)
+            return false;
+        if (other.getDisableScaleIn() != null && other.getDisableScaleIn().equals(this.getDisableScaleIn()) == false)
+            return false;
         return true;
     }
 
@@ -414,6 +456,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
         hashCode = prime * hashCode + ((getCustomizedMetricSpecification() == null) ? 0 : getCustomizedMetricSpecification().hashCode());
         hashCode = prime * hashCode + ((getScaleOutCooldown() == null) ? 0 : getScaleOutCooldown().hashCode());
         hashCode = prime * hashCode + ((getScaleInCooldown() == null) ? 0 : getScaleInCooldown().hashCode());
+        hashCode = prime * hashCode + ((getDisableScaleIn() == null) ? 0 : getDisableScaleIn().hashCode());
         return hashCode;
     }
 
