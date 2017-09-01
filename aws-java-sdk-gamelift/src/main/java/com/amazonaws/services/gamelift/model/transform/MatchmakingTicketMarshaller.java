@@ -40,10 +40,14 @@ public class MatchmakingTicketMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusMessage").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").build();
+    private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").build();
     private static final MarshallingInfo<List> PLAYERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Players").build();
     private static final MarshallingInfo<StructuredPojo> GAMESESSIONCONNECTIONINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionConnectionInfo").build();
+    private static final MarshallingInfo<Integer> ESTIMATEDWAITTIME_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EstimatedWaitTime").build();
 
     private static final MatchmakingTicketMarshaller instance = new MatchmakingTicketMarshaller();
 
@@ -67,8 +71,10 @@ public class MatchmakingTicketMarshaller {
             protocolMarshaller.marshall(matchmakingTicket.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(matchmakingTicket.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(matchmakingTicket.getStartTime(), STARTTIME_BINDING);
+            protocolMarshaller.marshall(matchmakingTicket.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(matchmakingTicket.getPlayers(), PLAYERS_BINDING);
             protocolMarshaller.marshall(matchmakingTicket.getGameSessionConnectionInfo(), GAMESESSIONCONNECTIONINFO_BINDING);
+            protocolMarshaller.marshall(matchmakingTicket.getEstimatedWaitTime(), ESTIMATEDWAITTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

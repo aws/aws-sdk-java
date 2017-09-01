@@ -43,6 +43,13 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
+    /**
+     * <p>
+     * User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and
+     * can't be reused.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -186,6 +193,52 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and
+     * can't be reused.
+     * </p>
+     * 
+     * @param clientToken
+     *        User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format,
+     *        and can't be reused.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and
+     * can't be reused.
+     * </p>
+     * 
+     * @return User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format,
+     *         and can't be reused.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and
+     * can't be reused.
+     * </p>
+     * 
+     * @param clientToken
+     *        User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format,
+     *        and can't be reused.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAutomationExecutionRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -201,7 +254,9 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters());
+            sb.append("Parameters: ").append(getParameters()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -228,6 +283,10 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         return true;
     }
 
@@ -239,6 +298,7 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getDocumentName() == null) ? 0 : getDocumentName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

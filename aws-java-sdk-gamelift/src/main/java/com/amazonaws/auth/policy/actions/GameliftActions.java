@@ -45,6 +45,10 @@ public enum GameliftActions implements Action {
     CreatePlayerSession("gamelift:CreatePlayerSession"),
     /** Action for the CreatePlayerSessions operation. */
     CreatePlayerSessions("gamelift:CreatePlayerSessions"),
+    /** Action for the CreateVpcPeeringAuthorization operation. */
+    CreateVpcPeeringAuthorization("gamelift:CreateVpcPeeringAuthorization"),
+    /** Action for the CreateVpcPeeringConnection operation. */
+    CreateVpcPeeringConnection("gamelift:CreateVpcPeeringConnection"),
     /** Action for the DeleteAlias operation. */
     DeleteAlias("gamelift:DeleteAlias"),
     /** Action for the DeleteBuild operation. */
@@ -57,6 +61,10 @@ public enum GameliftActions implements Action {
     DeleteMatchmakingConfiguration("gamelift:DeleteMatchmakingConfiguration"),
     /** Action for the DeleteScalingPolicy operation. */
     DeleteScalingPolicy("gamelift:DeleteScalingPolicy"),
+    /** Action for the DeleteVpcPeeringAuthorization operation. */
+    DeleteVpcPeeringAuthorization("gamelift:DeleteVpcPeeringAuthorization"),
+    /** Action for the DeleteVpcPeeringConnection operation. */
+    DeleteVpcPeeringConnection("gamelift:DeleteVpcPeeringConnection"),
     /** Action for the DescribeAlias operation. */
     DescribeAlias("gamelift:DescribeAlias"),
     /** Action for the DescribeBuild operation. */
@@ -95,6 +103,10 @@ public enum GameliftActions implements Action {
     DescribeRuntimeConfiguration("gamelift:DescribeRuntimeConfiguration"),
     /** Action for the DescribeScalingPolicies operation. */
     DescribeScalingPolicies("gamelift:DescribeScalingPolicies"),
+    /** Action for the DescribeVpcPeeringAuthorizations operation. */
+    DescribeVpcPeeringAuthorizations("gamelift:DescribeVpcPeeringAuthorizations"),
+    /** Action for the DescribeVpcPeeringConnections operation. */
+    DescribeVpcPeeringConnections("gamelift:DescribeVpcPeeringConnections"),
     /** Action for the GetGameSessionLogUrl operation. */
     GetGameSessionLogUrl("gamelift:GetGameSessionLogUrl"),
     /** Action for the GetInstanceAccess operation. */

@@ -88,6 +88,16 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public CreateVpcPeeringAuthorizationResult createVpcPeeringAuthorization(CreateVpcPeeringAuthorizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateVpcPeeringConnectionResult createVpcPeeringConnection(CreateVpcPeeringConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +124,16 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVpcPeeringAuthorizationResult deleteVpcPeeringAuthorization(DeleteVpcPeeringAuthorizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVpcPeeringConnectionResult deleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,6 +229,16 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVpcPeeringAuthorizationsResult describeVpcPeeringAuthorizations(DescribeVpcPeeringAuthorizationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVpcPeeringConnectionsResult describeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

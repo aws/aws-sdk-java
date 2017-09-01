@@ -50,47 +50,47 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <b>QUEUED</b> – The matchmaking request has been received and is currently waiting to be processed.
+     * <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SEARCHING</b> – The matchmaking request is currently being processed.
+     * <b>SEARCHING</b> -- The matchmaking request is currently being processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept the match (see
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
      * acceptance requirement.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of placing a new game session for
-     * the match.
+     * <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session
+     * for the match.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host the players. A ticket in this
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this
      * state contains the necessary connection information for players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who fail to accept a proposed
+     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration specified in the matchmaking
+     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
      * configuration. Matchmaking requests that time out can be resubmitted.
      * </p>
      * </li>
@@ -119,6 +119,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     private java.util.Date startTime;
     /**
      * <p>
+     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
+     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * </p>
+     */
+    private java.util.Date endTime;
+    /**
+     * <p>
      * A set of <code>Player</code> objects, each representing a player to find matches for. Players are identified by a
      * unique player ID and may include latency data for use during matchmaking. If the ticket is in status
      * <code>COMPLETED</code>, the <code>Player</code> objects include the team the players were assigned to in the
@@ -133,6 +140,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private GameSessionConnectionInfo gameSessionConnectionInfo;
+    /**
+     * <p>
+     * Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent
+     * data, this property may be empty.
+     * </p>
+     */
+    private Integer estimatedWaitTime;
 
     /**
      * <p>
@@ -227,47 +241,47 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <b>QUEUED</b> – The matchmaking request has been received and is currently waiting to be processed.
+     * <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SEARCHING</b> – The matchmaking request is currently being processed.
+     * <b>SEARCHING</b> -- The matchmaking request is currently being processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept the match (see
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
      * acceptance requirement.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of placing a new game session for
-     * the match.
+     * <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session
+     * for the match.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host the players. A ticket in this
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this
      * state contains the necessary connection information for players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who fail to accept a proposed
+     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration specified in the matchmaking
+     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
      * configuration. Matchmaking requests that time out can be resubmitted.
      * </p>
      * </li>
@@ -278,48 +292,48 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>QUEUED</b> – The matchmaking request has been received and is currently waiting to be processed.
+     *        <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SEARCHING</b> – The matchmaking request is currently being processed.
+     *        <b>SEARCHING</b> -- The matchmaking request is currently being processed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept the match (see
+     *        <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
      *        <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a
      *        player acceptance requirement.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of placing a new game
+     *        <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game
      *        session for the match.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>COMPLETED</b> – Players have been matched and a game session is ready to host the players. A ticket in
+     *        <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in
      *        this state contains the necessary connection information for players.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who fail to accept a
+     *        <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
      *        proposed match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for
      *        these players.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     *        <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration specified in the
+     *        <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the
      *        matchmaking configuration. Matchmaking requests that time out can be resubmitted.
      *        </p>
      *        </li>
@@ -337,47 +351,47 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <b>QUEUED</b> – The matchmaking request has been received and is currently waiting to be processed.
+     * <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SEARCHING</b> – The matchmaking request is currently being processed.
+     * <b>SEARCHING</b> -- The matchmaking request is currently being processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept the match (see
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
      * acceptance requirement.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of placing a new game session for
-     * the match.
+     * <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session
+     * for the match.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host the players. A ticket in this
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this
      * state contains the necessary connection information for players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who fail to accept a proposed
+     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration specified in the matchmaking
+     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
      * configuration. Matchmaking requests that time out can be resubmitted.
      * </p>
      * </li>
@@ -387,48 +401,48 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>QUEUED</b> – The matchmaking request has been received and is currently waiting to be processed.
+     *         <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>SEARCHING</b> – The matchmaking request is currently being processed.
+     *         <b>SEARCHING</b> -- The matchmaking request is currently being processed.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept the match (see
+     *         <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
      *         <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a
      *         player acceptance requirement.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of placing a new game
+     *         <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game
      *         session for the match.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>COMPLETED</b> – Players have been matched and a game session is ready to host the players. A ticket in
-     *         this state contains the necessary connection information for players.
+     *         <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket
+     *         in this state contains the necessary connection information for players.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who fail to accept a
+     *         <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
      *         proposed match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for
      *         these players.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     *         <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration specified in the
+     *         <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the
      *         matchmaking configuration. Matchmaking requests that time out can be resubmitted.
      *         </p>
      *         </li>
@@ -446,47 +460,47 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <b>QUEUED</b> – The matchmaking request has been received and is currently waiting to be processed.
+     * <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SEARCHING</b> – The matchmaking request is currently being processed.
+     * <b>SEARCHING</b> -- The matchmaking request is currently being processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept the match (see
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
      * acceptance requirement.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of placing a new game session for
-     * the match.
+     * <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session
+     * for the match.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host the players. A ticket in this
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this
      * state contains the necessary connection information for players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who fail to accept a proposed
+     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration specified in the matchmaking
+     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
      * configuration. Matchmaking requests that time out can be resubmitted.
      * </p>
      * </li>
@@ -497,48 +511,48 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>QUEUED</b> – The matchmaking request has been received and is currently waiting to be processed.
+     *        <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SEARCHING</b> – The matchmaking request is currently being processed.
+     *        <b>SEARCHING</b> -- The matchmaking request is currently being processed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept the match (see
+     *        <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
      *        <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a
      *        player acceptance requirement.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of placing a new game
+     *        <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game
      *        session for the match.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>COMPLETED</b> – Players have been matched and a game session is ready to host the players. A ticket in
+     *        <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in
      *        this state contains the necessary connection information for players.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who fail to accept a
+     *        <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
      *        proposed match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for
      *        these players.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     *        <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration specified in the
+     *        <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the
      *        matchmaking configuration. Matchmaking requests that time out can be resubmitted.
      *        </p>
      *        </li>
@@ -558,47 +572,47 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <b>QUEUED</b> – The matchmaking request has been received and is currently waiting to be processed.
+     * <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>SEARCHING</b> – The matchmaking request is currently being processed.
+     * <b>SEARCHING</b> -- The matchmaking request is currently being processed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept the match (see
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
      * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
      * acceptance requirement.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of placing a new game session for
-     * the match.
+     * <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game session
+     * for the match.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>COMPLETED</b> – Players have been matched and a game session is ready to host the players. A ticket in this
+     * <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in this
      * state contains the necessary connection information for players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who fail to accept a proposed
+     * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
      * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration specified in the matchmaking
+     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
      * configuration. Matchmaking requests that time out can be resubmitted.
      * </p>
      * </li>
@@ -609,48 +623,48 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>QUEUED</b> – The matchmaking request has been received and is currently waiting to be processed.
+     *        <b>QUEUED</b> -- The matchmaking request has been received and is currently waiting to be processed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>SEARCHING</b> – The matchmaking request is currently being processed.
+     *        <b>SEARCHING</b> -- The matchmaking request is currently being processed.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>REQUIRES_ACCEPTANCE</b> – A match has been proposed and the players must accept the match (see
+     *        <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
      *        <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a
      *        player acceptance requirement.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PLACING</b> – The FlexMatch engine has matched players and is in the process of placing a new game
+     *        <b>PLACING</b> -- The FlexMatch engine has matched players and is in the process of placing a new game
      *        session for the match.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>COMPLETED</b> – Players have been matched and a game session is ready to host the players. A ticket in
+     *        <b>COMPLETED</b> -- Players have been matched and a game session is ready to host the players. A ticket in
      *        this state contains the necessary connection information for players.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The matchmaking request was not completed. Tickets with players who fail to accept a
+     *        <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
      *        proposed match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for
      *        these players.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CANCELLED</b> – The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
+     *        <b>CANCELLED</b> -- The matchmaking request was canceled with a call to <a>StopMatchmaking</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TIMED_OUT</b> – The matchmaking request was not completed within the duration specified in the
+     *        <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the
      *        matchmaking configuration. Matchmaking requests that time out can be resubmitted.
      *        </p>
      *        </li>
@@ -797,6 +811,55 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
+     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * </p>
+     * 
+     * @param endTime
+     *        Time stamp indicating when the matchmaking request stopped being processed due to successful completion,
+     *        timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     *        "1469498468.057").
+     */
+
+    public void setEndTime(java.util.Date endTime) {
+        this.endTime = endTime;
+    }
+
+    /**
+     * <p>
+     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
+     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * </p>
+     * 
+     * @return Time stamp indicating when the matchmaking request stopped being processed due to successful completion,
+     *         timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     *         "1469498468.057").
+     */
+
+    public java.util.Date getEndTime() {
+        return this.endTime;
+    }
+
+    /**
+     * <p>
+     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
+     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * </p>
+     * 
+     * @param endTime
+     *        Time stamp indicating when the matchmaking request stopped being processed due to successful completion,
+     *        timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     *        "1469498468.057").
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MatchmakingTicket withEndTime(java.util.Date endTime) {
+        setEndTime(endTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * A set of <code>Player</code> objects, each representing a player to find matches for. Players are identified by a
      * unique player ID and may include latency data for use during matchmaking. If the ticket is in status
      * <code>COMPLETED</code>, the <code>Player</code> objects include the team the players were assigned to in the
@@ -936,6 +999,52 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent
+     * data, this property may be empty.
+     * </p>
+     * 
+     * @param estimatedWaitTime
+     *        Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough
+     *        recent data, this property may be empty.
+     */
+
+    public void setEstimatedWaitTime(Integer estimatedWaitTime) {
+        this.estimatedWaitTime = estimatedWaitTime;
+    }
+
+    /**
+     * <p>
+     * Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent
+     * data, this property may be empty.
+     * </p>
+     * 
+     * @return Average amount of time (in seconds) that players are currently waiting for a match. If there is not
+     *         enough recent data, this property may be empty.
+     */
+
+    public Integer getEstimatedWaitTime() {
+        return this.estimatedWaitTime;
+    }
+
+    /**
+     * <p>
+     * Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough recent
+     * data, this property may be empty.
+     * </p>
+     * 
+     * @param estimatedWaitTime
+     *        Average amount of time (in seconds) that players are currently waiting for a match. If there is not enough
+     *        recent data, this property may be empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MatchmakingTicket withEstimatedWaitTime(Integer estimatedWaitTime) {
+        setEstimatedWaitTime(estimatedWaitTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -958,10 +1067,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getEndTime() != null)
+            sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getPlayers() != null)
             sb.append("Players: ").append(getPlayers()).append(",");
         if (getGameSessionConnectionInfo() != null)
-            sb.append("GameSessionConnectionInfo: ").append(getGameSessionConnectionInfo());
+            sb.append("GameSessionConnectionInfo: ").append(getGameSessionConnectionInfo()).append(",");
+        if (getEstimatedWaitTime() != null)
+            sb.append("EstimatedWaitTime: ").append(getEstimatedWaitTime());
         sb.append("}");
         return sb.toString();
     }
@@ -1000,6 +1113,10 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
+        if (other.getEndTime() == null ^ this.getEndTime() == null)
+            return false;
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
+            return false;
         if (other.getPlayers() == null ^ this.getPlayers() == null)
             return false;
         if (other.getPlayers() != null && other.getPlayers().equals(this.getPlayers()) == false)
@@ -1007,6 +1124,10 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
         if (other.getGameSessionConnectionInfo() == null ^ this.getGameSessionConnectionInfo() == null)
             return false;
         if (other.getGameSessionConnectionInfo() != null && other.getGameSessionConnectionInfo().equals(this.getGameSessionConnectionInfo()) == false)
+            return false;
+        if (other.getEstimatedWaitTime() == null ^ this.getEstimatedWaitTime() == null)
+            return false;
+        if (other.getEstimatedWaitTime() != null && other.getEstimatedWaitTime().equals(this.getEstimatedWaitTime()) == false)
             return false;
         return true;
     }
@@ -1022,8 +1143,10 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getPlayers() == null) ? 0 : getPlayers().hashCode());
         hashCode = prime * hashCode + ((getGameSessionConnectionInfo() == null) ? 0 : getGameSessionConnectionInfo().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedWaitTime() == null) ? 0 : getEstimatedWaitTime().hashCode());
         return hashCode;
     }
 

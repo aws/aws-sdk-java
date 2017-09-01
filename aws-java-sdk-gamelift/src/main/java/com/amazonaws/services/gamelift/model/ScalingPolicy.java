@@ -164,37 +164,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -213,19 +213,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      * Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment, read as
-     * a percentage. Positive values scale up while negative values scale down.
+     * <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read
+     * as a percentage. Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * </ul>
@@ -256,25 +256,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session status =
+     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> – number of game sessions currently running (game session status = <code>ACTIVE</code>
+     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
      * ).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      * <code>ACTIVE</code> or <code>RESERVED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game sessions
+     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
      * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
      * session count. This number does include game sessions that are not currently accepting players (game session
      * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -282,12 +282,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> – number of instances currently running a game session.
+     * <b>ActiveInstances</b> -- number of instances currently running a game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> – number of instances not currently running a game session.
+     * <b>IdleInstances</b> -- number of instances not currently running a game session.
      * </p>
      * </li>
      * </ul>
@@ -381,37 +381,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -422,37 +422,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     *        <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATING</b> – A change is being made to the scaling policy.
+     *        <b>UPDATING</b> -- A change is being made to the scaling policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     *        <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – The scaling policy is being deleted.
+     *        <b>DELETING</b> -- The scaling policy is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETED</b> – The scaling policy has been deleted.
+     *        <b>DELETED</b> -- The scaling policy has been deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *        <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *        </p>
      *        </li>
      * @see ScalingStatusType
@@ -469,37 +469,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -509,37 +509,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>ACTIVE</b> – The scaling policy is currently in force.
+     *         <b>ACTIVE</b> -- The scaling policy is currently in force.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     *         <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>UPDATING</b> – A change is being made to the scaling policy.
+     *         <b>UPDATING</b> -- A change is being made to the scaling policy.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     *         <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DELETING</b> – The scaling policy is being deleted.
+     *         <b>DELETING</b> -- The scaling policy is being deleted.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DELETED</b> – The scaling policy has been deleted.
+     *         <b>DELETED</b> -- The scaling policy has been deleted.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *         <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *         </p>
      *         </li>
      * @see ScalingStatusType
@@ -556,37 +556,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -597,37 +597,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     *        <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATING</b> – A change is being made to the scaling policy.
+     *        <b>UPDATING</b> -- A change is being made to the scaling policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     *        <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – The scaling policy is being deleted.
+     *        <b>DELETING</b> -- The scaling policy is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETED</b> – The scaling policy has been deleted.
+     *        <b>DELETED</b> -- The scaling policy has been deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *        <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -646,37 +646,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -687,37 +687,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     *        <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATING</b> – A change is being made to the scaling policy.
+     *        <b>UPDATING</b> -- A change is being made to the scaling policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     *        <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – The scaling policy is being deleted.
+     *        <b>DELETING</b> -- The scaling policy is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETED</b> – The scaling policy has been deleted.
+     *        <b>DELETED</b> -- The scaling policy has been deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *        <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *        </p>
      *        </li>
      * @see ScalingStatusType
@@ -734,37 +734,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -775,37 +775,37 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATE_REQUESTED</b> – A request to update the scaling policy has been received.
+     *        <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATING</b> – A change is being made to the scaling policy.
+     *        <b>UPDATING</b> -- A change is being made to the scaling policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETE_REQUESTED</b> – A request to delete the scaling policy has been received.
+     *        <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – The scaling policy is being deleted.
+     *        <b>DELETING</b> -- The scaling policy is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETED</b> – The scaling policy has been deleted.
+     *        <b>DELETED</b> -- The scaling policy has been deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *        <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -864,19 +864,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      * Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment, read as
-     * a percentage. Positive values scale up while negative values scale down.
+     * <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read
+     * as a percentage. Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * </ul>
@@ -886,18 +886,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     *        <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      *        Positive values scale up while negative values scale down.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     *        <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment,
+     *        <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment,
      *        read as a percentage. Positive values scale up while negative values scale down.
      *        </p>
      *        </li>
@@ -915,19 +915,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      * Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment, read as
-     * a percentage. Positive values scale up while negative values scale down.
+     * <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read
+     * as a percentage. Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * </ul>
@@ -936,19 +936,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
-     *         Positive values scale up while negative values scale down.
+     *         <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance
+     *         count. Positive values scale up while negative values scale down.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     *         <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment,
-     *         read as a percentage. Positive values scale up while negative values scale down.
+     *         <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling
+     *         adjustment, read as a percentage. Positive values scale up while negative values scale down.
      *         </p>
      *         </li>
      * @see ScalingAdjustmentType
@@ -965,19 +965,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      * Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment, read as
-     * a percentage. Positive values scale up while negative values scale down.
+     * <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read
+     * as a percentage. Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * </ul>
@@ -987,18 +987,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     *        <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      *        Positive values scale up while negative values scale down.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     *        <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment,
+     *        <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment,
      *        read as a percentage. Positive values scale up while negative values scale down.
      *        </p>
      *        </li>
@@ -1018,19 +1018,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      * Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment, read as
-     * a percentage. Positive values scale up while negative values scale down.
+     * <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read
+     * as a percentage. Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * </ul>
@@ -1040,18 +1040,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     *        <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      *        Positive values scale up while negative values scale down.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     *        <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment,
+     *        <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment,
      *        read as a percentage. Positive values scale up while negative values scale down.
      *        </p>
      *        </li>
@@ -1069,19 +1069,19 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     * <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      * Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     * <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment, read as
-     * a percentage. Positive values scale up while negative values scale down.
+     * <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment, read
+     * as a percentage. Positive values scale up while negative values scale down.
      * </p>
      * </li>
      * </ul>
@@ -1091,18 +1091,18 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value from the current instance count.
+     *        <b>ChangeInCapacity</b> -- add (or subtract) the scaling adjustment value from the current instance count.
      *        Positive values scale up while negative values scale down.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ExactCapacity</b> – set the instance count to the scaling adjustment value.
+     *        <b>ExactCapacity</b> -- set the instance count to the scaling adjustment value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PercentChangeInCapacity</b> – increase or reduce the current instance count by the scaling adjustment,
+     *        <b>PercentChangeInCapacity</b> -- increase or reduce the current instance count by the scaling adjustment,
      *        read as a percentage. Positive values scale up while negative values scale down.
      *        </p>
      *        </li>
@@ -1278,25 +1278,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session status =
+     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> – number of game sessions currently running (game session status = <code>ACTIVE</code>
+     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
      * ).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      * <code>ACTIVE</code> or <code>RESERVED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game sessions
+     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
      * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
      * session count. This number does include game sessions that are not currently accepting players (game session
      * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1304,12 +1304,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> – number of instances currently running a game session.
+     * <b>ActiveInstances</b> -- number of instances currently running a game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> – number of instances not currently running a game session.
+     * <b>IdleInstances</b> -- number of instances not currently running a game session.
      * </p>
      * </li>
      * </ul>
@@ -1319,25 +1319,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session
+     *        <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
      *        status = <code>ACTIVATING</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveGameSessions</b> – number of game sessions currently running (game session status =
+     *        <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
      *        <code>ACTIVE</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     *        <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      *        <code>ACTIVE</code> or <code>RESERVED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game
+     *        <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
      *        sessions across the fleet, calculated by subtracting a game session's current player session count from
      *        its maximum player session count. This number does include game sessions that are not currently accepting
      *        players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1345,12 +1345,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveInstances</b> – number of instances currently running a game session.
+     *        <b>ActiveInstances</b> -- number of instances currently running a game session.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IdleInstances</b> – number of instances not currently running a game session.
+     *        <b>IdleInstances</b> -- number of instances not currently running a game session.
      *        </p>
      *        </li>
      * @see MetricName
@@ -1367,25 +1367,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session status =
+     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> – number of game sessions currently running (game session status = <code>ACTIVE</code>
+     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
      * ).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      * <code>ACTIVE</code> or <code>RESERVED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game sessions
+     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
      * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
      * session count. This number does include game sessions that are not currently accepting players (game session
      * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1393,12 +1393,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> – number of instances currently running a game session.
+     * <b>ActiveInstances</b> -- number of instances currently running a game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> – number of instances not currently running a game session.
+     * <b>IdleInstances</b> -- number of instances not currently running a game session.
      * </p>
      * </li>
      * </ul>
@@ -1407,25 +1407,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session
+     *         <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
      *         status = <code>ACTIVATING</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ActiveGameSessions</b> – number of game sessions currently running (game session status =
+     *         <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
      *         <code>ACTIVE</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     *         <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      *         <code>ACTIVE</code> or <code>RESERVED</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game
+     *         <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
      *         sessions across the fleet, calculated by subtracting a game session's current player session count from
      *         its maximum player session count. This number does include game sessions that are not currently accepting
      *         players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1433,12 +1433,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ActiveInstances</b> – number of instances currently running a game session.
+     *         <b>ActiveInstances</b> -- number of instances currently running a game session.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>IdleInstances</b> – number of instances not currently running a game session.
+     *         <b>IdleInstances</b> -- number of instances not currently running a game session.
      *         </p>
      *         </li>
      * @see MetricName
@@ -1455,25 +1455,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session status =
+     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> – number of game sessions currently running (game session status = <code>ACTIVE</code>
+     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
      * ).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      * <code>ACTIVE</code> or <code>RESERVED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game sessions
+     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
      * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
      * session count. This number does include game sessions that are not currently accepting players (game session
      * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1481,12 +1481,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> – number of instances currently running a game session.
+     * <b>ActiveInstances</b> -- number of instances currently running a game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> – number of instances not currently running a game session.
+     * <b>IdleInstances</b> -- number of instances not currently running a game session.
      * </p>
      * </li>
      * </ul>
@@ -1496,25 +1496,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session
+     *        <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
      *        status = <code>ACTIVATING</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveGameSessions</b> – number of game sessions currently running (game session status =
+     *        <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
      *        <code>ACTIVE</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     *        <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      *        <code>ACTIVE</code> or <code>RESERVED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game
+     *        <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
      *        sessions across the fleet, calculated by subtracting a game session's current player session count from
      *        its maximum player session count. This number does include game sessions that are not currently accepting
      *        players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1522,12 +1522,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveInstances</b> – number of instances currently running a game session.
+     *        <b>ActiveInstances</b> -- number of instances currently running a game session.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IdleInstances</b> – number of instances not currently running a game session.
+     *        <b>IdleInstances</b> -- number of instances not currently running a game session.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1546,25 +1546,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session status =
+     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> – number of game sessions currently running (game session status = <code>ACTIVE</code>
+     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
      * ).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      * <code>ACTIVE</code> or <code>RESERVED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game sessions
+     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
      * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
      * session count. This number does include game sessions that are not currently accepting players (game session
      * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1572,12 +1572,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> – number of instances currently running a game session.
+     * <b>ActiveInstances</b> -- number of instances currently running a game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> – number of instances not currently running a game session.
+     * <b>IdleInstances</b> -- number of instances not currently running a game session.
      * </p>
      * </li>
      * </ul>
@@ -1587,25 +1587,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session
+     *        <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
      *        status = <code>ACTIVATING</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveGameSessions</b> – number of game sessions currently running (game session status =
+     *        <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
      *        <code>ACTIVE</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     *        <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      *        <code>ACTIVE</code> or <code>RESERVED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game
+     *        <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
      *        sessions across the fleet, calculated by subtracting a game session's current player session count from
      *        its maximum player session count. This number does include game sessions that are not currently accepting
      *        players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1613,12 +1613,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveInstances</b> – number of instances currently running a game session.
+     *        <b>ActiveInstances</b> -- number of instances currently running a game session.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IdleInstances</b> – number of instances not currently running a game session.
+     *        <b>IdleInstances</b> -- number of instances not currently running a game session.
      *        </p>
      *        </li>
      * @see MetricName
@@ -1635,25 +1635,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session status =
+     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
      * <code>ACTIVATING</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> – number of game sessions currently running (game session status = <code>ACTIVE</code>
+     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
      * ).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      * <code>ACTIVE</code> or <code>RESERVED</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game sessions
+     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
      * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
      * session count. This number does include game sessions that are not currently accepting players (game session
      * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1661,12 +1661,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> – number of instances currently running a game session.
+     * <b>ActiveInstances</b> -- number of instances currently running a game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> – number of instances not currently running a game session.
+     * <b>IdleInstances</b> -- number of instances not currently running a game session.
      * </p>
      * </li>
      * </ul>
@@ -1676,25 +1676,25 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ActivatingGameSessions</b> – number of game sessions in the process of being created (game session
+     *        <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
      *        status = <code>ACTIVATING</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveGameSessions</b> – number of game sessions currently running (game session status =
+     *        <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
      *        <code>ACTIVE</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player session status =
+     *        <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
      *        <code>ACTIVE</code> or <code>RESERVED</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AvailablePlayerSessions</b> – number of player session slots currently available in active game
+     *        <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
      *        sessions across the fleet, calculated by subtracting a game session's current player session count from
      *        its maximum player session count. This number does include game sessions that are not currently accepting
      *        players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
@@ -1702,12 +1702,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveInstances</b> – number of instances currently running a game session.
+     *        <b>ActiveInstances</b> -- number of instances currently running a game session.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IdleInstances</b> – number of instances not currently running a game session.
+     *        <b>IdleInstances</b> -- number of instances not currently running a game session.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

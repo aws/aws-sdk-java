@@ -56,24 +56,24 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the
      * server process and/or been validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>COMPLETED</b> – The player connection has been dropped.
+     * <b>COMPLETED</b> -- The player connection has been dropped.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
-     * within the time-out limit (60 seconds).
+     * <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated
+     * within the timeout limit (60 seconds).
      * </p>
      * </li>
      * </ul>
@@ -225,24 +225,24 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the
      * server process and/or been validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>COMPLETED</b> – The player connection has been dropped.
+     * <b>COMPLETED</b> -- The player connection has been dropped.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
-     * within the time-out limit (60 seconds).
+     * <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated
+     * within the timeout limit (60 seconds).
      * </p>
      * </li>
      * </ul>
@@ -255,24 +255,24 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to
+     *        <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to
      *        the server process and/or been validated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     *        <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>COMPLETED</b> – The player connection has been dropped.
+     *        <b>COMPLETED</b> -- The player connection has been dropped.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     *        validated within the time-out limit (60 seconds).
+     *        <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not
+     *        validated within the timeout limit (60 seconds).
      *        </p>
      *        </li>
      */
@@ -291,24 +291,24 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the
      * server process and/or been validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>COMPLETED</b> – The player connection has been dropped.
+     * <b>COMPLETED</b> -- The player connection has been dropped.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
-     * within the time-out limit (60 seconds).
+     * <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated
+     * within the timeout limit (60 seconds).
      * </p>
      * </li>
      * </ul>
@@ -320,24 +320,24 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to
+     *         <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to
      *         the server process and/or been validated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     *         <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>COMPLETED</b> – The player connection has been dropped.
+     *         <b>COMPLETED</b> -- The player connection has been dropped.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     *         validated within the time-out limit (60 seconds).
+     *         <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not
+     *         validated within the timeout limit (60 seconds).
      *         </p>
      *         </li>
      */
@@ -356,24 +356,24 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to the
+     * <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the
      * server process and/or been validated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     * <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>COMPLETED</b> – The player connection has been dropped.
+     * <b>COMPLETED</b> -- The player connection has been dropped.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not validated
-     * within the time-out limit (60 seconds).
+     * <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated
+     * within the timeout limit (60 seconds).
      * </p>
      * </li>
      * </ul>
@@ -386,24 +386,24 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>RESERVED</b> – The player session request has been received, but the player has not yet connected to
+     *        <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to
      *        the server process and/or been validated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The player has been validated by the server process and is currently connected.
+     *        <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>COMPLETED</b> – The player connection has been dropped.
+     *        <b>COMPLETED</b> -- The player connection has been dropped.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TIMEDOUT</b> – A player session request was received, but the player did not connect and/or was not
-     *        validated within the time-out limit (60 seconds).
+     *        <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not
+     *        validated within the timeout limit (60 seconds).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

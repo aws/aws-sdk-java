@@ -42,37 +42,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -141,37 +141,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -182,37 +182,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     *        <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATING</b> – A change is being made to the scaling policy.
+     *        <b>UPDATING</b> -- A change is being made to the scaling policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     *        <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – The scaling policy is being deleted.
+     *        <b>DELETING</b> -- The scaling policy is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETED</b> – The scaling policy has been deleted.
+     *        <b>DELETED</b> -- The scaling policy has been deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *        <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *        </p>
      *        </li>
      * @see ScalingStatusType
@@ -230,37 +230,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -270,37 +270,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>ACTIVE</b> – The scaling policy is currently in force.
+     *         <b>ACTIVE</b> -- The scaling policy is currently in force.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     *         <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>UPDATING</b> – A change is being made to the scaling policy.
+     *         <b>UPDATING</b> -- A change is being made to the scaling policy.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     *         <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DELETING</b> – The scaling policy is being deleted.
+     *         <b>DELETING</b> -- The scaling policy is being deleted.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DELETED</b> – The scaling policy has been deleted.
+     *         <b>DELETED</b> -- The scaling policy has been deleted.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *         <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *         </p>
      *         </li>
      * @see ScalingStatusType
@@ -318,37 +318,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -359,37 +359,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     *        <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATING</b> – A change is being made to the scaling policy.
+     *        <b>UPDATING</b> -- A change is being made to the scaling policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     *        <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – The scaling policy is being deleted.
+     *        <b>DELETING</b> -- The scaling policy is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETED</b> – The scaling policy has been deleted.
+     *        <b>DELETED</b> -- The scaling policy has been deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *        <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -409,37 +409,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -450,37 +450,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     *        <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATING</b> – A change is being made to the scaling policy.
+     *        <b>UPDATING</b> -- A change is being made to the scaling policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     *        <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – The scaling policy is being deleted.
+     *        <b>DELETING</b> -- The scaling policy is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETED</b> – The scaling policy has been deleted.
+     *        <b>DELETED</b> -- The scaling policy has been deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *        <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *        </p>
      *        </li>
      * @see ScalingStatusType
@@ -498,37 +498,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy is currently in force.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     * <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>UPDATING</b> – A change is being made to the scaling policy.
+     * <b>UPDATING</b> -- A change is being made to the scaling policy.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     * <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – The scaling policy is being deleted.
+     * <b>DELETING</b> -- The scaling policy is being deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETED</b> – The scaling policy has been deleted.
+     * <b>DELETED</b> -- The scaling policy has been deleted.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     * <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      * </p>
      * </li>
      * </ul>
@@ -539,37 +539,37 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATEREQUESTED</b> – A request to update the scaling policy has been received.
+     *        <b>UPDATEREQUESTED</b> -- A request to update the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>UPDATING</b> – A change is being made to the scaling policy.
+     *        <b>UPDATING</b> -- A change is being made to the scaling policy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETEREQUESTED</b> – A request to delete the scaling policy has been received.
+     *        <b>DELETEREQUESTED</b> -- A request to delete the scaling policy has been received.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – The scaling policy is being deleted.
+     *        <b>DELETING</b> -- The scaling policy is being deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETED</b> – The scaling policy has been deleted.
+     *        <b>DELETED</b> -- The scaling policy has been deleted.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred in creating the policy. It should be removed and recreated.
+     *        <b>ERROR</b> -- An error occurred in creating the policy. It should be removed and recreated.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

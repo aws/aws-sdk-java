@@ -2234,6 +2234,9 @@ public interface AWSSimpleSystemsManagement {
      *         The number of simultaneously running Automation executions exceeded the allowable limit.
      * @throws AutomationDefinitionVersionNotFoundException
      *         An Automation document with the specified name and version could not be found.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don't match the original call
+     *         to the API with the same idempotency token.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StartAutomationExecution

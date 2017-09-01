@@ -35,6 +35,8 @@ public class StartAutomationExecutionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Parameters").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken").build();
 
     private static final StartAutomationExecutionRequestMarshaller instance = new StartAutomationExecutionRequestMarshaller();
 
@@ -55,6 +57,7 @@ public class StartAutomationExecutionRequestMarshaller {
             protocolMarshaller.marshall(startAutomationExecutionRequest.getDocumentName(), DOCUMENTNAME_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(startAutomationExecutionRequest.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(startAutomationExecutionRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

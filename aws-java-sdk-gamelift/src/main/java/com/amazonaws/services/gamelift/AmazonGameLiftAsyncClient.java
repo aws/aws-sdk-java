@@ -43,13 +43,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <b>Manage game sessions and player access</b> – Retrieve information on available game sessions; create new game
+ * <b>Manage game sessions and player access</b> -- Retrieve information on available game sessions; create new game
  * sessions; send player requests to join a game session.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Configure and manage game server resources</b> – Manage builds, fleets, queues, and aliases; set autoscaling
+ * <b>Configure and manage game server resources</b> -- Manage builds, fleets, queues, and aliases; set autoscaling
  * policies; retrieve logs and metrics.
  * </p>
  * </li>
@@ -99,31 +99,32 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a> – Learn more
- * about Amazon GameLift features and how to use them.
+ * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a> -- Learn
+ * more about Amazon GameLift features and how to use them.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift Tutorials</a> – Get started fast
- * with walkthroughs and sample projects.
+ * <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift Tutorials</a> -- Get started
+ * fast with walkthroughs and sample projects.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> – Stay up to date with new features and techniques.
+ * <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date with new features and techniques.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev Forums</a> – Connect with the
- * GameDev community.
+ * <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev Forums</a> -- Connect with
+ * the GameDev community.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon GameLift Document
- * History</a> – See changes to the Amazon GameLift service, SDKs, and documentation, as well as links to release notes.
+ * History</a> -- See changes to the Amazon GameLift service, SDKs, and documentation, as well as links to release
+ * notes.
  * </p>
  * </li>
  * </ul>
@@ -148,7 +149,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>SearchGameSessions</a> – Retrieve all available game sessions or search for game sessions that match a set of
+ * <a>SearchGameSessions</a> -- Retrieve all available game sessions or search for game sessions that match a set of
  * criteria.
  * </p>
  * </li>
@@ -167,24 +168,24 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>StartGameSessionPlacement</a> – Request a new game session placement and add one or more players to it.
+ * <a>StartGameSessionPlacement</a> -- Request a new game session placement and add one or more players to it.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeGameSessionPlacement</a> – Get details on a placement request, including status.
+ * <a>DescribeGameSessionPlacement</a> -- Get details on a placement request, including status.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>StopGameSessionPlacement</a> – Cancel a placement request.
+ * <a>StopGameSessionPlacement</a> -- Cancel a placement request.
  * </p>
  * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
- * <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
+ * <a>CreateGameSession</a> -- Start a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
@@ -196,22 +197,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>StartMatchmaking</a> – Request matchmaking for one players or a group who want to play together.
+ * <a>StartMatchmaking</a> -- Request matchmaking for one players or a group who want to play together.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeMatchmaking</a> – Get details on a matchmaking request, including status.
+ * <a>DescribeMatchmaking</a> -- Get details on a matchmaking request, including status.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>AcceptMatch</a> – Register that a player accepts a proposed match, for matches that require player acceptance.
+ * <a>AcceptMatch</a> -- Register that a player accepts a proposed match, for matches that require player acceptance.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>StopMatchmaking</a> – Cancel a matchmaking request.
+ * <a>StopMatchmaking</a> -- Cancel a matchmaking request.
  * </p>
  * </li>
  * </ul>
@@ -223,24 +224,24 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>DescribeGameSessions</a> – Retrieve metadata for one or more game sessions, including length of time active and
+ * <a>DescribeGameSessions</a> -- Retrieve metadata for one or more game sessions, including length of time active and
  * current player count. <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeGameSessionDetails</a> – Retrieve metadata and the game session protection setting for one or more game
+ * <a>DescribeGameSessionDetails</a> -- Retrieve metadata and the game session protection setting for one or more game
  * sessions.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateGameSession</a> – Change game session settings, such as maximum player count and join policy.
+ * <a>UpdateGameSession</a> -- Change game session settings, such as maximum player count and join policy.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetGameSessionLogUrl</a> – Get the location of saved logs for a game session.
+ * <a>GetGameSessionLogUrl</a> -- Get the location of saved logs for a game session.
  * </p>
  * </li>
  * </ul>
@@ -252,19 +253,19 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreatePlayerSession</a> – Send a request for a player to join a game session. <i>Available in Amazon GameLift
+ * <a>CreatePlayerSession</a> -- Send a request for a player to join a game session. <i>Available in Amazon GameLift
  * Local.</i>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game session. <i>Available in Amazon
+ * <a>CreatePlayerSessions</a> -- Send a request for multiple players to join a game session. <i>Available in Amazon
  * GameLift Local.</i>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribePlayerSessions</a> – Get details on player activity, including status, playing time, and player data.
+ * <a>DescribePlayerSessions</a> -- Get details on player activity, including status, playing time, and player data.
  * <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
@@ -288,29 +289,29 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreateBuild</a> – Create a new build using files stored in an Amazon S3 bucket. (Update uploading permissions with
- * <a>RequestUploadCredentials</a>.) To create a build and upload files from a local path, use the AWS CLI command
+ * <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3 bucket. (Update uploading permissions
+ * with <a>RequestUploadCredentials</a>.) To create a build and upload files from a local path, use the AWS CLI command
  * <code>upload-build</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListBuilds</a> – Get a list of all builds uploaded to a Amazon GameLift region.
+ * <a>ListBuilds</a> -- Get a list of all builds uploaded to a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeBuild</a> – Retrieve information associated with a build.
+ * <a>DescribeBuild</a> -- Retrieve information associated with a build.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateBuild</a> – Change build metadata, including build name and version.
+ * <a>UpdateBuild</a> -- Change build metadata, including build name and version.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteBuild</a> – Remove a build from Amazon GameLift.
+ * <a>DeleteBuild</a> -- Remove a build from Amazon GameLift.
  * </p>
  * </li>
  * </ul>
@@ -322,17 +323,17 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreateFleet</a> – Configure and activate a new fleet to run a build's game servers.
+ * <a>CreateFleet</a> -- Configure and activate a new fleet to run a build's game servers.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListFleets</a> – Get a list of all fleet IDs in a Amazon GameLift region (all statuses).
+ * <a>ListFleets</a> -- Get a list of all fleet IDs in a Amazon GameLift region (all statuses).
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteFleet</a> – Terminate a fleet that is no longer running game servers or hosting players.
+ * <a>DeleteFleet</a> -- Terminate a fleet that is no longer running game servers or hosting players.
  * </p>
  * </li>
  * <li>
@@ -342,19 +343,19 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> – View or change a fleet's metadata and settings for
+ * <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> -- View or change a fleet's metadata and settings for
  * game session protection and resource creation limits.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeFleetPortSettings</a> / <a>UpdateFleetPortSettings</a> – View or change the inbound permissions (IP
+ * <a>DescribeFleetPortSettings</a> / <a>UpdateFleetPortSettings</a> -- View or change the inbound permissions (IP
  * address and port setting ranges) allowed for a fleet.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> – View or change what server processes (and
+ * <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> -- View or change what server processes (and
  * how many) to run on each instance in a fleet.
  * </p>
  * </li>
@@ -369,37 +370,76 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>DescribeEC2InstanceLimits</a> – Retrieve maximum number of instances allowed for the current AWS account and the
+ * <a>DescribeEC2InstanceLimits</a> -- Retrieve maximum number of instances allowed for the current AWS account and the
  * current usage level.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> – Retrieve the capacity settings and the current number of
+ * <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> -- Retrieve the capacity settings and the current number of
  * instances in a fleet; adjust fleet capacity settings to scale up or down.
  * </p>
  * </li>
  * <li>
  * <p>
- * Autoscale – Manage autoscaling rules and apply them to a fleet.
+ * Autoscale -- Manage autoscaling rules and apply them to a fleet.
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>PutScalingPolicy</a> – Create a new autoscaling policy, or update an existing one.
+ * <a>PutScalingPolicy</a> -- Create a new autoscaling policy, or update an existing one.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeScalingPolicies</a> – Retrieve an existing autoscaling policy.
+ * <a>DescribeScalingPolicies</a> -- Retrieve an existing autoscaling policy.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteScalingPolicy</a> – Delete an autoscaling policy and stop it from affecting a fleet's capacity.
+ * <a>DeleteScalingPolicy</a> -- Delete an autoscaling policy and stop it from affecting a fleet's capacity.
  * </p>
  * </li>
  * </ul>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Manage VPC peering connections for fleets</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of your VPCs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection authorizations.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection authorization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the VPC for a Amazon GameLift fleet and
+ * one of your VPCs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or pending VPC peering connections with a
+ * Amazon GameLift fleet.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a Amazon GameLift fleet.
+ * </p>
  * </li>
  * </ul>
  * </li>
@@ -410,18 +450,18 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>DescribeFleetUtilization</a> – Get current data on the number of server processes, game sessions, and players
+ * <a>DescribeFleetUtilization</a> -- Get current data on the number of server processes, game sessions, and players
  * currently active on a fleet.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeFleetEvents</a> – Get a fleet's logged events for a specified time span.
+ * <a>DescribeFleetEvents</a> -- Get a fleet's logged events for a specified time span.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeGameSessions</a> – Retrieve metadata associated with one or more game sessions, including length of time
+ * <a>DescribeGameSessions</a> -- Retrieve metadata associated with one or more game sessions, including length of time
  * active and current player count.
  * </p>
  * </li>
@@ -434,13 +474,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>DescribeInstances</a> – Get information on each instance in a fleet, including instance ID, IP address, and
+ * <a>DescribeInstances</a> -- Get information on each instance in a fleet, including instance ID, IP address, and
  * status.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect to a specified instance in a fleet.
+ * <a>GetInstanceAccess</a> -- Request access credentials needed to remotely connect to a specified instance in a fleet.
  * </p>
  * </li>
  * </ul>
@@ -452,32 +492,32 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreateAlias</a> – Define a new alias and optionally assign it to a fleet.
+ * <a>CreateAlias</a> -- Define a new alias and optionally assign it to a fleet.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListAliases</a> – Get all fleet aliases defined in a Amazon GameLift region.
+ * <a>ListAliases</a> -- Get all fleet aliases defined in a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeAlias</a> – Retrieve information on an existing alias.
+ * <a>DescribeAlias</a> -- Retrieve information on an existing alias.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateAlias</a> – Change settings for a alias, such as redirecting it from one fleet to another.
+ * <a>UpdateAlias</a> -- Change settings for a alias, such as redirecting it from one fleet to another.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteAlias</a> – Remove an alias from the region.
+ * <a>DeleteAlias</a> -- Remove an alias from the region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ResolveAlias</a> – Get the fleet ID that a specified alias points to.
+ * <a>ResolveAlias</a> -- Get the fleet ID that a specified alias points to.
  * </p>
  * </li>
  * </ul>
@@ -489,22 +529,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreateGameSessionQueue</a> – Create a queue for processing requests for new game sessions.
+ * <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new game sessions.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeGameSessionQueues</a> – Retrieve game session queues defined in a Amazon GameLift region.
+ * <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateGameSessionQueue</a> – Change the configuration of a game session queue.
+ * <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session queue.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteGameSessionQueue</a> – Remove a game session queue from the region.
+ * <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the region.
  * </p>
  * </li>
  * </ul>
@@ -516,38 +556,38 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <a>CreateMatchmakingConfiguration</a> – Create a matchmaking configuration with instructions for building a player
+ * <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking configuration with instructions for building a player
  * group and placing in a new game session.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeMatchmakingConfigurations</a> – Retrieve matchmaking configurations defined a Amazon GameLift region.
+ * <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations defined a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateMatchmakingConfiguration</a> – Change settings for matchmaking configuration. queue.
+ * <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking configuration. queue.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteMatchmakingConfiguration</a> – Remove a matchmaking configuration from the region.
+ * <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from the region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateMatchmakingRuleSet</a> – Create a set of rules to use when searching for player matches.
+ * <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching for player matches.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeMatchmakingRuleSets</a> – Retrieve matchmaking rule sets defined in a Amazon GameLift region.
+ * <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ValidateMatchmakingRuleSet</a> – Verify syntax for a set of matchmaking rules.
+ * <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of matchmaking rules.
  * </p>
  * </li>
  * </ul>
@@ -1095,6 +1135,73 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVpcPeeringAuthorizationResult> createVpcPeeringAuthorizationAsync(CreateVpcPeeringAuthorizationRequest request) {
+
+        return createVpcPeeringAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcPeeringAuthorizationResult> createVpcPeeringAuthorizationAsync(
+            final CreateVpcPeeringAuthorizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVpcPeeringAuthorizationRequest, CreateVpcPeeringAuthorizationResult> asyncHandler) {
+        final CreateVpcPeeringAuthorizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVpcPeeringAuthorizationResult>() {
+            @Override
+            public CreateVpcPeeringAuthorizationResult call() throws Exception {
+                CreateVpcPeeringAuthorizationResult result = null;
+
+                try {
+                    result = executeCreateVpcPeeringAuthorization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcPeeringConnectionResult> createVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest request) {
+
+        return createVpcPeeringConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcPeeringConnectionResult> createVpcPeeringConnectionAsync(final CreateVpcPeeringConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVpcPeeringConnectionRequest, CreateVpcPeeringConnectionResult> asyncHandler) {
+        final CreateVpcPeeringConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVpcPeeringConnectionResult>() {
+            @Override
+            public CreateVpcPeeringConnectionResult call() throws Exception {
+                CreateVpcPeeringConnectionResult result = null;
+
+                try {
+                    result = executeCreateVpcPeeringConnection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest request) {
 
         return deleteAliasAsync(request, null);
@@ -1278,6 +1385,73 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
 
                 try {
                     result = executeDeleteScalingPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcPeeringAuthorizationResult> deleteVpcPeeringAuthorizationAsync(DeleteVpcPeeringAuthorizationRequest request) {
+
+        return deleteVpcPeeringAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcPeeringAuthorizationResult> deleteVpcPeeringAuthorizationAsync(
+            final DeleteVpcPeeringAuthorizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpcPeeringAuthorizationRequest, DeleteVpcPeeringAuthorizationResult> asyncHandler) {
+        final DeleteVpcPeeringAuthorizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVpcPeeringAuthorizationResult>() {
+            @Override
+            public DeleteVpcPeeringAuthorizationResult call() throws Exception {
+                DeleteVpcPeeringAuthorizationResult result = null;
+
+                try {
+                    result = executeDeleteVpcPeeringAuthorization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcPeeringConnectionResult> deleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request) {
+
+        return deleteVpcPeeringConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcPeeringConnectionResult> deleteVpcPeeringConnectionAsync(final DeleteVpcPeeringConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpcPeeringConnectionRequest, DeleteVpcPeeringConnectionResult> asyncHandler) {
+        final DeleteVpcPeeringConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVpcPeeringConnectionResult>() {
+            @Override
+            public DeleteVpcPeeringConnectionResult call() throws Exception {
+                DeleteVpcPeeringConnectionResult result = null;
+
+                try {
+                    result = executeDeleteVpcPeeringConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1907,6 +2081,75 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
 
                 try {
                     result = executeDescribeScalingPolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcPeeringAuthorizationsResult> describeVpcPeeringAuthorizationsAsync(
+            DescribeVpcPeeringAuthorizationsRequest request) {
+
+        return describeVpcPeeringAuthorizationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcPeeringAuthorizationsResult> describeVpcPeeringAuthorizationsAsync(
+            final DescribeVpcPeeringAuthorizationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeVpcPeeringAuthorizationsRequest, DescribeVpcPeeringAuthorizationsResult> asyncHandler) {
+        final DescribeVpcPeeringAuthorizationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVpcPeeringAuthorizationsResult>() {
+            @Override
+            public DescribeVpcPeeringAuthorizationsResult call() throws Exception {
+                DescribeVpcPeeringAuthorizationsResult result = null;
+
+                try {
+                    result = executeDescribeVpcPeeringAuthorizations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcPeeringConnectionsResult> describeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest request) {
+
+        return describeVpcPeeringConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcPeeringConnectionsResult> describeVpcPeeringConnectionsAsync(
+            final DescribeVpcPeeringConnectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeVpcPeeringConnectionsRequest, DescribeVpcPeeringConnectionsResult> asyncHandler) {
+        final DescribeVpcPeeringConnectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVpcPeeringConnectionsResult>() {
+            @Override
+            public DescribeVpcPeeringConnectionsResult call() throws Exception {
+                DescribeVpcPeeringConnectionsResult result = null;
+
+                try {
+                    result = executeDescribeVpcPeeringConnections(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

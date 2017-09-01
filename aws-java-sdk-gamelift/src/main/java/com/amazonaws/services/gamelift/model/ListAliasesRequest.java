@@ -39,13 +39,14 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.
      * </p>
      * </li>
      * </ul>
@@ -83,13 +84,14 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.
      * </p>
      * </li>
      * </ul>
@@ -103,12 +105,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to
+     *        <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
      *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *        message embedded.
      *        </p>
@@ -131,13 +133,14 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.
      * </p>
      * </li>
      * </ul>
@@ -150,12 +153,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *         <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to
+     *         <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
      *         the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *         message embedded.
      *         </p>
@@ -178,13 +181,14 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.
      * </p>
      * </li>
      * </ul>
@@ -198,12 +202,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to
+     *        <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
      *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *        message embedded.
      *        </p>
@@ -228,13 +232,14 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.
      * </p>
      * </li>
      * </ul>
@@ -248,12 +253,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to
+     *        <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
      *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *        message embedded.
      *        </p>
@@ -276,13 +281,14 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     * <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to the
+     * user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message
+     * embedded.
      * </p>
      * </li>
      * </ul>
@@ -296,12 +302,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>SIMPLE</b> – The alias resolves to one specific fleet. Use this type when routing to active fleets.
+     *        <b>SIMPLE</b> -- The alias resolves to one specific fleet. Use this type when routing to active fleets.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINAL</b> – The alias does not resolve to a fleet but instead can be used to display a message to
+     *        <b>TERMINAL</b> -- The alias does not resolve to a fleet but instead can be used to display a message to
      *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
      *        message embedded.
      *        </p>

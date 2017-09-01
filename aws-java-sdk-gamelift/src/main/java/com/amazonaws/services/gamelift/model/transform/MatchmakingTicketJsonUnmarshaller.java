@@ -72,6 +72,10 @@ public class MatchmakingTicketJsonUnmarshaller implements Unmarshaller<Matchmaki
                     context.nextToken();
                     matchmakingTicket.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("EndTime", targetDepth)) {
+                    context.nextToken();
+                    matchmakingTicket.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("Players", targetDepth)) {
                     context.nextToken();
                     matchmakingTicket.setPlayers(new ListUnmarshaller<Player>(PlayerJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -79,6 +83,10 @@ public class MatchmakingTicketJsonUnmarshaller implements Unmarshaller<Matchmaki
                 if (context.testExpression("GameSessionConnectionInfo", targetDepth)) {
                     context.nextToken();
                     matchmakingTicket.setGameSessionConnectionInfo(GameSessionConnectionInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EstimatedWaitTime", targetDepth)) {
+                    context.nextToken();
+                    matchmakingTicket.setEstimatedWaitTime(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

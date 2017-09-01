@@ -101,13 +101,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -140,6 +140,21 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<String> metricGroups;
+    /**
+     * <p>
+     * Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can
+     * find your Account ID in the AWS Management Console under account settings.
+     * </p>
+     */
+    private String peerVpcAwsAccountId;
+    /**
+     * <p>
+     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual Private Cloud
+     * service tools, including the VPC Dashboard in the AWS Management Console.
+     * </p>
+     */
+    private String peerVpcId;
 
     /**
      * <p>
@@ -682,13 +697,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -701,12 +716,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -727,13 +742,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -745,12 +760,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *         <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *         during a scale-down event.
      *         </p>
      *         </li>
@@ -771,13 +786,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -790,12 +805,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -818,13 +833,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -837,12 +852,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -863,13 +878,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -882,12 +897,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -1111,6 +1126,104 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can
+     * find your Account ID in the AWS Management Console under account settings.
+     * </p>
+     * 
+     * @param peerVpcAwsAccountId
+     *        Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with.
+     *        You can find your Account ID in the AWS Management Console under account settings.
+     */
+
+    public void setPeerVpcAwsAccountId(String peerVpcAwsAccountId) {
+        this.peerVpcAwsAccountId = peerVpcAwsAccountId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can
+     * find your Account ID in the AWS Management Console under account settings.
+     * </p>
+     * 
+     * @return Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with.
+     *         You can find your Account ID in the AWS Management Console under account settings.
+     */
+
+    public String getPeerVpcAwsAccountId() {
+        return this.peerVpcAwsAccountId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with. You can
+     * find your Account ID in the AWS Management Console under account settings.
+     * </p>
+     * 
+     * @param peerVpcAwsAccountId
+     *        Unique identifier for the AWS account with the VPC that you want to peer your Amazon GameLift fleet with.
+     *        You can find your Account ID in the AWS Management Console under account settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withPeerVpcAwsAccountId(String peerVpcAwsAccountId) {
+        setPeerVpcAwsAccountId(peerVpcAwsAccountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual Private Cloud
+     * service tools, including the VPC Dashboard in the AWS Management Console.
+     * </p>
+     * 
+     * @param peerVpcId
+     *        Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
+     *        in the same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual
+     *        Private Cloud service tools, including the VPC Dashboard in the AWS Management Console.
+     */
+
+    public void setPeerVpcId(String peerVpcId) {
+        this.peerVpcId = peerVpcId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual Private Cloud
+     * service tools, including the VPC Dashboard in the AWS Management Console.
+     * </p>
+     * 
+     * @return Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
+     *         in the same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual
+     *         Private Cloud service tools, including the VPC Dashboard in the AWS Management Console.
+     */
+
+    public String getPeerVpcId() {
+        return this.peerVpcId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the
+     * same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual Private Cloud
+     * service tools, including the VPC Dashboard in the AWS Management Console.
+     * </p>
+     * 
+     * @param peerVpcId
+     *        Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be
+     *        in the same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual
+     *        Private Cloud service tools, including the VPC Dashboard in the AWS Management Console.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withPeerVpcId(String peerVpcId) {
+        setPeerVpcId(peerVpcId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1144,7 +1257,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getResourceCreationLimitPolicy() != null)
             sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy()).append(",");
         if (getMetricGroups() != null)
-            sb.append("MetricGroups: ").append(getMetricGroups());
+            sb.append("MetricGroups: ").append(getMetricGroups()).append(",");
+        if (getPeerVpcAwsAccountId() != null)
+            sb.append("PeerVpcAwsAccountId: ").append(getPeerVpcAwsAccountId()).append(",");
+        if (getPeerVpcId() != null)
+            sb.append("PeerVpcId: ").append(getPeerVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -1208,6 +1325,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getMetricGroups() != null && other.getMetricGroups().equals(this.getMetricGroups()) == false)
             return false;
+        if (other.getPeerVpcAwsAccountId() == null ^ this.getPeerVpcAwsAccountId() == null)
+            return false;
+        if (other.getPeerVpcAwsAccountId() != null && other.getPeerVpcAwsAccountId().equals(this.getPeerVpcAwsAccountId()) == false)
+            return false;
+        if (other.getPeerVpcId() == null ^ this.getPeerVpcId() == null)
+            return false;
+        if (other.getPeerVpcId() != null && other.getPeerVpcId().equals(this.getPeerVpcId()) == false)
+            return false;
         return true;
     }
 
@@ -1228,6 +1353,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getRuntimeConfiguration() == null) ? 0 : getRuntimeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getResourceCreationLimitPolicy() == null) ? 0 : getResourceCreationLimitPolicy().hashCode());
         hashCode = prime * hashCode + ((getMetricGroups() == null) ? 0 : getMetricGroups().hashCode());
+        hashCode = prime * hashCode + ((getPeerVpcAwsAccountId() == null) ? 0 : getPeerVpcAwsAccountId().hashCode());
+        hashCode = prime * hashCode + ((getPeerVpcId() == null) ? 0 : getPeerVpcId().hashCode());
         return hashCode;
     }
 

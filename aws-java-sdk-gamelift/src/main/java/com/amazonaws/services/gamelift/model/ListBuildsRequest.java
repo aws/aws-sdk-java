@@ -38,18 +38,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -80,18 +80,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -104,20 +104,20 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *        fleets for builds that are in this status. When a build is successfully created, the build status is set
      *        to this value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *        build.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *        </p>
      *        </li>
      * @see BuildStatus
@@ -137,18 +137,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -160,20 +160,20 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *         <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *         fleets for builds that are in this status. When a build is successfully created, the build status is set
      *         to this value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *         <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *         build.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *         <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *         </p>
      *         </li>
      * @see BuildStatus
@@ -193,18 +193,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -217,20 +217,20 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *        fleets for builds that are in this status. When a build is successfully created, the build status is set
      *        to this value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *        build.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -252,18 +252,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -276,20 +276,20 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *        fleets for builds that are in this status. When a build is successfully created, the build status is set
      *        to this value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *        build.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *        </p>
      *        </li>
      * @see BuildStatus
@@ -309,18 +309,18 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create fleets for
+     * <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create fleets for
      * builds that are in this status. When a build is successfully created, the build status is set to this value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this build.
+     * <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this build.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     * <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      * </p>
      * </li>
      * </ul>
@@ -333,20 +333,20 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>INITIALIZED</b> – A new build has been defined, but no files have been uploaded. You cannot create
+     *        <b>INITIALIZED</b> -- A new build has been defined, but no files have been uploaded. You cannot create
      *        fleets for builds that are in this status. When a build is successfully created, the build status is set
      *        to this value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>READY</b> – The game build has been successfully uploaded. You can now create new fleets for this
+     *        <b>READY</b> -- The game build has been successfully uploaded. You can now create new fleets for this
      *        build.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FAILED</b> – The game build upload failed. You cannot create new fleets for this build.
+     *        <b>FAILED</b> -- The game build upload failed. You cannot create new fleets for this build.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -192,33 +192,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
      * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> – The fleet no longer exists.
+     * <b>TERMINATED</b> -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -264,13 +264,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -560,33 +560,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
      * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> – The fleet no longer exists.
+     * <b>TERMINATED</b> -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -599,33 +599,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating
      *        new instances with the game build and starting server processes.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        <b>ACTIVE</b> -- Hosts can now accept game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        <b>TERMINATED</b> -- The fleet no longer exists.
      *        </p>
      *        </li>
      * @see FleetStatus
@@ -645,33 +645,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
      * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> – The fleet no longer exists.
+     * <b>TERMINATED</b> -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -683,33 +683,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *         <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
-     *         new instances with the game build and starting server processes.
+     *         <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet,
+     *         creating new instances with the game build and starting server processes.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *         <b>ACTIVE</b> -- Hosts can now accept game sessions.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *         <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *         <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>TERMINATED</b> – The fleet no longer exists.
+     *         <b>TERMINATED</b> -- The fleet no longer exists.
      *         </p>
      *         </li>
      * @see FleetStatus
@@ -729,33 +729,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
      * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> – The fleet no longer exists.
+     * <b>TERMINATED</b> -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -768,33 +768,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating
      *        new instances with the game build and starting server processes.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        <b>ACTIVE</b> -- Hosts can now accept game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        <b>TERMINATED</b> -- The fleet no longer exists.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -816,33 +816,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
      * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> – The fleet no longer exists.
+     * <b>TERMINATED</b> -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -855,33 +855,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating
      *        new instances with the game build and starting server processes.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        <b>ACTIVE</b> -- Hosts can now accept game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        <b>TERMINATED</b> -- The fleet no longer exists.
      *        </p>
      *        </li>
      * @see FleetStatus
@@ -901,33 +901,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     * <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating new
      * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ACTIVE</b> – Hosts can now accept game sessions.
+     * <b>ACTIVE</b> -- Hosts can now accept game sessions.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     * <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>TERMINATED</b> – The fleet no longer exists.
+     * <b>TERMINATED</b> -- The fleet no longer exists.
      * </p>
      * </li>
      * </ul>
@@ -940,33 +940,33 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NEW</b> – A new fleet has been defined and desired instances is set to 1.
+     *        <b>NEW</b> -- A new fleet has been defined and desired instances is set to 1.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- Amazon GameLift is setting up the new fleet, creating
      *        new instances with the game build and starting server processes.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> – Hosts can now accept game sessions.
+     *        <b>ACTIVE</b> -- Hosts can now accept game sessions.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ERROR</b> – An error occurred when downloading, validating, building, or activating the fleet.
+     *        <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DELETING</b> – Hosts are responding to a delete fleet request.
+     *        <b>DELETING</b> -- Hosts are responding to a delete fleet request.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TERMINATED</b> – The fleet no longer exists.
+     *        <b>TERMINATED</b> -- The fleet no longer exists.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1244,13 +1244,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -1260,12 +1260,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -1283,13 +1283,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -1298,12 +1298,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *         <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *         <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *         during a scale-down event.
      *         </p>
      *         </li>
@@ -1321,13 +1321,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -1337,12 +1337,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -1362,13 +1362,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -1378,12 +1378,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>
@@ -1401,13 +1401,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a
-     * scale-down event.
+     * <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during
+     * a scale-down event.
      * </p>
      * </li>
      * </ul>
@@ -1417,12 +1417,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+     *        <b>NoProtection</b> -- The game session can be terminated during a scale-down event.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
+     *        <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated
      *        during a scale-down event.
      *        </p>
      *        </li>

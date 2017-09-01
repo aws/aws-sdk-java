@@ -95,7 +95,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session. A game session ID has the following format:
+     * Unique identifier for the game session. A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .
      * </p>
@@ -109,7 +109,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Unique identifier for a fleet the game session is running on.
+     * Unique identifier for a fleet that the game session is running on.
      * </p>
      */
     private String fleetId;
@@ -196,13 +196,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session. A game session ID has the following format:
+     * Unique identifier for the game session. A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session. A game session ID has the following format:
+     *        Unique identifier for the game session. A game session ARN has the following format:
      *        <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *        .
      */
@@ -213,12 +213,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session. A game session ID has the following format:
+     * Unique identifier for the game session. A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .
      * </p>
      * 
-     * @return Unique identifier for the game session. A game session ID has the following format:
+     * @return Unique identifier for the game session. A game session ARN has the following format:
      *         <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *         .
      */
@@ -229,13 +229,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the game session. A game session ID has the following format:
+     * Unique identifier for the game session. A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .
      * </p>
      * 
      * @param gameSessionId
-     *        Unique identifier for the game session. A game session ID has the following format:
+     *        Unique identifier for the game session. A game session ARN has the following format:
      *        <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *        .
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -288,11 +288,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet the game session is running on.
+     * Unique identifier for a fleet that the game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet the game session is running on.
+     *        Unique identifier for a fleet that the game session is running on.
      */
 
     public void setFleetId(String fleetId) {
@@ -301,10 +301,10 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet the game session is running on.
+     * Unique identifier for a fleet that the game session is running on.
      * </p>
      * 
-     * @return Unique identifier for a fleet the game session is running on.
+     * @return Unique identifier for a fleet that the game session is running on.
      */
 
     public String getFleetId() {
@@ -313,11 +313,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for a fleet the game session is running on.
+     * Unique identifier for a fleet that the game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet the game session is running on.
+     *        Unique identifier for a fleet that the game session is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

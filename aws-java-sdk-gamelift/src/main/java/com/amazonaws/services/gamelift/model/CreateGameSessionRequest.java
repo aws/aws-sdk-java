@@ -75,7 +75,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string
      * that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided,
-     * this string is included in the new game session's ID. (A game session ID has the following format:
+     * this string is included in the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .)
      * </p>
@@ -84,7 +84,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     * If provided, this string is included in the new game session's ID. (A game session ID has the following format:
+     * If provided, this string is included in the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .) Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained
      * for this time period and then deleted.
@@ -429,7 +429,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string
      * that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided,
-     * this string is included in the new game session's ID. (A game session ID has the following format:
+     * this string is included in the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .)
      * </p>
@@ -437,7 +437,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param gameSessionId
      *        <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom
      *        string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     *        If provided, this string is included in the new game session's ID. (A game session ID has the following
+     *        If provided, this string is included in the new game session's ID. (A game session ARN has the following
      *        format:
      *        <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *        .)
@@ -451,14 +451,14 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string
      * that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided,
-     * this string is included in the new game session's ID. (A game session ID has the following format:
+     * this string is included in the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .)
      * </p>
      * 
      * @return <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom
      *         string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     *         If provided, this string is included in the new game session's ID. (A game session ID has the following
+     *         If provided, this string is included in the new game session's ID. (A game session ARN has the following
      *         format:
      *         <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *         .)
@@ -472,7 +472,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string
      * that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided,
-     * this string is included in the new game session's ID. (A game session ID has the following format:
+     * this string is included in the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .)
      * </p>
@@ -480,7 +480,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param gameSessionId
      *        <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom
      *        string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     *        If provided, this string is included in the new game session's ID. (A game session ID has the following
+     *        If provided, this string is included in the new game session's ID. (A game session ARN has the following
      *        format:
      *        <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *        .)
@@ -495,7 +495,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     * If provided, this string is included in the new game session's ID. (A game session ID has the following format:
+     * If provided, this string is included in the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .) Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained
      * for this time period and then deleted.
@@ -503,7 +503,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param idempotencyToken
      *        Custom string that uniquely identifies a request for a new game session. Maximum token length is 48
-     *        characters. If provided, this string is included in the new game session's ID. (A game session ID has the
+     *        characters. If provided, this string is included in the new game session's ID. (A game session ARN has the
      *        following format:
      *        <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *        .) Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are
@@ -517,15 +517,15 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     * If provided, this string is included in the new game session's ID. (A game session ID has the following format:
+     * If provided, this string is included in the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .) Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained
      * for this time period and then deleted.
      * </p>
      * 
      * @return Custom string that uniquely identifies a request for a new game session. Maximum token length is 48
-     *         characters. If provided, this string is included in the new game session's ID. (A game session ID has the
-     *         following format:
+     *         characters. If provided, this string is included in the new game session's ID. (A game session ARN has
+     *         the following format:
      *         <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *         .) Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are
      *         retained for this time period and then deleted.
@@ -538,7 +538,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     * If provided, this string is included in the new game session's ID. (A game session ID has the following format:
+     * If provided, this string is included in the new game session's ID. (A game session ARN has the following format:
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      * .) Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are retained
      * for this time period and then deleted.
@@ -546,7 +546,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param idempotencyToken
      *        Custom string that uniquely identifies a request for a new game session. Maximum token length is 48
-     *        characters. If provided, this string is included in the new game session's ID. (A game session ID has the
+     *        characters. If provided, this string is included in the new game session's ID. (A game session ARN has the
      *        following format:
      *        <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom ID string or idempotency token&gt;</code>
      *        .) Idempotency tokens remain in use for 30 days after a game session has ended; game session objects are

@@ -45,7 +45,7 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not
-     * recognized; all occurances of the the repeated value after the first of a repeated value are ignored.
+     * recognized; all occurrences of the repeated value after the first of a repeated value are ignored.
      * </p>
      */
     private java.util.List<String> sL;
@@ -139,11 +139,11 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not
-     * recognized; all occurances of the the repeated value after the first of a repeated value are ignored.
+     * recognized; all occurrences of the repeated value after the first of a repeated value are ignored.
      * </p>
      * 
      * @return For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are
-     *         not recognized; all occurances of the the repeated value after the first of a repeated value are ignored.
+     *         not recognized; all occurrences of the repeated value after the first of a repeated value are ignored.
      */
 
     public java.util.List<String> getSL() {
@@ -153,12 +153,12 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not
-     * recognized; all occurances of the the repeated value after the first of a repeated value are ignored.
+     * recognized; all occurrences of the repeated value after the first of a repeated value are ignored.
      * </p>
      * 
      * @param sL
      *        For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not
-     *        recognized; all occurances of the the repeated value after the first of a repeated value are ignored.
+     *        recognized; all occurrences of the repeated value after the first of a repeated value are ignored.
      */
 
     public void setSL(java.util.Collection<String> sL) {
@@ -173,7 +173,7 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not
-     * recognized; all occurances of the the repeated value after the first of a repeated value are ignored.
+     * recognized; all occurrences of the repeated value after the first of a repeated value are ignored.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -183,7 +183,7 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param sL
      *        For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not
-     *        recognized; all occurances of the the repeated value after the first of a repeated value are ignored.
+     *        recognized; all occurrences of the repeated value after the first of a repeated value are ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,12 +200,12 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not
-     * recognized; all occurances of the the repeated value after the first of a repeated value are ignored.
+     * recognized; all occurrences of the repeated value after the first of a repeated value are ignored.
      * </p>
      * 
      * @param sL
      *        For a list of up to 10 strings. Maximum length for each string is 100 characters. Duplicate values are not
-     *        recognized; all occurances of the the repeated value after the first of a repeated value are ignored.
+     *        recognized; all occurrences of the repeated value after the first of a repeated value are ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
