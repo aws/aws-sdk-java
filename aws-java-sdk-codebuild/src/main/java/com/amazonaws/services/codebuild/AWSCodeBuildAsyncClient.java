@@ -46,6 +46,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
+ * <code>BatchDeleteBuilds</code>: Deletes one or more builds.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
  * AWS CodeBuild will run a build. This includes information such as where to get the source code to build, the build
  * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i>
@@ -314,6 +319,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteBuildsResult> batchDeleteBuildsAsync(BatchDeleteBuildsRequest request) {
+
+        return batchDeleteBuildsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteBuildsResult> batchDeleteBuildsAsync(final BatchDeleteBuildsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteBuildsRequest, BatchDeleteBuildsResult> asyncHandler) {
+        final BatchDeleteBuildsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteBuildsResult>() {
+            @Override
+            public BatchDeleteBuildsResult call() throws Exception {
+                BatchDeleteBuildsResult result = null;
+
+                try {
+                    result = executeBatchDeleteBuilds(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

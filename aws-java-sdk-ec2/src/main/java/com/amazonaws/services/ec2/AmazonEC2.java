@@ -510,7 +510,8 @@ public interface AmazonEC2 {
      * <p>
      * Each rule consists of the protocol (for example, TCP), plus either a CIDR range or a source group. For the TCP
      * and UDP protocols, you must also specify the destination port or port range. For the ICMP protocol, you must also
-     * specify the ICMP type and code. You can use -1 for the type or code to mean all types or all codes.
+     * specify the ICMP type and code. You can use -1 for the type or code to mean all types or all codes. You can
+     * optionally specify a description for the rule.
      * </p>
      * <p>
      * Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.
@@ -545,6 +546,9 @@ public interface AmazonEC2 {
      * security group for your VPC. The security groups must all be for the same VPC or a peer VPC in a VPC peering
      * connection. For more information about VPC security group limits, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a>.
+     * </p>
+     * <p>
+     * You can optionally specify a description for the security group rule.
      * </p>
      * 
      * @param authorizeSecurityGroupIngressRequest
@@ -5312,13 +5316,14 @@ public interface AmazonEC2 {
     /**
      * <p>
      * [EC2-VPC only] Removes one or more egress rules from a security group for EC2-VPC. This action doesn't apply to
-     * security groups for use in EC2-Classic. The values that you specify in the revoke request (for example, ports)
-     * must match the existing rule's values for the rule to be revoked.
+     * security groups for use in EC2-Classic. To remove a rule, the values that you specify (for example, ports) must
+     * match the existing rule's values exactly.
      * </p>
      * <p>
      * Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
      * protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also
-     * specify the ICMP type and code.
+     * specify the ICMP type and code. If the security group rule has a description, you do not have to specify the
+     * description to revoke the rule.
      * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
@@ -5336,8 +5341,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Removes one or more ingress rules from a security group. The values that you specify in the revoke request (for
-     * example, ports) must match the existing rule's values for the rule to be removed.
+     * Removes one or more ingress rules from a security group. To remove a rule, the values that you specify (for
+     * example, ports) must match the existing rule's values exactly.
      * </p>
      * <note>
      * <p>
@@ -5348,7 +5353,8 @@ public interface AmazonEC2 {
      * <p>
      * Each rule consists of the protocol and the CIDR range or source security group. For the TCP and UDP protocols,
      * you must also specify the destination port or range of ports. For the ICMP protocol, you must also specify the
-     * ICMP type and code.
+     * ICMP type and code. If the security group rule has a description, you do not have to specify the description to
+     * revoke the rule.
      * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
@@ -5638,6 +5644,46 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     UnmonitorInstancesResult unmonitorInstances(UnmonitorInstancesRequest unmonitorInstancesRequest);
+
+    /**
+     * <p>
+     * [EC2-VPC only] Updates the description of an egress (outbound) security group rule. You can replace an existing
+     * description, or add a description to a rule that did not have one previously.
+     * </p>
+     * <p>
+     * You specify the description as part of the IP permissions structure. You can remove a description for a security
+     * group rule by omitting the description parameter in the request.
+     * </p>
+     * 
+     * @param updateSecurityGroupRuleDescriptionsEgressRequest
+     *        Contains the parameters for UpdateSecurityGroupRuleDescriptionsEgress.
+     * @return Result of the UpdateSecurityGroupRuleDescriptionsEgress operation returned by the service.
+     * @sample AmazonEC2.UpdateSecurityGroupRuleDescriptionsEgress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSecurityGroupRuleDescriptionsEgressResult updateSecurityGroupRuleDescriptionsEgress(
+            UpdateSecurityGroupRuleDescriptionsEgressRequest updateSecurityGroupRuleDescriptionsEgressRequest);
+
+    /**
+     * <p>
+     * Updates the description of an ingress (inbound) security group rule. You can replace an existing description, or
+     * add a description to a rule that did not have one previously.
+     * </p>
+     * <p>
+     * You specify the description as part of the IP permissions structure. You can remove a description for a security
+     * group rule by omitting the description parameter in the request.
+     * </p>
+     * 
+     * @param updateSecurityGroupRuleDescriptionsIngressRequest
+     *        Contains the parameters for UpdateSecurityGroupRuleDescriptionsIngress.
+     * @return Result of the UpdateSecurityGroupRuleDescriptionsIngress operation returned by the service.
+     * @sample AmazonEC2.UpdateSecurityGroupRuleDescriptionsIngress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSecurityGroupRuleDescriptionsIngressResult updateSecurityGroupRuleDescriptionsIngress(
+            UpdateSecurityGroupRuleDescriptionsIngressRequest updateSecurityGroupRuleDescriptionsIngressRequest);
 
     /**
      * Checks whether you have the required permissions for the provided Amazon EC2 operation, without actually running

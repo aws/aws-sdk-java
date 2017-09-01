@@ -28,6 +28,11 @@
  * <ul>
  * <li>
  * <p>
+ * <code>BatchDeleteBuilds</code>: Deletes one or more builds.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
  * AWS CodeBuild will run a build. This includes information such as where to get the source code to build, the build
  * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i>

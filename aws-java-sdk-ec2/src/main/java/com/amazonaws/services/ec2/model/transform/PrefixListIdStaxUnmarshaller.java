@@ -43,6 +43,11 @@ public class PrefixListIdStaxUnmarshaller implements Unmarshaller<PrefixListId, 
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("description", targetDepth)) {
+                    prefixListId.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("prefixListId", targetDepth)) {
                     prefixListId.setPrefixListId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

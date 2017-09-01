@@ -106,6 +106,20 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private Matcher matcher;
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
+     * instance IDs and IP addresses.
+     * </p>
+     * <p>
+     * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
+     * for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * </p>
+     */
+    private String targetType;
 
     /**
      * <p>
@@ -716,6 +730,154 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
+     * instance IDs and IP addresses.
+     * </p>
+     * <p>
+     * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
+     * for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * </p>
+     * 
+     * @param targetType
+     *        The type of target that you must specify when registering targets with this target group. The possible
+     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *        specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
+     *        target group using both instance IDs and IP addresses.</p>
+     *        <p>
+     *        If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
+     *        (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the
+     *        RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * @see TargetTypeEnum
+     */
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
+    }
+
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
+     * instance IDs and IP addresses.
+     * </p>
+     * <p>
+     * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
+     * for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * </p>
+     * 
+     * @return The type of target that you must specify when registering targets with this target group. The possible
+     *         values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *         specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
+     *         target group using both instance IDs and IP addresses.</p>
+     *         <p>
+     *         If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
+     *         (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the
+     *         RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * @see TargetTypeEnum
+     */
+
+    public String getTargetType() {
+        return this.targetType;
+    }
+
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
+     * instance IDs and IP addresses.
+     * </p>
+     * <p>
+     * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
+     * for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * </p>
+     * 
+     * @param targetType
+     *        The type of target that you must specify when registering targets with this target group. The possible
+     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *        specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
+     *        target group using both instance IDs and IP addresses.</p>
+     *        <p>
+     *        If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
+     *        (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the
+     *        RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetTypeEnum
+     */
+
+    public CreateTargetGroupRequest withTargetType(String targetType) {
+        setTargetType(targetType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
+     * instance IDs and IP addresses.
+     * </p>
+     * <p>
+     * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
+     * for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * </p>
+     * 
+     * @param targetType
+     *        The type of target that you must specify when registering targets with this target group. The possible
+     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *        specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
+     *        target group using both instance IDs and IP addresses.</p>
+     *        <p>
+     *        If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
+     *        (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the
+     *        RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * @see TargetTypeEnum
+     */
+
+    public void setTargetType(TargetTypeEnum targetType) {
+        withTargetType(targetType);
+    }
+
+    /**
+     * <p>
+     * The type of target that you must specify when registering targets with this target group. The possible values are
+     * <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are specified by IP
+     * address). The default is <code>instance</code>. Note that you can't specify targets for a target group using both
+     * instance IDs and IP addresses.
+     * </p>
+     * <p>
+     * If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud (VPC)
+     * for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * </p>
+     * 
+     * @param targetType
+     *        The type of target that you must specify when registering targets with this target group. The possible
+     *        values are <code>instance</code> (targets are specified by instance ID) or <code>ip</code> (targets are
+     *        specified by IP address). The default is <code>instance</code>. Note that you can't specify targets for a
+     *        target group using both instance IDs and IP addresses.</p>
+     *        <p>
+     *        If the target type is <code>ip</code>, specify IP addresses from the subnets of the virtual private cloud
+     *        (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the
+     *        RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetTypeEnum
+     */
+
+    public CreateTargetGroupRequest withTargetType(TargetTypeEnum targetType) {
+        this.targetType = targetType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -749,7 +911,9 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getUnhealthyThresholdCount() != null)
             sb.append("UnhealthyThresholdCount: ").append(getUnhealthyThresholdCount()).append(",");
         if (getMatcher() != null)
-            sb.append("Matcher: ").append(getMatcher());
+            sb.append("Matcher: ").append(getMatcher()).append(",");
+        if (getTargetType() != null)
+            sb.append("TargetType: ").append(getTargetType());
         sb.append("}");
         return sb.toString();
     }
@@ -812,6 +976,10 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMatcher() != null && other.getMatcher().equals(this.getMatcher()) == false)
             return false;
+        if (other.getTargetType() == null ^ this.getTargetType() == null)
+            return false;
+        if (other.getTargetType() != null && other.getTargetType().equals(this.getTargetType()) == false)
+            return false;
         return true;
     }
 
@@ -832,6 +1000,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getHealthyThresholdCount() == null) ? 0 : getHealthyThresholdCount().hashCode());
         hashCode = prime * hashCode + ((getUnhealthyThresholdCount() == null) ? 0 : getUnhealthyThresholdCount().hashCode());
         hashCode = prime * hashCode + ((getMatcher() == null) ? 0 : getMatcher().hashCode());
+        hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
         return hashCode;
     }
 

@@ -92,6 +92,10 @@ public class CreateTargetGroupRequestMarshaller implements Marshaller<Request<Cr
             }
         }
 
+        if (createTargetGroupRequest.getTargetType() != null) {
+            request.addParameter("TargetType", StringUtils.fromString(createTargetGroupRequest.getTargetType()));
+        }
+
         return request;
     }
 

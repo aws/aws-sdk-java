@@ -41,6 +41,11 @@ import com.amazonaws.services.codebuild.model.*;
  * <ul>
  * <li>
  * <p>
+ * <code>BatchDeleteBuilds</code>: Deletes one or more builds.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
  * AWS CodeBuild will run a build. This includes information such as where to get the source code to build, the build
  * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i>
@@ -104,6 +109,37 @@ import com.amazonaws.services.codebuild.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCodeBuildAsync extends AWSCodeBuild {
+
+    /**
+     * <p>
+     * Deletes one or more builds.
+     * </p>
+     * 
+     * @param batchDeleteBuildsRequest
+     * @return A Java Future containing the result of the BatchDeleteBuilds operation returned by the service.
+     * @sample AWSCodeBuildAsync.BatchDeleteBuilds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteBuildsResult> batchDeleteBuildsAsync(BatchDeleteBuildsRequest batchDeleteBuildsRequest);
+
+    /**
+     * <p>
+     * Deletes one or more builds.
+     * </p>
+     * 
+     * @param batchDeleteBuildsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteBuilds operation returned by the service.
+     * @sample AWSCodeBuildAsyncHandler.BatchDeleteBuilds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteBuildsResult> batchDeleteBuildsAsync(BatchDeleteBuildsRequest batchDeleteBuildsRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteBuildsRequest, BatchDeleteBuildsResult> asyncHandler);
 
     /**
      * <p>

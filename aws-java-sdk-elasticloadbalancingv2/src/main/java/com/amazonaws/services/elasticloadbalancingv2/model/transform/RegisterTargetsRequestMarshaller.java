@@ -63,6 +63,11 @@ public class RegisterTargetsRequestMarshaller implements Marshaller<Request<Regi
                     if (targetsListValue.getPort() != null) {
                         request.addParameter("Targets.member." + targetsListIndex + ".Port", StringUtils.fromInteger(targetsListValue.getPort()));
                     }
+
+                    if (targetsListValue.getAvailabilityZone() != null) {
+                        request.addParameter("Targets.member." + targetsListIndex + ".AvailabilityZone",
+                                StringUtils.fromString(targetsListValue.getAvailabilityZone()));
+                    }
                     targetsListIndex++;
                 }
             }

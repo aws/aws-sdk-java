@@ -47,6 +47,11 @@ public class Ipv6RangeStaxUnmarshaller implements Unmarshaller<Ipv6Range, StaxUn
                     ipv6Range.setCidrIpv6(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("description", targetDepth)) {
+                    ipv6Range.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ipv6Range;

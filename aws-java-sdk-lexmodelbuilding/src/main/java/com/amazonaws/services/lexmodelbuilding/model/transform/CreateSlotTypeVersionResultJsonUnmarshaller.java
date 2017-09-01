@@ -77,6 +77,10 @@ public class CreateSlotTypeVersionResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     createSlotTypeVersionResult.setChecksum(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("valueSelectionStrategy", targetDepth)) {
+                    context.nextToken();
+                    createSlotTypeVersionResult.setValueSelectionStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

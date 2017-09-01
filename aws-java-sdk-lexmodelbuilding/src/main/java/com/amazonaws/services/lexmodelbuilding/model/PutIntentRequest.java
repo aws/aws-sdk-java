@@ -50,7 +50,7 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined
-     * in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+     * in the slots. For more information, see <a>how-it-works</a>.
      * </p>
      */
     private java.util.List<Slot> slots;
@@ -163,8 +163,8 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private CodeHook dialogCodeHook;
     /**
      * <p>
-     * Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza
-     * order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.
+     * Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a
+     * pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.
      * </p>
      * <p>
      * You might configure Amazon Lex to return all of the intent information to the client application, or direct it to
@@ -337,11 +337,11 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined
-     * in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+     * in the slots. For more information, see <a>how-it-works</a>.
      * </p>
      * 
      * @return An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts
-     *         defined in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+     *         defined in the slots. For more information, see <a>how-it-works</a>.
      */
 
     public java.util.List<Slot> getSlots() {
@@ -351,12 +351,12 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined
-     * in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+     * in the slots. For more information, see <a>how-it-works</a>.
      * </p>
      * 
      * @param slots
      *        An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts
-     *        defined in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+     *        defined in the slots. For more information, see <a>how-it-works</a>.
      */
 
     public void setSlots(java.util.Collection<Slot> slots) {
@@ -371,7 +371,7 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined
-     * in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+     * in the slots. For more information, see <a>how-it-works</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -381,7 +381,7 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * 
      * @param slots
      *        An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts
-     *        defined in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+     *        defined in the slots. For more information, see <a>how-it-works</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,12 +398,12 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts defined
-     * in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+     * in the slots. For more information, see <a>how-it-works</a>.
      * </p>
      * 
      * @param slots
      *        An array of intent slots. At runtime, Amazon Lex elicits required slot values from the user using prompts
-     *        defined in the slots. For more information, see &lt;xref linkend="how-it-works"/&gt;.
+     *        defined in the slots. For more information, see <a>how-it-works</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1100,8 +1100,8 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza
-     * order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.
+     * Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a
+     * pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.
      * </p>
      * <p>
      * You might configure Amazon Lex to return all of the intent information to the client application, or direct it to
@@ -1109,8 +1109,8 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param fulfillmentActivity
-     *        Describes how the intent is fulfilled. For example, after a user provides all of the information for a
-     *        pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza
+     *        Required. Describes how the intent is fulfilled. For example, after a user provides all of the information
+     *        for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza
      *        store. </p>
      *        <p>
      *        You might configure Amazon Lex to return all of the intent information to the client application, or
@@ -1124,17 +1124,17 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza
-     * order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.
+     * Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a
+     * pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.
      * </p>
      * <p>
      * You might configure Amazon Lex to return all of the intent information to the client application, or direct it to
      * invoke a Lambda function that can process the intent (for example, place an order with a pizzeria).
      * </p>
      * 
-     * @return Describes how the intent is fulfilled. For example, after a user provides all of the information for a
-     *         pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza
-     *         store. </p>
+     * @return Required. Describes how the intent is fulfilled. For example, after a user provides all of the
+     *         information for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with
+     *         a local pizza store. </p>
      *         <p>
      *         You might configure Amazon Lex to return all of the intent information to the client application, or
      *         direct it to invoke a Lambda function that can process the intent (for example, place an order with a
@@ -1147,8 +1147,8 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Describes how the intent is fulfilled. For example, after a user provides all of the information for a pizza
-     * order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.
+     * Required. Describes how the intent is fulfilled. For example, after a user provides all of the information for a
+     * pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza store.
      * </p>
      * <p>
      * You might configure Amazon Lex to return all of the intent information to the client application, or direct it to
@@ -1156,8 +1156,8 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param fulfillmentActivity
-     *        Describes how the intent is fulfilled. For example, after a user provides all of the information for a
-     *        pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza
+     *        Required. Describes how the intent is fulfilled. For example, after a user provides all of the information
+     *        for a pizza order, <code>fulfillmentActivity</code> defines how the bot places an order with a local pizza
      *        store. </p>
      *        <p>
      *        You might configure Amazon Lex to return all of the intent information to the client application, or

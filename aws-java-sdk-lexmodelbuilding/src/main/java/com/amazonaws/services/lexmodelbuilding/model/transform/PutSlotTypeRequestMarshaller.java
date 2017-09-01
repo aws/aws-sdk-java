@@ -36,6 +36,8 @@ public class PutSlotTypeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enumerationValues").build();
     private static final MarshallingInfo<String> CHECKSUM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("checksum").build();
+    private static final MarshallingInfo<String> VALUESELECTIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("valueSelectionStrategy").build();
 
     private static final PutSlotTypeRequestMarshaller instance = new PutSlotTypeRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class PutSlotTypeRequestMarshaller {
             protocolMarshaller.marshall(putSlotTypeRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(putSlotTypeRequest.getEnumerationValues(), ENUMERATIONVALUES_BINDING);
             protocolMarshaller.marshall(putSlotTypeRequest.getChecksum(), CHECKSUM_BINDING);
+            protocolMarshaller.marshall(putSlotTypeRequest.getValueSelectionStrategy(), VALUESELECTIONSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

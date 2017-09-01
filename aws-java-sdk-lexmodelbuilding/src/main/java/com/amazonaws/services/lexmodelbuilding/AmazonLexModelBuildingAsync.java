@@ -651,7 +651,7 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * Returns metadata information for a specific bot. You must provide the bot name and the bot version or alias.
      * </p>
      * <p>
-     * The GetBot operation requires permissions for the <code>lex:GetBot</code> action.
+     * This operation requires permissions for the <code>lex:GetBot</code> action.
      * </p>
      * 
      * @param getBotRequest
@@ -667,7 +667,7 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * Returns metadata information for a specific bot. You must provide the bot name and the bot version or alias.
      * </p>
      * <p>
-     * The GetBot operation requires permissions for the <code>lex:GetBot</code> action.
+     * This operation requires permissions for the <code>lex:GetBot</code> action.
      * </p>
      * 
      * @param getBotRequest

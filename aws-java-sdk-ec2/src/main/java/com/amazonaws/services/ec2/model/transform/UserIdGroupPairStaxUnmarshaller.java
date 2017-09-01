@@ -43,6 +43,11 @@ public class UserIdGroupPairStaxUnmarshaller implements Unmarshaller<UserIdGroup
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("description", targetDepth)) {
+                    userIdGroupPair.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("groupId", targetDepth)) {
                     userIdGroupPair.setGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

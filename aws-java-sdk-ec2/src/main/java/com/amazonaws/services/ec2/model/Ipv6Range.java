@@ -33,6 +33,16 @@ public class Ipv6Range implements Serializable, Cloneable {
      * </p>
      */
     private String cidrIpv6;
+    /**
+     * <p>
+     * A description for the security group rule that references this IPv6 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -81,6 +91,67 @@ public class Ipv6Range implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A description for the security group rule that references this IPv6 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @param description
+     *        A description for the security group rule that references this IPv6 address range.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *        ._-:/()#,@[]+=;{}!$
+     **/
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the security group rule that references this IPv6 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @return A description for the security group rule that references this IPv6 address range.</p>
+     *         <p>
+     *         Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *         ._-:/()#,@[]+=;{}!$
+     **/
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the security group rule that references this IPv6 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @param description
+     *        A description for the security group rule that references this IPv6 address range.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *        ._-:/()#,@[]+=;{}!$*
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Ipv6Range withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -92,7 +163,9 @@ public class Ipv6Range implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCidrIpv6() != null)
-            sb.append("CidrIpv6: ").append(getCidrIpv6());
+            sb.append("CidrIpv6: ").append(getCidrIpv6()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -111,6 +184,10 @@ public class Ipv6Range implements Serializable, Cloneable {
             return false;
         if (other.getCidrIpv6() != null && other.getCidrIpv6().equals(this.getCidrIpv6()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -120,6 +197,7 @@ public class Ipv6Range implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCidrIpv6() == null) ? 0 : getCidrIpv6().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

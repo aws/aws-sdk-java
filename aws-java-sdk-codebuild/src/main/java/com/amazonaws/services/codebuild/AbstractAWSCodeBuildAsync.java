@@ -28,6 +28,19 @@ public class AbstractAWSCodeBuildAsync extends AbstractAWSCodeBuild implements A
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteBuildsResult> batchDeleteBuildsAsync(BatchDeleteBuildsRequest request) {
+
+        return batchDeleteBuildsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteBuildsResult> batchDeleteBuildsAsync(BatchDeleteBuildsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteBuildsRequest, BatchDeleteBuildsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetBuildsResult> batchGetBuildsAsync(BatchGetBuildsRequest request) {
 
         return batchGetBuildsAsync(request, null);

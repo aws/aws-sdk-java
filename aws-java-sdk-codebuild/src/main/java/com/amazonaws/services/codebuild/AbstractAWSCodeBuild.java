@@ -38,6 +38,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public BatchDeleteBuildsResult batchDeleteBuilds(BatchDeleteBuildsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetBuildsResult batchGetBuilds(BatchGetBuildsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

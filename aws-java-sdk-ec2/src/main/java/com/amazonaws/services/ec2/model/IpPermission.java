@@ -29,7 +29,7 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
-     * indicates all ICMP/ICMPv6 types.
+     * indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.
      * </p>
      */
     private Integer fromPort;
@@ -66,7 +66,8 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
-     * all ICMP/ICMPv6 codes for the specified ICMP type.
+     * all ICMP/ICMPv6 codes for the specified ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      */
     private Integer toPort;
@@ -86,12 +87,13 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
-     * indicates all ICMP/ICMPv6 types.
+     * indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.
      * </p>
      * 
      * @param fromPort
      *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of
-     *        <code>-1</code> indicates all ICMP/ICMPv6 types.
+     *        <code>-1</code> indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify
+     *        all codes.
      */
 
     public void setFromPort(Integer fromPort) {
@@ -101,11 +103,12 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
-     * indicates all ICMP/ICMPv6 types.
+     * indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.
      * </p>
      * 
      * @return The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of
-     *         <code>-1</code> indicates all ICMP/ICMPv6 types.
+     *         <code>-1</code> indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify
+     *         all codes.
      */
 
     public Integer getFromPort() {
@@ -115,12 +118,13 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of <code>-1</code>
-     * indicates all ICMP/ICMPv6 types.
+     * indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.
      * </p>
      * 
      * @param fromPort
      *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. A value of
-     *        <code>-1</code> indicates all ICMP/ICMPv6 types.
+     *        <code>-1</code> indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify
+     *        all codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,12 +398,14 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
-     * all ICMP/ICMPv6 codes for the specified ICMP type.
+     * all ICMP/ICMPv6 codes for the specified ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      * 
      * @param toPort
      *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code>
-     *        indicates all ICMP/ICMPv6 codes for the specified ICMP type.
+     *        indicates all ICMP/ICMPv6 codes for the specified ICMP type. If you specify all ICMP/ICMPv6 types, you
+     *        must specify all codes.
      */
 
     public void setToPort(Integer toPort) {
@@ -409,11 +415,13 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
-     * all ICMP/ICMPv6 codes for the specified ICMP type.
+     * all ICMP/ICMPv6 codes for the specified ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      * 
      * @return The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code>
-     *         indicates all ICMP/ICMPv6 codes for the specified ICMP type.
+     *         indicates all ICMP/ICMPv6 codes for the specified ICMP type. If you specify all ICMP/ICMPv6 types, you
+     *         must specify all codes.
      */
 
     public Integer getToPort() {
@@ -423,12 +431,14 @@ public class IpPermission implements Serializable, Cloneable {
     /**
      * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates
-     * all ICMP/ICMPv6 codes for the specified ICMP type.
+     * all ICMP/ICMPv6 codes for the specified ICMP type. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      * 
      * @param toPort
      *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code>
-     *        indicates all ICMP/ICMPv6 codes for the specified ICMP type.
+     *        indicates all ICMP/ICMPv6 codes for the specified ICMP type. If you specify all ICMP/ICMPv6 types, you
+     *        must specify all codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

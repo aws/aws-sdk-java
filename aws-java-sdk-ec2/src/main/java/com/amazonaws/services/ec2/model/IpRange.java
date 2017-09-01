@@ -32,6 +32,16 @@ public class IpRange implements Serializable, Cloneable {
      * </p>
      */
     private String cidrIp;
+    /**
+     * <p>
+     * A description for the security group rule that references this IPv4 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -80,6 +90,67 @@ public class IpRange implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A description for the security group rule that references this IPv4 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @param description
+     *        A description for the security group rule that references this IPv4 address range.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *        ._-:/()#,@[]+=;{}!$
+     **/
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the security group rule that references this IPv4 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @return A description for the security group rule that references this IPv4 address range.</p>
+     *         <p>
+     *         Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *         ._-:/()#,@[]+=;{}!$
+     **/
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the security group rule that references this IPv4 address range.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @param description
+     *        A description for the security group rule that references this IPv4 address range.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *        ._-:/()#,@[]+=;{}!$*
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpRange withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -91,7 +162,9 @@ public class IpRange implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCidrIp() != null)
-            sb.append("CidrIp: ").append(getCidrIp());
+            sb.append("CidrIp: ").append(getCidrIp()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +183,10 @@ public class IpRange implements Serializable, Cloneable {
             return false;
         if (other.getCidrIp() != null && other.getCidrIp().equals(this.getCidrIp()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -119,6 +196,7 @@ public class IpRange implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

@@ -29,6 +29,7 @@ public enum TargetHealthReasonEnum {
     TargetNotInUse("Target.NotInUse"),
     TargetDeregistrationInProgress("Target.DeregistrationInProgress"),
     TargetInvalidState("Target.InvalidState"),
+    TargetIpUnusable("Target.IpUnusable"),
     ElbInternalError("Elb.InternalError");
 
     private String value;

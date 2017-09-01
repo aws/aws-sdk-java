@@ -66,6 +66,13 @@ public class GetSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String checksum;
+    /**
+     * <p>
+     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * <a>PutSlotType</a>.
+     * </p>
+     */
+    private String valueSelectionStrategy;
 
     /**
      * <p>
@@ -384,6 +391,73 @@ public class GetSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * <a>PutSlotType</a>.
+     * </p>
+     * 
+     * @param valueSelectionStrategy
+     *        The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     *        <a>PutSlotType</a>.
+     * @see SlotValueSelectionStrategy
+     */
+
+    public void setValueSelectionStrategy(String valueSelectionStrategy) {
+        this.valueSelectionStrategy = valueSelectionStrategy;
+    }
+
+    /**
+     * <p>
+     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * <a>PutSlotType</a>.
+     * </p>
+     * 
+     * @return The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     *         <a>PutSlotType</a>.
+     * @see SlotValueSelectionStrategy
+     */
+
+    public String getValueSelectionStrategy() {
+        return this.valueSelectionStrategy;
+    }
+
+    /**
+     * <p>
+     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * <a>PutSlotType</a>.
+     * </p>
+     * 
+     * @param valueSelectionStrategy
+     *        The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     *        <a>PutSlotType</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SlotValueSelectionStrategy
+     */
+
+    public GetSlotTypeResult withValueSelectionStrategy(String valueSelectionStrategy) {
+        setValueSelectionStrategy(valueSelectionStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     * <a>PutSlotType</a>.
+     * </p>
+     * 
+     * @param valueSelectionStrategy
+     *        The strategy that Amazon Lex uses to determine the value of the slot. For more information, see
+     *        <a>PutSlotType</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SlotValueSelectionStrategy
+     */
+
+    public GetSlotTypeResult withValueSelectionStrategy(SlotValueSelectionStrategy valueSelectionStrategy) {
+        this.valueSelectionStrategy = valueSelectionStrategy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -407,7 +481,9 @@ public class GetSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: ").append(getChecksum());
+            sb.append("Checksum: ").append(getChecksum()).append(",");
+        if (getValueSelectionStrategy() != null)
+            sb.append("ValueSelectionStrategy: ").append(getValueSelectionStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -450,6 +526,10 @@ public class GetSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
             return false;
+        if (other.getValueSelectionStrategy() == null ^ this.getValueSelectionStrategy() == null)
+            return false;
+        if (other.getValueSelectionStrategy() != null && other.getValueSelectionStrategy().equals(this.getValueSelectionStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -465,6 +545,7 @@ public class GetSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
+        hashCode = prime * hashCode + ((getValueSelectionStrategy() == null) ? 0 : getValueSelectionStrategy().hashCode());
         return hashCode;
     }
 

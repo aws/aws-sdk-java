@@ -52,6 +52,11 @@ public class TargetDescriptionStaxUnmarshaller implements Unmarshaller<TargetDes
                     targetDescription.setPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("AvailabilityZone", targetDepth)) {
+                    targetDescription.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return targetDescription;

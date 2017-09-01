@@ -42,6 +42,11 @@ import com.amazonaws.services.codebuild.model.*;
  * <ul>
  * <li>
  * <p>
+ * <code>BatchDeleteBuilds</code>: Deletes one or more builds.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
  * AWS CodeBuild will run a build. This includes information such as where to get the source code to build, the build
  * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i>
@@ -164,6 +169,21 @@ public interface AWSCodeBuild {
      */
     @Deprecated
     void setRegion(Region region);
+
+    /**
+     * <p>
+     * Deletes one or more builds.
+     * </p>
+     * 
+     * @param batchDeleteBuildsRequest
+     * @return Result of the BatchDeleteBuilds operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.BatchDeleteBuilds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchDeleteBuildsResult batchDeleteBuilds(BatchDeleteBuildsRequest batchDeleteBuildsRequest);
 
     /**
      * <p>

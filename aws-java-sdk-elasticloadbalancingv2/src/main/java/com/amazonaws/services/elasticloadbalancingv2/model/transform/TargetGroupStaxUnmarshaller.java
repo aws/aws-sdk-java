@@ -120,6 +120,10 @@ public class TargetGroupStaxUnmarshaller implements Unmarshaller<TargetGroup, St
                     continue;
                 }
 
+                if (context.testExpression("TargetType", targetDepth)) {
+                    targetGroup.setTargetType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return targetGroup;

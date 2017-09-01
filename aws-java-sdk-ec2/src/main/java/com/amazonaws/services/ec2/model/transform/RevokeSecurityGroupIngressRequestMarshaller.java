@@ -85,6 +85,11 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".CidrIpv6",
                                     StringUtils.fromString(ipPermissionIpv6RangesListValue.getCidrIpv6()));
                         }
+
+                        if (ipPermissionIpv6RangesListValue.getDescription() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".Description",
+                                    StringUtils.fromString(ipPermissionIpv6RangesListValue.getDescription()));
+                        }
                         ipv6RangesListIndex++;
                     }
                 }
@@ -95,6 +100,11 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
                     int prefixListIdsListIndex = 1;
 
                     for (PrefixListId ipPermissionPrefixListIdsListValue : ipPermissionPrefixListIdsList) {
+
+                        if (ipPermissionPrefixListIdsListValue.getDescription() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".Description",
+                                    StringUtils.fromString(ipPermissionPrefixListIdsListValue.getDescription()));
+                        }
 
                         if (ipPermissionPrefixListIdsListValue.getPrefixListId() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".PrefixListId",
@@ -115,6 +125,11 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
                     int userIdGroupPairsListIndex = 1;
 
                     for (UserIdGroupPair ipPermissionUserIdGroupPairsListValue : ipPermissionUserIdGroupPairsList) {
+
+                        if (ipPermissionUserIdGroupPairsListValue.getDescription() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".Description",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getDescription()));
+                        }
 
                         if (ipPermissionUserIdGroupPairsListValue.getGroupId() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId",
@@ -160,6 +175,11 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
                         if (ipPermissionIpv4RangesListValue.getCidrIp() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".CidrIp",
                                     StringUtils.fromString(ipPermissionIpv4RangesListValue.getCidrIp()));
+                        }
+
+                        if (ipPermissionIpv4RangesListValue.getDescription() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".Description",
+                                    StringUtils.fromString(ipPermissionIpv4RangesListValue.getDescription()));
                         }
                         ipv4RangesListIndex++;
                     }

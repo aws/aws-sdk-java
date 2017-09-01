@@ -47,6 +47,11 @@ public class IpRangeStaxUnmarshaller implements Unmarshaller<IpRange, StaxUnmars
                     ipRange.setCidrIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("description", targetDepth)) {
+                    ipRange.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ipRange;

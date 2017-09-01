@@ -55,6 +55,12 @@ public class EnumerationValue implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String value;
+    /**
+     * <p>
+     * Additional values related to the slot type value.
+     * </p>
+     */
+    private java.util.List<String> synonyms;
 
     /**
      * <p>
@@ -97,6 +103,76 @@ public class EnumerationValue implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Additional values related to the slot type value.
+     * </p>
+     * 
+     * @return Additional values related to the slot type value.
+     */
+
+    public java.util.List<String> getSynonyms() {
+        return synonyms;
+    }
+
+    /**
+     * <p>
+     * Additional values related to the slot type value.
+     * </p>
+     * 
+     * @param synonyms
+     *        Additional values related to the slot type value.
+     */
+
+    public void setSynonyms(java.util.Collection<String> synonyms) {
+        if (synonyms == null) {
+            this.synonyms = null;
+            return;
+        }
+
+        this.synonyms = new java.util.ArrayList<String>(synonyms);
+    }
+
+    /**
+     * <p>
+     * Additional values related to the slot type value.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSynonyms(java.util.Collection)} or {@link #withSynonyms(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param synonyms
+     *        Additional values related to the slot type value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnumerationValue withSynonyms(String... synonyms) {
+        if (this.synonyms == null) {
+            setSynonyms(new java.util.ArrayList<String>(synonyms.length));
+        }
+        for (String ele : synonyms) {
+            this.synonyms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional values related to the slot type value.
+     * </p>
+     * 
+     * @param synonyms
+     *        Additional values related to the slot type value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnumerationValue withSynonyms(java.util.Collection<String> synonyms) {
+        setSynonyms(synonyms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -108,7 +184,9 @@ public class EnumerationValue implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getSynonyms() != null)
+            sb.append("Synonyms: ").append(getSynonyms());
         sb.append("}");
         return sb.toString();
     }
@@ -127,6 +205,10 @@ public class EnumerationValue implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getSynonyms() == null ^ this.getSynonyms() == null)
+            return false;
+        if (other.getSynonyms() != null && other.getSynonyms().equals(this.getSynonyms()) == false)
+            return false;
         return true;
     }
 
@@ -136,6 +218,7 @@ public class EnumerationValue implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getSynonyms() == null) ? 0 : getSynonyms().hashCode());
         return hashCode;
     }
 

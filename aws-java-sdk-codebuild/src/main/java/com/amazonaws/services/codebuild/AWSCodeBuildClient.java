@@ -64,6 +64,11 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * <ul>
  * <li>
  * <p>
+ * <code>BatchDeleteBuilds</code>: Deletes one or more builds.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
  * AWS CodeBuild will run a build. This includes information such as where to get the source code to build, the build
  * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i>
@@ -338,6 +343,56 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/codebuild/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/codebuild/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Deletes one or more builds.
+     * </p>
+     * 
+     * @param batchDeleteBuildsRequest
+     * @return Result of the BatchDeleteBuilds operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.BatchDeleteBuilds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchDeleteBuilds" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchDeleteBuildsResult batchDeleteBuilds(BatchDeleteBuildsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteBuilds(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteBuildsResult executeBatchDeleteBuilds(BatchDeleteBuildsRequest batchDeleteBuildsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteBuildsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteBuildsRequest> request = null;
+        Response<BatchDeleteBuildsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteBuildsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteBuildsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDeleteBuildsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**

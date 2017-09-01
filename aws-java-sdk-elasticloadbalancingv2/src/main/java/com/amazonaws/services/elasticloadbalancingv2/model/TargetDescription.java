@@ -28,7 +28,8 @@ public class TargetDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the target.
+     * The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If
+     * the target type is <code>ip</code>, specify an IP address.
      * </p>
      */
     private String id;
@@ -38,14 +39,30 @@ public class TargetDescription implements Serializable, Cloneable {
      * </p>
      */
     private Integer port;
+    /**
+     * <p>
+     * The Availability Zone where the IP address is to be registered. Specify <code>all</code> to register an IP
+     * address outside the target group VPC with all Availability Zones that are enabled for the load balancer.
+     * </p>
+     * <p>
+     * If the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected
+     * and this parameter is optional.
+     * </p>
+     * <p>
+     * This parameter is not supported if the target type of the target group is <code>instance</code>.
+     * </p>
+     */
+    private String availabilityZone;
 
     /**
      * <p>
-     * The ID of the target.
+     * The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If
+     * the target type is <code>ip</code>, specify an IP address.
      * </p>
      * 
      * @param id
-     *        The ID of the target.
+     *        The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance
+     *        ID. If the target type is <code>ip</code>, specify an IP address.
      */
 
     public void setId(String id) {
@@ -54,10 +71,12 @@ public class TargetDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the target.
+     * The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If
+     * the target type is <code>ip</code>, specify an IP address.
      * </p>
      * 
-     * @return The ID of the target.
+     * @return The ID of the target. If the target type of the target group is <code>instance</code>, specify an
+     *         instance ID. If the target type is <code>ip</code>, specify an IP address.
      */
 
     public String getId() {
@@ -66,11 +85,13 @@ public class TargetDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the target.
+     * The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance ID. If
+     * the target type is <code>ip</code>, specify an IP address.
      * </p>
      * 
      * @param id
-     *        The ID of the target.
+     *        The ID of the target. If the target type of the target group is <code>instance</code>, specify an instance
+     *        ID. If the target type is <code>ip</code>, specify an IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,6 +141,94 @@ public class TargetDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Availability Zone where the IP address is to be registered. Specify <code>all</code> to register an IP
+     * address outside the target group VPC with all Availability Zones that are enabled for the load balancer.
+     * </p>
+     * <p>
+     * If the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected
+     * and this parameter is optional.
+     * </p>
+     * <p>
+     * This parameter is not supported if the target type of the target group is <code>instance</code>.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone where the IP address is to be registered. Specify <code>all</code> to register an IP
+     *        address outside the target group VPC with all Availability Zones that are enabled for the load
+     *        balancer.</p>
+     *        <p>
+     *        If the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically
+     *        detected and this parameter is optional.
+     *        </p>
+     *        <p>
+     *        This parameter is not supported if the target type of the target group is <code>instance</code>.
+     */
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone where the IP address is to be registered. Specify <code>all</code> to register an IP
+     * address outside the target group VPC with all Availability Zones that are enabled for the load balancer.
+     * </p>
+     * <p>
+     * If the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected
+     * and this parameter is optional.
+     * </p>
+     * <p>
+     * This parameter is not supported if the target type of the target group is <code>instance</code>.
+     * </p>
+     * 
+     * @return The Availability Zone where the IP address is to be registered. Specify <code>all</code> to register an
+     *         IP address outside the target group VPC with all Availability Zones that are enabled for the load
+     *         balancer.</p>
+     *         <p>
+     *         If the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically
+     *         detected and this parameter is optional.
+     *         </p>
+     *         <p>
+     *         This parameter is not supported if the target type of the target group is <code>instance</code>.
+     */
+
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The Availability Zone where the IP address is to be registered. Specify <code>all</code> to register an IP
+     * address outside the target group VPC with all Availability Zones that are enabled for the load balancer.
+     * </p>
+     * <p>
+     * If the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically detected
+     * and this parameter is optional.
+     * </p>
+     * <p>
+     * This parameter is not supported if the target type of the target group is <code>instance</code>.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The Availability Zone where the IP address is to be registered. Specify <code>all</code> to register an IP
+     *        address outside the target group VPC with all Availability Zones that are enabled for the load
+     *        balancer.</p>
+     *        <p>
+     *        If the IP address is in a subnet of the VPC for the target group, the Availability Zone is automatically
+     *        detected and this parameter is optional.
+     *        </p>
+     *        <p>
+     *        This parameter is not supported if the target type of the target group is <code>instance</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TargetDescription withAvailabilityZone(String availabilityZone) {
+        setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -133,7 +242,9 @@ public class TargetDescription implements Serializable, Cloneable {
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getPort() != null)
-            sb.append("Port: ").append(getPort());
+            sb.append("Port: ").append(getPort()).append(",");
+        if (getAvailabilityZone() != null)
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +267,10 @@ public class TargetDescription implements Serializable, Cloneable {
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
+            return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +281,7 @@ public class TargetDescription implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         return hashCode;
     }
 

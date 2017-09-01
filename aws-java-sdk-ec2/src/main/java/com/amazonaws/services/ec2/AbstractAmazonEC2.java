@@ -1490,6 +1490,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public UpdateSecurityGroupRuleDescriptionsEgressResult updateSecurityGroupRuleDescriptionsEgress(UpdateSecurityGroupRuleDescriptionsEgressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSecurityGroupRuleDescriptionsIngressResult updateSecurityGroupRuleDescriptionsIngress(UpdateSecurityGroupRuleDescriptionsIngressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public <X extends AmazonWebServiceRequest> DryRunResult<X> dryRun(DryRunSupportedRequest<X> request) throws AmazonServiceException, AmazonClientException {
         throw new java.lang.UnsupportedOperationException();
     }

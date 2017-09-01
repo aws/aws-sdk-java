@@ -4414,4 +4414,34 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityGroupRuleDescriptionsEgressResult> updateSecurityGroupRuleDescriptionsEgressAsync(
+            UpdateSecurityGroupRuleDescriptionsEgressRequest request) {
+
+        return updateSecurityGroupRuleDescriptionsEgressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityGroupRuleDescriptionsEgressResult> updateSecurityGroupRuleDescriptionsEgressAsync(
+            UpdateSecurityGroupRuleDescriptionsEgressRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSecurityGroupRuleDescriptionsEgressRequest, UpdateSecurityGroupRuleDescriptionsEgressResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityGroupRuleDescriptionsIngressResult> updateSecurityGroupRuleDescriptionsIngressAsync(
+            UpdateSecurityGroupRuleDescriptionsIngressRequest request) {
+
+        return updateSecurityGroupRuleDescriptionsIngressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityGroupRuleDescriptionsIngressResult> updateSecurityGroupRuleDescriptionsIngressAsync(
+            UpdateSecurityGroupRuleDescriptionsIngressRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSecurityGroupRuleDescriptionsIngressRequest, UpdateSecurityGroupRuleDescriptionsIngressResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

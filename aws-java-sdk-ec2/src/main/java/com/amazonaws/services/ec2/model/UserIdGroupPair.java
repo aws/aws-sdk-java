@@ -28,6 +28,16 @@ public class UserIdGroupPair implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A description for the security group rule that references this user ID group pair.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The ID of the security group.
      * </p>
      */
@@ -67,6 +77,67 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * </p>
      */
     private String vpcPeeringConnectionId;
+
+    /**
+     * <p>
+     * A description for the security group rule that references this user ID group pair.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @param description
+     *        A description for the security group rule that references this user ID group pair.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *        ._-:/()#,@[]+=;{}!$
+     **/
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description for the security group rule that references this user ID group pair.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @return A description for the security group rule that references this user ID group pair.</p>
+     *         <p>
+     *         Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *         ._-:/()#,@[]+=;{}!$
+     **/
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description for the security group rule that references this user ID group pair.
+     * </p>
+     * <p>
+     * Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     * ._-:/()#,@[]+=;{}!$*
+     * </p>
+     * 
+     * @param description
+     *        A description for the security group rule that references this user ID group pair.</p>
+     *        <p>
+     *        Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and
+     *        ._-:/()#,@[]+=;{}!$*
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserIdGroupPair withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
 
     /**
      * <p>
@@ -349,6 +420,8 @@ public class UserIdGroupPair implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getGroupId() != null)
             sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getGroupName() != null)
@@ -375,6 +448,10 @@ public class UserIdGroupPair implements Serializable, Cloneable {
         if (obj instanceof UserIdGroupPair == false)
             return false;
         UserIdGroupPair other = (UserIdGroupPair) obj;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getGroupId() == null ^ this.getGroupId() == null)
             return false;
         if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
@@ -407,6 +484,7 @@ public class UserIdGroupPair implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getPeeringStatus() == null) ? 0 : getPeeringStatus().hashCode());

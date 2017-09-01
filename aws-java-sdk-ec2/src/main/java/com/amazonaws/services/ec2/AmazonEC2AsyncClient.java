@@ -9323,6 +9323,76 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityGroupRuleDescriptionsEgressResult> updateSecurityGroupRuleDescriptionsEgressAsync(
+            UpdateSecurityGroupRuleDescriptionsEgressRequest request) {
+
+        return updateSecurityGroupRuleDescriptionsEgressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityGroupRuleDescriptionsEgressResult> updateSecurityGroupRuleDescriptionsEgressAsync(
+            final UpdateSecurityGroupRuleDescriptionsEgressRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSecurityGroupRuleDescriptionsEgressRequest, UpdateSecurityGroupRuleDescriptionsEgressResult> asyncHandler) {
+        final UpdateSecurityGroupRuleDescriptionsEgressRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSecurityGroupRuleDescriptionsEgressResult>() {
+            @Override
+            public UpdateSecurityGroupRuleDescriptionsEgressResult call() throws Exception {
+                UpdateSecurityGroupRuleDescriptionsEgressResult result = null;
+
+                try {
+                    result = executeUpdateSecurityGroupRuleDescriptionsEgress(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityGroupRuleDescriptionsIngressResult> updateSecurityGroupRuleDescriptionsIngressAsync(
+            UpdateSecurityGroupRuleDescriptionsIngressRequest request) {
+
+        return updateSecurityGroupRuleDescriptionsIngressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityGroupRuleDescriptionsIngressResult> updateSecurityGroupRuleDescriptionsIngressAsync(
+            final UpdateSecurityGroupRuleDescriptionsIngressRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSecurityGroupRuleDescriptionsIngressRequest, UpdateSecurityGroupRuleDescriptionsIngressResult> asyncHandler) {
+        final UpdateSecurityGroupRuleDescriptionsIngressRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSecurityGroupRuleDescriptionsIngressResult>() {
+            @Override
+            public UpdateSecurityGroupRuleDescriptionsIngressResult call() throws Exception {
+                UpdateSecurityGroupRuleDescriptionsIngressResult result = null;
+
+                try {
+                    result = executeUpdateSecurityGroupRuleDescriptionsIngress(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

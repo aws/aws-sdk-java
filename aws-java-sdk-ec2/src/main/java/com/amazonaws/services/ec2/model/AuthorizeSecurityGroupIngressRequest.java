@@ -37,19 +37,22 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types.
+     * number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      */
     private Integer fromPort;
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * The ID of the security group. You must specify either the security group ID or the security group name in the
+     * request. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      */
     private String groupId;
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group.
+     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
+     * security group name in the request.
      * </p>
      */
     private String groupName;
@@ -94,7 +97,8 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
-     * number, use <code>-1</code> to specify all codes.
+     * number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      */
     private Integer toPort;
@@ -111,7 +115,8 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * (with...) methods to initialize any additional object members.
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group.
+     *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
+     *        or the security group name in the request.
      * @param ipPermissions
      *        A set of IP permissions. Can be used to specify multiple rules in a single command.
      */
@@ -163,12 +168,14 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types.
+     * number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      * 
      * @param fromPort
      *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
-     *        type number, use <code>-1</code> to specify all types.
+     *        type number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must
+     *        specify all codes.
      */
 
     public void setFromPort(Integer fromPort) {
@@ -178,11 +185,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types.
+     * number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      * 
      * @return The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
-     *         type number, use <code>-1</code> to specify all types.
+     *         type number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must
+     *         specify all codes.
      */
 
     public Integer getFromPort() {
@@ -192,12 +201,14 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6 type
-     * number, use <code>-1</code> to specify all types.
+     * number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      * 
      * @param fromPort
      *        The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number. For the ICMP/ICMPv6
-     *        type number, use <code>-1</code> to specify all types.
+     *        type number, use <code>-1</code> to specify all types. If you specify all ICMP/ICMPv6 types, you must
+     *        specify all codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +219,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * The ID of the security group. You must specify either the security group ID or the security group name in the
+     * request. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
      * @param groupId
-     *        The ID of the security group. Required for a nondefault VPC.
+     *        The ID of the security group. You must specify either the security group ID or the security group name in
+     *        the request. For security groups in a nondefault VPC, you must specify the security group ID.
      */
 
     public void setGroupId(String groupId) {
@@ -221,10 +234,12 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * The ID of the security group. You must specify either the security group ID or the security group name in the
+     * request. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
-     * @return The ID of the security group. Required for a nondefault VPC.
+     * @return The ID of the security group. You must specify either the security group ID or the security group name in
+     *         the request. For security groups in a nondefault VPC, you must specify the security group ID.
      */
 
     public String getGroupId() {
@@ -233,11 +248,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the security group. Required for a nondefault VPC.
+     * The ID of the security group. You must specify either the security group ID or the security group name in the
+     * request. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
      * @param groupId
-     *        The ID of the security group. Required for a nondefault VPC.
+     *        The ID of the security group. You must specify either the security group ID or the security group name in
+     *        the request. For security groups in a nondefault VPC, you must specify the security group ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,11 +265,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group.
+     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
+     * security group name in the request.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group.
+     *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
+     *        or the security group name in the request.
      */
 
     public void setGroupName(String groupName) {
@@ -261,10 +280,12 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group.
+     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
+     * security group name in the request.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] The name of the security group.
+     * @return [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
+     *         or the security group name in the request.
      */
 
     public String getGroupName() {
@@ -273,11 +294,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group.
+     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
+     * security group name in the request.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group.
+     *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
+     *        or the security group name in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -567,12 +590,14 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
-     * number, use <code>-1</code> to specify all codes.
+     * number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      * 
      * @param toPort
      *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6
-     *        code number, use <code>-1</code> to specify all codes.
+     *        code number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must
+     *        specify all codes.
      */
 
     public void setToPort(Integer toPort) {
@@ -582,11 +607,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
-     * number, use <code>-1</code> to specify all codes.
+     * number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      * 
      * @return The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6
-     *         code number, use <code>-1</code> to specify all codes.
+     *         code number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must
+     *         specify all codes.
      */
 
     public Integer getToPort() {
@@ -596,12 +623,14 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     /**
      * <p>
      * The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6 code
-     * number, use <code>-1</code> to specify all codes.
+     * number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must specify all
+     * codes.
      * </p>
      * 
      * @param toPort
      *        The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code number. For the ICMP/ICMPv6
-     *        code number, use <code>-1</code> to specify all codes.
+     *        code number, use <code>-1</code> to specify all codes. If you specify all ICMP/ICMPv6 types, you must
+     *        specify all codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

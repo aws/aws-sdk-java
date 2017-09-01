@@ -80,7 +80,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      */
     private Boolean privilegedMode;
@@ -517,7 +517,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @param privilegedMode
@@ -530,7 +530,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        following build commands. (Do not run the following build commands if the specified build environment
      *        image is provided by AWS CodeBuild with Docker support.)</p>
      *        <p>
-     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      */
 
     public void setPrivilegedMode(Boolean privilegedMode) {
@@ -548,7 +548,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @return If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not
@@ -560,7 +560,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         following build commands. (Do not run the following build commands if the specified build environment
      *         image is provided by AWS CodeBuild with Docker support.)</p>
      *         <p>
-     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      */
 
     public Boolean getPrivilegedMode() {
@@ -578,7 +578,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @param privilegedMode
@@ -591,7 +591,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        following build commands. (Do not run the following build commands if the specified build environment
      *        image is provided by AWS CodeBuild with Docker support.)</p>
      *        <p>
-     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -611,7 +611,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
      * </p>
      * <p>
-     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      * </p>
      * 
      * @return If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not
@@ -623,7 +623,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         following build commands. (Do not run the following build commands if the specified build environment
      *         image is provided by AWS CodeBuild with Docker support.)</p>
      *         <p>
-     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
      */
 
     public Boolean isPrivilegedMode() {
