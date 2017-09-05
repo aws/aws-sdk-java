@@ -66,6 +66,7 @@ public class SimpleQueueServiceSample {
         }
         
         AmazonSQS sqs = AmazonSQSClientBuilder.standard()
+                               .withCredentials(credentials)
                                .withRegion(Regions.US_WEST_2)
                                .build();
 
