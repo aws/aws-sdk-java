@@ -93,12 +93,26 @@ public class StackedRequestHandler implements IRequestHandler2 {
     }
 
     @Override
+    public void beforeAttempt(HandlerBeforeAttemptContext context) {
+        for (RequestHandler2 handler : inOrderRequestHandlers) {
+            handler.beforeAttempt(context);
+        }
+    }
+
+    @Override
     public HttpResponse beforeUnmarshalling(Request<?> request, HttpResponse origHttpResponse) {
         HttpResponse toReturn = origHttpResponse;
         for(RequestHandler2 handler : reverseOrderRequestHandlers) {
             toReturn = handler.beforeUnmarshalling(request, toReturn);
         }
         return toReturn;
+    }
+
+    @Override
+    public void afterAttempt(HandlerAfterAttemptContext context) {
+        for(RequestHandler2 handler : reverseOrderRequestHandlers) {
+            handler.afterAttempt(context);
+        }
     }
 
     @Override

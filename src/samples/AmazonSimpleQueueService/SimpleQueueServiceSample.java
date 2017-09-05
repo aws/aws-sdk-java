@@ -64,7 +64,7 @@ public class SimpleQueueServiceSample {
                     "location (~/.aws/credentials), and is in valid format.",
                     e);
         }
-        
+
         AmazonSQS sqs = AmazonSQSClientBuilder.standard()
                                .withCredentials(credentials)
                                .withRegion(Regions.US_WEST_2)

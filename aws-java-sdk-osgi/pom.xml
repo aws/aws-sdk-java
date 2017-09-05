@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.189-SNAPSHOT</version>
+    <version>1.11.189</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -770,6 +770,834 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mobile</title>
+                                  <packages>com.amazonaws.services.mobile*</packages>
+                              </group>
                               <group>
                                   <title>AWS Mobile</title>
                                   <packages>com.amazonaws.services.mobile*</packages>

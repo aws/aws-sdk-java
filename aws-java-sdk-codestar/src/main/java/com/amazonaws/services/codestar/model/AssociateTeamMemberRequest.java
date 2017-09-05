@@ -40,7 +40,7 @@ public class AssociateTeamMemberRequest extends com.amazonaws.AmazonWebServiceRe
     private String clientRequestToken;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.
+     * The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.
      * </p>
      */
     private String userArn;
@@ -147,11 +147,11 @@ public class AssociateTeamMemberRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.
+     * The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.
      * </p>
      * 
      * @param userArn
-     *        The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.
+     *        The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.
      */
 
     public void setUserArn(String userArn) {
@@ -160,10 +160,10 @@ public class AssociateTeamMemberRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.
+     * The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.
+     * @return The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.
      */
 
     public String getUserArn() {
@@ -172,11 +172,11 @@ public class AssociateTeamMemberRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.
+     * The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.
      * </p>
      * 
      * @param userArn
-     *        The Amazon Resource Name (ARN) for the IAM user you want to add to the DevHub project.
+     *        The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

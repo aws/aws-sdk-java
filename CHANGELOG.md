@@ -1,3 +1,8 @@
+# __1.11.189__ __2017-09-05__
+## __AWS CodeStar__
+  - ### Features
+    - Added support to tag CodeStar projects. Tags can be used to organize and find CodeStar projects on key-value pairs that you can choose. For example, you could add a tag with a key of "Release" and a value of "Beta" to projects your organization is working on for an upcoming beta release.
+
 # __1.11.188__ __2017-09-01__
 ## __AWS Mobile__
   - ### Features

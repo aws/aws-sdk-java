@@ -81,6 +81,14 @@ public interface IRequestHandler2 {
     void beforeRequest(Request<?> request);
 
     /**
+     * Runs any additional processing logic on a request before each individual attempt is made.
+     *
+     * @param context
+     *              container for callback-related data; includes the request
+     */
+    void beforeAttempt(HandlerBeforeAttemptContext context);
+
+    /**
      * Runs any additional processing logic on the specified response before it's unmarshalled. This
      * callback is only invoked on successful responses that will be unmarshalled into an
      * appropriate modeled class and not for unsuccessful responses that will be unmarshalled into a
@@ -96,6 +104,17 @@ public interface IRequestHandler2 {
     HttpResponse beforeUnmarshalling(Request<?> request, HttpResponse httpResponse);
 
     /**
+     * Runs any additional processing logic on a request after each individual attempt.  Callback is
+     * invoked whether or not the attempt resulted in a successful response or an error.  This callback
+     * is invoked within a finally block and so any exceptions it generates will "replace" the current
+     * exception, if one is outstanding.
+     *
+     * @param context
+     *              container for the request as well as all possible results of the attempt
+     */
+    void afterAttempt(HandlerAfterAttemptContext context);
+
+    /**
      * Runs any additional processing logic on the specified request (after is has been executed by
      * the client runtime).
      *
@@ -107,7 +126,8 @@ public interface IRequestHandler2 {
     void afterResponse(Request<?> request, Response<?> response);
 
     /**
-     * Runs any additional processing logic on a request after it has failed.
+     * Runs any additional processing logic on a request after it has failed.  This callback is invoked
+     * from a catch block.  If it generates an exception, the original AmazonClientException will be lost.
      *
      * @param request
      *            The request that generated an error.

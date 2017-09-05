@@ -38,7 +38,7 @@ public class TeamMember implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role assigned to the user in the project. Project roles have different levels of access. For more
      * information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.
      * </p>
      */
     private String projectRole;
@@ -93,14 +93,14 @@ public class TeamMember implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role assigned to the user in the project. Project roles have different levels of access. For more
      * information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.
      * </p>
      * 
      * @param projectRole
      *        The role assigned to the user in the project. Project roles have different levels of access. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a>
-     *        in the AWS CodeStar User Guide.
+     *        in the <i>AWS CodeStar User Guide</i>.
      */
 
     public void setProjectRole(String projectRole) {
@@ -111,13 +111,13 @@ public class TeamMember implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role assigned to the user in the project. Project roles have different levels of access. For more
      * information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.
      * </p>
      * 
      * @return The role assigned to the user in the project. Project roles have different levels of access. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
-     *         Teams</a> in the AWS CodeStar User Guide.
+     *         Teams</a> in the <i>AWS CodeStar User Guide</i>.
      */
 
     public String getProjectRole() {
@@ -128,14 +128,14 @@ public class TeamMember implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role assigned to the user in the project. Project roles have different levels of access. For more
      * information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working
-     * with Teams</a> in the AWS CodeStar User Guide.
+     * with Teams</a> in the <i>AWS CodeStar User Guide</i>.
      * </p>
      * 
      * @param projectRole
      *        The role assigned to the user in the project. Project roles have different levels of access. For more
      *        information, see <a
      *        href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a>
-     *        in the AWS CodeStar User Guide.
+     *        in the <i>AWS CodeStar User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

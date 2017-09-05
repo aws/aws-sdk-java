@@ -62,27 +62,42 @@ import com.amazonaws.services.codestar.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
+ * <code>DeleteProject</code>, which deletes a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeProject</a>, which lists the attributes of a project.
+ * <code>DescribeProject</code>, which lists the attributes of a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListProjects</a>, which lists all AWS CodeStar projects associated with your AWS account.
+ * <code>ListProjects</code>, which lists all projects associated with your AWS account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListResources</a>, which lists the resources associated with an AWS CodeStar project.
+ * <code>ListResources</code>, which lists the resources associated with a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateProject</a>, which updates the attributes of an AWS CodeStar project.
+ * <code>ListTagsForProject</code>, which lists the tags associated with a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TagProject</code>, which adds tags to a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UntagProject</code>, which removes tags from a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateProject</code>, which updates the attributes of a project.
  * </p>
  * </li>
  * </ul>
@@ -92,18 +107,23 @@ import com.amazonaws.services.codestar.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>AssociateTeamMember</a>, which adds an IAM user to the team for an AWS CodeStar project.
+ * <code>AssociateTeamMember</code>, which adds an IAM user to the team for a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DisassociateTeamMember</a>, which removes an IAM user from the team for an AWS CodeStar project.
+ * <code>DisassociateTeamMember</code>, which removes an IAM user from the team for a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListTeamMembers</a>, which lists all the IAM users in the team for an AWS CodeStar project, including their roles
- * and attributes.
+ * <code>ListTeamMembers</code>, which lists all the IAM users in the team for a project, including their roles and
+ * attributes.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateTeamMember</code>, which updates a team member's attributes in a project.
  * </p>
  * </li>
  * </ul>
@@ -113,28 +133,28 @@ import com.amazonaws.services.codestar.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateUserProfile</a>, which creates a user profile that contains data associated with the user across all AWS
- * CodeStar projects.
+ * <code>CreateUserProfile</code>, which creates a user profile that contains data associated with the user across all
+ * projects.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteUserProfile</a>, which deletes all user profile information across all AWS CodeStar projects.
+ * <code>DeleteUserProfile</code>, which deletes all user profile information across all projects.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeUserProfile</a>, which describes the profile of a user.
+ * <code>DescribeUserProfile</code>, which describes the profile of a user.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListUserProfiles</a>, which lists all AWS CodeStar user profiles.
+ * <code>ListUserProfiles</code>, which lists all user profiles.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateUserProfile</a>, which updates the profile for an AWS CodeStar user.
+ * <code>UpdateUserProfile</code>, which updates the profile for a user.
  * </p>
  * </li>
  * </ul>
@@ -162,9 +182,6 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
                                     com.amazonaws.services.codestar.model.ConcurrentModificationException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.codestar.model.ValidationException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidServiceRoleException").withModeledClass(
                                     com.amazonaws.services.codestar.model.InvalidServiceRoleException.class))
                     .addErrorMetadata(
@@ -177,9 +194,6 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                             new JsonErrorShapeMetadata().withErrorCode("ProjectConfigurationException").withModeledClass(
                                     com.amazonaws.services.codestar.model.ProjectConfigurationException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TeamMemberNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codestar.model.TeamMemberNotFoundException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ProjectNotFoundException").withModeledClass(
                                     com.amazonaws.services.codestar.model.ProjectNotFoundException.class))
                     .addErrorMetadata(
@@ -191,6 +205,12 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UserProfileNotFoundException").withModeledClass(
                                     com.amazonaws.services.codestar.model.UserProfileNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
+                                    com.amazonaws.services.codestar.model.ValidationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TeamMemberNotFoundException").withModeledClass(
+                                    com.amazonaws.services.codestar.model.TeamMemberNotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
                                     com.amazonaws.services.codestar.model.InvalidNextTokenException.class))
@@ -795,6 +815,60 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
 
     /**
      * <p>
+     * Gets the tags for a project.
+     * </p>
+     * 
+     * @param listTagsForProjectRequest
+     * @return Result of the ListTagsForProject operation returned by the service.
+     * @throws ProjectNotFoundException
+     *         The specified AWS CodeStar project was not found.
+     * @throws ValidationException
+     *         The specified input is either not valid, or it could not be validated.
+     * @throws InvalidNextTokenException
+     *         The next token is not valid.
+     * @sample AWSCodeStar.ListTagsForProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForProjectResult listTagsForProject(ListTagsForProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForProject(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForProjectResult executeListTagsForProject(ListTagsForProjectRequest listTagsForProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForProjectRequest> request = null;
+        Response<ListTagsForProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForProjectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all team members associated with a project.
      * </p>
      * 
@@ -889,6 +963,118 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUserProfilesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUserProfilesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds tags to a project.
+     * </p>
+     * 
+     * @param tagProjectRequest
+     * @return Result of the TagProject operation returned by the service.
+     * @throws ProjectNotFoundException
+     *         The specified AWS CodeStar project was not found.
+     * @throws ValidationException
+     *         The specified input is either not valid, or it could not be validated.
+     * @throws LimitExceededException
+     *         A resource limit has been exceeded.
+     * @throws ConcurrentModificationException
+     *         Another modification is being made. That modification must complete before you can make your change.
+     * @sample AWSCodeStar.TagProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagProjectResult tagProject(TagProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagProject(request);
+    }
+
+    @SdkInternalApi
+    final TagProjectResult executeTagProject(TagProjectRequest tagProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagProjectRequest> request = null;
+        Response<TagProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagProjectResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes tags from a project.
+     * </p>
+     * 
+     * @param untagProjectRequest
+     * @return Result of the UntagProject operation returned by the service.
+     * @throws ProjectNotFoundException
+     *         The specified AWS CodeStar project was not found.
+     * @throws ValidationException
+     *         The specified input is either not valid, or it could not be validated.
+     * @throws LimitExceededException
+     *         A resource limit has been exceeded.
+     * @throws ConcurrentModificationException
+     *         Another modification is being made. That modification must complete before you can make your change.
+     * @sample AWSCodeStar.UntagProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagProjectResult untagProject(UntagProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagProject(request);
+    }
+
+    @SdkInternalApi
+    final UntagProjectResult executeUntagProject(UntagProjectRequest untagProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagProjectRequest> request = null;
+        Response<UntagProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagProjectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagProjectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

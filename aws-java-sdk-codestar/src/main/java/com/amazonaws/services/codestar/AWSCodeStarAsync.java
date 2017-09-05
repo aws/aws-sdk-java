@@ -39,27 +39,42 @@ import com.amazonaws.services.codestar.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
+ * <code>DeleteProject</code>, which deletes a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeProject</a>, which lists the attributes of a project.
+ * <code>DescribeProject</code>, which lists the attributes of a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListProjects</a>, which lists all AWS CodeStar projects associated with your AWS account.
+ * <code>ListProjects</code>, which lists all projects associated with your AWS account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListResources</a>, which lists the resources associated with an AWS CodeStar project.
+ * <code>ListResources</code>, which lists the resources associated with a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateProject</a>, which updates the attributes of an AWS CodeStar project.
+ * <code>ListTagsForProject</code>, which lists the tags associated with a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TagProject</code>, which adds tags to a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UntagProject</code>, which removes tags from a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateProject</code>, which updates the attributes of a project.
  * </p>
  * </li>
  * </ul>
@@ -69,18 +84,23 @@ import com.amazonaws.services.codestar.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>AssociateTeamMember</a>, which adds an IAM user to the team for an AWS CodeStar project.
+ * <code>AssociateTeamMember</code>, which adds an IAM user to the team for a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DisassociateTeamMember</a>, which removes an IAM user from the team for an AWS CodeStar project.
+ * <code>DisassociateTeamMember</code>, which removes an IAM user from the team for a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListTeamMembers</a>, which lists all the IAM users in the team for an AWS CodeStar project, including their roles
- * and attributes.
+ * <code>ListTeamMembers</code>, which lists all the IAM users in the team for a project, including their roles and
+ * attributes.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateTeamMember</code>, which updates a team member's attributes in a project.
  * </p>
  * </li>
  * </ul>
@@ -90,28 +110,28 @@ import com.amazonaws.services.codestar.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateUserProfile</a>, which creates a user profile that contains data associated with the user across all AWS
- * CodeStar projects.
+ * <code>CreateUserProfile</code>, which creates a user profile that contains data associated with the user across all
+ * projects.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteUserProfile</a>, which deletes all user profile information across all AWS CodeStar projects.
+ * <code>DeleteUserProfile</code>, which deletes all user profile information across all projects.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeUserProfile</a>, which describes the profile of a user.
+ * <code>DescribeUserProfile</code>, which describes the profile of a user.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListUserProfiles</a>, which lists all AWS CodeStar user profiles.
+ * <code>ListUserProfiles</code>, which lists all user profiles.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateUserProfile</a>, which updates the profile for an AWS CodeStar user.
+ * <code>UpdateUserProfile</code>, which updates the profile for a user.
  * </p>
  * </li>
  * </ul>
@@ -445,6 +465,37 @@ public interface AWSCodeStarAsync extends AWSCodeStar {
 
     /**
      * <p>
+     * Gets the tags for a project.
+     * </p>
+     * 
+     * @param listTagsForProjectRequest
+     * @return A Java Future containing the result of the ListTagsForProject operation returned by the service.
+     * @sample AWSCodeStarAsync.ListTagsForProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForProjectResult> listTagsForProjectAsync(ListTagsForProjectRequest listTagsForProjectRequest);
+
+    /**
+     * <p>
+     * Gets the tags for a project.
+     * </p>
+     * 
+     * @param listTagsForProjectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForProject operation returned by the service.
+     * @sample AWSCodeStarAsyncHandler.ListTagsForProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/ListTagsForProject" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForProjectResult> listTagsForProjectAsync(ListTagsForProjectRequest listTagsForProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForProjectRequest, ListTagsForProjectResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all team members associated with a project.
      * </p>
      * 
@@ -504,6 +555,68 @@ public interface AWSCodeStarAsync extends AWSCodeStar {
      */
     java.util.concurrent.Future<ListUserProfilesResult> listUserProfilesAsync(ListUserProfilesRequest listUserProfilesRequest,
             com.amazonaws.handlers.AsyncHandler<ListUserProfilesRequest, ListUserProfilesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds tags to a project.
+     * </p>
+     * 
+     * @param tagProjectRequest
+     * @return A Java Future containing the result of the TagProject operation returned by the service.
+     * @sample AWSCodeStarAsync.TagProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagProjectResult> tagProjectAsync(TagProjectRequest tagProjectRequest);
+
+    /**
+     * <p>
+     * Adds tags to a project.
+     * </p>
+     * 
+     * @param tagProjectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagProject operation returned by the service.
+     * @sample AWSCodeStarAsyncHandler.TagProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/TagProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagProjectResult> tagProjectAsync(TagProjectRequest tagProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<TagProjectRequest, TagProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from a project.
+     * </p>
+     * 
+     * @param untagProjectRequest
+     * @return A Java Future containing the result of the UntagProject operation returned by the service.
+     * @sample AWSCodeStarAsync.UntagProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagProjectResult> untagProjectAsync(UntagProjectRequest untagProjectRequest);
+
+    /**
+     * <p>
+     * Removes tags from a project.
+     * </p>
+     * 
+     * @param untagProjectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagProject operation returned by the service.
+     * @sample AWSCodeStarAsyncHandler.UntagProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/UntagProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagProjectResult> untagProjectAsync(UntagProjectRequest untagProjectRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagProjectRequest, UntagProjectResult> asyncHandler);
 
     /**
      * <p>

@@ -22,10 +22,16 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.amazonaws.Response;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.handlers.HandlerAfterAttemptContext;
+import com.amazonaws.handlers.HandlerBeforeAttemptContext;
 import com.amazonaws.handlers.HandlerContextKey;
+import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.apache.client.impl.ConnectionManagerAwareHttpClient;
 import com.amazonaws.http.apache.request.impl.ApacheHttpRequestFactory;
 import com.amazonaws.http.request.HttpRequestFactory;
@@ -60,6 +66,9 @@ public class AmazonHttpClientTest {
     private ConnectionManagerAwareHttpClient httpClient;
     private AmazonHttpClient client;
 
+    private RequestHandler2 mockHandler;
+    private List<RequestHandler2> requestHandlers = new ArrayList<RequestHandler2>();
+
     @Before
     public void setUp() {
         ClientConfiguration config = new ClientConfiguration();
@@ -68,6 +77,10 @@ public class AmazonHttpClientTest {
         EasyMock.replay(httpClient);
 
         client = new AmazonHttpClient(config, httpClient, null);
+
+        mockHandler = EasyMock.createStrictMock(RequestHandler2.class);
+
+        requestHandlers.add(mockHandler);
     }
 
     @Test
@@ -369,5 +382,209 @@ public class AmazonHttpClientTest {
         if (hasCL) request.addHeader("Content-Length", "100");
 
         return request;
+    }
+
+    enum MockRequestOutcome {
+        Success,
+        FailureWithAwsClientException,
+        Failure
+    };
+
+    /**
+     * Builds up the correct sequence of RequestHandler2 callbacks that occur from the AmazonHttpClient, based
+     * on parameters that describe a simple test scenario
+     * @param mockHandler
+     * @param attemptCount
+     * @param outcome
+     */
+    void SetupMockRequestHandler2(RequestHandler2 mockHandler, int attemptCount, MockRequestOutcome outcome) {
+
+        HttpResponse testResponse = EasyMock.createMock(HttpResponse.class);
+
+        // beforeRequest
+        EasyMock.reset(mockHandler);
+        mockHandler.beforeRequest(EasyMock.<Request<?>>anyObject());
+        EasyMock.expectLastCall().once();
+
+        for(int i = 0; i < attemptCount; ++i) {
+            // beforeAttempt
+            mockHandler.beforeAttempt(EasyMock.<HandlerBeforeAttemptContext>anyObject());
+            EasyMock.expectLastCall().once();
+
+            if (outcome == MockRequestOutcome.Success && i + 1 == attemptCount) {
+                // beforeUnmarshalling, requires success-based test
+                EasyMock.expect(mockHandler.beforeUnmarshalling(EasyMock.<Request<?>>anyObject(), EasyMock.<HttpResponse>anyObject()))
+                        .andReturn(testResponse)
+                        .once();
+            }
+
+            // afterAttempt
+            mockHandler.afterAttempt(EasyMock.<HandlerAfterAttemptContext>anyObject());
+            EasyMock.expectLastCall().once();
+        }
+
+        if(outcome == MockRequestOutcome.Success) {
+            // afterResponse, requires success
+            mockHandler.afterResponse(EasyMock.<Request<?>>anyObject(), EasyMock.<Response<?>>anyObject());
+            EasyMock.expectLastCall().once();
+        } else if (outcome == MockRequestOutcome.FailureWithAwsClientException){
+            // afterError, only called if exception was an AwsClientException
+            mockHandler.afterError(EasyMock.<Request<?>>anyObject(), EasyMock.<Response<?>>anyObject(), EasyMock.<Exception>anyObject());
+            EasyMock.expectLastCall().once();
+        }
+        EasyMock.replay(mockHandler);
+    }
+
+    @Test
+    public void testHandlerCallbacksOnFirstAttemptSuccess() throws IOException {
+        EasyMock.reset(httpClient);
+        EasyMock.expect(httpClient.execute(EasyMock.<HttpUriRequest>anyObject(), EasyMock.<HttpContext>anyObject()))
+                .andReturn(createBasicHttpResponse())
+                .once();
+
+        EasyMock.replay(httpClient);
+
+        SetupMockRequestHandler2(mockHandler, 1, MockRequestOutcome.Success);
+
+        ExecutionContext.Builder contextBuilder = ExecutionContext.builder();
+        contextBuilder.withRequestHandler2s(requestHandlers);
+
+        ExecutionContext context = contextBuilder.build();
+
+        Request<?> request = new DefaultRequest<Object>(SERVER_NAME);
+        request.setEndpoint(java.net.URI.create(URI_NAME));
+        request.setContent(new ByteArrayInputStream(new byte[0]));
+
+        try {
+            client.requestExecutionBuilder().request(request).executionContext(context).execute();
+        } catch (Exception e) {
+        }
+
+        // Verify that we called handler callbacks in proper sequence
+        EasyMock.verify(mockHandler);
+    }
+
+    @Test
+    public void testHandlerCallbacksOnRepeatedIOExceptions() throws IOException {
+
+        IOException exception = new IOException("BOOM");
+
+        EasyMock.reset(httpClient);
+
+        EasyMock
+                .expect(httpClient.getConnectionManager())
+                .andReturn(null)
+                .anyTimes();
+
+        EasyMock
+                .expect(httpClient.execute(EasyMock.<HttpUriRequest>anyObject(),
+                        EasyMock.<HttpContext>anyObject()))
+                .andThrow(exception)
+                .times(4);
+
+        EasyMock.replay(httpClient);
+
+        SetupMockRequestHandler2(mockHandler, 4, MockRequestOutcome.FailureWithAwsClientException);
+
+        ExecutionContext.Builder contextBuilder = ExecutionContext.builder();
+        contextBuilder.withRequestHandler2s(requestHandlers);
+
+        ExecutionContext context = contextBuilder.build();
+
+        Request<?> request = new DefaultRequest<Object>(SERVER_NAME);
+        request.setEndpoint(java.net.URI.create(URI_NAME));
+        request.setContent(new ByteArrayInputStream(new byte[0]));
+
+        try {
+            client.requestExecutionBuilder().request(request).executionContext(context).execute();
+        } catch (Exception e) {
+        }
+
+        // Verify that we called handler callbacks in proper sequence
+        EasyMock.verify(mockHandler);
+    }
+
+    @Test
+    public void testHandlerCallbacksOnRuntimeException() throws IOException {
+
+        Exception exception = new NullPointerException("BOOM");
+
+        EasyMock.reset(httpClient);
+
+        EasyMock
+                .expect(httpClient.getConnectionManager())
+                .andReturn(null)
+                .anyTimes();
+
+        EasyMock
+                .expect(httpClient.execute(EasyMock.<HttpUriRequest>anyObject(),
+                        EasyMock.<HttpContext>anyObject()))
+                .andThrow(exception)
+                .times(1);
+
+        EasyMock.replay(httpClient);
+
+        SetupMockRequestHandler2(mockHandler, 1, MockRequestOutcome.Failure);
+
+        ExecutionContext.Builder contextBuilder = ExecutionContext.builder();
+        contextBuilder.withRequestHandler2s(requestHandlers);
+
+        ExecutionContext context = contextBuilder.build();
+
+        Request<?> request = new DefaultRequest<Object>(SERVER_NAME);
+        request.setEndpoint(java.net.URI.create(URI_NAME));
+        request.setContent(new ByteArrayInputStream(new byte[0]));
+
+        try {
+            client.requestExecutionBuilder().request(request).executionContext(context).execute();
+        } catch (Exception e) {
+        }
+
+        // Verify that we called handler callbacks in proper sequence
+        EasyMock.verify(mockHandler);
+    }
+
+    @Test
+    public void testHandlerCallbacksOnFailFailSuccess() throws IOException {
+
+        Exception ioException = new IOException("SomethingBad");
+
+        EasyMock.reset(httpClient);
+
+        EasyMock
+                .expect(httpClient.getConnectionManager())
+                .andReturn(null)
+                .anyTimes();
+
+        EasyMock
+                .expect(httpClient.execute(EasyMock.<HttpUriRequest>anyObject(),
+                        EasyMock.<HttpContext>anyObject()))
+                .andThrow(ioException)
+                .times(2);
+
+        EasyMock.expect(httpClient.execute(EasyMock.<HttpUriRequest>anyObject(), EasyMock.<HttpContext>anyObject()))
+                .andReturn(createBasicHttpResponse())
+                .once();
+
+        EasyMock.replay(httpClient);
+
+        SetupMockRequestHandler2(mockHandler, 3, MockRequestOutcome.Success);
+
+        ExecutionContext.Builder contextBuilder = ExecutionContext.builder();
+        contextBuilder.withRequestHandler2s(requestHandlers);
+
+        ExecutionContext context = contextBuilder.build();
+
+        Request<?> request = new DefaultRequest<Object>(SERVER_NAME);
+        request.setEndpoint(java.net.URI.create(URI_NAME));
+        request.setContent(new ByteArrayInputStream(new byte[0]));
+
+        try {
+            client.requestExecutionBuilder().request(request).executionContext(context).execute();
+        } catch (Exception e) {
+        }
+
+        // Verify that we called handler callbacks in proper sequence
+        EasyMock.verify(mockHandler);
     }
 }

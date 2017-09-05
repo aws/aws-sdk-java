@@ -47,8 +47,16 @@ public abstract class RequestHandler2 implements IRequestHandler2 {
     }
 
     @Override
+    public void beforeAttempt(HandlerBeforeAttemptContext context) {
+    }
+
+    @Override
     public HttpResponse beforeUnmarshalling(Request<?> request, HttpResponse httpResponse) {
         return httpResponse;
+    }
+
+    @Override
+    public void afterAttempt(HandlerAfterAttemptContext context) {
     }
 
     @Override

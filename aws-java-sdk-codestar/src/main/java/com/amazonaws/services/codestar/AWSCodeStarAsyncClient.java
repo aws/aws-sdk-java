@@ -39,27 +39,42 @@ import java.util.concurrent.ExecutorService;
  * <ul>
  * <li>
  * <p>
- * <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
+ * <code>DeleteProject</code>, which deletes a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeProject</a>, which lists the attributes of a project.
+ * <code>DescribeProject</code>, which lists the attributes of a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListProjects</a>, which lists all AWS CodeStar projects associated with your AWS account.
+ * <code>ListProjects</code>, which lists all projects associated with your AWS account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListResources</a>, which lists the resources associated with an AWS CodeStar project.
+ * <code>ListResources</code>, which lists the resources associated with a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateProject</a>, which updates the attributes of an AWS CodeStar project.
+ * <code>ListTagsForProject</code>, which lists the tags associated with a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TagProject</code>, which adds tags to a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UntagProject</code>, which removes tags from a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateProject</code>, which updates the attributes of a project.
  * </p>
  * </li>
  * </ul>
@@ -69,18 +84,23 @@ import java.util.concurrent.ExecutorService;
  * <ul>
  * <li>
  * <p>
- * <a>AssociateTeamMember</a>, which adds an IAM user to the team for an AWS CodeStar project.
+ * <code>AssociateTeamMember</code>, which adds an IAM user to the team for a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DisassociateTeamMember</a>, which removes an IAM user from the team for an AWS CodeStar project.
+ * <code>DisassociateTeamMember</code>, which removes an IAM user from the team for a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListTeamMembers</a>, which lists all the IAM users in the team for an AWS CodeStar project, including their roles
- * and attributes.
+ * <code>ListTeamMembers</code>, which lists all the IAM users in the team for a project, including their roles and
+ * attributes.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateTeamMember</code>, which updates a team member's attributes in a project.
  * </p>
  * </li>
  * </ul>
@@ -90,28 +110,28 @@ import java.util.concurrent.ExecutorService;
  * <ul>
  * <li>
  * <p>
- * <a>CreateUserProfile</a>, which creates a user profile that contains data associated with the user across all AWS
- * CodeStar projects.
+ * <code>CreateUserProfile</code>, which creates a user profile that contains data associated with the user across all
+ * projects.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteUserProfile</a>, which deletes all user profile information across all AWS CodeStar projects.
+ * <code>DeleteUserProfile</code>, which deletes all user profile information across all projects.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeUserProfile</a>, which describes the profile of a user.
+ * <code>DescribeUserProfile</code>, which describes the profile of a user.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListUserProfiles</a>, which lists all AWS CodeStar user profiles.
+ * <code>ListUserProfiles</code>, which lists all user profiles.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateUserProfile</a>, which updates the profile for an AWS CodeStar user.
+ * <code>UpdateUserProfile</code>, which updates the profile for a user.
  * </p>
  * </li>
  * </ul>
@@ -479,6 +499,39 @@ public class AWSCodeStarAsyncClient extends AWSCodeStarClient implements AWSCode
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForProjectResult> listTagsForProjectAsync(ListTagsForProjectRequest request) {
+
+        return listTagsForProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForProjectResult> listTagsForProjectAsync(final ListTagsForProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForProjectRequest, ListTagsForProjectResult> asyncHandler) {
+        final ListTagsForProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForProjectResult>() {
+            @Override
+            public ListTagsForProjectResult call() throws Exception {
+                ListTagsForProjectResult result = null;
+
+                try {
+                    result = executeListTagsForProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTeamMembersResult> listTeamMembersAsync(ListTeamMembersRequest request) {
 
         return listTeamMembersAsync(request, null);
@@ -529,6 +582,72 @@ public class AWSCodeStarAsyncClient extends AWSCodeStarClient implements AWSCode
 
                 try {
                     result = executeListUserProfiles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagProjectResult> tagProjectAsync(TagProjectRequest request) {
+
+        return tagProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagProjectResult> tagProjectAsync(final TagProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagProjectRequest, TagProjectResult> asyncHandler) {
+        final TagProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagProjectResult>() {
+            @Override
+            public TagProjectResult call() throws Exception {
+                TagProjectResult result = null;
+
+                try {
+                    result = executeTagProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagProjectResult> untagProjectAsync(UntagProjectRequest request) {
+
+        return untagProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagProjectResult> untagProjectAsync(final UntagProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagProjectRequest, UntagProjectResult> asyncHandler) {
+        final UntagProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagProjectResult>() {
+            @Override
+            public UntagProjectResult call() throws Exception {
+                UntagProjectResult result = null;
+
+                try {
+                    result = executeUntagProject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

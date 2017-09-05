@@ -26,27 +26,42 @@
  * <ul>
  * <li>
  * <p>
- * <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
+ * <code>DeleteProject</code>, which deletes a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeProject</a>, which lists the attributes of a project.
+ * <code>DescribeProject</code>, which lists the attributes of a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListProjects</a>, which lists all AWS CodeStar projects associated with your AWS account.
+ * <code>ListProjects</code>, which lists all projects associated with your AWS account.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListResources</a>, which lists the resources associated with an AWS CodeStar project.
+ * <code>ListResources</code>, which lists the resources associated with a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateProject</a>, which updates the attributes of an AWS CodeStar project.
+ * <code>ListTagsForProject</code>, which lists the tags associated with a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TagProject</code>, which adds tags to a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UntagProject</code>, which removes tags from a project.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateProject</code>, which updates the attributes of a project.
  * </p>
  * </li>
  * </ul>
@@ -56,18 +71,23 @@
  * <ul>
  * <li>
  * <p>
- * <a>AssociateTeamMember</a>, which adds an IAM user to the team for an AWS CodeStar project.
+ * <code>AssociateTeamMember</code>, which adds an IAM user to the team for a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DisassociateTeamMember</a>, which removes an IAM user from the team for an AWS CodeStar project.
+ * <code>DisassociateTeamMember</code>, which removes an IAM user from the team for a project.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListTeamMembers</a>, which lists all the IAM users in the team for an AWS CodeStar project, including their roles
- * and attributes.
+ * <code>ListTeamMembers</code>, which lists all the IAM users in the team for a project, including their roles and
+ * attributes.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateTeamMember</code>, which updates a team member's attributes in a project.
  * </p>
  * </li>
  * </ul>
@@ -77,28 +97,28 @@
  * <ul>
  * <li>
  * <p>
- * <a>CreateUserProfile</a>, which creates a user profile that contains data associated with the user across all AWS
- * CodeStar projects.
+ * <code>CreateUserProfile</code>, which creates a user profile that contains data associated with the user across all
+ * projects.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteUserProfile</a>, which deletes all user profile information across all AWS CodeStar projects.
+ * <code>DeleteUserProfile</code>, which deletes all user profile information across all projects.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeUserProfile</a>, which describes the profile of a user.
+ * <code>DescribeUserProfile</code>, which describes the profile of a user.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListUserProfiles</a>, which lists all AWS CodeStar user profiles.
+ * <code>ListUserProfiles</code>, which lists all user profiles.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateUserProfile</a>, which updates the profile for an AWS CodeStar user.
+ * <code>UpdateUserProfile</code>, which updates the profile for a user.
  * </p>
  * </li>
  * </ul>

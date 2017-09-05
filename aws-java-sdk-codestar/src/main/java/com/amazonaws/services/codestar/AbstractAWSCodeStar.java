@@ -78,12 +78,27 @@ public class AbstractAWSCodeStar implements AWSCodeStar {
     }
 
     @Override
+    public ListTagsForProjectResult listTagsForProject(ListTagsForProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTeamMembersResult listTeamMembers(ListTeamMembersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListUserProfilesResult listUserProfiles(ListUserProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagProjectResult tagProject(TagProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagProjectResult untagProject(UntagProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -39,7 +39,7 @@ public class ListResourcesRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String nextToken;
     /**
      * <p>
-     * he maximum amount of data that can be contained in a single set of results.
+     * The maximum amount of data that can be contained in a single set of results.
      * </p>
      */
     private Integer maxResults;
@@ -126,11 +126,11 @@ public class ListResourcesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * he maximum amount of data that can be contained in a single set of results.
+     * The maximum amount of data that can be contained in a single set of results.
      * </p>
      * 
      * @param maxResults
-     *        he maximum amount of data that can be contained in a single set of results.
+     *        The maximum amount of data that can be contained in a single set of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -139,10 +139,10 @@ public class ListResourcesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * he maximum amount of data that can be contained in a single set of results.
+     * The maximum amount of data that can be contained in a single set of results.
      * </p>
      * 
-     * @return he maximum amount of data that can be contained in a single set of results.
+     * @return The maximum amount of data that can be contained in a single set of results.
      */
 
     public Integer getMaxResults() {
@@ -151,11 +151,11 @@ public class ListResourcesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * he maximum amount of data that can be contained in a single set of results.
+     * The maximum amount of data that can be contained in a single set of results.
      * </p>
      * 
      * @param maxResults
-     *        he maximum amount of data that can be contained in a single set of results.
+     *        The maximum amount of data that can be contained in a single set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

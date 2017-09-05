@@ -51,6 +51,8 @@ import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.handlers.CredentialsRequestHandler;
+import com.amazonaws.handlers.HandlerAfterAttemptContext;
+import com.amazonaws.handlers.HandlerBeforeAttemptContext;
 import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.apache.client.impl.ApacheHttpClientFactory;
@@ -745,6 +747,8 @@ public class AmazonHttpClient {
                 return response;
             } catch (AmazonClientException e) {
                 publishProgress(listener, ProgressEventType.CLIENT_REQUEST_FAILED_EVENT);
+
+                // Exceptions generated here will block the rethrow of e.
                 afterError(response, e);
                 throw e;
             } finally {
@@ -972,6 +976,20 @@ public class AmazonHttpClient {
             }
         }
 
+        private <T> void beforeAttempt(HandlerBeforeAttemptContext context) throws InterruptedException {
+            for (RequestHandler2 handler2 : requestHandler2s) {
+                handler2.beforeAttempt(context);
+                checkInterrupted();
+            }
+        }
+
+        private <T> void afterAttempt(HandlerAfterAttemptContext context) throws InterruptedException {
+            for (RequestHandler2 handler2 : requestHandler2s) {
+                handler2.afterAttempt(context);
+                checkInterrupted(context.getResponse());
+            }
+        }
+
         /**
          * Internal method to execute the HTTP method given.
          */
@@ -1025,14 +1043,29 @@ public class AmazonHttpClient {
                     request.setHeaders(originalHeaders);
                     request.setContent(originalContent);
                 }
+
+                Response<Output> response = null;
+                Exception savedException = null;
                 try {
-                    Response<Output> response = executeOneRequest(execOneParams);
+                    HandlerBeforeAttemptContext beforeAttemptContext = HandlerBeforeAttemptContext.builder()
+                            .withRequest(request)
+                            .build();
+
+                    beforeAttempt(beforeAttemptContext);
+                    response = executeOneRequest(execOneParams);
+                    savedException = execOneParams.retriedException;
+
                     if (response != null) {
                         return response;
                     }
                 } catch (IOException ioe) {
+                    savedException = ioe;
                     handleRetryableException(execOneParams, ioe);
+                } catch (InterruptedException ie) {
+                    savedException = ie;
+                    throw ie;
                 } catch (RuntimeException e) {
+                    savedException = e;
                     throw lastReset(captureExceptionMetrics(e));
                 } catch (Error e) {
                     throw lastReset(captureExceptionMetrics(e));
@@ -1055,6 +1088,18 @@ public class AmazonHttpClient {
                             }
                         }
                     }
+
+                    HandlerAfterAttemptContext afterAttemptContext = HandlerAfterAttemptContext.builder()
+                            .withRequest(request)
+                            .withResponse(response)
+                            .withException(savedException)
+                            .build();
+
+                    /*
+                     * Exceptions generated here will replace ones rethrown in catch-blocks
+                     * above or thrown in the original try-block.
+                     */
+                    afterAttempt(afterAttemptContext);
                 }
             } /* end while (true) */
         }
@@ -1128,6 +1173,7 @@ public class AmazonHttpClient {
          */
         private Response<Output> executeOneRequest(ExecOneRequestParams execOneParams)
                 throws IOException, InterruptedException {
+
             if (execOneParams.isRetry()) {
                 resetRequestInputStream(request);
             }
