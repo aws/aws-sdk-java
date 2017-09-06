@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A structure holds the actual and forecasted spend for a budget.
+ * A structure that holds the actual and forecasted spend for a budget.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CalculatedSpend implements Serializable, Cloneable, StructuredPojo {

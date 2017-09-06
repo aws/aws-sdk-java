@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A structure represent either a cost spend or usage spend. Contains an amount and a unit.
+ * A structure that represents either a cost spend or usage spend. Contains an amount and a unit.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Spend implements Serializable, Cloneable, StructuredPojo {

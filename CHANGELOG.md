@@ -1,3 +1,12 @@
+# __1.11.190__ __2017-09-06__
+## __AWS Budgets__
+  - ### Features
+    - Add an optional "thresholdType" to notifications to support percentage or absolute value thresholds.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fixing https://github.com/aws/aws-sdk-java/issues/1256. doesBucketExist now throws an exception when credentials are invalid rather than always returning true.
+
 # __1.11.189__ __2017-09-05__
 ## __AWS CodeStar__
   - ### Features

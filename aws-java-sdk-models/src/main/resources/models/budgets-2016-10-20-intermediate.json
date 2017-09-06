@@ -2071,7 +2071,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "A structure holds the actual and forecasted spend for a budget.",
+      "documentation" : "A structure that holds the actual and forecasted spend for a budget.",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -10104,6 +10104,69 @@
           "variableSetterType" : "Double"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ThresholdType",
+        "c2jShape" : "ThresholdType",
+        "deprecated" : false,
+        "documentation" : "",
+        "enumType" : "ThresholdType",
+        "fluentSetterDocumentation" : "/**\n@param thresholdType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ThresholdType*/",
+        "fluentSetterMethodName" : "withThresholdType",
+        "getterDocumentation" : "/**\n@return \n@see ThresholdType*/",
+        "getterMethodName" : "getThresholdType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ThresholdType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ThresholdType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ThresholdType",
+        "setterDocumentation" : "/**\n@param thresholdType \n@see ThresholdType*/",
+        "setterMethodName" : "setThresholdType",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "thresholdType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : true,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param thresholdType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ThresholdType*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "thresholdType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ComparisonOperator" : {
@@ -10295,6 +10358,70 @@
             "documentation" : "",
             "simpleType" : "Double",
             "variableSetterType" : "Double"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ThresholdType" : {
+          "c2jName" : "ThresholdType",
+          "c2jShape" : "ThresholdType",
+          "deprecated" : false,
+          "documentation" : "",
+          "enumType" : "ThresholdType",
+          "fluentSetterDocumentation" : "/**\n@param thresholdType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ThresholdType*/",
+          "fluentSetterMethodName" : "withThresholdType",
+          "getterDocumentation" : "/**\n@return \n@see ThresholdType*/",
+          "getterMethodName" : "getThresholdType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ThresholdType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ThresholdType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ThresholdType",
+          "setterDocumentation" : "/**\n@param thresholdType \n@see ThresholdType*/",
+          "setterMethodName" : "setThresholdType",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "thresholdType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : true,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param thresholdType \n@return Returns a reference to this object so that method calls can be chained together.\n@see ThresholdType*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "thresholdType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         }
@@ -10823,7 +10950,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "A structure represent either a cost spend or usage spend. Contains an amount and a unit.",
+      "documentation" : "A structure that represents either a cost spend or usage spend. Contains an amount and a unit.",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -11447,6 +11574,51 @@
       },
       "wrapper" : false
     },
+    "ThresholdType" : {
+      "c2jName" : "ThresholdType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE.",
+      "enums" : [ {
+        "name" : "PERCENTAGE",
+        "value" : "PERCENTAGE"
+      }, {
+        "name" : "ABSOLUTE_VALUE",
+        "value" : "ABSOLUTE_VALUE"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ThresholdType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "ThresholdType",
+        "variableName" : "thresholdType",
+        "variableType" : "ThresholdType",
+        "documentation" : null,
+        "simpleType" : "ThresholdType",
+        "variableSetterType" : "ThresholdType"
+      },
+      "wrapper" : false
+    },
     "TimePeriod" : {
       "c2jName" : "TimePeriod",
       "customization" : {
@@ -11456,7 +11628,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "A time period indicated the start date and end date of a budget.",
+      "documentation" : "A time period indicating the start date and end date of a budget.",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,

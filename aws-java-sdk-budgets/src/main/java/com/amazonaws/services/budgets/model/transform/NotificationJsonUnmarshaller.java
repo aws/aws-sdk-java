@@ -60,6 +60,10 @@ public class NotificationJsonUnmarshaller implements Unmarshaller<Notification, 
                     context.nextToken();
                     notification.setThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("ThresholdType", targetDepth)) {
+                    context.nextToken();
+                    notification.setThresholdType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

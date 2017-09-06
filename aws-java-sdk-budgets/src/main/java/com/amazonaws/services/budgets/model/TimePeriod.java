@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A time period indicated the start date and end date of a budget.
+ * A time period indicating the start date and end date of a budget.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
